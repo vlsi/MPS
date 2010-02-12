@@ -8,8 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -23,6 +23,9 @@ public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
       this.append("static ");
     }
     GenericDeclarationTextGen2.typeDeclarations(node, this);
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty()) {
+      this.append(" ");
+    }
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "returnType", true), this.getSNode());
     this.append(" ");
     this.append(SPropertyOperations.getString(node, "name"));

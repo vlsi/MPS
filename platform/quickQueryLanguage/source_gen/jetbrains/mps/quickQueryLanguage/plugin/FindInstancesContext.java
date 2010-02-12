@@ -27,7 +27,7 @@ public class FindInstancesContext extends StandaloneMPSContext {
     return GlobalScope.getInstance();
   }
 
-  public <T>T getComponent(@NotNull Class<T> c) {
+  public <T> T getComponent(@NotNull Class<T> c) {
     T component = this.myMPSProject.getComponent(c);
     if (component != null) {
       return component;

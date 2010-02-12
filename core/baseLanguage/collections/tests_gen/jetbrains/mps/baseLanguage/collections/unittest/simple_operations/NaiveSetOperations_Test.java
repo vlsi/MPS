@@ -574,7 +574,7 @@ __switch__:
     }
   }
 
-  public <T>void assertIterableEquals(Iterable<T> exp, Iterable<T> test) {
+  public <T> void assertIterableEquals(Iterable<T> exp, Iterable<T> test) {
     Iterator<T> expIt = exp.iterator();
     Iterator<T> testIt = test.iterator();
     while (expIt.hasNext() && testIt.hasNext()) {
@@ -584,7 +584,7 @@ __switch__:
     Assert.assertFalse(testIt.hasNext());
   }
 
-  public <T>void assertIterableEqualsAsSet(Iterable<T> exp, Iterable<T> test) {
+  public <T> void assertIterableEqualsAsSet(Iterable<T> exp, Iterable<T> test) {
     HashSet<T> expSet = new HashSet<T>();
     for (T e : exp) {
       Assert.assertTrue(expSet.add(e));
@@ -597,7 +597,7 @@ __switch__:
     Assert.assertFalse(testIt.hasNext());
   }
 
-  public <T>void assertIterableEqualsIgnoreOrder(Iterable<T> exp, Iterable<T> test) {
+  public <T> void assertIterableEqualsIgnoreOrder(Iterable<T> exp, Iterable<T> test) {
     HashMap<T, Integer> cardMap = new HashMap<T, Integer>();
     for (T e : exp) {
       Integer card = cardMap.get(e);

@@ -26,6 +26,9 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
       this.append("abstract ");
     }
     GenericDeclarationTextGen2.typeDeclarations(node, this);
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty()) {
+      this.append(" ");
+    }
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "returnType", true), this.getSNode());
     this.append(" ");
     this.append(SPropertyOperations.getString(node, "name"));
