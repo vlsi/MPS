@@ -28,6 +28,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationHelper;
 
 import java.util.*;
@@ -126,33 +127,32 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
       }
 
       private int compareWithoutEditor(SNode ancestor, SNode node1, SNode node2) {
-        int index1 = ancestor.getIndexOfChild(node1);
-        int index2 = ancestor.getIndexOfChild(node2);
-        return index1 - index2;
+        Integer index1 = ancestor.getIndexOfChild(node1);
+        Integer index2 = ancestor.getIndexOfChild(node2);
+        return index1.compareTo(index2);
       }
 
-      private int indexInEditor(SNode editorNode, String role, int index) {
-        index--;
+      private Pair<Integer, Boolean> indexInEditor(SNode editorNode, String role, Pair<Integer, Boolean> index) {
+        index.o1++;
         if (editorNode.toString().startsWith("%" + role + "%")) {
-          return -index;
+          return new Pair(index.o1, true);
         }
         for (SNode childEditorNode : editorNode.getChildren()) {
-          int result = indexInEditor(childEditorNode, role, index);
-          if (result >= 0) return result;
+          Pair<Integer, Boolean> result = indexInEditor(childEditorNode, role, index);
+          if (result.o2) return result;
         }
-        return index;
+        return new Pair(-1, false);
       }
 
       private int searchInEditors(SNode ancestor, SNode searchedNode) {
-        // todo: include editor components
         AbstractConceptDeclaration conceptDeclaration = ancestor.getConceptDeclarationAdapter();
         SModel structureModel = conceptDeclaration.getModel();
         Language language = (Language) structureModel.getModelDescriptor().getModule();
         SModel editorModel = language.getEditorModelDescriptor().getSModel();
         ConceptEditorDeclaration conceptEditorDeclaration = GoToEditorDeclarationHelper.findEditorDeclaration(editorModel, conceptDeclaration);
         SNode editorNode = conceptEditorDeclaration.getNode();
-        int index = indexInEditor(editorNode, searchedNode.getRole_(), -1);
-        if (index > -1 || ancestor.getParent() == null) {
+        int index = indexInEditor(editorNode, searchedNode.getRole_(), new Pair(-1, false)).o1;
+        if (index != -1 || ancestor.getParent() == null) {
           check(index, searchedNode, searchedNode.getContainingRoot());
           return index;
         }
@@ -160,16 +160,16 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
       }
 
       private int compareWithEditor(SNode ancestor, SNode node1, SNode node2) {       
-        int index1 = searchInEditors(ancestor, node1);
-        int index2 = searchInEditors(ancestor, node2);
-        return index1 - index2;
+        Integer index1 = searchInEditors(ancestor, node1);
+        Integer index2 = searchInEditors(ancestor, node2);
+        return index1.compareTo(index2);
       }
 
       public int compare(SNode o1, SNode o2) {
         SNode root1 = o1.getContainingRoot();
         SNode root2 = o2.getContainingRoot();
         if (!EqualUtil.equals(root1, root2)) {
-          return root1.toString().compareTo(root2.toString()) * 10;
+          return root1.toString().compareTo(root2.toString());
         }
         List<SNode> anc1 = o1.getAncestors(true);
         List<SNode> anc2 = o2.getAncestors(true);
