@@ -19,6 +19,8 @@ public class DependentComputationItem extends BaseConcept implements INamedConce
   public static final String APPLICABLE_CONCEPT = "applicableConcept";
   public static final String BLOCKING_NODE_CONCEPT = "blockingNodeConcept";
   public static final String FIND_MASTER_BLOCK = "findMasterBlock";
+  public static final String IS_APPLICABLE_BLOCK = "isApplicableBlock";
+  public static final String IS_BLOCKING_BLOCK = "isBlockingBlock";
 
   public DependentComputationItem(SNode node) {
     super(node);
@@ -78,6 +80,22 @@ public class DependentComputationItem extends BaseConcept implements INamedConce
 
   public void setFindMasterBlock(DependentComputationItem_FindMasterBlock node) {
     super.setChild(DependentComputationItem.FIND_MASTER_BLOCK, node);
+  }
+
+  public DependentComputationItem_ApplicableBlock getIsApplicableBlock() {
+    return (DependentComputationItem_ApplicableBlock) this.getChild(DependentComputationItem_ApplicableBlock.class, DependentComputationItem.IS_APPLICABLE_BLOCK);
+  }
+
+  public void setIsApplicableBlock(DependentComputationItem_ApplicableBlock node) {
+    super.setChild(DependentComputationItem.IS_APPLICABLE_BLOCK, node);
+  }
+
+  public DependentComputationItem_ApplicableBlock getIsBlockingBlock() {
+    return (DependentComputationItem_ApplicableBlock) this.getChild(DependentComputationItem_ApplicableBlock.class, DependentComputationItem.IS_BLOCKING_BLOCK);
+  }
+
+  public void setIsBlockingBlock(DependentComputationItem_ApplicableBlock node) {
+    super.setChild(DependentComputationItem.IS_BLOCKING_BLOCK, node);
   }
 
   public static DependentComputationItem newInstance(SModel sm, boolean init) {
