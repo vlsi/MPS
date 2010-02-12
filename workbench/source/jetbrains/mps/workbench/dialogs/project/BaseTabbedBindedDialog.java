@@ -49,14 +49,14 @@ public abstract class BaseTabbedBindedDialog extends BaseBindedDialog {
     return myTabbedPane;
   }
 
-  protected void addComponent(String tabName, JComponent comp, GridBagConstraints c) {
+  protected void addComponent(String tabName, JComponent comp, ConstraintsType c) {
     if (!myTabOrder.contains(tabName)) {
       myTabOrder.add(tabName);
     }
 
     JComponent tab = myComponents.get(tabName);
     if (tab == null) tab = new JPanel(new GridBagLayout());
-    tab.add(comp, c);
+    tab.add(comp, c.create(tab.getComponentCount()));
     myComponents.put(tabName, tab);
   }
 }

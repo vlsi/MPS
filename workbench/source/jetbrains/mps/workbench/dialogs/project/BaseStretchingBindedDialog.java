@@ -35,6 +35,11 @@ public abstract class BaseStretchingBindedDialog extends BaseBindedDialog {
     return myContentPanel;
   }
 
+  protected void addComponent(JComponent comp, ConstraintsType c) {
+    myContentPanel.add(comp, c.create(myContentPanel.getComponentCount()));
+  }
+
+  //todo remove this method
   protected void addComponent(JComponent comp, GridBagConstraints c) {
     myContentPanel.add(comp, c);
   }

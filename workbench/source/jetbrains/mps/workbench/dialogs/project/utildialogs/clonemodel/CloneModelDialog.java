@@ -65,19 +65,19 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
   }
 
   private void initUI() {
-    addComponent(new JLabel("Path:"), adjustConstraints(createLabelConstraints(0, 0), 5));
-    addComponent(createPathField(), adjustConstraints(createFieldConstraints(1, 0), 5));
+    addComponent(new JLabel("Path:"), adjustConstraints(ConstraintsType.LABEL.create(0), 5));
+    addComponent(createPathField(), adjustConstraints(ConstraintsType.FIELD.create(1, 0), 5));
 
-    addComponent(new JLabel("Name:"), adjustConstraints(createLabelConstraints(0, 1), 8));
-    addComponent(createNamespaceField(), adjustConstraints(createFieldConstraints(1, 1), 8));
+    addComponent(new JLabel("Name:"), adjustConstraints(ConstraintsType.LABEL.create(1), 8));
+    addComponent(createNamespaceField(), adjustConstraints(ConstraintsType.FIELD.create(1, 1), 8));
 
-    addComponent(new JLabel("Stereotype:"), adjustConstraints(createLabelConstraints(0, 2), 8));
-    GridBagConstraints c = adjustConstraints(createFieldConstraints(1, 2), 8);
+    addComponent(new JLabel("Stereotype:"), adjustConstraints(ConstraintsType.LABEL.create(2), 8));
+    GridBagConstraints c = adjustConstraints(ConstraintsType.FIELD.create(1, 2), 8);
     c.fill = GridBagConstraints.NONE;
     addComponent(createStereotypeCombo(), c);
 
-    addComponent(new JPanel(), createLabelConstraints(0, 4));
-    addComponent(new JPanel(), createListConstraints(1, 4));
+    addComponent(new JPanel(), ConstraintsType.LABEL.create(3));
+    addComponent(new JPanel(), ConstraintsType.LIST.create(1, 3));
   }
 
   private GridBagConstraints adjustConstraints(GridBagConstraints c, int topInset) {

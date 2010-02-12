@@ -81,20 +81,29 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
     myBindings.add(binding);
   }
 
-  protected GridBagConstraints createListConstraints(int x, int y) {
-    return new GridBagConstraints(x, y, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
-  }
+  protected enum ConstraintsType {
+    LABEL {
+      public GridBagConstraints create(int x, int y) {
+        GridBagConstraints c = LIST.create(x, y);
+        c.weightx = 0;
+        c.weighty = 0;
+        return c;
+      }},
+    FIELD {
+      public GridBagConstraints create(int x, int y) {
+        GridBagConstraints c = LIST.create(x, y);
+        c.weighty = 0;
+        return c;
+      }},
+    LIST {
+      public GridBagConstraints create(int x, int y) {
+        return new GridBagConstraints(x, y, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+      }};
 
-  protected GridBagConstraints createFieldConstraints(int x, int y) {
-    GridBagConstraints c = createListConstraints(x, y);
-    c.weighty = 0;
-    return c;
-  }
+    public GridBagConstraints create(int y) {
+      return create(0, y);
+    }
 
-  protected GridBagConstraints createLabelConstraints(int x, int y) {
-    GridBagConstraints c = createListConstraints(x, y);
-    c.weightx = 0;
-    c.weighty = 0;
-    return c;
+    public abstract GridBagConstraints create(int x, int y);
   }
 }

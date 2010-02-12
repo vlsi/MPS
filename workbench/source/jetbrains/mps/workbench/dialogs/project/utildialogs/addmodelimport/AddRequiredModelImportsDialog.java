@@ -53,9 +53,9 @@ public class AddRequiredModelImportsDialog extends BaseStretchingBindedDialog {
   }
 
   private void initUI() {
-    addComponent(createMessage(), createFieldConstraints(0, 0));
-    addComponent(StandardComponents.createModelsImportsPanel(this, "Models", myProps), createListConstraints(0, 1));
-    addComponent(StandardComponents.createLanguagesImportsPanel(this, "Languages", myProps), createListConstraints(0, 2));
+    addComponent(createMessage(), ConstraintsType.FIELD);
+    addComponent(StandardComponents.createModelsImportsPanel(this, "Models", myProps), ConstraintsType.LIST);
+    addComponent(StandardComponents.createLanguagesImportsPanel(this, "Languages", myProps), ConstraintsType.LIST);
   }
 
   private JComponent createMessage() {
