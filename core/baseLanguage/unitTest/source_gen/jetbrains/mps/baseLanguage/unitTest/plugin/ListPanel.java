@@ -32,7 +32,6 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.JScrollPane;
-import jetbrains.mps.workbench.dialogs.project.components.parts.UiListsFactory;
 import javax.swing.JLabel;
 
 public class ListPanel extends JPanel {
@@ -165,7 +164,6 @@ public class ListPanel extends JPanel {
     comp.doLayout();
     this.add(comp, BorderLayout.CENTER);
 
-    UiListsFactory.addActionsComponentToPanel("Test", this.list, this, add, remove);
     this.add(new JLabel((this.isTestMethods ?
       "Methods" :
       "Classes"

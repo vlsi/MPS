@@ -22866,28 +22866,6 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1853639028181771952" />
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8396772032863660229">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8396772032863660231">
-            <link role="baseMethodDeclaration:3" targetNodeId="98.~UiListsFactory.addActionsComponentToPanel(java.lang.String,javax.swing.JComponent,javax.swing.JPanel,com.intellij.openapi.actionSystem.AnAction...):void" resolveInfo="addActionsComponentToPanel" />
-            <link role="classConcept:3" targetNodeId="98.~UiListsFactory" resolveInfo="UiListsFactory" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8396772032863660232">
-              <property name="value:3" value="Test" />
-            </node>
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8396772032863660234">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="8396772032863660235">
-                <link role="fieldDeclaration:3" targetNodeId="813722280256835269:0" resolveInfo="list" />
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="8396772032863660236" />
-            </node>
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="8396772032863660238" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8396772032863660240">
-              <link role="variableDeclaration:3" targetNodeId="813722280256791080:0" resolveInfo="add" />
-            </node>
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8396772032863660242">
-              <link role="variableDeclaration:3" targetNodeId="813722280256835315:0" resolveInfo="remove" />
-            </node>
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4385949629785625126">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4385949629785625128">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="4385949629785625127" />
