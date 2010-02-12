@@ -25,10 +25,7 @@ import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -123,6 +120,7 @@ public class RequestManager implements DebugProcessListener {
 
 
   //------------------- requests creation
+
   public BreakpointRequest createBreakpointRequest(MPSBreakpoint requestor, Location location) {
     DebuggerManagerThread.assertIsManagerThread();
     BreakpointRequest req = myEventRequestManager.createBreakpointRequest(location);
@@ -130,11 +128,35 @@ public class RequestManager implements DebugProcessListener {
     registerRequestInternal(requestor, req);
     return req;
   }
+
+  void deleteStepRequests() {
+    List<StepRequest> stepRequests = myEventRequestManager.stepRequests();
+    if (stepRequests.size() > 0) {
+      List<StepRequest> toDelete = new ArrayList<StepRequest>(stepRequests.size());
+      for (StepRequest request : stepRequests) {
+        ThreadReference threadReference = request.thread();
+        // on attempt to delete a request assigned to a thread with unknown status, a JDWP error occures
+        if (threadReference.status() != ThreadReference.THREAD_STATUS_UNKNOWN) {
+          toDelete.add(request);
+        }
+      }
+      myEventRequestManager.deleteEventRequests(toDelete);
+    }
+  }
+
+  public StepRequest createStepRequest(StepRequestor requestor, int stepType, ThreadReference stepThread, int suspendPolicy) {
+    deleteStepRequests();
+    StepRequest stepRequest = myEventRequestManager.createStepRequest(stepThread, StepRequest.STEP_LINE, stepType);
+    stepRequest.setSuspendPolicy(suspendPolicy);
+    registerRequestInternal(requestor, stepRequest);
+    return stepRequest;
+  }
   //todo: some other types of requests; later
   //------------------- ~requests creation
 
 
   //by classname
+
   public void callbackOnPrepareClasses(ClassPrepareRequestor requestor, String classOrPatternToBeLoaded) {
     DebuggerManagerThread.assertIsManagerThread();
     ClassPrepareRequest classPrepareRequest = createClassPrepareRequest(requestor, classOrPatternToBeLoaded);
@@ -151,6 +173,7 @@ public class RequestManager implements DebugProcessListener {
   }
 
   //currently does no much more than request.enable()
+
   public void enableRequest(EventRequest request) {
     DebuggerManagerThread.assertIsManagerThread();
     LOG.assertLog(findRequestor(request) != null);
@@ -162,7 +185,7 @@ public class RequestManager implements DebugProcessListener {
     DebuggerManagerThread.assertIsManagerThread();
     myInvalidRequestsAndWarnings.put(requestor, message);
   }
-  
+
   @Nullable
   public String getWarning(Requestor requestor) {
     DebuggerManagerThread.assertIsManagerThread();
@@ -170,6 +193,7 @@ public class RequestManager implements DebugProcessListener {
   }
 
   //todo impl
+
   @Override
   public void connectorIsReady() {
     //To change body of implemented methods use File | Settings | File Templates.
@@ -219,6 +243,7 @@ public class RequestManager implements DebugProcessListener {
   }
 
   //todo the code below should be called on EVERY debug session in a project
+
   public static void createClassPrepareRequests(final MPSBreakpoint breakpoint) {
     DebugManagerComponent.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override

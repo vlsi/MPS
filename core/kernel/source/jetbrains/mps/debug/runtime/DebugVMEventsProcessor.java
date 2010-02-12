@@ -328,48 +328,33 @@ public class DebugVMEventsProcessor {
   }
 
   private void processStepEvent(SuspendContext suspendContext, StepEvent event) {
-    ThreadReference thread = event.thread();
-    preprocessEvent(suspendContext, thread);
+    preprocessEvent(suspendContext, event.thread());
 
-    //noinspection HardCodedStringLiteral
-//    RequestHint hint = (RequestHint) event.request().getProperty("hint");
-
-    deleteStepRequests(getVirtualMachine().eventRequestManager());
+    myRequestManager.deleteStepRequests();
 
     boolean shouldResume = false;
 
-//    if (hint != null) {
-//      final int nextStepDepth = hint.getNextStepDepth(suspendContext);
-//      if (nextStepDepth != RequestHint.STOP) {
-//        final ThreadReferenceProxyImpl threadProxy = suspendContext.getThread();
-//        doStep(suspendContext, threadProxy, nextStepDepth, hint);
-//        shouldResume = true;
-//      }
-//
-//      if (!shouldResume && hint.isRestoreBreakpoints()) {
-//        DebuggerManagerEx.getInstanceEx(getProject()).getBreakpointManager().enableBreakpoints(this);
-//      }
-//    }
+    EventRequest request = event.request();
+    if (request instanceof StepRequest) {
+      StepRequest stepRequest = (StepRequest) request;
+      // calculate if we should really stop here
+      // see idea's RequestHint.getNextStepDepth
+      StepRequestor requestor = (StepRequestor) myRequestManager.findRequestor(stepRequest);
+
+      int nextStepType = requestor.nextStep(suspendContext);
+      shouldResume = nextStepType != StepRequestor.STOP;
+      if (shouldResume) {
+        // do next step
+        doStep(suspendContext, suspendContext.getThread(), requestor, nextStepType);
+      }
+
+      // TODO restore breakpoints
+    }
 
     if (shouldResume) {
       getSuspendManager().voteResume(suspendContext);
     } else {
       getSuspendManager().voteSuspend(suspendContext);
-    }
-  }
-
-  private void deleteStepRequests(EventRequestManager requestManager) {
-    List<StepRequest> stepRequests = requestManager.stepRequests();
-    if (stepRequests.size() > 0) {
-      List<StepRequest> toDelete = new ArrayList<StepRequest>(stepRequests.size());
-      for (StepRequest request : stepRequests) {
-        ThreadReference threadReference = request.thread();
-        // on attempt to delete a request assigned to a thread with unknown status, a JDWP error occures
-        if (threadReference.status() != ThreadReference.THREAD_STATUS_UNKNOWN) {
-          toDelete.add(request);
-        }
-      }
-      requestManager.deleteEventRequests(toDelete);
     }
   }
 
@@ -486,37 +471,30 @@ public class DebugVMEventsProcessor {
     @Override
     protected void action() throws Exception {
       SuspendContext suspendContext = getSuspendContext();
-      ThreadReference stepThread = suspendContext.getThread();
-
-      if (stepThread == null) {
-        return;
-      }
-
-//      try {
-      LOG.debug("DO_STEP: creating step request for " + stepThread);
-
-      EventRequestManager requestManager = getVirtualMachine().eventRequestManager();
-
-      deleteStepRequests(requestManager);
-
-      StepRequest stepRequest = requestManager.createStepRequest(stepThread, StepRequest.STEP_LINE, getStepType());
-
-      // TODO add ignore filters to request
-
-      // suspend policy to match the suspend policy of the context:
-      // if all threads were suspended, then during stepping all the threads must be suspended
-      // if only event thread were suspended, then only this particular thread must be suspended during stepping
-      stepRequest.setSuspendPolicy(suspendContext.getSuspendPolicy() == EventRequest.SUSPEND_EVENT_THREAD ? EventRequest.SUSPEND_EVENT_THREAD : EventRequest.SUSPEND_ALL);
-      stepRequest.enable();
-//      } catch (ObjectCollectedException ignored) {
-//      }
-
+      doStep(suspendContext, suspendContext.getThread(), new StepRequestor(suspendContext, getStepType()), getStepType());
       super.action();
     }
 
     private int getStepType() {
       return myStepType.getJdiType();
     }
+
+  }
+
+  private void doStep(SuspendContext suspendContext, ThreadReference stepThread, StepRequestor stepRequestor, int stepType) {
+    if (stepThread == null) {
+      return;
+    }
+
+    // suspend policy to match the suspend policy of the context:
+    // if all threads were suspended, then during stepping all the threads must be suspended
+    // if only event thread were suspended, then only this particular thread must be suspended during stepping
+    int suspendPolicy = suspendContext.getSuspendPolicy() == EventRequest.SUSPEND_EVENT_THREAD ? EventRequest.SUSPEND_EVENT_THREAD : EventRequest.SUSPEND_ALL;
+    StepRequest stepRequest = myRequestManager.createStepRequest(stepRequestor, stepType, stepThread, suspendPolicy);
+
+    // TODO add ignore filters to request
+
+    myRequestManager.enableRequest(stepRequest);
   }
 
   public enum StepType {
