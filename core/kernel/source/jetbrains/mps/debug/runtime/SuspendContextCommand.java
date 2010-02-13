@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
  * Time: 13:44:02
  * To change this template use File | Settings | File Templates.
  */
-public class SuspendContextCommand extends DebuggerCommand {  //todo
+public abstract class SuspendContextCommand extends DebuggerCommand {  //todo
   private final SuspendContext mySuspendContext;
 
   public SuspendContextCommand(@NotNull SuspendContext suspendContext) {
@@ -19,9 +19,5 @@ public class SuspendContextCommand extends DebuggerCommand {  //todo
 
   public SuspendContext getSuspendContext() {
     return mySuspendContext;
-  }
-
-  @Override
-  protected void action() throws Exception {
   }
 }

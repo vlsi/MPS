@@ -27,17 +27,15 @@ public class DebugSession {
   }
 
   public void resume() {
-    DebuggerCommand command = myEventsProcessor.createResumeCommand();
-    LOG.assertLog(command != null);
-    myEventsProcessor.getManagerThread().schedule(command);
+    myEventsProcessor.resume();
   }
 
   public void pause() {
-    myEventsProcessor.getManagerThread().schedule(myEventsProcessor.createPauseCommand());
+    myEventsProcessor.pause();
   }
 
   public void stop() {
-    myEventsProcessor.getManagerThread().invokeTerminalCommand(myEventsProcessor.createStopCommand());
+    myEventsProcessor.stop();
   }
 
   public void stepOver() {
@@ -53,13 +51,7 @@ public class DebugSession {
   }
 
   private void step(StepType type) {
-    // in idea we also remember that we are step and add thread reference to a special list
-    // it is only used for updating local variables (namely for highlighting new vars)
-    // (but I may be wrong)
-    // see DebuggerSession.mySteppingThroughThreads in idea
-    DebuggerCommand command = myEventsProcessor.createStepCommand(type);
-    LOG.assertLog(command != null);
-    myEventsProcessor.getManagerThread().schedule(command);
+    myEventsProcessor.step(type);
   }
 
   DebugVMEventsProcessor getEventsProcessor() {

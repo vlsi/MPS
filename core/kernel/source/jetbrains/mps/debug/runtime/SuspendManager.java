@@ -55,7 +55,8 @@ public class SuspendManager {
     });
   }
 
-  public SuspendContext pushSuspendContext(final int suspendPolicy, int nVotes) {
+  //todo review this and a method below to avoid duplications
+  public SuspendContext pushSuspendContextWithVotesNumber(final int suspendPolicy, int nVotes) {
     SuspendContext suspendContext = new SuspendContext(myDebugProcess, suspendPolicy, nVotes, null) {
       protected void resumeImpl() {
         LOG.debug("Start resuming...");
@@ -96,7 +97,7 @@ public class SuspendManager {
     return suspendContext;
   }
 
-  public SuspendContext pushSuspendContext(final EventSet set) {
+  public SuspendContext pushSuspendContextFromEventSet(final EventSet set) {
     SuspendContext suspendContext;
     if (set == null) { // special case
       suspendContext = new SuspendContext(myDebugProcess, EventRequest.SUSPEND_NONE, 1, set) {
@@ -168,7 +169,7 @@ public class SuspendManager {
     myPausedContexts.remove(suspendContext);
   }
 
-  void pushPausedContext(SuspendContext suspendContext) {
+  private void pushPausedContext(SuspendContext suspendContext) {
     LOG.assertLog(myEventContexts.contains(suspendContext));
     myPausedContexts.addFirst(suspendContext);
   }
@@ -209,7 +210,7 @@ public class SuspendManager {
     }
   }
 
-  public void notifyPaused(SuspendContext suspendContext) {
+  private void notifyPaused(SuspendContext suspendContext) {
     pushPausedContext(suspendContext);
     myDebugProcess.getMulticaster().paused(suspendContext);
   }

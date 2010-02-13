@@ -22,7 +22,6 @@ import com.sun.jdi.VMDisconnectedException;
 import com.sun.jdi.VirtualMachine;
 import com.sun.jdi.event.*;
 import com.sun.jdi.request.EventRequest;
-import com.sun.jdi.request.EventRequestManager;
 import com.sun.jdi.request.StepRequest;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
@@ -31,8 +30,6 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -125,7 +122,7 @@ public class DebugVMEventsProcessor {
 
             getManagerThread().invokeAndWait(new DebuggerCommand() {
               protected void action() throws Exception {
-                final SuspendContext suspendContext = mySuspendManager.pushSuspendContext(eventSet);
+                final SuspendContext suspendContext = mySuspendManager.pushSuspendContextFromEventSet(eventSet);
 
                 for (Event event : eventSet) {
                   System.err.println("event happened: " + event.toString());
@@ -198,7 +195,7 @@ public class DebugVMEventsProcessor {
       getManagerThread().invokeAndWait(new DebuggerCommand() {
         protected void action() throws Exception {
           // SuspendContext suspendContext = getSuspendManager().pushSuspendContext(EventRequest.SUSPEND_NONE, 1);
-          SuspendContext suspendContext = getSuspendManager().pushSuspendContext(null);
+          SuspendContext suspendContext = getSuspendManager().pushSuspendContextFromEventSet(null);
           processVMDeathEvent(suspendContext, null);
         }
       });
@@ -256,7 +253,12 @@ public class DebugVMEventsProcessor {
     //we use schedule to allow processing other events during processing this one
     //this is especially nesessary if a method is breakpoint condition
     //todo shedule later
-    SuspendContextCommand suspendCommand = new SuspendContextCommand(suspendContext);
+    SuspendContextCommand suspendCommand = new SuspendContextCommand(suspendContext){
+      @Override
+      protected void action() throws Exception {
+
+      }
+    };
     //getManagerThread().schedule(new SuspendContextCommandImpl(suspendContext) {
     //  public void contextAction() throws Exception {
     final SuspendManager suspendManager = mySuspendManager;
@@ -345,7 +347,7 @@ public class DebugVMEventsProcessor {
       shouldResume = nextStepType != StepRequestor.STOP;
       if (shouldResume) {
         // do next step
-        doStep(suspendContext, suspendContext.getThread(), requestor, nextStepType);
+        addNewStepRequest(suspendContext, suspendContext.getThread(), requestor, nextStepType);
       }
 
       // TODO restore breakpoints
@@ -373,31 +375,33 @@ public class DebugVMEventsProcessor {
 
   //============================================ COMMANDS =============================================
 
-  @Nullable
-  public DebuggerCommand createResumeCommand() {
+  public void resume() {
     // we need the last paused context
     SuspendContext suspendContext = mySuspendManager.getPausedContext();
+    LOG.assertLog(suspendContext != null);
     if (suspendContext != null) {
-      return new ResumeCommand(suspendContext);
+      getManagerThread().schedule(new ResumeCommand(suspendContext));
     }
-    return null;
   }
 
-  public DebuggerCommand createPauseCommand() {
-    return new PauseCommand();
+  public void pause() {
+    getManagerThread().schedule(new PauseCommand());
   }
 
-  public DebuggerCommand createStopCommand() {
-    return new StopCommand(true);
+  public void stop() {
+    getManagerThread().invokeTerminalCommand(new StopCommand(true));
   }
 
-  @Nullable
-  public DebuggerCommand createStepCommand(StepType type) {
+  public void step(StepType type) {
+    // in idea we also remember that we are step and add thread reference to a special list
+    // it is only used for updating local variables (namely for highlighting new vars)
+    // (but I may be wrong)
+    // see DebuggerSession.mySteppingThroughThreads in idea
     SuspendContext suspendContext = mySuspendManager.getPausedContext();
+    LOG.assertLog(suspendContext != null);
     if (suspendContext != null) {
-      return new StepCommand(suspendContext, type);
+      getManagerThread().schedule(new StepCommand(suspendContext, type));
     }
-    return null;
   }
 
   private class ResumeCommand extends SuspendContextCommand {
@@ -426,13 +430,13 @@ public class DebugVMEventsProcessor {
       System.err.println("Pausing execution!");
       // see DebugProcessImpl.PauseCommand in idea
       getVirtualMachine().suspend();
-      SuspendContext suspendContext = getSuspendManager().pushSuspendContext(EventRequest.SUSPEND_ALL, 0);
+      SuspendContext suspendContext = getSuspendManager().pushSuspendContextWithVotesNumber(EventRequest.SUSPEND_ALL, 0);
       getMulticaster().paused(suspendContext);
     }
   }
 
   private class StopCommand extends DebuggerCommand {
-    private final boolean myIsTerminateTargetVM;
+    private final boolean myIsTerminateTargetVM; //what does it mean if "not terminate VM"
 
     public StopCommand(boolean isTerminateTargetVM) {
       myIsTerminateTargetVM = isTerminateTargetVM;
@@ -471,7 +475,7 @@ public class DebugVMEventsProcessor {
     @Override
     protected void action() throws Exception {
       SuspendContext suspendContext = getSuspendContext();
-      doStep(suspendContext, suspendContext.getThread(), new StepRequestor(suspendContext, getStepType()), getStepType());
+      addNewStepRequest(suspendContext, suspendContext.getThread(), new StepRequestor(suspendContext, getStepType()), getStepType());
       super.action();
     }
 
@@ -481,7 +485,7 @@ public class DebugVMEventsProcessor {
 
   }
 
-  private void doStep(SuspendContext suspendContext, ThreadReference stepThread, StepRequestor stepRequestor, int stepType) {
+  private void addNewStepRequest(SuspendContext suspendContext, ThreadReference stepThread, StepRequestor stepRequestor, int stepType) {
     if (stepThread == null) {
       return;
     }
@@ -490,6 +494,7 @@ public class DebugVMEventsProcessor {
     // if all threads were suspended, then during stepping all the threads must be suspended
     // if only event thread were suspended, then only this particular thread must be suspended during stepping
     int suspendPolicy = suspendContext.getSuspendPolicy() == EventRequest.SUSPEND_EVENT_THREAD ? EventRequest.SUSPEND_EVENT_THREAD : EventRequest.SUSPEND_ALL;
+    // why not simply suspendPolicy = suspendContext.getSuspendPolicy() ?
     StepRequest stepRequest = myRequestManager.createStepRequest(stepRequestor, stepType, stepThread, suspendPolicy);
 
     // TODO add ignore filters to request
@@ -497,6 +502,7 @@ public class DebugVMEventsProcessor {
     myRequestManager.enableRequest(stepRequest);
   }
 
+  //quite an over-engineering in fact. maybe use int
   public enum StepType {
     Over(StepRequest.STEP_OVER),
     Into(StepRequest.STEP_INTO),

@@ -28,6 +28,7 @@ public class StepRequestor implements Requestor {
     myLineNumber = frame.location().lineNumber();
   }
 
+  //decides whether we need to step again; depends on whether our current line in generated java class has been changed.
   public int nextStep(SuspendContext context) {
     if (myStepType == StepRequest.STEP_OVER || myStepType == StepRequest.STEP_INTO) {
       StackFrame frame = context.getFrame();

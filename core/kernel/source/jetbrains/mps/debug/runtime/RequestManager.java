@@ -130,6 +130,8 @@ public class RequestManager implements DebugProcessListener {
   }
 
   void deleteStepRequests() {
+    //todo what are these step requests to delete?
+    //todo and where are their requestors after requests are deleted? still in memory? possible leak
     List<StepRequest> stepRequests = myEventRequestManager.stepRequests();
     if (stepRequests.size() > 0) {
       List<StepRequest> toDelete = new ArrayList<StepRequest>(stepRequests.size());
@@ -241,8 +243,6 @@ public class RequestManager implements DebugProcessListener {
       }
     }
   }
-
-  //todo the code below should be called on EVERY debug session in a project
 
   public static void createClassPrepareRequests(final MPSBreakpoint breakpoint) {
     DebugManagerComponent.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
