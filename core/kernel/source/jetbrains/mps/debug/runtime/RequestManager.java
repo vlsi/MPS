@@ -207,7 +207,7 @@ public class RequestManager implements DebugProcessListener {
   }
 
   @Override
-  public void resumed(SuspendContext suspendContext) {
+  public void resumed(SuspendContext suspendContext, DebugVMEventsProcessor processor) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 

@@ -47,7 +47,7 @@ public class DebugVMEventsProcessor {
   private SuspendManager mySuspendManager;
   private VMCreator myVMCreator;
 
-  private DebugProcessMulticaster myMulticaster = new DebugProcessMulticaster();
+  private DebugProcessMulticaster myMulticaster;
 
   private Project myProject;
   private VirtualMachine myVirtualMachine;
@@ -62,6 +62,7 @@ public class DebugVMEventsProcessor {
 
   public DebugVMEventsProcessor(Project p, VMCreator vmCreator) {
     myProject = p;
+    myMulticaster = new DebugProcessMulticaster(this);
     myBreakpointManager = p.getComponent(BreakpointManagerComponent.class);
     myRequestManager = new RequestManager(this);
     mySuspendManager = new SuspendManager(this);

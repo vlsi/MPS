@@ -1,7 +1,6 @@
 package jetbrains.mps.debug.runtime;
 
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
-import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.logging.Logger;
 
 public class DebugSession {
@@ -73,7 +72,7 @@ public class DebugSession {
     }
 
     @Override
-    public void resumed(SuspendContext suspendContext) {
+    public void resumed(SuspendContext suspendContext, DebugVMEventsProcessor processor) {
       myState = DebuggerState.Running;
     }
 

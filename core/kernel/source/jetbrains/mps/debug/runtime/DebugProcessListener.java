@@ -30,7 +30,7 @@ public interface DebugProcessListener {
   void paused(SuspendContext suspendContext);
 
   //executed in manager thread
-  void resumed(SuspendContext suspendContext);
+  void resumed(SuspendContext suspendContext, DebugVMEventsProcessor processor);
 
   //executed in manager thread
   void processDetached(DebugVMEventsProcessor process, boolean closedByUser);
