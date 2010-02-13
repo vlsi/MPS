@@ -62,7 +62,7 @@ public class DebugVMEventsProcessor {
 
   public DebugVMEventsProcessor(Project p, VMCreator vmCreator) {
     myProject = p;
-    myMulticaster = new DebugProcessMulticaster(this);
+    myMulticaster = new DebugProcessMulticaster();
     myBreakpointManager = p.getComponent(BreakpointManagerComponent.class);
     myRequestManager = new RequestManager(this);
     mySuspendManager = new SuspendManager(this);
@@ -421,7 +421,7 @@ public class DebugVMEventsProcessor {
       // see DebugProcessImpl.ResumeCommand in idea
       SuspendManager suspendManager = getSuspendManager();
       suspendManager.resume(getSuspendContext());
-      getMulticaster().resumed(getSuspendContext());
+      getMulticaster().resumed(getSuspendContext(), DebugVMEventsProcessor.this);
     }
   }
 

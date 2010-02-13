@@ -16,11 +16,6 @@ import java.util.List;
 public class DebugProcessMulticaster {
   private static Logger LOG = Logger.getLogger(DebugProcessMulticaster.class);
   private final List<DebugProcessListener> myListeners = new ArrayList<DebugProcessListener>();
-  private DebugVMEventsProcessor myProcess;
-
-  public DebugProcessMulticaster(DebugVMEventsProcessor process) {
-    myProcess = process;
-  }
 
   private List<DebugProcessListener> getListeners() {
     synchronized (myListeners) {
@@ -61,10 +56,10 @@ public class DebugProcessMulticaster {
     }
   }
 
-  public void resumed(SuspendContext suspendContext) {
+  public void resumed(SuspendContext suspendContext, DebugVMEventsProcessor process) {
     for (DebugProcessListener listener : getListeners()) {
       try {
-        listener.resumed(suspendContext, myProcess);
+        listener.resumed(suspendContext, process);
       } catch (Throwable t) {
         LOG.error(t);
       }
