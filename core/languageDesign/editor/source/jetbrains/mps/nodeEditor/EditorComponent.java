@@ -739,6 +739,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  public Color getAdditionalCellFontColor(@NotNull EditorCell_Label cell) {
+    synchronized (myAdditionalPaintersLock) {
+      for (AdditionalPainter additionalPainter : myAdditionalPainters) {
+        Rectangle coverageArea = additionalPainter.getCoverageArea(this);
+        if (coverageArea != null) {
+          if (coverageArea.contains(cell.getBounds())) {
+            Color color = additionalPainter.getCellsFontColor(cell);
+            if (color != null) return color;
+          }
+        }
+      }
+      return null;
+    }
+  }
+
   public AdditionalPainter getAdditionalPainterByItem(Object item) {
     synchronized (myAdditionalPaintersLock) {
       AdditionalPainter additionalPainter = myItemsToAdditionalPainters.get(item);
@@ -1929,10 +1944,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
     }
 
-    HashSet<AdditionalPainter> additionalPainters;
+    List<AdditionalPainter> additionalPainters;
     synchronized (myAdditionalPaintersLock) {
-      additionalPainters = new HashSet<AdditionalPainter>(myAdditionalPainters);
+      additionalPainters = new ArrayList<AdditionalPainter>(myAdditionalPainters);
     }
+    Collections.sort(additionalPainters, new Comparator<AdditionalPainter>() {
+      @Override
+      public int compare(AdditionalPainter o1, AdditionalPainter o2) {
+        if (o1.isAbove(o2, EditorComponent.this)) return 1;
+        if (o2.isAbove(o1, EditorComponent.this)) return -1;
+        return 0;
+      }
+    });
     for (AdditionalPainter additionalPainter : additionalPainters) {
       if (!additionalPainter.paintsAbove()) {
         additionalPainter.paint(g, this);

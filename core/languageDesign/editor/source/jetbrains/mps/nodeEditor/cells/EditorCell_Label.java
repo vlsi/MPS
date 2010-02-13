@@ -335,10 +335,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     boolean selected = isSelectionPaintedOnAncestor();
     textLine.setSelected(selected);
     textLine.setShowCaret(toShowCaret);
+    Color cellFontColor = getEditor().getAdditionalCellFontColor(this);
     if (isDrawBrackets()) {
-      textLine.paint(g, myX + myGapLeft + BRACKET_WIDTH, myY);
+      textLine.paint(g, myX + myGapLeft + BRACKET_WIDTH, myY, cellFontColor);
     } else {
-      textLine.paint(g, myX + myGapLeft, myY);
+      textLine.paint(g, myX + myGapLeft, myY, cellFontColor);
     }
   }
 

@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 /**
  * Created by IntelliJ IDEA.
@@ -33,4 +37,9 @@ public interface AdditionalPainter<Item> {
 
   public void afterAdding(EditorComponent editorComponent);
   public void beforeRemoval(EditorComponent editorComponent);
+
+  public Color getCellsFontColor(EditorCell_Label cell);
+  public Rectangle getCoverageArea(EditorComponent editorComponent);
+
+  public boolean isAbove(AdditionalPainter additionalPainter, EditorComponent editorComponent);
 }

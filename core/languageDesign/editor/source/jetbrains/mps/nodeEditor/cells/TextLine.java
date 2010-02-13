@@ -27,7 +27,7 @@ import java.util.Set;
 
 public class TextLine {
   private static final Color ERROR_COLOR = new Color(255, 220, 220);
-  
+
   private static Map<Font, FontMetrics> ourFontMetricsCache = new HashMap<Font, FontMetrics>();
   private static Map<String, Font> ourFontsCache = new HashMap<String, Font>();
 
@@ -108,7 +108,7 @@ public class TextLine {
     myStyle = style;
     showTextColor();
     updateStyle();
-  }                     
+  }
 
   public String getText() {
     return myText;
@@ -123,7 +123,7 @@ public class TextLine {
     myCaretPosition = Math.min(myText.length(), myCaretPosition);
     myStartTextSelectionPosition = myCaretPosition;
     myEndTextSelectionPosition = myCaretPosition;
-  }  
+  }
 
   public String getTextBeforeCaret() {
     return myText.substring(0, myCaretPosition);
@@ -372,6 +372,10 @@ public class TextLine {
   }
 
   public void paint(Graphics g, int shiftX, int shiftY) {
+    paint(g, shiftX, shiftY, null);
+  }
+
+  public void paint(Graphics g, int shiftX, int shiftY, Color forcedTextColor) {
     Color backgroundColor;
     Color textColor;
     Color textBackgroundColor;
@@ -379,12 +383,17 @@ public class TextLine {
     FontMetrics metrics = getFontMetrics();
 
     backgroundColor = getBackgroundColor();
-    if (mySelected) {
-      textColor = getEffectiveSelectedTextColor();
-      textBackgroundColor = getSelectedTextBackgroundColor();
+    if (forcedTextColor != null) {
+      textColor = forcedTextColor;
+      textBackgroundColor = null;
     } else {
-      textColor = getEffectiveTextColor();
-      textBackgroundColor = getTextBackgroundColor();
+      if (mySelected) {
+        textColor = getEffectiveSelectedTextColor();
+        textBackgroundColor = getSelectedTextBackgroundColor();
+      } else {
+        textColor = getEffectiveTextColor();
+        textBackgroundColor = getTextBackgroundColor();
+      }
     }
 
     if (backgroundColor != null && !g.getColor().equals(backgroundColor) && !mySelected) {
@@ -569,7 +578,7 @@ public class TextLine {
         break;
       }
       len = newLen;
-    }    
+    }
   }
 
   public int getCaretPosition() {

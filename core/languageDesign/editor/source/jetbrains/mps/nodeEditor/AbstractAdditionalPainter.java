@@ -15,6 +15,11 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+
+import java.awt.Color;
+import java.awt.Rectangle;
+
 /**
  * Created by IntelliJ IDEA.
  * User: User
@@ -28,5 +33,20 @@ public abstract class AbstractAdditionalPainter<T> implements AdditionalPainter<
   }
 
   public void beforeRemoval(EditorComponent editorComponent) {
+  }
+
+  @Override
+  public Color getCellsFontColor(EditorCell_Label cell) {
+    return null;
+  }
+
+  @Override
+  public Rectangle getCoverageArea(EditorComponent editorComponent) {
+    return null;
+  }
+
+  @Override
+  public boolean isAbove(AdditionalPainter additionalPainter, EditorComponent editorComponent) {
+    return false;
   }
 }
