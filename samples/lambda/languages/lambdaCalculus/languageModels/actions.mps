@@ -5,6 +5,7 @@
   <language namespace="7c9e2807-94ad-4afc-adf0-aaee45eb2895(jetbrains.mps.samples.lambdaCalculus)" />
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -170,7 +171,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1934341835352174458">
-    <property name="name:23" value="SideTransform" />
+    <property name="name:23" value="SideTransformApplication" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1934341835352174459">
       <link role="applicableConcept:23" targetNodeId="1.4022026349914659049:0" resolveInfo="LambdaExpression" />
       <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="4530871765544987448">
@@ -224,7 +225,7 @@
             </node>
           </node>
           <node role="matchingText:23" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString:23" id="4530871765544987453">
-            <property name="text:23" value="(" />
+            <property name="text:23" value="[" />
           </node>
         </node>
       </node>
@@ -337,6 +338,108 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="3978364766705549165">
+    <property name="name:23" value="ParenthesisSubstitute" />
+    <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="3978364766705549166">
+      <property name="description:23" value="(" />
+      <link role="applicableConcept:23" targetNodeId="1.4022026349914659049:0" resolveInfo="LambdaExpression" />
+      <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="3978364766705549168">
+        <link role="concept:23" targetNodeId="1.3978364766705449817:0" resolveInfo="Parenthesis" />
+        <node role="part:23" type="jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart:23" id="3978364766705549170">
+          <node role="handler:23" type="jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler:23" id="3978364766705549171">
+            <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3978364766705549172">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3978364766705549176">
+                <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3978364766705549177">
+                  <property name="name:3" value="result" />
+                  <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3978364766705549178">
+                    <link role="concept:16" targetNodeId="1.3978364766705449817:0" resolveInfo="Parenthesis" />
+                  </node>
+                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3978364766705549179">
+                    <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="3978364766705549180">
+                      <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3978364766705549181">
+                        <link role="concept:16" targetNodeId="1.3978364766705449817:0" resolveInfo="Parenthesis" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3978364766705549189">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3978364766705549190">
+                  <link role="variableDeclaration:3" targetNodeId="3978364766705549177" resolveInfo="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText:23" type="jetbrains.mps.lang.actions.structure.Substitute_SimpleString:23" id="3978364766705549174">
+            <property name="text:23" value="(" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="5864443919858349084">
+    <property name="name:23" value="SideTransformMultiple" />
+    <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="5864443919858363011">
+      <link role="applicableConcept:23" targetNodeId="1.4022026349914659049:0" resolveInfo="LambdaExpression" />
+      <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="5864443919858363012">
+        <link role="concept:23" targetNodeId="1.1564819815921013155:0" resolveInfo="MultipleExpression" />
+        <node role="part:23" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart:23" id="5864443919858363014">
+          <node role="handler:23" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler:23" id="5864443919858363015">
+            <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5864443919858363016">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5864443919858365984">
+                <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5864443919858365985">
+                  <property name="name:3" value="multiple" />
+                  <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="5864443919858365986">
+                    <link role="concept:16" targetNodeId="1.1564819815921013155:0" resolveInfo="MultipleExpression" />
+                  </node>
+                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5864443919858365987">
+                    <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="5864443919858365988">
+                      <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="5864443919858365989">
+                        <link role="concept:16" targetNodeId="1.1564819815921013155:0" resolveInfo="MultipleExpression" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5864443919858365990">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5864443919858365991">
+                  <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode:23" id="5864443919858365992" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation:16" id="5864443919858365993">
+                    <node role="replacementNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5864443919858365994">
+                      <link role="variableDeclaration:3" targetNodeId="5864443919858365985" resolveInfo="application" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2132934819969955689">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2132934819969955690">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2132934819969955691">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2132934819969955692">
+                      <link role="variableDeclaration:3" targetNodeId="5864443919858365985" resolveInfo="multiple" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="2132934819969955693">
+                      <link role="link:16" targetNodeId="1.1564819815921013156:0" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation:7" id="3777111214477710563">
+                    <node role="argument:7" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode:23" id="3777111214477710569" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5864443919858366001">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5864443919858366002">
+                  <link role="variableDeclaration:3" targetNodeId="5864443919858365985" resolveInfo="application" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText:23" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString:23" id="5864443919858363017">
+            <property name="text:23" value=";" />
           </node>
         </node>
       </node>

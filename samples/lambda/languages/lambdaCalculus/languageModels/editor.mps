@@ -139,7 +139,7 @@
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="247065157658991471">
-        <property name="text:32" value="(" />
+        <property name="text:32" value="[" />
         <link role="actionMap:32" targetNodeId="2076063674015982318" resolveInfo="Application_Argument_actions" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="247065157659100297">
           <property name="flag:32" value="true" />
@@ -153,7 +153,7 @@
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4530871765544775092">
-        <property name="text:32" value=")" />
+        <property name="text:32" value="]" />
         <link role="actionMap:32" targetNodeId="2076063674015982318" resolveInfo="Application_Argument_actions" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="4530871765544775436">
           <property name="flag:32" value="true" />
@@ -351,6 +351,38 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3978364766705449819">
+    <link role="conceptDeclaration:32" targetNodeId="1.3978364766705449817:0" resolveInfo="Parenthesis" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3978364766705456156">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3978364766705456162">
+        <property name="text:32" value="(" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="14027134441303192">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="3978364766705456163">
+        <link role="relationDeclaration:32" targetNodeId="1.3978364766705449818:0" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3978364766705456161">
+        <property name="text:32" value=")" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="14027134441303193">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3978364766705456157" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1564819815921013157">
+    <link role="conceptDeclaration:32" targetNodeId="1.1564819815921013155:0" resolveInfo="MultipleExpression" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1564819815921057680">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="1564819815921057683">
+        <property name="separatorText:32" value=";" />
+        <link role="relationDeclaration:32" targetNodeId="1.1564819815921013156:0" />
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1564819815921057684" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1564819815921057682" />
     </node>
   </node>
 </model>

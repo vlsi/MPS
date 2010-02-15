@@ -39,7 +39,7 @@ public class LambdaApplication_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4125_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_4125_0");
     {
       Style style = editorCell.getStyle();
@@ -51,7 +51,7 @@ public class LambdaApplication_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_4125_1(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_4125_1");
     {
       Style style = editorCell.getStyle();

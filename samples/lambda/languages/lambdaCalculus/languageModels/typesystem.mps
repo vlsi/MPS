@@ -498,5 +498,38 @@
       <link role="concept:3" targetNodeId="1.4022026349915821199:0" resolveInfo="AbstractionVarRef" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="3777111214477754429">
+    <property name="name:3" value="typeof_MultipleExpression" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3777111214477754430">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="3777111214477757400">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3777111214477757404">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="3777111214477757405">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3777111214477849116">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3777111214477757408">
+                <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3777111214477757407">
+                  <link role="applicableNode:3" targetNodeId="3777111214477754431" resolveInfo="multipleExpression" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="3777111214477778772">
+                  <link role="link:16" targetNodeId="1.1564819815921013156:0" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation:7" id="3777111214477849132" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3777111214477757403">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="3777111214477754433">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3777111214477757399">
+              <link role="applicableNode:3" targetNodeId="3777111214477754431" resolveInfo="multipleExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="3777111214477754431">
+      <property name="name:3" value="multipleExpression" />
+      <link role="concept:3" targetNodeId="1.1564819815921013155:0" resolveInfo="MultipleExpression" />
+    </node>
+  </node>
 </model>
 
