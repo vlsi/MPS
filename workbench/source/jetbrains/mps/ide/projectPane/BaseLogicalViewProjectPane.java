@@ -1,65 +1,62 @@
 package jetbrains.mps.ide.projectPane;
 
+import com.intellij.ide.CopyProvider;
+import com.intellij.ide.CutProvider;
+import com.intellij.ide.PasteProvider;
+import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.impl.ProjectViewImpl;
-import com.intellij.ide.projectView.ProjectView;
-import com.intellij.ide.CopyProvider;
-import com.intellij.ide.PasteProvider;
-import com.intellij.ide.CutProvider;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.command.CommandAdapter;
+import com.intellij.openapi.command.CommandEvent;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
-import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.CommandAdapter;
-import com.intellij.openapi.command.CommandEvent;
-import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
-import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
-import com.intellij.openapi.fileEditor.FileEditor;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.ActionPlace;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
-import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.smodel.PackageNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.projectPane.*;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.*;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
+import com.intellij.util.ArrayUtil;
+import jetbrains.mps.generator.GenerationListener;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.actions.CopyNode_Action;
-import jetbrains.mps.ide.actions.PasteNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.ide.actions.PasteNode_Action;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
+import jetbrains.mps.ide.ui.MPSTree;
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.smodel.PackageNode;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.GenerationListener;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import org.jetbrains.annotations.Nullable;
 
+import javax.swing.JComponent;
+import javax.swing.JTree;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import javax.swing.JTree;
-import javax.swing.JComponent;
-import java.util.List;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
+import java.awt.datatransfer.UnsupportedFlavorException;
+import java.awt.dnd.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.io.File;
-
-import org.jetbrains.annotations.Nullable;
+import java.util.List;
 
 public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane {
   private MyCommandListener myCommandListener = new MyCommandListener();
@@ -209,6 +206,23 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   protected void addListeners() {
+    DragSource.getDefaultDragSource().createDefaultDragGestureRecognizer(getTree(), DnDConstants.ACTION_MOVE, new DragGestureListener() {
+      public void dragGestureRecognized(DragGestureEvent dge) {
+        if ((dge.getDragAction() & DnDConstants.ACTION_COPY_OR_MOVE) == 0) return;
+        ProjectView projectView = ProjectView.getInstance(getProject());
+        if (projectView == null) return;
+        final AbstractProjectViewPane currentPane = projectView.getCurrentProjectViewPane();
+        if (!(currentPane instanceof BaseLogicalViewProjectPane)) return;
+        final SNode node = getSelectedSNode();
+        if (node == null) return;
+        try {
+          dge.startDrag(DragSource.DefaultMoveNoDrop, new MyTransferable(node), new MyDragSourceListener());
+        } catch (InvalidDnDOperationException ignored) {
+        }
+      }
+    });
+    new DropTarget(myTree, new PropjectPaneDnDListener(myTree, new MyTransferable(null).getTransferDataFlavors()[0]));
+    myTree.enableDnd(this);
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myRefreshListener);
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
     CommandProcessor.getInstance().addCommandListener(myCommandListener);
@@ -534,5 +548,50 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         myNeedRebuild = false;
       }
     }
+  }
+
+  private class MyTransferable implements Transferable {
+    private final String mySupportedFlavor = "MPSNodeToMoveFlavor";
+    private Object myObject;
+
+    public MyTransferable(Object o) {
+      myObject = o;
+    }
+
+    public DataFlavor[] getTransferDataFlavors() {
+      Class aClass = MyTransferable.class;
+      DataFlavor dataFlavor = null;
+      try {
+        dataFlavor = new DataFlavor(DataFlavor.javaJVMLocalObjectMimeType + ";class=" + aClass.getName(),
+          mySupportedFlavor, aClass.getClassLoader());
+      } catch (ClassNotFoundException ignored) {
+      }
+      return new DataFlavor[]{dataFlavor};
+    }
+
+    public boolean isDataFlavorSupported(DataFlavor flavor) {
+      DataFlavor[] flavors = getTransferDataFlavors();
+      return ArrayUtil.find(flavors, flavor) != -1;
+    }
+
+    public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
+      return myObject;
+    }
+  }
+
+  private static class MyDragSourceListener implements DragSourceListener {
+    public void dragEnter(DragSourceDragEvent dsde) {
+      dsde.getDragSourceContext().setCursor(null);
+    }
+
+    public void dragOver(DragSourceDragEvent dsde) {}
+
+    public void dropActionChanged(DragSourceDragEvent dsde) {
+      dsde.getDragSourceContext().setCursor(null);
+    }
+
+    public void dragDropEnd(DragSourceDropEvent dsde) { }
+
+    public void dragExit(DragSourceEvent dse) { }
   }
 }
