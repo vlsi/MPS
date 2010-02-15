@@ -2,11 +2,13 @@ package jetbrains.mps.debug.runtime;
 
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.logging.Logger;
+import com.intellij.execution.process.ProcessHandler;
 
 public class DebugSession {
   private static final Logger LOG = Logger.getLogger(DebugSession.class);
   private final DebugVMEventsProcessor myEventsProcessor;
   private DebuggerState myState = DebuggerState.WaitingAttach;
+  private ProcessHandler myProcessHandler;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor) {
     myEventsProcessor = eventsProcessor;
@@ -55,6 +57,14 @@ public class DebugSession {
 
   DebugVMEventsProcessor getEventsProcessor() {
     return myEventsProcessor;
+  }
+
+  public void setProcessHandler(ProcessHandler processHandler) {
+    myProcessHandler = processHandler;
+  }
+
+  public ProcessHandler getProcessHandler() {
+    return myProcessHandler;
   }
 
   public enum DebuggerState {

@@ -89,6 +89,7 @@ public class VMCreator {
           myExecutionResult.getProcessHandler().addProcessListener(processListener);
         }
         myProcessListeners.clear();
+        myDebuggerSession.setProcessHandler(myExecutionResult.getProcessHandler());
       }
     } catch (ExecutionException e) {
       fail();
