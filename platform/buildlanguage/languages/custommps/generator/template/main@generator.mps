@@ -1082,6 +1082,22 @@
               </node>
             </node>
           </node>
+          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="962392115558669736">
+            <property name="excludes:7" value="" />
+            <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="962392115558669737">
+              <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="962392115558669740">
+                <property name="name:7" value="mps_home" />
+              </node>
+              <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="962392115558669739">
+                <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="962392115558669741">
+                  <property name="path:7" value="lib" />
+                </node>
+                <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="962392115558669743">
+                  <property name="path:7" value="tools" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists" id="1234971270220">
             <property name="artifactName" value="lib/idea-patch.jar" />
             <node role="create" type="jetbrains.mps.build.packaging.structure.Jar:7" id="1234971270221">
