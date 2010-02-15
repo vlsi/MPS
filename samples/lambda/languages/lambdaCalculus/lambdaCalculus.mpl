@@ -4,7 +4,18 @@
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.samples.lambdaCalculus" />
   </models>
   <accessoryModels />
-  <generators />
+  <generators>
+    <generator name="" generatorUID="jetbrains.mps.samples.lambdaCalculus#391739495267435110" uuid="c390df68-d947-4830-b90c-05e33eb03b94">
+      <models>
+        <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.samples.lambdaCalculus.generator.template" />
+      </models>
+      <external-templates />
+      <usedDevKits>
+        <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
+      </usedDevKits>
+      <mapping-priorities />
+    </generator>
+  </generators>
   <classPath />
   <languageRuntimeClassPath />
   <sourcePath />
