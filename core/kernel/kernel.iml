@@ -23,6 +23,7 @@
     <orderEntry type="library" name="tools" level="project" />
     <orderEntry type="module" module-name="xmlQuery" />
     <orderEntry type="module" module-name="baseLanguage" />
+    <orderEntry type="module" module-name="Tuples-runtime" />
   </component>
 </module>
 
