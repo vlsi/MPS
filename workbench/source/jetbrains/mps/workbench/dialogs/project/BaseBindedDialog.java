@@ -15,10 +15,20 @@
  */
 package jetbrains.mps.workbench.dialogs.project;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task.Modal;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.dialogs.BaseDialog;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jdesktop.beansbinding.AutoBinding;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
 import java.awt.GridBagConstraints;
@@ -28,6 +38,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BaseBindedDialog extends BaseDialog implements IBindedDialog {
+  private static final Logger LOG = Logger.getLogger(BaseBindedDialog.class);
+
   protected IOperationContext myOperationContext;
   private List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
 
@@ -79,6 +91,44 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
 
   final public void addBinding(AutoBinding binding) {
     myBindings.add(binding);
+  }
+
+  /**
+   * should be called on "ok", "apply" etc.
+   * @return true if no errors and the dialog should be closed
+   */
+  protected final boolean saveChanges() {
+    final boolean[] closeDialog = new boolean[]{true};
+
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        closeDialog[0] = doSaveChanges();
+      }
+    });
+
+    ProgressManager.getInstance().run(new Modal(getOperationContext().getComponent(Project.class), "Applying changes", false) {
+      public void run(@NotNull ProgressIndicator indicator) {
+        indicator.setIndeterminate(true);
+        try {
+
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              CleanupManager.getInstance().cleanup();
+            }
+          });
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+      }
+    });
+
+    ApplicationManager.getApplication().saveAll();
+
+    return closeDialog[0];
+  }
+
+  protected boolean doSaveChanges(){
+    return true;
   }
 
   protected enum ConstraintsType {

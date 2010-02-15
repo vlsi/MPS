@@ -32,50 +32,13 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.HeadlessException;
 
 public abstract class BasePropertiesDialog extends BaseTabbedBindedDialog {
-  private static final Logger LOG = Logger.getLogger(BasePropertiesDialog.class);
-
   protected BasePropertiesDialog(String text, IOperationContext operationContext) throws HeadlessException {
     super(text, operationContext);
-  }
-
-  /**
-   * @return true if no errors and the dialog should be closed
-   */
-  private boolean saveChanges() {
-    final boolean[] dontCloseDialog = new boolean[]{true};
-
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      public void run() {
-        dontCloseDialog[0] = doSaveChanges();
-      }
-    });
-
-    ProgressManager.getInstance().run(new Modal(getOperationContext().getComponent(Project.class), "Applying changes", false) {
-      public void run(@NotNull ProgressIndicator indicator) {
-        indicator.setIndeterminate(true);
-        try {
-
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              CleanupManager.getInstance().cleanup();
-            }
-          });
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
-      }
-    });
-
-    ApplicationManager.getApplication().saveAll();
-
-    return dontCloseDialog[0];
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensions(100, 100, 500, 600);
   }
-
-  protected abstract boolean doSaveChanges();
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOK() {
