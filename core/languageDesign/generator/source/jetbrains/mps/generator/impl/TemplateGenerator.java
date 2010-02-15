@@ -277,7 +277,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private void applyWeaving_MappingRules() throws GenerationFailureException, GenerationCanceledException {
     for (Weaving_MappingRule rule : myRuleManager.getWeaving_MappingRules()) {
       checkMonitorCanceled();
-      GeneratorUtil.applyWeaving_MappingRule(rule, this);
+      WeaveUtil.applyWeaving_MappingRule(rule, this);
     }
   }
 
