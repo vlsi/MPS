@@ -224,9 +224,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   public List<SNode> findAllOutputNodesByInputNodeAndMappingName(SNode inputNode, String mappingLabel) {
     Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
     if (o instanceof List) return ((List<SNode>) o);
-    List<SNode> list = new ArrayList<SNode>();
-    list.add((SNode) o);
-    return list;
+    return Collections.singletonList((SNode) o);
   }
 
   /*package*/

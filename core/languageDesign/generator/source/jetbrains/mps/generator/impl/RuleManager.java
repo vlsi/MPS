@@ -15,17 +15,12 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.plan.GenerationPlan;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.util.FlattenIterable;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class RuleManager {
@@ -35,6 +30,10 @@ public class RuleManager {
   private FlattenIterable<Weaving_MappingRule> myWeaving_MappingRules;
   private FlattenIterable<Reduction_MappingRule> myReduction_MappingRules;
   private FlattenIterable<DropRootRule> myDropRootRules;
+
+  private List<MappingScript> myPreScripts;
+  private List<MappingScript> myPostScripts;
+
   private List<MappingConfiguration> myMappings;
 
   private final FastRuleFinder myRuleFinder;
@@ -59,6 +58,19 @@ public class RuleManager {
       myReduction_MappingRules.add(mappingConfig.getReductionMappingRules());
       myDropRootRules.add(mappingConfig.getDropRootRules());
     }
+
+    myPostScripts = new LinkedList<MappingScript>();
+    myPreScripts = new LinkedList<MappingScript>();
+    for (MappingConfiguration mappingConfigs : myMappings) {
+      List<MappingScriptReference> scriptRefs = mappingConfigs.getPostMappingScripts();
+      for (MappingScriptReference scriptRef : scriptRefs) {
+        myPostScripts.add(scriptRef.getMappingScript());
+      }
+      scriptRefs = mappingConfigs.getPreMappingScripts();
+      for (MappingScriptReference scriptRef : scriptRefs) {
+        myPreScripts.add(scriptRef.getMappingScript());
+      }
+    }
   }
 
   public Iterable<CreateRootRule> getCreateRootRules() {
@@ -80,4 +92,11 @@ public class RuleManager {
   public FastRuleFinder getRuleFinder() {
     return myRuleFinder;
   }
-}
+
+  public List<MappingScript> getPreMappingScripts() {
+    return myPreScripts;
+  }
+
+  public List<MappingScript> getPostMappingScripts() {
+    return myPostScripts;
+  }}

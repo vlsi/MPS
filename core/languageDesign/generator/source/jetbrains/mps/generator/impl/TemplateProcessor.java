@@ -37,7 +37,7 @@ public class TemplateProcessor {
 
   private TemplateGenerator myGenerator;
   private SModel myOutputModel;
-  private List<SNode> myInputHistory = new ArrayList<SNode>();
+  private List<SNode> myInputHistory;
   private Map<String, SNode> myInputNodesByMappingName = new HashMap<String, SNode>();
 
   private TemplateProcessor(TemplateGenerator generator) {
@@ -61,11 +61,11 @@ public class TemplateProcessor {
     TemplateProcessor templateProcessor = new TemplateProcessor(generator);
     Map<String, SNode> old = generator.setPreviousInputNodesByMappingName(templateProcessor.myInputNodesByMappingName);
     try {
-      List<SNode> outputNodels = templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0);
-      if (outputNodels == null) {
+      List<SNode> outputNodes = templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0);
+      if (outputNodes == null) {
         throw new TemplateProcessingFailureException();
       }
-      return outputNodels;
+      return outputNodes;
     } catch (StackOverflowError e) {
       // this is critical
       LOG.error("generation thread run out of stack space :(");
@@ -112,9 +112,7 @@ public class TemplateProcessor {
                                                        SNode templateNode,
                                                        @Nullable SNode inputNode,
                                                        int nodeMacrosToSkip)
-    throws
-    DismissTopMappingRuleException,
-    GenerationFailureException, GenerationCanceledException {
+    throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
     GenerationTracer generationTracer = myGenerator.getGenerationTracer();
     putInputNodeByMappingName(mappingName, inputNode);
@@ -139,7 +137,7 @@ public class TemplateProcessor {
     generationTracer.pushTemplateNode(templateNode);
     SNode outputNode = new SNode(myOutputModel, templateNode.getConceptFqName(), false);
     myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
-    if (!myInputHistory.isEmpty()) {
+    if (myInputHistory != null && !myInputHistory.isEmpty()) {
       for (SNode historyInputNode : myInputHistory) {
         myGenerator.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNode, outputNode);
       }
@@ -598,16 +596,20 @@ public class TemplateProcessor {
 
 
   private void pushInputHistory(SNode oldInputNode) {
+    if(myInputHistory == null) {
+       myInputHistory = new ArrayList<SNode>();
+    }
     myInputHistory.add(oldInputNode);
   }
 
   private void popInputHistory() {
+    if(myInputHistory == null) return; 
     myInputHistory.remove(myInputHistory.size() - 1);
   }
 
   @Nullable
   private List<SNode> getInputHistoryCopy() {
-    return myInputHistory.isEmpty() ? null : new ArrayList<SNode>(myInputHistory);
+    return myInputHistory == null || myInputHistory.isEmpty() ? null : new ArrayList<SNode>(myInputHistory);
   }
 
   private void putInputNodeByMappingName(String mappingName, SNode node) {

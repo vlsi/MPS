@@ -176,7 +176,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private void revalidateAllReferences() throws GenerationCanceledException {
     // replace all postponed references
-    List<SNode> roots = getOutputModel().getRoots();
+    List<SNode> roots = myOutputModel.getRoots();
     for (SNode root : roots) {
       checkMonitorCanceled();
       revalidateAllReferences(root);
@@ -227,7 +227,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return;
     }
     boolean includeInheritors = rule.getApplyToConceptInheritors();
-    List<SNode> inputNodes = getInputModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+    List<SNode> inputNodes = myInputModel.getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode inputNode : inputNodes) {
       // do not apply root mapping if root node has been copied from input model on previous micro-step
       // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
@@ -267,7 +267,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       List<SNode> outputNodes = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, this);
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode);
-        getOutputModel().addRoot(outputNode);
+        myOutputModel.addRoot(outputNode);
       }
     } catch (TemplateProcessingFailureException e) {
       showErrorMessage(inputNode, templateNode, "couldn't create root node");
@@ -283,10 +283,29 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private boolean isRootToDrop(SNode rootNode) throws GenerationFailureException {
     for (DropRootRule dropRootRule : myRuleManager.getDropRootRules()) {
-      if (GeneratorUtil.isApplicableDropRootRule(rootNode, dropRootRule, this)) {
+      if (isApplicableDropRootRule(rootNode, dropRootRule)) {
         return true;
       }
     }
+    return false;
+  }
+
+  public boolean isApplicableDropRootRule(SNode inputRootNode, DropRootRule rule) throws GenerationFailureException {
+    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
+    if (applicableConcept == null) {
+      showErrorMessage(null, null, rule.getNode(), "rule has no applicable concept defined");
+      return false;
+    }
+
+    if (inputRootNode.isInstanceOfConcept(applicableConcept)) {
+      if (QueryExecutor.checkCondition(rule.getConditionFunction(), inputRootNode, rule.getNode(), this)) {
+        myGenerationTracer.pushInputNode(inputRootNode);
+        myGenerationTracer.pushRule(rule.getNode());
+        myGenerationTracer.closeInputNode(inputRootNode);
+        return true;
+      }
+    }
+
     return false;
   }
 

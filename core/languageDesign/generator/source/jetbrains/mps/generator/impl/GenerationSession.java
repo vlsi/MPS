@@ -98,7 +98,7 @@ public class GenerationSession {
     SModelDescriptor currInputModel = myOriginalInputModel;
     do {
       info("execute step " + (myMajorStep + 1));
-      status = executeMacroStep(currInputModel.getSModel());
+      status = executeMajorStep(currInputModel.getSModel());
       wasErrors |= status.isError();
       wasWarnings |= status.hasWarnings();
       if (status.isError() || status.isCanceled()) {
@@ -125,7 +125,7 @@ public class GenerationSession {
       status.getTraceMap(), wasErrors, wasWarnings, status.isCanceled());
   }
 
-  private GenerationStatus executeMacroStep(SModel inputModel) throws GenerationCanceledException {
+  private GenerationStatus executeMajorStep(SModel inputModel) throws GenerationCanceledException {
     myTransientModelsCount = 0;
     info("generating model \"" + inputModel.getSModelFqName() + "\"");
 
@@ -136,7 +136,7 @@ public class GenerationSession {
     printGenerationStepData(inputModel);
 
     // -- replace context
-    mySessionContext = new GenerationSessionContext(myInvocationContext, inputModel, myGenerationPlan, myMajorStep, mySessionContext);
+    mySessionContext = new GenerationSessionContext(myInvocationContext, inputModel, myGenerationPlan, mySessionContext);
 
     // -- prepare generator
     GeneratorLogger logger = new GeneratorLogger(mySessionContext);
@@ -271,7 +271,7 @@ public class GenerationSession {
   }
 
   private SModel preProcessModel(GeneratorLogger logger, RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {
-    List<MappingScript> preMappingScripts = mySessionContext.getPreMappingScripts();
+    List<MappingScript> preMappingScripts = ruleManager.getPreMappingScripts();
     if (!preMappingScripts.isEmpty()) {
       // need to clone input model?
       boolean needToCloneInputMode = !myDiscardTransients;  // clone model if save transients (needed for tracing)
@@ -314,7 +314,7 @@ public class GenerationSession {
   }
 
   private SModel postProcessModel(GeneratorLogger logger, RuleManager ruleManager, SModel currentOutputModel) throws GenerationFailureException {
-    List<MappingScript> postMappingScripts = mySessionContext.getPostMappingScripts();
+    List<MappingScript> postMappingScripts = ruleManager.getPostMappingScripts();
     if (!postMappingScripts.isEmpty() && !myDiscardTransients) {  // clone model - needed for tracing
       SModel currentOutputModel_clone = createTransientModel();
       info("clone model '" + currentOutputModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");

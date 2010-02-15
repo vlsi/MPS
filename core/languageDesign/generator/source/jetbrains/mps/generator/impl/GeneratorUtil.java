@@ -22,7 +22,6 @@ import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -32,6 +31,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -90,29 +90,9 @@ public class GeneratorUtil {
     return QueryExecutor.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator);
   }
 
-
-  public static boolean isApplicableDropRootRule(SNode inputRootNode, DropRootRule rule, TemplateGenerator generator) throws GenerationFailureException {
-    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
-    if (applicableConcept == null) {
-      generator.showErrorMessage(null, null, rule.getNode(), "rule has no applicable concept defined");
-      return false;
-    }
-
-    if (inputRootNode.isInstanceOfConcept(applicableConcept)) {
-      if (QueryExecutor.checkCondition(rule.getConditionFunction(), inputRootNode, rule.getNode(), generator)) {
-        generator.getGenerationTracer().pushInputNode(inputRootNode);
-        generator.getGenerationTracer().pushRule(rule.getNode());
-        generator.getGenerationTracer().closeInputNode(inputRootNode);
-        return true;
-      }
-    }
-
-    return false;
-  }
-
   /*package*/
   static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
-    List<TemplateFragment> templateFragments = new ArrayList<TemplateFragment>(1);
+    List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
     for (INodeAdapter subnode : template.getDescendants()) {
       if (subnode instanceof TemplateFragment) {
         templateFragments.add((TemplateFragment) subnode);
@@ -196,10 +176,7 @@ public class GeneratorUtil {
     } else if (ruleConsequence instanceof InlineTemplate_RuleConsequence) {
       BaseConcept templateNode = ((InlineTemplate_RuleConsequence) ruleConsequence).getTemplateNode();
       if (templateNode != null) {
-//        return new Pair<SNode, String>(templateNode.getNode(), null);
-        List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>(1);
-        result.add(new Pair<SNode, String>(templateNode.getNode(), null));
-        return result;
+        return Collections.singletonList(new Pair<SNode, String>(templateNode.getNode(), null));
       } else {
         generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "no template node");
       }
@@ -279,7 +256,7 @@ public class GeneratorUtil {
       return null;
     }
 
-    List<SNode> result = new ArrayList<SNode>(1);
+    List<SNode> result = new ArrayList<SNode>(nodeAndMappingNamePairs.size());
     for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;

@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -43,19 +44,11 @@ public class MacroUtil {
       }
 
       if (nodeMacro instanceof CopySrcNodeMacro) {
-        List<SNode> result = new ArrayList<SNode>(1);
         SNode newInputNode = getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcNodeMacro) nodeMacro).getSourceNodeQuery(), false, generator);
-        if (newInputNode != null) {
-          result.add(newInputNode);
-        }
-        return result;
+        return wrapAsList(newInputNode);
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
-        List<SNode> result = new ArrayList<SNode>(1);
         SNode newInputNode = getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcNodeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
-        if (newInputNode != null) {
-          result.add(newInputNode);
-        }
-        return result;
+        return wrapAsList(newInputNode);
       }
 
       if (nodeMacro instanceof SwitchMacro) {
@@ -65,13 +58,15 @@ public class MacroUtil {
       }
 
       // <default> : propagate  current input node
-      List<SNode> list = new ArrayList<SNode>(1);
-      list.add(currentInputNode);
-      return list;
+      return Collections.singletonList(currentInputNode);
 
     } catch (Throwable t) {
       throw new GenerationFailureException("couldn't get input nodes", currentInputNode, nodeMacro.getNode(), null, t);
     }
+  }
+
+  private static <T> List<T> wrapAsList(T node) {
+    return node == null ? Collections.<T>emptyList() : Collections.singletonList(node);
   }
 
   /**
@@ -99,17 +94,13 @@ public class MacroUtil {
       throw new GenerationFailureException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
     }
 
-    SNode resultNode = QueryExecutor.evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, generator);
-    return resultNode;
+    return QueryExecutor.evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, generator);
   }
 
   private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) throws GenerationFailureException {
     if (query != null) {
       List<SNode> list = QueryExecutor.evaluateSourceNodesQuery(currentInputNode, null, macro.getNode(), query, generator);
-      if (list != null) {
-        return list;
-      }
-      return new LinkedList<SNode>();
+      return list != null ? list : Collections.<SNode>emptyList();
     }
 
     throw new GenerationFailureException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);

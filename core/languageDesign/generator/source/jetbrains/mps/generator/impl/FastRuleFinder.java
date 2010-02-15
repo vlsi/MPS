@@ -31,6 +31,7 @@ import java.util.Map.Entry;
  * Date: Jan 21, 2007
  */
 public class FastRuleFinder {
+
   private Map<String, Reduction_MappingRule[]> myApplicableRules = new HashMap<String, Reduction_MappingRule[]>();
 
   public FastRuleFinder(Iterable<Reduction_MappingRule> reductionRules) {
@@ -45,10 +46,12 @@ public class FastRuleFinder {
       }
 
       for (String conceptFqName : applicableTo) {
-        if (!applicableRules.containsKey(conceptFqName)) {
-          applicableRules.put(conceptFqName, new ArrayList<Reduction_MappingRule>());
+        List<Reduction_MappingRule> rules = applicableRules.get(conceptFqName);
+        if (rules == null) {
+          rules = new LinkedList<Reduction_MappingRule>();
+          applicableRules.put(conceptFqName, rules);
         }
-        applicableRules.get(conceptFqName).add(rule);
+        rules.add(rule);
       }
     }
 

@@ -47,8 +47,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   // objects survive between transient models and between generation steps
   private Map<Object, Object> mySessionObjects = new HashMap<Object, Object>();
 
-  private LinkedHashSet<MappingConfiguration> myMappingConfigurations;
-
   // these objects survive through all steps of generation
   private TraceMap myTraceMap = new TraceMap();
   private Set<String> myUsedNames = new HashSet<String>();
@@ -59,13 +57,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   public GenerationSessionContext(IOperationContext invocationContext,
                                   SModel inputModel,
                                   GenerationPlan generationPlan,
-                                  int majorStep,
                                   GenerationSessionContext prevContext) {
 
     myInvocationContext = invocationContext;
     myGenerationPlan = generationPlan;
     myTemplateModels = generationPlan.getTemplateModels();
-    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(generationPlan.getMappingConfigurations(majorStep));
 
     getModule().setInvocationContext(invocationContext.getModule());
 
@@ -90,32 +86,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public SModel getOriginalInputModel() {
     return myOriginalInputModel;
-  }
-
-  public Set<MappingConfiguration> getMappingConfigurations() {
-    return myMappingConfigurations;
-  }
-
-  public List<MappingScript> getPreMappingScripts() {
-    List<MappingScript> result = new ArrayList<MappingScript>();
-    for (MappingConfiguration mappingConfigs : getMappingConfigurations()) {
-      List<MappingScriptReference> scriptRefs = mappingConfigs.getPreMappingScripts();
-      for (MappingScriptReference scriptRef : scriptRefs) {
-        result.add(scriptRef.getMappingScript());
-      }
-    }
-    return result;
-  }
-
-  public List<MappingScript> getPostMappingScripts() {
-    List<MappingScript> result = new ArrayList<MappingScript>();
-    for (MappingConfiguration mappingConfigs : getMappingConfigurations()) {
-      List<MappingScriptReference> scriptRefs = mappingConfigs.getPostMappingScripts();
-      for (MappingScriptReference scriptRef : scriptRefs) {
-        result.add(scriptRef.getMappingScript());
-      }
-    }
-    return result;
   }
 
   public <T> T getComponent(@NotNull Class<T> clazz) {
