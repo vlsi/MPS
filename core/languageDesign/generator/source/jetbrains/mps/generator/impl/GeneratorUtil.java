@@ -92,68 +92,6 @@ public class GeneratorUtil {
   }
 
 
-  public static void applyCreateRootRule(CreateRootRule createRootRule, TemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
-    if (QueryExecutor.checkCondition(createRootRule, generator)) {
-      INamedConcept templateNode = createRootRule.getTemplateNode();
-      if (templateNode == null) {
-        generator.showErrorMessage(null, null, createRootRule.getNode(), "'create root' rule has no template");
-      } else {
-        generator.getGeneratorSessionContext().getGenerationTracer().pushRule(createRootRule.getNode());
-        boolean wasChanged = generator.isChanged();
-        try {
-          createRootNodeFromTemplate(
-            getMappingName(createRootRule, null),
-            BaseAdapter.fromAdapter(templateNode), null, generator);
-        } catch (DismissTopMappingRuleException e) {
-          // it's ok, just continue
-          generator.setChanged(wasChanged);
-        } finally {
-          generator.getGeneratorSessionContext().getGenerationTracer().closeRule(createRootRule.getNode());
-        }
-      }
-    }
-  }
-
-  public static void applyRoot_MappingRule(Root_MappingRule rule, TemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
-    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
-    if (applicableConcept == null) {
-      generator.showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
-      return;
-    }
-    boolean includeInheritors = rule.getApplyToConceptInheritors();
-    List<SNode> inputNodes = generator.getInputModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
-    for (SNode inputNode : inputNodes) {
-      // do not apply root mapping if root node has been copied from input model on previous micro-step
-      // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
-      if (generator.getGeneratorSessionContext().isCopiedRoot(inputNode)) {
-        continue;
-      }
-
-      if (QueryExecutor.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator)) {
-        generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
-        generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
-        boolean wasChanged = generator.isChanged();
-        try {
-          generator.setChanged(true);
-          SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
-          if (templateNode != null) {
-            createRootNodeFromTemplate(getMappingName(rule, null), templateNode, inputNode, generator);
-          } else {
-            generator.showErrorMessage(BaseAdapter.fromAdapter(rule), "no template is defined for the rule");
-          }
-          if (inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
-            generator.addRootNotToCopy(inputNode);
-          }
-        } catch (DismissTopMappingRuleException e) {
-          // it's ok, just continue
-          generator.setChanged(wasChanged);
-        } finally {
-          generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
-        }
-      }
-    }
-  }
-
   public static boolean isApplicableDropRootRule(SNode inputRootNode, DropRootRule rule, TemplateGenerator generator) throws GenerationFailureException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
@@ -173,23 +111,6 @@ public class GeneratorUtil {
     return false;
   }
 
-
-  private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator)
-    throws
-    DismissTopMappingRuleException,
-    GenerationFailureException,
-    GenerationCanceledException {
-
-    try {
-      List<SNode> outputNodes = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, generator);
-      for (SNode outputNode : outputNodes) {
-        generator.registerRoot(outputNode, inputNode);
-        generator.getOutputModel().addRoot(outputNode);
-      }
-    } catch (TemplateProcessingFailureException e) {
-      generator.showErrorMessage(inputNode, templateNode, "couldn't create root node");
-    }
-  }
 
   private static void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateGenerator generator)
     throws

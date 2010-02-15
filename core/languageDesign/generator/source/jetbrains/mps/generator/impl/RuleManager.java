@@ -62,149 +62,23 @@ public class RuleManager {
     }
   }
 
-  public RuleProcessor createProcessor(TemplateGenerator generator) {
-    return new RuleProcessor(generator);
+  public Iterable<CreateRootRule> getCreateRootRules() {
+    return myCreateRootRules;
   }
 
-  public class RuleProcessor {
+  public Iterable<Root_MappingRule> getRoot_MappingRules() {
+    return myRoot_MappingRules;
+  }
 
-    private TemplateGenerator myGenerator;
+  public FlattenIterable<Weaving_MappingRule> getWeaving_MappingRules() {
+    return myWeaving_MappingRules;
+  }
 
-    public RuleProcessor(TemplateGenerator generator) {
-      myGenerator = generator;
-    }
+  public FlattenIterable<DropRootRule> getDropRootRules() {
+    return myDropRootRules;
+  }
 
-    public void applyRoot_MappingRules() throws GenerationFailureException, GenerationCanceledException {
-      for (Root_MappingRule rule : myRoot_MappingRules) {
-        myGenerator.checkMonitorCanceled();
-        GeneratorUtil.applyRoot_MappingRule(rule, myGenerator);
-      }
-    }
-
-    public void applyCreateRootRules() throws GenerationFailureException, GenerationCanceledException {
-      for (CreateRootRule rule : myCreateRootRules) {
-        myGenerator.checkMonitorCanceled();
-        GeneratorUtil.applyCreateRootRule(rule, myGenerator);
-      }
-    }
-
-    public void applyWeaving_MappingRules() throws GenerationFailureException, GenerationCanceledException {
-      for (Weaving_MappingRule rule : myWeaving_MappingRules) {
-        myGenerator.checkMonitorCanceled();
-        GeneratorUtil.applyWeaving_MappingRule(rule, myGenerator);
-      }
-    }
-
-    public boolean isRootToDrop(SNode rootNode) throws GenerationFailureException {
-      for (DropRootRule dropRootRule : myDropRootRules) {
-        if (GeneratorUtil.isApplicableDropRootRule(rootNode, dropRootRule, myGenerator)) {
-          return true;
-        }
-      }
-      return false;
-    }
-
-    public void applyReductionRules(SNode inputNode, SNode clonedOutputNode) throws GenerationFailureException, GenerationCanceledException {
-      myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
-      try {
-        applyReductionRules_internal(inputNode, clonedOutputNode);
-      } finally {
-        myGenerator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
-      }
-    }
-
-    private void applyReductionRules_internal(SNode inputNode, SNode clonedOutputNode) throws GenerationFailureException, GenerationCanceledException {
-      if (clonedOutputNode.getParent() != null) { // don't try to reduce copied roots
-        List<SNode> outputNodes = tryToReduce(inputNode, null);
-        if (outputNodes != null) {
-          SNode parent = clonedOutputNode.getParent();
-          String childRole = parent.getRoleOf(clonedOutputNode);
-          // check new children
-          for (SNode outputNode : outputNodes.toArray(new SNode[outputNodes.size()])) {
-            if (!GeneratorUtil.checkChild(parent, childRole, outputNode)) {
-              LOG.warning(" -- was input: " + inputNode.getDebugText(), inputNode);
-            }
-          }
-
-          parent.replaceChild(clonedOutputNode, outputNodes);
-          return;
-        }
-      }
-
-      // no reduction rule found - keep the cloned node in output model and proceed with its children.
-      myGenerator.getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
-      for (SNode childInputNode : inputNode.getChildren()) {
-        SNode childOutputNode = myGenerator.findOutputNodeById(childInputNode.getSNodeId());
-        applyReductionRules(childInputNode, childOutputNode);
-      }
-      myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(clonedOutputNode);
-    }
-
-    /**
-     * @return null if no reductions found
-     */
-    @Nullable
-    List<SNode> tryToReduce(SNode inputNode, String mappingName) throws GenerationFailureException, GenerationCanceledException {
-      boolean needStopReductionBlocking = false;
-      boolean wasChanged = myGenerator.isChanged();
-      Reduction_MappingRule reductionRule = null;
-      try {
-        reductionRule = myRuleFinder.findReductionRule(inputNode, myGenerator);
-        if (reductionRule != null) {
-          myGenerator.setChanged(true);
-          needStopReductionBlocking = startReductionBlockingForInput(inputNode);
-
-          List<SNode> outputNodes = GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
-          if (outputNodes != null && outputNodes.size() == 1) {
-            SNode reducedNode = outputNodes.get(0);
-            // register copied node
-            myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, reducedNode);
-            // output node should be accessible via 'findCopiedNode'
-            myGenerator.addCopiedOutputNodeForInputNode(inputNode, reducedNode);
-            // preserve user objects
-            reducedNode.putUserObjects(inputNode);
-            // keep track of 'original input node'
-            if (inputNode.getModel() == myGenerator.getGeneratorSessionContext().getOriginalInputModel()) {
-              reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
-              reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
-            }
-          }
-          return outputNodes;
-        }
-      } catch (DismissTopMappingRuleException ex) {
-        // it's ok, just continue
-        myGenerator.setChanged(wasChanged);
-        if (ex.isLoggingNeeded()) {
-          String messageText = "-- dismissed reduction rule: " + reductionRule.getDebugText();
-          if (ex.isInfo()) {
-            myGenerator.showInformationMessage(reductionRule.getNode(), messageText);
-          } else if (ex.isWarning()) {
-            myGenerator.showWarningMessage(reductionRule.getNode(), messageText);
-          } else {
-            myGenerator.showErrorMessage(reductionRule.getNode(), messageText);
-          }
-        }
-      } finally {
-        if (needStopReductionBlocking) {
-          stopReductionBlockingForInput(inputNode);
-        }
-      }
-      return null;
-    }
-
-    /**
-     * prevents applying of reduction rules which have already been applied to the input node.
-     */
-    void blockReductionsForOutput(SNode inputNode, SNode outputNode) {
-      myRuleFinder.disableReductionsForOutput(inputNode, outputNode, myGenerator);
-    }
-
-    private boolean startReductionBlockingForInput(SNode inputNode) {
-      return myRuleFinder.startReductionBlockingForInput(inputNode, myGenerator);
-    }
-
-    private void stopReductionBlockingForInput(SNode inputNode) {
-      myRuleFinder.stopReductionBlockingForInput(inputNode, myGenerator);
-    }
+  public FastRuleFinder getRuleFinder() {
+    return myRuleFinder;
   }
 }

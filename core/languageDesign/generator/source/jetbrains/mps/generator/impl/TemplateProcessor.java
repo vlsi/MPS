@@ -521,7 +521,7 @@ public class TemplateProcessor {
   }
 
   private List<SNode> copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
-    List<SNode> outputNodes = myGenerator.getRuleProcessor().tryToReduce(inputNode, mappingName);
+    List<SNode> outputNodes = myGenerator.tryToReduce(inputNode, mappingName);
     if (outputNodes != null) {
       return outputNodes;
     }
@@ -529,7 +529,7 @@ public class TemplateProcessor {
     // no reduction found - do node copying
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
-    myGenerator.getRuleProcessor().blockReductionsForOutput(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.
+    myGenerator.blockReductionsForOutput(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.
 
     myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
     myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
