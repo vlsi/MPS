@@ -784,7 +784,7 @@ public abstract class AbstractModule implements IModule {
         IClassPathItem pathItem = AbstractClassPathItem.createFromPath(path.getPath(), this);
         myCachedClassPathItem.add(pathItem);
       } catch (IOException e) {
-        LOG.error(e);
+        LOG.error(e.getMessage());
       }
     }
   }
