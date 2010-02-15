@@ -46,6 +46,7 @@
     <mkdir dir="${deploy.dir}/MPS/lib/xstream" />
     <mkdir dir="${deploy.dir}/MPS/lib/yjp" />
     <mkdir dir="${deploy.dir}/MPS/lib/httpclient" />
+    <mkdir dir="${deploy.dir}/MPS/lib/tools" />
     <mkdir dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp/idea" />
     <mkdir dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
@@ -162,6 +163,9 @@
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/httpclient">
       <fileset dir="${mps_home}/lib/httpclient" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
+    </copy>
+    <copy todir="${deploy.dir}/MPS/lib/tools">
+      <fileset dir="${mps_home}/lib/tools" excludes="**/*.zip, **/*.iml, **/*.iws" includes="**/*.jar, **/*.class, **/*.png, **/*.xml, **/*.txt, **/*.html, " />
     </copy>
     <copy todir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp">
       <fileset dir="${mps_home}/core/idea-patch/classes" />
