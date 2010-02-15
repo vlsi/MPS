@@ -19,29 +19,35 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by: Sergey Dmitriev
  * Date: Jan 23, 2007
- *
+ * <p/>
  * Created once per micro-step.
  */
 public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private boolean myChanged = false;
   private final RuleManager myRuleManager;
+
+  /* cached session data */
+  private BlockedReductionsData myReductionData;
+  private final GenerationTracer myGenerationTracer;
 
   public TemplateGenerator(GenerationSessionContext operationContext,
                            ProgressIndicator progressMonitor,
@@ -51,13 +57,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
                            SModel outputModel) {
     super(operationContext, progressMonitor, logger, inputModel, outputModel);
     myRuleManager = ruleManager;
+    myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
   }
 
   public GenerationSessionContext getGeneratorSessionContext() {
     return (GenerationSessionContext) getOperationContext();
   }
 
-  public boolean doMapping(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
+  public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
     checkMonitorCanceled();
 
     // create all roots
@@ -120,7 +127,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
 
-    List<SNode> copiedRoots = new ArrayList<SNode>();
+    List<SNode> copiedRoots = new ArrayList<SNode>(rootsToCopy.size());
     for (SNode rootToCopy : rootsToCopy) {
       SNode newroot = CloneUtil.clone(rootToCopy, myOutputModel, getGeneratorSessionContext().getOriginalInputModel() == myInputModel);
       registerRoot(newroot, rootToCopy);
@@ -191,13 +198,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  public void applyCreateRootRule(CreateRootRule createRootRule) throws GenerationFailureException, GenerationCanceledException {
+  private void applyCreateRootRule(CreateRootRule createRootRule) throws GenerationFailureException, GenerationCanceledException {
     if (QueryExecutor.checkCondition(createRootRule, this)) {
       INamedConcept templateNode = createRootRule.getTemplateNode();
       if (templateNode == null) {
         showErrorMessage(null, null, createRootRule.getNode(), "'create root' rule has no template");
       } else {
-        getGeneratorSessionContext().getGenerationTracer().pushRule(createRootRule.getNode());
+        myGenerationTracer.pushRule(createRootRule.getNode());
         boolean wasChanged = isChanged();
         try {
           createRootNodeFromTemplate(
@@ -207,13 +214,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           // it's ok, just continue
           setChanged(wasChanged);
         } finally {
-          getGeneratorSessionContext().getGenerationTracer().closeRule(createRootRule.getNode());
+          myGenerationTracer.closeRule(createRootRule.getNode());
         }
       }
     }
   }
 
-  public void applyRoot_MappingRule(Root_MappingRule rule) throws GenerationFailureException, GenerationCanceledException {
+  private void applyRoot_MappingRule(Root_MappingRule rule) throws GenerationFailureException, GenerationCanceledException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
@@ -229,8 +236,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
 
       if (QueryExecutor.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), this)) {
-        getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
-        getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
+        myGenerationTracer.pushInputNode(inputNode);
+        myGenerationTracer.pushRule(rule.getNode());
         boolean wasChanged = isChanged();
         try {
           setChanged(true);
@@ -247,17 +254,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           // it's ok, just continue
           setChanged(wasChanged);
         } finally {
-          getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
+          myGenerationTracer.closeInputNode(inputNode);
         }
       }
     }
   }
 
   private void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode)
-    throws
-    DismissTopMappingRuleException,
-    GenerationFailureException,
-    GenerationCanceledException {
+    throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
     try {
       List<SNode> outputNodes = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, this);
@@ -270,23 +274,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  public boolean isChanged() {
-    return myChanged;
-  }
-
-  public void setChanged(boolean b) {
-    myChanged = b;
-  }
-
-
-  public void applyWeaving_MappingRules() throws GenerationFailureException, GenerationCanceledException {
+  private void applyWeaving_MappingRules() throws GenerationFailureException, GenerationCanceledException {
     for (Weaving_MappingRule rule : myRuleManager.getWeaving_MappingRules()) {
       checkMonitorCanceled();
       GeneratorUtil.applyWeaving_MappingRule(rule, this);
     }
   }
 
-  public boolean isRootToDrop(SNode rootNode) throws GenerationFailureException {
+  private boolean isRootToDrop(SNode rootNode) throws GenerationFailureException {
     for (DropRootRule dropRootRule : myRuleManager.getDropRootRules()) {
       if (GeneratorUtil.isApplicableDropRootRule(rootNode, dropRootRule, this)) {
         return true;
@@ -295,12 +290,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return false;
   }
 
-  public void applyReductionRules(SNode inputNode, SNode clonedOutputNode) throws GenerationFailureException, GenerationCanceledException {
-    getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
+  private void applyReductionRules(SNode inputNode, SNode clonedOutputNode) throws GenerationFailureException, GenerationCanceledException {
+    myGenerationTracer.pushInputNode(inputNode);
     try {
       applyReductionRules_internal(inputNode, clonedOutputNode);
     } finally {
-      getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
+      myGenerationTracer.closeInputNode(inputNode);
     }
   }
 
@@ -311,7 +306,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         SNode parent = clonedOutputNode.getParent();
         String childRole = parent.getRoleOf(clonedOutputNode);
         // check new children
-        for (SNode outputNode : outputNodes.toArray(new SNode[outputNodes.size()])) {
+        for (SNode outputNode : outputNodes) {
           if (!GeneratorUtil.checkChild(parent, childRole, outputNode)) {
             showWarningMessage(inputNode, " -- was input: " + inputNode.getDebugText());
           }
@@ -323,12 +318,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     // no reduction rule found - keep the cloned node in output model and proceed with its children.
-    getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
+    myGenerationTracer.pushCopyOperation();
     for (SNode childInputNode : inputNode.getChildren()) {
       SNode childOutputNode = findOutputNodeById(childInputNode.getSNodeId());
       applyReductionRules(childInputNode, childOutputNode);
     }
-    getGeneratorSessionContext().getGenerationTracer().pushOutputNode(clonedOutputNode);
+    myGenerationTracer.pushOutputNode(clonedOutputNode);
   }
 
   /**
@@ -387,14 +382,38 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
    * prevents applying of reduction rules which have already been applied to the input node.
    */
   void blockReductionsForOutput(SNode inputNode, SNode outputNode) {
-    myRuleManager.getRuleFinder().disableReductionsForOutput(inputNode, outputNode, this);
+    getBlockedReductionsData().blockReductionsForOutput(inputNode, outputNode);
   }
 
   private boolean startReductionBlockingForInput(SNode inputNode) {
-    return myRuleManager.getRuleFinder().startReductionBlockingForInput(inputNode, this);
+    return getBlockedReductionsData().startReductionBlockingForInput(inputNode);
   }
 
   private void stopReductionBlockingForInput(SNode inputNode) {
-    myRuleManager.getRuleFinder().stopReductionBlockingForInput(inputNode, this);
+    getBlockedReductionsData().stopReductionBlockingForInput(inputNode);
+  }
+
+  BlockedReductionsData getBlockedReductionsData() {
+    if(myReductionData == null) {
+      Object blockedReductions = getGeneratorSessionContext().getStepObject(BlockedReductionsData.KEY);
+      if (blockedReductions == null) {
+        blockedReductions = new BlockedReductionsData();
+        getGeneratorSessionContext().putStepObject(BlockedReductionsData.KEY, blockedReductions);
+      }
+      myReductionData = (BlockedReductionsData) blockedReductions;
+    }
+    return myReductionData;
+  }
+
+  GenerationTracer getGenerationTracer() {
+    return myGenerationTracer;
+  }
+
+  private boolean isChanged() {
+    return myChanged;
+  }
+
+  void setChanged(boolean b) {
+    myChanged = b;
   }
 }

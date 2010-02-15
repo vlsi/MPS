@@ -27,10 +27,7 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Applies template to input node.
@@ -49,18 +46,12 @@ public class TemplateProcessor {
   }
 
   @NotNull
-  public static List<SNode> createOutputNodesForTemplateNode(String mappingName,
-                                                             SNode templateNode,
-                                                             SNode inputNode,
-                                                             TemplateGenerator generator)
-    throws
-    DismissTopMappingRuleException,
-    TemplateProcessingFailureException,
-    GenerationFailureException,
-    GenerationCanceledException {
+  public static List<SNode> createOutputNodesForTemplateNode(String mappingName, SNode templateNode,
+                                                             SNode inputNode, TemplateGenerator generator)
+    throws DismissTopMappingRuleException, TemplateProcessingFailureException, GenerationFailureException, GenerationCanceledException {
 
     if (generator.getProgressMonitor().isCanceled()) {
-      if (generator.getGeneratorSessionContext().getGenerationTracer().isTracing()) {
+      if (generator.getGenerationTracer().isTracing()) {
         LOG.info("generation canceled when processing branch:");
         logCurrentGenerationBranch(generator, false);
       }
@@ -78,7 +69,7 @@ public class TemplateProcessor {
     } catch (StackOverflowError e) {
       // this is critical
       LOG.error("generation thread run out of stack space :(");
-      if (generator.getGeneratorSessionContext().getGenerationTracer().isTracing()) {
+      if (generator.getGenerationTracer().isTracing()) {
         LOG.error("failed branch was:");
         logCurrentGenerationBranch(generator, true);
       } else {
@@ -92,7 +83,7 @@ public class TemplateProcessor {
   }
 
   private static void logCurrentGenerationBranch(TemplateGenerator generator, boolean error) {
-    List<Pair<SNode, String>> pairs = generator.getGeneratorSessionContext().getGenerationTracer().getNodesWithTextFromCurrentBranch();
+    List<Pair<SNode, String>> pairs = generator.getGenerationTracer().getNodesWithTextFromCurrentBranch();
     StringBuilder indent = new StringBuilder();
     boolean indentInc = true;
     for (Pair<SNode, String> pair : pairs) {
@@ -125,11 +116,10 @@ public class TemplateProcessor {
     DismissTopMappingRuleException,
     GenerationFailureException, GenerationCanceledException {
 
-    GenerationTracer generationTracer = myGenerator.getGeneratorSessionContext().getGenerationTracer();
+    GenerationTracer generationTracer = myGenerator.getGenerationTracer();
     putInputNodeByMappingName(mappingName, inputNode);
 
     int macroCount = 0;
-    List<SNode> outputNodes = new ArrayList<SNode>();
     // templateNode has unprocessed node-macros?
     for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
       if (!(templateChildNode instanceof NodeMacro)) continue;
@@ -148,7 +138,6 @@ public class TemplateProcessor {
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
     generationTracer.pushTemplateNode(templateNode);
     SNode outputNode = new SNode(myOutputModel, templateNode.getConceptFqName(), false);
-    outputNodes.add(outputNode);
     myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
     if (!myInputHistory.isEmpty()) {
       for (SNode historyInputNode : myInputHistory) {
@@ -230,12 +219,12 @@ public class TemplateProcessor {
       generationTracer.pushOutputNode(outputNode);
       generationTracer.closeTemplateNode(templateNode);
     }
-    return outputNodes;
+    return Collections.singletonList(outputNode);
   }
 
   @Nullable
   private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, SNode inputNode, int nodeMacrosToSkip) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
-    GenerationTracer generationTracer = myGenerator.getGeneratorSessionContext().getGenerationTracer();
+    GenerationTracer generationTracer = myGenerator.getGenerationTracer();
     List<SNode> outputNodes = new ArrayList<SNode>();
     String mappingName = GeneratorUtil.getMappingName(nodeMacro, null);
 
@@ -512,11 +501,11 @@ public class TemplateProcessor {
 
   private List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
     putInputNodeByMappingName(mappingName, inputNode);
-    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
+    myGenerator.getGenerationTracer().pushInputNode(inputNode);
     try {
       return copyNodeFromInputNode_internal(mappingName, templateNode, inputNode);
     } finally {
-      myGenerator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
+      myGenerator.getGenerationTracer().closeInputNode(inputNode);
     }
   }
 
@@ -527,7 +516,7 @@ public class TemplateProcessor {
     }
 
     // no reduction found - do node copying
-    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
+    myGenerator.getGenerationTracer().pushCopyOperation();
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
     myGenerator.blockReductionsForOutput(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.
 
@@ -586,10 +575,8 @@ public class TemplateProcessor {
       }
     }
 
-    myGenerator.getGeneratorSessionContext().getGenerationTracer().pushOutputNode(outputNode);
-    outputNodes = new ArrayList<SNode>(1);
-    outputNodes.add(outputNode);
-    return outputNodes;
+    myGenerator.getGenerationTracer().pushOutputNode(outputNode);
+    return Collections.singletonList(outputNode);
   }
 
   @Nullable

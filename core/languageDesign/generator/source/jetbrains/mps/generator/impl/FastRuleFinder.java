@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
@@ -59,16 +58,16 @@ public class FastRuleFinder {
     }
   }
 
-  /*package*/ Reduction_MappingRule findReductionRule(SNode node, ITemplateGenerator generator) throws GenerationFailureException {
+  Reduction_MappingRule findReductionRule(SNode node, TemplateGenerator generator) throws GenerationFailureException {
     Reduction_MappingRule[] allRules = myApplicableRules.get(node.getConceptFqName());
     if (allRules == null) {
       return null;
     }
 
     for (Reduction_MappingRule rule : allRules) {
-      if (!isDisabledReductionForNode(node, rule, generator)) {
+      if (!generator.getBlockedReductionsData().isReductionBlocked(node, rule)) {
         if (QueryExecutor.checkCondition(rule.getConditionFunction(), false, node, rule.getNode(), generator)) {
-          registerReduction(node, rule, generator);
+          generator.getBlockedReductionsData().registerInputReduction(node, rule);
           return rule;
         }
       }
@@ -76,37 +75,7 @@ public class FastRuleFinder {
     return null;
   }
 
-  private void registerReduction(SNode inputNode, Reduction_MappingRule rule, ITemplateGenerator generator) {
-    getBlockedReductionsData(generator).registerInputReduction(inputNode, rule);
-  }
-
-  private boolean isDisabledReductionForNode(SNode node, Reduction_MappingRule rule, ITemplateGenerator generator) {
-//    return false;
-    return getBlockedReductionsData(generator).isReductionBlocked(node, rule);
-  }
-
-  public void disableReductionsForOutput(SNode inputNode, SNode outputNode, ITemplateGenerator generator) {
-    getBlockedReductionsData(generator).blockReductionsForOutput(inputNode, outputNode);
-  }
-
-  public boolean startReductionBlockingForInput(SNode inputNode, ITemplateGenerator generator) {
-    return getBlockedReductionsData(generator).startReductionBlockingForInput(inputNode);
-  }
-
-  public void stopReductionBlockingForInput(SNode inputNode, ITemplateGenerator generator) {
-    getBlockedReductionsData(generator).stopReductionBlockingForInput(inputNode);
-  }
-
-  private BlockedReductionsData getBlockedReductionsData(ITemplateGenerator generator) {
-    Object blockedReductions = generator.getGeneratorSessionContext().getStepObject(BlockedReductionsData.KEY);
-    if (blockedReductions == null) {
-      blockedReductions = new BlockedReductionsData();
-      generator.getGeneratorSessionContext().putStepObject(BlockedReductionsData.KEY, blockedReductions);
-    }
-    return (BlockedReductionsData) blockedReductions;
-  }
-
-  private static class BlockedReductionsData {
+  public static class BlockedReductionsData {
     public static final Object KEY = new Object();
     private Map<SNodeId, Object> myInputReductionsData = new HashMap<SNodeId, Object>();
     private Map<SNodeId, Object> myBlockedReductionData = new HashMap<SNodeId, Object>();

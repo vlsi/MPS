@@ -267,7 +267,7 @@ public class GenerationSession {
   private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, boolean isPrimary,
                              RuleManager ruleManager, GeneratorLogger logger) throws GenerationFailureException, GenerationCanceledException {
     TemplateGenerator tg = new TemplateGenerator(mySessionContext, myProgressMonitor, logger, ruleManager, currentInputModel, currentOutputModel);
-    return tg.doMapping(isPrimary);
+    return tg.apply(isPrimary);
   }
 
   private SModel preProcessModel(GeneratorLogger logger, RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {

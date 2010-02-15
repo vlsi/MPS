@@ -20,9 +20,7 @@ import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
@@ -33,6 +31,7 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -101,9 +100,9 @@ public class GeneratorUtil {
 
     if (inputRootNode.isInstanceOfConcept(applicableConcept)) {
       if (QueryExecutor.checkCondition(rule.getConditionFunction(), inputRootNode, rule.getNode(), generator)) {
-        generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputRootNode);
-        generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
-        generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputRootNode);
+        generator.getGenerationTracer().pushInputNode(inputRootNode);
+        generator.getGenerationTracer().pushRule(rule.getNode());
+        generator.getGenerationTracer().closeInputNode(inputRootNode);
         return true;
       }
     }
@@ -117,11 +116,11 @@ public class GeneratorUtil {
     GenerationFailureException,
     GenerationCanceledException {
 
-    generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
+    generator.getGenerationTracer().pushInputNode(inputNode);
     try {
       weaveTemplateDeclaration_intern(inputNode, template, outputContextNode, rule, generator);
     } finally {
-      generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputNode);
+      generator.getGenerationTracer().closeInputNode(inputNode);
     }
   }
 
@@ -296,14 +295,14 @@ public class GeneratorUtil {
         generator.setChanged(true);
 
         boolean someOutputGenerated = true;
-        generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(applicableNode);
-        generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
+        generator.getGenerationTracer().pushInputNode(applicableNode);
+        generator.getGenerationTracer().pushRule(rule.getNode());
         try {
           RuleConsequence ruleConsequence = rule.getRuleConsequence();
           if (ruleConsequence == null) {
             generator.showErrorMessage(applicableNode, null, rule.getNode(), "no rule consequence");
           } else {
-            generator.getGeneratorSessionContext().getGenerationTracer().pushRuleConsequence(ruleConsequence.getNode());
+            generator.getGenerationTracer().pushRuleConsequence(ruleConsequence.getNode());
             if (ruleConsequence instanceof TemplateDeclarationReference) {
               TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
               weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule, generator);
@@ -329,9 +328,9 @@ public class GeneratorUtil {
           }
         } finally {
           if (someOutputGenerated) {
-            generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(applicableNode);
+            generator.getGenerationTracer().closeInputNode(applicableNode);
           } else {
-            generator.getGeneratorSessionContext().getGenerationTracer().popInputNode(applicableNode);
+            generator.getGenerationTracer().popInputNode(applicableNode);
           }
         }
       }
@@ -340,12 +339,12 @@ public class GeneratorUtil {
 
 
   @Nullable
-  /*package*/ static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
+  /*package*/ static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, TemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
     if (ruleConsequence == null) {
       generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
       return null;
     }
-    generator.getGeneratorSessionContext().getGenerationTracer().pushRuleConsequence(ruleConsequence.getNode());
+    generator.getGenerationTracer().pushRuleConsequence(ruleConsequence.getNode());
 
     if (ruleConsequence instanceof DismissTopMappingRule) {
       GeneratorMessage message = ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage();
@@ -428,13 +427,13 @@ public class GeneratorUtil {
   /*package*/
   @Nullable
   static List<SNode> applyReductionRule(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
-    generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
+    generator.getGenerationTracer().pushRule(rule.getNode());
     try {
       return applyReductionRule_internal(inputNode, rule, generator);
     } catch (AbandonRuleInputException e) {
-      return new ArrayList<SNode>(1);
+      return Collections.emptyList();
     } finally {
-      generator.getGeneratorSessionContext().getGenerationTracer().closeRule(rule.getNode());
+      generator.getGenerationTracer().closeRule(rule.getNode());
     }
   }
 

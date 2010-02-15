@@ -29,7 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RuleManager {
-  private static final Logger LOG = Logger.getLogger(RuleManager.class);
 
   private FlattenIterable<CreateRootRule> myCreateRootRules;
   private FlattenIterable<Root_MappingRule> myRoot_MappingRules;
@@ -46,7 +45,7 @@ public class RuleManager {
     myRuleFinder = new FastRuleFinder(myReduction_MappingRules);
   }
 
-  protected void initialize(List<MappingConfiguration> list) {
+  private void initialize(List<MappingConfiguration> list) {
     myCreateRootRules = new FlattenIterable(new ArrayList<List<CreateRootRule>>(list.size()));
     myRoot_MappingRules = new FlattenIterable(new ArrayList<List<Root_MappingRule>>(list.size()));
     myWeaving_MappingRules = new FlattenIterable(new ArrayList<List<Weaving_MappingRule>>(list.size()));
