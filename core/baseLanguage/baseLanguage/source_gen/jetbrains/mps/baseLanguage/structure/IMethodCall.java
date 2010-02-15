@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface IMethodCall extends TypeDerivable, TypeAnnotable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.IMethodCall";
-  public static final String ACTUAL_ARGUMENT = "actualArgument";
   public static final String TYPE_ARGUMENT = "typeArgument";
+  public static final String ACTUAL_ARGUMENT = "actualArgument";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
 
   public int getActualArgumentsCount();
@@ -16,11 +16,6 @@ public interface IMethodCall extends TypeDerivable, TypeAnnotable {
   public List<Expression> getActualArguments();
   public void addActualArgument(Expression node);
   public void insertActualArgument(Expression prev, Expression node);
-  public int getTypeArgumentsCount();
-  public Iterator<Type> typeArguments();
-  public List<Type> getTypeArguments();
-  public void addTypeArgument(Type node);
-  public void insertTypeArgument(Type prev, Type node);
   public BaseMethodDeclaration getBaseMethodDeclaration();
   public void setBaseMethodDeclaration(BaseMethodDeclaration node);
 }

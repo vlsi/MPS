@@ -16,7 +16,6 @@ public class BaseMethodCall extends Expression implements IMethodCall {
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
-  public static final String TYPE_ARGUMENT = "typeArgument";
 
   public BaseMethodCall(SNode node) {
     super(node);
@@ -72,26 +71,6 @@ public class BaseMethodCall extends Expression implements IMethodCall {
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, BaseMethodCall.ACTUAL_ARGUMENT, node);
-  }
-
-  public int getTypeArgumentsCount() {
-    return this.getChildCount(BaseMethodCall.TYPE_ARGUMENT);
-  }
-
-  public Iterator<Type> typeArguments() {
-    return this.children(Type.class, BaseMethodCall.TYPE_ARGUMENT);
-  }
-
-  public List<Type> getTypeArguments() {
-    return this.getChildren(Type.class, BaseMethodCall.TYPE_ARGUMENT);
-  }
-
-  public void addTypeArgument(Type node) {
-    this.addChild(BaseMethodCall.TYPE_ARGUMENT, node);
-  }
-
-  public void insertTypeArgument(Type prev, Type node) {
-    this.insertChild(prev, BaseMethodCall.TYPE_ARGUMENT, node);
   }
 
   public static BaseMethodCall newInstance(SModel sm, boolean init) {

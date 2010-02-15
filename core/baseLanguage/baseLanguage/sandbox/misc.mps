@@ -164,12 +164,6 @@
             <property name="value:3" value="" />
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4573995203962985570" />
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="7298431225127792045" />
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="7298431225127792046" />
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="7298431225128041654" />
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="7298431225128041655" />
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="7298431225127762015" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="7298431225127762016" />
       </node>
     </node>

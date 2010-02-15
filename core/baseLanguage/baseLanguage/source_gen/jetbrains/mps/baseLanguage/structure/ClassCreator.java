@@ -17,7 +17,6 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String TYPE_PARAMETER = "typeParameter";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
-  public static final String TYPE_ARGUMENT = "typeArgument";
 
   public ClassCreator(SNode node) {
     super(node);
@@ -101,26 +100,6 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, ClassCreator.ACTUAL_ARGUMENT, node);
-  }
-
-  public int getTypeArgumentsCount() {
-    return this.getChildCount(ClassCreator.TYPE_ARGUMENT);
-  }
-
-  public Iterator<Type> typeArguments() {
-    return this.children(Type.class, ClassCreator.TYPE_ARGUMENT);
-  }
-
-  public List<Type> getTypeArguments() {
-    return this.getChildren(Type.class, ClassCreator.TYPE_ARGUMENT);
-  }
-
-  public void addTypeArgument(Type node) {
-    this.addChild(ClassCreator.TYPE_ARGUMENT, node);
-  }
-
-  public void insertTypeArgument(Type prev, Type node) {
-    this.insertChild(prev, ClassCreator.TYPE_ARGUMENT, node);
   }
 
   public static ClassCreator newInstance(SModel sm, boolean init) {

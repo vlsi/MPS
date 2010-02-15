@@ -797,7 +797,7 @@ public class JavaConverterTreeBuilder {
     if (typeArgs == null) return;
     for (TypeReference typeArg : typeArgs) {
       Type type = myTypesProvider.createType(typeArg.resolvedType);
-      call.addTypeArgument(type);
+      call.addChild(IMethodCall.TYPE_ARGUMENT, type);
     }
   }
 

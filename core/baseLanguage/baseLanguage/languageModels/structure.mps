@@ -2687,6 +2687,7 @@
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="typeArgument" />
       <property name="sourceCardinality:0" value="0..n" />
+      <property name="doNotGenerate:0" value="true" />
       <link role="target:0" targetNodeId="1068431790189:3" resolveInfo="Type" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1068499141037">

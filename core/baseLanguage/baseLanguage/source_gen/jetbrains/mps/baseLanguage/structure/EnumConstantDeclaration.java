@@ -23,7 +23,6 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
   public static final String METHOD = "method";
   public static final String ANNOTATION = "annotation";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
-  public static final String TYPE_ARGUMENT = "typeArgument";
 
   public EnumConstantDeclaration(SNode node) {
     super(node);
@@ -151,26 +150,6 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, EnumConstantDeclaration.ACTUAL_ARGUMENT, node);
-  }
-
-  public int getTypeArgumentsCount() {
-    return this.getChildCount(EnumConstantDeclaration.TYPE_ARGUMENT);
-  }
-
-  public Iterator<Type> typeArguments() {
-    return this.children(Type.class, EnumConstantDeclaration.TYPE_ARGUMENT);
-  }
-
-  public List<Type> getTypeArguments() {
-    return this.getChildren(Type.class, EnumConstantDeclaration.TYPE_ARGUMENT);
-  }
-
-  public void addTypeArgument(Type node) {
-    this.addChild(EnumConstantDeclaration.TYPE_ARGUMENT, node);
-  }
-
-  public void insertTypeArgument(Type prev, Type node) {
-    this.insertChild(prev, EnumConstantDeclaration.TYPE_ARGUMENT, node);
   }
 
   public static EnumConstantDeclaration newInstance(SModel sm, boolean init) {
