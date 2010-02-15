@@ -73,7 +73,9 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
         public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
           SNode node = getLoadableNode();
           if (node == null) return;
-          SModelDescriptor md = node.getModel().getModelDescriptor();
+          SModel model = node.getModel();
+          if (model == null) return;
+          SModelDescriptor md = model.getModelDescriptor();
           if (modelDescriptor.equals(md)) {
             reinit();
           }

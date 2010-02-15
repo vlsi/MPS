@@ -62,7 +62,10 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   private SModelRepositoryListener myWeakRepositoryListener = new SModelRepositoryAdapter() {
     public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
       for (SNode node : getLoadableNodes()) {
-        SModelDescriptor md = node.getModel().getModelDescriptor();
+        if (node == null) continue;
+        SModel model = node.getModel();
+        if (model == null) continue;
+        SModelDescriptor md = model.getModelDescriptor();
         if (modelDescriptor.equals(md)) {
           SNodePointer nodePointer = new SNodePointer(node);
           int index = getIndexOfTabFor(nodePointer);
