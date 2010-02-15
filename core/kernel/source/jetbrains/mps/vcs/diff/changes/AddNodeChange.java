@@ -49,7 +49,8 @@ public class AddNodeChange extends NewNodeChange {
   }
 
   public String toString() {
-    return "add node " + getAffectedNodeId() + " in role " + getNodeRole() + " before " + getPreviousNode();
+    return "add node " + getAffectedNodeId() + " in role " + getNodeRole() + " before " + getPreviousNode()
+      + (mySubstitution ? " (substituted)" : "");
   }
 
   public boolean apply(SModel m) {
