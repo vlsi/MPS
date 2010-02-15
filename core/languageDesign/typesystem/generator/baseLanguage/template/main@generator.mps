@@ -10112,7 +10112,9 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1205764611218">
             <property name="name:3" value="representator" />
             <property name="isFinal:3" value="true" />
-            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1205764687186" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7714441788707387123">
+              <link role="classifier:3" targetNodeId="4.~SNode" resolveInfo="SNode" />
+            </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1205764645376">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1205764645377">
                 <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1205764645378">
@@ -14807,7 +14809,9 @@
                 <link role="templateSwitch:2" targetNodeId="1174660621472" resolveInfo="FindNodeToCheck_switch" />
               </node>
             </node>
-            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1239498049370" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7714441788707386353">
+              <link role="classifier:3" targetNodeId="4.~SNode" resolveInfo="SNode" />
+            </node>
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1216206633074">
@@ -17486,7 +17490,9 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1220519561008">
             <property name="name:3" value="representator" />
             <property name="isFinal:3" value="true" />
-            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1220519561009" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7714441788707387122">
+              <link role="classifier:3" targetNodeId="4.~SNode" resolveInfo="SNode" />
+            </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1220519561010">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1220519561011">
                 <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1220519561012">
