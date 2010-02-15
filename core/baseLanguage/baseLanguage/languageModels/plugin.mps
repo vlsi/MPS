@@ -104,20 +104,9 @@
   <import index="147" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
   <import index="148" modelUID="f:java_stub#jetbrains.mps.baseLanguage.icons(jetbrains.mps.baseLanguage.icons@java_stub)" version="-1" />
   <import index="149" modelUID="f:java_stub#com.intellij.openapi.vfs(com.intellij.openapi.vfs@java_stub)" version="-1" />
-  <import index="150" modelUID="f:java_stub#com.intellij.util.indexing(com.intellij.util.indexing@java_stub)" version="-1" />
-  <import index="151" modelUID="f:java_stub#com.intellij.util.io(com.intellij.util.io@java_stub)" version="-1" />
-  <import index="153" modelUID="f:java_stub#jetbrains.mps.fileTypes(jetbrains.mps.fileTypes@java_stub)" version="-1" />
-  <import index="154" modelUID="f:java_stub#jetbrains.mps.workbench.actions.goTo.index(jetbrains.mps.workbench.actions.goTo.index@java_stub)" version="-1" />
-  <import index="155" modelUID="f:java_stub#jetbrains.mps.smodel.persistence.def(jetbrains.mps.smodel.persistence.def@java_stub)" version="-1" />
-  <import index="156" modelUID="f:java_stub#org.jdom(org.jdom@java_stub)" version="-1" />
-  <import index="157" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
-  <import index="158" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <import index="159" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="160" modelUID="f:java_stub#com.intellij.psi.search(com.intellij.psi.search@java_stub)" version="-1" />
-  <import index="161" modelUID="f:java_stub#com.intellij.openapi.module(com.intellij.openapi.module@java_stub)" version="-1" />
   <import index="162" modelUID="f:java_stub#jetbrains.mps.baseLanguage.index(jetbrains.mps.baseLanguage.index@java_stub)" version="-1" />
   <import index="163" modelUID="f:java_stub#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)" version="-1" />
-  <import index="165" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="166" modelUID="f:java_stub#com.intellij.execution.executors(com.intellij.execution.executors@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1205247737002">
     <property name="name:23" value="BaseLanguageModelActionsInternal" />
@@ -7632,7 +7621,7 @@
       <node role="visibility:0" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="73588894266431300" />
     </node>
     <node role="componentMethod:1" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="73588894266431301">
-      <property name="name:0" value="getProjectMainNodes" />
+      <property name="name:0" value="getGlobalMainNodes" />
       <node role="returnType:0" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="73588894266431302" />
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="73588894266431303">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="73588894266431304">
@@ -7652,17 +7641,6 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="73588894266431313">
                 <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="73588894266431314">
                   <property name="name:7" value="solution" />
-                </node>
-                <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="73588894266431315">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="73588894266431316">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="73588894266431317" />
-                    <node role="operation:3" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation:1" id="73588894266431318">
-                      <link role="member:1" targetNodeId="73588894266431273" resolveInfo="myProject" />
-                    </node>
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="73588894266431319">
-                    <link role="baseMethodDeclaration:3" targetNodeId="10.~MPSProject.getProjectSolutions():java.util.List" resolveInfo="getProjectSolutions" />
-                  </node>
                 </node>
                 <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="73588894266431320">
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="73588894266431321">
@@ -7765,6 +7743,15 @@
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+                <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6634379752753983178">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6634379752753983177">
+                    <link role="baseMethodDeclaration:3" targetNodeId="10.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
+                    <link role="classConcept:3" targetNodeId="10.~GlobalScope" resolveInfo="GlobalScope" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6634379752753983184">
+                    <link role="baseMethodDeclaration:3" targetNodeId="10.~GlobalScope.getVisibleSolutions():java.util.List" resolveInfo="getVisibleSolutions" />
                   </node>
                 </node>
               </node>
