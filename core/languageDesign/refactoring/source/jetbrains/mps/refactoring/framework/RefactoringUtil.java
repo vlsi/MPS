@@ -29,6 +29,14 @@ import java.util.*;
 public class RefactoringUtil {
   private static final Logger LOG = Logger.getLogger(RefactoringUtil.class);
 
+  public static IRefactoring getRefactoringByClassName(String className) {
+    for (IRefactoring r : getAllRefactorings()) {
+      Class refClass = r instanceof OldRefactoringAdapter ? ((OldRefactoringAdapter) r).getRefactoringClass() : r.getClass();
+      if (refClass.getName().equals(className)) return r;
+    }
+    return null;
+  }
+
   public static List<IRefactoring> getAllRefactorings() {
     List<IRefactoring> allRefactorings = new ArrayList<IRefactoring>();
     List<Language> languages = GlobalScope.getInstance().getVisibleLanguages();
@@ -40,12 +48,13 @@ public class RefactoringUtil {
     return allRefactorings;
   }
 
-  public static boolean isApplicableInContext(IRefactoring refactoring, Collection entities) {
+  public static Applicability getApplicability(IRefactoring refactoring, Collection entities) {
     assert !entities.isEmpty();
     assert (entities.size() == 1 || refactoring.getRefactoringTarget().allowMultipleTargets());
 
     IRefactoringTarget target = refactoring.getRefactoringTarget();
-    if (!isApplicableToEntities(refactoring.getUserFriendlyName(), target, entities)) return false;
+    if (!isApplicableToEntities(refactoring.getUserFriendlyName(), target, entities))
+      return Applicability.NOT_APPLICABLE;
 
     for (IRefactoring r : getAllRefactorings()) {
       if (r.getOverridenRefactoringClass() == null) continue;
@@ -56,17 +65,18 @@ public class RefactoringUtil {
       Class refClass = refactoring instanceof OldRefactoringAdapter ? ((OldRefactoringAdapter) refactoring).getRefactoringClass() : refactoring.getClass();
       //todo {end}
 
-      if (r.getOverridenRefactoringClass() == refClass) return false;
+      if (r.getOverridenRefactoringClass() == null) continue;
+      if (r.getOverridenRefactoringClass() == refClass) return Applicability.OVERRIDDEN;
 
       //check
       String overriddenName = r.getOverridenRefactoringClass().getName();
       String refClassName = refClass.getName();
       String overriddenClassLoader = r.getOverridenRefactoringClass().getClassLoader().toString();
       String refClassLoader = refClass.getClassLoader().toString();
-      assert !overriddenName.equals(refClassName) : "overridden: " + overriddenClassLoader + "; " + "ref: " + refClassLoader;
+      assert !overriddenName.equals(refClassName) : "Refactoring classes are loaded using different classloaders. overridden: " + overriddenClassLoader + "; " + "ref: " + refClassLoader + "; class: " + refClassName;
     }
 
-    return true;
+    return Applicability.APPLICABLE;
   }
 
   private static boolean isApplicableToEntities(String refactoringName, IRefactoringTarget target, Collection entities) {
@@ -105,5 +115,22 @@ public class RefactoringUtil {
 
   public static Map<IModule, List<SModel>> getLanguageModels(MPSProject project, Language language) {
     return Collections.<IModule, List<SModel>>singletonMap(language, getLanguageModelsList(project, language));
+  }
+
+  public enum Applicability {
+    APPLICABLE {
+      public boolean lessThan(Applicability level) {
+        return false;
+      }},
+    NOT_APPLICABLE {
+      public boolean lessThan(Applicability level) {
+        return true;//To change body of implemented methods use File | Settings | File Templates.
+      }},
+    OVERRIDDEN {
+      public boolean lessThan(Applicability level) {
+        return level == APPLICABLE;
+      }};
+
+    public abstract boolean lessThan(Applicability level);
   }
 }

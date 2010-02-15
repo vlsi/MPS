@@ -34,6 +34,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.framework.*;
+import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -81,7 +82,12 @@ public class DeleteModelHelper {
   }
 
   public static void safeDelete(final Project project, final SModelDescriptor modelDescriptor, boolean deleteFiles) {
-    GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(OldRefactoringAdapter.createAdapterFor(new SafeDeleteModelRefactoring(deleteFiles)));
+    IRefactoring ref = OldRefactoringAdapter.createAdapterFor(new SafeDeleteModelRefactoring(deleteFiles));
+    GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(ref){
+      protected Applicability getMinApplicabilityLevel() {
+        return Applicability.OVERRIDDEN;
+      }
+    };
 
     DataContext dc = new DataContext() {
       private DataContext myRealContext = DataManager.getInstance().getDataContext();

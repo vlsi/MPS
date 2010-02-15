@@ -24,7 +24,10 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.lang.core.scripts.SafeDelete;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
+import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
+import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -37,7 +40,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class DeleteNodesHelper {
+public class                       DeleteNodesHelper {
   private List<SNode> myNodes;
   private IOperationContext myContext;
   private boolean mySafe;
@@ -99,7 +102,12 @@ public class DeleteNodesHelper {
   }
 
   private void safeDelete(final IOperationContext context, final SNode node) {
-    final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(OldRefactoringAdapter.createAdapterFor(new SafeDelete()));
+    IRefactoring ref = RefactoringUtil.getRefactoringByClassName(SafeDelete.class.getName());
+    final GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(ref){
+      protected Applicability getMinApplicabilityLevel() {
+        return Applicability.OVERRIDDEN;
+      }
+    };
 
     DataContext dc = new DataContext() {
       private DataContext myRealContext = DataManager.getInstance().getDataContext();

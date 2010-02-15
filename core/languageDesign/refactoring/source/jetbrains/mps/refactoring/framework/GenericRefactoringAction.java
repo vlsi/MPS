@@ -18,6 +18,7 @@ package jetbrains.mps.refactoring.framework;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget.TargetType;
+import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -150,9 +151,13 @@ public class GenericRefactoringAction extends BaseAction {
     if (entities == null || entities.isEmpty()) {
       enabled = false;
     } else {
-      enabled = RefactoringUtil.isApplicableInContext(myRefactoring, entities);
+      enabled = !(RefactoringUtil.getApplicability(myRefactoring, entities).lessThan(getMinApplicabilityLevel()));
     }
 
     setEnabledState(e.getPresentation(), enabled);
+  }
+
+  protected Applicability getMinApplicabilityLevel() {
+    return Applicability.APPLICABLE;
   }
 }
