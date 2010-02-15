@@ -177,6 +177,10 @@
       <property name="propertyType:0" value="string" />
       <link role="dataType:0" targetNodeId="1084197782722:0" resolveInfo="Cardinality" />
     </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="3236994869861844876">
+      <property name="name:0" value="doNotGenerate" />
+      <link role="dataType:0" targetNodeId="1.1082983657063:0" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1071599698500">
       <property name="sourceCardinality:0" value="0..1" />
       <property name="role:0" value="specializedLink" />

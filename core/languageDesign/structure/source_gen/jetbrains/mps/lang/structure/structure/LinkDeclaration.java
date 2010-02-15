@@ -14,6 +14,7 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String DO_NOT_GENERATE = "doNotGenerate";
   public static final String META_CLASS = "metaClass";
   public static final String SOURCE_CARDINALITY = "sourceCardinality";
   public static final String SPECIALIZED_LINK = "specializedLink";
@@ -53,6 +54,14 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
 
   public void setVirtualPackage(String value) {
     this.setProperty(LinkDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getDoNotGenerate() {
+    return this.getBooleanProperty(LinkDeclaration.DO_NOT_GENERATE);
+  }
+
+  public void setDoNotGenerate(boolean value) {
+    this.setBooleanProperty(LinkDeclaration.DO_NOT_GENERATE, value);
   }
 
   public LinkMetaclass getMetaClass() {

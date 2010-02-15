@@ -111,6 +111,12 @@ public class QueriesGenerated {
     return b1 || b2;
   }
 
+  public static boolean baseMappingRule_Condition_3300834394754013276(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
+    boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() > 0;
+    return b1 || b2;
+  }
+
   public static Object propertyMacro_GetPropertyValue_1168019908729(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -617,6 +623,14 @@ public class QueriesGenerated {
     return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(_context.getNode(), "target", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_3300834394753999388(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "role");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3300834394753999396(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.toConstantName(SPropertyOperations.getString(_context.getNode(), "role"));
+  }
+
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(_context.getNode());
     SNode outputEnumConstant = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(defaultMember, _context.getOutputNode(), "outputEnumConstant");
@@ -1046,7 +1060,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      if (QueriesUtil.isRefLink_card_1_nospec(_2_link)) {
+                      if (QueriesUtil.isRefLink_card_1_nospec(_2_link) && !(SPropertyOperations.getBoolean(_2_link, "doNotGenerate"))) {
                         this.__CP__ = 6;
                         break;
                       }
@@ -1109,7 +1123,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      if (QueriesUtil.isRefLink_card_1_spec(_2_link)) {
+                      if (QueriesUtil.isRefLink_card_1_spec(_2_link) && !(SPropertyOperations.getBoolean(_2_link, "doNotGenerate"))) {
                         this.__CP__ = 6;
                         break;
                       }
@@ -1172,7 +1186,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      if (QueriesUtil.isAggLink_card_1_nospec(_2_link)) {
+                      if (QueriesUtil.isAggLink_card_1_nospec(_2_link) && !(SPropertyOperations.getBoolean(_2_link, "doNotGenerate"))) {
                         this.__CP__ = 6;
                         break;
                       }
@@ -1235,7 +1249,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      if (QueriesUtil.isAggLink_card_1_spec(_2_link)) {
+                      if (QueriesUtil.isAggLink_card_1_spec(_2_link) && !(SPropertyOperations.getBoolean(_2_link, "doNotGenerate"))) {
                         this.__CP__ = 6;
                         break;
                       }
@@ -1302,7 +1316,7 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      if (QueriesUtil.isAggLink_card_n_nospec(_2_link)) {
+                      if (QueriesUtil.isAggLink_card_n_nospec(_2_link) && !(SPropertyOperations.getBoolean(_2_link, "doNotGenerate"))) {
                         this.__CP__ = 6;
                         break;
                       }
@@ -1369,7 +1383,7 @@ __switch__:
   public static Iterable sourceNodesQuery_1169752120196(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode link) {
-        return QueriesUtil.isAggLink_card_1_nospec(link);
+        return QueriesUtil.isAggLink_card_1_nospec(link) && !(SPropertyOperations.getBoolean(link, "doNotGenerate"));
       }
     });
   }
@@ -1377,7 +1391,7 @@ __switch__:
   public static Iterable sourceNodesQuery_1169753230932(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode link) {
-        return QueriesUtil.isAggLink_card_1_spec(link);
+        return QueriesUtil.isAggLink_card_1_spec(link) && !(SPropertyOperations.getBoolean(link, "doNotGenerate"));
       }
     });
   }
@@ -1385,7 +1399,7 @@ __switch__:
   public static Iterable sourceNodesQuery_1169753275330(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode link) {
-        return QueriesUtil.isAggLink_card_n_nospec(link);
+        return QueriesUtil.isAggLink_card_n_nospec(link) && !(SPropertyOperations.getBoolean(link, "doNotGenerate"));
       }
     });
   }
@@ -1393,7 +1407,7 @@ __switch__:
   public static Iterable sourceNodesQuery_1169753367103(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode link) {
-        return QueriesUtil.isRefLink_card_1_nospec(link);
+        return QueriesUtil.isRefLink_card_1_nospec(link) && !(SPropertyOperations.getBoolean(link, "doNotGenerate"));
       }
     });
   }
@@ -1401,7 +1415,7 @@ __switch__:
   public static Iterable sourceNodesQuery_1169753422079(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode link) {
-        return QueriesUtil.isRefLink_card_1_spec(link);
+        return QueriesUtil.isRefLink_card_1_spec(link) && !(SPropertyOperations.getBoolean(link, "doNotGenerate"));
       }
     });
   }
@@ -1441,6 +1455,22 @@ __switch__:
           _context.showErrorMessage(it, "Can't extend null interface");
         }
         return (SLinkOperations.getTarget(it, "intfc", false) != null);
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_3300834394753999472(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode link) {
+        return SPropertyOperations.getBoolean(link, "doNotGenerate");
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_3300834394754013305(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode link) {
+        return SPropertyOperations.getBoolean(link, "doNotGenerate");
       }
     });
   }
@@ -1596,6 +1626,14 @@ __switch__:
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1187044602478(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_3300834394753999469(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_3300834394754013272(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "javaClass");
   }
 }

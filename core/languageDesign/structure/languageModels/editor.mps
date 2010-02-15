@@ -874,10 +874,34 @@
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1239877876830" />
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3236994869861848674">
+        <property name="text:32" value="-G" />
+        <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="3236994869861848675">
+          <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3236994869861848676">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3236994869861848677">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3236994869861848679">
+                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="3236994869861848678" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3236994869861848683">
+                  <link role="property:16" targetNodeId="1.3236994869861844876:0" resolveInfo="doNotGenerate" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem:32" id="1214314941385">
         <property name="flag:32" value="true" />
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1239877876865" />
+    </node>
+    <node role="inspectedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3236994869861848654">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3236994869861848655">
+        <property name="text:32" value="do not generate:" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="3236994869861848658">
+        <link role="relationDeclaration:32" targetNodeId="1.3236994869861844876:0" resolveInfo="doNotGenerate" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="3236994869861848656" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1087215312703">
