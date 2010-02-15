@@ -46,6 +46,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
 
   private CloneModelProperties myModelProperties;
   private SModel myCloningModel;
+  private JComboBox myModelStereotype;
 
   public CloneModelDialog(final SModelDescriptor modelDescriptor, IOperationContext operationContext) {
     super("Clone Model " + modelDescriptor.getLongName(), operationContext);
@@ -58,6 +59,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
 
     collectModelProps();
     initUI();
+    myModelStereotype.setSelectedItem(modelDescriptor.getStereotype());
   }
 
   public DialogDimensions getDefaultDimensionSettings() {
@@ -118,12 +120,12 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
   }
 
   private JComponent createStereotypeCombo() {
-    JComboBox cbStereotype = new JComboBox(SModelStereotype.values);
+    myModelStereotype = new JComboBox(SModelStereotype.values);
 
     Property pStereotype = BeanProperty.create(CloneModelProperties.PROPERTY_STEREOTYPE);
     Property pStereotypeVar = BeanProperty.create("selectedItem");
-    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pStereotype, cbStereotype, pStereotypeVar));
-    return cbStereotype;
+    addBinding(Bindings.createAutoBinding(UpdateStrategy.READ_WRITE, myModelProperties, pStereotype, myModelStereotype, pStereotypeVar));
+    return myModelStereotype;
   }
 
   private void collectModelProps() {
