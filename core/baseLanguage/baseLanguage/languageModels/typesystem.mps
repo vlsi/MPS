@@ -22630,5 +22630,45 @@
       <link role="concept:3" targetNodeId="1.1144231330558:3" resolveInfo="ForStatement" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="4276006055364077538">
+    <property name="name:3" value="check_BaseMethodDeclaration" />
+    <property name="package:3" value="method" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4276006055364077539">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4276006055364077541">
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4276006055364077543">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="4276006055364077562">
+            <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4276006055364077565">
+              <property name="value:3" value="Abstract method can't be synchronized" />
+            </node>
+            <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4276006055364077566">
+              <link role="applicableNode:3" targetNodeId="4276006055364077540" resolveInfo="baseMethodDeclaration" />
+            </node>
+          </node>
+        </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="4276006055364077553">
+          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4276006055364077557">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4276006055364077556">
+              <link role="applicableNode:3" targetNodeId="4276006055364077540" resolveInfo="baseMethodDeclaration" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4276006055364077561">
+              <link role="property:16" targetNodeId="1.4276006055363816570:3" resolveInfo="isSynchronized" />
+            </node>
+          </node>
+          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4276006055364077548">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4276006055364077547">
+              <link role="applicableNode:3" targetNodeId="4276006055364077540" resolveInfo="baseMethodDeclaration" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4276006055364077552">
+              <link role="baseMethodDeclaration:16" targetNodeId="37.1232982539764" resolveInfo="isAbstract" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="4276006055364077540">
+      <property name="name:3" value="baseMethodDeclaration" />
+      <link role="concept:3" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
+    </node>
+  </node>
 </model>
 

@@ -4008,6 +4008,21 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4276006055363820762">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4276006055363820763">
+            <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="4276006055363823739">
+              <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart:11" id="4276006055363823741">
+                <property name="value:11" value="synchronized " />
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4276006055363823731">
+            <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="4276006055363823730" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4276006055363823735">
+              <link role="property:16" targetNodeId="1.4276006055363816570:3" resolveInfo="isSynchronized" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="1801588482814917869">
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.OperationCall:11" id="1801588482814917871">
             <link role="function:11" targetNodeId="1234891360396" resolveInfo="typeDeclarations" />
@@ -5634,6 +5649,21 @@
               <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1235131865177">
                 <link role="conceptDeclaration:16" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1603254302405465092">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1603254302405465093">
+            <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="1603254302405480801">
+              <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart:11" id="1603254302405480803">
+                <property name="value:11" value="synchronized " />
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1603254302405480796">
+            <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="1603254302405480795" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1603254302405480800">
+              <link role="property:16" targetNodeId="1.4276006055363816570:3" resolveInfo="isSynchronized" />
             </node>
           </node>
         </node>

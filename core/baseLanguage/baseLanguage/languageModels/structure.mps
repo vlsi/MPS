@@ -285,6 +285,10 @@
       <property name="name:0" value="isFinal" />
       <link role="dataType:0" targetNodeId="4.1082983657063:0" />
     </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="4276006055363816570">
+      <property name="name:0" value="isSynchronized" />
+      <link role="dataType:0" targetNodeId="4.1082983657063:0" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1068580123133">
       <property name="sourceCardinality:0" value="1" />
       <property name="role:0" value="returnType" />

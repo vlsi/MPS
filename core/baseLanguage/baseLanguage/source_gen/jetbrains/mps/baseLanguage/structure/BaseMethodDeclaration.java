@@ -17,6 +17,7 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_FINAL = "isFinal";
+  public static final String IS_SYNCHRONIZED = "isSynchronized";
   public static final String IS_DEPRECATED = "isDeprecated";
   public static final String RETURN_TYPE = "returnType";
   public static final String BODY = "body";
@@ -66,6 +67,14 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
 
   public void setIsFinal(boolean value) {
     this.setBooleanProperty(BaseMethodDeclaration.IS_FINAL, value);
+  }
+
+  public boolean getIsSynchronized() {
+    return this.getBooleanProperty(BaseMethodDeclaration.IS_SYNCHRONIZED);
+  }
+
+  public void setIsSynchronized(boolean value) {
+    this.setBooleanProperty(BaseMethodDeclaration.IS_SYNCHRONIZED, value);
   }
 
   public boolean getIsDeprecated() {

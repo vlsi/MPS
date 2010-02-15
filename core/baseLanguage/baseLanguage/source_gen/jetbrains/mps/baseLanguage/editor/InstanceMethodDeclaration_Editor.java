@@ -146,6 +146,9 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition5704_8(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_5704_9(editorContext, node));
     }
+    if (renderingCondition5704_11(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_5704_12(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -296,6 +299,15 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_5704_12(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "synchronized");
+    editorCell.setCellId("Constant_5704_12");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    DeleteSynchronizedInBaseMethod.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNodeList_5704_0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new InstanceMethodDeclaration_Editor.parameterListHandler_5704_0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -438,6 +450,10 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition5704_10(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isFinal");
+  }
+
+  private static boolean renderingCondition5704_11(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isSynchronized");
   }
 
   private static class parameterListHandler_5704_0 extends RefNodeListHandler {

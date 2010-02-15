@@ -8,8 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -21,6 +21,9 @@ public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
     BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       this.append("static ");
+    }
+    if (SPropertyOperations.getBoolean(node, "isSynchronized")) {
+      this.append("synchronized ");
     }
     GenericDeclarationTextGen2.typeDeclarations(node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty()) {

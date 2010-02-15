@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -68,6 +69,9 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createComponent_5695_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5695_3(editorContext, node));
+    if (renderingCondition5695_3(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_5695_10(editorContext, node));
+    }
     if (renderingCondition5695_2(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createComponent_5695_2(editorContext, node));
     }
@@ -237,6 +241,15 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_5695_10(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "synchronized");
+    editorCell.setCellId("Constant_5695_10");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    DeleteSynchronizedInBaseMethod.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNodeList_5695_0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new StaticMethodDeclaration_Editor.parameterListHandler_5695_0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -330,6 +343,10 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition5695_2(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+  }
+
+  private static boolean renderingCondition5695_3(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isSynchronized");
   }
 
   private static class parameterListHandler_5695_0 extends RefNodeListHandler {

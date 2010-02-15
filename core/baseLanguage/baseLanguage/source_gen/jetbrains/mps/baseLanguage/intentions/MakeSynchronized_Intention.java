@@ -6,15 +6,16 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 
-public class AddNewLine_Intention extends BaseIntention implements Intention {
-  public AddNewLine_Intention() {
+public class MakeSynchronized_Intention extends BaseIntention implements Intention {
+  public MakeSynchronized_Intention() {
   }
 
   public String getConcept() {
-    return "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
+    return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   }
 
   public boolean isParameterized() {
@@ -26,11 +27,14 @@ public class AddNewLine_Intention extends BaseIntention implements Intention {
   }
 
   public boolean isAvailableInChildNodes() {
-    return false;
+    return true;
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add Empty Line after the Method";
+    return (SPropertyOperations.getBoolean(node, "isSynchronized") ?
+      "Make Method Not Synchronized" :
+      "Make Method Synchronized"
+    );
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -41,11 +45,17 @@ public class AddNewLine_Intention extends BaseIntention implements Intention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface");
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null)) {
+      return false;
+    }
+    if (BaseMethodDeclaration_Behavior.call_isAbstract_1232982539764(node)) {
+      return false;
+    }
+    return true;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNodeOperations.insertNextSiblingChild(node, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration", null));
+    SPropertyOperations.set(node, "isSynchronized", "" + !(SPropertyOperations.getBoolean(node, "isSynchronized")));
   }
 
   public String getLocationString() {

@@ -25,6 +25,9 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
     if (SPropertyOperations.getBoolean(node, "isAbstract") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"))) {
       this.append("abstract ");
     }
+    if (SPropertyOperations.getBoolean(node, "isSynchronized")) {
+      this.append("synchronized ");
+    }
     GenericDeclarationTextGen2.typeDeclarations(node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty()) {
       this.append(" ");

@@ -1210,6 +1210,23 @@
             </node>
           </node>
         </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4276006055363812033">
+          <property name="text:32" value="synchronized" />
+          <link role="styleClass:32" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+          <link role="actionMap:32" targetNodeId="4276006055363816577" resolveInfo="DeleteSynchronizedInBaseMethod" />
+          <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="4276006055363812034">
+            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4276006055363812035">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4276006055363816564">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4276006055363816566">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="4276006055363816565" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4276006055363816575">
+                    <link role="property:16" targetNodeId="17.4276006055363816570:3" resolveInfo="isSynchronized " />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237717874647" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="1203413352302">
@@ -1534,6 +1551,23 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1080826270968">
         <property name="text:32" value="static" />
         <link role="styleClass:32" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1603254302405122143">
+        <property name="text:32" value="synchronized" />
+        <link role="styleClass:32" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        <link role="actionMap:32" targetNodeId="4276006055363816577" resolveInfo="DeleteSynchronizedInBaseMethod" />
+        <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1603254302405122144">
+          <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1603254302405122145">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1603254302405147712">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1603254302405147714">
+                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1603254302405147713" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1603254302405147718">
+                  <link role="property:16" targetNodeId="17.4276006055363816570:3" resolveInfo="isSynchronized" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="1203413131108">
         <link role="editorComponent:32" targetNodeId="1109280020740" resolveInfo="_GenericDeclaration_TypeVariables_Component" />
@@ -16346,6 +16380,31 @@
         <link role="actionMap:32" targetNodeId="4848386836749782320" resolveInfo="ClassifierClassExpression_DeleteClass" />
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="4564374268190696683" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="4276006055363816577">
+    <property name="package:32" value="method" />
+    <property name="name:32" value="DeleteSynchronizedInBaseMethod" />
+    <link role="applicableConcept:32" targetNodeId="17.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
+    <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="4276006055363816578">
+      <property name="actionId:32" value="delete_action_id" />
+      <node role="executeFunction:32" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction:32" id="4276006055363816579">
+        <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4276006055363816580">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4276006055363816581">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="4276006055363816588">
+              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4276006055363816591">
+                <property name="value:3" value="false" />
+              </node>
+              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4276006055363816583">
+                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="4276006055363816582" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4276006055363816587">
+                  <link role="property:16" targetNodeId="17.4276006055363816570:3" resolveInfo="isSynchronized " />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
