@@ -178,6 +178,8 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   private boolean isForSlaveComputation(SNode node) {
+    if (myComputedBlockingTerms.contains(node)) return false;
+    if (!myCurrentSlaveComputedNodes.isEmpty() && myCurrentSlaveComputedNodes.peek() == node) return false;
     return myTypeChecker.getRulesManager().isBlockingDependentComputationNode(node);
   }
 
@@ -189,6 +191,11 @@ public class NodeTypesComponent implements EditorMessageOwner {
       SNode blockingNode = dependentComputation.getBlockingNode(node);
       if (blockingNode != null) {
         if (!myComputedBlockingTerms.contains(blockingNode)) {
+          if (blockingNode.getAncestors(true).contains(node)) {
+            LOG.warning("blocking node is a descendant of blocked node, will be never unblocked ", blockingNode);
+            LOG.warning("MPS typesystem will not block node type computation ", node);
+            continue;
+          }
           result = true;
           Set<SNode> nodes = myBlockedOnSlaveComputation.get(blockingNode);
           if (nodes == null) {
@@ -230,6 +237,8 @@ public class NodeTypesComponent implements EditorMessageOwner {
     slaveManager.solveInequations();
     myEquationManager.fillWithEquations(slaveManager);
     SNode result = myCurrentSlaveComputedNodes.pop();
+    myComputedBlockingTerms.add(result);
+    expandTypeAndPutToContext(result);
     return result;
   }
 
@@ -446,13 +455,18 @@ public class NodeTypesComponent implements EditorMessageOwner {
     for (Entry<SNode, SNode> contextEntry : new HashSet<Entry<SNode, SNode>>(myNodesToTypesMap.entrySet())) {
       SNode term = contextEntry.getKey();
       if (term == null) continue;
-      SNode type = expandType(term, contextEntry.getValue(), myTypeChecker.getRuntimeTypesModel());
+      SNode type = expandTypeAndPutToContext(term);
       if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
         RuntimeErrorType errorType = (RuntimeErrorType) BaseAdapter.fromNode(type);
         reportTypeError(term, errorType.getErrorText(), errorType.getNodeModel(), errorType.getNodeId());
       }
-      myNodesToTypesMap.put(term, type);
     }
+  }
+
+  private SNode expandTypeAndPutToContext(SNode term) {
+    SNode type = expandType(term, myNodesToTypesMap.get(term), myTypeChecker.getRuntimeTypesModel());
+    myNodesToTypesMap.put(term, type);
+    return type;
   }
 
   private boolean isIncrementalMode() {
@@ -546,7 +560,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
       myCurrentFrontiers.push(newFrontier);
       for (SNode sNode : frontier) {
         if (isForSlaveComputation(sNode)) {
-          performSlaveComputation(node);
+          performSlaveComputation(sNode);
           continue;
         }
         if (myFullyCheckedNodes.contains(sNode)) {
