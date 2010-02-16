@@ -119,7 +119,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return checkGenerationRequired(project, modelFile.toVirtualFile(), generatedHash);
   }
 
-  private boolean checkGenerationRequired(final Project project, VirtualFile f, String generatedHash) {
+  private boolean checkGenerationRequired(final Project project, @NotNull VirtualFile f, String generatedHash) {
     final String[] valueArray = new String[1];
     FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(f), f, new ValueProcessor<String>() {
       @Override
