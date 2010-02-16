@@ -136,15 +136,15 @@ public class TemplateProcessor {
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
     generationTracer.pushTemplateNode(templateNode);
     SNode outputNode = new SNode(myOutputModel, templateNode.getConceptFqName(), false);
-    myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
+    GeneratorMappings mappings = myGenerator.getMappings();
+    mappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
     if (myInputHistory != null && !myInputHistory.isEmpty()) {
       for (SNode historyInputNode : myInputHistory) {
-        myGenerator.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNode, outputNode);
+        mappings.addOutputNodeByIndirectInputAndTemplateNode(historyInputNode, templateNode, outputNode);
       }
     }
-    myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
-    myGenerator.addTemplateNodeByOutputNode(outputNode, templateNode);
-    myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);
+    mappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
+    mappings.addOutputNodeByTemplateNode(templateNode, outputNode);
     outputNode.putProperties(templateNode);
 
     SModel templateModel = templateNode.getModel();
@@ -518,10 +518,11 @@ public class TemplateProcessor {
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
     myGenerator.blockReductionsForOutput(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.
 
-    myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
-    myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
+    GeneratorMappings mappings = myGenerator.getMappings();
+    mappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
+    mappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
     // output node should be accessible via 'findCopiedNode'
-    myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNode);
+    mappings.addCopiedOutputNodeForInputNode(inputNode, outputNode);
 
     outputNode.putProperties(inputNode);
     outputNode.putUserObjects(inputNode);

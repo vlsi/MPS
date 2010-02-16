@@ -28,6 +28,7 @@ import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -364,9 +365,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         if (outputNodes != null && outputNodes.size() == 1) {
           SNode reducedNode = outputNodes.get(0);
           // register copied node
-          addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, reducedNode);
+          getMappings().addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, reducedNode);
           // output node should be accessible via 'findCopiedNode'
-          addCopiedOutputNodeForInputNode(inputNode, reducedNode);
+          getMappings().addCopiedOutputNodeForInputNode(inputNode, reducedNode);
           // preserve user objects
           reducedNode.putUserObjects(inputNode);
           // keep track of 'original input node'
