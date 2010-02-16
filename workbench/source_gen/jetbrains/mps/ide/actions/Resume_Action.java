@@ -11,9 +11,8 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.debug.runtime.DebugSession;
-import jetbrains.mps.debug.runtime.DebugManagerComponent;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 public class Resume_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/debug/resume.png", "jetbrains.mps.ide"), true);
@@ -34,7 +33,10 @@ public class Resume_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      event.getPresentation().setEnabled(Resume_Action.this.getDebugSession() != null && Resume_Action.this.getDebugSession().isPaused());
+      {
+        DebugSession debugSession = DebugActionsUtil.getDebugSession(event);
+        event.getPresentation().setEnabled(debugSession != null && debugSession.isPaused());
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "Resume", t);
@@ -57,15 +59,11 @@ public class Resume_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      Resume_Action.this.getDebugSession().resume();
+      DebugActionsUtil.getDebugSession(event).resume();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "Resume", t);
       }
     }
-  }
-
-  private DebugSession getDebugSession() {
-    return DebugManagerComponent.getInstance(Resume_Action.this.project).getCurrentDebugSession();
   }
 }

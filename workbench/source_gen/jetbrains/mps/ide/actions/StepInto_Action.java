@@ -11,9 +11,8 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.debug.runtime.DebugSession;
-import jetbrains.mps.debug.runtime.DebugManagerComponent;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 public class StepInto_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/debug/stepInto.png", "jetbrains.mps.ide"), true);
@@ -34,7 +33,10 @@ public class StepInto_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      event.getPresentation().setEnabled(StepInto_Action.this.getDebugSession() != null && StepInto_Action.this.getDebugSession().isPaused());
+      {
+        DebugSession debugSession = DebugActionsUtil.getDebugSession(event);
+        event.getPresentation().setEnabled(debugSession != null && debugSession.isPaused());
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "StepInto", t);
@@ -57,15 +59,11 @@ public class StepInto_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      StepInto_Action.this.getDebugSession().stepInto();
+      DebugActionsUtil.getDebugSession(event).stepInto();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "StepInto", t);
       }
     }
-  }
-
-  private DebugSession getDebugSession() {
-    return DebugManagerComponent.getInstance(StepInto_Action.this.project).getCurrentDebugSession();
   }
 }
