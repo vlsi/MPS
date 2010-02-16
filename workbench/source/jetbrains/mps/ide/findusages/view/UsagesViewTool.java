@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -38,6 +39,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -101,6 +103,9 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean forceNewTab, final String notFoundMsg) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
+        Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+        if (project==null || project.isDisposed()) return;
+
         final SearchResults[] searchResults = new SearchResults[1];
         final boolean[] isCancelled = new boolean[1];
         ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
