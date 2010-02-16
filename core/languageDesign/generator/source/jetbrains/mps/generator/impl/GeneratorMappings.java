@@ -34,6 +34,51 @@ public class GeneratorMappings {
     myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(pair.o1, false));
   }
 
+  void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
+    if (mappingName == null) return;
+    Pair key = new Pair(mappingName, inputNode);
+    Object o = myMappingNameAndInputNodeToOutputNodeMap.get(key);
+    if (o == null) {
+      myMappingNameAndInputNodeToOutputNodeMap.put(key, outputNode);
+    } else if (o instanceof List) {
+      ((List<SNode>) o).add(outputNode);
+    } else {
+      List<SNode> list = new ArrayList<SNode>();
+      list.add((SNode) o);
+      list.add(outputNode);
+      myMappingNameAndInputNodeToOutputNodeMap.put(key, list);
+    }
+  }
+
+  void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
+    // todo: can be several copied output nodes for one input node
+    Pair key = new Pair(inputNode, inputNode);
+    if (!myTemplateNodeAndInputNodeToOutputNodeMap.containsKey(key)) {
+      myTemplateNodeAndInputNodeToOutputNodeMap.put(key, outputNode);
+    } else {
+      myInputNodesWithNotUniqueCopiedOutputNode.add(inputNode);
+    }
+  }
+
+  void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
+    // todo: combination of (templateN, inputN) -> outputN
+    // todo: is not unique
+    // todo: generator should repotr error on attempt to obtain not unique output-node
+    myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
+  }
+
+  void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
+    // todo: combination of (templateN, inputN) -> outputN
+    // todo: is not unique
+    // todo: generator should repotr error on attempt to obtain not unique output-node
+    Pair key = new Pair(templateNode, inditectInputNode);
+    if (!myTemplateNodeAndInputNodeToOutputNodeMap.containsKey(key)) {
+      myTemplateNodeAndInputNodeToOutputNodeMap.put(key, outputNode);
+    }
+  }
+
+  // find methods
+
   public SNode findOutputNodeByTemplateNode(SNode templateNode, boolean unique) {
     Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
     if (pair != null) {
@@ -93,58 +138,8 @@ public class GeneratorMappings {
     return Collections.singletonList((SNode) o);
   }
 
-  /*package*/
-
-  void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
-    if (mappingName == null) return;
-    Pair key = new Pair(mappingName, inputNode);
-    Object o = myMappingNameAndInputNodeToOutputNodeMap.get(key);
-    if (o == null) {
-      myMappingNameAndInputNodeToOutputNodeMap.put(key, outputNode);
-    } else if (o instanceof List) {
-      ((List<SNode>) o).add(outputNode);
-    } else {
-      List<SNode> list = new ArrayList<SNode>();
-      list.add((SNode) o);
-      list.add(outputNode);
-      myMappingNameAndInputNodeToOutputNodeMap.put(key, list);
-    }
-  }
-
-  /*package*/
-  void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
-    // todo: can be several copied output nodes for one input node
-    Pair key = new Pair(inputNode, inputNode);
-    if (!myTemplateNodeAndInputNodeToOutputNodeMap.containsKey(key)) {
-      myTemplateNodeAndInputNodeToOutputNodeMap.put(key, outputNode);
-    } else {
-      myInputNodesWithNotUniqueCopiedOutputNode.add(inputNode);
-    }
-  }
-
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
     return myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair(templateNode, inputNode));
-  }
-
-  /*package*/
-
-  void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
-    // todo: combination of (templateN, inputN) -> outputN
-    // todo: is not unique
-    // todo: generator should repotr error on attempt to obtain not unique output-node
-    myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
-  }
-
-  /*package*/
-
-  void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
-    // todo: combination of (templateN, inputN) -> outputN
-    // todo: is not unique
-    // todo: generator should repotr error on attempt to obtain not unique output-node
-    Pair key = new Pair(templateNode, inditectInputNode);
-    if (!myTemplateNodeAndInputNodeToOutputNodeMap.containsKey(key)) {
-      myTemplateNodeAndInputNodeToOutputNodeMap.put(key, outputNode);
-    }
   }
 
   public boolean isInputNodeHasUniqueCopiedOutputNode(SNode inputNode) {
