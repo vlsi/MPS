@@ -478,9 +478,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public boolean needsReloading() {
-    if (myDiskTimestamp == -1) {
-      return false;
-    }
+    if (myDiskTimestamp == -1) return false;
     return fileTimestamp() != myDiskTimestamp;
   }
 
@@ -489,27 +487,23 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public void refresh() {
-    if (isInitialized()) {
-      addListenersFromSModel();
+    if (!isInitialized()) return;
 
-      SModel oldModel = mySModel;
-      mySModel = myModelRootManager.refresh(this);
+    addListenersFromSModel();
 
-      if (mySModel != oldModel) {
-        oldModel.dispose();
-      }
+    SModel oldModel = mySModel;
+    mySModel = myModelRootManager.refresh(this);
 
-      if (mySModel != null) {
-        if (mySModel != oldModel) {
-          addListenersToSModel();
-        } else {
-          synchronized (myListenersLock) {
-            myWeakModelListeners.clear();
-            myModelListeners.clear();
-            myModelCommandListeners.clear();
-          }
-        }
-      }
+    if (mySModel != oldModel) {
+      oldModel.dispose();
+    }
+
+    if (!isInitialized()) return;
+
+    if (mySModel != oldModel) {
+      addListenersToSModel();
+    } else {
+      clearListeners();
     }
   }
 
