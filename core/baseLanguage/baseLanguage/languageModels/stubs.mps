@@ -1107,11 +1107,13 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement:0" id="420611614541943948">
                 <property name="severity:0" value="error" />
                 <property name="hasException:0" value="true" />
-                <node role="logExpression:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="420611614541943949">
-                  <property name="value:3" value="Error on loading stubs" />
-                </node>
-                <node role="exception:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="420611614541943950">
-                  <link role="variableDeclaration:3" targetNodeId="420611614541943945" resolveInfo="e" />
+                <node role="logExpression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3429303863731528641">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3429303863731528640">
+                    <link role="variableDeclaration:3" targetNodeId="420611614541943945" resolveInfo="e" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3429303863731528649">
+                    <link role="baseMethodDeclaration:3" targetNodeId="2v.~Throwable.getMessage():java.lang.String" resolveInfo="getMessage" />
+                  </node>
                 </node>
               </node>
             </node>
