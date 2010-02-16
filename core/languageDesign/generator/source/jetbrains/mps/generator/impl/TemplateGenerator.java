@@ -27,6 +27,7 @@ import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
@@ -40,6 +41,8 @@ import java.util.*;
  * Created once per micro-step.
  */
 public class TemplateGenerator extends AbstractTemplateGenerator {
+
+  private static final Logger LOG = Logger.getLogger(TemplateGenerator.class);
 
   private boolean myChanged = false;
   private final RuleManager myRuleManager;
@@ -361,7 +364,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         setChanged(true);
         needStopReductionBlocking = startReductionBlockingForInput(inputNode);
 
-        List<SNode> outputNodes = GeneratorUtil.applyReductionRule(inputNode, reductionRule, this);
+        List<SNode> outputNodes = applyReductionRule(inputNode, reductionRule);
         if (outputNodes != null && outputNodes.size() == 1) {
           SNode reducedNode = outputNodes.get(0);
           // register copied node
@@ -397,6 +400,57 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
     return null;
+  }
+
+  @Nullable
+  private List<SNode> applyReductionRule(SNode inputNode, Reduction_MappingRule rule) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
+    myGenerationTracer.pushRule(rule.getNode());
+    try {
+      return applyReductionRule_internal(inputNode, rule);
+    } catch (AbandonRuleInputException e) {
+      return Collections.emptyList();
+    } finally {
+      myGenerationTracer.closeRule(rule.getNode());
+    }
+  }
+
+  @Nullable
+  private List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule)
+    throws DismissTopMappingRuleException,AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
+
+    String ruleMappingName = GeneratorUtil.getMappingName(rule, null);
+    RuleConsequence ruleConsequence = rule.getRuleConsequence();
+    if (ruleConsequence == null) {
+      showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no rule consequence");
+      return null;
+    }
+
+    List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(ruleConsequence, inputNode, rule.getNode(), this);
+    if (nodeAndMappingNamePairs == null) {
+      showErrorMessage(inputNode, null, ruleConsequence.getNode(), "error processing reduction rule consequence");
+      return null;
+    }
+
+    List<SNode> result = new ArrayList<SNode>(nodeAndMappingNamePairs.size());
+    for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
+      SNode templateNode = nodeAndMappingNamePair.o1;
+      String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;
+      try {
+        result.addAll(TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, this));
+      } catch (DismissTopMappingRuleException e) {
+        throw e;
+      } catch (TemplateProcessingFailureException e) {
+        showErrorMessage(inputNode, templateNode, rule.getNode(), "error processing reduction rule");
+      } catch (GenerationFailureException e) {
+        throw e;
+      } catch (GenerationCanceledException e) {
+        throw e;
+      } catch (Throwable t) {
+        LOG.error(t, BaseAdapter.fromNode(templateNode));
+        showErrorMessage(inputNode, templateNode, rule.getNode(), "error processing reduction rule");
+      }
+    }
+    return result;
   }
 
   /**

@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class WeaveUtil {
 
-  private static final Logger LOG = Logger.getLogger(GeneratorUtil.class);
+  private static final Logger LOG = Logger.getLogger(WeaveUtil.class);
 
   private static void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template,
                                                SNode outputContextNode, Weaving_MappingRule rule, TemplateGenerator generator)
@@ -33,9 +33,7 @@ public class WeaveUtil {
   }
 
   private static void weaveTemplateDeclaration_intern(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateGenerator generator)
-    throws
-    GenerationFailureException,
-    GenerationCanceledException {
+    throws GenerationFailureException, GenerationCanceledException {
 
     if (template == null) {
       generator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't evaluate weaving rule: no template");

@@ -142,7 +142,9 @@ public class GeneratorUtil {
   }
 
   @Nullable
-  /*package*/ static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, TemplateGenerator generator) throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
+  static List<Pair<SNode, String>> getTemplateNodesFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, TemplateGenerator generator)
+    throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException {
+
     if (ruleConsequence == null) {
       generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
       return null;
@@ -224,69 +226,9 @@ public class GeneratorUtil {
     return messageType;
   }
 
-  /*package*/
-
-  @Nullable
-  static List<SNode> applyReductionRule(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
-    generator.getGenerationTracer().pushRule(rule.getNode());
-    try {
-      return applyReductionRule_internal(inputNode, rule, generator);
-    } catch (AbandonRuleInputException e) {
-      return Collections.emptyList();
-    } finally {
-      generator.getGenerationTracer().closeRule(rule.getNode());
-    }
-  }
-
-  @Nullable
-  private static List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator)
-    throws DismissTopMappingRuleException,
-    AbandonRuleInputException,
-    GenerationFailureException,
-    GenerationCanceledException {
-
-    String ruleMappingName = getMappingName(rule, null);
-    RuleConsequence ruleConsequence = rule.getRuleConsequence();
-    if (ruleConsequence == null) {
-      generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no rule consequence");
-      return null;
-    }
-
-    List<Pair<SNode, String>> nodeAndMappingNamePairs = getTemplateNodesFromRuleConsequence(ruleConsequence, inputNode, rule.getNode(), generator);
-    if (nodeAndMappingNamePairs == null) {
-      generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "error processing reduction rule consequence");
-      return null;
-    }
-
-    List<SNode> result = new ArrayList<SNode>(nodeAndMappingNamePairs.size());
-    for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
-      SNode templateNode = nodeAndMappingNamePair.o1;
-      String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;
-      try {
-        result.addAll(TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, generator));
-      } catch (DismissTopMappingRuleException e) {
-        throw e;
-      } catch (TemplateProcessingFailureException e) {
-        generator.showErrorMessage(inputNode, templateNode, rule.getNode(), "error processing reduction rule");
-      } catch (GenerationFailureException e) {
-        throw e;
-      } catch (GenerationCanceledException e) {
-        throw e;
-      } catch (Throwable t) {
-        LOG.error(t, BaseAdapter.fromNode(templateNode));
-        generator.showErrorMessage(inputNode, templateNode, rule.getNode(), "error processing reduction rule");
-      }
-    }
-    return result;
-  }
-
-  /*package*/
-
   static boolean checkChild(SNode parent, String role, SNode child) {
     return checkLinkTarget(parent, role, child, true, false);
   }
-
-  /*package*/
 
   static boolean checkReferent(SNode reference, String role, SNode referent) {
     return checkLinkTarget(reference, role, referent, false, true);
