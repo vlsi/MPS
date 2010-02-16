@@ -795,7 +795,7 @@ public class Language extends AbstractModule {
 
         result.add(AbstractClassPathItem.createFromPath(s, this));
       } catch (IOException e) {
-        LOG.error(e);
+        LOG.error(e.getMessage());
       }
     }
 

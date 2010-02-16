@@ -112,7 +112,7 @@ public class ClassPathTest extends BaseMPSTest {
             try {
               pathItem = AbstractClassPathItem.createFromPath(path, null);
             } catch (IOException e) {
-              LOG.error(e);
+              LOG.error(e.getMessage());
               continue;
             }
 
