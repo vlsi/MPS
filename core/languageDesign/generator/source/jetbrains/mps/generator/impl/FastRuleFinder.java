@@ -124,9 +124,9 @@ public class FastRuleFinder {
 
     public void blockReductionsForOutput(SNode inputNode, SNode outputNode) {
       SNodeId inputNodeId = inputNode.getSNodeId();
-      SNodeId outputNodeId = outputNode.getSNodeId();
       Object o = myInputReductionsData.get(inputNodeId);
       if (o == null) return;
+      SNodeId outputNodeId = outputNode.getSNodeId();
       myBlockedReductionData.put(outputNodeId, o);
     }
 

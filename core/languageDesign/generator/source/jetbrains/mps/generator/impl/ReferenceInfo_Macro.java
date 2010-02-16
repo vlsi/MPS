@@ -16,16 +16,13 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
-import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
@@ -115,45 +112,31 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       return;
     }
 
-    // TODO extract into QueryExecutor
-
-    String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
-    try {
-      Object result;
-      result = QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new ReferenceMacroContext(getInputNode(), getOutputSourceNode(), myReferenceMacro.getNode(), generator),
-        myReferenceMacro.getModel());
-
-      if (result instanceof SNode) {
-        myOutputTargetNode = (SNode) result;
-      } else if (result != null) {
-        String resolveInfo = (String) result;
-        // we are expecting:
-        // - just resolve-info
-        // - [models name]resolve-info
-        // - []resolve-info
-        if (resolveInfo.startsWith("[")) {
-          String[] modelNameAndTheRest = resolveInfo.split("]");
-          if (modelNameAndTheRest.length > 1 || (modelNameAndTheRest.length == 1 && resolveInfo.endsWith("]"))) {
-            resolveInfo = resolveInfo.substring(resolveInfo.indexOf("]") + 1).trim();
-            String modelName = modelNameAndTheRest[0].substring(1).trim();
-            if (modelName.length() > 0) {
-              // model: either current output or java_stub
-              if (!modelName.equals(generator.getOutputModel().getLongName())) {
-                // external java_stub
-                myExternalTargetModelReference = StubHelper.uidForPackageInStubs(modelName);
-              }
+    Object result = QueryExecutor.getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro.getNode(), myReferenceMacro.getModel(), function, generator);
+    if (result instanceof SNode) {
+      myOutputTargetNode = (SNode) result;
+    } else if (result != null) {
+      String resolveInfo = (String) result;
+      // we are expecting:
+      // - just resolve-info
+      // - [models name]resolve-info
+      // - []resolve-info
+      if (resolveInfo.startsWith("[")) {
+        String[] modelNameAndTheRest = resolveInfo.split("]");
+        if (modelNameAndTheRest.length > 1 || (modelNameAndTheRest.length == 1 && resolveInfo.endsWith("]"))) {
+          resolveInfo = resolveInfo.substring(resolveInfo.indexOf("]") + 1).trim();
+          String modelName = modelNameAndTheRest[0].substring(1).trim();
+          if (modelName.length() > 0) {
+            // model: either current output or java_stub
+            if (!modelName.equals(generator.getOutputModel().getLongName())) {
+              // external java_stub
+              myExternalTargetModelReference = StubHelper.uidForPackageInStubs(modelName);
             }
           }
         }
-
-        myResolveInfoForDynamicResolve = resolveInfo;
       }
-    } catch (Throwable t) {
-      generator.showErrorMessage(getInputNode(), myReferenceMacro.getNode(), "couldn't evaluate reference macro");
-      Logger.getLogger(this.getClass()).error(t, myReferenceMacro.getNode());
+
+      myResolveInfoForDynamicResolve = resolveInfo;
     }
 
     if (myOutputTargetNode == null) {

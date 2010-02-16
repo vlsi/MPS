@@ -308,4 +308,20 @@ public class QueryExecutor {
     }
     return null;
   }
+
+  public static Object getReferentTarget(SNode node, SNode outputNode, SNode macroNode, SModel sourceModel, ReferenceMacro_GetReferent function, ITemplateGenerator generator) {
+    String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
+    try {
+      return QueryMethodGenerated.invoke(
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new ReferenceMacroContext(node, outputNode, macroNode, generator),
+        sourceModel);
+
+    } catch (Throwable t) {
+      generator.showErrorMessage(node, macroNode, "couldn't evaluate reference macro");
+      LOG.error(t, macroNode);
+    }
+    return null;
+  }
 }
