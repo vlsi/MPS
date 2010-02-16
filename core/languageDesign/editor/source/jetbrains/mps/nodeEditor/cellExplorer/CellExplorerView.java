@@ -83,7 +83,7 @@ public class CellExplorerView extends BaseProjectTool {
   };
 
   public CellExplorerView(Project project) {
-    super(project, "cell explorer view", -1, null, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Cell Explorer", -1, null, ToolWindowAnchor.BOTTOM, true);
 
     myTree.setRootVisible(true);
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
