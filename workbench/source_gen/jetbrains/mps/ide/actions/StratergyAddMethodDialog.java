@@ -5,11 +5,12 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Frame;
 import java.awt.HeadlessException;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import com.intellij.openapi.actionSystem.AnAction;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.BaseAdapter;
 import javax.swing.JComponent;
@@ -32,6 +33,24 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     this.myCollectStrategy = collectStrategy;
     this.myAdditionStrategy = additionStrategy;
     this.mySortByNameAction = new StratergyAddMethodDialog.SortByNameAction(context.getOperationContext().getProject());
+  }
+
+  private void removeAttributes(SNode node) {
+    if (SNodeOperations.isAttribute(node)) {
+      SNodeOperations.deleteNode(node);
+    } else {
+      for (SNode child : SNodeOperations.getChildren(node)) {
+        this.removeAttributes(child);
+      }
+    }
+  }
+
+  private SNode getNodeWithoutAttributes(BaseAddMethodDialog.MethodTreeNode methodTreeNode) {
+    SNode methodNode = methodTreeNode.getMethod().getNode();
+    for (SNode child : SNodeOperations.getChildren(methodNode)) {
+      this.removeAttributes(child);
+    }
+    return methodNode;
   }
 
   public List<BaseMethodDeclaration> collectImplementableMethods() {
@@ -63,7 +82,7 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     List<BaseMethodDeclaration> result = new ArrayList<BaseMethodDeclaration>();
     List<SNode> methods = new ArrayList<SNode>();
     for (BaseAddMethodDialog.MethodTreeNode methodNode : methodNodes) {
-      methods.add(methodNode.getMethod().getNode());
+      methods.add(this.getNodeWithoutAttributes(methodNode));
     }
     List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> addedMethods = this.myContainerStrategy.doAddMethods(methods);
     for (StratergyAddMethodDialog.ContainerStrategy.MethodAddition added : addedMethods) {
