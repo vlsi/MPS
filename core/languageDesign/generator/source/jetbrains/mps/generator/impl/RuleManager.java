@@ -50,7 +50,7 @@ public class RuleManager {
     myWeaving_MappingRules = new FlattenIterable(new ArrayList<List<Weaving_MappingRule>>(list.size()));
     myReduction_MappingRules = new FlattenIterable(new ArrayList<List<Reduction_MappingRule>>(list.size()));
     myDropRootRules = new FlattenIterable(new ArrayList<List<DropRootRule>>(list.size()));
-    
+
     for (MappingConfiguration mappingConfig : list) {
       myCreateRootRules.add(mappingConfig.getCreateRootRules());
       myRoot_MappingRules.add(mappingConfig.getRootMappingRules());
@@ -99,4 +99,5 @@ public class RuleManager {
 
   public List<MappingScript> getPostMappingScripts() {
     return myPostScripts;
-  }}
+  }
+}

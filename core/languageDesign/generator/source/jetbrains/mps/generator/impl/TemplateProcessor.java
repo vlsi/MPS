@@ -596,14 +596,14 @@ public class TemplateProcessor {
 
 
   private void pushInputHistory(SNode oldInputNode) {
-    if(myInputHistory == null) {
-       myInputHistory = new ArrayList<SNode>();
+    if (myInputHistory == null) {
+      myInputHistory = new ArrayList<SNode>();
     }
     myInputHistory.add(oldInputNode);
   }
 
   private void popInputHistory() {
-    if(myInputHistory == null) return; 
+    if (myInputHistory == null) return;
     myInputHistory.remove(myInputHistory.size() - 1);
   }
 

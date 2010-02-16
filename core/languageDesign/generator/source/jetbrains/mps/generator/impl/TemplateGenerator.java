@@ -30,9 +30,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by: Sergey Dmitriev
@@ -44,6 +42,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private boolean myChanged = false;
   private final RuleManager myRuleManager;
+  private final DelayedChanges myDelayedChanges = new DelayedChanges();
+  private final Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
 
   /* cached session data */
   private BlockedReductionsData myReductionData;
@@ -76,14 +76,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     // root mapping rules
+    List<SNode> rootsNotToCopy = new ArrayList<SNode>();
     for (Root_MappingRule rule : myRuleManager.getRoot_MappingRules()) {
       checkMonitorCanceled();
-      applyRoot_MappingRule(rule);
+      applyRoot_MappingRule(rule, rootsNotToCopy);
     }
 
     checkMonitorCanceled();
     getGeneratorSessionContext().clearCopiedRootsSet();
-    List<SNode> copiedOutputRoots = copyRootsFromInputModel();
+    List<SNode> copiedOutputRoots = copyRootsFromInputModel(rootsNotToCopy);
     for (SNode copiedOutputRoot : copiedOutputRoots) {
       getGeneratorSessionContext().registerCopiedRoot(copiedOutputRoot);
       myOutputModel.addRoot(copiedOutputRoot);
@@ -100,7 +101,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     applyWeaving_MappingRules();
 
     // execute mapper in all $MAP_SRC$/$MAP_SRCL$
-    getDelayedChanges().doAllChanges();
+    myDelayedChanges.doAllChanges();
 
     // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
     for (SNode copiedRoot : copiedOutputRoots) {
@@ -113,9 +114,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return isChanged();
   }
 
-  private List<SNode> copyRootsFromInputModel() throws GenerationFailureException {
+  private List<SNode> copyRootsFromInputModel(List<SNode> rootsNotToCopy) throws GenerationFailureException {
     List<SNode> rootsToCopy = new ArrayList<SNode>(myInputModel.getRoots());
-    for (SNode rootNode : getRootsNotToCopy()) {
+    for (SNode rootNode : rootsNotToCopy) {
       rootsToCopy.remove(rootNode);
     }
 
@@ -220,7 +221,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private void applyRoot_MappingRule(Root_MappingRule rule) throws GenerationFailureException, GenerationCanceledException {
+  private void applyRoot_MappingRule(Root_MappingRule rule, List<SNode> rootsNotToCopy) throws GenerationFailureException, GenerationCanceledException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
@@ -248,7 +249,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             showErrorMessage(BaseAdapter.fromAdapter(rule), "no template is defined for the rule");
           }
           if (inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
-            addRootNotToCopy(inputNode);
+            rootsNotToCopy.add(inputNode);
           }
         } catch (DismissTopMappingRuleException e) {
           // it's ok, just continue
@@ -413,7 +414,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   BlockedReductionsData getBlockedReductionsData() {
-    if(myReductionData == null) {
+    if (myReductionData == null) {
       Object blockedReductions = getGeneratorSessionContext().getStepObject(BlockedReductionsData.KEY);
       if (blockedReductions == null) {
         blockedReductions = new BlockedReductionsData();
@@ -428,11 +429,23 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myGenerationTracer;
   }
 
+  DelayedChanges getDelayedChanges() {
+    return myDelayedChanges;
+  }
+
   private boolean isChanged() {
     return myChanged;
   }
 
   void setChanged(boolean b) {
     myChanged = b;
+  }
+
+  void registerRoot(SNode newroot, SNode old) {
+    myNewToOldRoot.put(newroot, old);
+  }
+
+  public SNode getInputRootForOutput(SNode node) {
+    return myNewToOldRoot.get(node);
   }
 }

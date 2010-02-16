@@ -91,6 +91,7 @@ public class GeneratorUtil {
   }
 
   /*package*/
+
   static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
     List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
     for (INodeAdapter subnode : template.getDescendants()) {
@@ -224,6 +225,7 @@ public class GeneratorUtil {
   }
 
   /*package*/
+
   @Nullable
   static List<SNode> applyReductionRule(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     generator.getGenerationTracer().pushRule(rule.getNode());
@@ -279,11 +281,13 @@ public class GeneratorUtil {
   }
 
   /*package*/
+
   static boolean checkChild(SNode parent, String role, SNode child) {
     return checkLinkTarget(parent, role, child, true, false);
   }
 
   /*package*/
+
   static boolean checkReferent(SNode reference, String role, SNode referent) {
     return checkLinkTarget(reference, role, referent, false, true);
   }

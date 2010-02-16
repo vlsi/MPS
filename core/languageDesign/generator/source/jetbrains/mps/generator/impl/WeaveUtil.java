@@ -121,7 +121,7 @@ public class WeaveUtil {
 
   public static void applyWeaving_MappingRule(Weaving_MappingRule rule, TemplateGenerator generator)
     throws GenerationFailureException, GenerationCanceledException {
-    
+
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       generator.showErrorMessage(null, rule.getNode(), "rule has no applicable concept defined");

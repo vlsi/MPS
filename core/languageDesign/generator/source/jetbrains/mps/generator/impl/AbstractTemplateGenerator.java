@@ -38,14 +38,11 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   protected final SModel myInputModel;
   protected final SModel myOutputModel;
 
-  private final ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
   private final HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
   private final Set<SNode> myInputNodesWithNotUniqueCopiedOutputNode = new HashSet<SNode>();
   private final HashMap<Pair<String, SNode>, Object> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, Object>();
   private final HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
   private final HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
-  private final DelayedChanges myDelayedChanges = new DelayedChanges();
-  private final Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
 
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
@@ -130,14 +127,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myOutputModel;
   }
 
-  public void addRootNotToCopy(SNode inputNode) {
-    myRootsNotToCopy.add(inputNode);
-  }
-
-  public Iterable<SNode> getRootsNotToCopy() {
-    return myRootsNotToCopy;
-  }
-
   public SNode findTemplateNodeByOutputNode(SNode outputNode) {
     return myOutputNodeToTemplateNodeMap.get(outputNode);
   }
@@ -171,10 +160,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       }
     }
     return null;
-  }
-
-  public DelayedChanges getDelayedChanges() {
-    return myDelayedChanges;
   }
 
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingLabel) {
@@ -228,6 +213,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   /*package*/
+
   void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
     if (mappingName == null) return;
     Pair key = new Pair(mappingName, inputNode);
@@ -250,6 +236,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   /*package*/
+
   SNode findCopiedOutputNodeForInputNode_unique(SNode inputNode) {
     SNode node = findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
     if (!myInputNodesWithNotUniqueCopiedOutputNode.contains(inputNode)) return node;
@@ -257,6 +244,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   /*package*/
+
   void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
     // todo: can be several copied output nodes for one input node
     Pair key = new Pair(inputNode, inputNode);
@@ -279,6 +267,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   /*package*/
+
   void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
@@ -287,6 +276,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   /*package*/
+
   void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
@@ -353,13 +343,5 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   public SNode findInputNodeById(SNodeId nodeId) {
     return myInputModel.getNodeById(nodeId);
-  }
-
-  void registerRoot(SNode newroot, SNode old) {
-    myNewToOldRoot.put(newroot, old);
-  }
-
-  public SNode getInputRootForOutput(SNode node) {
-    return myNewToOldRoot.get(node);
   }
 }
