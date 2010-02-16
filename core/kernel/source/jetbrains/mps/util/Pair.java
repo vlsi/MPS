@@ -30,7 +30,7 @@ public class Pair<T1, T2> {
   public int hashCode() {
     int result = 0;
     if (o1 != null) result ^= o1.hashCode();
-    if (o2 != null) result ^= o2.hashCode() >> 16;
+    if (o2 != null) result ^= o2.hashCode();
     return result;
   }
 
