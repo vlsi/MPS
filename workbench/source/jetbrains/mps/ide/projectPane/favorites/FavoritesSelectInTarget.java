@@ -1,24 +1,27 @@
 package jetbrains.mps.ide.projectPane.favorites;
 
-import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.SelectInContext;
+import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FavoritesSelectInTarget implements SelectInTarget {
   private List<SNode> getAvailableNodes(List<Object> objects) {
     List<SNode> result = new ArrayList<SNode>();
+    if (objects == null) return result;
     for (Object o : objects) {
       FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(o);
       if (favoritesRoot == null) continue;
@@ -88,7 +91,7 @@ public class FavoritesSelectInTarget implements SelectInTarget {
   }
 
   public String getMinorViewId() {
-    return "Favorites";
+    return FavoritesProjectPane.ID;
   }
 
   public float getWeight() {
