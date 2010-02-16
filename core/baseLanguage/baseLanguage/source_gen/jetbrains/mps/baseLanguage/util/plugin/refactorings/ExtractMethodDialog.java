@@ -9,12 +9,13 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
+import java.awt.Dimension;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.awt.GridBagLayout;
-import java.awt.Insets;
 import java.awt.GridBagConstraints;
+import java.awt.Insets;
 import javax.swing.JComponent;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
@@ -47,6 +48,7 @@ public class ExtractMethodDialog extends BaseDialog {
 
   public ExtractMethodDialog(EditorContext context, final List<SNode> nodes, Frame frame) {
     super(frame, "Extract Method");
+    this.setMinimumSize(new Dimension(600, 450));
     this.myContext = context;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -114,55 +116,44 @@ public class ExtractMethodDialog extends BaseDialog {
 
   private void initPanel() {
     this.myPanel = new JPanel(new GridBagLayout());
-    Insets defaultInsets = new Insets(3, 5, 3, 5);
-    //  Method panel 
+
     GridBagConstraints c = new GridBagConstraints();
     c.fill = GridBagConstraints.BOTH;
-    c.insets = defaultInsets;
+    c.anchor = GridBagConstraints.NORTHWEST;
+    c.insets = new Insets(3, 5, 3, 5);
+
     c.gridx = 0;
     c.gridy = 0;
     c.weightx = 1;
-    c.weighty = 0.1;
+    c.weighty = 0;
     c.gridwidth = 2;
     this.myPanel.add(this.createMethodPanel(), c);
-    //  Parameters panel 
-    c = new GridBagConstraints();
-    c.fill = GridBagConstraints.BOTH;
-    c.insets = defaultInsets;
+
     c.gridx = 0;
     c.gridy = 1;
     c.weightx = 1;
-    c.weighty = 0.7;
+    c.weighty = 1;
     c.gridwidth = 1;
     this.myPanel.add(this.createParametersPanel(), c);
-    //  Visibility panel 
-    c = new GridBagConstraints();
-    c.fill = GridBagConstraints.BOTH;
-    c.insets = defaultInsets;
+
     c.gridx = 1;
     c.gridy = 1;
     c.weightx = 0;
-    c.weighty = 0;
+    c.weighty = 1;
     c.gridwidth = 1;
     this.myPanel.add(this.createVisibilityPanel(), c);
-    //  Preview panel 
-    c = new GridBagConstraints();
-    c.fill = GridBagConstraints.BOTH;
-    c.insets = defaultInsets;
+
     c.gridx = 0;
     c.gridy = 2;
     c.weightx = 0;
-    c.weighty = 0.1;
+    c.weighty = 0;
     c.gridwidth = 2;
     this.myPanel.add(this.createPreviewPanel(), c);
-    //  Messages panel 
-    c = new GridBagConstraints();
-    c.fill = GridBagConstraints.BOTH;
-    c.insets = defaultInsets;
+
     c.gridx = 0;
     c.gridy = 3;
     c.weightx = 1;
-    c.weighty = 0.2;
+    c.weighty = 0;
     c.gridwidth = 2;
     this.myPanel.add(this.createMessagesComponent(), c);
   }
@@ -189,6 +180,12 @@ public class ExtractMethodDialog extends BaseDialog {
     this.createVisibilityButton(1, VisibilityLevel.PACKAGE_LOCAL, group, visbilityPanel);
     this.createVisibilityButton(2, VisibilityLevel.PROTECTED, group, visbilityPanel);
     this.createVisibilityButton(3, VisibilityLevel.PUBLIC, group, visbilityPanel);
+    GridBagConstraints c = new GridBagConstraints();
+    c.gridx = 0;
+    c.gridy = 4;
+    c.weightx = 1;
+    c.weighty = 1;
+    visbilityPanel.add(new JPanel(), c);
     button.setSelected(true);
     return visbilityPanel;
   }
@@ -199,6 +196,7 @@ public class ExtractMethodDialog extends BaseDialog {
     c.gridx = 0;
     c.gridy = y;
     c.weightx = 1;
+    c.weighty = 0;
     c.anchor = GridBagConstraints.FIRST_LINE_START;
     JRadioButton button = new JRadioButton(new AbstractAction(levelToSet.getButtonText()) {
       public void actionPerformed(ActionEvent e) {
@@ -213,6 +211,7 @@ public class ExtractMethodDialog extends BaseDialog {
 
   private JComponent createParametersPanel() {
     ParametersPanel parametersPanel = new ParametersPanel(this.myParameters);
+    parametersPanel.setBorder(this.createBorder("Parameters"));
     ParametersTableModel tableModel = parametersPanel.getTableModel();
     tableModel.addTableModelListener(new TableModelListener() {
       public void tableChanged(TableModelEvent p0) {
