@@ -7690,34 +7690,34 @@
             </node>
           </node>
         </node>
-        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1188909406988">
-          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977966317">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977964062">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1188909632443">
-                <link role="applicableNode:3" targetNodeId="1188909367615" resolveInfo="classifierType2" />
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="1017923110105115803">
+          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1017923110105115804">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1017923110105115805">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1017923110105115806">
+                <link role="applicableNode:3" targetNodeId="1188909328678" resolveInfo="classifierType1" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1188909635275">
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1017923110105115807">
                 <link role="link:16" targetNodeId="1.1107535924139:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1188909649030">
-              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1188909651032">
-                <link role="conceptDeclaration:16" targetNodeId="1.1107796713796:3" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1017923110105115808">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1017923110105115809">
+                <link role="conceptDeclaration:16" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
               </node>
             </node>
           </node>
-          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977968005">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203977962630">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1188909387055">
-                <link role="applicableNode:3" targetNodeId="1188909328678" resolveInfo="classifierType1" />
+          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1017923110105115810">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1017923110105115811">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1017923110105115812">
+                <link role="applicableNode:3" targetNodeId="1188909367615" resolveInfo="classifierType2" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1188909395950">
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1017923110105115813">
                 <link role="link:16" targetNodeId="1.1107535924139:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1188909399454">
-              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1188909404300">
-                <link role="conceptDeclaration:16" targetNodeId="1.1107796713796:3" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1017923110105115814">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1017923110105115815">
+                <link role="conceptDeclaration:16" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
               </node>
             </node>
           </node>

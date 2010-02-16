@@ -13,7 +13,7 @@ public class interfaces_are_comparable_ComparisonRule extends ComparisonRule_Run
   }
 
   public boolean areComparable(SNode node1, SNode node2) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node1, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node2, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node1, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node2, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
       return true;
     } else {
       return false;
