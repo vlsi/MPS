@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.JOptionPane;
@@ -59,14 +61,14 @@ public class PropjectPaneDnDListener implements DropTargetListener {
       });
   }
 
-  private List<SNode> getNodesToMove(SModelDescriptor targetModel, String virtualPackage, List<SNode> sourceNodes) {
+  private List<Pair<SNode, String>> getNodesToMove(SModelDescriptor targetModel, String virtualPackage, List<Pair<SNode, String>> sourceNodes) {
     if (targetModel == null) return Collections.emptyList();
-    List<SNode> result = new ArrayList<SNode>();
-    for (final SNode node : sourceNodes) {
-      if (EqualUtil.equals(virtualPackage, getVirtualPackage(node))) continue;
-      SModelDescriptor sourceModel = getModelDescriptor(node);
+    List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
+    for (final Pair<SNode, String> node : sourceNodes) {
+      if (EqualUtil.equals(virtualPackage + node.o2, getVirtualPackage(node.o1))) continue;
+      SModelDescriptor sourceModel = getModelDescriptor(node.o1);
       if (EqualUtil.equals(sourceModel, targetModel)) {
-        result.add(node);
+        result.add(new Pair(node.o1, node.o2));
       }
     }
     return result;
@@ -93,6 +95,30 @@ public class PropjectPaneDnDListener implements DropTargetListener {
       return ((SModelTreeNode) node).getSModelDescriptor();
     }
     return null;
+  }
+
+  private String getPackagePresentation(String name) {
+    return (name == null)? "<i><untitled></i>" : "'<b>" + name + "</b>";
+  }
+
+  private String getFullTargetPack(String targetPackage, String basePack) {
+    return (basePack == null || basePack.isEmpty())? targetPackage : targetPackage + "." + basePack;
+  }
+
+  private String getConfirnLabel(List<Pair<SNode, String>> sourceNodes, String target) {
+    StringBuilder builder = new StringBuilder();
+    builder.append("<html>Do you want to move ");
+    builder.append(NameUtil.formatNumericalString(sourceNodes.size(), "node")).append(" ");
+    Pair<SNode, String> first = sourceNodes.get(0);
+    boolean isSingle = sourceNodes.size() == 1;
+    if (isSingle) {
+      builder.append("from virtual package ");
+      builder.append(getPackagePresentation(getVirtualPackage(first.o1))).append(" ");
+    }
+    builder.append("to ");
+    builder.append(getPackagePresentation(target + ((isSingle)? first.o2 : "")));
+    builder.append("?</html>");
+    return builder.toString();
   }
 
   public void dragEnter(DropTargetDragEvent dtde) {
@@ -127,33 +153,32 @@ public class PropjectPaneDnDListener implements DropTargetListener {
     } catch (Throwable t) {
       t.printStackTrace();
     }
-    if (!(source instanceof SNode)) {
+    if (!(source instanceof List) || ((List) source).isEmpty()) {
       dtde.rejectDrop();
       return;
     }
-    final SNode sourceNode = (SNode) source;
+    final List<Pair<SNode, String>> sourceNodes = (List<Pair<SNode, String>>) source;
 
     SModelDescriptor targetModel = getTargetModel(treePath);
     final String targetPackage = getTargetVirtualPackage(treePath);
-    List<SNode> nodeToMove = getNodesToMove(targetModel, targetPackage, Collections.singletonList(sourceNode));
+    List<Pair<SNode, String>> nodeToMove = getNodesToMove(targetModel, targetPackage, sourceNodes);
     if (nodeToMove.isEmpty()) {
       dtde.rejectDrop();
       return;
     }
     Project project = (Project) DataManager.getInstance().getDataContext().getData(MPSDataKeys.PROJECT.getName());
-    int result = JOptionPane.showConfirmDialog(WindowManager.getInstance().getFrame(project),
-      "<html>Do you want to move node from virtual package '<b>"
-        + getVirtualPackage(sourceNode)
-        + "</b>' to '<b>"
-        + targetPackage
-        + "</b>'?</html>");
+    int result = JOptionPane.showConfirmDialog(WindowManager.getInstance().getFrame(project), getConfirnLabel(sourceNodes, targetPackage));
     if (result == JOptionPane.YES_OPTION) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          sourceNode.setProperty(SModelTreeNode.PACK, targetPackage);
-          if (SNodeOperations.isInstanceOf(sourceNode, AbstractConceptDeclaration.concept)) {
-            for (SNode aspect : AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(sourceNode, GlobalScope.getInstance())) {
-              aspect.setProperty(SModelTreeNode.PACK, targetPackage);
+          for (Pair<SNode, String> sourceNode : sourceNodes) {
+            String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
+            sourceNode.o1.setProperty(SModelTreeNode.PACK, fullTargetPack);
+            if (SNodeOperations.isInstanceOf(sourceNode.o1, AbstractConceptDeclaration.concept)) {
+              List<SNode> allAspects = AbstractConceptDeclaration_Behavior.call_findAllAspects_7754459869734028917(sourceNode.o1, GlobalScope.getInstance());
+              for (SNode aspect : allAspects) {
+                aspect.setProperty(SModelTreeNode.PACK, fullTargetPack);
+              }
             }
           }
         }

@@ -11,6 +11,7 @@ import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
@@ -27,6 +28,7 @@ import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -35,6 +37,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
@@ -213,10 +216,41 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         if (projectView == null) return;
         final AbstractProjectViewPane currentPane = projectView.getCurrentProjectViewPane();
         if (!(currentPane instanceof BaseLogicalViewProjectPane)) return;
-        final SNode node = getSelectedSNode();
-        if (node == null) return;
+        List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
+        for (SNode node : getSelectedSNodes()) {
+          result.add(new Pair(node, ""));
+        }
+        SModelDescriptor contextDescriptor = getContextModel();
+        if (contextDescriptor != null) {
+          for (PackageNode treeNode : getSelectedTreeNodes(PackageNode.class)) {
+            String searchedPack = treeNode.getFullPackage();
+            if (treeNode.getChildCount() == 0 || searchedPack == null) continue;
+            for (final SNode node : contextDescriptor.getSModel().getRoots()) {
+              String nodePack = ModelAccess.instance().runReadAction(new Computable<String>() {
+                public String compute() {
+                  return node.getProperty(BaseConcept.VIRTUAL_PACKAGE);
+                }
+              });
+              if (nodePack == null) continue;
+              if (nodePack.startsWith(searchedPack)) {
+                StringBuilder basePack = new StringBuilder();
+                String firstPart = treeNode.getPackage();
+                String secondPart = "";
+                if (nodePack.startsWith(searchedPack + ".")) {
+                  secondPart = nodePack.replaceFirst(searchedPack + ".", "");
+                }
+                basePack.append(firstPart);
+                if (!firstPart.isEmpty() && !secondPart.isEmpty()) {
+                  basePack.append(".");
+                }
+                basePack.append(secondPart);
+                result.add(new Pair(node, basePack.toString()));
+              }
+            }
+          }
+        }
         try {
-          dge.startDrag(DragSource.DefaultMoveNoDrop, new MyTransferable(node), new MyDragSourceListener());
+          dge.startDrag(DragSource.DefaultMoveNoDrop, new MyTransferable(result), new MyDragSourceListener());
         } catch (InvalidDnDOperationException ignored) {
         }
       }
