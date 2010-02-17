@@ -18,7 +18,6 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro;
-import jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;

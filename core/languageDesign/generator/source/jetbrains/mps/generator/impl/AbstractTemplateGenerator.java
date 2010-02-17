@@ -17,15 +17,11 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
-import jetbrains.mps.lang.generator.structure.RuleConsequence;
-import jetbrains.mps.lang.generator.structure.TemplateSwitch;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.*;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 

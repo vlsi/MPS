@@ -12,7 +12,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.search.ISearchScope;
 
 import java.util.List;
 
