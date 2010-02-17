@@ -15,6 +15,10 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFabric;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodDialog;
 
 public class ExtractMethod_Action extends GeneratedAction {
@@ -84,7 +88,16 @@ public class ExtractMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ExtractMethodDialog dialog = new ExtractMethodDialog(ExtractMethod_Action.this.context, ExtractMethod_Action.this.nodes, ExtractMethod_Action.this.frame);
+      final Wrappers._T<ExtractMethodRefactoringParameters> params = new Wrappers._T<ExtractMethodRefactoringParameters>();
+      final Wrappers._T<ExtractMethodRefactoring> refactoring = new Wrappers._T<ExtractMethodRefactoring>();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          params.value = new ExtractMethodRefactoringParameters(ExtractMethod_Action.this.nodes);
+          refactoring.value = ExtractMethodFabric.createRefactoring(params.value);
+          params.value.setReturnType(refactoring.value.getMethodType());
+        }
+      });
+      ExtractMethodDialog dialog = new ExtractMethodDialog(ExtractMethod_Action.this.frame, ExtractMethod_Action.this.context, params.value, refactoring.value);
       dialog.pack();
       dialog.showDialog();
     } catch (Throwable t) {

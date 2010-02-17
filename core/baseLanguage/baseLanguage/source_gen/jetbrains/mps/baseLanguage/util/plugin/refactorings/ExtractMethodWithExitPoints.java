@@ -14,7 +14,7 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
     super(parameters);
   }
 
-  protected SNode getMethodType() {
+  public SNode getMethodType() {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanType", null);
   }
 

@@ -6,11 +6,10 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import jetbrains.mps.nodeEditor.EditorContext;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
 import java.awt.Dimension;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.awt.GridBagLayout;
@@ -46,21 +45,12 @@ public class ExtractMethodDialog extends BaseDialog {
   private EditorContext myContext;
   private ExtractMethodRefactoring myRefactoring;
 
-  public ExtractMethodDialog(EditorContext context, final List<SNode> nodes, Frame frame) {
+  public ExtractMethodDialog(Frame frame, EditorContext context, ExtractMethodRefactoringParameters params, ExtractMethodRefactoring refactoring) {
     super(frame, "Extract Method");
     this.setMinimumSize(new Dimension(600, 450));
     this.myContext = context;
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        ExtractMethodDialog.this.myParameters = new ExtractMethodRefactoringParameters(nodes);
-      }
-    });
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        ExtractMethodDialog.this.myRefactoring = ExtractMethodFabric.createRefactoring(ExtractMethodDialog.this.myParameters);
-        ExtractMethodDialog.this.myParameters.setReturnType(ExtractMethodDialog.this.myRefactoring.getMethodType());
-      }
-    });
+    this.myParameters = params;
+    this.myRefactoring = refactoring;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         ExtractMethodDialog.this.initPanel();

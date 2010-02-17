@@ -41,7 +41,7 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
   protected void modifyPartToExtract() {
   }
 
-  protected SNode getMethodType() {
+  public SNode getMethodType() {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null);
   }
 

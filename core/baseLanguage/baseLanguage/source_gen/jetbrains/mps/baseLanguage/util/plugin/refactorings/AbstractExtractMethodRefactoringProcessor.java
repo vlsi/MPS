@@ -4,10 +4,9 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -27,9 +26,7 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
   }
 
   public SNode createNewMethod() {
-    SNode methodConcept = SNodeOperations.getConceptDeclaration(this.getContainerMethod());
-    assert methodConcept != null;
-    return SNodeOperations.cast(SConceptOperations.createNewNode(NameUtil.nodeFQName(methodConcept), null), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", null);
   }
 
   public SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres) {
@@ -47,8 +44,7 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
       }
       node = SNodeOperations.getParent(node);
     }
-    assert false;
-    return null;
+    throw new IllegalStateException("can't be applied in this case");
   }
 
   public SNode getContainerReturnType() {

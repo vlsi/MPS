@@ -35,7 +35,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     ListSequence.fromList(this.myStatements).addElement(returnStatement);
   }
 
-  protected SNode getMethodType() {
+  public SNode getMethodType() {
     return SNodeOperations.copyNode(SLinkOperations.getTarget(this.myOutputVariable, "type", true));
   }
 

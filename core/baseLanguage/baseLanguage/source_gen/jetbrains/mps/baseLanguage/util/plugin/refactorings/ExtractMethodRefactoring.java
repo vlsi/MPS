@@ -146,5 +146,5 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  protected abstract SNode getMethodType();
+  public abstract SNode getMethodType();
 }
