@@ -16,20 +16,17 @@
 package jetbrains.mps.workbench.actions.model;
 
 import com.intellij.openapi.util.Pair;
+import jetbrains.mps.generator.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.plan.GenerationPartitioner;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
-import jetbrains.mps.generator2.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
-import jetbrains.mps.lang.generator.structure.MappingLabelDeclaration;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.workbench.output.OutputViewTool;
 
 import javax.swing.JOptionPane;
