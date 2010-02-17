@@ -173,6 +173,7 @@ public class GenerationSession {
 
   private SModel executeMacroStepInternal(SModel inputModel, GeneratorLogger logger, RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
     SModel currentInputModel = inputModel;
+    IGenerationTracer tracer = mySessionContext.getGenerationTracer();
 
     // -----------------------
     // reverse roots order
@@ -201,7 +202,7 @@ public class GenerationSession {
     currentInputModel = preProcessModel(logger, ruleManager, currentInputModel);
 
     SModel currentOutputModel = createTransientModel();
-    mySessionContext.getGenerationTracer().startTracing(currentInputModel, currentOutputModel);
+    tracer.startTracing(currentInputModel, currentOutputModel);
 
     // -----------------------
     // primary mapping
@@ -229,10 +230,10 @@ public class GenerationSession {
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
       currentInputModel.setLoading(false);
-      mySessionContext.getGenerationTracer().startTracing(currentInputModel, transientModel);
+      tracer.startTracing(currentInputModel, transientModel);
       if (!applyRules(currentInputModel, transientModel, false, ruleManager, logger)) {
         // nothing has been generated
-        mySessionContext.getGenerationTracer().discardTracing(currentInputModel, transientModel);
+        tracer.discardTracing(currentInputModel, transientModel);
         info("remove empty model '" + transientModel.getSModelFqName() + "'");
         SModelRepository.getInstance().removeModelDescriptor(transientModel.getModelDescriptor());
         myTransientModelsCount--;
@@ -241,9 +242,9 @@ public class GenerationSession {
 
       if (++secondaryMappingRepeatCount > 10) {
         logger.showErrorMessage(null, "failed to generate output after 10 repeated mappings");
-        if (mySessionContext.getGenerationTracer().isTracing()) {
+        if (tracer.isTracing()) {
           LOG.error("last rules applied:");
-          List<Pair<SNode, SNode>> pairs = mySessionContext.getGenerationTracer().getAllAppiedRulesWithInputNodes(transientModel.getSModelReference());
+          List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(transientModel.getSModelReference());
           for (Pair<SNode, SNode> pair : pairs) {
             LOG.error("rule: " + pair.o1.getDebugText(), pair.o1);
             LOG.error("-- input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"), pair.o2);
