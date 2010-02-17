@@ -280,9 +280,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private void applyWeaving_MappingRules() throws GenerationFailureException, GenerationCanceledException {
+    WeavingProcessor wp = new WeavingProcessor(this);
     for (Weaving_MappingRule rule : myRuleManager.getWeaving_MappingRules()) {
       checkMonitorCanceled();
-      WeaveUtil.applyWeaving_MappingRule(rule, this);
+      wp.apply(rule);
     }
   }
 
@@ -486,6 +487,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   DelayedChanges getDelayedChanges() {
     return myDelayedChanges;
+  }
+
+  RuleManager getRuleManager() {
+    return myRuleManager;
   }
 
   private boolean isChanged() {

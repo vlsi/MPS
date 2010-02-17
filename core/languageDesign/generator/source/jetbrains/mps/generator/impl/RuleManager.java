@@ -15,13 +15,15 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.plan.GenerationPlan;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.util.FlattenIterable;
 import jetbrains.mps.lang.generator.structure.*;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.SNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class RuleManager {
 
@@ -31,15 +33,20 @@ public class RuleManager {
   private FlattenIterable<Reduction_MappingRule> myReduction_MappingRules;
   private FlattenIterable<DropRootRule> myDropRootRules;
 
+  private TemplateSwitchGraph myTemplateSwitchGraph;
+  private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
+
   private List<MappingScript> myPreScripts;
   private List<MappingScript> myPostScripts;
 
   private List<MappingConfiguration> myMappings;
 
   private final FastRuleFinder myRuleFinder;
+  private final GenerationPlan myPlan;
 
   public RuleManager(GenerationPlan plan, int step) {
     myMappings = plan.getMappingConfigurations(step);
+    myPlan = plan;
     initialize(myMappings);
     myRuleFinder = new FastRuleFinder(myReduction_MappingRules);
   }
@@ -99,5 +106,42 @@ public class RuleManager {
 
   public List<MappingScript> getPostMappingScripts() {
     return myPostScripts;
+  }
+
+  public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch, ITemplateGenerator generator) throws GenerationFailureException {
+    AbstractConceptDeclaration inputNodeConcept = inputNode.getConceptDeclarationAdapter();
+
+    if (myTemplateSwitchGraph == null) {
+      myTemplateSwitchGraph = new TemplateSwitchGraph(myPlan.getTemplateModels());
+      myTemplateSwitchToListCache = new HashMap<TemplateSwitch, List<TemplateSwitch>>();
+    }
+
+    List<TemplateSwitch> switches = myTemplateSwitchToListCache.get(templateSwitch);
+    if (switches == null) {
+      switches = myTemplateSwitchGraph.getSubgraphAsList(templateSwitch);
+      myTemplateSwitchToListCache.put(templateSwitch, switches);
+    }
+
+    // for each template switch test conditions and choose template node
+    for (TemplateSwitch aSwitch : switches) {
+      List<Reduction_MappingRule> rules = aSwitch.getReductionMappingRules();
+      for (Reduction_MappingRule rule : rules) {
+        if (GeneratorUtil.checkPremiseForBaseMappingRule(inputNode, inputNodeConcept, rule, generator)) {
+          RuleConsequence ruleConsequence = rule.getRuleConsequence();
+          if (ruleConsequence == null) {
+            generator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't apply reduction: no rule consequence");
+          }
+          return ruleConsequence;
+        }
+      }
+
+      // default
+      RuleConsequence ruleConsequence = aSwitch.getDefaultConsequence();
+      if (ruleConsequence != null) {
+        return ruleConsequence;
+      }
+    }
+
+    return null;
   }
 }

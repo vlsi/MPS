@@ -105,14 +105,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private void expandReferenceMacro(ITemplateGenerator generator) {
     String linkRole = getReferenceRole();
 
-    // try new query
-    ReferenceMacro_GetReferent function = myReferenceMacro.getReferentFunction();
-    if (function == null) {
-      generator.showErrorMessage(getInputNode(), myReferenceMacro.getNode(), "couldn't evaluate reference macro");
-      return;
-    }
-
-    Object result = QueryExecutor.getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro.getNode(), myReferenceMacro.getModel(), function, generator);
+    Object result = QueryExecutor.getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro, generator);
     if (result instanceof SNode) {
       myOutputTargetNode = (SNode) result;
     } else if (result != null) {

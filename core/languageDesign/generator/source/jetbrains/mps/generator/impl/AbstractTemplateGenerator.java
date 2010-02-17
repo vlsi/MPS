@@ -38,8 +38,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   private GeneratorMappings myMappings;
 
-  private TemplateSwitchGraph myTemplateSwitchGraph;
-  private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
   private Map<String, SNode> myCurrentPreviousInputNodesByMappingName;
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
@@ -180,43 +178,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       return null;
     }
     return myCurrentPreviousInputNodesByMappingName.get(mappingName);
-  }
-
-  public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) throws GenerationFailureException {
-    AbstractConceptDeclaration inputNodeConcept = inputNode.getConceptDeclarationAdapter();
-
-    if (myTemplateSwitchGraph == null) {
-      myTemplateSwitchGraph = new TemplateSwitchGraph(getGeneratorSessionContext().getTemplateModels());
-      myTemplateSwitchToListCache = new HashMap<TemplateSwitch, List<TemplateSwitch>>();
-    }
-
-    List<TemplateSwitch> switches = myTemplateSwitchToListCache.get(templateSwitch);
-    if (switches == null) {
-      switches = myTemplateSwitchGraph.getSubgraphAsList(templateSwitch);
-      myTemplateSwitchToListCache.put(templateSwitch, switches);
-    }
-
-    // for each template switch test conditions and choose template node
-    for (TemplateSwitch aSwitch : switches) {
-      List<Reduction_MappingRule> rules = aSwitch.getReductionMappingRules();
-      for (Reduction_MappingRule rule : rules) {
-        if (GeneratorUtil.checkPremiseForBaseMappingRule(inputNode, inputNodeConcept, rule, this)) {
-          RuleConsequence ruleConsequence = rule.getRuleConsequence();
-          if (ruleConsequence == null) {
-            showErrorMessage(inputNode, null, rule.getNode(), "couldn't apply reduction: no rule consequence");
-          }
-          return ruleConsequence;
-        }
-      }
-
-      // default
-      RuleConsequence ruleConsequence = aSwitch.getDefaultConsequence();
-      if (ruleConsequence != null) {
-        return ruleConsequence;
-      }
-    }
-
-    return null;
   }
 
   public SNode findOutputNodeById(SNodeId nodeId) {

@@ -389,7 +389,7 @@ public class TemplateProcessor {
       generationTracer.pushSwitch(templateSwitch.getNode());
       try {
         List<SNode> _outputNodes = null;
-        RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
+        RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getRuleManager().getConsequenceForSwitchCase(newInputNode, templateSwitch, myGenerator);
         if (consequenceForCase == null) {
           // no switch-case found for the inputNode - continue with templateNode under the $switch$
           _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1);
