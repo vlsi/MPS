@@ -357,6 +357,7 @@ public class GenerationSession {
         info("remove spent model '" + model.getSModelFqName() + "'");
         SModelRepository.getInstance().removeModelDescriptor(md);
       }
+      // TODO md.disposeFastNodeFinder();
     }
   }
 

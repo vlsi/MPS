@@ -25,6 +25,9 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
 
+/**
+ * Manages rules/templates of major step.
+ */
 public class RuleManager {
 
   private FlattenIterable<CreateRootRule> myCreateRootRules;

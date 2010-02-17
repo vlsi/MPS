@@ -80,15 +80,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     // root mapping rules
-    List<SNode> rootsNotToCopy = new ArrayList<SNode>();
+    List<SNode> rootsToCopy = new ArrayList<SNode>(myInputModel.getRoots());
     for (Root_MappingRule rule : myRuleManager.getRoot_MappingRules()) {
       checkMonitorCanceled();
-      applyRoot_MappingRule(rule, rootsNotToCopy);
+      applyRoot_MappingRule(rule, rootsToCopy);
     }
 
     checkMonitorCanceled();
     getGeneratorSessionContext().clearCopiedRootsSet();
-    List<SNode> copiedOutputRoots = copyRootsFromInputModel(rootsNotToCopy);
+    List<SNode> copiedOutputRoots = copyRootsFromInputModel(rootsToCopy);
     for (SNode copiedOutputRoot : copiedOutputRoots) {
       getGeneratorSessionContext().registerCopiedRoot(copiedOutputRoot);
       myOutputModel.addRoot(copiedOutputRoot);
@@ -118,12 +118,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return isChanged();
   }
 
-  private List<SNode> copyRootsFromInputModel(List<SNode> rootsNotToCopy) throws GenerationFailureException {
-    List<SNode> rootsToCopy = new ArrayList<SNode>(myInputModel.getRoots());
-    for (SNode rootNode : rootsNotToCopy) {
-      rootsToCopy.remove(rootNode);
-    }
-
+  private List<SNode> copyRootsFromInputModel(List<SNode> rootsToCopy) throws GenerationFailureException {
     Iterator<SNode> iterator = rootsToCopy.iterator();
     while (iterator.hasNext()) {
       SNode rootNode = iterator.next();
@@ -225,7 +220,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private void applyRoot_MappingRule(Root_MappingRule rule, List<SNode> rootsNotToCopy) throws GenerationFailureException, GenerationCanceledException {
+  private void applyRoot_MappingRule(Root_MappingRule rule, List<SNode> rootsToCopy) throws GenerationFailureException, GenerationCanceledException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
@@ -253,7 +248,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             showErrorMessage(BaseAdapter.fromAdapter(rule), "no template is defined for the rule");
           }
           if (inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
-            rootsNotToCopy.add(inputNode);
+            rootsToCopy.remove(inputNode);
           }
         } catch (DismissTopMappingRuleException e) {
           // it's ok, just continue
