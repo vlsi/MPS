@@ -63,7 +63,7 @@ public class PropjectPaneDnDListener implements DropTargetListener {
     if (targetModel == null) return Collections.emptyList();
     List<SNode> result = new ArrayList<SNode>();
     for (final SNode node : sourceNodes) {
-      if (virtualPackage.equals(getVirtualPackage(node))) continue;
+      if (EqualUtil.equals(virtualPackage, getVirtualPackage(node))) continue;
       SModelDescriptor sourceModel = getModelDescriptor(node);
       if (EqualUtil.equals(sourceModel, targetModel)) {
         result.add(node);
