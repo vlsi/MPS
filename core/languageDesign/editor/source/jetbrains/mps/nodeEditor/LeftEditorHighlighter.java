@@ -45,13 +45,14 @@ public class LeftEditorHighlighter extends JComponent {
 
   private static final Logger LOG = Logger.getLogger(LeftEditorHighlighter.class);
 
+  private static final int RIGHT_GAP = 5;
   private static final int BRACKETS_WIDTH = 2;
-  private static final int MIN_WIDTH = 30;
+  private static final int MIN_SEAPEATOR_LINE_X = 30;
   private static final int GAP_BETWEEN_ICONS = 3;
   private static final int LEFT_GAP = 1;
 
   private EditorComponent myEditorComponent;
-  private int myWidth = MIN_WIDTH;
+  private int mySeparatorLineX = MIN_SEAPEATOR_LINE_X;
 
   private HashMap<CellInfo, HighlighterBracket> myBrackets = new HashMap<CellInfo, HighlighterBracket>();
 
@@ -74,8 +75,8 @@ public class LeftEditorHighlighter extends JComponent {
   public LeftEditorHighlighter(EditorComponent editorComponent) {
     setBackground(Color.white);
     myEditorComponent = editorComponent;
-    editorComponent.addMouseListener(new MyMouseListener());
-    editorComponent.addMouseMotionListener(new MyMouseEnterListener());
+    addMouseListener(new MyMouseListener());
+    addMouseMotionListener(new MyMouseEnterListener());
     editorComponent.addRebuildListener(new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
         removeAllIconRenderers(IconRendererType.BOOKMARK);
@@ -140,19 +141,17 @@ public class LeftEditorHighlighter extends JComponent {
         deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
     }
     g.setColor(Color.gray);
-    UIUtil.drawVDottedLine(g2d, myWidth - 1, bounds.y, bounds.y + bounds.height, getBackground(), Color.gray);
+    UIUtil.drawVDottedLine(g2d, mySeparatorLineX, bounds.y, bounds.y + bounds.height, getBackground(), Color.gray);
 
-    for (FoldingButton button : myFoldingButtons.values()) {
-      if (button.myMouseOver && !button.myIsFolded) {
-        g.setColor(button.getBorderColor());
-        g.drawLine(button.myX, button.myY1 + FoldingButton.WIDTH, button.myX, button.myY2 - FoldingButton.WIDTH);
-      }
-    }
     for (HighlighterBracket bracket : myBrackets.values()) {
       bracket.paint(g);
     }
+    // Painting mouse over feedback "below" all other folding buttons 
     for (FoldingButton button : myFoldingButtons.values()) {
-      button.paint(g);
+      button.paintFeedback(g, mySeparatorLineX);
+    }
+    for (FoldingButton button : myFoldingButtons.values()) {
+      button.paint(g, mySeparatorLineX);
     }
     paintIconRenderers(g);
   }
@@ -236,10 +235,6 @@ public class LeftEditorHighlighter extends JComponent {
     }
   }
 
-  public int getWidth() {
-    return myWidth;
-  }
-
   public void relayout(boolean updateFolding) {
     relayout(updateFolding, true);
   }
@@ -250,7 +245,7 @@ public class LeftEditorHighlighter extends JComponent {
     if (updateBraces) {
       for (HighlighterBracket bracket : myBrackets.values()) {
         bracket.relayout();
-        bracket.setX(myWidth);
+        bracket.setX(mySeparatorLineX);
       }
     }
     deleteUnresolvedBrackets();
@@ -258,12 +253,11 @@ public class LeftEditorHighlighter extends JComponent {
     if (updateFolding) {
       for (FoldingButton button : myFoldingButtons.values()) {
         button.relayout();
-        button.setX(myWidth);
       }
       deleteUnresolvedFoldingButtons();
     }
 
-    myBracketsAndFoldingButtonsWidth = myFoldingButtons.isEmpty() ? 0 : FoldingButton.WIDTH;
+    myBracketsAndFoldingButtonsWidth = myFoldingButtons.isEmpty() ? 0 : FoldingButton.WIDTH/2;
     myBracketEdges.clear();
     myBracketsLayoutStack.clear();
     // from top to bottom
@@ -296,7 +290,7 @@ public class LeftEditorHighlighter extends JComponent {
         }
       }
 
-      myCurrentBracketsWidth = (myWidth - maxDepth) / (2 + maxDepth);
+      myCurrentBracketsWidth = (mySeparatorLineX - maxDepth) / (2 + maxDepth);
       for (HighlighterBracket bracket : myBrackets.values()) {
         int inverseDepth = maxDepth - bracket.myDepth;
         bracket.myCurrentWidth = getCurrentBracketsWidth() * 2 + inverseDepth * (getCurrentBracketsWidth() + 1);
@@ -308,7 +302,7 @@ public class LeftEditorHighlighter extends JComponent {
 
     myBracketsLayoutStack.clear();
     myBracketEdges.clear();
-    updateWidth();
+    updateSeparatorLinePosition();
   }
 
   private int getCurrentBracketsWidth() {
@@ -345,13 +339,13 @@ public class LeftEditorHighlighter extends JComponent {
   public void addIconRenderer(EditorMessageIconRenderer renderer) {
     myIconRenderers.add(renderer);
     recalculateIconRenderersWidth();
-    updateWidth();
+    updateSeparatorLinePosition();
   }
 
   public void removeIconRenderer(EditorMessageIconRenderer renderer) {
     if (myIconRenderers.remove(renderer)) {
       recalculateIconRenderersWidth();
-      updateWidth();
+      updateSeparatorLinePosition();
     }
   }
 
@@ -366,14 +360,14 @@ public class LeftEditorHighlighter extends JComponent {
     }
     if (wasModified) {
       recalculateIconRenderersWidth();
-      updateWidth();
+      updateSeparatorLinePosition();
     }
   }
 
   public void removeAllIconRenderers(Collection<EditorMessageIconRenderer> renderers) {
     if (myIconRenderers.removeAll(renderers)) {
       recalculateIconRenderersWidth();
-      updateWidth();
+      updateSeparatorLinePosition();
     }
   }
 
@@ -388,7 +382,7 @@ public class LeftEditorHighlighter extends JComponent {
     }
     if (wasModified) {
       recalculateIconRenderersWidth();
-      updateWidth();
+      updateSeparatorLinePosition();
     }
   }
 
@@ -423,21 +417,15 @@ public class LeftEditorHighlighter extends JComponent {
     }.run();
   }
 
-  private void updateWidth() {
-    int newWidth = Math.max(MIN_WIDTH, myIconRenderersWidth + myBracketsAndFoldingButtonsWidth);
-    if (newWidth != myWidth) {
-      myWidth = newWidth;
+  private void updateSeparatorLinePosition() {
+    int newSeparatorLineX = Math.max(MIN_SEAPEATOR_LINE_X, myIconRenderersWidth + myBracketsAndFoldingButtonsWidth);
+    if (newSeparatorLineX != mySeparatorLineX) {
+      mySeparatorLineX = newSeparatorLineX;
       // TODO: remove relayout call from here
 //      relayout(true, true);
       for (HighlighterBracket bracket : myBrackets.values()) {
-        bracket.setX(myWidth);
+        bracket.setX(mySeparatorLineX);
       }
-
-      for (FoldingButton button : myFoldingButtons.values()) {
-        button.relayout();
-        button.setX(myWidth);
-      }
-      
       firePreferredSizeChanged();
     }
   }
@@ -448,7 +436,7 @@ public class LeftEditorHighlighter extends JComponent {
 
   @Override
   public Dimension getPreferredSize() {
-    return new Dimension(myWidth, myEditorComponent.getPreferredSize().height);
+    return new Dimension(mySeparatorLineX + RIGHT_GAP, myEditorComponent.getPreferredSize().height);
   }
 
   private int getIconCoordinate(EditorMessageIconRenderer renderer) {
@@ -474,6 +462,10 @@ TODO: handle mouse events for LeftHighlighter elements here and return from this
 is consumed by corresponding element.
 */
     super.processMouseEvent(e);
+  }
+
+  private boolean isInBracketsAndFoldingButtons(MouseEvent e) {
+    return e.getX() >= mySeparatorLineX - FoldingButton.WIDTH / 2 && e.getX() <= mySeparatorLineX + FoldingButton.WIDTH / 2;
   }
 
   private class HighlighterBracket {
@@ -594,9 +586,8 @@ is consumed by corresponding element.
     private EditorComponent myEditor;
     private int myY1;
     private int myY2;
-    private int myX;
     private boolean myIsHidden = false;
-    public static final int WIDTH = 9;
+    public static final int WIDTH = 8;
     private boolean myIsFolded = false;
     private boolean myMouseOver = false;
 
@@ -623,11 +614,18 @@ is consumed by corresponding element.
       return myMouseOver ? Color.BLUE : Color.DARK_GRAY;
     }
 
-    public void paint(Graphics g) {
+    public void paintFeedback(Graphics g, int x) {
+      if (myMouseOver && !myIsFolded) {
+        g.setColor(getBorderColor());
+        g.drawLine(x, myY1 + FoldingButton.WIDTH, x, myY2 - FoldingButton.WIDTH);
+      }
+    }
+
+    public void paint(Graphics g, int x) {
       if (myIsHidden) return;
       Color borderColor = getBorderColor();
       if (!myIsFolded) {
-        int xs[] = {myX, myX - WIDTH / 2, myX - WIDTH / 2, myX - WIDTH * 3 / 8, myX, myX + WIDTH * 3 / 8, myX + WIDTH / 2, myX + WIDTH / 2};
+        int xs[] = {x, x - WIDTH / 2, x - WIDTH / 2, x - WIDTH * 3 / 8, x, x + WIDTH * 3 / 8, x + WIDTH / 2, x + WIDTH / 2};
         int ys[] = {myY1, myY1, myY1 + WIDTH / 2, myY1 + WIDTH * 7 / 8, myY1 + WIDTH, myY1 + WIDTH * 7 / 8, myY1 + WIDTH / 2, myY1};
 
         g.setColor(Color.WHITE);
@@ -645,27 +643,23 @@ is consumed by corresponding element.
         g.drawPolygon(xs, ys, xs.length);
 
         g.setColor(Color.DARK_GRAY);
-        g.drawLine(myX - WIDTH / 4, myY1 + WIDTH / 2, myX + WIDTH / 4, myY1 + WIDTH / 2);
-        g.drawLine(myX - WIDTH / 4, myY2 - WIDTH / 2, myX + WIDTH / 4, myY2 - WIDTH / 2);
+        g.drawLine(x - WIDTH / 4, myY1 + WIDTH / 2, x + WIDTH / 4, myY1 + WIDTH / 2);
+        g.drawLine(x - WIDTH / 4, myY2 - WIDTH / 2, x + WIDTH / 4, myY2 - WIDTH / 2);
 
       } else {
         g.setColor(Color.LIGHT_GRAY);
         //noinspection SuspiciousNameCombination
-        g.fillOval(myX - WIDTH / 2 - 1, (myY1 + myY2 - WIDTH - 1) / 2, WIDTH + 1, WIDTH + 1);
+        g.fillOval(x - WIDTH / 2, (myY1 + myY2 - WIDTH) / 2, WIDTH, WIDTH);
         g.setColor(borderColor);
-        g.drawOval(myX - WIDTH / 2 - 1, (myY1 + myY2 - WIDTH - 1) / 2, WIDTH + 1, WIDTH + 1);
+        g.drawOval(x - WIDTH / 2, (myY1 + myY2 - WIDTH) / 2, WIDTH, WIDTH);
         g.setColor(Color.WHITE);
-        g.drawLine(myX - (WIDTH + 1) / 4, (myY1 + myY2) / 2, myX + (WIDTH + 1) / 4, (myY1 + myY2) / 2);
-        g.drawLine(myX, (myY1 + myY2 - WIDTH - 1) / 2 + WIDTH / 4, myX, (myY1 + myY2 + WIDTH + 1) / 2 - WIDTH / 4);
+        g.drawLine(x - WIDTH / 4, (myY1 + myY2) / 2, x + WIDTH / 4, (myY1 + myY2) / 2);
+        g.drawLine(x, (myY1 + myY2) / 2 + WIDTH / 4, x, (myY1 + myY2) / 2 - WIDTH / 4);
       }
     }
 
     private EditorCell getCell() {
       return myCellInfo.findCell(myEditor);
-    }
-
-    public void setX(int x) {
-      myX = x;
     }
 
     public void activate() {
@@ -685,22 +679,21 @@ is consumed by corresponding element.
 
     public void mouseEntered() {
       myMouseOver = true;
-      myEditor.repaint(myX - 1 - WIDTH / 2, myY1, WIDTH + 2, myY2 - myY1);
+      repaint(mySeparatorLineX - WIDTH / 2, myY1, WIDTH + 1, myY2 - myY1 + 1);
     }
 
     public void mouseExited() {
       myMouseOver = false;
-      myEditor.repaint(myX - 1 - WIDTH / 2, myY1, WIDTH + 2, myY2 - myY1);
+      repaint(mySeparatorLineX - WIDTH / 2, myY1, WIDTH + 1, myY2 - myY1 + 1);
     }
 
-    public boolean isInside(MouseEvent e) {
-      if (e.getX() > myX + FoldingButton.WIDTH / 2 || e.getX() < myX - FoldingButton.WIDTH / 2) return false;
-      if (!myIsFolded && ((e.getY() >= myY1 && e.getY() <= myY1 + FoldingButton.WIDTH)
-        || (e.getY() <= myY2 && e.getY() >= myY2 - FoldingButton.WIDTH))) {
+    public boolean isInside(int y) {
+      if (!myIsFolded && ((y >= myY1 && y <= myY1 + FoldingButton.WIDTH)
+        || (y <= myY2 && y >= myY2 - FoldingButton.WIDTH))) {
         return true;
       }
-      if (myIsFolded && e.getY() >= (myY1 + myY2 - FoldingButton.WIDTH) / 2 &&
-        e.getY() <= (myY1 + myY2 + FoldingButton.WIDTH) / 2) {
+      if (myIsFolded && y >= (myY1 + myY2 - FoldingButton.WIDTH) / 2 &&
+        y <= (myY1 + myY2 + FoldingButton.WIDTH) / 2) {
         return true;
       }
       return false;
@@ -749,11 +742,22 @@ is consumed by corresponding element.
   private class MyMouseListener extends MouseAdapter {
 
     public void mouseClicked(MouseEvent e) {
-      if (e.getX() > myWidth + FoldingButton.WIDTH / 2 || e.getX() < myWidth - FoldingButton.WIDTH / 2) return;
+      if (!isInBracketsAndFoldingButtons(e)) {
+        return;
+      }
       for (FoldingButton button : myFoldingButtons.values()) {
-        if (button.isInside(e)) {
+        if (button.isInside(e.getY())) {
           button.activate();
           break;
+        }
+      }
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+      for (FoldingButton button : myFoldingButtons.values()) {
+        if (button.myMouseOver) {
+          button.mouseExited();
         }
       }
     }
@@ -762,12 +766,20 @@ is consumed by corresponding element.
   private class MyMouseEnterListener extends MouseMotionAdapter {
 
     public void mouseMoved(MouseEvent e) {
-      for (FoldingButton button : myFoldingButtons.values()) {
-        if (button.isInside(e)) {
-          if (!button.myMouseOver) {
-            button.mouseEntered();
+      if (isInBracketsAndFoldingButtons(e)) {
+        for (FoldingButton button : myFoldingButtons.values()) {
+          if (button.isInside(e.getY())) {
+            if (!button.myMouseOver) {
+              button.mouseEntered();
+            }
+          } else {
+            if (button.myMouseOver) {
+              button.mouseExited();
+            }
           }
-        } else {
+        }
+      } else {
+        for (FoldingButton button : myFoldingButtons.values()) {
           if (button.myMouseOver) {
             button.mouseExited();
           }
