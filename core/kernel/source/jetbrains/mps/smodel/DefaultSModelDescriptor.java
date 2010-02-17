@@ -715,6 +715,14 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return myFastNodeFinder;
   }
 
+  @Override
+  public void disposeFastNodeFinder() {
+    if(myFastNodeFinder != null) {
+      myFastNodeFinder.dispose();
+      myFastNodeFinder = null;
+    }
+  }
+
   private void addInstances(SNode current, AbstractConceptDeclaration concept, Set<SNode> result, IScope scope) {
     if (current.isInstanceOfConcept(concept)) result.add(current);
     for (SNode child : current.getChildren()) {

@@ -101,6 +101,8 @@ public interface SModelDescriptor {
 
   FastNodeFinder getFastNodeFinder();
 
+  void disposeFastNodeFinder();
+
   long timestamp();
 
   long fileTimestamp();
