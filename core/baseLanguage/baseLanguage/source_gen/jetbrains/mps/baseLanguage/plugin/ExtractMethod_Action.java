@@ -8,6 +8,7 @@ import jetbrains.mps.logging.Logger;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
+import jetbrains.mps.nodeEditor.EditorContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFabric;
@@ -22,6 +23,7 @@ public class ExtractMethod_Action extends GeneratedAction {
 
   private List<SNode> nodes;
   private Frame frame;
+  private EditorContext context;
 
   public ExtractMethod_Action() {
     super("Extract Method", "", ICON);
@@ -73,14 +75,18 @@ public class ExtractMethod_Action extends GeneratedAction {
     if (this.frame == null) {
       return false;
     }
+    this.context = event.getData(MPSDataKeys.EDITOR_CONTEXT);
+    if (this.context == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ExtractMethodDialog dialog = new ExtractMethodDialog(event.getData(MPSDataKeys.EDITOR_CONTEXT), ExtractMethod_Action.this.nodes, ExtractMethod_Action.this.frame);
-      dialog.showDialog();
+      ExtractMethodDialog dialog = new ExtractMethodDialog(ExtractMethod_Action.this.context, ExtractMethod_Action.this.nodes, ExtractMethod_Action.this.frame);
       dialog.pack();
+      dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ExtractMethod", t);
     }
