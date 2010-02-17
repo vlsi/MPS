@@ -12,6 +12,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
@@ -78,8 +79,11 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           }
         });
       }
-      if (node.value == null) {
+      if ((node.value == null)) {
         error.append("node is not selected or does not exist").append("\n");
+      }
+      if ((ClassConcept_Behavior.call_getMainMethod_1213877355884(node.value) == null)) {
+        error.append("node is not valid").append("\n");
       }
 
       if (DefaultJavaApplication_Configuration.this.getStateObject().parameters == null) {
