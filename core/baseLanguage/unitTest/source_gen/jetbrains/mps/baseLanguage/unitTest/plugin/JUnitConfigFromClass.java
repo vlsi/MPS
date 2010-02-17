@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.SNode;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -25,6 +27,10 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
   }
 
   private void createConfig(final SNode parameter) {
+    if (ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(parameter)).isEmpty()) {
+      return;
+    }
+
     JUnitConfigFromClass.this.setSourceElement(new MPSPsiElement<SNode>(parameter));
 
     boolean isCompileInMPS = SNodeOperations.getModel(parameter).getModelDescriptor().getModule().isCompileInMPS();

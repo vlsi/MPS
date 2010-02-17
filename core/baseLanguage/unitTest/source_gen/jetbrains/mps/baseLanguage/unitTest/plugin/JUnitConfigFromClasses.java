@@ -8,10 +8,11 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -29,6 +30,17 @@ public class JUnitConfigFromClasses extends BaseConfigCreator<List> implements C
   }
 
   private void createConfig(final List<SNode> parameter) {
+    boolean containsTest = false;
+    for (SNode testCase : parameter) {
+      if (ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(testCase)).isNotEmpty()) {
+        containsTest = true;
+        break;
+      }
+    }
+    if (!(containsTest)) {
+      return;
+    }
+
     JUnitConfigFromClasses.this.setSourceElement(new MPSPsiElement<List>(parameter));
 
     boolean isCompileInMPS = SNodeOperations.getModel(Sequence.fromIterable(parameter).first()).getModelDescriptor().getModule().isCompileInMPS();
