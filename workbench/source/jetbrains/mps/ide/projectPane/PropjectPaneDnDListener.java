@@ -112,6 +112,10 @@ public class PropjectPaneDnDListener implements DropTargetListener {
   public void drop(DropTargetDropEvent dtde) {
     Point point = dtde.getLocation();
     TreePath treePath = myTree.getPathForLocation(point.x, point.y);
+    if (treePath == null) {
+      dtde.rejectDrop();
+      return;
+    }
     Object target = treePath.getLastPathComponent();
     if (!(target instanceof MPSTreeNode)) {
       dtde.rejectDrop();
