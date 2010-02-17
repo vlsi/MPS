@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.impl;
+package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.template.ITemplateGenerator;
