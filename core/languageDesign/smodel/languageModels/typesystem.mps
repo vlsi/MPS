@@ -9599,17 +9599,32 @@
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration:3" id="1228341932957">
         <property name="name:3" value="Concept" />
       </node>
-      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1228341932958">
-        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1228341932959">
-          <link role="baseMethodDeclaration:3" targetNodeId="1178287490309" resolveInfo="equate_inputNodeConcept" />
-          <link role="classConcept:3" targetNodeId="1178287490257" resolveInfo="RulesUtil" />
-          <node role="actualArgument:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1228341932960">
-            <link role="applicableNode:3" targetNodeId="1228341901783" resolveInfo="node" />
-          </node>
-          <node role="actualArgument:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="1228341932961">
-            <link role="typeVarDeclaration:3" targetNodeId="1228341932957" resolveInfo="Concept" />
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="4733308734233397410">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4733308734233397411">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4733308734233397412">
+            <node role="quotedNode:0" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4733308734233400020">
+              <node role="referenceAntiquotation$link_attribute$concept:16" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="4733308734233400021">
+                <node role="expression:0" type="jetbrains.mps.lang.typesystem.structure.TypeVarReference:3" id="4733308734233400023">
+                  <link role="typeVarDeclaration:3" targetNodeId="1228341932957" resolveInfo="Concept" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4733308734233397420">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="4733308734233397421">
+            <property name="skipDependencyOnCurrent:3" value="true" />
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4733308734233400027">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4733308734233400028">
+                <link role="applicableNode:3" targetNodeId="1228341901783" resolveInfo="node" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4733308734233400029">
+                <link role="baseMethodDeclaration:16" targetNodeId="32.1213877508894" resolveInfo="getLeftExpression" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="4733308734233397423" />
       </node>
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1228341932962">
         <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1228341932963">
