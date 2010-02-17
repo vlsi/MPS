@@ -4333,6 +4333,9 @@
                   <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3115327157609992863">
                     <link role="variableDeclaration:3" targetNodeId="3115327157609990362" resolveInfo="ownMethod" />
                   </node>
+                  <node role="messageTarget:3" type="jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget:3" id="958860355040994538">
+                    <link role="propertyDeclaration:3" targetNodeId="25.1169194664001:0" resolveInfo="name" />
+                  </node>
                 </node>
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.BreakStatement:3" id="3115327157609989962" />
               </node>
