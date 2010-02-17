@@ -23,7 +23,7 @@ import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
+import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -51,7 +51,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   /* cached session data */
   private BlockedReductionsData myReductionData;
-  private final GenerationTracer myGenerationTracer;
+  private final IGenerationTracer myGenerationTracer;
 
   public TemplateGenerator(GenerationSessionContext operationContext,
                            ProgressIndicator progressMonitor,
@@ -476,7 +476,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myReductionData;
   }
 
-  GenerationTracer getGenerationTracer() {
+  IGenerationTracer getGenerationTracer() {
     return myGenerationTracer;
   }
 

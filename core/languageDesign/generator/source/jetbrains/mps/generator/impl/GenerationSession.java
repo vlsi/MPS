@@ -28,6 +28,7 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.NodeWithContext;
+import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.MappingScript;
 import jetbrains.mps.lang.generator.structure.MappingScriptKind;
 import jetbrains.mps.logging.ILoggingHandler;
@@ -53,16 +54,17 @@ import java.util.List;
 public class GenerationSession {
   public static final Logger LOG = Logger.getLogger(GenerationSession.class);
 
-  private SModelDescriptor myOriginalInputModel;
+  private final SModelDescriptor myOriginalInputModel;
   private GenerationPlan myGenerationPlan;
 
   /* temporary */
-  private boolean myReverseRoots;
+  private final boolean myReverseRoots;
 
-  private IOperationContext myInvocationContext;
-  private boolean myDiscardTransients;
-  private ProgressIndicator myProgressMonitor;
-  private IMessageHandler myMessagesHandler;
+  private final IOperationContext myInvocationContext;
+  private final IGenerationTracer myGenerationTracer;
+  private final boolean myDiscardTransients;
+  private final ProgressIndicator myProgressMonitor;
+  private final IMessageHandler myMessagesHandler;
   private ILoggingHandler myLoggingHandler;
 
   private GenerationSessionContext mySessionContext;
@@ -71,10 +73,11 @@ public class GenerationSession {
   private int myTransientModelsCount = 0;
 
   public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
-                           boolean saveTransientModels, ProgressIndicator progressMonitor,
-                           IMessageHandler messagesHandler, boolean reverseRoots) {
+                           IGenerationTracer generationTracer, boolean saveTransientModels,
+                           ProgressIndicator progressMonitor, IMessageHandler messagesHandler, boolean reverseRoots) {
     myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
+    myGenerationTracer = generationTracer;
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
     myMessagesHandler = messagesHandler;
@@ -136,7 +139,7 @@ public class GenerationSession {
     printGenerationStepData(inputModel);
 
     // -- replace context
-    mySessionContext = new GenerationSessionContext(myInvocationContext, inputModel, myGenerationPlan, mySessionContext);
+    mySessionContext = new GenerationSessionContext(myInvocationContext, myGenerationTracer, inputModel, myGenerationPlan, mySessionContext);
 
     // -- prepare generator
     GeneratorLogger logger = new GeneratorLogger(mySessionContext);

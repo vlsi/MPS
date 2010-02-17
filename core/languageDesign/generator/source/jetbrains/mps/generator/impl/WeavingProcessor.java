@@ -3,7 +3,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.template.QueryExecutor;
-import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
+import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
@@ -22,7 +22,7 @@ public class WeavingProcessor {
 
   private static final Logger LOG = Logger.getLogger(WeavingProcessor.class);
 
-  private GenerationTracer myGenerationTracer;
+  private IGenerationTracer myGenerationTracer;
   private TemplateGenerator myGenerator;
   private FastNodeFinder myFastNodeFinder;
 

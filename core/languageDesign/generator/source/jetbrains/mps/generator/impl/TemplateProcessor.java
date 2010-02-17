@@ -20,7 +20,7 @@ import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.template.MacroUtil;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
+import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -115,7 +115,7 @@ public class TemplateProcessor {
                                                        int nodeMacrosToSkip)
     throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
-    GenerationTracer generationTracer = myGenerator.getGenerationTracer();
+    IGenerationTracer generationTracer = myGenerator.getGenerationTracer();
     putInputNodeByMappingName(mappingName, inputNode);
 
     int macroCount = 0;
@@ -223,7 +223,7 @@ public class TemplateProcessor {
 
   @Nullable
   private List<SNode> createOutputNodesForTemplateNodeWithMacro(NodeMacro nodeMacro, SNode templateNode, SNode inputNode, int nodeMacrosToSkip) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
-    GenerationTracer generationTracer = myGenerator.getGenerationTracer();
+    IGenerationTracer generationTracer = myGenerator.getGenerationTracer();
     List<SNode> outputNodes = new ArrayList<SNode>();
     String mappingName = GeneratorUtil.getMappingName(nodeMacro, null);
 

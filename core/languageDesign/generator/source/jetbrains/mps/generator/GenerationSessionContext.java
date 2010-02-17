@@ -19,9 +19,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
-import jetbrains.mps.lang.generator.structure.MappingConfiguration;
-import jetbrains.mps.lang.generator.structure.MappingScript;
-import jetbrains.mps.lang.generator.structure.MappingScriptReference;
+import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
@@ -37,9 +35,12 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private static final Object COPYED_ROOTS = new Object();
 
-  private List<SModelDescriptor> myTemplateModels;
-  private IOperationContext myInvocationContext;
-  private GenerationPlan myGenerationPlan;
+  private SModel myOriginalInputModel;
+
+  private final List<SModelDescriptor> myTemplateModels;
+  private final IOperationContext myInvocationContext;
+  private final IGenerationTracer myGenerationTracer;
+  private final GenerationPlan myGenerationPlan;
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
   // objects survive between transient models but not between generation steps 
@@ -51,15 +52,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private TraceMap myTraceMap = new TraceMap();
   private Set<String> myUsedNames = new HashSet<String>();
 
-  private SModel myOriginalInputModel;
-
-
   public GenerationSessionContext(IOperationContext invocationContext,
+                                  IGenerationTracer generationTracer,
                                   SModel inputModel,
                                   GenerationPlan generationPlan,
                                   GenerationSessionContext prevContext) {
 
     myInvocationContext = invocationContext;
+    myGenerationTracer = generationTracer;
     myGenerationPlan = generationPlan;
     myTemplateModels = generationPlan.getTemplateModels();
 
@@ -224,8 +224,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return set.contains(inputNode);
   }
 
-  public GenerationTracer getGenerationTracer() {
-    return getComponent(GenerationTracer.class);
+  public IGenerationTracer getGenerationTracer() {
+    return myGenerationTracer;
   }
 
   private boolean keepTransientForMessageNavigation() {

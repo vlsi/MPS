@@ -30,7 +30,7 @@ import javax.swing.SwingUtilities;
 import java.util.*;
 
 
-public class GenerationTracer {
+public class GenerationTracer implements IGenerationTracer {
   private static final Logger LOG = Logger.getLogger(GenerationTracer.class);
 
   private Project myProject;
@@ -56,6 +56,7 @@ public class GenerationTracer {
     return getMPSProject().getComponent(GenerationTracerViewTool.class);
   }
 
+  @Override
   public void startTracing() {
     myActive = true;
     myTracingDataByInputModel = new HashMap<String, List<TracerNode>>();
@@ -71,6 +72,7 @@ public class GenerationTracer {
     });
   }
 
+  @Override
   public void finishTracing() {
     myActive = false;
     SwingUtilities.invokeLater(new Runnable() {
@@ -79,11 +81,28 @@ public class GenerationTracer {
       }
     });
   }
+  
+  public void discardTracing() {
+    myActive = false;
+    myTracingDataByInputModel = null;
+    myTracingDataByOutputModel = null;
+    myModelsProcessedByScripts = null;
+    myCurrentTracingData = null;
+    myCurrentTraceNode = null;
 
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        getTracerViewTool().setTracingDataIsAvailable(false);
+      }
+    });
+  }
+
+  @Override
   public boolean isTracing() {
     return myActive;
   }
 
+  @Override
   public void startTracing(SModel inputModel, SModel outputModel) {
     if (!myActive) return;
     myCurrentTracingData = new ArrayList<TracerNode>();
@@ -92,6 +111,7 @@ public class GenerationTracer {
     myCurrentTraceNode = null;
   }
 
+  @Override
   public void discardTracing(SModel inputModel, SModel outputModel) {
     if (!myActive) return;
     myTracingDataByInputModel.remove(inputModel.getSModelReference().toString());
@@ -100,56 +120,67 @@ public class GenerationTracer {
     myCurrentTraceNode = null;
   }
 
+  @Override
   public void pushInputNode(SNode node) {
     if (!myActive) return;
     push(new TracerNode(TracerNode.Kind.INPUT, new SNodePointer(node)));
   }
 
+  @Override
   public void closeInputNode(SNode node) {
     if (!myActive) return;
     closeBranch(TracerNode.Kind.INPUT, node);
   }
 
+  @Override
   public void popInputNode(SNode node) {
     if (!myActive) return;
     pop(TracerNode.Kind.INPUT, node);
   }
 
+  @Override
   public void pushRule(SNode node) {
     if (!myActive) return;
     push(new TracerNode(TracerNode.Kind.RULE, new SNodePointer(node)));
   }
 
+  @Override
   public void closeRule(SNode node) {
     if (!myActive) return;
     closeBranch(TracerNode.Kind.RULE, node);
   }
 
+  @Override
   public void pushRuleConsequence(SNode node) {
     if (!myActive) return;
     push(new TracerNode(TracerNode.Kind.RULE_CONSEQUENCE, new SNodePointer(node)));
   }
 
+  @Override
   public void pushSwitch(SNode node) {
     if (!myActive) return;
     push(new TracerNode(TracerNode.Kind.SWITCH, new SNodePointer(node)));
   }
 
+  @Override
   public void pushMacro(SNode node) {
     if (!myActive) return;
     push(new TracerNode(TracerNode.Kind.MACRO, new SNodePointer(node)));
   }
 
+  @Override
   public void closeMacro(SNode node) {
     if (!myActive) return;
     closeBranch(TracerNode.Kind.MACRO, node);
   }
 
+  @Override
   public void pushOutputNode(SNode node) {
     if (!myActive) return;
     push(new TracerNode(TracerNode.Kind.OUTPUT, new SNodePointer(node)));
   }
 
+  @Override
   public void pushOutputNodeToReplaceLater(SNode node) {
     if (!myActive) return;
     if (myCurrentTraceNode == null) {
@@ -159,6 +190,7 @@ public class GenerationTracer {
     myOutputNodesToReplaceLater.put(node, myCurrentTraceNode);
   }
 
+  @Override
   public void replaceOutputNode(SNode node, SNode newOutputNode) {
     if (!myActive) return;
     TracerNode parentTracerNode = myOutputNodesToReplaceLater.get(node);
@@ -170,16 +202,19 @@ public class GenerationTracer {
     parentTracerNode.addChild(new TracerNode(Kind.OUTPUT, new SNodePointer(newOutputNode)));
   }
 
+  @Override
   public void pushTemplateNode(SNode node) {
     if (!myActive) return;
     push(new TracerNode(Kind.TEMPLATE, new SNodePointer(node)));
   }
 
+  @Override
   public void closeTemplateNode(SNode node) {
     if (!myActive) return;
     closeBranch(Kind.TEMPLATE, node);
   }
 
+  @Override
   public void pushCopyOperation() {
     if (!myActive) return;
     push(new TracerNode(Kind.COPY_OPERATION, null));
@@ -440,6 +475,7 @@ public class GenerationTracer {
   /**
    * util
    */
+  @Override
   public List<Pair<SNode, SNode>> getAllAppiedRulesWithInputNodes(SModelReference outputModelReference) {
     List<TracerNode> list = myTracingDataByOutputModel.get(outputModelReference.toString());
     List<TracerNode> ruleNodes = new ArrayList<TracerNode>();
@@ -463,6 +499,7 @@ public class GenerationTracer {
   /**
    * util
    */
+  @Override
   public List<Pair<SNode, String>> getNodesWithTextFromCurrentBranch() {
     List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
     TracerNode currNode = myCurrentTraceNode;
@@ -478,11 +515,13 @@ public class GenerationTracer {
     return result;
   }
 
+  @Override
   public void registerPreMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<MappingScript> preMappingScripts) {
     if (!myActive) return;
     myModelsProcessedByScripts.put(scriptsInputModel, scriptsOutputModel, preMappingScripts);
   }
 
+  @Override
   public void registerPostMappingScripts(SModel scriptsInputModel, SModel scriptsOutputModel, List<MappingScript> postMappingScripts) {
     if (!myActive) return;
     myModelsProcessedByScripts.put(scriptsInputModel, scriptsOutputModel, postMappingScripts);

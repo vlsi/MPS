@@ -30,6 +30,8 @@ import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
+import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
+import jetbrains.mps.lang.generator.plugin.debug.NullGenerationTracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -297,16 +299,22 @@ public class GeneratorManager {
       public void run() {
         final MPSProject project = inputModels.get(0).o2.getMPSProject();
         project.getComponentSafe(TransientModelsModule.class).clearAll();
-        if (saveTransientModels) {
-          project.getComponentSafe(GenerationTracer.class).startTracing();
+        if (!saveTransientModels) {
+          project.getComponentSafe(GenerationTracer.class).discardTracing();
         }
+
+        IGenerationTracer tracer = saveTransientModels
+          ? project.getComponentSafe(GenerationTracer.class)
+          : new NullGenerationTracer();
+        tracer.startTracing();
+
         fireBeforeGeneration(inputModels);
-        GenerationController gc = new GenerationController(new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, progress, messages, saveTransientModels);
+        GenerationController gc = new GenerationController(new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, tracer, progress, messages, saveTransientModels);
           //mySettings.isUseNewGenerator()
           //  ? new GenerationController2(GeneratorManager.this, new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, progress, messages, saveTransientModels)
           //  : new GenerationController(GeneratorManager.this, new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, progress, messages, saveTransientModels);
         result[0] = gc.generate();
-        project.getComponentSafe(GenerationTracer.class).finishTracing();
+        tracer.finishTracing();
         fireAfterGeneration(inputModels);
 
         CleanupManager.getInstance().cleanup();

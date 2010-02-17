@@ -32,6 +32,7 @@ import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.TaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
+import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
@@ -50,7 +51,8 @@ public class GenerationController {
   private GeneratorNotifierHelper myNotifierHelper;
   protected GenerationSettings mySettings;
   private List<Pair<SModelDescriptor, IOperationContext>> myInputModels;
-  protected IGenerationHandler myGenerationHandler;
+  protected final IGenerationHandler myGenerationHandler;
+  protected final IGenerationTracer myGenerationTracer;
   protected ProgressIndicator myProgress;
   protected IMessageHandler myMessages;
   protected boolean mySaveTransientModels;
@@ -62,6 +64,7 @@ public class GenerationController {
                               GenerationSettings settings,
                               List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
                               IGenerationHandler generationHandler,
+                              IGenerationTracer generationTracer,
                               ProgressIndicator progress,
                               IMessageHandler messages,
                               boolean saveTransientModels) {
@@ -70,6 +73,7 @@ public class GenerationController {
     mySettings = settings;
     myInputModels = _inputModels;
     myGenerationHandler = generationHandler;
+    myGenerationTracer = generationTracer;
     myProgress = progress;
     myMessages = messages;
     mySaveTransientModels = saveTransientModels;
@@ -151,7 +155,7 @@ public class GenerationController {
       for (SModelDescriptor inputModel : inputModels) {
         TypeChecker.getInstance().setIsGeneration(true);
 
-        GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, mySaveTransientModels, myProgress, myMessages, mySettings.isUseNewGenerator());
+        GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, myGenerationTracer, mySaveTransientModels, myProgress, myMessages, mySettings.isUseNewGenerator());
         try {
           Logger.addLoggingHandler(generationSession.getLoggingHandler());
           if (!myGenerationHandler.canHandle(inputModel)) {
