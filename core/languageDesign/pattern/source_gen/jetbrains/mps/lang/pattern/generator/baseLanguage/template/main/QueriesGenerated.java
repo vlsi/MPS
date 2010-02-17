@@ -442,10 +442,6 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static SNode sourceNodeQuery_5526632522770840539(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget((_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "patternVarField")), "type", true);
-  }
-
   public static Iterable sourceNodesQuery_1190931377097(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (String propertyName : _context.getNode().getPropertyNames()) {

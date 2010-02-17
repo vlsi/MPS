@@ -4911,27 +4911,8 @@
                     <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="5526632522770840505">
                       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5526632522770840534">
                         <link role="classifier:3" targetNodeId="3.~SNode" resolveInfo="SNode" />
-                        <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="5526632522770840538">
-                          <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="5526632522770840539">
-                            <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5526632522770840540">
-                              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5526632522770840542">
-                                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5526632522770840553">
-                                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="5526632522770840544">
-                                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5526632522770840545">
-                                      <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="5526632522770840546" />
-                                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput:0" id="5526632522770840547">
-                                        <link role="label:0" targetNodeId="1215479326412" resolveInfo="patternVarField" />
-                                        <node role="inputNode:0" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="5526632522770840548" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5526632522770840561">
-                                    <link role="link:16" targetNodeId="4.5680397130376446158:3" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
+                        <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="1058751858811892944">
+                          <link role="templateSwitch:2" targetNodeId="1174819350788" resolveInfo="PatternVariableType_switch" />
                         </node>
                       </node>
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5526632522770840508">
