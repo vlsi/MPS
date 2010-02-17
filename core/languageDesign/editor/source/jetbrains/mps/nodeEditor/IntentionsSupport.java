@@ -220,7 +220,7 @@ public class IntentionsSupport {
 
   @NotNull
   private Point getLightBulbLocation(@NotNull EditorCell selectedCell) {
-    int x = myEditor.getRootCell().getX() - myEditor.getAdditionalShiftX();// - myLightBulb.getWidth() - 6;
+    int x = myEditor.getRootCell().getX() - myEditor.getShiftX();// - myLightBulb.getWidth() - 6;
     int y = selectedCell.getY();
 
     Rectangle viewRect = myEditor.getViewport().getViewRect();

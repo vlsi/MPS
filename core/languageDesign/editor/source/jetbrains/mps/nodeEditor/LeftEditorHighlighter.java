@@ -15,34 +15,43 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.util.containers.SortedList;
+import com.intellij.util.ui.UIUtil;
+import gnu.trove.TIntObjectHashMap;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
+import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.Pair;
 
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import javax.swing.JComponent;
 import java.awt.*;
+import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.*;
 import java.util.List;
 
-public class LeftEditorHighlighter {
+public class LeftEditorHighlighter extends JComponent {
 
   private static final Logger LOG = Logger.getLogger(LeftEditorHighlighter.class);
+
   private static final int BRACKETS_WIDTH = 2;
+  private static final int MIN_WIDTH = 30;
+  private static final int GAP_BETWEEN_ICONS = 3;
+  private static final int LEFT_GAP = 1;
 
   private EditorComponent myEditorComponent;
-  private int myWidth = 10;
+  private int myWidth = MIN_WIDTH;
 
   private HashMap<CellInfo, HighlighterBracket> myBrackets = new HashMap<CellInfo, HighlighterBracket>();
 
@@ -54,20 +63,22 @@ public class LeftEditorHighlighter {
   private Map<CellInfo, FoldingButton> myFoldingButtons = new HashMap<CellInfo, FoldingButton>();
   private Set<FoldingButton> myUnresolvedFoldingButtons = new HashSet<FoldingButton>();
 
-  private Map<CellInfo, Bookmark> myBookmarks = new HashMap<CellInfo, Bookmark>();
-  private Set<Bookmark> myUnresolvedBookmarks = new HashSet<Bookmark>();
-
   private BookmarkListener myListener;
   private BookmarkManager myBookmarkManager = null;
 
+  private Set<EditorMessageIconRenderer> myIconRenderers = new HashSet();
+  private TIntObjectHashMap<List<EditorMessageIconRenderer>> myLineToRenderersMap = new TIntObjectHashMap();
+  private int myIconRenderersWidth = 0;
+  private int myBracketsAndFoldingButtonsWidth = 0;
+
   public LeftEditorHighlighter(EditorComponent editorComponent) {
+    setBackground(Color.white);
     myEditorComponent = editorComponent;
     editorComponent.addMouseListener(new MyMouseListener());
     editorComponent.addMouseMotionListener(new MyMouseEnterListener());
     editorComponent.addRebuildListener(new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
-        myBookmarks.clear();
-        myUnresolvedBookmarks.clear();
+        removeAllIconRenderers(IconRendererType.BOOKMARK);
         BookmarkManager bookmarkManager = getBookmarkManager();
         if (bookmarkManager != null) {
           bookmarkManager.removeBookmarkListener(myListener);
@@ -113,15 +124,24 @@ public class LeftEditorHighlighter {
     relayout(true, false);
   }
 
+  @Override
   public void paint(Graphics g) {
     Graphics2D g2d = (Graphics2D) g;
-    g.setColor(Color.DARK_GRAY);
-    Stroke s = g2d.getStroke();
-    g2d.setStroke(ColorAndGraphicsUtil.dottedStroke());
-
+    EditorComponent.turnOnAliasingIfPossible(g2d);
     Rectangle bounds = g.getClipBounds();
-    g.drawLine(myWidth, bounds.y, myWidth, bounds.y + bounds.height);
-    g2d.setStroke(s);
+    g.setColor(getBackground());
+    g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+
+    // same as in EditorComponent.paint() method
+    EditorCell deepestCell = myEditorComponent.getDeepestSelectedCell();
+    if (deepestCell instanceof EditorCell_Label) {
+      g.setColor(EditorComponent.CARET_ROW_COLOR);
+      g.fillRect(bounds.x, deepestCell.getY(), bounds.width,
+        deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
+    }
+    g.setColor(Color.gray);
+    UIUtil.drawVDottedLine(g2d, myWidth - 1, bounds.y, bounds.y + bounds.height, getBackground(), Color.gray);
+
     for (FoldingButton button : myFoldingButtons.values()) {
       if (button.myMouseOver && !button.myIsFolded) {
         g.setColor(button.getBorderColor());
@@ -134,9 +154,30 @@ public class LeftEditorHighlighter {
     for (FoldingButton button : myFoldingButtons.values()) {
       button.paint(g);
     }
-    for (Bookmark bookmark : myBookmarks.values()) {
-      bookmark.paint(g);
-    }
+    paintIconRenderers(g);
+  }
+
+  private void paintIconRenderers(final Graphics g) {
+    Rectangle clipBounds = g.getClipBounds();
+    final int startY = clipBounds.y;
+    final int endY = clipBounds.y + clipBounds.height;
+    new IconsBeltAllocator(myLineToRenderersMap) {
+      @Override
+      protected boolean allocateRow(List<EditorMessageIconRenderer> row, int y) {
+        if (y < startY) {
+          return true;
+        }
+        if (y > endY) {
+          return false;
+        }
+        return super.allocateRow(row, y);
+      }
+
+      @Override
+      protected void allocateIcon(EditorMessageIconRenderer renderer, int x, int y) {
+        renderer.getIcon().paintIcon(LeftEditorHighlighter.this, g, x, y);
+      }
+    }.run();
   }
 
   public void unHighlight(EditorCell cell) {
@@ -153,7 +194,8 @@ public class LeftEditorHighlighter {
     myFoldingButtons.put(cell.getCellInfo(), new FoldingButton(cell));
   }
 
-  public void addBookmark(SNode node, int number) {
+  private void addBookmark(SNode node, int number) {
+    // TODO: Do we need all these checks?..
     if (node == null) return;
     SNode editedNode = myEditorComponent.getEditedNode();
     if (editedNode == null) return;
@@ -165,14 +207,14 @@ public class LeftEditorHighlighter {
       //   LOG.error("can't find a cell for node " + node);
       return;
     }
-    myBookmarks.put(nodeCell.getCellInfo(), new Bookmark(nodeCell, number));
+    addIconRenderer(new BookmarkIconRenderer(node, number));
   }
 
   public void removeBookmark(int number) {
-    for (CellInfo cellInfo : new HashSet<CellInfo>(myBookmarks.keySet())) {
-      if (myBookmarks.get(cellInfo).getNumber() == number) {
-        myBookmarks.remove(cellInfo);
-        break;
+    for (EditorMessageIconRenderer renderer: myIconRenderers) {
+      if (renderer instanceof BookmarkIconRenderer && ((BookmarkIconRenderer) renderer).getNumber() == number) {
+        removeIconRenderer(renderer);
+        return;
       }
     }
   }
@@ -183,16 +225,15 @@ public class LeftEditorHighlighter {
       //   LOG.error("can't find a cell for node " + node);
       return;
     }
-    for (CellInfo cellInfo : new HashSet<CellInfo>(myBookmarks.keySet())) {
-      if (myBookmarks.get(cellInfo).getNumber() == -1 && cellInfo.findCell(myEditorComponent) == nodeCell) {
-        myBookmarks.remove(cellInfo);
-        break;
+    for (EditorMessageIconRenderer renderer: myIconRenderers) {
+      if (renderer instanceof BookmarkIconRenderer) {
+        BookmarkIconRenderer bookmarkIconRenderer = (BookmarkIconRenderer) renderer;
+        if (bookmarkIconRenderer.getNumber() == -1 && bookmarkIconRenderer.getNode() == node) {
+          removeIconRenderer(bookmarkIconRenderer);
+          break;
+        }
       }
     }
-  }
-
-  public void setWidth(int width) {
-    myWidth = width;
   }
 
   public int getWidth() {
@@ -204,6 +245,8 @@ public class LeftEditorHighlighter {
   }
 
   private void relayout(boolean updateFolding, boolean updateBraces) {
+    recalculateIconRenderersWidth();
+
     if (updateBraces) {
       for (HighlighterBracket bracket : myBrackets.values()) {
         bracket.relayout();
@@ -220,14 +263,7 @@ public class LeftEditorHighlighter {
       deleteUnresolvedFoldingButtons();
     }
 
-    // if (updateFolding) {
-    for (Bookmark bookmark : myBookmarks.values()) {
-      bookmark.relayout();
-      bookmark.setX(myWidth);
-    }
-    deleteUnresolvedBookmarks();
-    // }
-
+    myBracketsAndFoldingButtonsWidth = myFoldingButtons.isEmpty() ? 0 : FoldingButton.WIDTH;
     myBracketEdges.clear();
     myBracketsLayoutStack.clear();
     // from top to bottom
@@ -264,6 +300,7 @@ public class LeftEditorHighlighter {
       for (HighlighterBracket bracket : myBrackets.values()) {
         int inverseDepth = maxDepth - bracket.myDepth;
         bracket.myCurrentWidth = getCurrentBracketsWidth() * 2 + inverseDepth * (getCurrentBracketsWidth() + 1);
+        myBracketsAndFoldingButtonsWidth = Math.max(myBracketsAndFoldingButtonsWidth, bracket.myCurrentWidth);
       }
     } catch (EmptyStackException ex) {
       LOG.error("brackets error");
@@ -271,6 +308,7 @@ public class LeftEditorHighlighter {
 
     myBracketsLayoutStack.clear();
     myBracketEdges.clear();
+    updateWidth();
   }
 
   private int getCurrentBracketsWidth() {
@@ -291,13 +329,6 @@ public class LeftEditorHighlighter {
     myUnresolvedFoldingButtons.clear();
   }
 
-  private void deleteUnresolvedBookmarks() {
-    for (Bookmark bookmark : myUnresolvedBookmarks) {
-      myBookmarks.remove(bookmark.myCellInfo);
-    }
-    myUnresolvedBookmarks.clear();
-  }
-
   public BookmarkManager getBookmarkManager() {
     if (myBookmarkManager != null) {
       return myBookmarkManager;
@@ -309,6 +340,140 @@ public class LeftEditorHighlighter {
     BookmarkManager bookmarkManager = context.getComponent(BookmarkManager.class);
     myBookmarkManager = bookmarkManager;
     return bookmarkManager;
+  }
+
+  public void addIconRenderer(EditorMessageIconRenderer renderer) {
+    myIconRenderers.add(renderer);
+    recalculateIconRenderersWidth();
+    updateWidth();
+  }
+
+  public void removeIconRenderer(EditorMessageIconRenderer renderer) {
+    if (myIconRenderers.remove(renderer)) {
+      recalculateIconRenderersWidth();
+      updateWidth();
+    }
+  }
+
+  public void removeIconRenderer(SNode snode, IconRendererType type) {
+    boolean wasModified = false;
+    for (Iterator<EditorMessageIconRenderer> it = myIconRenderers.iterator(); it.hasNext();) {
+      EditorMessageIconRenderer renderer = it.next();
+      if (renderer.getNode() == snode && (type == null || renderer.getType() == type)) {
+        it.remove();
+        wasModified = true;
+      }
+    }
+    if (wasModified) {
+      recalculateIconRenderersWidth();
+      updateWidth();
+    }
+  }
+
+  public void removeAllIconRenderers(Collection<EditorMessageIconRenderer> renderers) {
+    if (myIconRenderers.removeAll(renderers)) {
+      recalculateIconRenderersWidth();
+      updateWidth();
+    }
+  }
+
+  public void removeAllIconRenderers(IconRendererType type) {
+    boolean wasModified = false;
+    for (Iterator<EditorMessageIconRenderer> it = myIconRenderers.iterator(); it.hasNext();) {
+      EditorMessageIconRenderer renderer = it.next();
+      if (renderer.getType() == type) {
+        it.remove();
+        wasModified = true;
+      }
+    }
+    if (wasModified) {
+      recalculateIconRenderersWidth();
+      updateWidth();
+    }
+  }
+
+  private void recalculateIconRenderersWidth() {
+    myLineToRenderersMap.clear();
+    for (EditorMessageIconRenderer renderer : myIconRenderers) {
+      int yCoordinate = getIconCoordinate(renderer);
+      if (yCoordinate < 0) {
+        continue;
+      }
+      List<EditorMessageIconRenderer> renderersForLine = myLineToRenderersMap.get(yCoordinate);
+      if (renderersForLine == null) {
+        renderersForLine = new SortedList(new Comparator<EditorMessageIconRenderer>() {
+          @Override
+          public int compare(EditorMessageIconRenderer message1, EditorMessageIconRenderer message2) {
+            return message1.getType().getWeight() - message2.getType().getWeight();
+          }
+        });
+        myLineToRenderersMap.put(yCoordinate, renderersForLine);
+      }
+      renderersForLine.add(renderer);
+    }
+
+    myIconRenderersWidth = 0;
+    new IconsBeltAllocator(myLineToRenderersMap) {
+      @Override
+      public boolean allocateRow(List<EditorMessageIconRenderer> row, int y) {
+        boolean result = super.allocateRow(row, y);
+        myIconRenderersWidth = Math.max(myIconRenderersWidth, getLastRowWidth());
+        return result;
+      }
+    }.run();
+  }
+
+  private void updateWidth() {
+    int newWidth = Math.max(MIN_WIDTH, myIconRenderersWidth + myBracketsAndFoldingButtonsWidth);
+    if (newWidth != myWidth) {
+      myWidth = newWidth;
+      // TODO: remove relayout call from here
+//      relayout(true, true);
+      for (HighlighterBracket bracket : myBrackets.values()) {
+        bracket.setX(myWidth);
+      }
+
+      for (FoldingButton button : myFoldingButtons.values()) {
+        button.relayout();
+        button.setX(myWidth);
+      }
+      
+      firePreferredSizeChanged();
+    }
+  }
+
+  private void firePreferredSizeChanged() {
+    processComponentEvent(new ComponentEvent(this, ComponentEvent.COMPONENT_RESIZED));
+  }
+
+  @Override
+  public Dimension getPreferredSize() {
+    return new Dimension(myWidth, myEditorComponent.getPreferredSize().height);
+  }
+
+  private int getIconCoordinate(EditorMessageIconRenderer renderer) {
+    SNode rendererNode = renderer.getNode();
+    EditorCell nodeCell = myEditorComponent.findNodeCell(rendererNode);
+    if (nodeCell == null) {
+      // no cell for node?..
+      return -1;
+    }
+    nodeCell = renderer.getAnchorCell(nodeCell);
+    if (nodeCell == null) {
+      // no anchorCell 
+      return -1;
+    }
+    return nodeCell.getY() + nodeCell.getHeight() / 2 - renderer.getIcon().getIconHeight() / 2;
+  }
+
+
+  @Override
+  protected void processMouseEvent(MouseEvent e) {
+/*
+TODO: handle mouse events for LeftHighlighter elements here and return from this method in case event
+is consumed by corresponding element.
+*/
+    super.processMouseEvent(e);
   }
 
   private class HighlighterBracket {
@@ -542,48 +707,42 @@ public class LeftEditorHighlighter {
     }
   }
 
-  private class Bookmark {
-    private CellInfo myCellInfo;
-    private EditorComponent myEditor;
-    private int myY;
-    private int myX;
+  private class BookmarkIconRenderer implements EditorMessageIconRenderer {
+    private SNode myNode;
     private int myNumber;
 
-    public Bookmark(EditorCell cell, int number) {
-      myCellInfo = cell.getCellInfo();
-      myEditor = cell.getEditor();
+    private BookmarkIconRenderer(SNode node, int number) {
+      myNode = node;
       myNumber = number;
     }
 
-    public void paint(Graphics g) {
-      Icon icon = BookmarkManager.getIcon(myNumber);
-      g.drawImage(((ImageIcon) icon).getImage(), /*myX - 12*/1, myY - 6, null);
+    @Override
+    public Icon getIcon() {
+      return BookmarkManager.getIcon(myNumber);
     }
 
-    public void relayout() {
-      if (myCellInfo == null) return;
-      EditorCell cell = getCell();
-      if (cell != null) {
-        setY(cell.getY() + cell.getHeight() / 2);
-      } else {
-        LeftEditorHighlighter.this.myUnresolvedBookmarks.add(this);
-      }
+    @Override
+    public String getTooltipText() {
+      return null;
     }
 
-    private EditorCell getCell() {
-      return myCellInfo.findCell(myEditor);
-    }
-
-    public void setX(int x) {
-      myX = x;
-    }
-
-    private void setY(int y) {
-      myY = y;
+    @Override
+    public SNode getNode() {
+      return myNode;
     }
 
     public int getNumber() {
       return myNumber;
+    }
+
+    @Override
+    public IconRendererType getType() {
+      return IconRendererType.BOOKMARK;
+    }
+
+    @Override
+    public EditorCell getAnchorCell(EditorCell bigCell) {
+      return bigCell;
     }
   }
 
@@ -614,6 +773,64 @@ public class LeftEditorHighlighter {
           }
         }
       }
+    }
+  }
+
+  private static class IconsBeltAllocator {
+    private TIntObjectHashMap<List<EditorMessageIconRenderer>> myLineToRenderers;
+    private int[] mySortedYs;
+    private int myLastRowLowerBound;
+    private int myLastRowWidth;
+
+    public IconsBeltAllocator(TIntObjectHashMap<List<EditorMessageIconRenderer>> lineToRenderersMap) {
+      myLineToRenderers = lineToRenderersMap;
+      mySortedYs = myLineToRenderers.keys();
+      Arrays.sort(mySortedYs);
+    }
+
+    public void run() {
+      myLastRowLowerBound = -1;
+      myLastRowWidth = -1;
+      for (int y : mySortedYs) {
+        List<EditorMessageIconRenderer> row = myLineToRenderers.get(y);
+        if (row.size() == 0) {
+          continue;
+        }
+        if (!allocateRow(row, y)) {
+          break;
+        }
+      }
+    }
+
+    protected boolean allocateRow(List<EditorMessageIconRenderer> row, int y) {
+      int maxIconHeight = 0;
+      for (EditorMessageIconRenderer renderer : row) {
+        maxIconHeight = Math.max(maxIconHeight, renderer.getIcon().getIconHeight());
+      }
+      int rowUpperBoundY = y - maxIconHeight / 2;
+      int offset;
+      if (myLastRowLowerBound > 0 && myLastRowLowerBound >= rowUpperBoundY) {
+        offset = myLastRowWidth;
+      } else {
+        offset = LEFT_GAP;
+      }
+      for (EditorMessageIconRenderer renderer : row) {
+        allocateIcon(renderer, offset, y);
+        offset += renderer.getIcon().getIconWidth() + GAP_BETWEEN_ICONS;
+      }
+      myLastRowLowerBound = rowUpperBoundY + maxIconHeight;
+      myLastRowWidth = offset;
+      return true;
+    }
+
+    /**
+     * Empty allocateIcon method should be overriden if you need to paint an icon
+     */
+    protected void allocateIcon(EditorMessageIconRenderer renderer, int x, int y) {
+    }
+
+    protected int getLastRowWidth() {
+      return myLastRowWidth;
     }
   }
 

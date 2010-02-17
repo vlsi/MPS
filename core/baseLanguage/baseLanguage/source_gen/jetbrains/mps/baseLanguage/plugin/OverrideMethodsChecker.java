@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
 public class OverrideMethodsChecker extends EditorCheckerAdapter {
   private boolean myIndexWasNotReady;
@@ -143,6 +144,13 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
           return true;
         }
         if (SNodeOperations.isInstanceOf(sourceNode, "jetbrains.mps.baseLanguage.structure.Type") && this.isParameterType(sourceNode)) {
+          return true;
+        }
+      }
+      if (event instanceof SModelPropertyEvent) {
+        SModelPropertyEvent propertyEvent = (SModelPropertyEvent) event;
+        SNode node = propertyEvent.getNode();
+        if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
           return true;
         }
       }

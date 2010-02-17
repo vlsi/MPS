@@ -93,6 +93,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private static final Logger LOG = Logger.getLogger(EditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
+  public static final Color CARET_ROW_COLOR = new Color(255, 255, 215);
 
   private static final int SCROLL_GAP = 15;
 
@@ -166,9 +167,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Nullable
   protected EditorCell mySelectedCell;
   private boolean myCellSwapInProgress;
-  private static final int MIN_SHIFT_X = 30;
-  private static final int ADDITIONAL_SHIFT_X = 15;
-  private int myShiftX = MIN_SHIFT_X + ADDITIONAL_SHIFT_X;
+  private int myShiftX = 15;
   private int myShiftY = 10;
 
   @NotNull
@@ -431,6 +430,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
 
     myLeftHighlighter = new LeftEditorHighlighter(this);
+    myLeftHighlighter.addMouseListener(new MouseAdapter() {
+      @Override
+      public void mousePressed(MouseEvent e) {
+        processLeftMarginPress(e);
+      }
+    });
+    myScrollPane.setRowHeaderView(myLeftHighlighter);
 
     addFocusListener(new FocusListener() {
       public void focusGained(FocusEvent e) {
@@ -505,8 +511,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
-  public int getAdditionalShiftX() {
-    return ADDITIONAL_SHIFT_X;
+  public int getShiftX() {
+    return myShiftX;
   }
 
   public JViewport getViewport() {
@@ -1378,7 +1384,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
-    myLeftHighlighter.setWidth(myShiftX - ADDITIONAL_SHIFT_X);
     myLeftHighlighter.relayout(updateFolding);
     if (mySearchPanel.isVisible()) {
       mySearchPanel.search(false);
@@ -1578,7 +1583,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void processMousePressed(MouseEvent mouseEvent) {
     requestFocus();
-    processLeftMarginPress(mouseEvent);
     processCoordSelection(mouseEvent);
 
     if (mouseEvent.getButton() == MouseEvent.BUTTON2) {
@@ -1682,10 +1686,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void processLeftMarginPress(MouseEvent mouseEvent) {
-    if (mouseEvent.getX() < myLeftHighlighter.getWidth()) {
-      for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
-        listener.mousePressed(mouseEvent, this);
-      }
+    for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
+      listener.mousePressed(mouseEvent, this);
     }
   }
 
@@ -1933,7 +1935,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (deepestCell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) deepestCell;
 
-      g.setColor(new Color(255, 255, 215));
+      g.setColor(CARET_ROW_COLOR);
       g.fillRect(0, deepestCell.getY(), getWidth(),
         deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
 
@@ -1967,7 +1969,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
     g.drawLine(boundPosition, 0, boundPosition, getHeight());
 
-    myLeftHighlighter.paint(g);
     if (myRootCell != null) {
       myRootCell.paint(g);
     }
@@ -2817,6 +2818,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public static interface CellSynchronizationWithModelListener {
     public void cellSynchronizedWithModel(EditorCell cell);
+  }
+
+  @Override
+  public void repaint() {
+    super.repaint();
+    if (myLeftHighlighter != null) {
+      myLeftHighlighter.repaint();
+    }
   }
 
   private class MPSActionProxy extends AbstractAction {

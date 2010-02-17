@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SNode;
@@ -24,7 +25,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import jetbrains.mps.vcs.diff.ui.DiffEditorComponent;
 
 import java.awt.Color;
 import java.util.*;
@@ -170,6 +170,9 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
     myMessages.remove(m);
     myEditor.getMessagesGutter().remove(m);
+    if (m instanceof EditorMessageIconRenderer) {
+      myEditor.getLeftEditorHighlighter().removeIconRenderer((EditorMessageIconRenderer) m);
+    }
 
     myMessagesToNodes.clearFirst(m);
   }
@@ -183,6 +186,9 @@ public class NodeHighlightManager implements EditorMessageOwner {
       addMessage(message);
     }
     myEditor.getMessagesGutter().add(message);
+    if (message instanceof EditorMessageIconRenderer) {
+      myEditor.getLeftEditorHighlighter().addIconRenderer((EditorMessageIconRenderer) message);
+    }
     if (repaintAndRebuild) {
       repaintAndRebuildEditorMessages();
     }
@@ -197,6 +203,9 @@ public class NodeHighlightManager implements EditorMessageOwner {
       removeMessage(message);
     }
     myEditor.getMessagesGutter().remove(message);
+    if (message instanceof EditorMessageIconRenderer) {
+      myEditor.getLeftEditorHighlighter().removeIconRenderer((EditorMessageIconRenderer) message);
+    }
     if (repaintAndRebuild) {
       repaintAndRebuildEditorMessages();
     }
@@ -219,7 +228,15 @@ public class NodeHighlightManager implements EditorMessageOwner {
     boolean result = myEditor.getMessagesGutter().removeMessages(owner);
     synchronized (myMessagesLock) {
       if (myOwnerToMessages.containsKey(owner)) {
-        for (EditorMessage m : new ArrayList<EditorMessage>(myOwnerToMessages.get(owner))) {
+        ArrayList<EditorMessage> messages = new ArrayList<EditorMessage>(myOwnerToMessages.get(owner));
+        List<EditorMessageIconRenderer> iconRenderers = new ArrayList();
+        for (EditorMessage m : messages) {
+          if (m instanceof EditorMessageIconRenderer) {
+            iconRenderers.add((EditorMessageIconRenderer) m);
+          }
+        }
+        myEditor.getLeftEditorHighlighter().removeAllIconRenderers(iconRenderers);
+        for (EditorMessage m : messages) {
           removeMessage(m);
         }
       }
