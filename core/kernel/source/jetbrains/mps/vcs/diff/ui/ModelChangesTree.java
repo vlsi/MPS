@@ -355,8 +355,9 @@ class ModelChangesTree extends MPSTree {
 
     public void doUpdatePresentation_internal() {
       try {
-        super.doUpdatePresentation();
+        super.doUpdatePresentation_internal();
       } catch (RuntimeException e){
+        // why we ignore it? it's a bad practice
         // ignore
       }
       SNodeId id = getSNode().getSNodeId();
