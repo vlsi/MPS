@@ -35,6 +35,7 @@ import java.awt.Dialog;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 class ModelChooserDialog extends BaseDialog {
@@ -43,14 +44,17 @@ class ModelChooserDialog extends BaseDialog {
   private SmartChooseByNamePanel myChooser;
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
+  private boolean myIsMultipleSelection = false;
 
-  ModelChooserDialog(Frame owner, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) throws HeadlessException {
+  ModelChooserDialog(Frame owner, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels, boolean multiSelection) throws HeadlessException {
     super(owner, "Choose Model");
+    myIsMultipleSelection = multiSelection;
     doInit(models, nonProjectModels);
   }
 
-  ModelChooserDialog(Dialog owner, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) throws HeadlessException {
+  ModelChooserDialog(Dialog owner, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels, boolean multiSelection) throws HeadlessException {
     super(owner, "Choose Model");
+    myIsMultipleSelection = multiSelection;
     doInit(models, nonProjectModels);
   }
 
@@ -99,7 +103,7 @@ class ModelChooserDialog extends BaseDialog {
           onOk();
         }
       }
-    }, ModalityState.current(), false);
+    }, ModalityState.current(), myIsMultipleSelection);
   }
 
   public boolean stretchMainComponent() {
@@ -114,11 +118,17 @@ class ModelChooserDialog extends BaseDialog {
     return myChooser.getPanel();
   }
 
-  public SModelDescriptor getResult() {
-    if (myIsCancelled) return null;
-    BaseModelItem modelItem = (BaseModelItem) myChooser.getChosenElement();
-    if (modelItem == null) return null;
-    return modelItem.getModelDescriptor();
+  public List<SModelDescriptor> getResult() {
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    if (myIsCancelled) return result;
+    List<Object> choosen = Collections.unmodifiableList(myChooser.getChosenElements());
+    for (Object item : choosen) {
+      if (item instanceof BaseModelItem) {
+        BaseModelItem modelItem = (BaseModelItem) item;
+        result.add(modelItem.getModelDescriptor());
+      }
+    }
+    return result;
   }
 
   @Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)

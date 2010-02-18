@@ -46,6 +46,20 @@ import java.awt.Window;
 import java.util.List;
 
 public class CommonChoosers {
+  private static List<SModelDescriptor> showDialogModelChooser_internal(final Component parent, final List<SModelDescriptor> models,
+                                                      @Nullable List<SModelDescriptor> nonProjectModels,
+                                                      boolean multiSelection) {
+    Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
+    ModelChooserDialog dialog;
+    if (window instanceof Frame) {
+      dialog = new ModelChooserDialog((Frame) window, models, nonProjectModels, multiSelection);
+    } else {
+      dialog = new ModelChooserDialog((Dialog) window, models, nonProjectModels, multiSelection);
+    }
+    dialog.showDialog();
+    return dialog.getResult();
+  }
+
   public static SNode showDialogNodeChooser(final Component parent, final List<SNode> values) {
     Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
     NodeChooserDialog dialog;
@@ -58,16 +72,14 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
-  public static SModelDescriptor showDialogModelChooser(final Component parent, final List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) {
-    Window window = parent instanceof Window ? (Window) parent : SwingUtilities.getWindowAncestor(parent);
-    ModelChooserDialog dialog;
-    if (window instanceof Frame) {
-      dialog = new ModelChooserDialog((Frame) window, models, nonProjectModels);
-    } else {
-      dialog = new ModelChooserDialog((Dialog) window, models, nonProjectModels);
-    }
-    dialog.showDialog();
-    return dialog.getResult();
+  public static List<SModelDescriptor> showDialogModelCollectionChooser(Component parent, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) {
+    return showDialogModelChooser_internal(parent, models, nonProjectModels, true);
+  }
+
+  public static SModelDescriptor showDialogModelChooser(Component parent, List<SModelDescriptor> models, @Nullable List<SModelDescriptor> nonProjectModels) {
+    List<SModelDescriptor> result = showDialogModelChooser_internal(parent, models, nonProjectModels, false);
+    if (result == null || result.isEmpty()) return null;
+    return result.get(0);
   }
 
   public static <T extends IModule> T showDialogModuleChooser(final Component parent, String entityString, final List<T> modules, @Nullable List<T> nonProjectModules) {
@@ -129,6 +141,7 @@ public class CommonChoosers {
     }, ModalityState.current(), true);
   }
 
+  // todo: unused?
   public static void showSimpleModelChooser(final List<SModelDescriptor> models, final ChooserCallback<SModelDescriptor> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);

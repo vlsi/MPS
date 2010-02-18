@@ -795,7 +795,7 @@ public abstract class ChooseByNameBase {
     return elements != null && elements.size() == 1 ? elements.get(0) : null;
   }
 
-  protected List<Object> getChosenElements() {
+  public List<Object> getChosenElements() {
     if (myListIsUpToDate) {
       List<Object> values = new ArrayList<Object>(Arrays.asList(myList.getSelectedValues()));
       values.remove(EXTRA_ELEM);
