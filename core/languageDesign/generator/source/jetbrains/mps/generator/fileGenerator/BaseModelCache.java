@@ -54,17 +54,15 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
   public void initComponent() {
     myAllCaches.registerCache(this);
     myFileGeneratorManager.addCachesGenerator(new CacheGenerator() {
-      public Set<File> generateCaches(CacheGenerationContext context) {
-        Set<File> result = new HashSet<File>();
-
-        T cache = generateCache(context);
+      public File generateCache(CacheGenerationContext context) {
+        T cache = BaseModelCache.this.generateCache(context);
 
         SModelDescriptor model = context.getOriginalInputModel();
 
         myCache.put(model, cache);
         
         IFile cacheFile = getCacheFile(model);
-        if (cacheFile == null) return Collections.EMPTY_SET;
+        if (cacheFile == null) return null;
 
         OutputStream os = null;
         try {
@@ -81,9 +79,7 @@ public abstract class BaseModelCache<T> implements ApplicationComponent {
             }
           }
         }
-        result.add(cacheFile.toFile());
-
-        return result;
+        return cacheFile.toFile();
       }
     });
   }

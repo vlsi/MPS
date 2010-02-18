@@ -273,11 +273,14 @@ public class FileGenerationManager implements ApplicationComponent {
       }
     }
 
-    Set<File> generatedCaches = new HashSet<File>();
+    Set<File> generatedCaches = new HashSet<File>(myCacheGenerators.size());
 
     for (CacheGenerator g : myCacheGenerators) {
       try {
-        generatedCaches.addAll(g.generateCaches(new CacheGenerationContext(status, outputRootDirectory)));
+        File cacheFile = g.generateCache(new CacheGenerationContext(status, outputRootDirectory));
+        if(cacheFile != null) {
+          generatedCaches.add(cacheFile);
+        }
       } catch (Throwable t) {
         LOG.error(t);
       }

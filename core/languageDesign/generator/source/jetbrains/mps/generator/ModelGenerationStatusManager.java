@@ -88,7 +88,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   public void initComponent() {
     myFileGenerationManager.addCachesGenerator(new CacheGenerator() {
-      public Set<File> generateCaches(CacheGenerationContext context) {
+      public File generateCache(CacheGenerationContext context) {
         return generateHashFile(context);
       }
     });
@@ -198,10 +198,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     return result;
   }
 
-  private Set<File> generateHashFile(CacheGenerationContext context) {
+  private File generateHashFile(CacheGenerationContext context) {
     File outputDir = context.getOutputDir();
-
-    Set<File> generatedFiles = new HashSet<File>();
 
     SModelDescriptor descriptor = context.getOriginalInputModel();
     IFile file = descriptor.getModelFile();
@@ -237,9 +235,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
         LOG.error(e);
       }
     }
-    generatedFiles.add(result);
-
-    return generatedFiles;
+    return result;
   }
 
 }
