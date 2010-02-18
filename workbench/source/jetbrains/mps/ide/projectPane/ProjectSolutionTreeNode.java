@@ -45,8 +45,8 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
     return mySolution;
   }
 
-  protected void updatePresentation() {
-    super.updatePresentation();
+  protected void doUpdatePresentation() {
+    super.doUpdatePresentation();
     setIcon(Icons.SOLUTION_ICON);
 
     IFile descriptorFile = mySolution.getDescriptorFile();

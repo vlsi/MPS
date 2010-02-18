@@ -1652,12 +1652,12 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1208284838941" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1208284980560">
-      <property name="name:3" value="updatePresentation" />
+      <property name="name:3" value="doUpdatePresentation" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1208284980561" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1208284980563">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7719232434617373668">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall:3" id="7719232434617373669">
-            <link role="baseMethodDeclaration:3" targetNodeId="11.~MPSTreeNode.updatePresentation():void" resolveInfo="updatePresentation" />
+            <link role="baseMethodDeclaration:3" targetNodeId="7719232434617373672:0" resolveInfo="doUpdatePresentation" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1208285076724">
@@ -4420,11 +4420,11 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="1208791630998" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1208285478286">
-      <property name="name:3" value="updatePresentation" />
+      <property name="name:3" value="doUpdatePresentation" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1208285478289">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7719232434617373772">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall:3" id="7719232434617373773">
-            <link role="baseMethodDeclaration:3" targetNodeId="11.~MPSTreeNode.updatePresentation():void" resolveInfo="updatePresentation" />
+            <link role="baseMethodDeclaration:3" targetNodeId="7719232434617373672:0" resolveInfo="doUpdatePresentation" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1208285478299">
@@ -25749,7 +25749,7 @@
       <link role="classifier:3" targetNodeId="11.~MPSTreeNode" resolveInfo="MPSTreeNode" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7719232434617373672">
-      <property name="name:3" value="updatePresentation" />
+      <property name="name:3" value="doUpdatePresentation" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="7719232434617373673" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7719232434617373674" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7719232434617373675">
@@ -25798,6 +25798,18 @@
         <link role="annotation:3" targetNodeId="2.~Override" />
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8940381362895276519">
+      <property name="name:3" value="updatePresentation" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8940381362895276520" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="8940381362895280316" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8940381362895276522">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8940381362895280314">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall:3" id="8940381362895280315">
+            <link role="baseMethodDeclaration:3" targetNodeId="11.~MPSTreeNode.updatePresentation():void" resolveInfo="updatePresentation" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7719232434617373713">
       <property name="name:3" value="setState" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7719232434617373714">
@@ -25826,7 +25838,7 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7719232434617373726">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7719232434617373727">
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7719232434617373728">
-                    <link role="baseMethodDeclaration:3" targetNodeId="7719232434617373672:0" resolveInfo="updatePresentation" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="8940381362895276519:0" resolveInfo="updatePresentation" />
                   </node>
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7719232434617373729" />
                 </node>
@@ -26849,7 +26861,7 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="497539554676247555">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="497539554676247556">
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="497539554676247557">
-                    <link role="baseMethodDeclaration:3" targetNodeId="7719232434617373672:0" resolveInfo="updatePresentation" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="8940381362895276519:0" resolveInfo="updatePresentation" />
                   </node>
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="497539554676247565">
                     <link role="variableDeclaration:3" targetNodeId="497539554676247550:0" resolveInfo="node" />

@@ -40,8 +40,8 @@ class GeneratorTreeNode extends ProjectModuleTreeNode implements StereotypeProvi
     return getGenerator();
   }
 
-  protected void updatePresentation() {
-    super.updatePresentation();
+  protected void doUpdatePresentation() {
+    super.doUpdatePresentation();
     setIcon(Icons.GENERATOR_ICON);
     setNodeIdentifier(calculateNodeIdenifier());
   }

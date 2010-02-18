@@ -195,7 +195,7 @@ public class CellExplorerView extends BaseProjectTool {
       updatePresentation();
     }
 
-    protected void updatePresentation() {
+    protected void doUpdatePresentation() {
       if (myCell.isErrorState()) {
         setIcon(Icons.CELL_ERROR_ICON);
       } else if (myCell instanceof EditorCell_Collection) {

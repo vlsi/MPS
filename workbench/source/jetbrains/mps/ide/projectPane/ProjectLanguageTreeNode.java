@@ -51,11 +51,10 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     updatePresentation();
   }
 
-  protected void updatePresentation() {
-    super.updatePresentation();
+  protected void doUpdatePresentation() {
+    super.doUpdatePresentation();
     setIcon(Icons.PROJECT_LANGUAGE_ICON);
     setNodeIdentifier(myLanguage.getModuleReference().toString());
-    
   }
 
   @Override
@@ -182,8 +181,8 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     }
 
     @Override
-    protected void updatePresentation() {
-      super.updatePresentation();
+    protected void doUpdatePresentation() {
+      super.doUpdatePresentation();
       setErrorState(validate().isEmpty()? ErrorState.NONE : ErrorState.ERROR);
     }
 

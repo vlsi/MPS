@@ -33,8 +33,8 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
     setNodeIdentifier(myTransientModule.getModuleReference().toString());
   }
 
-  protected void updatePresentation() {
-    super.updatePresentation();
+  protected void doUpdatePresentation() {
+    super.doUpdatePresentation();
     setIcon(Icons.TRANSIENT_MODELS_ICON);
   }
 

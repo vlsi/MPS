@@ -298,6 +298,12 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   protected void updatePresentation() {
+    //todo
+    doUpdatePresentation();
+  }
+
+  protected void doUpdatePresentation() {
+
   }
 
   public final Icon getIcon(boolean expanded) {

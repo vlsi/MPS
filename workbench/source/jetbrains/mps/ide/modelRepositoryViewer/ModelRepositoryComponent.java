@@ -118,7 +118,7 @@ public class ModelRepositoryComponent {
         updatePresentation();
       }
 
-      protected void updatePresentation() {
+      protected void doUpdatePresentation() {
         setIcon(IconManager.getIconFor(myModelDescriptor));
         if (SModelRepository.getInstance().isChanged(myModelDescriptor)) {
           setColor(new Color(0x00, 0x00, 0x90));
@@ -139,7 +139,7 @@ public class ModelRepositoryComponent {
         updatePresentation();
       }
 
-      protected void updatePresentation() {
+      protected void doUpdatePresentation() {
 
         if (myOwner instanceof Generator) {
           setIcon(Icons.GENERATOR_ICON);

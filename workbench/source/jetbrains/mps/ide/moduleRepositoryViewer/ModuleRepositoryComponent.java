@@ -116,7 +116,7 @@ public class ModuleRepositoryComponent {
         updatePresentation();
       }
 
-      protected void updatePresentation() {
+      protected void doUpdatePresentation() {
         setIcon(IconManager.getIconFor(myModule));
         setNodeIdentifier(myModule.toString());
       }
@@ -132,7 +132,7 @@ public class ModuleRepositoryComponent {
         updatePresentation();
       }
 
-      protected void updatePresentation() {
+      protected void doUpdatePresentation() {
         IconManager.getIconFor(myOwner);
         setNodeIdentifier(myOwner.toString());
       }

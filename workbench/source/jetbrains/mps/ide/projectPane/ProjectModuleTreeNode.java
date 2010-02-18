@@ -53,7 +53,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
     super(operationContext);
   }
 
-  protected void updatePresentation() {
+  protected void doUpdatePresentation() {
     if (getTree() == null) return;
 
     if (getModule().isPackaged()) {

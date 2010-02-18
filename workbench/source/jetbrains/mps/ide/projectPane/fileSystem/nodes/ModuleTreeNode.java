@@ -37,8 +37,8 @@ public class ModuleTreeNode extends AbstractFileTreeNode {
   }
 
   @Override
-  protected void updatePresentation() {
-    super.updatePresentation();
+  protected void doUpdatePresentation() {
+    super.doUpdatePresentation();
     setText(myModule.getModuleFqName());
     setNodeIdentifier(getFile().getPath());
     VirtualFile file = VFileSystem.getFile(myModule.getDescriptorFile());

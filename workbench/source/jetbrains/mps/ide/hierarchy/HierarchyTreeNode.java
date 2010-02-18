@@ -50,7 +50,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     updatePresentation();
   }
 
-  protected void updatePresentation() {
+  protected void doUpdatePresentation() {
     @DisposableCommand
     SNode node = myNodePointer.getNode();
     if (node == null) return;

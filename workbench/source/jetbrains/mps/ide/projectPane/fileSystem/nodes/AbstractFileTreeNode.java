@@ -54,7 +54,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
   }
 
   @Override
-  protected void updatePresentation() {
+  protected void doUpdatePresentation() {
     updatePresentationInternal();
   }
 

@@ -19,11 +19,11 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
   public TestCaseTreeNode(IOperationContext operationContext, SNode testCase) {
     super(operationContext);
     this.testCase = testCase;
-    this.updatePresentation();
+    this.doUpdatePresentation();
   }
 
-  public void updatePresentation() {
-    super.updatePresentation();
+  public void doUpdatePresentation() {
+    super.doUpdatePresentation();
     this.setNodeIdentifier(this.testCase.getId());
     this.setText(SPropertyOperations.getString(this.testCase, "name"));
     this.setAdditionalText(SNodeOperations.getModel(this.testCase).getLongName());

@@ -64,7 +64,7 @@ public class CompositeTreeNode extends MPSTreeNode {
   }
 
   @Override
-  protected void updatePresentation() {
+  protected void doUpdatePresentation() {
     setText("VCS Roots");
   }
 }

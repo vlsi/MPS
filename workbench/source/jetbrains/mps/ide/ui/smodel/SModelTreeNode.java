@@ -124,7 +124,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     updatePresentation();
   }
 
-  protected void updatePresentation() {
+  protected void doUpdatePresentation() {
     SModelDescriptor sm = getSModelDescriptor();
     if (sm != null && sm.isInitialized() && SModelRepository.getInstance().isChanged(sm)) {
       setColor(new Color(0x00, 0x00, 0x90));

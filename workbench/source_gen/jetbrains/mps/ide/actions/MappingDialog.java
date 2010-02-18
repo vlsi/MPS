@@ -137,8 +137,8 @@ public class MappingDialog extends BaseDialog {
       this.updatePresentation();
     }
 
-    protected void updatePresentation() {
-      super.updatePresentation();
+    protected void doUpdatePresentation() {
+      super.doUpdatePresentation();
       this.setText(this.myText);
       this.setIcon(this.myIcon);
       this.setNodeIdentifier(this.myNodeIdentifier);

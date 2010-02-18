@@ -15,7 +15,7 @@ public abstract class BaseTestTreeNode extends MPSTreeNode {
   }
 
   @Override
-  protected void updatePresentation() {
+  protected void doUpdatePresentation() {
     Icon icon = this.state.getIcon();
     if (icon != null) {
       this.setIcon(icon);

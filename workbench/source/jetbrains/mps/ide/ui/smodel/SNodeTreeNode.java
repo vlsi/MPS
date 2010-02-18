@@ -57,15 +57,19 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     updatePresentation();
   }
 
-  protected final void updatePresentation() {
+  protected void updatePresentation() {
+    super.updatePresentation();
+  }
+
+  protected final void doUpdatePresentation() {
     if (getSModelModelTreeNode() != null) {
       getSModelModelTreeNode().getDependencyRecorder().rebuild(this, new Runnable() {
         public void run() {
-          doUpdatePresentation();
+          doUpdatePresentation_internal();
         }
       });
     } else {
-      doUpdatePresentation();
+      doUpdatePresentation_internal();
     }
   }
 
@@ -85,7 +89,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     super.onRemove();
   }
 
-  protected void doUpdatePresentation() {
+  protected void doUpdatePresentation_internal() {
     if (hasErrors()) {
       setColor(Color.RED);
     } else {

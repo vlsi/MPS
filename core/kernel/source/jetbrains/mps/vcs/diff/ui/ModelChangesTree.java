@@ -248,7 +248,7 @@ class ModelChangesTree extends MPSTree {
       updatePresentation();
     }
 
-    protected void updatePresentation() {
+    protected void doUpdatePresentation() {
       if (myModel == null) {
         return;
       }
@@ -353,7 +353,7 @@ class ModelChangesTree extends MPSTree {
       super(node, role, operationContext, condition);
     }
 
-    public void doUpdatePresentation() {
+    public void doUpdatePresentation_internal() {
       try {
         super.doUpdatePresentation();
       } catch (RuntimeException e){

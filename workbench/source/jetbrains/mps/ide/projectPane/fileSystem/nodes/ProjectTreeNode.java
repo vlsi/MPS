@@ -75,8 +75,8 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
   }
 
   @Override
-  protected void updatePresentation() {
-    super.updatePresentation();
+  protected void doUpdatePresentation() {
+    super.doUpdatePresentation();
     setText(myProject.getName());
   }
 

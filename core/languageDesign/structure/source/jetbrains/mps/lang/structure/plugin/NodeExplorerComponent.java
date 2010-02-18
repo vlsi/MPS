@@ -116,7 +116,7 @@ public class NodeExplorerComponent {
       myAncestorNodeContext = ancestorNodeContext;
     }
 
-    protected void doUpdatePresentation() {
+    protected void doUpdatePresentation_internal() {
       super.doUpdatePresentation();
       String string = getText();
       String typeInfo = " {" + PresentationManager.toString(TypeChecker.getInstance().getTypeOf(getSNode())) + "}";

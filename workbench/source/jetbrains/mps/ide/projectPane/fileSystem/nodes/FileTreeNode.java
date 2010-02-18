@@ -36,8 +36,8 @@ public class FileTreeNode extends AbstractFileTreeNode {
   }
 
   @Override
-  protected void updatePresentation() {
-    super.updatePresentation();
+  protected void doUpdatePresentation() {
+    super.doUpdatePresentation();
     Icon icon = getIcon();
     if (icon != null) setIcon(icon);
   }

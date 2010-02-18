@@ -106,8 +106,8 @@ public class ModuleTreeNode extends MPSTreeNode {
     return myModule;
   }
 
-  protected void updatePresentation() {
-    super.updatePresentation();
+  protected void doUpdatePresentation() {
+    super.doUpdatePresentation();
     String uid = myModule.getModuleUID();
     setText(uid);
     setNodeIdentifier(uid);

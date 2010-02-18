@@ -18,11 +18,11 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
   public TestMethodTreeNode(IOperationContext operationContext, SNode testMethod) {
     super(operationContext);
     this.testMethod = testMethod;
-    this.updatePresentation();
+    this.doUpdatePresentation();
   }
 
-  public void updatePresentation() {
-    super.updatePresentation();
+  public void doUpdatePresentation() {
+    super.doUpdatePresentation();
     this.setNodeIdentifier(this.testMethod.getId());
     this.setText(ITestMethod_Behavior.call_getTestName_1216136419751(this.testMethod));
   }

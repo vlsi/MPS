@@ -107,7 +107,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
         updatePresentation();
       }
 
-      protected void updatePresentation() {
+      protected void doUpdatePresentation() {
         setText(myModule.getModuleUID());
         setIcon(IconManager.getIconFor(myModule));
         setNodeIdentifier(myModule.getModuleUID());

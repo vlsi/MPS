@@ -44,7 +44,7 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     updatePresentation();
   }
 
-  protected void updatePresentation() {
+  protected void doUpdatePresentation() {
     if (hasErrors()) {
       setColor(Color.RED);
     }

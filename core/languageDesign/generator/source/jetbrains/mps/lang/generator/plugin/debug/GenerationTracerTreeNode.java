@@ -167,7 +167,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     return getChildCount() == 0;
   }
 
-  protected void updatePresentation() {
+  protected void doUpdatePresentation() {
     Kind kind = myTracerNode.getKind();
     SNodePointer nodePointer = myTracerNode.getNodePointer();
     if (nodePointer != null) {

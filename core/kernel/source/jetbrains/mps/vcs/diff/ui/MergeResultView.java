@@ -189,11 +189,11 @@ class MergeResultView extends JPanel {
       updatePresentation();
     }
 
-    protected void updatePresentation() {
+    protected void doUpdatePresentation() {
       if (myModel == null) {
         return;
       }
-      super.updatePresentation();
+      super.doUpdatePresentation();
     }
 
     @NotNull

@@ -45,8 +45,8 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     return myDevKit;
   }
 
-  protected void updatePresentation() {
-    super.updatePresentation();
+  protected void doUpdatePresentation() {
+    super.doUpdatePresentation();
     setIcon(Icons.DEVKIT_ICON);
     setNodeIdentifier(calculateNodeIdentifier());
   }

@@ -68,7 +68,7 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
   private void updateTreeNode(final BaseTestTreeNode node) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        node.updatePresentation();
+        node.doUpdatePresentation();
         node.updateNodePresentationInTree();
       }
     });

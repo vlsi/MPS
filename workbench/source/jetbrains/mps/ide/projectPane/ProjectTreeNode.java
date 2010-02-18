@@ -35,8 +35,8 @@ class ProjectTreeNode extends MPSTreeNode {
     updatePresentation();
   }
 
-  protected void updatePresentation() {
-    super.updatePresentation();
+  protected void doUpdatePresentation() {
+    super.doUpdatePresentation();
     setErrorState(myProject.getErrors() != null ? ErrorState.ERROR : ErrorState.NONE);
     setTooltipText(myProject.getErrors());
   }

@@ -117,7 +117,7 @@ public class StructureViewComponent {
       updatePresentation();
     }
 
-    protected void updatePresentation() {
+    protected void doUpdatePresentation() {
       if (!declaredInCurrentConcept()) {
         setColor(new Color(110, 110, 110));
       } else {
