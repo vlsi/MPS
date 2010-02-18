@@ -8,9 +8,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
@@ -31,6 +30,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
@@ -69,21 +69,23 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    StringBuilder error = new StringBuilder();
+    final StringBuilder error = new StringBuilder();
     {
-      final Wrappers._T<SNode> node = new Wrappers._T<SNode>(null);
       if (DefaultJavaApplication_Configuration.this.getStateObject().modelId != null && DefaultJavaApplication_Configuration.this.getStateObject().nodeId != null) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
+            SNode node = null;
+            node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
+            if ((node == null)) {
+              error.append("node is not selected or does not exist").append("\n");
+            }
+            if ((ClassConcept_Behavior.call_getMainMethod_1213877355884(node) == null)) {
+              error.append("node is not valid").append("\n");
+            }
           }
         });
-      }
-      if ((node.value == null)) {
-        error.append("node is not selected or does not exist").append("\n");
-      }
-      if ((ClassConcept_Behavior.call_getMainMethod_1213877355884(node.value) == null)) {
-        error.append("node is not valid").append("\n");
+      } else {
+        error.append("node is not selected").append("\n");
       }
 
       if (DefaultJavaApplication_Configuration.this.getStateObject().parameters == null) {
