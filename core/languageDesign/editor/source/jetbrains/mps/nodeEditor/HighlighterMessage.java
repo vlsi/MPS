@@ -18,21 +18,18 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.typesystem.inference.IErrorTarget;
-import jetbrains.mps.typesystem.inference.ErrorTargetEnum;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
+import jetbrains.mps.nodeEditor.messageTargets.EditorMessageTarget;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class HighlighterMessage extends DefaultEditorMessage {
-  private IErrorTarget myErrorTarget;
+public class HighlighterMessage extends EditorMessageWithTarget {
   private IErrorReporter myErrorReporter;
 
-  public HighlighterMessage(SNode errorNode, MessageStatus status, IErrorTarget target, Color color, String string, EditorMessageOwner owner) {
-    super(errorNode, status, color, string, owner);
-    myErrorTarget = target;
+  public HighlighterMessage(SNode errorNode, MessageStatus status, EditorMessageTarget target, Color color, String string, EditorMessageOwner owner) {
+    super(errorNode, status, target, color, string, owner);
   }
 
   public void setErrorReporter(IErrorReporter errorReporter) {
@@ -48,10 +45,7 @@ public class HighlighterMessage extends DefaultEditorMessage {
     if (!(message instanceof HighlighterMessage)) {
       return false;
     }
-    if (!super.sameAs(message)) {
-      return false;
-    }
-    return myErrorTarget.sameAs(((HighlighterMessage) message).myErrorTarget);
+    return super.sameAs(message);
   }
 
   public EditorCell getCellForParentNodeInMainEditor(EditorComponent editor) {
@@ -69,84 +63,6 @@ public class HighlighterMessage extends DefaultEditorMessage {
       parent = parent.getParent();
     }
     return result;
-  }
-
-  public boolean acceptCell(EditorCell cell, EditorComponent editor) {
-    //cell can be not a big one so we don't call super.acceptCell
-    if (cell == null) {
-      return false;
-    }
-    if (!editor.isValid(cell)) {
-      return false;
-    }
-
-    if (cell.getSNode() != getNode()) {
-      return false;
-    }
-
-    //for ErrorTargetEnum.NODE should be a big cell
-    if (myErrorTarget.getTarget() == ErrorTargetEnum.NODE) {
-      return cell.isBigCell();
-    }
-
-    if (myErrorTarget.getTarget() == ErrorTargetEnum.REFERENCE) {
-      return cell.isReferenceCell() && myErrorTarget.getRole().equals(cell.getRole());
-    }
-
-    if (myErrorTarget.getTarget() == ErrorTargetEnum.PROPERTY) {
-      if (!(cell instanceof EditorCell_Property)) return false;
-      EditorCell_Property propertyCell = (EditorCell_Property) cell;
-      ModelAccessor modelAccessor = propertyCell.getModelAccessor();
-      if (modelAccessor instanceof PropertyAccessor) {
-        return myErrorTarget.getRole().equals(((PropertyAccessor) modelAccessor).getPropertyName());
-      }
-    }
-
-    return false;
-  }
-
-  public EditorCell getCell(EditorComponent editor) {
-    final EditorCell rawCell = super.getCell(editor);
-    if (rawCell == null) {
-      return null;
-    }
-    if (myErrorTarget.getTarget() == ErrorTargetEnum.NODE) {
-      return rawCell;
-    }
-    if (myErrorTarget.getTarget() == ErrorTargetEnum.REFERENCE) {
-      EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
-        public boolean met(EditorCell cell) {
-          return cell.isReferenceCell() && myErrorTarget.getRole().equals(cell.getRole());
-        }
-      }, true), true);
-      if (child != null) {
-        return child;
-      } else {
-        return rawCell;
-      }
-    }
-    if (myErrorTarget.getTarget() == ErrorTargetEnum.PROPERTY) {
-      EditorCell child = rawCell.findChild(CellFinders.byCondition(new Condition<EditorCell>() {
-        public boolean met(EditorCell cell) {
-          if (!(cell instanceof EditorCell_Property)) return false;
-          EditorCell_Property propertyCell = (EditorCell_Property) cell;
-          ModelAccessor modelAccessor = propertyCell.getModelAccessor();
-          if (!(modelAccessor instanceof PropertyAccessor)) {
-            return false;
-          }
-          if (myErrorTarget.getRole().equals(((PropertyAccessor) modelAccessor).getPropertyName())) {
-            return true;
-          }
-          return false;
-        }
-      }, true), true);
-      if (child != null) {
-        return child;
-      } else {
-        return rawCell;
-      }
-    }
-    return null;
   }
 
   public boolean isBackGround() {

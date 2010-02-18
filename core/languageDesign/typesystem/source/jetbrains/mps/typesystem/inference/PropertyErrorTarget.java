@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum;
+import jetbrains.mps.nodeEditor.messageTargets.EditorMessageTarget;
+import jetbrains.mps.nodeEditor.messageTargets.PropertyMessageTarget;
+
 public class PropertyErrorTarget implements IErrorTarget {
   private String myPropertyName;
 
@@ -22,8 +26,8 @@ public class PropertyErrorTarget implements IErrorTarget {
     myPropertyName = propertyName;
   }
 
-  public ErrorTargetEnum getTarget() {
-    return ErrorTargetEnum.PROPERTY;
+  public MessageTargetEnum getTarget() {
+    return MessageTargetEnum.PROPERTY;
   }
 
   public String getRole() {
@@ -33,5 +37,10 @@ public class PropertyErrorTarget implements IErrorTarget {
   public boolean sameAs(IErrorTarget errorTarget) {
     return errorTarget instanceof PropertyErrorTarget &&
       ((PropertyErrorTarget) errorTarget).myPropertyName.equals(myPropertyName);
+  }
+
+  @Override
+  public EditorMessageTarget toEditorMessageTarget() {
+    return new PropertyMessageTarget(myPropertyName);
   }
 }

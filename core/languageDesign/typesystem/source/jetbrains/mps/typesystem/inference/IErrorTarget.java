@@ -15,10 +15,15 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum;
+import jetbrains.mps.nodeEditor.messageTargets.EditorMessageTarget;
+
 public interface IErrorTarget {
-  public ErrorTargetEnum getTarget();
+  public MessageTargetEnum getTarget();
 
   public String getRole();
 
   public boolean sameAs(IErrorTarget errorTarget);
+
+  public EditorMessageTarget toEditorMessageTarget();
 }

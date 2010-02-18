@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum;
+import jetbrains.mps.nodeEditor.messageTargets.EditorMessageTarget;
+import jetbrains.mps.nodeEditor.messageTargets.ReferenceMessageTarget;
+
 public class ReferenceErrorTarget implements IErrorTarget {
   private String myRole;
 
@@ -22,8 +26,8 @@ public class ReferenceErrorTarget implements IErrorTarget {
     myRole = role;
   }
 
-  public ErrorTargetEnum getTarget() {
-    return ErrorTargetEnum.REFERENCE;
+  public MessageTargetEnum getTarget() {
+    return MessageTargetEnum.REFERENCE;
   }
 
   public String getRole() {
@@ -33,5 +37,10 @@ public class ReferenceErrorTarget implements IErrorTarget {
   public boolean sameAs(IErrorTarget errorTarget) {
     return errorTarget instanceof ReferenceErrorTarget
       && ((ReferenceErrorTarget) errorTarget).myRole.equals(myRole);
+  }
+
+  @Override
+  public EditorMessageTarget toEditorMessageTarget() {
+    return new ReferenceMessageTarget(myRole);
   }
 }
