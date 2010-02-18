@@ -11,6 +11,9 @@ import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.ide.DataManager;
 import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +23,6 @@ import com.intellij.execution.ExecutionException;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
-import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import jetbrains.mps.debug.StacktraceUtil;
 import javax.swing.JComponent;
@@ -28,7 +30,6 @@ import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
@@ -92,6 +93,11 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 errorReport.value = "module is not selected or does not exist";
               } else if (TestRunUtil.validateModule(DefaultJUnit_Configuration.this.getStateObject().module)) {
                 errorReport.value = "module is not valid";
+              }
+            } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.PROJECT) {
+              MPSProject mpsproject = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
+              if (!(TestRunUtil.containsTest(mpsproject))) {
+                errorReport.value = "project is not contains tests";
               }
             }
           }

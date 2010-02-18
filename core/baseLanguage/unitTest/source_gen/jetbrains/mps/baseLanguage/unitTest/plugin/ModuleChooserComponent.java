@@ -12,10 +12,15 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import java.util.Collections;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
 
 public class ModuleChooserComponent extends BaseChooserComponent {
   private List<IModule> checkedModules = ListSequence.fromList(new ArrayList<IModule>());
@@ -36,21 +41,18 @@ public class ModuleChooserComponent extends BaseChooserComponent {
   }
 
   private void collectModules() {
-    final List<IModule> modules = ListSequence.fromList(new ArrayList<IModule>());
     ListSequence.fromList(this.checkedModules).clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ListSequence.fromList(modules).addSequence(SetSequence.fromSet(GlobalScope.getInstance().getVisibleModules()));
-        for (IModule module : modules) {
-          for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
-            if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
-              continue;
-            }
-            if (ListSequence.fromList(TestRunUtil.getModelTests(descriptor.getSModel())).isNotEmpty()) {
-              ListSequence.fromList(ModuleChooserComponent.this.checkedModules).addElement(module);
-              break;
-            }
+        List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
+        for (SNode node : nodes) {
+          SModel model = SNodeOperations.getModel(node);
+          SModelDescriptor md = model.getModelDescriptor();
+          IModule module = md.getModule();
+          if (ListSequence.fromList(ModuleChooserComponent.this.checkedModules).contains(module)) {
+            continue;
           }
+          ListSequence.fromList(ModuleChooserComponent.this.checkedModules).addElement(module);
         }
       }
     });

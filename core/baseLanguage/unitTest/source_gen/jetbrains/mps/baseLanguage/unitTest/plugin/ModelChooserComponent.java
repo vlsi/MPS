@@ -12,9 +12,14 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import java.util.Collections;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelStereotype;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.smodel.SModel;
 
 public class ModelChooserComponent extends BaseChooserComponent {
   private List<SModelDescriptor> checkedModels = ListSequence.fromList(new ArrayList<SModelDescriptor>());
@@ -35,20 +40,17 @@ public class ModelChooserComponent extends BaseChooserComponent {
   }
 
   private void collectModels() {
-    final List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     ListSequence.fromList(this.checkedModels).clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
-          ListSequence.fromList(models).addSequence(ListSequence.fromList(module.getOwnModelDescriptors()));
-        }
-        for (SModelDescriptor descriptor : models) {
-          if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
+        List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
+        for (SNode node : nodes) {
+          SModel model = SNodeOperations.getModel(node);
+          SModelDescriptor md = model.getModelDescriptor();
+          if (ListSequence.fromList(ModelChooserComponent.this.checkedModels).contains(md)) {
             continue;
           }
-          if (ListSequence.fromList(TestRunUtil.getModelTests(descriptor.getSModel())).isNotEmpty()) {
-            ListSequence.fromList(ModelChooserComponent.this.checkedModels).addElement(descriptor);
-          }
+          ListSequence.fromList(ModelChooserComponent.this.checkedModels).addElement(md);
         }
       }
     });

@@ -13,11 +13,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.project.GlobalScope;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.BorderLayout;
 import javax.swing.AbstractListModel;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -60,22 +62,15 @@ public class ListPanel extends JPanel {
   }
 
   private void collectCandidates() {
-    final List<SNode> nodesList = new ArrayList<SNode>();
+    final Wrappers._T<List<SNode>> nodesList = new Wrappers._T<List<SNode>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
-          for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
-            if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
-              continue;
-            }
-            ListSequence.fromList(nodesList).addSequence(ListSequence.fromList(TestRunUtil.getModelTests(descriptor.getSModel())));
-          }
-        }
+        nodesList.value = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
       }
     });
     if (this.isTestMethods) {
       final List<SNode> methodsList = new ArrayList<SNode>();
-      for (final SNode testCase : nodesList) {
+      for (final SNode testCase : nodesList.value) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             ListSequence.fromList(methodsList).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(SNodeOperations.cast(testCase, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))));
@@ -84,7 +79,7 @@ public class ListPanel extends JPanel {
       }
       this.candidates = methodsList;
     } else {
-      this.candidates = nodesList;
+      this.candidates = nodesList.value;
     }
   }
 
