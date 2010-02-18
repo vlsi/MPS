@@ -19597,5 +19597,100 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1028039751735280089">
+    <property name="name:8" value="OverrideMethods" />
+    <link role="forConcept:8" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+    <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1028039751735280090">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1028039751735280091">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1028039751735280291">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1028039751735280292">
+            <property name="value:3" value="Override Methods" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction:8" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock:8" id="1028039751735280092">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1028039751735280093">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1028039751735298553">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1028039751735298554">
+            <link role="classConcept:3" targetNodeId="26.~SwingUtilities" resolveInfo="SwingUtilities" />
+            <link role="baseMethodDeclaration:3" targetNodeId="26.~SwingUtilities.invokeLater(java.lang.Runnable):void" resolveInfo="invokeLater" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1028039751735298555">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1028039751735298556">
+                <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1028039751735298557">
+                  <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
+                  <link role="classifier:3" targetNodeId="2.~Runnable" resolveInfo="Runnable" />
+                  <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1028039751735298558" />
+                  <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1028039751735298559">
+                    <property name="isAbstract:3" value="false" />
+                    <property name="name:3" value="run" />
+                    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1028039751735298560" />
+                    <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1028039751735298561" />
+                    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1028039751735298562">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1028039751735298563">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1028039751735298564">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1028039751735298565">
+                            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1028039751735298566">
+                              <link role="baseMethodDeclaration:3" targetNodeId="34.7824118464175997729" resolveInfo="StratergyAddMethodDialog" />
+                              <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext:0" id="1028039751735298581" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1028039751735298568">
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1028039751735298569">
+                                  <node role="operand:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext:0" id="1028039751735298582" />
+                                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1028039751735298571">
+                                    <link role="baseMethodDeclaration:3" targetNodeId="6.~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+                                  </node>
+                                </node>
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1028039751735298572">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="5.~IOperationContext.getMainFrame():java.awt.Frame" resolveInfo="getMainFrame" />
+                                </node>
+                              </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1028039751735298573">
+                                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1028039751735298574">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="34.7824118464176019402" resolveInfo="AddClassMethodStrategy" />
+                                  <node role="actualArgument:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1028039751735298583" />
+                                </node>
+                              </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1028039751735298576">
+                                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1028039751735298577">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="34.8300784086089115230" resolveInfo="MethodsToOverrideStrategy" />
+                                </node>
+                              </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1028039751735298578">
+                                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1028039751735298579">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="34.8300784086089079436" resolveInfo="OverrideClassMethodStrategy" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1028039751735298580">
+                            <link role="baseMethodDeclaration:3" targetNodeId="28.~BaseDialog.showDialog():void" resolveInfo="showDialog" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="isApplicableFunction:8" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock:8" id="1028039751735280295">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1028039751735280296">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3600721186257525212">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3600721186257525220">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3600721186257525215">
+              <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="3600721186257525214" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3600721186257525219">
+                <link role="baseMethodDeclaration:16" targetNodeId="29.6603209858471717101" resolveInfo="getMethodsToOverride" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="3600721186257525224" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
