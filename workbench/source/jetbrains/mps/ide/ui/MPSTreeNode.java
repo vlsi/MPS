@@ -150,9 +150,11 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   protected void onRemove() {
+    //todo fire events
   }
 
   protected void onAdd() {
+    //todo fire events
   }
 
   public void init() {

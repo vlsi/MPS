@@ -66,6 +66,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   private Set<MPSTreeNode> myExpadingNodes = new HashSet<MPSTreeNode>();
 
+  private List<MPSTreeNodeListener> myTreeNodeListeners = new ArrayList<MPSTreeNodeListener>();
+
   private boolean myDisposed = false;
 
   protected MPSTree() {
@@ -216,6 +218,26 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     }
   }
 
+  public void addTreeNodeListener(MPSTreeNodeListener listener) {
+    myTreeNodeListeners.add(listener);
+  }
+
+  public void removeTreeNodeListener(MPSTreeNodeListener listener) {
+    myTreeNodeListeners.remove(listener);
+  }
+
+  /*package */ void fireTreeNodeAdded(MPSTreeNode node) {
+    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+      listener.treeNodeAdded(node, this);
+    }
+  }
+
+  /*package */ void fireTreeNodeRemoved(MPSTreeNode node) {
+    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+      listener.treeNodeRemoved(node, this);
+    }
+  }
+
   void myMouseReleased(MouseEvent e) {
     if (e.isPopupTrigger()) showPopup(e.getX(), e.getY());
   }
@@ -264,7 +286,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     } finally {
       myAutoExpandEnabled = true;
     }
-
   }
 
   public boolean isAutoOpen() {
