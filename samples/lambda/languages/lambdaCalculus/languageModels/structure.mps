@@ -68,7 +68,6 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4022026349914673025">
     <property name="name:0" value="AbstractionVariable" />
-    <link role="extends:0" targetNodeId="4022026349914659049:0" resolveInfo="LambdaExpression" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4022026349914673026">
       <link role="intfc:0" targetNodeId="2v.1169194658468:0" resolveInfo="INamedConcept" />
     </node>

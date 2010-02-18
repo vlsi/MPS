@@ -385,5 +385,29 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1564819815921057682" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="305525145257891155">
+    <link role="conceptDeclaration:32" targetNodeId="1.305525145257533839:0" resolveInfo="LetExpression" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="305525145257897480">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="305525145257897484">
+        <property name="text:32" value="let" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="305525145257897486">
+        <link role="relationDeclaration:32" targetNodeId="1.305525145257897485:0" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="305525145257897489">
+        <property name="text:32" value="=" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="305525145257897490">
+        <link role="relationDeclaration:32" targetNodeId="1.305525145257533840:0" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="305525145257897492">
+        <property name="text:32" value="in" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="305525145257897494">
+        <link role="relationDeclaration:32" targetNodeId="1.305525145257533841:0" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="305525145257897482" />
+    </node>
+  </node>
 </model>
 

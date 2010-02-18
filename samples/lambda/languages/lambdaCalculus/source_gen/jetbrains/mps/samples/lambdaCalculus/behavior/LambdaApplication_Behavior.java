@@ -32,4 +32,12 @@ public class LambdaApplication_Behavior {
     }
     return null;
   }
+
+  public static boolean call_isInner_1308935328408185123(SNode thisNode) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"), "function", true) == thisNode;
+  }
+
+  public static boolean call_isFullApplication_1308935328408190838(SNode thisNode) {
+    return !(LambdaApplication_Behavior.call_isInner_1308935328408185123(thisNode)) && (ListSequence.fromList(LambdaApplication_Behavior.call_getArguments_5066394162984555451(thisNode)).count() == ListSequence.fromList(LambdaAbstraction_Behavior.call_getVariables_5066394162984559815(LambdaApplication_Behavior.call_getLambdaAbstraction_4976946798230781575(thisNode))).count());
+  }
 }
