@@ -30,6 +30,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -510,11 +511,18 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged = b;
   }
 
-  void registerRoot(SNode newroot, SNode old) {
+  void registerRoot(@NotNull SNode newroot, SNode old) {
     myNewToOldRoot.put(newroot, old);
   }
 
   SNode getOriginalRootByGenerated(SNode root) {
-    return myNewToOldRoot.get(root);
+    SNode node = myNewToOldRoot.get(root);
+    if(node != null && !node.isRoot()) {
+      SNode noderoot = node.getContainingRoot();
+      if(noderoot != null) {
+        return noderoot;
+      }
+    }
+    return node;
   }
 }
