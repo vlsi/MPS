@@ -6024,10 +6024,10 @@
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237469274784">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1237469942895">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1237469942896">
-          <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.collections.structure.IteratorType:7" id="1237469942897">
-            <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.Type:3" id="1237469942898">
-              <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="1237469942899">
-                <node role="expression:0" type="jetbrains.mps.lang.typesystem.structure.PatternVariableReference:3" id="1237469942900">
+          <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType:7" id="7798684637311179544">
+            <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.Type:3" id="7798684637311179545">
+              <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="7798684637311179546">
+                <node role="expression:0" type="jetbrains.mps.lang.typesystem.structure.PatternVariableReference:3" id="7798684637311180092">
                   <link role="patternVarDecl:3" targetNodeId="1237469376770" resolveInfo="#p" />
                 </node>
               </node>

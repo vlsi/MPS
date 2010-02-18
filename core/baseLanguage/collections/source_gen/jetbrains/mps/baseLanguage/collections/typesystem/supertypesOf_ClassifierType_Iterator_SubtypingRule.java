@@ -105,7 +105,7 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
       SNode quotedNode_2060_0 = null;
       SNode quotedNode_2060_1 = null;
       {
-        quotedNode_2060_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IteratorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        quotedNode_2060_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2060_0 = quotedNode_2060_0;
         {
           quotedNode_2060_1 = (SNode) parameter_2060_0;
@@ -131,7 +131,7 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
       SNode quotedNode_2060_0 = null;
       SNode quotedNode_2060_1 = null;
       {
-        quotedNode_2060_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IteratorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        quotedNode_2060_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2060_0 = quotedNode_2060_0;
         {
           quotedNode_2060_1 = (SNode) parameter_2060_0;
