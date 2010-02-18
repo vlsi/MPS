@@ -59,7 +59,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                            GeneratorLogger logger, RuleManager ruleManager,
                            SModel inputModel, SModel outputModel, boolean isStrict) {
-    
+
     super(operationContext, progressMonitor, logger, inputModel, outputModel);
     myRuleManager = ruleManager;
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
@@ -413,7 +413,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   @Nullable
   private List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule)
-    throws DismissTopMappingRuleException,AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
+    throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
 
     String ruleMappingName = GeneratorUtil.getMappingName(rule, null);
     RuleConsequence ruleConsequence = rule.getRuleConsequence();
@@ -497,11 +497,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   public GenerationSessionContext getGeneratorSessionContext() {
     return (GenerationSessionContext) getOperationContext();
   }
-  
+
   public boolean isStrict() {
     return myIsStrict;
   }
-  
+
   private boolean isChanged() {
     return myChanged;
   }
@@ -514,7 +514,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myNewToOldRoot.put(newroot, old);
   }
 
-  public SNode getInputRootForOutput(SNode node) {
-    return myNewToOldRoot.get(node);
+  SNode getOriginalRootByGenerated(SNode root) {
+    return myNewToOldRoot.get(root);
   }
 }

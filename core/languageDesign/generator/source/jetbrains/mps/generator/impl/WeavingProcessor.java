@@ -142,25 +142,8 @@ public class WeavingProcessor {
     for (SNode applicableNode : nodes) {
       if (QueryExecutor.checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), myGenerator)) {
         SNode outputContextNode = QueryExecutor.getContextNodeForWeavingingRule(applicableNode, rule, myGenerator);
-        if (outputContextNode == null) {
-          myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
+        if (!checkContext(rule, applicableNode, outputContextNode)) {
           continue;
-        } else {
-          // Additional check - context should be generated from the same root, TODO replace warn -> error
-          SNode contextRoot = outputContextNode.getContainingRoot();
-          if (contextRoot != null) {
-            SNode inputRoot = applicableNode.getContainingRoot();
-            SNode originalContextRoot = myGenerator.getInputRootForOutput(contextRoot);
-            if (originalContextRoot == null) {
-              myGenerator.showWarningMessage(rule.getNode(), "bad context for weaving rule: unknown input for " + contextRoot);
-            }
-            originalContextRoot = originalContextRoot != null ? originalContextRoot.getContainingRoot() : null;
-            if (originalContextRoot != inputRoot && inputRoot != null && originalContextRoot != null) {
-              myGenerator.showWarningMessage(rule.getNode(), "bad context for weaving rule: " + originalContextRoot.toString() + " vs " + inputRoot.toString());
-            }
-          } else {
-            myGenerator.showWarningMessage(rule.getNode(), "bad context for weaving rule: no root for " + outputContextNode);
-          }
         }
         myGenerator.setChanged(true);
 
@@ -193,7 +176,7 @@ public class WeavingProcessor {
                 weaveTemplateDeclaration(queryNode, template, outputContextNode, rule);
               }
             } else {
-              myGenerator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "unsapported rule consequence");
+              myGenerator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "unsupported rule consequence");
             }
           }
         } finally {
@@ -205,5 +188,35 @@ public class WeavingProcessor {
         }
       }
     }
+  }
+
+  private boolean checkContext(Weaving_MappingRule rule, SNode applicableNode, SNode contextNode) {
+    if (contextNode == null) {
+      myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
+      return false;
+    }
+
+    // Additional check - context should be generated from the same root
+    SNode contextRoot = contextNode.getContainingRoot();
+    boolean wasError = false;
+    if (contextRoot != null) {
+      SNode inputRoot = applicableNode.getContainingRoot();
+      SNode originalContextRoot = myGenerator.getOriginalRootByGenerated(contextRoot);
+      if (originalContextRoot == null) {
+        myGenerator.showErrorIfStrict(rule.getNode(), "bad context for weaving rule: unknown input for " + contextRoot);
+        wasError = true;
+      } else {
+        if (originalContextRoot != inputRoot && inputRoot != null) {
+          myGenerator.showErrorIfStrict(rule.getNode(),
+            "bad context for weaving rule: " + contextRoot.toString() + " is generated from " + originalContextRoot.toString()
+              + ", while input node is from " + inputRoot.toString());
+          wasError = true;
+        }
+      }
+    } else {
+      myGenerator.showErrorIfStrict(rule.getNode(), "bad context for weaving rule: no root for context " + contextNode);
+      wasError = true;
+    }
+    return !(wasError && myGenerator.isStrict());
   }
 }

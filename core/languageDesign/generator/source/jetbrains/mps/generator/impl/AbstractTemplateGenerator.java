@@ -74,6 +74,13 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myLogger.showWarningMessage(node, message);
   }
 
+  public void showErrorIfStrict(SNode node, String message) {
+    if (isStrict())
+      myLogger.showErrorMessage(node, message);
+    else
+      myLogger.showWarningMessage(node, message);
+  }
+
   public void showErrorMessage(SNode node, String message) {
     myLogger.showErrorMessage(node, message);
   }

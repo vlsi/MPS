@@ -70,4 +70,6 @@ public interface ITemplateGenerator {
   int getErrorCount();
 
   int getWarningCount();
+
+  boolean isStrict();
 }
