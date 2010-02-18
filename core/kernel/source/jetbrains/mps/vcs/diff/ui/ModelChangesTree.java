@@ -252,7 +252,7 @@ class ModelChangesTree extends MPSTree {
       if (myModel == null) {
         return;
       }
-      super.updatePresentation();
+      super.doUpdatePresentation();
     }
 
     private boolean processNode(SNodeId nodeId, SNodeTreeNode parent, Map<SNodeId, SNodeTreeNode> visited, Set<SNodeId> rootNodes) {
