@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -98,13 +99,8 @@ public class TestRunUtil {
     if (moduleName == null) {
       return tests;
     }
-    for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
-      if (module.getModuleFqName().equals(moduleName)) {
-        for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
-          ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModelTests(modelDescriptor.getSModel())));
-        }
-      }
-    }
+    IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleName);
+    ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(module)));
     return excludeAbstract(tests);
   }
 

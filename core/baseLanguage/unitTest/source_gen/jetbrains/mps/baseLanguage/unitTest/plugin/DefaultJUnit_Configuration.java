@@ -91,7 +91,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
               if (DefaultJUnit_Configuration.this.getStateObject().module == null) {
                 errorReport.value = "module is not selected or does not exist";
-              } else if (TestRunUtil.validateModule(DefaultJUnit_Configuration.this.getStateObject().module)) {
+              } else if (!(TestRunUtil.validateModule(DefaultJUnit_Configuration.this.getStateObject().module))) {
                 errorReport.value = "module is not valid";
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.PROJECT) {
