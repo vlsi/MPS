@@ -700,6 +700,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     setOperationContext(operationContext);
     editNode(node);
+    setReadOnly(node == null || node.isDeleted() || node.getModel().isNotEditable());
   }
 
   protected void editNode(final SNode node) {
@@ -2097,7 +2098,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return; //i.e. editor is disposed
     }
 
-    if (peekKeyboardHandler().processKeyPressed(editorContext, keyEvent)) {
+    if (isKeyboardHandlerProcessingEnabled(keyEvent) && peekKeyboardHandler().processKeyPressed(editorContext, keyEvent)) {
       keyEvent.consume();
     }
     revalidateAndRepaint(false);
@@ -2106,7 +2107,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void processKeyReleased(final KeyEvent keyEvent) {
     if (keyEvent.isConsumed()) return;
 
-    if (peekKeyboardHandler().processKeyReleased(getEditorContext(), keyEvent)) {
+    if (isKeyboardHandlerProcessingEnabled(keyEvent) && peekKeyboardHandler().processKeyReleased(getEditorContext(), keyEvent)) {
       keyEvent.consume();
     }
 
@@ -2116,13 +2117,46 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void processKeyTyped(final KeyEvent keyEvent) {
     if (keyEvent.isConsumed()) return;
 
-    if (peekKeyboardHandler().processKeyTyped(getEditorContext(), keyEvent)) {
+    if (isKeyboardHandlerProcessingEnabled(keyEvent) && peekKeyboardHandler().processKeyTyped(getEditorContext(), keyEvent)) {
       keyEvent.consume();
     }
 
     revalidateAndRepaint(false);
   }
 
+  private boolean isKeyboardHandlerProcessingEnabled(KeyEvent keyEvent) {
+    if (!isReadOnly()) {
+      return true;
+    }
+    CellActionType actionType = getActionType(keyEvent, getEditorContext());
+    switch (actionType) {
+      case LEFT:
+      case RIGHT:
+      case UP:
+      case DOWN:
+      case SELECT_LEFT:
+      case SELECT_RIGHT:
+      case SELECT_UP:
+      case SELECT_DOWN:
+      case SELECT_HOME:
+      case SELECT_END:
+      case SELECT_LOCAL_HOME:
+      case SELECT_LOCAL_END:
+      case LOCAL_HOME:
+      case LOCAL_END:
+      case HOME:
+      case END:
+      case ROOT_HOME:
+      case ROOT_END:
+      case PAGE_UP:
+      case PAGE_DOWN:
+      case NEXT:
+      case PREV:
+      case COPY:
+        return true;
+    }
+    return false;
+  }
 
   void executeCommand(final Runnable r) {
     myInsideOfCommand = true;

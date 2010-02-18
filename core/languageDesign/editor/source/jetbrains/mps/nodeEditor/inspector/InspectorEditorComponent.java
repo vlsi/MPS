@@ -52,6 +52,7 @@ public class InspectorEditorComponent extends EditorComponent {
   public void editNode(SNode semanticNode, IOperationContext operationContext) {
     //never used
     inspectNode(semanticNode, operationContext);
+    setReadOnly(semanticNode == null || semanticNode.isDeleted() || semanticNode.getModel().isNotEditable());
   }
 
   public void inspectNode(final SNode node, final IOperationContext context) {
