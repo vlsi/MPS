@@ -36,6 +36,7 @@ import java.awt.Dialog;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 class ModuleChooserDialog<T> extends BaseDialog {
@@ -44,14 +45,17 @@ class ModuleChooserDialog<T> extends BaseDialog {
   private SmartChooseByNamePanel myChooser;
   private boolean myIsCancelled = true;
   private boolean myOkDone = false;
+  private boolean myIsMultipleSelection = false;
 
-  ModuleChooserDialog(Frame owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString) throws HeadlessException {
+  ModuleChooserDialog(Frame owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
     super(owner, "Choose " + entityString);
+    myIsMultipleSelection = multiSelection;
     doInit(modules, nonProjectModules, NameUtil.capitalize(entityString));
   }
 
-  ModuleChooserDialog(Dialog owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString) throws HeadlessException {
+  ModuleChooserDialog(Dialog owner, List<T> modules, @Nullable List<T> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
     super(owner, "Choose " + entityString);
+    myIsMultipleSelection = multiSelection;
     doInit(modules, nonProjectModules, NameUtil.capitalize(entityString));
   }
 
@@ -99,7 +103,7 @@ class ModuleChooserDialog<T> extends BaseDialog {
           onOk();
         }
       }
-    }, ModalityState.current(), false);
+    }, ModalityState.current(), myIsMultipleSelection);
   }
 
   public boolean stretchMainComponent() {
@@ -114,11 +118,17 @@ class ModuleChooserDialog<T> extends BaseDialog {
     return myChooser.getPanel();
   }
 
-  public T getResult() {
-    if (myIsCancelled) return null;
-    BaseModuleItem moduleItem = (BaseModuleItem) myChooser.getChosenElement();
-    if (moduleItem == null) return null;
-    return (T) moduleItem.getModule();
+  public List<T> getResult() {
+    List<T> result = new ArrayList<T>();
+    if (myIsCancelled) return result;
+    List<Object> choosen = Collections.unmodifiableList(myChooser.getChosenElements());
+    for (Object item : choosen) {
+      if (item instanceof BaseModuleItem) {
+        BaseModuleItem moduleItem = (BaseModuleItem) item;
+        result.add((T) moduleItem.getModule());
+      }
+    }
+    return result;
   }
 
   @Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
