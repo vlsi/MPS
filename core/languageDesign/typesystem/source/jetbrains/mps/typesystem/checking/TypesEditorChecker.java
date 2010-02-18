@@ -88,7 +88,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
         for (IErrorReporter errorReporter : errors) {
           MessageStatus status = errorReporter.getMessageStatus();
           String errorString = errorReporter.reportError();
-          HighlighterMessage message = createHighlighterMessage(errorNode.o1, NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorReporter);
+          HighlighterMessage message = HighlightUtil.createHighlighterMessage(errorNode.o1, NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorReporter, this);
           IntentionProvider intentionProvider = errorReporter.getIntentionProvider();
 
           if (intentionProvider != null && intentionProvider.isExecutedImmediately() && !IMMEDIATE_QFIX_DISABLED) {

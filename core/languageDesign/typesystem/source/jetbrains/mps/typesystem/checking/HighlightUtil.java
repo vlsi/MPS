@@ -1,0 +1,44 @@
+package jetbrains.mps.typesystem.checking;
+
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+
+import java.awt.Color;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: Cyril.Konopko
+ * Date: 18.02.2010
+ * Time: 19:34:33
+ * To change this template use File | Settings | File Templates.
+ */
+public class HighlightUtil {
+  public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, EditorCheckerAdapter checker) {
+    if (errorReporter == null) {
+      errorReporter = new SimpleErrorReporter(node, message, null, null, MessageStatus.ERROR, new NodeErrorTarget());
+    }
+    final MessageStatus status = errorReporter.getMessageStatus();
+    HighlighterMessage error = new HighlighterMessage(node, status,
+      errorReporter.getErrorTarget().toEditorMessageTarget(), getMessageColor(status), message, checker.getOwner(node.getContainingRoot()));
+    error.setErrorReporter(errorReporter);
+    return error;
+  }
+
+  public static HighlighterMessage createHighlighterMessage(SNode node, String message, EditorCheckerAdapter checker) {
+    return createHighlighterMessage(node, message, (IErrorReporter) null, checker);
+  }
+
+  public static Color getMessageColor(MessageStatus messageStatus) {
+    if (messageStatus == MessageStatus.ERROR) {
+      return Color.RED;
+    }
+    if (messageStatus == MessageStatus.WARNING) {
+      return Color.YELLOW;
+    }
+    if (messageStatus == MessageStatus.OK) {
+      return Color.LIGHT_GRAY;
+    }
+    return Color.BLACK;
+  }
+}

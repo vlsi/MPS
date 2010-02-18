@@ -26,42 +26,9 @@ import java.util.List;
 import java.util.Comparator;
 
 public abstract class EditorCheckerAdapter implements IEditorChecker, EditorMessageOwner {
-  public static final Object ERROR_INFO = new Object();
 
   public EditorMessageOwner getOwner(SNode rootNode) {
     return this;
-  }
-
-  protected HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter) {
-    if (errorReporter == null) {
-      errorReporter = new SimpleErrorReporter(node, message, null, null, MessageStatus.ERROR, new NodeErrorTarget());
-    }
-    final MessageStatus status = errorReporter.getMessageStatus();
-    HighlighterMessage error = new HighlighterMessage(node, status,
-      errorReporter.getErrorTarget().toEditorMessageTarget(), getMessageColor(status), message, getOwner(node.getContainingRoot()));
-    error.setErrorReporter(errorReporter);
-    return error;
-  }
-
-  protected HighlighterMessage createHighlighterMessage(SNode node, String message) {
-    return createHighlighterMessage(node, message, (IErrorReporter) null);
-  }
-
-  protected HighlighterMessage createHighlighterMessage(SNode node, String message, SNode rule) {
-    return createHighlighterMessage(node, message, rule != null ? new SimpleErrorReporter(node, message, rule.getModel().getSModelReference().toString(), rule.getId()) : null);
-  }
-
-  private Color getMessageColor(MessageStatus messageStatus) {
-    if (messageStatus == MessageStatus.ERROR) {
-      return Color.RED;
-    }
-    if (messageStatus == MessageStatus.WARNING) {
-      return Color.YELLOW;
-    }
-    if (messageStatus == MessageStatus.OK) {
-      return Color.LIGHT_GRAY;
-    }
-    return Color.BLACK;
   }
 
   public boolean hasDramaticalEvent(List<SModelEvent> events) {

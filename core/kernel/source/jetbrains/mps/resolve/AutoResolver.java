@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
+import jetbrains.mps.typesystem.checking.HighlightUtil;
 
 import java.util.*;
 
@@ -75,7 +76,7 @@ public class AutoResolver extends EditorCheckerAdapter {
 
     // highlight nodes with errors
     for (SReference ref : yetBadReferences) {
-      EditorMessage message = createHighlighterMessage(ref.getSourceNode(), "unresolved reference");
+      EditorMessage message = HighlightUtil.createHighlighterMessage(ref.getSourceNode(), "unresolved reference", this);
       messages.add(message);
     }
     return messages;
