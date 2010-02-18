@@ -41,6 +41,8 @@ public interface ITemplateGenerator {
    */
   SModel getTargetModel();
 
+  boolean areMappingsAvailable();
+
   SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName);
 
   SNode findOutputNodeByInputNodeAndOutputNodeAndMappingName(SNode inputNode, SNode outputNode, String mappingName);

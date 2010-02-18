@@ -155,7 +155,10 @@ public class GenerationController {
       for (SModelDescriptor inputModel : inputModels) {
         TypeChecker.getInstance().setIsGeneration(true);
 
-        GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, myGenerationTracer, mySaveTransientModels, myProgress, myMessages, mySettings.isUseNewGenerator());
+        GenerationSession generationSession = new GenerationSession(
+          inputModel, invocationContext, myGenerationTracer, mySaveTransientModels,
+          myProgress, myMessages, mySettings.isUseNewGenerator(), mySettings.isStrictMode());
+
         try {
           Logger.addLoggingHandler(generationSession.getLoggingHandler());
           if (!myGenerationHandler.canHandle(inputModel)) {

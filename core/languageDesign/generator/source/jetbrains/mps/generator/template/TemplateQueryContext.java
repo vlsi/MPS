@@ -98,11 +98,17 @@ public class TemplateQueryContext {
   }
 
   public SNode getOutputNodeByMappingLabel(String label) {
+    if(!myGenerator.areMappingsAvailable()) {
+      myGenerator.showErrorMessage(getTemplateNodeForLogging(), "'get output by label' cannot be used here");
+    }
     return myGenerator.findOutputNodeByInputNodeAndMappingName(null, label);
   }
 
   public SNode getOutputNodeByInputNodeAndMappingLabel(SNode inputNode, String label) {
     if (inputNode == null) return null;
+    if(!myGenerator.areMappingsAvailable()) {
+      myGenerator.showErrorMessage(getTemplateNodeForLogging(), "'get output by input and label' cannot be used here");
+    }
     return myGenerator.findOutputNodeByInputNodeAndMappingName(inputNode, label);
   }
 
@@ -113,6 +119,9 @@ public class TemplateQueryContext {
 
   public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode inputNode, String label) {
     if (inputNode == null) return null;
+    if(!myGenerator.areMappingsAvailable()) {
+      myGenerator.showErrorMessage(getTemplateNodeForLogging(), "'get all output by input and label' cannot be used here");
+    }
     return myGenerator.findAllOutputNodesByInputNodeAndMappingName(inputNode, label);
   }
 
@@ -122,6 +131,9 @@ public class TemplateQueryContext {
 
   public SNode getCopiedOutputNodeForInputNode(SNode inputNode) {
     if (inputNode == null) return null;
+    if(!myGenerator.areMappingsAvailable()) {
+      myGenerator.showErrorMessage(getTemplateNodeForLogging(), "'get copied node for input' cannot be used here");
+    }
     return myGenerator.findCopiedOutputNodeForInputNode(inputNode);
   }
 

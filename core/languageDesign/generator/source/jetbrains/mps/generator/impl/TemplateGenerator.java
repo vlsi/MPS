@@ -49,27 +49,26 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final DelayedChanges myDelayedChanges = new DelayedChanges();
   private final Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
 
+  private final boolean myIsStrict;
+  private boolean myAreMappingsReady = false;
+
   /* cached session data */
   private BlockedReductionsData myReductionData;
   private final IGenerationTracer myGenerationTracer;
 
-  public TemplateGenerator(GenerationSessionContext operationContext,
-                           ProgressIndicator progressMonitor,
-                           GeneratorLogger logger,
-                           RuleManager ruleManager,
-                           SModel inputModel,
-                           SModel outputModel) {
+  public TemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
+                           GeneratorLogger logger, RuleManager ruleManager,
+                           SModel inputModel, SModel outputModel, boolean isStrict) {
+    
     super(operationContext, progressMonitor, logger, inputModel, outputModel);
     myRuleManager = ruleManager;
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
-  }
-
-  public GenerationSessionContext getGeneratorSessionContext() {
-    return (GenerationSessionContext) getOperationContext();
+    myIsStrict = isStrict;
   }
 
   public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
     checkMonitorCanceled();
+    myAreMappingsReady = false;
 
     // create all roots
     if (isPrimary) {
@@ -100,6 +99,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       SNode inputRootNode = findInputNodeById(outputRootNode.getSNodeId());
       applyReductionRules(inputRootNode, outputRootNode);
     }
+
+    myAreMappingsReady = true;
 
     // weaving
     applyWeaving_MappingRules();
@@ -488,6 +489,19 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myRuleManager;
   }
 
+  @Override
+  public boolean areMappingsAvailable() {
+    return myIsStrict ? myAreMappingsReady : true;
+  }
+
+  public GenerationSessionContext getGeneratorSessionContext() {
+    return (GenerationSessionContext) getOperationContext();
+  }
+  
+  public boolean isStrict() {
+    return myIsStrict;
+  }
+  
   private boolean isChanged() {
     return myChanged;
   }

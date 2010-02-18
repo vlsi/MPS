@@ -69,12 +69,15 @@ public class GenerationSession {
 
   private GenerationSessionContext mySessionContext;
 
+  private boolean myIsStrict;
+
   private int myMajorStep = 0;
   private int myTransientModelsCount = 0;
 
   public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
                            IGenerationTracer generationTracer, boolean saveTransientModels,
-                           ProgressIndicator progressMonitor, IMessageHandler messagesHandler, boolean reverseRoots) {
+                           ProgressIndicator progressMonitor, IMessageHandler messagesHandler,
+                           boolean reverseRoots, boolean isStrict) {
     myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
     myGenerationTracer = generationTracer;
@@ -82,6 +85,7 @@ public class GenerationSession {
     myProgressMonitor = progressMonitor;
     myMessagesHandler = messagesHandler;
     myReverseRoots = reverseRoots;
+    myIsStrict = isStrict;
   }
 
   public GenerationStatus generateModel() throws Exception {
@@ -270,7 +274,7 @@ public class GenerationSession {
 
   private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, boolean isPrimary,
                              RuleManager ruleManager, GeneratorLogger logger) throws GenerationFailureException, GenerationCanceledException {
-    TemplateGenerator tg = new TemplateGenerator(mySessionContext, myProgressMonitor, logger, ruleManager, currentInputModel, currentOutputModel);
+    TemplateGenerator tg = new TemplateGenerator(mySessionContext, myProgressMonitor, logger, ruleManager, currentInputModel, currentOutputModel, myIsStrict);
     return tg.apply(isPrimary);
   }
 
@@ -311,7 +315,7 @@ public class GenerationSession {
         continue;
       }
       addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")", preMappingScript.getNode());
-      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, logger, ruleManager, currentInputModel, currentInputModel);
+      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, logger, ruleManager, currentInputModel, currentInputModel, myIsStrict);
       QueryExecutor.executeMappingScript(preMappingScript, currentInputModel, templateGenerator);
     }
     return currentInputModel;
@@ -335,7 +339,7 @@ public class GenerationSession {
         continue;
       }
       addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")", postMappingScript.getNode());
-      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, logger, ruleManager, currentOutputModel, currentOutputModel);
+      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, logger, ruleManager, currentOutputModel, currentOutputModel, myIsStrict);
       QueryExecutor.executeMappingScript(postMappingScript, currentOutputModel, templateGenerator);
     }
     return currentOutputModel;
