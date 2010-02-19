@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class DivideOperation extends BinaryOperation {
+public class DivideOperation extends BinaryNumericOperation {
   public static final String concept = "jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation";
 
   public DivideOperation(SNode node) {

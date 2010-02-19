@@ -25,65 +25,14 @@
   <languageAspect modelUID="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="0" />
-  <node type="jetbrains.mps.samples.lambdaCalculus.structure.Program:0" id="4976946798230780924">
-    <property name="name:0" value="First" />
-    <node role="expression:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication:0" id="4976946798230780985">
-      <node role="argument:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="4976946798230780995">
-        <property name="value:0" value="2" />
-      </node>
-      <node role="argument:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="4976946798230781004">
-        <property name="value:0" value="3" />
-      </node>
-      <node role="argument:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="3978364766705709662">
-        <property name="value:0" value="4" />
-      </node>
-      <node role="function:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication:0" id="4976946798230780969">
-        <node role="argument:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="4976946798230780978">
-          <property name="value:0" value="1" />
-        </node>
-        <node role="function:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction:0" id="4976946798230780926">
-          <node role="variable:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable:0" id="4976946798230780927">
-            <property name="name:0" value="x" />
-          </node>
-          <node role="variable:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable:0" id="4976946798230780931">
-            <property name="name:0" value="y" />
-          </node>
-          <node role="variable:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable:0" id="4976946798230780935">
-            <property name="name:0" value="z" />
-          </node>
-          <node role="variable:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable:0" id="3978364766705709641">
-            <property name="name:0" value="a" />
-          </node>
-          <node role="body:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AddOperation:0" id="4976946798230780945">
-            <node role="right:0" type="jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation:0" id="4976946798230780957">
-              <node role="right:0" type="jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation:0" id="3978364766705709673">
-                <node role="right:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef:0" id="3978364766705709676">
-                  <link role="variable:0" targetNodeId="3978364766705709641" resolveInfo="a" />
-                </node>
-                <node role="left:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef:0" id="4976946798230780964">
-                  <link role="variable:0" targetNodeId="4976946798230780935" resolveInfo="z" />
-                </node>
-              </node>
-              <node role="left:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef:0" id="4976946798230780952">
-                <link role="variable:0" targetNodeId="4976946798230780931" resolveInfo="y" />
-              </node>
-            </node>
-            <node role="left:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef:0" id="4976946798230780940">
-              <link role="variable:0" targetNodeId="4976946798230780927" resolveInfo="x" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.samples.lambdaCalculus.structure.Program:0" id="1308935328408196786">
     <property name="name:0" value="Second" />
     <node role="expression:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication:0" id="3310228858883447816">
       <node role="argument:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="3310228858883447828">
-        <property name="value:0" value="2" />
+        <property name="value:0" value="42" />
       </node>
       <node role="argument:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="3310228858883449821">
-        <property name="value:0" value="1" />
+        <property name="value:0" value="11" />
       </node>
       <node role="function:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication:0" id="1308935328408196813">
         <node role="function:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction:0" id="1308935328408196788">
@@ -155,63 +104,30 @@
             </node>
           </node>
           <node role="argument:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="3310228858883504683">
-            <property name="value:0" value="1" />
+            <property name="value:0" value="14" />
           </node>
         </node>
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.samples.lambdaCalculus.structure.Program:0" id="3310228858883445418">
-    <property name="name:0" value="Third" />
-    <node role="expression:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication:0" id="3310228858883445676">
-      <node role="function:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction:0" id="3310228858883445425">
-        <node role="body:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AddOperation:0" id="3310228858883445490">
-          <node role="right:0" type="jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation:0" id="3310228858883445593">
-            <node role="right:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AddOperation:0" id="3310228858883446882">
-              <node role="right:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AddOperation:0" id="3310228858883446886">
-                <node role="right:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef:0" id="3310228858883446900">
-                  <link role="variable:0" targetNodeId="3310228858883445439" resolveInfo="b" />
-                </node>
-                <node role="left:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef:0" id="3310228858883446885">
-                  <link role="variable:0" targetNodeId="3310228858883445434" resolveInfo="a" />
-                </node>
-              </node>
-              <node role="left:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="3310228858883445605">
-                <property name="value:0" value="2" />
-              </node>
-            </node>
-            <node role="left:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication:0" id="3310228858883445527">
-              <node role="argument:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="3310228858883445539">
-                <property name="value:0" value="1" />
-              </node>
-              <node role="function:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction:0" id="3310228858883445499">
-                <node role="variable:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable:0" id="3310228858883445500">
-                  <property name="name:0" value="t" />
-                </node>
-                <node role="body:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AddOperation:0" id="3310228858883445515">
-                  <node role="right:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="3310228858883445518">
-                    <property name="value:0" value="1" />
-                  </node>
-                  <node role="left:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef:0" id="3310228858883445508">
-                    <link role="variable:0" targetNodeId="3310228858883445500" resolveInfo="t" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="left:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="3310228858883445483">
-            <property name="value:0" value="3" />
-          </node>
+  <node type="jetbrains.mps.samples.lambdaCalculus.structure.Program:0" id="1888188276222002592">
+    <property name="name:0" value="StringL" />
+    <node role="expression:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication:0" id="1888188276222002610">
+      <node role="function:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction:0" id="1888188276222002594">
+        <node role="variable:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable:0" id="1888188276222002595">
+          <property name="name:0" value="x" />
         </node>
-        <node role="variable:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable:0" id="3310228858883445434">
-          <property name="name:0" value="a" />
-        </node>
-        <node role="variable:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable:0" id="3310228858883445439">
-          <property name="name:0" value="b" />
+        <node role="body:0" type="jetbrains.mps.samples.lambdaCalculus.structure.ConcatenateOperation:0" id="1888188276222002602">
+          <node role="right:0" type="jetbrains.mps.samples.lambdaCalculus.structure.StringConstant:0" id="1888188276222002607">
+            <property name="value:0" value="abc" />
+          </node>
+          <node role="left:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef:0" id="1888188276222002599">
+            <link role="variable:0" targetNodeId="1888188276222002595" resolveInfo="x" />
+          </node>
         </node>
       </node>
-      <node role="argument:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="3310228858883445720">
-        <property name="value:0" value="8" />
+      <node role="argument:0" type="jetbrains.mps.samples.lambdaCalculus.structure.StringConstant:0" id="1888188276222002619">
+        <property name="value:0" value="qwer" />
       </node>
     </node>
   </node>

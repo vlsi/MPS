@@ -149,7 +149,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1934341835352312169">
     <property name="name:0" value="AddOperation" />
-    <link role="extends:0" targetNodeId="1934341835352312155:0" resolveInfo="BinaryOperation" />
+    <link role="extends:0" targetNodeId="1888188276221754548:0" resolveInfo="BinaryNumericOperation" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1934341835352312170">
       <property name="value:0" value="+" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
@@ -157,7 +157,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6645816968628162282">
     <property name="name:0" value="MultiplyOperation" />
-    <link role="extends:0" targetNodeId="1934341835352312155:0" resolveInfo="BinaryOperation" />
+    <link role="extends:0" targetNodeId="1888188276221754548:0" resolveInfo="BinaryNumericOperation" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6645816968628162283">
       <property name="value:0" value="*" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
@@ -165,7 +165,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6645816968628162284">
     <property name="name:0" value="SubtractOperation" />
-    <link role="extends:0" targetNodeId="1934341835352312155:0" resolveInfo="BinaryOperation" />
+    <link role="extends:0" targetNodeId="1888188276221754548:0" resolveInfo="BinaryNumericOperation" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6645816968628162285">
       <property name="value:0" value="-" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
@@ -173,7 +173,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="6645816968628162286">
     <property name="name:0" value="DivideOperation" />
-    <link role="extends:0" targetNodeId="1934341835352312155:0" resolveInfo="BinaryOperation" />
+    <link role="extends:0" targetNodeId="1888188276221754548:0" resolveInfo="BinaryNumericOperation" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="6645816968628162287">
       <property name="value:0" value="/" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
@@ -232,6 +232,28 @@
       <property name="role:0" value="expressions" />
       <property name="sourceCardinality:0" value="1..n" />
       <link role="target:0" targetNodeId="4022026349914659049:0" resolveInfo="LambdaExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1888188276221754548">
+    <property name="name:0" value="BinaryNumericOperation" />
+    <link role="extends:0" targetNodeId="1934341835352312155:0" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1888188276221754549">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473854053:0" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1888188276221754550">
+    <property name="name:0" value="BinaryStringOperation" />
+    <link role="extends:0" targetNodeId="1934341835352312155:0" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1888188276221754551">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473854053:0" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1888188276221754552">
+    <property name="name:0" value="ConcatenateOperation" />
+    <link role="extends:0" targetNodeId="1888188276221754550:0" resolveInfo="BinaryStringOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1888188276221891163">
+      <property name="value:0" value="+" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
 </model>

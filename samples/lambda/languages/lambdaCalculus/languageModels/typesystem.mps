@@ -51,28 +51,16 @@
             </node>
           </node>
         </node>
-        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4530871765544307920">
-          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4530871765544307921">
-            <node role="quotedNode:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumberType:0" id="720459392342066410" />
-          </node>
-        </node>
-      </node>
-      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="6645816968628542119">
-        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="6645816968628542120">
-          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="6645816968628542121">
-            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6645816968628542122">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6645816968628542123">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1888188276221891128">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1888188276221891129">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1888188276221891131">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1888188276221891132">
                 <link role="applicableNode:3" targetNodeId="6645816968628516761" resolveInfo="binaryOperation" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6645816968628542129">
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1888188276221891133">
                 <link role="link:16" targetNodeId="1.1934341835352312157:0" />
               </node>
             </node>
-          </node>
-        </node>
-        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4530871765544307924">
-          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="720459392342066411">
-            <node role="quotedNode:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumberType:0" id="720459392342066412" />
           </node>
         </node>
       </node>
@@ -84,9 +72,16 @@
             </node>
           </node>
         </node>
-        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4530871765544565320">
-          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4530871765544565321">
-            <node role="quotedNode:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumberType:0" id="4530871765544565323" />
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1888188276221891134">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1888188276221891135">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1888188276221891136">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1888188276221891137">
+                <link role="applicableNode:3" targetNodeId="6645816968628516761" resolveInfo="binaryOperation" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1888188276221891138">
+                <link role="link:16" targetNodeId="1.1934341835352312157:0" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -529,6 +524,57 @@
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="3777111214477754431">
       <property name="name:3" value="multipleExpression" />
       <link role="concept:3" targetNodeId="1.1564819815921013155:0" resolveInfo="MultipleExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1888188276221754553">
+    <property name="name:3" value="typeof_BinaryNumericOperation" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1888188276221754554">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1888188276221891124">
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1888188276221891127">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1888188276221891115">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1888188276221891117">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1888188276221891116">
+                <link role="applicableNode:3" targetNodeId="1888188276221869743" resolveInfo="binaryNumericOperation" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1888188276221891121">
+                <link role="link:16" targetNodeId="1.1934341835352312156:0" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1888188276221891143">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1888188276221891144">
+            <node role="quotedNode:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumberType:0" id="1888188276221891146" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1888188276221869743">
+      <property name="name:3" value="binaryNumericOperation" />
+      <link role="concept:3" targetNodeId="1.1888188276221754548:0" resolveInfo="BinaryNumericOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1888188276221891147">
+    <property name="name:3" value="typeof_BinaryStringOperation" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1888188276221891148">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1888188276221891155">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1888188276221891159">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1888188276221891160">
+            <node role="quotedNode:0" type="jetbrains.mps.samples.lambdaCalculus.structure.StringType:0" id="1888188276221891162" />
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1888188276221891158">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1888188276221891152">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1888188276221891154">
+              <link role="applicableNode:3" targetNodeId="1888188276221891150" resolveInfo="binaryStringOperation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1888188276221891150">
+      <property name="name:3" value="binaryStringOperation" />
+      <link role="concept:3" targetNodeId="1.1888188276221754550:0" resolveInfo="BinaryStringOperation" />
     </node>
   </node>
 </model>

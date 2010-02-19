@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class SubtractOperation extends BinaryOperation {
+public class SubtractOperation extends BinaryNumericOperation {
   public static final String concept = "jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation";
 
   public SubtractOperation(SNode node) {
