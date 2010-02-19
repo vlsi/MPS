@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,8 +34,8 @@ import java.util.Map;
 public class DelayedChanges {
   private static final Logger LOG = Logger.getLogger(DelayedChanges.class);
 
-  private ArrayList<ExecuteMapSrcNodeMacroChange> myExecuteMapSrcNodeMacroChanges = new ArrayList<ExecuteMapSrcNodeMacroChange>();
-  private ArrayList<ExecuteMapSrcNodeMacroPostProcChange> myExecuteMapSrcNodeMacroPostProcChanges = new ArrayList<ExecuteMapSrcNodeMacroPostProcChange>();
+  private List<ExecuteMapSrcNodeMacroChange> myExecuteMapSrcNodeMacroChanges = new ArrayList<ExecuteMapSrcNodeMacroChange>();
+  private List<ExecuteMapSrcNodeMacroPostProcChange> myExecuteMapSrcNodeMacroPostProcChanges = new ArrayList<ExecuteMapSrcNodeMacroPostProcChange>();
 
   public void addExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, Map<String, SNode> inputNodesByMappingName, TemplateGenerator generator) {
     myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, inputNode, inputNodesByMappingName, generator));
@@ -49,6 +50,7 @@ public class DelayedChanges {
     for (ExecuteMapSrcNodeMacroChange executeMapSrcNodeMacroChange : myExecuteMapSrcNodeMacroChanges) {
       executeMapSrcNodeMacroChange.doChange();
     }
+    myExecuteMapSrcNodeMacroChanges = null;
     for (ExecuteMapSrcNodeMacroPostProcChange executeMapSrcNodeMacroPostProcChange : myExecuteMapSrcNodeMacroPostProcChanges) {
       executeMapSrcNodeMacroPostProcChange.doChange();
     }
@@ -167,32 +169,6 @@ public class DelayedChanges {
         LOG.error(t, myMapSrcMacro);
       } finally {
         myGenerator.setPreviousInputNodesByMappingName(old);
-      }
-    }
-
-    private void validateReferences(SNode node) {
-      for (SReference reference : node.getReferencesArray()) {
-        validateReference(reference);
-      }
-      for (SNode child : node.getChildren()) {
-        validateReferences(child);
-      }
-    }
-
-    private void validateReference(SReference reference) {
-      // reference to input model - illegal
-      if (myGenerator.getSourceModel().getSModelReference().equals(reference.getTargetSModelReference())) {
-        // replace
-        reference.getSourceNode().removeReference(reference);
-        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-          reference.getRole(),
-          reference.getSourceNode(),
-          myInputNode,
-          reference.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(
-          refInfo,
-          myGenerator);
-        reference.getSourceNode().addReference(postponedReference);
       }
     }
   }

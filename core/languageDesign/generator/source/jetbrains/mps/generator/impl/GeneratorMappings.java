@@ -11,8 +11,8 @@ import java.util.*;
  */
 public class GeneratorMappings {
 
+  /* mapping,input -> output */
   private final Map<Pair<String, SNode>, Object> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, Object>();
-  private final Map<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
 
   /* input -> output */
   private final Map<SNode, SNode> myCopiedOutputNodeForInputNode = new HashMap<SNode, SNode>();
@@ -20,6 +20,9 @@ public class GeneratorMappings {
 
   /* null value means multiple nodes for the template */
   private final Map<SNode, SNode> myTemplateNodeToOutputNodeMap = new HashMap<SNode, SNode>();
+
+  /* template,input -> output */
+  private final Map<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
 
   public GeneratorMappings() {
   }
@@ -67,7 +70,7 @@ public class GeneratorMappings {
   void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
-    // todo: generator should repotr error on attempt to obtain not unique output-node
+    // todo: generator should report error on attempt to obtain not unique output-node
     Pair key = new Pair(templateNode, inditectInputNode);
     if (!myTemplateNodeAndInputNodeToOutputNodeMap.containsKey(key)) {
       myTemplateNodeAndInputNodeToOutputNodeMap.put(key, outputNode);
