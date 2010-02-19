@@ -23,6 +23,8 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.ui.RowIcon;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.ui.treeMessages.TreeMessage;
+import jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -37,7 +39,9 @@ import javax.swing.tree.MutableTreeNode;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * @author Kostik
@@ -60,6 +64,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private boolean myAutoExpandable = true;
   private ErrorState myErrorState = ErrorState.NONE;
   private ErrorState myCombinedErrorState = ErrorState.NONE;
+  private List<TreeMessage> myTreeMessages = null;
 
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -300,8 +305,50 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   protected void updatePresentation() {
-    //todo
     doUpdatePresentation();
+    if (myTreeMessages != null) {
+      Color c = null;
+      String additionalText = null;
+      for (TreeMessage message : myTreeMessages) {
+        if (c == null && message.alternatesColor()) {
+          c = message.getColor();
+        }
+        if (additionalText == null && message.hasAdditionalText()) {
+          additionalText = message.getAdditionalText();
+        }
+      }
+      if (c != null) {
+        setColor(c);
+      }
+      if (additionalText != null) {
+     //   String oldText = getAdditionalText();
+     //   oldText = oldText == null ? "" : oldText + " ";
+        setAdditionalText(/*oldText +*/ additionalText);
+      }
+    }
+  }
+
+  public void addTreeMessage(TreeMessage message) {
+    if (myTreeMessages == null) {
+      myTreeMessages = new ArrayList<TreeMessage>(1);
+    }
+    myTreeMessages.add(message);
+  }
+
+  public void removeTreeMessage(TreeMessage message) {
+    if (myTreeMessages != null) {
+      myTreeMessages.remove(message);
+    }
+  }
+
+  public void removeTreeMessages(TreeMessageOwner owner) {
+    if (owner == null) return;
+    if (myTreeMessages == null) return;
+    for (TreeMessage message : new ArrayList<TreeMessage>(myTreeMessages)) {
+      if (owner.equals(message.getOwner())) {
+        myTreeMessages.remove(message);
+      }
+    }
   }
 
   protected void doUpdatePresentation() {
