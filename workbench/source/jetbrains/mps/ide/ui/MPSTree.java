@@ -717,10 +717,10 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     assert !myDisposed;
 
     myDisposed = true;
-
     if (getModel().getRoot() instanceof MPSTreeNode) {
       ((MPSTreeNode) getModel().getRoot()).removeThisAndChildren();
     }
+    myTreeNodeListeners.clear();
   }
 
   protected static class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
