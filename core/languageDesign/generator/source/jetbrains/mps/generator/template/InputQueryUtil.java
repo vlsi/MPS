@@ -27,7 +27,7 @@ import java.util.List;
  * Created by: Sergey Dmitriev
  * Date: Jan 24, 2007
  */
-public class MacroUtil {
+public class InputQueryUtil {
 
   public static List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) throws GenerationFailureException {
     try {

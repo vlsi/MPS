@@ -17,7 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.generator.template.MacroUtil;
+import jetbrains.mps.generator.template.InputQueryUtil;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
@@ -229,7 +229,7 @@ public class TemplateProcessor {
 
     if (nodeMacro instanceof LoopMacro) {
       // $LOOP$
-      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
+      List<SNode> newInputNodes = getNewInputNodes(nodeMacro, inputNode);
       for (SNode newInputNode : newInputNodes) {
         boolean inputChanged = (newInputNode != inputNode);
         if (inputChanged) {
@@ -250,7 +250,7 @@ public class TemplateProcessor {
 
     } else if (nodeMacro instanceof CopySrcNodeMacro || nodeMacro instanceof CopySrcListMacro) {
       // $COPY-SRC$ / $COPY-SRCL$
-      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
+      List<SNode> newInputNodes = getNewInputNodes(nodeMacro, inputNode);
       for (SNode newInputNode : newInputNodes) {
         List<SNode> _outputNodes = copyNodeFromInputNode(mappingName, templateNode, newInputNode);
         if (_outputNodes != null) {
@@ -321,7 +321,7 @@ public class TemplateProcessor {
         macro_mapperFunction = ((MapSrcListMacro) nodeMacro).getMapperFunction();
       }
 
-      List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
+      List<SNode> newInputNodes = getNewInputNodes(nodeMacro, inputNode);
       for (SNode newInputNode : newInputNodes) {
         boolean inputChanged = (newInputNode != inputNode);
         if (inputChanged) {
@@ -373,7 +373,7 @@ public class TemplateProcessor {
         return null;
       }
 
-      SNode newInputNode = MacroUtil.getNewInputNode(nodeMacro, inputNode, myGenerator);
+      SNode newInputNode = getNewInputNode(nodeMacro, inputNode);
       if (newInputNode == null) {
         GeneratorMessage generatorMessage = templateSwitch.getNullInputMessage();
         if (generatorMessage != null) {
@@ -429,7 +429,7 @@ public class TemplateProcessor {
 
     } else if (nodeMacro instanceof IncludeMacro) {
       // $INCLUDE$
-      SNode newInputNode = MacroUtil.getNewInputNode(nodeMacro, inputNode, myGenerator);
+      SNode newInputNode = getNewInputNode(nodeMacro, inputNode);
       if (newInputNode == null) {
         return outputNodes; // skip template
       }
@@ -478,7 +478,7 @@ public class TemplateProcessor {
     }
 
     // $$
-    List<SNode> newInputNodes = MacroUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
+    List<SNode> newInputNodes = getNewInputNodes(nodeMacro, inputNode);
     for (SNode newInputNode : newInputNodes) {
       boolean inputChanged = (newInputNode != inputNode);
       if (inputChanged) {
@@ -496,6 +496,29 @@ public class TemplateProcessor {
       }
     }
     return outputNodes;
+  }
+
+  private SNode getNewInputNode(NodeMacro nodeMacro, SNode inputNode) throws GenerationFailureException {
+    SNode node = InputQueryUtil.getNewInputNode(nodeMacro, inputNode, myGenerator);
+//    if(myGenerator.isStrict() && node != null) {
+//      if(node.getModel() != myGenerator.getInputModel()) {
+//        myGenerator.showErrorMessage(nodeMacro.getNode(), "returned node should be from input model");
+//      }
+//    }
+    return node;
+  }
+
+  private List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode inputNode) throws GenerationFailureException {
+    List<SNode> nodes = InputQueryUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
+//    if(myGenerator.isStrict() && nodes != null) {
+//      for(SNode node : nodes) {
+//        if(node.getModel() != myGenerator.getInputModel()) {
+//          myGenerator.showErrorMessage(nodeMacro.getNode(), "returned nodes should be from input model");
+//          break;
+//        }
+//      }
+//    }
+    return nodes;
   }
 
   private List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
