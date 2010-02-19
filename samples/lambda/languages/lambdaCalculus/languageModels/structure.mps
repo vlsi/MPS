@@ -181,6 +181,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4530871765544139480">
     <property name="name:0" value="LambdaType" />
+    <property name="package:0" value="types" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="4530871765544139481">
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473854053:0" resolveInfo="abstract" />
@@ -188,10 +189,12 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4530871765544139482">
     <property name="name:0" value="NumberType" />
+    <property name="package:0" value="types" />
     <link role="extends:0" targetNodeId="4530871765544139480:0" resolveInfo="LambdaType" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4530871765544139489">
     <property name="name:0" value="StringType" />
+    <property name="package:0" value="types" />
     <link role="extends:0" targetNodeId="4530871765544139480:0" resolveInfo="LambdaType" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="4530871765544148487">
       <property name="value:0" value="string" />

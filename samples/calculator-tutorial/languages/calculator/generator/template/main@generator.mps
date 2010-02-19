@@ -759,7 +759,7 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1241363900359">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241363900360">
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1241363900361">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~Component.setVisible(boolean):void" resolveInfo="setVisible" />
+              <link role="baseMethodDeclaration:3" targetNodeId="6.~Window.setVisible(boolean):void" resolveInfo="setVisible" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1241363902113">
                 <property name="value:3" value="true" />
               </node>

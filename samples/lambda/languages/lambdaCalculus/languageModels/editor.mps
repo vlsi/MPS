@@ -215,6 +215,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4530871765544139483">
+    <property name="package:32" value="types" />
     <link role="conceptDeclaration:32" targetNodeId="1.4530871765544139482:0" resolveInfo="NumberType" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4530871765544139485">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4530871765544139488">
@@ -224,6 +225,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4530871765544139490">
+    <property name="package:32" value="types" />
     <link role="conceptDeclaration:32" targetNodeId="1.4530871765544139489:0" resolveInfo="StringType" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4530871765544139492">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4530871765544139495">
