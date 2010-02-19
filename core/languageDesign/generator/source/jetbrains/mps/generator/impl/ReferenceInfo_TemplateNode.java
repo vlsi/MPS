@@ -51,7 +51,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     }
 
     // if template has been applied exactly once, then we have unique output node for each template node
-    outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, true);
+    outputTargetNode = generator.findOutputNodeByTemplateNodeUnique(myTemplateTargetNode);
     if (outputTargetNode != null) {
       return outputTargetNode;
     }

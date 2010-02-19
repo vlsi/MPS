@@ -11,26 +11,25 @@ import java.util.*;
  */
 public class GeneratorMappings {
 
-  private final Map<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
-  private final Set<SNode> myInputNodesWithNotUniqueCopiedOutputNode = new HashSet<SNode>();
   private final Map<Pair<String, SNode>, Object> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, Object>();
-  private final Map<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
+  private final Map<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
+
+  /* input -> output */
+  private final Map<SNode, SNode> myCopiedOutputNodeForInputNode = new HashMap<SNode, SNode>();
+  private final Set<SNode> myInputNodesWithNotUniqueCopiedOutputNode = new HashSet<SNode>();
+
+  /* null value means multiple nodes for the template */
+  private final Map<SNode, SNode> myTemplateNodeToOutputNodeMap = new HashMap<SNode, SNode>();
 
   public GeneratorMappings() {
   }
 
   public void addOutputNodeByTemplateNode(SNode templateNode, SNode outputNode) {
-    Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
-    if (pair == null) {
-      myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(outputNode, true));
+    if(myTemplateNodeToOutputNodeMap.containsKey(templateNode)) {
+      myTemplateNodeToOutputNodeMap.put(templateNode, null);
       return;
     }
-
-    // that means that there were more than one output node for given template node
-    if (!pair.o2) {
-      return;
-    }
-    myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(pair.o1, false));
+    myTemplateNodeToOutputNodeMap.put(templateNode, outputNode);
   }
 
   void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
@@ -51,9 +50,8 @@ public class GeneratorMappings {
 
   void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
     // todo: can be several copied output nodes for one input node
-    Pair key = new Pair(inputNode, inputNode);
-    if (!myTemplateNodeAndInputNodeToOutputNodeMap.containsKey(key)) {
-      myTemplateNodeAndInputNodeToOutputNodeMap.put(key, outputNode);
+    if (!myCopiedOutputNodeForInputNode.containsKey(inputNode)) {
+      myCopiedOutputNodeForInputNode.put(inputNode, outputNode);
     } else {
       myInputNodesWithNotUniqueCopiedOutputNode.add(inputNode);
     }
@@ -78,14 +76,8 @@ public class GeneratorMappings {
 
   // find methods
 
-  public SNode findOutputNodeByTemplateNode(SNode templateNode, boolean unique) {
-    Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
-    if (pair != null) {
-      if (pair.o2 || !unique) {
-        return pair.o1;
-      }
-    }
-    return null;
+  public SNode findOutputNodeByTemplateNodeUnique(SNode templateNode) {
+    return myTemplateNodeToOutputNodeMap.get(templateNode);
   }
 
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingLabel, GeneratorLogger logger) {
@@ -135,6 +127,10 @@ public class GeneratorMappings {
     Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
     if (o instanceof List) return ((List<SNode>) o);
     return Collections.singletonList((SNode) o);
+  }
+
+  public SNode findCopiedOutputNodeForInputNode(SNode inputNode) {
+    return myCopiedOutputNodeForInputNode.get(inputNode);
   }
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {

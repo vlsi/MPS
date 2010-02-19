@@ -266,7 +266,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
     try {
-      List<SNode> outputNodes = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, this);
+      List<SNode> outputNodes = new TemplateProcessor(this).processTemplateNode(mappingName, templateNode, inputNode);
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode);
         myOutputModel.addRoot(outputNode);
@@ -430,11 +430,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     List<SNode> result = new ArrayList<SNode>(nodeAndMappingNamePairs.size());
+    TemplateProcessor templateProcessor = new TemplateProcessor(this);
     for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;
       try {
-        result.addAll(TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, this));
+        result.addAll(templateProcessor.processTemplateNode(mappingName, templateNode, inputNode));
       } catch (DismissTopMappingRuleException e) {
         throw e;
       } catch (TemplateProcessingFailureException e) {

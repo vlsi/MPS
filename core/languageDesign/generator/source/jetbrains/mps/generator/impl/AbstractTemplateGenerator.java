@@ -127,8 +127,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myMappings;
   }
 
-  public SNode findOutputNodeByTemplateNode(SNode templateNode, boolean unique) {
-    return myMappings.findOutputNodeByTemplateNode(templateNode, unique);
+  public SNode findOutputNodeByTemplateNodeUnique(SNode templateNode) {
+    return myMappings.findOutputNodeByTemplateNodeUnique(templateNode);
   }
 
   @Override
@@ -148,26 +148,23 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   @Override
   public SNode findCopiedOutputNodeForInputNode(SNode inputNode) {
-    return findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
+    SNode outputNode = myMappings.findCopiedOutputNodeForInputNode(inputNode);
+    if (outputNode == null) {
+      outputNode = findOutputNodeById(inputNode.getSNodeId());
+    }
+    return outputNode;
   }
 
   /*package*/
 
   SNode findCopiedOutputNodeForInputNode_unique(SNode inputNode) {
-    SNode node = findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
+    SNode node = findCopiedOutputNodeForInputNode(inputNode);
     if (myMappings.isInputNodeHasUniqueCopiedOutputNode(inputNode)) return node;
     return null;
   }
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
-    SNode outputNode = myMappings.findOutputNodeByInputAndTemplateNode(inputNode, templateNode);
-    if (outputNode == null) {
-      // input node has been cloned?
-      if (inputNode == templateNode) {
-        outputNode = findOutputNodeById(inputNode.getSNodeId());
-      }
-    }
-    return outputNode;
+    return myMappings.findOutputNodeByInputAndTemplateNode(inputNode, templateNode);
   }
 
   public Map<String, SNode> setPreviousInputNodesByMappingName(Map<String, SNode> inputNodesByMappingName) {

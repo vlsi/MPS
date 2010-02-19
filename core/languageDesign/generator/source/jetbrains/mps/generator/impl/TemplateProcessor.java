@@ -36,33 +36,32 @@ import java.util.*;
 public class TemplateProcessor {
   private static final Logger LOG = Logger.getLogger(TemplateProcessor.class);
 
-  private TemplateGenerator myGenerator;
-  private SModel myOutputModel;
-  private List<SNode> myInputHistory;
-  private Map<String, SNode> myInputNodesByMappingName = new HashMap<String, SNode>();
+  private final TemplateGenerator myGenerator;
+  private final SModel myOutputModel;
+  private final Map<String, SNode> myInputNodesByMappingName = new HashMap<String, SNode>();
 
-  private TemplateProcessor(TemplateGenerator generator) {
+  private List<SNode> myInputHistory;
+
+  public TemplateProcessor(TemplateGenerator generator) {
     myGenerator = generator;
     myOutputModel = myGenerator.getOutputModel();
   }
 
   @NotNull
-  public static List<SNode> createOutputNodesForTemplateNode(String mappingName, SNode templateNode,
-                                                             SNode inputNode, TemplateGenerator generator)
+  public List<SNode> processTemplateNode(String mappingName, SNode templateNode, SNode inputNode)
     throws DismissTopMappingRuleException, TemplateProcessingFailureException, GenerationFailureException, GenerationCanceledException {
 
-    if (generator.getProgressMonitor().isCanceled()) {
-      if (generator.getGenerationTracer().isTracing()) {
+    if (myGenerator.getProgressMonitor().isCanceled()) {
+      if (myGenerator.getGenerationTracer().isTracing()) {
         LOG.info("generation canceled when processing branch:");
-        logCurrentGenerationBranch(generator, false);
+        logCurrentGenerationBranch(myGenerator, false);
       }
       throw new GenerationCanceledException();
     }
 
-    TemplateProcessor templateProcessor = new TemplateProcessor(generator);
-    Map<String, SNode> old = generator.setPreviousInputNodesByMappingName(templateProcessor.myInputNodesByMappingName);
+    Map<String, SNode> old = myGenerator.setPreviousInputNodesByMappingName(myInputNodesByMappingName);
     try {
-      List<SNode> outputNodes = templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0);
+      List<SNode> outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0);
       if (outputNodes == null) {
         throw new TemplateProcessingFailureException();
       }
@@ -70,16 +69,16 @@ public class TemplateProcessor {
     } catch (StackOverflowError e) {
       // this is critical
       LOG.error("generation thread run out of stack space :(");
-      if (generator.getGenerationTracer().isTracing()) {
+      if (myGenerator.getGenerationTracer().isTracing()) {
         LOG.error("failed branch was:");
-        logCurrentGenerationBranch(generator, true);
+        logCurrentGenerationBranch(myGenerator, true);
       } else {
         LOG.error("try to increase JVM stack size (-Xss option)");
         LOG.error("to get more diagnostic generate model with the 'save transient models' option");
       }
       throw new GenerationFailureException("couldn't process template", inputNode, templateNode, null, e);
     } finally {
-      generator.setPreviousInputNodesByMappingName(old);
+      myGenerator.setPreviousInputNodesByMappingName(old);
     }
   }
 
