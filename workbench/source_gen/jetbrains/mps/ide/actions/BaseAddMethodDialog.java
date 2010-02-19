@@ -154,6 +154,7 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
     return mainPanel;
   }
 
+  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void onOk() {
     this.dispose();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -182,6 +183,7 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
     });
   }
 
+  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
   public void onCancel() {
     this.dispose();
   }
