@@ -39,7 +39,6 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(GlobalClassPathIndex.class);
   }
 
-  private final VcsContextFactory myVcsContextFactory;
   private final MPSModuleRepository myModuleRepository;
   private final Map<String, ArrayList<IModule>> myClassPathIndex = new HashMap<String, ArrayList<IModule>>();
   private final HashSet<String> myExcludedClassPath = new HashSet<String>();
@@ -75,16 +74,53 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     }
   };
 
+  @SuppressWarnings({"UnusedDeclaration"}) //component dependency 
   public GlobalClassPathIndex(final MPSModuleRepository moduleRepository, VcsContextFactory factory) {
     myModuleRepository = moduleRepository;
-    myVcsContextFactory = factory;
   }
 
-  private void notifyListeners() {
-    for (ExclusionChangedListener l : myListeners) {
-      l.exclusionChanged();
-    }
+  //--------component stuff----------
+
+  @NotNull
+  public String getComponentName() {
+    return "Global Class Path Index";
   }
+
+  public void initComponent() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        List<IModule> moduleList = myModuleRepository.getAllModules();
+        for (IModule module : moduleList) {
+          moduleAdded(module);
+        }
+      }
+    });
+    myModuleRepository.addModuleRepositoryListener(myModuleRepositoryListener);
+  }
+
+  public void disposeComponent() {
+    myModuleRepository.removeModuleRepositoryListener(myModuleRepositoryListener);
+  }
+
+  //--------info query stuff----------
+
+  public boolean isExcluded(VirtualFile file) {
+    return isExcluded(file.getPath());
+  }
+
+  public boolean isExcluded(FilePath filePath) {
+    return isExcluded(filePath.getPath());
+  }
+
+  public boolean isExcluded(String filePath) {
+    return myExcludedClassPath.contains(filePath);
+  }
+
+  public Set<String> getExcludedClassPath() {
+    return Collections.unmodifiableSet(myExcludedClassPath);
+  }
+
+  //--------events stuff----------
 
   public void addListener(ExclusionChangedListener l) {
     myListeners.add(l);
@@ -93,6 +129,14 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   public void removeListener(ExclusionChangedListener l) {
     myListeners.remove(l);
   }
+
+  private void notifyListeners() {
+    for (ExclusionChangedListener l : myListeners) {
+      l.exclusionChanged();
+    }
+  }
+
+  //------------------------------
 
   private void moduleInitialized(IModule module) {
     updateClassesGen(module);
@@ -241,43 +285,6 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     IFile classesGen = module.getClassesGen();
     if (classesGen == null) return;
     myExcludedClassPath.add(classesGen.getCanonicalPath());
-  }
-
-  @NotNull
-  public String getComponentName() {
-    return "Global Class Path Index";
-  }
-
-  public void initComponent() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        List<IModule> moduleList = myModuleRepository.getAllModules();
-        for (IModule module : moduleList) {
-          moduleAdded(module);
-        }
-      }
-    });
-    myModuleRepository.addModuleRepositoryListener(myModuleRepositoryListener);
-  }
-
-  public void disposeComponent() {
-    myModuleRepository.removeModuleRepositoryListener(myModuleRepositoryListener);
-  }
-
-  public boolean isExcluded(VirtualFile file) {
-    return isExcluded(file.getPath());
-  }
-
-  public boolean isExcluded(FilePath filePath) {
-    return isExcluded(filePath.getPath());
-  }
-
-  public boolean isExcluded(String filePath) {
-    return myExcludedClassPath.contains(filePath);
-  }
-
-  public Set<String> getExcludedClassPath() {
-    return Collections.unmodifiableSet(myExcludedClassPath);
   }
 
   public static interface ExclusionChangedListener {
