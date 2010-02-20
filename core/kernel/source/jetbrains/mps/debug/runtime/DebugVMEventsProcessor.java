@@ -75,7 +75,7 @@ public class DebugVMEventsProcessor {
       myVirtualMachine = vm;
       vmAttached();
       myEventThread = new DebuggerEventThread();
-      new Thread(myEventThread).start();
+      new Thread(myEventThread, "Debug Events Processor Thread").start();
     }
   }
 
