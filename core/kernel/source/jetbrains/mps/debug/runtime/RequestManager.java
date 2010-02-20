@@ -95,34 +95,31 @@ public class RequestManager implements DebugProcessListener {
       return;
     }
     for (final EventRequest request : requests) {
-      deleteRequestFromRequestor(request, requestor);
+      try {
+        final Requestor targetRequestor = (Requestor) request.getProperty(REQUESTOR);
+        if (targetRequestor != requestor) {
+          // the same request may be assigned to more than one requestor, but
+          // there is only one 'targetRequestor' for each request, so if target requestor and requestor being processed are different,
+          // should clear also the mapping targetRequestor->request
+          final Set<EventRequest> allTargetRequestorRequests = myRequestorToBelongedRequests.get(targetRequestor);
+          if (allTargetRequestorRequests != null) {
+            allTargetRequestorRequests.remove(request);
+            if (allTargetRequestorRequests.size() == 0) {
+              myRequestorToBelongedRequests.remove(targetRequestor);
+            }
+          }
+        }
+        myEventRequestManager.deleteEventRequest(request);
+      }
+      catch (InvalidRequestStateException ignored) {
+        // request is already deleted
+      }
+      catch (InternalException e) {
+        LOG.error(e);
+      }
     }
   }
 
-  private void deleteRequestFromRequestor(EventRequest request, Requestor requestor) {
-    try {
-      final Requestor targetRequestor = (Requestor) request.getProperty(REQUESTOR);
-      if (targetRequestor != requestor) {
-        // the same request may be assigned to more than one requestor, but
-        // there is only one 'targetRequestor' for each request, so if target requestor and requestor being processed are different,
-        // should clear also the mapping targetRequestor->request
-        final Set<EventRequest> allTargetRequestorRequests = myRequestorToBelongedRequests.get(targetRequestor);
-        if (allTargetRequestorRequests != null) {
-          allTargetRequestorRequests.remove(request);
-          if (allTargetRequestorRequests.size() == 0) {
-            myRequestorToBelongedRequests.remove(targetRequestor);
-          }
-        }
-      }
-      myEventRequestManager.deleteEventRequest(request);
-    }
-    catch (InvalidRequestStateException ignored) {
-      // request is already deleted
-    }
-    catch (InternalException e) {
-      LOG.error(e);
-    }
-  }
 
   //------------------- requests creation
 
@@ -149,9 +146,17 @@ public class RequestManager implements DebugProcessListener {
       }
 
       // removing from requestor maps
-      for (StepRequest request : toDelete) {
-        deleteRequestFromRequestor(request, findRequestor(request));
+      for (StepRequest stepRequest : toDelete) {
+        Requestor requestor = findRequestor(stepRequest);
+        if (requestor != null) {
+          Set<EventRequest> requestSet = myRequestorToBelongedRequests.get(requestor);
+          requestSet.remove(stepRequest);
+          if (requestSet.isEmpty()) {
+            myRequestorToBelongedRequests.remove(requestor);
+          }
+        }
       }
+      myEventRequestManager.deleteEventRequests(toDelete);
     }
   }
 
