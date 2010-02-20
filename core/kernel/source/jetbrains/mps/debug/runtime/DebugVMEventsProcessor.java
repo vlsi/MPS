@@ -30,6 +30,7 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -377,12 +378,14 @@ public class DebugVMEventsProcessor {
   //============================================ COMMANDS =============================================
 
   public void resume() {
-    // we need the last paused context
+    // TODO we need to resume specific thread
     SuspendContext suspendContext = mySuspendManager.getPausedContext();
-    LOG.assertLog(suspendContext != null);
-    if (suspendContext != null) {
-      getManagerThread().schedule(new ResumeCommand(suspendContext));
+    if (suspendContext == null) {
+      List<SuspendContext> list = mySuspendManager.getEventContexts();
+      LOG.assertLog(list.size() > 0);
+      suspendContext = list.get(0);
     }
+    getManagerThread().schedule(new ResumeCommand(suspendContext));
   }
 
   public void pause() {
@@ -431,6 +434,7 @@ public class DebugVMEventsProcessor {
       System.err.println("Pausing execution!");
       // see DebugProcessImpl.PauseCommand in idea
       getVirtualMachine().suspend();
+      // TODO the context we create here is not in SuspendManager paused list. WHY?
       SuspendContext suspendContext = getSuspendManager().pushSuspendContextWithVotesNumber(EventRequest.SUSPEND_ALL, 0);
       getMulticaster().paused(suspendContext);
     }

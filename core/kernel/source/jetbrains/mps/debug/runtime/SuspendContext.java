@@ -28,6 +28,7 @@ import com.sun.jdi.ObjectReference;
 import com.sun.jdi.event.EventSet;
 import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -42,6 +43,7 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
   private final DebugVMEventsProcessor myDebugProcess;
   private final int mySuspendPolicy;
 
+  @Nullable
   private ThreadReference myThread;
   boolean myIsVotedForResume = true;
 
@@ -99,6 +101,7 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
     return myDebugProcess;
   }
 
+  @Nullable
   public StackFrame getFrame() {
     assertNotResumed();
     try {
@@ -108,6 +111,7 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
     }
   }
 
+  @Nullable
   public ThreadReference getThread() {
     return myThread;
   }

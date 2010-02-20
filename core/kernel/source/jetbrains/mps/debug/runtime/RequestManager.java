@@ -23,6 +23,7 @@ import jetbrains.mps.debug.runtime.DebugManagerComponent.AllDebugProcessesAction
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -202,23 +203,23 @@ public class RequestManager implements DebugProcessListener {
   }
 
   @Override
-  public void paused(SuspendContext suspendContext) {
+  public void paused(@NotNull SuspendContext suspendContext) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
-  public void resumed(SuspendContext suspendContext, DebugVMEventsProcessor processor) {
+  public void resumed(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
-  public void processDetached(DebugVMEventsProcessor process, boolean closedByUser) {
+  public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
     myEventRequestManager = null;
     myRequestorToBelongedRequests.clear();
   }
 
   @Override
-  public void processAttached(DebugVMEventsProcessor process) {
+  public void processAttached(@NotNull DebugVMEventsProcessor process) {
     myEventRequestManager = myDebugEventsProcessor.getVirtualMachine().eventRequestManager();
     // invoke later, so that requests are for sure created only _after_ 'processAttached()' methods of other listeneres are executed
     process.getManagerThread().schedule(new DebuggerCommand() {

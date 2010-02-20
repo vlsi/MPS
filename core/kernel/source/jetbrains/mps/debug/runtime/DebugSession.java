@@ -3,6 +3,7 @@ package jetbrains.mps.debug.runtime;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.logging.Logger;
 import com.intellij.execution.process.ProcessHandler;
+import org.jetbrains.annotations.NotNull;
 
 public class DebugSession {
   private static final Logger LOG = Logger.getLogger(DebugSession.class);
@@ -77,22 +78,22 @@ public class DebugSession {
   private class MyDebugProcessAdapter extends DebugProcessAdapter {
 
     @Override
-    public void paused(SuspendContext suspendContext) {
+    public void paused(@NotNull SuspendContext suspendContext) {
       myState = DebuggerState.Paused;
     }
 
     @Override
-    public void resumed(SuspendContext suspendContext, DebugVMEventsProcessor processor) {
+    public void resumed(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor) {
       myState = DebuggerState.Running;
     }
 
     @Override
-    public void processAttached(DebugVMEventsProcessor process) {
+    public void processAttached(@NotNull DebugVMEventsProcessor process) {
       myState = DebuggerState.Running;
     }
 
     @Override
-    public void processDetached(DebugVMEventsProcessor process, boolean closedByUser) {
+    public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
       myState = DebuggerState.Stopped;
     }
   }

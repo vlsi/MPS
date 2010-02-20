@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.debug.runtime;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -29,22 +31,22 @@ public abstract class DebugProcessAdapter implements DebugProcessListener {
   }
 
   @Override
-  public void paused(SuspendContext suspendContext) {
+  public void paused(@NotNull SuspendContext suspendContext) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
-  public void resumed(SuspendContext suspendContext, DebugVMEventsProcessor processor) {
+  public void resumed(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
-  public void processDetached(DebugVMEventsProcessor process, boolean closedByUser) {
+  public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
-  public void processAttached(DebugVMEventsProcessor process) {
+  public void processAttached(@NotNull DebugVMEventsProcessor process) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 }

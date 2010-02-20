@@ -46,7 +46,7 @@ public class DebugProcessMulticaster {
     }
   }
 
-  public void paused(SuspendContext suspendContext) {
+  public void paused(@NotNull SuspendContext suspendContext) {
     for (DebugProcessListener listener : getListeners()) {
       try {
         listener.paused(suspendContext);
@@ -56,7 +56,7 @@ public class DebugProcessMulticaster {
     }
   }
 
-  public void resumed(SuspendContext suspendContext, DebugVMEventsProcessor process) {
+  public void resumed(@NotNull SuspendContext suspendContext, @NotNull  DebugVMEventsProcessor process) {
     for (DebugProcessListener listener : getListeners()) {
       try {
         listener.resumed(suspendContext, process);
@@ -66,7 +66,7 @@ public class DebugProcessMulticaster {
     }
   }
 
-  public void processDetached(DebugVMEventsProcessor process, boolean closedByUser) {
+  public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
     for (DebugProcessListener listener : getListeners()) {
       try {
         listener.processDetached(process, closedByUser);
@@ -76,7 +76,7 @@ public class DebugProcessMulticaster {
     }
   }
 
-  public void processAttached(DebugVMEventsProcessor process) {
+  public void processAttached(@NotNull DebugVMEventsProcessor process) {
     for (DebugProcessListener listener : getListeners()) {
       try {
         listener.processAttached(process);

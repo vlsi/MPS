@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.debug.runtime;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -26,16 +28,15 @@ public interface DebugProcessListener {
   //executed in manager thread
   void connectorIsReady();
 
-  // TODO ok, why parameters of this method are different to resumed?
   //executed in manager thread
-  void paused(SuspendContext suspendContext);
+  void paused(@NotNull SuspendContext suspendContext);
 
   //executed in manager thread
-  void resumed(SuspendContext suspendContext, DebugVMEventsProcessor processor);
+  void resumed(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor);
 
   //executed in manager thread
-  void processDetached(DebugVMEventsProcessor process, boolean closedByUser);
+  void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser);
 
   //executed in manager thread
-  void processAttached(DebugVMEventsProcessor process);
+  void processAttached(@NotNull DebugVMEventsProcessor process);
 }

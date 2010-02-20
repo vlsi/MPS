@@ -21,6 +21,7 @@ import com.sun.jdi.ThreadReference;
 import com.sun.jdi.event.EventSet;
 import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.LinkedList;
@@ -48,7 +49,7 @@ public class SuspendManager {
   public SuspendManager(DebugVMEventsProcessor debugProcess) {
     myDebugProcess = debugProcess;
     myDebugProcess.addDebugProcessListener(new DebugProcessAdapter() {
-      public void processDetached(DebugVMEventsProcessor process, boolean closedByUser) {
+      public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
         myEventContexts.clear();
         myPausedContexts.clear();
       }
