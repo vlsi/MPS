@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
+import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
+import jetbrains.mps.nodeEditor.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
@@ -65,5 +67,10 @@ public class SetPropertyChange extends Change {
   @Override
   public List<SNodeId> getDependencies() {
     return Arrays.asList(getAffectedNodeId());
+  }
+
+  @Override
+  public MessageTarget getMessageTarget() {
+    return new PropertyMessageTarget(myProperty);
   }
 }

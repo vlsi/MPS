@@ -7,7 +7,7 @@ package jetbrains.mps.nodeEditor.messageTargets;
  * Time: 19:25:45
  * To change this template use File | Settings | File Templates.
  */
-public class ReferenceMessageTarget implements EditorMessageTarget {
+public class ReferenceMessageTarget implements MessageTarget {
    private String myRole;
 
   public ReferenceMessageTarget(String role) {
@@ -22,7 +22,7 @@ public class ReferenceMessageTarget implements EditorMessageTarget {
     return myRole;
   }
 
-  public boolean sameAs(EditorMessageTarget errorTarget) {
+  public boolean sameAs(MessageTarget errorTarget) {
     return errorTarget instanceof ReferenceMessageTarget
       && ((ReferenceMessageTarget) errorTarget).myRole.equals(myRole);
   }

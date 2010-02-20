@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
 import jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum;
-import jetbrains.mps.nodeEditor.messageTargets.EditorMessageTarget;
 
 public interface IErrorTarget {
   public MessageTargetEnum getTarget();
@@ -25,5 +25,5 @@ public interface IErrorTarget {
 
   public boolean sameAs(IErrorTarget errorTarget);
 
-  public EditorMessageTarget toEditorMessageTarget();
+  public MessageTarget toEditorMessageTarget();
 }

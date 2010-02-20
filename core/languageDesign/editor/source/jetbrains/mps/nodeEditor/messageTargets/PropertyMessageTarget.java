@@ -7,7 +7,7 @@ package jetbrains.mps.nodeEditor.messageTargets;
  * Time: 19:12:33
  * To change this template use File | Settings | File Templates.
  */
-public class PropertyMessageTarget implements EditorMessageTarget {
+public class PropertyMessageTarget implements MessageTarget {
   private String myPropertyName;
 
   public PropertyMessageTarget(String propertyName) {
@@ -22,7 +22,7 @@ public class PropertyMessageTarget implements EditorMessageTarget {
     return myPropertyName;
   }
 
-  public boolean sameAs(EditorMessageTarget errorTarget) {
+  public boolean sameAs(MessageTarget errorTarget) {
     return errorTarget instanceof PropertyMessageTarget &&
       ((PropertyMessageTarget) errorTarget).myPropertyName.equals(myPropertyName);
   }

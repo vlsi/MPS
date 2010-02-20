@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
+import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
+import jetbrains.mps.nodeEditor.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.*;
 
 public class SetReferenceChange extends Change {
@@ -94,6 +96,11 @@ public class SetReferenceChange extends Change {
 
   public String getResolveInfo() {
     return myResolveInfo;
+  }
+
+  @Override
+  public MessageTarget getMessageTarget() {
+    return new ReferenceMessageTarget(myRole);
   }
 }
 

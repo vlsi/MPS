@@ -16,11 +16,11 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
-import jetbrains.mps.nodeEditor.messageTargets.EditorMessageTarget;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -28,7 +28,7 @@ import java.awt.Graphics;
 public class HighlighterMessage extends EditorMessageWithTarget {
   private IErrorReporter myErrorReporter;
 
-  public HighlighterMessage(SNode errorNode, MessageStatus status, EditorMessageTarget target, Color color, String string, EditorMessageOwner owner) {
+  public HighlighterMessage(SNode errorNode, MessageStatus status, MessageTarget target, Color color, String string, EditorMessageOwner owner) {
     super(errorNode, status, target, color, string, owner);
   }
 

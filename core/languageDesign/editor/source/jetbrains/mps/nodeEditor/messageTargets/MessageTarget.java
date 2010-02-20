@@ -9,12 +9,12 @@ import jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum;
  * Time: 18:36:04
  * To change this template use File | Settings | File Templates.
  */
-public interface EditorMessageTarget {
+public interface MessageTarget {
   // we can't just move IErrorTarget hereinto and rename it, 
   // because we need backward compatibility
   public MessageTargetEnum getTarget();
 
   public String getRole();
 
-  public boolean sameAs(EditorMessageTarget messageTarget);
+  public boolean sameAs(MessageTarget messageTarget);
 }

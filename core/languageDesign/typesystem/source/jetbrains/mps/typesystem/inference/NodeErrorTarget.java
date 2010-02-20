@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
 import jetbrains.mps.nodeEditor.messageTargets.MessageTargetEnum;
-import jetbrains.mps.nodeEditor.messageTargets.EditorMessageTarget;
 import jetbrains.mps.nodeEditor.messageTargets.NodeMessageTarget;
 
 public class NodeErrorTarget implements IErrorTarget {
@@ -33,7 +33,7 @@ public class NodeErrorTarget implements IErrorTarget {
   }
 
   @Override
-  public EditorMessageTarget toEditorMessageTarget() {
+  public MessageTarget toEditorMessageTarget() {
     return new NodeMessageTarget();
   }
 }

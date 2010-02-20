@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
+import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
+import jetbrains.mps.nodeEditor.messageTargets.NodeMessageTarget;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
@@ -54,5 +56,10 @@ public class DeleteNodeChange extends Change {
   @Override
   public List<SNodeId> getDependencies() {
     return myChildren;
+  }
+
+  @Override
+  public MessageTarget getMessageTarget() {
+    return new NodeMessageTarget();
   }
 }

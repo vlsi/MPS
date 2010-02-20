@@ -8,7 +8,7 @@ package jetbrains.mps.nodeEditor.messageTargets;
  * Time: 19:10:52
  * To change this template use File | Settings | File Templates.
  */
-public class NodeMessageTarget implements EditorMessageTarget {
+public class NodeMessageTarget implements MessageTarget {
   public MessageTargetEnum getTarget() {
     return MessageTargetEnum.NODE;
   }
@@ -17,7 +17,7 @@ public class NodeMessageTarget implements EditorMessageTarget {
     return null;
   }
 
-  public boolean sameAs(EditorMessageTarget errorTarget) {
+  public boolean sameAs(MessageTarget errorTarget) {
     return errorTarget instanceof NodeMessageTarget;
   }
 }

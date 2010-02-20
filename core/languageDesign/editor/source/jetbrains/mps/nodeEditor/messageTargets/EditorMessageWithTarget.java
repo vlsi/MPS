@@ -15,9 +15,9 @@ import java.awt.Color;
  * To change this template use File | Settings | File Templates.
  */
 public class EditorMessageWithTarget extends DefaultEditorMessage {
-  protected EditorMessageTarget myMessageTarget;
+  protected MessageTarget myMessageTarget;
 
-  public EditorMessageWithTarget(SNode errorNode, MessageStatus status, EditorMessageTarget target, Color color, String string, EditorMessageOwner owner) {
+  public EditorMessageWithTarget(SNode errorNode, MessageStatus status, MessageTarget target, Color color, String string, EditorMessageOwner owner) {
     super(errorNode, status, color, string, owner);
     myMessageTarget = target;
   }

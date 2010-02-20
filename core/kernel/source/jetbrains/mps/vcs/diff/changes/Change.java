@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs.diff.changes;
 
+import jetbrains.mps.nodeEditor.messageTargets.MessageTarget;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -50,5 +51,9 @@ public abstract class Change {
     } else {
       return o1.equals(o2);
     }
+  }
+
+  public MessageTarget getMessageTarget() {
+    return null;
   }
 }
