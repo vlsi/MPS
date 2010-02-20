@@ -56,6 +56,7 @@ public class RequestManager implements DebugProcessListener {
     return myEventRequestManager;
   }
 
+  @Nullable
   public Requestor findRequestor(EventRequest request) {
     DebuggerManagerThread.assertIsManagerThread();
     return request != null ? (Requestor) request.getProperty(REQUESTOR) : null;
@@ -131,8 +132,8 @@ public class RequestManager implements DebugProcessListener {
   }
 
   void deleteStepRequests() {
+    DebuggerManagerThread.assertIsManagerThread();
     //todo what are these step requests to delete?
-    //todo and where are their requestors after requests are deleted? still in memory? possible leak
     List<StepRequest> stepRequests = myEventRequestManager.stepRequests();
     if (stepRequests.size() > 0) {
       List<StepRequest> toDelete = new ArrayList<StepRequest>(stepRequests.size());
@@ -141,6 +142,18 @@ public class RequestManager implements DebugProcessListener {
         // on attempt to delete a request assigned to a thread with unknown status, a JDWP error occures
         if (threadReference.status() != ThreadReference.THREAD_STATUS_UNKNOWN) {
           toDelete.add(request);
+        }
+      }
+
+      // removing from requestor maps
+      for (StepRequest stepRequest : toDelete) {
+        Requestor requestor = findRequestor(stepRequest);
+        if (requestor != null) {
+          Set<EventRequest> requestSet = myRequestorToBelongedRequests.get(requestor);
+          requestSet.remove(stepRequest);
+          if (requestSet.isEmpty()) {
+            myRequestorToBelongedRequests.remove(requestor);
+          }
         }
       }
       myEventRequestManager.deleteEventRequests(toDelete);

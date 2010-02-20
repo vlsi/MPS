@@ -441,7 +441,7 @@ public class DebugVMEventsProcessor {
   }
 
   private class StopCommand extends DebuggerCommand {
-    private final boolean myIsTerminateTargetVM; //what does it mean if "not terminate VM"
+    private final boolean myIsTerminateTargetVM; //what does it mean if "not terminate VM" --It means detach from target vm
 
     public StopCommand(boolean isTerminateTargetVM) {
       myIsTerminateTargetVM = isTerminateTargetVM;
