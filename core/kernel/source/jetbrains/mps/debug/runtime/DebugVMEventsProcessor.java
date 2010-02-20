@@ -345,6 +345,7 @@ public class DebugVMEventsProcessor {
       // see idea's RequestHint.getNextStepDepth
       StepRequestor requestor = (StepRequestor) myRequestManager.findRequestor(stepRequest);
 
+      assert requestor != null;
       int nextStepType = requestor.nextStep(suspendContext);
       shouldResume = nextStepType != StepRequestor.STOP;
       if (shouldResume) {
@@ -495,12 +496,7 @@ public class DebugVMEventsProcessor {
       return;
     }
 
-    // suspend policy to match the suspend policy of the context:
-    // if all threads were suspended, then during stepping all the threads must be suspended
-    // if only event thread were suspended, then only this particular thread must be suspended during stepping
-    int suspendPolicy = suspendContext.getSuspendPolicy() == EventRequest.SUSPEND_EVENT_THREAD ? EventRequest.SUSPEND_EVENT_THREAD : EventRequest.SUSPEND_ALL;
-    // why not simply suspendPolicy = suspendContext.getSuspendPolicy() ?
-    StepRequest stepRequest = myRequestManager.createStepRequest(stepRequestor, stepType, stepThread, suspendPolicy);
+    StepRequest stepRequest = myRequestManager.createStepRequest(stepRequestor, stepType, stepThread, suspendContext.getSuspendPolicy());
 
     // TODO add ignore filters to request
 
