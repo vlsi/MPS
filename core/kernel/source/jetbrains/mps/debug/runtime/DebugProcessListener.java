@@ -26,6 +26,7 @@ public interface DebugProcessListener {
   //executed in manager thread
   void connectorIsReady();
 
+  // TODO ok, why parameters of this method are different to resumed?
   //executed in manager thread
   void paused(SuspendContext suspendContext);
 
