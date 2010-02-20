@@ -57,7 +57,13 @@
             <action id="CreateRunConfiguration" class="com.intellij.execution.actions.CreateAction"/>
         </group>
 
+        <group id="MPSDebugToolBar" popup="false">
+        </group>
+
         <group id="DebugToolBar" popup="false">
+            <reference ref="MPSDebugToolBar"/>
+            <reference ref="Stop"/>
+            <separator/>
         </group>
 
 
