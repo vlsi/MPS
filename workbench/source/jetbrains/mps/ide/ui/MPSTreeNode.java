@@ -329,25 +329,59 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void addTreeMessage(TreeMessage message) {
+    addTreeMessage(message, true);
+  }
+
+  public void addTreeMessage(TreeMessage message, boolean updatePresentation) {
     if (myTreeMessages == null) {
       myTreeMessages = new ArrayList<TreeMessage>(1);
     }
     myTreeMessages.add(message);
-  }
-
-  public void removeTreeMessage(TreeMessage message) {
-    if (myTreeMessages != null) {
-      myTreeMessages.remove(message);
+    if (updatePresentation) {
+      updatePresentation();
     }
   }
 
-  public void removeTreeMessages(TreeMessageOwner owner) {
+  public void addTreeMessages(TreeMessage... messages) {
+    addTreeMessages(true, messages);
+  }
+
+  public void addTreeMessages(boolean updatePresentation, TreeMessage... messages) {
+    if (messages.length == 0) return;
+    if (myTreeMessages == null) {
+      myTreeMessages = new ArrayList<TreeMessage>(1);
+    }
+    for (TreeMessage message : messages) {
+      myTreeMessages.add(message);
+    }
+    if (updatePresentation) {
+      updatePresentation();
+    }
+  }
+
+   public void removeTreeMessage(TreeMessage message) {
+     removeTreeMessage(message, true);
+   }
+
+  public void removeTreeMessage(TreeMessage message, boolean updatePresentation) {
+    if (myTreeMessages != null) {
+      myTreeMessages.remove(message);
+    }
+    if (updatePresentation) {
+      updatePresentation();
+    }
+  }
+
+  public void removeTreeMessages(TreeMessageOwner owner, boolean updatePresentation) {
     if (owner == null) return;
     if (myTreeMessages == null) return;
     for (TreeMessage message : new ArrayList<TreeMessage>(myTreeMessages)) {
       if (owner.equals(message.getOwner())) {
         myTreeMessages.remove(message);
       }
+    }
+    if (updatePresentation) {
+      updatePresentation();
     }
   }
 
