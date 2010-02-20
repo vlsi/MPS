@@ -88,4 +88,12 @@ public class AddNodeChange extends NewNodeChange {
   public boolean isSubstitution() {
     return mySubstitution;
   }
+
+  @Override
+  public ChangeType getChangeType() {
+    if (isSubstitution()) {
+      return ChangeType.CHANGE;
+    }
+    return ChangeType.ADD;
+  }
 }

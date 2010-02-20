@@ -76,4 +76,10 @@ public class SetNodeChange extends NewNodeChange {
   public SNodeId getOldChildId() {
     return myOldChildId;
   }
+
+  @Override
+  public ChangeType getChangeType() {
+    if (getOldChildId() != null) return ChangeType.CHANGE;
+    return ChangeType.ADD;
+  }
 }
