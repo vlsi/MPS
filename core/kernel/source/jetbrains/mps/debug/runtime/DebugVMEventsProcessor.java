@@ -42,14 +42,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class DebugVMEventsProcessor {
   private static final Logger LOG = Logger.getLogger(DebugVMEventsProcessor.class);
 
-  private BreakpointManagerComponent myBreakpointManager;
+  private final BreakpointManagerComponent myBreakpointManager;
   private final RequestManager myRequestManager;
-  private SuspendManager mySuspendManager;
-  private VMCreator myVMCreator;
+  private final SuspendManager mySuspendManager;
+  private final VMCreator myVMCreator;
 
-  private DebugProcessMulticaster myMulticaster;
+  private final DebugProcessMulticaster myMulticaster;
 
-  private Project myProject;
+  private final Project myProject;
   private VirtualMachine myVirtualMachine;
 
   private DebuggerEventThread myEventThread;
