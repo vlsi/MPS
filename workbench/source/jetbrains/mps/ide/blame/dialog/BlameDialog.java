@@ -19,9 +19,12 @@ import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.history.VcsRevisionNumber;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
+import jetbrains.mps.changesmanager.VCSUtils;
 import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
@@ -29,6 +32,9 @@ import jetbrains.mps.ide.blame.perform.Response;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -149,7 +155,18 @@ public class BlameDialog extends BaseDialog {
     return "[Build info]\n" +
       "build number: " + ai.getBuild().asString() + "\n" +
       "version name: " + ai.getVersionName() + "\n" +
-      "build date: " + ai.getBuildDate().getTime().toString() + "\n";
+      "build date: " + ai.getBuildDate().getTime().toString() + "\n" +
+      getRevisionNumber();
+  }
+
+  private String getRevisionNumber() {
+    VirtualFile file = VFileSystem.getFile(PathManager.getHomePath());
+    if (file == null) return "";
+    VcsRevisionNumber revisionNumber = ApplicationLevelVcsManager.instance().getRevisionNumber(file);
+    if (revisionNumber == null) {
+      return "";
+    }
+    return "revision number: " + revisionNumber.asString() + "\n";
   }
 
   public DialogDimensions getDefaultDimensionSettings() {

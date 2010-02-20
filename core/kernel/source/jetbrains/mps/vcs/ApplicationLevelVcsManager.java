@@ -20,14 +20,15 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerListener;
 import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.vcs.*;
-import com.intellij.openapi.vcs.actions.VcsContextFactory;
-import com.intellij.openapi.vcs.changes.*;
+import com.intellij.openapi.vcs.AbstractVcs;
+import com.intellij.openapi.vcs.FilePath;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.diff.DiffProvider;
+import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -127,6 +128,19 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
       }
     }
     return null;
+  }
+
+  @Nullable
+  public VcsRevisionNumber getRevisionNumber(VirtualFile file) {
+    AbstractVcs vcs = getVcsForFile(file);
+    if (vcs == null) {
+      return null;
+    }
+    DiffProvider diffProvider = vcs.getDiffProvider();
+    if (diffProvider == null) {
+      return null;
+    }
+    return diffProvider.getCurrentRevision(file);
   }
 
   public boolean isInConflict(IFile ifile, boolean synchronously) {
