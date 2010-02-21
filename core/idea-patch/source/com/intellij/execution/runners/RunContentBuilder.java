@@ -85,33 +85,6 @@ public class RunContentBuilder implements LogConsoleManager, Disposable {
     return myExecutionResult;
   }
 
-  // MPS Patch Start
-  @Patch
-  public ProgramRunner getRunner() {
-    return myRunner;
-  }
-
-  @Patch
-  public ExecutionEnvironment getEnvironment() {
-    return myEnvironment;
-  }
-
-  @Patch
-  public RunnerLayoutUi getUi() {
-    return myUi;
-  }
-
-  @Patch
-  public Executor getExecutor() {
-    return myExecutor;
-  }
-
-  @Patch
-  public Project getProject() {
-    return myProject;
-  }
-  // MPS Patch End
-
   public void setExecutionResult(final ExecutionResult executionResult) {
     myExecutionResult = executionResult;
   }
