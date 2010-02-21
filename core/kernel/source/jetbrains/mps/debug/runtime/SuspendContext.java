@@ -42,19 +42,16 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
 
   private final DebugVMEventsProcessor myDebugProcess;
   private final int mySuspendPolicy;
+  private final EventSet myEventSet;
+  private final Set<ObjectReference> myKeptReferences = new HashSet<ObjectReference>();
 
   @Nullable
   private ThreadReference myThread;
+
   boolean myIsVotedForResume = true;
-
   protected int myVotesToVote;
-
-  private final EventSet myEventSet;
   private volatile boolean  myIsResumed;
-
   public volatile boolean  myInProgress;
-
-  private final Set<ObjectReference> myKeptReferences = new HashSet<ObjectReference>();
 
   SuspendContext(@NotNull DebugVMEventsProcessor debugProcess,
                  int suspendPolicy, int eventVotes, @Nullable EventSet set) {
@@ -64,7 +61,7 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
     myEventSet = set;
   }
 
-  public void setThread(ThreadReference thread) {
+  public void setThread(@Nullable ThreadReference thread) {
     assertNotResumed();
     LOG.assertLog(myThread == null || myThread == thread);
     myThread = thread;

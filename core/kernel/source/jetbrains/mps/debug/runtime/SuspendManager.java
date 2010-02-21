@@ -58,30 +58,7 @@ public class SuspendManager {
 
   //todo review this and a method below to avoid duplications
   public SuspendContext pushSuspendContextWithVotesNumber(final int suspendPolicy, int nVotes) {
-    SuspendContext suspendContext = new SuspendContextImpl(myDebugProcess, suspendPolicy, nVotes, null) {
-      protected void resumeImpl() {
-        LOG.debug("Start resuming...");
-        switch (getSuspendPolicy()) {
-          case EventRequest.SUSPEND_ALL:
-            doResume();
-            LOG.debug("VM resumed ");
-            break;
-          case EventRequest.SUSPEND_EVENT_THREAD:
-            // TODO: well, this call not just MAY produce NPE, it WILL, if we ever get here (but we won't AFAIK) 
-            getThread().resume();
-            LOG.debug("Thread resumed : " + getThread().toString());
-            break;
-          case EventRequest.SUSPEND_NONE:
-            LOG.debug("None resumed");
-            break;
-        }
-      }
-
-      @Override
-      protected void tryResume() throws ObjectCollectedException, InternalException {
-        myDebugProcess.getVirtualMachine().resume();
-      }
-    };
+    SuspendContext suspendContext = new SuspendContextImpl(myDebugProcess, suspendPolicy, nVotes, null);
     pushContext(suspendContext);
     return suspendContext;
   }
@@ -89,6 +66,7 @@ public class SuspendManager {
   public SuspendContext pushSuspendContextFromEventSet(final EventSet set) {
     SuspendContext suspendContext;
     if (set == null) { // special case
+      // TODO when can set be null?
       suspendContext = new SuspendContext(myDebugProcess, EventRequest.SUSPEND_NONE, 1, set) {
         @Override
         protected void resumeImpl() {
@@ -96,25 +74,6 @@ public class SuspendManager {
       };
     } else {
       suspendContext = new SuspendContextImpl(myDebugProcess, set.suspendPolicy(), set.size(), set) {
-        protected void resumeImpl() {
-          final ThreadReference thread = this.getThread();
-          if (thread != null) { // check that thread is suspended at the moment
-            try {
-              if (!thread.isSuspended()) {
-                LOG.assertLog(false, "Context thread must be suspended");
-              }
-            } catch (ObjectCollectedException ignored) {
-
-            }
-          }
-
-          doResume();
-        }
-
-        @Override
-        protected void tryResume() throws ObjectCollectedException, InternalException {
-          set.resume();
-        }
       };
     }
     pushContext(suspendContext);
@@ -201,14 +160,55 @@ public class SuspendManager {
     return myPausedContexts;
   }
 
-  private abstract class SuspendContextImpl extends SuspendContext {
+  private class SuspendContextImpl extends SuspendContext {
     public SuspendContextImpl(@NotNull DebugVMEventsProcessor debugProcess, int suspendPolicy, int eventVotes, @Nullable EventSet set) {
       super(debugProcess, suspendPolicy, eventVotes, set);
     }
 
-    protected abstract void tryResume() throws ObjectCollectedException, InternalException;
+    @Override
+    protected void resumeImpl() {
+      ThreadReference thread = getThread();
+      if (thread != null) { // check that thread is suspended at the moment
+        try {
+          if (!thread.isSuspended()) {
+            LOG.assertLog(false, "Context thread must be suspended");
+          }
+        } catch (ObjectCollectedException ignored) {
+        }
+      }
 
-    protected void doResume() {
+      if (getEventSet() != null) {
+        tryResume5Times();
+      } else {
+        LOG.debug("Start resuming...");
+        switch (getSuspendPolicy()) {
+          case EventRequest.SUSPEND_ALL:
+            tryResume5Times();
+            LOG.debug("VM resumed ");
+            break;
+          case EventRequest.SUSPEND_EVENT_THREAD:
+            // TODO: well, this call not just MAY produce NPE, it WILL, if we ever get here (but we won't AFAIK)
+            // TODO why don't we repeat 5 times here?
+            LOG.assertLog(thread != null);
+            thread.resume();
+            LOG.debug("Thread resumed : " + getThread().toString());
+            break;
+          case EventRequest.SUSPEND_NONE:
+            LOG.debug("None resumed");
+            break;
+        }
+      }
+    }
+
+    protected void tryResume() throws ObjectCollectedException, InternalException {
+      if (getEventSet() != null) {
+        getEventSet().resume();
+      } else {
+        myDebugProcess.getVirtualMachine().resume();
+      }
+    }
+
+    protected void tryResume5Times() {
       int resumeAttempts = 5;
       while (--resumeAttempts > 0) {
         try {
