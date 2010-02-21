@@ -25,6 +25,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CommonPaths {
   private static final Logger LOG = Logger.getLogger(CommonPaths.class);
@@ -36,6 +38,7 @@ public class CommonPaths {
   private static IClassPathItem ourIDEAUtilJar = null;
   private static IClassPathItem ourIDEAxtensionsJar = null;
 
+  //todo remove when migration to stubs is finished
   private static JarFileClassPathItem findBootstrapJarByName(String name) {
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
       try {
@@ -55,6 +58,7 @@ public class CommonPaths {
     return null;
   }
 
+  //todo remove when migration to stubs is finished
   public static IClassPathItem getJDK() {
     if (ourRTJar == null) {
       CompositeClassPathItem composite = new CompositeClassPathItem();
@@ -81,6 +85,37 @@ public class CommonPaths {
     } else {
       LOG.error("Can't find " + name + ". Make sure you are using JDK 5.0");
     }
+  }
+
+  private static String getFullJarPathByName(String name) {
+    for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
+      try {
+        File file = new File(url.toURI());
+        if (!file.exists()) continue;
+        if (!file.getPath().endsWith(name)) continue;
+
+        return url.toURI().toString();
+      } catch (URISyntaxException e) {
+        LOG.error(e);
+      }
+    }
+    return null;
+  }
+
+  //todo remove when migration to stubs is finished
+  public static List<String> getJDKPath() {
+    List<String> result = new ArrayList<String>();
+
+    if (!SystemInfo.isMac) {
+      result.add(getFullJarPathByName("rt.jar"));
+    } else {
+      result.add(getFullJarPathByName("classes.jar"));
+    }
+
+    result.add(getFullJarPathByName("jsse.jar"));
+    result.add(getFullJarPathByName("jce.jar"));
+    result.add(getFullJarPathByName("charsets.jar"));
+    return result;
   }
 
   public static IClassPathItem getMPSPath() {
