@@ -143,7 +143,7 @@ public class SuspendManager {
 
   private void notifyPaused(SuspendContext suspendContext) {
     pushPausedContext(suspendContext);
-    myDebugProcess.getMulticaster().paused(suspendContext);
+    myDebugProcess.getMulticaster().paused(suspendContext, myDebugProcess);
   }
 
   public void voteResume(SuspendContext suspendContext) {

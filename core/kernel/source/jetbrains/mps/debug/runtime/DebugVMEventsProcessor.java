@@ -446,7 +446,7 @@ public class DebugVMEventsProcessor {
         }
       }
       suspendContext.setThread(thread);
-      getMulticaster().paused(suspendContext);
+      getMulticaster().paused(suspendContext, DebugVMEventsProcessor.this);
     }
   }
 

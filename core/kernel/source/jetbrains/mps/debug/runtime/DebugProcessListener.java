@@ -29,7 +29,7 @@ public interface DebugProcessListener {
   void connectorIsReady();
 
   //executed in manager thread
-  void paused(@NotNull SuspendContext suspendContext);
+  void paused(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor);
 
   //executed in manager thread
   void resumed(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor);
