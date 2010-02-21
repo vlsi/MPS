@@ -4,6 +4,7 @@ import com.intellij.execution.process.ProcessHandler;
 import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.ThreadReference;
+import jetbrains.mps.debug.runtime.DebugManagerComponent.DebugSessionListener;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -82,12 +83,12 @@ public class DebugSession {
     return myProcessHandler;
   }
 
-  void pause(SuspendContext suspendContext) {
-    // TODO update state
+  private void pause(SuspendContext suspendContext) {
+    // TODO several threads might be paused on several _different_ contexts. Should be some kind of map between them.
     myCurrentSuspendContext = suspendContext;
   }
 
-  void resume(SuspendContext suspendContext) {
+  private void resume(SuspendContext suspendContext) {
     // TODO update state
     myCurrentSuspendContext = null;
   }
@@ -131,6 +132,18 @@ public class DebugSession {
     myListeners.remove(listener);
   }
 
+  private void fireSessionPaused(DebugSession debugSession) {
+    for (SessionChangeListener listener : myListeners) {
+      listener.paused(debugSession);
+    }
+  }
+
+  private void fireSessionResumed(DebugSession debugSession) {
+    for (SessionChangeListener listener : myListeners) {
+      listener.resumed(debugSession);
+    }
+  }
+
   public enum DebuggerState {
     Stopped,
     Running,
@@ -143,11 +156,15 @@ public class DebugSession {
     @Override
     public void paused(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor) {
       myState = DebuggerState.Paused;
+      pause(suspendContext);
+      fireSessionPaused(DebugSession.this);
     }
 
     @Override
     public void resumed(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor) {
       myState = DebuggerState.Running;
+      resume(suspendContext);
+      fireSessionResumed(DebugSession.this);
     }
 
     @Override
@@ -163,5 +180,7 @@ public class DebugSession {
 
   public static interface SessionChangeListener {
     public void stateChanged(DebugSession session);
+    public void paused(DebugSession session);
+    public void resumed(DebugSession session);
   }
 }
