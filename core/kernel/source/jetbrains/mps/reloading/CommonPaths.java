@@ -78,6 +78,7 @@ public class CommonPaths {
     return ourRTJar;
   }
 
+  //todo remove when migration to stubs is finished
   private static void addJarForName(CompositeClassPathItem composite, String name) {
     JarFileClassPathItem rtJar = findBootstrapJarByName(name);
     if (rtJar != null) {
@@ -102,7 +103,6 @@ public class CommonPaths {
     return null;
   }
 
-  //todo remove when migration to stubs is finished
   public static List<String> getJDKPath() {
     List<String> result = new ArrayList<String>();
 
@@ -118,6 +118,7 @@ public class CommonPaths {
     return result;
   }
 
+  //todo remove when migration to stubs is finished
   public static IClassPathItem getMPSPath() {
     CompositeClassPathItem result = new CompositeClassPathItem();
     result.add(getBaseMPSClassPath());
@@ -156,6 +157,16 @@ public class CommonPaths {
 
     return result;
   }
+
+  //todo
+  public static List<String> getMPSPaths() {
+    List<String> result = new ArrayList<String>();
+
+
+
+    return result;
+  }
+
 
   private static IClassPathItem getLibraryJars() {
     CompositeClassPathItem cp = new CompositeClassPathItem();

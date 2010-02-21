@@ -1505,5 +1505,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor" id="2974122604715433683">
+    <property name="name" value="MPS" />
+    <property name="moduleName" value="MPS.Classpath" />
+    <property name="moduleId" value="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
+    <link role="creator" targetNodeId="5516999836374025628" resolveInfo="JavaStubs" />
+    <node role="rootsBlock" type="jetbrains.mps.lang.stubs.structure.GetRootsBlock" id="2974122604715433684">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2974122604715433685">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6324573423433975456">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6324573423433975457">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="6324573423433975458">
+              <node role="copyFrom:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6324573423433975463">
+                <link role="baseMethodDeclaration:3" targetNodeId="6.~CommonPaths.getMPSPaths():java.util.List" resolveInfo="getMPSPaths" />
+                <link role="classConcept:3" targetNodeId="6.~CommonPaths" resolveInfo="CommonPaths" />
+              </node>
+              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6324573423433975460" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
