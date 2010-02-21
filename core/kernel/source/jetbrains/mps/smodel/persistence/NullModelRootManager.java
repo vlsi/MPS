@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.SModel;
@@ -23,13 +24,12 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 class NullModelRootManager extends BaseMPSModelRootManager {
   public static final Logger LOG = Logger.getLogger(NullModelRootManager.class);
 
-  public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner) {
+  public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner, List<StubPath> notChangedStubs) {
     LOG.error("Can't read from Null Model Root Manager");
   }
 

@@ -210,6 +210,11 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     model.fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
   }
 
+  //todo hide this method DO NOT USE THIS. THIS IS FOR INCREMENTAL RELOADING PURPOSES ONLY
+  public void setModelRootManager(IModelRootManager modelRootManager) {
+    myModelRootManager = modelRootManager;
+  }
+
   protected void updateDiskTimestamp() {
   }
 

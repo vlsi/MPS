@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
@@ -49,7 +50,7 @@ import java.util.Set;
 public class DefaultModelRootManager extends BaseMPSModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
-  public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner) {
+  public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner, List<StubPath> notChangedStubs) {
     readModelDescriptors(FileSystem.getFile(root.getPath()), root, owner);
   }
 

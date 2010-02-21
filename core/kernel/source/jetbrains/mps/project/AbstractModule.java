@@ -16,6 +16,7 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.baseLanguage.stubs.JavaStubs;
@@ -36,6 +37,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.stubs.BaseStubModelRootManager;
 import jetbrains.mps.stubs.StubLocation;
 import jetbrains.mps.util.CollectionUtil;
@@ -44,6 +46,7 @@ import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
+import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -457,7 +460,7 @@ public abstract class AbstractModule implements IModule {
           SModelRoot root = new SModelRoot(this, modelRoot);
           mySModelRoots.add(root);
           IModelRootManager manager = root.getManager();
-          manager.updateModels(root, this);
+          manager.updateModels(root, this, new ArrayList<StubPath>());
         } catch (Exception e) {
           LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         }
@@ -471,7 +474,7 @@ public abstract class AbstractModule implements IModule {
     for (SModelRoot root : mySModelRoots) {
       root.dispose();
     }
-    disposeStubs();
+    disposeStubs(new ArrayList<StubPath>());
     mySModelRoots.clear();
   }
 
@@ -685,10 +688,105 @@ public abstract class AbstractModule implements IModule {
     updateClassPathItem();
     myIncludedStubPaths = getIncludedStubPaths();
 
-    releaseOldStubs();
+    updateStubs();
     CleanupManager.getInstance().cleanup();
     MPSModuleRepository.getInstance().invalidateCaches();
-    loadNewStubs();
+  }
+
+  private void updateStubs() {
+    /*
+      We have to update stub path in the following cases:
+      * a new path which didn't existed
+      * an old path which does not exist any more
+      * timestamp for this path has changed (stubs change)
+      * model root manager for the path has changed (manager change leading to stubs change)
+    */
+
+    //we do not touch models whose loaded status, files and manager were not changed
+    List<StubPath> notChangedStubs = new ArrayList<StubPath>();
+
+    //todo make time linear [due to stubs list size this is not very significant]
+    List<StubPath> newStubs = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
+    for (StubPath os : myLoadedStubPaths) {
+      for (StubPath ns : newStubs) {
+        if (StubPath.equalStubPaths(os, ns)) {
+          if (os.isFresh()) {
+            notChangedStubs.add(ns);
+          }
+        }
+      }
+    }
+
+    disposeStubs(notChangedStubs);
+    releaseOldStubs(notChangedStubs);
+    loadNewStubs(notChangedStubs);
+  }
+
+  private void releaseOldStubs(List<StubPath> notChangedStubs) {
+    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
+      if (notChanged(notChangedStubs, sm)) continue;
+
+      if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
+        if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
+          SModelRepository.getInstance().removeModelDescriptor(sm);
+        } else {
+          SModelRepository.getInstance().unRegisterModelDescriptor(sm, this);
+        }
+      }
+    }
+  }
+
+  private boolean notChanged(List<StubPath> notChangedStubs, SModelDescriptor sm) {
+    if (!(sm instanceof BaseStubModelDescriptor)) return false;
+
+    BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) sm;
+
+    for (StubPath sp : notChangedStubs) {
+      if (StubPath.equalStubPaths(baseDescriptor.getSp(), sp)) return true;
+    }
+
+    return false;
+  }
+
+  private void loadNewStubs(List<StubPath> notChangedStubs) {
+    //todo[CP] remove this when JDK and Classpath migrated. Will be supported by another framework
+    for (SModelRoot mr : getSModelRoots()) {
+      IModelRootManager m = mr.getManager();
+      if (!(m instanceof BaseStubModelRootManager)) continue;
+      m.updateModels(mr, this, notChangedStubs);
+    }
+
+    List<StubPath> stubModels = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
+
+    for (StubPath sp : stubModels) {
+      BaseStubModelRootManager manager = createStubManager(sp);
+      sp.setModelRootManager(manager);
+      if (manager == null) continue;
+      manager.updateModels(sp.getPath(), "", this, notChangedStubs);
+      myLoadedStubPaths.add(sp);
+    }
+  }
+
+
+  private void disposeStubs(List<StubPath> notChangedStubs) {
+    List<StubPath> toRemove = new ArrayList<StubPath>();
+
+    stub:
+    for (StubPath sp : myLoadedStubPaths) {
+      BaseStubModelRootManager mrm = sp.getModelRootManager();
+      if (mrm != null) {
+        mrm.dispose();
+        sp.setModelRootManager(null);
+      }
+
+      for (StubPath notChanged : notChangedStubs) {
+        if (StubPath.equalStubPaths(notChanged, sp)) continue stub;
+      }
+
+      toRemove.add(sp);
+    }
+
+    myLoadedStubPaths.removeAll(toRemove);
   }
 
   private Set<String> getIncludedStubPaths() {
@@ -703,7 +801,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void setIncludedStubPath() {
-    for (StubModelsEntry entry :getStubModelEntries()) {
+    for (StubModelsEntry entry : getStubModelEntries()) {
       if (myIncludedStubPaths.contains(entry.getPath())) {
         entry.setIncludedInVCS(true);
       } else {
@@ -729,6 +827,7 @@ public abstract class AbstractModule implements IModule {
 
   //todo check this code. Wy not to do it where we add jars?
   //todo[CP] rewrite when classpaths are removed
+
   protected void updatePackagedDescriptorClasspath() {
     if (!isPackaged()) return;
 
@@ -801,48 +900,6 @@ public abstract class AbstractModule implements IModule {
     return new ClasspathCollector(modules).collect(includeJDK, includeMPS);
   }
 
-  private void releaseOldStubs() {
-    disposeStubs();
-
-    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
-      if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
-        if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
-          SModelRepository.getInstance().removeModelDescriptor(sm);
-        } else {
-          SModelRepository.getInstance().unRegisterModelDescriptor(sm, this);
-        }
-      }
-    }
-  }
-
-  private void disposeStubs() {
-    for (StubPath sp : myLoadedStubPaths) {
-      BaseStubModelRootManager mrm = sp.getModelRootManager();
-      if (mrm == null) continue;
-      mrm.dispose();
-      sp.setModelRootManager(null);
-    }
-
-    myLoadedStubPaths.clear();
-  }
-
-  private void loadNewStubs() {
-    //todo[CP] remove this when JDK and Classpath migrated. Will be supported by another framework
-    for (SModelRoot mr : getSModelRoots()) {
-      IModelRootManager m = mr.getManager();
-      if (!(m instanceof BaseStubModelRootManager)) continue;
-      m.updateModels(mr, this);
-    }
-
-    List<StubPath> stubModels = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
-    for (StubPath sp : stubModels) {
-      BaseStubModelRootManager manager = createStubManager(sp);
-      sp.setModelRootManager(manager);
-      if (manager == null) continue;
-      manager.updateModels(sp.getPath(), "", this);
-      myLoadedStubPaths.add(sp);
-    }
-  }
 
   @Override
   public List<SNodeDescriptor> getStubsRootNodeDescriptors() {
@@ -881,11 +938,11 @@ public abstract class AbstractModule implements IModule {
         // well, that's weird... this causes an NPE in ClassLoaderManager
         return (BaseStubModelRootManager) BaseStubModelRootManager.create(this, className);
       }
-      
+
       return (BaseStubModelRootManager) BaseStubModelRootManager.create(moduleId, className);
     } catch (ManagerNotFoundException e) {
       LOG.error("Can't create stub manager " + sp.getManager().getClassName() + " for " + sp.getPath(), e);
-      return null;                                                                                                                                
+      return null;
     }
   }
 
@@ -894,6 +951,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo[CP] remove this method when got rid of classpaths
+
   protected List<StubModelsEntry> getStubModelEntries() {
     List<ClassPathEntry> cp = getModuleDescriptor().getClassPaths();
     List<StubModelsEntry> sm = getModuleDescriptor().getStubModelEntries();
@@ -902,6 +960,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo[CP] remove this method when got rid of classpaths
+
   protected List<StubModelsEntry> toStubModelEntries(List<ClassPathEntry> cp, List<StubModelsEntry> sm) {
     ArrayList<StubModelsEntry> result = new ArrayList<StubModelsEntry>();
 
@@ -922,11 +981,16 @@ public abstract class AbstractModule implements IModule {
   public static class StubPath {
     private String myPath;
     private ModelRootManager myManager;
+
     private BaseStubModelRootManager myModelRootManager;
+    private long myPathTimestamp;
+    private long myManagerTimestamp;
 
     public StubPath(String path, ModelRootManager manager) {
       myPath = path;
       myManager = manager;
+
+      init();
     }
 
     public String getPath() {
@@ -951,6 +1015,30 @@ public abstract class AbstractModule implements IModule {
 
     public void setModelRootManager(BaseStubModelRootManager modelRootManager) {
       myModelRootManager = modelRootManager;
+    }
+
+    public boolean isFresh() {
+      //todo manager timestamp
+      return myPathTimestamp == getTimestamp();
+    }
+
+    private long getTimestamp() {
+      VirtualFile file = VFileSystem.getFile(myPath);
+      if (file == null) return 0L;
+      return file.getTimeStamp();
+    }
+
+    private void init() {
+      myPathTimestamp = getTimestamp();
+      //todo manager timestamp
+      myManagerTimestamp = 0L;
+    }
+
+    public static boolean equalStubPaths(StubPath os, StubPath ns) {
+      boolean pathsEqual = EqualUtil.equals(os.getPath(), ns.getPath());
+      boolean managersEqual = EqualUtil.equals(os.getManager(), ns.getManager());
+      boolean equalSP = pathsEqual && managersEqual;
+      return equalSP;
     }
   }
 

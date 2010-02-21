@@ -21,7 +21,10 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.stubs.BaseStubModelDescriptor;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import java.util.List;
 import java.util.ArrayList;
@@ -85,7 +88,7 @@ public class JavaStubs extends BaseStubModelRootManager {
           SModelRepository.getInstance().addOwnerForDescriptor(descriptor, location.getModule());
           result.add(descriptor);
         } else {
-          SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(JavaStubs.this, null, modelReference);
+          SModelDescriptor modelDescriptor = new BaseStubModelDescriptor(new AbstractModule.StubPath(location.getPath(), new ModelRootManager(BaseLanguage_Language.MODULE_REFERENCE.getModuleId().toString(), JavaStubs.this.getClass().getName())), JavaStubs.this, null, modelReference);
           result.add(modelDescriptor);
         }
       }

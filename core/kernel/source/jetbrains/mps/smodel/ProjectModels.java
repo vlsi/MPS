@@ -15,20 +15,20 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.BaseMPSModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Set;
+import java.util.List;
 
 public class ProjectModels {
   private static long ourProjectModelDescriptorCount = 0;
   private static final IModelRootManager ourModelRootManager = new BaseMPSModelRootManager() {
-    public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner) {
+    public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner, List<StubPath> notChangedStubs) {
       throw new RuntimeException();
     }
 

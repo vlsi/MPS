@@ -17,6 +17,7 @@ package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModelRoot;
@@ -46,15 +47,16 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   private StubLocation myLocation;
 
-  public final void updateModels(@NotNull SModelRoot root, @NotNull IModule module) {
-    updateModels(root.getPath(), root.getPrefix(), module);
+  public final void updateModels(@NotNull SModelRoot root, @NotNull IModule module, List<StubPath> notChangedStubs) {
+    updateModels(root.getPath(), root.getPrefix(), module, notChangedStubs);
   }
 
-  public final void updateModels(String path, String prefix, @NotNull IModule module) {
+  public final void updateModels(String path, String prefix, @NotNull IModule module, List<StubPath> notChangedStubs) {
     myLocation = new StubLocation(path, prefix, module);
 
     SModelRepository repository = SModelRepository.getInstance();
 
+    stub:
     for (SModelDescriptor descriptor : getModelDescriptors(myLocation)) {
       if (repository.getModelDescriptor(descriptor.getSModelReference()) == null) {
         repository.registerModelDescriptor(descriptor, module);
@@ -63,12 +65,24 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
           LOG.warning("Loading the same java_stub package twice : " + descriptor.getLongName() + " from " + repository.getOwners(descriptor));
         }
       } else {
+        if (descriptor instanceof BaseSModelDescriptor){
+          ((BaseSModelDescriptor) descriptor).setModelRootManager(this);
+        }
+
         if (!descriptor.isInitialized()) {
           if (!myDescriptorsWithListener.contains(descriptor)) {
             descriptor.addModelListener(myInitializationListener);
             myDescriptorsWithListener.add(descriptor);
           }
         } else {
+          if (descriptor instanceof BaseStubModelDescriptor){
+            for (StubPath notChanged : notChangedStubs) {
+              if (StubPath.equalStubPaths(notChanged, ((BaseStubModelDescriptor) descriptor).getSp())) {
+                continue stub;
+              }
+            }
+          }
+
           updateModelInLoadingState(descriptor, descriptor.getSModel());
         }
       }
@@ -145,7 +159,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     // TODO: fixme
     // hack -- avoid "harmless exceptions" to be reported if the module hasn't been loaded yet
     if (!(MPSModuleRepository.getInstance().isKnownModule(mod))) {
-       return null;
+      return null;
     }
     Class managerClass = mod.getClass(className);
     if (managerClass == null) {

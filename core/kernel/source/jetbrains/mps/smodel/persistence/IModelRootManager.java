@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence;
 
+import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.ModelOwner;
@@ -24,13 +25,14 @@ import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public interface IModelRootManager {
   public static final IModelRootManager NULL_MANAGER = new NullModelRootManager();
 
-  void updateModels(@NotNull SModelRoot root, @NotNull IModule owner);
+  void updateModels(@NotNull SModelRoot root, @NotNull IModule owner, List<StubPath> notChangedStubs);
 
   @NotNull
   SModel loadModel(@NotNull SModelDescriptor modelDescriptor);
