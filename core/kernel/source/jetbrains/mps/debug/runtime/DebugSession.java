@@ -1,9 +1,11 @@
 package jetbrains.mps.debug.runtime;
 
+import com.intellij.execution.process.ProcessHandler;
+import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.StackFrame;
+import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.logging.Logger;
-import com.intellij.execution.process.ProcessHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -41,7 +43,7 @@ public class DebugSession {
   }
 
   public void resume() {
-    myEventsProcessor.resume();
+    myEventsProcessor.resume(myCurrentSuspendContext);
   }
 
   public void pause() {
@@ -93,13 +95,29 @@ public class DebugSession {
   @NotNull
   public List<StackFrame> getFrames() {
     if (myCurrentSuspendContext != null) {
-      return myCurrentSuspendContext.getFrames();
+      ThreadReference thread = myCurrentSuspendContext.getThread();
+      if (thread == null) {
+        List<ThreadReference> threads = myEventsProcessor.getVirtualMachine().allThreads();
+        thread = threads.get(0);
+        for (ThreadReference t : threads) {
+          // TODO this is a hack
+          if (!t.threadGroup().name().equals("system")) {
+            thread = t;
+            break;
+          }
+        }
+      }
+      try {
+        return thread.frames();
+      } catch (IncompatibleThreadStateException e) {
+        LOG.error(e);
+      }
     }
     return Collections.emptyList();
   }
 
   // TODO call when user selects something in ui and changes state
-  private void fireStateChanged(){
+  private void fireStateChanged() {
     for (SessionChangeListener listener : myListeners) {
       listener.stateChanged(this);
     }

@@ -376,14 +376,7 @@ public class DebugVMEventsProcessor {
 
   //============================================ COMMANDS =============================================
 
-  public void resume() {
-    // TODO we need to resume specific thread
-    SuspendContext suspendContext = mySuspendManager.getPausedContext();
-    if (suspendContext == null) {
-      List<SuspendContext> list = mySuspendManager.getEventContexts();
-      LOG.assertLog(list.size() > 0);
-      suspendContext = list.get(0);
-    }
+  public void resume(@NotNull SuspendContext suspendContext) {
     getManagerThread().schedule(new ResumeCommand(suspendContext));
   }
 
@@ -435,17 +428,6 @@ public class DebugVMEventsProcessor {
       getVirtualMachine().suspend();
       // TODO the context we create here is not in SuspendManager paused list. WHY?
       SuspendContext suspendContext = getSuspendManager().pushSuspendContextWithVotesNumber(EventRequest.SUSPEND_ALL, 0);
-
-      List<ThreadReference> threads = getVirtualMachine().allThreads();
-      ThreadReference thread = threads.get(0);
-      for (ThreadReference t : threads) {
-        // TODO this is a hack
-        if (!t.threadGroup().name().equals("system")){
-          thread = t;
-          break;
-        }
-      }
-      suspendContext.setThread(thread);
       getMulticaster().paused(suspendContext, DebugVMEventsProcessor.this);
     }
   }

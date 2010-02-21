@@ -108,7 +108,7 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
   }
 
   @NotNull
-  public List<StackFrame> getFrames() {
+  private List<StackFrame> getFrames() {
     assertNotResumed();
     try {
       return myThread != null ? myThread.frames() : Collections.<StackFrame>emptyList();

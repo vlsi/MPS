@@ -11,31 +11,40 @@ import jetbrains.mps.logging.Logger;
 public class StepRequestor implements Requestor {
   public static final int STOP = 0;
   private static final Logger LOG = Logger.getLogger(StepRequestor.class);
-  private final String myDeclaringType;
-  private final int myLineNumber;
-  private int myFrameCount;
+
   private final int myStepType;
+  
+  private String myDeclaringType;
+  private int myLineNumber;
+  private int myFrameCount;
 
   public StepRequestor(SuspendContext context, int stepType) {
     myStepType = stepType;
-    StackFrame frame = context.getFrame();
     try {
-      myFrameCount = context.getThread().frameCount();
+      ThreadReference thread = context.getThread();
+      if (thread != null) {
+        myFrameCount = thread.frameCount();
+        StackFrame frame = thread.frame(0);
+        if (frame != null) {
+          myDeclaringType = frame.location().declaringType().name();
+          myLineNumber = frame.location().lineNumber();
+        }
+      }
     } catch (IncompatibleThreadStateException e) {
       LOG.error(e);
     }
-    myDeclaringType = frame.location().declaringType().name();
-    myLineNumber = frame.location().lineNumber();
   }
 
   //decides whether we need to step again; depends on whether our current line in generated java class has been changed.
   public int nextStep(SuspendContext context) {
     if (myStepType == StepRequest.STEP_OVER || myStepType == StepRequest.STEP_INTO) {
+      ThreadReference thread = context.getThread();
       StackFrame frame = context.getFrame();
+      if (frame == null || thread == null) return myStepType;
       int frameCount = -1;
       Location location = frame.location();
       try {
-        frameCount = context.getThread().frameCount();
+        frameCount = thread.frameCount();
       } catch (IncompatibleThreadStateException e) {
         LOG.error(e);
       }
