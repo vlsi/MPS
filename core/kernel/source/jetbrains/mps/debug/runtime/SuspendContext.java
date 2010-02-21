@@ -57,7 +57,7 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
   private final Set<ObjectReference> myKeptReferences = new HashSet<ObjectReference>();
 
   SuspendContext(@NotNull DebugVMEventsProcessor debugProcess,
-                 int suspendPolicy, int eventVotes, EventSet set) {
+                 int suspendPolicy, int eventVotes, @Nullable EventSet set) {
     myDebugProcess = debugProcess;
     mySuspendPolicy = suspendPolicy;
     myVotesToVote = eventVotes;
