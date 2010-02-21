@@ -194,5 +194,32 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5553449326502826656" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="2974122604715183932">
+    <property name="package" value="Libs" />
+    <link role="concept" targetNodeId="1.8529737993487825733" resolveInfo="LibraryStubDescriptor" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="2974122604715185986">
+      <property name="name" value="getGeneratedClassName" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2974122604715185987" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2974122604715185990" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2974122604715185989">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2974122604715185991">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2974122604715185999">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2974122604715186002">
+              <property name="value:3" value="_StubDescriptor" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2974122604715185994">
+              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="2974122604715185993" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="2974122604715185998">
+                <link role="property:16" targetNodeId="4v.1169194664001:0" resolveInfo="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="2974122604715183933">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2974122604715183934" />
+    </node>
+  </node>
 </model>
 

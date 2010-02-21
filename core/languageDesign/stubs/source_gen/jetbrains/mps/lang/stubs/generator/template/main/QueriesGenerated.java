@@ -8,9 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.stubs.behavior.AbstractModelCreator_Behavior;
-import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.stubs.behavior.LibraryStubDescriptor_Behavior;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -23,6 +25,26 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_562112407431589663(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "languageId");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2974122604715183878(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "moduleName");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2974122604715183881(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "moduleId");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2974122604715183884(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return Language.getLanguageFor(_context.getOriginalInputModel().getModelDescriptor()).getModuleId().toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2974122604715183887(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractModelCreator_Behavior.call_getGeneratedClassFQName_5553449326502826666(SLinkOperations.getTarget(_context.getNode(), "creator", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2974122604715183923(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return LibraryStubDescriptor_Behavior.call_getGeneratedClassName_2974122604715185986(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_3798212845297807980(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -47,6 +69,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_4009335194403392534(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "rootDescriptorsBlock", true) != null);
+  }
+
+  public static SNode sourceNodeQuery_2974122604715183891(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "rootsBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_3798212845297904679(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
