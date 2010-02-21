@@ -16,10 +16,7 @@
 package jetbrains.mps.debug.runtime;
 
 import com.intellij.openapi.project.Project;
-import com.sun.jdi.InternalException;
-import com.sun.jdi.ThreadReference;
-import com.sun.jdi.VMDisconnectedException;
-import com.sun.jdi.VirtualMachine;
+import com.sun.jdi.*;
 import com.sun.jdi.event.*;
 import com.sun.jdi.request.EventRequest;
 import com.sun.jdi.request.StepRequest;
@@ -28,8 +25,8 @@ import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -197,6 +194,7 @@ public class DebugVMEventsProcessor {
       getManagerThread().invokeAndWait(new DebuggerCommand() {
         protected void action() throws Exception {
           // SuspendContext suspendContext = getSuspendManager().pushSuspendContext(EventRequest.SUSPEND_NONE, 1);
+          // TODO why do we need to create empty context? VM is dead!
           SuspendContext suspendContext = getSuspendManager().pushSuspendContextFromEventSet(null);
           processVMDeathEvent(suspendContext, null);
         }
@@ -255,7 +253,7 @@ public class DebugVMEventsProcessor {
     //we use schedule to allow processing other events during processing this one
     //this is especially nesessary if a method is breakpoint condition
     //todo shedule later
-    SuspendContextCommand suspendCommand = new SuspendContextCommand(suspendContext){
+    SuspendContextCommand suspendCommand = new SuspendContextCommand(suspendContext) {
       @Override
       protected void action() throws Exception {
 
@@ -437,6 +435,17 @@ public class DebugVMEventsProcessor {
       getVirtualMachine().suspend();
       // TODO the context we create here is not in SuspendManager paused list. WHY?
       SuspendContext suspendContext = getSuspendManager().pushSuspendContextWithVotesNumber(EventRequest.SUSPEND_ALL, 0);
+
+      List<ThreadReference> threads = getVirtualMachine().allThreads();
+      ThreadReference thread = threads.get(0);
+      for (ThreadReference t : threads) {
+        // TODO this is a hack
+        if (!t.threadGroup().name().equals("system")){
+          thread = t;
+          break;
+        }
+      }
+      suspendContext.setThread(thread);
       getMulticaster().paused(suspendContext);
     }
   }
@@ -504,6 +513,7 @@ public class DebugVMEventsProcessor {
   }
 
   //quite an over-engineering in fact. maybe use int
+
   public enum StepType {
     Over(StepRequest.STEP_OVER),
     Into(StepRequest.STEP_INTO),

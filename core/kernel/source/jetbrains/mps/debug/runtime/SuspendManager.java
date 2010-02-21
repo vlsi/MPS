@@ -63,10 +63,9 @@ public class SuspendManager {
     return suspendContext;
   }
 
-  public SuspendContext pushSuspendContextFromEventSet(final EventSet set) {
+  public SuspendContext pushSuspendContextFromEventSet(EventSet set) {
     SuspendContext suspendContext;
     if (set == null) { // special case
-      // TODO when can set be null?
       suspendContext = new SuspendContext(myDebugProcess, EventRequest.SUSPEND_NONE, 1, set) {
         @Override
         protected void resumeImpl() {
@@ -183,6 +182,7 @@ public class SuspendManager {
         LOG.debug("Start resuming...");
         switch (getSuspendPolicy()) {
           case EventRequest.SUSPEND_ALL:
+            // TODO refactor
             tryResume5Times();
             LOG.debug("VM resumed ");
             break;

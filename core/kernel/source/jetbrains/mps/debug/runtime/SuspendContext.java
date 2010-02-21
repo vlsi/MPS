@@ -18,6 +18,8 @@ package jetbrains.mps.debug.runtime;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
@@ -101,10 +103,17 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
   @Nullable
   public StackFrame getFrame() {
     assertNotResumed();
+    List<StackFrame> frames = getFrames();
+    return !frames.isEmpty() ? frames.get(0) : null;
+  }
+
+  @NotNull
+  public List<StackFrame> getFrames() {
+    assertNotResumed();
     try {
-      return myThread != null && myThread.frameCount() > 0 ? myThread.frame(0) : null;
+      return myThread != null ? myThread.frames() : Collections.<StackFrame>emptyList();
     } catch (IncompatibleThreadStateException e) {
-      return null;
+      return Collections.<StackFrame>emptyList();
     }
   }
 
