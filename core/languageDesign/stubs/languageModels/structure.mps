@@ -29,10 +29,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.stubs(jetbrains.mps.stubs@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.workbench.actions.goTo.index(jetbrains.mps.workbench.actions.goTo.index@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3671542447677113727">
     <property name="name:0" value="StubsCreatorDeclaration" />
     <property name="rootable:0" value="true" />
@@ -249,6 +250,53 @@
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="5553449326502622462" resolveInfo="ModelManagerDeclaration" />
       <link role="specializedLink:0" targetNodeId="5553449326502623264" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8529737993487825733">
+    <property name="package:0" value="Libs" />
+    <property name="name:0" value="LibraryStubDescriptor" />
+    <property name="rootable:0" value="true" />
+    <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8529737993487825738">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="rootsBlock" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="8529737993487825737" resolveInfo="GetRootsBlock" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8529737993487825734">
+      <property name="name:0" value="moduleName" />
+      <link role="dataType:0" targetNodeId="3v.1082983041843:0" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8529737993487825735">
+      <property name="name:0" value="moduleId" />
+      <link role="dataType:0" targetNodeId="3v.1082983041843:0" resolveInfo="string" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8529737993487833471">
+      <link role="intfc:0" targetNodeId="3v.1169194658468:0" resolveInfo="INamedConcept" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8529737993487992546">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="creator" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="3671542447677113727" resolveInfo="StubsCreatorDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8529737993487825737">
+    <property name="package:0" value="Libs" />
+    <property name="name:0" value="GetRootsBlock" />
+    <link role="extends:0" targetNodeId="2v.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8529737993487825739">
+      <property name="value:0" value="roots" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="8529737993487825741">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1216468774225:3" resolveInfo="showName" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="8529737993487825742">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2v.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="8529737993487826288">
+        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6021028498538002105" />
+      </node>
     </node>
   </node>
 </model>

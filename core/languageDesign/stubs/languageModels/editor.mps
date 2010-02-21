@@ -320,5 +320,69 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="8529737993487833472">
+    <property name="package:32" value="Libs" />
+    <link role="conceptDeclaration:32" targetNodeId="1.8529737993487825733" resolveInfo="LibraryRoots" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Block:32" id="8529737993487833477">
+      <node role="body:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8529737993487833501">
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="8529737993487833502" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8529737993487833490">
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid:32" id="8529737993487833500" />
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8529737993487833484">
+            <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8529737993487833486" />
+            <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8529737993487833487">
+              <property name="text:32" value="lib module name: " />
+            </node>
+            <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8529737993487833489">
+              <link role="relationDeclaration:32" targetNodeId="1.8529737993487825734" resolveInfo="moduleName" />
+            </node>
+          </node>
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8529737993487833493">
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="8529737993487833494">
+              <property name="flag:32" value="false" />
+            </node>
+            <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8529737993487833497">
+              <property name="text:32" value="lib module id:" />
+            </node>
+            <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8529737993487833499">
+              <link role="relationDeclaration:32" targetNodeId="1.8529737993487825735" resolveInfo="moduleId" />
+            </node>
+            <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8529737993487833496" />
+          </node>
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8529737993487992548">
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="8529737993487992549">
+              <property name="flag:32" value="false" />
+            </node>
+            <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8529737993487992552">
+              <property name="text:32" value="creator:" />
+            </node>
+            <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="8529737993487992554">
+              <link role="relationDeclaration:32" targetNodeId="1.8529737993487992546" />
+              <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="8529737993487992555">
+                <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8529737993487992557">
+                  <property name="readOnly:32" value="true" />
+                  <link role="relationDeclaration:32" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+            <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8529737993487992551" />
+          </node>
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8529737993487833504" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="8529737993487833506">
+          <link role="relationDeclaration:32" targetNodeId="1.8529737993487825738" />
+        </node>
+      </node>
+      <node role="header:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8529737993487833479">
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8529737993487833480" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8529737993487833481">
+          <property name="text:32" value="library descriptor" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8529737993487833483">
+          <link role="relationDeclaration:32" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
