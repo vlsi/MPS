@@ -12,6 +12,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7(jetbrains.mps.lang.editor.editorTest)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -7066,6 +7067,130 @@
       </node>
       <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7075734325385964951">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7075734325385964952" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="4246727699196031257">
+    <property name="name:4" value="RT_toStaticFieldReference" />
+    <property name="package:4" value="AbstractClassifierReference" />
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4246727699196031778">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4246727699196031779">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4246727699196040260">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AbstractClassifierReference:3" id="4246727699196040261">
+            <link role="classifier:3" targetNodeId="1.~Object" resolveInfo="Object" />
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="4246727699196040265">
+              <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="6" />
+              <property name="selectionEnd:4" value="6" />
+              <property name="cellId:4" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4246727699196031780">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4246727699196031781">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4246727699196040262">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4246727699196040267">
+            <link role="classifier:3" targetNodeId="1.~Object" resolveInfo="Object" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4246727699196068721">
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="4246727699196068722">
+        <property name="keys:4" value="." />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="8221415467041264294">
+    <property name="package:4" value="AbstractClassifierReference" />
+    <property name="name:4" value="RT_addTypeVariable" />
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="8221415467041337184">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8221415467041337185">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8221415467041346661">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AbstractClassifierReference:3" id="8221415467041346662">
+            <link role="classifier:3" targetNodeId="7.~List" resolveInfo="List" />
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="8221415467041346671">
+              <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="4" />
+              <property name="selectionEnd:4" value="4" />
+              <property name="cellId:4" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="8221415467041346663">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8221415467041346664">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8221415467041346667">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8221415467041346668">
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8221415467041346669">
+              <link role="classifier:3" targetNodeId="7.~List" resolveInfo="List" />
+              <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="8221415467041346670">
+                <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="8221415467041392574">
+                  <property name="isLastPosition:4" value="true" />
+                  <property name="useLabelSelection:4" value="true" />
+                  <property name="selectionStart:4" value="0" />
+                  <property name="selectionEnd:4" value="0" />
+                  <property name="cellId:4" value="Error_9010_0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8221415467041374128">
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="8221415467041374129">
+        <property name="keys:4" value="&lt;" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="8221415467041384661">
+    <property name="package:4" value="AbstractClassifierReference" />
+    <property name="name:4" value="RT_toArray" />
+    <node role="nodeToEdit:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="8221415467041384664">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8221415467041384665">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8221415467041384666">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AbstractClassifierReference:3" id="8221415467041384667">
+            <link role="classifier:3" targetNodeId="1.~Object" resolveInfo="Object" />
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="8221415467041384677">
+              <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="6" />
+              <property name="selectionEnd:4" value="6" />
+              <property name="cellId:4" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result:4" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="8221415467041384668">
+      <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8221415467041384669">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8221415467041384672">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8221415467041384673">
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ArrayType:3" id="8221415467041384674">
+              <node role="componentType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8221415467041384675">
+                <link role="classifier:3" targetNodeId="1.~Object" resolveInfo="Object" />
+              </node>
+            </node>
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="8221415467041384676">
+              <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="0" />
+              <property name="selectionEnd:4" value="0" />
+              <property name="cellId:4" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8221415467041384678">
+      <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="8221415467041384679">
+        <property name="keys:4" value="[" />
       </node>
     </node>
   </node>
