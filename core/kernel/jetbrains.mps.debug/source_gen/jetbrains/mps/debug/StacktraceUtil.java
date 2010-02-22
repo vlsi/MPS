@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.project.MPSProject;
@@ -105,6 +106,20 @@ public class StacktraceUtil {
       return getNode(pkg, split[0], Integer.parseInt(split[1]));
     }
     return null;
+  }
+
+  public static String getGeneratedFileName(SNode node) {
+    SNode snode = ((SNode) node);
+    SModel model = snode.getModel();
+    DebugInfo debugInfo = BLDebugInfoCache.getInstance().get(model.getModelDescriptor());
+    if (debugInfo == null) {
+      return null;
+    }
+    PositionInfo positionInfo = debugInfo.getPositionForNode(snode.getId());
+    if (positionInfo == null) {
+      return null;
+    }
+    return model.getLongName() + "." + positionInfo.getFileName();
   }
 
   private static void showNode(SNode node) {

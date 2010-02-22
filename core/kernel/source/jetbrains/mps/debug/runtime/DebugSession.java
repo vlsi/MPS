@@ -89,9 +89,8 @@ public class DebugSession {
     }
   }
 
-  @NotNull
-  public List<StackFrame> getFrames() {
-    return myUiState.getStackFrames();
+  public UiState getUiState() {
+    return myUiState;
   }
 
   // TODO call when user selects something in ui and changes state
@@ -152,6 +151,7 @@ public class DebugSession {
     @Override
     public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
       myExecutionState = ExecutionState.Stopped;
+      myUiState.setContext(null);
     }
   }
 
@@ -163,7 +163,7 @@ public class DebugSession {
     public void resumed(DebugSession session);
   }
 
-  private class UiState {
+  public class UiState {
     private SuspendContext myContext;
     private ThreadReference myThread;
     private StackFrame myStackFrame;
@@ -202,6 +202,7 @@ public class DebugSession {
           LOG.error(e);
         }
       }
+      fireStateChanged();
     }
 
     public SuspendContext getContext() {
@@ -224,6 +225,20 @@ public class DebugSession {
         } catch (IncompatibleThreadStateException e) {
           LOG.error(e);
         }
+      }
+      return Collections.emptyList();
+    }
+
+    public void selectThread(ThreadReference thread) {
+      // TODO CONTEXT!!!
+      myThread = thread;
+      DebugSession.this.fireStateChanged();
+    }
+
+    @NotNull
+    public List<ThreadReference> getThreads() {
+      if (myExecutionState.equals(ExecutionState.Paused)) {
+        return myEventsProcessor.getVirtualMachine().allThreads();
       }
       return Collections.emptyList();
     }

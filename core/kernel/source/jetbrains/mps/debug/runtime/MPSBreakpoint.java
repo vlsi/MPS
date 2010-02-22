@@ -15,22 +15,21 @@
  */
 package jetbrains.mps.debug.runtime;
 
-import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.debug.PositionInfo;
-import jetbrains.mps.debug.BLDebugInfoCache;
-import jetbrains.mps.debug.DebugInfo;
-import jetbrains.mps.logging.Logger;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import com.sun.jdi.*;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.BreakpointRequest;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.debug.BLDebugInfoCache;
+import jetbrains.mps.debug.DebugInfo;
+import jetbrains.mps.debug.PositionInfo;
+import jetbrains.mps.debug.StacktraceUtil;
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -87,6 +86,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
   }
 
   //this should be called on every breakpoint when DebugEventsProcessor is attached
+
   public void createClassPrepareRequest(DebugVMEventsProcessor debugProcess) {
     DebuggerManagerThread.assertIsManagerThread();
 
@@ -109,7 +109,11 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
       @Override
       public String compute() {
         SNode node = getSNode();
-        return PositionUtil.getGeneratedClassName(node);
+        String fileName = StacktraceUtil.getGeneratedFileName(node);
+        if (fileName.endsWith(".java")) {
+          fileName = fileName.substring(0, fileName.length() - ".java".length());
+        }
+        return fileName;
       }
     });
 
@@ -128,7 +132,8 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
   }
 
 
-  @Override     //this is called when a class for this ClassPrepareRequestor is prepared
+  @Override
+  //this is called when a class for this ClassPrepareRequestor is prepared
   public void processClassPrepare(DebugVMEventsProcessor debugProcess, ReferenceType classType) {
     if (!myIsEnabled || !isValid()) {
       return;
@@ -143,6 +148,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
   }
 
   //this is called when a class for this BP is prepared
+
   protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, final ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
 
@@ -171,7 +177,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
       LOG.warning("InvalidLineNumberException: " + ex.getMessage());
     } catch (InternalException ex) {
       LOG.error(ex);
-    } catch(Exception ex) {
+    } catch (Exception ex) {
       LOG.error(ex);
     }
   }
@@ -194,11 +200,12 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
     }
   }
 
-  @Override  //called when breakpoint is hit
+  @Override
+  //called when breakpoint is hit
   public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
     System.err.println("breakpoint hit!");
     final SuspendContext context = action.getSuspendContext();
-    if(!isValid()) {
+    if (!isValid()) {
       context.getDebugProcess().getRequestManager().deleteRequest(this);
       return false;
     }
