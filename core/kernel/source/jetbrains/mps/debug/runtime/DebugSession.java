@@ -154,14 +154,14 @@ public class DebugSession {
   private class MyDebugProcessAdapter extends DebugProcessAdapter {
 
     @Override
-    public void paused(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor) {
+    public void paused(@NotNull SuspendContext suspendContext) {
       myState = DebuggerState.Paused;
       pause(suspendContext);
       fireSessionPaused(DebugSession.this);
     }
 
     @Override
-    public void resumed(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor) {
+    public void resumed(@NotNull SuspendContext suspendContext) {
       myState = DebuggerState.Running;
       resume(suspendContext);
       fireSessionResumed(DebugSession.this);

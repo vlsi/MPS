@@ -46,20 +46,20 @@ public class DebugProcessMulticaster {
     }
   }
 
-  public void paused(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor) {
+  public void paused(@NotNull SuspendContext suspendContext) {
     for (DebugProcessListener listener : getListeners()) {
       try {
-        listener.paused(suspendContext, processor);
+        listener.paused(suspendContext);
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
   }
 
-  public void resumed(@NotNull SuspendContext suspendContext, @NotNull  DebugVMEventsProcessor process) {
+  public void resumed(@NotNull SuspendContext suspendContext) {
     for (DebugProcessListener listener : getListeners()) {
       try {
-        listener.resumed(suspendContext, process);
+        listener.resumed(suspendContext);
       } catch (Throwable t) {
         LOG.error(t);
       }

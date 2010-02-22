@@ -413,7 +413,7 @@ public class DebugVMEventsProcessor {
       // see DebugProcessImpl.ResumeCommand in idea
       SuspendManager suspendManager = getSuspendManager();
       suspendManager.resume(getSuspendContext());
-      getMulticaster().resumed(getSuspendContext(), DebugVMEventsProcessor.this);
+      getMulticaster().resumed(getSuspendContext());
     }
   }
 
@@ -426,7 +426,7 @@ public class DebugVMEventsProcessor {
       SuspendManager suspendManager = getSuspendManager();
       SuspendContext suspendContext = suspendManager.pushSuspendContextWithVotesNumber(EventRequest.SUSPEND_ALL, 0);
       suspendManager.pausedByUser(suspendContext);
-      getMulticaster().paused(suspendContext, DebugVMEventsProcessor.this);
+      getMulticaster().paused(suspendContext);
     }
   }
 

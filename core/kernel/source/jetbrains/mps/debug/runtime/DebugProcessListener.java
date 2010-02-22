@@ -29,10 +29,10 @@ public interface DebugProcessListener {
   void connectorIsReady();
 
   //executed in manager thread
-  void paused(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor);
+  void paused(@NotNull SuspendContext suspendContext);
 
   //executed in manager thread
-  void resumed(@NotNull SuspendContext suspendContext, @NotNull DebugVMEventsProcessor processor);
+  void resumed(@NotNull SuspendContext suspendContext);
 
   //executed in manager thread
   void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser);
