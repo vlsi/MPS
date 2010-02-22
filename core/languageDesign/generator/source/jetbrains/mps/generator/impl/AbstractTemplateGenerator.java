@@ -101,6 +101,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myLogger.getWarningCount();
   }
 
+  public GeneratorLogger getLogger() {
+    return myLogger;
+  }
+
   public SModel getInputModel() {
     return myInputModel;
   }

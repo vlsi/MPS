@@ -22,7 +22,6 @@ import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -34,8 +33,6 @@ import java.util.*;
  * Applies template to input node.
  */
 public class TemplateProcessor {
-  private static final Logger LOG = Logger.getLogger(TemplateProcessor.class);
-
   private final TemplateGenerator myGenerator;
   private final SModel myOutputModel;
   private final Map<String, SNode> myInputNodesByMappingName = new HashMap<String, SNode>();
@@ -53,8 +50,8 @@ public class TemplateProcessor {
 
     if (myGenerator.getProgressMonitor().isCanceled()) {
       if (myGenerator.getGenerationTracer().isTracing()) {
-        LOG.info("generation canceled when processing branch:");
-        logCurrentGenerationBranch(myGenerator, false);
+        myGenerator.showInformationMessage(null, "generation canceled when processing branch:");
+        GeneratorUtil.logCurrentGenerationBranch(myGenerator, false);
       }
       throw new GenerationCanceledException();
     }
@@ -68,42 +65,18 @@ public class TemplateProcessor {
       return outputNodes;
     } catch (StackOverflowError e) {
       // this is critical
-      LOG.error("generation thread run out of stack space :(");
+      GeneratorLogger logger = myGenerator.getLogger();
+      logger.showErrorMessage(null, "generation thread run out of stack space :(");
       if (myGenerator.getGenerationTracer().isTracing()) {
-        LOG.error("failed branch was:");
-        logCurrentGenerationBranch(myGenerator, true);
+        logger.showErrorMessage(null, "failed branch was:");
+        GeneratorUtil.logCurrentGenerationBranch(myGenerator, true);
       } else {
-        LOG.error("try to increase JVM stack size (-Xss option)");
-        LOG.error("to get more diagnostic generate model with the 'save transient models' option");
+        logger.showErrorMessage(null, "try to increase JVM stack size (-Xss option)");
+        logger.showErrorMessage(null, "to get more diagnostic generate model with the 'save transient models' option");
       }
       throw new GenerationFailureException("couldn't process template", inputNode, templateNode, null, e);
     } finally {
       myGenerator.setPreviousInputNodesByMappingName(old);
-    }
-  }
-
-  private static void logCurrentGenerationBranch(TemplateGenerator generator, boolean error) {
-    List<Pair<SNode, String>> pairs = generator.getGenerationTracer().getNodesWithTextFromCurrentBranch();
-    StringBuilder indent = new StringBuilder();
-    boolean indentInc = true;
-    for (Pair<SNode, String> pair : pairs) {
-      String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + pair.o1.getDebugText() : "");
-      if (error) {
-        LOG.error(logMessage, pair.o1);
-      } else {
-        LOG.info(logMessage, pair.o1);
-      }
-      if (indentInc && indent.length() >= 80) {
-        indentInc = false;
-      } else if (indent.length() == 0) {
-        indentInc = true;
-      }
-
-      if (indentInc) {
-        indent.append(".");
-      } else {
-        indent.deleteCharAt(indent.length() - 1);
-      }
     }
   }
 
@@ -204,11 +177,10 @@ public class TemplateProcessor {
           for (SNode outputChildNode : outputChildNodes) {
             // check child
             if (!GeneratorUtil.checkChild(outputNode, role, outputChildNode)) {
-              LOG.warning(" -- was input: " + (inputNode != null ? inputNode.getDebugText() : "null"), inputNode);
-              LOG.warning(" -- was parent in template: " + templateNode.getDebugText(), templateNode);
-              LOG.warning(" -- was child in template: " + templateChildNode.getDebugText(), templateChildNode);
+              myGenerator.showWarningMessage(inputNode, " -- was input: " + (inputNode != null ? inputNode.getDebugText() : "null"));
+              myGenerator.showWarningMessage(templateNode, " -- was parent in template: " + templateNode.getDebugText());
+              myGenerator.showWarningMessage(templateChildNode.getNode(), " -- was child in template: " + templateChildNode.getDebugText());
             }
-
             outputNode.addChild(role, outputChildNode);
           }
         }
@@ -259,10 +231,10 @@ public class TemplateProcessor {
             Language outputNodeLang = outputNode.getNodeLanguage();
             if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
               if (!outputNodeLang.getGenerators().isEmpty()) {
-                LOG.error("language of output node is '" + outputNodeLang.getNamespace() + "' - this language did not show up when computing generation steps!", outputNode);
-                LOG.error(" -- was input: " + inputNode.getDebugText(), inputNode);
-                LOG.error(" -- was template: " + nodeMacro.getDebugText(), nodeMacro);
-                LOG.error(" -- workaround: add the language '" + outputNodeLang.getNamespace() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'");
+                myGenerator.showErrorMessage(outputNode, "language of output node is '" + outputNodeLang.getNamespace() + "' - this language did not show up when computing generation steps!");
+                myGenerator.showErrorMessage(inputNode, " -- was input: " + inputNode.getDebugText());
+                myGenerator.showErrorMessage(nodeMacro.getNode(), " -- was template: " + nodeMacro.getDebugText());
+                myGenerator.showErrorMessage(null, " -- workaround: add the language '" + outputNodeLang.getNamespace() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'");
               }
             }
           }
@@ -586,12 +558,11 @@ public class TemplateProcessor {
         for (SNode outputChildNode : outputChildNodes) {
           // check child
           if (!GeneratorUtil.checkChild(outputNode, childRole, outputChildNode)) {
-            LOG.warning(" -- was input: " + inputNode.getDebugText(), inputNode);
+            myGenerator.showWarningMessage(inputNode, " -- was input: " + inputNode.getDebugText());
             if (SModelStereotype.isGeneratorModel(templateNode.getModel())) {
-              LOG.warning(" -- was template: " + templateNode.getDebugText(), templateNode);
+              myGenerator.showWarningMessage(templateNode, " -- was template: " + templateNode.getDebugText());
             }
           }
-
           outputNode.addChild(childRole, outputChildNode);
         }
       }
@@ -639,5 +610,8 @@ public class TemplateProcessor {
   private void putInputNodeByMappingName(String mappingName, SNode node) {
     if (mappingName == null || node == null) return;
     myInputNodesByMappingName.put(mappingName, node);
+  }
+
+  public static class TemplateProcessingFailureException extends Exception {
   }
 }

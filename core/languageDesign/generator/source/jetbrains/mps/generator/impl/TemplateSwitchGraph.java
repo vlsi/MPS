@@ -84,4 +84,14 @@ public class TemplateSwitchGraph {
       }
     }
   }
+
+  private static class TemplateSwitchGraphNode {
+    final TemplateSwitch myTemplateSwitch;
+    TemplateSwitchGraphNode myModifiedSwitchNode;
+    List<TemplateSwitchGraphNode> myModifierSwitchNodes = new LinkedList<TemplateSwitchGraphNode>();
+
+    public TemplateSwitchGraphNode(TemplateSwitch templateSwitch) {
+      this.myTemplateSwitch = templateSwitch;
+    }
+  }
 }

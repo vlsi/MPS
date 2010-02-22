@@ -2,13 +2,13 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.SNode;
@@ -19,8 +19,6 @@ import java.util.List;
  * Evgeny Gryaznov, Feb 15, 2010
  */
 public class WeavingProcessor {
-
-  private static final Logger LOG = Logger.getLogger(WeavingProcessor.class);
 
   private IGenerationTracer myGenerationTracer;
   private TemplateGenerator myGenerator;
@@ -89,7 +87,7 @@ public class WeavingProcessor {
       try {
         contextParentNode = QueryExecutor.getContextNodeForTemplateFragment(inputNode, templateFragmentNode, outputContextNode, myGenerator);
       } catch (Exception e) {
-        LOG.error(e);
+        myGenerator.getLogger().handleException(e);
       }
       if (contextParentNode != null) {
         try {
@@ -99,9 +97,9 @@ public class WeavingProcessor {
           String childRole = templateFragmentNode.getRole_();
           for (SNode outputNodeToWeave : outputNodesToWeave) {
             if (!GeneratorUtil.checkChild(contextParentNode, childRole, outputNodeToWeave)) {
-              LOG.warning(" -- was input: " + inputNode.getDebugText(), inputNode);
-              LOG.warning(" -- was template: " + templateFragment.getDebugText(), templateFragment);
-              LOG.warning(" -- was rule: " + rule.getDebugText(), rule);
+              myGenerator.showWarningMessage(inputNode, " -- was input: " + inputNode.getDebugText());
+              myGenerator.showWarningMessage(templateFragment.getNode(), " -- was template: " + templateFragment.getDebugText());
+              myGenerator.showWarningMessage(rule.getNode(), " -- was rule: " + rule.getDebugText());
             }
 
             LinkDeclaration childLinkDeclaration = contextParentNode.getLinkDeclaration(childRole);

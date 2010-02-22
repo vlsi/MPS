@@ -27,6 +27,7 @@ import java.util.HashSet;
  * Nov 30, 2007
  */
 public class GeneratorLogger {
+
   private static final Logger LOG = Logger.getLogger(GeneratorLogger.class);
 
   private IOperationContext myOperationContext;
@@ -80,6 +81,10 @@ public class GeneratorLogger {
       LOG.error("-- was template: " + templateNode.getDebugText(),
         new NodeWithContext(templateNode, myOperationContext));
     }
+  }
+
+  public void handleException(Throwable t) {
+    LOG.error(t);
   }
 
   public int getErrorCount() {

@@ -52,8 +52,6 @@ import java.util.List;
  * Created once per model generation.
  */
 public class GenerationSession {
-  public static final Logger LOG = Logger.getLogger(GenerationSession.class);
-
   private final SModelDescriptor myOriginalInputModel;
   private GenerationPlan myGenerationPlan;
 
@@ -163,11 +161,11 @@ public class GenerationSession {
     } catch (GenerationCanceledException gce) {
       throw gce;
     } catch (GenerationFailureException gfe) {
-      LOG.error(gfe.getMessage());
+      logger.showErrorMessage(null, gfe.getMessage());
       error("model \"" + inputModel.getSModelFqName() + "\" generation failed : " + gfe);
       status = new GenerationStatus.ERROR(inputModel);
     } catch (Throwable e) {
-      LOG.error(e);
+      logger.handleException(e);
       error("model \"" + inputModel.getSModelFqName() + "\" generation failed : " + e);
       status = new GenerationStatus.ERROR(inputModel);
     }
@@ -247,14 +245,14 @@ public class GenerationSession {
       if (++secondaryMappingRepeatCount > 10) {
         logger.showErrorMessage(null, "failed to generate output after 10 repeated mappings");
         if (tracer.isTracing()) {
-          LOG.error("last rules applied:");
+          logger.showErrorMessage(null, "last rules applied:");
           List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(transientModel.getSModelReference());
           for (Pair<SNode, SNode> pair : pairs) {
-            LOG.error("rule: " + pair.o1.getDebugText(), pair.o1);
-            LOG.error("-- input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"), pair.o2);
+            logger.showErrorMessage(pair.o1, "rule: " + pair.o1.getDebugText());
+            logger.showErrorMessage(pair.o2, "-- input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"));
           }
         } else {
-          LOG.error("to get more diagnostic generate model with the 'save transient models' option");
+          logger.showErrorMessage(null, "to get more diagnostic generate model with the 'save transient models' option");
         }
         throw new GenerationFailureException("failed to generate output after 10 repeated mappings");
       }

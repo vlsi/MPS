@@ -269,4 +269,28 @@ public class GeneratorUtil {
     }
   }
 
+  static void logCurrentGenerationBranch(TemplateGenerator generator, boolean error) {
+    List<Pair<SNode, String>> pairs = generator.getGenerationTracer().getNodesWithTextFromCurrentBranch();
+    StringBuilder indent = new StringBuilder();
+    boolean indentInc = true;
+    for (Pair<SNode, String> pair : pairs) {
+      String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + pair.o1.getDebugText() : "");
+      if (error) {
+        generator.showErrorMessage(pair.o1, logMessage);
+      } else {
+        generator.showInformationMessage(pair.o1, logMessage);
+      }
+      if (indentInc && indent.length() >= 80) {
+        indentInc = false;
+      } else if (indent.length() == 0) {
+        indentInc = true;
+      }
+
+      if (indentInc) {
+        indent.append(".");
+      } else {
+        indent.deleteCharAt(indent.length() - 1);
+      }
+    }
+  }
 }
