@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.TreeSet;
 import org.jdom.Element;
+import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -29,12 +30,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class DebugInfo {
   private static final String DEBUG_INFO = "debugInfo";
   private static final String NODE_INFO = "nodeInfo";
+  private static final String VAR_INFO = "varInfo";
   private static final String ROOT = "root";
   private static final String ROOT_ID_ATTR = "nodeId";
   private static final String UNSPECIFIED_ROOT = "";
   private static Logger LOG = Logger.getLogger(DebugInfo.class);
 
   private Map<String, Set<PositionInfo>> myRootToPositions = MapSequence.fromMap(new LinkedHashMap<String, Set<PositionInfo>>(16, (float) 0.75, false));
+  private Map<String, Set<VarPositionInfo>> myRootToVarPositions = MapSequence.fromMap(new LinkedHashMap<String, Set<VarPositionInfo>>(16, (float) 0.75, false));
   private SModel myModel;
 
   public DebugInfo() {
@@ -42,6 +45,10 @@ public class DebugInfo {
 
   public void addPosition(PositionInfo position) {
     this.addPosition(position, UNSPECIFIED_ROOT);
+  }
+
+  public void addVarPosition(VarPositionInfo position) {
+    this.addVarPosition(position, UNSPECIFIED_ROOT);
   }
 
   public void addPosition(PositionInfo position, String rootNodeId) {
@@ -56,17 +63,38 @@ public class DebugInfo {
     SetSequence.fromSet(info).addElement(position);
   }
 
+  public void addVarPosition(VarPositionInfo position, String rootNodeId) {
+    if (rootNodeId == null) {
+      rootNodeId = UNSPECIFIED_ROOT;
+    }
+    Set<VarPositionInfo> info = MapSequence.fromMap(this.myRootToVarPositions).get(rootNodeId);
+    if (info == null) {
+      info = SetSequence.fromSet(new TreeSet<VarPositionInfo>());
+      MapSequence.fromMap(this.myRootToVarPositions).put(rootNodeId, info);
+    }
+    SetSequence.fromSet(info).addElement(position);
+  }
+
   public Element toXml() {
     Element root = new Element(DEBUG_INFO);
 
-    Set<PositionInfo> noroot = MapSequence.fromMap(this.myRootToPositions).get(UNSPECIFIED_ROOT);
-    if (noroot != null) {
-      for (PositionInfo position : noroot) {
+    Set<PositionInfo> noRoot = MapSequence.fromMap(this.myRootToPositions).get(UNSPECIFIED_ROOT);
+    if (noRoot != null) {
+      for (PositionInfo position : noRoot) {
         Element e = new Element(NODE_INFO);
         position.saveTo(e);
         root.addContent(e);
       }
     }
+    Set<VarPositionInfo> noRootVars = MapSequence.fromMap(this.myRootToVarPositions).get(UNSPECIFIED_ROOT);
+    if (noRootVars != null) {
+      for (PositionInfo position : noRootVars) {
+        Element e = new Element(NODE_INFO);
+        position.saveTo(e);
+        root.addContent(e);
+      }
+    }
+    Map<String, Element> rootsToElements = MapSequence.fromMap(new HashMap<String, Element>());
     for (String rootId : SetSequence.fromSet(MapSequence.fromMap(this.myRootToPositions).keySet()).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return !(ObjectUtils.equals(it, UNSPECIFIED_ROOT));
@@ -78,9 +106,32 @@ public class DebugInfo {
     }, true)) {
       Element re = new Element(ROOT);
       re.setAttribute(ROOT_ID_ATTR, rootId);
+      MapSequence.fromMap(rootsToElements).put(rootId, re);
       root.addContent(re);
       for (PositionInfo position : MapSequence.fromMap(this.myRootToPositions).get(rootId)) {
         Element e = new Element(NODE_INFO);
+        position.saveTo(e);
+        re.addContent(e);
+      }
+    }
+    for (String rootId : SetSequence.fromSet(MapSequence.fromMap(this.myRootToVarPositions).keySet()).where(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return !(ObjectUtils.equals(it, UNSPECIFIED_ROOT));
+      }
+    }).sort(new ISelector<String, Comparable<?>>() {
+      public Comparable<?> select(String it) {
+        return it;
+      }
+    }, true)) {
+      Element re = MapSequence.fromMap(rootsToElements).get(rootId);
+      if (re == null) {
+        re = new Element(ROOT);
+        MapSequence.fromMap(rootsToElements).put(rootId, re);
+      }
+      re.setAttribute(ROOT_ID_ATTR, rootId);
+      root.addContent(re);
+      for (PositionInfo position : MapSequence.fromMap(this.myRootToVarPositions).get(rootId)) {
+        Element e = new Element(VAR_INFO);
         position.saveTo(e);
         re.addContent(e);
       }
@@ -179,10 +230,16 @@ public class DebugInfo {
       for (Element e : ((List<Element>) root.getChildren(NODE_INFO))) {
         result.addPosition(new PositionInfo(e));
       }
+      for (Element e : ((List<Element>) root.getChildren(VAR_INFO))) {
+        result.addVarPosition(new VarPositionInfo(e));
+      }
       for (Element re : ((List<Element>) root.getChildren(ROOT))) {
         String rootId = re.getAttributeValue(ROOT_ID_ATTR);
         for (Element e : ((List<Element>) re.getChildren(NODE_INFO))) {
           result.addPosition(new PositionInfo(e), rootId);
+        }
+        for (Element e : ((List<Element>) re.getChildren(VAR_INFO))) {
+          result.addVarPosition(new VarPositionInfo(e), rootId);
         }
       }
     } catch (DataConversionException e) {

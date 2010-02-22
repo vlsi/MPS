@@ -31,6 +31,7 @@ public class DebugInfoManager implements ApplicationComponent {
   }
 
   private Set<String> myDebuggableConcepts = new HashSet<String>();
+  private Set<String> myVariableConcepts = new HashSet<String>();
 
   @NotNull
   public String getComponentName() {
@@ -45,8 +46,23 @@ public class DebugInfoManager implements ApplicationComponent {
     myDebuggableConcepts.remove(fqName);
   }
 
+  public void addVariableConcept(String fqName) {
+    myVariableConcepts.add(fqName);
+  }
+
+  public void removeVariableConcept(String fqName) {
+    myVariableConcepts.remove(fqName);
+  }
+
   public boolean isDebuggableNode(SNode node) {
     for (String concept : myDebuggableConcepts) {
+      if (SNodeOperations.isInstanceOf(node, concept)) return true;
+    }
+    return false;
+  }
+
+  public boolean isVariableNode(SNode node) {
+    for (String concept : myVariableConcepts) {
       if (SNodeOperations.isInstanceOf(node, concept)) return true;
     }
     return false;

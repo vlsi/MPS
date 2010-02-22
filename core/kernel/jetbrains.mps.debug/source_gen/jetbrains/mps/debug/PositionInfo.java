@@ -113,4 +113,13 @@ public class PositionInfo implements Comparable<PositionInfo> {
       return this.getLineDistance() - p.getLineDistance();
     }
   }
+
+  public void fillFrom(PositionInfo position) {
+    this.myNodeId = position.myNodeId;
+    this.myFileName = position.myFileName;
+    this.myStartLine = position.myStartLine;
+    this.myStartPosition = position.myStartPosition;
+    this.myEndLine = position.myEndLine;
+    this.myEndPosition = position.myEndPosition;
+  }
 }

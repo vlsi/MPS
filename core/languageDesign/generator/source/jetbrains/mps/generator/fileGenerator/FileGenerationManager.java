@@ -23,6 +23,7 @@ import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.debug.DebugInfo;
 import jetbrains.mps.debug.PositionInfo;
+import jetbrains.mps.debug.VarPositionInfo;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
@@ -192,24 +193,45 @@ public class FileGenerationManager implements ApplicationComponent {
 
   private void fillDebugInfo(DebugInfo info, String rootNodeId, SNode outputNode, TextGenerationResult result) {
     Map<SNode, PositionInfo> positions = result.getPositions();
-    if (positions == null) {
+    Map<SNode, VarPositionInfo> varPositions = result.getVarPositions();
+    if (positions == null && varPositions == null) {
       return;
     }
     String fileName = outputNode.getName() + ".java";
-    for (SNode out : positions.keySet()) {
-      SNode input = out;
-      while (input != null && !(input.isDisposed()) && (input.getModel().getModelDescriptor() == null || input.getModel().getModelDescriptor().isTransient())) {
-        input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE);
-      }
-
-      if (input != null && !(input.isDisposed())) {
-        PositionInfo positionInfo = result.getPositions().get(out);
-        positionInfo.setNodeId(input.getId());
-        info.setModel(input.getModel());
-        positionInfo.setFileName(fileName);
-        info.addPosition(positionInfo, rootNodeId);
+    if (positions != null) {
+      for (SNode out : positions.keySet()) {
+        SNode input = out;
+        input = getOriginalInputNode(input);
+        if (input != null && !(input.isDisposed())) {
+          PositionInfo positionInfo = result.getPositions().get(out);
+          positionInfo.setNodeId(input.getId());
+          info.setModel(input.getModel());
+          positionInfo.setFileName(fileName);
+          info.addPosition(positionInfo, rootNodeId);
+        }
       }
     }
+    if (varPositions != null) {
+      for (SNode out : varPositions.keySet()) {
+        SNode input = out;
+        input = getOriginalInputNode(input);
+        if (input != null && !(input.isDisposed())) {
+          VarPositionInfo positionInfo = result.getVarPositions().get(out);
+          positionInfo.setNodeId(input.getId());
+          info.setModel(input.getModel());
+          positionInfo.setFileName(fileName);
+          info.addPosition(positionInfo, rootNodeId);
+        }
+      }
+    }
+  }
+
+  private SNode getOriginalInputNode(SNode input) {
+    while (input != null && !(input.isDisposed())
+      && (input.getModel().getModelDescriptor() == null || input.getModel().getModelDescriptor().isTransient())) {
+      input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE);
+    }
+    return input;
   }
 
   private void fillDependencies(ModelDependencies root, SNode outputNode, TextGenerationResult result) {

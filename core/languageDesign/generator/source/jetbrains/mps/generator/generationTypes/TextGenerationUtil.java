@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.debug.PositionInfo;
+import jetbrains.mps.debug.VarPositionInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
@@ -28,29 +29,37 @@ public class TextGenerationUtil {
     String nodeText;
     boolean containsErrors = false;
     Map<SNode, PositionInfo> positions = null;
+    Map<SNode, VarPositionInfo> varPositions = null;
     Map<String, String> dependencies = null;
     if (TextGenManager.instance().canGenerateTextFor(node)) {
       TextGenManager.TextGenerationResult generationResult = TextGenManager.instance().generateText(context, node);
       containsErrors = generationResult.hasErrors();
       nodeText = generationResult.getText();
       positions = generationResult.getPositions();
+      varPositions = generationResult.getVarPositions();
       dependencies = generationResult.getDependencies();
     } else {
       nodeText = "Can't generate text from " + node;
     }
-    return new TextGenerationResult(nodeText, containsErrors, positions, dependencies);
+    return new TextGenerationResult(nodeText, containsErrors, positions, varPositions, dependencies);
   }
 
   public static class TextGenerationResult {
     private boolean myContainsErrors;
     private String myText;
     private Map<SNode, PositionInfo> myPositions;
+    private Map<SNode, VarPositionInfo> myVarPositions;
     private Map<String, String> myDependencies = new HashMap<String, String>();
 
-    public TextGenerationResult(String text, boolean containsErrors, Map<SNode, PositionInfo> positions, Map<String, String> dependencies) {
+    public TextGenerationResult(String text,
+                                boolean containsErrors,
+                                Map<SNode, PositionInfo> positions,
+                                Map<SNode, VarPositionInfo> varPositions,
+                                Map<String, String> dependencies) {
       myContainsErrors = containsErrors;
       myText = text;
       myPositions = positions;
+      myVarPositions = varPositions;
       myDependencies = dependencies;
     }
 
@@ -64,6 +73,10 @@ public class TextGenerationUtil {
 
     public Map<SNode, PositionInfo> getPositions() {
       return myPositions;
+    }
+
+    public Map<SNode, VarPositionInfo> getVarPositions() {
+      return myVarPositions;
     }
 
     public Map<String, String> getDependencies() {
