@@ -56,9 +56,8 @@ public class SuspendManager {
     });
   }
 
-  //todo review this and a method below to avoid duplications
-  public SuspendContext pushSuspendContextWithVotesNumber(final int suspendPolicy, int nVotes) {
-    SuspendContext suspendContext = new SuspendContextImpl(myDebugProcess, suspendPolicy, nVotes, null);
+  public SuspendContext pushSuspendContextWithVotesNumber(int suspendPolicy, int nVotes) {
+    SuspendContext suspendContext = new SuspendContextByHimself(myDebugProcess, suspendPolicy, nVotes);
     pushContext(suspendContext);
     return suspendContext;
   }
@@ -66,13 +65,13 @@ public class SuspendManager {
   public SuspendContext pushSuspendContextFromEventSet(EventSet set) {
     SuspendContext suspendContext;
     if (set == null) { // special case
-      suspendContext = new SuspendContext(myDebugProcess, EventRequest.SUSPEND_NONE, 1, set) {
+      suspendContext = new SuspendContextByHimself(myDebugProcess, EventRequest.SUSPEND_NONE, 1) {
         @Override
         protected void resumeImpl() {
         }
       };
     } else {
-      suspendContext = new SuspendContextImpl(myDebugProcess, set.suspendPolicy(), set.size(), set) {
+      suspendContext = new SuspendContextFromSet(myDebugProcess, set) {
       };
     }
     pushContext(suspendContext);
@@ -159,9 +158,9 @@ public class SuspendManager {
     return myPausedContexts;
   }
 
-  private class SuspendContextImpl extends SuspendContext {
-    public SuspendContextImpl(@NotNull DebugVMEventsProcessor debugProcess, int suspendPolicy, int eventVotes, @Nullable EventSet set) {
-      super(debugProcess, suspendPolicy, eventVotes, set);
+  private class SuspendContextFromSet extends SuspendContextImpl {
+    public SuspendContextFromSet(@NotNull DebugVMEventsProcessor debugProcess, @NotNull EventSet set) {
+      super(debugProcess, set.suspendPolicy(), set.size(), set);
     }
 
     @Override
@@ -176,37 +175,55 @@ public class SuspendManager {
         }
       }
 
-      if (getEventSet() != null) {
-        tryResume5Times();
-      } else {
-        LOG.debug("Start resuming...");
-        switch (getSuspendPolicy()) {
-          case EventRequest.SUSPEND_ALL:
-            // TODO refactor
-            tryResume5Times();
-            LOG.debug("VM resumed ");
-            break;
-          case EventRequest.SUSPEND_EVENT_THREAD:
-            // TODO: well, this call not just MAY produce NPE, it WILL, if we ever get here (but we won't AFAIK)
-            // TODO why don't we repeat 5 times here?
-            LOG.assertLog(thread != null);
-            thread.resume();
-            LOG.debug("Thread resumed : " + getThread().toString());
-            break;
-          case EventRequest.SUSPEND_NONE:
-            LOG.debug("None resumed");
-            break;
-        }
+      tryResume5Times();
+    }
+
+    @Override
+    protected void tryResume() throws ObjectCollectedException, InternalException {
+      getEventSet().resume();
+    }
+  }
+
+  private class SuspendContextByHimself extends SuspendContextImpl {
+    public SuspendContextByHimself(@NotNull DebugVMEventsProcessor debugProcess, int suspendPolicy, int eventVotes) {
+      super(debugProcess, suspendPolicy, eventVotes, null);
+    }
+
+    @Override
+    protected void resumeImpl() {
+      LOG.debug("Start resuming...");
+      switch (getSuspendPolicy()) {
+        case EventRequest.SUSPEND_ALL:
+          // TODO refactor
+          tryResume5Times();
+          LOG.debug("VM resumed ");
+          break;
+        case EventRequest.SUSPEND_EVENT_THREAD:
+          // TODO: well, this call not just MAY produce NPE, it WILL, if we ever get here (but we won't AFAIK)
+          // TODO why don't we repeat 5 times here?
+          ThreadReference thread = getThread();
+          LOG.assertLog(thread != null);
+          thread.resume();
+          LOG.debug("Thread resumed : " + getThread().toString());
+          break;
+        case EventRequest.SUSPEND_NONE:
+          LOG.debug("None resumed");
+          break;
       }
     }
 
+    @Override
     protected void tryResume() throws ObjectCollectedException, InternalException {
-      if (getEventSet() != null) {
-        getEventSet().resume();
-      } else {
-        myDebugProcess.getVirtualMachine().resume();
-      }
+      myDebugProcess.getVirtualMachine().resume();
     }
+  }
+
+  private abstract class SuspendContextImpl extends SuspendContext {
+    public SuspendContextImpl(@NotNull DebugVMEventsProcessor debugProcess, int suspendPolicy, int eventVotes, @Nullable EventSet set) {
+      super(debugProcess, suspendPolicy, eventVotes, set);
+    }
+
+    protected abstract void tryResume() throws ObjectCollectedException, InternalException;
 
     protected void tryResume5Times() {
       int resumeAttempts = 5;
