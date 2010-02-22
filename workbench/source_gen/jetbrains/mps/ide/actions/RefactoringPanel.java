@@ -6,31 +6,40 @@ import javax.swing.JPanel;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import java.awt.BorderLayout;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.awt.GridLayout;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.awt.GridBagLayout;
 import com.intellij.ui.RoundedLineBorder;
 import java.awt.Color;
+import java.awt.GridBagConstraints;
 import javax.swing.JComponent;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.awt.GridLayout;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.EqualUtil;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class RefactoringPanel {
   private JPanel myComponent;
   private SModel myModel;
   private List<SNode> myRefactorings;
+  private IOperationContext myContext;
 
-  public RefactoringPanel(SModel model, List<SNode> refactorings) {
+  public RefactoringPanel(SModel model, List<SNode> refactorings, IOperationContext context) {
     this.myModel = model;
     this.myRefactorings = refactorings;
+    this.myContext = context;
     this.initComponent();
   }
 
@@ -41,38 +50,75 @@ public class RefactoringPanel {
     JLabel modelNameLabel = new JLabel(modelName, modelIcon, SwingConstants.LEADING);
     this.myComponent.add(modelNameLabel, BorderLayout.PAGE_START);
     List<RefactoringContext> refactoringsContextList = this.myModel.getRefactoringHistory().getRefactoringContexts();
-    JPanel mainPanel = new JPanel(new GridLayout(ListSequence.fromList(refactoringsContextList).count(), 1));
+    JPanel mainPanel = new JPanel(new GridBagLayout());
     mainPanel.setBorder(new RoundedLineBorder(Color.BLACK));
+    GridBagConstraints gridBagConstraints = new GridBagConstraints();
+    gridBagConstraints.gridy = GridBagConstraints.RELATIVE;
     for (RefactoringContext refactoringContext : refactoringsContextList) {
-      this.addRefactoringItem(refactoringContext, mainPanel);
+      this.addRefactoringName(refactoringContext, mainPanel, gridBagConstraints);
+      this.addRefactoringParameters(refactoringContext, mainPanel, gridBagConstraints);
+      this.addRefactoringMoves(refactoringContext, mainPanel, gridBagConstraints);
+      this.addRefactoringFeatures(refactoringContext, mainPanel, gridBagConstraints);
     }
     this.myComponent.add(mainPanel, BorderLayout.CENTER);
   }
 
-  private void addRefactoringItem(RefactoringContext refactoringContext, JComponent component) {
-    JComponent itemPanel = new JPanel(new GridLayout(1, 2));
+  public void addRefactoringParameters(RefactoringContext refactoringContext, JComponent component, GridBagConstraints gridBagConstraints) {
+    Map<String, Object> parameters = refactoringContext.getAdditionalParameters();
+    if (MapSequence.fromMap(parameters).isEmpty()) {
+      return;
+    }
+    JPanel parameterPanel = new JPanel(new GridLayout(MapSequence.fromMap(parameters).count() + 1, 1));
+    parameterPanel.add(new JLabel("<html><b>Parameters:</b></html>"));
+    for (String key : MapSequence.fromMap(parameters).keySet()) {
+      parameterPanel.add(new JLabel(key + " = " + MapSequence.fromMap(parameters).get(key)));
+    }
+    component.add(parameterPanel, gridBagConstraints);
+  }
+
+  public void addRefactoringMoves(RefactoringContext refactoringContext, JComponent component, GridBagConstraints gridBagConstraints) {
+  }
+
+  public void addRefactoringFeatures(RefactoringContext refactoringContext, JComponent component, GridBagConstraints gridBagConstraints) {
+  }
+
+  private void addRefactoringName(RefactoringContext refactoringContext, JComponent component, GridBagConstraints gridBagConstraints) {
     IRefactoring refactoring = refactoringContext.getRefactoring();
     String name = refactoring.getUserFriendlyName();
+    if (name == null) {
+      return;
+    }
+    JComponent itemPanel = new JPanel(new GridLayout(1, 2));
     JLabel refactoringName = new JLabel(name);
     SNode refactoringNode = null;
     for (SNode node : this.myRefactorings) {
+      String userFriendlyNodeName = null;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.refactoring.structure.Refactoring")) {
-        if (EqualUtil.equals(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.refactoring.structure.Refactoring"), "userFriendlyName"), name)) {
-          refactoringNode = SNodeOperations.cast(node, "jetbrains.mps.lang.refactoring.structure.Refactoring");
-          break;
-        }
+        userFriendlyNodeName = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.refactoring.structure.Refactoring"), "userFriendlyName");
+      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.refactoring.structure.OldRefactoring")) {
+        userFriendlyNodeName = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.refactoring.structure.OldRefactoring"), "userFriendlyName");
+      }
+      if (EqualUtil.equals(userFriendlyNodeName, name)) {
+        refactoringNode = node;
+        break;
       }
     }
     itemPanel.add(refactoringName);
-    if ((refactoringNode != null)) {
-      JButton button = new JButton("Go To " + SPropertyOperations.getString(refactoringNode, "name"));
+    if (refactoringNode != null) {
+      JButton button = new JButton("Go To '" + SPropertyOperations.getString(SNodeOperations.cast(refactoringNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") + "' action");
+      final SNode nodeToSelect = refactoringNode;
+      button.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent event) {
+          RefactoringPanel.this.myContext.getComponent(MPSEditorOpener.class).openNode(nodeToSelect, RefactoringPanel.this.myContext, true, true);
+        }
+      });
       button.setIcon(IconManager.getIconFor(refactoringNode));
       itemPanel.add(button);
     } else {
       JLabel infoLabel = new JLabel("<html><i>action not found</i></html>");
       itemPanel.add(infoLabel);
     }
-    component.add(itemPanel);
+    component.add(itemPanel, gridBagConstraints);
   }
 
   public JComponent getComponent() {
