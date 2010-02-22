@@ -119,7 +119,18 @@ public class DebugInfo {
         return it;
       }
     }, true);
-    String nodeId = Sequence.fromIterable(sorted).first().getNodeId();
+    PositionInfo firstPositionInfo = Sequence.fromIterable(sorted).first();
+    String nodeId = firstPositionInfo.getNodeId();
+    // here we do some magic to fix the following bug: 
+    // each node in base language owns a '\n' symbol in a previous line 
+    // in the following code we will never get 'for' node quering line 1: 
+    // 1.  for (...) { 
+    // 2.    some statement 
+    // 3.  } 
+    // since 'some statement' takes lines 1-2 instead of just line 2 
+    if (Sequence.fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == line && firstPositionInfo.getLineDistance() > 0) {
+      nodeId = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1).getNodeId();
+    }
     return model.getNodeById(nodeId);
   }
 
