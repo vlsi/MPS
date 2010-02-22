@@ -2129,31 +2129,33 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return true;
     }
     CellActionType actionType = getActionType(keyEvent, getEditorContext());
-    switch (actionType) {
-      case LEFT:
-      case RIGHT:
-      case UP:
-      case DOWN:
-      case SELECT_LEFT:
-      case SELECT_RIGHT:
-      case SELECT_UP:
-      case SELECT_DOWN:
-      case SELECT_HOME:
-      case SELECT_END:
-      case SELECT_LOCAL_HOME:
-      case SELECT_LOCAL_END:
-      case LOCAL_HOME:
-      case LOCAL_END:
-      case HOME:
-      case END:
-      case ROOT_HOME:
-      case ROOT_END:
-      case PAGE_UP:
-      case PAGE_DOWN:
-      case NEXT:
-      case PREV:
-      case COPY:
-        return true;
+    if (actionType != null) {
+      switch (actionType) {
+        case LEFT:
+        case RIGHT:
+        case UP:
+        case DOWN:
+        case SELECT_LEFT:
+        case SELECT_RIGHT:
+        case SELECT_UP:
+        case SELECT_DOWN:
+        case SELECT_HOME:
+        case SELECT_END:
+        case SELECT_LOCAL_HOME:
+        case SELECT_LOCAL_END:
+        case LOCAL_HOME:
+        case LOCAL_END:
+        case HOME:
+        case END:
+        case ROOT_HOME:
+        case ROOT_END:
+        case PAGE_UP:
+        case PAGE_DOWN:
+        case NEXT:
+        case PREV:
+        case COPY:
+          return true;
+      }
     }
     return false;
   }
