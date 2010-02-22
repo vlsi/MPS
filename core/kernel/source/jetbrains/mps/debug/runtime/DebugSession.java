@@ -164,6 +164,7 @@ public class DebugSession {
     public void resumed(DebugSession session);
   }
 
+  // TODO this class is horrible. Nobody will ever understand what is going on here.  Do something about it.
   public class UiState {
     private SuspendContext myContext;
     private ThreadReference myThread;
@@ -235,7 +236,9 @@ public class DebugSession {
 
     private void updateFrame() {
       try {
-        myStackFrame = myThread.frame(0);
+        if (myThread.frameCount() > 0) {
+          myStackFrame = myThread.frame(0);
+        }
       } catch (IncompatibleThreadStateException e) {
         LOG.error(e);
       }
