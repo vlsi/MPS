@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.Pair;
 
 import javax.swing.Icon;
@@ -140,8 +141,12 @@ public class LeftEditorHighlighter extends JComponent {
       g.fillRect(bounds.x, deepestCell.getY(), bounds.width,
         deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
     }
+//    UIUtil.drawVDottedLine(g2d, mySeparatorLineX, bounds.y, bounds.y + bounds.height, getBackground(), Color.gray);
     g.setColor(Color.gray);
-    UIUtil.drawVDottedLine(g2d, mySeparatorLineX, bounds.y, bounds.y + bounds.height, getBackground(), Color.gray);
+    Stroke s = g2d.getStroke();
+    g2d.setStroke(ColorAndGraphicsUtil.dottedStroke());
+    g.drawLine(mySeparatorLineX, bounds.y, mySeparatorLineX, bounds.y + bounds.height);
+    g2d.setStroke(s);
 
     for (HighlighterBracket bracket : myBrackets.values()) {
       bracket.paint(g);
