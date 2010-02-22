@@ -57,7 +57,7 @@ public class SuspendManager {
   }
 
   public SuspendContext pushSuspendContextWithVotesNumber(int suspendPolicy, int nVotes) {
-    SuspendContext suspendContext = new SuspendContextByHimself(myDebugProcess, suspendPolicy, nVotes);
+    SuspendContext suspendContext = new SuspendContextByItSelf(myDebugProcess, suspendPolicy, nVotes);
     pushContext(suspendContext);
     return suspendContext;
   }
@@ -65,7 +65,7 @@ public class SuspendManager {
   public SuspendContext pushSuspendContextFromEventSet(EventSet set) {
     SuspendContext suspendContext;
     if (set == null) { // special case
-      suspendContext = new SuspendContextByHimself(myDebugProcess, EventRequest.SUSPEND_NONE, 1) {
+      suspendContext = new SuspendContextByItSelf(myDebugProcess, EventRequest.SUSPEND_NONE, 1) {
         @Override
         protected void resumeImpl() {
         }
@@ -184,8 +184,8 @@ public class SuspendManager {
     }
   }
 
-  private class SuspendContextByHimself extends SuspendContextImpl {
-    public SuspendContextByHimself(@NotNull DebugVMEventsProcessor debugProcess, int suspendPolicy, int eventVotes) {
+  private class SuspendContextByItSelf extends SuspendContextImpl {
+    public SuspendContextByItSelf(@NotNull DebugVMEventsProcessor debugProcess, int suspendPolicy, int eventVotes) {
       super(debugProcess, suspendPolicy, eventVotes, null);
     }
 

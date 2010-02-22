@@ -94,7 +94,6 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
       public void run() {
         if (myProject.isDisposed()) return;
         ((ToolWindowManagerEx) ToolWindowManager.getInstance(myProject)).addToolWindowManagerListener(new ToolWindowManagerAdapter() {
-          @Patch
           public void stateChanged() {
             if (myProject.isDisposed()) return;
 
@@ -106,22 +105,12 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
             currentWindows.addAll(Arrays.asList(toolWindowIds));
             myToolwindowIdZbuffer.retainAll(currentWindows);
 
-            // MPS Patch Start
-            // We cycle for all tool windows and find relevant to us
-            for (String toolWindowId : toolWindowIds) {
-              if (toolWindowId != null) {
-                ToolWindow window = toolWindowManager.getToolWindow(toolWindowId);
-                if (window != null) {
-                  if (window.isActive()) {
-                    if (myToolwindowIdZbuffer.remove(toolWindowId)) {
-                      myToolwindowIdZbuffer.addFirst(toolWindowId);
-                      return;
-                    }
-                  }
-                }
+            final String activeToolWindowId = toolWindowManager.getActiveToolWindowId();
+            if (activeToolWindowId != null) {
+              if (myToolwindowIdZbuffer.remove(activeToolWindowId)) {
+                myToolwindowIdZbuffer.addFirst(activeToolWindowId);
               }
             }
-            // MPS Patch End
           }
         });
       }
