@@ -4,27 +4,23 @@ import com.intellij.execution.process.ProcessHandler;
 import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.debug.runtime.DebugManagerComponent.DebugSessionListener;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* TODO split into two classes
-* First to control debugging (play/pause/etc)
-* Second to hold current state of the session (current thread, frame, etc)
-* */
 public class DebugSession {
   private static final Logger LOG = Logger.getLogger(DebugSession.class);
   private final DebugVMEventsProcessor myEventsProcessor;
   private final List<SessionChangeListener> myListeners = new ArrayList<SessionChangeListener>();
+  private final UiState myUiState = new UiState(null);
 
-  private DebuggerState myState = DebuggerState.WaitingAttach;
+  private ExecutionState myExecutionState = ExecutionState.WaitingAttach;
   private ProcessHandler myProcessHandler;
-  private SuspendContext myCurrentSuspendContext;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor) {
     myEventsProcessor = eventsProcessor;
@@ -32,19 +28,19 @@ public class DebugSession {
   }
 
   public boolean isPaused() {
-    return myState.equals(DebuggerState.Paused);
+    return myExecutionState.equals(ExecutionState.Paused);
   }
 
   public boolean isRunning() {
-    return myState.equals(DebuggerState.Running);
+    return myExecutionState.equals(ExecutionState.Running);
   }
 
   public boolean isStopped() {
-    return myState.equals(DebuggerState.Stopped);
+    return myExecutionState.equals(ExecutionState.Stopped);
   }
 
   public void resume() {
-    myEventsProcessor.resume(myCurrentSuspendContext);
+    myEventsProcessor.resume(myUiState.getContext());
   }
 
   public void pause() {
@@ -68,7 +64,7 @@ public class DebugSession {
   }
 
   private void step(StepType type) {
-    myEventsProcessor.step(type, myCurrentSuspendContext);
+    myEventsProcessor.step(type, myUiState.getContext());
   }
 
   DebugVMEventsProcessor getEventsProcessor() {
@@ -84,37 +80,18 @@ public class DebugSession {
   }
 
   private void pause(SuspendContext suspendContext) {
-    // TODO several threads might be paused on several _different_ contexts. Should be some kind of map between them.
-    myCurrentSuspendContext = suspendContext;
+    myUiState.setContext(suspendContext);
   }
 
   private void resume(SuspendContext suspendContext) {
-    // TODO update state
-    myCurrentSuspendContext = null;
+    if (myUiState.getContext() == suspendContext) {
+      myUiState.setContext(null);
+    }
   }
 
   @NotNull
   public List<StackFrame> getFrames() {
-    if (myCurrentSuspendContext != null) {
-      ThreadReference thread = myCurrentSuspendContext.getThread();
-      if (thread == null) {
-        List<ThreadReference> threads = myEventsProcessor.getVirtualMachine().allThreads();
-        thread = threads.get(0);
-        for (ThreadReference t : threads) {
-          // TODO this is a hack
-          if (!t.threadGroup().name().equals("system")) {
-            thread = t;
-            break;
-          }
-        }
-      }
-      try {
-        return thread.frames();
-      } catch (IncompatibleThreadStateException e) {
-        LOG.error(e);
-      }
-    }
-    return Collections.emptyList();
+    return myUiState.getStackFrames();
   }
 
   // TODO call when user selects something in ui and changes state
@@ -144,7 +121,7 @@ public class DebugSession {
     }
   }
 
-  public enum DebuggerState {
+  public enum ExecutionState {
     Stopped,
     Running,
     Paused,
@@ -155,32 +132,100 @@ public class DebugSession {
 
     @Override
     public void paused(@NotNull SuspendContext suspendContext) {
-      myState = DebuggerState.Paused;
+      myExecutionState = ExecutionState.Paused;
       pause(suspendContext);
       fireSessionPaused(DebugSession.this);
     }
 
     @Override
     public void resumed(@NotNull SuspendContext suspendContext) {
-      myState = DebuggerState.Running;
+      myExecutionState = ExecutionState.Running;
       resume(suspendContext);
       fireSessionResumed(DebugSession.this);
     }
 
     @Override
     public void processAttached(@NotNull DebugVMEventsProcessor process) {
-      myState = DebuggerState.Running;
+      myExecutionState = ExecutionState.Running;
     }
 
     @Override
     public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
-      myState = DebuggerState.Stopped;
+      myExecutionState = ExecutionState.Stopped;
     }
   }
 
   public static interface SessionChangeListener {
     public void stateChanged(DebugSession session);
+
     public void paused(DebugSession session);
+
     public void resumed(DebugSession session);
+  }
+
+  private class UiState {
+    private SuspendContext myContext;
+    private ThreadReference myThread;
+    private StackFrame myStackFrame;
+
+    public UiState(@Nullable SuspendContext context) {
+      setContext(context);
+    }
+
+    public void setContext(@Nullable SuspendContext context) {
+      if (context == null) {
+        // TODO what if we resumed one context, but some others are still suspended? Find them?
+        myContext = null;
+        myThread = null;
+        myStackFrame = null;
+      } else {
+        myContext = context;
+
+        myThread = myContext.getThread();
+        if (myThread == null) {
+          List<ThreadReference> threads = myEventsProcessor.getVirtualMachine().allThreads();
+          myThread = threads.get(0);
+          for (ThreadReference t : threads) {
+            // TODO this is a hack
+            if (!t.threadGroup().name().equals("system")) {
+              myThread = t;
+              break;
+            }
+          }
+        }
+
+        LOG.assertLog(myThread != null);
+
+        try {
+          myStackFrame = myThread.frame(0);
+        } catch (IncompatibleThreadStateException e) {
+          LOG.error(e);
+        }
+      }
+    }
+
+    public SuspendContext getContext() {
+      return myContext;
+    }
+
+    public ThreadReference getThread() {
+      return myThread;
+    }
+
+    public StackFrame getStackFrame() {
+      return myStackFrame;
+    }
+
+    @NotNull
+    public List<StackFrame> getStackFrames() {
+      if (myThread != null) {
+        try {
+          return myThread.frames();
+        } catch (IncompatibleThreadStateException e) {
+          LOG.error(e);
+        }
+      }
+      return Collections.emptyList();
+    }
   }
 }
