@@ -164,6 +164,11 @@ public class SuspendManager {
     return myPausedContexts;
   }
 
+  @Nullable
+  SuspendContext getPausedByUserContext() {
+    return myPausedByUserContext;
+  }
+
   public void pausedByUser(SuspendContext suspendContext) {
     myPausedByUserContext = suspendContext;
   }

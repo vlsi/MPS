@@ -64,6 +64,7 @@ public class DebugSession {
   }
 
   private void step(StepType type) {
+    // TODO we actually can't step through paused by user context
     myEventsProcessor.step(type, myUiState.getContext());
   }
 
@@ -80,12 +81,12 @@ public class DebugSession {
   }
 
   private void pause(SuspendContext suspendContext) {
-    myUiState.setContext(suspendContext);
+    myUiState.selectContext(suspendContext);
   }
 
   private void resume(SuspendContext suspendContext) {
     if (myUiState.getContext() == suspendContext) {
-      myUiState.setContext(null);
+      myUiState.selectContext(null);
     }
   }
 
@@ -151,7 +152,7 @@ public class DebugSession {
     @Override
     public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
       myExecutionState = ExecutionState.Stopped;
-      myUiState.setContext(null);
+      myUiState.selectContext(null);
     }
   }
 
@@ -169,10 +170,10 @@ public class DebugSession {
     private StackFrame myStackFrame;
 
     public UiState(@Nullable SuspendContext context) {
-      setContext(context);
+      selectContext(context);
     }
 
-    public void setContext(@Nullable SuspendContext context) {
+    public void selectContext(@Nullable SuspendContext context) {
       if (context == null) {
         // TODO what if we resumed one context, but some others are still suspended? Find them?
         myContext = null;
@@ -196,13 +197,48 @@ public class DebugSession {
 
         LOG.assertLog(myThread != null);
 
-        try {
-          myStackFrame = myThread.frame(0);
-        } catch (IncompatibleThreadStateException e) {
-          LOG.error(e);
-        }
+        updateFrame();
       }
       fireStateChanged();
+    }
+
+    public void selectThread(ThreadReference thread) {
+      if (thread == null) {
+        myContext = null;
+        myThread = null;
+        myStackFrame = null;
+      } else {
+        myThread = thread;
+        if (!myContext.suspends(thread)) {
+          SuspendContext result = null;
+          for (SuspendContext suspendContext : myEventsProcessor.getSuspendManager().getPausedContexts()) {
+            if (suspendContext.suspends(thread)) {
+              result = suspendContext;
+              break;
+            }
+          }
+
+          if (result == null) {
+            SuspendContext suspendContext = myEventsProcessor.getSuspendManager().getPausedByUserContext();
+            if (suspendContext != null) {
+              if (suspendContext.suspends(thread)) {
+                result = suspendContext;
+              }
+            }
+          }
+          myContext = result;
+        }
+        updateFrame();
+      }
+      DebugSession.this.fireStateChanged();
+    }
+
+    private void updateFrame() {
+      try {
+        myStackFrame = myThread.frame(0);
+      } catch (IncompatibleThreadStateException e) {
+        LOG.error(e);
+      }
     }
 
     public SuspendContext getContext() {
@@ -227,12 +263,6 @@ public class DebugSession {
         }
       }
       return Collections.emptyList();
-    }
-
-    public void selectThread(ThreadReference thread) {
-      // TODO CONTEXT!!!
-      myThread = thread;
-      DebugSession.this.fireStateChanged();
     }
 
     @NotNull
