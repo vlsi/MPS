@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.HashSet;
@@ -30,39 +30,41 @@ public class GeneratorLogger {
 
   private static final Logger LOG = Logger.getLogger(GeneratorLogger.class);
 
-  private IOperationContext myOperationContext;
+  private GenerationSessionContext myOperationContext;
   private int myWarningsCount;
   private int myErrorsCount;
   private HashSet<SNode> myFailedRules = new HashSet<SNode>();
 
-  public GeneratorLogger(IOperationContext operationContext) {
+  public GeneratorLogger() {
+  }
+
+  public void setOperationContext(GenerationSessionContext operationContext) {
     myOperationContext = operationContext;
   }
 
   public void showInformationMessage(SNode node, String message) {
-    LOG.info(message, node != null ? new NodeWithContext(node, myOperationContext) : null);
+    LOG.info(message, node != null && myOperationContext != null ? new NodeWithContext(node, myOperationContext) : node);
   }
 
   public void showWarningMessage(SNode node, String message) {
     myWarningsCount++;
-    LOG.warning(message, node != null ? new NodeWithContext(node, myOperationContext) : null);
+    LOG.warning(message, node != null && myOperationContext != null ? new NodeWithContext(node, myOperationContext) : node);
   }
 
   public void showErrorMessage(SNode node, String message) {
     myErrorsCount++;
-    LOG.error(message, node != null ? new NodeWithContext(node, myOperationContext) : null);
+    LOG.error(message, node != null && myOperationContext != null ? new NodeWithContext(node, myOperationContext) : node);
   }
 
   public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {
-    myErrorsCount++;
     showErrorMessage(inputNode, templateNode, null, message);
   }
 
   public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
-    myErrorsCount++;
     if (ruleNode != null) {
       if (myFailedRules.contains(ruleNode)) {
         // do not show duplicating messages
+        myErrorsCount++;
         return;
       }
       myFailedRules.add(ruleNode);
@@ -71,15 +73,15 @@ public class GeneratorLogger {
     showErrorMessage((templateNode != null ? templateNode : ruleNode), message);
     if (inputNode != null) {
       LOG.error("-- was input node: " + inputNode.getDebugText(),
-        new NodeWithContext(inputNode, myOperationContext));
+        myOperationContext != null ? new NodeWithContext(inputNode, myOperationContext) : inputNode);
     }
     if (ruleNode != null) {
       LOG.error("-- was rule: " + ruleNode.getDebugText(),
-        new NodeWithContext(ruleNode, myOperationContext));
+        myOperationContext != null ? new NodeWithContext(ruleNode, myOperationContext) : ruleNode);
     }
     if (templateNode != null) {
       LOG.error("-- was template: " + templateNode.getDebugText(),
-        new NodeWithContext(templateNode, myOperationContext));
+        myOperationContext != null ? new NodeWithContext(templateNode, myOperationContext) : templateNode);
     }
   }
 
@@ -95,8 +97,7 @@ public class GeneratorLogger {
     return myWarningsCount;
   }
 
-  public void clearErrorsAndWarnings() {
-    myErrorsCount = 0;
-    myWarningsCount = 0;
+  public void clearFailedRules() {
+    myFailedRules.clear();
   }
 }

@@ -93,14 +93,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myLogger.showErrorMessage(inputNode, templateNode, ruleNode, message);
   }
 
-  public int getErrorCount() {
-    return myLogger.getErrorCount();
-  }
-
-  public int getWarningCount() {
-    return myLogger.getWarningCount();
-  }
-
   public GeneratorLogger getLogger() {
     return myLogger;
   }

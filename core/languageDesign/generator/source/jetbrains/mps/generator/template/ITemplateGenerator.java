@@ -67,9 +67,5 @@ public interface ITemplateGenerator {
 
   IScope getScope();
 
-  int getErrorCount();
-
-  int getWarningCount();
-
   boolean isStrict();
 }

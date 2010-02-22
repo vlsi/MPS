@@ -37,7 +37,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private SModel myOriginalInputModel;
 
-  private final List<SModelDescriptor> myTemplateModels;
   private final IOperationContext myInvocationContext;
   private final IGenerationTracer myGenerationTracer;
   private final GenerationPlan myGenerationPlan;
@@ -61,7 +60,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myInvocationContext = invocationContext;
     myGenerationTracer = generationTracer;
     myGenerationPlan = generationPlan;
-    myTemplateModels = generationPlan.getTemplateModels();
 
     getModule().setInvocationContext(invocationContext.getModule());
 
@@ -116,10 +114,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   @NotNull
   public IScope getScope() {
     return getModule().getScope();
-  }
-
-  public List<SModelDescriptor> getTemplateModels() {
-    return myTemplateModels;
   }
 
   public IOperationContext getInvocationContext() {
