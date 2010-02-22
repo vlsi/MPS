@@ -161,9 +161,13 @@ public class IconManager {
   }
 
   public static Icon getIconForConceptFQName(String conceptFQName) {
-    ConceptDeclaration cd = (ConceptDeclaration) SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
-    Icon icon = getIconFor(cd);
-
+    AbstractConceptDeclaration acd = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
+    ConceptDeclaration cd = null;
+    Icon icon = null;
+    if (acd instanceof ConceptDeclaration) {
+      cd = (ConceptDeclaration) acd;
+      icon = getIconFor(cd);
+    }
     if (icon == null) {
       if (cd != null && cd.isRoot()) {
         return Icons.DEFAULT_ROOT_ICON;
