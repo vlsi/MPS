@@ -68,7 +68,7 @@ public class DebugSession {
   }
 
   private void step(StepType type) {
-    myEventsProcessor.step(type);
+    myEventsProcessor.step(type, myCurrentSuspendContext);
   }
 
   DebugVMEventsProcessor getEventsProcessor() {

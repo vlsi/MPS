@@ -16,7 +16,10 @@
 package jetbrains.mps.debug.runtime;
 
 import com.intellij.openapi.project.Project;
-import com.sun.jdi.*;
+import com.sun.jdi.InternalException;
+import com.sun.jdi.ThreadReference;
+import com.sun.jdi.VMDisconnectedException;
+import com.sun.jdi.VirtualMachine;
 import com.sun.jdi.event.*;
 import com.sun.jdi.request.EventRequest;
 import com.sun.jdi.request.StepRequest;
@@ -26,8 +29,6 @@ import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -388,16 +389,12 @@ public class DebugVMEventsProcessor {
     getManagerThread().invokeTerminalCommand(new StopCommand(true));
   }
 
-  public void step(StepType type) {
+  public void step(StepType type, @NotNull SuspendContext suspendContext) {
     // in idea we also remember that we are step and add thread reference to a special list
     // it is only used for updating local variables (namely for highlighting new vars)
     // (but I may be wrong)
     // see DebuggerSession.mySteppingThroughThreads in idea
-    SuspendContext suspendContext = mySuspendManager.getPausedContext();
-    LOG.assertLog(suspendContext != null);
-    if (suspendContext != null) {
-      getManagerThread().schedule(new StepCommand(suspendContext, type));
-    }
+    getManagerThread().schedule(new StepCommand(suspendContext, type));
   }
 
   private class ResumeCommand extends SuspendContextCommand {
@@ -426,8 +423,9 @@ public class DebugVMEventsProcessor {
       System.err.println("Pausing execution!");
       // see DebugProcessImpl.PauseCommand in idea
       getVirtualMachine().suspend();
-      // TODO the context we create here is not in SuspendManager paused list. WHY?
-      SuspendContext suspendContext = getSuspendManager().pushSuspendContextWithVotesNumber(EventRequest.SUSPEND_ALL, 0);
+      SuspendManager suspendManager = getSuspendManager();
+      SuspendContext suspendContext = suspendManager.pushSuspendContextWithVotesNumber(EventRequest.SUSPEND_ALL, 0);
+      suspendManager.pausedByUser(suspendContext);
       getMulticaster().paused(suspendContext, DebugVMEventsProcessor.this);
     }
   }

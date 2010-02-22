@@ -20,6 +20,7 @@ import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.event.EventSet;
 import com.sun.jdi.request.EventRequest;
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -37,14 +38,15 @@ import java.util.List;
 public class SuspendManager {
   private static final Logger LOG = Logger.getLogger(SuspendManager.class);
 
+  private final DebugVMEventsProcessor myDebugProcess;
 
   private final LinkedList<SuspendContext> myEventContexts = new LinkedList<SuspendContext>();
-
   // contexts, paused at breakpoint or another debugger event requests. Note that thread, explicitly paused by user is not considered as
   // "paused at breakpoint" and JDI prohibits data queries on its stackframes
   private final LinkedList<SuspendContext> myPausedContexts = new LinkedList<SuspendContext>();
-
-  private final DebugVMEventsProcessor myDebugProcess;
+  // context paused by user
+  @Nullable
+  private SuspendContext myPausedByUserContext;
 
   public SuspendManager(DebugVMEventsProcessor debugProcess) {
     myDebugProcess = debugProcess;
@@ -52,6 +54,7 @@ public class SuspendManager {
       public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
         myEventContexts.clear();
         myPausedContexts.clear();
+        myPausedByUserContext = null;
       }
     });
   }
@@ -79,7 +82,7 @@ public class SuspendManager {
   }
 
   private void pushContext(SuspendContext suspendContext) {
-    // DebuggerManagerThreadImpl.assertIsManagerThread();
+    DebuggerManagerThread.assertIsManagerThread();
     myEventContexts.addFirst(suspendContext);
   }
 
@@ -94,9 +97,12 @@ public class SuspendManager {
   }
 
   public void popContext(SuspendContext suspendContext) {
-    //  DebuggerManagerThreadImpl.assertIsManagerThread();
+    DebuggerManagerThread.assertIsManagerThread();
     myEventContexts.remove(suspendContext);
     myPausedContexts.remove(suspendContext);
+    if (myPausedByUserContext == suspendContext) {
+      myPausedByUserContext = null;
+    }
   }
 
   private void pushPausedContext(SuspendContext suspendContext) {
@@ -105,17 +111,17 @@ public class SuspendManager {
   }
 
   public boolean hasEventContext(SuspendContext suspendContext) {
-    // DebuggerManagerThreadImpl.assertIsManagerThread();
+    DebuggerManagerThread.assertIsManagerThread();
     return myEventContexts.contains(suspendContext);
   }
 
   public List<SuspendContext> getEventContexts() {
-    // DebuggerManagerThreadImpl.assertIsManagerThread();
+    DebuggerManagerThread.assertIsManagerThread();
     return myEventContexts;
   }
 
   public boolean isSuspended(ThreadReference thread) throws ObjectCollectedException {
-    // DebuggerManagerThreadImpl.assertIsManagerThread();
+    DebuggerManagerThread.assertIsManagerThread();
 
     boolean suspended = false;
     for (SuspendContext suspendContext : myEventContexts) {
@@ -158,6 +164,10 @@ public class SuspendManager {
     return myPausedContexts;
   }
 
+  public void pausedByUser(SuspendContext suspendContext) {
+    myPausedByUserContext = suspendContext;
+  }
+
   private class SuspendContextFromSet extends SuspendContextImpl {
     public SuspendContextFromSet(@NotNull DebugVMEventsProcessor debugProcess, @NotNull EventSet set) {
       super(debugProcess, set.suspendPolicy(), set.size(), set);
@@ -194,7 +204,6 @@ public class SuspendManager {
       LOG.debug("Start resuming...");
       switch (getSuspendPolicy()) {
         case EventRequest.SUSPEND_ALL:
-          // TODO refactor
           tryResume5Times();
           LOG.debug("VM resumed ");
           break;
