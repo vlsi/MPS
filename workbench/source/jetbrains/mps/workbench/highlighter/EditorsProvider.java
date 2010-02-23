@@ -74,6 +74,8 @@ public class EditorsProvider {
       }
     };
 
+    updateInformation();
+
     myMessageBusConnection = myProject.getMessageBus().connect();
     myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, editorManagerListener);
     myMessageBusConnection.subscribe(FileEditorManagerListener.Before.FILE_EDITOR_MANAGER, new Before() {
