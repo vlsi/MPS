@@ -3,7 +3,7 @@ package jetbrains.mps.generator.generationTypes;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
-import jetbrains.mps.ide.messages.IMessageHandler;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.plugin.IProjectHandler;
@@ -30,8 +30,8 @@ public class TextGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public void startGeneration(IMessageHandler handler) {
-    super.startGeneration(handler);
+  public void startGeneration(IGeneratorLogger logger) {
+    super.startGeneration(logger);
     info("generating text");
   }
 

@@ -16,17 +16,11 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutor;
-import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.MappingScript;
@@ -61,9 +55,8 @@ public class GenerationSession {
   private final IGenerationTracer myGenerationTracer;
   private final boolean myDiscardTransients;
   private final ProgressIndicator myProgressMonitor;
-  private final IMessageHandler myMessagesHandler;
   private ILoggingHandler myLoggingHandler;
-  private final GeneratorLogger myLogger;
+  private final GenerationSessionLogger myLogger;
 
   private GenerationSessionContext mySessionContext;
 
@@ -74,17 +67,16 @@ public class GenerationSession {
 
   public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
                            IGenerationTracer generationTracer, boolean saveTransientModels,
-                           ProgressIndicator progressMonitor, IMessageHandler messagesHandler,
-                           boolean reverseRoots, boolean isStrict, boolean showErrorsOnly) {
+                           ProgressIndicator progressMonitor, GeneratorLoggerAdapter logger,
+                           boolean reverseRoots, boolean isStrict) {
     myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
     myGenerationTracer = generationTracer;
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
-    myMessagesHandler = messagesHandler;
     myReverseRoots = reverseRoots;
     myIsStrict = isStrict;
-    myLogger = new GeneratorLogger(myMessagesHandler, !showErrorsOnly);
+    myLogger = new GenerationSessionLogger(logger);
   }
 
   public GenerationStatus generateModel() throws GenerationCanceledException {
@@ -163,7 +155,6 @@ public class GenerationSession {
     if (myLogger.getErrorCount() > 0) {
       myLogger.warning("model \"" + inputModel.getSModelFqName() + "\" has been generated with errors");
     }
-    myLogger.clearFailedRules();
     return outputModel;
   }
 
@@ -249,7 +240,7 @@ public class GenerationSession {
           List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(transientModel.getSModelReference());
           for (Pair<SNode, SNode> pair : pairs) {
             myLogger.error(pair.o1, "rule: " + pair.o1.getDebugText());
-            myLogger.error(pair.o2, "-- input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"));
+            myLogger.describeError(pair.o2, "input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"));
           }
         } else {
           myLogger.error("to get more diagnostic generate model with the 'save transient models' option");

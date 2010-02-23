@@ -16,32 +16,33 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.smodel.SNode;
 
-import java.util.HashSet;
-
 /**
  * Igor Alshannikov
  * Nov 30, 2007
  */
-public class GeneratorLogger {
+public class GenerationSessionLogger implements IGeneratorLogger {
 
   private GenerationSessionContext myOperationContext;
   private int myWarningsCount;
   private int myErrorsCount;
-  private HashSet<SNode> myFailedRules = new HashSet<SNode>();
-  private IMessageHandler myMessageHandler;
-  private boolean myHandleInfo;
 
-  public GeneratorLogger(IMessageHandler messageHandler, boolean handleInfo) {
-    myMessageHandler = messageHandler;
-    myHandleInfo = handleInfo;
+  private final IMessageHandler myMessageHandler;
+  private final boolean myHandleInfo;
+
+  public GenerationSessionLogger(GeneratorLoggerAdapter logger) {
+    myMessageHandler = logger.myMessageHandler;
+    myHandleInfo = logger.myHandleInfo;
   }
 
+  @Override
   public boolean needsInfo() {
     return myHandleInfo;
   }
@@ -50,13 +51,15 @@ public class GeneratorLogger {
     myOperationContext = operationContext;
   }
 
+  @Override
   public void info(SNode node, String message) {
     if(!myHandleInfo) {
       return;
     }
-    report(MessageKind.INFORMATION, message, node != null && myOperationContext != null ? new NodeWithContext(node, myOperationContext) : node);
+    report(MessageKind.INFORMATION, message, node);
   }
 
+  @Override
   public void info(String message) {
     if(!myHandleInfo) {
       return;
@@ -64,55 +67,41 @@ public class GeneratorLogger {
     report(MessageKind.INFORMATION, message, null);
   }
 
-  public void warning(SNode node, String message) {
-    myWarningsCount++;
-    report(MessageKind.WARNING, message, node != null && myOperationContext != null ? new NodeWithContext(node, myOperationContext) : node);
-  }
-
+  @Override
   public void warning(String message) {
     myWarningsCount++;
     report(MessageKind.WARNING, message, null);
   }
 
-  public void error(SNode node, String message) {
-    myErrorsCount++;
-    report(MessageKind.ERROR, message, node != null && myOperationContext != null ? new NodeWithContext(node, myOperationContext) : node);
+  @Override
+  public void warning(SNode node, String message) {
+    myWarningsCount++;
+    report(MessageKind.WARNING, message, node);
   }
 
+  @Override
+  public void describeWarning(SNode node, String message) {
+    report(MessageKind.WARNING, "-- " + message, node);
+  }
+
+  @Override
+  public void error(SNode node, String message) {
+    myErrorsCount++;
+    report(MessageKind.ERROR, message, node);
+  }
+
+  @Override
+  public void describeError(SNode node, String message) {
+    report(MessageKind.ERROR, "-- " + message, node);
+  }
+
+  @Override
   public void error(String message) {
     myErrorsCount++;
     report(MessageKind.ERROR, message, null);
   }
 
-  public void error(SNode inputNode, SNode templateNode, String message) {
-    error(inputNode, templateNode, null, message);
-  }
-
-  public void error(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
-    if (ruleNode != null) {
-      if (myFailedRules.contains(ruleNode)) {
-        // do not show duplicating messages
-        myErrorsCount++;
-        return;
-      }
-      myFailedRules.add(ruleNode);
-    }
-
-    error((templateNode != null ? templateNode : ruleNode), message);
-    if (inputNode != null) {
-      report(MessageKind.ERROR, "-- was input node: " + inputNode.getDebugText(),
-        myOperationContext != null ? new NodeWithContext(inputNode, myOperationContext) : inputNode);
-    }
-    if (ruleNode != null) {
-      report(MessageKind.ERROR, "-- was rule: " + ruleNode.getDebugText(),
-        myOperationContext != null ? new NodeWithContext(ruleNode, myOperationContext) : ruleNode);
-    }
-    if (templateNode != null) {
-      report(MessageKind.ERROR, "-- was template: " + templateNode.getDebugText(),
-        myOperationContext != null ? new NodeWithContext(templateNode, myOperationContext) : templateNode);
-    }
-  }
-
+  @Override
   public void handleException(Throwable t) {
     Message message = new Message(MessageKind.ERROR, t.getMessage());
     message.setException(t);
@@ -120,6 +109,10 @@ public class GeneratorLogger {
   }
 
   private void report(MessageKind kind, String text, Object hintObject) {
+    if(hintObject instanceof SNode && myOperationContext != null) {
+      hintObject = new NodeWithContext((SNode) hintObject, myOperationContext);
+    }
+
     Message message = new Message(kind, text);
     if(hintObject != null) {
       message.setHintObject(hintObject);
@@ -144,9 +137,5 @@ public class GeneratorLogger {
 
   public int getWarningCount() {
     return myWarningsCount;
-  }
-
-  public void clearFailedRules() {
-    myFailedRules.clear();
   }
 }

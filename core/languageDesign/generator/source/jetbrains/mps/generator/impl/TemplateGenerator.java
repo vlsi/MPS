@@ -19,6 +19,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.template.QueryExecutor;
@@ -59,7 +60,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final IGenerationTracer myGenerationTracer;
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
-                           GeneratorLogger logger, RuleManager ruleManager,
+                           IGeneratorLogger logger, RuleManager ruleManager,
                            SModel inputModel, SModel outputModel, boolean isStrict) {
 
     super(operationContext, progressMonitor, logger, inputModel, outputModel);

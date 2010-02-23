@@ -16,9 +16,11 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.core.structure.BaseConcept;
+import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
@@ -269,16 +271,16 @@ public class GeneratorUtil {
     }
   }
 
-  static void logCurrentGenerationBranch(TemplateGenerator generator, boolean error) {
-    List<Pair<SNode, String>> pairs = generator.getGenerationTracer().getNodesWithTextFromCurrentBranch();
+  public static void logCurrentGenerationBranch(IGeneratorLogger logger, IGenerationTracer generationTracer, boolean error) {
+    List<Pair<SNode, String>> pairs = generationTracer.getNodesWithTextFromCurrentBranch();
     StringBuilder indent = new StringBuilder();
     boolean indentInc = true;
     for (Pair<SNode, String> pair : pairs) {
       String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + pair.o1.getDebugText() : "");
       if (error) {
-        generator.showErrorMessage(pair.o1, logMessage);
+        logger.error(pair.o1, logMessage);
       } else {
-        generator.showInformationMessage(pair.o1, logMessage);
+        logger.info(pair.o1, logMessage);
       }
       if (indentInc && indent.length() >= 80) {
         indentInc = false;

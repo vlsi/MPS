@@ -20,9 +20,9 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
-import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.make.ModuleMaker;
@@ -55,8 +55,8 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public void startGeneration(IMessageHandler handler) {
-    super.startGeneration(handler);
+  public void startGeneration(IGeneratorLogger logger) {
+    super.startGeneration(logger);
     info("generating files");
   }
 

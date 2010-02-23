@@ -16,9 +16,7 @@
 package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.logging.Logger;
 
@@ -28,28 +26,28 @@ import jetbrains.mps.logging.Logger;
 public abstract class GenerationHandlerBase implements IGenerationHandler {
   protected static final Logger LOG = Logger.getLogger(IGenerationHandler.class);
 
-  protected IMessageHandler myMessages;
+  protected IGeneratorLogger myLogger;
 
   @Override
-  public void startGeneration(IMessageHandler handler) {
-    myMessages = handler;
+  public void startGeneration(IGeneratorLogger logger) {
+    myLogger = logger;
   }
 
   @Override
   public void finishGeneration() {
-    myMessages = null;
+    myLogger = null;
   }
 
   protected void info(String text) {
-    myMessages.handle(new Message(MessageKind.INFORMATION, this.getClass(), text));
+    myLogger.info(text);
   }
 
   protected void warning(String text) {
-    myMessages.handle(new Message(MessageKind.WARNING, this.getClass(), text));
+    myLogger.warning(text);
   }
 
   protected void error(String text) {
-    myMessages.handle(new Message(MessageKind.ERROR, this.getClass(), text));
+    myLogger.error(text);
   }
 
   protected void checkMonitorCanceled(ITaskProgressHelper progressHelper) throws GenerationCanceledException {

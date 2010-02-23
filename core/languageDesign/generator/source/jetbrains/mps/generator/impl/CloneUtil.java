@@ -72,7 +72,7 @@ public class CloneUtil {
           outputNode.addReference(outputReference);
         } else {
           LOG.error("internal error: can't clone reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
-          LOG.error(" -- was refernce class : " + reference.getClass().getName());
+          LOG.error(" -- was reference class : " + reference.getClass().getName());
         }
       }
     }

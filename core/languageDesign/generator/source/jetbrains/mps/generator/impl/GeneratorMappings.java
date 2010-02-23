@@ -1,6 +1,6 @@
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
@@ -83,13 +83,13 @@ public class GeneratorMappings {
     return myTemplateNodeToOutputNodeMap.get(templateNode);
   }
 
-  public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingLabel, GeneratorLogger logger) {
+  public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingLabel, IGeneratorLogger logger) {
     Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
     if (o instanceof List) {
       List<SNode> list = (List<SNode>) o;
       logger.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingLabel + "' and input " + inputNode.getDebugText());
       for (int i = 0; i < list.size(); i++) {
-        Logger.getLogger(this.getClass()).warning("-- output [" + i + "] : " + list.get(i).getDebugText(), list.get(i));
+        logger.describeWarning(list.get(i), "output [" + i + "] : " + list.get(i).getDebugText());
       }
       return list.get(0);
     }
@@ -97,13 +97,13 @@ public class GeneratorMappings {
     return (SNode) o;
   }
 
-  public SNode findOutputNodeByInputNodeAndOutputNodeAndMappingName(SNode inputNode, SNode outputNode, String mappingLabel, GeneratorLogger logger) {
+  public SNode findOutputNodeByInputNodeAndOutputNodeAndMappingName(SNode inputNode, SNode outputNode, String mappingLabel, IGeneratorLogger logger) {
     Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
     if (o instanceof List) {
       List<SNode> list = (List<SNode>) o;
       logger.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingLabel + "' and input " + inputNode.getDebugText());
       for (int i = 0; i < list.size(); i++) {
-        Logger.getLogger(this.getClass()).warning("-- output [" + i + "] : " + list.get(i).getDebugText(), list.get(i));
+        logger.describeWarning(list.get(i), "output [" + i + "] : " + list.get(i).getDebugText());
       }
       //heuristics
       List<SNode> ancestors = outputNode.getAncestors(true);

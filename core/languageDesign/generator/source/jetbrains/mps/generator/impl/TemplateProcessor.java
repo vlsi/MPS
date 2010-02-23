@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.template.InputQueryUtil;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -47,11 +48,12 @@ public class TemplateProcessor {
   @NotNull
   public List<SNode> processTemplateNode(String mappingName, SNode templateNode, SNode inputNode)
     throws DismissTopMappingRuleException, TemplateProcessingFailureException, GenerationFailureException, GenerationCanceledException {
+    IGeneratorLogger logger = myGenerator.getLogger();
 
     if (myGenerator.getProgressMonitor().isCanceled()) {
-      if (myGenerator.getGenerationTracer().isTracing()) {
-        myGenerator.showInformationMessage(null, "generation canceled when processing branch:");
-        GeneratorUtil.logCurrentGenerationBranch(myGenerator, false);
+      if (myGenerator.getGenerationTracer().isTracing() && logger.needsInfo()) {
+        logger.info("generation canceled when processing branch:");
+        GeneratorUtil.logCurrentGenerationBranch(logger, myGenerator.getGenerationTracer(), false);
       }
       throw new GenerationCanceledException();
     }
@@ -65,11 +67,10 @@ public class TemplateProcessor {
       return outputNodes;
     } catch (StackOverflowError e) {
       // this is critical
-      GeneratorLogger logger = myGenerator.getLogger();
       logger.error("generation thread run out of stack space :(");
       if (myGenerator.getGenerationTracer().isTracing()) {
         logger.error("failed branch was:");
-        GeneratorUtil.logCurrentGenerationBranch(myGenerator, true);
+        GeneratorUtil.logCurrentGenerationBranch(logger, myGenerator.getGenerationTracer(), true);
       } else {
         logger.error("try to increase JVM stack size (-Xss option)");
         logger.error("to get more diagnostic generate model with the 'save transient models' option");

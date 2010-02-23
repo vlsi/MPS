@@ -17,9 +17,11 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.*;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +29,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   private IOperationContext myOperationContext;
   private ProgressIndicator myProgressMonitor;
-  private GeneratorLogger myLogger;
+  private IGeneratorLogger myLogger;
 
   protected final SModel myInputModel;
   protected final SModel myOutputModel;
@@ -35,9 +37,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private GeneratorMappings myMappings;
 
   private Map<String, SNode> myCurrentPreviousInputNodesByMappingName;
+  private HashSet<SNode> myFailedRules;
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
-                                      ProgressIndicator progressMonitor, GeneratorLogger logger,
+                                      ProgressIndicator progressMonitor, IGeneratorLogger logger,
                                       SModel inputModel, SModel outputModel) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
@@ -86,14 +89,34 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {
-    myLogger.error(inputNode, templateNode, message);
+    showErrorMessage(inputNode, templateNode, null, message);
   }
 
   public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
-    myLogger.error(inputNode, templateNode, ruleNode, message);
+    if (ruleNode != null) {
+      if (myFailedRules == null) {
+        myFailedRules = new HashSet<SNode>();
+      }
+      if (myFailedRules.contains(ruleNode)) {
+        // do not show duplicating messages
+        return;
+      }
+      myFailedRules.add(ruleNode);
+    }
+
+    myLogger.error((templateNode != null ? templateNode : ruleNode), message);
+    if (inputNode != null) {
+      myLogger.describeError(inputNode, "was input node: " + inputNode.getDebugText());
+    }
+    if (ruleNode != null) {
+      myLogger.describeError(ruleNode, "was rule: " + ruleNode.getDebugText());
+    }
+    if (templateNode != null) {
+      myLogger.describeError(templateNode, "was template: " + templateNode.getDebugText());
+    }
   }
 
-  public GeneratorLogger getLogger() {
+  public IGeneratorLogger getLogger() {
     return myLogger;
   }
 

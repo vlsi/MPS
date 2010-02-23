@@ -17,17 +17,12 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.generator.GenerationSettings;
-import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.TaskProgressHelper;
@@ -54,7 +49,7 @@ public class GenerationController {
   protected final IGenerationHandler myGenerationHandler;
   protected final IGenerationTracer myGenerationTracer;
   protected ProgressIndicator myProgress;
-  protected IMessageHandler myMessages;
+  protected GeneratorLoggerAdapter myLogger;
   protected boolean mySaveTransientModels;
 
   protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
@@ -75,7 +70,7 @@ public class GenerationController {
     myGenerationHandler = generationHandler;
     myGenerationTracer = generationTracer;
     myProgress = progress;
-    myMessages = messages;
+    myLogger = new GeneratorLoggerAdapter(messages, !settings.isShowErrorsOnly());
     mySaveTransientModels = saveTransientModels;
 
     IModule current = null;
@@ -97,7 +92,7 @@ public class GenerationController {
     long totalJob = estimateGenerationTime();
     long startJobTime = System.currentTimeMillis();
 
-    myGenerationHandler.startGeneration(myMessages);
+    myGenerationHandler.startGeneration(myLogger);
     TaskProgressHelper progressHelper = new TaskProgressHelper(myProgress, totalJob, startJobTime);
 
     try {
@@ -107,25 +102,24 @@ public class GenerationController {
         generationOK = generationOK && result;
       }
       if (generationOK) {
-        info("generation completed successfully in " + (System.currentTimeMillis() - startJobTime) + " ms");
+        if(myLogger.needsInfo()) {
+          myLogger.info("generation completed successfully in " + (System.currentTimeMillis() - startJobTime) + " ms");
+        }
       } else {
-        error("generation completed with errors in " + (System.currentTimeMillis() - startJobTime) + " ms");
+        myLogger.error("generation completed with errors in " + (System.currentTimeMillis() - startJobTime) + " ms");
       }
       generationOK = compile(progressHelper, generationOK);
 
       fireModelsGenerated(generationOK);
       return generationOK;
     } catch (GenerationCanceledException gce) {
-      warning("generation canceled");
+      myLogger.warning("generation canceled");
       return false;
     } catch (GenerationFailureException e) {
-      error(e.getMessage());
+      myLogger.error(e.getMessage());
       return false;
     } catch (Throwable t) {
-      LOG.error(t);
-      final String text = t.toString();
-      // myProgress.setText(text);
-      error(text);
+      myLogger.handleException(t);
       return false;
     } finally {
       myGenerationHandler.finishGeneration();
@@ -157,7 +151,7 @@ public class GenerationController {
 
         GenerationSession generationSession = new GenerationSession(
           inputModel, invocationContext, myGenerationTracer, mySaveTransientModels,
-          myProgress, myMessages, mySettings.isUseNewGenerator(), mySettings.isStrictMode(), mySettings.isShowErrorsOnly());
+          myProgress, myLogger, mySettings.isUseNewGenerator(), mySettings.isStrictMode());
 
         try {
           Logger.addLoggingHandler(generationSession.getLoggingHandler());
@@ -166,7 +160,7 @@ public class GenerationController {
             continue;
           }
 
-          info("");
+          myLogger.info("");
           String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
           progressHelper.setText2("model " + inputModel.getSModelFqName());
           progressHelper.startLeafTask(taskName);
@@ -200,7 +194,7 @@ public class GenerationController {
     }
 
     checkMonitorCanceled();
-    info("");
+    myLogger.info("");
 
     //myProgress.finishTask("generating in module " + module);   //todo finish timer
     progressHelper.setText2("");
@@ -255,17 +249,4 @@ public class GenerationController {
   protected void checkMonitorCanceled() throws GenerationCanceledException {
     if (myProgress.isCanceled()) throw new GenerationCanceledException();
   }
-
-  protected void info(String text) {
-    myMessages.handle(new Message(MessageKind.INFORMATION, GenerationController.class, text));
-  }
-
-  protected void warning(String text) {
-    myMessages.handle(new Message(MessageKind.WARNING, GenerationController.class, text));
-  }
-
-  protected void error(String text) {
-    myMessages.handle(new Message(MessageKind.ERROR, GenerationController.class, text));
-  }
-
 }
