@@ -689,8 +689,6 @@ public abstract class AbstractModule implements IModule {
     myIncludedStubPaths = getIncludedStubPaths();
 
     updateStubs();
-    CleanupManager.getInstance().cleanup();
-    MPSModuleRepository.getInstance().invalidateCaches();
   }
 
   private void updateStubs() {
@@ -705,6 +703,7 @@ public abstract class AbstractModule implements IModule {
     //we do not touch models whose loaded status, files and manager were not changed
     List<StubPath> notChangedStubPaths = new ArrayList<StubPath>();
 
+/*
     List<StubPath> newStubs = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
 
     //todo make time linear [due to stubs list size this is not very significant]
@@ -717,9 +716,14 @@ public abstract class AbstractModule implements IModule {
         }
       }
     }
+*/
 
     disposeAllStubManagers();
     releaseOldStubs(notChangedStubPaths);
+
+    CleanupManager.getInstance().cleanup();
+    MPSModuleRepository.getInstance().invalidateCaches();
+    
     loadNewStubs(notChangedStubPaths);
   }
 
