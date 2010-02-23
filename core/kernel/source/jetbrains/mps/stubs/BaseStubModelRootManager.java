@@ -56,7 +56,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
     SModelRepository repository = SModelRepository.getInstance();
 
-    stub:
     for (SModelDescriptor descriptor : getModelDescriptors(myLocation)) {
       if (repository.getModelDescriptor(descriptor.getSModelReference()) == null) {
         repository.registerModelDescriptor(descriptor, module);
@@ -65,7 +64,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
           LOG.warning("Loading the same java_stub package twice : " + descriptor.getLongName() + " from " + repository.getOwners(descriptor));
         }
       } else {
-        if (descriptor instanceof BaseSModelDescriptor){
+        if (descriptor instanceof BaseSModelDescriptor) {
           ((BaseSModelDescriptor) descriptor).setModelRootManager(this);
         }
 
@@ -75,15 +74,23 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
             myDescriptorsWithListener.add(descriptor);
           }
         } else {
-          if (descriptor instanceof BaseStubModelDescriptor){
-            for (StubPath notChanged : notChangedStubs) {
-              if (StubPath.equalStubPaths(notChanged, ((BaseStubModelDescriptor) descriptor).getSp())) {
-                continue stub;
+          if (descriptor instanceof BaseStubModelDescriptor) {
+            for (StubPath sp : ((BaseStubModelDescriptor) descriptor).getPaths()) {
+              boolean incl = false;
+              for (StubPath notChanged : notChangedStubs) {
+                if (StubPath.equalStubPaths(notChanged, sp)) {
+                  incl = true;
+                  break;
+                }
+              }
+              if (!incl) {
+                updateModelInLoadingState(descriptor, descriptor.getSModel());
+                break;
               }
             }
+          } else {
+            updateModelInLoadingState(descriptor, descriptor.getSModel());
           }
-
-          updateModelInLoadingState(descriptor, descriptor.getSModel());
         }
       }
     }

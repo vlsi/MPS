@@ -6,15 +6,24 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.vfs.IFile;
 
-public class BaseStubModelDescriptor extends DefaultSModelDescriptor{
-  private StubPath mySp;
+import java.util.ArrayList;
+import java.util.List;
 
-  public BaseStubModelDescriptor(StubPath sp, IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
+public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
+  private List<StubPath> myStubPaths;
+
+  public BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
     super(manager, modelFile, modelReference);
-    mySp = sp;
   }
 
-  public StubPath getSp() {
-    return mySp;
+  public void addStubPath(StubPath sp) {
+    if (myStubPaths == null) {
+      myStubPaths = new ArrayList<StubPath>();
+    }
+    myStubPaths.add(sp);
+  }
+
+  public List<StubPath> getPaths() {
+    return myStubPaths == null ? new ArrayList<StubPath>() : myStubPaths;
   }
 }

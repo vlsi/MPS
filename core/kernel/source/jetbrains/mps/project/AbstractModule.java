@@ -474,7 +474,7 @@ public abstract class AbstractModule implements IModule {
     for (SModelRoot root : mySModelRoots) {
       root.dispose();
     }
-    disposeStubs(new ArrayList<StubPath>());
+    disposeAllStubManagers();
     mySModelRoots.clear();
   }
 
@@ -703,23 +703,36 @@ public abstract class AbstractModule implements IModule {
     */
 
     //we do not touch models whose loaded status, files and manager were not changed
-    List<StubPath> notChangedStubs = new ArrayList<StubPath>();
+    List<StubPath> notChangedStubPaths = new ArrayList<StubPath>();
+
+    List<StubPath> newStubs = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
 
     //todo make time linear [due to stubs list size this is not very significant]
-    List<StubPath> newStubs = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
     for (StubPath os : myLoadedStubPaths) {
       for (StubPath ns : newStubs) {
         if (StubPath.equalStubPaths(os, ns)) {
           if (os.isFresh()) {
-            notChangedStubs.add(ns);
+            notChangedStubPaths.add(ns);
           }
         }
       }
     }
 
-    disposeStubs(notChangedStubs);
-    releaseOldStubs(notChangedStubs);
-    loadNewStubs(notChangedStubs);
+    disposeAllStubManagers();
+    releaseOldStubs(notChangedStubPaths);
+    loadNewStubs(notChangedStubPaths);
+  }
+
+  private void disposeAllStubManagers() {
+    for (StubPath sp : myLoadedStubPaths) {
+      BaseStubModelRootManager mrm = sp.getModelRootManager();
+      if (mrm != null) {
+        mrm.dispose();
+        sp.setModelRootManager(null);
+      }
+    }
+
+    myLoadedStubPaths.clear();
   }
 
   private void releaseOldStubs(List<StubPath> notChangedStubs) {
@@ -736,24 +749,26 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  private boolean notChanged(List<StubPath> notChangedStubs, SModelDescriptor sm) {
+  private boolean notChanged(List<StubPath> notChangedStubPaths, SModelDescriptor sm) {
     if (!(sm instanceof BaseStubModelDescriptor)) return false;
 
     BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) sm;
 
-    for (StubPath sp : notChangedStubs) {
-      if (StubPath.equalStubPaths(baseDescriptor.getSp(), sp)) return true;
+    for (StubPath sp : notChangedStubPaths) {
+      for (StubPath s:baseDescriptor.getPaths()){
+        if (!StubPath.equalStubPaths(s, sp)) return false;
+      }
     }
 
-    return false;
+    return true;
   }
 
-  private void loadNewStubs(List<StubPath> notChangedStubs) {
+  private void loadNewStubs(List<StubPath> notChangedStubPaths) {
     //todo[CP] remove this when JDK and Classpath migrated. Will be supported by another framework
     for (SModelRoot mr : getSModelRoots()) {
       IModelRootManager m = mr.getManager();
       if (!(m instanceof BaseStubModelRootManager)) continue;
-      m.updateModels(mr, this, notChangedStubs);
+      m.updateModels(mr, this, notChangedStubPaths);
     }
 
     List<StubPath> stubModels = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
@@ -761,32 +776,12 @@ public abstract class AbstractModule implements IModule {
     for (StubPath sp : stubModels) {
       BaseStubModelRootManager manager = createStubManager(sp);
       sp.setModelRootManager(manager);
+
       if (manager == null) continue;
-      manager.updateModels(sp.getPath(), "", this, notChangedStubs);
+      manager.updateModels(sp.getPath(), "", this, notChangedStubPaths);
+
       myLoadedStubPaths.add(sp);
     }
-  }
-
-
-  private void disposeStubs(List<StubPath> notChangedStubs) {
-    List<StubPath> toRemove = new ArrayList<StubPath>();
-
-    stub:
-    for (StubPath sp : myLoadedStubPaths) {
-      BaseStubModelRootManager mrm = sp.getModelRootManager();
-      if (mrm != null) {
-        mrm.dispose();
-        sp.setModelRootManager(null);
-      }
-
-      for (StubPath notChanged : notChangedStubs) {
-        if (StubPath.equalStubPaths(notChanged, sp)) continue stub;
-      }
-
-      toRemove.add(sp);
-    }
-
-    myLoadedStubPaths.removeAll(toRemove);
   }
 
   private Set<String> getIncludedStubPaths() {
