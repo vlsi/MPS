@@ -17,7 +17,10 @@ package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.GenerationSettings;
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.IdeMain;

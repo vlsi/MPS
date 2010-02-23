@@ -308,11 +308,8 @@ public class TemplateProcessor {
             // execute the 'mapper' function later
             putInputNodeByMappingName(mappingName, newInputNode);
             myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(
-              nodeMacro,
-              childToReplaceLater,
-              newInputNode,
-              new HashMap<String, SNode>(myInputNodesByMappingName),
-              myGenerator);
+              nodeMacro, childToReplaceLater, newInputNode,
+              new HashMap<String, SNode>(myInputNodesByMappingName));
           } else {
             List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1);
             if (_outputNodes != null) {
@@ -320,11 +317,8 @@ public class TemplateProcessor {
               // do post-processing here (it's not really a post-processing because model is not completed yet - output nodes are not added to parent node).
               for (SNode outputNode : _outputNodes) {
                 myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroPostProcChange(
-                  nodeMacro,
-                  outputNode,
-                  newInputNode,
-                  new HashMap<String, SNode>(myInputNodesByMappingName),
-                  myGenerator);
+                  nodeMacro, outputNode, newInputNode,
+                  new HashMap<String, SNode>(myInputNodesByMappingName));
               }
             }
           }

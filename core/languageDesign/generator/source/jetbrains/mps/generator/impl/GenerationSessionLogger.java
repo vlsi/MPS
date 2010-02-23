@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;

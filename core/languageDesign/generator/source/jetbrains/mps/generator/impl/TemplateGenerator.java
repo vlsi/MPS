@@ -49,7 +49,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private boolean myChanged = false;
   private final RuleManager myRuleManager;
-  private final DelayedChanges myDelayedChanges = new DelayedChanges();
+  private final DelayedChanges myDelayedChanges;
   private final Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
 
   private final boolean myIsStrict;
@@ -67,6 +67,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myRuleManager = ruleManager;
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
     myIsStrict = isStrict;
+    myDelayedChanges = new DelayedChanges(this);
   }
 
   public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
