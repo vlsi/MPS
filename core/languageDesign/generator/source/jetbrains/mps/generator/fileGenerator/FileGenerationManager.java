@@ -220,7 +220,7 @@ public class FileGenerationManager implements ApplicationComponent {
           positionInfo.setNodeId(input.getId());
           info.setModel(input.getModel());
           positionInfo.setFileName(fileName);
-          info.addPosition(positionInfo, rootNodeId);
+          info.addVarPosition(positionInfo, rootNodeId);
         }
       }
     }

@@ -3666,6 +3666,12 @@
       <property name="sourceCardinality:0" value="0..n" />
       <link role="target:0" targetNodeId="5124230653299542673:23" resolveInfo="ConceptReference" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6030304139513186662">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="conceptsOfVars" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="5124230653299542673:23" resolveInfo="ConceptReference" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="485694842828664424">
     <property name="package:0" value="Tool.Operations" />

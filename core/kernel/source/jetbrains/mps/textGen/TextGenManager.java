@@ -61,12 +61,18 @@ public class TextGenManager {
 
   public TextGenerationResult generateText(IOperationContext context, SNode node) {
     myPositions = new HashMap<SNode, PositionInfo>();
+    myVarPositions = new HashMap<SNode, VarPositionInfo>();
     TextGenBuffer buffer = new TextGenBuffer();
     buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
     appendNodeText(context, buffer, node, null);
     int topLength = buffer.getTopBufferText().split(buffer.getLineSeparator(), -1).length + 2;
     for (SNode n : myPositions.keySet()) {
       PositionInfo position = myPositions.get(n);
+      position.setStartLine(position.getStartLine() + topLength);
+      position.setEndLine(position.getEndLine() + topLength);
+    }
+    for (SNode n : myVarPositions.keySet()) {
+      PositionInfo position = myVarPositions.get(n);
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }

@@ -506,6 +506,14 @@ public class QueriesGenerated {
     return BaseToolDeclaration_Behavior.call_getGeneratedName_6547237850567463427(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_6030304139513239361(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "declaration", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6030304139513239382(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "declaration", false));
+  }
+
   public static Object propertyMacro_GetPropertyValue_6277721878946467558(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return KeymapChangesDeclaration_Behavior.call_getGeneratedName_6277721878946468943(_context.getNode());
   }
@@ -624,10 +632,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_4042687513231504092(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "map_KeymapConstructor");
-  }
-
-  public static Object referenceMacro_GetReferent_5124230653299831359(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "declaration", false);
   }
 
   public static Object referenceMacro_GetReferent_6423922349611078592(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1516,6 +1520,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_5508914264443135959(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "methodDeclaration", true);
+  }
+
+  public static Iterable sourceNodesQuery_6030304139513191221(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "conceptsOfVars", true);
   }
 
   public static Iterable sourceNodesQuery_6193305307616881805(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -13,6 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 public class DebugInfoInitializer extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.DebugInfoInitializer";
   public static final String CONCEPTS_TO_DEBUG = "conceptsToDebug";
+  public static final String CONCEPTS_OF_VARS = "conceptsOfVars";
 
   public DebugInfoInitializer(SNode node) {
     super(node);
@@ -36,6 +37,26 @@ public class DebugInfoInitializer extends BaseConcept {
 
   public void insertConceptsToDebug(ConceptReference prev, ConceptReference node) {
     this.insertChild(prev, DebugInfoInitializer.CONCEPTS_TO_DEBUG, node);
+  }
+
+  public int getConceptsOfVarsesCount() {
+    return this.getChildCount(DebugInfoInitializer.CONCEPTS_OF_VARS);
+  }
+
+  public Iterator<ConceptReference> conceptsOfVarses() {
+    return this.children(ConceptReference.class, DebugInfoInitializer.CONCEPTS_OF_VARS);
+  }
+
+  public List<ConceptReference> getConceptsOfVarses() {
+    return this.getChildren(ConceptReference.class, DebugInfoInitializer.CONCEPTS_OF_VARS);
+  }
+
+  public void addConceptsOfVars(ConceptReference node) {
+    this.addChild(DebugInfoInitializer.CONCEPTS_OF_VARS, node);
+  }
+
+  public void insertConceptsOfVars(ConceptReference prev, ConceptReference node) {
+    this.insertChild(prev, DebugInfoInitializer.CONCEPTS_OF_VARS, node);
   }
 
   public static DebugInfoInitializer newInstance(SModel sm, boolean init) {

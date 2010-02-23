@@ -7467,6 +7467,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.DebugInfoInitializer:23" id="5191407547578461866">
+    <node role="conceptsOfVars:23" type="jetbrains.mps.lang.plugin.structure.ConceptReference:23" id="6142677984957065801">
+      <link role="declaration:23" targetNodeId="1.1068581242863:3" resolveInfo="LocalVariableDeclaration" />
+    </node>
     <node role="conceptsToDebug:23" type="jetbrains.mps.lang.plugin.structure.ConceptReference:23" id="5191407547578560720">
       <link role="declaration:23" targetNodeId="1.1068580123157:3" resolveInfo="Statement" />
     </node>

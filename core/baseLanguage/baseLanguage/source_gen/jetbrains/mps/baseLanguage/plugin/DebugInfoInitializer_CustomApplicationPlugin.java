@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.DebugInfoManager;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private static Logger LOG = Logger.getLogger(DebugInfoInitializer_CustomApplicationPlugin.class);
@@ -16,9 +14,10 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
 
   public void doInit() {
     DebugInfoManager manager = DebugInfoManager.getInstance();
-    manager.addDebuggableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement")));
-    manager.addDebuggableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")));
-    manager.addDebuggableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")));
-    manager.addDebuggableConcept(INamedConcept_Behavior.call_getFqName_1213877404258(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")));
+    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.Statement");
+    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    manager.addVariableConcept("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
 }
