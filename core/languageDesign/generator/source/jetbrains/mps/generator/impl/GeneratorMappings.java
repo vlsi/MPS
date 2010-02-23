@@ -87,7 +87,7 @@ public class GeneratorMappings {
     Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
     if (o instanceof List) {
       List<SNode> list = (List<SNode>) o;
-      logger.showWarningMessage(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingLabel + "' and input " + inputNode.getDebugText());
+      logger.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingLabel + "' and input " + inputNode.getDebugText());
       for (int i = 0; i < list.size(); i++) {
         Logger.getLogger(this.getClass()).warning("-- output [" + i + "] : " + list.get(i).getDebugText(), list.get(i));
       }
@@ -101,7 +101,7 @@ public class GeneratorMappings {
     Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
     if (o instanceof List) {
       List<SNode> list = (List<SNode>) o;
-      logger.showWarningMessage(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingLabel + "' and input " + inputNode.getDebugText());
+      logger.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingLabel + "' and input " + inputNode.getDebugText());
       for (int i = 0; i < list.size(); i++) {
         Logger.getLogger(this.getClass()).warning("-- output [" + i + "] : " + list.get(i).getDebugText(), list.get(i));
       }

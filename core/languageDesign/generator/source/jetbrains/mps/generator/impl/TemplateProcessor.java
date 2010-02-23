@@ -66,13 +66,13 @@ public class TemplateProcessor {
     } catch (StackOverflowError e) {
       // this is critical
       GeneratorLogger logger = myGenerator.getLogger();
-      logger.showErrorMessage(null, "generation thread run out of stack space :(");
+      logger.error("generation thread run out of stack space :(");
       if (myGenerator.getGenerationTracer().isTracing()) {
-        logger.showErrorMessage(null, "failed branch was:");
+        logger.error("failed branch was:");
         GeneratorUtil.logCurrentGenerationBranch(myGenerator, true);
       } else {
-        logger.showErrorMessage(null, "try to increase JVM stack size (-Xss option)");
-        logger.showErrorMessage(null, "to get more diagnostic generate model with the 'save transient models' option");
+        logger.error("try to increase JVM stack size (-Xss option)");
+        logger.error("to get more diagnostic generate model with the 'save transient models' option");
       }
       throw new GenerationFailureException("couldn't process template", inputNode, templateNode, null, e);
     } finally {

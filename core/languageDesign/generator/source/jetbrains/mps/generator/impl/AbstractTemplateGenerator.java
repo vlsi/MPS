@@ -67,30 +67,30 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public void showInformationMessage(SNode node, String message) {
-    myLogger.showInformationMessage(node, message);
+    myLogger.info(node, message);
   }
 
   public void showWarningMessage(SNode node, String message) {
-    myLogger.showWarningMessage(node, message);
+    myLogger.warning(node, message);
   }
 
   public void showErrorIfStrict(SNode node, String message) {
     if (isStrict())
-      myLogger.showErrorMessage(node, message);
+      myLogger.error(node, message);
     else
-      myLogger.showWarningMessage(node, message);
+      myLogger.warning(node, message);
   }
 
   public void showErrorMessage(SNode node, String message) {
-    myLogger.showErrorMessage(node, message);
+    myLogger.error(node, message);
   }
 
   public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {
-    myLogger.showErrorMessage(inputNode, templateNode, message);
+    myLogger.error(inputNode, templateNode, message);
   }
 
   public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
-    myLogger.showErrorMessage(inputNode, templateNode, ruleNode, message);
+    myLogger.error(inputNode, templateNode, ruleNode, message);
   }
 
   public GeneratorLogger getLogger() {

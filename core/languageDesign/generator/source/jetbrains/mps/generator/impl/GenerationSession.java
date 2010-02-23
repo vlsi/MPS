@@ -75,7 +75,7 @@ public class GenerationSession {
   public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
                            IGenerationTracer generationTracer, boolean saveTransientModels,
                            ProgressIndicator progressMonitor, IMessageHandler messagesHandler,
-                           boolean reverseRoots, boolean isStrict) {
+                           boolean reverseRoots, boolean isStrict, boolean showErrorsOnly) {
     myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
     myGenerationTracer = generationTracer;
@@ -84,7 +84,7 @@ public class GenerationSession {
     myMessagesHandler = messagesHandler;
     myReverseRoots = reverseRoots;
     myIsStrict = isStrict;
-    myLogger = new GeneratorLogger();
+    myLogger = new GeneratorLogger(myMessagesHandler, !showErrorsOnly);
   }
 
   public GenerationStatus generateModel() throws GenerationCanceledException {
@@ -103,7 +103,9 @@ public class GenerationSession {
       SModel currOutput = null;
 
       for(myMajorStep = 0; myMajorStep < myGenerationPlan.getStepCount(); myMajorStep++) {
-        info("executing step " + (myMajorStep + 1));
+        if(myLogger.needsInfo()) {
+          myLogger.info("executing step " + (myMajorStep + 1));
+        }
         currOutput = executeMajorStep(currInputModel);
         if(currOutput == null || myLogger.getErrorCount() > 0) {
           break;
@@ -127,12 +129,12 @@ public class GenerationSession {
     } catch (GenerationCanceledException gce) {
       throw gce;
     } catch (GenerationFailureException gfe) {
-      error(gfe.getMessage());
-      error("model \"" + myOriginalInputModel.getSModelFqName() + "\" generation failed : " + gfe);
+      myLogger.error(gfe.getMessage());
+      myLogger.error("model \"" + myOriginalInputModel.getSModelFqName() + "\" generation failed : " + gfe);
       return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());
     } catch (Throwable e) {
       myLogger.handleException(e);
-      error("model \"" + myOriginalInputModel.getSModelFqName() + "\" generation failed : " + e);
+      myLogger.error("model \"" + myOriginalInputModel.getSModelFqName() + "\" generation failed : " + e);
       return new GenerationStatus.ERROR(myOriginalInputModel.getSModel());
     }
   }
@@ -142,11 +144,11 @@ public class GenerationSession {
 
     if (myGenerationPlan.getMappingConfigurations(myMajorStep).isEmpty()) {
       if(inputModel.getRoots().size() > 0) {
-        warning("skip model \"" + inputModel.getSModelFqName() + "\" : no generator available");
+        myLogger.warning("skip model \"" + inputModel.getSModelFqName() + "\" : no generator available");
       }
       return inputModel;
     }
-    if(myGenerationTracer.isTracing()) {
+    if(myGenerationTracer.isTracing() && myLogger.needsInfo()) {
       printGenerationStepData(inputModel);
     }
 
@@ -159,7 +161,7 @@ public class GenerationSession {
 
     SModel outputModel = executeMajorStepInternal(inputModel, ruleManager);
     if (myLogger.getErrorCount() > 0) {
-      warning("model \"" + inputModel.getSModelFqName() + "\" has been generated with errors");
+      myLogger.warning("model \"" + inputModel.getSModelFqName() + "\" has been generated with errors");
     }
     myLogger.clearFailedRules();
     return outputModel;
@@ -174,7 +176,9 @@ public class GenerationSession {
     // -----------------------
     if (myReverseRoots && inputModel == mySessionContext.getOriginalInputModel()) {
       SModel currentInputModel_clone = createTransientModel();
-      info("reversing roots '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
+      if(myLogger.needsInfo()) {
+        myLogger.info("reversing roots '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
+      }
       List<SNode> rrr = currentInputModel.getRoots();
       SNode[] roots = rrr.toArray(new SNode[rrr.size()]);
       for (int i = 0; i < roots.length / 2; i++) {
@@ -217,7 +221,9 @@ public class GenerationSession {
       currentOutputModel.validateLanguagesAndImports();
 
       // apply mapping to the output model
-      info("generating model '" + currentOutputModel.getSModelFqName() + "'");
+      if(myLogger.needsInfo()) {
+        myLogger.info("generating model '" + currentOutputModel.getSModelFqName() + "'");
+      }
       mySessionContext.clearTransientObjects();
       SModel transientModel = createTransientModel();
       // probably we can forget about former input model here
@@ -228,23 +234,25 @@ public class GenerationSession {
       if (!applyRules(currentInputModel, transientModel, false, ruleManager)) {
         // nothing has been generated
         tracer.discardTracing(currentInputModel, transientModel);
-        info("remove empty model '" + transientModel.getSModelFqName() + "'");
+        if(myLogger.needsInfo()) {
+          myLogger.info("remove empty model '" + transientModel.getSModelFqName() + "'");
+        }
         SModelRepository.getInstance().removeModelDescriptor(transientModel.getModelDescriptor());
         myTransientModelsCount--;
         break;
       }
 
       if (++secondaryMappingRepeatCount > 10) {
-        myLogger.showErrorMessage(null, "failed to generate output after 10 repeated mappings");
+        myLogger.error("failed to generate output after 10 repeated mappings");
         if (tracer.isTracing()) {
-          myLogger.showErrorMessage(null, "last rules applied:");
+          myLogger.error("last rules applied:");
           List<Pair<SNode, SNode>> pairs = tracer.getAllAppiedRulesWithInputNodes(transientModel.getSModelReference());
           for (Pair<SNode, SNode> pair : pairs) {
-            myLogger.showErrorMessage(pair.o1, "rule: " + pair.o1.getDebugText());
-            myLogger.showErrorMessage(pair.o2, "-- input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"));
+            myLogger.error(pair.o1, "rule: " + pair.o1.getDebugText());
+            myLogger.error(pair.o2, "-- input: " + (pair.o2 != null ? pair.o2.getDebugText() : "n/a"));
           }
         } else {
-          myLogger.showErrorMessage(null, "to get more diagnostic generate model with the 'save transient models' option");
+          myLogger.error("to get more diagnostic generate model with the 'save transient models' option");
         }
         throw new GenerationFailureException("failed to generate output after 10 repeated mappings");
       }
@@ -285,8 +293,9 @@ public class GenerationSession {
       }
       if (needToCloneInputMode) {
         SModel currentInputModel_clone = createTransientModel();
-        info("clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
-
+        if(myLogger.needsInfo()) {
+          myLogger.info("clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
+        }
         CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
 
         if (!myDiscardTransients) { // tracing
@@ -301,10 +310,12 @@ public class GenerationSession {
 
     for (MappingScript preMappingScript : preMappingScripts) {
       if (preMappingScript.getScriptKind() != MappingScriptKind.pre_process_input_model) {
-        addMessage(MessageKind.WARNING, "skip script '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ") - wrong script kind", preMappingScript.getNode());
+        myLogger.warning(preMappingScript.getNode(), "skip script '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ") - wrong script kind");
         continue;
       }
-      addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")", preMappingScript.getNode());
+      if(myLogger.needsInfo()) {
+        myLogger.info(preMappingScript.getNode(), "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")");
+      }
       ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myIsStrict);
       QueryExecutor.executeMappingScript(preMappingScript, currentInputModel, templateGenerator);
     }
@@ -315,7 +326,9 @@ public class GenerationSession {
     List<MappingScript> postMappingScripts = ruleManager.getPostMappingScripts();
     if (!postMappingScripts.isEmpty() && !myDiscardTransients) {  // clone model - needed for tracing
       SModel currentOutputModel_clone = createTransientModel();
-      info("clone model '" + currentOutputModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");
+      if(myLogger.needsInfo()) {
+        myLogger.info("clone model '" + currentOutputModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");
+      }
       CloneUtil.cloneModel(currentOutputModel, currentOutputModel_clone, false);
 
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentOutputModel, currentOutputModel_clone, postMappingScripts);
@@ -325,10 +338,12 @@ public class GenerationSession {
 
     for (MappingScript postMappingScript : postMappingScripts) {
       if (postMappingScript.getScriptKind() != MappingScriptKind.post_process_output_model) {
-        addMessage(MessageKind.WARNING, "skip script '" + postMappingScript + "' (" + postMappingScript.getModel().getSModelFqName() + ") - wrong script kind", postMappingScript.getNode());
+        myLogger.warning(postMappingScript.getNode(), "skip script '" + postMappingScript + "' (" + postMappingScript.getModel().getSModelFqName() + ") - wrong script kind");
         continue;
       }
-      addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")", postMappingScript.getNode());
+      if(myLogger.needsInfo()) {
+        myLogger.info(postMappingScript.getNode(), "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
+      }
       ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentOutputModel, currentOutputModel, myIsStrict);
       QueryExecutor.executeMappingScript(postMappingScript, currentOutputModel, templateGenerator);
     }
@@ -352,34 +367,18 @@ public class GenerationSession {
     SModelDescriptor md = model.getModelDescriptor();
     if (md != null && md.isTransient()) {
       if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
-        info("remove spent model '" + model.getSModelFqName() + "'");
+        if(myLogger.needsInfo()) {
+          myLogger.info("remove spent model '" + model.getSModelFqName() + "'");
+        }
         SModelRepository.getInstance().removeModelDescriptor(md);
       }
       md.disposeFastNodeFinder();
     }
   }
 
-  private void info(String text) {
-    myMessagesHandler.handle(new Message(MessageKind.INFORMATION, text));
-  }
-
-  private void warning(String text) {
-    myMessagesHandler.handle(new Message(MessageKind.WARNING, text));
-  }
-
-  private void error(String text) {
-    myMessagesHandler.handle(new Message(MessageKind.ERROR, text));
-  }
-
-  private void addMessage(MessageKind kind, String text, Object hintObject) {
-    Message message = new Message(kind, text);
-    message.setHintObject(hintObject);
-    myMessagesHandler.handle(message);
-  }
-
   private boolean checkGenerationPlan(GenerationPlan generationPlan) {
     if (generationPlan.hasConflictingPriorityRules()) {
-      error("Conflicting mapping priority rules encountered:");
+      myLogger.error("Conflicting mapping priority rules encountered:");
       List<com.intellij.openapi.util.Pair<MappingPriorityRule, String>> errors = generationPlan.getConflictingPriorityRulesAsStrings();
       for (com.intellij.openapi.util.Pair<MappingPriorityRule, String> error : errors) {
         MappingPriorityRule rule = error.first;
@@ -391,7 +390,7 @@ public class GenerationSession {
         addMessage(MessageKind.ERROR, text, generatorModule);
           */
       }
-      error("-----------------------------------------------");
+      myLogger.error("-----------------------------------------------");
       return false;
     }
     return true;
@@ -404,9 +403,9 @@ public class GenerationSession {
         return ("" + o1.getModuleFqName()).compareTo("" + o2.getModuleFqName());
       }
     });
-    info("languages used:");
+    myLogger.info("languages used:");
     for (ModuleReference reference : references) {
-      info("    " + reference.getModuleFqName());
+      myLogger.info("    " + reference.getModuleFqName());
     }
 //    List<Generator> generators = stepController.getGenerators();
 //    Collections.sort(generators, new Comparator<Generator>() {
@@ -420,10 +419,10 @@ public class GenerationSession {
 //      addMessage(new Message(MessageKind.INFORMATION, "    " + generator.getAlias()));
 //    }
 
-    info("apply mapping configurations:");
+    myLogger.info("apply mapping configurations:");
     List<String> messages = GenerationPartitioningUtil.toStrings(myGenerationPlan.getMappingConfigurations(myMajorStep));
     for (String message : messages) {
-      info("    " + message);
+      myLogger.info("    " + message);
     }
   }
 
@@ -451,6 +450,7 @@ public class GenerationSession {
     if (myDiscardTransients) {
       mySessionContext.clearTransientModels();
     }
+    myLogger.setOperationContext(null);
     mySessionContext = null;
   }
 }

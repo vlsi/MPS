@@ -157,7 +157,7 @@ public class GenerationController {
 
         GenerationSession generationSession = new GenerationSession(
           inputModel, invocationContext, myGenerationTracer, mySaveTransientModels,
-          myProgress, myMessages, mySettings.isUseNewGenerator(), mySettings.isStrictMode());
+          myProgress, myMessages, mySettings.isUseNewGenerator(), mySettings.isStrictMode(), mySettings.isShowErrorsOnly());
 
         try {
           Logger.addLoggingHandler(generationSession.getLoggingHandler());
