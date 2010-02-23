@@ -38,6 +38,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -315,6 +316,12 @@ public class MPSEditorOpener implements ProjectComponent {
       baseNode = root;
     }
 
+    // [++] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
+    assert baseNode.isRegistered() : "BaseNode is not registered";
+    SNode node = new SNodePointer(baseNode).getNode();
+    assert node != null : "Unable to get Node by SNodePointer";
+    assert node.isRegistered() : "Returned node is not registered (" + node + "|" + baseNode + ")";
+    // [--] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
     FileEditor fileEditor = editorManager.openFile(file, false)[0];
