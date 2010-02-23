@@ -64,9 +64,11 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
           LOG.warning("Loading the same java_stub package twice : " + descriptor.getLongName() + " from " + repository.getOwners(descriptor));
         }
       } else {
+/*
         if (descriptor instanceof BaseSModelDescriptor) {
           ((BaseSModelDescriptor) descriptor).setModelRootManager(this);
         }
+*/
 
         if (!descriptor.isInitialized()) {
           if (!myDescriptorsWithListener.contains(descriptor)) {
@@ -75,18 +77,23 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
           }
         } else {
           if (descriptor instanceof BaseStubModelDescriptor) {
+            boolean changed = false;
             for (StubPath sp : ((BaseStubModelDescriptor) descriptor).getPaths()) {
-              boolean incl = false;
+              boolean isContaied = false;
               for (StubPath notChanged : notChangedStubs) {
                 if (StubPath.equalStubPaths(notChanged, sp)) {
-                  incl = true;
+                  isContaied = true;
                   break;
                 }
               }
-              if (!incl) {
-                updateModelInLoadingState(descriptor, descriptor.getSModel());
+              if (!isContaied) {
+                changed = true;
                 break;
               }
+            }
+            if (changed) {
+              updateModelInLoadingState(descriptor, descriptor.getSModel());
+              break;
             }
           } else {
             updateModelInLoadingState(descriptor, descriptor.getSModel());
