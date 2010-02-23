@@ -50,6 +50,7 @@ public class PersistentOptions_PreferencesComponent extends BaseProjectPrefsComp
   public static class MyState {
     public boolean addReturnsOnImplement = false;
     public boolean sortAlphabetically = false;
+    public boolean addOverrideAnnotation = true;
 
     public MyState() {
     }
