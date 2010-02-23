@@ -754,10 +754,16 @@ public abstract class AbstractModule implements IModule {
 
     BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) sm;
 
-    for (StubPath sp : notChangedStubPaths) {
-      for (StubPath s:baseDescriptor.getPaths()){
-        if (!StubPath.equalStubPaths(s, sp)) return false;
+    for (StubPath s : baseDescriptor.getPaths()) {
+      boolean contains = false;
+      for (StubPath sp : notChangedStubPaths) {
+        if (StubPath.equalStubPaths(s, sp)) {
+          contains = true;
+          break;
+        }
       }
+
+      if (!contains) return false;
     }
 
     return true;
