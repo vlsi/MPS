@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.dialogs.BaseDialog;
 import java.awt.BorderLayout;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
@@ -14,9 +15,9 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.awt.GridBagLayout;
-import com.intellij.ui.RoundedLineBorder;
-import java.awt.Color;
+import javax.swing.border.TitledBorder;
 import java.awt.GridBagConstraints;
+import java.awt.Insets;
 import javax.swing.JComponent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -35,6 +36,7 @@ public class RefactoringPanel {
   private SModel myModel;
   private List<SNode> myRefactorings;
   private IOperationContext myContext;
+  private BaseDialog myOwner;
 
   public RefactoringPanel(SModel model, List<SNode> refactorings, IOperationContext context) {
     this.myModel = model;
@@ -51,8 +53,9 @@ public class RefactoringPanel {
     this.myComponent.add(modelNameLabel, BorderLayout.PAGE_START);
     List<RefactoringContext> refactoringsContextList = this.myModel.getRefactoringHistory().getRefactoringContexts();
     JPanel mainPanel = new JPanel(new GridBagLayout());
-    mainPanel.setBorder(new RoundedLineBorder(Color.BLACK));
-    GridBagConstraints gridBagConstraints = new GridBagConstraints();
+    mainPanel.setBorder(new TitledBorder("actions"));
+    GridBagConstraints gridBagConstraints = new GridBagConstraints(0, 0, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(4, 8, 4, 8), 0, 0);
+    gridBagConstraints.weighty = 0;
     gridBagConstraints.gridy = GridBagConstraints.RELATIVE;
     for (RefactoringContext refactoringContext : refactoringsContextList) {
       this.addRefactoringName(refactoringContext, mainPanel, gridBagConstraints);
@@ -63,7 +66,11 @@ public class RefactoringPanel {
     this.myComponent.add(mainPanel, BorderLayout.CENTER);
   }
 
-  public void addRefactoringParameters(RefactoringContext refactoringContext, JComponent component, GridBagConstraints gridBagConstraints) {
+  public void setOwner(BaseDialog dialog) {
+    this.myOwner = dialog;
+  }
+
+  private void addRefactoringParameters(RefactoringContext refactoringContext, JComponent component, GridBagConstraints gridBagConstraints) {
     Map<String, Object> parameters = refactoringContext.getAdditionalParameters();
     if (MapSequence.fromMap(parameters).isEmpty()) {
       return;
@@ -110,6 +117,9 @@ public class RefactoringPanel {
       button.addActionListener(new ActionListener() {
         public void actionPerformed(ActionEvent event) {
           RefactoringPanel.this.myContext.getComponent(MPSEditorOpener.class).openNode(nodeToSelect, RefactoringPanel.this.myContext, true, true);
+          if (RefactoringPanel.this.myOwner != null) {
+            RefactoringPanel.this.myOwner.dispose();
+          }
         }
       });
       button.setIcon(IconManager.getIconFor(refactoringNode));
