@@ -269,9 +269,15 @@ public class Generator extends AbstractModule {
 
   public Set<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
     Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>(super.getImplicitlyImportedModelsFor(sm));
-    result.add(getSourceLanguage().getStructureModelDescriptor());
-    if (getSourceLanguage().getConstraintsModelDescriptor() != null) {
-      result.add(getSourceLanguage().getConstraintsModelDescriptor());
+
+    SModelDescriptor structureModelDescriptor = getSourceLanguage().getStructureModelDescriptor();
+    if (structureModelDescriptor!=null){
+      result.add(structureModelDescriptor);
+    }
+
+    SModelDescriptor constraints = getSourceLanguage().getConstraintsModelDescriptor();
+    if (constraints != null) {
+      result.add(constraints);
     }
 
     for (Language language : getSourceLanguage().getExtendedLanguages()) {
@@ -279,14 +285,17 @@ public class Generator extends AbstractModule {
       if (structure != null) {
         result.add(structure);
       }
-      if (language.getConstraintsModelDescriptor() != null) {
-        result.add(language.getConstraintsModelDescriptor());
+
+      SModelDescriptor constr = language.getConstraintsModelDescriptor();
+      if (constr != null) {
+        result.add(constr);
       }
     }
 
     for (Language language : sm.getSModel().getLanguages(getScope())) {
-      if (language.getStructureModelDescriptor() != null) {
-        result.add(language.getStructureModelDescriptor());
+      SModelDescriptor struc = language.getStructureModelDescriptor();
+      if (struc != null) {
+        result.add(struc);
       }
     }
 
