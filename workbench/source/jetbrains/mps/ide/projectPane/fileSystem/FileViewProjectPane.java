@@ -322,6 +322,8 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     if (!(selectionPath.getLastPathComponent() instanceof FileTreeNode)) return;
     final FileTreeNode fileTreeNode = (FileTreeNode) selectionPath.getLastPathComponent();
 
+    // assertion was added for http://youtrack.jetbrains.net/issue/MPS-7762
+    assert fileTreeNode.getFile().isValid() : "Underlying file is not valid";
     com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
       public void run() {
         myIdeDocumentHistory.includeCurrentCommandAsNavigation();
