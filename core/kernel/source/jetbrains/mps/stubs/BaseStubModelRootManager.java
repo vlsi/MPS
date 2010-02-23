@@ -76,6 +76,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
             myDescriptorsWithListener.add(descriptor);
           }
         } else {
+/*
           if (descriptor instanceof BaseStubModelDescriptor) {
             boolean changed = false;
             for (StubPath sp : ((BaseStubModelDescriptor) descriptor).getPaths()) {
@@ -95,13 +96,15 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
               updateModelInLoadingState(descriptor, descriptor.getSModel());
               break;
             }
-          } else {
-            updateModelInLoadingState(descriptor, descriptor.getSModel());
-          }
-        }
+        }else{
+*/
+          updateModelInLoadingState(descriptor, descriptor.getSModel());
+//        }
       }
     }
   }
+
+}
 
   @NotNull
   public final SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
