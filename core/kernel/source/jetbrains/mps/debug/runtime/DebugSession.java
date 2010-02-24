@@ -285,11 +285,17 @@ public class DebugSession {
       return Collections.emptyList();
     }
 
+    // TODO we synchronize over ui state, but do we need to synchronize over jdi ThreadReferences, StackFrames etc?????? Here we access them from EDT.
     @NotNull
     public synchronized List<ThreadReference> getThreads() {
       if (myExecutionState.equals(ExecutionState.Paused)) {
-        // TODO some threads are not paused
-        return myEventsProcessor.getVirtualMachine().allThreads();
+        List<ThreadReference> result = new ArrayList<ThreadReference>();
+        for (ThreadReference threadReference : myEventsProcessor.getVirtualMachine().allThreads()) {
+          if (threadReference.isSuspended()) {
+            result.add(threadReference);
+          }
+        }
+        return result;
       }
       return Collections.emptyList();
     }
