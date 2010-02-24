@@ -268,6 +268,8 @@ public class DebugSession {
         System.err.println("frames " + myThread.frames());
         if (myThread.frameCount() > 0) {
           myStackFrame = myThread.frame(0);
+        } else {
+          myStackFrame = null;
         }
       } catch (IncompatibleThreadStateException e) {
         LOG.error(e);
