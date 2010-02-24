@@ -169,13 +169,13 @@ public class DebugSession {
     private StackFrame myStackFrame = null;
 
     // changes state on pause/resume
-    private void paused(SuspendContext context) {
+    private synchronized void paused(SuspendContext context) {
       // we select new context even if we are already on some other context
       // user probably wants to know about new paused contexts
       setContext(context);
     }
 
-    private void resumed(SuspendContext context) {
+    private synchronized void resumed(SuspendContext context) {
       if (context != myContext) return;
 
       List<SuspendContext> allPausedContexts = getAllPausedContexts();
@@ -225,7 +225,7 @@ public class DebugSession {
     }
 
     // changes state on user selection
-    public void selectThread(ThreadReference thread) {
+    public synchronized void selectThread(ThreadReference thread) {
       if (thread == null) {
         myContext = null;
         myThread = null;
@@ -233,12 +233,17 @@ public class DebugSession {
       } else {
         myThread = thread;
         if (!myContext.suspends(thread)) {
+          System.err.println(" my current context " + myContext + " does not suspends thread " + thread);
+          myContext = null;
           for (SuspendContext context : getAllPausedContexts()) {
+            System.err.println("checking context " + context);
             if (context.suspends(thread)) {
+              System.err.println("context " + context + " suspends thread " + thread);
               myContext = context;
               break;
             }
           }
+          LOG.assertLog(myContext != null); // in case some botva is going on
         }
         updateFrame();
       }
@@ -247,6 +252,7 @@ public class DebugSession {
 
     private void updateFrame() {
       try {
+        System.err.println("frames " + myThread.frames());
         if (myThread.frameCount() > 0) {
           myStackFrame = myThread.frame(0);
         }
@@ -255,20 +261,20 @@ public class DebugSession {
       }
     }
 
-    public SuspendContext getContext() {
+    public synchronized SuspendContext getContext() {
       return myContext;
     }
 
-    public ThreadReference getThread() {
+    public synchronized ThreadReference getThread() {
       return myThread;
     }
 
-    public StackFrame getStackFrame() {
+    public synchronized StackFrame getStackFrame() {
       return myStackFrame;
     }
 
     @NotNull
-    public List<StackFrame> getStackFrames() {
+    public synchronized List<StackFrame> getStackFrames() {
       if (myThread != null) {
         try {
           return myThread.frames();
@@ -280,7 +286,7 @@ public class DebugSession {
     }
 
     @NotNull
-    public List<ThreadReference> getThreads() {
+    public synchronized List<ThreadReference> getThreads() {
       if (myExecutionState.equals(ExecutionState.Paused)) {
         // TODO some threads are not paused
         return myEventsProcessor.getVirtualMachine().allThreads();
