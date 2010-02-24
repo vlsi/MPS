@@ -170,6 +170,11 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
         if (methods.isEmpty()) {
           return;
         }
+        Collections.sort(methods, new Comparator<BaseMethodDeclaration>() {
+          public int compare(BaseMethodDeclaration m1, BaseMethodDeclaration m2) {
+            return BaseAddMethodDialog.this.compareMethods(m1, m2);
+          }
+        });
         if (methods.size() == 1) {
           SNode node = methods.get(0).getNode();
           BaseAddMethodDialog.this.myContext.selectAfter(node);
