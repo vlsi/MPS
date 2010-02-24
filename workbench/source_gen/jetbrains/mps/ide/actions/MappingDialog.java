@@ -18,6 +18,7 @@ import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import javax.swing.JComponent;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -71,6 +72,11 @@ public class MappingDialog extends BaseDialog {
 
   protected JComponent getMainComponent() {
     return this.myMainComponent;
+  }
+
+  @Override
+  public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
+    return new DialogDimensionsSettings.DialogDimensions(300, 300, 500, 400);
   }
 
   private MPSTreeNode rebuildTree() {
