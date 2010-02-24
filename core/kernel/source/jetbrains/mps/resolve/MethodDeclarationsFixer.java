@@ -267,6 +267,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     testAndFixMethodCall(methodCall, resolveTargets);
   }
 
+  //todo myParametersToCheckedMethodCalls should be updated on node creation/deletion
   private void expressionTypeChanged(SNode expression, Map<SNode, SNode> resolveTargets) {
     SNode methodCall = myParametersToCheckedMethodCalls.get(expression);
     if (methodCall != null) {
@@ -283,6 +284,8 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
     //actual argument
     SNode parent = child.getParent();
+    //todo getParent() does not work in case we add child inside a parameter,
+    //todo e.g. this._ -> this.myT
     if (myCheckedMethodCalls.contains(parent)) {
       testAndFixMethodCall(parent, resolveTargets);
     }
