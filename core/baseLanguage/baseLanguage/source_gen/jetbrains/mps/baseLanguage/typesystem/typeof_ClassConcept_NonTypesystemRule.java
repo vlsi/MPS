@@ -14,7 +14,7 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -38,7 +38,7 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
         }
       }
     }
-    if (!(SPropertyOperations.getBoolean(cls, "abstractClass")) && ListSequence.fromList(ClassConcept_Behavior.call_getMethodsToImplement_1221637841398(cls)).isNotEmpty()) {
+    if (!(SPropertyOperations.getBoolean(cls, "abstractClass")) && ListSequence.fromList(IMemberContainer_Behavior.call_getMethodsToImplement_5418393554803775106(cls)).isNotEmpty()) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();

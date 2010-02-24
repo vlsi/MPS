@@ -443,6 +443,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_BaseMethodDeclaration_OverrideAnnotation_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

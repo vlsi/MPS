@@ -7030,8 +7030,8 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1221638423004">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1221638419235">
               <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="1221638419109" />
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1221638420706">
-                <link role="baseMethodDeclaration:16" targetNodeId="29.1221637841398" resolveInfo="getMethodsToImplement" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="5418393554803775532">
+                <link role="baseMethodDeclaration:16" targetNodeId="29.5418393554803775106" resolveInfo="getMethodsToImplement" />
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="1221638428601" />
@@ -19682,8 +19682,8 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3600721186257525220">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3600721186257525215">
               <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="3600721186257525214" />
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3600721186257525219">
-                <link role="baseMethodDeclaration:16" targetNodeId="29.6603209858471717101" resolveInfo="getMethodsToOverride" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="5418393554803775241">
+                <link role="baseMethodDeclaration:16" targetNodeId="29.5418393554803767537" resolveInfo="getMethodsToOverride" />
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="3600721186257525224" />

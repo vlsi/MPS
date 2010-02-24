@@ -49,6 +49,7 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.search.VisibleThrowablesScope;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
@@ -1314,7 +1315,9 @@ __switch__:
                       return SPropertyOperations.getBoolean(it, "isAbstract");
                     }
                   }).toListSequence();
-                  ListSequence.fromList(methodsToImplement).addSequence(ListSequence.fromList(ClassConcept_Behavior.call_getMethodsToImplement_1221637841398(SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+                  for (SNode baseMethodDeclaration : IMemberContainer_Behavior.call_getMethodsToImplement_5418393554803775106(SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+                    ListSequence.fromList(methodsToImplement).addElement(SNodeOperations.cast(baseMethodDeclaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+                  }
                 }
                 for (SNode method : ListSequence.fromList(methodsToImplement)) {
                   SNode method_copy = SNodeOperations.copyNode(method);

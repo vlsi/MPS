@@ -7,7 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
 import jetbrains.mps.ide.actions.AddClassMethodStrategy;
@@ -46,7 +46,7 @@ public class ImplementMethods_Intention extends BaseIntention implements Intenti
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(ClassConcept_Behavior.call_getMethodsToImplement_1221637841398(node)).isNotEmpty();
+    return ListSequence.fromList(IMemberContainer_Behavior.call_getMethodsToImplement_5418393554803775106(node)).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

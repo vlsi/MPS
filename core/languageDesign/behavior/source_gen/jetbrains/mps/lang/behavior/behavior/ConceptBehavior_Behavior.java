@@ -103,7 +103,7 @@ public class ConceptBehavior_Behavior {
     };
   }
 
-  public static List<SNode> call_getMethodsToOverride_6603209858471710849(SNode thisNode) {
+  public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
     for (SNode method : ConceptBehavior_Behavior.call_getConceptMethods_5466054087443746043(thisNode, GlobalScope.getInstance())) {
       if (SPropertyOperations.getBoolean(method, "isFinal")) {
