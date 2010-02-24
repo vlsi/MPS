@@ -89,7 +89,7 @@ public class DebugInfo {
     Set<VarPositionInfo> noRootVars = MapSequence.fromMap(this.myRootToVarPositions).get(UNSPECIFIED_ROOT);
     if (noRootVars != null) {
       for (PositionInfo position : noRootVars) {
-        Element e = new Element(VAR_INFO);
+        Element e = new Element(NODE_INFO);
         position.saveTo(e);
         root.addContent(e);
       }
@@ -181,6 +181,36 @@ public class DebugInfo {
     // since 'some statement' takes lines 1-2 instead of just line 2 
     if (Sequence.fromIterable(sorted).count() > 1 && firstPositionInfo.getStartLine() == line && firstPositionInfo.getLineDistance() > 0) {
       nodeId = ListSequence.fromList(Sequence.fromIterable(sorted).toListSequence()).getElement(1).getNodeId();
+    }
+    return model.getNodeById(nodeId);
+  }
+
+  public SNode getVarForLine(String file, int line, SModel model, String varName) {
+    List<VarPositionInfo> resultList = ListSequence.fromList(new ArrayList<VarPositionInfo>());
+    for (Set<VarPositionInfo> val : MapSequence.fromMap(this.myRootToVarPositions).values()) {
+      for (VarPositionInfo element : val) {
+        if (ObjectUtils.equals(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
+          ListSequence.fromList(resultList).addElement(element);
+        }
+      }
+    }
+    if (ListSequence.fromList(resultList).isEmpty()) {
+      return null;
+    }
+    Iterable<VarPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<VarPositionInfo, Comparable<?>>() {
+      public Comparable<?> select(VarPositionInfo it) {
+        return it;
+      }
+    }, true);
+    String nodeId = null;
+    for (VarPositionInfo varPosition : sorted) {
+      if (varPosition.getVarName().equals(varName)) {
+        nodeId = varPosition.getNodeId();
+        break;
+      }
+    }
+    if (nodeId == null) {
+      return null;
     }
     return model.getNodeById(nodeId);
   }

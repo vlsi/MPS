@@ -63,11 +63,15 @@ public class StacktraceUtil {
     });
   }
 
-  public static SNode getNode(String method, final String file, final int position) {
-    int lastDot = method.lastIndexOf(".");
+  public static SNode getNode(String className, String file, int position) {
+    return getNodeOrVar(className, file, position, null);
+  }
+
+  public static SNode getNodeOrVar(String className, final String file, final int position, final String varName) {
+    int lastDot = className.lastIndexOf(".");
     String pkg = (lastDot == -1 ?
       "" :
-      method.substring(0, lastDot)
+      className.substring(0, lastDot)
     );
     List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptorsByModelName(pkg);
     for (final SModelDescriptor descriptor : ListSequence.fromList(list)) {
@@ -83,7 +87,11 @@ public class StacktraceUtil {
       final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          nodeToShow.value = result.getNodeForLine(file, position, descriptor.getSModel());
+          if (varName == null) {
+            nodeToShow.value = result.getNodeForLine(file, position, descriptor.getSModel());
+          } else {
+            nodeToShow.value = result.getVarForLine(file, position, descriptor.getSModel(), varName);
+          }
         }
       });
 
