@@ -9,6 +9,11 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class InstanceMethodDeclaration_Behavior {
@@ -38,19 +43,15 @@ public class InstanceMethodDeclaration_Behavior {
   }
 
   public static SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
-    SNode superclass = null;
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      superclass = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true);
-    }
-    while (superclass != null) {
-      for (SNode methodCandidate : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(superclass, "classifier", false), "method", true))) {
-        if (SPropertyOperations.getString(methodCandidate, "name").equals(SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
-          if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(methodCandidate, thisNode)) {
-            return methodCandidate;
-          }
+    SNode classifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.INSTANCE_METHOD);
+    List<SNode> methodDeclarations = BaseAdapter.toNodes(scope.getAdapters(InstanceMethodDeclaration.class));
+    for (SNode methodCandidate : ((List<SNode>) methodDeclarations)) {
+      if (SPropertyOperations.getString(methodCandidate, "name").equals(SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
+        if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(methodCandidate, thisNode)) {
+          return methodCandidate;
         }
       }
-      superclass = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(superclass, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true);
     }
     return null;
   }
