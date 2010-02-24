@@ -135,8 +135,6 @@ public class LeftEditorHighlighter extends JComponent {
 
   @Override
   public void paint(Graphics g) {
-    Graphics2D g2d = (Graphics2D) g;
-    EditorComponent.turnOnAliasingIfPossible(g2d);
     Rectangle bounds = g.getClipBounds();
     g.setColor(getBackground());
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
@@ -148,12 +146,7 @@ public class LeftEditorHighlighter extends JComponent {
       g.fillRect(bounds.x, deepestCell.getY(), bounds.width,
         deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
     }
-//    UIUtil.drawVDottedLine(g2d, mySeparatorLineX, bounds.y, bounds.y + bounds.height, getBackground(), Color.gray);
-    g.setColor(Color.gray);
-    Stroke s = g2d.getStroke();
-    g2d.setStroke(ColorAndGraphicsUtil.dottedStroke());
-    g.drawLine(mySeparatorLineX, bounds.y, mySeparatorLineX, bounds.y + bounds.height);
-    g2d.setStroke(s);
+    UIUtil.drawVDottedLine((Graphics2D) g, mySeparatorLineX, bounds.y, bounds.y + bounds.height, getBackground(), Color.gray);
 
     for (HighlighterBracket bracket : myBrackets.values()) {
       bracket.paint(g);
