@@ -163,18 +163,12 @@ public class DebugSession {
     public void resumed(DebugSession session);
   }
 
-  // TODO this class is horrible. Nobody will ever understand what is going on here.  Do something about it.
   public class UiState {
-    private SuspendContext myContext;
-    private ThreadReference myThread;
-    private StackFrame myStackFrame;
-
-    public UiState() {
-      setContext(null);
-    }
+    private SuspendContext myContext = null;
+    private ThreadReference myThread = null;
+    private StackFrame myStackFrame = null;
 
     // changes state on pause/resume
-
     private void paused(SuspendContext context) {
       // we select new context even if we are already on some other context
       // user probably wants to know about new paused contexts
@@ -201,9 +195,9 @@ public class DebugSession {
       return CollectionUtil.union(suspendManager.getPausedContexts(), Collections.singletonList(context));
     }
 
+    // retrieve thread and frame from given context
     private void setContext(@Nullable SuspendContext context) {
       if (context == null) {
-        // TODO what if we resumed one context, but some others are still suspended? Find them?
         myContext = null;
         myThread = null;
         myStackFrame = null;
@@ -215,7 +209,7 @@ public class DebugSession {
           List<ThreadReference> threads = myEventsProcessor.getVirtualMachine().allThreads();
           myThread = threads.get(0);
           for (ThreadReference t : threads) {
-            // TODO this is a hack
+            // TODO this is a hack to filter out system threads
             if (!t.threadGroup().name().equals("system")) {
               myThread = t;
               break;
@@ -239,8 +233,6 @@ public class DebugSession {
       } else {
         myThread = thread;
         if (!myContext.suspends(thread)) {
-          SuspendContext result = null;
-
           for (SuspendContext context : getAllPausedContexts()) {
             if (context.suspends(thread)) {
               myContext = context;
