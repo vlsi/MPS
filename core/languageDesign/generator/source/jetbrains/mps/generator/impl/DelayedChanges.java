@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.generator.structure.NodeMacro;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.Language;
@@ -79,7 +78,7 @@ public class DelayedChanges {
     public void doChange() {
       Map<String, SNode> old = myGenerator.setPreviousInputNodesByMappingName(myInputNodesByMappingName);
       try {
-        SNode child = QueryExecutor.executeMapSrcNodeMacro(myInputNode, myMapSrcMacro, myChildToReplace.getParent(), myGenerator);
+        SNode child = myGenerator.getExecutor().executeMapSrcNodeMacro(myInputNode, myMapSrcMacro, myChildToReplace.getParent());
         if (child != null) {
           // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
           // planning the generation steps.
@@ -165,7 +164,7 @@ public class DelayedChanges {
     public void doChange() {
       Map<String, SNode> old = myGenerator.setPreviousInputNodesByMappingName(myInputNodesByMappingName);
       try {
-        QueryExecutor.executeMapSrcNodeMacro_PostProc(myInputNode, myMapSrcMacro, myOutputChild, myGenerator);
+        myGenerator.getExecutor().executeMapSrcNodeMacro_PostProc(myInputNode, myMapSrcMacro, myOutputChild);
       } catch (Throwable t) {
         myGenerator.showErrorMessage(myInputNode, myMapSrcMacro, "mapping failed: '" + t.getMessage() + "'");
         myLogger.handleException(t);

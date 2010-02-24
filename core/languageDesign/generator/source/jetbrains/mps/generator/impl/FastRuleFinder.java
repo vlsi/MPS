@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SNode;
@@ -61,7 +60,7 @@ public class FastRuleFinder {
     }
   }
 
-  Reduction_MappingRule findReductionRule(SNode node, TemplateGenerator generator) throws GenerationFailureException {
+  public Reduction_MappingRule findReductionRule(SNode node, TemplateGenerator generator) throws GenerationFailureException {
     Reduction_MappingRule[] allRules = myApplicableRules.get(node.getConceptFqName());
     if (allRules == null) {
       return null;
@@ -69,7 +68,7 @@ public class FastRuleFinder {
 
     for (Reduction_MappingRule rule : allRules) {
       if (!generator.getBlockedReductionsData().isReductionBlocked(node, rule)) {
-        if (QueryExecutor.checkCondition(rule.getConditionFunction(), false, node, rule.getNode(), generator)) {
+        if (generator.getExecutor().checkCondition(rule.getConditionFunction(), false, node, rule.getNode())) {
           generator.getBlockedReductionsData().registerInputReduction(node, rule);
           return rule;
         }

@@ -16,11 +16,18 @@ import java.util.List;
 /**
  * Evgeny Gryaznov, Feb 10, 2010
  */
-public class QueryExecutor {
-  
-  private static final Logger LOG = Logger.getLogger(QueryExecutor.class);
+public class QueryExecutor implements IQueryExecutor {
 
-  public static boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws GenerationFailureException {
+  private static final Logger LOG = Logger.getLogger(QueryExecutor.class);
+  
+  private ITemplateGenerator generator;
+
+  public QueryExecutor(ITemplateGenerator generator) {
+    this.generator = generator;
+  }
+
+  @Override
+  public boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
     if (condition == null) {
       if (required) {
         generator.showErrorMessage(inputNode, null, ruleNode, "rule condition required");
@@ -47,7 +54,8 @@ public class QueryExecutor {
     return false;
   }
 
-  public static boolean checkCondition(CreateRootRule createRootRule, ITemplateGenerator generator) throws GenerationFailureException {
+  @Override
+  public boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException {
     CreateRootRule_Condition conditionFunction = createRootRule.getConditionFunction();
     if (conditionFunction == null) {
       return true;
@@ -70,7 +78,8 @@ public class QueryExecutor {
     return false;
   }
 
-  public static boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode, ITemplateGenerator generator) throws GenerationFailureException {
+  @Override
+  public boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode) throws GenerationFailureException {
     if (condition == null) {
       // condition is not required
       return true;
@@ -95,7 +104,8 @@ public class QueryExecutor {
     return true;
   }
 
-  public static boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, ITemplateGenerator generator) throws GenerationFailureException {
+  @Override
+  public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro) throws GenerationFailureException {
     IfMacro_Condition function = ifMacro.getConditionFunction();
     if (function == null) {
       throw new GenerationFailureException("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null);
@@ -120,7 +130,8 @@ public class QueryExecutor {
     return false;
   }
 
-  public static void executeMappingScript(MappingScript mappingScript, SModel model, ITemplateGenerator generator) throws GenerationFailureException {
+  @Override
+  public void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException {
     MappingScript_CodeBlock codeBlock = mappingScript.getCodeBlock();
     if (codeBlock == null) {
       generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no code-block");
@@ -144,7 +155,8 @@ public class QueryExecutor {
     }
   }
 
-  public static SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, ITemplateGenerator generator) throws GenerationFailureException {
+  @Override
+  public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode) throws GenerationFailureException {
     INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
     MapSrcMacro_MapperFunction mapperFunction;
     if (adapter instanceof MapSrcNodeMacro) {
@@ -165,7 +177,8 @@ public class QueryExecutor {
     }
   }
 
-  public static void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, ITemplateGenerator generator) throws GenerationFailureException {
+  @Override
+  public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode) throws GenerationFailureException {
     INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
     MapSrcMacro_PostMapperFunction postMapperFunction;
     if (adapter instanceof MapSrcNodeMacro) {
@@ -188,7 +201,8 @@ public class QueryExecutor {
     }
   }
 
-  public static void expandPropertyMacro(ITemplateGenerator generator, PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode) throws GenerationFailureException {
+  @Override
+  public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode) throws GenerationFailureException {
     String attributeRole = propertyMacro.getRole_();
     String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(attributeRole);
 
@@ -212,7 +226,8 @@ public class QueryExecutor {
     }
   }
 
-  public static SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, ITemplateGenerator generator) {
+  @Override
+  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
     try {
       return (SNode) QueryMethodGenerated.invoke(
@@ -233,7 +248,8 @@ public class QueryExecutor {
   /**
    * used to evaluate 'sourceNodesQuery' in macros and in rules
    */
-  public static List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
+  @Override
+  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
     try {
       Object result = QueryMethodGenerated.invoke(
@@ -262,7 +278,8 @@ public class QueryExecutor {
     }
   }
 
-  public static SNode getContextNodeForTemplateFragment(SNode inputNode, SNode templateFragmentNode, SNode mainContextNode, ITemplateGenerator generator) {
+  @Override
+  public SNode getContextNodeForTemplateFragment(SNode inputNode, SNode templateFragmentNode, SNode mainContextNode) {
     TemplateFragment fragment = TemplateFragment_AnnotationLink.getTemplateFragment((BaseConcept) templateFragmentNode.getAdapter());
     // has custom context builder provider?
     TemplateFragment_ContextNodeQuery query = fragment.getContextNodeQuery();
@@ -288,7 +305,8 @@ public class QueryExecutor {
     return mainContextNode;
   }
 
-  public static SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule, ITemplateGenerator generator) {
+  @Override
+  public SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule) {
     Weaving_MappingRule_ContextNodeQuery query = rule.getContextNodeQuery();
     if (query != null) {
       String methodName = TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(query.getNode());
@@ -309,7 +327,8 @@ public class QueryExecutor {
     return null;
   }
 
-  public static Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, ITemplateGenerator generator) {
+  @Override
+  public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro) {
     ReferenceMacro_GetReferent function = refMacro.getReferentFunction();
     if (function == null) {
       generator.showErrorMessage(node, refMacro.getNode(), "couldn't evaluate reference macro: no function");

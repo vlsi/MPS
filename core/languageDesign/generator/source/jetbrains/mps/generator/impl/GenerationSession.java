@@ -23,7 +23,8 @@ import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.QueryExecutor;
+import jetbrains.mps.generator.util.IPerformanceTracer;
+import jetbrains.mps.generator.util.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.MappingScript;
@@ -62,6 +63,7 @@ public class GenerationSession {
   private final GenerationSessionLogger myLogger;
 
   private GenerationSessionContext mySessionContext;
+  private IPerformanceTracer ttrace;
 
   private boolean myIsStrict;
 
@@ -80,6 +82,8 @@ public class GenerationSession {
     myReverseRoots = reverseRoots;
     myIsStrict = isStrict;
     myLogger = new GenerationSessionLogger(logger);
+    ttrace = new NullPerformanceTracer();
+      //new PerformanceTracer("model " + inputModel.getName());
   }
 
   public GenerationStatus generateModel() throws GenerationCanceledException {
@@ -97,6 +101,7 @@ public class GenerationSession {
       SModel currInputModel = myOriginalInputModel.getSModel();
       SModel currOutput = null;
 
+      ttrace.push("steps", false);
       for(myMajorStep = 0; myMajorStep < myGenerationPlan.getStepCount(); myMajorStep++) {
         if(myLogger.needsInfo()) {
           myLogger.info("executing step " + (myMajorStep + 1));
@@ -110,11 +115,17 @@ public class GenerationSession {
         }
         currInputModel = currOutput;
       }
+      ttrace.pop();
 
       // we need this in order to prevent memory leaks from nodes which are reported to message view
       // since session objects might include objects with disposed class loaders
       if (mySessionContext != null) {
         mySessionContext.clearTransientObjects();
+      }
+
+      String report = ttrace.report();
+      if(report != null) {
+        myLogger.trace(report);
       }
 
       return new GenerationStatus(myOriginalInputModel.getSModel(), currOutput,
@@ -191,7 +202,9 @@ public class GenerationSession {
     // -----------------------
     // run pre-processing scripts
     // -----------------------
+    ttrace.push("pre-processing", false);
     currentInputModel = preProcessModel(ruleManager, currentInputModel);
+    ttrace.pop();
 
     SModel currentOutputModel = createTransientModel();
     tracer.startTracing(currentInputModel, currentOutputModel);
@@ -259,14 +272,16 @@ public class GenerationSession {
     // -----------------------
     // run post-processing scripts
     // -----------------------
+    ttrace.push("post-processing", false);
     currentOutputModel = postProcessModel(ruleManager, currentOutputModel);
+    ttrace.pop();
 
     return currentOutputModel;
   }
 
   private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, boolean isPrimary,
                              RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
-    TemplateGenerator tg = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myIsStrict);
+    TemplateGenerator tg = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myIsStrict, ttrace);
     return tg.apply(isPrimary);
   }
 
@@ -310,8 +325,8 @@ public class GenerationSession {
       if(myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getNode(), "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")");
       }
-      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myIsStrict);
-      QueryExecutor.executeMappingScript(preMappingScript, currentInputModel, templateGenerator);
+      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myIsStrict, ttrace);
+      templateGenerator.getExecutor().executeMappingScript(preMappingScript, currentInputModel);
     }
     return currentInputModel;
   }
@@ -338,8 +353,8 @@ public class GenerationSession {
       if(myLogger.needsInfo()) {
         myLogger.info(postMappingScript.getNode(), "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
       }
-      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentOutputModel, currentOutputModel, myIsStrict);
-      QueryExecutor.executeMappingScript(postMappingScript, currentOutputModel, templateGenerator);
+      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentOutputModel, currentOutputModel, myIsStrict, ttrace);
+      templateGenerator.getExecutor().executeMappingScript(postMappingScript, currentOutputModel);
     }
     return currentOutputModel;
   }

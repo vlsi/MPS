@@ -3,7 +3,6 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
-import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -85,7 +84,7 @@ public class WeavingProcessor {
       SNode templateFragmentNode = BaseAdapter.fromAdapter(templateFragment.getParent());
       SNode contextParentNode = null;
       try {
-        contextParentNode = QueryExecutor.getContextNodeForTemplateFragment(inputNode, templateFragmentNode, outputContextNode, myGenerator);
+        contextParentNode = myGenerator.getExecutor().getContextNodeForTemplateFragment(inputNode, templateFragmentNode, outputContextNode);
       } catch (Exception e) {
         myGenerator.getLogger().handleException(e);
       }
@@ -139,8 +138,8 @@ public class WeavingProcessor {
     boolean includeInheritors = rule.getApplyToConceptInheritors();
     List<SNode> nodes = myFastNodeFinder.getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
-      if (QueryExecutor.checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), myGenerator)) {
-        SNode outputContextNode = QueryExecutor.getContextNodeForWeavingingRule(applicableNode, rule, myGenerator);
+      if (myGenerator.getExecutor().checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode())) {
+        SNode outputContextNode = myGenerator.getExecutor().getContextNodeForWeavingingRule(applicableNode, rule);
         if (!checkContext(rule, applicableNode, outputContextNode)) {
           continue;
         }
@@ -167,7 +166,7 @@ public class WeavingProcessor {
                 break;
               }
               TemplateDeclaration template = weaveEach.getTemplate();
-              List<SNode> queryNodes = QueryExecutor.evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, myGenerator);
+              List<SNode> queryNodes = myGenerator.getExecutor().evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query);
               if (queryNodes.isEmpty()) {
                 someOutputGenerated = false;
               }

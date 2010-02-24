@@ -22,8 +22,8 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
-import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.util.IPerformanceTracer;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
@@ -58,36 +58,43 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   /* cached session data */
   private BlockedReductionsData myReductionData;
   private final IGenerationTracer myGenerationTracer;
+  private IPerformanceTracer ttrace;
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
-                           SModel inputModel, SModel outputModel, boolean isStrict) {
+                           SModel inputModel, SModel outputModel, boolean isStrict, IPerformanceTracer performance) {
 
     super(operationContext, progressMonitor, logger, inputModel, outputModel);
     myRuleManager = ruleManager;
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
     myIsStrict = isStrict;
     myDelayedChanges = new DelayedChanges(this);
+    ttrace = performance;
   }
 
   public boolean apply(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
     checkMonitorCanceled();
     myAreMappingsReady = false;
 
+    ttrace.push("reductions", false);
     // create all roots
     if (isPrimary) {
+      ttrace.push("create root", false);
       for (CreateRootRule rule : myRuleManager.getCreateRootRules()) {
         checkMonitorCanceled();
         applyCreateRootRule(rule);
       }
+      ttrace.pop();
     }
 
     // root mapping rules
+    ttrace.push("root mappings", false);
     List<SNode> rootsToCopy = new ArrayList<SNode>(myInputModel.getRoots());
     for (Root_MappingRule rule : myRuleManager.getRoot_MappingRules()) {
       checkMonitorCanceled();
       applyRoot_MappingRule(rule, rootsToCopy);
     }
+    ttrace.pop();
 
     checkMonitorCanceled();
     getGeneratorSessionContext().clearCopiedRootsSet();
@@ -104,21 +111,28 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       applyReductionRules(inputRootNode, outputRootNode);
     }
 
+    ttrace.pop();
+
     myAreMappingsReady = true;
 
     // weaving
+    ttrace.push("weavings", false);
     applyWeaving_MappingRules();
+    ttrace.pop();
 
     // execute mapper in all $MAP_SRC$/$MAP_SRCL$
+    ttrace.push("delayed mappings", false);
     myDelayedChanges.doAllChanges();
+    ttrace.pop();
 
     // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
+    ttrace.push("restoring references", false);
     for (SNode copiedRoot : copiedOutputRoots) {
       checkMonitorCanceled();
       invalidateReferencesInCopiedNode(copiedRoot);
     }
     revalidateAllReferences();
-
+    ttrace.pop();
     checkMonitorCanceled();
     return isChanged();
   }
@@ -204,7 +218,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   private void applyCreateRootRule(CreateRootRule createRootRule) throws GenerationFailureException, GenerationCanceledException {
-    if (QueryExecutor.checkCondition(createRootRule, this)) {
+    if (myExecutor.checkCondition(createRootRule)) {
       INamedConcept templateNode = createRootRule.getTemplateNode();
       if (templateNode == null) {
         showErrorMessage(null, null, createRootRule.getNode(), "'create root' rule has no template");
@@ -240,7 +254,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         continue;
       }
 
-      if (QueryExecutor.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), this)) {
+      if (myExecutor.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode())) {
         myGenerationTracer.pushInputNode(inputNode);
         myGenerationTracer.pushRule(rule.getNode());
         boolean wasChanged = isChanged();
@@ -304,7 +318,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     if (inputRootNode.isInstanceOfConcept(applicableConcept)) {
-      if (QueryExecutor.checkCondition(rule.getConditionFunction(), inputRootNode, rule.getNode(), this)) {
+      if (myExecutor.checkCondition(rule.getConditionFunction(), inputRootNode, rule.getNode())) {
         myGenerationTracer.pushInputNode(inputRootNode);
         myGenerationTracer.pushRule(rule.getNode());
         myGenerationTracer.closeInputNode(inputRootNode);

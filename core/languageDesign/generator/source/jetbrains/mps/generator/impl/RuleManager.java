@@ -21,6 +21,7 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.util.FlattenIterable;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.*;
@@ -129,7 +130,7 @@ public class RuleManager {
     for (TemplateSwitch aSwitch : switches) {
       List<Reduction_MappingRule> rules = aSwitch.getReductionMappingRules();
       for (Reduction_MappingRule rule : rules) {
-        if (GeneratorUtil.checkPremiseForBaseMappingRule(inputNode, inputNodeConcept, rule, generator)) {
+        if (checkPremiseForBaseMappingRule(inputNode, inputNodeConcept, rule, generator)) {
           RuleConsequence ruleConsequence = rule.getRuleConsequence();
           if (ruleConsequence == null) {
             generator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't apply reduction: no rule consequence");
@@ -146,5 +147,17 @@ public class RuleManager {
     }
 
     return null;
+  }
+
+  private static boolean checkPremiseForBaseMappingRule(SNode inputNode, AbstractConceptDeclaration inputNodeConcept, BaseMappingRule rule, ITemplateGenerator generator) throws GenerationFailureException {
+    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
+    if (applicableConcept != null) {
+      if (rule.getApplyToConceptInheritors()) {
+        if (!SModelUtil_new.isAssignableConcept(inputNodeConcept, applicableConcept)) return false;
+      } else {
+        if (inputNodeConcept != applicableConcept) return false;
+      }
+    }
+    return generator.getExecutor().checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode());
   }
 }

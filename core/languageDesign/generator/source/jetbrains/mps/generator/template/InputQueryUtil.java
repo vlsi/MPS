@@ -90,12 +90,12 @@ public class InputQueryUtil {
       throw new GenerationFailureException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
     }
 
-    return QueryExecutor.evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, generator);
+    return generator.getExecutor().evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query);
   }
 
   private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) throws GenerationFailureException {
     if (query != null) {
-      List<SNode> list = QueryExecutor.evaluateSourceNodesQuery(currentInputNode, null, macro.getNode(), query, generator);
+      List<SNode> list = generator.getExecutor().evaluateSourceNodesQuery(currentInputNode, null, macro.getNode(), query);
       return list != null ? list : Collections.<SNode>emptyList();
     }
 
@@ -109,6 +109,6 @@ public class InputQueryUtil {
       // continue with current input node
       return currentInputNode;
     }
-    return QueryExecutor.evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, generator);
+    return generator.getExecutor().evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query);
   }
 }

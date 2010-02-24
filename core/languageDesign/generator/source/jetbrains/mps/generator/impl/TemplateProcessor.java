@@ -19,7 +19,6 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.template.InputQueryUtil;
-import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
@@ -151,7 +150,7 @@ public class TemplateProcessor {
     List<INodeAdapter> templateChildNodes = new ArrayList<INodeAdapter>();
     for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
       if (templateChildNode instanceof PropertyMacro) {
-        QueryExecutor.expandPropertyMacro(myGenerator, (PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
+        myGenerator.getExecutor().expandPropertyMacro((PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
       } else if (templateChildNode instanceof ReferenceMacro) {
         ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(
           outputNode, (ReferenceMacro) templateChildNode,
@@ -247,7 +246,7 @@ public class TemplateProcessor {
     } else if (nodeMacro instanceof IfMacro) {
       // $IF$
       List<SNode> _outputNodes = null;
-      if (QueryExecutor.checkConditionForIfMacro(inputNode, (IfMacro) nodeMacro, myGenerator)) {
+      if (myGenerator.getExecutor().checkConditionForIfMacro(inputNode, (IfMacro) nodeMacro)) {
         _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, nodeMacrosToSkip + 1);
       } else {
         // alternative consequence

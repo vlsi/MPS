@@ -18,7 +18,6 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
@@ -77,18 +76,6 @@ public class GeneratorUtil {
       return defaultValue;
     }
     return mappingName;
-  }
-
-  public static boolean checkPremiseForBaseMappingRule(SNode inputNode, AbstractConceptDeclaration inputNodeConcept, BaseMappingRule rule, ITemplateGenerator generator) throws GenerationFailureException {
-    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
-    if (applicableConcept != null) {
-      if (rule.getApplyToConceptInheritors()) {
-        if (!SModelUtil_new.isAssignableConcept(inputNodeConcept, applicableConcept)) return false;
-      } else {
-        if (inputNodeConcept != applicableConcept) return false;
-      }
-    }
-    return QueryExecutor.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator);
   }
 
   /*package*/
@@ -188,7 +175,7 @@ public class GeneratorUtil {
     } else if (ruleConsequence instanceof InlineSwitch_RuleConsequence) {
       InlineSwitch_RuleConsequence inlineSwitch = (InlineSwitch_RuleConsequence) ruleConsequence;
       for (InlineSwitch_Case switchCase : inlineSwitch.getCases()) {
-        if (QueryExecutor.checkCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode(), generator)) {
+        if (generator.getExecutor().checkCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode())) {
           return getTemplateNodesFromRuleConsequence(switchCase.getCaseConsequence(), inputNode, switchCase.getNode(), generator);
         }
       }

@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SModelReference;
@@ -104,7 +103,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private void expandReferenceMacro(ITemplateGenerator generator) {
     String linkRole = getReferenceRole();
 
-    Object result = QueryExecutor.getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro, generator);
+    Object result = generator.getExecutor().getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro);
     if (result instanceof SNode) {
       myOutputTargetNode = (SNode) result;
     } else if (result != null) {

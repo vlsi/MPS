@@ -107,6 +107,12 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     myMessageHandler.handle(message);
   }
 
+  public void trace(String message) {
+    for(String s : message.split("\n")) {
+      report(MessageKind.INFORMATION, s, null);
+    }
+  }
+
   private void report(MessageKind kind, String text, Object hintObject) {
     if(hintObject instanceof SNode && myOperationContext != null) {
       hintObject = new NodeWithContext((SNode) hintObject, myOperationContext);

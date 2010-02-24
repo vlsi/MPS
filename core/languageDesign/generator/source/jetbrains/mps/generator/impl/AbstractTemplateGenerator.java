@@ -18,7 +18,9 @@ package jetbrains.mps.generator.impl;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.template.IQueryExecutor;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.smodel.*;
 
 import java.util.HashSet;
@@ -39,6 +41,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private Map<String, SNode> myCurrentPreviousInputNodesByMappingName;
   private HashSet<SNode> myFailedRules;
 
+  protected final IQueryExecutor myExecutor;
+
   protected AbstractTemplateGenerator(IOperationContext operationContext,
                                       ProgressIndicator progressMonitor, IGeneratorLogger logger,
                                       SModel inputModel, SModel outputModel) {
@@ -48,6 +52,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myMappings = new GeneratorMappings();
+    myExecutor = new QueryExecutor(this);
   }
 
   public IOperationContext getOperationContext() {
@@ -205,5 +210,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   public SNode findInputNodeById(SNodeId nodeId) {
     return myInputModel.getNodeById(nodeId);
+  }
+
+  @Override
+  public IQueryExecutor getExecutor() {
+    return myExecutor;
   }
 }

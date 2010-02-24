@@ -68,4 +68,6 @@ public interface ITemplateGenerator {
   IScope getScope();
 
   boolean isStrict();
+
+  IQueryExecutor getExecutor();
 }
