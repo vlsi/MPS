@@ -78,33 +78,23 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
         } else {
 /*
           if (descriptor instanceof BaseStubModelDescriptor) {
-            boolean changed = false;
             for (StubPath sp : ((BaseStubModelDescriptor) descriptor).getPaths()) {
-              boolean isContaied = false;
-              for (StubPath notChanged : notChangedStubs) {
-                if (StubPath.equalStubPaths(notChanged, sp)) {
-                  isContaied = true;
-                  break;
-                }
-              }
-              if (!isContaied) {
-                changed = true;
+              if (!notChangedStubs.contains(sp)) {
+                updateModelInLoadingState(descriptor, descriptor.getSModel());
                 break;
               }
             }
-            if (changed) {
-              updateModelInLoadingState(descriptor, descriptor.getSModel());
-              break;
-            }
-        }else{
+          } else {
 */
-          updateModelInLoadingState(descriptor, descriptor.getSModel());
-//        }
+            updateModelInLoadingState(descriptor, descriptor.getSModel());
+/*
+          }
+*/
+        }
       }
     }
-  }
 
-}
+  }
 
   @NotNull
   public final SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {

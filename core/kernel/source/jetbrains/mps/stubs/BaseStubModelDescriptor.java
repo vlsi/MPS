@@ -21,11 +21,7 @@ public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
       myStubPaths = new ArrayList<StubPath>();
     }
 
-    for (StubPath s : myStubPaths) {
-      if (StubPath.equalStubPaths(s, sp)) {
-        return;
-      }
-    }
+    if (myStubPaths.contains(sp)) return;
 
     myStubPaths.add(sp);
   }

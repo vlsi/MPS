@@ -63,6 +63,8 @@ public abstract class AbstractModule implements IModule {
   public static final String MODULE_DIR = "module";
   public static final String CACHES_DIR = "caches";
   public static final String PACKAGE_SUFFIX = "mpsarch.jar";
+  
+  private static final boolean USE_INCREMETAL_STUBS_RELOADING = false;
 
   public static void registerModelCreationListener(ModelCreationListener listener) {
     myModelCreationListeners.add(listener);
@@ -703,20 +705,20 @@ public abstract class AbstractModule implements IModule {
     //we do not touch models whose loaded status, files and manager were not changed
     List<StubPath> notChangedStubPaths = new ArrayList<StubPath>();
 
-/*
     List<StubPath> newStubs = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
 
-    //todo make time linear [due to stubs list size this is not very significant]
-    for (StubPath os : myLoadedStubPaths) {
-      for (StubPath ns : newStubs) {
-        if (StubPath.equalStubPaths(os, ns)) {
-          if (os.isFresh()) {
-            notChangedStubPaths.add(ns);
+    if (USE_INCREMETAL_STUBS_RELOADING){
+      //todo make time linear [due to stubs list size this is not very significant]
+      for (StubPath os : myLoadedStubPaths) {
+        for (StubPath ns : newStubs) {
+          if (os.equals(ns)) {
+            if (os.isFresh()) {
+              notChangedStubPaths.add(ns);
+            }
           }
         }
       }
     }
-*/
 
     disposeAllStubManagers();
     releaseOldStubs(notChangedStubPaths);
@@ -755,19 +757,10 @@ public abstract class AbstractModule implements IModule {
 
   private boolean notChanged(List<StubPath> notChangedStubPaths, SModelDescriptor sm) {
     if (!(sm instanceof BaseStubModelDescriptor)) return false;
-
     BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) sm;
 
     for (StubPath s : baseDescriptor.getPaths()) {
-      boolean contains = false;
-      for (StubPath sp : notChangedStubPaths) {
-        if (StubPath.equalStubPaths(s, sp)) {
-          contains = true;
-          break;
-        }
-      }
-
-      if (!contains) return false;
+      if (!notChangedStubPaths.contains(s)) return false;
     }
 
     return true;
@@ -987,9 +980,10 @@ public abstract class AbstractModule implements IModule {
     private String myPath;
     private ModelRootManager myManager;
 
-    private BaseStubModelRootManager myModelRootManager;
     private long myPathTimestamp;
     private long myManagerTimestamp;
+
+    private BaseStubModelRootManager myModelRootManager;
 
     public StubPath(String path, ModelRootManager manager) {
       myPath = path;
@@ -1039,11 +1033,22 @@ public abstract class AbstractModule implements IModule {
       myManagerTimestamp = 0L;
     }
 
-    public static boolean equalStubPaths(StubPath os, StubPath ns) {
-      boolean pathsEqual = EqualUtil.equals(os.getPath(), ns.getPath());
-      boolean managersEqual = EqualUtil.equals(os.getManager(), ns.getManager());
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      StubPath stubPath = (StubPath) o;
+
+      boolean pathsEqual = EqualUtil.equals(stubPath.getPath(), this.getPath());
+      boolean managersEqual = EqualUtil.equals(stubPath.getManager(), this.getManager());
       boolean equalSP = pathsEqual && managersEqual;
       return equalSP;
+    }
+
+    public int hashCode() {
+      int result = myPath != null ? myPath.hashCode() : 0;
+      result = 31 * result + (myManager != null ? myManager.hashCode() : 0);
+      return result;
     }
   }
 
