@@ -263,6 +263,7 @@ public class DebugSession {
     }
 
     private void updateFrame() {
+      LOG.assertLog(myThread != null);
       try {
         System.err.println("frames " + myThread.frames());
         if (myThread.frameCount() > 0) {
@@ -273,14 +274,17 @@ public class DebugSession {
       }
     }
 
+    @Nullable
     public synchronized SuspendContext getContext() {
       return myContext;
     }
 
+    @Nullable
     public synchronized ThreadReference getThread() {
       return myThread;
     }
 
+    @Nullable
     public synchronized StackFrame getStackFrame() {
       return myStackFrame;
     }
