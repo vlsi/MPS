@@ -7467,8 +7467,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.DebugInfoInitializer:23" id="5191407547578461866">
-    <node role="conceptsOfVars:23" type="jetbrains.mps.lang.plugin.structure.ConceptReference:23" id="6142677984957065801">
-      <link role="declaration:23" targetNodeId="1.1068581242863:3" resolveInfo="LocalVariableDeclaration" />
+    <node role="conceptsOfVars:23" type="jetbrains.mps.lang.plugin.structure.VariableNodeItem:23" id="1406126706073866236">
+      <link role="concept:23" targetNodeId="1.1068581242866:3" resolveInfo="LocalVariableReference" />
+      <node role="varEntity:23" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1406126706073908092">
+        <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.VariableNodeExpression:23" id="1406126706073908091" />
+        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1406126706073908096">
+          <link role="link:16" targetNodeId="1.1070568296581:3" />
+        </node>
+      </node>
     </node>
     <node role="conceptsToDebug:23" type="jetbrains.mps.lang.plugin.structure.ConceptReference:23" id="5191407547578560720">
       <link role="declaration:23" targetNodeId="1.1068580123157:3" resolveInfo="Statement" />

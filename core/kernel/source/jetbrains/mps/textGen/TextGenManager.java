@@ -123,7 +123,8 @@ public class TextGenManager {
       if (DebugInfoManager.getInstance().isVariableNode(node)) {
         VarPositionInfo varPositionInfo = new VarPositionInfo();
         varPositionInfo.fillFrom(info);
-        varPositionInfo.setVarName(node.getName()); //todo maybe not under all circumstances it should be name
+        String name = DebugInfoManager.getInstance().getVariableNamedEntity(node).getName();
+        varPositionInfo.setVarName(name);
         myVarPositions.put(node, varPositionInfo);
       }
     } catch (Exception e) {

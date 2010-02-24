@@ -984,5 +984,29 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5857416866788535172">
+    <property name="package:8" value="Custom.DebugInfo" />
+    <link role="concept:8" targetNodeId="7.5857416866788535167:23" resolveInfo="VariableNodeExpression" />
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="5857416866788535173">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5857416866788535174">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5857416866788538164">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5857416866788538177">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5857416866788538166">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="5857416866788538165" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="5857416866788538170">
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="5857416866788538171">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="5857416866788538174">
+                    <link role="conceptDeclaration:16" targetNodeId="7.5857416866788524756:23" resolveInfo="VariableNodeItem" />
+                  </node>
+                </node>
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion:16" id="5857416866788538176" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="5857416866788538181" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

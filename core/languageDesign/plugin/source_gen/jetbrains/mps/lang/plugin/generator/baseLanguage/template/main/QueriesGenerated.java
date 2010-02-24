@@ -506,10 +506,6 @@ public class QueriesGenerated {
     return BaseToolDeclaration_Behavior.call_getGeneratedName_6547237850567463427(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_6030304139513239361(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "declaration", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_6030304139513239382(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "declaration", false));
   }
@@ -520,6 +516,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_6277721878946535353(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString_def(_context.getNode(), "keymap", "Mac OS X");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6925065918170478781(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "concept", false));
   }
 
   public static Object referenceMacro_GetReferent_1204045280150(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1271,6 +1271,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_6423922349611078568(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "componentExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_6925065918170478802(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "varEntity", true);
   }
 
   public static SNode sourceNodeQuery_7692832593197995997(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

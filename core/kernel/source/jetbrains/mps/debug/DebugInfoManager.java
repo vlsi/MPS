@@ -17,13 +17,17 @@ package jetbrains.mps.debug;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Map;
+import java.util.HashMap;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.Mapper;
 
 public class DebugInfoManager implements ApplicationComponent {
   public static DebugInfoManager getInstance() {
@@ -31,7 +35,7 @@ public class DebugInfoManager implements ApplicationComponent {
   }
 
   private Set<String> myDebuggableConcepts = new HashSet<String>();
-  private Set<String> myVariableConcepts = new HashSet<String>();
+  private Map<String, Mapper<SNode, SNode>> myVariableConceptsAndGetters = new HashMap<String, Mapper<SNode, SNode>>();
 
   @NotNull
   public String getComponentName() {
@@ -46,12 +50,12 @@ public class DebugInfoManager implements ApplicationComponent {
     myDebuggableConcepts.remove(fqName);
   }
 
-  public void addVariableConcept(String fqName) {
-    myVariableConcepts.add(fqName);
+  public void addVariableConcept(String fqName, Mapper<SNode, SNode> namedEntityGetter) {
+    myVariableConceptsAndGetters.put(fqName, namedEntityGetter);
   }
 
   public void removeVariableConcept(String fqName) {
-    myVariableConcepts.remove(fqName);
+    myVariableConceptsAndGetters.remove(fqName);
   }
 
   public boolean isDebuggableNode(SNode node) {
@@ -62,10 +66,19 @@ public class DebugInfoManager implements ApplicationComponent {
   }
 
   public boolean isVariableNode(SNode node) {
-    for (String concept : myVariableConcepts) {
+    for (String concept : myVariableConceptsAndGetters.keySet()) {
       if (SNodeOperations.isInstanceOf(node, concept)) return true;
     }
     return false;
+  }
+
+  public SNode getVariableNamedEntity(SNode node) {
+    for (String concept : myVariableConceptsAndGetters.keySet()) {
+      if (SNodeOperations.isInstanceOf(node, concept)) {
+        return myVariableConceptsAndGetters.get(concept).value(node);
+      }
+    }
+    return null;
   }
 
   public void initComponent() {

@@ -3670,7 +3670,7 @@
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="conceptsOfVars" />
       <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="5124230653299542673:23" resolveInfo="ConceptReference" />
+      <link role="target:0" targetNodeId="5857416866788524756:23" resolveInfo="VariableNodeItem" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="485694842828664424">
@@ -3851,6 +3851,32 @@
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="7692832593197710977">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
       <node role="target:0" type="jetbrains.mps.lang.smodel.structure.SConceptType:16" id="7692832593197710979" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5857416866788524756">
+    <property name="package:0" value="Custom.DebugInfo" />
+    <property name="name:0" value="VariableNodeItem" />
+    <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5857416866788529838">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="concept" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="8.1071489090640:0" resolveInfo="ConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5857416866788529837">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="varEntity" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5857416866788535167">
+    <property name="package:0" value="Custom.DebugInfo" />
+    <property name="name:0" value="VariableNodeExpression" />
+    <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5857416866788535168">
+      <property name="value:0" value="varNode" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
 </model>
