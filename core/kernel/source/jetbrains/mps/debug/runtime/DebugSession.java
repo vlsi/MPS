@@ -6,6 +6,7 @@ import com.sun.jdi.StackFrame;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,7 +18,7 @@ public class DebugSession {
   private static final Logger LOG = Logger.getLogger(DebugSession.class);
   private final DebugVMEventsProcessor myEventsProcessor;
   private final List<SessionChangeListener> myListeners = new ArrayList<SessionChangeListener>();
-  private final UiState myUiState = new UiState(null);
+  private final UiState myUiState = new UiState();
 
   private ExecutionState myExecutionState = ExecutionState.WaitingAttach;
   private ProcessHandler myProcessHandler;
@@ -81,13 +82,11 @@ public class DebugSession {
   }
 
   private void pause(SuspendContext suspendContext) {
-    myUiState.selectContext(suspendContext);
+    myUiState.paused(suspendContext);
   }
 
   private void resume(SuspendContext suspendContext) {
-    if (myUiState.getContext() == suspendContext) {
-      myUiState.selectContext(null);
-    }
+    myUiState.resumed(suspendContext);
   }
 
   public UiState getUiState() {
@@ -152,7 +151,7 @@ public class DebugSession {
     @Override
     public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
       myExecutionState = ExecutionState.Stopped;
-      myUiState.selectContext(null);
+      myUiState.setContext(null);
     }
   }
 
@@ -170,11 +169,39 @@ public class DebugSession {
     private ThreadReference myThread;
     private StackFrame myStackFrame;
 
-    public UiState(@Nullable SuspendContext context) {
-      selectContext(context);
+    public UiState() {
+      setContext(null);
     }
 
-    public void selectContext(@Nullable SuspendContext context) {
+    // changes state on pause/resume
+
+    private void paused(SuspendContext context) {
+      // we select new context even if we are already on some other context
+      // user probably wants to know about new paused contexts
+      setContext(context);
+    }
+
+    private void resumed(SuspendContext context) {
+      if (context != myContext) return;
+
+      List<SuspendContext> allPausedContexts = getAllPausedContexts();
+      if (allPausedContexts.isEmpty()) {
+        setContext(null);
+      } else {
+        setContext(allPausedContexts.get(0));
+      }
+    }
+
+    private List<SuspendContext> getAllPausedContexts() {
+      SuspendManager suspendManager = myEventsProcessor.getSuspendManager();
+      SuspendContext context = suspendManager.getPausedByUserContext();
+      if (context != null) {
+        return suspendManager.getPausedContexts();
+      }
+      return CollectionUtil.union(suspendManager.getPausedContexts(), Collections.singletonList(context));
+    }
+
+    private void setContext(@Nullable SuspendContext context) {
       if (context == null) {
         // TODO what if we resumed one context, but some others are still suspended? Find them?
         myContext = null;
@@ -203,6 +230,7 @@ public class DebugSession {
       fireStateChanged();
     }
 
+    // changes state on user selection
     public void selectThread(ThreadReference thread) {
       if (thread == null) {
         myContext = null;
@@ -212,22 +240,13 @@ public class DebugSession {
         myThread = thread;
         if (!myContext.suspends(thread)) {
           SuspendContext result = null;
-          for (SuspendContext suspendContext : myEventsProcessor.getSuspendManager().getPausedContexts()) {
-            if (suspendContext.suspends(thread)) {
-              result = suspendContext;
+
+          for (SuspendContext context : getAllPausedContexts()) {
+            if (context.suspends(thread)) {
+              myContext = context;
               break;
             }
           }
-
-          if (result == null) {
-            SuspendContext suspendContext = myEventsProcessor.getSuspendManager().getPausedByUserContext();
-            if (suspendContext != null) {
-              if (suspendContext.suspends(thread)) {
-                result = suspendContext;
-              }
-            }
-          }
-          myContext = result;
         }
         updateFrame();
       }
@@ -271,6 +290,7 @@ public class DebugSession {
     @NotNull
     public List<ThreadReference> getThreads() {
       if (myExecutionState.equals(ExecutionState.Paused)) {
+        // TODO some threads are not paused
         return myEventsProcessor.getVirtualMachine().allThreads();
       }
       return Collections.emptyList();
