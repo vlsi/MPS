@@ -164,8 +164,11 @@ public class DebugSession {
   }
 
   public class UiState {
+    @Nullable
     private SuspendContext myContext = null;
+    @Nullable
     private ThreadReference myThread = null;
+    @Nullable
     private StackFrame myStackFrame = null;
 
     // changes state on pause/resume
@@ -232,6 +235,7 @@ public class DebugSession {
         myStackFrame = null;
       } else {
         myThread = thread;
+        LOG.assertLog(myContext != null);
         if (!myContext.suspends(thread)) {
           System.err.println(" my current context " + myContext + " does not suspends thread " + thread);
           myContext = null;
@@ -247,7 +251,15 @@ public class DebugSession {
         }
         updateFrame();
       }
-      DebugSession.this.fireStateChanged();
+      fireStateChanged();
+    }
+
+    public synchronized void selectFrame(StackFrame frame) {
+      LOG.assertLog(frame == null || frame.thread() == myThread);
+      if (myStackFrame != frame) {
+        myStackFrame = frame;
+        fireStateChanged();
+      }
     }
 
     private void updateFrame() {
