@@ -13757,7 +13757,7 @@
                     <property name="name:3" value="idx" />
                     <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1204637673190" />
                     <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1204637673191">
-                      <property name="value:3" value="0" />
+                      <property name="value:3" value="-1" />
                     </node>
                   </node>
                 </node>
@@ -13781,37 +13781,37 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1302824097488277744">
-                          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1302824097488277745">
-                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="1302824097488277746">
-                              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="1302824097488277747">
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8138367744850640694">
+                          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8138367744850640695">
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="8138367744850640696">
+                              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="8138367744850640697">
                                 <property name="text:3" value=" TEMP HACK: proceed only if the &quot;right&quot; expression is a ClosureLiteral, balk otherwise" />
                               </node>
                             </node>
-                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="1302824097488277748">
-                              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="1302824097488277749">
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="8138367744850640698">
+                              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="8138367744850640699">
                                 <property name="text:3" value=" This may cause unexpected results, so please disable in case of difficulties generating some code" />
                               </node>
                             </node>
-                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1302824097488277750">
-                              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1302824097488277751">
-                                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="1302824097488278306" />
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8138367744850640700">
+                              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8138367744850640701">
+                                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="8138367744850927048" />
                               </node>
-                              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1302824097488277753">
-                                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1302824097488277754">
-                                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1302824097488277756">
-                                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1302824097488277757">
+                              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="8138367744850640703">
+                                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8138367744850640704">
+                                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="8138367744850640706">
+                                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8138367744850640707">
                                       <link role="conceptDeclaration:16" targetNodeId="1.1199569711397:3" resolveInfo="ClosureLiteral" />
                                     </node>
                                   </node>
-                                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1302824097488278303">
+                                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8138367744850641254">
                                     <link role="variableDeclaration:3" targetNodeId="1204637673225" resolveInfo="arg" />
                                   </node>
                                 </node>
                               </node>
                             </node>
                           </node>
-                          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1302824097488277758">
+                          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="8138367744850640708">
                             <link role="classifier:3" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
                             <link role="variableDeclaration:3" targetNodeId="2v.1225980328125" resolveInfo="ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE" />
                           </node>
@@ -13921,15 +13921,10 @@
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="1237042861935" />
                         </node>
-                        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1204637673325">
-                          <link role="variableDeclaration:3" targetNodeId="1204637673189" resolveInfo="idx" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1204637673334">
-                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="1238145925514">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1238145925515">
-                          <link role="variableDeclaration:3" targetNodeId="1204637673189" resolveInfo="idx" />
+                        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression:3" id="4790429054582162064">
+                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4790429054582162065">
+                            <link role="variableDeclaration:3" targetNodeId="1204637673189" resolveInfo="idx" />
+                          </node>
                         </node>
                       </node>
                     </node>

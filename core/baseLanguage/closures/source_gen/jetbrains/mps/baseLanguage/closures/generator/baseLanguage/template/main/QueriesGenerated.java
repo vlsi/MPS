@@ -3860,9 +3860,9 @@ public class QueriesGenerated {
         if ((SLinkOperations.getTarget(imco, "baseMethodDeclaration", false) != null) && ListSequence.fromList(args).count() != ListSequence.fromList(pdecls).count()) {
           _context.showInformationMessage(imco, "Actual arguments count != parameter declarations count");
         }
-        int idx = 0;
+        int idx = -1;
         for (SNode pdecl : pdecls) {
-          if (idx < ListSequence.fromList(args).count()) {
+          if (++idx < ListSequence.fromList(args).count()) {
             SNode arg = ListSequence.fromList(args).getElement(idx);
             if (Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE) {
               //  TEMP HACK: proceed only if the "right" expression is a ClosureLiteral, balk otherwise 
@@ -3878,7 +3878,6 @@ public class QueriesGenerated {
             SNode pdeclType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pdecl, "type", true), operandType);
             FunctionTypeUtil.prepAdaptations(_context, FunctionTypeUtil.unmeet(pdeclType), arg);
           }
-          idx++;
         }
       }
     }
