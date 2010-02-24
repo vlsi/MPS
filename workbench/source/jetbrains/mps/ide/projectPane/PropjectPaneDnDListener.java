@@ -56,7 +56,8 @@ public class PropjectPaneDnDListener implements DropTargetListener {
   private String getVirtualPackage(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          return node.getProperty(BaseConcept.VIRTUAL_PACKAGE);
+          String result = node.getProperty(BaseConcept.VIRTUAL_PACKAGE);
+          return (result == null)? "" : result;
         }
       });
   }
@@ -98,7 +99,7 @@ public class PropjectPaneDnDListener implements DropTargetListener {
   }
 
   private String getPackagePresentation(String name) {
-    return (name == null)? "<i><untitled></i>" : "'<b>" + name + "</b>";
+    return (name == null || name.isEmpty())? "<i><untitled></i>" : "'<b>" + name + "</b>'";
   }
 
   private String getFullTargetPack(String targetPackage, String basePack) {
@@ -160,7 +161,7 @@ public class PropjectPaneDnDListener implements DropTargetListener {
     final List<Pair<SNode, String>> sourceNodes = (List<Pair<SNode, String>>) source;
 
     SModelDescriptor targetModel = getTargetModel(treePath);
-    final String targetPackage = getTargetVirtualPackage(treePath);
+    final String targetPackage = (getTargetVirtualPackage(treePath) == null)? "" : getTargetVirtualPackage(treePath);
     List<Pair<SNode, String>> nodeToMove = getNodesToMove(targetModel, targetPackage, sourceNodes);
     if (nodeToMove.isEmpty()) {
       dtde.rejectDrop();
