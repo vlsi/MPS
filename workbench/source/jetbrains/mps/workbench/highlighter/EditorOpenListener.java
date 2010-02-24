@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.highlighter;
 
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,7 +26,7 @@ import jetbrains.mps.ide.IEditor;
  * To change this template use File | Settings | File Templates.
  */
 public interface EditorOpenListener {
-  public void editorOpened(IEditor editor);
+  public void editorOpened(MPSFileNodeEditor editor);
 
-  public void editorClosed(IEditor editor);
+  public void editorClosed(MPSFileNodeEditor editor);
 }

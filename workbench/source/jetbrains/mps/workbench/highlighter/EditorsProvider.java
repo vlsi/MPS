@@ -53,7 +53,7 @@ public class EditorsProvider {
         FileEditor selectedEditor = source.getSelectedEditor(file);
         if (selectedEditor instanceof MPSFileNodeEditor) {
           MPSFileNodeEditor editor = (MPSFileNodeEditor) selectedEditor;
-          fireEditorOpened(editor.getNodeEditor());
+          fireEditorOpened(editor);
         }
       }
 
@@ -89,7 +89,7 @@ public class EditorsProvider {
         FileEditor selectedEditor = source.getSelectedEditor(file);
         if (selectedEditor instanceof MPSFileNodeEditor) {
           MPSFileNodeEditor editor = (MPSFileNodeEditor) selectedEditor;
-          fireEditorClosed(editor.getNodeEditor());
+          fireEditorClosed(editor);
         }
       }
     });
@@ -106,14 +106,14 @@ public class EditorsProvider {
   }
 
   //todo add synchronization if necessary
-  private void fireEditorOpened(IEditor editor) {
+  private void fireEditorOpened(MPSFileNodeEditor editor) {
     for (EditorOpenListener listener : myEditorOpenListeners) {
       listener.editorOpened(editor);
     }
   }
 
   //todo add synchronization if necessary
-  private void fireEditorClosed(IEditor editor) {
+  private void fireEditorClosed(MPSFileNodeEditor editor) {
     for (EditorOpenListener listener : myEditorOpenListeners) {
       listener.editorClosed(editor);
     }
