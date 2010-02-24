@@ -77,6 +77,11 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
   public DocumentReference[] getDocumentReferences() {
     List<DocumentReference> docRefs = new ArrayList<DocumentReference>();
     for (SNode node : myNodeEditor.getEditedNodes()) {
+      // [++] additional assertions for http://youtrack.jetbrains.net/issue/MPS-7743
+      assert node.isRegistered() : "Edited node is not registered in model";
+      assert SModelRepository.getInstance().getModelDescriptor(node.getModel().getSModelReference()) != null : "Unable to locate SModelDescriptor representing edited node model";
+      assert SModelRepository.getInstance().getModelDescriptor(node.getModel().getSModelReference()).getSModel().getNodeById(node.getSNodeId()) != null : "Unable to locate edited node";
+      // [--] additional assertions for http://youtrack.jetbrains.net/issue/MPS-7743
       docRefs.add(DocumentReferenceManagerImpl.getInstance().create(MPSNodesVirtualFileSystem.getInstance().getFileFor(node)));
     }
     return docRefs.toArray(new DocumentReference[docRefs.size()]);
