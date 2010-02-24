@@ -34,6 +34,7 @@ import jetbrains.mps.util.Pair;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
+import javax.swing.SwingUtilities;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
@@ -42,6 +43,9 @@ import java.awt.event.MouseMotionAdapter;
 import java.util.*;
 import java.util.List;
 
+/**
+ * This class should be called in UI (EventDispatch) thread only
+ */
 public class LeftEditorHighlighter extends JComponent {
 
   private static final Logger LOG = Logger.getLogger(LeftEditorHighlighter.class);
@@ -80,6 +84,7 @@ public class LeftEditorHighlighter extends JComponent {
     addMouseMotionListener(new MyMouseEnterListener());
     editorComponent.addRebuildListener(new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
+        assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter$RebuildListener should be called in eventDispatchThread";
         removeAllIconRenderers(IconRendererType.BOOKMARK);
         BookmarkManager bookmarkManager = getBookmarkManager();
         if (bookmarkManager != null) {
@@ -92,10 +97,12 @@ public class LeftEditorHighlighter extends JComponent {
           }
           myListener = new BookmarkListener() {
             public void bookmarkAdded(int number, SNode node) {
+              assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter$BookmarkListener should be called in eventDispatchThread";
               addBookmark(node, number);
             }
 
             public void bookmarkRemoved(int number, SNode node) {
+              assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter$BookmarkListener should be called in eventDispatchThread";
               if (number == -1) {
                 removeUnnumberedBookmark(node);
               } else {
@@ -185,15 +192,17 @@ public class LeftEditorHighlighter extends JComponent {
   }
 
   public void unHighlight(EditorCell cell) {
+    assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.unHighlight() should be called in eventDispatchThread";
     myBrackets.remove(cell.getCellInfo());
   }
 
   public void highlight(EditorCell cell, EditorCell cell2, Color c) {
+    assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.unHighlight() should be called in eventDispatchThread";
     if (cell.getEditor() != myEditorComponent) throw new IllegalArgumentException("cell must be from my editor");
     myBrackets.put(cell.getCellInfo(), new HighlighterBracket(cell, cell2, c, myEditorComponent));
   }
 
-  public void markFoldable(EditorCell cell) {
+  private void markFoldable(EditorCell cell) {
     if (cell.getEditor() != myEditorComponent) throw new IllegalArgumentException("cell must be from my editor");
     myFoldingButtons.put(cell.getCellInfo(), new FoldingButton(cell));
   }
@@ -214,7 +223,7 @@ public class LeftEditorHighlighter extends JComponent {
     addIconRenderer(new BookmarkIconRenderer(node, number));
   }
 
-  public void removeBookmark(int number) {
+  private void removeBookmark(int number) {
     for (EditorMessageIconRenderer renderer: myIconRenderers) {
       if (renderer instanceof BookmarkIconRenderer && ((BookmarkIconRenderer) renderer).getNumber() == number) {
         removeIconRenderer(renderer);
@@ -223,7 +232,7 @@ public class LeftEditorHighlighter extends JComponent {
     }
   }
 
-  public void removeUnnumberedBookmark(SNode node) {
+  private void removeUnnumberedBookmark(SNode node) {
     EditorCell nodeCell = myEditorComponent.findNodeCell(node);
     if (nodeCell == null) {
       //   LOG.error("can't find a cell for node " + node);
@@ -241,6 +250,7 @@ public class LeftEditorHighlighter extends JComponent {
   }
 
   public void relayout(boolean updateFolding) {
+    assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.relayout() should be executed in eventDispatchThread";
     relayout(updateFolding, true);
   }
 
@@ -328,7 +338,7 @@ public class LeftEditorHighlighter extends JComponent {
     myUnresolvedFoldingButtons.clear();
   }
 
-  public BookmarkManager getBookmarkManager() {
+  private BookmarkManager getBookmarkManager() {
     if (myBookmarkManager != null) {
       return myBookmarkManager;
     }
@@ -342,12 +352,21 @@ public class LeftEditorHighlighter extends JComponent {
   }
 
   public void addIconRenderer(EditorMessageIconRenderer renderer) {
+    assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.addIconRenderer() should be called in eventDispatchThread";
     myIconRenderers.add(renderer);
     recalculateIconRenderersWidth();
     updateSeparatorLinePosition();
   }
 
+  public void addAllIconRenderers(Collection<EditorMessageIconRenderer> renderers) {
+    assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.addAllIconRenderers() should be called in eventDispatchThread";
+    myIconRenderers.addAll(renderers);
+    recalculateIconRenderersWidth();
+    updateSeparatorLinePosition();
+  }
+
   public void removeIconRenderer(EditorMessageIconRenderer renderer) {
+    assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.removeIconRenderer() should be called in eventDispatchThread";
     if (myIconRenderers.remove(renderer)) {
       recalculateIconRenderersWidth();
       updateSeparatorLinePosition();
@@ -355,6 +374,7 @@ public class LeftEditorHighlighter extends JComponent {
   }
 
   public void removeIconRenderer(SNode snode, IconRendererType type) {
+    assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.removeIconRenderer() should be called in eventDispatchThread";
     boolean wasModified = false;
     for (Iterator<EditorMessageIconRenderer> it = myIconRenderers.iterator(); it.hasNext();) {
       EditorMessageIconRenderer renderer = it.next();
@@ -370,6 +390,7 @@ public class LeftEditorHighlighter extends JComponent {
   }
 
   public void removeAllIconRenderers(Collection<EditorMessageIconRenderer> renderers) {
+    assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.removeAllIconRenderers() should be called in eventDispatchThread";
     if (myIconRenderers.removeAll(renderers)) {
       recalculateIconRenderersWidth();
       updateSeparatorLinePosition();
@@ -377,6 +398,7 @@ public class LeftEditorHighlighter extends JComponent {
   }
 
   public void removeAllIconRenderers(IconRendererType type) {
+    assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.removeAllIconRenderers() should be called in eventDispatchThread";
     boolean wasModified = false;
     for (Iterator<EditorMessageIconRenderer> it = myIconRenderers.iterator(); it.hasNext();) {
       EditorMessageIconRenderer renderer = it.next();

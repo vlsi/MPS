@@ -46,6 +46,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   private Map<EditorCell, List<EditorMessage>> myMessagesCache = new HashMap<EditorCell, List<EditorMessage>>();
   public ReloadAdapter myHandler;
+  private Collection<EditorMessageIconRenderer> myIconRenderers = new LinkedList();
 
   public NodeHighlightManager(@NotNull EditorComponent edtitor) {
     myEditor = edtitor;
@@ -170,9 +171,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
     myMessages.remove(m);
     myEditor.getMessagesGutter().remove(m);
-    if (m instanceof EditorMessageIconRenderer) {
-      myEditor.getLeftEditorHighlighter().removeIconRenderer((EditorMessageIconRenderer) m);
-    }
 
     myMessagesToNodes.clearFirst(m);
   }
@@ -186,9 +184,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
       addMessage(message);
     }
     myEditor.getMessagesGutter().add(message);
-    if (message instanceof EditorMessageIconRenderer) {
-      myEditor.getLeftEditorHighlighter().addIconRenderer((EditorMessageIconRenderer) message);
-    }
     if (repaintAndRebuild) {
       repaintAndRebuildEditorMessages();
     }
@@ -203,9 +198,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
       removeMessage(message);
     }
     myEditor.getMessagesGutter().remove(message);
-    if (message instanceof EditorMessageIconRenderer) {
-      myEditor.getLeftEditorHighlighter().removeIconRenderer((EditorMessageIconRenderer) message);
-    }
     if (repaintAndRebuild) {
       repaintAndRebuildEditorMessages();
     }
@@ -229,13 +221,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
     synchronized (myMessagesLock) {
       if (myOwnerToMessages.containsKey(owner)) {
         ArrayList<EditorMessage> messages = new ArrayList<EditorMessage>(myOwnerToMessages.get(owner));
-        List<EditorMessageIconRenderer> iconRenderers = new ArrayList();
-        for (EditorMessage m : messages) {
-          if (m instanceof EditorMessageIconRenderer) {
-            iconRenderers.add((EditorMessageIconRenderer) m);
-          }
-        }
-        myEditor.getLeftEditorHighlighter().removeAllIconRenderers(iconRenderers);
         for (EditorMessage m : messages) {
           removeMessage(m);
         }
@@ -251,9 +236,24 @@ public class NodeHighlightManager implements EditorMessageOwner {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
         rebuildMessages();
+        refreshLeftHighlighterMessages();
         myEditor.getExternalComponent().repaint();
       }
     });
+  }
+
+  // Should be called in EDT only
+  private void refreshLeftHighlighterMessages() {
+    myEditor.getLeftEditorHighlighter().removeAllIconRenderers(myIconRenderers);
+    myIconRenderers.clear();
+    synchronized (myMessagesLock) {
+      for (EditorMessage message : myMessages) {
+        if (message instanceof EditorMessageIconRenderer) {
+          myIconRenderers.add((EditorMessageIconRenderer) message);
+        }
+      }
+    }
+    myEditor.getLeftEditorHighlighter().addAllIconRenderers(myIconRenderers);
   }
 
   public void mark(SNode node, Color color, String messageText, EditorMessageOwner owner) {
