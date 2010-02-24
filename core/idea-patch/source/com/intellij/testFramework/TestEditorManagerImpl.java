@@ -411,7 +411,7 @@ public class TestEditorManagerImpl extends FileEditorManagerImpl implements Appl
     // Restore selected editor
     final FileEditorProvider selectedProvider = editorHistoryManager.getSelectedProvider(file);
     if (selectedProvider != null) {
-      final FileEditor[] _editors = newSelectedComposite.getEditors();
+      final FileEditor[] _editors = newSelectedComposite.getAllEditors();
       final FileEditorProvider[] _providers = newSelectedComposite.getProviders();
       for (int i = _editors.length - 1; i >= 0; i--) {
         final FileEditorProvider provider = _providers[i];//getProvider(_editors[i]);

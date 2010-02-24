@@ -20,22 +20,20 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
 import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
-import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin.PluginState;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager.PluginsState;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.highlighter.EditorsProvider;
@@ -114,7 +112,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
           Set<IModule> modules = new HashSet<IModule>();
           modules.addAll(PluginUtil.collectPluginModules(mpsProject));
           modules.add(PluginUtil.getIDEModule());
-          mySortedPlugins = PluginUtil.createPlugins(modules,new ProjectPluginCreator());
+          mySortedPlugins = PluginUtil.createPlugins(modules, new ProjectPluginCreator());
           for (BaseProjectPlugin plugin : mySortedPlugins) {
             try {
               plugin.init(mpsProject);
@@ -127,7 +125,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       });
     }
 
-    recreateEditors();
+    recreateTabbedEditors();
 
     myLoaded = true;
   }
@@ -210,13 +208,13 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   //--------------ADDITIONAL----------------
 
-  private void recreateEditors() {
+  private void recreateTabbedEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         EditorsProvider editorsProvider = new EditorsProvider(myProject);
-        for (FileEditor editor : editorsProvider.getEditors()) {
-          if (editor instanceof MPSFileNodeEditor) {
-            ((MPSFileNodeEditor) editor).recreateEditor();
+        for (MPSFileNodeEditor editor : editorsProvider.getAllEditors()) {
+          if (editor.getNodeEditor() instanceof TabbedEditor){
+            editor.recreateEditor();
           }
         }
       }

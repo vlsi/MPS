@@ -24,8 +24,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +35,7 @@ public class EditorsProvider {
 
   private Project myProject;
 
+  private List<MPSFileNodeEditor> mySelectedEditors = new ArrayList<MPSFileNodeEditor>();
   private List<MPSFileNodeEditor> myEditors = new ArrayList<MPSFileNodeEditor>();
 
   private List<EditorOpenListener> myEditorOpenListeners = new ArrayList<EditorOpenListener>();
@@ -58,14 +59,6 @@ public class EditorsProvider {
 
       public void fileClosed(FileEditorManager source, VirtualFile file) {
         updateInformation();
-        /*
-        FileEditor selectedEditor = source.getSelectedEditor(file);
-        dumpFileEditors(source.getSelectedEditors());
-        if (selectedEditor instanceof MPSFileNodeEditor) {
-          MPSFileNodeEditor editor = (MPSFileNodeEditor) selectedEditor;
-          fireEditorClosed(editor.getNodeEditor());
-        }
-        */
       }
 
       public void selectionChanged(FileEditorManagerEvent event) {
@@ -94,6 +87,14 @@ public class EditorsProvider {
     });
   }
 
+  public List<MPSFileNodeEditor> getAllEditors() {
+    return myEditors;
+  }
+
+  public List<IEditor> getSelectedEditors() {
+    return toMPSEditors(mySelectedEditors);
+  }
+
   //todo add synchronization if necessary
   public void addEditorOpenListener(EditorOpenListener listener) {
     myEditorOpenListeners.add(listener);
@@ -120,30 +121,32 @@ public class EditorsProvider {
 
   private void updateInformation() {
     synchronized (myLock) {
-      myEditors.clear();
-
       FileEditorManager fileEditorManager = FileEditorManager.getInstance(myProject);
-      for (FileEditor fileEditor : fileEditorManager.getSelectedEditors()) {
-        if (fileEditor instanceof MPSFileNodeEditor) {
-          MPSFileNodeEditor mpsFileNodeEditor = (MPSFileNodeEditor) fileEditor;
-          IEditor nodeEditor = mpsFileNodeEditor.getNodeEditor();
-          if (nodeEditor != null) {
-            myEditors.add(mpsFileNodeEditor);
-          }
-        }
-      }
+
+      mySelectedEditors = filterMPSEditors(fileEditorManager.getSelectedEditors());
+      myEditors = filterMPSEditors((fileEditorManager.getAllEditors()));
     }
   }
 
-  public List<MPSFileNodeEditor> getEditors() {
-    return myEditors;
+  private List<MPSFileNodeEditor> filterMPSEditors(FileEditor[] selectedEditors) {
+    List<MPSFileNodeEditor> editors = new ArrayList<MPSFileNodeEditor>();
+    for (FileEditor fileEditor : selectedEditors) {
+      if (fileEditor instanceof MPSFileNodeEditor) {
+        MPSFileNodeEditor mpsFileNodeEditor = (MPSFileNodeEditor) fileEditor;
+        IEditor nodeEditor = mpsFileNodeEditor.getNodeEditor();
+        if (nodeEditor != null) {
+          editors.add(mpsFileNodeEditor);
+        }
+      }
+    }
+    return editors;
   }
 
-  public List<IEditor> getSelectedEditors() {
+  private List<IEditor> toMPSEditors(List<MPSFileNodeEditor> nodeEditors) {
     List<MPSFileNodeEditor> emptyEditors = new ArrayList<MPSFileNodeEditor>(0);
     List<IEditor> result = new ArrayList<IEditor>();
     synchronized (myLock) {
-      for (MPSFileNodeEditor e : myEditors) {
+      for (MPSFileNodeEditor e : nodeEditors) {
         IEditor editor = e.getNodeEditor();
         if (editor != null) {
           result.add(editor);
