@@ -3864,6 +3864,13 @@ public class QueriesGenerated {
         for (SNode pdecl : pdecls) {
           if (idx < ListSequence.fromList(args).count()) {
             SNode arg = ListSequence.fromList(args).getElement(idx);
+            if (Constants.ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE) {
+              //  TEMP HACK: proceed only if the "right" expression is a ClosureLiteral, balk otherwise 
+              //  This may cause unexpected results, so please disable in case of difficulties generating some code 
+              if (!(SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"))) {
+                continue;
+              }
+            }
             SNode operandType = SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
             if ((operandType == null)) {
               operandType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);

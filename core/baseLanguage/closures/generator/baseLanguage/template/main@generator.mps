@@ -13781,6 +13781,41 @@
                             </node>
                           </node>
                         </node>
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1302824097488277744">
+                          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1302824097488277745">
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="1302824097488277746">
+                              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="1302824097488277747">
+                                <property name="text:3" value=" TEMP HACK: proceed only if the &quot;right&quot; expression is a ClosureLiteral, balk otherwise" />
+                              </node>
+                            </node>
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="1302824097488277748">
+                              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="1302824097488277749">
+                                <property name="text:3" value=" This may cause unexpected results, so please disable in case of difficulties generating some code" />
+                              </node>
+                            </node>
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1302824097488277750">
+                              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1302824097488277751">
+                                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="1302824097488278306" />
+                              </node>
+                              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1302824097488277753">
+                                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1302824097488277754">
+                                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1302824097488277756">
+                                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1302824097488277757">
+                                      <link role="conceptDeclaration:16" targetNodeId="1.1199569711397:3" resolveInfo="ClosureLiteral" />
+                                    </node>
+                                  </node>
+                                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1302824097488278303">
+                                    <link role="variableDeclaration:3" targetNodeId="1204637673225" resolveInfo="arg" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1302824097488277758">
+                            <link role="classifier:3" targetNodeId="2v.1225980323340" resolveInfo="Constants" />
+                            <link role="variableDeclaration:3" targetNodeId="2v.1225980328125" resolveInfo="ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE" />
+                          </node>
+                        </node>
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1238702338399">
                           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1238702338400">
                             <property name="name:3" value="operandType" />
