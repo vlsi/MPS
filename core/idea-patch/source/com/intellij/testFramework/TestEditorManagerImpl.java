@@ -275,10 +275,12 @@ public class TestEditorManagerImpl extends FileEditorManagerImpl implements Appl
     return myVirtualFile2Editor.get(myActiveFile);
   }
 
+  //begin patch
   @NotNull
   public FileEditor[] getAllEditors() {
-    throw new UnsupportedOperationException();
+    return new FileEditor[0];
   }
+  //end patch
 
   public void showEditorAnnotation(@NotNull FileEditor editor, @NotNull JComponent annotationComoponent) {
   }
