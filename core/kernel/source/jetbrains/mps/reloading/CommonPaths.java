@@ -95,7 +95,7 @@ public class CommonPaths {
         if (!file.exists()) continue;
         if (!file.getPath().endsWith(name)) continue;
 
-        return url.toURI().toString();
+        return file.getAbsolutePath();
       } catch (URISyntaxException e) {
         LOG.error(e);
       }
