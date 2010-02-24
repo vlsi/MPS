@@ -39,7 +39,6 @@ import java.util.ArrayList;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
-import org.jdom.Text;
 
 public class TypecheckerStateViewComponent extends JPanel {
   private static final Logger LOG = Logger.getLogger(TypecheckerStateViewComponent.class);
@@ -72,7 +71,7 @@ public class TypecheckerStateViewComponent extends JPanel {
     //upper panel
     JButton debugCurrentRootButton = new JButton(new AbstractAction("Debug Current Root") {
       public void actionPerformed(ActionEvent e) {
-        IEditor currentEditor = myEditorsProvider.getAllEditors().get(0);
+        IEditor currentEditor = myEditorsProvider.getSelectedEditors().get(0);
         if (currentEditor != null) {
           EditorComponent editorComponent = currentEditor.getCurrentEditorComponent();
           if (editorComponent != null) {

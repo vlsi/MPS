@@ -263,7 +263,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private List<EditorComponent> getAllEditorComponents() {
     final List<IEditor> list;
     synchronized (ADD_EDITORS_LOCK) {
-      list = myEditorsProvider.getAllEditors();
+      list = myEditorsProvider.getSelectedEditors();
       if (!myAdditionalEditors.isEmpty()) {
         list.addAll(myAdditionalEditors);
       }

@@ -28,7 +28,6 @@ import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.logging.Logger;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class EditorsProvider {
@@ -61,7 +60,7 @@ public class EditorsProvider {
         updateInformation();
         /*
         FileEditor selectedEditor = source.getSelectedEditor(file);
-        dumpFileEditors(source.getAllEditors());
+        dumpFileEditors(source.getSelectedEditors());
         if (selectedEditor instanceof MPSFileNodeEditor) {
           MPSFileNodeEditor editor = (MPSFileNodeEditor) selectedEditor;
           fireEditorClosed(editor.getNodeEditor());
@@ -140,7 +139,7 @@ public class EditorsProvider {
     return myEditors;
   }
 
-  public List<IEditor> getAllEditors() {
+  public List<IEditor> getSelectedEditors() {
     List<MPSFileNodeEditor> emptyEditors = new ArrayList<MPSFileNodeEditor>(0);
     List<IEditor> result = new ArrayList<IEditor>();
     synchronized (myLock) {
