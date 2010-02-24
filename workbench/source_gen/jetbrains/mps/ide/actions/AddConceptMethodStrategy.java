@@ -12,6 +12,9 @@ import jetbrains.mps.baseLanguage.typesystem.ResolveUtil;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class AddConceptMethodStrategy implements StratergyAddMethodDialog.ContainerStrategy {
   private ConceptBehavior myBehavior;
@@ -45,12 +48,20 @@ public class AddConceptMethodStrategy implements StratergyAddMethodDialog.Contai
     return (List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition>) methods;
   }
 
-  public boolean extendsContainer(INodeAdapter containerThatExtends, INodeAdapter extendedContainer) {
-    return false;
+  private Integer getSuperBehavioursCount(INodeAdapter adapter) {
+    if (!(adapter instanceof ConceptBehavior)) {
+      return 0;
+    }
+    SNode conceptBehavior = (SNode) adapter.getNode();
+    SNode concept = IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(conceptBehavior);
+    if ((concept == null)) {
+      return 0;
+    }
+    return ListSequence.fromList(SConceptOperations.getAllSuperConcepts(concept, false)).count();
   }
 
   public int compareContainers(INodeAdapter c1, INodeAdapter c2) {
-    return 0;
+    return this.getSuperBehavioursCount(c2).compareTo(this.getSuperBehavioursCount(c1));
   }
 
   public SNode getMainContainer() {

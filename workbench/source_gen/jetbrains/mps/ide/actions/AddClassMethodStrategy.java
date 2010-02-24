@@ -13,6 +13,9 @@ import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.smodel.BaseAdapter;
 
 public class AddClassMethodStrategy implements StratergyAddMethodDialog.ContainerStrategy {
   private ClassConcept myClassConcept;
@@ -45,12 +48,17 @@ public class AddClassMethodStrategy implements StratergyAddMethodDialog.Containe
     return (List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition>) methods;
   }
 
-  public boolean extendsContainer(INodeAdapter containerThatExtends, INodeAdapter extendedContainer) {
-    return false;
+  private Integer getSuperclssesCount(INodeAdapter adapter) {
+    if (!(adapter instanceof Classifier)) {
+      return 0;
+    }
+    Classifier classifier = (Classifier) adapter;
+    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(classifier, IClassifiersSearchScope.CLASSIFFIER);
+    return BaseAdapter.toNodes(scope.getAdapters(Classifier.class)).size();
   }
 
   public int compareContainers(INodeAdapter c1, INodeAdapter c2) {
-    return 0;
+    return this.getSuperclssesCount(c2).compareTo(this.getSuperclssesCount(c1));
   }
 
   public SNode getMainContainer() {

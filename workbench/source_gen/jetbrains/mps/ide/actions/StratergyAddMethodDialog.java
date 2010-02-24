@@ -132,10 +132,6 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     return this.myContainerStrategy.getContainer(BaseAdapter.fromAdapter(bm)).getAdapter();
   }
 
-  protected boolean extendsContainer(INodeAdapter containerThatExtends, INodeAdapter extendedContainer) {
-    return this.myContainerStrategy.extendsContainer(containerThatExtends, extendedContainer);
-  }
-
   protected int compareContainers(INodeAdapter c1, INodeAdapter c2) {
     return this.myContainerStrategy.compareContainers(c1, c2);
   }
@@ -148,7 +144,6 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     public SNode getMainContainer();
     public SNode getContainer(SNode methodDecl);
     public List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> doAddMethods(List<SNode> nodes);
-    public boolean extendsContainer(INodeAdapter containerThatExtends, INodeAdapter extendedContainer);
     public int compareContainers(INodeAdapter c1, INodeAdapter c2);
     public static class MethodAddition {
       private BaseMethodDeclaration mySource;

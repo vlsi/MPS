@@ -84,8 +84,6 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
 
   protected abstract INodeAdapter getContainer(BaseMethodDeclaration bm);
 
-  protected abstract boolean extendsContainer(INodeAdapter containerThatExtends, INodeAdapter extendedContainer);
-
   protected abstract int compareContainers(INodeAdapter c1, INodeAdapter c2);
 
   protected abstract JComponent createAdditionalOptionsComponent();
@@ -95,11 +93,7 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
     for (BaseMethodDeclaration method : this.collectImplementableMethods()) {
       String signature = BaseConcept_Behavior.call_getPresentation_1213877396640(method.getNode());
       if (possibleMethods.containsKey(signature)) {
-        INodeAdapter oldContainer = this.getContainer(possibleMethods.get(signature));
-        INodeAdapter newContainer = this.getContainer(method);
-        if (!(this.extendsContainer(newContainer, oldContainer))) {
-          possibleMethods.put(signature, method);
-        }
+        possibleMethods.put(signature, method);
       } else {
         possibleMethods.put(signature, method);
       }
