@@ -15,8 +15,9 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethod
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractStaticContainerProcessor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
@@ -123,6 +124,14 @@ public class ConceptBehavior_Behavior {
       ListSequence.fromList(methods).addElement(method);
     }
     return methods;
+  }
+
+  public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
+    SNode baseNode = IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(thisNode);
+    if ((baseNode == null)) {
+      return new ArrayList<SNode>();
+    }
+    return AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(baseNode, GlobalScope.getInstance());
   }
 
   public static List<SNode> call_getConceptMethods_5466054087443746043(SNode thisNode, IScope scope) {
