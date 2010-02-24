@@ -43,8 +43,12 @@ public class InstanceMethodDeclaration_Behavior {
   }
 
   public static SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
-    SNode classifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.INSTANCE_METHOD);
+    SNode classifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    if ((SLinkOperations.getTarget(classifier, "superclass", true) == null)) {
+      return null;
+    }
+    SNode superclass = SLinkOperations.getTarget(SLinkOperations.getTarget(classifier, "superclass", true), "classifier", false);
+    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(superclass)), IClassifiersSearchScope.INSTANCE_METHOD);
     List<SNode> methodDeclarations = BaseAdapter.toNodes(scope.getAdapters(InstanceMethodDeclaration.class));
     for (SNode methodCandidate : ((List<SNode>) methodDeclarations)) {
       if (SPropertyOperations.getString(methodCandidate, "name").equals(SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
