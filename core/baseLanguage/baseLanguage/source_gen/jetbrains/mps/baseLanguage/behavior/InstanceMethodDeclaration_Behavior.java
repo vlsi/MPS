@@ -44,10 +44,10 @@ public class InstanceMethodDeclaration_Behavior {
 
   public static SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
     SNode classifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    if ((SLinkOperations.getTarget(classifier, "superclass", true) == null)) {
-      return null;
-    }
-    SNode superclass = SLinkOperations.getTarget(SLinkOperations.getTarget(classifier, "superclass", true), "classifier", false);
+    SNode superclass = ((SLinkOperations.getTarget(classifier, "superclass", true) == null) ?
+      SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object") :
+      SLinkOperations.getTarget(SLinkOperations.getTarget(classifier, "superclass", true), "classifier", false)
+    );
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(superclass)), IClassifiersSearchScope.INSTANCE_METHOD);
     List<SNode> methodDeclarations = BaseAdapter.toNodes(scope.getAdapters(InstanceMethodDeclaration.class));
     for (SNode methodCandidate : ((List<SNode>) methodDeclarations)) {
