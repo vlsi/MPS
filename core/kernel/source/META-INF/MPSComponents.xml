@@ -612,6 +612,7 @@
 
         <component>
             <implementation-class>jetbrains.mps.changesmanager.ChangesManager</implementation-class>
+            <skipForDefaultProject />
         </component>
 
         <component>
