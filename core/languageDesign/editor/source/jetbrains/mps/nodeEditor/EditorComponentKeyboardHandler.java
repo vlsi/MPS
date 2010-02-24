@@ -75,12 +75,12 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         EditorCell cellWithRole = new ChildrenCollectionFinder(selectedCell, actionType == CellActionType.INSERT).find();
 
         if (cellWithRole == null && actionType == CellActionType.INSERT_BEFORE &&
-          selectedCell.isFirstPositionInBigCell() && hasSingleRolesAtLeftBoundary(selectedCell)) {
+          selectedCell.isFirstPositionInBigCell() && hasSingleRolesAtLeftBoundary(selectedCell) && selectedCell.getPrevLeaf() != null) {
           cellWithRole = new ChildrenCollectionFinder(selectedCell.getPrevLeaf(), false).find();
         }
 
         if (cellWithRole == null && actionType == CellActionType.INSERT &&
-          selectedCell.isLastPositionInBigCell() && hasSingleRolesAtRightBoundary(selectedCell)) {
+          selectedCell.isLastPositionInBigCell() && hasSingleRolesAtRightBoundary(selectedCell) && selectedCell.getNextLeaf() != null) {
           cellWithRole = new ChildrenCollectionFinder(selectedCell.getNextLeaf(), true).find();
         }
 
