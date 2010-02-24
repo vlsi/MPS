@@ -15544,20 +15544,6 @@
                 </node>
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1207161823268">
                   <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207161823269">
-                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1207161823270">
-                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1207161823271">
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1207161823272">
-                          <link role="variableDeclaration:3" targetNodeId="1207161823255" resolveInfo="cl" />
-                        </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation:16" id="1207161823273">
-                          <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1207161823274">
-                            <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1209072010746">
-                              <link role="conceptDeclaration:16" targetNodeId="3.1068390468198:3" resolveInfo="ClassConcept" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1207161823275">
                       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207161823276">
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1207161823277">
@@ -15821,7 +15807,7 @@
                               <link role="variableDeclaration:3" targetNodeId="1207161823249" resolveInfo="te" />
                             </node>
                             <node role="messageText:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1207161823330">
-                              <property name="value:3" value="Cound not find the class concept" />
+                              <property name="value:3" value="Could not find the class concept" />
                             </node>
                           </node>
                         </node>

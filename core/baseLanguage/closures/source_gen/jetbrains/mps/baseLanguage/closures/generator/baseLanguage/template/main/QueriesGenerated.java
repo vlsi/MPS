@@ -3910,7 +3910,6 @@ public class QueriesGenerated {
         SNode cl = SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false);
         SNode thisCC = SNodeOperations.getAncestor(te, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
         if ((cl != null)) {
-          SNodeOperations.getAncestors(cl, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
           for (SNode cc : SNodeOperations.getAncestors(cl, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)) {
             if (cc == thisCC) {
               if (SNodeOperations.isInstanceOf(thisCC, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
@@ -3935,7 +3934,7 @@ public class QueriesGenerated {
           }
         } else
         if (thisCC == null) {
-          _context.showWarningMessage(te, "Cound not find the class concept");
+          _context.showWarningMessage(te, "Could not find the class concept");
         }
       }
     }
