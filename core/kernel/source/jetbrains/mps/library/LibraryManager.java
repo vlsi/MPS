@@ -19,21 +19,13 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.xmlb.annotations.Transient;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.stubs.BaseLibStubDescriptor;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.Nls;
 
 import java.io.File;
@@ -49,8 +41,6 @@ import java.util.*;
     )}
 )
 public class LibraryManager extends BaseLibraryManager implements ApplicationComponent {
-  private static final Logger LOG = Logger.getLogger(LibraryManager.class);
-
   public static LibraryManager getInstance() {
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
@@ -71,7 +61,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
 
   @Override
   protected void onAfterModulesRead() {
-
+    ClassLoaderManager.getInstance().init(LibraryManager.this);
   }
 
   @Override
@@ -121,87 +111,8 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
       }
     }
 
-    ClassLoaderManager.getInstance().init(LibraryManager.this);
-    ClassLoaderManager.getInstance().updateClassPath(false);
-
-    loadStubSolutions();
-
     fireOnLoad(myBootstrapLibrariesOwner);
     fireOnLoad(myPredefinedLibrariesOwner);
-  }
-
-  private void loadStubSolutions() {
-    List<Language> languages = getModuleRepository().getAllLanguages();
-    for (Language l : languages) {
-
-      List<VirtualFile> classfiles = new ArrayList<VirtualFile>();
-
-      addDescriptorClassFiles(classfiles, getStubDir(l));
-      addDescriptorClassFiles(classfiles, getStubDir2(l));
-
-      List<String> files = new ArrayList<String>();
-      for (VirtualFile f : classfiles) {
-        String name = f.getNameWithoutExtension();
-        if (name.endsWith("_StubDescriptor")) {
-          files.add(name);
-        }
-      }
-
-      for (String fileName : files) {
-        Class descrClass = l.getClass(getName(l, fileName));
-        if (descrClass == null) continue;
-
-        try {
-          BaseLibStubDescriptor descr = (BaseLibStubDescriptor) descrClass.newInstance();
-
-          SolutionDescriptor descriptor = new SolutionDescriptor();
-          descriptor.setExternallyVisible(true);
-          descriptor.setDontLoadClasses(false);
-
-          descriptor.setUUID(descr.getModuleId());
-          descriptor.setNamespace(descr.getModuleName());
-
-          for (String path : descr.getPaths()) {
-            StubModelsEntry sme = new StubModelsEntry();
-            sme.setIncludedInVCS(false);
-            sme.setPath(path);
-            sme.setManager(descr.getManager());
-            descriptor.getStubModelEntries().add(sme);
-          }
-
-          Solution.newInstance(descriptor);
-        } catch (InstantiationException e) {
-          LOG.error(e);
-        } catch (IllegalAccessException e) {
-          LOG.error(e);
-        }
-      }
-    }
-  }
-
-  private void addDescriptorClassFiles(List<VirtualFile> classfiles, String stubDir) {
-    if (stubDir == null) return;
-    VirtualFile classesGenFile = VFileSystem.getFile(stubDir);
-    if (classesGenFile == null) return;
-    classfiles.addAll(Arrays.asList(classesGenFile.getChildren()));
-  }
-
-  private String getStubDir(Language l) {
-    IFile cg = l.getClassesGen();
-    if (cg == null) return null;
-    return cg.getAbsolutePath() + File.separator + l.getModuleFqName().replace('.', File.separatorChar) + File.separator + LanguageAspect.STUBS.getName();
-  }
-
-  private String getStubDir2(Language l) {
-    if (l.getDescriptorFile() == null) return null;
-    IFile cd = l.getDescriptorFile().getParent().child("classes");
-    if (cd == null) return null;
-    String classesDir = cd.getAbsolutePath();
-    return classesDir + File.separator + l.getModuleFqName().replace('.', File.separatorChar) + File.separator + LanguageAspect.STUBS.getName();
-  }
-
-  private String getName(Language l, String fileName) {
-    return l.getModuleFqName() + "." + LanguageAspect.STUBS.getName() + "." + fileName;
   }
 
   @Override
