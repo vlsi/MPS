@@ -20,22 +20,22 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8048_0(editorContext, node);
+    return this.createCollection_8048_l523emnf4zx2(editorContext, node);
   }
 
-  private EditorCell createCollection_8048_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8048_l523emnf4zx2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8048_0");
-    editorCell.addEditorCell(this.createRefCell_8048_0(editorContext, node));
+    editorCell.setCellId("Collection_8048_l523emnf4zx2");
+    editorCell.addEditorCell(this.createRefCell_8048_l523emnf4zwy(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_8048_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_8048_l523emnf4zwy(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("annotationLink");
     provider.setNoTargetText("<no annotationLink>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeAttributeAccessQualifier_Editor._Inline8048_0());
+    provider.setAuxiliaryCellProvider(new NodeAttributeAccessQualifier_Editor._Inline8048_l523emnf4zwz());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -48,8 +48,8 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline8048_0 extends InlineCellProvider {
-    public _Inline8048_0() {
+  public static class _Inline8048_l523emnf4zwz extends InlineCellProvider {
+    public _Inline8048_l523emnf4zwz() {
       super();
     }
 
@@ -58,10 +58,10 @@ public class NodeAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8048_0(editorContext, node);
+      return this.createProperty_8048_l523emnf4zx0(editorContext, node);
     }
 
-    private EditorCell createProperty_8048_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_8048_l523emnf4zx0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no annotation link>");

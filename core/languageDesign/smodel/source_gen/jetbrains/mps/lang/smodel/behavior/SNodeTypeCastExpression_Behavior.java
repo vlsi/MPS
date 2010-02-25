@@ -21,7 +21,7 @@ public class SNodeTypeCastExpression_Behavior {
 
   public static boolean call_isSNodeCast_1238686302573(SNode thisNode) {
     SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "leftExpression", true));
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new SNodeTypeCastExpression_Behavior.QuotationClass_3483_0().createNode(), false)) || SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure.SNodeType");
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new SNodeTypeCastExpression_Behavior.QuotationClass_3483_l523emnf4vv9().createNode(), false)) || SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure.SNodeType");
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
@@ -39,18 +39,18 @@ public class SNodeTypeCastExpression_Behavior {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_2749027262099690841);
   }
 
-  public static class QuotationClass_3483_0 {
-    public QuotationClass_3483_0() {
+  public static class QuotationClass_3483_l523emnf4vv9 {
+    public QuotationClass_3483_l523emnf4vv9() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3483_0 = null;
+      SNode quotedNode_3483_l523emnf4ucw = null;
       {
-        quotedNode_3483_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3483_0 = quotedNode_3483_0;
-        result = quotedNode1_3483_0;
+        quotedNode_3483_l523emnf4ucw = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3483_l523emnf4ucw = quotedNode_3483_l523emnf4ucw;
+        result = quotedNode1_3483_l523emnf4ucw;
       }
       return result;
     }

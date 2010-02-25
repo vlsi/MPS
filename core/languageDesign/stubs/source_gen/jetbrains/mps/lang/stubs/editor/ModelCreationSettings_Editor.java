@@ -20,47 +20,47 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ModelCreationSettings_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5999_0(editorContext, node);
+    return this.createCollection_5999_2st2tv7ncki2(editorContext, node);
   }
 
-  private EditorCell createCollection_5999_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5999_2st2tv7ncki2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5999_0");
-    editorCell.addEditorCell(this.createConstant_5999_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5999_1(editorContext, node));
+    editorCell.setCellId("Collection_5999_2st2tv7ncki2");
+    editorCell.addEditorCell(this.createConstant_5999_2st2tv7ncki5(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5999_2st2tv7ncki8(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5999_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5999_2st2tv7ncki8(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5999_1");
-    editorCell.addEditorCell(this.createIndentCell5999_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_5999_0(editorContext, node));
+    editorCell.setCellId("Collection_5999_2st2tv7ncki8");
+    editorCell.addEditorCell(this.createIndentCell5999_2st2tv7ncki7(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_5999_2st2tv7nckib(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5999_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5999_2st2tv7ncki5(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "import on creation:");
-    editorCell.setCellId("Constant_5999_0");
+    editorCell.setCellId("Constant_5999_2st2tv7ncki5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_5999_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ModelCreationSettings_Editor.importedLanguageListHandler_5999_0(node, "importedLanguage", editorContext);
+  private EditorCell createRefNodeList_5999_2st2tv7nckib(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ModelCreationSettings_Editor.importedLanguageListHandler_5999_2st2tv7nckib(node, "importedLanguage", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_importedLanguage");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createIndentCell5999_0(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell5999_2st2tv7ncki7(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private static class importedLanguageListHandler_5999_0 extends RefNodeListHandler {
-    public importedLanguageListHandler_5999_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class importedLanguageListHandler_5999_2st2tv7nckib extends RefNodeListHandler {
+    public importedLanguageListHandler_5999_2st2tv7nckib(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

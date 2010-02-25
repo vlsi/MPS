@@ -14,12 +14,12 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class Node_GetContainingRootOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_2190_0(editorContext, node);
+    return this.createConstant_2190_ey3bz9l6(editorContext, node);
   }
 
-  private EditorCell createConstant_2190_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2190_ey3bz9l6(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "containing root");
-    editorCell.setCellId("Constant_2190_0");
+    editorCell.setCellId("Constant_2190_ey3bz9l6");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

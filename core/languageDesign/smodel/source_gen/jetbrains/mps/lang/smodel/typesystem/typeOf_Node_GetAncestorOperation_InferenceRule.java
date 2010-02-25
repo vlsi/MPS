@@ -25,7 +25,7 @@ public class typeOf_Node_GetAncestorOperation_InferenceRule extends AbstractInfe
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207354639034", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207354639036", true), (SNode) new typeOf_Node_GetAncestorOperation_InferenceRule.QuotationClass_8483_0().createNode(typeCheckingContext.getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207354629107), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207354639036", true), (SNode) new typeOf_Node_GetAncestorOperation_InferenceRule.QuotationClass_8483_l523emnf6rnv().createNode(typeCheckingContext.getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207354629107), typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -41,32 +41,32 @@ public class typeOf_Node_GetAncestorOperation_InferenceRule extends AbstractInfe
     return true;
   }
 
-  public static class QuotationClass_8483_0 {
-    public QuotationClass_8483_0() {
+  public static class QuotationClass_8483_l523emnf6rnv {
+    public QuotationClass_8483_l523emnf6rnv() {
     }
 
-    public SNode createNode(Object parameter_8483_0, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_8483_l523emnf6kn5, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8483_0 = null;
+      SNode quotedNode_8483_l523emnf6kme = null;
       {
-        quotedNode_8483_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8483_0 = quotedNode_8483_0;
-        quotedNode1_8483_0.setReferent("concept", (SNode) parameter_8483_0);
-        result = quotedNode1_8483_0;
+        quotedNode_8483_l523emnf6kme = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8483_l523emnf6kme = quotedNode_8483_l523emnf6kme;
+        quotedNode1_8483_l523emnf6kme.setReferent("concept", (SNode) parameter_8483_l523emnf6kn5);
+        result = quotedNode1_8483_l523emnf6kme;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_8483_0) {
+    public SNode createNode(Object parameter_8483_l523emnf6kn5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8483_0 = null;
+      SNode quotedNode_8483_l523emnf6kme = null;
       {
-        quotedNode_8483_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8483_0 = quotedNode_8483_0;
-        quotedNode1_8483_0.setReferent("concept", (SNode) parameter_8483_0);
-        result = quotedNode1_8483_0;
+        quotedNode_8483_l523emnf6kme = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8483_l523emnf6kme = quotedNode_8483_l523emnf6kme;
+        quotedNode1_8483_l523emnf6kme.setReferent("concept", (SNode) parameter_8483_l523emnf6kn5);
+        result = quotedNode1_8483_l523emnf6kme;
       }
       return result;
     }

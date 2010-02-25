@@ -28,7 +28,7 @@ public class typeof_IntervalType_InferenceRule extends AbstractInferenceRule_Run
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425320", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) SLinkOperations.getTarget(intervalType, "elementType", true), (SNode) new typeof_IntervalType_InferenceRule.QuotationClass_6109_0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) SLinkOperations.getTarget(intervalType, "elementType", true), (SNode) new typeof_IntervalType_InferenceRule.QuotationClass_6109_l523emneijmf().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -44,19 +44,19 @@ public class typeof_IntervalType_InferenceRule extends AbstractInferenceRule_Run
     return false;
   }
 
-  public static class QuotationClass_6109_0 {
-    public QuotationClass_6109_0() {
+  public static class QuotationClass_6109_l523emneijmf {
+    public QuotationClass_6109_l523emneijmf() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6109_0 = null;
+      SNode quotedNode_6109_l523emneieov = null;
       {
-        quotedNode_6109_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6109_0 = quotedNode_6109_0;
-        quotedNode1_6109_0.addReference(SReference.create("classifier", quotedNode1_6109_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
-        result = quotedNode1_6109_0;
+        quotedNode_6109_l523emneieov = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6109_l523emneieov = quotedNode_6109_l523emneieov;
+        quotedNode1_6109_l523emneieov.addReference(SReference.create("classifier", quotedNode1_6109_l523emneieov, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
+        result = quotedNode1_6109_l523emneieov;
       }
       return result;
     }
@@ -64,12 +64,12 @@ public class typeof_IntervalType_InferenceRule extends AbstractInferenceRule_Run
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6109_0 = null;
+      SNode quotedNode_6109_l523emneieov = null;
       {
-        quotedNode_6109_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6109_0 = quotedNode_6109_0;
-        quotedNode1_6109_0.addReference(SReference.create("classifier", quotedNode1_6109_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
-        result = quotedNode1_6109_0;
+        quotedNode_6109_l523emneieov = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6109_l523emneieov = quotedNode_6109_l523emneieov;
+        quotedNode1_6109_l523emneieov.addReference(SReference.create("classifier", quotedNode1_6109_l523emneieov, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
+        result = quotedNode1_6109_l523emneieov;
       }
       return result;
     }

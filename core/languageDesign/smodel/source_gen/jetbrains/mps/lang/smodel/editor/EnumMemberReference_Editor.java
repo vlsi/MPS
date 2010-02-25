@@ -24,21 +24,21 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class EnumMemberReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9300_0(editorContext, node);
+    return this.createCollection_9300_emjd16he(editorContext, node);
   }
 
-  private EditorCell createCollection_9300_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9300_emjd16he(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9300_0");
-    editorCell.addEditorCell(this.createConstant_9300_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_9300_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9300_1(editorContext, node));
+    editorCell.setCellId("Collection_9300_emjd16he");
+    editorCell.addEditorCell(this.createConstant_9300_emjd1hmk(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_9300_emjd18de(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9300_emjd3bio(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9300_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9300_emjd1hmk(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_9300_0");
+    editorCell.setCellId("Constant_9300_emjd1hmk");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -51,9 +51,9 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9300_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9300_emjd3bio(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_9300_1");
+    editorCell.setCellId("Constant_9300_emjd3bio");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -66,12 +66,12 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_9300_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_9300_emjd18de(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("enumMember");
     provider.setNoTargetText("<no enumMember>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumMemberReference_Editor._Inline9300_0());
+    provider.setAuxiliaryCellProvider(new EnumMemberReference_Editor._Inline9300_emjd18df());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -84,8 +84,8 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline9300_0 extends InlineCellProvider {
-    public _Inline9300_0() {
+  public static class _Inline9300_emjd18df extends InlineCellProvider {
+    public _Inline9300_emjd18df() {
       super();
     }
 
@@ -94,10 +94,10 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_9300_0(editorContext, node);
+      return this.createProperty_9300_emjd18dg(editorContext, node);
     }
 
-    private EditorCell createProperty_9300_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_9300_emjd18dg(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("externalValue");
       provider.setNoTargetText("<no ext value>");

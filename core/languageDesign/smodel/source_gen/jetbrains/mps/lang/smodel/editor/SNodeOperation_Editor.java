@@ -10,10 +10,10 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class SNodeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_1722_0(editorContext, node);
+    return this.createComponent_1722_fgsewey0(editorContext, node);
   }
 
-  private EditorCell createComponent_1722_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_1722_fgsewey0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAlias_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;

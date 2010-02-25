@@ -16,35 +16,35 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class DeleteFeatureExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9687_0(editorContext, node);
+    return this.createCollection_9687_p35nwq7aztjt(editorContext, node);
   }
 
-  private EditorCell createCollection_9687_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9687_p35nwq7aztjt(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9687_0");
-    editorCell.addEditorCell(this.createConstant_9687_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9687_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9687_1(editorContext, node));
+    editorCell.setCellId("Collection_9687_p35nwq7aztjt");
+    editorCell.addEditorCell(this.createConstant_9687_p35nwq7aztju(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9687_p35nwq7aztjv(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9687_p35nwq7aztjw(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9687_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9687_p35nwq7aztju(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "deleteFeature(");
-    editorCell.setCellId("Constant_9687_0");
+    editorCell.setCellId("Constant_9687_p35nwq7aztju");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9687_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9687_p35nwq7aztjw(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_9687_1");
+    editorCell.setCellId("Constant_9687_p35nwq7aztjw");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_9687_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9687_p35nwq7aztjv(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("feature");
     provider.setNoTargetText("<no feature>");

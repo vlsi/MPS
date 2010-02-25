@@ -22,35 +22,35 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class AskExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8539_0(editorContext, node);
+    return this.createCollection_8539_15ro1oav73mif(editorContext, node);
   }
 
-  private EditorCell createCollection_8539_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8539_15ro1oav73mif(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8539_0");
-    editorCell.addEditorCell(this.createConstant_8539_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_8539_0(editorContext, node));
+    editorCell.setCellId("Collection_8539_15ro1oav73mif");
+    editorCell.addEditorCell(this.createConstant_8539_15ro1oav73mih(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_8539_15ro1oav73miq(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8539_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8539_15ro1oav73mih(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ask for");
-    editorCell.setCellId("Constant_8539_0");
+    editorCell.setCellId("Constant_8539_15ro1oav73mih");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_8539_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new AskExpression_Editor.parameterListHandler_8539_0(node, "parameter", editorContext);
+  private EditorCell createRefNodeList_8539_15ro1oav73miq(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new AskExpression_Editor.parameterListHandler_8539_15ro1oav73miq(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class parameterListHandler_8539_0 extends RefNodeListHandler {
-    public parameterListHandler_8539_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class parameterListHandler_8539_15ro1oav73miq extends RefNodeListHandler {
+    public parameterListHandler_8539_15ro1oav73miq(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

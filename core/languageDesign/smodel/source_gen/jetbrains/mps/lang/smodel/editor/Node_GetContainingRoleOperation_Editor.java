@@ -16,31 +16,31 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Node_GetContainingRoleOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_7022_0(editorContext, node);
+    return this.createComponent_7022_ewa1nmkg08tj(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7022_0(editorContext, node);
+    return this.createCollection_7022_ewa1nmkg08tr(editorContext, node);
   }
 
-  private EditorCell createCollection_7022_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7022_ewa1nmkg08tr(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_7022_0");
-    editorCell.addEditorCell(this.createConstant_7022_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7022_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7022_2(editorContext, node));
+    editorCell.setCellId("Collection_7022_ewa1nmkg08tr");
+    editorCell.addEditorCell(this.createConstant_7022_ewa1nmkg08tt(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7022_ewa1nmkg08tw(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7022_ewa1nmkg08tx(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_7022_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_7022_ewa1nmkg08tj(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAlias_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_7022_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7022_ewa1nmkg08tt(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Get node 'containingRole' operation");
-    editorCell.setCellId("Constant_7022_0");
+    editorCell.setCellId("Constant_7022_ewa1nmkg08tt");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
@@ -50,16 +50,16 @@ public class Node_GetContainingRoleOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7022_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7022_ewa1nmkg08tw(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_7022_1");
+    editorCell.setCellId("Constant_7022_ewa1nmkg08tw");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7022_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7022_ewa1nmkg08tx(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns aggregation link role defined in concept of parent node and representing containment reference for this node");
-    editorCell.setCellId("Constant_7022_2");
+    editorCell.setCellId("Constant_7022_ewa1nmkg08tx");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);

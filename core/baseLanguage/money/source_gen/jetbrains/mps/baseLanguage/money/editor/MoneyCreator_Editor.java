@@ -16,52 +16,52 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MoneyCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2512_0(editorContext, node);
+    return this.createCollection_2512_f5ghpx8z(editorContext, node);
   }
 
-  private EditorCell createCollection_2512_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2512_f5ghpx8z(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2512_0");
-    editorCell.addEditorCell(this.createConstant_2512_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2512_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2512_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2512_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2512_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2512_2(editorContext, node));
+    editorCell.setCellId("Collection_2512_f5ghpx8z");
+    editorCell.addEditorCell(this.createConstant_2512_f5ghq8lh(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2512_f5ghqico(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2512_f5gi13nf(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2512_f5gi3ybb(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2512_f5gi15bd(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2512_f5ghqtuu(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2512_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2512_f5ghq8lh(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Money");
-    editorCell.setCellId("Constant_2512_0");
+    editorCell.setCellId("Constant_2512_f5ghq8lh");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2512_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2512_f5ghqico(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_2512_1");
+    editorCell.setCellId("Constant_2512_f5ghqico");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2512_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2512_f5ghqtuu(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_2512_2");
+    editorCell.setCellId("Constant_2512_f5ghqtuu");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2512_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2512_f5gi3ybb(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_2512_3");
+    editorCell.setCellId("Constant_2512_f5gi3ybb");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_2512_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2512_f5gi13nf(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("amount");
     provider.setNoTargetText("<no amount>");
@@ -78,7 +78,7 @@ public class MoneyCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2512_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2512_f5gi15bd(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("currency");
     provider.setNoTargetText("<no currency>");

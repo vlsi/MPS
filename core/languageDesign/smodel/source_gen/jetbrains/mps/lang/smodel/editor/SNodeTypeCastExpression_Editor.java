@@ -25,26 +25,26 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6410_0(editorContext, node);
+    return this.createCollection_6410_ejrsu17k(editorContext, node);
   }
 
-  private EditorCell createCollection_6410_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6410_ejrsu17k(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6410_0");
-    editorCell.addEditorCell(this.createRefNode_6410_0(editorContext, node));
-    if (renderingCondition6410_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6410_0(editorContext, node));
+    editorCell.setCellId("Collection_6410_ejrsu17k");
+    editorCell.addEditorCell(this.createRefNode_6410_ejrsu5s3(editorContext, node));
+    if (renderingCondition6410_ft1kp6va(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6410_ejrsugpt(editorContext, node));
     }
-    if (renderingCondition6410_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6410_1(editorContext, node));
+    if (renderingCondition6410_ft1kppct(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6410_ft1kost5(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefCell_6410_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_6410_ejrsvao1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6410_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6410_ejrsugpt(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_6410_0");
+    editorCell.setCellId("Constant_6410_ejrsugpt");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -53,9 +53,9 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6410_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6410_ft1kost5(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
-    editorCell.setCellId("Constant_6410_1");
+    editorCell.setCellId("Constant_6410_ft1kost5");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
@@ -64,7 +64,7 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6410_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6410_ejrsu5s3(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -81,12 +81,12 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_6410_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_6410_ejrsvao1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SNodeTypeCastExpression_Editor._Inline6410_0());
+    provider.setAuxiliaryCellProvider(new SNodeTypeCastExpression_Editor._Inline6410_ejrsvao0());
     editorCell = provider.createEditorCell(editorContext);
     SNodeTypeCastExpression_Concept_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -100,16 +100,16 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition6410_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6410_ft1kp6va(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "asCast"));
   }
 
-  private static boolean renderingCondition6410_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6410_ft1kppct(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "asCast");
   }
 
-  public static class _Inline6410_0 extends InlineCellProvider {
-    public _Inline6410_0() {
+  public static class _Inline6410_ejrsvao0 extends InlineCellProvider {
+    public _Inline6410_ejrsvao0() {
       super();
     }
 
@@ -118,10 +118,10 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_6410_0(editorContext, node);
+      return this.createProperty_6410_ejrsveho(editorContext, node);
     }
 
-    private EditorCell createProperty_6410_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_6410_ejrsveho(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

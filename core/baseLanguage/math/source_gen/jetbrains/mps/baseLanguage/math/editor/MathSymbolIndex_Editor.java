@@ -16,26 +16,26 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class MathSymbolIndex_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3290_0(editorContext, node);
+    return this.createCollection_3290_fs0987pj(editorContext, node);
   }
 
-  private EditorCell createCollection_3290_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3290_fs0987pj(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3290_0");
-    editorCell.addEditorCell(this.createProperty_3290_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3290_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_3290_0(editorContext, node));
+    editorCell.setCellId("Collection_3290_fs0987pj");
+    editorCell.addEditorCell(this.createProperty_3290_fs0989i9(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3290_fs098cx5(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_3290_fs098ecf(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3290_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3290_fs098cx5(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
-    editorCell.setCellId("Constant_3290_0");
+    editorCell.setCellId("Constant_3290_fs098cx5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_3290_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_3290_fs0989i9(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -53,7 +53,7 @@ public class MathSymbolIndex_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_3290_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_3290_fs098ecf(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("iterable");
     provider.setNoTargetText("<no iterable>");

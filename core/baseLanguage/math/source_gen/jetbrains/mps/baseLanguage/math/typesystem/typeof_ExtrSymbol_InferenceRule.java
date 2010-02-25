@@ -28,7 +28,7 @@ public class typeof_ExtrSymbol_InferenceRule extends AbstractInferenceRule_Runti
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236431731877", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236431731879", true), (SNode) new typeof_ExtrSymbol_InferenceRule.QuotationClass_5171_0().createNode(typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1236431731879", true), (SNode) new typeof_ExtrSymbol_InferenceRule.QuotationClass_5171_l523emneijrp().createNode(typeCheckingContext), true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = symbol;
@@ -50,19 +50,19 @@ public class typeof_ExtrSymbol_InferenceRule extends AbstractInferenceRule_Runti
     return false;
   }
 
-  public static class QuotationClass_5171_0 {
-    public QuotationClass_5171_0() {
+  public static class QuotationClass_5171_l523emneijrp {
+    public QuotationClass_5171_l523emneijrp() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5171_0 = null;
+      SNode quotedNode_5171_l523emneieyt = null;
       {
-        quotedNode_5171_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5171_0 = quotedNode_5171_0;
-        quotedNode1_5171_0.addReference(SReference.create("classifier", quotedNode1_5171_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
-        result = quotedNode1_5171_0;
+        quotedNode_5171_l523emneieyt = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5171_l523emneieyt = quotedNode_5171_l523emneieyt;
+        quotedNode1_5171_l523emneieyt.addReference(SReference.create("classifier", quotedNode1_5171_l523emneieyt, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
+        result = quotedNode1_5171_l523emneieyt;
       }
       return result;
     }
@@ -70,12 +70,12 @@ public class typeof_ExtrSymbol_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5171_0 = null;
+      SNode quotedNode_5171_l523emneieyt = null;
       {
-        quotedNode_5171_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5171_0 = quotedNode_5171_0;
-        quotedNode1_5171_0.addReference(SReference.create("classifier", quotedNode1_5171_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
-        result = quotedNode1_5171_0;
+        quotedNode_5171_l523emneieyt = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5171_l523emneieyt = quotedNode_5171_l523emneieyt;
+        quotedNode1_5171_l523emneieyt.addReference(SReference.create("classifier", quotedNode1_5171_l523emneieyt, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
+        result = quotedNode1_5171_l523emneieyt;
       }
       return result;
     }

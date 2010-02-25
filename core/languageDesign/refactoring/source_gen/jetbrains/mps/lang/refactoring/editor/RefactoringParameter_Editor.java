@@ -19,26 +19,26 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class RefactoringParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9661_0(editorContext, node);
+    return this.createCollection_9661_15ro1oav78pfh(editorContext, node);
   }
 
-  private EditorCell createCollection_9661_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9661_15ro1oav78pfh(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9661_0");
-    editorCell.addEditorCell(this.createProperty_9661_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9661_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9661_0(editorContext, node));
+    editorCell.setCellId("Collection_9661_15ro1oav78pfh");
+    editorCell.addEditorCell(this.createProperty_9661_15ro1oav78pfi(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9661_15ro1oav78pfk(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9661_15ro1oav78pfl(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9661_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9661_15ro1oav78pfk(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "chooser:");
-    editorCell.setCellId("Constant_9661_0");
+    editorCell.setCellId("Constant_9661_15ro1oav78pfk");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_9661_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9661_15ro1oav78pfi(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -60,7 +60,7 @@ public class RefactoringParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9661_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9661_15ro1oav78pfl(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("chooser");
     provider.setNoTargetText("<no chooser>");

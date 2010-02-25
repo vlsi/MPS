@@ -21,20 +21,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class PoundExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9048_0(editorContext, node);
+    return this.createCollection_9048_fdhrqwx8(editorContext, node);
   }
 
-  private EditorCell createCollection_9048_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9048_fdhrqwx8(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9048_0");
-    editorCell.addEditorCell(this.createConstant_9048_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9048_0(editorContext, node));
+    editorCell.setCellId("Collection_9048_fdhrqwx8");
+    editorCell.addEditorCell(this.createConstant_9048_fdhrqwx9(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9048_fdhrqwxa(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9048_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9048_fdhrqwx9(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
-    editorCell.setCellId("Constant_9048_0");
+    editorCell.setCellId("Constant_9048_fdhrqwx9");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -47,7 +47,7 @@ public class PoundExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9048_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9048_fdhrqwxa(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

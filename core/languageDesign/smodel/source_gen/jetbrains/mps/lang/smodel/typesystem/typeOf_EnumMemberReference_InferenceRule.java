@@ -23,7 +23,7 @@ public class typeOf_EnumMemberReference_InferenceRule extends AbstractInferenceR
       SNode _nodeToCheck_1029348928467 = node;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203711941824", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203711941826", true), (SNode) new typeOf_EnumMemberReference_InferenceRule.QuotationClass_4232_0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1203711941826", true), (SNode) new typeOf_EnumMemberReference_InferenceRule.QuotationClass_4232_l523emnf6t1s().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -39,18 +39,18 @@ public class typeOf_EnumMemberReference_InferenceRule extends AbstractInferenceR
     return true;
   }
 
-  public static class QuotationClass_4232_0 {
-    public QuotationClass_4232_0() {
+  public static class QuotationClass_4232_l523emnf6t1s {
+    public QuotationClass_4232_l523emnf6t1s() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4232_0 = null;
+      SNode quotedNode_4232_l523emnf6lpp = null;
       {
-        quotedNode_4232_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4232_0 = quotedNode_4232_0;
-        result = quotedNode1_4232_0;
+        quotedNode_4232_l523emnf6lpp = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4232_l523emnf6lpp = quotedNode_4232_l523emnf6lpp;
+        result = quotedNode1_4232_l523emnf6lpp;
       }
       return result;
     }
@@ -58,11 +58,11 @@ public class typeOf_EnumMemberReference_InferenceRule extends AbstractInferenceR
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4232_0 = null;
+      SNode quotedNode_4232_l523emnf6lpp = null;
       {
-        quotedNode_4232_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4232_0 = quotedNode_4232_0;
-        result = quotedNode1_4232_0;
+        quotedNode_4232_l523emnf6lpp = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4232_l523emnf6lpp = quotedNode_4232_l523emnf6lpp;
+        result = quotedNode1_4232_l523emnf6lpp;
       }
       return result;
     }

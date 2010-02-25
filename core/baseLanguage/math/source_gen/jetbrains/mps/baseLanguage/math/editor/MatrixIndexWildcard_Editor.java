@@ -11,12 +11,12 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class MatrixIndexWildcard_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_4033_0(editorContext, node);
+    return this.createConstant_4033_1cjhuq2yrrb1p(editorContext, node);
   }
 
-  private EditorCell createConstant_4033_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4033_1cjhuq2yrrb1p(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*");
-    editorCell.setCellId("Constant_4033_0");
+    editorCell.setCellId("Constant_4033_1cjhuq2yrrb1p");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;

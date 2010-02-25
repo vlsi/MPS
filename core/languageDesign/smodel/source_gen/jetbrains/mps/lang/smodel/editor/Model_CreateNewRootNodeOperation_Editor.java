@@ -25,30 +25,30 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8073_0(editorContext, node);
+    return this.createCollection_8073_evy8gf2i(editorContext, node);
   }
 
-  private EditorCell createCollection_8073_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8073_evy8gf2i(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8073_0");
-    editorCell.addEditorCell(this.createComponent_8073_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8073_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_8073_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8073_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8073_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8073_1(editorContext, node));
+    editorCell.setCellId("Collection_8073_evy8gf2i");
+    editorCell.addEditorCell(this.createComponent_8073_fe928jq1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8073_f110osym(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_8073_evy8gf2k(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8073_f110nb3h(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8073_f110nb3i(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8073_f110okzn(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_8073_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_8073_fe928jq1(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAlias_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_8073_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8073_f110nb3h(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_8073_0");
+    editorCell.setCellId("Constant_8073_f110nb3h");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -57,28 +57,28 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8073_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8073_f110okzn(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_8073_1");
+    editorCell.setCellId("Constant_8073_f110okzn");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8073_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8073_f110osym(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_8073_2");
+    editorCell.setCellId("Constant_8073_f110osym");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_8073_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_8073_evy8gf2k(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Model_CreateNewRootNodeOperation_Editor._Inline8073_0());
+    provider.setAuxiliaryCellProvider(new Model_CreateNewRootNodeOperation_Editor._Inline8073_evy8gf2l());
     editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
@@ -95,7 +95,7 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8073_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8073_f110nb3i(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("prototypeNode");
     provider.setNoTargetText("<no prototype>");
@@ -116,8 +116,8 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline8073_0 extends InlineCellProvider {
-    public _Inline8073_0() {
+  public static class _Inline8073_evy8gf2l extends InlineCellProvider {
+    public _Inline8073_evy8gf2l() {
       super();
     }
 
@@ -126,10 +126,10 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8073_0(editorContext, node);
+      return this.createProperty_8073_evy8gf2m(editorContext, node);
     }
 
-    private EditorCell createProperty_8073_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_8073_evy8gf2m(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

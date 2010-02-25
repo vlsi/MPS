@@ -22,16 +22,16 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
 
   public void applyRule(final SNode binaryOperation, final TypeCheckingContext typeCheckingContext) {
     do {
-      SNode matchedNode_8572_0 = binaryOperation;
+      SNode matchedNode_8572_12eb5vy0kjcow = binaryOperation;
       {
-        boolean matches_8572_0 = false;
+        boolean matches_8572_12eb5vy0kjcoy = false;
         {
-          SNode matchingNode_8572_0 = binaryOperation;
-          if (matchingNode_8572_0 != null) {
-            matches_8572_0 = SModelUtil_new.isAssignableConcept(matchingNode_8572_0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MulExpression");
+          SNode matchingNode_8572_12eb5vy0kjcoy = binaryOperation;
+          if (matchingNode_8572_12eb5vy0kjcoy != null) {
+            matches_8572_12eb5vy0kjcoy = SModelUtil_new.isAssignableConcept(matchingNode_8572_12eb5vy0kjcoy.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MulExpression");
           }
         }
-        if (matches_8572_0) {
+        if (matches_8572_12eb5vy0kjcoy) {
           if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), "jetbrains.mps.baseLanguage.math.structure.MatrixType") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
             int lc = SPropertyOperations.getInteger(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "columns");
             int rr = SPropertyOperations.getInteger(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "rows");
@@ -49,15 +49,15 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
         }
       }
       {
-        boolean matches_8572_1 = false;
+        boolean matches_8572_12eb5vy0kjcp3 = false;
         {
-          SNode matchingNode_8572_1 = binaryOperation;
-          if (matchingNode_8572_1 != null) {
-            matches_8572_1 = SModelUtil_new.isAssignableConcept(matchingNode_8572_1.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.PlusExpression");
+          SNode matchingNode_8572_12eb5vy0kjcp3 = binaryOperation;
+          if (matchingNode_8572_12eb5vy0kjcp3 != null) {
+            matches_8572_12eb5vy0kjcp3 = SModelUtil_new.isAssignableConcept(matchingNode_8572_12eb5vy0kjcp3.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.PlusExpression");
           }
         }
-        if (matches_8572_1) {
-          if (!(MathTypeUtil.checkAdditiveOperationDimensions(matchedNode_8572_0))) {
+        if (matches_8572_12eb5vy0kjcp3) {
+          if (!(MathTypeUtil.checkAdditiveOperationDimensions(matchedNode_8572_12eb5vy0kjcow))) {
             {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
@@ -68,15 +68,15 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
         }
       }
       {
-        boolean matches_8572_2 = false;
+        boolean matches_8572_12eb5vy0kjcp7 = false;
         {
-          SNode matchingNode_8572_2 = binaryOperation;
-          if (matchingNode_8572_2 != null) {
-            matches_8572_2 = SModelUtil_new.isAssignableConcept(matchingNode_8572_2.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MinusExpression");
+          SNode matchingNode_8572_12eb5vy0kjcp7 = binaryOperation;
+          if (matchingNode_8572_12eb5vy0kjcp7 != null) {
+            matches_8572_12eb5vy0kjcp7 = SModelUtil_new.isAssignableConcept(matchingNode_8572_12eb5vy0kjcp7.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MinusExpression");
           }
         }
-        if (matches_8572_2) {
-          if (!(MathTypeUtil.checkAdditiveOperationDimensions(matchedNode_8572_0))) {
+        if (matches_8572_12eb5vy0kjcp7) {
+          if (!(MathTypeUtil.checkAdditiveOperationDimensions(matchedNode_8572_12eb5vy0kjcow))) {
             {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();

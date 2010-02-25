@@ -19,22 +19,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class MathTypeCast_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9211_0(editorContext, node);
+    return this.createCollection_9211_fsd9riir(editorContext, node);
   }
 
-  private EditorCell createCollection_9211_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9211_fsd9riir(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9211_0");
-    editorCell.addEditorCell(this.createConstant_9211_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9211_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9211_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9211_0(editorContext, node));
+    editorCell.setCellId("Collection_9211_fsd9riir");
+    editorCell.addEditorCell(this.createConstant_9211_fsirq5km(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_9211_fsirqaj4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9211_fsirq748(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9211_fsirb8gr(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9211_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9211_fsirq5km(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_9211_0");
+    editorCell.setCellId("Constant_9211_fsirq5km");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -44,9 +44,9 @@ public class MathTypeCast_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9211_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9211_fsirq748(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_9211_1");
+    editorCell.setCellId("Constant_9211_fsirq748");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
@@ -56,7 +56,7 @@ public class MathTypeCast_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9211_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9211_fsirb8gr(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("castedExpr");
     provider.setNoTargetText("<no castedExpr>");
@@ -73,7 +73,7 @@ public class MathTypeCast_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_9211_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9211_fsirqaj4(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("target");
     provider.setNoTargetText("<no target>");

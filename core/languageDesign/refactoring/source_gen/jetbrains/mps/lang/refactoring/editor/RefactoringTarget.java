@@ -26,37 +26,37 @@ public class RefactoringTarget extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9311_0(editorContext, node);
+    return this.createCollection_9311_rm1st8cecygl(editorContext, node);
   }
 
-  private EditorCell createCollection_9311_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9311_rm1st8cecygl(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_9311_0");
-    editorCell.addEditorCell(this.createCollection_9311_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9311_0(editorContext, node));
+    editorCell.setCellId("Collection_9311_rm1st8cecygl");
+    editorCell.addEditorCell(this.createCollection_9311_rm1st8cecygr(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9311_rm1st8cecygw(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_9311_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9311_rm1st8cecygr(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9311_1");
+    editorCell.setCellId("Collection_9311_rm1st8cecygr");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9311_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9311_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9311_rm1st8cecygt(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_9311_rm1st8cecygu(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9311_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9311_rm1st8cecygt(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "allow multiple:");
-    editorCell.setCellId("Constant_9311_0");
+    editorCell.setCellId("Constant_9311_rm1st8cecygt");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_9311_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9311_rm1st8cecygu(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("allowMultiple");
     provider.setNoTargetText("<no allowMultiple>");
@@ -74,7 +74,7 @@ public class RefactoringTarget extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9311_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9311_rm1st8cecygw(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("isApplicableBlock");
     provider.setNoTargetText("<applicable=true>");

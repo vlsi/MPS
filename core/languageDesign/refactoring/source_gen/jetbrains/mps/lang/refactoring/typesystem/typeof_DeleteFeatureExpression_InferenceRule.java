@@ -25,7 +25,7 @@ public class typeof_DeleteFeatureExpression_InferenceRule extends AbstractInfere
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "3302086321379403362", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "3302086321379403367", true), (SNode) new typeof_DeleteFeatureExpression_InferenceRule.QuotationClass_4245_0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "3302086321379403367", true), (SNode) new typeof_DeleteFeatureExpression_InferenceRule.QuotationClass_4245_l523emnf4byh().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -41,18 +41,18 @@ public class typeof_DeleteFeatureExpression_InferenceRule extends AbstractInfere
     return false;
   }
 
-  public static class QuotationClass_4245_0 {
-    public QuotationClass_4245_0() {
+  public static class QuotationClass_4245_l523emnf4byh {
+    public QuotationClass_4245_l523emnf4byh() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4245_0 = null;
+      SNode quotedNode_4245_l523emnf49uq = null;
       {
-        quotedNode_4245_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4245_0 = quotedNode_4245_0;
-        result = quotedNode1_4245_0;
+        quotedNode_4245_l523emnf49uq = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4245_l523emnf49uq = quotedNode_4245_l523emnf49uq;
+        result = quotedNode1_4245_l523emnf49uq;
       }
       return result;
     }
@@ -60,11 +60,11 @@ public class typeof_DeleteFeatureExpression_InferenceRule extends AbstractInfere
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4245_0 = null;
+      SNode quotedNode_4245_l523emnf49uq = null;
       {
-        quotedNode_4245_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4245_0 = quotedNode_4245_0;
-        result = quotedNode1_4245_0;
+        quotedNode_4245_l523emnf49uq = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4245_l523emnf49uq = quotedNode_4245_l523emnf49uq;
+        result = quotedNode1_4245_l523emnf49uq;
       }
       return result;
     }

@@ -23,7 +23,7 @@ public class typeof_NewExecuteFinderExpression_InferenceRule extends AbstractInf
       SNode _nodeToCheck_1029348928467 = executeFinderExpression;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "1206450517331", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "1206450509047", true), (SNode) new typeof_NewExecuteFinderExpression_InferenceRule.QuotationClass_4023_0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "1206450509047", true), (SNode) new typeof_NewExecuteFinderExpression_InferenceRule.QuotationClass_4023_l523emnexigg().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -39,18 +39,18 @@ public class typeof_NewExecuteFinderExpression_InferenceRule extends AbstractInf
     return false;
   }
 
-  public static class QuotationClass_4023_0 {
-    public QuotationClass_4023_0() {
+  public static class QuotationClass_4023_l523emnexigg {
+    public QuotationClass_4023_l523emnexigg() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4023_0 = null;
+      SNode quotedNode_4023_l523emnexi9l = null;
       {
-        quotedNode_4023_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4023_0 = quotedNode_4023_0;
-        result = quotedNode1_4023_0;
+        quotedNode_4023_l523emnexi9l = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4023_l523emnexi9l = quotedNode_4023_l523emnexi9l;
+        result = quotedNode1_4023_l523emnexi9l;
       }
       return result;
     }
@@ -58,11 +58,11 @@ public class typeof_NewExecuteFinderExpression_InferenceRule extends AbstractInf
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4023_0 = null;
+      SNode quotedNode_4023_l523emnexi9l = null;
       {
-        quotedNode_4023_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4023_0 = quotedNode_4023_0;
-        result = quotedNode1_4023_0;
+        quotedNode_4023_l523emnexi9l = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4023_l523emnexi9l = quotedNode_4023_l523emnexi9l;
+        result = quotedNode1_4023_l523emnexi9l;
       }
       return result;
     }

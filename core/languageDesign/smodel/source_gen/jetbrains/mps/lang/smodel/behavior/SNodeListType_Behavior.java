@@ -48,26 +48,26 @@ public class SNodeListType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new SNodeListType_Behavior.QuotationClass_5020_0().createNode();
+    return new SNodeListType_Behavior.QuotationClass_5020_l523emnf4uq7().createNode();
   }
 
   public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "elementConcept", false) == null);
   }
 
-  public static class QuotationClass_5020_0 {
-    public QuotationClass_5020_0() {
+  public static class QuotationClass_5020_l523emnf4uq7 {
+    public QuotationClass_5020_l523emnf4uq7() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5020_0 = null;
+      SNode quotedNode_5020_fhnb6rej = null;
       {
-        quotedNode_5020_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5020_0 = quotedNode_5020_0;
-        quotedNode1_5020_0.addReference(SReference.create("classifier", quotedNode1_5020_0, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
-        result = quotedNode1_5020_0;
+        quotedNode_5020_fhnb6rej = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5020_fhnb6rej = quotedNode_5020_fhnb6rej;
+        quotedNode1_5020_fhnb6rej.addReference(SReference.create("classifier", quotedNode1_5020_fhnb6rej, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
+        result = quotedNode1_5020_fhnb6rej;
       }
       return result;
     }

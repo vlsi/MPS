@@ -28,9 +28,9 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
       for (SNode superConcept : ListSequence.fromList(superConcepts)) {
-        ListSequence.fromList(list).addElement(new supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.QuotationClass_8679_0().createNode(superConcept, typeCheckingContext));
+        ListSequence.fromList(list).addElement(new supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.QuotationClass_8679_l523emnf6y77().createNode(superConcept, typeCheckingContext));
       }
-      ListSequence.fromList(list).addElement(new supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.QuotationClass_8679_1().createNode(typeCheckingContext));
+      ListSequence.fromList(list).addElement(new supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.QuotationClass_8679_l523emnf6y98().createNode(typeCheckingContext));
     }
     return list;
   }
@@ -47,49 +47,49 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
     return false;
   }
 
-  public static class QuotationClass_8679_0 {
-    public QuotationClass_8679_0() {
+  public static class QuotationClass_8679_l523emnf6y77 {
+    public QuotationClass_8679_l523emnf6y77() {
     }
 
-    public SNode createNode(Object parameter_8679_0, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_8679_l523emnf6n32, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8679_0 = null;
+      SNode quotedNode_8679_l523emnf6n30 = null;
       {
-        quotedNode_8679_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8679_0 = quotedNode_8679_0;
-        quotedNode1_8679_0.setReferent("conceptDeclaraton", (SNode) parameter_8679_0);
-        result = quotedNode1_8679_0;
+        quotedNode_8679_l523emnf6n30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8679_l523emnf6n30 = quotedNode_8679_l523emnf6n30;
+        quotedNode1_8679_l523emnf6n30.setReferent("conceptDeclaraton", (SNode) parameter_8679_l523emnf6n32);
+        result = quotedNode1_8679_l523emnf6n30;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_8679_0) {
+    public SNode createNode(Object parameter_8679_l523emnf6n32) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8679_0 = null;
+      SNode quotedNode_8679_l523emnf6n30 = null;
       {
-        quotedNode_8679_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8679_0 = quotedNode_8679_0;
-        quotedNode1_8679_0.setReferent("conceptDeclaraton", (SNode) parameter_8679_0);
-        result = quotedNode1_8679_0;
+        quotedNode_8679_l523emnf6n30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8679_l523emnf6n30 = quotedNode_8679_l523emnf6n30;
+        quotedNode1_8679_l523emnf6n30.setReferent("conceptDeclaraton", (SNode) parameter_8679_l523emnf6n32);
+        result = quotedNode1_8679_l523emnf6n30;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_8679_1 {
-    public QuotationClass_8679_1() {
+  public static class QuotationClass_8679_l523emnf6y98 {
+    public QuotationClass_8679_l523emnf6y98() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8679_1 = null;
+      SNode quotedNode_8679_l523emnf6n38 = null;
       {
-        quotedNode_8679_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8679_1 = quotedNode_8679_1;
-        result = quotedNode1_8679_1;
+        quotedNode_8679_l523emnf6n38 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8679_l523emnf6n38 = quotedNode_8679_l523emnf6n38;
+        result = quotedNode1_8679_l523emnf6n38;
       }
       return result;
     }
@@ -97,11 +97,11 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8679_1 = null;
+      SNode quotedNode_8679_l523emnf6n38 = null;
       {
-        quotedNode_8679_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8679_1 = quotedNode_8679_1;
-        result = quotedNode1_8679_1;
+        quotedNode_8679_l523emnf6n38 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8679_l523emnf6n38 = quotedNode_8679_l523emnf6n38;
+        result = quotedNode1_8679_l523emnf6n38;
       }
       return result;
     }

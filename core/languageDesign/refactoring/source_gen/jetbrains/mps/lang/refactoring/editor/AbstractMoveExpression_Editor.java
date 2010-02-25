@@ -17,28 +17,28 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2495_0(editorContext, node);
+    return this.createCollection_2495_fb3iu30q(editorContext, node);
   }
 
-  private EditorCell createCollection_2495_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2495_fb3iu30q(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2495_0");
-    editorCell.addEditorCell(this.createConceptProperty_2495_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2495_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2495_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2495_1(editorContext, node));
+    editorCell.setCellId("Collection_2495_fb3iu30q");
+    editorCell.addEditorCell(this.createConceptProperty_2495_fb3iu30r(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2495_fb3iu30t(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2495_fb3iu30u(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2495_fb3iu30v(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2495_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2495_fb3iu30u(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to");
-    editorCell.setCellId("Constant_2495_0");
+    editorCell.setCellId("Constant_2495_fb3iu30u");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2495_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_2495_fb3iu30r(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -57,7 +57,7 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2495_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2495_fb3iu30t(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("whatToMove");
     provider.setNoTargetText("<no whatToMove>");
@@ -74,7 +74,7 @@ public class AbstractMoveExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2495_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2495_fb3iu30v(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("destination");
     provider.setNoTargetText("<no destination>");

@@ -18,30 +18,30 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class IntervalType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1347_0(editorContext, node);
+    return this.createCollection_1347_frp02z4f(editorContext, node);
   }
 
-  private EditorCell createCollection_1347_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1347_frp02z4f(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1347_0");
-    editorCell.addEditorCell(this.createConstant_1347_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1347_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1347_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1347_2(editorContext, node));
+    editorCell.setCellId("Collection_1347_frp02z4f");
+    editorCell.addEditorCell(this.createConstant_1347_frp02z4g(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1347_frp02z4h(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1347_frp02z4k(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1347_frp02z4l(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1347_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1347_frp02z4g(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interval");
-    editorCell.setCellId("Constant_1347_0");
+    editorCell.setCellId("Constant_1347_frp02z4g");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1347_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1347_frp02z4h(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_1347_1");
+    editorCell.setCellId("Constant_1347_frp02z4h");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -51,9 +51,9 @@ public class IntervalType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1347_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1347_frp02z4l(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_1347_2");
+    editorCell.setCellId("Constant_1347_frp02z4l");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -62,7 +62,7 @@ public class IntervalType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1347_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1347_frp02z4k(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementType");
     provider.setNoTargetText("<no elementType>");

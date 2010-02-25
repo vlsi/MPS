@@ -16,31 +16,31 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_8643_0(editorContext, node);
+    return this.createComponent_8643_vq4efsa2u2iv(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8643_0(editorContext, node);
+    return this.createCollection_8643_vq4efsa2u2iw(editorContext, node);
   }
 
-  private EditorCell createCollection_8643_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8643_vq4efsa2u2iw(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8643_0");
-    editorCell.addEditorCell(this.createConstant_8643_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8643_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8643_2(editorContext, node));
+    editorCell.setCellId("Collection_8643_vq4efsa2u2iw");
+    editorCell.addEditorCell(this.createConstant_8643_vq4efsa2u2iy(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8643_vq4efsa2u2j0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8643_vq4efsa2u2j2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_8643_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_8643_vq4efsa2u2iv(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_8643_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8643_vq4efsa2u2iy(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Get reference 'linkDeclaration' operation");
-    editorCell.setCellId("Constant_8643_0");
+    editorCell.setCellId("Constant_8643_vq4efsa2u2iy");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -51,9 +51,9 @@ public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  private EditorCell createConstant_8643_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8643_vq4efsa2u2j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_8643_1");
+    editorCell.setCellId("Constant_8643_vq4efsa2u2j0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -62,9 +62,9 @@ public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  private EditorCell createConstant_8643_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8643_vq4efsa2u2j2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns LinkDeclararion representing containment link for this node inside parent node");
-    editorCell.setCellId("Constant_8643_2");
+    editorCell.setCellId("Constant_8643_vq4efsa2u2j2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

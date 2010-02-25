@@ -18,7 +18,7 @@ public class ModelManagerDeclaration_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    return new ModelManagerDeclaration_Behavior.QuotationClass_4389_0().createNode(thisNode);
+    return new ModelManagerDeclaration_Behavior.QuotationClass_4389_l523emnf930d().createNode(thisNode);
   }
 
   public static SNode call_createType_5553449326502622488(SNode thisNode) {
@@ -29,19 +29,19 @@ public class ModelManagerDeclaration_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_5553449326502622488);
   }
 
-  public static class QuotationClass_4389_0 {
-    public QuotationClass_4389_0() {
+  public static class QuotationClass_4389_l523emnf930d {
+    public QuotationClass_4389_l523emnf930d() {
     }
 
-    public SNode createNode(Object parameter_4389_0) {
+    public SNode createNode(Object parameter_4389_166xhhklv9nks) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4389_0 = null;
+      SNode quotedNode_4389_166xhhklv91ct = null;
       {
-        quotedNode_4389_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.ModelManagerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4389_0 = quotedNode_4389_0;
-        quotedNode1_4389_0.setReferent("declaration", (SNode) parameter_4389_0);
-        result = quotedNode1_4389_0;
+        quotedNode_4389_166xhhklv91ct = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.ModelManagerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4389_166xhhklv91ct = quotedNode_4389_166xhhklv91ct;
+        quotedNode1_4389_166xhhklv91ct.setReferent("declaration", (SNode) parameter_4389_166xhhklv9nks);
+        result = quotedNode1_4389_166xhhklv91ct;
       }
       return result;
     }

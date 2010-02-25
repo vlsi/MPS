@@ -31,28 +31,28 @@ public class AliasComponent extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createAlternation_9277_0(editorContext, node);
+    return this.createAlternation_9277_brbv31kpfbdr(editorContext, node);
   }
 
-  private EditorCell createAlternation_9277_0(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_9277_brbv31kpfbdr(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = AliasComponent.renderingCondition9277_0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = AliasComponent.renderingCondition9277_brbv31kpfbdw(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createConceptProperty_9277_0(editorContext, node);
+      editorCell = this.createConceptProperty_9277_brbv31kpfbds(editorContext, node);
     } else {
-      editorCell = this.createError_9277_0(editorContext, node);
+      editorCell = this.createError_9277_brbv31kpfbe6(editorContext, node);
     }
     return editorCell;
   }
 
-  private EditorCell createError_9277_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_9277_brbv31kpfbe6(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose operaion>");
-    editorCell.setCellId("Error_9277_0");
+    editorCell.setCellId("Error_9277_brbv31kpfbe6");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9277_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_9277_brbv31kpfbds(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -64,7 +64,7 @@ public class AliasComponent extends AbstractCellProvider {
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new AliasComponent.AliasComponent_replaceWith_SNodeOperation_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new AliasComponent.AliasComponent_replaceWith_SNodeOperation_cellMenubrbv31kpfbdu()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -75,12 +75,12 @@ public class AliasComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static boolean renderingCondition9277_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9277_brbv31kpfbdw(SNode node, EditorContext editorContext, IScope scope) {
     return !(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
   }
 
-  public static class AliasComponent_replaceWith_SNodeOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public AliasComponent_replaceWith_SNodeOperation_cellMenu0() {
+  public static class AliasComponent_replaceWith_SNodeOperation_cellMenubrbv31kpfbdu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public AliasComponent_replaceWith_SNodeOperation_cellMenubrbv31kpfbdu() {
     }
 
     public String getReplacementConceptName() {

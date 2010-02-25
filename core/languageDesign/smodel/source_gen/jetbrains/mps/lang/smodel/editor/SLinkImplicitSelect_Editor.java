@@ -19,22 +19,22 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class SLinkImplicitSelect_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7502_0(editorContext, node);
+    return this.createCollection_7502_l523emnf4zxk(editorContext, node);
   }
 
-  private EditorCell createCollection_7502_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7502_l523emnf4zxk(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7502_0");
-    editorCell.addEditorCell(this.createRefCell_7502_0(editorContext, node));
+    editorCell.setCellId("Collection_7502_l523emnf4zxk");
+    editorCell.addEditorCell(this.createRefCell_7502_l523emnf4zxg(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_7502_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_7502_l523emnf4zxg(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SLinkImplicitSelect_Editor._Inline7502_0());
+    provider.setAuxiliaryCellProvider(new SLinkImplicitSelect_Editor._Inline7502_l523emnf4zxh());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -47,8 +47,8 @@ public class SLinkImplicitSelect_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline7502_0 extends InlineCellProvider {
-    public _Inline7502_0() {
+  public static class _Inline7502_l523emnf4zxh extends InlineCellProvider {
+    public _Inline7502_l523emnf4zxh() {
       super();
     }
 
@@ -57,10 +57,10 @@ public class SLinkImplicitSelect_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_7502_0(editorContext, node);
+      return this.createProperty_7502_l523emnf4zxi(editorContext, node);
     }
 
-    private EditorCell createProperty_7502_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_7502_l523emnf4zxi(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

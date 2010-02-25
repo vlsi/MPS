@@ -16,31 +16,31 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Reference_GetResolveInfo_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_0260_0(editorContext, node);
+    return this.createComponent_0260_17d7m6dh76hfy(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0260_0(editorContext, node);
+    return this.createCollection_0260_17d7m6dh76hfz(editorContext, node);
   }
 
-  private EditorCell createCollection_0260_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0260_17d7m6dh76hfz(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0260_0");
-    editorCell.addEditorCell(this.createConstant_0260_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0260_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0260_2(editorContext, node));
+    editorCell.setCellId("Collection_0260_17d7m6dh76hfz");
+    editorCell.addEditorCell(this.createConstant_0260_17d7m6dh76hg1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0260_17d7m6dh76hg5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0260_17d7m6dh76hg7(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_0260_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_0260_17d7m6dh76hfy(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_0260_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0260_17d7m6dh76hg1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Get reference 'resolveInfo' operation");
-    editorCell.setCellId("Constant_0260_0");
+    editorCell.setCellId("Constant_0260_17d7m6dh76hg1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -51,9 +51,9 @@ public class Reference_GetResolveInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0260_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0260_17d7m6dh76hg5(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_0260_1");
+    editorCell.setCellId("Constant_0260_17d7m6dh76hg5");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -62,9 +62,9 @@ public class Reference_GetResolveInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0260_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0260_17d7m6dh76hg7(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns resolve info for this reference");
-    editorCell.setCellId("Constant_0260_2");
+    editorCell.setCellId("Constant_0260_17d7m6dh76hg7");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

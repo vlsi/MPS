@@ -23,22 +23,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0883_0(editorContext, node);
+    return this.createCollection_0883_fdhr6rtr(editorContext, node);
   }
 
-  private EditorCell createCollection_0883_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0883_fdhr6rtr(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0883_0");
-    editorCell.addEditorCell(this.createRefCell_0883_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0883_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0883_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0883_1(editorContext, node));
+    editorCell.setCellId("Collection_0883_fdhr6rtr");
+    editorCell.addEditorCell(this.createRefCell_0883_fdhr6rts(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0883_fdhr736r(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0883_fdhr7j54(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0883_fdhr7mwl(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0883_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0883_fdhr736r(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_0883_0");
+    editorCell.setCellId("Constant_0883_fdhr736r");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -49,9 +49,9 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0883_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0883_fdhr7mwl(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_0883_1");
+    editorCell.setCellId("Constant_0883_fdhr7mwl");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -62,12 +62,12 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_0883_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0883_fdhr6rts(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("annotationLink");
     provider.setNoTargetText("<no annotationLink>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyAttributeAccessQualifier_Editor._Inline0883_0());
+    provider.setAuxiliaryCellProvider(new PropertyAttributeAccessQualifier_Editor._Inline0883_fdhr6rtt());
     editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
@@ -84,7 +84,7 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0883_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0883_fdhr7j54(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("propertyQualifier");
     provider.setNoTargetText("<property>");
@@ -101,8 +101,8 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0883_0 extends InlineCellProvider {
-    public _Inline0883_0() {
+  public static class _Inline0883_fdhr6rtt extends InlineCellProvider {
+    public _Inline0883_fdhr6rtt() {
       super();
     }
 
@@ -111,10 +111,10 @@ public class PropertyAttributeAccessQualifier_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0883_0(editorContext, node);
+      return this.createProperty_0883_fdhr6rtu(editorContext, node);
     }
 
-    private EditorCell createProperty_0883_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0883_fdhr6rtu(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no annotation link>");

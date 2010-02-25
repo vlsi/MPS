@@ -18,21 +18,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class NodeStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3345_0(editorContext, node);
+    return this.createCollection_3345_fbdtgbfu(editorContext, node);
   }
 
-  private EditorCell createCollection_3345_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3345_fbdtgbfu(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3345_0");
-    editorCell.addEditorCell(this.createConstant_3345_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_3345_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3345_1(editorContext, node));
+    editorCell.setCellId("Collection_3345_fbdtgbfu");
+    editorCell.addEditorCell(this.createConstant_3345_fbdtgi1b(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_3345_fbdtgkyu(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3345_fd63dfac(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3345_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3345_fbdtgi1b(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "add node");
-    editorCell.setCellId("Constant_3345_0");
+    editorCell.setCellId("Constant_3345_fbdtgi1b");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -41,9 +41,9 @@ public class NodeStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3345_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3345_fd63dfac(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_3345_1");
+    editorCell.setCellId("Constant_3345_fd63dfac");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -52,7 +52,7 @@ public class NodeStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_3345_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_3345_fbdtgkyu(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("foundNode");
     provider.setNoTargetText("<no foundNode>");

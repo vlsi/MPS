@@ -23,34 +23,34 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6651_0(editorContext, node);
+    return this.createCollection_6651_1cjhuq2yrl6nf(editorContext, node);
   }
 
-  private EditorCell createCollection_6651_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6651_1cjhuq2yrl6nf(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6651_0");
-    if (renderingCondition6651_2(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6651_0(editorContext, node));
+    editorCell.setCellId("Collection_6651_1cjhuq2yrl6nf");
+    if (renderingCondition6651_1cjhuq2yrl6vo(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6651_1cjhuq2yrl6nh(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefNode_6651_2(editorContext, node));
-    if (renderingCondition6651_3(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6651_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6651_1cjhuq2yrl6nv(editorContext, node));
+    if (renderingCondition6651_1cjhuq2yrl9gy(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6651_1cjhuq2yrl6nk(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_6651_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6651_0(editorContext, node));
-    if (renderingCondition6651_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6651_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6651_1cjhuq2yrl6nm(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6651_1cjhuq2yrl6nt(editorContext, node));
+    if (renderingCondition6651_7bvww20fhubs(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6651_1cjhuq2yrl6ns(editorContext, node));
     }
-    if (renderingCondition6651_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_6651_1(editorContext, node));
+    if (renderingCondition6651_7bvww20fi86l(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_6651_1cjhuq2yrl6nu(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_6651_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6651_1cjhuq2yrl6no(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6651_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6651_1cjhuq2yrl6nh(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_6651_0");
+    editorCell.setCellId("Constant_6651_1cjhuq2yrl6nh");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -60,9 +60,9 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6651_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6651_1cjhuq2yrl6nk(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_6651_1");
+    editorCell.setCellId("Constant_6651_1cjhuq2yrl6nk");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -72,9 +72,9 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6651_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6651_1cjhuq2yrl6nm(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
-    editorCell.setCellId("Constant_6651_2");
+    editorCell.setCellId("Constant_6651_1cjhuq2yrl6nm");
     BaseLanguageStyle_StyleSheet.getLeftBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -85,9 +85,9 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6651_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6651_1cjhuq2yrl6no(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
-    editorCell.setCellId("Constant_6651_3");
+    editorCell.setCellId("Constant_6651_1cjhuq2yrl6no");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -97,9 +97,9 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6651_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6651_1cjhuq2yrl6ns(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_6651_4");
+    editorCell.setCellId("Constant_6651_1cjhuq2yrl6ns");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -109,7 +109,7 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6651_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6651_1cjhuq2yrl6nt(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rowIndex");
     provider.setNoTargetText("<no rowIndex>");
@@ -126,7 +126,7 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6651_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6651_1cjhuq2yrl6nu(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("colIndex");
     provider.setNoTargetText("<no colIndex>");
@@ -143,7 +143,7 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6651_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6651_1cjhuq2yrl6nv(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");
@@ -160,19 +160,19 @@ public class MatrixElementAccessExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition6651_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6651_7bvww20fhubs(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), "jetbrains.mps.baseLanguage.math.structure.VectorType"));
   }
 
-  private static boolean renderingCondition6651_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6651_7bvww20fi86l(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), "jetbrains.mps.baseLanguage.math.structure.VectorType"));
   }
 
-  private static boolean renderingCondition6651_2(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6651_1cjhuq2yrl6vo(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "expression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
   }
 
-  private static boolean renderingCondition6651_3(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6651_1cjhuq2yrl9gy(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "expression", true), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"));
   }
 }

@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class SLinkAccess_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6219_0(editorContext, node);
+    return this.createCollection_6219_l523emnf4zvz(editorContext, node);
   }
 
-  private EditorCell createCollection_6219_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6219_l523emnf4zvz(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6219_0");
-    editorCell.addEditorCell(this.createRefCell_6219_0(editorContext, node));
+    editorCell.setCellId("Collection_6219_l523emnf4zvz");
+    editorCell.addEditorCell(this.createRefCell_6219_l523emnf4zvw(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_6219_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_6219_l523emnf4zvw(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SLinkAccess_Editor._Inline6219_0());
+    provider.setAuxiliaryCellProvider(new SLinkAccess_Editor._Inline6219_l523emnf4zvx());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class SLinkAccess_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline6219_0 extends InlineCellProvider {
-    public _Inline6219_0() {
+  public static class _Inline6219_l523emnf4zvx extends InlineCellProvider {
+    public _Inline6219_l523emnf4zvx() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class SLinkAccess_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_6219_0(editorContext, node);
+      return this.createProperty_6219_l523emnf4zvy(editorContext, node);
     }
 
-    private EditorCell createProperty_6219_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_6219_l523emnf4zvy(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
