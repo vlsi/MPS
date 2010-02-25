@@ -47,7 +47,10 @@ public class EditorsProvider {
   public EditorsProvider(Project project) {
     myProject = project;
 
-    FileEditorManagerListener editorManagerListener = new FileEditorManagerListener() {
+    updateInformation();
+
+    myMessageBusConnection = myProject.getMessageBus().connect();
+    myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, new FileEditorManagerListener() {
       public void fileOpened(FileEditorManager source, VirtualFile file) {
         updateInformation();
         FileEditor selectedEditor = source.getSelectedEditor(file);
@@ -64,18 +67,12 @@ public class EditorsProvider {
       public void selectionChanged(FileEditorManagerEvent event) {
         updateInformation();
       }
-    };
+    });
 
-    updateInformation();
-
-    myMessageBusConnection = myProject.getMessageBus().connect();
-    myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, editorManagerListener);
     myMessageBusConnection.subscribe(FileEditorManagerListener.Before.FILE_EDITOR_MANAGER, new Before() {
-      @Override
       public void beforeFileOpened(FileEditorManager source, VirtualFile file) {
       }
 
-      @Override
       public void beforeFileClosed(FileEditorManager source, VirtualFile file) {
         updateInformation();
         FileEditor selectedEditor = source.getSelectedEditor(file);
