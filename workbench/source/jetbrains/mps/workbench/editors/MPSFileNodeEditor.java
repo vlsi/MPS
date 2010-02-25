@@ -82,6 +82,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
         public void run() {
+          assert !node.getModel().isDisposed() : "Model containing edited node is disposed";
           SNodePointer nodePointer = new SNodePointer(node);
           assert nodePointer.getModel() != null : "Unable to locate SModelDescriptor representing edited node model";
           assert nodePointer.getModel().getSModel().getNodeById(nodePointer.getNodeId()) != null : "Unable to locate edited node";
