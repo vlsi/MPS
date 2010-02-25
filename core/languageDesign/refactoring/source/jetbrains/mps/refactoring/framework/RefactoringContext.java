@@ -25,7 +25,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Pair;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -41,6 +43,7 @@ public class RefactoringContext {
   //elements names
   public static final String REFACTORING_CONTEXT = "refactoringContext";
   public static final String MOVE_MAP = "moveMap";
+  public static final String SOURCE_MAP = "sourceMap";
   public static final String CONCEPT_FEATURE_MAP = "conceptFeatureMap";
   public static final String PARAMETERS_MAP = "parametersMap";
   public static final String ENTRY = "entry";
@@ -54,6 +57,7 @@ public class RefactoringContext {
   //persistent fields
   private Map<String, Object> myParametersMap = new HashMap<String, Object>();
   private Map<FullNodeId, FullNodeId> myMoveMap = new HashMap<FullNodeId, FullNodeId>();
+  private Map<FullNodeId, FullNodeId> mySourceMap = new HashMap<FullNodeId, FullNodeId>();
   private Map<ConceptFeature, ConceptFeature> myConceptFeatureMap = new HashMap<ConceptFeature, ConceptFeature>();
   private int myModelVersion = -1;
   private IRefactoring myRefactoring;
@@ -187,9 +191,18 @@ public class RefactoringContext {
     for (SNode node : targetNodes) {
       targetNode.addChild(role, node);
     }
+    SNode oldParent = null;
+    for (SNode node : sourceNodes) {
+      if (oldParent == null) {
+        oldParent = node.getParent();
+      } else {
+        assert node.getParent() == oldParent;
+      }
+    }
     for (SNode key : mapping.keySet()) {
       SNode target = mapping.get(key);
       myMoveMap.put(new FullNodeId(key), new FullNodeId(target));
+      mySourceMap.put(new FullNodeId(target), new FullNodeId(oldParent));
     }
     for (SNode node : sourceNodes) {
       node.delete();
@@ -215,7 +228,7 @@ public class RefactoringContext {
     if (sourceNodes.isEmpty()) {
       return new ArrayList<SNode>();
     }
-//    SModel sourceModel = sourceNodes.get(0).getModel();
+    SModel sourceModel = sourceNodes.get(0).getModel();
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> targetNodes = CopyUtil.copy(sourceNodes, mapping);
     for (SNode node : targetNodes) {
@@ -224,6 +237,7 @@ public class RefactoringContext {
     for (SNode key : mapping.keySet()) {
       SNode target = mapping.get(key);
       myMoveMap.put(new FullNodeId(key), new FullNodeId(target));
+      mySourceMap.put(new FullNodeId(target), new FullNodeId(sourceModel));
     }
     for (SNode node : sourceNodes) {
       node.delete();
@@ -508,6 +522,27 @@ public class RefactoringContext {
       refactoringContextElement.addContent(moveMapElement);
     }
     {
+      Element moveMapElement = new Element(SOURCE_MAP);
+      List<Entry<FullNodeId, FullNodeId>> entries = new ArrayList<Entry<FullNodeId, FullNodeId>>(mySourceMap.entrySet());
+      Collections.sort(entries,
+        new Comparator<Entry<FullNodeId, FullNodeId>>() {
+          public int compare(Entry<FullNodeId, FullNodeId> o1, Entry<FullNodeId, FullNodeId> o2) {
+            return o1.getKey().compareTo(o2.getKey()) * 10 + o1.getValue().compareTo(o2.getValue());
+          }
+        });
+      for (Entry<FullNodeId, FullNodeId> entry : entries) {
+        Element entryElement = new Element(ENTRY);
+        Element keyElement = new Element(KEY);
+        Element valueElement = new Element(VALUE);
+        entry.getKey().toElement(keyElement);
+        entry.getValue().toElement(valueElement);
+        entryElement.addContent(keyElement);
+        entryElement.addContent(valueElement);
+        moveMapElement.addContent(entryElement);
+      }
+      refactoringContextElement.addContent(moveMapElement);
+    }
+    {
       Element featureMapElement = new Element(CONCEPT_FEATURE_MAP);
       List<Entry<ConceptFeature, ConceptFeature>> entries = new ArrayList<Entry<ConceptFeature, ConceptFeature>>(myConceptFeatureMap.entrySet());
       Collections.sort(entries,
@@ -549,6 +584,51 @@ public class RefactoringContext {
       }
     }
     return refactoringContextElement;
+  }
+
+  public List<Pair> getConceptFeatures() {
+    List<Pair> result = new ArrayList<Pair>();
+    for (ConceptFeature conceptFeature : myConceptFeatureMap.keySet()) {
+      String first = conceptFeature.getConceptFQName();
+      String second = myConceptFeatureMap.get(conceptFeature).getConceptFQName();
+      result.add(new Pair(first, second));
+    }
+    return result;
+  }
+
+  private List<Pair> removeChildrens(List<Pair<SNode, SNode>> pairs) {
+    List<Pair> result = new ArrayList<Pair>();
+    result.addAll(pairs);
+    for (Pair<SNode, SNode> pair : pairs) {
+      SNode node = pair.o1;
+      if (node == null) continue;
+      List<SNode> ancestors = node.getAncestors(false);
+      for (Pair<SNode, SNode> ancestorCondidate : pairs) {
+        if (EqualUtil.equals(pair, ancestorCondidate)) continue;
+        if (ancestors.contains(ancestorCondidate.o1)) {
+          result.remove(ancestorCondidate);
+        }
+      }
+    }
+    return result;
+  }
+
+  private List<Pair> getNodes(Map<FullNodeId, FullNodeId> map) {
+    List<Pair<SNode, SNode>> result = new ArrayList<Pair<SNode, SNode>>();
+    for (FullNodeId fullNodeId : map.keySet()) {
+      SNode first = fullNodeId.getNode();
+      SNode second = map.get(fullNodeId).getNode();
+      result.add(new Pair(first, second));
+    }
+    return removeChildrens(result);
+  }
+
+  public List<Pair> getMovedNodes() {
+    return getNodes(myMoveMap);
+  }
+
+  public List<Pair> getSourceNodes() {
+    return getNodes(mySourceMap);
   }
 
   public void fromElement(Element element) {
@@ -618,6 +698,16 @@ public class RefactoringContext {
           Element keyElement = entryElement.getChild(KEY);
           Element valueElement = entryElement.getChild(VALUE);
           myMoveMap.put(new FullNodeId(keyElement), new FullNodeId(valueElement));
+        }
+      }
+    }
+    {
+      Element moveMapElement = element.getChild(SOURCE_MAP);
+      if (moveMapElement != null) {
+        for (Element entryElement : (List<Element>) moveMapElement.getChildren(ENTRY)) {
+          Element keyElement = entryElement.getChild(KEY);
+          Element valueElement = entryElement.getChild(VALUE);
+          mySourceMap.put(new FullNodeId(keyElement), new FullNodeId(valueElement));
         }
       }
     }
@@ -743,6 +833,7 @@ public class RefactoringContext {
 
   public static class FullNodeId implements Comparable<FullNodeId> {
 
+    @Nullable
     private SNodeId myNodeId;
 
     private SModelReference myModelReference;
@@ -750,14 +841,19 @@ public class RefactoringContext {
     public static final String MODEL_UID = "modelUID";
 
     public static final String NODE_ID = "nodeId";
+    private static final String NULL = "null";
 
-    public FullNodeId(SNodeId nodeId, SModelReference modelReference) {
+    public FullNodeId(@Nullable SNodeId nodeId, SModelReference modelReference) {
       myNodeId = nodeId;
       myModelReference = modelReference;
     }
 
     public FullNodeId(SNode node) {
       this(node.getSNodeId(), node.getModel().getSModelReference());
+    }
+
+    public FullNodeId(SModel model) {
+      this(null, model.getSModelReference());
     }
 
     public FullNodeId(Element element) {
@@ -767,9 +863,17 @@ public class RefactoringContext {
     public int compareTo(FullNodeId o) {
       int i2 = myModelReference.getLongName().compareTo(o.myModelReference.getLongName());
       if (i2 != 0) return i2;
+      if (myNodeId == null) {
+        if (o.myNodeId == null) {
+          return 0;
+        } else {
+          return 1;
+        }
+      }
       return myNodeId.toString().compareTo(o.myNodeId.toString());
     }
 
+    @Nullable
     public SNodeId getNodeId() {
       return myNodeId;
     }
@@ -780,12 +884,17 @@ public class RefactoringContext {
 
     public void toElement(Element element) {
       element.setAttribute(MODEL_UID, myModelReference.toString());
-      element.setAttribute(NODE_ID, myNodeId.toString());
+      element.setAttribute(NODE_ID, myNodeId == null ? NULL : myNodeId.toString());
     }
 
     public void fromElement(Element element) {
       myModelReference = SModelReference.fromString(element.getAttributeValue(MODEL_UID));
-      myNodeId = SNodeId.fromString(element.getAttributeValue(NODE_ID));
+      String value = element.getAttributeValue(NODE_ID);
+      if (value.equals(NULL)) {
+        myNodeId = null;
+      } else {
+        myNodeId = SNodeId.fromString(value);
+      }
     }
 
     public SNode getNode() {
