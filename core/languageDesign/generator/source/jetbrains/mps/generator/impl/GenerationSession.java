@@ -25,6 +25,7 @@ import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.util.IPerformanceTracer;
 import jetbrains.mps.generator.util.IPerformanceTracer.NullPerformanceTracer;
+import jetbrains.mps.generator.util.PerformanceTracer;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.MappingScript;
@@ -53,7 +54,7 @@ public class GenerationSession {
   private GenerationPlan myGenerationPlan;
 
   /* temporary */
-  private final boolean myReverseRoots;
+  private final boolean myParallelGeneration;
 
   private final IOperationContext myInvocationContext;
   private final IGenerationTracer myGenerationTracer;
@@ -73,17 +74,18 @@ public class GenerationSession {
   public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
                            IGenerationTracer generationTracer, boolean saveTransientModels,
                            ProgressIndicator progressMonitor, GeneratorLoggerAdapter logger,
-                           boolean reverseRoots, boolean isStrict) {
+                           boolean parallelGeneration, boolean isStrict) {
     myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
     myGenerationTracer = generationTracer;
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
-    myReverseRoots = reverseRoots;
+    myParallelGeneration = parallelGeneration;
     myIsStrict = isStrict;
     myLogger = new GenerationSessionLogger(logger);
-    ttrace = new NullPerformanceTracer();
-      //new PerformanceTracer("model " + inputModel.getName());
+    ttrace = myIsStrict && !myParallelGeneration
+      ? new PerformanceTracer("model " + inputModel.getName())
+      : new NullPerformanceTracer();
   }
 
   public GenerationStatus generateModel() throws GenerationCanceledException {
@@ -102,12 +104,12 @@ public class GenerationSession {
       SModel currOutput = null;
 
       ttrace.push("steps", false);
-      for(myMajorStep = 0; myMajorStep < myGenerationPlan.getStepCount(); myMajorStep++) {
-        if(myLogger.needsInfo()) {
+      for (myMajorStep = 0; myMajorStep < myGenerationPlan.getStepCount(); myMajorStep++) {
+        if (myLogger.needsInfo()) {
           myLogger.info("executing step " + (myMajorStep + 1));
         }
         currOutput = executeMajorStep(currInputModel);
-        if(currOutput == null || myLogger.getErrorCount() > 0) {
+        if (currOutput == null || myLogger.getErrorCount() > 0) {
           break;
         }
         if (myGenerationPlan.getMappingConfigurations(myMajorStep).isEmpty()) {
@@ -124,7 +126,7 @@ public class GenerationSession {
       }
 
       String report = ttrace.report();
-      if(report != null) {
+      if (report != null) {
         myLogger.trace(report);
       }
 
@@ -149,12 +151,12 @@ public class GenerationSession {
     myTransientModelsCount = 0;
 
     if (myGenerationPlan.getMappingConfigurations(myMajorStep).isEmpty()) {
-      if(inputModel.getRoots().size() > 0) {
+      if (inputModel.getRoots().size() > 0) {
         myLogger.warning("skip model \"" + inputModel.getSModelFqName() + "\" : no generator available");
       }
       return inputModel;
     }
-    if(myGenerationTracer.isTracing() && myLogger.needsInfo()) {
+    if (myGenerationTracer.isTracing() && myLogger.needsInfo()) {
       printGenerationStepData(inputModel);
     }
 
@@ -179,9 +181,9 @@ public class GenerationSession {
     // -----------------------
     // reverse roots order
     // -----------------------
-    if (myReverseRoots && inputModel == mySessionContext.getOriginalInputModel()) {
+    if (myParallelGeneration && inputModel == mySessionContext.getOriginalInputModel()) {
       SModel currentInputModel_clone = createTransientModel();
-      if(myLogger.needsInfo()) {
+      if (myLogger.needsInfo()) {
         myLogger.info("reversing roots '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
       }
       List<SNode> rrr = currentInputModel.getRoots();
@@ -228,7 +230,7 @@ public class GenerationSession {
       currentOutputModel.validateLanguagesAndImports();
 
       // apply mapping to the output model
-      if(myLogger.needsInfo()) {
+      if (myLogger.needsInfo()) {
         myLogger.info("generating model '" + currentOutputModel.getSModelFqName() + "'");
       }
       mySessionContext.clearTransientObjects();
@@ -241,7 +243,7 @@ public class GenerationSession {
       if (!applyRules(currentInputModel, transientModel, false, ruleManager)) {
         // nothing has been generated
         tracer.discardTracing(currentInputModel, transientModel);
-        if(myLogger.needsInfo()) {
+        if (myLogger.needsInfo()) {
           myLogger.info("remove empty model '" + transientModel.getSModelFqName() + "'");
         }
         SModelRepository.getInstance().removeModelDescriptor(transientModel.getModelDescriptor());
@@ -281,7 +283,10 @@ public class GenerationSession {
 
   private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, boolean isPrimary,
                              RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
-    TemplateGenerator tg = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myIsStrict, ttrace);
+    TemplateGenerator tg =
+      myIsStrict && myParallelGeneration && !mySessionContext.getGenerationTracer().isTracing() && ParallelTemplateGenerator.PARALLELING_ENABLED
+        ? new ParallelTemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myIsStrict, ttrace)
+        : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myIsStrict, ttrace);
     return tg.apply(isPrimary);
   }
 
@@ -302,7 +307,7 @@ public class GenerationSession {
       }
       if (needToCloneInputMode) {
         SModel currentInputModel_clone = createTransientModel();
-        if(myLogger.needsInfo()) {
+        if (myLogger.needsInfo()) {
           myLogger.info("clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
         }
         CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
@@ -322,7 +327,7 @@ public class GenerationSession {
         myLogger.warning(preMappingScript.getNode(), "skip script '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ") - wrong script kind");
         continue;
       }
-      if(myLogger.needsInfo()) {
+      if (myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getNode(), "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")");
       }
       ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myIsStrict, ttrace);
@@ -335,7 +340,7 @@ public class GenerationSession {
     List<MappingScript> postMappingScripts = ruleManager.getPostMappingScripts();
     if (!postMappingScripts.isEmpty() && !myDiscardTransients) {  // clone model - needed for tracing
       SModel currentOutputModel_clone = createTransientModel();
-      if(myLogger.needsInfo()) {
+      if (myLogger.needsInfo()) {
         myLogger.info("clone model '" + currentOutputModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");
       }
       CloneUtil.cloneModel(currentOutputModel, currentOutputModel_clone, false);
@@ -350,7 +355,7 @@ public class GenerationSession {
         myLogger.warning(postMappingScript.getNode(), "skip script '" + postMappingScript + "' (" + postMappingScript.getModel().getSModelFqName() + ") - wrong script kind");
         continue;
       }
-      if(myLogger.needsInfo()) {
+      if (myLogger.needsInfo()) {
         myLogger.info(postMappingScript.getNode(), "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
       }
       ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentOutputModel, currentOutputModel, myIsStrict, ttrace);
@@ -376,7 +381,7 @@ public class GenerationSession {
     SModelDescriptor md = model.getModelDescriptor();
     if (md != null && md.isTransient()) {
       if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
-        if(myLogger.needsInfo()) {
+        if (myLogger.needsInfo()) {
           myLogger.info("remove spent model '" + model.getSModelFqName() + "'");
         }
         SModelRepository.getInstance().removeModelDescriptor(md);

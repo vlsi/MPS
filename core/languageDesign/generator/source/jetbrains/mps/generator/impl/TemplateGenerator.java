@@ -77,6 +77,34 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myAreMappingsReady = false;
 
     ttrace.push("reductions", false);
+    List<SNode> copiedRoots = applyReductions(isPrimary);
+    ttrace.pop();
+
+    myAreMappingsReady = true;
+
+    // weaving
+    ttrace.push("weavings", false);
+    applyWeaving_MappingRules();
+    ttrace.pop();
+
+    // execute mapper in all $MAP_SRC$/$MAP_SRCL$
+    ttrace.push("delayed mappings", false);
+    myDelayedChanges.doAllChanges();
+    ttrace.pop();
+
+    // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
+    ttrace.push("restoring references", false);
+    for (SNode copiedRoot : copiedRoots) {
+      checkMonitorCanceled();
+      invalidateReferencesInCopiedNode(copiedRoot);
+    }
+    revalidateAllReferences();
+    ttrace.pop();
+    checkMonitorCanceled();
+    return isChanged();
+  }
+
+  protected List<SNode> applyReductions(boolean isPrimary) throws GenerationCanceledException, GenerationFailureException {
     // create all roots
     if (isPrimary) {
       ttrace.push("create root", false);
@@ -110,31 +138,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       SNode inputRootNode = findInputNodeById(outputRootNode.getSNodeId());
       applyReductionRules(inputRootNode, outputRootNode);
     }
-
-    ttrace.pop();
-
-    myAreMappingsReady = true;
-
-    // weaving
-    ttrace.push("weavings", false);
-    applyWeaving_MappingRules();
-    ttrace.pop();
-
-    // execute mapper in all $MAP_SRC$/$MAP_SRCL$
-    ttrace.push("delayed mappings", false);
-    myDelayedChanges.doAllChanges();
-    ttrace.pop();
-
-    // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
-    ttrace.push("restoring references", false);
-    for (SNode copiedRoot : copiedOutputRoots) {
-      checkMonitorCanceled();
-      invalidateReferencesInCopiedNode(copiedRoot);
-    }
-    revalidateAllReferences();
-    ttrace.pop();
-    checkMonitorCanceled();
-    return isChanged();
+    return copiedOutputRoots;
   }
 
   private List<SNode> copyRootsFromInputModel(List<SNode> rootsToCopy) throws GenerationFailureException {
@@ -329,7 +333,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return false;
   }
 
-  private void applyReductionRules(SNode inputNode, SNode clonedOutputNode) throws GenerationFailureException, GenerationCanceledException {
+  protected void applyReductionRules(SNode inputNode, SNode clonedOutputNode) throws GenerationFailureException, GenerationCanceledException {
     myGenerationTracer.pushInputNode(inputNode);
     try {
       applyReductionRules_internal(inputNode, clonedOutputNode);
@@ -338,7 +342,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private void applyReductionRules_internal(SNode inputNode, SNode clonedOutputNode) throws GenerationFailureException, GenerationCanceledException {
+  protected void applyReductionRules_internal(SNode inputNode, SNode clonedOutputNode) throws GenerationFailureException, GenerationCanceledException {
     if (clonedOutputNode.getParent() != null) { // don't try to reduce copied roots
       List<SNode> outputNodes = tryToReduce(inputNode, null);
       if (outputNodes != null) {
