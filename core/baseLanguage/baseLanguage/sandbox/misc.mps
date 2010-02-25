@@ -2197,5 +2197,28 @@
     <property name="name:3" value="Foobar" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6624237184120625882" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="9026942911488969235">
+    <property name="name:3" value="ReturnLast" />
+    <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="9026942911488969241">
+      <property name="name:3" value="returnLast" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="9026942911488986242" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9026942911488969243" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9026942911488969244">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9026942911488986243">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="9026942911488986244">
+            <property name="value:3" value="0" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="9026942911488986245" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="9026942911488986246" />
+      </node>
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9026942911488969236" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="9026942911488969237">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="9026942911488969238" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9026942911488969239" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9026942911488969240" />
+    </node>
+  </node>
 </model>
 
