@@ -20,46 +20,46 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class SubSetOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6649_ftrhuc6a(editorContext, node);
+    return this.createCollection_6649_0(editorContext, node);
   }
 
-  private EditorCell createCollection_6649_ftrhuc6a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6649_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6649_ftrhuc6a");
-    editorCell.addEditorCell(this.createConceptProperty_6649_ftrhuc6b(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6649_ftrhuc6c(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6649_ftrhugj5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6649_ftrhuhlm(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6649_ftrhuk2d(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6649_ftrhuc6e(editorContext, node));
+    editorCell.setCellId("Collection_6649_0");
+    editorCell.addEditorCell(this.createConceptProperty_6649_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6649_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6649_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6649_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6649_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6649_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6649_ftrhuc6c(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6649_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_6649_ftrhuc6c");
+    editorCell.setCellId("Constant_6649_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6649_ftrhuc6e(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6649_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_6649_ftrhuc6e");
+    editorCell.setCellId("Constant_6649_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6649_ftrhuhlm(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6649_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_6649_ftrhuhlm");
+    editorCell.setCellId("Constant_6649_2");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_6649_ftrhuc6b(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_6649_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -68,7 +68,7 @@ public class SubSetOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SubSetOperation_Editor.SubSetOperation_Editor_replaceWith_SequenceOperation_cellMenu43xmtj5qiune()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SubSetOperation_Editor.SubSetOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -79,7 +79,7 @@ public class SubSetOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6649_ftrhugj5(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6649_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fromElement");
     provider.setNoTargetText("<no fromElement>");
@@ -96,7 +96,7 @@ public class SubSetOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6649_ftrhuk2d(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6649_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("toElement");
     provider.setNoTargetText("<no toElement>");
@@ -113,8 +113,8 @@ public class SubSetOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class SubSetOperation_Editor_replaceWith_SequenceOperation_cellMenu43xmtj5qiune extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public SubSetOperation_Editor_replaceWith_SequenceOperation_cellMenu43xmtj5qiune() {
+  public static class SubSetOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public SubSetOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

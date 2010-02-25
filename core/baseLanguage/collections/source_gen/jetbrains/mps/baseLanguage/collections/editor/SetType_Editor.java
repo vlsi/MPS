@@ -27,22 +27,22 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class SetType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9680_fng9gcb8(editorContext, node);
+    return this.createCollection_9680_0(editorContext, node);
   }
 
-  private EditorCell createCollection_9680_fng9gcb8(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9680_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9680_fng9gcb8");
-    editorCell.addEditorCell(this.createConceptProperty_9680_ftrh95ye(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9680_fng9gcbc(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9680_fng9gcbe(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9680_fng9gcbf(editorContext, node));
+    editorCell.setCellId("Collection_9680_0");
+    editorCell.addEditorCell(this.createConceptProperty_9680_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9680_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9680_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9680_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9680_fng9gcbc(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9680_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_9680_fng9gcbc");
+    editorCell.setCellId("Constant_9680_0");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -52,9 +52,9 @@ public class SetType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9680_fng9gcbf(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9680_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_9680_fng9gcbf");
+    editorCell.setCellId("Constant_9680_1");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -64,7 +64,7 @@ public class SetType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9680_fng9gcbe(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9680_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementType");
     provider.setNoTargetText("<no elementType>");
@@ -84,7 +84,7 @@ public class SetType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9680_ftrh95ye(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_9680_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -98,7 +98,7 @@ public class SetType_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SetType_Editor.SetType_component_cellMenu1j1w5gdbaq344()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SetType_Editor.SetType_component_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -109,10 +109,10 @@ public class SetType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class SetType_component_cellMenu1j1w5gdbaq344 implements SubstituteInfoPart {
+  public static class SetType_component_cellMenu0 implements SubstituteInfoPart {
     private replace_withAnotherSequenceType myComponent;
 
-    public SetType_component_cellMenu1j1w5gdbaq344() {
+    public SetType_component_cellMenu0() {
       this.myComponent = new replace_withAnotherSequenceType();
     }
 

@@ -20,22 +20,22 @@ public class QueryFunction_PasteWrapper_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new QueryFunction_PasteWrapper_Behavior.QuotationClass_8066_l523emnepmwc().createNode(SLinkOperations.getTarget(QueryFunction_PasteWrapper_Behavior.call_getWrapper_1221137519379(thisNode), "targetConcept", false));
+    return new QueryFunction_PasteWrapper_Behavior.QuotationClass_8066_0().createNode(SLinkOperations.getTarget(QueryFunction_PasteWrapper_Behavior.call_getWrapper_1221137519379(thisNode), "targetConcept", false));
   }
 
-  public static class QuotationClass_8066_l523emnepmwc {
-    public QuotationClass_8066_l523emnepmwc() {
+  public static class QuotationClass_8066_0 {
+    public QuotationClass_8066_0() {
     }
 
-    public SNode createNode(Object parameter_8066_fkzdrmed) {
+    public SNode createNode(Object parameter_8066_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8066_fkzdrgic = null;
+      SNode quotedNode_8066_0 = null;
       {
-        quotedNode_8066_fkzdrgic = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8066_fkzdrgic = quotedNode_8066_fkzdrgic;
-        quotedNode1_8066_fkzdrgic.setReferent("concept", (SNode) parameter_8066_fkzdrmed);
-        result = quotedNode1_8066_fkzdrgic;
+        quotedNode_8066_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8066_0 = quotedNode_8066_0;
+        quotedNode1_8066_0.setReferent("concept", (SNode) parameter_8066_0);
+        result = quotedNode1_8066_0;
       }
       return result;
     }

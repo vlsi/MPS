@@ -20,45 +20,45 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class TakeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7796_eypq3ufa(editorContext, node);
+    return this.createCollection_7796_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7796_eypq3ufa(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7796_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7796_eypq3ufa");
-    editorCell.addEditorCell(this.createConstant_7796_eypq3vow(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7796_fihlg37f(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7796_eypq410d(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7796_eypq42s8(editorContext, node));
+    editorCell.setCellId("Collection_7796_0");
+    editorCell.addEditorCell(this.createConstant_7796_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7796_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7796_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7796_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7796_eypq3vow(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7796_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "take");
-    editorCell.setCellId("Constant_7796_eypq3vow");
+    editorCell.setCellId("Constant_7796_0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TakeOperation_Editor.TakeOperation_Editor_replaceWith_SequenceOperation_cellMenueypq4a0p()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TakeOperation_Editor.TakeOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_7796_eypq42s8(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7796_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_7796_eypq42s8");
+    editorCell.setCellId("Constant_7796_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7796_fihlg37f(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7796_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_7796_fihlg37f");
+    editorCell.setCellId("Constant_7796_2");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_7796_eypq410d(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7796_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementsToTake");
     provider.setNoTargetText("<no elementsToTake>");
@@ -75,8 +75,8 @@ public class TakeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class TakeOperation_Editor_replaceWith_SequenceOperation_cellMenueypq4a0p extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public TakeOperation_Editor_replaceWith_SequenceOperation_cellMenueypq4a0p() {
+  public static class TakeOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public TakeOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

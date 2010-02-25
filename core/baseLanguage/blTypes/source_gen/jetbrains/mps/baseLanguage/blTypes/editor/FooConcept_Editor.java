@@ -20,18 +20,18 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class FooConcept_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2822_ffmiyx83(editorContext, node);
+    return this.createCollection_2822_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2822_ffmiyx83(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2822_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2822_ffmiyx83");
-    editorCell.addEditorCell(this.createProperty_2822_ffmiz5ux(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_2822_ffmj0b85(editorContext, node));
+    editorCell.setCellId("Collection_2822_0");
+    editorCell.addEditorCell(this.createProperty_2822_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_2822_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createProperty_2822_ffmiz5ux(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_2822_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -49,12 +49,12 @@ public class FooConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_2822_ffmj0b85(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_2822_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("bar");
     provider.setNoTargetText("<no bar>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FooConcept_Editor._Inline2822_ffmj0b86());
+    provider.setAuxiliaryCellProvider(new FooConcept_Editor._Inline2822_0());
     editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
@@ -71,8 +71,8 @@ public class FooConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline2822_ffmj0b86 extends InlineCellProvider {
-    public _Inline2822_ffmj0b86() {
+  public static class _Inline2822_0 extends InlineCellProvider {
+    public _Inline2822_0() {
       super();
     }
 
@@ -81,10 +81,10 @@ public class FooConcept_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_2822_ffmj1cmr(editorContext, node);
+      return this.createProperty_2822_1(editorContext, node);
     }
 
-    private EditorCell createProperty_2822_ffmj1cmr(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_2822_1(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class MenuPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_1562_f1sf37rx(editorContext, node);
+    return this.createError_1562_0(editorContext, node);
   }
 
-  private EditorCell createError_1562_f1sf37rx(EditorContext editorContext, SNode node) {
+  private EditorCell createError_1562_0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "menuPart");
-    editorCell.setCellId("Error_1562_f1sf37rx");
+    editorCell.setCellId("Error_1562_0");
     return editorCell;
   }
 }

@@ -20,45 +20,45 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class SkipOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5500_eypmm7rx(editorContext, node);
+    return this.createCollection_5500_0(editorContext, node);
   }
 
-  private EditorCell createCollection_5500_eypmm7rx(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5500_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5500_eypmm7rx");
-    editorCell.addEditorCell(this.createConstant_5500_eypmm95w(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5500_fihlesdo(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5500_eypmmcg0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5500_eypmme7g(editorContext, node));
+    editorCell.setCellId("Collection_5500_0");
+    editorCell.addEditorCell(this.createConstant_5500_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5500_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5500_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5500_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5500_eypmm95w(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5500_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "skip");
-    editorCell.setCellId("Constant_5500_eypmm95w");
+    editorCell.setCellId("Constant_5500_0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SkipOperation_Editor.SkipOperation_Editor_replaceWith_SequenceOperation_cellMenueypmmlfx()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new SkipOperation_Editor.SkipOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_5500_eypmme7g(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5500_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_5500_eypmme7g");
+    editorCell.setCellId("Constant_5500_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5500_fihlesdo(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5500_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_5500_fihlesdo");
+    editorCell.setCellId("Constant_5500_2");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_5500_eypmmcg0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5500_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementsToSkip");
     provider.setNoTargetText("<no elementsToSkip>");
@@ -75,8 +75,8 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class SkipOperation_Editor_replaceWith_SequenceOperation_cellMenueypmmlfx extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public SkipOperation_Editor_replaceWith_SequenceOperation_cellMenueypmmlfx() {
+  public static class SkipOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public SkipOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

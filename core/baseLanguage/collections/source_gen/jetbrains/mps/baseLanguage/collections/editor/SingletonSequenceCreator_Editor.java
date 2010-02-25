@@ -20,25 +20,25 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4756_frm4ico7(editorContext, node);
+    return this.createCollection_4756_0(editorContext, node);
   }
 
-  private EditorCell createCollection_4756_frm4ico7(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4756_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4756_frm4ico7");
-    editorCell.addEditorCell(this.createConstant_4756_frm4ico8(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4756_frm4icoa(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4756_frm4icob(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4756_frm4icoc(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4756_frm4icoe(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4756_frm4is9n(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4756_frm4icor(editorContext, node));
+    editorCell.setCellId("Collection_4756_0");
+    editorCell.addEditorCell(this.createConstant_4756_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4756_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4756_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4756_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4756_3(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4756_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4756_4(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4756_frm4ico8(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4756_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "singleton");
-    editorCell.setCellId("Constant_4756_frm4ico8");
+    editorCell.setCellId("Constant_4756_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -48,17 +48,17 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4756_frm4icoa(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4756_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_4756_frm4icoa");
+    editorCell.setCellId("Constant_4756_1");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4756_frm4icoc(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4756_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_4756_frm4icoc");
+    editorCell.setCellId("Constant_4756_2");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -68,17 +68,17 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4756_frm4icoe(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4756_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_4756_frm4icoe");
+    editorCell.setCellId("Constant_4756_3");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4756_frm4icor(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4756_4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_4756_frm4icor");
+    editorCell.setCellId("Constant_4756_4");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -88,7 +88,7 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4756_frm4icob(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4756_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementType");
     provider.setNoTargetText("<no elementType>");
@@ -105,7 +105,7 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4756_frm4is9n(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4756_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("singletonValue");
     provider.setNoTargetText("<no singletonValue>");

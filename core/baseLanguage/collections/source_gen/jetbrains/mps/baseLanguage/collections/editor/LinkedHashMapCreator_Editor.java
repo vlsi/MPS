@@ -19,46 +19,46 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LinkedHashMapCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_6309_bvb0txi54clw(editorContext, node);
+    return this.createComponent_6309_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6309_ftsqqhcr(editorContext, node);
+    return this.createCollection_6309_0(editorContext, node);
   }
 
-  private EditorCell createCollection_6309_ftsqqhcr(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6309_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6309_ftsqqhcr");
-    editorCell.addEditorCell(this.createCollection_6309_ftsqqym6(editorContext, node));
+    editorCell.setCellId("Collection_6309_0");
+    editorCell.addEditorCell(this.createCollection_6309_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_6309_ftsqqym6(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6309_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6309_ftsqqym6");
+    editorCell.setCellId("Collection_6309_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6309_ftsqr1u5(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6309_ftsqrhb8(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6309_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6309_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_6309_bvb0txi54clw(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_6309_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new HashMapCreator_editorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_6309_ftsqr1u5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6309_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "iteration order:");
-    editorCell.setCellId("Constant_6309_ftsqr1u5");
+    editorCell.setCellId("Constant_6309_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_6309_ftsqrhb8(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6309_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("order");
     provider.setNoTargetText("<no order>");

@@ -25,14 +25,14 @@ public class typeof_DowncastExpression_InferenceRule extends AbstractInferenceRu
       typeCheckingContext.whenConcrete(expType, new Runnable() {
         public void run() {
           {
-            IMatchingPattern pattern_4857_fo8pfb5r = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type");
-            SNode coercedNode_4857_fo8pfb5r = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(expType), pattern_4857_fo8pfb5r, typeCheckingContext);
-            if (coercedNode_4857_fo8pfb5r != null) {
+            IMatchingPattern pattern_4857_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type");
+            SNode coercedNode_4857_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(expType), pattern_4857_0, typeCheckingContext);
+            if (coercedNode_4857_0 != null) {
               {
                 SNode _nodeToCheck_1029348928467 = expression;
                 BaseIntentionProvider intentionProvider = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231787457", 0, intentionProvider);
-                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231710394", true), (SNode) ClassifierTypeUtil.getTypeCoercedToClassifierType(coercedNode_4857_fo8pfb5r), _info_12389875345);
+                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1228231710394", true), (SNode) ClassifierTypeUtil.getTypeCoercedToClassifierType(coercedNode_4857_0), _info_12389875345);
               }
             } else {
             }

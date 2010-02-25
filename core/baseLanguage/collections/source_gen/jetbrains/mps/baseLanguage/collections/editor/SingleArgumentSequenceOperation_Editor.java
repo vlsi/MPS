@@ -23,36 +23,36 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9701_43xmtj5qincp(editorContext, node);
+    return this.createCollection_9701_0(editorContext, node);
   }
 
-  private EditorCell createCollection_9701_43xmtj5qincp(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9701_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9701_43xmtj5qincp");
-    editorCell.addEditorCell(this.createConceptProperty_9701_43xmtj5qincq(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9701_43xmtj5qincu(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9701_43xmtj5qincv(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9701_43xmtj5qincw(editorContext, node));
+    editorCell.setCellId("Collection_9701_0");
+    editorCell.addEditorCell(this.createConceptProperty_9701_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9701_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9701_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9701_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9701_43xmtj5qincu(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9701_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_9701_43xmtj5qincu");
+    editorCell.setCellId("Constant_9701_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9701_43xmtj5qincw(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9701_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_9701_43xmtj5qincw");
+    editorCell.setCellId("Constant_9701_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9701_43xmtj5qincq(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_9701_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -65,7 +65,7 @@ public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SingleArgumentSequenceOperation_Editor.SingleArgumentSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu43xmtj5qinct()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SingleArgumentSequenceOperation_Editor.SingleArgumentSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -76,7 +76,7 @@ public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9701_43xmtj5qincv(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9701_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("argument");
     provider.setNoTargetText("<no argument>");
@@ -96,8 +96,8 @@ public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class SingleArgumentSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu43xmtj5qinct extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public SingleArgumentSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu43xmtj5qinct() {
+  public static class SingleArgumentSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public SingleArgumentSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

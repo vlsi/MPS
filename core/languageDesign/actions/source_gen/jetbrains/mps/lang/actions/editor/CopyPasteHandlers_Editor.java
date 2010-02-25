@@ -26,77 +26,77 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2789_196unrw6zueqf(editorContext, node);
+    return this.createCollection_2789_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2789_196unrw6zueqf(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2789_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_2789_196unrw6zueqf");
-    editorCell.addEditorCell(this.createCollection_2789_196unrw6zueqg(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2789_196unrw6zueql(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_2789_196unrw6zueqm(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2789_1ffj70sp629mz(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_2789_196unrw6zueqs(editorContext, node));
+    editorCell.setCellId("Collection_2789_0");
+    editorCell.addEditorCell(this.createCollection_2789_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2789_1(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_2789_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2789_2(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_2789_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2789_196unrw6zueqg(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2789_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2789_196unrw6zueqg");
+    editorCell.setCellId("Collection_2789_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2789_196unrw6zueqh(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2789_196unrw6zueqj(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2789_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_2789_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2789_196unrw6zueqm(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2789_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_2789_196unrw6zueqm");
+    editorCell.setCellId("Collection_2789_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createRefNodeList_2789_196unrw6zueqo(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_2789_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2789_196unrw6zueqs(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2789_3(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_2789_196unrw6zueqs");
+    editorCell.setCellId("Collection_2789_3");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createRefNodeList_2789_196unrw6zuequ(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_2789_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2789_196unrw6zueqh(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2789_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy paste handlers");
-    editorCell.setCellId("Constant_2789_196unrw6zueqh");
+    editorCell.setCellId("Constant_2789_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2789_196unrw6zueql(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2789_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_2789_196unrw6zueql");
+    editorCell.setCellId("Constant_2789_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2789_1ffj70sp629mz(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2789_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_2789_1ffj70sp629mz");
+    editorCell.setCellId("Constant_2789_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2789_196unrw6zueqo(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CopyPasteHandlers_Editor.postProcessorListHandler_2789_196unrw6zueqo(node, "postProcessor", editorContext);
+  private EditorCell createRefNodeList_2789_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CopyPasteHandlers_Editor.postProcessorListHandler_2789_0(node, "postProcessor", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_postProcessor");
     {
@@ -107,8 +107,8 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2789_196unrw6zuequ(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CopyPasteHandlers_Editor.preProcessorListHandler_2789_196unrw6zuequ(node, "preProcessor", editorContext);
+  private EditorCell createRefNodeList_2789_1(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CopyPasteHandlers_Editor.preProcessorListHandler_2789_0(node, "preProcessor", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_preProcessor");
     {
@@ -119,7 +119,7 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_2789_196unrw6zueqj(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_2789_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -137,8 +137,8 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class postProcessorListHandler_2789_196unrw6zueqo extends RefNodeListHandler {
-    public postProcessorListHandler_2789_196unrw6zueqo(SNode ownerNode, String childRole, EditorContext context) {
+  private static class postProcessorListHandler_2789_0 extends RefNodeListHandler {
+    public postProcessorListHandler_2789_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -186,8 +186,8 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class preProcessorListHandler_2789_196unrw6zuequ extends RefNodeListHandler {
-    public preProcessorListHandler_2789_196unrw6zuequ(SNode ownerNode, String childRole, EditorContext context) {
+  private static class preProcessorListHandler_2789_0 extends RefNodeListHandler {
+    public preProcessorListHandler_2789_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

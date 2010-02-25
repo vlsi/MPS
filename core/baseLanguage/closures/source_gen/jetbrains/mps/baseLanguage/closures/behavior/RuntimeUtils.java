@@ -29,7 +29,7 @@ public class RuntimeUtils {
   }
 
   public static SModel getRuntimeModel() {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(new RuntimeUtils.QuotationClass_6121_l523emne5p1z().createNode(), "classifier", false));
+    return SNodeOperations.getModel(SLinkOperations.getTarget(new RuntimeUtils.QuotationClass_6121_0().createNode(), "classifier", false));
   }
 
   public static Map<String, SNode> getRuntimeClassifiersMap() {
@@ -52,19 +52,19 @@ public class RuntimeUtils {
     return runtimeClassifiers;
   }
 
-  public static class QuotationClass_6121_l523emne5p1z {
-    public QuotationClass_6121_l523emne5p1z() {
+  public static class QuotationClass_6121_0 {
+    public QuotationClass_6121_0() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6121_fppjd2wn = null;
+      SNode quotedNode_6121_0 = null;
       {
-        quotedNode_6121_fppjd2wn = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6121_fppjd2wn = quotedNode_6121_fppjd2wn;
-        quotedNode1_6121_fppjd2wn.addReference(SReference.create("classifier", quotedNode1_6121_fppjd2wn, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~YieldingIterator")));
-        result = quotedNode1_6121_fppjd2wn;
+        quotedNode_6121_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6121_0 = quotedNode_6121_0;
+        quotedNode1_6121_0.addReference(SReference.create("classifier", quotedNode1_6121_0, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~YieldingIterator")));
+        result = quotedNode1_6121_0;
       }
       return result;
     }

@@ -16,36 +16,36 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class TypeHintExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8675_fb981pcy(editorContext, node);
+    return this.createCollection_8675_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8675_fb981pcy(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8675_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8675_fb981pcy");
-    editorCell.addEditorCell(this.createConstant_8675_fb981qc5(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8675_fb981wrz(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8675_fb981xu8(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8675_fb981zrq(editorContext, node));
+    editorCell.setCellId("Collection_8675_0");
+    editorCell.addEditorCell(this.createConstant_8675_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8675_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8675_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8675_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8675_fb981qc5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8675_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_8675_fb981qc5");
+    editorCell.setCellId("Constant_8675_0");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8675_fb981xu8(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8675_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_8675_fb981xu8");
+    editorCell.setCellId("Constant_8675_1");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_8675_fb981wrz(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8675_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("typeHint");
     provider.setNoTargetText("<no typeHint>");
@@ -62,7 +62,7 @@ public class TypeHintExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8675_fb981zrq(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8675_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

@@ -22,11 +22,11 @@ public class BeanBuilder_Behavior {
   }
 
   public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
-    return new BeanBuilder_Behavior.QuotationClass_4166_l523emne47fv().createNode(SLinkOperations.getTargets(thisNode, "actualArgument", true), SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false));
+    return new BeanBuilder_Behavior.QuotationClass_4166_0().createNode(SLinkOperations.getTargets(thisNode, "actualArgument", true), SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false));
   }
 
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
-    return new BeanBuilder_Behavior.QuotationClass_4166_l523emne47iw().createNode(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    return new BeanBuilder_Behavior.QuotationClass_4166_1().createNode(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static SNode call_getCreatorExpression_6666322667909649860(SNode thisNode, SNode parentRef) {
@@ -45,50 +45,50 @@ public class BeanBuilder_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", PARAMETERS_6666322667909649864);
   }
 
-  public static class QuotationClass_4166_l523emne47fv {
-    public QuotationClass_4166_l523emne47fv() {
+  public static class QuotationClass_4166_0 {
+    public QuotationClass_4166_0() {
     }
 
-    public SNode createNode(Object parameter_4166_1enba5vsyph7x, Object parameter_4166_1enba5vsyph7p) {
+    public SNode createNode(Object parameter_4166_0, Object parameter_4166_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4166_1enba5vsype4z = null;
-      SNode quotedNode_4166_1enba5vsyph7j = null;
-      SNode quotedNode_4166_1enba5vsyph7l = null;
+      SNode quotedNode_4166_0 = null;
+      SNode quotedNode_4166_1 = null;
+      SNode quotedNode_4166_2 = null;
       {
-        quotedNode_4166_1enba5vsype4z = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4166_1enba5vsype4z = quotedNode_4166_1enba5vsype4z;
+        quotedNode_4166_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4166_0 = quotedNode_4166_0;
         {
-          quotedNode_4166_1enba5vsyph7j = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_4166_1enba5vsyph7j = quotedNode_4166_1enba5vsyph7j;
-          quotedNode1_4166_1enba5vsyph7j.setReferent("baseMethodDeclaration", (SNode) parameter_4166_1enba5vsyph7p);
+          quotedNode_4166_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4166_1 = quotedNode_4166_1;
+          quotedNode1_4166_1.setReferent("baseMethodDeclaration", (SNode) parameter_4166_1);
           {
-            List<SNode> nodes = (List<SNode>) parameter_4166_1enba5vsyph7x;
+            List<SNode> nodes = (List<SNode>) parameter_4166_0;
             for (SNode child : nodes) {
-              quotedNode_4166_1enba5vsyph7j.addChild("actualArgument", HUtil.copyIfNecessary(child));
+              quotedNode_4166_1.addChild("actualArgument", HUtil.copyIfNecessary(child));
             }
           }
-          quotedNode_4166_1enba5vsype4z.addChild("creator", quotedNode1_4166_1enba5vsyph7j);
+          quotedNode_4166_0.addChild("creator", quotedNode1_4166_1);
         }
-        result = quotedNode1_4166_1enba5vsype4z;
+        result = quotedNode1_4166_0;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_4166_l523emne47iw {
-    public QuotationClass_4166_l523emne47iw() {
+  public static class QuotationClass_4166_1 {
+    public QuotationClass_4166_1() {
     }
 
-    public SNode createNode(Object parameter_4166_1enba5vsypneh) {
+    public SNode createNode(Object parameter_4166_2) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4166_1enba5vsypne3 = null;
+      SNode quotedNode_4166_3 = null;
       {
-        quotedNode_4166_1enba5vsypne3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4166_1enba5vsypne3 = quotedNode_4166_1enba5vsypne3;
-        quotedNode1_4166_1enba5vsypne3.setReferent("classifier", (SNode) parameter_4166_1enba5vsypneh);
-        result = quotedNode1_4166_1enba5vsypne3;
+        quotedNode_4166_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4166_2 = quotedNode_4166_3;
+        quotedNode1_4166_2.setReferent("classifier", (SNode) parameter_4166_2);
+        result = quotedNode1_4166_2;
       }
       return result;
     }

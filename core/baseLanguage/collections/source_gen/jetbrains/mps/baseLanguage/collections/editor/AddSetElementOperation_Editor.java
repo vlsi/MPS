@@ -23,49 +23,49 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class AddSetElementOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1680_fnh6aqjj(editorContext, node);
+    return this.createCollection_1680_0(editorContext, node);
   }
 
-  private EditorCell createCollection_1680_fnh6aqjj(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1680_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1680_fnh6aqjj");
-    editorCell.addEditorCell(this.createConstant_1680_fnh6aqjk(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1680_fnh6aqjo(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1680_fnh6aqjq(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1680_fnh6aqjr(editorContext, node));
+    editorCell.setCellId("Collection_1680_0");
+    editorCell.addEditorCell(this.createConstant_1680_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1680_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1680_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1680_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1680_fnh6aqjk(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1680_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "add");
-    editorCell.setCellId("Constant_1680_fnh6aqjk");
+    editorCell.setCellId("Constant_1680_0");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, true);
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new AddSetElementOperation_Editor.AddSetElementOperation_Editor_replaceWith_SequenceOperation_cellMenufnh6aqjm()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new AddSetElementOperation_Editor.AddSetElementOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_1680_fnh6aqjo(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1680_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_1680_fnh6aqjo");
+    editorCell.setCellId("Constant_1680_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1680_fnh6aqjr(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1680_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_1680_fnh6aqjr");
+    editorCell.setCellId("Constant_1680_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_1680_fnh6aqjq(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1680_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("argument");
     provider.setNoTargetText("<no argument>");
@@ -85,8 +85,8 @@ public class AddSetElementOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class AddSetElementOperation_Editor_replaceWith_SequenceOperation_cellMenufnh6aqjm extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public AddSetElementOperation_Editor_replaceWith_SequenceOperation_cellMenufnh6aqjm() {
+  public static class AddSetElementOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public AddSetElementOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

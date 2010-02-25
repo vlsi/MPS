@@ -11,35 +11,35 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class LinkAttributeConcept_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2506_ehvtgmau(editorContext, node);
+    return this.createCollection_2506_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2506_ehvtgmau(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2506_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2506_ehvtgmau");
-    editorCell.addEditorCell(this.createConstant_2506_ehvtgmav(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2506_ehvtgmaw(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2506_ehvtgmax(editorContext, node));
+    editorCell.setCellId("Collection_2506_0");
+    editorCell.addEditorCell(this.createConstant_2506_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2506_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2506_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2506_ehvtgmav(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2506_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$(");
-    editorCell.setCellId("Constant_2506_ehvtgmav");
+    editorCell.setCellId("Constant_2506_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2506_ehvtgmaw(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2506_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<reference cell>");
-    editorCell.setCellId("Constant_2506_ehvtgmaw");
+    editorCell.setCellId("Constant_2506_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2506_ehvtgmax(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2506_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")$");
-    editorCell.setCellId("Constant_2506_ehvtgmax");
+    editorCell.setCellId("Constant_2506_2");
     editorCell.setDefaultText("");
     return editorCell;
   }

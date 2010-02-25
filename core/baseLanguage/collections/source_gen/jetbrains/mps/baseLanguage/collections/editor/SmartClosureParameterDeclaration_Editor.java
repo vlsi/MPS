@@ -18,20 +18,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SmartClosureParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7207_fcvzo256(editorContext, node);
+    return this.createCollection_7207_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7207_fcvzo256(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7207_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7207_fcvzo256");
-    editorCell.addEditorCell(this.createConstant_7207_fcvzo3tw(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7207_fcvzo8ei(editorContext, node));
+    editorCell.setCellId("Collection_7207_0");
+    editorCell.addEditorCell(this.createConstant_7207_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_7207_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7207_fcvzo3tw(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7207_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "~");
-    editorCell.setCellId("Constant_7207_fcvzo3tw");
+    editorCell.setCellId("Constant_7207_0");
     BaseLanguageStyle_StyleSheet.getParameter(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -42,7 +42,7 @@ public class SmartClosureParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_7207_fcvzo8ei(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_7207_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

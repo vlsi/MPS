@@ -27,22 +27,22 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class ListType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7508_ep2uyn2q(editorContext, node);
+    return this.createCollection_7508_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7508_ep2uyn2q(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7508_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7508_ep2uyn2q");
-    editorCell.addEditorCell(this.createConceptProperty_7508_1j1w5gdbaq33y(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7508_fihkela8(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7508_ep2uyy3y(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7508_ep2uz2ei(editorContext, node));
+    editorCell.setCellId("Collection_7508_0");
+    editorCell.addEditorCell(this.createConceptProperty_7508_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7508_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7508_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7508_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7508_ep2uz2ei(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7508_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_7508_ep2uz2ei");
+    editorCell.setCellId("Constant_7508_0");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -52,9 +52,9 @@ public class ListType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7508_fihkela8(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7508_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_7508_fihkela8");
+    editorCell.setCellId("Constant_7508_1");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -64,7 +64,7 @@ public class ListType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7508_ep2uyy3y(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7508_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementType");
     provider.setNoTargetText("<no elementType>");
@@ -84,7 +84,7 @@ public class ListType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_7508_1j1w5gdbaq33y(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_7508_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -98,7 +98,7 @@ public class ListType_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ListType_Editor.ListType_component_cellMenu1j1w5gdbaq342()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ListType_Editor.ListType_component_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -109,10 +109,10 @@ public class ListType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class ListType_component_cellMenu1j1w5gdbaq342 implements SubstituteInfoPart {
+  public static class ListType_component_cellMenu0 implements SubstituteInfoPart {
     private replace_withAnotherSequenceType myComponent;
 
-    public ListType_component_cellMenu1j1w5gdbaq342() {
+    public ListType_component_cellMenu0() {
       this.myComponent = new replace_withAnotherSequenceType();
     }
 

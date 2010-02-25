@@ -19,31 +19,31 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 
 public class BeanPropertyBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9354_kcu0vc0s218s(editorContext, node);
+    return this.createCollection_9354_0(editorContext, node);
   }
 
-  private EditorCell createCollection_9354_kcu0vc0s218s(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9354_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9354_kcu0vc0s218s");
-    editorCell.addEditorCell(this.createRefCell_9354_kcu0vc0s218v(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9354_kcu0vc0s2191(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9354_kcu0vc0s2198(editorContext, node));
+    editorCell.setCellId("Collection_9354_0");
+    editorCell.addEditorCell(this.createRefCell_9354_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9354_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9354_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9354_kcu0vc0s2191(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9354_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_9354_kcu0vc0s2191");
+    editorCell.setCellId("Constant_9354_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_9354_kcu0vc0s218v(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_9354_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("setter");
     provider.setNoTargetText("<no setter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BeanPropertyBuilder_Editor._Inline9354_kcu0vc0s218w());
+    provider.setAuxiliaryCellProvider(new BeanPropertyBuilder_Editor._Inline9354_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -56,7 +56,7 @@ public class BeanPropertyBuilder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9354_kcu0vc0s2198(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9354_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -73,8 +73,8 @@ public class BeanPropertyBuilder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline9354_kcu0vc0s218w extends InlineCellProvider {
-    public _Inline9354_kcu0vc0s218w() {
+  public static class _Inline9354_0 extends InlineCellProvider {
+    public _Inline9354_0() {
       super();
     }
 
@@ -83,12 +83,12 @@ public class BeanPropertyBuilder_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createReferencePresentation_9354_kcu0vc0s7f27(editorContext, node);
+      return this.createReferencePresentation_9354_0(editorContext, node);
     }
 
-    private EditorCell createReferencePresentation_9354_kcu0vc0s7f27(EditorContext editorContext, SNode node) {
+    private EditorCell createReferencePresentation_9354_0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
-      editorCell.setCellId("ReferencePresentation_9354_kcu0vc0s7f27");
+      editorCell.setCellId("ReferencePresentation_9354_0");
       return editorCell;
     }
   }

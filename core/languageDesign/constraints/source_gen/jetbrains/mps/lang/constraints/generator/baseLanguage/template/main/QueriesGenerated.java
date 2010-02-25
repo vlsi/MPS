@@ -202,12 +202,12 @@ public class QueriesGenerated {
     }
     SNode bltype = DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);
     if (SNodeOperations.isInstanceOf(bltype, "jetbrains.mps.baseLanguage.structure.IntegerType")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_l523emnesw6w().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_0().createNode(), "baseMethodDeclaration", false);
     }
     if (SNodeOperations.isInstanceOf(bltype, "jetbrains.mps.baseLanguage.structure.BooleanType")) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_l523emnesw90().createNode(), "baseMethodDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_1().createNode(), "baseMethodDeclaration", false);
     }
-    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_l523emneswb4().createNode(), "baseMethodDeclaration", false);
+    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_2().createNode(), "baseMethodDeclaration", false);
   }
 
   public static Object referenceMacro_GetReferent_1239021689212(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -385,58 +385,58 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "class_for_concept");
   }
 
-  public static class QuotationClass_8087_l523emnesw6w {
-    public QuotationClass_8087_l523emnesw6w() {
+  public static class QuotationClass_8087_0 {
+    public QuotationClass_8087_0() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_l523emnesvaa = null;
+      SNode quotedNode_8087_0 = null;
       {
-        quotedNode_8087_l523emnesvaa = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_l523emnesvaa = quotedNode_8087_l523emnesvaa;
-        quotedNode1_8087_l523emnesvaa.addReference(SReference.create("classConcept", quotedNode1_8087_l523emnesvaa, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations")));
-        quotedNode1_8087_l523emnesvaa.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8087_l523emnesvaa, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations.getInteger(java.lang.String):int")));
-        result = quotedNode1_8087_l523emnesvaa;
+        quotedNode_8087_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8087_0 = quotedNode_8087_0;
+        quotedNode1_8087_0.addReference(SReference.create("classConcept", quotedNode1_8087_0, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations")));
+        quotedNode1_8087_0.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8087_0, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations.getInteger(java.lang.String):int")));
+        result = quotedNode1_8087_0;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_8087_l523emnesw90 {
-    public QuotationClass_8087_l523emnesw90() {
+  public static class QuotationClass_8087_1 {
+    public QuotationClass_8087_1() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_l523emnesval = null;
+      SNode quotedNode_8087_1 = null;
       {
-        quotedNode_8087_l523emnesval = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_l523emnesval = quotedNode_8087_l523emnesval;
-        quotedNode1_8087_l523emnesval.addReference(SReference.create("classConcept", quotedNode1_8087_l523emnesval, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations")));
-        quotedNode1_8087_l523emnesval.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8087_l523emnesval, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations.getBoolean(java.lang.String):boolean")));
-        result = quotedNode1_8087_l523emnesval;
+        quotedNode_8087_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8087_1 = quotedNode_8087_1;
+        quotedNode1_8087_1.addReference(SReference.create("classConcept", quotedNode1_8087_1, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations")));
+        quotedNode1_8087_1.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8087_1, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations.getBoolean(java.lang.String):boolean")));
+        result = quotedNode1_8087_1;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_8087_l523emneswb4 {
-    public QuotationClass_8087_l523emneswb4() {
+  public static class QuotationClass_8087_2 {
+    public QuotationClass_8087_2() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_l523emnesvau = null;
+      SNode quotedNode_8087_2 = null;
       {
-        quotedNode_8087_l523emnesvau = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_l523emnesvau = quotedNode_8087_l523emnesvau;
-        quotedNode1_8087_l523emnesvau.addReference(SReference.create("classConcept", quotedNode1_8087_l523emnesvau, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations")));
-        quotedNode1_8087_l523emnesvau.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8087_l523emnesvau, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations.getString(java.lang.String):java.lang.String")));
-        result = quotedNode1_8087_l523emnesvau;
+        quotedNode_8087_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8087_2 = quotedNode_8087_2;
+        quotedNode1_8087_2.addReference(SReference.create("classConcept", quotedNode1_8087_2, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations")));
+        quotedNode1_8087_2.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8087_2, SModelReference.fromString("f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)"), SNodeId.fromString("~SPropertyOperations.getString(java.lang.String):java.lang.String")));
+        result = quotedNode1_8087_2;
       }
       return result;
     }

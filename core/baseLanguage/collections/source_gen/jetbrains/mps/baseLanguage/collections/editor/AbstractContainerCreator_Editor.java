@@ -10,10 +10,10 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_7023_14bzru4g7rkib(editorContext, node);
+    return this.createComponent_7023_0(editorContext, node);
   }
 
-  private EditorCell createComponent_7023_14bzru4g7rkib(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_7023_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AbstractContainerCreator_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;

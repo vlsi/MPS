@@ -230,7 +230,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_8087_l523emne5kww().createNode(_context.getSourceNode()));
+          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_8087_0().createNode(_context.getSourceNode()));
         }
 
         public String getMatchingText(String pattern) {
@@ -323,32 +323,32 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_8087_l523emne5kww {
-    public QuotationClass_8087_l523emne5kww() {
+  public static class QuotationClass_8087_0 {
+    public QuotationClass_8087_0() {
     }
 
-    public SNode createNode(Object parameter_4028_frp0cbqn) {
+    public SNode createNode(Object parameter_4028_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4028_frp0bo5i = null;
-      SNode quotedNode_4028_frp0bo5j = null;
+      SNode quotedNode_4028_0 = null;
+      SNode quotedNode_4028_1 = null;
       {
-        quotedNode_4028_frp0bo5i = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4028_frp0bo5i = quotedNode_4028_frp0bo5i;
+        quotedNode_4028_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4028_0 = quotedNode_4028_0;
         {
-          quotedNode_4028_frp0bo5j = (SNode) parameter_4028_frp0cbqn;
-          SNode quotedNode1_4028_frp0bo5j;
-          if (_parameterValues_129834374.contains(quotedNode_4028_frp0bo5j)) {
-            quotedNode1_4028_frp0bo5j = CopyUtil.copy(quotedNode_4028_frp0bo5j);
+          quotedNode_4028_1 = (SNode) parameter_4028_0;
+          SNode quotedNode1_4028_1;
+          if (_parameterValues_129834374.contains(quotedNode_4028_1)) {
+            quotedNode1_4028_1 = CopyUtil.copy(quotedNode_4028_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_4028_frp0bo5j);
-            quotedNode1_4028_frp0bo5j = quotedNode_4028_frp0bo5j;
+            _parameterValues_129834374.add(quotedNode_4028_1);
+            quotedNode1_4028_1 = quotedNode_4028_1;
           }
-          if (quotedNode1_4028_frp0bo5j != null) {
-            quotedNode_4028_frp0bo5i.addChild("function", HUtil.copyIfNecessary(quotedNode1_4028_frp0bo5j));
+          if (quotedNode1_4028_1 != null) {
+            quotedNode_4028_0.addChild("function", HUtil.copyIfNecessary(quotedNode1_4028_1));
           }
         }
-        result = quotedNode1_4028_frp0bo5i;
+        result = quotedNode1_4028_0;
       }
       return result;
     }

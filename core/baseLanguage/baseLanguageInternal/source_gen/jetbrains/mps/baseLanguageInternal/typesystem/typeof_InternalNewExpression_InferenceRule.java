@@ -27,7 +27,7 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
     if ((SLinkOperations.getTarget(internalNewExpression, "type", true) != null)) {
       type = SLinkOperations.getTarget(internalNewExpression, "type", true);
     } else {
-      type = new typeof_InternalNewExpression_InferenceRule.QuotationClass_4515_l523emne0ync().createNode(typeCheckingContext);
+      type = new typeof_InternalNewExpression_InferenceRule.QuotationClass_4515_0().createNode(typeCheckingContext);
     }
     {
       SNode _nodeToCheck_1029348928467 = internalNewExpression;
@@ -49,19 +49,19 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
     return true;
   }
 
-  public static class QuotationClass_4515_l523emne0ync {
-    public QuotationClass_4515_l523emne0ync() {
+  public static class QuotationClass_4515_0 {
+    public QuotationClass_4515_0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4515_l523emne0y1p = null;
+      SNode quotedNode_4515_0 = null;
       {
-        quotedNode_4515_l523emne0y1p = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4515_l523emne0y1p = quotedNode_4515_l523emne0y1p;
-        quotedNode1_4515_l523emne0y1p.addReference(SReference.create("classifier", quotedNode1_4515_l523emne0y1p, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_4515_l523emne0y1p;
+        quotedNode_4515_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4515_0 = quotedNode_4515_0;
+        quotedNode1_4515_0.addReference(SReference.create("classifier", quotedNode1_4515_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_4515_0;
       }
       return result;
     }
@@ -69,12 +69,12 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4515_l523emne0y1p = null;
+      SNode quotedNode_4515_0 = null;
       {
-        quotedNode_4515_l523emne0y1p = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4515_l523emne0y1p = quotedNode_4515_l523emne0y1p;
-        quotedNode1_4515_l523emne0y1p.addReference(SReference.create("classifier", quotedNode1_4515_l523emne0y1p, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_4515_l523emne0y1p;
+        quotedNode_4515_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4515_0 = quotedNode_4515_0;
+        quotedNode1_4515_0.addReference(SReference.create("classifier", quotedNode1_4515_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_4515_0;
       }
       return result;
     }

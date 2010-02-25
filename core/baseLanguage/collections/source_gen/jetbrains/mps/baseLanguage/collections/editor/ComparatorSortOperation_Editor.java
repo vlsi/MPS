@@ -24,32 +24,32 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4999_ffqovzh4(editorContext, node);
+    return this.createCollection_4999_0(editorContext, node);
   }
 
-  private EditorCell createCollection_4999_ffqovzh4(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4999_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4999_ffqovzh4");
-    editorCell.addEditorCell(this.createConceptProperty_4999_ffqow418(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4999_ffqow64o(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4999_ffqowa33(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4999_ffqoxa70(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4999_ffqoxcni(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4999_ffqoxee4(editorContext, node));
+    editorCell.setCellId("Collection_4999_0");
+    editorCell.addEditorCell(this.createConceptProperty_4999_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4999_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4999_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4999_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4999_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4999_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4999_ffqow64o(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4999_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_4999_ffqow64o");
+    editorCell.setCellId("Constant_4999_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4999_ffqoxa70(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4999_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_4999_ffqoxa70");
+    editorCell.setCellId("Constant_4999_1");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -59,15 +59,15 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4999_ffqoxee4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4999_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_4999_ffqoxee4");
+    editorCell.setCellId("Constant_4999_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_4999_ffqow418(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_4999_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -76,7 +76,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ComparatorSortOperation_Editor.ComparatorSortOperation_Editor_replaceWith_SequenceOperation_cellMenu43xmtj5qniui()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ComparatorSortOperation_Editor.ComparatorSortOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -87,7 +87,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4999_ffqowa33(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4999_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("comparator");
     provider.setNoTargetText("<no comparator>");
@@ -104,7 +104,7 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4999_ffqoxcni(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4999_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("ascending");
     provider.setNoTargetText("<no ascending>");
@@ -121,8 +121,8 @@ public class ComparatorSortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class ComparatorSortOperation_Editor_replaceWith_SequenceOperation_cellMenu43xmtj5qniui extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ComparatorSortOperation_Editor_replaceWith_SequenceOperation_cellMenu43xmtj5qniui() {
+  public static class ComparatorSortOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ComparatorSortOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

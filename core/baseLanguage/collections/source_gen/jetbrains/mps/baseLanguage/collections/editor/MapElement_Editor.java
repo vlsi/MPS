@@ -18,22 +18,22 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MapElement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7980_fabm55jo(editorContext, node);
+    return this.createCollection_7980_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7980_fabm55jo(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7980_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7980_fabm55jo");
-    editorCell.addEditorCell(this.createRefNode_7980_fabm583q(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7980_fabm5a0d(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7980_fabm5cpn(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7980_fabm5et8(editorContext, node));
+    editorCell.setCellId("Collection_7980_0");
+    editorCell.addEditorCell(this.createRefNode_7980_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7980_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7980_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7980_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7980_fabm5a0d(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7980_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
-    editorCell.setCellId("Constant_7980_fabm5a0d");
+    editorCell.setCellId("Constant_7980_0");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -45,9 +45,9 @@ public class MapElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7980_fabm5et8(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7980_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
-    editorCell.setCellId("Constant_7980_fabm5et8");
+    editorCell.setCellId("Constant_7980_1");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -58,7 +58,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7980_fabm583q(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7980_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("map");
     provider.setNoTargetText("<no map>");
@@ -75,7 +75,7 @@ public class MapElement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7980_fabm5cpn(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7980_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("key");
     provider.setNoTargetText("<no key>");

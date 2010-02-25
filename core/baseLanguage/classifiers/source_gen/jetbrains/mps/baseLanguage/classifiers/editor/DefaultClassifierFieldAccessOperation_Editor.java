@@ -21,22 +21,22 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2689_l523emne5ayz(editorContext, node);
+    return this.createCollection_2689_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2689_l523emne5ayz(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2689_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2689_l523emne5ayz");
-    editorCell.addEditorCell(this.createRefCell_2689_l523emne5ayv(editorContext, node));
+    editorCell.setCellId("Collection_2689_0");
+    editorCell.addEditorCell(this.createRefCell_2689_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_2689_l523emne5ayv(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_2689_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("field");
     provider.setNoTargetText("<no field>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DefaultClassifierFieldAccessOperation_Editor._Inline2689_l523emne5ayw());
+    provider.setAuxiliaryCellProvider(new DefaultClassifierFieldAccessOperation_Editor._Inline2689_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -49,8 +49,8 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public static class _Inline2689_l523emne5ayw extends InlineCellProvider {
-    public _Inline2689_l523emne5ayw() {
+  public static class _Inline2689_0 extends InlineCellProvider {
+    public _Inline2689_0() {
       super();
     }
 
@@ -59,10 +59,10 @@ public class DefaultClassifierFieldAccessOperation_Editor extends DefaultNodeEdi
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_2689_l523emne5ayx(editorContext, node);
+      return this.createProperty_2689_0(editorContext, node);
     }
 
-    private EditorCell createProperty_2689_l523emne5ayx(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_2689_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

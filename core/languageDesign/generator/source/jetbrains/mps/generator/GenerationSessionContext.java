@@ -18,16 +18,14 @@ package jetbrains.mps.generator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Igor Alshannikov
@@ -154,7 +152,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return mySessionObjects.get(key);
   }
 
-  public String createUniqueName(String roughName, SNode contextNode, SNode inputNode) {
+  public String createUniqueName(String roughName) {
+    return createUniqueName(roughName, null);
+  }
+
+  public String createUniqueName(String roughName, SNode contextNode) {
     if (contextNode != null) {
       // find topmost 'named' ancestor
       INamedConcept topmostNamed = null;
@@ -179,22 +181,11 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       }
     } // if(contextNode != null)
 
-    if(inputNode != null && inputNode.getModel() == myOriginalInputModel) {
-      String s = inputNode.getId();
-      try {
-        long l = Long.parseLong(s); // make it a bit shorter
-        s = Long.toString(l, Character.MAX_RADIX);
-      } catch(NumberFormatException ex) {
-      }
-      roughName += s;
-    }
-
     String uniqueName;
     int count = 0;
     while (true) {
-      uniqueName = count > 0 ? roughName + count : roughName;
+      uniqueName = roughName + (count++);
       if (!myUsedNames.contains(uniqueName)) break;
-      count++;
     }
     myUsedNames.add(uniqueName);
     return uniqueName;

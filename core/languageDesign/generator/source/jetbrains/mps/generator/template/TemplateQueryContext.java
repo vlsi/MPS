@@ -148,7 +148,7 @@ public class TemplateQueryContext {
   }
 
   public String createUniqueName(String baseName, SNode contextNode) {
-    return myGenerator.getGeneratorSessionContext().createUniqueName(baseName, contextNode, getOriginalCopiedInputNode(myInputNode));
+    return myGenerator.getGeneratorSessionContext().createUniqueName(baseName, contextNode);
   }
 
   public IOperationContext getInvocationContext() {

@@ -19,123 +19,123 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5159_f0xoacqk(editorContext, node);
+    return this.createCollection_5159_0(editorContext, node);
   }
 
-  private EditorCell createCollection_5159_f0xoacqk(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5159_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5159_f0xoacqk");
-    editorCell.addEditorCell(this.createCollection_5159_f0xoacql(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5159_f0xoacqn(editorContext, node));
+    editorCell.setCellId("Collection_5159_0");
+    editorCell.addEditorCell(this.createCollection_5159_1(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5159_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5159_f0xoacql(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5159_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5159_f0xoacql");
+    editorCell.setCellId("Collection_5159_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5159_f0xoacqm(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5159_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5159_f0xoacqn(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5159_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5159_f0xoacqn");
+    editorCell.setCellId("Collection_5159_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell5159_fmoo026q(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5159_f0xoacqp(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell5159_0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5159_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5159_f0xoacqp(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5159_3(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5159_f0xoacqp");
+    editorCell.setCellId("Collection_5159_3");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5159_f0xoacqr(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5159_f0xoacqs(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5159_f0xoacqv(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5159_f0xoacqw(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5159_fcon27fc(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5159_fcon27fd(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5159_fp6xlvzy(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5159_fp6xlz65(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5159_f0xoacqz(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5159_f0xoacr0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5159_1(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5159_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5159_2(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5159_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5159_4(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5159_7(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5159_5(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5159_8(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5159_3(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5159_6(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5159_f0xoacqs(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5159_4(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5159_f0xoacqs");
+    editorCell.setCellId("Collection_5159_4");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell5159_fmoo03k8(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5159_f0xoacqu(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell5159_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5159_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5159_f0xoacqw(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5159_5(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5159_f0xoacqw");
+    editorCell.setCellId("Collection_5159_5");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell5159_fmoo0522(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5159_f0xoacqy(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell5159_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5159_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5159_f0xoacr0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5159_6(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5159_f0xoacr0");
+    editorCell.setCellId("Collection_5159_6");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell5159_fmoo09br(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5159_f0xoacr2(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell5159_4(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5159_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5159_fcon27fd(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5159_7(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5159_fcon27fd");
+    editorCell.setCellId("Collection_5159_7");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell5159_fmoo07y9(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5159_fcon27ff(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell5159_3(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5159_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5159_fp6xlz65(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5159_8(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5159_fp6xlz65");
+    editorCell.setCellId("Collection_5159_8");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell5159_fp6xlz66(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5159_fp6xlz67(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell5159_5(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5159_4(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5159_f0xoacqm(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5159_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "simple item");
-    editorCell.setCellId("Constant_5159_f0xoacqm");
+    editorCell.setCellId("Constant_5159_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -144,9 +144,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5159_f0xoacqr(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5159_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
-    editorCell.setCellId("Constant_5159_f0xoacqr");
+    editorCell.setCellId("Constant_5159_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -155,9 +155,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5159_f0xoacqv(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5159_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
-    editorCell.setCellId("Constant_5159_f0xoacqv");
+    editorCell.setCellId("Constant_5159_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -166,9 +166,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5159_f0xoacqz(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5159_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do transform");
-    editorCell.setCellId("Constant_5159_f0xoacqz");
+    editorCell.setCellId("Constant_5159_3");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -177,9 +177,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5159_fcon27fc(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5159_4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
-    editorCell.setCellId("Constant_5159_fcon27fc");
+    editorCell.setCellId("Constant_5159_4");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -188,9 +188,9 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5159_fp6xlvzy(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5159_5(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
-    editorCell.setCellId("Constant_5159_fp6xlvzy");
+    editorCell.setCellId("Constant_5159_5");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -199,37 +199,37 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createIndentCell5159_fmoo026q(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell5159_0(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createIndentCell5159_fmoo03k8(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell5159_1(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createIndentCell5159_fmoo0522(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell5159_2(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createIndentCell5159_fmoo07y9(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell5159_3(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createIndentCell5159_fmoo09br(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell5159_4(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createIndentCell5159_fp6xlz66(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell5159_5(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createRefNode_5159_f0xoacqu(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5159_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("matchingText");
     provider.setNoTargetText("<default>");
@@ -246,7 +246,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5159_f0xoacqy(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5159_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("descriptionText");
     provider.setNoTargetText("<default>");
@@ -263,7 +263,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5159_f0xoacr2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5159_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("handler");
     provider.setNoTargetText("<none>");
@@ -280,7 +280,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5159_fcon27ff(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5159_3(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("icon");
     provider.setNoTargetText("<default>");
@@ -297,7 +297,7 @@ public class SimpleSideTransformMenuPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5159_fp6xlz67(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5159_4(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("actionType");
     provider.setNoTargetText("<default>");

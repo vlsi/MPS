@@ -20,51 +20,51 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class CustomMapCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_8901_bza98slie2lu(editorContext, node);
+    return this.createComponent_8901_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8901_bza98slie2lv(editorContext, node);
+    return this.createCollection_8901_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8901_bza98slie2lv(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8901_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_8901_bza98slie2lv");
-    editorCell.addEditorCell(this.createCollection_8901_bza98slie2lw(editorContext, node));
+    editorCell.setCellId("Collection_8901_0");
+    editorCell.addEditorCell(this.createCollection_8901_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8901_bza98slie2lw(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8901_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8901_bza98slie2lw");
+    editorCell.setCellId("Collection_8901_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8901_bza98slie2ly(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_8901_bza98slie2lz(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8901_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_8901_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_8901_bza98slie2lu(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_8901_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new HashMapCreator_editorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_8901_bza98slie2ly(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8901_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "container declaration:");
-    editorCell.setCellId("Constant_8901_bza98slie2ly");
+    editorCell.setCellId("Constant_8901_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_8901_bza98slie2lz(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_8901_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("containerDeclaration");
     provider.setNoTargetText("<no containerDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CustomMapCreator_Editor._Inline8901_bza98slie2m0());
+    provider.setAuxiliaryCellProvider(new CustomMapCreator_Editor._Inline8901_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -77,8 +77,8 @@ public class CustomMapCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline8901_bza98slie2m0 extends InlineCellProvider {
-    public _Inline8901_bza98slie2m0() {
+  public static class _Inline8901_0 extends InlineCellProvider {
+    public _Inline8901_0() {
       super();
     }
 
@@ -87,10 +87,10 @@ public class CustomMapCreator_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8901_bza98slie2m1(editorContext, node);
+      return this.createProperty_8901_0(editorContext, node);
     }
 
-    private EditorCell createProperty_8901_bza98slie2m1(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_8901_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -23,10 +23,10 @@ public class check_container_creator_not_primitive_array_NonTypesystemRule exten
 
   public void applyRule(final SNode acc, final TypeCheckingContext typeCheckingContext) {
     {
-      IMatchingPattern pattern_8029_ftsmiad6 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ArrayType");
-      SNode coercedNode_8029_ftsmiad6 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(acc, "copyFrom", true)), pattern_8029_ftsmiad6, typeCheckingContext);
-      if (coercedNode_8029_ftsmiad6 != null) {
-        if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_8029_ftsmiad6, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")))) {
+      IMatchingPattern pattern_8029_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ArrayType");
+      SNode coercedNode_8029_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(acc, "copyFrom", true)), pattern_8029_0, typeCheckingContext);
+      if (coercedNode_8029_0 != null) {
+        if (!(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_8029_0, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")))) {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(acc, "copyFrom", true), "Primitive arrays not supported", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240320024069", intentionProvider, errorTarget);

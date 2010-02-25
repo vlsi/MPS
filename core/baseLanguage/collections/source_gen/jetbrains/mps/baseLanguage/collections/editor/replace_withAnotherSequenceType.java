@@ -20,11 +20,11 @@ import jetbrains.mps.util.NameUtil;
 
 public class replace_withAnotherSequenceType extends AbstractCellMenuComponent {
   public replace_withAnotherSequenceType() {
-    super(new SubstituteInfoPart[]{new replace_withAnotherSequenceType.Type_customReplace_cellMenu1j1w5gdbapzzf()});
+    super(new SubstituteInfoPart[]{new replace_withAnotherSequenceType.Type_customReplace_cellMenu0()});
   }
 
-  public static class Type_customReplace_cellMenu1j1w5gdbapzzf extends AbstractCellMenuPart_ReplaceNode_Group {
-    public Type_customReplace_cellMenu1j1w5gdbapzzf() {
+  public static class Type_customReplace_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public Type_customReplace_cellMenu0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
