@@ -26,10 +26,10 @@ public class check_IMemberOperation_NonTypesystemRule extends AbstractNonTypesys
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
     SNode operandType = TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(nodeToCheck));
     {
-      IMatchingPattern pattern_5723_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
-      SNode coercedNode_5723_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, pattern_5723_0, typeCheckingContext);
-      if (coercedNode_5723_0 != null) {
-        if (!(ListSequence.fromList(BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_5723_0, nodeToCheck)).contains(SLinkOperations.getTarget(nodeToCheck, "member", false)))) {
+      IMatchingPattern pattern_5723_fdzqr4dk = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
+      SNode coercedNode_5723_fdzqr4dk = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, pattern_5723_fdzqr4dk, typeCheckingContext);
+      if (coercedNode_5723_fdzqr4dk != null) {
+        if (!(ListSequence.fromList(BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_5723_fdzqr4dk, nodeToCheck)).contains(SLinkOperations.getTarget(nodeToCheck, "member", false)))) {
           {
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();

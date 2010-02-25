@@ -33,23 +33,23 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1012_0(editorContext, node);
+    return this.createCollection_1012_fsinradd(editorContext, node);
   }
 
-  private EditorCell createCollection_1012_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1012_fsinradd(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1012_0");
-    editorCell.addEditorCell(this.createConstant_1012_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_1012_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1012_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1012_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1012_3(editorContext, node));
+    editorCell.setCellId("Collection_1012_fsinradd");
+    editorCell.addEditorCell(this.createConstant_1012_fsinrade(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_1012_fsinradf(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1012_fsinradj(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1012_fsinradv(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1012_fsinradx(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1012_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1012_fsinrade(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_1012_0");
+    editorCell.setCellId("Constant_1012_fsinrade");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -59,15 +59,15 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1012_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1012_fsinradj(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "==>");
-    editorCell.setCellId("Constant_1012_2");
+    editorCell.setCellId("Constant_1012_fsinradj");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
-          return UnrestrictedClosureLiteral_Editor._StyleParameter_QueryFunction_1012_0((cell == null ?
+          return UnrestrictedClosureLiteral_Editor._StyleParameter_QueryFunction_1012_fsinradm((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -81,9 +81,9 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1012_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1012_fsinradx(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_1012_3");
+    editorCell.setCellId("Constant_1012_fsinradx");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -93,15 +93,15 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_1012_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new UnrestrictedClosureLiteral_Editor.parameterListHandler_1012_0(node, "parameter", editorContext);
+  private EditorCell createRefNodeList_1012_fsinradf(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new UnrestrictedClosureLiteral_Editor.parameterListHandler_1012_fsinradf(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNode_1012_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1012_fsinradv(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -125,12 +125,12 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_1012_0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_1012_fsinradm(SNode node, EditorContext editorContext) {
     return !(StatementList_Behavior.call_isCompact_1237546596168(SLinkOperations.getTarget(node, "body", true)));
   }
 
-  private static class parameterListHandler_1012_0 extends RefNodeListHandler {
-    public parameterListHandler_1012_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class parameterListHandler_1012_fsinradf extends RefNodeListHandler {
+    public parameterListHandler_1012_fsinradf(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -153,7 +153,7 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_1012_1(editorContext, node);
+      return this.createConstant_1012_fsinradg(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -181,9 +181,9 @@ public class UnrestrictedClosureLiteral_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_1012_1(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_1012_fsinradg(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_1012_1");
+      editorCell.setCellId("Constant_1012_fsinradg");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

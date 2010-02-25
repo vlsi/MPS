@@ -26,46 +26,46 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7313_0(editorContext, node);
+    return this.createCollection_7313_frozwy12(editorContext, node);
   }
 
-  private EditorCell createCollection_7313_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7313_frozwy12(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7313_0");
-    editorCell.addEditorCell(this.createRefNode_7313_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7313_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_7313_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7313_1(editorContext, node));
+    editorCell.setCellId("Collection_7313_frozwy12");
+    editorCell.addEditorCell(this.createRefNode_7313_frozx3ha(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7313_frozx64x(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_7313_frozxbzu(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7313_frozxi3h(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7313_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7313_frozx64x(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_7313_0");
+    editorCell.setCellId("Constant_7313_frozx64x");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     CompactInvokeFunctionExpression_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7313_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7313_frozxi3h(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_7313_1");
+    editorCell.setCellId("Constant_7313_frozxi3h");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     CompactInvokeFunctionExpression_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_7313_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CompactInvokeFunctionExpression_Editor.parameterListHandler_7313_0(node, "parameter", editorContext);
+  private EditorCell createRefNodeList_7313_frozxbzu(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CompactInvokeFunctionExpression_Editor.parameterListHandler_7313_frozxbzu(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNode_7313_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7313_frozx3ha(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("function");
     provider.setNoTargetText("<no function>");
@@ -82,8 +82,8 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class parameterListHandler_7313_0 extends RefNodeListHandler {
-    public parameterListHandler_7313_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class parameterListHandler_7313_frozxbzu extends RefNodeListHandler {
+    public parameterListHandler_7313_frozxbzu(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -106,7 +106,7 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_7313_2(editorContext, node);
+      return this.createConstant_7313_frp0d081(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -134,9 +134,9 @@ public class CompactInvokeFunctionExpression_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_7313_2(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_7313_frp0d081(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_7313_2");
+      editorCell.setCellId("Constant_7313_frp0d081");
       editorCell.setDefaultText("");
       return editorCell;
     }

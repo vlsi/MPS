@@ -17,27 +17,27 @@ import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 
 public class YieldStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6730_0(editorContext, node);
+    return this.createCollection_6730_fbnjqomr(editorContext, node);
   }
 
-  private EditorCell createCollection_6730_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6730_fbnjqomr(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6730_0");
-    editorCell.addEditorCell(this.createConceptProperty_6730_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6730_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6730_0(editorContext, node));
+    editorCell.setCellId("Collection_6730_fbnjqomr");
+    editorCell.addEditorCell(this.createConceptProperty_6730_folg6333(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6730_fbnjqtfy(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6730_fbnjqvdl(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6730_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6730_fbnjqvdl(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_6730_0");
+    editorCell.setCellId("Constant_6730_fbnjqvdl");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_6730_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6730_fbnjqtfy(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");
@@ -54,7 +54,7 @@ public class YieldStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_6730_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_6730_folg6333(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

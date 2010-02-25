@@ -23,7 +23,7 @@ public class RulesUtil_Closures {
 
   public static List<SNode> getInterfaces() {
     if (ourInterfaces == null) {
-      ourInterfaces = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new RulesUtil_Closures.QuotationClass_7070_0().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface");
+      ourInterfaces = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new RulesUtil_Closures.QuotationClass_7070_l523emne7eyw().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface");
       ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
         public void onReload() {
           RulesUtil_Closures.ourInterfaces = null;
@@ -34,19 +34,19 @@ public class RulesUtil_Closures {
     return ourInterfaces;
   }
 
-  public static class QuotationClass_7070_0 {
-    public QuotationClass_7070_0() {
+  public static class QuotationClass_7070_l523emne7eyw {
+    public QuotationClass_7070_l523emne7eyw() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7070_0 = null;
+      SNode quotedNode_7070_fg95vvn1 = null;
       {
-        quotedNode_7070_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7070_0 = quotedNode_7070_0;
-        quotedNode1_7070_0.addReference(SReference.create("classifier", quotedNode1_7070_0, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~FunctionTypes")));
-        result = quotedNode1_7070_0;
+        quotedNode_7070_fg95vvn1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7070_fg95vvn1 = quotedNode_7070_fg95vvn1;
+        quotedNode1_7070_fg95vvn1.addReference(SReference.create("classifier", quotedNode1_7070_fg95vvn1, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~FunctionTypes")));
+        result = quotedNode1_7070_fg95vvn1;
       }
       return result;
     }

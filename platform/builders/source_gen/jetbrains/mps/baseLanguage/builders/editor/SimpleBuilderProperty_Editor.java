@@ -19,34 +19,34 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class SimpleBuilderProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0302_0(editorContext, node);
+    return this.createCollection_0302_14y51dfl9357e(editorContext, node);
   }
 
-  private EditorCell createCollection_0302_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0302_14y51dfl9357e(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0302_0");
-    editorCell.addEditorCell(this.createConstant_0302_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0302_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0302_4(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0302_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0302_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0302_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0302_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0302_2(editorContext, node));
+    editorCell.setCellId("Collection_0302_14y51dfl9357e");
+    editorCell.addEditorCell(this.createConstant_0302_14y51dfl9357h(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_0302_14y51dfl9357o(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0302_14y51dfl9a97q(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0302_14y51dfl9a97s(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0302_14y51dfl9357j(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0302_14y51dfl96ys0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0302_14y51dfl96ys2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0302_14y51dfl9357m(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0302_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0302_14y51dfl9357h(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property");
-    editorCell.setCellId("Constant_0302_0");
+    editorCell.setCellId("Constant_0302_14y51dfl9357h");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0302_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0302_14y51dfl9357j(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_0302_1");
+    editorCell.setCellId("Constant_0302_14y51dfl9357j");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -56,17 +56,17 @@ public class SimpleBuilderProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0302_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0302_14y51dfl9357m(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_0302_2");
+    editorCell.setCellId("Constant_0302_14y51dfl9357m");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0302_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0302_14y51dfl96ys0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "set");
-    editorCell.setCellId("Constant_0302_3");
+    editorCell.setCellId("Constant_0302_14y51dfl96ys0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -76,14 +76,14 @@ public class SimpleBuilderProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0302_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0302_14y51dfl9a97q(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_0302_4");
+    editorCell.setCellId("Constant_0302_14y51dfl9a97q");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_0302_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_0302_14y51dfl9357o(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -101,7 +101,7 @@ public class SimpleBuilderProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0302_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0302_14y51dfl96ys2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("set");
     provider.setNoTargetText("<no set>");
@@ -122,7 +122,7 @@ public class SimpleBuilderProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0302_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0302_14y51dfl9a97s(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");

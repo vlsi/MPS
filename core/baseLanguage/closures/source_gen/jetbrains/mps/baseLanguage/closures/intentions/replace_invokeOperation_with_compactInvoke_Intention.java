@@ -54,46 +54,46 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIn
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
-    SNodeOperations.replaceWithAnother(parent, new replace_invokeOperation_with_compactInvoke_Intention.QuotationClass_4266_0().createNode(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(parent, "operation", true), "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), "parameter", true), SLinkOperations.getTarget(parent, "operand", true)));
+    SNodeOperations.replaceWithAnother(parent, new replace_invokeOperation_with_compactInvoke_Intention.QuotationClass_4266_l523emne77e6().createNode(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(parent, "operation", true), "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), "parameter", true), SLinkOperations.getTarget(parent, "operand", true)));
   }
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.closures.intentions";
   }
 
-  public static class QuotationClass_4266_0 {
-    public QuotationClass_4266_0() {
+  public static class QuotationClass_4266_l523emne77e6 {
+    public QuotationClass_4266_l523emne77e6() {
     }
 
-    public SNode createNode(Object parameter_3549_0, Object parameter_3549_1) {
+    public SNode createNode(Object parameter_3549_frp0lhcy, Object parameter_3549_frp0k74v) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3549_0 = null;
-      SNode quotedNode_3549_1 = null;
-      SNode quotedNode_3549_2 = null;
+      SNode quotedNode_3549_frp0k4at = null;
+      SNode quotedNode_3549_frp0l4sz = null;
+      SNode quotedNode_3549_frp0k4au = null;
       {
-        quotedNode_3549_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3549_0 = quotedNode_3549_0;
+        quotedNode_3549_frp0k4at = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3549_frp0k4at = quotedNode_3549_frp0k4at;
         {
-          List<SNode> nodes = (List<SNode>) parameter_3549_0;
+          List<SNode> nodes = (List<SNode>) parameter_3549_frp0lhcy;
           for (SNode child : nodes) {
-            quotedNode_3549_0.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_3549_frp0k4at.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
         {
-          quotedNode_3549_2 = (SNode) parameter_3549_1;
-          SNode quotedNode1_3549_1;
-          if (_parameterValues_129834374.contains(quotedNode_3549_2)) {
-            quotedNode1_3549_1 = CopyUtil.copy(quotedNode_3549_2);
+          quotedNode_3549_frp0k4au = (SNode) parameter_3549_frp0k74v;
+          SNode quotedNode1_3549_frp0k4au;
+          if (_parameterValues_129834374.contains(quotedNode_3549_frp0k4au)) {
+            quotedNode1_3549_frp0k4au = CopyUtil.copy(quotedNode_3549_frp0k4au);
           } else {
-            _parameterValues_129834374.add(quotedNode_3549_2);
-            quotedNode1_3549_1 = quotedNode_3549_2;
+            _parameterValues_129834374.add(quotedNode_3549_frp0k4au);
+            quotedNode1_3549_frp0k4au = quotedNode_3549_frp0k4au;
           }
-          if (quotedNode1_3549_1 != null) {
-            quotedNode_3549_0.addChild("function", HUtil.copyIfNecessary(quotedNode1_3549_1));
+          if (quotedNode1_3549_frp0k4au != null) {
+            quotedNode_3549_frp0k4at.addChild("function", HUtil.copyIfNecessary(quotedNode1_3549_frp0k4au));
           }
         }
-        result = quotedNode1_3549_0;
+        result = quotedNode1_3549_frp0k4at;
       }
       return result;
     }

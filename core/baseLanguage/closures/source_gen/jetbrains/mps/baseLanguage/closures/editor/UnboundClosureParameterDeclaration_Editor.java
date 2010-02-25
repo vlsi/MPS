@@ -15,25 +15,25 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class UnboundClosureParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4651_0(editorContext, node);
+    return this.createCollection_4651_fcrleh4j(editorContext, node);
   }
 
-  private EditorCell createCollection_4651_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4651_fcrleh4j(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4651_0");
-    editorCell.addEditorCell(this.createConstant_4651_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4651_0(editorContext, node));
+    editorCell.setCellId("Collection_4651_fcrleh4j");
+    editorCell.addEditorCell(this.createConstant_4651_fcrlekjf(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4651_fcrlfcej(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4651_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4651_fcrlekjf(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?");
-    editorCell.setCellId("Constant_4651_0");
+    editorCell.setCellId("Constant_4651_fcrlekjf");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_4651_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4651_fcrlfcej(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

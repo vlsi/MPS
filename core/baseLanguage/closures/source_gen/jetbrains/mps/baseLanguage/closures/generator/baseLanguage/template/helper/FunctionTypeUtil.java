@@ -111,7 +111,7 @@ with_meet:
           continue with_meet;
         }
       }
-      return new FunctionTypeUtil.QuotationClass_5316_0().createNode();
+      return new FunctionTypeUtil.QuotationClass_5316_l523emne66df().createNode();
     }
     if (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
@@ -264,18 +264,18 @@ with_meet:
     }
   }
 
-  public static class QuotationClass_5316_0 {
-    public QuotationClass_5316_0() {
+  public static class QuotationClass_5316_l523emne66df {
+    public QuotationClass_5316_l523emne66df() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5316_0 = null;
+      SNode quotedNode_5316_fsez99r6 = null;
       {
-        quotedNode_5316_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5316_0 = quotedNode_5316_0;
-        result = quotedNode1_5316_0;
+        quotedNode_5316_fsez99r6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5316_fsez99r6 = quotedNode_5316_fsez99r6;
+        result = quotedNode1_5316_fsez99r6;
       }
       return result;
     }
