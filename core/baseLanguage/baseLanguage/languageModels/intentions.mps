@@ -19506,7 +19506,6 @@
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="4276006055363816691">
     <property name="package:8" value="method" />
     <property name="name:8" value="MakeSynchronized" />
-    <property name="isAvailableInChildNodes:8" value="true" />
     <link role="forConcept:8" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="4276006055363816692">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4276006055363816693">

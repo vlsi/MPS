@@ -27,7 +27,7 @@ public class MakeSynchronized_Intention extends BaseIntention implements Intenti
   }
 
   public boolean isAvailableInChildNodes() {
-    return true;
+    return false;
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
