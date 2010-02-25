@@ -17,10 +17,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AllAttributesQualifier_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConceptProperty_1062_fdqekweo(editorContext, node);
+    return this.createConceptProperty_1062_0(editorContext, node);
   }
 
-  private EditorCell createConceptProperty_1062_fdqekweo(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_1062_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

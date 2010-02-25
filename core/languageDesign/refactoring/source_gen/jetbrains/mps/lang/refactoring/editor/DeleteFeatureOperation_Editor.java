@@ -15,41 +15,41 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class DeleteFeatureOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6528_fdfx2opq(editorContext, node);
+    return this.createCollection_6528_0(editorContext, node);
   }
 
-  private EditorCell createCollection_6528_fdfx2opq(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6528_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6528_fdfx2opq");
-    editorCell.addEditorCell(this.createConstant_6528_fdfx2tm0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6528_fdfx30fp(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6528_fdfx320m(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6528_fdfx39w3(editorContext, node));
+    editorCell.setCellId("Collection_6528_0");
+    editorCell.addEditorCell(this.createConstant_6528_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6528_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6528_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6528_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6528_fdfx2tm0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6528_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "deleteFeature(");
-    editorCell.setCellId("Constant_6528_fdfx2tm0");
+    editorCell.setCellId("Constant_6528_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6528_fdfx320m(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6528_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_6528_fdfx320m");
+    editorCell.setCellId("Constant_6528_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6528_fdfx39w3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6528_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_6528_fdfx39w3");
+    editorCell.setCellId("Constant_6528_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_6528_fdfx30fp(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6528_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("feature");
     provider.setNoTargetText("<no feature>");

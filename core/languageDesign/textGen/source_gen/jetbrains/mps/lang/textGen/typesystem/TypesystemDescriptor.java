@@ -9,11 +9,11 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_AbstractAppendPart_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_NodeParameter_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_AbstractTextGenParameter_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_SimplestTextGenOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -21,19 +21,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ConceptTextGenDeclaration_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_FoundErrorOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_NodeParameter_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_NodePart_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_AbstractTextGenParameter_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -41,11 +29,23 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ReferenceAppendPart_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_AbstractAppendPart_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_SimplestTextGenOperation_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_NodePart_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_FoundErrorOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConceptTextGenDeclaration_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ReferenceAppendPart_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

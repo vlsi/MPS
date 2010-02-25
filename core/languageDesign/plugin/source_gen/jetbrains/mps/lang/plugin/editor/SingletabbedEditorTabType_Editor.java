@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class SingletabbedEditorTabType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_5790_13ku18yhye3i(editorContext, node);
+    return this.createConstant_5790_0(editorContext, node);
   }
 
-  private EditorCell createConstant_5790_13ku18yhye3i(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5790_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "tab-single");
-    editorCell.setCellId("Constant_5790_13ku18yhye3i");
+    editorCell.setCellId("Constant_5790_0");
     editorCell.setDefaultText("");
     return editorCell;
   }

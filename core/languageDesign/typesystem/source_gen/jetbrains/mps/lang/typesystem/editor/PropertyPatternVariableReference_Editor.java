@@ -20,22 +20,22 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2824_l523emnfar2u(editorContext, node);
+    return this.createCollection_2824_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2824_l523emnfar2u(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2824_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2824_l523emnfar2u");
-    editorCell.addEditorCell(this.createRefCell_2824_l523emnfar2p(editorContext, node));
+    editorCell.setCellId("Collection_2824_0");
+    editorCell.addEditorCell(this.createRefCell_2824_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_2824_l523emnfar2p(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_2824_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("patternVarDecl");
     provider.setNoTargetText("<no patternVarDecl>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyPatternVariableReference_Editor._Inline2824_l523emnfar2q());
+    provider.setAuxiliaryCellProvider(new PropertyPatternVariableReference_Editor._Inline2824_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -48,8 +48,8 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline2824_l523emnfar2q extends InlineCellProvider {
-    public _Inline2824_l523emnfar2q() {
+  public static class _Inline2824_0 extends InlineCellProvider {
+    public _Inline2824_0() {
       super();
     }
 
@@ -58,10 +58,10 @@ public class PropertyPatternVariableReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_2824_l523emnfar2r(editorContext, node);
+      return this.createProperty_2824_0(editorContext, node);
     }
 
-    private EditorCell createProperty_2824_l523emnfar2r(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_2824_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

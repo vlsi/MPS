@@ -26,7 +26,7 @@ public class typeof_InlineRegexpExpression_InferenceRule extends AbstractInferen
       SNode _nodeToCheck_1029348928467 = expression;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "633895403832947240", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "633895403832947237", true), (SNode) new typeof_InlineRegexpExpression_InferenceRule.QuotationClass_8930_l523emnek7uk().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "633895403832947237", true), (SNode) new typeof_InlineRegexpExpression_InferenceRule.QuotationClass_8930_0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -42,19 +42,19 @@ public class typeof_InlineRegexpExpression_InferenceRule extends AbstractInferen
     return false;
   }
 
-  public static class QuotationClass_8930_l523emnek7uk {
-    public QuotationClass_8930_l523emnek7uk() {
+  public static class QuotationClass_8930_0 {
+    public QuotationClass_8930_0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8930_l523emnek766 = null;
+      SNode quotedNode_8930_0 = null;
       {
-        quotedNode_8930_l523emnek766 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8930_l523emnek766 = quotedNode_8930_l523emnek766;
-        quotedNode1_8930_l523emnek766.addReference(SReference.create("classifier", quotedNode1_8930_l523emnek766, SModelReference.fromString("f:java_stub#java.util.regex(java.util.regex@java_stub)"), SNodeId.fromString("~Pattern")));
-        result = quotedNode1_8930_l523emnek766;
+        quotedNode_8930_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8930_0 = quotedNode_8930_0;
+        quotedNode1_8930_0.addReference(SReference.create("classifier", quotedNode1_8930_0, SModelReference.fromString("f:java_stub#java.util.regex(java.util.regex@java_stub)"), SNodeId.fromString("~Pattern")));
+        result = quotedNode1_8930_0;
       }
       return result;
     }
@@ -62,12 +62,12 @@ public class typeof_InlineRegexpExpression_InferenceRule extends AbstractInferen
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8930_l523emnek766 = null;
+      SNode quotedNode_8930_0 = null;
       {
-        quotedNode_8930_l523emnek766 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8930_l523emnek766 = quotedNode_8930_l523emnek766;
-        quotedNode1_8930_l523emnek766.addReference(SReference.create("classifier", quotedNode1_8930_l523emnek766, SModelReference.fromString("f:java_stub#java.util.regex(java.util.regex@java_stub)"), SNodeId.fromString("~Pattern")));
-        result = quotedNode1_8930_l523emnek766;
+        quotedNode_8930_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8930_0 = quotedNode_8930_0;
+        quotedNode1_8930_0.addReference(SReference.create("classifier", quotedNode1_8930_0, SModelReference.fromString("f:java_stub#java.util.regex(java.util.regex@java_stub)"), SNodeId.fromString("~Pattern")));
+        result = quotedNode1_8930_0;
       }
       return result;
     }

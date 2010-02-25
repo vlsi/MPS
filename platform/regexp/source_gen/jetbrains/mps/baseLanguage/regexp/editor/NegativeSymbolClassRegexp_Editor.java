@@ -26,41 +26,41 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9912_ezl1b9ch(editorContext, node);
+    return this.createCollection_9912_0(editorContext, node);
   }
 
-  private EditorCell createCollection_9912_ezl1b9ch(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9912_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9912_ezl1b9ch");
-    editorCell.addEditorCell(this.createConstant_9912_ezl1b9ci(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9912_105o7fpapb8wi(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_9912_ezl1b9cj(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9912_ezl1b9ck(editorContext, node));
+    editorCell.setCellId("Collection_9912_0");
+    editorCell.addEditorCell(this.createConstant_9912_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9912_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_9912_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9912_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9912_ezl1b9ci(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9912_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
-    editorCell.setCellId("Constant_9912_ezl1b9ci");
+    editorCell.setCellId("Constant_9912_0");
     RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new NegativeSymbolClassRegexp_Editor.NegativeSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu105o7fpap5u08()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new NegativeSymbolClassRegexp_Editor.NegativeSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_9912_ezl1b9ck(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9912_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
-    editorCell.setCellId("Constant_9912_ezl1b9ck");
+    editorCell.setCellId("Constant_9912_1");
     RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9912_105o7fpapb8wi(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9912_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "^");
-    editorCell.setCellId("Constant_9912_105o7fpapb8wi");
+    editorCell.setCellId("Constant_9912_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
@@ -71,16 +71,16 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_9912_ezl1b9cj(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new NegativeSymbolClassRegexp_Editor.partListHandler_9912_ezl1b9cj(node, "part", editorContext);
+  private EditorCell createRefNodeList_9912_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new NegativeSymbolClassRegexp_Editor.partListHandler_9912_0(node, "part", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_part");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class partListHandler_9912_ezl1b9cj extends RefNodeListHandler {
-    public partListHandler_9912_ezl1b9cj(SNode ownerNode, String childRole, EditorContext context) {
+  private static class partListHandler_9912_0 extends RefNodeListHandler {
+    public partListHandler_9912_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -121,8 +121,8 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class NegativeSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu105o7fpap5u08 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public NegativeSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu105o7fpap5u08() {
+  public static class NegativeSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public NegativeSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

@@ -19,27 +19,27 @@ public class _NotInRules_Component extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8756_f0hw5d1p(editorContext, node);
+    return this.createCollection_8756_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8756_f0hw5d1p(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8756_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_8756_f0hw5d1p");
-    editorCell.addEditorCell(this.createConstant_8756_f0hw5g1u(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8756_f0hw5lko(editorContext, node));
+    editorCell.setCellId("Collection_8756_0");
+    editorCell.addEditorCell(this.createConstant_8756_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8756_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8756_f0hw5g1u(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8756_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not use in rules");
-    editorCell.setCellId("Constant_8756_f0hw5g1u");
+    editorCell.setCellId("Constant_8756_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8756_f0hw5lko(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8756_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use in queries only");
-    editorCell.setCellId("Constant_8756_f0hw5lko");
+    editorCell.setCellId("Constant_8756_1");
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -22,22 +22,22 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class MatchVariableReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2814_ezl5pf5w(editorContext, node);
+    return this.createCollection_2814_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2814_ezl5pf5w(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2814_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2814_ezl5pf5w");
-    editorCell.addEditorCell(this.createRefCell_2814_ezl5pieq(editorContext, node));
+    editorCell.setCellId("Collection_2814_0");
+    editorCell.addEditorCell(this.createRefCell_2814_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_2814_ezl5pieq(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_2814_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("match");
     provider.setNoTargetText("<no match>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatchVariableReference_Editor._Inline2814_ezl5pier());
+    provider.setAuxiliaryCellProvider(new MatchVariableReference_Editor._Inline2814_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -50,8 +50,8 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline2814_ezl5pier extends InlineCellProvider {
-    public _Inline2814_ezl5pier() {
+  public static class _Inline2814_0 extends InlineCellProvider {
+    public _Inline2814_0() {
       super();
     }
 
@@ -60,10 +60,10 @@ public class MatchVariableReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_2814_ezl5pjls(editorContext, node);
+      return this.createProperty_2814_0(editorContext, node);
     }
 
-    private EditorCell createProperty_2814_ezl5pjls(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_2814_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

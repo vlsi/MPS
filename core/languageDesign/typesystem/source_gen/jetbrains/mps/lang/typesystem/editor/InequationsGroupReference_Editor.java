@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class InequationsGroupReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8366_l523emnfar4v(editorContext, node);
+    return this.createCollection_8366_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8366_l523emnfar4v(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8366_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8366_l523emnfar4v");
-    editorCell.addEditorCell(this.createRefCell_8366_l523emnfar4s(editorContext, node));
+    editorCell.setCellId("Collection_8366_0");
+    editorCell.addEditorCell(this.createRefCell_8366_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_8366_l523emnfar4s(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_8366_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("group");
     provider.setNoTargetText("<no group>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InequationsGroupReference_Editor._Inline8366_l523emnfar4t());
+    provider.setAuxiliaryCellProvider(new InequationsGroupReference_Editor._Inline8366_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class InequationsGroupReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline8366_l523emnfar4t extends InlineCellProvider {
-    public _Inline8366_l523emnfar4t() {
+  public static class _Inline8366_0 extends InlineCellProvider {
+    public _Inline8366_0() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class InequationsGroupReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8366_l523emnfar4u(editorContext, node);
+      return this.createProperty_8366_0(editorContext, node);
     }
 
-    private EditorCell createProperty_8366_l523emnfar4u(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_8366_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

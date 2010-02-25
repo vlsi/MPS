@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class WhenConcreteVariableReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1508_l523emnfar3i(editorContext, node);
+    return this.createCollection_1508_0(editorContext, node);
   }
 
-  private EditorCell createCollection_1508_l523emnfar3i(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1508_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1508_l523emnfar3i");
-    editorCell.addEditorCell(this.createRefCell_1508_l523emnfar3f(editorContext, node));
+    editorCell.setCellId("Collection_1508_0");
+    editorCell.addEditorCell(this.createRefCell_1508_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_1508_l523emnfar3f(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_1508_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("whenConcreteVar");
     provider.setNoTargetText("<no whenConcreteVar>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new WhenConcreteVariableReference_Editor._Inline1508_l523emnfar3g());
+    provider.setAuxiliaryCellProvider(new WhenConcreteVariableReference_Editor._Inline1508_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class WhenConcreteVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline1508_l523emnfar3g extends InlineCellProvider {
-    public _Inline1508_l523emnfar3g() {
+  public static class _Inline1508_0 extends InlineCellProvider {
+    public _Inline1508_0() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class WhenConcreteVariableReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_1508_l523emnfar3h(editorContext, node);
+      return this.createProperty_1508_0(editorContext, node);
     }
 
-    private EditorCell createProperty_1508_l523emnfar3h(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_1508_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

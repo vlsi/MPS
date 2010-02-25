@@ -14,10 +14,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ContextMemberOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConceptProperty_7938_1ofi8ipuopc6q(editorContext, node);
+    return this.createConceptProperty_7938_0(editorContext, node);
   }
 
-  private EditorCell createConceptProperty_7938_1ofi8ipuopc6q(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_7938_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

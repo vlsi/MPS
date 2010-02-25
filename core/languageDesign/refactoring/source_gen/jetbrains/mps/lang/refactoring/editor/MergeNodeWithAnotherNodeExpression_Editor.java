@@ -16,36 +16,36 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MergeNodeWithAnotherNodeExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0481_omvtja15nr7y(editorContext, node);
+    return this.createCollection_0481_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0481_omvtja15nr7y(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0481_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0481_omvtja15nr7y");
-    editorCell.addEditorCell(this.createConstant_0481_omvtja15nr7z(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0481_omvtja15nr80(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0481_omvtja15nr81(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0481_omvtja15nr82(editorContext, node));
+    editorCell.setCellId("Collection_0481_0");
+    editorCell.addEditorCell(this.createConstant_0481_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0481_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0481_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0481_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0481_omvtja15nr7z(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0481_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mergeNode");
-    editorCell.setCellId("Constant_0481_omvtja15nr7z");
+    editorCell.setCellId("Constant_0481_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0481_omvtja15nr81(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0481_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
-    editorCell.setCellId("Constant_0481_omvtja15nr81");
+    editorCell.setCellId("Constant_0481_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_0481_omvtja15nr80(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0481_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("whatToMove");
     provider.setNoTargetText("<no whatToMove>");
@@ -62,7 +62,7 @@ public class MergeNodeWithAnotherNodeExpression_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createRefNode_0481_omvtja15nr82(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0481_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("destination");
     provider.setNoTargetText("<no destination>");

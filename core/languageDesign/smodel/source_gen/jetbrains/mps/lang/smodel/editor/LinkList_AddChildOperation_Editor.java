@@ -17,42 +17,42 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LinkList_AddChildOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8105_ejndf6z3(editorContext, node);
+    return this.createCollection_8105_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8105_ejndf6z3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8105_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8105_ejndf6z3");
-    editorCell.addEditorCell(this.createComponent_8105_fe93noqe(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8105_fe93noqf(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8105_ejndfhxd(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8105_fe93nhq7(editorContext, node));
+    editorCell.setCellId("Collection_8105_0");
+    editorCell.addEditorCell(this.createComponent_8105_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8105_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8105_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8105_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_8105_fe93noqe(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_8105_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ReplaceableAlias_Comp(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_8105_fe93nhq7(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8105_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_8105_fe93nhq7");
+    editorCell.setCellId("Constant_8105_0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8105_fe93noqf(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8105_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_8105_fe93noqf");
+    editorCell.setCellId("Constant_8105_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_8105_ejndfhxd(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8105_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("childNode");
     provider.setNoTargetText("<no childNode>");

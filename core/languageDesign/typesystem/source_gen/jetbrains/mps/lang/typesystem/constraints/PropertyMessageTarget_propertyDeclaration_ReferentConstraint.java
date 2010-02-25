@@ -36,10 +36,10 @@ public class PropertyMessageTarget_propertyDeclaration_ReferentConstraint extend
     }
     SNode nodetype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(messageStatement, "nodeToReport", true));
     {
-      IMatchingPattern pattern_0298_fnpywvlq = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType");
-      SNode coercedNode_0298_fnpywvlq = TypeChecker.getInstance().getRuntimeSupport().coerce_(nodetype, pattern_0298_fnpywvlq);
-      if (coercedNode_0298_fnpywvlq != null) {
-        return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SLinkOperations.getTarget(coercedNode_0298_fnpywvlq, "concept", false));
+      IMatchingPattern pattern_0298_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType");
+      SNode coercedNode_0298_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(nodetype, pattern_0298_0);
+      if (coercedNode_0298_0 != null) {
+        return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SLinkOperations.getTarget(coercedNode_0298_0, "concept", false));
       } else {
         return Sequence.fromIterable(Collections.<SNode>emptyList());
       }

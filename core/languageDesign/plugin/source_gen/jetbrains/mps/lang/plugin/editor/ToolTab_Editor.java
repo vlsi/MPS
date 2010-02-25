@@ -18,29 +18,29 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ToolTab_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0417_1gpmupxsudfcj(editorContext, node);
+    return this.createCollection_0417_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0417_1gpmupxsudfcj(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0417_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0417_1gpmupxsudfcj");
-    editorCell.addEditorCell(this.createConstant_0417_1gpmupxsurn6y(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0417_1gpmupxsurn71(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0417_1gpmupxsudfcm(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0417_1gpmupxsudfcn(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0417_1gpmupxsudfcq(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0417_1gpmupxsudfcs(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0417_1gpmupxsudfcv(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0417_1gpmupxsudfcx(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0417_1gpmupxsudfd0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0417_1gpmupxsudfd2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0417_1gpmupxsurn74(editorContext, node));
+    editorCell.setCellId("Collection_0417_0");
+    editorCell.addEditorCell(this.createConstant_0417_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0417_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0417_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0417_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0417_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0417_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0417_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0417_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0417_3(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0417_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0417_6(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0417_1gpmupxsudfcm(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0417_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "component:");
-    editorCell.setCellId("Constant_0417_1gpmupxsudfcm");
+    editorCell.setCellId("Constant_0417_0");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -50,9 +50,9 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0417_1gpmupxsudfcq(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0417_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "title:");
-    editorCell.setCellId("Constant_0417_1gpmupxsudfcq");
+    editorCell.setCellId("Constant_0417_1");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -62,9 +62,9 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0417_1gpmupxsudfcv(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0417_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon:");
-    editorCell.setCellId("Constant_0417_1gpmupxsudfcv");
+    editorCell.setCellId("Constant_0417_2");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -74,9 +74,9 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0417_1gpmupxsudfd0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0417_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dispose:");
-    editorCell.setCellId("Constant_0417_1gpmupxsudfd0");
+    editorCell.setCellId("Constant_0417_3");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -86,16 +86,16 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0417_1gpmupxsurn6y(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0417_4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "tab");
-    editorCell.setCellId("Constant_0417_1gpmupxsurn6y");
+    editorCell.setCellId("Constant_0417_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0417_1gpmupxsurn71(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0417_5(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_0417_1gpmupxsurn71");
+    editorCell.setCellId("Constant_0417_5");
     BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -105,9 +105,9 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0417_1gpmupxsurn74(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0417_6(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_0417_1gpmupxsurn74");
+    editorCell.setCellId("Constant_0417_6");
     BaseLanguageStyle_StyleSheet.getBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -117,7 +117,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0417_1gpmupxsudfcn(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0417_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("componentExpression");
     provider.setNoTargetText("<no componentExpression>");
@@ -139,7 +139,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0417_1gpmupxsudfcs(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0417_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("titleExpression");
     provider.setNoTargetText("<no title>");
@@ -161,7 +161,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0417_1gpmupxsudfcx(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0417_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("iconExpression");
     provider.setNoTargetText("<no icon>");
@@ -183,7 +183,7 @@ public class ToolTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0417_1gpmupxsudfd2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0417_3(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("disposeTabClosure");
     provider.setNoTargetText("<no dispose block>");

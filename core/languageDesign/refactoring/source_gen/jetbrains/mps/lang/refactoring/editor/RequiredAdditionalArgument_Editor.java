@@ -19,26 +19,26 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class RequiredAdditionalArgument_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7015_f6klhzj7(editorContext, node);
+    return this.createCollection_7015_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7015_f6klhzj7(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7015_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7015_f6klhzj7");
-    editorCell.addEditorCell(this.createProperty_7015_f6klhzj8(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7015_f6yymccz(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7015_f6yymefo(editorContext, node));
+    editorCell.setCellId("Collection_7015_0");
+    editorCell.addEditorCell(this.createProperty_7015_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7015_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7015_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7015_f6yymccz(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7015_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_7015_f6yymccz");
+    editorCell.setCellId("Constant_7015_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_7015_f6klhzj8(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_7015_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -60,7 +60,7 @@ public class RequiredAdditionalArgument_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7015_f6yymefo(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7015_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("argumentType");
     provider.setNoTargetText("<no argumentType>");

@@ -24,35 +24,35 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class CreateEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6235_f8d06swl(editorContext, node);
+    return this.createCollection_6235_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6235_f8d072nh(editorContext, node);
+    return this.createCollection_6235_1(editorContext, node);
   }
 
-  private EditorCell createCollection_6235_f8d06swl(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6235_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6235_f8d06swl");
-    editorCell.addEditorCell(this.createRefNode_6235_f8d06swm(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_6235_f8d06swn(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6235_f8d06swq(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6235_f8d06swr(editorContext, node));
+    editorCell.setCellId("Collection_6235_0");
+    editorCell.addEditorCell(this.createRefNode_6235_0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_6235_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6235_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6235_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_6235_f8d072nh(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6235_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6235_f8d072nh");
-    editorCell.addEditorCell(this.createComponent_6235_fipsvy84(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6235_f8d07pc8(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6235_f8d07suk(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6235_f8d07cgm(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6235_f8d083n3(editorContext, node));
+    editorCell.setCellId("Collection_6235_1");
+    editorCell.addEditorCell(this.createComponent_6235_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6235_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6235_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6235_1(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6235_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_6235_fipsvy84(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_6235_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AbstractEquationInspector(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     {
@@ -62,24 +62,24 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6235_f8d06swr(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6235_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_6235_f8d06swr");
+    editorCell.setCellId("Constant_6235_0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6235_f8d07cgm(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6235_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "direction =");
-    editorCell.setCellId("Constant_6235_f8d07cgm");
+    editorCell.setCellId("Constant_6235_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6235_f8d07pc8(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6235_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_6235_f8d07pc8");
+    editorCell.setCellId("Constant_6235_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -89,9 +89,9 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6235_f8d07suk(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6235_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "advanced:");
-    editorCell.setCellId("Constant_6235_f8d07suk");
+    editorCell.setCellId("Constant_6235_3");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -100,7 +100,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6235_f8d06swm(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6235_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -117,7 +117,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_6235_f8d06swn(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_6235_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -125,7 +125,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("conceptProperty_alias");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CreateEquationStatement_Editor.CreateEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenuf8d06swp()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new CreateEquationStatement_Editor.CreateEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -136,7 +136,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6235_f8d06swq(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6235_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightExpression");
     provider.setNoTargetText("<no rightExpression>");
@@ -153,7 +153,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6235_f8d083n3(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6235_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("direction");
     provider.setNoTargetText("<no direction>");
@@ -175,8 +175,8 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class CreateEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenuf8d06swp extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public CreateEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenuf8d06swp() {
+  public static class CreateEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public CreateEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

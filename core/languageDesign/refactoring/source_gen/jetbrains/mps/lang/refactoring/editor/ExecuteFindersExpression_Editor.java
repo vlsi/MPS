@@ -24,70 +24,70 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0628_fgwa1d27(editorContext, node);
+    return this.createCollection_0628_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0628_fgwa1d27(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0628_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0628_fgwa1d27");
-    editorCell.addEditorCell(this.createConstant_0628_fgwa1il1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0628_fgwa1skh(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_0628_fgwa2p7p(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0628_fgwa697o(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0628_fgwa2uqz(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0628_fgwa6e0h(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0628_fgwa2wlg(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0628_fgwa1vws(editorContext, node));
+    editorCell.setCellId("Collection_0628_0");
+    editorCell.addEditorCell(this.createConstant_0628_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0628_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_0628_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0628_3(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0628_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0628_4(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0628_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0628_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0628_fgwa1il1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0628_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "executeFinders");
-    editorCell.setCellId("Constant_0628_fgwa1il1");
+    editorCell.setCellId("Constant_0628_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0628_fgwa1skh(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0628_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_0628_fgwa1skh");
+    editorCell.setCellId("Constant_0628_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0628_fgwa1vws(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0628_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_0628_fgwa1vws");
+    editorCell.setCellId("Constant_0628_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0628_fgwa697o(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0628_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_0628_fgwa697o");
+    editorCell.setCellId("Constant_0628_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0628_fgwa6e0h(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0628_4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_0628_fgwa6e0h");
+    editorCell.setCellId("Constant_0628_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_0628_fgwa2p7p(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ExecuteFindersExpression_Editor.findersListHandler_0628_fgwa2p7p(node, "finders", editorContext);
+  private EditorCell createRefNodeList_0628_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ExecuteFindersExpression_Editor.findersListHandler_0628_0(node, "finders", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_finders");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNode_0628_fgwa2uqz(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0628_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("searchNode");
     provider.setNoTargetText("<context node>");
@@ -104,7 +104,7 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0628_fgwa2wlg(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0628_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("searchScope");
     provider.setNoTargetText("<global scope>");
@@ -121,8 +121,8 @@ public class ExecuteFindersExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class findersListHandler_0628_fgwa2p7p extends RefNodeListHandler {
-    public findersListHandler_0628_fgwa2p7p(SNode ownerNode, String childRole, EditorContext context) {
+  private static class findersListHandler_0628_0 extends RefNodeListHandler {
+    public findersListHandler_0628_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -21,20 +21,20 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class MatchVariableReferenceReplacement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0284_suaah4tku07v(editorContext, node);
+    return this.createCollection_0284_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0284_suaah4tku07v(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0284_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0284_suaah4tku07v");
-    editorCell.addEditorCell(this.createConstant_0284_suaah4tku07w(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_0284_suaah4tku07y(editorContext, node));
+    editorCell.setCellId("Collection_0284_0");
+    editorCell.addEditorCell(this.createConstant_0284_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_0284_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0284_suaah4tku07w(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0284_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\\");
-    editorCell.setCellId("Constant_0284_suaah4tku07w");
+    editorCell.setCellId("Constant_0284_0");
     RegexpStylesheet_StyleSheet.getRegexpBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -44,12 +44,12 @@ public class MatchVariableReferenceReplacement_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createRefCell_0284_suaah4tku07y(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0284_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("match");
     provider.setNoTargetText("<no match>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatchVariableReferenceReplacement_Editor._Inline0284_suaah4tku07z());
+    provider.setAuxiliaryCellProvider(new MatchVariableReferenceReplacement_Editor._Inline0284_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -62,8 +62,8 @@ public class MatchVariableReferenceReplacement_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public static class _Inline0284_suaah4tku07z extends InlineCellProvider {
-    public _Inline0284_suaah4tku07z() {
+  public static class _Inline0284_0 extends InlineCellProvider {
+    public _Inline0284_0() {
       super();
     }
 
@@ -72,10 +72,10 @@ public class MatchVariableReferenceReplacement_Editor extends DefaultNodeEditor 
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0284_suaah4tku080(editorContext, node);
+      return this.createProperty_0284_0(editorContext, node);
     }
 
-    private EditorCell createProperty_0284_suaah4tku080(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0284_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

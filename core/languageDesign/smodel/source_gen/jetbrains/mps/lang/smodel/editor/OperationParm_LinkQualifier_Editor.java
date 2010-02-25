@@ -14,17 +14,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class OperationParm_LinkQualifier_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0904_l523emnf4zxn(editorContext, node);
+    return this.createCollection_0904_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0904_l523emnf4zxn(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0904_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0904_l523emnf4zxn");
-    editorCell.addEditorCell(this.createRefNode_0904_l523emnf4zxm(editorContext, node));
+    editorCell.setCellId("Collection_0904_0");
+    editorCell.addEditorCell(this.createRefNode_0904_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_0904_l523emnf4zxm(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0904_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("linkQualifier");
     provider.setNoTargetText("<no linkQualifier>");

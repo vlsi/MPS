@@ -15,12 +15,12 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class SReferenceType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_6426_edio1ndf0xq1(editorContext, node);
+    return this.createConstant_6426_0(editorContext, node);
   }
 
-  private EditorCell createConstant_6426_edio1ndf0xq1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6426_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reference");
-    editorCell.setCellId("Constant_6426_edio1ndf0xq1");
+    editorCell.setCellId("Constant_6426_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();

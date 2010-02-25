@@ -18,49 +18,49 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class GetGroupOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4898_fftptvh3(editorContext, node);
+    return this.createCollection_4898_0(editorContext, node);
   }
 
-  private EditorCell createCollection_4898_fftptvh3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4898_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4898_fftptvh3");
-    editorCell.addEditorCell(this.createConstant_4898_fftptwas(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4898_fftpug0v(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_4898_fftpujiu(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4898_fftpugpz(editorContext, node));
+    editorCell.setCellId("Collection_4898_0");
+    editorCell.addEditorCell(this.createConstant_4898_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4898_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_4898_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4898_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4898_fftptwas(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4898_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "actionGroup");
-    editorCell.setCellId("Constant_4898_fftptwas");
+    editorCell.setCellId("Constant_4898_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4898_fftpug0v(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4898_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_4898_fftpug0v");
+    editorCell.setCellId("Constant_4898_1");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4898_fftpugpz(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4898_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_4898_fftpugpz");
+    editorCell.setCellId("Constant_4898_2");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_4898_fftpujiu(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_4898_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("group");
     provider.setNoTargetText("<no group>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GetGroupOperation_Editor._Inline4898_fftpujiv());
+    provider.setAuxiliaryCellProvider(new GetGroupOperation_Editor._Inline4898_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -73,8 +73,8 @@ public class GetGroupOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4898_fftpujiv extends InlineCellProvider {
-    public _Inline4898_fftpujiv() {
+  public static class _Inline4898_0 extends InlineCellProvider {
+    public _Inline4898_0() {
       super();
     }
 
@@ -83,10 +83,10 @@ public class GetGroupOperation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_4898_fftpulbd(editorContext, node);
+      return this.createProperty_4898_0(editorContext, node);
     }
 
-    private EditorCell createProperty_4898_fftpulbd(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_4898_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

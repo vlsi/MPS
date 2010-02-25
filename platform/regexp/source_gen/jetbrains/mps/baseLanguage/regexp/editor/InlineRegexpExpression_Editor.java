@@ -29,58 +29,58 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6834_ezk99kj8(editorContext, node);
+    return this.createCollection_6834_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6834_ezuza2j9(editorContext, node);
+    return this.createCollection_6834_1(editorContext, node);
   }
 
-  private EditorCell createCollection_6834_ezk99kj8(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6834_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6834_ezk99kj8");
-    editorCell.addEditorCell(this.createConstant_6834_j5vzngaq5c4p(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6834_ezk99lr5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_j5vzngaq5c4y(editorContext, node));
-    if (renderingCondition6834_ezuzgs9a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6834_ezuzgn0h(editorContext, node));
+    editorCell.setCellId("Collection_6834_0");
+    editorCell.addEditorCell(this.createConstant_6834_15(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6834_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_16(editorContext, node));
+    if (renderingCondition6834_2(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6834_14(editorContext, node));
     }
-    if (renderingCondition6834_ezuzfyda(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6834_ezuzfli5(editorContext, node));
+    if (renderingCondition6834_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6834_12(editorContext, node));
     }
-    if (renderingCondition6834_ezuzghpa(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6834_ezuzg8zv(editorContext, node));
+    if (renderingCondition6834_1(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6834_13(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_6834_ezuza2j9(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6834_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6834_ezuza2j9");
-    editorCell.addEditorCell(this.createConstant_6834_ezuza3rk(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_ezuzeeb5(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6834_ezuzeiav(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_ezuzeavc(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_ezuza794(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6834_ezuzaavt(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_ezuzah9i(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_ezuzaj65(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_ezuzbbjw(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_ezuzbdmo(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6834_ezuzbhyj(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_ezuzblp7(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_ezuzbn3l(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_ezuzcbtx(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_ezuzced5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_1hjyizaca3qmn(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6834_1hjyizaca3qmr(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6834_1hjyizaca3s6s(editorContext, node));
+    editorCell.setCellId("Collection_6834_1");
+    editorCell.addEditorCell(this.createConstant_6834_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_11(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6834_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_10(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_1(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6834_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_5(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6834_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_7(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_8(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_9(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_17(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6834_18(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6834_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuza3rk(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Options:");
-    editorCell.setCellId("Constant_6834_ezuza3rk");
+    editorCell.setCellId("Constant_6834_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -89,16 +89,16 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuza794(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Dot all (/s) : ");
-    editorCell.setCellId("Constant_6834_ezuza794");
+    editorCell.setCellId("Constant_6834_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzah9i(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_6834_ezuzah9i");
+    editorCell.setCellId("Constant_6834_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -107,9 +107,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzaj65(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "If dot all mode is enabled, the . symbol class will include new line characters");
-    editorCell.setCellId("Constant_6834_ezuzaj65");
+    editorCell.setCellId("Constant_6834_3");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -119,9 +119,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzbbjw(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_6834_ezuzbbjw");
+    editorCell.setCellId("Constant_6834_4");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -130,16 +130,16 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzbdmo(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_5(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Multiline mode (/m) : ");
-    editorCell.setCellId("Constant_6834_ezuzbdmo");
+    editorCell.setCellId("Constant_6834_5");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzblp7(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_6(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_6834_ezuzblp7");
+    editorCell.setCellId("Constant_6834_6");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -148,9 +148,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzbn3l(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_7(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "If multiline mode is enabled, the $ and ^ will work not only in the start and");
-    editorCell.setCellId("Constant_6834_ezuzbn3l");
+    editorCell.setCellId("Constant_6834_7");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -160,9 +160,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzcbtx(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_8(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_6834_ezuzcbtx");
+    editorCell.setCellId("Constant_6834_8");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -171,9 +171,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzced5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_9(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "the end of the text but on starts and ends of lines separated by new line characters");
-    editorCell.setCellId("Constant_6834_ezuzced5");
+    editorCell.setCellId("Constant_6834_9");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -183,9 +183,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzeavc(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_10(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_6834_ezuzeavc");
+    editorCell.setCellId("Constant_6834_10");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -194,16 +194,16 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzeeb5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_11(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Case insensitive (/i) :");
-    editorCell.setCellId("Constant_6834_ezuzeeb5");
+    editorCell.setCellId("Constant_6834_11");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzfli5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_12(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "s");
-    editorCell.setCellId("Constant_6834_ezuzfli5");
+    editorCell.setCellId("Constant_6834_12");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
@@ -214,9 +214,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzg8zv(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_13(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "i");
-    editorCell.setCellId("Constant_6834_ezuzg8zv");
+    editorCell.setCellId("Constant_6834_13");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
@@ -227,9 +227,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_ezuzgn0h(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_14(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "m");
-    editorCell.setCellId("Constant_6834_ezuzgn0h");
+    editorCell.setCellId("Constant_6834_14");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
@@ -240,9 +240,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_j5vzngaq5c4p(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_15(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
-    editorCell.setCellId("Constant_6834_j5vzngaq5c4p");
+    editorCell.setCellId("Constant_6834_15");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
@@ -252,9 +252,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_j5vzngaq5c4y(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_16(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
-    editorCell.setCellId("Constant_6834_j5vzngaq5c4y");
+    editorCell.setCellId("Constant_6834_16");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
@@ -264,9 +264,9 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_1hjyizaca3qmn(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_17(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_6834_1hjyizaca3qmn");
+    editorCell.setCellId("Constant_6834_17");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -275,14 +275,14 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6834_1hjyizaca3qmr(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6834_18(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Value:");
-    editorCell.setCellId("Constant_6834_1hjyizaca3qmr");
+    editorCell.setCellId("Constant_6834_18");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_6834_1hjyizaca3s6s(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_6834_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return (Regexp_Behavior.call_isValid_4759120547781297301(SLinkOperations.getTarget(node, "regexp", true)) ?
@@ -299,11 +299,11 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_6834_1hjyizaca3s6s");
+    editorCell.setCellId("ReadOnlyModelAccessor_6834_0");
     return editorCell;
   }
 
-  private EditorCell createRefNode_6834_ezk99lr5(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6834_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");
@@ -320,7 +320,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6834_ezuzaavt(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6834_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("dotAll");
     provider.setNoTargetText("<no dotAll>");
@@ -342,7 +342,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6834_ezuzbhyj(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6834_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("multiLine");
     provider.setNoTargetText("<no multiLine>");
@@ -364,7 +364,7 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6834_ezuzeiav(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6834_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("caseInsensitive");
     provider.setNoTargetText("<no caseInsensitive>");
@@ -386,15 +386,15 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition6834_ezuzfyda(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6834_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "dotAll");
   }
 
-  private static boolean renderingCondition6834_ezuzghpa(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6834_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "caseInsensitive");
   }
 
-  private static boolean renderingCondition6834_ezuzgs9a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition6834_2(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "multiLine");
   }
 }

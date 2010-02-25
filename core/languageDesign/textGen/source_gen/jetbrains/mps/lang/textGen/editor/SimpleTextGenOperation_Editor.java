@@ -19,20 +19,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SimpleTextGenOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2650_fqrzw2pv(editorContext, node);
+    return this.createCollection_2650_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2650_fqrzw2pv(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2650_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2650_fqrzw2pv");
-    editorCell.addEditorCell(this.createConceptProperty_2650_fqrzw53f(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2650_fqzfo6oj(editorContext, node));
+    editorCell.setCellId("Collection_2650_0");
+    editorCell.addEditorCell(this.createConceptProperty_2650_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2650_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2650_fqzfo6oj(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2650_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_2650_fqzfo6oj");
+    editorCell.setCellId("Constant_2650_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_LEFT, new Padding(-1.0, Measure.SPACES));
@@ -42,7 +42,7 @@ public class SimpleTextGenOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2650_fqrzw53f(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_2650_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

@@ -18,7 +18,7 @@ public class StubsCreatorDeclaration_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    return new StubsCreatorDeclaration_Behavior.QuotationClass_3906_l523emnf92wl().createNode(thisNode, thisNode);
+    return new StubsCreatorDeclaration_Behavior.QuotationClass_3906_0().createNode(thisNode, thisNode);
   }
 
   public static SNode call_createType_5516999836374144781(SNode thisNode) {
@@ -29,20 +29,20 @@ public class StubsCreatorDeclaration_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_5516999836374144781);
   }
 
-  public static class QuotationClass_3906_l523emnf92wl {
-    public QuotationClass_3906_l523emnf92wl() {
+  public static class QuotationClass_3906_0 {
+    public QuotationClass_3906_0() {
     }
 
-    public SNode createNode(Object parameter_3906_15wyl8006n2t9, Object parameter_3906_166xhhklv9nkp) {
+    public SNode createNode(Object parameter_3906_0, Object parameter_3906_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3906_15wyl8006n2t5 = null;
+      SNode quotedNode_3906_0 = null;
       {
-        quotedNode_3906_15wyl8006n2t5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubsCreatorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3906_15wyl8006n2t5 = quotedNode_3906_15wyl8006n2t5;
-        quotedNode1_3906_15wyl8006n2t5.setReferent("creatorDeclaration", (SNode) parameter_3906_15wyl8006n2t9);
-        quotedNode1_3906_15wyl8006n2t5.setReferent("declaration", (SNode) parameter_3906_166xhhklv9nkp);
-        result = quotedNode1_3906_15wyl8006n2t5;
+        quotedNode_3906_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubsCreatorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3906_0 = quotedNode_3906_0;
+        quotedNode1_3906_0.setReferent("creatorDeclaration", (SNode) parameter_3906_0);
+        quotedNode1_3906_0.setReferent("declaration", (SNode) parameter_3906_1);
+        result = quotedNode1_3906_0;
       }
       return result;
     }

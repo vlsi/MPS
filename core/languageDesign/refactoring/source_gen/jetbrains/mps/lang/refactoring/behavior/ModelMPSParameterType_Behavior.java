@@ -21,7 +21,7 @@ public class ModelMPSParameterType_Behavior {
   }
 
   public static SNode virtual_getCreatorMethod_4413749148913760555(SNode thisNode) {
-    return new ModelMPSParameterType_Behavior.QuotationClass_8603_l523emnf3cxc().createNode();
+    return new ModelMPSParameterType_Behavior.QuotationClass_8603_0().createNode();
   }
 
   public static SNode call_getCreatorMethod_4413749148913760577(SNode thisNode) {
@@ -32,20 +32,20 @@ public class ModelMPSParameterType_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ModelMPSParameterType"), callerConceptFqName, "virtual_getCreatorMethod_4413749148913760555", PARAMETERS_4413749148913760577);
   }
 
-  public static class QuotationClass_8603_l523emnf3cxc {
-    public QuotationClass_8603_l523emnf3cxc() {
+  public static class QuotationClass_8603_0 {
+    public QuotationClass_8603_0() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8603_xj7jhr05b32i = null;
+      SNode quotedNode_8603_0 = null;
       {
-        quotedNode_8603_xj7jhr05b32i = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8603_xj7jhr05b32i = quotedNode_8603_xj7jhr05b32i;
-        quotedNode1_8603_xj7jhr05b32i.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8603_xj7jhr05b32i, SModelReference.fromString("f:java_stub#jetbrains.mps.refactoring.framework.paramchooser.mps(jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)"), SNodeId.fromString("~MPSChooserFactory.createModelChooser(jetbrains.mps.refactoring.framework.RefactoringContext,java.lang.String,jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings):jetbrains.mps.refactoring.framework.paramchooser.IChooser")));
-        quotedNode1_8603_xj7jhr05b32i.addReference(SReference.create("classConcept", quotedNode1_8603_xj7jhr05b32i, SModelReference.fromString("f:java_stub#jetbrains.mps.refactoring.framework.paramchooser.mps(jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)"), SNodeId.fromString("~MPSChooserFactory")));
-        result = quotedNode1_8603_xj7jhr05b32i;
+        quotedNode_8603_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8603_0 = quotedNode_8603_0;
+        quotedNode1_8603_0.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8603_0, SModelReference.fromString("f:java_stub#jetbrains.mps.refactoring.framework.paramchooser.mps(jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)"), SNodeId.fromString("~MPSChooserFactory.createModelChooser(jetbrains.mps.refactoring.framework.RefactoringContext,java.lang.String,jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings):jetbrains.mps.refactoring.framework.paramchooser.IChooser")));
+        quotedNode1_8603_0.addReference(SReference.create("classConcept", quotedNode1_8603_0, SModelReference.fromString("f:java_stub#jetbrains.mps.refactoring.framework.paramchooser.mps(jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)"), SNodeId.fromString("~MPSChooserFactory")));
+        result = quotedNode1_8603_0;
       }
       return result;
     }

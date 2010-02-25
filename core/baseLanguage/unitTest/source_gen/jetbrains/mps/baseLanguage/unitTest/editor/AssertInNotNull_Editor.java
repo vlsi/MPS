@@ -19,29 +19,29 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AssertInNotNull_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2813_1hsj97fi00xdo(editorContext, node);
+    return this.createCollection_2813_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2813_1hsj97fi00xdo(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2813_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2813_1hsj97fi00xdo");
-    editorCell.addEditorCell(this.createConstant_2813_1hsj97fi00xdp(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2813_1hsj97fi00xdr(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2813_1hsj97fi00xds(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_2813_139msq0tnlyfy(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2813_1hsj97fi00xdu(editorContext, node));
+    editorCell.setCellId("Collection_2813_0");
+    editorCell.addEditorCell(this.createConstant_2813_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2813_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2813_1(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_2813_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2813_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_2813_139msq0tnlyfy(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_2813_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new MessageComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_2813_1hsj97fi00xdp(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2813_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert");
-    editorCell.setCellId("Constant_2813_1hsj97fi00xdp");
+    editorCell.setCellId("Constant_2813_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
@@ -50,9 +50,9 @@ public class AssertInNotNull_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2813_1hsj97fi00xds(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2813_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is not null");
-    editorCell.setCellId("Constant_2813_1hsj97fi00xds");
+    editorCell.setCellId("Constant_2813_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
@@ -61,9 +61,9 @@ public class AssertInNotNull_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2813_1hsj97fi00xdu(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2813_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_2813_1hsj97fi00xdu");
+    editorCell.setCellId("Constant_2813_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -72,7 +72,7 @@ public class AssertInNotNull_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2813_1hsj97fi00xdr(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2813_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

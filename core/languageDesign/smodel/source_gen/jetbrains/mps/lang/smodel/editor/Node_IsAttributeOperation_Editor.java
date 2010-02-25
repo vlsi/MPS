@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class Node_IsAttributeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_9414_fdyqzd7x(editorContext, node);
+    return this.createConstant_9414_0(editorContext, node);
   }
 
-  private EditorCell createConstant_9414_fdyqzd7x(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9414_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isAttribute");
-    editorCell.setCellId("Constant_9414_fdyqzd7x");
+    editorCell.setCellId("Constant_9414_0");
     editorCell.setDefaultText("");
     return editorCell;
   }

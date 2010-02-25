@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class EnumMember_NameOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_3132_ftq77qvx(editorContext, node);
+    return this.createConstant_3132_0(editorContext, node);
   }
 
-  private EditorCell createConstant_3132_ftq77qvx(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3132_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
-    editorCell.setCellId("Constant_3132_ftq77qvx");
+    editorCell.setCellId("Constant_3132_0");
     editorCell.setDefaultText("");
     return editorCell;
   }

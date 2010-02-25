@@ -14,10 +14,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SimpleRule_Annotated_Parameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConceptProperty_0987_flusbed4(editorContext, node);
+    return this.createConceptProperty_0987_0(editorContext, node);
   }
 
-  private EditorCell createConceptProperty_0987_flusbed4(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_0987_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

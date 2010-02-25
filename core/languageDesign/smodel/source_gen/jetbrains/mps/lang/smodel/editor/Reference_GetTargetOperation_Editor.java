@@ -16,31 +16,31 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Reference_GetTargetOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_7944_srw9zh6eccwe(editorContext, node);
+    return this.createComponent_7944_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7944_brbv31kpfewz(editorContext, node);
+    return this.createCollection_7944_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7944_brbv31kpfewz(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7944_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7944_brbv31kpfewz");
-    editorCell.addEditorCell(this.createConstant_7944_brbv31kpfex1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7944_brbv31kpfexb(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7944_brbv31kpfexd(editorContext, node));
+    editorCell.setCellId("Collection_7944_0");
+    editorCell.addEditorCell(this.createConstant_7944_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7944_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7944_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_7944_srw9zh6eccwe(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_7944_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_7944_brbv31kpfex1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7944_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Get reference 'target' operation");
-    editorCell.setCellId("Constant_7944_brbv31kpfex1");
+    editorCell.setCellId("Constant_7944_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -51,9 +51,9 @@ public class Reference_GetTargetOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7944_brbv31kpfexb(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7944_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_7944_brbv31kpfexb");
+    editorCell.setCellId("Constant_7944_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -62,9 +62,9 @@ public class Reference_GetTargetOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7944_brbv31kpfexd(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7944_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns target node linked by this reference");
-    editorCell.setCellId("Constant_7944_brbv31kpfexd");
+    editorCell.setCellId("Constant_7944_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);

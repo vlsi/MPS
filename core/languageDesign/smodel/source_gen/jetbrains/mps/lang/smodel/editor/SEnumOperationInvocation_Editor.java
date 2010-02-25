@@ -24,24 +24,24 @@ import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 
 public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8169_fu2punxb(editorContext, node);
+    return this.createCollection_8169_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8169_fu2punxb(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8169_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8169_fu2punxb");
-    editorCell.addEditorCell(this.createConstant_8169_fu2punxc(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8169_fu2punxe(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_8169_fu2punxf(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8169_fu2punxj(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8169_fu2pv2l0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8169_fu2pvofk(editorContext, node));
+    editorCell.setCellId("Collection_8169_0");
+    editorCell.addEditorCell(this.createConstant_8169_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8169_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_8169_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8169_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8169_3(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8169_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8169_fu2punxc(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8169_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enum");
-    editorCell.setCellId("Constant_8169_fu2punxc");
+    editorCell.setCellId("Constant_8169_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -51,36 +51,36 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8169_fu2punxe(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8169_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
-    editorCell.setCellId("Constant_8169_fu2punxe");
+    editorCell.setCellId("Constant_8169_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8169_fu2punxj(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8169_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
-    editorCell.setCellId("Constant_8169_fu2punxj");
+    editorCell.setCellId("Constant_8169_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8169_fu2pv2l0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8169_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
-    editorCell.setCellId("Constant_8169_fu2pv2l0");
+    editorCell.setCellId("Constant_8169_3");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_8169_fu2punxf(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_8169_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("enumDeclaration");
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SEnumOperationInvocation_Editor._Inline8169_fu2punxg());
+    provider.setAuxiliaryCellProvider(new SEnumOperationInvocation_Editor._Inline8169_0());
     editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
@@ -97,7 +97,7 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8169_fu2pvofk(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8169_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("operation");
     provider.setNoTargetText("<no operation>");
@@ -114,8 +114,8 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline8169_fu2punxg extends InlineCellProvider {
-    public _Inline8169_fu2punxg() {
+  public static class _Inline8169_0 extends InlineCellProvider {
+    public _Inline8169_0() {
       super();
     }
 
@@ -124,10 +124,10 @@ public class SEnumOperationInvocation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8169_fu2punxh(editorContext, node);
+      return this.createProperty_8169_0(editorContext, node);
     }
 
-    private EditorCell createProperty_8169_fu2punxh(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_8169_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<null>");

@@ -16,27 +16,27 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class FindMatchExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3608_1akftfdvqyjnh(editorContext, node);
+    return this.createCollection_3608_0(editorContext, node);
   }
 
-  private EditorCell createCollection_3608_1akftfdvqyjnh(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3608_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3608_1akftfdvqyjnh");
-    editorCell.addEditorCell(this.createRefNode_3608_1akftfdvqyjnk(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3608_1akftfdvqyjnm(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_3608_1akftfdvqyjno(editorContext, node));
+    editorCell.setCellId("Collection_3608_0");
+    editorCell.addEditorCell(this.createRefNode_3608_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3608_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_3608_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3608_1akftfdvqyjnm(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3608_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=~");
-    editorCell.setCellId("Constant_3608_1akftfdvqyjnm");
+    editorCell.setCellId("Constant_3608_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_3608_1akftfdvqyjnk(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_3608_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("inputExpression");
     provider.setNoTargetText("<no inputExpression>");
@@ -53,7 +53,7 @@ public class FindMatchExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_3608_1akftfdvqyjno(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_3608_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");

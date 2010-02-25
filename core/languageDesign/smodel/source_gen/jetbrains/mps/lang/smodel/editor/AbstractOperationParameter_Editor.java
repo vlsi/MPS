@@ -16,10 +16,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AbstractOperationParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConceptProperty_4888_eml0frqn(editorContext, node);
+    return this.createConceptProperty_4888_0(editorContext, node);
   }
 
-  private EditorCell createConceptProperty_4888_eml0frqn(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_4888_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("choose parameter");

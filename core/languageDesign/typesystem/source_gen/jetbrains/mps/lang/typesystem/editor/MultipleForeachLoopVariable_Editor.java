@@ -15,26 +15,26 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MultipleForeachLoopVariable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6386_f0hy8xt0(editorContext, node);
+    return this.createCollection_6386_0(editorContext, node);
   }
 
-  private EditorCell createCollection_6386_f0hy8xt0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6386_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6386_f0hy8xt0");
-    editorCell.addEditorCell(this.createRefNode_6386_f0hy8zwk(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6386_f0hy92gn(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6386_f0hy99o9(editorContext, node));
+    editorCell.setCellId("Collection_6386_0");
+    editorCell.addEditorCell(this.createRefNode_6386_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6386_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6386_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6386_f0hy92gn(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6386_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_6386_f0hy92gn");
+    editorCell.setCellId("Constant_6386_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_6386_f0hy8zwk(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6386_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
@@ -51,7 +51,7 @@ public class MultipleForeachLoopVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6386_f0hy99o9(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6386_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("iterable");
     provider.setNoTargetText("<no iterable>");

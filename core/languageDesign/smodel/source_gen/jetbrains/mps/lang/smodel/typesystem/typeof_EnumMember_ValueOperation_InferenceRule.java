@@ -29,7 +29,7 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(operation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331899146", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331895732", true), (SNode) new typeof_EnumMember_ValueOperation_InferenceRule.QuotationClass_4386_l523emnf6wlj().createNode(typeCheckingContext.getEquationManager().getRepresentator(Enum_typevar_1240331870095), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331895732", true), (SNode) new typeof_EnumMember_ValueOperation_InferenceRule.QuotationClass_4386_0().createNode(typeCheckingContext.getEquationManager().getRepresentator(Enum_typevar_1240331870095), typeCheckingContext), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = operation;
@@ -64,32 +64,32 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
     return false;
   }
 
-  public static class QuotationClass_4386_l523emnf6wlj {
-    public QuotationClass_4386_l523emnf6wlj() {
+  public static class QuotationClass_4386_0 {
+    public QuotationClass_4386_0() {
     }
 
-    public SNode createNode(Object parameter_4386_l523emnf6psq, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_4386_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4386_l523emnf6pro = null;
+      SNode quotedNode_4386_0 = null;
       {
-        quotedNode_4386_l523emnf6pro = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4386_l523emnf6pro = quotedNode_4386_l523emnf6pro;
-        quotedNode1_4386_l523emnf6pro.setReferent("enum", (SNode) parameter_4386_l523emnf6psq);
-        result = quotedNode1_4386_l523emnf6pro;
+        quotedNode_4386_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4386_0 = quotedNode_4386_0;
+        quotedNode1_4386_0.setReferent("enum", (SNode) parameter_4386_0);
+        result = quotedNode1_4386_0;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_4386_l523emnf6psq) {
+    public SNode createNode(Object parameter_4386_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4386_l523emnf6pro = null;
+      SNode quotedNode_4386_0 = null;
       {
-        quotedNode_4386_l523emnf6pro = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4386_l523emnf6pro = quotedNode_4386_l523emnf6pro;
-        quotedNode1_4386_l523emnf6pro.setReferent("enum", (SNode) parameter_4386_l523emnf6psq);
-        result = quotedNode1_4386_l523emnf6pro;
+        quotedNode_4386_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4386_0 = quotedNode_4386_0;
+        quotedNode1_4386_0.setReferent("enum", (SNode) parameter_4386_0);
+        result = quotedNode1_4386_0;
       }
       return result;
     }

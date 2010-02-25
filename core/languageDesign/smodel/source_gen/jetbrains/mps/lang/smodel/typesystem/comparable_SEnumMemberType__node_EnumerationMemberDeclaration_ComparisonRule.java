@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTERl523emnf6qof = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
+  private static SNodePointer SNODE_POINTER3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
@@ -30,7 +30,7 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
   }
 
   public boolean isApplicable2(SNode node) {
-    this.myMatchingPattern2 = new comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.Pattern_1423_l523emnf6qpu();
+    this.myMatchingPattern2 = new comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.Pattern_1423_0();
     return this.myMatchingPattern2.match(node);
   }
 
@@ -42,21 +42,21 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
     return "jetbrains.mps.lang.smodel.structure.SNodeType";
   }
 
-  public static class Pattern_1423_l523emnf6qpu extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_1423_l523emnf6qpu() {
+  public static class Pattern_1423_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_1423_0() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_8893_ftszhvjn;
-        nodeToMatch_8893_ftszhvjn = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_8893_ftszhvjn.getConceptFqName()))) {
+        SNode nodeToMatch_8893_0;
+        nodeToMatch_8893_0 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_8893_0.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTERl523emnf6qof.getNode();
-          if (nodeToMatch_8893_ftszhvjn.getReferent("concept") != referent) {
+          referent = SNODE_POINTER3.getNode();
+          if (nodeToMatch_8893_0.getReferent("concept") != referent) {
             return false;
           }
         }

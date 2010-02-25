@@ -25,7 +25,7 @@ public class typeof_Node_GetAncestorsOperation_InferenceRule extends AbstractInf
       SNode _nodeToCheck_1029348928467 = op;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207354069917", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207354069919", true), (SNode) new typeof_Node_GetAncestorsOperation_InferenceRule.QuotationClass_5060_l523emnf6rpu().createNode(typeCheckingContext.getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207354069912), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207354069919", true), (SNode) new typeof_Node_GetAncestorsOperation_InferenceRule.QuotationClass_5060_0().createNode(typeCheckingContext.getEquationManager().getRepresentator(ConceptFromOpParm_typevar_1207354069912), typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -41,32 +41,32 @@ public class typeof_Node_GetAncestorsOperation_InferenceRule extends AbstractInf
     return true;
   }
 
-  public static class QuotationClass_5060_l523emnf6rpu {
-    public QuotationClass_5060_l523emnf6rpu() {
+  public static class QuotationClass_5060_0 {
+    public QuotationClass_5060_0() {
     }
 
-    public SNode createNode(Object parameter_5060_l523emnf6kp9, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_5060_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5060_l523emnf6koi = null;
+      SNode quotedNode_5060_0 = null;
       {
-        quotedNode_5060_l523emnf6koi = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5060_l523emnf6koi = quotedNode_5060_l523emnf6koi;
-        quotedNode1_5060_l523emnf6koi.setReferent("elementConcept", (SNode) parameter_5060_l523emnf6kp9);
-        result = quotedNode1_5060_l523emnf6koi;
+        quotedNode_5060_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5060_0 = quotedNode_5060_0;
+        quotedNode1_5060_0.setReferent("elementConcept", (SNode) parameter_5060_0);
+        result = quotedNode1_5060_0;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_5060_l523emnf6kp9) {
+    public SNode createNode(Object parameter_5060_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5060_l523emnf6koi = null;
+      SNode quotedNode_5060_0 = null;
       {
-        quotedNode_5060_l523emnf6koi = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5060_l523emnf6koi = quotedNode_5060_l523emnf6koi;
-        quotedNode1_5060_l523emnf6koi.setReferent("elementConcept", (SNode) parameter_5060_l523emnf6kp9);
-        result = quotedNode1_5060_l523emnf6koi;
+        quotedNode_5060_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5060_0 = quotedNode_5060_0;
+        quotedNode1_5060_0.setReferent("elementConcept", (SNode) parameter_5060_0);
+        result = quotedNode1_5060_0;
       }
       return result;
     }

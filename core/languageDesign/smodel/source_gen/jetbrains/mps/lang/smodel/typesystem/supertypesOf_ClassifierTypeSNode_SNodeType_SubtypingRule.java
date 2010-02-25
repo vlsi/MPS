@@ -16,7 +16,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
 public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTERl523emnf6mkh = new SNodePointer("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)", "~SNode");
+  private static SNodePointer SNODE_POINTER0 = new SNodePointer("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)", "~SNode");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -24,7 +24,7 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
   }
 
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.QuotationClass_0716_l523emnf6tva().createNode(typeCheckingContext);
+    return new supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.QuotationClass_0716_0().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -32,7 +32,7 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.Pattern_0716_l523emnf6mlb();
+    this.myMatchingPattern = new supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.Pattern_0716_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -40,21 +40,21 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
     return true;
   }
 
-  public static class Pattern_0716_l523emnf6mlb extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_0716_l523emnf6mlb() {
+  public static class Pattern_0716_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_0716_0() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_2752_f1r15a3r;
-        nodeToMatch_2752_f1r15a3r = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_2752_f1r15a3r.getConceptFqName()))) {
+        SNode nodeToMatch_2752_0;
+        nodeToMatch_2752_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_2752_0.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTERl523emnf6mkh.getNode();
-          if (nodeToMatch_2752_f1r15a3r.getReferent("classifier") != referent) {
+          referent = SNODE_POINTER0.getNode();
+          if (nodeToMatch_2752_0.getReferent("classifier") != referent) {
             return false;
           }
         }
@@ -74,18 +74,18 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
     }
   }
 
-  public static class QuotationClass_0716_l523emnf6tva {
-    public QuotationClass_0716_l523emnf6tva() {
+  public static class QuotationClass_0716_0 {
+    public QuotationClass_0716_0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0716_l523emnf6mkg = null;
+      SNode quotedNode_0716_0 = null;
       {
-        quotedNode_0716_l523emnf6mkg = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0716_l523emnf6mkg = quotedNode_0716_l523emnf6mkg;
-        result = quotedNode1_0716_l523emnf6mkg;
+        quotedNode_0716_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0716_0 = quotedNode_0716_0;
+        result = quotedNode1_0716_0;
       }
       return result;
     }
@@ -93,11 +93,11 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0716_l523emnf6mkg = null;
+      SNode quotedNode_0716_0 = null;
       {
-        quotedNode_0716_l523emnf6mkg = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0716_l523emnf6mkg = quotedNode_0716_l523emnf6mkg;
-        result = quotedNode1_0716_l523emnf6mkg;
+        quotedNode_0716_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0716_0 = quotedNode_0716_0;
+        result = quotedNode1_0716_0;
       }
       return result;
     }

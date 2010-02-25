@@ -31,10 +31,10 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_9788_8whgk1jc4typ(editorContext, node);
+    return this.createProperty_9788_0(editorContext, node);
   }
 
-  private EditorCell createProperty_9788_8whgk1jc4typ(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9788_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -42,7 +42,7 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ActionParameter_NameCellComponent.ActionParameter_name_postfixCellMenu8whgk1jc4tyr()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ActionParameter_NameCellComponent.ActionParameter_name_postfixCellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -53,8 +53,8 @@ public class ActionParameter_NameCellComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  public static class ActionParameter_name_postfixCellMenu8whgk1jc4tyr extends AbstractCellMenuPart_PropertyPostfixHints {
-    public ActionParameter_name_postfixCellMenu8whgk1jc4tyr() {
+  public static class ActionParameter_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public ActionParameter_name_postfixCellMenu0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {

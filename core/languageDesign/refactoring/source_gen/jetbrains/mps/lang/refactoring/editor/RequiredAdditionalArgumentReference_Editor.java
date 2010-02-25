@@ -19,22 +19,22 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3524_l523emnf3fcp(editorContext, node);
+    return this.createCollection_3524_0(editorContext, node);
   }
 
-  private EditorCell createCollection_3524_l523emnf3fcp(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3524_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3524_l523emnf3fcp");
-    editorCell.addEditorCell(this.createRefCell_3524_l523emnf3fcl(editorContext, node));
+    editorCell.setCellId("Collection_3524_0");
+    editorCell.addEditorCell(this.createRefCell_3524_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_3524_l523emnf3fcl(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_3524_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("argument");
     provider.setNoTargetText("<no argument>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RequiredAdditionalArgumentReference_Editor._Inline3524_l523emnf3fcm());
+    provider.setAuxiliaryCellProvider(new RequiredAdditionalArgumentReference_Editor._Inline3524_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -47,8 +47,8 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  public static class _Inline3524_l523emnf3fcm extends InlineCellProvider {
-    public _Inline3524_l523emnf3fcm() {
+  public static class _Inline3524_0 extends InlineCellProvider {
+    public _Inline3524_0() {
       super();
     }
 
@@ -57,10 +57,10 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_3524_l523emnf3fcn(editorContext, node);
+      return this.createProperty_3524_0(editorContext, node);
     }
 
-    private EditorCell createProperty_3524_l523emnf3fcn(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_3524_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

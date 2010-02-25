@@ -20,47 +20,47 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4196_fnoifgi3(editorContext, node);
+    return this.createCollection_4196_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4196_l523emnf0c53(editorContext, node);
+    return this.createCollection_4196_1(editorContext, node);
   }
 
-  private EditorCell createCollection_4196_fnoifgi3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4196_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4196_fnoifgi3");
-    editorCell.addEditorCell(this.createRefNode_4196_fnoifgi4(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4196_fnoifgi5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4196_fnoifgi7(editorContext, node));
+    editorCell.setCellId("Collection_4196_0");
+    editorCell.addEditorCell(this.createRefNode_4196_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4196_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4196_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4196_l523emnf0c53(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4196_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4196_l523emnf0c53");
-    editorCell.addEditorCell(this.createCollection_4196_l523emnf0c54(editorContext, node));
+    editorCell.setCellId("Collection_4196_1");
+    editorCell.addEditorCell(this.createCollection_4196_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4196_l523emnf0c54(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4196_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4196_l523emnf0c54");
-    if (renderingCondition4196_l523emnf0c4t(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_4196_l523emnf0c4s(editorContext, node));
+    editorCell.setCellId("Collection_4196_2");
+    if (renderingCondition4196_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_4196_1(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_4196_fnoifgi7(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4196_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_4196_fnoifgi7");
+    editorCell.setCellId("Constant_4196_0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_4196_fnoifgi4(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4196_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -77,7 +77,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  private EditorCell createProperty_4196_fnoifgi5(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4196_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<name>");
@@ -95,7 +95,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  private EditorCell createRefNode_4196_l523emnf0c4s(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4196_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("toStringFunction");
     provider.setNoTargetText("<no toStringFunction>");
@@ -112,7 +112,7 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     return editorCell;
   }
 
-  private static boolean renderingCondition4196_l523emnf0c4t(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition4196_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
   }
 }

@@ -31,10 +31,10 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
   public List<SNode> getSubOrSuperTypes(SNode itt, TypeCheckingContext typeCheckingContext) {
     List<SNode> result = new ArrayList<SNode>();
     String clname = "Tuples._" + ListSequence.fromList(SLinkOperations.getTargets(itt, "componentType", true)).count();
-    SModel rtmodel = SNodeOperations.getModel(SLinkOperations.getTarget(new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_5937_l523emnekz53().createNode(typeCheckingContext), "classifier", false));
+    SModel rtmodel = SNodeOperations.getModel(SLinkOperations.getTarget(new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_5937_0().createNode(typeCheckingContext), "classifier", false));
     for (SNode ct : SModelOperations.getNodes(rtmodel, "jetbrains.mps.baseLanguage.structure.Classifier")) {
       if ((clname).equals(SPropertyOperations.getString(ct, "name"))) {
-        SNode supertype = new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_5937_l523emnekz6x().createNode(ct, typeCheckingContext);
+        SNode supertype = new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_5937_1().createNode(ct, typeCheckingContext);
         ListSequence.fromList(result).addElement(supertype);
         for (SNode comptype : SLinkOperations.getTargets(itt, "componentType", true)) {
           SNode javatype = ClassifierTypeUtil.getTypeCoercedToClassifierType(comptype);
@@ -57,19 +57,19 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
     return true;
   }
 
-  public static class QuotationClass_5937_l523emnekz53 {
-    public QuotationClass_5937_l523emnekz53() {
+  public static class QuotationClass_5937_0 {
+    public QuotationClass_5937_0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5937_l523emnekxtk = null;
+      SNode quotedNode_5937_0 = null;
       {
-        quotedNode_5937_l523emnekxtk = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5937_l523emnekxtk = quotedNode_5937_l523emnekxtk;
-        quotedNode1_5937_l523emnekxtk.addReference(SReference.create("classifier", quotedNode1_5937_l523emnekxtk, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime@java_stub)"), SNodeId.fromString("~Tuples")));
-        result = quotedNode1_5937_l523emnekxtk;
+        quotedNode_5937_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5937_0 = quotedNode_5937_0;
+        quotedNode1_5937_0.addReference(SReference.create("classifier", quotedNode1_5937_0, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime@java_stub)"), SNodeId.fromString("~Tuples")));
+        result = quotedNode1_5937_0;
       }
       return result;
     }
@@ -77,43 +77,43 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5937_l523emnekxtk = null;
+      SNode quotedNode_5937_0 = null;
       {
-        quotedNode_5937_l523emnekxtk = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5937_l523emnekxtk = quotedNode_5937_l523emnekxtk;
-        quotedNode1_5937_l523emnekxtk.addReference(SReference.create("classifier", quotedNode1_5937_l523emnekxtk, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime@java_stub)"), SNodeId.fromString("~Tuples")));
-        result = quotedNode1_5937_l523emnekxtk;
+        quotedNode_5937_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5937_0 = quotedNode_5937_0;
+        quotedNode1_5937_0.addReference(SReference.create("classifier", quotedNode1_5937_0, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime@java_stub)"), SNodeId.fromString("~Tuples")));
+        result = quotedNode1_5937_0;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_5937_l523emnekz6x {
-    public QuotationClass_5937_l523emnekz6x() {
+  public static class QuotationClass_5937_1 {
+    public QuotationClass_5937_1() {
     }
 
-    public SNode createNode(Object parameter_5937_l523emnekxtx, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_5937_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5937_l523emnekxtv = null;
+      SNode quotedNode_5937_1 = null;
       {
-        quotedNode_5937_l523emnekxtv = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5937_l523emnekxtv = quotedNode_5937_l523emnekxtv;
-        quotedNode1_5937_l523emnekxtv.setReferent("classifier", (SNode) parameter_5937_l523emnekxtx);
-        result = quotedNode1_5937_l523emnekxtv;
+        quotedNode_5937_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5937_1 = quotedNode_5937_1;
+        quotedNode1_5937_1.setReferent("classifier", (SNode) parameter_5937_0);
+        result = quotedNode1_5937_1;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_5937_l523emnekxtx) {
+    public SNode createNode(Object parameter_5937_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5937_l523emnekxtv = null;
+      SNode quotedNode_5937_1 = null;
       {
-        quotedNode_5937_l523emnekxtv = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5937_l523emnekxtv = quotedNode_5937_l523emnekxtv;
-        quotedNode1_5937_l523emnekxtv.setReferent("classifier", (SNode) parameter_5937_l523emnekxtx);
-        result = quotedNode1_5937_l523emnekxtv;
+        quotedNode_5937_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5937_1 = quotedNode_5937_1;
+        quotedNode1_5937_1.setReferent("classifier", (SNode) parameter_5937_0);
+        result = quotedNode1_5937_1;
       }
       return result;
     }

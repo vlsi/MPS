@@ -28,27 +28,27 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2140_ft4dm0pn(editorContext, node);
+    return this.createCollection_2140_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2140_ft4dm0pn(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2140_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2140_ft4dm0pn");
-    editorCell.addEditorCell(this.createConceptProperty_2140_ft4dm4ml(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_2140_ft4dmnk1(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_2140_ft4dn9d0(editorContext, node));
+    editorCell.setCellId("Collection_2140_0");
+    editorCell.addEditorCell(this.createConceptProperty_2140_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_2140_0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_2140_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2140_ft4dmnk1(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new IndexedTupleLiteral_Editor.componentListHandler_2140_ft4dmnk1(node, "component", editorContext);
+  private EditorCell createRefNodeList_2140_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new IndexedTupleLiteral_Editor.componentListHandler_2140_0(node, "component", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_component");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2140_ft4dm4ml(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_2140_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("leftBracket");
     provider.setNoTargetText("<no leftBracket>");
@@ -71,7 +71,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2140_ft4dn9d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_2140_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("rightBracket");
     provider.setNoTargetText("<no rightBracket>");
@@ -94,8 +94,8 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class componentListHandler_2140_ft4dmnk1 extends RefNodeListHandler {
-    public componentListHandler_2140_ft4dmnk1(SNode ownerNode, String childRole, EditorContext context) {
+  private static class componentListHandler_2140_0 extends RefNodeListHandler {
+    public componentListHandler_2140_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -118,7 +118,7 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_2140_ft4dmqpf(editorContext, node);
+      return this.createConstant_2140_0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -146,9 +146,9 @@ public class IndexedTupleLiteral_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_2140_ft4dmqpf(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_2140_0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_2140_ft4dmqpf");
+      editorCell.setCellId("Constant_2140_0");
       editorCell.setDefaultText("");
       return editorCell;
     }

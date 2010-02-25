@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class NodeUnreachable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_7226_fig0komf(editorContext, node);
+    return this.createConstant_7226_0(editorContext, node);
   }
 
-  private EditorCell createConstant_7226_fig0komf(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7226_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unreachable");
-    editorCell.setCellId("Constant_7226_fig0komf");
+    editorCell.setCellId("Constant_7226_0");
     transformationTest_StyleSheet.getNodeProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;

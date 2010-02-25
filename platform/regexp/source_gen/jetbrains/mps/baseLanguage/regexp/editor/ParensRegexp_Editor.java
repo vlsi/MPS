@@ -27,39 +27,39 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class ParensRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9798_ezjxq7of(editorContext, node);
+    return this.createCollection_9798_0(editorContext, node);
   }
 
-  private EditorCell createCollection_9798_ezjxq7of(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9798_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9798_ezjxq7of");
+    editorCell.setCellId("Collection_9798_0");
     editorCell.addKeyMap(new RegexpSequenceByEnter());
-    editorCell.addEditorCell(this.createConstant_9798_ezjxq9iv(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9798_ezjxqc3e(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9798_ezjxqetj(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9798_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9798_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9798_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9798_ezjxq9iv(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9798_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_9798_ezjxq9iv");
+    editorCell.setCellId("Constant_9798_0");
     RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
     ParensRegexp_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ParensRegexp_Editor.ParensRegexp_Editor_replaceWith_ParensRegexp_cellMenu1urbbxnwp86tu(),new ParensRegexp_Editor.ParensRegexp_customReplace_cellMenu1urbbxnwp3io4()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ParensRegexp_Editor.ParensRegexp_Editor_replaceWith_ParensRegexp_cellMenu0(),new ParensRegexp_Editor.ParensRegexp_customReplace_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_9798_ezjxqetj(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9798_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_9798_ezjxqetj");
+    editorCell.setCellId("Constant_9798_1");
     RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
     ParensRegexp_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_9798_ezjxqc3e(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9798_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expr");
     provider.setNoTargetText("<no expr>");
@@ -76,8 +76,8 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class ParensRegexp_customReplace_cellMenu1urbbxnwp3io4 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public ParensRegexp_customReplace_cellMenu1urbbxnwp3io4() {
+  public static class ParensRegexp_customReplace_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public ParensRegexp_customReplace_cellMenu0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
@@ -103,8 +103,8 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ParensRegexp_Editor_replaceWith_ParensRegexp_cellMenu1urbbxnwp86tu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ParensRegexp_Editor_replaceWith_ParensRegexp_cellMenu1urbbxnwp86tu() {
+  public static class ParensRegexp_Editor_replaceWith_ParensRegexp_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ParensRegexp_Editor_replaceWith_ParensRegexp_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

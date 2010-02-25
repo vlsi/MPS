@@ -23,27 +23,27 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class PatternCondition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7841_ezmg4at9(editorContext, node);
+    return this.createCollection_7841_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7841_ezmg4at9(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7841_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7841_ezmg4at9");
-    editorCell.addEditorCell(this.createRefNode_7841_ezmg4col(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7841_ezmg4f6x(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7841_ezmg4k73(editorContext, node));
+    editorCell.setCellId("Collection_7841_0");
+    editorCell.addEditorCell(this.createRefNode_7841_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7841_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_7841_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7841_ezmg4f6x(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7841_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
-    editorCell.setCellId("Constant_7841_ezmg4f6x");
+    editorCell.setCellId("Constant_7841_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_7841_ezmg4col(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7841_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("pattern");
     provider.setNoTargetText("<no pattern>");
@@ -60,7 +60,7 @@ public class PatternCondition_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_7841_ezmg4k73(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_7841_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

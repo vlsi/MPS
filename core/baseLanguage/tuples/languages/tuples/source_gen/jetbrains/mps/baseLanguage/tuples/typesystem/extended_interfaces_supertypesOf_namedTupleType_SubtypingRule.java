@@ -33,7 +33,7 @@ public class extended_interfaces_supertypesOf_namedTupleType_SubtypingRule exten
           ListSequence.fromList(paramTypes).addElement(pt);
         }
       }
-      ListSequence.fromList(result).addElement(new extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.QuotationClass_2344_l523emnekzk8().createNode(paramTypes, SLinkOperations.getTarget(ct, "classifier", false), typeCheckingContext));
+      ListSequence.fromList(result).addElement(new extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.QuotationClass_2344_0().createNode(paramTypes, SLinkOperations.getTarget(ct, "classifier", false), typeCheckingContext));
     }
     return result;
   }
@@ -50,46 +50,46 @@ public class extended_interfaces_supertypesOf_namedTupleType_SubtypingRule exten
     return true;
   }
 
-  public static class QuotationClass_2344_l523emnekzk8 {
-    public QuotationClass_2344_l523emnekzk8() {
+  public static class QuotationClass_2344_0 {
+    public QuotationClass_2344_0() {
     }
 
-    public SNode createNode(Object parameter_2344_l523emnekxok, Object parameter_2344_l523emnekxom, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_2344_0, Object parameter_2344_1, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2344_l523emnekxoh = null;
-      SNode quotedNode_2344_l523emnekxoi = null;
+      SNode quotedNode_2344_0 = null;
+      SNode quotedNode_2344_1 = null;
       {
-        quotedNode_2344_l523emnekxoh = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2344_l523emnekxoh = quotedNode_2344_l523emnekxoh;
-        quotedNode1_2344_l523emnekxoh.setReferent("classifier", (SNode) parameter_2344_l523emnekxom);
+        quotedNode_2344_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2344_0 = quotedNode_2344_0;
+        quotedNode1_2344_0.setReferent("classifier", (SNode) parameter_2344_1);
         {
-          List<SNode> nodes = (List<SNode>) parameter_2344_l523emnekxok;
+          List<SNode> nodes = (List<SNode>) parameter_2344_0;
           for (SNode child : nodes) {
-            quotedNode_2344_l523emnekxoh.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_2344_0.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
-        result = quotedNode1_2344_l523emnekxoh;
+        result = quotedNode1_2344_0;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_2344_l523emnekxok, Object parameter_2344_l523emnekxom) {
+    public SNode createNode(Object parameter_2344_0, Object parameter_2344_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2344_l523emnekxoh = null;
-      SNode quotedNode_2344_l523emnekxoi = null;
+      SNode quotedNode_2344_0 = null;
+      SNode quotedNode_2344_1 = null;
       {
-        quotedNode_2344_l523emnekxoh = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2344_l523emnekxoh = quotedNode_2344_l523emnekxoh;
-        quotedNode1_2344_l523emnekxoh.setReferent("classifier", (SNode) parameter_2344_l523emnekxom);
+        quotedNode_2344_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2344_0 = quotedNode_2344_0;
+        quotedNode1_2344_0.setReferent("classifier", (SNode) parameter_2344_1);
         {
-          List<SNode> nodes = (List<SNode>) parameter_2344_l523emnekxok;
+          List<SNode> nodes = (List<SNode>) parameter_2344_0;
           for (SNode child : nodes) {
-            quotedNode_2344_l523emnekxoh.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_2344_0.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_2344_l523emnekxoh;
+        result = quotedNode1_2344_0;
       }
       return result;
     }

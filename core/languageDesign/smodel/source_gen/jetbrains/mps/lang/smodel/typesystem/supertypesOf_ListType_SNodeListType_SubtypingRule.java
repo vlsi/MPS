@@ -21,7 +21,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
   }
 
   public SNode getSubOrSuperType(SNode subtype, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_ListType_SNodeListType_SubtypingRule.QuotationClass_0844_l523emnf6uye().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_elem")), typeCheckingContext);
+    return new supertypesOf_ListType_SNodeListType_SubtypingRule.QuotationClass_0844_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_elem")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -29,7 +29,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new supertypesOf_ListType_SNodeListType_SubtypingRule.Pattern_0844_l523emnf6nli();
+    this.myMatchingPattern = new supertypesOf_ListType_SNodeListType_SubtypingRule.Pattern_0844_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -37,33 +37,33 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
     return false;
   }
 
-  public static class Pattern_0844_l523emnf6nli extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_0844_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_elem;
 
-    public Pattern_0844_l523emnf6nli() {
+    public Pattern_0844_0() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_0272_fa6yewhj;
-        nodeToMatch_0272_fa6yewhj = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_0272_fa6yewhj.getConceptFqName()))) {
+        SNode nodeToMatch_0272_0;
+        nodeToMatch_0272_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_0272_0.getConceptFqName()))) {
           return false;
         }
         {
-          String childRole0272_l523emnf6nkf = "elementType";
-          if (nodeToMatch_0272_fa6yewhj.getChildCount(childRole0272_l523emnf6nkf) != 1) {
+          String childRole0272_0 = "elementType";
+          if (nodeToMatch_0272_0.getChildCount(childRole0272_0) != 1) {
             return false;
           }
           {
-            SNode childVar_0272_fa6yf05i = nodeToMatch_0272_fa6yewhj.getChildren(childRole0272_l523emnf6nkf).get(0);
+            SNode childVar_0272_0 = nodeToMatch_0272_0.getChildren(childRole0272_0).get(0);
             {
-              SNode nodeToMatch_0272_fa6yf05i;
-              nodeToMatch_0272_fa6yf05i = childVar_0272_fa6yf05i;
-              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_0272_fa6yf05i.getConceptFqName()))) {
+              SNode nodeToMatch_0272_1;
+              nodeToMatch_0272_1 = childVar_0272_0;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_0272_1.getConceptFqName()))) {
                 return false;
               }
-              this.PatternVar_elem = nodeToMatch_0272_fa6yf05i.getReferent("concept");
+              this.PatternVar_elem = nodeToMatch_0272_1.getReferent("concept");
             }
           }
         }
@@ -89,32 +89,32 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
     }
   }
 
-  public static class QuotationClass_0844_l523emnf6uye {
-    public QuotationClass_0844_l523emnf6uye() {
+  public static class QuotationClass_0844_0 {
+    public QuotationClass_0844_0() {
     }
 
-    public SNode createNode(Object parameter_0844_l523emnf6nkp, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_0844_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0844_l523emnf6nkd = null;
+      SNode quotedNode_0844_0 = null;
       {
-        quotedNode_0844_l523emnf6nkd = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0844_l523emnf6nkd = quotedNode_0844_l523emnf6nkd;
-        quotedNode1_0844_l523emnf6nkd.setReferent("elementConcept", (SNode) parameter_0844_l523emnf6nkp);
-        result = quotedNode1_0844_l523emnf6nkd;
+        quotedNode_0844_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0844_0 = quotedNode_0844_0;
+        quotedNode1_0844_0.setReferent("elementConcept", (SNode) parameter_0844_0);
+        result = quotedNode1_0844_0;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_0844_l523emnf6nkp) {
+    public SNode createNode(Object parameter_0844_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0844_l523emnf6nkd = null;
+      SNode quotedNode_0844_0 = null;
       {
-        quotedNode_0844_l523emnf6nkd = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0844_l523emnf6nkd = quotedNode_0844_l523emnf6nkd;
-        quotedNode1_0844_l523emnf6nkd.setReferent("elementConcept", (SNode) parameter_0844_l523emnf6nkp);
-        result = quotedNode1_0844_l523emnf6nkd;
+        quotedNode_0844_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0844_0 = quotedNode_0844_0;
+        quotedNode1_0844_0.setReferent("elementConcept", (SNode) parameter_0844_0);
+        result = quotedNode1_0844_0;
       }
       return result;
     }

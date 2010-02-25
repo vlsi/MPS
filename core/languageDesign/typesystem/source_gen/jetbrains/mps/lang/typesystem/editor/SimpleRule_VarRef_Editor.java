@@ -24,30 +24,30 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5489_flurjry4(editorContext, node);
+    return this.createCollection_5489_0(editorContext, node);
   }
 
-  private EditorCell createCollection_5489_flurjry4(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5489_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5489_flurjry4");
-    editorCell.addEditorCell(this.createConstant_5489_flurju8z(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5489_flurk1bl(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5489_flurk88u(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_5489_flurkln1(editorContext, node));
+    editorCell.setCellId("Collection_5489_0");
+    editorCell.addEditorCell(this.createConstant_5489_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5489_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5489_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_5489_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5489_flurju8z(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5489_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "var reference");
-    editorCell.setCellId("Constant_5489_flurju8z");
+    editorCell.setCellId("Constant_5489_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5489_flurk88u(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5489_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has var decl role");
-    editorCell.setCellId("Constant_5489_flurk88u");
+    editorCell.setCellId("Constant_5489_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -57,7 +57,7 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5489_flurk1bl(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5489_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("conceptReference");
     provider.setNoTargetText("<no conceptReference>");
@@ -75,12 +75,12 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_5489_flurkln1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_5489_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleRule_VarRef_Editor._Inline5489_flurkln2());
+    provider.setAuxiliaryCellProvider(new SimpleRule_VarRef_Editor._Inline5489_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -93,8 +93,8 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline5489_flurkln2 extends InlineCellProvider {
-    public _Inline5489_flurkln2() {
+  public static class _Inline5489_0 extends InlineCellProvider {
+    public _Inline5489_0() {
       super();
     }
 
@@ -103,10 +103,10 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_5489_flurkodq(editorContext, node);
+      return this.createProperty_5489_0(editorContext, node);
     }
 
-    private EditorCell createProperty_5489_flurkodq(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_5489_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

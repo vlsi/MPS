@@ -20,34 +20,34 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class TypeVarDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0927_ezmtkr41(editorContext, node);
+    return this.createCollection_0927_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0927_ezmtkr41(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0927_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0927_ezmtkr41");
-    editorCell.addEditorCell(this.createConstant_0927_ezmtksxl(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0927_ezmtl2r6(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0927_ezmtln1t(editorContext, node));
+    editorCell.setCellId("Collection_0927_0");
+    editorCell.addEditorCell(this.createConstant_0927_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_0927_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0927_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0927_ezmtksxl(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0927_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "var");
-    editorCell.setCellId("Constant_0927_ezmtksxl");
+    editorCell.setCellId("Constant_0927_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0927_ezmtln1t(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0927_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_0927_ezmtln1t");
+    editorCell.setCellId("Constant_0927_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_0927_ezmtl2r6(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_0927_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

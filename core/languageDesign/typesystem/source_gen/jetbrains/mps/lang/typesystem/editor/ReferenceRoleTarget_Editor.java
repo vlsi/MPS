@@ -16,26 +16,26 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ReferenceRoleTarget_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6346_fnq44hav(editorContext, node);
+    return this.createCollection_6346_0(editorContext, node);
   }
 
-  private EditorCell createCollection_6346_fnq44hav(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6346_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6346_fnq44hav");
-    editorCell.addEditorCell(this.createConstant_6346_fnq44llp(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6346_fnq44rdj(editorContext, node));
+    editorCell.setCellId("Collection_6346_0");
+    editorCell.addEditorCell(this.createConstant_6346_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6346_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6346_fnq44llp(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6346_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reference role");
-    editorCell.setCellId("Constant_6346_fnq44llp");
+    editorCell.setCellId("Constant_6346_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_6346_fnq44rdj(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6346_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("referenceRole");
     provider.setNoTargetText("<no referenceRole>");

@@ -13,10 +13,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SwitchToInspector_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConceptProperty_1300_17v4z0mx78e51(editorContext, node);
+    return this.createConceptProperty_1300_0(editorContext, node);
   }
 
-  private EditorCell createConceptProperty_1300_17v4z0mx78e51(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_1300_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

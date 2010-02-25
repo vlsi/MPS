@@ -11,22 +11,22 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class Node_InferTypeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_8304_1cbap6k05r2wh(editorContext, node);
+    return this.createConstant_8304_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_8304_1cbap6k05r2wi(editorContext, node);
+    return this.createComponent_8304_0(editorContext, node);
   }
 
-  private EditorCell createComponent_8304_1cbap6k05r2wi(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_8304_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _NotInRules_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_8304_1cbap6k05r2wh(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8304_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inferType");
-    editorCell.setCellId("Constant_8304_1cbap6k05r2wh");
+    editorCell.setCellId("Constant_8304_0");
     editorCell.setDefaultText("");
     return editorCell;
   }

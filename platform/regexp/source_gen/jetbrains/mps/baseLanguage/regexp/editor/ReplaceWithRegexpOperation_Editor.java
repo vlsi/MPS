@@ -18,23 +18,23 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0936_flhyp0oz(editorContext, node);
+    return this.createCollection_0936_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0936_flhyp0oz(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0936_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0936_flhyp0oz");
-    editorCell.addEditorCell(this.createConstant_0936_flhyp0p1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0936_flhyp0p3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0936_flhyp0p8(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0936_flhyp0pa(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0936_flhyp0pc(editorContext, node));
+    editorCell.setCellId("Collection_0936_0");
+    editorCell.addEditorCell(this.createConstant_0936_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0936_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0936_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0936_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0936_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0936_flhyp0p1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0936_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replaceAll");
-    editorCell.setCellId("Constant_0936_flhyp0p1");
+    editorCell.setCellId("Constant_0936_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -43,9 +43,9 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0936_flhyp0p8(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0936_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_0936_flhyp0p8");
+    editorCell.setCellId("Constant_0936_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -54,9 +54,9 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0936_flhyp0pa(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0936_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
-    editorCell.setCellId("Constant_0936_flhyp0pa");
+    editorCell.setCellId("Constant_0936_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -65,7 +65,7 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0936_flhyp0p3(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0936_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");
@@ -86,7 +86,7 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0936_flhyp0pc(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0936_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("replaceBlock");
     provider.setNoTargetText("<no replaceBlock>");

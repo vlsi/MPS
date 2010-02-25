@@ -18,39 +18,39 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class WithIndentOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6519_frwaleue(editorContext, node);
+    return this.createCollection_6519_0(editorContext, node);
   }
 
-  private EditorCell createCollection_6519_frwaleue(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6519_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6519_frwaleue");
-    editorCell.addEditorCell(this.createConstant_6519_frwalk6r(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6519_frwalp62(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6519_frwamgk9(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6519_frwanu1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6519_frwanzid(editorContext, node));
+    editorCell.setCellId("Collection_6519_0");
+    editorCell.addEditorCell(this.createConstant_6519_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6519_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6519_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6519_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6519_3(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6519_frwalk6r(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6519_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
-    editorCell.setCellId("Constant_6519_frwalk6r");
+    editorCell.setCellId("Constant_6519_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6519_frwalp62(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6519_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "indent");
-    editorCell.setCellId("Constant_6519_frwalp62");
+    editorCell.setCellId("Constant_6519_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6519_frwamgk9(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6519_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_6519_frwamgk9");
+    editorCell.setCellId("Constant_6519_2");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -60,9 +60,9 @@ public class WithIndentOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6519_frwanzid(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6519_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_6519_frwanzid");
+    editorCell.setCellId("Constant_6519_3");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -72,7 +72,7 @@ public class WithIndentOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6519_frwanu1a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6519_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("list");
     provider.setNoTargetText("<no list>");

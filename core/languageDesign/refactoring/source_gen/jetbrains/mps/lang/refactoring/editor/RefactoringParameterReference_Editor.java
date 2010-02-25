@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class RefactoringParameterReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1786_l523emnf3fdg(editorContext, node);
+    return this.createCollection_1786_0(editorContext, node);
   }
 
-  private EditorCell createCollection_1786_l523emnf3fdg(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1786_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1786_l523emnf3fdg");
-    editorCell.addEditorCell(this.createRefCell_1786_l523emnf3fdd(editorContext, node));
+    editorCell.setCellId("Collection_1786_0");
+    editorCell.addEditorCell(this.createRefCell_1786_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_1786_l523emnf3fdd(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_1786_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("refactoringParameter");
     provider.setNoTargetText("<no refactoringParameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RefactoringParameterReference_Editor._Inline1786_l523emnf3fde());
+    provider.setAuxiliaryCellProvider(new RefactoringParameterReference_Editor._Inline1786_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class RefactoringParameterReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline1786_l523emnf3fde extends InlineCellProvider {
-    public _Inline1786_l523emnf3fde() {
+  public static class _Inline1786_0 extends InlineCellProvider {
+    public _Inline1786_0() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class RefactoringParameterReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_1786_l523emnf3fdf(editorContext, node);
+      return this.createProperty_1786_0(editorContext, node);
     }
 
-    private EditorCell createProperty_1786_l523emnf3fdf(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_1786_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

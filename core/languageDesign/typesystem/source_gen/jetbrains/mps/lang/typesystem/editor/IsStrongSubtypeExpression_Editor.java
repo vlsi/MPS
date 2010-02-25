@@ -20,54 +20,54 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class IsStrongSubtypeExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9195_f0w5c3r1(editorContext, node);
+    return this.createCollection_9195_0(editorContext, node);
   }
 
-  private EditorCell createCollection_9195_f0w5c3r1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9195_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9195_f0w5c3r1");
-    editorCell.addEditorCell(this.createConstant_9195_f0w5c3r2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9195_fid7aval(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9195_f0w5c3r3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9195_f0w5c3r4(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9195_f0w5c3r5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9195_f0w5c3r6(editorContext, node));
+    editorCell.setCellId("Collection_9195_0");
+    editorCell.addEditorCell(this.createConstant_9195_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9195_3(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9195_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9195_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9195_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9195_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9195_f0w5c3r2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9195_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isStrongSubtype");
-    editorCell.setCellId("Constant_9195_f0w5c3r2");
+    editorCell.setCellId("Constant_9195_0");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IsStrongSubtypeExpression_Editor.IsStrongSubtypeExpression_Editor_replaceWith_IsSubtypeExpression_cellMenuf0w6gs28()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IsStrongSubtypeExpression_Editor.IsStrongSubtypeExpression_Editor_replaceWith_IsSubtypeExpression_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_9195_f0w5c3r4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9195_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":<<");
-    editorCell.setCellId("Constant_9195_f0w5c3r4");
+    editorCell.setCellId("Constant_9195_1");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9195_f0w5c3r6(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9195_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_9195_f0w5c3r6");
+    editorCell.setCellId("Constant_9195_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9195_fid7aval(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9195_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_9195_fid7aval");
+    editorCell.setCellId("Constant_9195_3");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_9195_f0w5c3r3(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9195_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("subtypeExpression");
     provider.setNoTargetText("<no subtypeExpression>");
@@ -84,7 +84,7 @@ public class IsStrongSubtypeExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9195_f0w5c3r5(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9195_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("supertypeExpression");
     provider.setNoTargetText("<no supertypeExpression>");
@@ -101,8 +101,8 @@ public class IsStrongSubtypeExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class IsStrongSubtypeExpression_Editor_replaceWith_IsSubtypeExpression_cellMenuf0w6gs28 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public IsStrongSubtypeExpression_Editor_replaceWith_IsSubtypeExpression_cellMenuf0w6gs28() {
+  public static class IsStrongSubtypeExpression_Editor_replaceWith_IsSubtypeExpression_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public IsStrongSubtypeExpression_Editor_replaceWith_IsSubtypeExpression_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

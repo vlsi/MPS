@@ -17,21 +17,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InfoAppendPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8223_fseryxlk(editorContext, node);
+    return this.createCollection_8223_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8223_fseryxlk(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8223_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8223_fseryxlk");
-    editorCell.addEditorCell(this.createConstant_8223_fserzn1j(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8223_fserzhm7(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8223_fserzx0j(editorContext, node));
+    editorCell.setCellId("Collection_8223_0");
+    editorCell.addEditorCell(this.createConstant_8223_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8223_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8223_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8223_fserzn1j(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8223_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$resolve{");
-    editorCell.setCellId("Constant_8223_fserzn1j");
+    editorCell.setCellId("Constant_8223_0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -42,9 +42,9 @@ public class InfoAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8223_fserzx0j(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8223_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_8223_fserzx0j");
+    editorCell.setCellId("Constant_8223_1");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -54,7 +54,7 @@ public class InfoAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8223_fserzhm7(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8223_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");

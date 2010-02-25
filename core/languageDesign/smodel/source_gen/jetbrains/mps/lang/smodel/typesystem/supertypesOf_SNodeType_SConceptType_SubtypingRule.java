@@ -16,7 +16,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
 public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTERl523emnf6myb = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
+  private static SNodePointer SNODE_POINTER2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -24,7 +24,7 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
   }
 
   public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_SNodeType_SConceptType_SubtypingRule.QuotationClass_3405_l523emnf6u0v().createNode(typeCheckingContext);
+    return new supertypesOf_SNodeType_SConceptType_SubtypingRule.QuotationClass_3405_0().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -32,7 +32,7 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new supertypesOf_SNodeType_SConceptType_SubtypingRule.Pattern_3405_l523emnf6mz5();
+    this.myMatchingPattern = new supertypesOf_SNodeType_SConceptType_SubtypingRule.Pattern_3405_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -40,21 +40,21 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
     return false;
   }
 
-  public static class Pattern_3405_l523emnf6mz5 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_3405_l523emnf6mz5() {
+  public static class Pattern_3405_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_3405_0() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_3241_f2ap4u9e;
-        nodeToMatch_3241_f2ap4u9e = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_3241_f2ap4u9e.getConceptFqName()))) {
+        SNode nodeToMatch_3241_0;
+        nodeToMatch_3241_0 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_3241_0.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTERl523emnf6myb.getNode();
-          if (nodeToMatch_3241_f2ap4u9e.getReferent("concept") != referent) {
+          referent = SNODE_POINTER2.getNode();
+          if (nodeToMatch_3241_0.getReferent("concept") != referent) {
             return false;
           }
         }
@@ -74,18 +74,18 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
     }
   }
 
-  public static class QuotationClass_3405_l523emnf6u0v {
-    public QuotationClass_3405_l523emnf6u0v() {
+  public static class QuotationClass_3405_0 {
+    public QuotationClass_3405_0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3405_l523emnf6mya = null;
+      SNode quotedNode_3405_0 = null;
       {
-        quotedNode_3405_l523emnf6mya = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3405_l523emnf6mya = quotedNode_3405_l523emnf6mya;
-        result = quotedNode1_3405_l523emnf6mya;
+        quotedNode_3405_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3405_0 = quotedNode_3405_0;
+        result = quotedNode1_3405_0;
       }
       return result;
     }
@@ -93,11 +93,11 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3405_l523emnf6mya = null;
+      SNode quotedNode_3405_0 = null;
       {
-        quotedNode_3405_l523emnf6mya = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3405_l523emnf6mya = quotedNode_3405_l523emnf6mya;
-        result = quotedNode1_3405_l523emnf6mya;
+        quotedNode_3405_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3405_0 = quotedNode_3405_0;
+        result = quotedNode1_3405_0;
       }
       return result;
     }

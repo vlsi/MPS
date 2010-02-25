@@ -21,20 +21,20 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0777_f02ngdn3(editorContext, node);
+    return this.createCollection_0777_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0777_f02ngdn3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0777_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0777_f02ngdn3");
-    editorCell.addEditorCell(this.createRefCell_0777_f02nge6w(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0777_f02ngh67(editorContext, node));
+    editorCell.setCellId("Collection_0777_0");
+    editorCell.addEditorCell(this.createRefCell_0777_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0777_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0777_f02ngh67(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0777_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/list");
-    editorCell.setCellId("Constant_0777_f02ngh67");
+    editorCell.setCellId("Constant_0777_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -45,12 +45,12 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_0777_f02nge6w(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0777_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("conceptLinkDeclaration");
     provider.setNoTargetText("<no conceptLinkDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SConceptLinkAccess_Editor._Inline0777_f02nge6x());
+    provider.setAuxiliaryCellProvider(new SConceptLinkAccess_Editor._Inline0777_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -63,8 +63,8 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0777_f02nge6x extends InlineCellProvider {
-    public _Inline0777_f02nge6x() {
+  public static class _Inline0777_0 extends InlineCellProvider {
+    public _Inline0777_0() {
       super();
     }
 
@@ -73,10 +73,10 @@ public class SConceptLinkAccess_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0777_f02nge6y(editorContext, node);
+      return this.createProperty_0777_0(editorContext, node);
     }
 
-    private EditorCell createProperty_0777_f02nge6y(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0777_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -21,22 +21,22 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ConceptReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4215_l523emnf4zwq(editorContext, node);
+    return this.createCollection_4215_0(editorContext, node);
   }
 
-  private EditorCell createCollection_4215_l523emnf4zwq(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4215_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4215_l523emnf4zwq");
-    editorCell.addEditorCell(this.createRefCell_4215_l523emnf4zwk(editorContext, node));
+    editorCell.setCellId("Collection_4215_0");
+    editorCell.addEditorCell(this.createRefCell_4215_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_4215_l523emnf4zwk(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_4215_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptReference_Editor._Inline4215_l523emnf4zwl());
+    provider.setAuxiliaryCellProvider(new ConceptReference_Editor._Inline4215_0());
     editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
@@ -53,8 +53,8 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4215_l523emnf4zwl extends InlineCellProvider {
-    public _Inline4215_l523emnf4zwl() {
+  public static class _Inline4215_0 extends InlineCellProvider {
+    public _Inline4215_0() {
       super();
     }
 
@@ -63,10 +63,10 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_4215_l523emnf4zwm(editorContext, node);
+      return this.createProperty_4215_0(editorContext, node);
     }
 
-    private EditorCell createProperty_4215_l523emnf4zwm(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_4215_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

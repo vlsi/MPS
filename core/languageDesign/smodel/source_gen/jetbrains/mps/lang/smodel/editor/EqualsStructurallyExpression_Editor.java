@@ -24,19 +24,19 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0523_fnsqjuot(editorContext, node);
+    return this.createCollection_0523_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0523_fnsqjuot(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0523_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0523_fnsqjuot");
-    editorCell.addEditorCell(this.createRefNode_0523_fnsqjuou(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_0523_fnsqjuov(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0523_fnsqjup0(editorContext, node));
+    editorCell.setCellId("Collection_0523_0");
+    editorCell.addEditorCell(this.createRefNode_0523_0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_0523_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0523_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_0523_fnsqjuou(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0523_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -54,7 +54,7 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_0523_fnsqjuov(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_0523_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no operator>");
@@ -69,7 +69,7 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     }
     editorCell.addKeyMap(new CastExpression_KeyMap());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new EqualsStructurallyExpression_Editor.EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenufnsqjuox()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new EqualsStructurallyExpression_Editor.EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -80,7 +80,7 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0523_fnsqjup0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0523_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightExpression");
     provider.setNoTargetText("<no rightExpression>");
@@ -98,8 +98,8 @@ public class EqualsStructurallyExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenufnsqjuox extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenufnsqjuox() {
+  public static class EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public EqualsStructurallyExpression_Editor_replaceWith_BinaryOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

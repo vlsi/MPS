@@ -22,98 +22,98 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class AssertMatch_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9939_fgrxal6b(editorContext, node);
+    return this.createCollection_9939_0(editorContext, node);
   }
 
-  private EditorCell createCollection_9939_fgrxal6b(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9939_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9939_fgrxal6b");
-    editorCell.addEditorCell(this.createConstant_9939_fgrxaofk(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9939_fgrywniv(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_9939_fgrxaye4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9939_fgrywvyb(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9939_fgrxbeez(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9939_fgryx92m(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_9939_fgrxbm0g(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9939_fgryxjub(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9939_fgrxbvjt(editorContext, node));
+    editorCell.setCellId("Collection_9939_0");
+    editorCell.addEditorCell(this.createConstant_9939_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9939_3(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_9939_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9939_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9939_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9939_5(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_9939_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9939_6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9939_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9939_fgrxaofk(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9939_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert");
-    editorCell.setCellId("Constant_9939_fgrxaofk");
+    editorCell.setCellId("Constant_9939_0");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9939_fgrxbeez(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9939_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "match");
-    editorCell.setCellId("Constant_9939_fgrxbeez");
+    editorCell.setCellId("Constant_9939_1");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9939_fgrxbvjt(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9939_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_9939_fgrxbvjt");
+    editorCell.setCellId("Constant_9939_2");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9939_fgrywniv(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9939_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_9939_fgrywniv");
+    editorCell.setCellId("Constant_9939_3");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9939_fgrywvyb(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9939_4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_9939_fgrywvyb");
+    editorCell.setCellId("Constant_9939_4");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9939_fgryx92m(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9939_5(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_9939_fgryx92m");
+    editorCell.setCellId("Constant_9939_5");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9939_fgryxjub(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9939_6(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_9939_fgryxjub");
+    editorCell.setCellId("Constant_9939_6");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_9939_fgrxaye4(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new AssertMatch_Editor.beforeListHandler_9939_fgrxaye4(node, "before", editorContext);
+  private EditorCell createRefNodeList_9939_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new AssertMatch_Editor.beforeListHandler_9939_0(node, "before", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_before");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_9939_fgrxbm0g(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new AssertMatch_Editor.afterListHandler_9939_fgrxbm0g(node, "after", editorContext);
+  private EditorCell createRefNodeList_9939_1(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new AssertMatch_Editor.afterListHandler_9939_0(node, "after", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_after");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class beforeListHandler_9939_fgrxaye4 extends RefNodeListHandler {
-    public beforeListHandler_9939_fgrxaye4(SNode ownerNode, String childRole, EditorContext context) {
+  private static class beforeListHandler_9939_0 extends RefNodeListHandler {
+    public beforeListHandler_9939_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -161,8 +161,8 @@ public class AssertMatch_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class afterListHandler_9939_fgrxbm0g extends RefNodeListHandler {
-    public afterListHandler_9939_fgrxbm0g(SNode ownerNode, String childRole, EditorContext context) {
+  private static class afterListHandler_9939_0 extends RefNodeListHandler {
+    public afterListHandler_9939_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

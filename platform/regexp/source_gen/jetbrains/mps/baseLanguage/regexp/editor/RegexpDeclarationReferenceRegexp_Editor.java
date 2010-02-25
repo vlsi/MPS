@@ -20,23 +20,23 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1993_ezmrt1ly(editorContext, node);
+    return this.createCollection_1993_0(editorContext, node);
   }
 
-  private EditorCell createCollection_1993_ezmrt1ly(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1993_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1993_ezmrt1ly");
+    editorCell.setCellId("Collection_1993_0");
     editorCell.addKeyMap(new RegexpSequenceByEnter());
-    editorCell.addEditorCell(this.createRefCell_1993_ezmrt8kg(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_1993_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_1993_ezmrt8kg(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_1993_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RegexpDeclarationReferenceRegexp_Editor._Inline1993_ezmrt8kh());
+    provider.setAuxiliaryCellProvider(new RegexpDeclarationReferenceRegexp_Editor._Inline1993_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -49,8 +49,8 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline1993_ezmrt8kh extends InlineCellProvider {
-    public _Inline1993_ezmrt8kh() {
+  public static class _Inline1993_0 extends InlineCellProvider {
+    public _Inline1993_0() {
       super();
     }
 
@@ -59,10 +59,10 @@ public class RegexpDeclarationReferenceRegexp_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_1993_ezmrt9pc(editorContext, node);
+      return this.createProperty_1993_0(editorContext, node);
     }
 
-    private EditorCell createProperty_1993_ezmrt9pc(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_1993_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

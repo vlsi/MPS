@@ -18,20 +18,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8939_fdgkool4(editorContext, node);
+    return this.createCollection_8939_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8939_fdgkool4(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8939_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8939_fdgkool4");
-    editorCell.addEditorCell(this.createConstant_8939_fdgkp5up(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8939_fdgkqp0f(editorContext, node));
+    editorCell.setCellId("Collection_8939_0");
+    editorCell.addEditorCell(this.createConstant_8939_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8939_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8939_fdgkp5up(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8939_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
-    editorCell.setCellId("Constant_8939_fdgkp5up");
+    editorCell.setCellId("Constant_8939_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
@@ -42,7 +42,7 @@ public class AttributeAccessOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8939_fdgkqp0f(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8939_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("attributeQualifier");
     provider.setNoTargetText("<no attributeQualifier>");

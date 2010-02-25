@@ -20,22 +20,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ApplicationPluginType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5953_fiaia9l2(editorContext, node);
+    return this.createCollection_5953_0(editorContext, node);
   }
 
-  private EditorCell createCollection_5953_fiaia9l2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5953_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5953_fiaia9l2");
-    editorCell.addEditorCell(this.createConstant_5953_fiaia9l3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5953_fiaia9l5(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_5953_fiaia9l7(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5953_fiaia9la(editorContext, node));
+    editorCell.setCellId("Collection_5953_0");
+    editorCell.addEditorCell(this.createConstant_5953_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5953_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_5953_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5953_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5953_fiaia9l3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5953_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "application plugin");
-    editorCell.setCellId("Constant_5953_fiaia9l3");
+    editorCell.setCellId("Constant_5953_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -45,9 +45,9 @@ public class ApplicationPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5953_fiaia9l5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5953_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_5953_fiaia9l5");
+    editorCell.setCellId("Constant_5953_1");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -58,9 +58,9 @@ public class ApplicationPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5953_fiaia9la(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5953_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_5953_fiaia9la");
+    editorCell.setCellId("Constant_5953_2");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -71,12 +71,12 @@ public class ApplicationPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_5953_fiaia9l7(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_5953_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("plugin");
     provider.setNoTargetText("<no plugin>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ApplicationPluginType_Editor._Inline5953_fiaia9l8());
+    provider.setAuxiliaryCellProvider(new ApplicationPluginType_Editor._Inline5953_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -89,8 +89,8 @@ public class ApplicationPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline5953_fiaia9l8 extends InlineCellProvider {
-    public _Inline5953_fiaia9l8() {
+  public static class _Inline5953_0 extends InlineCellProvider {
+    public _Inline5953_0() {
       super();
     }
 
@@ -99,10 +99,10 @@ public class ApplicationPluginType_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_5953_fiaia9l9(editorContext, node);
+      return this.createProperty_5953_0(editorContext, node);
     }
 
-    private EditorCell createProperty_5953_fiaia9l9(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_5953_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

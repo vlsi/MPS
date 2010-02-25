@@ -22,53 +22,53 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class JoinType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3192_f1ufpfj4(editorContext, node);
+    return this.createCollection_3192_0(editorContext, node);
   }
 
-  private EditorCell createCollection_3192_f1ufpfj4(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3192_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3192_f1ufpfj4");
-    editorCell.addEditorCell(this.createConstant_3192_f1ufpswy(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3192_fid2mo0z(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_3192_f1ufqnrs(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3192_fe1affgy(editorContext, node));
+    editorCell.setCellId("Collection_3192_0");
+    editorCell.addEditorCell(this.createConstant_3192_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3192_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_3192_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3192_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3192_f1ufpswy(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3192_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "join");
-    editorCell.setCellId("Constant_3192_f1ufpswy");
+    editorCell.setCellId("Constant_3192_0");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3192_fe1affgy(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3192_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_3192_fe1affgy");
+    editorCell.setCellId("Constant_3192_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3192_fid2mo0z(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3192_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_3192_fid2mo0z");
+    editorCell.setCellId("Constant_3192_2");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_3192_f1ufqnrs(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new JoinType_Editor.argumentListHandler_3192_f1ufqnrs(node, "argument", editorContext);
+  private EditorCell createRefNodeList_3192_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new JoinType_Editor.argumentListHandler_3192_0(node, "argument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_argument");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class argumentListHandler_3192_f1ufqnrs extends RefNodeListHandler {
-    public argumentListHandler_3192_f1ufqnrs(SNode ownerNode, String childRole, EditorContext context) {
+  private static class argumentListHandler_3192_0 extends RefNodeListHandler {
+    public argumentListHandler_3192_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

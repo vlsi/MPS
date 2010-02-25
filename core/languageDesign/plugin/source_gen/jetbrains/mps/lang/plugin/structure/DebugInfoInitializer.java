@@ -43,19 +43,19 @@ public class DebugInfoInitializer extends BaseConcept {
     return this.getChildCount(DebugInfoInitializer.CONCEPTS_OF_VARS);
   }
 
-  public Iterator<VariableNodeItem> conceptsOfVarses() {
-    return this.children(VariableNodeItem.class, DebugInfoInitializer.CONCEPTS_OF_VARS);
+  public Iterator<ConceptReference> conceptsOfVarses() {
+    return this.children(ConceptReference.class, DebugInfoInitializer.CONCEPTS_OF_VARS);
   }
 
-  public List<VariableNodeItem> getConceptsOfVarses() {
-    return this.getChildren(VariableNodeItem.class, DebugInfoInitializer.CONCEPTS_OF_VARS);
+  public List<ConceptReference> getConceptsOfVarses() {
+    return this.getChildren(ConceptReference.class, DebugInfoInitializer.CONCEPTS_OF_VARS);
   }
 
-  public void addConceptsOfVars(VariableNodeItem node) {
+  public void addConceptsOfVars(ConceptReference node) {
     this.addChild(DebugInfoInitializer.CONCEPTS_OF_VARS, node);
   }
 
-  public void insertConceptsOfVars(VariableNodeItem prev, VariableNodeItem node) {
+  public void insertConceptsOfVars(ConceptReference prev, ConceptReference node) {
     this.insertChild(prev, DebugInfoInitializer.CONCEPTS_OF_VARS, node);
   }
 

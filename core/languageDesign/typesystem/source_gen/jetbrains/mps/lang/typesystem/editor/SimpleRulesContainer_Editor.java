@@ -22,28 +22,28 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7856_flur9mnu(editorContext, node);
+    return this.createCollection_7856_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7856_flur9mnu(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7856_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_7856_flur9mnu");
-    editorCell.addEditorCell(this.createConstant_7856_flur9pzs(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7856_flv6aw7h(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_7856_flurahlr(editorContext, node));
+    editorCell.setCellId("Collection_7856_0");
+    editorCell.addEditorCell(this.createConstant_7856_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7856_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_7856_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7856_flur9pzs(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7856_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "simple rules container");
-    editorCell.setCellId("Constant_7856_flur9pzs");
+    editorCell.setCellId("Constant_7856_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7856_flv6aw7h(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7856_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_7856_flv6aw7h");
+    editorCell.setCellId("Constant_7856_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -52,16 +52,16 @@ public class SimpleRulesContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_7856_flurahlr(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new SimpleRulesContainer_Editor.simpleRuleListHandler_7856_flurahlr(node, "simpleRule", editorContext);
+  private EditorCell createRefNodeList_7856_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new SimpleRulesContainer_Editor.simpleRuleListHandler_7856_0(node, "simpleRule", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_simpleRule");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class simpleRuleListHandler_7856_flurahlr extends RefNodeListHandler {
-    public simpleRuleListHandler_7856_flurahlr(SNode ownerNode, String childRole, EditorContext context) {
+  private static class simpleRuleListHandler_7856_0 extends RefNodeListHandler {
+    public simpleRuleListHandler_7856_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

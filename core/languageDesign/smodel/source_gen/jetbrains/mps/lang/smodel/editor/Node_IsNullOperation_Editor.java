@@ -15,12 +15,12 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class Node_IsNullOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_8163_eyeq27il(editorContext, node);
+    return this.createConstant_8163_0(editorContext, node);
   }
 
-  private EditorCell createConstant_8163_eyeq27il(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8163_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isNull");
-    editorCell.setCellId("Constant_8163_eyeq27il");
+    editorCell.setCellId("Constant_8163_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

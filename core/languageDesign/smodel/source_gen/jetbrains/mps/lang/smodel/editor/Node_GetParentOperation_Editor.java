@@ -14,12 +14,12 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class Node_GetParentOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_5352_fk2ywya4(editorContext, node);
+    return this.createConstant_5352_0(editorContext, node);
   }
 
-  private EditorCell createConstant_5352_fk2ywya4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5352_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parent");
-    editorCell.setCellId("Constant_5352_fk2ywya4");
+    editorCell.setCellId("Constant_5352_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

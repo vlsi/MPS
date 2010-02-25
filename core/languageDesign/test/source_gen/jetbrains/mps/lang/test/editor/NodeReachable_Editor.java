@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class NodeReachable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_7119_fiekmw81(editorContext, node);
+    return this.createConstant_7119_0(editorContext, node);
   }
 
-  private EditorCell createConstant_7119_fiekmw81(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7119_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reachable");
-    editorCell.setCellId("Constant_7119_fiekmw81");
+    editorCell.setCellId("Constant_7119_0");
     transformationTest_StyleSheet.getNodeProperty(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;

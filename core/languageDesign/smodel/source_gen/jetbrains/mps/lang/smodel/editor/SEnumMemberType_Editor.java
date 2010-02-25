@@ -24,22 +24,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class SEnumMemberType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3332_ftq5pp3u(editorContext, node);
+    return this.createCollection_3332_0(editorContext, node);
   }
 
-  private EditorCell createCollection_3332_ftq5pp3u(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3332_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3332_ftq5pp3u");
-    editorCell.addEditorCell(this.createConstant_3332_ftq5pp3v(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3332_ftq5pp3x(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_3332_ftq5pp3y(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3332_ftq5pp43(editorContext, node));
+    editorCell.setCellId("Collection_3332_0");
+    editorCell.addEditorCell(this.createConstant_3332_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3332_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_3332_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3332_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3332_ftq5pp3v(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3332_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enummember");
-    editorCell.setCellId("Constant_3332_ftq5pp3v");
+    editorCell.setCellId("Constant_3332_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -49,28 +49,28 @@ public class SEnumMemberType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3332_ftq5pp3x(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3332_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_3332_ftq5pp3x");
+    editorCell.setCellId("Constant_3332_1");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3332_ftq5pp43(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3332_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_3332_ftq5pp43");
+    editorCell.setCellId("Constant_3332_2");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_3332_ftq5pp3y(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_3332_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("enum");
     provider.setNoTargetText("");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SEnumMemberType_Editor._Inline3332_ftq5pp3z());
+    provider.setAuxiliaryCellProvider(new SEnumMemberType_Editor._Inline3332_0());
     editorCell = provider.createEditorCell(editorContext);
     SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     {
@@ -91,8 +91,8 @@ public class SEnumMemberType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline3332_ftq5pp3z extends InlineCellProvider {
-    public _Inline3332_ftq5pp3z() {
+  public static class _Inline3332_0 extends InlineCellProvider {
+    public _Inline3332_0() {
       super();
     }
 
@@ -101,10 +101,10 @@ public class SEnumMemberType_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_3332_ftq5pp40(editorContext, node);
+      return this.createProperty_3332_0(editorContext, node);
     }
 
-    private EditorCell createProperty_3332_ftq5pp40(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_3332_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

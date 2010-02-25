@@ -16,46 +16,46 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MoveNodeToNodeExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1436_fb3j5n26(editorContext, node);
+    return this.createCollection_1436_0(editorContext, node);
   }
 
-  private EditorCell createCollection_1436_fb3j5n26(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1436_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1436_fb3j5n26");
-    editorCell.addEditorCell(this.createConstant_1436_fb3j5n27(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1436_fb3j5n28(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1436_fb3j5n29(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1436_fb3j5n2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1436_fb3j5n2b(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1436_fb3j5n2c(editorContext, node));
+    editorCell.setCellId("Collection_1436_0");
+    editorCell.addEditorCell(this.createConstant_1436_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1436_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1436_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1436_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1436_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1436_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1436_fb3j5n27(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1436_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "moveNode");
-    editorCell.setCellId("Constant_1436_fb3j5n27");
+    editorCell.setCellId("Constant_1436_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1436_fb3j5n29(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1436_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to");
-    editorCell.setCellId("Constant_1436_fb3j5n29");
+    editorCell.setCellId("Constant_1436_1");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1436_fb3j5n2b(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1436_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "withRole");
-    editorCell.setCellId("Constant_1436_fb3j5n2b");
+    editorCell.setCellId("Constant_1436_2");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_1436_fb3j5n28(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1436_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("whatToMove");
     provider.setNoTargetText("<no whatToMove>");
@@ -72,7 +72,7 @@ public class MoveNodeToNodeExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1436_fb3j5n2a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1436_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("destination");
     provider.setNoTargetText("<no destination>");
@@ -89,7 +89,7 @@ public class MoveNodeToNodeExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1436_fb3j5n2c(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1436_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("roleInTarget");
     provider.setNoTargetText("<no roleInTarget>");

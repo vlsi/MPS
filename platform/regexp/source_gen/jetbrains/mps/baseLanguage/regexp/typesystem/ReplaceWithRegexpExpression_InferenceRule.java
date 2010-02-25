@@ -25,7 +25,7 @@ public class ReplaceWithRegexpExpression_InferenceRule extends AbstractInference
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1178179183633", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1178179183634", true), (SNode) new ReplaceWithRegexpExpression_InferenceRule.QuotationClass_0207_l523emnek7hw().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590517(jetbrains.mps.baseLanguage.regexp.typesystem)", "1178179183634", true), (SNode) new ReplaceWithRegexpExpression_InferenceRule.QuotationClass_0207_0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -41,18 +41,18 @@ public class ReplaceWithRegexpExpression_InferenceRule extends AbstractInference
     return false;
   }
 
-  public static class QuotationClass_0207_l523emnek7hw {
-    public QuotationClass_0207_l523emnek7hw() {
+  public static class QuotationClass_0207_0 {
+    public QuotationClass_0207_0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0207_l523emnek6xb = null;
+      SNode quotedNode_0207_0 = null;
       {
-        quotedNode_0207_l523emnek6xb = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0207_l523emnek6xb = quotedNode_0207_l523emnek6xb;
-        result = quotedNode1_0207_l523emnek6xb;
+        quotedNode_0207_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0207_0 = quotedNode_0207_0;
+        result = quotedNode1_0207_0;
       }
       return result;
     }
@@ -60,11 +60,11 @@ public class ReplaceWithRegexpExpression_InferenceRule extends AbstractInference
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0207_l523emnek6xb = null;
+      SNode quotedNode_0207_0 = null;
       {
-        quotedNode_0207_l523emnek6xb = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0207_l523emnek6xb = quotedNode_0207_l523emnek6xb;
-        result = quotedNode1_0207_l523emnek6xb;
+        quotedNode_0207_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0207_0 = quotedNode_0207_0;
+        result = quotedNode1_0207_0;
       }
       return result;
     }

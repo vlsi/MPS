@@ -17,22 +17,22 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9926_l523emnfar3s(editorContext, node);
+    return this.createCollection_9926_0(editorContext, node);
   }
 
-  private EditorCell createCollection_9926_l523emnfar3s(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9926_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9926_l523emnfar3s");
-    editorCell.addEditorCell(this.createRefCell_9926_l523emnfar3p(editorContext, node));
+    editorCell.setCellId("Collection_9926_0");
+    editorCell.addEditorCell(this.createRefCell_9926_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_9926_l523emnfar3p(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_9926_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("quickFixArgument");
     provider.setNoTargetText("<no quickFixArgument>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new QuickFixArgumentReference_Editor._Inline9926_l523emnfar3q());
+    provider.setAuxiliaryCellProvider(new QuickFixArgumentReference_Editor._Inline9926_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -45,8 +45,8 @@ public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline9926_l523emnfar3q extends InlineCellProvider {
-    public _Inline9926_l523emnfar3q() {
+  public static class _Inline9926_0 extends InlineCellProvider {
+    public _Inline9926_0() {
       super();
     }
 
@@ -55,10 +55,10 @@ public class QuickFixArgumentReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_9926_l523emnfar3r(editorContext, node);
+      return this.createProperty_9926_0(editorContext, node);
     }
 
-    private EditorCell createProperty_9926_l523emnfar3r(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_9926_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

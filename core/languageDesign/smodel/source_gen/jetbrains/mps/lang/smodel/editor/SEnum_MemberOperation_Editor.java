@@ -19,29 +19,29 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7750_fu2qd091(editorContext, node);
+    return this.createCollection_7750_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7750_fu2qd091(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7750_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7750_fu2qd091");
-    editorCell.addEditorCell(this.createConstant_7750_fu2qd093(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_7750_fu2qd094(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7750_fu2qd097(editorContext, node));
+    editorCell.setCellId("Collection_7750_0");
+    editorCell.addEditorCell(this.createConstant_7750_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_7750_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7750_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7750_fu2qd093(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7750_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_7750_fu2qd093");
+    editorCell.setCellId("Constant_7750_0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7750_fu2qd097(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7750_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_7750_fu2qd097");
+    editorCell.setCellId("Constant_7750_1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
@@ -50,12 +50,12 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_7750_fu2qd094(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_7750_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("member");
     provider.setNoTargetText("<no member>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SEnum_MemberOperation_Editor._Inline7750_fu2qd095());
+    provider.setAuxiliaryCellProvider(new SEnum_MemberOperation_Editor._Inline7750_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -68,8 +68,8 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline7750_fu2qd095 extends InlineCellProvider {
-    public _Inline7750_fu2qd095() {
+  public static class _Inline7750_0 extends InlineCellProvider {
+    public _Inline7750_0() {
       super();
     }
 
@@ -78,10 +78,10 @@ public class SEnum_MemberOperation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_7750_fu2qd096(editorContext, node);
+      return this.createProperty_7750_0(editorContext, node);
     }
 
-    private EditorCell createProperty_7750_fu2qd096(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_7750_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("externalValue");
       provider.setNoTargetText("<no externalValue>");

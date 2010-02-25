@@ -18,17 +18,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class StringLiteralRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3179_ezjsrtfl(editorContext, node);
+    return this.createCollection_3179_0(editorContext, node);
   }
 
-  private EditorCell createCollection_3179_ezjsrtfl(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3179_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3179_ezjsrtfl");
-    editorCell.addEditorCell(this.createProperty_3179_ezjsrw0y(editorContext, node));
+    editorCell.setCellId("Collection_3179_0");
+    editorCell.addEditorCell(this.createProperty_3179_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createProperty_3179_ezjsrw0y(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_3179_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");

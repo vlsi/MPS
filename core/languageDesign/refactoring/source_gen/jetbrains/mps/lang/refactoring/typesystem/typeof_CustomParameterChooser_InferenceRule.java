@@ -28,14 +28,14 @@ public class typeof_CustomParameterChooser_InferenceRule extends AbstractInferen
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5934994956485865554", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5934994956485865546", true), (SNode) new typeof_CustomParameterChooser_InferenceRule.QuotationClass_8873_l523emnf4c6a().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5934994956485865546", true), (SNode) new typeof_CustomParameterChooser_InferenceRule.QuotationClass_8873_0().createNode(typeCheckingContext), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(chooser, "focusedComponent", true);
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5934994956485884205", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5934994956485884210", true), (SNode) new typeof_CustomParameterChooser_InferenceRule.QuotationClass_8873_l523emnf4c83().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5934994956485884210", true), (SNode) new typeof_CustomParameterChooser_InferenceRule.QuotationClass_8873_1().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -51,19 +51,19 @@ public class typeof_CustomParameterChooser_InferenceRule extends AbstractInferen
     return false;
   }
 
-  public static class QuotationClass_8873_l523emnf4c6a {
-    public QuotationClass_8873_l523emnf4c6a() {
+  public static class QuotationClass_8873_0 {
+    public QuotationClass_8873_0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8873_l523emnf4a30 = null;
+      SNode quotedNode_8873_0 = null;
       {
-        quotedNode_8873_l523emnf4a30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8873_l523emnf4a30 = quotedNode_8873_l523emnf4a30;
-        quotedNode1_8873_l523emnf4a30.addReference(SReference.create("classifier", quotedNode1_8873_l523emnf4a30, SModelReference.fromString("f:java_stub#javax.swing(javax.swing@java_stub)"), SNodeId.fromString("~JComponent")));
-        result = quotedNode1_8873_l523emnf4a30;
+        quotedNode_8873_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8873_0 = quotedNode_8873_0;
+        quotedNode1_8873_0.addReference(SReference.create("classifier", quotedNode1_8873_0, SModelReference.fromString("f:java_stub#javax.swing(javax.swing@java_stub)"), SNodeId.fromString("~JComponent")));
+        result = quotedNode1_8873_0;
       }
       return result;
     }
@@ -71,30 +71,30 @@ public class typeof_CustomParameterChooser_InferenceRule extends AbstractInferen
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8873_l523emnf4a30 = null;
+      SNode quotedNode_8873_0 = null;
       {
-        quotedNode_8873_l523emnf4a30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8873_l523emnf4a30 = quotedNode_8873_l523emnf4a30;
-        quotedNode1_8873_l523emnf4a30.addReference(SReference.create("classifier", quotedNode1_8873_l523emnf4a30, SModelReference.fromString("f:java_stub#javax.swing(javax.swing@java_stub)"), SNodeId.fromString("~JComponent")));
-        result = quotedNode1_8873_l523emnf4a30;
+        quotedNode_8873_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8873_0 = quotedNode_8873_0;
+        quotedNode1_8873_0.addReference(SReference.create("classifier", quotedNode1_8873_0, SModelReference.fromString("f:java_stub#javax.swing(javax.swing@java_stub)"), SNodeId.fromString("~JComponent")));
+        result = quotedNode1_8873_0;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_8873_l523emnf4c83 {
-    public QuotationClass_8873_l523emnf4c83() {
+  public static class QuotationClass_8873_1 {
+    public QuotationClass_8873_1() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8873_l523emnf4a36 = null;
+      SNode quotedNode_8873_1 = null;
       {
-        quotedNode_8873_l523emnf4a36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8873_l523emnf4a36 = quotedNode_8873_l523emnf4a36;
-        quotedNode1_8873_l523emnf4a36.addReference(SReference.create("classifier", quotedNode1_8873_l523emnf4a36, SModelReference.fromString("f:java_stub#javax.swing(javax.swing@java_stub)"), SNodeId.fromString("~JComponent")));
-        result = quotedNode1_8873_l523emnf4a36;
+        quotedNode_8873_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8873_1 = quotedNode_8873_1;
+        quotedNode1_8873_1.addReference(SReference.create("classifier", quotedNode1_8873_1, SModelReference.fromString("f:java_stub#javax.swing(javax.swing@java_stub)"), SNodeId.fromString("~JComponent")));
+        result = quotedNode1_8873_1;
       }
       return result;
     }
@@ -102,12 +102,12 @@ public class typeof_CustomParameterChooser_InferenceRule extends AbstractInferen
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8873_l523emnf4a36 = null;
+      SNode quotedNode_8873_1 = null;
       {
-        quotedNode_8873_l523emnf4a36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8873_l523emnf4a36 = quotedNode_8873_l523emnf4a36;
-        quotedNode1_8873_l523emnf4a36.addReference(SReference.create("classifier", quotedNode1_8873_l523emnf4a36, SModelReference.fromString("f:java_stub#javax.swing(javax.swing@java_stub)"), SNodeId.fromString("~JComponent")));
-        result = quotedNode1_8873_l523emnf4a36;
+        quotedNode_8873_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8873_1 = quotedNode_8873_1;
+        quotedNode1_8873_1.addReference(SReference.create("classifier", quotedNode1_8873_1, SModelReference.fromString("f:java_stub#javax.swing(javax.swing@java_stub)"), SNodeId.fromString("~JComponent")));
+        result = quotedNode1_8873_1;
       }
       return result;
     }
