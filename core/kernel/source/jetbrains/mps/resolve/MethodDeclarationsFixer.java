@@ -187,15 +187,17 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
     Map<TypeVariableDeclaration, Type> typeByTypeVar = getTypeByTypeVar(methodCall);
 
-    List<? extends BaseMethodDeclaration> methodDeclarationsGoodParams = MethodResolveUtil.selectByParmCount(candidates, actualArgs);
+    jetbrains.mps.util.Pair<List<? extends BaseMethodDeclaration>,Boolean> parmCountPair = MethodResolveUtil.selectByParmCountReportNoGoodMethod(candidates, actualArgs);
+    List<? extends BaseMethodDeclaration> methodDeclarationsGoodParams = parmCountPair.o1;
     BaseMethodDeclaration newTarget = null;
-    boolean good = true;
+    boolean good;
     if (methodDeclarationsGoodParams.size() == 1) {
       newTarget = methodDeclarationsGoodParams.get(0);
+      good = parmCountPair.o2;
     } else {
-      jetbrains.mps.util.Pair<BaseMethodDeclaration, Boolean> pair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethod(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
-      newTarget = pair.o1;
-      good = pair.o2;
+      jetbrains.mps.util.Pair<BaseMethodDeclaration, Boolean> parmTypesPair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethod(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
+      newTarget = parmTypesPair.o1;
+      good = parmTypesPair.o2;
     }
     if (newTarget != null) {
       if (baseMethodDeclaration == null || (good && newTarget.getNode() != baseMethodDeclaration.getNode())) {
