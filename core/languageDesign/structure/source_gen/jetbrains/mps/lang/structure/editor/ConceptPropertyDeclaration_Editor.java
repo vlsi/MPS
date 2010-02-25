@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class ConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_4303_eijnr5bw(editorContext, node);
+    return this.createError_4303_0(editorContext, node);
   }
 
-  private EditorCell createError_4303_eijnr5bw(EditorContext editorContext, SNode node) {
+  private EditorCell createError_4303_0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose property type>");
-    editorCell.setCellId("Error_4303_eijnr5bw");
+    editorCell.setCellId("Error_4303_0");
     return editorCell;
   }
 }

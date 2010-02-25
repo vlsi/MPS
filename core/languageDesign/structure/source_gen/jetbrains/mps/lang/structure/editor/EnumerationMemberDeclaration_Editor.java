@@ -23,41 +23,41 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9117_dty57ecq(editorContext, node);
+    return this.createCollection_9117_0(editorContext, node);
   }
 
-  private EditorCell createCollection_9117_dty57ecq(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9117_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9117_dty57ecq");
-    if (renderingCondition9117_fa5z97is(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_9117_fa5z7zbj(editorContext, node));
+    editorCell.setCellId("Collection_9117_0");
+    if (renderingCondition9117_1(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_9117_1(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_9117_eu31nc1e(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9117_dty57ecw(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9117_eu31nrrv(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9117_dty57ecu(editorContext, node));
-    if (renderingCondition9117_eu31glic(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_9117_dty57ecy(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9117_1(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_9117_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9117_2(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_9117_0(editorContext, node));
+    if (renderingCondition9117_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_9117_0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_9117_fa5z7zbj(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9117_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9117_fa5z7zbj");
+    editorCell.setCellId("Collection_9117_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9117_fa5z8702(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9117_fa5z8nos(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9117_fk5ure4f(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9117_3(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_9117_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9117_4(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_dty57ecy(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9117_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    (default)");
-    editorCell.setCellId("Constant_9117_dty57ecy");
+    editorCell.setCellId("Constant_9117_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -67,9 +67,9 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_eu31nc1e(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9117_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value");
-    editorCell.setCellId("Constant_9117_eu31nc1e");
+    editorCell.setCellId("Constant_9117_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -80,9 +80,9 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_eu31nrrv(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9117_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  presentation");
-    editorCell.setCellId("Constant_9117_eu31nrrv");
+    editorCell.setCellId("Constant_9117_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -93,9 +93,9 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_fa5z8702(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9117_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "identifier");
-    editorCell.setCellId("Constant_9117_fa5z8702");
+    editorCell.setCellId("Constant_9117_3");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -106,14 +106,14 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_fk5ure4f(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9117_4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_9117_fk5ure4f");
+    editorCell.setCellId("Constant_9117_4");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_9117_dty57ecu(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9117_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("externalValue");
     provider.setNoTargetText("<no external value>");
@@ -136,7 +136,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_9117_dty57ecw(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9117_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("internalValue");
     provider.setNoTargetText("<NULL>");
@@ -160,7 +160,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_9117_fa5z8nos(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9117_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("javaIdentifier");
     provider.setNoTargetText("<no identifier>");
@@ -184,11 +184,11 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition9117_eu31glic(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9117_0(SNode node, EditorContext editorContext, IScope scope) {
     return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
   }
 
-  private static boolean renderingCondition9117_fa5z97is(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9117_1(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberIdentifierPolicy", "custom", "derive_from_presentation");
   }
 }
