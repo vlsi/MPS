@@ -18,32 +18,32 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CellModel_BlockStart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_1215_0(editorContext, node);
+    return this.createProperty_1215_fal2vnjh(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1215_0(editorContext, node);
+    return this.createCollection_1215_fal2wkn2(editorContext, node);
   }
 
-  private EditorCell createCollection_1215_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1215_fal2wkn2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_1215_0");
+    editorCell.setCellId("Collection_1215_fal2wkn2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createComponent_1215_0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_1215_fhx9buaz(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_1215_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_1215_fhx9buaz(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _CellModel_Common(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createProperty_1215_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_1215_fal2vnjh(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("openBrace");
     provider.setNoTargetText("{");

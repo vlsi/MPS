@@ -18,7 +18,7 @@ public class Styles_StyleSheet {
     Style style = new Style(cell);
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, new AttributeCalculator<Boolean>() {
       public Boolean calculate(EditorCell cell) {
-        return Styles_StyleSheet._StyleParameter_QueryFunction_7582_0((cell == null ?
+        return Styles_StyleSheet._StyleParameter_QueryFunction_7582_fsg2h571((cell == null ?
           null :
           cell.getSNode()
         ), (cell == null ?
@@ -29,7 +29,7 @@ public class Styles_StyleSheet {
     });
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, new AttributeCalculator<Boolean>() {
       public Boolean calculate(EditorCell cell) {
-        return Styles_StyleSheet._StyleParameter_QueryFunction_7582_1((cell == null ?
+        return Styles_StyleSheet._StyleParameter_QueryFunction_7582_fsg2hv0v((cell == null ?
           null :
           cell.getSNode()
         ), (cell == null ?
@@ -40,7 +40,7 @@ public class Styles_StyleSheet {
     });
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, new AttributeCalculator<Boolean>() {
       public Boolean calculate(EditorCell cell) {
-        return Styles_StyleSheet._StyleParameter_QueryFunction_7582_2((cell == null ?
+        return Styles_StyleSheet._StyleParameter_QueryFunction_7582_fsg3efib((cell == null ?
           null :
           cell.getSNode()
         ), (cell == null ?
@@ -116,7 +116,7 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
       public Boolean calculate(EditorCell cell) {
-        return Styles_StyleSheet._StyleParameter_QueryFunction_7582_3((cell == null ?
+        return Styles_StyleSheet._StyleParameter_QueryFunction_7582_xilj3fm55xef((cell == null ?
           null :
           cell.getSNode()
         ), (cell == null ?
@@ -128,14 +128,14 @@ public class Styles_StyleSheet {
     return style;
   }
 
-  private static boolean _StyleParameter_QueryFunction_7582_0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_7582_fsg2h571(SNode node, EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
     return EditorCellModel_Behavior.call_isIndented_1237383418148(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
   }
 
-  private static boolean _StyleParameter_QueryFunction_7582_1(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_7582_fsg2hv0v(SNode node, EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
@@ -151,14 +151,14 @@ public class Styles_StyleSheet {
     return false;
   }
 
-  private static boolean _StyleParameter_QueryFunction_7582_2(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_7582_fsg3efib(SNode node, EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
     return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
   }
 
-  private static boolean _StyleParameter_QueryFunction_7582_3(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_7582_xilj3fm55xef(SNode node, EditorContext editorContext) {
     return true;
   }
 }

@@ -19,26 +19,26 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1626_0(editorContext, node);
+    return this.createCollection_1626_fi60ar0m(editorContext, node);
   }
 
-  private EditorCell createCollection_1626_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1626_fi60ar0m(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1626_0");
-    editorCell.addEditorCell(this.createConceptProperty_1626_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1626_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_1626_0(editorContext, node));
+    editorCell.setCellId("Collection_1626_fi60ar0m");
+    editorCell.addEditorCell(this.createConceptProperty_1626_fi60ass1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1626_fi60au2z(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_1626_fi60avqh(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1626_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1626_fi60au2z(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_1626_0");
+    editorCell.setCellId("Constant_1626_fi60au2z");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_1626_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_1626_fi60ass1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -47,7 +47,7 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new FloatStyleClassItem_Editor.FloatStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new FloatStyleClassItem_Editor.FloatStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenuflgm5hre()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -58,7 +58,7 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_1626_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_1626_fi60avqh(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -76,8 +76,8 @@ public class FloatStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class FloatStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public FloatStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
+  public static class FloatStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenuflgm5hre extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public FloatStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenuflgm5hre() {
     }
 
     public String getReplacementConceptName() {

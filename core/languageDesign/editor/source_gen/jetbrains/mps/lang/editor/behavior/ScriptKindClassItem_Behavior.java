@@ -13,29 +13,29 @@ public class ScriptKindClassItem_Behavior {
 
   public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     do {
-      SNode matchedNode_3509_0 = SNodeOperations.getParent(cellModel);
+      SNode matchedNode_3509_1qpwi56afaxm6 = SNodeOperations.getParent(cellModel);
       {
-        boolean matches_3509_0 = false;
+        boolean matches_3509_1qpwi56afaxm8 = false;
         {
-          SNode matchingNode_3509_0 = SNodeOperations.getParent(cellModel);
-          if (matchingNode_3509_0 != null) {
-            matches_3509_0 = SModelUtil_new.isAssignableConcept(matchingNode_3509_0.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
+          SNode matchingNode_3509_1qpwi56afaxm8 = SNodeOperations.getParent(cellModel);
+          if (matchingNode_3509_1qpwi56afaxm8 != null) {
+            matches_3509_1qpwi56afaxm8 = SModelUtil_new.isAssignableConcept(matchingNode_3509_1qpwi56afaxm8.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
           }
         }
-        if (matches_3509_0) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_3509_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Superscript");
+        if (matches_3509_1qpwi56afaxm8) {
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_3509_1qpwi56afaxm6, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Superscript");
         }
       }
       {
-        boolean matches_3509_1 = false;
+        boolean matches_3509_1qpwi56afaxmh = false;
         {
-          SNode matchingNode_3509_1 = SNodeOperations.getParent(cellModel);
-          if (matchingNode_3509_1 != null) {
-            matches_3509_1 = SModelUtil_new.isAssignableConcept(matchingNode_3509_1.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole");
+          SNode matchingNode_3509_1qpwi56afaxmh = SNodeOperations.getParent(cellModel);
+          if (matchingNode_3509_1qpwi56afaxmh != null) {
+            matches_3509_1qpwi56afaxmh = SModelUtil_new.isAssignableConcept(matchingNode_3509_1qpwi56afaxmh.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole");
           }
         }
-        if (matches_3509_1) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_3509_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Superscript");
+        if (matches_3509_1qpwi56afaxmh) {
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_3509_1qpwi56afaxm6, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Superscript");
         }
       }
       return false;

@@ -27,43 +27,43 @@ import jetbrains.mps.smodel.SModel;
 
 public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3813_0(editorContext, node);
+    return this.createCollection_3813_frxipro2(editorContext, node);
   }
 
-  private EditorCell createCollection_3813_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3813_frxipro2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3813_0");
-    editorCell.addEditorCell(this.createConceptProperty_3813_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3813_0(editorContext, node));
-    if (renderingCondition3813_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createProperty_3813_0(editorContext, node));
+    editorCell.setCellId("Collection_3813_frxipro2");
+    editorCell.addEditorCell(this.createConceptProperty_3813_frxjml9d(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3813_frxiq1tz(editorContext, node));
+    if (renderingCondition3813_fsrt0fja(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createProperty_3813_fsrrwrag(editorContext, node));
     }
-    if (renderingCondition3813_2(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_3813_1(editorContext, node));
+    if (renderingCondition3813_18xv807wphaop(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_3813_18xv807wphaon(editorContext, node));
     }
-    if (renderingCondition3813_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_3813_0(editorContext, node));
+    if (renderingCondition3813_fsq078mi(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_3813_fs0ingdz(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_3813_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3813_frxiq1tz(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_3813_0");
+    editorCell.setCellId("Constant_3813_frxiq1tz");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3813_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3813_18xv807wphaon(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null");
-    editorCell.setCellId("Constant_3813_1");
+    editorCell.setCellId("Constant_3813_18xv807wphaon");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu18xv807wpieir()}));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_3813_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_3813_frxjml9d(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -82,7 +82,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_3813_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_3813_fs0ingdz(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
@@ -102,7 +102,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_3813_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_3813_fsrrwrag(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("labelName");
     provider.setNoTargetText("<no labelName>");
@@ -110,7 +110,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_labelName");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu18xv807wpiej6()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -121,20 +121,20 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition3813_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3813_fsq078mi(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) != null;
   }
 
-  private static boolean renderingCondition3813_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3813_fsrt0fja(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) == null && !(SPropertyOperations.getBoolean(node, "hasNoLabel"));
   }
 
-  private static boolean renderingCondition3813_2(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition3813_18xv807wphaop(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "query", true) == null) && SPropertyOperations.getBoolean(node, "hasNoLabel");
   }
 
-  public static class MatchingLabelStyleClassItem_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
-    public MatchingLabelStyleClassItem_generic_cellMenu0() {
+  public static class MatchingLabelStyleClassItem_generic_cellMenu18xv807wpieir extends AbstractCellMenuPart_Generic_Item {
+    public MatchingLabelStyleClassItem_generic_cellMenu18xv807wpieir() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -146,8 +146,8 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class MatchingLabelStyleClassItem_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
-    public MatchingLabelStyleClassItem_generic_cellMenu1() {
+  public static class MatchingLabelStyleClassItem_generic_cellMenu18xv807wpiej6 extends AbstractCellMenuPart_Generic_Item {
+    public MatchingLabelStyleClassItem_generic_cellMenu18xv807wpiej6() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {

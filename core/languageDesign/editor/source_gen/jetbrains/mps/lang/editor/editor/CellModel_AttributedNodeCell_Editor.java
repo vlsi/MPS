@@ -15,43 +15,43 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5832_1(editorContext, node);
+    return this.createCollection_5832_eo8fhyli(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5832_0(editorContext, node);
+    return this.createCollection_5832_eo8fhnsc(editorContext, node);
   }
 
-  private EditorCell createCollection_5832_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5832_eo8fhnsc(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5832_0");
+    editorCell.setCellId("Collection_5832_eo8fhnsc");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createComponent_5832_0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_5832_fhx99wgp(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5832_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5832_eo8fhyli(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5832_1");
+    editorCell.setCellId("Collection_5832_eo8fhyli");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
-    editorCell.addEditorCell(this.createConstant_5832_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5832_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5832_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5832_eo8fhylj(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5832_eo8fhylk(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5832_eo8fhyll(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_5832_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_5832_fhx99wgp(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _CellModel_Common(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_5832_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5832_eo8fhylj(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[>");
-    editorCell.setCellId("Constant_5832_0");
+    editorCell.setCellId("Constant_5832_eo8fhylj");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -62,17 +62,17 @@ public class CellModel_AttributedNodeCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5832_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5832_eo8fhylk(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed node");
-    editorCell.setCellId("Constant_5832_1");
+    editorCell.setCellId("Constant_5832_eo8fhylk");
     Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5832_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5832_eo8fhyll(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<]");
-    editorCell.setCellId("Constant_5832_2");
+    editorCell.setCellId("Constant_5832_eo8fhyll");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);

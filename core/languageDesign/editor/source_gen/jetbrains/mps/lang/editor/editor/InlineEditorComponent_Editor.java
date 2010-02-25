@@ -17,21 +17,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InlineEditorComponent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2949_0(editorContext, node);
+    return this.createCollection_2949_dvwm408h(editorContext, node);
   }
 
-  private EditorCell createCollection_2949_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2949_dvwm408h(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2949_0");
+    editorCell.setCellId("Collection_2949_dvwm408h");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
-    editorCell.addEditorCell(this.createConstant_2949_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2949_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2949_dw0hbiw6(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2949_ejt1dwz8(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2949_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2949_dw0hbiw6(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
-    editorCell.setCellId("Constant_2949_0");
+    editorCell.setCellId("Constant_2949_dw0hbiw6");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -41,7 +41,7 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2949_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2949_ejt1dwz8(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("cellModel");
     provider.setNoTargetText("<no cellModel>");

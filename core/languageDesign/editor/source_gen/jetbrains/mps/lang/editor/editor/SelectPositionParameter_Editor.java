@@ -15,33 +15,33 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SelectPositionParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0936_0(editorContext, node);
+    return this.createCollection_0936_fbushd9m(editorContext, node);
   }
 
-  private EditorCell createCollection_0936_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0936_fbushd9m(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0936_0");
-    editorCell.addEditorCell(this.createConstant_0936_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0936_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0936_0(editorContext, node));
+    editorCell.setCellId("Collection_0936_fbushd9m");
+    editorCell.addEditorCell(this.createConstant_0936_fbushdsr(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0936_fbushg9s(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_0936_fbushhpx(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0936_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0936_fbushdsr(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "position");
-    editorCell.setCellId("Constant_0936_0");
+    editorCell.setCellId("Constant_0936_fbushdsr");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0936_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0936_fbushg9s(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_0936_1");
+    editorCell.setCellId("Constant_0936_fbushg9s");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_0936_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_0936_fbushhpx(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("position");
     provider.setNoTargetText("<no position>");

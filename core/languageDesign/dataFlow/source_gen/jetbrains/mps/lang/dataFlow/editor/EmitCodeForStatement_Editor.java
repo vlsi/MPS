@@ -15,35 +15,35 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4758_0(editorContext, node);
+    return this.createCollection_4758_fe8jm52y(editorContext, node);
   }
 
-  private EditorCell createCollection_4758_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4758_fe8jm52y(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4758_0");
-    editorCell.addEditorCell(this.createConstant_4758_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4758_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4758_0(editorContext, node));
+    editorCell.setCellId("Collection_4758_fe8jm52y");
+    editorCell.addEditorCell(this.createConstant_4758_fe8jm5op(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4758_fe8jm6rd(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4758_fe8jm7vt(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4758_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4758_fe8jm5op(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "code");
-    editorCell.setCellId("Constant_4758_0");
+    editorCell.setCellId("Constant_4758_fe8jm5op");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4758_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4758_fe8jm6rd(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
-    editorCell.setCellId("Constant_4758_1");
+    editorCell.setCellId("Constant_4758_fe8jm6rd");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_4758_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4758_fe8jm7vt(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("codeFor");
     provider.setNoTargetText("<no codeFor>");

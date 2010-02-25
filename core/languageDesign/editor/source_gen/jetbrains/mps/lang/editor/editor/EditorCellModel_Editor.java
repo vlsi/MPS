@@ -15,27 +15,27 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class EditorCellModel_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_1982_0(editorContext, node);
+    return this.createError_1982_dskj1rtq(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1982_0(editorContext, node);
+    return this.createCollection_1982_dskj1rto(editorContext, node);
   }
 
-  private EditorCell createCollection_1982_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1982_dskj1rto(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_1982_0");
+    editorCell.setCellId("Collection_1982_dskj1rto");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1982_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1982_dskj1rtp(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1982_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1982_dskj1rtp(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "< abstract cell >");
-    editorCell.setCellId("Constant_1982_0");
+    editorCell.setCellId("Constant_1982_dskj1rtp");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
@@ -46,9 +46,9 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createError_1982_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_1982_dskj1rtq(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose cell model>");
-    editorCell.setCellId("Error_1982_0");
+    editorCell.setCellId("Error_1982_dskj1rtq");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
     return editorCell;
   }

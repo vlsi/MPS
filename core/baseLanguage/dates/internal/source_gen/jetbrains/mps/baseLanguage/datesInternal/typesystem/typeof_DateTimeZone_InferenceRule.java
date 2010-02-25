@@ -23,7 +23,7 @@ public class typeof_DateTimeZone_InferenceRule extends AbstractInferenceRule_Run
       SNode _nodeToCheck_1029348928467 = zone;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e8ab0d3d-755b-484a-bfcc-496dbc9af2ce(jetbrains.mps.baseLanguage.datesInternal.typesystem)", "1238686218519", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e8ab0d3d-755b-484a-bfcc-496dbc9af2ce(jetbrains.mps.baseLanguage.datesInternal.typesystem)", "1238686214063", true), (SNode) new typeof_DateTimeZone_InferenceRule.QuotationClass_3957_0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e8ab0d3d-755b-484a-bfcc-496dbc9af2ce(jetbrains.mps.baseLanguage.datesInternal.typesystem)", "1238686214063", true), (SNode) new typeof_DateTimeZone_InferenceRule.QuotationClass_3957_l523emnefvyq().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -39,18 +39,18 @@ public class typeof_DateTimeZone_InferenceRule extends AbstractInferenceRule_Run
     return false;
   }
 
-  public static class QuotationClass_3957_0 {
-    public QuotationClass_3957_0() {
+  public static class QuotationClass_3957_l523emnefvyq {
+    public QuotationClass_3957_l523emnefvyq() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3957_0 = null;
+      SNode quotedNode_3957_l523emnefvxa = null;
       {
-        quotedNode_3957_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeZoneType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3957_0 = quotedNode_3957_0;
-        result = quotedNode1_3957_0;
+        quotedNode_3957_l523emnefvxa = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeZoneType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3957_l523emnefvxa = quotedNode_3957_l523emnefvxa;
+        result = quotedNode1_3957_l523emnefvxa;
       }
       return result;
     }
@@ -58,11 +58,11 @@ public class typeof_DateTimeZone_InferenceRule extends AbstractInferenceRule_Run
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3957_0 = null;
+      SNode quotedNode_3957_l523emnefvxa = null;
       {
-        quotedNode_3957_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeZoneType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3957_0 = quotedNode_3957_0;
-        result = quotedNode1_3957_0;
+        quotedNode_3957_l523emnefvxa = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeZoneType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3957_l523emnefvxa = quotedNode_3957_l523emnefvxa;
+        result = quotedNode1_3957_l523emnefvxa;
       }
       return result;
     }

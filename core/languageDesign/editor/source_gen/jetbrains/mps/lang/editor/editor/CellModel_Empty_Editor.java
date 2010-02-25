@@ -17,42 +17,42 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CellModel_Empty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4201_0(editorContext, node);
+    return this.createCollection_4201_1nzp6whr1asqq(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4201_1(editorContext, node);
+    return this.createCollection_4201_1r5w89bsx1vsl(editorContext, node);
   }
 
-  private EditorCell createCollection_4201_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4201_1nzp6whr1asqq(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4201_0");
+    editorCell.setCellId("Collection_4201_1nzp6whr1asqq");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createConceptProperty_4201_0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_4201_1nzp6whr1asqs(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4201_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4201_1r5w89bsx1vsl(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_4201_1");
+    editorCell.setCellId("Collection_4201_1r5w89bsx1vsl");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createComponent_4201_0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_4201_1r5w89bsx1vsm(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_4201_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_4201_1r5w89bsx1vsm(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _CellModel_Common(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_4201_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_4201_1nzp6whr1asqs(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
