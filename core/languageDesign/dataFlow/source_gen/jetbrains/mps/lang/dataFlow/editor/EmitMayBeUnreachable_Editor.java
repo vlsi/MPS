@@ -17,21 +17,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5949_fe9vcg2e(editorContext, node);
+    return this.createCollection_5949_0(editorContext, node);
   }
 
-  private EditorCell createCollection_5949_fe9vcg2e(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5949_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5949_fe9vcg2e");
-    editorCell.addEditorCell(this.createConstant_5949_fe9vdkto(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5949_fe9vcz6e(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5949_fe9vdr4a(editorContext, node));
+    editorCell.setCellId("Collection_5949_0");
+    editorCell.addEditorCell(this.createConstant_5949_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5949_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5949_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5949_fe9vdkto(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5949_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_5949_fe9vdkto");
+    editorCell.setCellId("Constant_5949_0");
     DataFlow_StyleSheet.getMayBeUnreachable(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -42,9 +42,9 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5949_fe9vdr4a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5949_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_5949_fe9vdr4a");
+    editorCell.setCellId("Constant_5949_1");
     DataFlow_StyleSheet.getMayBeUnreachable(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -55,7 +55,7 @@ public class EmitMayBeUnreachable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5949_fe9vcz6e(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5949_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("emitStatement");
     provider.setNoTargetText("<no emitStatement>");

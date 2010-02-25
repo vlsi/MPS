@@ -16,26 +16,26 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class PositionStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3721_firj564z(editorContext, node);
+    return this.createCollection_3721_0(editorContext, node);
   }
 
-  private EditorCell createCollection_3721_firj564z(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3721_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3721_firj564z");
-    editorCell.addEditorCell(this.createConceptProperty_3721_firj5650(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3721_firj5651(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_3721_firj5652(editorContext, node));
+    editorCell.setCellId("Collection_3721_0");
+    editorCell.addEditorCell(this.createConceptProperty_3721_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3721_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_3721_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3721_firj5651(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3721_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_3721_firj5651");
+    editorCell.setCellId("Constant_3721_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_3721_firj5650(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_3721_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -54,7 +54,7 @@ public class PositionStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_3721_firj5652(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_3721_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("position");
     provider.setNoTargetText("<no position>");

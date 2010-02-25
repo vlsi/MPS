@@ -20,60 +20,60 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class CellActionMapItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7515_ejhsmphp(editorContext, node);
+    return this.createCollection_7515_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7515_ejhsmphp(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7515_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7515_ejhsmphp");
-    editorCell.addEditorCell(this.createConstant_7515_ejhsmphq(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7515_ejhsnbjo(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_7515_ejhsmphr(editorContext, node));
+    editorCell.setCellId("Collection_7515_0");
+    editorCell.addEditorCell(this.createConstant_7515_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_7515_0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_7515_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7515_ejhsmphr(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7515_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_7515_ejhsmphr");
+    editorCell.setCellId("Collection_7515_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createCollection_7515_ejhv3wta(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_7515_ejhsmpi4(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_7515_3(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_7515_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7515_ejhsmpi4(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7515_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7515_ejhsmpi4");
+    editorCell.setCellId("Collection_7515_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7515_ejhsmpi5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7515_ejhsmpi6(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7515_ejhsmpi7(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7515_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7515_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7515_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7515_ejhv3wta(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7515_3(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7515_ejhv3wta");
+    editorCell.setCellId("Collection_7515_3");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7515_ejhv3wtb(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7515_ejhv3wtc(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7515_ejhv3wtd(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7515_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7515_4(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_7515_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7515_ejhsmphq(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7515_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "action");
-    editorCell.setCellId("Constant_7515_ejhsmphq");
+    editorCell.setCellId("Constant_7515_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, false);
@@ -82,16 +82,16 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7515_ejhsmpi5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7515_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "execute");
-    editorCell.setCellId("Constant_7515_ejhsmpi5");
+    editorCell.setCellId("Constant_7515_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7515_ejhsmpi6(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7515_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_7515_ejhsmpi6");
+    editorCell.setCellId("Constant_7515_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -100,16 +100,16 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7515_ejhv3wtb(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7515_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description");
-    editorCell.setCellId("Constant_7515_ejhv3wtb");
+    editorCell.setCellId("Constant_7515_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7515_ejhv3wtc(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7515_4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_7515_ejhv3wtc");
+    editorCell.setCellId("Constant_7515_4");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -118,7 +118,7 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7515_ejhsmpi7(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7515_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("executeFunction");
     provider.setNoTargetText("<no executeFunction>");
@@ -135,7 +135,7 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_7515_ejhsnbjo(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_7515_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("actionId");
     provider.setNoTargetText("<no actionId>");
@@ -157,7 +157,7 @@ public class CellActionMapItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_7515_ejhv3wtd(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_7515_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("description");
     provider.setNoTargetText("<no description>");

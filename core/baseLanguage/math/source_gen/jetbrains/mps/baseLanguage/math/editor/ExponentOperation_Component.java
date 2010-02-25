@@ -40,19 +40,19 @@ public class ExponentOperation_Component extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1658_1j4jvlw6k389v(editorContext, node);
+    return this.createCollection_1658_0(editorContext, node);
   }
 
-  private EditorCell createCollection_1658_1j4jvlw6k389v(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1658_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
-    editorCell.setCellId("Collection_1658_1j4jvlw6k389v");
-    editorCell.addEditorCell(this.createRefNode_1658_1j4jvlw6k389w(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_1658_1j4jvlw6k389x(editorContext, node));
-    editorCell.addEditorCell(this.createEmpty_1658_1nzp6whr1a5pf(editorContext, node));
+    editorCell.setCellId("Collection_1658_0");
+    editorCell.addEditorCell(this.createRefNode_1658_0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_1658_0(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_1658_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_1658_1j4jvlw6k389w(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1658_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expr");
     provider.setNoTargetText("<no expr>");
@@ -69,7 +69,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_1658_1j4jvlw6k389x(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_1658_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("operationSymbol");
     provider.setNoTargetText("<no operationSymbol>");
@@ -82,7 +82,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     }
     deleteUpperIndex.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu1j4jvlw6k38a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -93,9 +93,9 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createEmpty_1658_1nzp6whr1a5pf(EditorContext editorContext, SNode node) {
+  private EditorCell createEmpty_1658_0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setCellId("Empty_1658_1nzp6whr1a5pf");
+    editorCell.setCellId("Empty_1658_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -103,8 +103,8 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public static class ExponentialOperation_generic_cellMenu1j4jvlw6k38a0 extends AbstractCellMenuPart_Generic_Group {
-    public ExponentialOperation_generic_cellMenu1j4jvlw6k38a0() {
+  public static class ExponentialOperation_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
+    public ExponentialOperation_generic_cellMenu0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

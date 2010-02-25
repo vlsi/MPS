@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class TemplateSwitchReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1583_l523emnexng7(editorContext, node);
+    return this.createCollection_1583_0(editorContext, node);
   }
 
-  private EditorCell createCollection_1583_l523emnexng7(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1583_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1583_l523emnexng7");
-    editorCell.addEditorCell(this.createRefCell_1583_l523emnexng4(editorContext, node));
+    editorCell.setCellId("Collection_1583_0");
+    editorCell.addEditorCell(this.createRefCell_1583_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_1583_l523emnexng4(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_1583_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("templateSwitch");
     provider.setNoTargetText("<choose switch>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateSwitchReference_Editor._Inline1583_l523emnexng5());
+    provider.setAuxiliaryCellProvider(new TemplateSwitchReference_Editor._Inline1583_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class TemplateSwitchReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline1583_l523emnexng5 extends InlineCellProvider {
-    public _Inline1583_l523emnexng5() {
+  public static class _Inline1583_0 extends InlineCellProvider {
+    public _Inline1583_0() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class TemplateSwitchReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_1583_l523emnexng6(editorContext, node);
+      return this.createProperty_1583_0(editorContext, node);
     }
 
-    private EditorCell createProperty_1583_l523emnexng6(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_1583_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

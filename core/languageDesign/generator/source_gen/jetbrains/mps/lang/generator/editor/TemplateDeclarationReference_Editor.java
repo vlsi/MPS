@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class TemplateDeclarationReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0479_l523emnexngc(editorContext, node);
+    return this.createCollection_0479_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0479_l523emnexngc(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0479_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0479_l523emnexngc");
-    editorCell.addEditorCell(this.createRefCell_0479_l523emnexng9(editorContext, node));
+    editorCell.setCellId("Collection_0479_0");
+    editorCell.addEditorCell(this.createRefCell_0479_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_0479_l523emnexng9(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0479_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("template");
     provider.setNoTargetText("<choose template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateDeclarationReference_Editor._Inline0479_l523emnexnga());
+    provider.setAuxiliaryCellProvider(new TemplateDeclarationReference_Editor._Inline0479_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class TemplateDeclarationReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0479_l523emnexnga extends InlineCellProvider {
-    public _Inline0479_l523emnexnga() {
+  public static class _Inline0479_0 extends InlineCellProvider {
+    public _Inline0479_0() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class TemplateDeclarationReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0479_l523emnexngb(editorContext, node);
+      return this.createProperty_0479_0(editorContext, node);
     }
 
-    private EditorCell createProperty_0479_l523emnexngb(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0479_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -17,52 +17,52 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5690_f91qoopi(editorContext, node);
+    return this.createCollection_5690_0(editorContext, node);
   }
 
-  private EditorCell createCollection_5690_f91qoopi(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5690_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5690_f91qoopi");
-    editorCell.addEditorCell(this.createCollection_5690_f91qoopj(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5690_f934i7yn(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5690_f91qow4z(editorContext, node));
+    editorCell.setCellId("Collection_5690_0");
+    editorCell.addEditorCell(this.createCollection_5690_1(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5690_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5690_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5690_f91qoopj(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5690_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5690_f91qoopj");
+    editorCell.setCellId("Collection_5690_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5690_f934iq4u(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5690_f91qq3hs(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5690_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5690_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5690_f934i7yn(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5690_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5690_f934i7yn");
+    editorCell.setCellId("Collection_5690_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5690_f93548fl(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5690_f934i7yq(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5690_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5690_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5690_f91qow4z(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5690_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5690_f91qow4z");
+    editorCell.setCellId("Constant_5690_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5690_f934iq4u(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5690_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "case:");
-    editorCell.setCellId("Constant_5690_f934iq4u");
+    editorCell.setCellId("Constant_5690_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
@@ -71,9 +71,9 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5690_f93548fl(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5690_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_5690_f93548fl");
+    editorCell.setCellId("Constant_5690_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -82,7 +82,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5690_f91qq3hs(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5690_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("conditionFunction");
     provider.setNoTargetText("<no conditionFunction>");
@@ -99,7 +99,7 @@ public class InlineSwitch_Case_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5690_f934i7yq(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5690_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("caseConsequence");
     provider.setNoTargetText("<no caseConsequence>");

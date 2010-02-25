@@ -17,20 +17,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9488_1gwewexg2b0lz(editorContext, node);
+    return this.createCollection_9488_0(editorContext, node);
   }
 
-  private EditorCell createCollection_9488_1gwewexg2b0lz(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9488_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9488_1gwewexg2b0lz");
-    editorCell.addEditorCell(this.createConceptProperty_9488_gufrzp3epod1(editorContext, node));
-    if (renderingCondition9488_1de4tu02199ac(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_9488_1de4tu02199ab(editorContext, node));
+    editorCell.setCellId("Collection_9488_0");
+    editorCell.addEditorCell(this.createConceptProperty_9488_0(editorContext, node));
+    if (renderingCondition9488_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_9488_0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9488_gufrzp3epod1(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_9488_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -50,7 +50,7 @@ public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9488_1de4tu02199ab(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9488_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("variableReference");
     provider.setNoTargetText("<no variableReference>");
@@ -67,7 +67,7 @@ public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition9488_1de4tu02199ac(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition9488_0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "variableReference", true) != null);
   }
 }

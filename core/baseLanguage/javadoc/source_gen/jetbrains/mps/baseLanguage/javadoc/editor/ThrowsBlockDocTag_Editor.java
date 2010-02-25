@@ -16,27 +16,27 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class ThrowsBlockDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5434_18i8xz7ldtf20(editorContext, node);
+    return this.createCollection_5434_0(editorContext, node);
   }
 
-  private EditorCell createCollection_5434_18i8xz7ldtf20(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5434_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5434_18i8xz7ldtf20");
-    editorCell.addEditorCell(this.createConstant_5434_18i8xz7ldtf23(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5434_1fwojygdyr1mm(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5434_18i8xz7ldzxuy(editorContext, node));
+    editorCell.setCellId("Collection_5434_0");
+    editorCell.addEditorCell(this.createConstant_5434_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5434_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5434_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5434_18i8xz7ldtf23(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5434_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@throws");
-    editorCell.setCellId("Constant_5434_18i8xz7ldtf23");
+    editorCell.setCellId("Constant_5434_0");
     DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_5434_18i8xz7ldzxuy(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_5434_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");
@@ -54,7 +54,7 @@ public class ThrowsBlockDocTag_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5434_1fwojygdyr1mm(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5434_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("exceptionType");
     provider.setNoTargetText("<no exceptionType>");

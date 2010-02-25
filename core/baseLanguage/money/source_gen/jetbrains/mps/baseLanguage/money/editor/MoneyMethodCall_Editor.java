@@ -17,18 +17,18 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class MoneyMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7315_f5mfw2rw(editorContext, node);
+    return this.createCollection_7315_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7315_f5mfw2rw(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7315_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7315_f5mfw2rw");
-    editorCell.addEditorCell(this.createRefNode_7315_f5mfw5l3(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_7315_f5mfwbg2(editorContext, node));
+    editorCell.setCellId("Collection_7315_0");
+    editorCell.addEditorCell(this.createRefNode_7315_0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_7315_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_7315_f5mfw5l3(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7315_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("instance");
     provider.setNoTargetText("<no instance>");
@@ -45,7 +45,7 @@ public class MoneyMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_7315_f5mfwbg2(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_7315_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

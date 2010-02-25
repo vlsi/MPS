@@ -20,44 +20,44 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5064_fbovm7ph(editorContext, node);
+    return this.createCollection_5064_0(editorContext, node);
   }
 
-  private EditorCell createCollection_5064_fbovm7ph(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5064_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5064_fbovm7ph");
-    editorCell.addEditorCell(this.createConstant_5064_fbovm8b8(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5064_fbovm9wl(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5064_fbowltjg(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_5064_fbovmopb(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5064_fbowlvrd(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_5064_fbowlxss(editorContext, node));
+    editorCell.setCellId("Collection_5064_0");
+    editorCell.addEditorCell(this.createConstant_5064_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5064_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5064_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_5064_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5064_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_5064_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5064_fbovm8b8(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5064_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
-    editorCell.setCellId("Constant_5064_fbovm8b8");
+    editorCell.setCellId("Constant_5064_0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5064_fbowltjg(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5064_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_5064_fbowltjg");
+    editorCell.setCellId("Constant_5064_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5064_fbowlvrd(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5064_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
-    editorCell.setCellId("Constant_5064_fbowlvrd");
+    editorCell.setCellId("Constant_5064_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_5064_fbovm9wl(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_5064_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -79,12 +79,12 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_5064_fbovmopb(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_5064_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("sourceConcept");
     provider.setNoTargetText("<no input concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline5064_fbovmopc());
+    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline5064_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -97,12 +97,12 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_5064_fbowlxss(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_5064_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("targetConcept");
     provider.setNoTargetText("<no output concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline5064_fbowlxst());
+    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline5064_1());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -115,8 +115,8 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline5064_fbovmopc extends InlineCellProvider {
-    public _Inline5064_fbovmopc() {
+  public static class _Inline5064_0 extends InlineCellProvider {
+    public _Inline5064_0() {
       super();
     }
 
@@ -125,10 +125,10 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_5064_fbovmq3q(editorContext, node);
+      return this.createProperty_5064_1(editorContext, node);
     }
 
-    private EditorCell createProperty_5064_fbovmq3q(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_5064_1(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -152,8 +152,8 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline5064_fbowlxst extends InlineCellProvider {
-    public _Inline5064_fbowlxst() {
+  public static class _Inline5064_1 extends InlineCellProvider {
+    public _Inline5064_1() {
       super();
     }
 
@@ -162,10 +162,10 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_5064_fbowm05y(editorContext, node);
+      return this.createProperty_5064_2(editorContext, node);
     }
 
-    private EditorCell createProperty_5064_fbowm05y(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_5064_2(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

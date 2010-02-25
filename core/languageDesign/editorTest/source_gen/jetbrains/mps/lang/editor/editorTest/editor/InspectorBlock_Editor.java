@@ -18,28 +18,28 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class InspectorBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9110_r7vot5bnrk6v(editorContext, node);
+    return this.createCollection_9110_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9110_r7vot5bnrk70(editorContext, node);
+    return this.createCollection_9110_1(editorContext, node);
   }
 
-  private EditorCell createCollection_9110_r7vot5bnrk6v(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9110_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9110_r7vot5bnrk6v");
-    editorCell.addEditorCell(this.createConceptProperty_9110_r7vot5bnzy8x(editorContext, node));
+    editorCell.setCellId("Collection_9110_0");
+    editorCell.addEditorCell(this.createConceptProperty_9110_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_9110_r7vot5bnrk70(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9110_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9110_r7vot5bnrk70");
-    editorCell.addEditorCell(this.createRefNode_9110_r7vot5bnrk73(editorContext, node));
+    editorCell.setCellId("Collection_9110_1");
+    editorCell.addEditorCell(this.createRefNode_9110_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_9110_r7vot5bnrk73(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9110_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("block");
     provider.setNoTargetText("<no block>");
@@ -56,7 +56,7 @@ public class InspectorBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9110_r7vot5bnzy8x(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_9110_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

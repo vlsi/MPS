@@ -14,7 +14,7 @@ public class Util {
   public static boolean isPlusMinusExpressionMoneyExpression(SNode expr) {
     SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "rightExpression", true));
     SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "leftExpression", true));
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new Util.QuotationClass_7074_l523emnej1as().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new Util.QuotationClass_7074_l523emnej19a().createNode())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new Util.QuotationClass_7074_1().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new Util.QuotationClass_7074_0().createNode())) {
       return true;
     }
     return false;
@@ -23,75 +23,75 @@ public class Util {
   public static boolean isMulDivExpressionMoneyExpression(SNode expr) {
     SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "rightExpression", true));
     SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "leftExpression", true));
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new Util.QuotationClass_7074_l523emnej1ds().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new Util.QuotationClass_7074_l523emnej1ca().createNode())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new Util.QuotationClass_7074_3().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new Util.QuotationClass_7074_2().createNode())) {
       return true;
     }
     return false;
   }
 
-  public static class QuotationClass_7074_l523emnej19a {
-    public QuotationClass_7074_l523emnej19a() {
+  public static class QuotationClass_7074_0 {
+    public QuotationClass_7074_0() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7074_l523emnej17z = null;
+      SNode quotedNode_7074_0 = null;
       {
-        quotedNode_7074_l523emnej17z = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7074_l523emnej17z = quotedNode_7074_l523emnej17z;
-        result = quotedNode1_7074_l523emnej17z;
+        quotedNode_7074_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7074_0 = quotedNode_7074_0;
+        result = quotedNode1_7074_0;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_7074_l523emnej1as {
-    public QuotationClass_7074_l523emnej1as() {
+  public static class QuotationClass_7074_1 {
+    public QuotationClass_7074_1() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7074_l523emnej187 = null;
+      SNode quotedNode_7074_1 = null;
       {
-        quotedNode_7074_l523emnej187 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7074_l523emnej187 = quotedNode_7074_l523emnej187;
-        result = quotedNode1_7074_l523emnej187;
+        quotedNode_7074_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7074_1 = quotedNode_7074_1;
+        result = quotedNode1_7074_1;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_7074_l523emnej1ca {
-    public QuotationClass_7074_l523emnej1ca() {
+  public static class QuotationClass_7074_2 {
+    public QuotationClass_7074_2() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7074_l523emnej18r = null;
+      SNode quotedNode_7074_2 = null;
       {
-        quotedNode_7074_l523emnej18r = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7074_l523emnej18r = quotedNode_7074_l523emnej18r;
-        result = quotedNode1_7074_l523emnej18r;
+        quotedNode_7074_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7074_2 = quotedNode_7074_2;
+        result = quotedNode1_7074_2;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_7074_l523emnej1ds {
-    public QuotationClass_7074_l523emnej1ds() {
+  public static class QuotationClass_7074_3 {
+    public QuotationClass_7074_3() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7074_l523emnej18z = null;
+      SNode quotedNode_7074_3 = null;
       {
-        quotedNode_7074_l523emnej18z = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7074_l523emnej18z = quotedNode_7074_l523emnej18z;
-        result = quotedNode1_7074_l523emnej18z;
+        quotedNode_7074_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7074_3 = quotedNode_7074_3;
+        result = quotedNode1_7074_3;
       }
       return result;
     }

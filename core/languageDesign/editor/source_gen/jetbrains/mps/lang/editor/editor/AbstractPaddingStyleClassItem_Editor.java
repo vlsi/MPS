@@ -19,27 +19,27 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2253_fnfy8rip(editorContext, node);
+    return this.createCollection_2253_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2253_fnfy8rip(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2253_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2253_fnfy8rip");
-    editorCell.addEditorCell(this.createConceptProperty_2253_fnfy8riq(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2253_fnfy8rit(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2253_fnfy8riu(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2253_fng5byyf(editorContext, node));
+    editorCell.setCellId("Collection_2253_0");
+    editorCell.addEditorCell(this.createConceptProperty_2253_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2253_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_2253_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_2253_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2253_fnfy8rit(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2253_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_2253_fnfy8rit");
+    editorCell.setCellId("Constant_2253_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2253_fnfy8riq(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_2253_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -48,7 +48,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new AbstractPaddingStyleClassItem_Editor.AbstractPaddingStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenufnfy8ris()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new AbstractPaddingStyleClassItem_Editor.AbstractPaddingStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -59,7 +59,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_2253_fnfy8riu(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_2253_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -77,7 +77,7 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_2253_fng5byyf(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_2253_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("measure");
     provider.setNoTargetText("<no measure>");
@@ -95,8 +95,8 @@ public class AbstractPaddingStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class AbstractPaddingStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenufnfy8ris extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public AbstractPaddingStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenufnfy8ris() {
+  public static class AbstractPaddingStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public AbstractPaddingStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

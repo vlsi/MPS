@@ -19,42 +19,42 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SideTranformWrapper_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0431_12tp9n8bcdb3u(editorContext, node);
+    return this.createCollection_0431_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0431_12tp9n8bcdb3u(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0431_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0431_12tp9n8bcdb3u");
-    editorCell.addEditorCell(this.createConstant_0431_12tp9n8bcmmt0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0431_12tp9n8bcdb42(editorContext, node));
-    if (renderingCondition0431_12tp9n8bcdb4j(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_0431_12tp9n8bcdb44(editorContext, node));
+    editorCell.setCellId("Collection_0431_0");
+    editorCell.addEditorCell(this.createConstant_0431_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0431_0(editorContext, node));
+    if (renderingCondition0431_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_0431_1(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_0431_12tp9n8bcmmt2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0431_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0431_12tp9n8bcdb44(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0431_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0431_12tp9n8bcdb44");
+    editorCell.setCellId("Collection_0431_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0431_12tp9n8bcdb49(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0431_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0431_12tp9n8bcdb49(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0431_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "right");
-    editorCell.setCellId("Constant_0431_12tp9n8bcdb49");
+    editorCell.setCellId("Constant_0431_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0431_12tp9n8bcmmt0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0431_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_0431_12tp9n8bcmmt0");
+    editorCell.setCellId("Constant_0431_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -63,9 +63,9 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0431_12tp9n8bcmmt2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0431_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_0431_12tp9n8bcmmt2");
+    editorCell.setCellId("Constant_0431_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -74,7 +74,7 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0431_12tp9n8bcdb42(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0431_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("child");
     provider.setNoTargetText("<no child>");
@@ -92,7 +92,7 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition0431_12tp9n8bcdb4j(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition0431_0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "rightOpen");
   }
 }

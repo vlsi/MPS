@@ -34,7 +34,7 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
       SNode _nodeToCheck_1029348928467 = node;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086114", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086119", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_5712_l523emnexauv().createNode(applicableConcept, typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1223982086119", true), (SNode) new typeof_ConceptFunctionParameter_node_InferenceRule.QuotationClass_5712_0().createNode(applicableConcept, typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -50,32 +50,32 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
     return false;
   }
 
-  public static class QuotationClass_5712_l523emnexauv {
-    public QuotationClass_5712_l523emnexauv() {
+  public static class QuotationClass_5712_0 {
+    public QuotationClass_5712_0() {
     }
 
-    public SNode createNode(Object parameter_5712_l523emnex9qv, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_5712_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5712_l523emnex9qt = null;
+      SNode quotedNode_5712_0 = null;
       {
-        quotedNode_5712_l523emnex9qt = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5712_l523emnex9qt = quotedNode_5712_l523emnex9qt;
-        quotedNode1_5712_l523emnex9qt.setReferent("concept", (SNode) parameter_5712_l523emnex9qv);
-        result = quotedNode1_5712_l523emnex9qt;
+        quotedNode_5712_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5712_0 = quotedNode_5712_0;
+        quotedNode1_5712_0.setReferent("concept", (SNode) parameter_5712_0);
+        result = quotedNode1_5712_0;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_5712_l523emnex9qv) {
+    public SNode createNode(Object parameter_5712_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5712_l523emnex9qt = null;
+      SNode quotedNode_5712_0 = null;
       {
-        quotedNode_5712_l523emnex9qt = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5712_l523emnex9qt = quotedNode_5712_l523emnex9qt;
-        quotedNode1_5712_l523emnex9qt.setReferent("concept", (SNode) parameter_5712_l523emnex9qv);
-        result = quotedNode1_5712_l523emnex9qt;
+        quotedNode_5712_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5712_0 = quotedNode_5712_0;
+        quotedNode1_5712_0.setReferent("concept", (SNode) parameter_5712_0);
+        result = quotedNode1_5712_0;
       }
       return result;
     }

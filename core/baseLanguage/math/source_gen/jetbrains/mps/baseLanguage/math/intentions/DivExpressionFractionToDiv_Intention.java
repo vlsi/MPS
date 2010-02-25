@@ -41,53 +41,53 @@ public class DivExpressionFractionToDiv_Intention extends BaseIntention implemen
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNodeOperations.replaceWithAnother(node, new DivExpressionFractionToDiv_Intention.QuotationClass_9288_l523emnei6rc().createNode(SLinkOperations.getTarget(node, "denominator", true), SLinkOperations.getTarget(node, "numerator", true)));
+    SNodeOperations.replaceWithAnother(node, new DivExpressionFractionToDiv_Intention.QuotationClass_9288_0().createNode(SLinkOperations.getTarget(node, "denominator", true), SLinkOperations.getTarget(node, "numerator", true)));
   }
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.math.intentions";
   }
 
-  public static class QuotationClass_9288_l523emnei6rc {
-    public QuotationClass_9288_l523emnei6rc() {
+  public static class QuotationClass_9288_0 {
+    public QuotationClass_9288_0() {
     }
 
-    public SNode createNode(Object parameter_6693_fsbg4u6u, Object parameter_6693_fsbg4qxh) {
+    public SNode createNode(Object parameter_6693_0, Object parameter_6693_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6693_fsbg4mal = null;
-      SNode quotedNode_6693_fsbg4mam = null;
-      SNode quotedNode_6693_fsbg4man = null;
+      SNode quotedNode_6693_0 = null;
+      SNode quotedNode_6693_1 = null;
+      SNode quotedNode_6693_2 = null;
       {
-        quotedNode_6693_fsbg4mal = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6693_fsbg4mal = quotedNode_6693_fsbg4mal;
+        quotedNode_6693_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6693_0 = quotedNode_6693_0;
         {
-          quotedNode_6693_fsbg4mam = (SNode) parameter_6693_fsbg4u6u;
-          SNode quotedNode1_6693_fsbg4mam;
-          if (_parameterValues_129834374.contains(quotedNode_6693_fsbg4mam)) {
-            quotedNode1_6693_fsbg4mam = CopyUtil.copy(quotedNode_6693_fsbg4mam);
+          quotedNode_6693_1 = (SNode) parameter_6693_0;
+          SNode quotedNode1_6693_1;
+          if (_parameterValues_129834374.contains(quotedNode_6693_1)) {
+            quotedNode1_6693_1 = CopyUtil.copy(quotedNode_6693_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_6693_fsbg4mam);
-            quotedNode1_6693_fsbg4mam = quotedNode_6693_fsbg4mam;
+            _parameterValues_129834374.add(quotedNode_6693_1);
+            quotedNode1_6693_1 = quotedNode_6693_1;
           }
-          if (quotedNode1_6693_fsbg4mam != null) {
-            quotedNode_6693_fsbg4mal.addChild("rightExpression", HUtil.copyIfNecessary(quotedNode1_6693_fsbg4mam));
+          if (quotedNode1_6693_1 != null) {
+            quotedNode_6693_0.addChild("rightExpression", HUtil.copyIfNecessary(quotedNode1_6693_1));
           }
         }
         {
-          quotedNode_6693_fsbg4man = (SNode) parameter_6693_fsbg4qxh;
-          SNode quotedNode1_6693_fsbg4man;
-          if (_parameterValues_129834374.contains(quotedNode_6693_fsbg4man)) {
-            quotedNode1_6693_fsbg4man = CopyUtil.copy(quotedNode_6693_fsbg4man);
+          quotedNode_6693_2 = (SNode) parameter_6693_1;
+          SNode quotedNode1_6693_2;
+          if (_parameterValues_129834374.contains(quotedNode_6693_2)) {
+            quotedNode1_6693_2 = CopyUtil.copy(quotedNode_6693_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_6693_fsbg4man);
-            quotedNode1_6693_fsbg4man = quotedNode_6693_fsbg4man;
+            _parameterValues_129834374.add(quotedNode_6693_2);
+            quotedNode1_6693_2 = quotedNode_6693_2;
           }
-          if (quotedNode1_6693_fsbg4man != null) {
-            quotedNode_6693_fsbg4mal.addChild("leftExpression", HUtil.copyIfNecessary(quotedNode1_6693_fsbg4man));
+          if (quotedNode1_6693_2 != null) {
+            quotedNode_6693_0.addChild("leftExpression", HUtil.copyIfNecessary(quotedNode1_6693_2));
           }
         }
-        result = quotedNode1_6693_fsbg4mal;
+        result = quotedNode1_6693_0;
       }
       return result;
     }

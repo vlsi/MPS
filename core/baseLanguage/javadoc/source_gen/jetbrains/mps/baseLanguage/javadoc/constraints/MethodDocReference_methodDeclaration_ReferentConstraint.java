@@ -34,23 +34,23 @@ public class MethodDocReference_methodDeclaration_ReferentConstraint extends Bas
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IVisible") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true) == new MethodDocReference_methodDeclaration_ReferentConstraint.QuotationClass_1607_l523emneg2r7().createNode();
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IVisible") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true) == new MethodDocReference_methodDeclaration_ReferentConstraint.QuotationClass_1607_0().createNode();
       }
     });
   }
 
-  public static class QuotationClass_1607_l523emneg2r7 {
-    public QuotationClass_1607_l523emneg2r7() {
+  public static class QuotationClass_1607_0 {
+    public QuotationClass_1607_0() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0363_jcjdroc2jewk = null;
+      SNode quotedNode_0363_0 = null;
       {
-        quotedNode_0363_jcjdroc2jewk = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0363_jcjdroc2jewk = quotedNode_0363_jcjdroc2jewk;
-        result = quotedNode1_0363_jcjdroc2jewk;
+        quotedNode_0363_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0363_0 = quotedNode_0363_0;
+        result = quotedNode1_0363_0;
       }
       return result;
     }

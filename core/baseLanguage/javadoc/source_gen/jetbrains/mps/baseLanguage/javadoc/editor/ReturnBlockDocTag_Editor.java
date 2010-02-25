@@ -15,26 +15,26 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ReturnBlockDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8877_18i8xz7ldvyj6(editorContext, node);
+    return this.createCollection_8877_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8877_18i8xz7ldvyj6(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8877_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8877_18i8xz7ldvyj6");
-    editorCell.addEditorCell(this.createConstant_8877_18i8xz7ldvyj9(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_8877_18i8xz7ldvyjb(editorContext, node));
+    editorCell.setCellId("Collection_8877_0");
+    editorCell.addEditorCell(this.createConstant_8877_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_8877_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8877_18i8xz7ldvyj9(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8877_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@return");
-    editorCell.setCellId("Constant_8877_18i8xz7ldvyj9");
+    editorCell.setCellId("Constant_8877_0");
     DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_8877_18i8xz7ldvyjb(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_8877_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");

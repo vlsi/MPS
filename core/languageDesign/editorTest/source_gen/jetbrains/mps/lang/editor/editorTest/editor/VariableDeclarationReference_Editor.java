@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class VariableDeclarationReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6593_jut47ztfeyxs(editorContext, node);
+    return this.createCollection_6593_0(editorContext, node);
   }
 
-  private EditorCell createCollection_6593_jut47ztfeyxs(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6593_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6593_jut47ztfeyxs");
-    editorCell.addEditorCell(this.createRefCell_6593_jut47ztfeyxv(editorContext, node));
+    editorCell.setCellId("Collection_6593_0");
+    editorCell.addEditorCell(this.createRefCell_6593_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_6593_jut47ztfeyxv(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_6593_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("var");
     provider.setNoTargetText("<no var>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new VariableDeclarationReference_Editor._Inline6593_jut47ztfeyxw());
+    provider.setAuxiliaryCellProvider(new VariableDeclarationReference_Editor._Inline6593_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class VariableDeclarationReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline6593_jut47ztfeyxw extends InlineCellProvider {
-    public _Inline6593_jut47ztfeyxw() {
+  public static class _Inline6593_0 extends InlineCellProvider {
+    public _Inline6593_0() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class VariableDeclarationReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_6593_jut47ztfeyxy(editorContext, node);
+      return this.createProperty_6593_0(editorContext, node);
     }
 
-    private EditorCell createProperty_6593_jut47ztfeyxy(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_6593_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

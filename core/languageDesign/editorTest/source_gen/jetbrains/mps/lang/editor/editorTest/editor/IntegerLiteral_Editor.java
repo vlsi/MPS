@@ -13,10 +13,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class IntegerLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_6139_12tp9n8bco3in(editorContext, node);
+    return this.createProperty_6139_0(editorContext, node);
   }
 
-  private EditorCell createProperty_6139_12tp9n8bco3in(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6139_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");

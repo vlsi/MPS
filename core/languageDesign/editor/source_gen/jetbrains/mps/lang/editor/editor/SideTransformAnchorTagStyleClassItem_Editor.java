@@ -19,26 +19,26 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2322_fhumv9xn(editorContext, node);
+    return this.createCollection_2322_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2322_fhumv9xn(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2322_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2322_fhumv9xn");
-    editorCell.addEditorCell(this.createConceptProperty_2322_fhumv9xo(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2322_fhumv9xp(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2322_fhumv9xq(editorContext, node));
+    editorCell.setCellId("Collection_2322_0");
+    editorCell.addEditorCell(this.createConceptProperty_2322_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2322_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_2322_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2322_fhumv9xp(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2322_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_2322_fhumv9xp");
+    editorCell.setCellId("Constant_2322_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2322_fhumv9xo(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_2322_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -47,7 +47,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SideTransformAnchorTagStyleClassItem_Editor.SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenuflgma9nt()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SideTransformAnchorTagStyleClassItem_Editor.SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -58,7 +58,7 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  private EditorCell createProperty_2322_fhumv9xq(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_2322_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("tag");
     provider.setNoTargetText("<no tag>");
@@ -76,8 +76,8 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public static class SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenuflgma9nt extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenuflgma9nt() {
+  public static class SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public SideTransformAnchorTagStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

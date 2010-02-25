@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class RuleConsequence_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_0885_ewtu12cn(editorContext, node);
+    return this.createError_0885_0(editorContext, node);
   }
 
-  private EditorCell createError_0885_ewtu12cn(EditorContext editorContext, SNode node) {
+  private EditorCell createError_0885_0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "choose consequence");
-    editorCell.setCellId("Error_0885_ewtu12cn");
+    editorCell.setCellId("Error_0885_0");
     return editorCell;
   }
 }

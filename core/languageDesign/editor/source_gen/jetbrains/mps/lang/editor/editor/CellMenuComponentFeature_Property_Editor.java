@@ -19,22 +19,22 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4050_l523emneu37j(editorContext, node);
+    return this.createCollection_4050_0(editorContext, node);
   }
 
-  private EditorCell createCollection_4050_l523emneu37j(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4050_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4050_l523emneu37j");
-    editorCell.addEditorCell(this.createRefCell_4050_l523emneu37f(editorContext, node));
+    editorCell.setCellId("Collection_4050_0");
+    editorCell.addEditorCell(this.createRefCell_4050_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_4050_l523emneu37f(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_4050_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("<choose property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Property_Editor._Inline4050_l523emneu37g());
+    provider.setAuxiliaryCellProvider(new CellMenuComponentFeature_Property_Editor._Inline4050_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -47,8 +47,8 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public static class _Inline4050_l523emneu37g extends InlineCellProvider {
-    public _Inline4050_l523emneu37g() {
+  public static class _Inline4050_0 extends InlineCellProvider {
+    public _Inline4050_0() {
       super();
     }
 
@@ -57,10 +57,10 @@ public class CellMenuComponentFeature_Property_Editor extends DefaultNodeEditor 
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_4050_l523emneu37h(editorContext, node);
+      return this.createProperty_4050_0(editorContext, node);
     }
 
-    private EditorCell createProperty_4050_l523emneu37h(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_4050_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class IBaseTestBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_5253_s4nz0blfsy1g(editorContext, node);
+    return this.createConstant_5253_0(editorContext, node);
   }
 
-  private EditorCell createConstant_5253_s4nz0blfsy1g(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5253_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5253_s4nz0blfsy1g");
+    editorCell.setCellId("Constant_5253_0");
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -24,30 +24,30 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8473_ft5sx2uu(editorContext, node);
+    return this.createCollection_8473_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8473_l523emneh3uo(editorContext, node);
+    return this.createCollection_8473_1(editorContext, node);
   }
 
-  private EditorCell createCollection_8473_ft5sx2uu(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8473_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8473_ft5sx2uu");
-    editorCell.addEditorCell(this.createRefNode_8473_ft5sxarb(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_8473_ft5sx5oj(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8473_ft5sxcm6(editorContext, node));
+    editorCell.setCellId("Collection_8473_0");
+    editorCell.addEditorCell(this.createRefNode_8473_0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_8473_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8473_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8473_l523emneh3uo(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8473_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8473_l523emneh3uo");
-    editorCell.addEditorCell(this.createRefCell_8473_l523emneh3ul(editorContext, node));
+    editorCell.setCellId("Collection_8473_1");
+    editorCell.addEditorCell(this.createRefCell_8473_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_8473_ft5sx5oj(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_8473_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -61,7 +61,7 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new DecimalBinaryOperation_Editor.DecimalBinaryOperation_Editor_replaceWith_BinaryOperation_cellMenuft5vbyn9()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new DecimalBinaryOperation_Editor.DecimalBinaryOperation_Editor_replaceWith_BinaryOperation_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -72,7 +72,7 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8473_ft5sxarb(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8473_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -89,7 +89,7 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8473_ft5sxcm6(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8473_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightExpression");
     provider.setNoTargetText("<no rightExpression>");
@@ -106,12 +106,12 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_8473_l523emneh3ul(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_8473_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("context");
     provider.setNoTargetText("<no context>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DecimalBinaryOperation_Editor._Inline8473_l523emneh3um());
+    provider.setAuxiliaryCellProvider(new DecimalBinaryOperation_Editor._Inline8473_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -124,8 +124,8 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline8473_l523emneh3um extends InlineCellProvider {
-    public _Inline8473_l523emneh3um() {
+  public static class _Inline8473_0 extends InlineCellProvider {
+    public _Inline8473_0() {
       super();
     }
 
@@ -134,18 +134,18 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createComponent_8473_l523emneh3un(editorContext, node);
+      return this.createComponent_8473_0(editorContext, node);
     }
 
-    private EditorCell createComponent_8473_l523emneh3un(EditorContext editorContext, SNode node) {
+    private EditorCell createComponent_8473_0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new MathContextEditorPart(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
       return editorCell;
     }
   }
 
-  public static class DecimalBinaryOperation_Editor_replaceWith_BinaryOperation_cellMenuft5vbyn9 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public DecimalBinaryOperation_Editor_replaceWith_BinaryOperation_cellMenuft5vbyn9() {
+  public static class DecimalBinaryOperation_Editor_replaceWith_BinaryOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public DecimalBinaryOperation_Editor_replaceWith_BinaryOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

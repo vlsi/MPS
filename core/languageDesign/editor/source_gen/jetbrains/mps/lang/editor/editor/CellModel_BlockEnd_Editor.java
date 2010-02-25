@@ -18,31 +18,31 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_3910_fal3zx11(editorContext, node);
+    return this.createProperty_3910_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3910_fal3x0id(editorContext, node);
+    return this.createCollection_3910_0(editorContext, node);
   }
 
-  private EditorCell createCollection_3910_fal3x0id(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3910_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_3910_fal3x0id");
+    editorCell.setCellId("Collection_3910_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createComponent_3910_fhx9bans(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_3910_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_3910_fhx9bans(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_3910_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _CellModel_Common(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createProperty_3910_fal3zx11(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_3910_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("closeBrace");
     provider.setNoTargetText("}");

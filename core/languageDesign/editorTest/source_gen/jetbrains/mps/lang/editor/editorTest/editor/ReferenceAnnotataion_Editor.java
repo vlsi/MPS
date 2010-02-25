@@ -15,28 +15,28 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ReferenceAnnotataion_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6697_1m6nlx7r750f7(editorContext, node);
+    return this.createCollection_6697_0(editorContext, node);
   }
 
-  private EditorCell createCollection_6697_1m6nlx7r750f7(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6697_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6697_1m6nlx7r750f7");
-    editorCell.addEditorCell(this.createConstant_6697_1m6nlx7r750fc(editorContext, node));
-    editorCell.addEditorCell(this.createAttributedLinkCell_6697_1m6nlx7r76xus(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6697_1m6nlx7r750fe(editorContext, node));
+    editorCell.setCellId("Collection_6697_0");
+    editorCell.addEditorCell(this.createConstant_6697_0(editorContext, node));
+    editorCell.addEditorCell(this.createAttributedLinkCell_6697_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6697_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6697_1m6nlx7r750fc(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6697_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<ref");
-    editorCell.setCellId("Constant_6697_1m6nlx7r750fc");
+    editorCell.setCellId("Constant_6697_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6697_1m6nlx7r750fe(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6697_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_6697_1m6nlx7r750fe");
+    editorCell.setCellId("Constant_6697_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -45,7 +45,7 @@ public class ReferenceAnnotataion_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createAttributedLinkCell_6697_1m6nlx7r76xus(EditorContext editorContext, SNode node) {
+  private EditorCell createAttributedLinkCell_6697_0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedLinkCell();

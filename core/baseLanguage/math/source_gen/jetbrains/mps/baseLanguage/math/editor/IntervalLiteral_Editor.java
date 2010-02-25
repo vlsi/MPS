@@ -31,37 +31,37 @@ import jetbrains.mps.smodel.IScope;
 
 public class IntervalLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6862_frp02z1y(editorContext, node);
+    return this.createCollection_6862_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6862_frp02z43(editorContext, node);
+    return this.createCollection_6862_1(editorContext, node);
   }
 
-  private EditorCell createCollection_6862_frp02z1y(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6862_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6862_frp02z1y");
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6862_frp02z1z(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6862_frp02z2x(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6862_frp02z30(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6862_frp02z32(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6862_frp02z35(editorContext, node));
+    editorCell.setCellId("Collection_6862_0");
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6862_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6862_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6862_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6862_1(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6862_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_6862_frp02z43(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6862_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6862_frp02z43");
-    editorCell.addEditorCell(this.createConstant_6862_frp02z46(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6862_frp02z47(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6862_frp02z4b(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6862_frp02z4c(editorContext, node));
+    editorCell.setCellId("Collection_6862_1");
+    editorCell.addEditorCell(this.createConstant_6862_1(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6862_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6862_2(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6862_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6862_frp02z30(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6862_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_6862_frp02z30");
+    editorCell.setCellId("Constant_6862_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -70,21 +70,21 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6862_frp02z46(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6862_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "start incuded:");
-    editorCell.setCellId("Constant_6862_frp02z46");
+    editorCell.setCellId("Constant_6862_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6862_frp02z4b(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6862_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end included:");
-    editorCell.setCellId("Constant_6862_frp02z4b");
+    editorCell.setCellId("Constant_6862_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_6862_frp02z1z(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_6862_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         if (SPropertyOperations.getBoolean(node, "startIncluded")) {
@@ -102,8 +102,8 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenufrp02z2f(),new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenufrp02z2o()}));
-    editorCell.setCellId("ReadOnlyModelAccessor_6862_frp02z1z");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu0(),new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu1()}));
+    editorCell.setCellId("ReadOnlyModelAccessor_6862_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -111,7 +111,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_6862_frp02z35(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_6862_1(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         if (SPropertyOperations.getBoolean(node, "endIncluded")) {
@@ -129,12 +129,12 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenufrp02z3l(),new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenufrp02z3u()}));
-    editorCell.setCellId("ReadOnlyModelAccessor_6862_frp02z35");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu2(),new IntervalLiteral_Editor.IntervalLiteral_generic_cellMenu3()}));
+    editorCell.setCellId("ReadOnlyModelAccessor_6862_1");
     return editorCell;
   }
 
-  private EditorCell createRefNode_6862_frp02z2x(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6862_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("start");
     provider.setNoTargetText("-\u221e");
@@ -155,7 +155,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6862_frp02z32(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6862_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("end");
     provider.setNoTargetText("+\u221e");
@@ -177,7 +177,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6862_frp02z47(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6862_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("startIncluded");
     provider.setNoTargetText("<no startIncluded>");
@@ -199,7 +199,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6862_frp02z4c(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6862_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("endIncluded");
     provider.setNoTargetText("<no endIncluded>");
@@ -221,8 +221,8 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class IntervalLiteral_generic_cellMenufrp02z2f extends AbstractCellMenuPart_Generic_Item {
-    public IntervalLiteral_generic_cellMenufrp02z2f() {
+  public static class IntervalLiteral_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
+    public IntervalLiteral_generic_cellMenu0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -234,8 +234,8 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class IntervalLiteral_generic_cellMenufrp02z2o extends AbstractCellMenuPart_Generic_Item {
-    public IntervalLiteral_generic_cellMenufrp02z2o() {
+  public static class IntervalLiteral_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
+    public IntervalLiteral_generic_cellMenu1() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -247,8 +247,8 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class IntervalLiteral_generic_cellMenufrp02z3l extends AbstractCellMenuPart_Generic_Item {
-    public IntervalLiteral_generic_cellMenufrp02z3l() {
+  public static class IntervalLiteral_generic_cellMenu2 extends AbstractCellMenuPart_Generic_Item {
+    public IntervalLiteral_generic_cellMenu2() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -260,8 +260,8 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class IntervalLiteral_generic_cellMenufrp02z3u extends AbstractCellMenuPart_Generic_Item {
-    public IntervalLiteral_generic_cellMenufrp02z3u() {
+  public static class IntervalLiteral_generic_cellMenu3 extends AbstractCellMenuPart_Generic_Item {
+    public IntervalLiteral_generic_cellMenu3() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {

@@ -23,21 +23,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class CodeSnippet_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2388_jhkadxjsaahn(editorContext, node);
+    return this.createCollection_2388_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2388_jhkadxjsaahn(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2388_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2388_jhkadxjsaahn");
-    editorCell.addEditorCell(this.createConstant_2388_jhkadxjsaahr(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_2388_jhkadxjsaahv(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2388_jhkadxjsaahu(editorContext, node));
+    editorCell.setCellId("Collection_2388_0");
+    editorCell.addEditorCell(this.createConstant_2388_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_2388_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2388_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2388_jhkadxjsaahr(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2388_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{{");
-    editorCell.setCellId("Constant_2388_jhkadxjsaahr");
+    editorCell.setCellId("Constant_2388_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -46,15 +46,15 @@ public class CodeSnippet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2388_jhkadxjsaahu(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2388_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}}");
-    editorCell.setCellId("Constant_2388_jhkadxjsaahu");
+    editorCell.setCellId("Constant_2388_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2388_jhkadxjsaahv(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CodeSnippet_Editor.statementListHandler_2388_jhkadxjsaahv(node, "statement", editorContext);
+  private EditorCell createRefNodeList_2388_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CodeSnippet_Editor.statementListHandler_2388_0(node, "statement", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_statement");
     {
@@ -68,8 +68,8 @@ public class CodeSnippet_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class statementListHandler_2388_jhkadxjsaahv extends RefNodeListHandler {
-    public statementListHandler_2388_jhkadxjsaahv(SNode ownerNode, String childRole, EditorContext context) {
+  private static class statementListHandler_2388_0 extends RefNodeListHandler {
+    public statementListHandler_2388_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

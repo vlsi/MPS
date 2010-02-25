@@ -19,35 +19,35 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class TableComponentStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2963_1ftexjcmdvamm(editorContext, node);
+    return this.createCollection_2963_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2963_1ftexjcmdvamm(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2963_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2963_1ftexjcmdvamm");
-    editorCell.addEditorCell(this.createConstant_2963_1ftexjcmdvamn(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2963_1ftexjcmdvamq(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2963_1ftexjcmdvebu(editorContext, node));
+    editorCell.setCellId("Collection_2963_0");
+    editorCell.addEditorCell(this.createConstant_2963_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2963_1(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_2963_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2963_1ftexjcmdvamn(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2963_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "table-component");
-    editorCell.setCellId("Constant_2963_1ftexjcmdvamn");
+    editorCell.setCellId("Constant_2963_0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TableComponentStyleClassItem_Editor.TableComponentStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu1ftexjcmdvamp()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TableComponentStyleClassItem_Editor.TableComponentStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_2963_1ftexjcmdvamq(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2963_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_2963_1ftexjcmdvamq");
+    editorCell.setCellId("Constant_2963_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_2963_1ftexjcmdvebu(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_2963_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("tableComponent");
     provider.setNoTargetText("<no tableComponent>");
@@ -65,8 +65,8 @@ public class TableComponentStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class TableComponentStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu1ftexjcmdvamp extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public TableComponentStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu1ftexjcmdvamp() {
+  public static class TableComponentStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public TableComponentStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

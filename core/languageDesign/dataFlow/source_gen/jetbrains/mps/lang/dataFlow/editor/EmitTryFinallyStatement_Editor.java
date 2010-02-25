@@ -17,23 +17,23 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9240_fegusbjc(editorContext, node);
+    return this.createCollection_9240_0(editorContext, node);
   }
 
-  private EditorCell createCollection_9240_fegusbjc(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9240_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9240_fegusbjc");
-    editorCell.addEditorCell(this.createConstant_9240_fegusc91(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9240_fegusmp8(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9240_feguso2e(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9240_fegusqcn(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9240_fegusuje(editorContext, node));
+    editorCell.setCellId("Collection_9240_0");
+    editorCell.addEditorCell(this.createConstant_9240_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9240_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9240_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9240_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9240_2(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9240_fegusc91(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9240_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "try");
-    editorCell.setCellId("Constant_9240_fegusc91");
+    editorCell.setCellId("Constant_9240_0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -43,9 +43,9 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9240_feguso2e(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9240_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "finally");
-    editorCell.setCellId("Constant_9240_feguso2e");
+    editorCell.setCellId("Constant_9240_1");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -55,9 +55,9 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9240_fegusuje(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9240_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end");
-    editorCell.setCellId("Constant_9240_fegusuje");
+    editorCell.setCellId("Constant_9240_2");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -67,7 +67,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9240_fegusmp8(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9240_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("tryPart");
     provider.setNoTargetText("<no tryPart>");
@@ -89,7 +89,7 @@ public class EmitTryFinallyStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9240_fegusqcn(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9240_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("finallyPart");
     provider.setNoTargetText("<no finallyPart>");

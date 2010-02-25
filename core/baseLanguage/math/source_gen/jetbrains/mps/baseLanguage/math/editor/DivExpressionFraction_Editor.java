@@ -21,40 +21,40 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
 
 public class DivExpressionFraction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9055_fsbffl6w(editorContext, node);
+    return this.createCollection_9055_1(editorContext, node);
   }
 
-  private EditorCell createCollection_9055_fsbev7mo(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9055_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_9055_fsbev7mo");
+    editorCell.setCellId("Collection_9055_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
       style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
     }
-    editorCell.addEditorCell(this.createRefNode_9055_fsbf5smh(editorContext, node));
-    editorCell.addEditorCell(this.createCustom_9055_1xixm5yv3wtfq(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9055_fsbf63en(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9055_0(editorContext, node));
+    editorCell.addEditorCell(this.createCustom_9055_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9055_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_9055_fsbffl6w(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9055_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9055_fsbffl6w");
-    editorCell.addEditorCell(this.createEmpty_9055_1r5w89bsxb4ep(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_9055_fsbev7mo(editorContext, node));
-    editorCell.addEditorCell(this.createEmpty_9055_1r5w89bsxb4et(editorContext, node));
+    editorCell.setCellId("Collection_9055_1");
+    editorCell.addEditorCell(this.createEmpty_9055_0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_9055_0(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_9055_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCustom_9055_1xixm5yv3wtfq(final EditorContext editorContext, final SNode node) {
+  private EditorCell createCustom_9055_0(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<HLineCellProvider>() {
       public HLineCellProvider invoke() {
         return new HLineCellProvider(node);
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_9055_1xixm5yv3wtfq");
+    editorCell.setCellId("Custom_9055_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.BASE_LINE_CELL, true);
@@ -62,7 +62,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9055_fsbf5smh(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9055_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("numerator");
     provider.setNoTargetText("<no numerator>");
@@ -80,7 +80,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9055_fsbf63en(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9055_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("denominator");
     provider.setNoTargetText("<no denominator>");
@@ -98,9 +98,9 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createEmpty_9055_1r5w89bsxb4ep(EditorContext editorContext, SNode node) {
+  private EditorCell createEmpty_9055_0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setCellId("Empty_9055_1r5w89bsxb4ep");
+    editorCell.setCellId("Empty_9055_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -108,9 +108,9 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createEmpty_9055_1r5w89bsxb4et(EditorContext editorContext, SNode node) {
+  private EditorCell createEmpty_9055_1(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setCellId("Empty_9055_1r5w89bsxb4et");
+    editorCell.setCellId("Empty_9055_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);

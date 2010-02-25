@@ -15,33 +15,33 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CaretPositionParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3119_fbutorz8(editorContext, node);
+    return this.createCollection_3119_0(editorContext, node);
   }
 
-  private EditorCell createCollection_3119_fbutorz8(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3119_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3119_fbutorz8");
-    editorCell.addEditorCell(this.createConstant_3119_fbutot1h(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3119_fbutozoa(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_3119_fbutp103(editorContext, node));
+    editorCell.setCellId("Collection_3119_0");
+    editorCell.addEditorCell(this.createConstant_3119_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3119_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_3119_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3119_fbutot1h(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3119_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "caret position");
-    editorCell.setCellId("Constant_3119_fbutot1h");
+    editorCell.setCellId("Constant_3119_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3119_fbutozoa(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3119_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_3119_fbutozoa");
+    editorCell.setCellId("Constant_3119_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_3119_fbutp103(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_3119_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("position");
     provider.setNoTargetText("<no position>");

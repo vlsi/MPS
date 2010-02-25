@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class BaseInlineDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_1600_gufrzp3fgwtt(editorContext, node);
+    return this.createError_1600_0(editorContext, node);
   }
 
-  private EditorCell createError_1600_gufrzp3fgwtt(EditorContext editorContext, SNode node) {
+  private EditorCell createError_1600_0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "...");
-    editorCell.setCellId("Error_1600_gufrzp3fgwtt");
+    editorCell.setCellId("Error_1600_0");
     return editorCell;
   }
 }

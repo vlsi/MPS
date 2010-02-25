@@ -19,35 +19,35 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class HorizontalAlign_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7861_frt6h1sy(editorContext, node);
+    return this.createCollection_7861_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7861_frt6h1sy(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7861_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7861_frt6h1sy");
-    editorCell.addEditorCell(this.createConstant_7861_frt6h1sz(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7861_frt6h1t2(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7861_frt6h1t3(editorContext, node));
+    editorCell.setCellId("Collection_7861_0");
+    editorCell.addEditorCell(this.createConstant_7861_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7861_1(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_7861_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7861_frt6h1sz(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7861_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "horizontal-align");
-    editorCell.setCellId("Constant_7861_frt6h1sz");
+    editorCell.setCellId("Constant_7861_0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new HorizontalAlign_Editor.HorizontalAlign_Editor_replaceWith_StyleClassItem_cellMenufrt6h1t1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new HorizontalAlign_Editor.HorizontalAlign_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_7861_frt6h1t2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7861_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_7861_frt6h1t2");
+    editorCell.setCellId("Constant_7861_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_7861_frt6h1t3(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_7861_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("align");
     provider.setNoTargetText("<no align>");
@@ -65,8 +65,8 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class HorizontalAlign_Editor_replaceWith_StyleClassItem_cellMenufrt6h1t1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public HorizontalAlign_Editor_replaceWith_StyleClassItem_cellMenufrt6h1t1() {
+  public static class HorizontalAlign_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public HorizontalAlign_Editor_replaceWith_StyleClassItem_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

@@ -21,27 +21,27 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class InIntervalExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0650_frp02z1k(editorContext, node);
+    return this.createCollection_0650_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0650_frp02z1k(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0650_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0650_frp02z1k");
-    editorCell.addEditorCell(this.createRefNode_0650_frp02z1l(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0650_frp02z1m(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0650_frp02z1p(editorContext, node));
+    editorCell.setCellId("Collection_0650_0");
+    editorCell.addEditorCell(this.createRefNode_0650_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0650_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0650_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0650_frp02z1m(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0650_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
-    editorCell.setCellId("Constant_0650_frp02z1m");
+    editorCell.setCellId("Constant_0650_0");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new InIntervalExpression_Editor.InIntervalExpression_Editor_replaceWith_BinaryOperation_cellMenufrp02z1o()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new InIntervalExpression_Editor.InIntervalExpression_Editor_replaceWith_BinaryOperation_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createRefNode_0650_frp02z1l(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0650_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -59,7 +59,7 @@ public class InIntervalExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0650_frp02z1p(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0650_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightExpression");
     provider.setNoTargetText("<no rightExpression>");
@@ -77,8 +77,8 @@ public class InIntervalExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class InIntervalExpression_Editor_replaceWith_BinaryOperation_cellMenufrp02z1o extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public InIntervalExpression_Editor_replaceWith_BinaryOperation_cellMenufrp02z1o() {
+  public static class InIntervalExpression_Editor_replaceWith_BinaryOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public InIntervalExpression_Editor_replaceWith_BinaryOperation_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

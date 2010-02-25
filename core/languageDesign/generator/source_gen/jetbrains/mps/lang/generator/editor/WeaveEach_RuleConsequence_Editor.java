@@ -20,55 +20,55 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3153_exaju3ci(editorContext, node);
+    return this.createCollection_3153_0(editorContext, node);
   }
 
-  private EditorCell createCollection_3153_exaju3ci(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3153_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_3153_exaju3ci");
+    editorCell.setCellId("Collection_3153_0");
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createCollection_3153_f93abnbr(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_3153_f93acb20(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3153_f93amqrp(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_3153_1(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_3153_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3153_4(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_3153_f93abnbr(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3153_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3153_f93abnbr");
+    editorCell.setCellId("Collection_3153_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_3153_f93abnbs(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3153_f93adin1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_3153_f93abuxp(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3153_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3153_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_3153_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_3153_f93acb20(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3153_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3153_f93acb20");
+    editorCell.setCellId("Collection_3153_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_3153_f93acb21(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3153_f93adn06(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_3153_f93acb23(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3153_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3153_3(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_3153_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3153_f93abnbs(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3153_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreach");
-    editorCell.setCellId("Constant_3153_f93abnbs");
+    editorCell.setCellId("Constant_3153_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3153_f93acb21(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3153_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply");
-    editorCell.setCellId("Constant_3153_f93acb21");
+    editorCell.setCellId("Constant_3153_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
@@ -77,9 +77,9 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3153_f93adin1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3153_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_3153_f93adin1");
+    editorCell.setCellId("Constant_3153_2");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -89,9 +89,9 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3153_f93adn06(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3153_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_3153_f93adn06");
+    editorCell.setCellId("Constant_3153_3");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -101,9 +101,9 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3153_f93amqrp(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3153_4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_3153_f93amqrp");
+    editorCell.setCellId("Constant_3153_4");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -112,7 +112,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_3153_f93abuxp(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_3153_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("sourceNodesQuery");
     provider.setNoTargetText("<none>");
@@ -129,12 +129,12 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_3153_f93acb23(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_3153_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("template");
     provider.setNoTargetText("<choose template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new WeaveEach_RuleConsequence_Editor._Inline3153_f93acb24());
+    provider.setAuxiliaryCellProvider(new WeaveEach_RuleConsequence_Editor._Inline3153_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -147,8 +147,8 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline3153_f93acb24 extends InlineCellProvider {
-    public _Inline3153_f93acb24() {
+  public static class _Inline3153_0 extends InlineCellProvider {
+    public _Inline3153_0() {
       super();
     }
 
@@ -157,10 +157,10 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_3153_f93acb25(editorContext, node);
+      return this.createProperty_3153_0(editorContext, node);
     }
 
-    private EditorCell createProperty_3153_f93acb25(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_3153_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

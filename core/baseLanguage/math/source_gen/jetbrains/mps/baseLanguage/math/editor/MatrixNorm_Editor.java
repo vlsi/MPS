@@ -19,34 +19,34 @@ import jetbrains.mps.nodeEditor.style.ScriptKind;
 
 public class MatrixNorm_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8175_6zw2kd9x64pp(editorContext, node);
+    return this.createCollection_8175_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8175_6zw2kd9x64pp(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8175_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
-    editorCell.setCellId("Collection_8175_6zw2kd9x64pp");
-    editorCell.addEditorCell(this.createConstant_8175_an45w38fxw1u(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8175_5rjmync64njt(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8175_an45w38fxw1s(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_8175_5rjmync6fgtp(editorContext, node));
+    editorCell.setCellId("Collection_8175_0");
+    editorCell.addEditorCell(this.createConstant_8175_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8175_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8175_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_8175_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8175_an45w38fxw1s(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8175_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\u2551");
-    editorCell.setCellId("Constant_8175_an45w38fxw1s");
+    editorCell.setCellId("Constant_8175_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8175_an45w38fxw1u(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8175_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\u2551");
-    editorCell.setCellId("Constant_8175_an45w38fxw1u");
+    editorCell.setCellId("Constant_8175_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_8175_5rjmync64njt(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8175_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("mat");
     provider.setNoTargetText("<no mat>");
@@ -63,7 +63,7 @@ public class MatrixNorm_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_8175_5rjmync6fgtp(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_8175_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("deg");
     provider.setNoTargetText("<no deg>");

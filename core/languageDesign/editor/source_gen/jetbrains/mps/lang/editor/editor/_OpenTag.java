@@ -27,10 +27,10 @@ public class _OpenTag extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createReadOnlyModelAccessor_4575_fn8tz1wi(editorContext, node);
+    return this.createReadOnlyModelAccessor_4575_0(editorContext, node);
   }
 
-  private EditorCell createReadOnlyModelAccessor_4575_fn8tz1wi(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_4575_0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node);
@@ -44,13 +44,13 @@ public class _OpenTag extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_4575_fn8tz1wi");
+    editorCell.setCellId("ReadOnlyModelAccessor_4575_0");
     Styles_StyleSheet.getBordered(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.BACKGROUND_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
-          return _OpenTag._StyleParameter_QueryFunction_4575_fnd3ulof((cell == null ?
+          return _OpenTag._StyleParameter_QueryFunction_4575_0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -64,7 +64,7 @@ public class _OpenTag extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_4575_fnd3ulof(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_4575_0(SNode node, EditorContext editorContext) {
     return _EditorUtil.grayIfNotSelectable(node);
   }
 }

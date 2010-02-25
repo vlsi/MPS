@@ -19,35 +19,35 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class ScriptKindClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2848_1qpwi56afapxp(editorContext, node);
+    return this.createCollection_2848_0(editorContext, node);
   }
 
-  private EditorCell createCollection_2848_1qpwi56afapxp(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2848_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2848_1qpwi56afapxp");
-    editorCell.addEditorCell(this.createConstant_2848_1qpwi56afapxq(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2848_1qpwi56afapxt(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2848_1qpwi56afauwh(editorContext, node));
+    editorCell.setCellId("Collection_2848_0");
+    editorCell.addEditorCell(this.createConstant_2848_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2848_1(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_2848_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2848_1qpwi56afapxq(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2848_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "script-kind");
-    editorCell.setCellId("Constant_2848_1qpwi56afapxq");
+    editorCell.setCellId("Constant_2848_0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ScriptKindClassItem_Editor.ScriptKindClassItem_Editor_replaceWith_StyleClassItem_cellMenu1qpwi56afapxs()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ScriptKindClassItem_Editor.ScriptKindClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_2848_1qpwi56afapxt(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2848_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_2848_1qpwi56afapxt");
+    editorCell.setCellId("Constant_2848_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_2848_1qpwi56afauwh(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_2848_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("script");
     provider.setNoTargetText("<no script>");
@@ -65,8 +65,8 @@ public class ScriptKindClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class ScriptKindClassItem_Editor_replaceWith_StyleClassItem_cellMenu1qpwi56afapxs extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ScriptKindClassItem_Editor_replaceWith_StyleClassItem_cellMenu1qpwi56afapxs() {
+  public static class ScriptKindClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ScriptKindClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
     }
 
     public String getReplacementConceptName() {

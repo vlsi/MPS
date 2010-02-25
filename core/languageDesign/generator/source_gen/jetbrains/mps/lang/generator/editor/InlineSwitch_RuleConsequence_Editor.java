@@ -26,38 +26,38 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4569_f91qs4dn(editorContext, node);
+    return this.createCollection_4569_0(editorContext, node);
   }
 
-  private EditorCell createCollection_4569_f91qs4dn(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4569_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_4569_f91qs4dn");
+    editorCell.setCellId("Collection_4569_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.DRAW_BRACKETS, true);
       style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.gray);
     }
-    editorCell.addEditorCell(this.createRefNodeList_4569_f934a8vh(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4569_f934au63(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_4569_f91qt3yl(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_4569_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4569_0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_4569_1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4569_f91qt3yl(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4569_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4569_f91qt3yl");
+    editorCell.setCellId("Collection_4569_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4569_f934bgxz(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4569_f91qthnp(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4569_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4569_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4569_f934au63(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4569_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default:");
-    editorCell.setCellId("Constant_4569_f934au63");
+    editorCell.setCellId("Constant_4569_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
@@ -66,9 +66,9 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4569_f934bgxz(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4569_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_4569_f934bgxz");
+    editorCell.setCellId("Constant_4569_1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -77,8 +77,8 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4569_f934a8vh(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new InlineSwitch_RuleConsequence_Editor.caseListHandler_4569_f934a8vh(node, "case", editorContext);
+  private EditorCell createRefNodeList_4569_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new InlineSwitch_RuleConsequence_Editor.caseListHandler_4569_0(node, "case", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_case");
     editorCell.setGridLayout(true);
@@ -86,7 +86,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4569_f91qthnp(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4569_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("defaultConsequence");
     provider.setNoTargetText("<no defaultConsequence>");
@@ -103,8 +103,8 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class caseListHandler_4569_f934a8vh extends RefNodeListHandler {
-    public caseListHandler_4569_f934a8vh(SNode ownerNode, String childRole, EditorContext context) {
+  private static class caseListHandler_4569_0 extends RefNodeListHandler {
+    public caseListHandler_4569_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -22,26 +22,26 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class CodeInlineDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4588_gufrzp3eoidh(editorContext, node);
+    return this.createCollection_4588_0(editorContext, node);
   }
 
-  private EditorCell createCollection_4588_gufrzp3eoidh(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4588_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4588_gufrzp3eoidh");
-    editorCell.addEditorCell(this.createConceptProperty_4588_gufrzp3epocz(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_4588_nlofi2mgkv4z(editorContext, node));
+    editorCell.setCellId("Collection_4588_0");
+    editorCell.addEditorCell(this.createConceptProperty_4588_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_4588_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4588_nlofi2mgkv4z(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CodeInlineDocTag_Editor.lineListHandler_4588_nlofi2mgkv4z(node, "line", editorContext);
+  private EditorCell createRefNodeList_4588_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CodeInlineDocTag_Editor.lineListHandler_4588_0(node, "line", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_line");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_4588_gufrzp3epocz(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_4588_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -60,8 +60,8 @@ public class CodeInlineDocTag_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class lineListHandler_4588_nlofi2mgkv4z extends RefNodeListHandler {
-    public lineListHandler_4588_nlofi2mgkv4z(SNode ownerNode, String childRole, EditorContext context) {
+  private static class lineListHandler_4588_0 extends RefNodeListHandler {
+    public lineListHandler_4588_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

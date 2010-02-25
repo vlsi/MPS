@@ -31,40 +31,40 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0528_f50y8rob(editorContext, node);
+    return this.createCollection_0528_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0528_f50y8rob(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0528_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0528_f50y8rob");
-    editorCell.addEditorCell(this.createConstant_0528_f50y8s97(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0528_f50y8vjq(editorContext, node));
-    if (renderingCondition0528_fkwpf0pm(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createProperty_0528_f50y8x3s(editorContext, node));
+    editorCell.setCellId("Collection_0528_0");
+    editorCell.addEditorCell(this.createConstant_0528_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0528_1(editorContext, node));
+    if (renderingCondition0528_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createProperty_0528_0(editorContext, node));
     }
-    if (renderingCondition0528_fkwpg5nk(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_0528_fkwpfv0a(editorContext, node));
+    if (renderingCondition0528_1(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_0528_0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_0528_f50y8s97(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0528_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "font-style");
-    editorCell.setCellId("Constant_0528_f50y8s97");
+    editorCell.setCellId("Constant_0528_0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenuflgm8pa3()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_0528_f50y8vjq(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0528_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_0528_f50y8vjq");
+    editorCell.setCellId("Constant_0528_1");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_0528_f50y8x3s(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_0528_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("style");
     provider.setNoTargetText("<no style>");
@@ -72,7 +72,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_style");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu1ewg3yzpoxq2q()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu1()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -83,7 +83,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0528_fkwpfv0a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0528_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
@@ -93,7 +93,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_RECURSIVELY);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenufmz38vz1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new FontStyleStyleClassItem_Editor.FontStyleStyleClassItem_generic_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -104,16 +104,16 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition0528_fkwpf0pm(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition0528_0(SNode node, EditorContext editorContext, IScope scope) {
     return !(ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))));
   }
 
-  private static boolean renderingCondition0528_fkwpg5nk(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition0528_1(SNode node, EditorContext editorContext, IScope scope) {
     return ObjectUtils.equals(SPropertyOperations.getString_def(node, "style", "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
   }
 
-  public static class FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenuflgm8pa3 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenuflgm8pa3() {
+  public static class FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public FontStyleStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
     }
 
     public String getReplacementConceptName() {
@@ -121,8 +121,8 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class FontStyleStyleClassItem_generic_cellMenufmz38vz1 extends AbstractCellMenuPart_Generic_Group {
-    public FontStyleStyleClassItem_generic_cellMenufmz38vz1() {
+  public static class FontStyleStyleClassItem_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
+    public FontStyleStyleClassItem_generic_cellMenu0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
@@ -143,8 +143,8 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class FontStyleStyleClassItem_generic_cellMenu1ewg3yzpoxq2q extends AbstractCellMenuPart_Generic_Group {
-    public FontStyleStyleClassItem_generic_cellMenu1ewg3yzpoxq2q() {
+  public static class FontStyleStyleClassItem_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Group {
+    public FontStyleStyleClassItem_generic_cellMenu1() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

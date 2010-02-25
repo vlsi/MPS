@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class FieldDocReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7297_l523emneg3gf(editorContext, node);
+    return this.createCollection_7297_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7297_l523emneg3gf(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7297_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7297_l523emneg3gf");
-    editorCell.addEditorCell(this.createRefCell_7297_l523emneg3gc(editorContext, node));
+    editorCell.setCellId("Collection_7297_0");
+    editorCell.addEditorCell(this.createRefCell_7297_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_7297_l523emneg3gc(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_7297_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("fieldDeclaration");
     provider.setNoTargetText("<no fieldDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new FieldDocReference_Editor._Inline7297_l523emneg3gd());
+    provider.setAuxiliaryCellProvider(new FieldDocReference_Editor._Inline7297_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class FieldDocReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline7297_l523emneg3gd extends InlineCellProvider {
-    public _Inline7297_l523emneg3gd() {
+  public static class _Inline7297_0 extends InlineCellProvider {
+    public _Inline7297_0() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class FieldDocReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_7297_l523emneg3ge(editorContext, node);
+      return this.createProperty_7297_0(editorContext, node);
     }
 
-    private EditorCell createProperty_7297_l523emneg3ge(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_7297_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
