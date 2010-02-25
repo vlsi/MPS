@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class GrandChild_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_7308_0(editorContext, node);
+    return this.createConstant_7308_245xsd60y3wi(editorContext, node);
   }
 
-  private EditorCell createConstant_7308_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7308_245xsd60y3wi(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "grandChild");
-    editorCell.setCellId("Constant_7308_0");
+    editorCell.setCellId("Constant_7308_245xsd60y3wi");
     editorCell.setDefaultText("");
     return editorCell;
   }

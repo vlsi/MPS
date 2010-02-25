@@ -24,26 +24,26 @@ public class MessageComponent extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5894_1(editorContext, node);
+    return this.createCollection_5894_l523emnel3q4(editorContext, node);
   }
 
-  private EditorCell createCollection_5894_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5894_l523emnel3pt(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5894_0");
-    editorCell.addEditorCell(this.createRefNode_5894_0(editorContext, node));
+    editorCell.setCellId("Collection_5894_l523emnel3pt");
+    editorCell.addEditorCell(this.createRefNode_5894_l523emnel3pu(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5894_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5894_l523emnel3q4(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5894_1");
-    if (renderingCondition5894_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_5894_0(editorContext, node));
+    editorCell.setCellId("Collection_5894_l523emnel3q4");
+    if (renderingCondition5894_l523emnel3pw(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_5894_l523emnel3pt(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createRefNode_5894_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5894_l523emnel3pu(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("message");
     provider.setNoTargetText("<no message>");
@@ -60,7 +60,7 @@ public class MessageComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static boolean renderingCondition5894_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition5894_l523emnel3pw(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "message", true) != null);
   }
 }

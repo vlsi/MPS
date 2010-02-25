@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class DocMethodParameterReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5823_0(editorContext, node);
+    return this.createCollection_5823_l523emneg3ga(editorContext, node);
   }
 
-  private EditorCell createCollection_5823_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5823_l523emneg3ga(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5823_0");
-    editorCell.addEditorCell(this.createRefCell_5823_0(editorContext, node));
+    editorCell.setCellId("Collection_5823_l523emneg3ga");
+    editorCell.addEditorCell(this.createRefCell_5823_l523emneg3g7(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_5823_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_5823_l523emneg3g7(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("parameterDeclaration");
     provider.setNoTargetText("<no parameterDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DocMethodParameterReference_Editor._Inline5823_0());
+    provider.setAuxiliaryCellProvider(new DocMethodParameterReference_Editor._Inline5823_l523emneg3g8());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class DocMethodParameterReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline5823_0 extends InlineCellProvider {
-    public _Inline5823_0() {
+  public static class _Inline5823_l523emneg3g8 extends InlineCellProvider {
+    public _Inline5823_l523emneg3g8() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class DocMethodParameterReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_5823_0(editorContext, node);
+      return this.createProperty_5823_l523emneg3g9(editorContext, node);
     }
 
-    private EditorCell createProperty_5823_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_5823_l523emneg3g9(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

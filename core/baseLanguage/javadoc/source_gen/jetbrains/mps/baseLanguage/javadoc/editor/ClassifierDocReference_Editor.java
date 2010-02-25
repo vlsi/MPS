@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ClassifierDocReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9880_0(editorContext, node);
+    return this.createCollection_9880_l523emneg3gp(editorContext, node);
   }
 
-  private EditorCell createCollection_9880_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9880_l523emneg3gp(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9880_0");
-    editorCell.addEditorCell(this.createRefCell_9880_0(editorContext, node));
+    editorCell.setCellId("Collection_9880_l523emneg3gp");
+    editorCell.addEditorCell(this.createRefCell_9880_l523emneg3gm(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_9880_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_9880_l523emneg3gm(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClassifierDocReference_Editor._Inline9880_0());
+    provider.setAuxiliaryCellProvider(new ClassifierDocReference_Editor._Inline9880_l523emneg3gn());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class ClassifierDocReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline9880_0 extends InlineCellProvider {
-    public _Inline9880_0() {
+  public static class _Inline9880_l523emneg3gn extends InlineCellProvider {
+    public _Inline9880_l523emneg3gn() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class ClassifierDocReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_9880_0(editorContext, node);
+      return this.createProperty_9880_l523emneg3go(editorContext, node);
     }
 
-    private EditorCell createProperty_9880_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_9880_l523emneg3go(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -16,26 +16,26 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class VariableLive_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7812_0(editorContext, node);
+    return this.createCollection_7812_fig2zse3(editorContext, node);
   }
 
-  private EditorCell createCollection_7812_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7812_fig2zse3(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7812_0");
-    editorCell.addEditorCell(this.createConstant_7812_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7812_0(editorContext, node));
+    editorCell.setCellId("Collection_7812_fig2zse3");
+    editorCell.addEditorCell(this.createConstant_7812_fig2zvxb(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7812_fig30029(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7812_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7812_fig2zvxb(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "live");
-    editorCell.setCellId("Constant_7812_0");
+    editorCell.setCellId("Constant_7812_fig2zvxb");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_7812_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7812_fig30029(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("var");
     provider.setNoTargetText("<no var>");

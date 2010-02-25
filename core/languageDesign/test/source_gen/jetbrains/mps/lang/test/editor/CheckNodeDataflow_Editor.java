@@ -17,38 +17,38 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0726_0(editorContext, node);
+    return this.createCollection_0726_fj9zyjlf(editorContext, node);
   }
 
-  private EditorCell createCollection_0726_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0726_fj9zyjlf(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0726_0");
-    editorCell.addEditorCell(this.createConstant_0726_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0726_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0726_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0726_2(editorContext, node));
+    editorCell.setCellId("Collection_0726_fj9zyjlf");
+    editorCell.addEditorCell(this.createConstant_0726_fj9zynym(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0726_fj9zyyh8(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0726_fj9zz9gq(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0726_fjijcybt(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0726_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0726_fj9zynym(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
-    editorCell.setCellId("Constant_0726_0");
+    editorCell.setCellId("Constant_0726_fj9zynym");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0726_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0726_fj9zz9gq(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dataflow");
-    editorCell.setCellId("Constant_0726_1");
+    editorCell.setCellId("Constant_0726_fj9zz9gq");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0726_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0726_fjijcybt(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_0726_2");
+    editorCell.setCellId("Constant_0726_fjijcybt");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -57,7 +57,7 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0726_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0726_fj9zyyh8(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodeToCheck");
     provider.setNoTargetText("<no nodeToCheck>");

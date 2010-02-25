@@ -22,44 +22,44 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class PressKeyStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3031_0(editorContext, node);
+    return this.createCollection_3031_fokbw8ht(editorContext, node);
   }
 
-  private EditorCell createCollection_3031_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3031_fokbw8ht(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3031_0");
-    editorCell.addEditorCell(this.createConstant_3031_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_3031_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3031_1(editorContext, node));
+    editorCell.setCellId("Collection_3031_fokbw8ht");
+    editorCell.addEditorCell(this.createConstant_3031_fokbwbe2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_3031_fokbwov6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3031_fokc7jfe(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3031_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3031_fokbwbe2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press keys");
-    editorCell.setCellId("Constant_3031_0");
+    editorCell.setCellId("Constant_3031_fokbwbe2");
     transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3031_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3031_fokc7jfe(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_3031_1");
+    editorCell.setCellId("Constant_3031_fokc7jfe");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_3031_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new PressKeyStatement_Editor.keyStrokesListHandler_3031_0(node, "keyStrokes", editorContext);
+  private EditorCell createRefNodeList_3031_fokbwov6(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new PressKeyStatement_Editor.keyStrokesListHandler_3031_fokbwov6(node, "keyStrokes", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_keyStrokes");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class keyStrokesListHandler_3031_0 extends RefNodeListHandler {
-    public keyStrokesListHandler_3031_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class keyStrokesListHandler_3031_fokbwov6 extends RefNodeListHandler {
+    public keyStrokesListHandler_3031_fokbwov6(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

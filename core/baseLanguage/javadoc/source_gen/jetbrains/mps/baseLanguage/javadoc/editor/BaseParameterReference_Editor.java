@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class BaseParameterReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_2343_0(editorContext, node);
+    return this.createError_2343_1fwojygdyxejp(editorContext, node);
   }
 
-  private EditorCell createError_2343_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_2343_1fwojygdyxejp(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no param>");
-    editorCell.setCellId("Error_2343_0");
+    editorCell.setCellId("Error_2343_1fwojygdyxejp");
     return editorCell;
   }
 }

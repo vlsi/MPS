@@ -63,7 +63,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1171932074431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode superclass = SLinkOperations.getTarget(_context.getNode(), "superclass", true);
     if ((superclass == null)) {
-      return new QueriesGenerated.QuotationClass_8087_0().createNode();
+      return new QueriesGenerated.QuotationClass_8087_l523emnela2q().createNode();
     }
     return superclass;
   }
@@ -168,19 +168,19 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
   }
 
-  public static class QuotationClass_8087_0 {
-    public QuotationClass_8087_0() {
+  public static class QuotationClass_8087_l523emnela2q {
+    public QuotationClass_8087_l523emnela2q() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_0 = null;
+      SNode quotedNode_8087_l523emnel96t = null;
       {
-        quotedNode_8087_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_0 = quotedNode_8087_0;
-        quotedNode1_8087_0.addReference(SReference.create("classifier", quotedNode1_8087_0, SModelReference.fromString("f:java_stub#junit.framework(junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
-        result = quotedNode1_8087_0;
+        quotedNode_8087_l523emnel96t = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8087_l523emnel96t = quotedNode_8087_l523emnel96t;
+        quotedNode1_8087_l523emnel96t.addReference(SReference.create("classifier", quotedNode1_8087_l523emnel96t, SModelReference.fromString("f:java_stub#junit.framework(junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
+        result = quotedNode1_8087_l523emnel96t;
       }
       return result;
     }

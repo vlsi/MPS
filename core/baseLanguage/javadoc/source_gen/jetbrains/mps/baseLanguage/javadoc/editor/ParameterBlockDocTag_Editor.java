@@ -16,27 +16,27 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ParameterBlockDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8822_0(editorContext, node);
+    return this.createCollection_8822_1sbf2stxxotch(editorContext, node);
   }
 
-  private EditorCell createCollection_8822_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8822_1sbf2stxxotch(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8822_0");
-    editorCell.addEditorCell(this.createConstant_8822_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8822_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_8822_0(editorContext, node));
+    editorCell.setCellId("Collection_8822_1sbf2stxxotch");
+    editorCell.addEditorCell(this.createConstant_8822_1sbf2stxxotck(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8822_1fwojygdysjcl(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_8822_1sbf2stxxotcs(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8822_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8822_1sbf2stxxotck(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@param");
-    editorCell.setCellId("Constant_8822_0");
+    editorCell.setCellId("Constant_8822_1sbf2stxxotck");
     DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_8822_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8822_1fwojygdysjcl(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("parameter");
     provider.setNoTargetText("<no parameter>");
@@ -53,7 +53,7 @@ public class ParameterBlockDocTag_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_8822_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_8822_1sbf2stxxotcs(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");

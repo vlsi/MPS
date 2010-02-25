@@ -15,44 +15,44 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AssertType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2300_0(editorContext, node);
+    return this.createCollection_2300_fjbmp63t(editorContext, node);
   }
 
-  private EditorCell createCollection_2300_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2300_fjbmp63t(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2300_0");
-    editorCell.addEditorCell(this.createConstant_2300_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2300_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2300_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2300_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2300_2(editorContext, node));
+    editorCell.setCellId("Collection_2300_fjbmp63t");
+    editorCell.addEditorCell(this.createConstant_2300_fjbmpa2o(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2300_fjbmph1x(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2300_fjbmppj7(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2300_fjbmq3ub(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2300_fjbmuz9h(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2300_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2300_fjbmpa2o(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert");
-    editorCell.setCellId("Constant_2300_0");
+    editorCell.setCellId("Constant_2300_fjbmpa2o");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2300_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2300_fjbmppj7(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has type");
-    editorCell.setCellId("Constant_2300_1");
+    editorCell.setCellId("Constant_2300_fjbmppj7");
     transformationTest_StyleSheet.getAssertStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2300_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2300_fjbmuz9h(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_2300_2");
+    editorCell.setCellId("Constant_2300_fjbmuz9h");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_2300_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2300_fjbmph1x(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodeToCheck");
     provider.setNoTargetText("<no nodeToCheck>");
@@ -69,7 +69,7 @@ public class AssertType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2300_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2300_fjbmq3ub(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("typeToCheck");
     provider.setNoTargetText("<no typeToCheck>");

@@ -33,23 +33,23 @@ public class FieldDocReference_fieldDeclaration_ReferentConstraint extends BaseN
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "visibility", true) == new FieldDocReference_fieldDeclaration_ReferentConstraint.QuotationClass_8027_0().createNode();
+        return SLinkOperations.getTarget(it, "visibility", true) == new FieldDocReference_fieldDeclaration_ReferentConstraint.QuotationClass_8027_l523emneg2vg().createNode();
       }
     });
   }
 
-  public static class QuotationClass_8027_0 {
-    public QuotationClass_8027_0() {
+  public static class QuotationClass_8027_l523emneg2vg {
+    public QuotationClass_8027_l523emneg2vg() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7020_0 = null;
+      SNode quotedNode_7020_jcjdroc2i1sn = null;
       {
-        quotedNode_7020_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7020_0 = quotedNode_7020_0;
-        result = quotedNode1_7020_0;
+        quotedNode_7020_jcjdroc2i1sn = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7020_jcjdroc2i1sn = quotedNode_7020_jcjdroc2i1sn;
+        result = quotedNode1_7020_jcjdroc2i1sn;
       }
       return result;
     }

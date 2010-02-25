@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class BaseVariableDocReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_9676_0(editorContext, node);
+    return this.createError_9676_169d2ra239ghz(editorContext, node);
   }
 
-  private EditorCell createError_9676_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_9676_169d2ra239ghz(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no variable reference>");
-    editorCell.setCellId("Error_9676_0");
+    editorCell.setCellId("Error_9676_169d2ra239ghz");
     return editorCell;
   }
 }

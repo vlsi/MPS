@@ -15,33 +15,33 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ExpressionContainer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2925_0(editorContext, node);
+    return this.createCollection_2925_kemllded1mk8(editorContext, node);
   }
 
-  private EditorCell createCollection_2925_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2925_kemllded1mk8(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2925_0");
-    editorCell.addEditorCell(this.createConstant_2925_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2925_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2925_1(editorContext, node));
+    editorCell.setCellId("Collection_2925_kemllded1mk8");
+    editorCell.addEditorCell(this.createConstant_2925_kemllded1mk9(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2925_kemllded1mkc(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2925_kemllded1mke(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2925_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2925_kemllded1mk9(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_2925_0");
+    editorCell.setCellId("Constant_2925_kemllded1mk9");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2925_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2925_kemllded1mke(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_2925_1");
+    editorCell.setCellId("Constant_2925_kemllded1mke");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_2925_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2925_kemllded1mkc(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

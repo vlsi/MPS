@@ -17,23 +17,23 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2585_0(editorContext, node);
+    return this.createCollection_2585_1gwewexg2b0lm(editorContext, node);
   }
 
-  private EditorCell createCollection_2585_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2585_1gwewexg2b0lm(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2585_0");
+    editorCell.setCellId("Collection_2585_1gwewexg2b0lm");
     IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.addEditorCell(this.createConstant_2585_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2585_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2585_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2585_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2585_1gwewexg2b0lr(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2585_gufrzp3flqf3(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2585_1gwewexg2b0lw(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2585_1gwewexg2b0lu(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2585_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2585_gufrzp3flqf3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
-    editorCell.setCellId("Constant_2585_0");
+    editorCell.setCellId("Constant_2585_gufrzp3flqf3");
     DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -46,9 +46,9 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2585_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2585_1gwewexg2b0lr(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_2585_1");
+    editorCell.setCellId("Constant_2585_1gwewexg2b0lr");
     DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -61,9 +61,9 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2585_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2585_1gwewexg2b0lu(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_2585_2");
+    editorCell.setCellId("Constant_2585_1gwewexg2b0lu");
     DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -76,7 +76,7 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2585_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2585_1gwewexg2b0lw(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("tag");
     provider.setNoTargetText("...");

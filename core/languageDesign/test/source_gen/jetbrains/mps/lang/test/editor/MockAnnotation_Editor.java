@@ -13,33 +13,33 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MockAnnotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3037_0(editorContext, node);
+    return this.createCollection_3037_fp5o4dpx(editorContext, node);
   }
 
-  private EditorCell createCollection_3037_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3037_fp5o4dpx(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3037_0");
-    editorCell.addEditorCell(this.createConstant_3037_0(editorContext, node));
-    editorCell.addEditorCell(this.createAttributedNodeCell_3037_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3037_1(editorContext, node));
+    editorCell.setCellId("Collection_3037_fp5o4dpx");
+    editorCell.addEditorCell(this.createConstant_3037_fp5o4l98(editorContext, node));
+    editorCell.addEditorCell(this.createAttributedNodeCell_3037_fp5o53a6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3037_fp5o58xd(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3037_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3037_fp5o4l98(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<mock");
-    editorCell.setCellId("Constant_3037_0");
+    editorCell.setCellId("Constant_3037_fp5o4l98");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3037_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3037_fp5o58xd(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_3037_1");
+    editorCell.setCellId("Constant_3037_fp5o58xd");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createAttributedNodeCell_3037_0(EditorContext editorContext, SNode node) {
+  private EditorCell createAttributedNodeCell_3037_fp5o53a6(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();

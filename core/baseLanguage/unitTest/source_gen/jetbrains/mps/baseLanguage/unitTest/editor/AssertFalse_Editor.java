@@ -19,28 +19,28 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AssertFalse_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4977_0(editorContext, node);
+    return this.createCollection_4977_eyegxqom(editorContext, node);
   }
 
-  private EditorCell createCollection_4977_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4977_eyegxqom(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4977_0");
-    editorCell.addEditorCell(this.createConstant_4977_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4977_0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_4977_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4977_1(editorContext, node));
+    editorCell.setCellId("Collection_4977_eyegxqom");
+    editorCell.addEditorCell(this.createConstant_4977_eyegxrpk(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4977_eyegxzx7(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_4977_139msq0tnlyfw(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4977_eyeh17qq(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_4977_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_4977_139msq0tnlyfw(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new MessageComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_4977_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4977_eyegxrpk(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert false");
-    editorCell.setCellId("Constant_4977_0");
+    editorCell.setCellId("Constant_4977_eyegxrpk");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
@@ -49,9 +49,9 @@ public class AssertFalse_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4977_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4977_eyeh17qq(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_4977_1");
+    editorCell.setCellId("Constant_4977_eyeh17qq");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -60,7 +60,7 @@ public class AssertFalse_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4977_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4977_eyegxzx7(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");

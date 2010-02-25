@@ -54,14 +54,14 @@ public class AddMethodDocComment_Intention extends BaseIntention implements Inte
     //  Method parameters 
     for (SNode parameterDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
       SNode paramTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
-      SLinkOperations.setTarget(paramTag, "parameter", new AddMethodDocComment_Intention.QuotationClass_6454_0().createNode(parameterDeclaration), true);
+      SLinkOperations.setTarget(paramTag, "parameter", new AddMethodDocComment_Intention.QuotationClass_6454_l523emneghj5().createNode(parameterDeclaration), true);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "param", true)).addElement(paramTag);
     }
 
     //  Type variables 
     for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
       SNode paramTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
-      SLinkOperations.setTarget(paramTag, "parameter", new AddMethodDocComment_Intention.QuotationClass_6454_1().createNode(typeVariableDeclaration), true);
+      SLinkOperations.setTarget(paramTag, "parameter", new AddMethodDocComment_Intention.QuotationClass_6454_l523emneghls().createNode(typeVariableDeclaration), true);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "param", true)).addElement(paramTag);
     }
 
@@ -82,37 +82,37 @@ public class AddMethodDocComment_Intention extends BaseIntention implements Inte
     return "jetbrains.mps.baseLanguage.javadoc.intentions";
   }
 
-  public static class QuotationClass_6454_0 {
-    public QuotationClass_6454_0() {
+  public static class QuotationClass_6454_l523emneghj5 {
+    public QuotationClass_6454_l523emneghj5() {
     }
 
-    public SNode createNode(Object parameter_6567_0) {
+    public SNode createNode(Object parameter_6567_1fwojygdyzxkn) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6567_0 = null;
+      SNode quotedNode_6567_1fwojygdyzxkg = null;
       {
-        quotedNode_6567_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6567_0 = quotedNode_6567_0;
-        quotedNode1_6567_0.setReferent("param", (SNode) parameter_6567_0);
-        result = quotedNode1_6567_0;
+        quotedNode_6567_1fwojygdyzxkg = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6567_1fwojygdyzxkg = quotedNode_6567_1fwojygdyzxkg;
+        quotedNode1_6567_1fwojygdyzxkg.setReferent("param", (SNode) parameter_6567_1fwojygdyzxkn);
+        result = quotedNode1_6567_1fwojygdyzxkg;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_6454_1 {
-    public QuotationClass_6454_1() {
+  public static class QuotationClass_6454_l523emneghls {
+    public QuotationClass_6454_l523emneghls() {
     }
 
-    public SNode createNode(Object parameter_6567_1) {
+    public SNode createNode(Object parameter_6567_fpvng1m9t4sx) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6567_1 = null;
+      SNode quotedNode_6567_fpvng1m9t4su = null;
       {
-        quotedNode_6567_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6567_1 = quotedNode_6567_1;
-        quotedNode1_6567_1.setReferent("param", (SNode) parameter_6567_1);
-        result = quotedNode1_6567_1;
+        quotedNode_6567_fpvng1m9t4su = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6567_fpvng1m9t4su = quotedNode_6567_fpvng1m9t4su;
+        quotedNode1_6567_fpvng1m9t4su.setReferent("param", (SNode) parameter_6567_fpvng1m9t4sx);
+        result = quotedNode1_6567_fpvng1m9t4su;
       }
       return result;
     }

@@ -26,26 +26,26 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class NodeTypeSetProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7233_0(editorContext, node);
+    return this.createCollection_7233_q6d7sj0gbv0(editorContext, node);
   }
 
-  private EditorCell createCollection_7233_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7233_q6d7sj0gbv0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7233_0");
-    editorCell.addEditorCell(this.createConceptProperty_7233_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_7233_0(editorContext, node));
+    editorCell.setCellId("Collection_7233_q6d7sj0gbv0");
+    editorCell.addEditorCell(this.createConceptProperty_7233_q6d7sj0gbv4(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_7233_q6d7sj0gbv5(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_7233_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new NodeTypeSetProperty_Editor.typeListHandler_7233_0(node, "type", editorContext);
+  private EditorCell createRefNodeList_7233_q6d7sj0gbv5(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new NodeTypeSetProperty_Editor.typeListHandler_7233_q6d7sj0gbv5(node, "type", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_type");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_7233_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_7233_q6d7sj0gbv4(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -64,8 +64,8 @@ public class NodeTypeSetProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class typeListHandler_7233_0 extends RefNodeListHandler {
-    public typeListHandler_7233_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class typeListHandler_7233_q6d7sj0gbv5 extends RefNodeListHandler {
+    public typeListHandler_7233_q6d7sj0gbv5(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

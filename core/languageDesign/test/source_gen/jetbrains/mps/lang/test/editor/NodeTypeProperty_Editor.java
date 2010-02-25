@@ -16,26 +16,26 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class NodeTypeProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5451_0(editorContext, node);
+    return this.createCollection_5451_fiel1rla(editorContext, node);
   }
 
-  private EditorCell createCollection_5451_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5451_fiel1rla(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5451_0");
-    editorCell.addEditorCell(this.createConstant_5451_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5451_0(editorContext, node));
+    editorCell.setCellId("Collection_5451_fiel1rla");
+    editorCell.addEditorCell(this.createConstant_5451_fiel1wlh(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5451_fiel224b(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5451_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5451_fiel1wlh(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has type");
-    editorCell.setCellId("Constant_5451_0");
+    editorCell.setCellId("Constant_5451_fiel1wlh");
     BaseLanguageStyle_StyleSheet.getAnnotation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_5451_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5451_fiel224b(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
