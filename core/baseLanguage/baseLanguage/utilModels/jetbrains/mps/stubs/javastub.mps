@@ -4982,6 +4982,7 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7241381882860004243">
+          <property name="right_transfrom_hint:3" value="true" />
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="7241381882860004244">
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="7241381882860004245">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7241381882860004246">

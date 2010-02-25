@@ -135,10 +135,17 @@ import java.util.Stack;
         for (TypeUtil.TypeBuilderVisitor v : this.interfaceBoundVisitors) {
           interfaceBounds.add(v.getResult());
         }
-        result.add(new ASMFormalTypeParameter(this.name, (this.classBoundVisitor != null ?
-          this.classBoundVisitor.getResult() :
-          null
-        ), interfaceBounds));
+        ASMType formalType = null;
+        if (this.classBoundVisitor != null) {
+          formalType = this.classBoundVisitor.getResult();
+          if (formalType instanceof ASMClassType) {
+            ASMClassType classFormalType = (ASMClassType) formalType;
+            if (classFormalType.getName().equals(Object.class.getName())) {
+              formalType = null;
+            }
+          }
+        }
+        result.add(new ASMFormalTypeParameter(this.name, formalType, interfaceBounds));
         this.name = null;
         this.classBoundVisitor = null;
         this.interfaceBoundVisitors.clear();
