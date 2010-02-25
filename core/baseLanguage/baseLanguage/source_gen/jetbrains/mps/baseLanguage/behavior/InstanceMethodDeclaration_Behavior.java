@@ -43,11 +43,16 @@ public class InstanceMethodDeclaration_Behavior {
   }
 
   public static SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
-    SNode classifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    SNode superclass = ((SLinkOperations.getTarget(classifier, "superclass", true) == null) ?
-      SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object") :
-      SLinkOperations.getTarget(SLinkOperations.getTarget(classifier, "superclass", true), "classifier", false)
-    );
+    SNode parent = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    SNode superclass;
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+      superclass = SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false);
+    } else {
+      superclass = ((SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true) == null) ?
+        SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Object") :
+        SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "classifier", false)
+      );
+    }
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(superclass)), IClassifiersSearchScope.INSTANCE_METHOD);
     List<SNode> methodDeclarations = BaseAdapter.toNodes(scope.getAdapters(InstanceMethodDeclaration.class));
     for (SNode methodCandidate : ((List<SNode>) methodDeclarations)) {
