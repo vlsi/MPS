@@ -33,5 +33,8 @@ public class AnonymousClassCreator_DataFlow extends DataFlowBuilder {
     for (SNode expr : SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "cls", true), "actualArgument", true)) {
       _context.getBuilder().build((SNode) expr);
     }
+    for (SNode fieldDeclaration : SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "cls", true), "field", true)) {
+      _context.getBuilder().build((SNode) fieldDeclaration);
+    }
   }
 }

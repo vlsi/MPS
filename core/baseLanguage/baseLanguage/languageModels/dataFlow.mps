@@ -1948,6 +1948,32 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="9026942911488170852">
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9026942911488170853">
+            <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="9026942911488182287">
+              <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="9026942911488182289">
+                <link role="variableDeclaration:3" targetNodeId="9026942911488170856" resolveInfo="fieldDeclaration" />
+              </node>
+            </node>
+          </node>
+          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9026942911488170877">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9026942911488170866">
+              <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="9026942911488170865" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="9026942911488170872">
+                <link role="link:16" targetNodeId="1.1182160096073:3" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="9026942911488178283">
+              <link role="link:16" targetNodeId="1.1068390468199:3" />
+            </node>
+          </node>
+          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="9026942911488170856">
+            <property name="name:3" value="fieldDeclaration" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="9026942911488170860">
+              <link role="concept:16" targetNodeId="1.1068390468200:3" resolveInfo="FieldDeclaration" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
