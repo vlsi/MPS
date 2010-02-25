@@ -60,9 +60,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private PluginsState myState = new PluginsState();
   private volatile boolean myLoaded = false; //this is synchronized
   private Project myProject;
+  private EditorsProvider myEditorsProvider;
 
   public ProjectPluginManager(Project project) {
     myProject = project;
+    myEditorsProvider = new EditorsProvider(myProject);    
   }
 
   public void projectOpened() {
@@ -211,8 +213,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   private void recreateTabbedEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        EditorsProvider editorsProvider = new EditorsProvider(myProject);
-        for (MPSFileNodeEditor editor : editorsProvider.getAllEditors()) {
+        for (MPSFileNodeEditor editor : myEditorsProvider.getAllEditors()) {
           if (editor.getNodeEditor() instanceof TabbedEditor){
             editor.recreateEditor();
           }
