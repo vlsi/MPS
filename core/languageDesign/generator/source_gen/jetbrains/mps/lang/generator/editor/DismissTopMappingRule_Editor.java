@@ -18,20 +18,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class DismissTopMappingRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9261_0(editorContext, node);
+    return this.createCollection_9261_exc7l0yb(editorContext, node);
   }
 
-  private EditorCell createCollection_9261_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9261_exc7l0yb(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9261_0");
-    editorCell.addEditorCell(this.createConstant_9261_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9261_0(editorContext, node));
+    editorCell.setCellId("Collection_9261_exc7l0yb");
+    editorCell.addEditorCell(this.createConstant_9261_exc7lhru(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9261_exc7m7en(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9261_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9261_exc7lhru(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "DISMISS TOP RULE");
-    editorCell.setCellId("Constant_9261_0");
+    editorCell.setCellId("Constant_9261_exc7lhru");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -40,7 +40,7 @@ public class DismissTopMappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9261_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9261_exc7m7en(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("generatorMessage");
     provider.setNoTargetText("<no message>");

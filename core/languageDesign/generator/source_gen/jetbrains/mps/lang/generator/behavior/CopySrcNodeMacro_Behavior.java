@@ -14,30 +14,30 @@ public class CopySrcNodeMacro_Behavior {
 
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
-      GeneratedMatchingPattern pattern_8614_0 = new CopySrcNodeMacro_Behavior.Pattern_8614_0();
-      SNode coercedNode_8614_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_8614_0);
-      if (coercedNode_8614_0 != null) {
-        return ((SNode) pattern_8614_0.getFieldValue("PatternVar_concept"));
+      GeneratedMatchingPattern pattern_8614_fhnba0y1 = new CopySrcNodeMacro_Behavior.Pattern_8614_l523emnexljv();
+      SNode coercedNode_8614_fhnba0y1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_8614_fhnba0y1);
+      if (coercedNode_8614_fhnba0y1 != null) {
+        return ((SNode) pattern_8614_fhnba0y1.getFieldValue("PatternVar_concept"));
       } else {
       }
     }
     return null;
   }
 
-  public static class Pattern_8614_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_8614_l523emnexljv extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_concept;
 
-    public Pattern_8614_0() {
+    public Pattern_8614_l523emnexljv() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_8614_0;
-        nodeToMatch_8614_0 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_8614_0.getConceptFqName()))) {
+        SNode nodeToMatch_8614_fhnba0y4;
+        nodeToMatch_8614_fhnba0y4 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_8614_fhnba0y4.getConceptFqName()))) {
           return false;
         }
-        this.PatternVar_concept = nodeToMatch_8614_0.getReferent("concept");
+        this.PatternVar_concept = nodeToMatch_8614_fhnba0y4.getReferent("concept");
       }
       return true;
     }

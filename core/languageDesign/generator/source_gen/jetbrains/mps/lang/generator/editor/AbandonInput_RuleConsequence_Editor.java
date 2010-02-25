@@ -13,12 +13,12 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class AbandonInput_RuleConsequence_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_9121_0(editorContext, node);
+    return this.createConstant_9121_fcjsrbhs(editorContext, node);
   }
 
-  private EditorCell createConstant_9121_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9121_fcjsrbhs(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<abandon input>");
-    editorCell.setCellId("Constant_9121_0");
+    editorCell.setCellId("Constant_9121_fcjsrbhs");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);

@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class MappingScriptReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4758_0(editorContext, node);
+    return this.createCollection_4758_l523emnexngh(editorContext, node);
   }
 
-  private EditorCell createCollection_4758_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4758_l523emnexngh(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4758_0");
-    editorCell.addEditorCell(this.createRefCell_4758_0(editorContext, node));
+    editorCell.setCellId("Collection_4758_l523emnexngh");
+    editorCell.addEditorCell(this.createRefCell_4758_l523emnexnge(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_4758_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_4758_l523emnexnge(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("mappingScript");
     provider.setNoTargetText("choose script");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingScriptReference_Editor._Inline4758_0());
+    provider.setAuxiliaryCellProvider(new MappingScriptReference_Editor._Inline4758_l523emnexngf());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class MappingScriptReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4758_0 extends InlineCellProvider {
-    public _Inline4758_0() {
+  public static class _Inline4758_l523emnexngf extends InlineCellProvider {
+    public _Inline4758_l523emnexngf() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class MappingScriptReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_4758_0(editorContext, node);
+      return this.createProperty_4758_l523emnexngg(editorContext, node);
     }
 
-    private EditorCell createProperty_4758_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_4758_l523emnexngg(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

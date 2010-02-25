@@ -17,31 +17,31 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3465_0(editorContext, node);
+    return this.createCollection_3465_fjhjkc57(editorContext, node);
   }
 
-  private EditorCell createCollection_3465_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3465_fjhjkc57(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3465_0");
-    editorCell.addEditorCell(this.createConstant_3465_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_3465_0(editorContext, node));
+    editorCell.setCellId("Collection_3465_fjhjkc57");
+    editorCell.addEditorCell(this.createConstant_3465_fjhjkc58(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_3465_fjhjkc59(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3465_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3465_fjhjkc58(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get prev input");
-    editorCell.setCellId("Constant_3465_0");
+    editorCell.setCellId("Constant_3465_fjhjkc58");
     Styles_StyleSheet.getGenContext_operation(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_3465_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_3465_fjhjkc59(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("label");
     provider.setNoTargetText("<choose mapping label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenerationContextOp_GetPrevInputByLabel_Editor._Inline3465_0());
+    provider.setAuxiliaryCellProvider(new GenerationContextOp_GetPrevInputByLabel_Editor._Inline3465_fjhjkc5a());
     editorCell = provider.createEditorCell(editorContext);
     jetbrains.mps.lang.generator.editor.Styles_StyleSheet.getMappingLabelReference(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -55,8 +55,8 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
     return editorCell;
   }
 
-  public static class _Inline3465_0 extends InlineCellProvider {
-    public _Inline3465_0() {
+  public static class _Inline3465_fjhjkc5a extends InlineCellProvider {
+    public _Inline3465_fjhjkc5a() {
       super();
     }
 
@@ -65,10 +65,10 @@ public class GenerationContextOp_GetPrevInputByLabel_Editor extends DefaultNodeE
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_3465_0(editorContext, node);
+      return this.createProperty_3465_fjhjkc5b(editorContext, node);
     }
 
-    private EditorCell createProperty_3465_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_3465_fjhjkc5b(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -18,21 +18,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8721_0(editorContext, node);
+    return this.createCollection_8721_f0qz6qbk(editorContext, node);
   }
 
-  private EditorCell createCollection_8721_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8721_f0qz6qbk(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8721_0");
-    editorCell.addEditorCell(this.createConstant_8721_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8721_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8721_1(editorContext, node));
+    editorCell.setCellId("Collection_8721_f0qz6qbk");
+    editorCell.addEditorCell(this.createConstant_8721_f0qz6u94(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8721_f0qz85hs(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8721_f0qz7qke(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8721_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8721_f0qz6u94(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<T ");
-    editorCell.setCellId("Constant_8721_0");
+    editorCell.setCellId("Constant_8721_f0qz6u94");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
@@ -42,9 +42,9 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8721_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8721_f0qz7qke(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " T>");
-    editorCell.setCellId("Constant_8721_1");
+    editorCell.setCellId("Constant_8721_f0qz7qke");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
@@ -54,7 +54,7 @@ public class InlineTemplate_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8721_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8721_f0qz85hs(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("templateNode");
     provider.setNoTargetText("<no templateNode>");
