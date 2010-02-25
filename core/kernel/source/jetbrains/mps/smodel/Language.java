@@ -884,6 +884,10 @@ public class Language extends AbstractModule {
     return toStubModelEntries(cp, sm);
   }
 
+  public boolean isGenerateAdapters() {
+    return !myLanguageDescriptor.isDoNotGenerateAdapters();
+  }
+
   //-----------stubs--------------
 
   private static LanguageDescriptor createNewDescriptor(String languageNamespace, IFile descriptorFile) {

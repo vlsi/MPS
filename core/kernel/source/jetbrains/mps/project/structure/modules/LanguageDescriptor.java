@@ -29,6 +29,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
   private List<Dependency> myRuntimeModules;
   private List<ClassPathEntry> myRuntimeClassPaths;
   private List<StubModelsEntry> myRuntimeStubModels;
+  private boolean myDoNotGenerateAdapters = false;
 
   public LanguageDescriptor() {
     super();
@@ -70,6 +71,10 @@ public class LanguageDescriptor extends ModuleDescriptor {
 
   public List<StubModelsEntry> getRuntimeStubModels() {
     return myRuntimeStubModels;
+  }
+
+  public boolean isDoNotGenerateAdapters() {
+    return myDoNotGenerateAdapters;
   }
 
   @Override

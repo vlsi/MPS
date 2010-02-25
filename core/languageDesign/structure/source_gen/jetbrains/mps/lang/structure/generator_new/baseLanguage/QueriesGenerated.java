@@ -39,85 +39,190 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1167266219124(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     SNode type = SLinkOperations.getTarget(_context.getNode(), "memberDataType", false);
     return PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(type);
   }
 
   public static boolean baseMappingRule_Condition_1167266685049(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     SNode type = SLinkOperations.getTarget(_context.getNode(), "memberDataType", false);
     return PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(type);
   }
 
   public static boolean baseMappingRule_Condition_1167266687532(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     SNode type = SLinkOperations.getTarget(_context.getNode(), "memberDataType", false);
     return PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(type);
   }
 
   public static boolean baseMappingRule_Condition_1167267315256(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     return SPropertyOperations.hasValue(_context.getNode(), "name", "AttributeConcept");
   }
 
   public static boolean baseMappingRule_Condition_1169582607456(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
     boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169582607528(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
     boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169582607585(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
     boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169582607642(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
     boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169582939030(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
     boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169583297029(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
     boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169591070445(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
     boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169592290031(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
     boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169592375050(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
     boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_3300834394754013276(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
     boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
+  public static boolean baseMappingRule_Condition_3345876218930170217(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930171382(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930171391(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930171400(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930192907(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930192927(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930192936(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930192945(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930192954(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930192968(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930192982(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930192991(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930193000(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930193009(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
+  public static boolean baseMappingRule_Condition_3345876218930193018(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters();
+  }
+
   public static boolean baseMappingRule_Condition_9026942911489417924(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(QueriesUtil.getInputLanguage(_context.getOriginalInputModel()).isGenerateAdapters())) {
+      return false;
+    }
     boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
     boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).count() > 0;
     return b1 || b2;
