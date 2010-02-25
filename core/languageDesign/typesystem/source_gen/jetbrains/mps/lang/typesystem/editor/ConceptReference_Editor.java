@@ -33,49 +33,49 @@ import java.util.ArrayList;
 
 public class ConceptReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4215_0(editorContext, node);
+    return this.createCollection_4215_ezmg58wh(editorContext, node);
   }
 
-  private EditorCell createCollection_4215_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4215_ezmg58wh(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4215_0");
-    editorCell.addEditorCell(this.createConstant_4215_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4215_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_4215_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4215_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4215_1(editorContext, node));
+    editorCell.setCellId("Collection_4215_ezmg58wh");
+    editorCell.addEditorCell(this.createConstant_4215_ezmiaji8(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4215_fagr67h6(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_4215_ezmg5b3j(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4215_ezmik7hc(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4215_ezmikic0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4215_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4215_ezmiaji8(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
-    editorCell.setCellId("Constant_4215_0");
+    editorCell.setCellId("Constant_4215_ezmiaji8");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4215_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4215_ezmik7hc(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
-    editorCell.setCellId("Constant_4215_1");
+    editorCell.setCellId("Constant_4215_ezmik7hc");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4215_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4215_fagr67h6(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_4215_2");
+    editorCell.setCellId("Constant_4215_fagr67h6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_4215_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_4215_ezmg5b3j(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptReference_Editor._Inline4215_0());
+    provider.setAuxiliaryCellProvider(new ConceptReference_Editor._Inline4215_ezmg5b3k());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -88,7 +88,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4215_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4215_ezmikic0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -101,7 +101,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ConceptReference_Editor.ConceptReference_name_postfixCellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ConceptReference_Editor.ConceptReference_name_postfixCellMenuf3oeyjps()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -112,8 +112,8 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4215_0 extends InlineCellProvider {
-    public _Inline4215_0() {
+  public static class _Inline4215_ezmg5b3k extends InlineCellProvider {
+    public _Inline4215_ezmg5b3k() {
       super();
     }
 
@@ -122,10 +122,10 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_4215_0(editorContext, node);
+      return this.createProperty_4215_ezmg5dox(editorContext, node);
     }
 
-    private EditorCell createProperty_4215_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_4215_ezmg5dox(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -146,8 +146,8 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ConceptReference_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public ConceptReference_name_postfixCellMenu0() {
+  public static class ConceptReference_name_postfixCellMenuf3oeyjps extends AbstractCellMenuPart_PropertyPostfixHints {
+    public ConceptReference_name_postfixCellMenuf3oeyjps() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {

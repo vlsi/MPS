@@ -27,7 +27,7 @@ public class typeof_ConceptFunctionParameter_DependentComputationNode_InferenceR
         SNode _nodeToCheck_1029348928467 = node;
         BaseIntentionProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8058965347377049402", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8058965347377049399", true), (SNode) new typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.QuotationClass_1496_0().createNode(SLinkOperations.getTarget(dependentComputationItem, "applicableConcept", false), typeCheckingContext), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8058965347377049399", true), (SNode) new typeof_ConceptFunctionParameter_DependentComputationNode_InferenceRule.QuotationClass_1496_l523emnfdocf().createNode(SLinkOperations.getTarget(dependentComputationItem, "applicableConcept", false), typeCheckingContext), _info_12389875345);
       }
     }
   }
@@ -44,32 +44,32 @@ public class typeof_ConceptFunctionParameter_DependentComputationNode_InferenceR
     return true;
   }
 
-  public static class QuotationClass_1496_0 {
-    public QuotationClass_1496_0() {
+  public static class QuotationClass_1496_l523emnfdocf {
+    public QuotationClass_1496_l523emnfdocf() {
     }
 
-    public SNode createNode(Object parameter_1496_0, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_1496_l523emnfdlp4, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1496_0 = null;
+      SNode quotedNode_1496_l523emnfdlp2 = null;
       {
-        quotedNode_1496_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1496_0 = quotedNode_1496_0;
-        quotedNode1_1496_0.setReferent("concept", (SNode) parameter_1496_0);
-        result = quotedNode1_1496_0;
+        quotedNode_1496_l523emnfdlp2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1496_l523emnfdlp2 = quotedNode_1496_l523emnfdlp2;
+        quotedNode1_1496_l523emnfdlp2.setReferent("concept", (SNode) parameter_1496_l523emnfdlp4);
+        result = quotedNode1_1496_l523emnfdlp2;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_1496_0) {
+    public SNode createNode(Object parameter_1496_l523emnfdlp4) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1496_0 = null;
+      SNode quotedNode_1496_l523emnfdlp2 = null;
       {
-        quotedNode_1496_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1496_0 = quotedNode_1496_0;
-        quotedNode1_1496_0.setReferent("concept", (SNode) parameter_1496_0);
-        result = quotedNode1_1496_0;
+        quotedNode_1496_l523emnfdlp2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1496_l523emnfdlp2 = quotedNode_1496_l523emnfdlp2;
+        quotedNode1_1496_l523emnfdlp2.setReferent("concept", (SNode) parameter_1496_l523emnfdlp4);
+        result = quotedNode1_1496_l523emnfdlp2;
       }
       return result;
     }

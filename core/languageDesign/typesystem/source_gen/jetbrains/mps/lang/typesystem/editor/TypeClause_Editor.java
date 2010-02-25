@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class TypeClause_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_8701_0(editorContext, node);
+    return this.createError_8701_fabolo2p(editorContext, node);
   }
 
-  private EditorCell createError_8701_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_8701_fabolo2p(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "type clause");
-    editorCell.setCellId("Error_8701_0");
+    editorCell.setCellId("Error_8701_fabolo2p");
     return editorCell;
   }
 }

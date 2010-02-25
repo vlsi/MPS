@@ -18,31 +18,31 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ReferenceMessageTarget_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8369_0(editorContext, node);
+    return this.createCollection_8369_fnpxo6c4(editorContext, node);
   }
 
-  private EditorCell createCollection_8369_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8369_fnpxo6c4(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8369_0");
-    editorCell.addEditorCell(this.createConstant_8369_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_8369_0(editorContext, node));
+    editorCell.setCellId("Collection_8369_fnpxo6c4");
+    editorCell.addEditorCell(this.createConstant_8369_fnpxob5f(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_8369_fnpxoejq(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8369_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8369_fnpxob5f(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reference");
-    editorCell.setCellId("Constant_8369_0");
+    editorCell.setCellId("Constant_8369_fnpxob5f");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_8369_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_8369_fnpxoejq(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no linkDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ReferenceMessageTarget_Editor._Inline8369_0());
+    provider.setAuxiliaryCellProvider(new ReferenceMessageTarget_Editor._Inline8369_fnpxoejr());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -55,8 +55,8 @@ public class ReferenceMessageTarget_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline8369_0 extends InlineCellProvider {
-    public _Inline8369_0() {
+  public static class _Inline8369_fnpxoejr extends InlineCellProvider {
+    public _Inline8369_fnpxoejr() {
       super();
     }
 
@@ -65,10 +65,10 @@ public class ReferenceMessageTarget_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8369_0(editorContext, node);
+      return this.createProperty_8369_fnpxohsx(editorContext, node);
     }
 
-    private EditorCell createProperty_8369_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_8369_fnpxohsx(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

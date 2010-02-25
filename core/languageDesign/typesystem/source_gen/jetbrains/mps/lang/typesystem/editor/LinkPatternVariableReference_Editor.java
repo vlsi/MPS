@@ -20,22 +20,22 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class LinkPatternVariableReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7485_0(editorContext, node);
+    return this.createCollection_7485_l523emnfar31(editorContext, node);
   }
 
-  private EditorCell createCollection_7485_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7485_l523emnfar31(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7485_0");
-    editorCell.addEditorCell(this.createRefCell_7485_0(editorContext, node));
+    editorCell.setCellId("Collection_7485_l523emnfar31");
+    editorCell.addEditorCell(this.createRefCell_7485_l523emnfar2w(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_7485_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_7485_l523emnfar2w(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("patternVarDecl");
     provider.setNoTargetText("<no patternVarDecl>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LinkPatternVariableReference_Editor._Inline7485_0());
+    provider.setAuxiliaryCellProvider(new LinkPatternVariableReference_Editor._Inline7485_l523emnfar2x());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -48,8 +48,8 @@ public class LinkPatternVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline7485_0 extends InlineCellProvider {
-    public _Inline7485_0() {
+  public static class _Inline7485_l523emnfar2x extends InlineCellProvider {
+    public _Inline7485_l523emnfar2x() {
       super();
     }
 
@@ -58,10 +58,10 @@ public class LinkPatternVariableReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_7485_0(editorContext, node);
+      return this.createProperty_7485_l523emnfar2y(editorContext, node);
     }
 
-    private EditorCell createProperty_7485_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_7485_l523emnfar2y(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

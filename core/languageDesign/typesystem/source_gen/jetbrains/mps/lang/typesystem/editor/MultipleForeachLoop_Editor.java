@@ -27,57 +27,57 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4210_0(editorContext, node);
+    return this.createCollection_4210_f0hyakjf(editorContext, node);
   }
 
-  private EditorCell createCollection_4210_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4210_f0hyakjf(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4210_0");
-    editorCell.addEditorCell(this.createConstant_4210_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4210_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_4210_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4210_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4210_4(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4210_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4210_3(editorContext, node));
+    editorCell.setCellId("Collection_4210_f0hyakjf");
+    editorCell.addEditorCell(this.createConstant_4210_f0hyauzg(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4210_f0hyayer(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_4210_f0hyb2e1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4210_f0hyb8dt(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4210_fj8hloaz(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4210_f0hybr6n(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4210_f0hybuii(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4210_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4210_f0hyauzg(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreach");
-    editorCell.setCellId("Constant_4210_0");
+    editorCell.setCellId("Constant_4210_f0hyauzg");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4210_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4210_f0hyayer(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_4210_1");
+    editorCell.setCellId("Constant_4210_f0hyayer");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4210_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4210_f0hyb8dt(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_4210_2");
+    editorCell.setCellId("Constant_4210_f0hyb8dt");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4210_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4210_f0hybuii(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_4210_3");
+    editorCell.setCellId("Constant_4210_f0hybuii");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4210_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4210_fj8hloaz(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_4210_4");
+    editorCell.setCellId("Constant_4210_fj8hloaz");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -87,15 +87,15 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4210_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new MultipleForeachLoop_Editor.loopVariableListHandler_4210_0(node, "loopVariable", editorContext);
+  private EditorCell createRefNodeList_4210_f0hyb2e1(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new MultipleForeachLoop_Editor.loopVariableListHandler_4210_f0hyb2e1(node, "loopVariable", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_loopVariable");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNode_4210_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4210_f0hybr6n(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -117,8 +117,8 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class loopVariableListHandler_4210_0 extends RefNodeListHandler {
-    public loopVariableListHandler_4210_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class loopVariableListHandler_4210_f0hyb2e1 extends RefNodeListHandler {
+    public loopVariableListHandler_4210_f0hyb2e1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

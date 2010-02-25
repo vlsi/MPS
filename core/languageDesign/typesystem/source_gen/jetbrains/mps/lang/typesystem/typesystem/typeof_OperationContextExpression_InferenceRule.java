@@ -26,7 +26,7 @@ public class typeof_OperationContextExpression_InferenceRule extends AbstractInf
       SNode _nodeToCheck_1029348928467 = expression;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "5622704259074446621", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "5622704259074446618", true), (SNode) new typeof_OperationContextExpression_InferenceRule.QuotationClass_3228_0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "5622704259074446618", true), (SNode) new typeof_OperationContextExpression_InferenceRule.QuotationClass_3228_l523emnfdo8o().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -42,19 +42,19 @@ public class typeof_OperationContextExpression_InferenceRule extends AbstractInf
     return false;
   }
 
-  public static class QuotationClass_3228_0 {
-    public QuotationClass_3228_0() {
+  public static class QuotationClass_3228_l523emnfdo8o {
+    public QuotationClass_3228_l523emnfdo8o() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3228_0 = null;
+      SNode quotedNode_3228_l523emnfdlk1 = null;
       {
-        quotedNode_3228_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3228_0 = quotedNode_3228_0;
-        quotedNode1_3228_0.addReference(SReference.create("classifier", quotedNode1_3228_0, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IOperationContext")));
-        result = quotedNode1_3228_0;
+        quotedNode_3228_l523emnfdlk1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3228_l523emnfdlk1 = quotedNode_3228_l523emnfdlk1;
+        quotedNode1_3228_l523emnfdlk1.addReference(SReference.create("classifier", quotedNode1_3228_l523emnfdlk1, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IOperationContext")));
+        result = quotedNode1_3228_l523emnfdlk1;
       }
       return result;
     }
@@ -62,12 +62,12 @@ public class typeof_OperationContextExpression_InferenceRule extends AbstractInf
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3228_0 = null;
+      SNode quotedNode_3228_l523emnfdlk1 = null;
       {
-        quotedNode_3228_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3228_0 = quotedNode_3228_0;
-        quotedNode1_3228_0.addReference(SReference.create("classifier", quotedNode1_3228_0, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IOperationContext")));
-        result = quotedNode1_3228_0;
+        quotedNode_3228_l523emnfdlk1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3228_l523emnfdlk1 = quotedNode_3228_l523emnfdlk1;
+        quotedNode1_3228_l523emnfdlk1.addReference(SReference.create("classifier", quotedNode1_3228_l523emnfdlk1, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IOperationContext")));
+        result = quotedNode1_3228_l523emnfdlk1;
       }
       return result;
     }

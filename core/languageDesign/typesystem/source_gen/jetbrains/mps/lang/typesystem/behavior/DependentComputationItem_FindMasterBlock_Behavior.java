@@ -16,22 +16,22 @@ public class DependentComputationItem_FindMasterBlock_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new DependentComputationItem_FindMasterBlock_Behavior.QuotationClass_9219_0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.typesystem.structure.DependentComputationItem"), "blockingNodeConcept", false));
+    return new DependentComputationItem_FindMasterBlock_Behavior.QuotationClass_9219_l523emnfai54().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.typesystem.structure.DependentComputationItem"), "blockingNodeConcept", false));
   }
 
-  public static class QuotationClass_9219_0 {
-    public QuotationClass_9219_0() {
+  public static class QuotationClass_9219_l523emnfai54 {
+    public QuotationClass_9219_l523emnfai54() {
     }
 
-    public SNode createNode(Object parameter_9219_0) {
+    public SNode createNode(Object parameter_9219_180hvujqqwtv) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9219_0 = null;
+      SNode quotedNode_9219_180hvujqqwtk = null;
       {
-        quotedNode_9219_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9219_0 = quotedNode_9219_0;
-        quotedNode1_9219_0.setReferent("concept", (SNode) parameter_9219_0);
-        result = quotedNode1_9219_0;
+        quotedNode_9219_180hvujqqwtk = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9219_180hvujqqwtk = quotedNode_9219_180hvujqqwtk;
+        quotedNode1_9219_180hvujqqwtk.setReferent("concept", (SNode) parameter_9219_180hvujqqwtv);
+        result = quotedNode1_9219_180hvujqqwtk;
       }
       return result;
     }

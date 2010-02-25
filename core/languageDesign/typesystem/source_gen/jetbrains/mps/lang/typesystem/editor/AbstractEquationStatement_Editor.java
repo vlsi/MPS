@@ -25,37 +25,37 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7653_0(editorContext, node);
+    return this.createCollection_7653_ezmsogxk(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_7653_0(editorContext, node);
+    return this.createComponent_7653_fgt76xrc(editorContext, node);
   }
 
-  private EditorCell createCollection_7653_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7653_ezmsogxk(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7653_0");
-    editorCell.addEditorCell(this.createRefNode_7653_0(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_7653_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7653_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7653_0(editorContext, node));
+    editorCell.setCellId("Collection_7653_ezmsogxk");
+    editorCell.addEditorCell(this.createRefNode_7653_ezmsogxl(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_7653_ezmsondw(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7653_ezmsogxn(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7653_ezmsogxo(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_7653_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_7653_fgt76xrc(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AbstractEquationInspector(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_7653_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7653_ezmsogxo(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_7653_0");
+    editorCell.setCellId("Constant_7653_ezmsogxo");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_7653_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7653_ezmsogxl(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -72,7 +72,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7653_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7653_ezmsogxn(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightExpression");
     provider.setNoTargetText("<no rightExpression>");
@@ -89,7 +89,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_7653_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_7653_ezmsondw(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -100,7 +100,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
-          return AbstractEquationStatement_Editor._StyleParameter_QueryFunction_7653_0((cell == null ?
+          return AbstractEquationStatement_Editor._StyleParameter_QueryFunction_7653_fhvy7oyw((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -111,7 +111,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
       });
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new AbstractEquationStatement_Editor.AbstractEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new AbstractEquationStatement_Editor.AbstractEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenuezmspdce()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -122,7 +122,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_7653_0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_7653_fhvy7oyw(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "checkOnly")) {
       return Color.GRAY;
     } else {
@@ -130,8 +130,8 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class AbstractEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public AbstractEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenu0() {
+  public static class AbstractEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenuezmspdce extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public AbstractEquationStatement_Editor_replaceWith_AbstractEquationStatement_cellMenuezmspdce() {
     }
 
     public String getReplacementConceptName() {

@@ -24,57 +24,57 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0652_0(editorContext, node);
+    return this.createCollection_0652_flv4e7w2(editorContext, node);
   }
 
-  private EditorCell createCollection_0652_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0652_flv4e7w2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_0652_0");
-    editorCell.addEditorCell(this.createCollection_0652_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_0652_2(editorContext, node));
+    editorCell.setCellId("Collection_0652_flv4e7w2");
+    editorCell.addEditorCell(this.createCollection_0652_flv4e7w3(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_0652_flv4f12z(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0652_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0652_flv4e7w3(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0652_1");
+    editorCell.setCellId("Collection_0652_flv4e7w3");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0652_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0652_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0652_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_0652_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0652_flv4e7w4(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0652_flv4e7w5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0652_flv4egy5(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_0652_flv4er89(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0652_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0652_flv4f12z(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0652_2");
+    editorCell.setCellId("Collection_0652_flv4f12z");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0652_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_0652_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0652_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_0652_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0652_flv4f26s(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_0652_flv4fgge(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0652_flv4fqfx(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_0652_flv4gb69(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0652_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0652_flv4e7w4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "procedure call");
-    editorCell.setCellId("Constant_0652_0");
+    editorCell.setCellId("Constant_0652_flv4e7w4");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0652_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0652_flv4egy5(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has arguments");
-    editorCell.setCellId("Constant_0652_1");
+    editorCell.setCellId("Constant_0652_flv4egy5");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -84,17 +84,17 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0652_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0652_flv4f26s(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "its procedure declaration");
-    editorCell.setCellId("Constant_0652_2");
+    editorCell.setCellId("Constant_0652_flv4f26s");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0652_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0652_flv4fqfx(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has parameters");
-    editorCell.setCellId("Constant_0652_3");
+    editorCell.setCellId("Constant_0652_flv4fqfx");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -104,7 +104,7 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0652_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0652_flv4e7w5(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("conceptReference");
     provider.setNoTargetText("<no conceptReference>");
@@ -122,12 +122,12 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_0652_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0652_flv4er89(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("actualArgumentsLink");
     provider.setNoTargetText("<no actualArgumentsLink>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleRule_ProcedureCall_Editor._Inline0652_0());
+    provider.setAuxiliaryCellProvider(new SimpleRule_ProcedureCall_Editor._Inline0652_flv4er8a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -140,12 +140,12 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_0652_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0652_flv4fgge(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("procedureDeclaration");
     provider.setNoTargetText("<no procedureDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleRule_ProcedureCall_Editor._Inline0652_1());
+    provider.setAuxiliaryCellProvider(new SimpleRule_ProcedureCall_Editor._Inline0652_flv4fggf());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -158,12 +158,12 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_0652_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0652_flv4gb69(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("parametersLink");
     provider.setNoTargetText("<no parametersLink>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleRule_ProcedureCall_Editor._Inline0652_2());
+    provider.setAuxiliaryCellProvider(new SimpleRule_ProcedureCall_Editor._Inline0652_flv4gb6a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -176,8 +176,8 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0652_0 extends InlineCellProvider {
-    public _Inline0652_0() {
+  public static class _Inline0652_flv4er8a extends InlineCellProvider {
+    public _Inline0652_flv4er8a() {
       super();
     }
 
@@ -186,10 +186,10 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0652_0(editorContext, node);
+      return this.createProperty_0652_flv4exa1(editorContext, node);
     }
 
-    private EditorCell createProperty_0652_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0652_flv4exa1(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
@@ -210,8 +210,8 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline0652_1 extends InlineCellProvider {
-    public _Inline0652_1() {
+  public static class _Inline0652_flv4fggf extends InlineCellProvider {
+    public _Inline0652_flv4fggf() {
       super();
     }
 
@@ -220,10 +220,10 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0652_1(editorContext, node);
+      return this.createProperty_0652_flv4fi4i(editorContext, node);
     }
 
-    private EditorCell createProperty_0652_1(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0652_flv4fi4i(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");
@@ -244,8 +244,8 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline0652_2 extends InlineCellProvider {
-    public _Inline0652_2() {
+  public static class _Inline0652_flv4gb6a extends InlineCellProvider {
+    public _Inline0652_flv4gb6a() {
       super();
     }
 
@@ -254,10 +254,10 @@ public class SimpleRule_ProcedureCall_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0652_2(editorContext, node);
+      return this.createProperty_0652_flv4gdpz(editorContext, node);
     }
 
-    private EditorCell createProperty_0652_2(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0652_flv4gdpz(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

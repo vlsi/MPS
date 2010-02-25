@@ -22,73 +22,73 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1071_0(editorContext, node);
+    return this.createCollection_1071_fc0edu30(editorContext, node);
   }
 
-  private EditorCell createCollection_1071_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1071_fc0edu30(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_1071_0");
-    editorCell.addEditorCell(this.createCollection_1071_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1071_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_1071_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1071_9(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_1071_5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1071_4(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_1071_3(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_1071_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1071_7(editorContext, node));
+    editorCell.setCellId("Collection_1071_fc0edu30");
+    editorCell.addEditorCell(this.createCollection_1071_fc0edu31(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1071_fc0edu34(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_1071_fc0edu35(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1071_ragz3pizppmv(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_1071_ragz3pizppds(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1071_fc0edu3a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_1071_fc0edu3b(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_1071_fc0edu3f(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1071_fc0edu3i(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_1071_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1071_fc0edu31(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1071_1");
-    editorCell.addEditorCell(this.createConstant_1071_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_1071_0(editorContext, node));
+    editorCell.setCellId("Collection_1071_fc0edu31");
+    editorCell.addEditorCell(this.createConstant_1071_fc0edu32(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_1071_fc0edu33(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_1071_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1071_fc0edu35(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1071_2");
-    editorCell.addEditorCell(this.createConstant_1071_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1071_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1071_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1071_1(editorContext, node));
+    editorCell.setCellId("Collection_1071_fc0edu35");
+    editorCell.addEditorCell(this.createConstant_1071_fc0edu36(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1071_fc0edu37(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1071_fc0edu38(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1071_fc0edu39(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_1071_3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1071_fc0edu3b(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createFlow(editorContext, node);
-    editorCell.setCellId("Collection_1071_3");
-    editorCell.addEditorCell(this.createConstant_1071_5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1071_6(editorContext, node));
+    editorCell.setCellId("Collection_1071_fc0edu3b");
+    editorCell.addEditorCell(this.createConstant_1071_fc0edu3d(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1071_fc0edu3e(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_1071_4(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1071_fc0edu3f(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1071_4");
-    editorCell.addEditorCell(this.createIndentCell1071_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1071_2(editorContext, node));
+    editorCell.setCellId("Collection_1071_fc0edu3f");
+    editorCell.addEditorCell(this.createIndentCell1071_fj8hwcbm(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1071_fc0edu3h(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_1071_5(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1071_ragz3pizppds(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1071_5");
+    editorCell.setCellId("Collection_1071_ragz3pizppds");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1071_8(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1071_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1071_ragz3pizppdw(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1071_ragz3pizppdy(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1071_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1071_fc0edu32(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replacement rule");
-    editorCell.setCellId("Constant_1071_0");
+    editorCell.setCellId("Constant_1071_fc0edu32");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -98,9 +98,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1071_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1071_fc0edu34(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_1071_1");
+    editorCell.setCellId("Constant_1071_fc0edu34");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -109,9 +109,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1071_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1071_fc0edu36(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable for ");
-    editorCell.setCellId("Constant_1071_2");
+    editorCell.setCellId("Constant_1071_fc0edu36");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -121,16 +121,16 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1071_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1071_fc0edu38(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<:");
-    editorCell.setCellId("Constant_1071_3");
+    editorCell.setCellId("Constant_1071_fc0edu38");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1071_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1071_fc0edu3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_1071_4");
+    editorCell.setCellId("Constant_1071_fc0edu3a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -139,9 +139,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1071_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1071_fc0edu3d(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rule");
-    editorCell.setCellId("Constant_1071_5");
+    editorCell.setCellId("Constant_1071_fc0edu3d");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -152,9 +152,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1071_6(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1071_fc0edu3e(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_1071_6");
+    editorCell.setCellId("Constant_1071_fc0edu3e");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -164,9 +164,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1071_7(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1071_fc0edu3i(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_1071_7");
+    editorCell.setCellId("Constant_1071_fc0edu3i");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -176,9 +176,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1071_8(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1071_ragz3pizppdw(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "custom condition:");
-    editorCell.setCellId("Constant_1071_8");
+    editorCell.setCellId("Constant_1071_ragz3pizppdw");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -188,9 +188,9 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1071_9(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1071_ragz3pizppmv(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_1071_9");
+    editorCell.setCellId("Constant_1071_ragz3pizppmv");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -199,12 +199,12 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createIndentCell1071_0(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell1071_fj8hwcbm(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createProperty_1071_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_1071_fc0edu33(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -222,7 +222,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1071_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1071_fc0edu37(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("applicableNode");
     provider.setNoTargetText("<no applicableNode>");
@@ -239,7 +239,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1071_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1071_fc0edu39(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("supertypeNode");
     provider.setNoTargetText("<no supertypeNode>");
@@ -256,7 +256,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1071_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1071_fc0edu3h(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -273,7 +273,7 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1071_3(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1071_ragz3pizppdy(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("isApplicableClause");
     provider.setNoTargetText("true");
