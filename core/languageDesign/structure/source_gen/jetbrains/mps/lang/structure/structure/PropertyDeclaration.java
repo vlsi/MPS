@@ -15,6 +15,7 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String DO_NOT_GENERATE = "doNotGenerate";
   public static final String DATA_TYPE = "dataType";
 
   public PropertyDeclaration(SNode node) {
@@ -51,6 +52,14 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
 
   public void setVirtualPackage(String value) {
     this.setProperty(PropertyDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getDoNotGenerate() {
+    return this.getBooleanProperty(PropertyDeclaration.DO_NOT_GENERATE);
+  }
+
+  public void setDoNotGenerate(boolean value) {
+    this.setBooleanProperty(PropertyDeclaration.DO_NOT_GENERATE, value);
   }
 
   public DataTypeDeclaration getDataType() {

@@ -17,11 +17,17 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5641_dtilnad1(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_5641_1wkyw78n9geb9(editorContext, node);
   }
 
   private EditorCell createCollection_5641_dtilnad1(EditorContext editorContext, SNode node) {
@@ -30,6 +36,17 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_5641_dtilnad2(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5641_dtimjkci(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_5641_e4392wgm(editorContext, node));
+    if (renderingCondition5641_1wkyw78n9geb0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_5641_1wkyw78n9geay(editorContext, node));
+    }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_5641_1wkyw78n9geb9(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_5641_1wkyw78n9geb9");
+    editorCell.addEditorCell(this.createConstant_5641_1wkyw78n9gebb(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5641_1wkyw78n9gebd(editorContext, node));
     return editorCell;
   }
 
@@ -40,6 +57,20 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5641_1wkyw78n9geay(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-G");
+    editorCell.setCellId("Constant_5641_1wkyw78n9geay");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5641_1wkyw78n9gebb(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not generate:");
+    editorCell.setCellId("Constant_5641_1wkyw78n9gebb");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -83,6 +114,28 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createProperty_5641_1wkyw78n9gebd(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("doNotGenerate");
+    provider.setNoTargetText("<no doNotGenerate>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_doNotGenerate");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition5641_1wkyw78n9geb0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "doNotGenerate");
   }
 
   public static class _Inline5641_e438z9uc extends InlineCellProvider {

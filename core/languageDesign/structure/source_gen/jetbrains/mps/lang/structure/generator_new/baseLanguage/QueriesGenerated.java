@@ -117,6 +117,12 @@ public class QueriesGenerated {
     return b1 || b2;
   }
 
+  public static boolean baseMappingRule_Condition_9026942911489417924(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
+    boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).count() > 0;
+    return b1 || b2;
+  }
+
   public static Object propertyMacro_GetPropertyValue_1168019908729(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -631,6 +637,14 @@ public class QueriesGenerated {
     return NameUtil.toConstantName(SPropertyOperations.getString(_context.getNode(), "role"));
   }
 
+  public static Object propertyMacro_GetPropertyValue_9026942911489416741(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_9026942911489416749(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.toConstantName(SPropertyOperations.getString(_context.getNode(), "name"));
+  }
+
   public static Object referenceMacro_GetReferent_1197509802062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(_context.getNode());
     SNode outputEnumConstant = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(defaultMember, _context.getOutputNode(), "outputEnumConstant");
@@ -761,20 +775,27 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      if (!(ListSequence.fromList(names).contains(SPropertyOperations.getString(_2_p, "name")))) {
+                      if (SPropertyOperations.getBoolean(_2_p, "doNotGenerate")) {
                         this.__CP__ = 6;
                         break;
                       }
-                      this.__CP__ = 3;
+                      this.__CP__ = 7;
                       break;
                     case 7:
-                      if (QueriesUtil.propertyDataType_isString(_2_p)) {
-                        this.__CP__ = 8;
+                      if (!(ListSequence.fromList(names).contains(SPropertyOperations.getString(_2_p, "name")))) {
+                        this.__CP__ = 9;
                         break;
                       }
                       this.__CP__ = 3;
                       break;
                     case 10:
+                      if (QueriesUtil.propertyDataType_isString(_2_p)) {
+                        this.__CP__ = 11;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 13:
                       this.__CP__ = 3;
                       this.yield(_2_p);
                       return true;
@@ -785,11 +806,14 @@ __switch__:
                       this.__CP__ = 5;
                       break;
                     case 6:
-                      this.__CP__ = 7;
+                      this.__CP__ = 3;
                       break;
-                    case 8:
-                      ListSequence.fromList(names).addElement(SPropertyOperations.getString(_2_p, "name"));
+                    case 9:
                       this.__CP__ = 10;
+                      break;
+                    case 11:
+                      ListSequence.fromList(names).addElement(SPropertyOperations.getString(_2_p, "name"));
+                      this.__CP__ = 13;
                       break;
                     default:
                       break __loop__;
@@ -836,20 +860,27 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      if (!(ListSequence.fromList(names).contains(SPropertyOperations.getString(_2_p, "name")))) {
+                      if (SPropertyOperations.getBoolean(_2_p, "doNotGenerate")) {
                         this.__CP__ = 6;
                         break;
                       }
-                      this.__CP__ = 3;
+                      this.__CP__ = 7;
                       break;
                     case 7:
-                      if (QueriesUtil.propertyDataType_isBoolean(_2_p)) {
-                        this.__CP__ = 8;
+                      if (!(ListSequence.fromList(names).contains(SPropertyOperations.getString(_2_p, "name")))) {
+                        this.__CP__ = 9;
                         break;
                       }
                       this.__CP__ = 3;
                       break;
                     case 10:
+                      if (QueriesUtil.propertyDataType_isBoolean(_2_p)) {
+                        this.__CP__ = 11;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 13:
                       this.__CP__ = 3;
                       this.yield(_2_p);
                       return true;
@@ -860,11 +891,14 @@ __switch__:
                       this.__CP__ = 5;
                       break;
                     case 6:
-                      this.__CP__ = 7;
+                      this.__CP__ = 3;
                       break;
-                    case 8:
-                      ListSequence.fromList(names).addElement(SPropertyOperations.getString(_2_p, "name"));
+                    case 9:
                       this.__CP__ = 10;
+                      break;
+                    case 11:
+                      ListSequence.fromList(names).addElement(SPropertyOperations.getString(_2_p, "name"));
+                      this.__CP__ = 13;
                       break;
                     default:
                       break __loop__;
@@ -911,20 +945,27 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      if (!(ListSequence.fromList(names).contains(SPropertyOperations.getString(_2_p, "name")))) {
+                      if (SPropertyOperations.getBoolean(_2_p, "doNotGenerate")) {
                         this.__CP__ = 6;
                         break;
                       }
-                      this.__CP__ = 3;
+                      this.__CP__ = 7;
                       break;
                     case 7:
-                      if (QueriesUtil.propertyDataType_isInteger(_2_p)) {
-                        this.__CP__ = 8;
+                      if (!(ListSequence.fromList(names).contains(SPropertyOperations.getString(_2_p, "name")))) {
+                        this.__CP__ = 9;
                         break;
                       }
                       this.__CP__ = 3;
                       break;
                     case 10:
+                      if (QueriesUtil.propertyDataType_isInteger(_2_p)) {
+                        this.__CP__ = 11;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 13:
                       this.__CP__ = 3;
                       this.yield(_2_p);
                       return true;
@@ -935,11 +976,14 @@ __switch__:
                       this.__CP__ = 5;
                       break;
                     case 6:
-                      this.__CP__ = 7;
+                      this.__CP__ = 3;
                       break;
-                    case 8:
-                      ListSequence.fromList(names).addElement(SPropertyOperations.getString(_2_p, "name"));
+                    case 9:
                       this.__CP__ = 10;
+                      break;
+                    case 11:
+                      ListSequence.fromList(names).addElement(SPropertyOperations.getString(_2_p, "name"));
+                      this.__CP__ = 13;
                       break;
                     default:
                       break __loop__;
@@ -986,20 +1030,27 @@ __switch__:
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      if (!(ListSequence.fromList(names).contains(SPropertyOperations.getString(_2_p, "name")))) {
+                      if (SPropertyOperations.getBoolean(_2_p, "doNotGenerate")) {
                         this.__CP__ = 6;
                         break;
                       }
-                      this.__CP__ = 3;
+                      this.__CP__ = 7;
                       break;
                     case 7:
-                      if (QueriesUtil.propertyDataType_isEnum(_2_p)) {
-                        this.__CP__ = 8;
+                      if (!(ListSequence.fromList(names).contains(SPropertyOperations.getString(_2_p, "name")))) {
+                        this.__CP__ = 9;
                         break;
                       }
                       this.__CP__ = 3;
                       break;
                     case 10:
+                      if (QueriesUtil.propertyDataType_isEnum(_2_p)) {
+                        this.__CP__ = 11;
+                        break;
+                      }
+                      this.__CP__ = 3;
+                      break;
+                    case 13:
                       this.__CP__ = 3;
                       this.yield(_2_p);
                       return true;
@@ -1010,11 +1061,14 @@ __switch__:
                       this.__CP__ = 5;
                       break;
                     case 6:
-                      this.__CP__ = 7;
+                      this.__CP__ = 3;
                       break;
-                    case 8:
-                      ListSequence.fromList(names).addElement(SPropertyOperations.getString(_2_p, "name"));
+                    case 9:
                       this.__CP__ = 10;
+                      break;
+                    case 11:
+                      ListSequence.fromList(names).addElement(SPropertyOperations.getString(_2_p, "name"));
+                      this.__CP__ = 13;
                       break;
                     default:
                       break __loop__;
@@ -1351,7 +1405,7 @@ __switch__:
   public static Iterable sourceNodesQuery_1169751054593(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode p) {
-        return QueriesUtil.propertyDataType_isString(p);
+        return QueriesUtil.propertyDataType_isString(p) && !(SPropertyOperations.getBoolean(p, "doNotGenerate"));
       }
     });
   }
@@ -1359,7 +1413,7 @@ __switch__:
   public static Iterable sourceNodesQuery_1169751903568(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode p) {
-        return QueriesUtil.propertyDataType_isBoolean(p);
+        return QueriesUtil.propertyDataType_isBoolean(p) && !(SPropertyOperations.getBoolean(p, "doNotGenerate"));
       }
     });
   }
@@ -1367,7 +1421,7 @@ __switch__:
   public static Iterable sourceNodesQuery_1169751987220(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode p) {
-        return QueriesUtil.propertyDataType_isInteger(p);
+        return QueriesUtil.propertyDataType_isInteger(p) && !(SPropertyOperations.getBoolean(p, "doNotGenerate"));
       }
     });
   }
@@ -1375,7 +1429,7 @@ __switch__:
   public static Iterable sourceNodesQuery_1169752052157(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode p) {
-        return QueriesUtil.propertyDataType_isEnum(p);
+        return QueriesUtil.propertyDataType_isEnum(p) && !(SPropertyOperations.getBoolean(p, "doNotGenerate"));
       }
     });
   }
@@ -1471,6 +1525,22 @@ __switch__:
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode link) {
         return SPropertyOperations.getBoolean(link, "doNotGenerate");
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_9026942911489416770(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode property) {
+        return SPropertyOperations.getBoolean(property, "doNotGenerate");
+      }
+    });
+  }
+
+  public static Iterable sourceNodesQuery_9026942911489417953(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode propertyDeclaration) {
+        return SPropertyOperations.getBoolean(propertyDeclaration, "doNotGenerate");
       }
     });
   }
@@ -1634,6 +1704,14 @@ __switch__:
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_3300834394754013272(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_9026942911489416767(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_9026942911489417920(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "javaClass");
   }
 }

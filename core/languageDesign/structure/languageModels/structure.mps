@@ -199,6 +199,10 @@
     <property name="name:0" value="PropertyDeclaration" />
     <property name="iconPath:0" value="${language_descriptor}/icons/property.png" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="9026942911489198753">
+      <property name="name:0" value="doNotGenerate" />
+      <link role="dataType:0" targetNodeId="1.1082983657063:0" resolveInfo="boolean" />
+    </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1169197677374">
       <link role="intfc:0" targetNodeId="1.1169194658468:0" />
     </node>

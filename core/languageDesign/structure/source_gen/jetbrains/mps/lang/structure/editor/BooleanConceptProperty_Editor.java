@@ -20,22 +20,22 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0119_l523emnf7u39(editorContext, node);
+    return this.createCollection_0119_emsbcypj(editorContext, node);
   }
 
-  private EditorCell createCollection_0119_l523emnf7u39(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0119_emsbcypj(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0119_l523emnf7u39");
-    editorCell.addEditorCell(this.createRefCell_0119_l523emnf7u34(editorContext, node));
+    editorCell.setCellId("Collection_0119_emsbcypj");
+    editorCell.addEditorCell(this.createRefCell_0119_emsbcypj(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_0119_l523emnf7u34(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0119_emsbcypj(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("booleanConceptPropertyDeclaration");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BooleanConceptProperty_Editor._Inline0119_l523emnf7u35());
+    provider.setAuxiliaryCellProvider(new BooleanConceptProperty_Editor._Inline0119_emsbcypk());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -48,8 +48,8 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0119_l523emnf7u35 extends InlineCellProvider {
-    public _Inline0119_l523emnf7u35() {
+  public static class _Inline0119_emsbcypk extends InlineCellProvider {
+    public _Inline0119_emsbcypk() {
       super();
     }
 
@@ -58,10 +58,10 @@ public class BooleanConceptProperty_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0119_l523emnf7u36(editorContext, node);
+      return this.createProperty_0119_emsbcypl(editorContext, node);
     }
 
-    private EditorCell createProperty_0119_l523emnf7u36(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0119_emsbcypl(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
