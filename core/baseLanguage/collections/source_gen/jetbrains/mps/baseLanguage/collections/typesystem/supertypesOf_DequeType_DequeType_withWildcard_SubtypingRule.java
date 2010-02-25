@@ -17,7 +17,7 @@ public class supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule extends
   }
 
   public SNode getSubOrSuperType(SNode dequeType, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule.QuotationClass_4920_0().createNode(typeCheckingContext);
+    return new supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule.QuotationClass_4920_l523emnebarl().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -36,24 +36,24 @@ public class supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule extends
     return true;
   }
 
-  public static class QuotationClass_4920_0 {
-    public QuotationClass_4920_0() {
+  public static class QuotationClass_4920_l523emnebarl {
+    public QuotationClass_4920_l523emnebarl() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4920_0 = null;
-      SNode quotedNode_4920_1 = null;
+      SNode quotedNode_4920_l523emneasey = null;
+      SNode quotedNode_4920_l523emneasez = null;
       {
-        quotedNode_4920_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4920_0 = quotedNode_4920_0;
+        quotedNode_4920_l523emneasey = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4920_l523emneasey = quotedNode_4920_l523emneasey;
         {
-          quotedNode_4920_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_4920_1 = quotedNode_4920_1;
-          quotedNode_4920_0.addChild("elementType", quotedNode1_4920_1);
+          quotedNode_4920_l523emneasez = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4920_l523emneasez = quotedNode_4920_l523emneasez;
+          quotedNode_4920_l523emneasey.addChild("elementType", quotedNode1_4920_l523emneasez);
         }
-        result = quotedNode1_4920_0;
+        result = quotedNode1_4920_l523emneasey;
       }
       return result;
     }
@@ -61,17 +61,17 @@ public class supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule extends
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4920_0 = null;
-      SNode quotedNode_4920_1 = null;
+      SNode quotedNode_4920_l523emneasey = null;
+      SNode quotedNode_4920_l523emneasez = null;
       {
-        quotedNode_4920_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4920_0 = quotedNode_4920_0;
+        quotedNode_4920_l523emneasey = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4920_l523emneasey = quotedNode_4920_l523emneasey;
         {
-          quotedNode_4920_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_4920_1 = quotedNode_4920_1;
-          quotedNode_4920_0.addChild("elementType", quotedNode1_4920_1);
+          quotedNode_4920_l523emneasez = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4920_l523emneasez = quotedNode_4920_l523emneasez;
+          quotedNode_4920_l523emneasey.addChild("elementType", quotedNode1_4920_l523emneasez);
         }
-        result = quotedNode1_4920_0;
+        result = quotedNode1_4920_l523emneasey;
       }
       return result;
     }

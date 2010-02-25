@@ -64,7 +64,7 @@ public class ListType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new ListType_Behavior.QuotationClass_9863_0().createNode();
+    return new ListType_Behavior.QuotationClass_9863_l523emne7soi().createNode();
   }
 
   public static List<SNode> call_getAbstractCreators_7602110602933345720(SNode thisNode, SModel targetModel) {
@@ -75,19 +75,19 @@ public class ListType_Behavior {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.ListType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345720, targetModel);
   }
 
-  public static class QuotationClass_9863_0 {
-    public QuotationClass_9863_0() {
+  public static class QuotationClass_9863_l523emne7soi {
+    public QuotationClass_9863_l523emne7soi() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9863_0 = null;
+      SNode quotedNode_9863_ne2j6ic5udg8 = null;
       {
-        quotedNode_9863_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9863_0 = quotedNode_9863_0;
-        quotedNode1_9863_0.addReference(SReference.create("classifier", quotedNode1_9863_0, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
-        result = quotedNode1_9863_0;
+        quotedNode_9863_ne2j6ic5udg8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9863_ne2j6ic5udg8 = quotedNode_9863_ne2j6ic5udg8;
+        quotedNode1_9863_ne2j6ic5udg8.addReference(SReference.create("classifier", quotedNode1_9863_ne2j6ic5udg8, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
+        result = quotedNode1_9863_ne2j6ic5udg8;
       }
       return result;
     }

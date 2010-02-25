@@ -27,7 +27,7 @@ public class DequeType_Behavior {
 
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> res = new ArrayList<SNode>();
-    ListSequence.fromList(res).addElement(new DequeType_Behavior.QuotationClass_4089_0().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
+    ListSequence.fromList(res).addElement(new DequeType_Behavior.QuotationClass_4089_l523emne7x3h().createNode(SLinkOperations.getTarget(thisNode, "elementType", true)));
     ListSequence.fromList(res).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return res;
   }
@@ -40,32 +40,32 @@ public class DequeType_Behavior {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.DequeType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345651, targetModel);
   }
 
-  public static class QuotationClass_4089_0 {
-    public QuotationClass_4089_0() {
+  public static class QuotationClass_4089_l523emne7x3h {
+    public QuotationClass_4089_l523emne7x3h() {
     }
 
-    public SNode createNode(Object parameter_4089_0) {
+    public SNode createNode(Object parameter_4089_pigaxbzsgv8q) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4089_0 = null;
-      SNode quotedNode_4089_1 = null;
+      SNode quotedNode_4089_pigaxbzsgv8n = null;
+      SNode quotedNode_4089_pigaxbzsgv8o = null;
       {
-        quotedNode_4089_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4089_0 = quotedNode_4089_0;
+        quotedNode_4089_pigaxbzsgv8n = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4089_pigaxbzsgv8n = quotedNode_4089_pigaxbzsgv8n;
         {
-          quotedNode_4089_1 = (SNode) parameter_4089_0;
-          SNode quotedNode1_4089_1;
-          if (_parameterValues_129834374.contains(quotedNode_4089_1)) {
-            quotedNode1_4089_1 = CopyUtil.copy(quotedNode_4089_1);
+          quotedNode_4089_pigaxbzsgv8o = (SNode) parameter_4089_pigaxbzsgv8q;
+          SNode quotedNode1_4089_pigaxbzsgv8o;
+          if (_parameterValues_129834374.contains(quotedNode_4089_pigaxbzsgv8o)) {
+            quotedNode1_4089_pigaxbzsgv8o = CopyUtil.copy(quotedNode_4089_pigaxbzsgv8o);
           } else {
-            _parameterValues_129834374.add(quotedNode_4089_1);
-            quotedNode1_4089_1 = quotedNode_4089_1;
+            _parameterValues_129834374.add(quotedNode_4089_pigaxbzsgv8o);
+            quotedNode1_4089_pigaxbzsgv8o = quotedNode_4089_pigaxbzsgv8o;
           }
-          if (quotedNode1_4089_1 != null) {
-            quotedNode_4089_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4089_1));
+          if (quotedNode1_4089_pigaxbzsgv8o != null) {
+            quotedNode_4089_pigaxbzsgv8n.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4089_pigaxbzsgv8o));
           }
         }
-        result = quotedNode1_4089_0;
+        result = quotedNode1_4089_pigaxbzsgv8n;
       }
       return result;
     }

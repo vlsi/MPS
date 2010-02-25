@@ -17,36 +17,36 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class MapRemoveOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1355_0(editorContext, node);
+    return this.createCollection_1355_felfo5bu(editorContext, node);
   }
 
-  private EditorCell createCollection_1355_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1355_felfo5bu(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1355_0");
-    editorCell.addEditorCell(this.createConceptProperty_1355_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1355_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1355_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1355_1(editorContext, node));
+    editorCell.setCellId("Collection_1355_felfo5bu");
+    editorCell.addEditorCell(this.createConceptProperty_1355_felfo83q(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1355_felfofmz(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1355_felfojou(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1355_felfogu6(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1355_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1355_felfofmz(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_1355_0");
+    editorCell.setCellId("Constant_1355_felfofmz");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1355_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1355_felfogu6(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_1355_1");
+    editorCell.setCellId("Constant_1355_felfogu6");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_1355_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_1355_felfo83q(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -65,7 +65,7 @@ public class MapRemoveOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1355_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1355_felfojou(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("key");
     provider.setNoTargetText("<no key>");

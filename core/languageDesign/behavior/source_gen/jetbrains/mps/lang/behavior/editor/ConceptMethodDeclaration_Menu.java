@@ -16,11 +16,11 @@ import jetbrains.mps.smodel.SModel;
 
 public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
   public ConceptMethodDeclaration_Menu() {
-    super(new SubstituteInfoPart[]{new ConceptMethodDeclaration_Menu.ConceptMethodDeclaration_generic_cellMenu0()});
+    super(new SubstituteInfoPart[]{new ConceptMethodDeclaration_Menu.ConceptMethodDeclaration_generic_cellMenufmulpzdo()});
   }
 
-  public static class ConceptMethodDeclaration_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-    public ConceptMethodDeclaration_generic_cellMenu0() {
+  public static class ConceptMethodDeclaration_generic_cellMenufmulpzdo extends AbstractCellMenuPart_Generic_Group {
+    public ConceptMethodDeclaration_generic_cellMenufmulpzdo() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

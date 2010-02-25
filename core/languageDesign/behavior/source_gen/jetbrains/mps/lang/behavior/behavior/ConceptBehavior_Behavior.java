@@ -99,7 +99,7 @@ public class ConceptBehavior_Behavior {
       }
 
       public SNode createMethodCall(SNode method, List<SNode> arguments) {
-        return new ConceptBehavior_Behavior.QuotationClass_3513_0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), method, arguments);
+        return new ConceptBehavior_Behavior.QuotationClass_3513_l523emnerjrq().createNode(SLinkOperations.getTarget(SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), method, arguments);
       }
     };
   }
@@ -163,27 +163,27 @@ public class ConceptBehavior_Behavior {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978650, baseConcept);
   }
 
-  public static class QuotationClass_3513_0 {
-    public QuotationClass_3513_0() {
+  public static class QuotationClass_3513_l523emnerjrq {
+    public QuotationClass_3513_l523emnerjrq() {
     }
 
-    public SNode createNode(Object parameter_3513_0, Object parameter_3513_1, Object parameter_3513_2) {
+    public SNode createNode(Object parameter_3513_fmux0asp, Object parameter_3513_fmuwzv73, Object parameter_3513_fmux12vs) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3513_0 = null;
-      SNode quotedNode_3513_1 = null;
+      SNode quotedNode_3513_fmuwu639 = null;
+      SNode quotedNode_3513_fmux0wer = null;
       {
-        quotedNode_3513_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3513_0 = quotedNode_3513_0;
-        quotedNode1_3513_0.setReferent("baseMethodDeclaration", (SNode) parameter_3513_1);
-        quotedNode1_3513_0.setReferent("concept", (SNode) parameter_3513_0);
+        quotedNode_3513_fmuwu639 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3513_fmuwu639 = quotedNode_3513_fmuwu639;
+        quotedNode1_3513_fmuwu639.setReferent("baseMethodDeclaration", (SNode) parameter_3513_fmuwzv73);
+        quotedNode1_3513_fmuwu639.setReferent("concept", (SNode) parameter_3513_fmux0asp);
         {
-          List<SNode> nodes = (List<SNode>) parameter_3513_2;
+          List<SNode> nodes = (List<SNode>) parameter_3513_fmux12vs;
           for (SNode child : nodes) {
-            quotedNode_3513_0.addChild("actualArgument", HUtil.copyIfNecessary(child));
+            quotedNode_3513_fmuwu639.addChild("actualArgument", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_3513_0;
+        result = quotedNode1_3513_fmuwu639;
       }
       return result;
     }

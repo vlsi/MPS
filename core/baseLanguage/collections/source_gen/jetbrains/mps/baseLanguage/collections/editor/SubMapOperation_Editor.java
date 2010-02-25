@@ -17,46 +17,46 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class SubMapOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2095_0(editorContext, node);
+    return this.createCollection_2095_ftrb0nts(editorContext, node);
   }
 
-  private EditorCell createCollection_2095_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2095_ftrb0nts(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2095_0");
-    editorCell.addEditorCell(this.createConceptProperty_2095_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2095_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2095_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2095_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2095_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2095_1(editorContext, node));
+    editorCell.setCellId("Collection_2095_ftrb0nts");
+    editorCell.addEditorCell(this.createConceptProperty_2095_ftrb0ntt(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2095_ftrb0ntu(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2095_ftrb1zgm(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2095_ftrb20rq(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_2095_ftrb2spn(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2095_ftrb0ntw(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2095_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2095_ftrb0ntu(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_2095_0");
+    editorCell.setCellId("Constant_2095_ftrb0ntu");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2095_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2095_ftrb0ntw(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_2095_1");
+    editorCell.setCellId("Constant_2095_ftrb0ntw");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2095_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2095_ftrb20rq(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_2095_2");
+    editorCell.setCellId("Constant_2095_ftrb20rq");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2095_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_2095_ftrb0ntt(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -75,7 +75,7 @@ public class SubMapOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2095_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2095_ftrb1zgm(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fromKey");
     provider.setNoTargetText("<no fromKey>");
@@ -92,7 +92,7 @@ public class SubMapOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2095_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2095_ftrb2spn(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("toKey");
     provider.setNoTargetText("<no toKey>");

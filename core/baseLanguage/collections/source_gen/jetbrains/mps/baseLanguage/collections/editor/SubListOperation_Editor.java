@@ -22,40 +22,40 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class SubListOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5651_0(editorContext, node);
+    return this.createCollection_5651_16swqnfzexuf2(editorContext, node);
   }
 
-  private EditorCell createCollection_5651_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5651_16swqnfzexuf2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5651_0");
-    editorCell.addEditorCell(this.createConceptProperty_5651_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5651_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5651_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5651_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5651_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5651_1(editorContext, node));
+    editorCell.setCellId("Collection_5651_16swqnfzexuf2");
+    editorCell.addEditorCell(this.createConceptProperty_5651_16swqnfzexuf5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5651_16swqnfzexuf8(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5651_16swqnfzexyzr(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5651_16swqnfzexufb(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5651_16swqnfzexyzu(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5651_16swqnfzexuf9(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5651_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5651_16swqnfzexuf8(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_5651_0");
+    editorCell.setCellId("Constant_5651_16swqnfzexuf8");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5651_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5651_16swqnfzexuf9(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_5651_1");
+    editorCell.setCellId("Constant_5651_16swqnfzexuf9");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5651_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5651_16swqnfzexufb(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_5651_2");
+    editorCell.setCellId("Constant_5651_16swqnfzexufb");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -65,7 +65,7 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_5651_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_5651_16swqnfzexuf5(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -74,7 +74,7 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SubListOperation_Editor.SubListOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SubListOperation_Editor.SubListOperation_Editor_replaceWith_SequenceOperation_cellMenun0yu8co7z2t5()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -85,7 +85,7 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5651_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5651_16swqnfzexyzr(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fromIndex");
     provider.setNoTargetText("<no fromIndex>");
@@ -102,7 +102,7 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5651_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5651_16swqnfzexyzu(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("upToIndex");
     provider.setNoTargetText("<no upToIndex>");
@@ -119,8 +119,8 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class SubListOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public SubListOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
+  public static class SubListOperation_Editor_replaceWith_SequenceOperation_cellMenun0yu8co7z2t5 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public SubListOperation_Editor_replaceWith_SequenceOperation_cellMenun0yu8co7z2t5() {
     }
 
     public String getReplacementConceptName() {

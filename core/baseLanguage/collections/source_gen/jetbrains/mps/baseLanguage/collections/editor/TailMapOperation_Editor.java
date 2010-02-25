@@ -17,36 +17,36 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class TailMapOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3679_0(editorContext, node);
+    return this.createCollection_3679_ftraz8ax(editorContext, node);
   }
 
-  private EditorCell createCollection_3679_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3679_ftraz8ax(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3679_0");
-    editorCell.addEditorCell(this.createConceptProperty_3679_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3679_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_3679_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3679_1(editorContext, node));
+    editorCell.setCellId("Collection_3679_ftraz8ax");
+    editorCell.addEditorCell(this.createConceptProperty_3679_ftraz8ay(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3679_ftraz8az(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_3679_ftraz8b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3679_ftraz8b1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3679_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3679_ftraz8az(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_3679_0");
+    editorCell.setCellId("Constant_3679_ftraz8az");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3679_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3679_ftraz8b1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_3679_1");
+    editorCell.setCellId("Constant_3679_ftraz8b1");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_3679_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_3679_ftraz8ay(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -65,7 +65,7 @@ public class TailMapOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_3679_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_3679_ftraz8b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fromKey");
     provider.setNoTargetText("<no fromKey>");

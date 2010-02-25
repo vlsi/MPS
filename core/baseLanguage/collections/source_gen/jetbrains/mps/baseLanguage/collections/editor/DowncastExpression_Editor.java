@@ -19,20 +19,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class DowncastExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1517_0(editorContext, node);
+    return this.createCollection_1517_fo8nubl3(editorContext, node);
   }
 
-  private EditorCell createCollection_1517_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1517_fo8nubl3(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1517_0");
-    editorCell.addEditorCell(this.createRefNode_1517_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1517_0(editorContext, node));
+    editorCell.setCellId("Collection_1517_fo8nubl3");
+    editorCell.addEditorCell(this.createRefNode_1517_fo8nv2u8(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1517_fo8nubl5(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1517_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1517_fo8nubl5(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
-    editorCell.setCellId("Constant_1517_0");
+    editorCell.setCellId("Constant_1517_fo8nubl5");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, false);
@@ -47,7 +47,7 @@ public class DowncastExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1517_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1517_fo8nv2u8(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

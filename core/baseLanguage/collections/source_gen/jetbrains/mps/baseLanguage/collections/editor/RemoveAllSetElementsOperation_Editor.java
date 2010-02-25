@@ -23,35 +23,35 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class RemoveAllSetElementsOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0497_0(editorContext, node);
+    return this.createCollection_0497_fnhmcpar(editorContext, node);
   }
 
-  private EditorCell createCollection_0497_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0497_fnhmcpar(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0497_0");
-    editorCell.addEditorCell(this.createConstant_0497_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0497_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0497_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0497_2(editorContext, node));
+    editorCell.setCellId("Collection_0497_fnhmcpar");
+    editorCell.addEditorCell(this.createConstant_0497_fnhmcpas(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0497_fnhmcpaw(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0497_fnhmcpay(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0497_fnhmcpaz(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0497_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0497_fnhmcpas(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "removeAll");
-    editorCell.setCellId("Constant_0497_0");
+    editorCell.setCellId("Constant_0497_fnhmcpas");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, true);
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new RemoveAllSetElementsOperation_Editor.RemoveAllSetElementsOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new RemoveAllSetElementsOperation_Editor.RemoveAllSetElementsOperation_Editor_replaceWith_SequenceOperation_cellMenufnhmcpau()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_0497_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0497_fnhmcpaw(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_0497_1");
+    editorCell.setCellId("Constant_0497_fnhmcpaw");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -61,15 +61,15 @@ public class RemoveAllSetElementsOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0497_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0497_fnhmcpaz(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_0497_2");
+    editorCell.setCellId("Constant_0497_fnhmcpaz");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_0497_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0497_fnhmcpay(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("argument");
     provider.setNoTargetText("<no argument>");
@@ -89,8 +89,8 @@ public class RemoveAllSetElementsOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class RemoveAllSetElementsOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public RemoveAllSetElementsOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
+  public static class RemoveAllSetElementsOperation_Editor_replaceWith_SequenceOperation_cellMenufnhmcpau extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public RemoveAllSetElementsOperation_Editor_replaceWith_SequenceOperation_cellMenufnhmcpau() {
     }
 
     public String getReplacementConceptName() {

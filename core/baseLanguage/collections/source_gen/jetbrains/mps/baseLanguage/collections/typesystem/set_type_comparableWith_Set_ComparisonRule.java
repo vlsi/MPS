@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER10 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~Set");
+  private static SNodePointer SNODE_POINTERl523emneasnq = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~Set");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
@@ -30,7 +30,7 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
   }
 
   public boolean isApplicable2(SNode node) {
-    this.myMatchingPattern2 = new set_type_comparableWith_Set_ComparisonRule.Pattern_9209_0();
+    this.myMatchingPattern2 = new set_type_comparableWith_Set_ComparisonRule.Pattern_9209_l523emneasp6();
     return this.myMatchingPattern2.match(node);
   }
 
@@ -42,35 +42,35 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
 
-  public static class Pattern_9209_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_9209_l523emneasp6 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_ELEMENT;
 
-    public Pattern_9209_0() {
+    public Pattern_9209_l523emneasp6() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_9717_0;
-        nodeToMatch_9717_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_9717_0.getConceptFqName()))) {
+        SNode nodeToMatch_9717_fub42viq;
+        nodeToMatch_9717_fub42viq = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_9717_fub42viq.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTER10.getNode();
-          if (nodeToMatch_9717_0.getReferent("classifier") != referent) {
+          referent = SNODE_POINTERl523emneasnq.getNode();
+          if (nodeToMatch_9717_fub42viq.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole9717_0 = "parameter";
-          if (nodeToMatch_9717_0.getChildCount(childRole9717_0) != 1) {
+          String childRole9717_l523emneasnr = "parameter";
+          if (nodeToMatch_9717_fub42viq.getChildCount(childRole9717_l523emneasnr) != 1) {
             return false;
           }
           {
             this.PatternVar_ELEMENT = null;
-            SNode childVar_9717_0 = nodeToMatch_9717_0.getChildren(childRole9717_0).get(0);
-            this.PatternVar_ELEMENT = childVar_9717_0;
+            SNode childVar_9717_fub42wcl = nodeToMatch_9717_fub42viq.getChildren(childRole9717_l523emneasnr).get(0);
+            this.PatternVar_ELEMENT = childVar_9717_fub42wcl;
           }
         }
       }

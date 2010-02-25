@@ -15,25 +15,25 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class BarConcept_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4999_0(editorContext, node);
+    return this.createCollection_4999_ffmj128y(editorContext, node);
   }
 
-  private EditorCell createCollection_4999_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4999_ffmj128y(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4999_0");
-    editorCell.addEditorCell(this.createConstant_4999_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4999_0(editorContext, node));
+    editorCell.setCellId("Collection_4999_ffmj128y");
+    editorCell.addEditorCell(this.createConstant_4999_ffmj128z(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4999_ffmj165n(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4999_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4999_ffmj128z(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "BAR");
-    editorCell.setCellId("Constant_4999_0");
+    editorCell.setCellId("Constant_4999_ffmj128z");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_4999_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4999_ffmj165n(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

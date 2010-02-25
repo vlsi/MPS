@@ -21,46 +21,46 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class MappingType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6372_0(editorContext, node);
+    return this.createCollection_6372_ftucteyx(editorContext, node);
   }
 
-  private EditorCell createCollection_6372_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6372_ftucteyx(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6372_0");
-    editorCell.addEditorCell(this.createConceptProperty_6372_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6372_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6372_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6372_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6372_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6372_2(editorContext, node));
+    editorCell.setCellId("Collection_6372_ftucteyx");
+    editorCell.addEditorCell(this.createConceptProperty_6372_ftucthgj(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6372_ftuctj8c(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6372_ftucttzc(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6372_ftuctv0t(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6372_ftucu1e1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6372_ftucu7bg(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6372_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6372_ftuctj8c(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_6372_0");
+    editorCell.setCellId("Constant_6372_ftuctj8c");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6372_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6372_ftuctv0t(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_6372_1");
+    editorCell.setCellId("Constant_6372_ftuctv0t");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6372_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6372_ftucu7bg(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_6372_2");
+    editorCell.setCellId("Constant_6372_ftucu7bg");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_6372_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_6372_ftucthgj(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -83,7 +83,7 @@ public class MappingType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6372_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6372_ftucttzc(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("keyType");
     provider.setNoTargetText("<no keyType>");
@@ -100,7 +100,7 @@ public class MappingType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6372_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6372_ftucu1e1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("valueType");
     provider.setNoTargetText("<no valueType>");

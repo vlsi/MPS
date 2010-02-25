@@ -17,36 +17,36 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class HeadMapOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9631_0(editorContext, node);
+    return this.createCollection_9631_ftrau1in(editorContext, node);
   }
 
-  private EditorCell createCollection_9631_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9631_ftrau1in(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9631_0");
-    editorCell.addEditorCell(this.createConceptProperty_9631_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9631_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9631_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9631_1(editorContext, node));
+    editorCell.setCellId("Collection_9631_ftrau1in");
+    editorCell.addEditorCell(this.createConceptProperty_9631_ftrau1io(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9631_ftrau1ip(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9631_ftraunb9(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9631_ftrau1ir(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9631_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9631_ftrau1ip(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_9631_0");
+    editorCell.setCellId("Constant_9631_ftrau1ip");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9631_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9631_ftrau1ir(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_9631_1");
+    editorCell.setCellId("Constant_9631_ftrau1ir");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9631_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_9631_ftrau1io(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -65,7 +65,7 @@ public class HeadMapOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9631_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9631_ftraunb9(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("toKey");
     provider.setNoTargetText("<no toKey>");

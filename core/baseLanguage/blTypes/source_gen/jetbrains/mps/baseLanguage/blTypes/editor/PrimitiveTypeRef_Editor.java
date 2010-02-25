@@ -21,22 +21,22 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class PrimitiveTypeRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4714_0(editorContext, node);
+    return this.createCollection_4714_esk6mo82(editorContext, node);
   }
 
-  private EditorCell createCollection_4714_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4714_esk6mo82(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4714_0");
-    editorCell.addEditorCell(this.createRefCell_4714_0(editorContext, node));
+    editorCell.setCellId("Collection_4714_esk6mo82");
+    editorCell.addEditorCell(this.createRefCell_4714_esk6mo83(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_4714_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_4714_esk6mo83(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("descriptor");
     provider.setNoTargetText("<no descriptor>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PrimitiveTypeRef_Editor._Inline4714_0());
+    provider.setAuxiliaryCellProvider(new PrimitiveTypeRef_Editor._Inline4714_esk6mo84());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -49,8 +49,8 @@ public class PrimitiveTypeRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4714_0 extends InlineCellProvider {
-    public _Inline4714_0() {
+  public static class _Inline4714_esk6mo84 extends InlineCellProvider {
+    public _Inline4714_esk6mo84() {
       super();
     }
 
@@ -59,10 +59,10 @@ public class PrimitiveTypeRef_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_4714_0(editorContext, node);
+      return this.createProperty_4714_esk6mo85(editorContext, node);
     }
 
-    private EditorCell createProperty_4714_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_4714_esk6mo85(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

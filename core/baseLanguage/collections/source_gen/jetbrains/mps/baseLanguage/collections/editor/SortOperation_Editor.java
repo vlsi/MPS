@@ -24,24 +24,24 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class SortOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9219_0(editorContext, node);
+    return this.createCollection_9219_fdvqoitp(editorContext, node);
   }
 
-  private EditorCell createCollection_9219_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9219_fdvqoitp(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9219_0");
-    editorCell.addEditorCell(this.createConceptProperty_9219_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9219_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9219_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9219_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9219_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9219_1(editorContext, node));
+    editorCell.setCellId("Collection_9219_fdvqoitp");
+    editorCell.addEditorCell(this.createConceptProperty_9219_ffqouss1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9219_fdvqp2d4(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9219_fdvqoitt(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9219_fdvqoitu(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9219_fdvqoitv(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9219_fdvqoitw(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9219_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9219_fdvqoitu(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_9219_0");
+    editorCell.setCellId("Constant_9219_fdvqoitu");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -51,23 +51,23 @@ public class SortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9219_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9219_fdvqoitw(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_9219_1");
+    editorCell.setCellId("Constant_9219_fdvqoitw");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9219_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9219_fdvqp2d4(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_9219_2");
+    editorCell.setCellId("Constant_9219_fdvqp2d4");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_9219_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9219_fdvqoitt(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("toComparable");
     provider.setNoTargetText("<no toComparable>");
@@ -84,7 +84,7 @@ public class SortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9219_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9219_fdvqoitv(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("ascending");
     provider.setNoTargetText("<no ascending>");
@@ -101,7 +101,7 @@ public class SortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9219_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_9219_ffqouss1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -110,7 +110,7 @@ public class SortOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SortOperation_Editor.SortOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new SortOperation_Editor.SortOperation_Editor_replaceWith_SequenceOperation_cellMenu43xmtj5qniuk()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -121,8 +121,8 @@ public class SortOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class SortOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public SortOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
+  public static class SortOperation_Editor_replaceWith_SequenceOperation_cellMenu43xmtj5qniuk extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public SortOperation_Editor_replaceWith_SequenceOperation_cellMenu43xmtj5qniuk() {
     }
 
     public String getReplacementConceptName() {
