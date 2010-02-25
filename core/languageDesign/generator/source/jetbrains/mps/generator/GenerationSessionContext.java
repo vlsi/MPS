@@ -179,7 +179,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       }
     } // if(contextNode != null)
 
-    if(inputNode != null) {
+    if(inputNode != null && inputNode.getModel() == myOriginalInputModel) {
       String s = inputNode.getId();
       try {
         long l = Long.parseLong(s); // make it a bit shorter
