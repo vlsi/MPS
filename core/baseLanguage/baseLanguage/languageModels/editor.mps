@@ -2165,6 +2165,9 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="4972241301747234900">
         <link role="editorComponent:32" targetNodeId="4972241301747172167" resolveInfo="IMethodCall_typeArguments" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4761946706540844855">
+          <property name="flag:32" value="false" />
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1237669975430">
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1237669975431">
@@ -3135,6 +3138,9 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="163269897332083231">
         <link role="editorComponent:32" targetNodeId="4972241301747172167" resolveInfo="IMethodCall_typeArguments" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4761946706540844856">
+          <property name="flag:32" value="false" />
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="1091709481300">
         <link role="relationDeclaration:32" targetNodeId="17.1073063089579:3" />
@@ -12470,6 +12476,9 @@
       <property name="vertical:32" value="false" />
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="4972241301747234896">
         <link role="editorComponent:32" targetNodeId="4972241301747172167" resolveInfo="IMethodCall_typeArguments" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4761946706536448697">
+          <property name="flag:32" value="false" />
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="1202948938317">
         <property name="noTargetText:32" value="&lt;no method&gt;" />
@@ -12828,6 +12837,9 @@
       <property name="vertical:32" value="false" />
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="4022780949364649459">
         <link role="editorComponent:32" targetNodeId="4972241301747172167" resolveInfo="IMethodCall_typeArguments" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4761946706537047587">
+          <property name="flag:32" value="false" />
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="4590747232508931347">
         <link role="relationDeclaration:32" targetNodeId="17.1212686240295:3" />
@@ -15762,8 +15774,8 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4972241301747186355">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4972241301747186356">
         <property name="text:32" value="&lt;" />
-        <link role="styleClass:32" targetNodeId="1234958090348" resolveInfo="LeftParenAfterName" />
         <link role="actionMap:32" targetNodeId="4972241301747194480" resolveInfo="IMethodCall_DeleteTypeArguments" />
+        <link role="styleClass:32" targetNodeId="1215087929380" resolveInfo="LeftParen" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="4972241301747186357">
           <property name="style:32" value="PLAIN" />
         </node>
@@ -15789,9 +15801,7 @@
         <property name="text:32" value="&gt;" />
         <link role="styleClass:32" targetNodeId="1215088010675" resolveInfo="RightParen" />
         <link role="actionMap:32" targetNodeId="4972241301747194480" resolveInfo="IMethodCall_DeleteTypeArguments" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4972241301747186394">
-          <property name="flag:32" value="true" />
-        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4972241301747186394" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="4972241301747186395">
           <property name="style:32" value="PLAIN" />
         </node>
@@ -15799,6 +15809,12 @@
           <property name="flag:32" value="false" />
         </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="863669384468523973">
+          <property name="flag:32" value="true" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="4761946706539676829">
+          <property name="flag:32" value="true" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem:32" id="4761946706539968821">
           <property name="flag:32" value="true" />
         </node>
       </node>

@@ -78,6 +78,10 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_9368_1(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new IMethodCall_typeArguments(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     return editorCell;
   }
 

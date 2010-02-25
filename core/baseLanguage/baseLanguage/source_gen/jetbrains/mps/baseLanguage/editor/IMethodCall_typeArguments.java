@@ -62,7 +62,7 @@ public class IMethodCall_typeArguments extends AbstractCellProvider {
   private EditorCell createConstant_5659_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_5659_0");
-    BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
+    BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
@@ -78,10 +78,12 @@ public class IMethodCall_typeArguments extends AbstractCellProvider {
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
+      style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
       style.set(StyleAttributes.EDITABLE, false);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
     }
     IMethodCall_DeleteTypeArguments.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
