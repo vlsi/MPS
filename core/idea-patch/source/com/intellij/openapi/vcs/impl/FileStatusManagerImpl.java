@@ -119,8 +119,12 @@ public class FileStatusManagerImpl extends FileStatusManager implements ProjectC
 
   public void initComponent() { }
 
+  @Patch
   public void addFileStatusListener(FileStatusListener listener) {
-    myListeners.add(listener);
+    // MPS patch: fixed MPS-7548
+    if (listener != null) {
+      myListeners.add(listener);
+    }
   }
 
   public void addFileStatusListener(final FileStatusListener listener, Disposable parentDisposable) {
