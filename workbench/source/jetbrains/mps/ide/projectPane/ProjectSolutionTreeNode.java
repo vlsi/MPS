@@ -50,9 +50,9 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
     setIcon(Icons.SOLUTION_ICON);
 
     IFile descriptorFile = mySolution.getDescriptorFile();
-    assert descriptorFile != null;
+//    assert descriptorFile != null;
 
-    setNodeIdentifier(descriptorFile.getAbsolutePath());
+    setNodeIdentifier(descriptorFile == null ? mySolution.getModuleFqName() : descriptorFile.getAbsolutePath());
   }
 
   public IModule getModule() {

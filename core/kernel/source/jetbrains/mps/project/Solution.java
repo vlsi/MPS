@@ -48,6 +48,22 @@ public class Solution extends AbstractModule {
 
   }
 
+  //this is for stubs framework only
+  public static Solution newInstance(SolutionDescriptor descriptor){
+    Solution solution = new Solution();
+
+    MPSModuleRepository repository = MPSModuleRepository.getInstance();
+    if (repository.existsModule(descriptor.getModuleReference())) {
+      LOG.error("Loading module " + descriptor.getNamespace() + " for the second time");
+      return repository.getSolution(descriptor.getModuleReference());
+    }
+
+    solution.setSolutionDescriptor(descriptor, false);
+    repository.addModule(solution, null);
+
+    return solution;
+  }
+
   public static Solution newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
     SolutionDescriptor solutionDescriptor;

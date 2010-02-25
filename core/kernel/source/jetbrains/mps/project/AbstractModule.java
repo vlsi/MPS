@@ -63,7 +63,7 @@ public abstract class AbstractModule implements IModule {
   public static final String MODULE_DIR = "module";
   public static final String CACHES_DIR = "caches";
   public static final String PACKAGE_SUFFIX = "mpsarch.jar";
-  
+
   private static final boolean USE_INCREMETAL_STUBS_RELOADING = false;
 
   public static void registerModelCreationListener(ModelCreationListener listener) {
@@ -687,7 +687,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void updateClassPath() {
-    updateClassPathItem();
+    myCachedClassPathItem = null;
     myIncludedStubPaths = getIncludedStubPaths();
 
     updateStubs();
@@ -707,7 +707,7 @@ public abstract class AbstractModule implements IModule {
 
     List<StubPath> newStubs = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
 
-    if (USE_INCREMETAL_STUBS_RELOADING){
+    if (USE_INCREMETAL_STUBS_RELOADING) {
       //todo make time linear [due to stubs list size this is not very significant]
       for (StubPath os : myLoadedStubPaths) {
         for (StubPath ns : newStubs) {
@@ -725,7 +725,7 @@ public abstract class AbstractModule implements IModule {
 
     CleanupManager.getInstance().cleanup();
     MPSModuleRepository.getInstance().invalidateCaches();
-    
+
     loadNewStubs(notChangedStubPaths);
   }
 
@@ -874,6 +874,13 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
+  public IClassPathItem getClassPathItem() {
+    if (myCachedClassPathItem == null) {
+      updateClassPathItem();
+    }
+    return myCachedClassPathItem;
+  }
+
   private void updateClassPathItem() {
     myCachedClassPathItem = new CompositeClassPathItem();
     for (StubPath path : getAllStubPaths()) {
@@ -884,10 +891,6 @@ public abstract class AbstractModule implements IModule {
         LOG.error(e.getMessage());
       }
     }
-  }
-
-  public IClassPathItem getClassPathItem() {
-    return myCachedClassPathItem;
   }
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
