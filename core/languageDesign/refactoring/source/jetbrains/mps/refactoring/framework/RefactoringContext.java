@@ -600,12 +600,13 @@ public class RefactoringContext {
     List<Pair> result = new ArrayList<Pair>();
     result.addAll(pairs);
     for (Pair<SNode, SNode> pair : pairs) {
-      SNode node = pair.o1;
+      boolean isSecond = pair.o1 == null;
+      SNode node = (isSecond)? pair.o2 : pair.o1;
       if (node == null) continue;
       List<SNode> ancestors = node.getAncestors(false);
       for (Pair<SNode, SNode> ancestorCondidate : pairs) {
         if (EqualUtil.equals(pair, ancestorCondidate)) continue;
-        if (ancestors.contains(ancestorCondidate.o1)) {
+        if (ancestors.contains((isSecond)? ancestorCondidate.o2 : ancestorCondidate.o1)) {
           result.remove(ancestorCondidate);
         }
       }

@@ -45,14 +45,14 @@ public abstract class BaseMethodUpdateStrategy implements StratergyAddMethodDial
     }
 
     if (this.myCheckBox.isSelected()) {
-      return new BaseMethodUpdateStrategy.QuotationClass_3774_1j4pfg2c6jymi().createNode(returnExpr);
+      return new BaseMethodUpdateStrategy.QuotationClass_3774_151i6yjy6a6hn().createNode(returnExpr);
     } else {
-      return new BaseMethodUpdateStrategy.QuotationClass_3774_1j4pfg2c6jypi().createNode(returnExpr);
+      return new BaseMethodUpdateStrategy.QuotationClass_3774_151i6yjy6a6kn().createNode(returnExpr);
     }
   }
 
-  public static class QuotationClass_3774_1j4pfg2c6jymi {
-    public QuotationClass_3774_1j4pfg2c6jymi() {
+  public static class QuotationClass_3774_151i6yjy6a6hn {
+    public QuotationClass_3774_151i6yjy6a6hn() {
     }
 
     public SNode createNode(Object parameter_3774_1319lno33slxy) {
@@ -82,8 +82,8 @@ public abstract class BaseMethodUpdateStrategy implements StratergyAddMethodDial
     }
   }
 
-  public static class QuotationClass_3774_1j4pfg2c6jypi {
-    public QuotationClass_3774_1j4pfg2c6jypi() {
+  public static class QuotationClass_3774_151i6yjy6a6kn {
+    public QuotationClass_3774_151i6yjy6a6kn() {
     }
 
     public SNode createNode(Object parameter_3774_1319lno33slyg) {

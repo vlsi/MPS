@@ -56,19 +56,19 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
         }
       }
       if (isNeedAddAnnotation) {
-        ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addElement(new OverrideClassMethodStrategy.QuotationClass_2096_1j4pfg2c6ld6t().createNode());
+        ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addElement(new OverrideClassMethodStrategy.QuotationClass_2096_151i6yjy6bd8s().createNode());
       }
     }
 
     Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return new OverrideClassMethodStrategy.QuotationClass_2096_1j4pfg2c6ld8z().createNode(it);
+        return new OverrideClassMethodStrategy.QuotationClass_2096_151i6yjy6bday().createNode(it);
       }
     });
-    SNode superCallExpr = new OverrideClassMethodStrategy.QuotationClass_2096_1j4pfg2c6jy7w().createNode(sourceMethod, Sequence.fromIterable(paramList).toListSequence());
+    SNode superCallExpr = new OverrideClassMethodStrategy.QuotationClass_2096_151i6yjy6a631().createNode(sourceMethod, Sequence.fromIterable(paramList).toListSequence());
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new OverrideClassMethodStrategy.QuotationClass_2096_1j4pfg2c6lddh().createNode(superCallExpr));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new OverrideClassMethodStrategy.QuotationClass_2096_151i6yjy6bdfg().createNode(superCallExpr));
     } else {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(this.getReturnStatement(superCallExpr));
     }
@@ -86,8 +86,8 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
     return optPanel;
   }
 
-  public static class QuotationClass_2096_1j4pfg2c6jy7w {
-    public QuotationClass_2096_1j4pfg2c6jy7w() {
+  public static class QuotationClass_2096_151i6yjy6a631 {
+    public QuotationClass_2096_151i6yjy6a631() {
     }
 
     public SNode createNode(Object parameter_2096_piw2vy43bphu, Object parameter_2096_1djwx8uxrc0l5) {
@@ -111,8 +111,8 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
     }
   }
 
-  public static class QuotationClass_2096_1j4pfg2c6ld6t {
-    public QuotationClass_2096_1j4pfg2c6ld6t() {
+  public static class QuotationClass_2096_151i6yjy6bd8s {
+    public QuotationClass_2096_151i6yjy6bd8s() {
     }
 
     public SNode createNode() {
@@ -129,8 +129,8 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
     }
   }
 
-  public static class QuotationClass_2096_1j4pfg2c6ld8z {
-    public QuotationClass_2096_1j4pfg2c6ld8z() {
+  public static class QuotationClass_2096_151i6yjy6bday {
+    public QuotationClass_2096_151i6yjy6bday() {
     }
 
     public SNode createNode(Object parameter_2096_1djwx8uxrc0kf) {
@@ -147,8 +147,8 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
     }
   }
 
-  public static class QuotationClass_2096_1j4pfg2c6lddh {
-    public QuotationClass_2096_1j4pfg2c6lddh() {
+  public static class QuotationClass_2096_151i6yjy6bdfg {
+    public QuotationClass_2096_151i6yjy6bdfg() {
     }
 
     public SNode createNode(Object parameter_2096_piw2vy43dk2q) {

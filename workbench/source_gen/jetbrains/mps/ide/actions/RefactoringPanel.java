@@ -88,8 +88,19 @@ public class RefactoringPanel {
     if (pairs.isEmpty()) {
       return;
     }
-    for (Pair<String, String> pair : pairs) {
-      stringBuilder.append(pair.o1 + " -> " + pair.o2);
+    for (Pair pair : pairs) {
+      boolean isCreated = pair.o1 == null;
+      boolean isRemoved = pair.o2 == null;
+      if (isCreated && isRemoved) {
+        continue;
+      }
+      if (isCreated) {
+        stringBuilder.append(pair.o2.toString() + " created");
+      } else if (isRemoved) {
+        stringBuilder.append(pair.o1.toString() + " removed");
+      } else {
+        stringBuilder.append(pair.o1.toString() + " -> " + pair.o2.toString());
+      }
       stringBuilder.append("\n");
     }
     stringBuilder.append("\n\n");
