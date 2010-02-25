@@ -117,7 +117,7 @@ public class NodeExplorerComponent {
     }
 
     protected void doUpdatePresentation_internal() {
-      super.doUpdatePresentation();
+      super.doUpdatePresentation_internal();
       String string = getText();
       String typeInfo = " {" + PresentationManager.toString(TypeChecker.getInstance().getTypeOf(getSNode())) + "}";
       setText(string + typeInfo);
