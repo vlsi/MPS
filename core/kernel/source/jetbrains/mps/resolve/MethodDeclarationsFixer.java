@@ -203,6 +203,9 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       }
       myMethodCallsToSetDecls.put(methodCall.getNode(), newTarget.getNode());
       myCheckedMethodCalls.add(methodCallNode);
+      for (Expression actualArgument : methodCall.getActualArguments()) {
+        myParametersToCheckedMethodCalls.put(actualArgument.getNode(), methodCallNode);
+      }
 
       SNode newTargetNode = newTarget.getNode();
       Set<SNode> nodeSet = myMethodDeclsToCheckedMethodCalls.get(newTargetNode);
@@ -267,7 +270,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     testAndFixMethodCall(methodCall, resolveTargets);
   }
 
-  //todo myParametersToCheckedMethodCalls should be updated on node creation/deletion
   private void expressionTypeChanged(SNode expression, Map<SNode, SNode> resolveTargets) {
     SNode methodCall = myParametersToCheckedMethodCalls.get(expression);
     if (methodCall != null) {
@@ -284,9 +286,8 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
     //actual argument
     SNode parent = child.getParent();
-    //todo getParent() does not work in case we add child inside a parameter,
-    //todo e.g. this._ -> this.myT
     if (myCheckedMethodCalls.contains(parent)) {
+      myParametersToCheckedMethodCalls.put(child, parent);
       testAndFixMethodCall(parent, resolveTargets);
     }
 
@@ -307,6 +308,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     if (myCheckedMethodCalls.contains(formerParent)) {
       //if arg deleted then fix method call
       //if deleted inside argument and arg type is changed it is processed elsewhere
+      myParametersToCheckedMethodCalls.remove(child);
       testAndFixMethodCall(formerParent, resolveTargets);
     }
 

@@ -1942,10 +1942,10 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3927049521891160577">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="3927049521891160576" />
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3927049521891160581">
-              <link role="baseMethodDeclaration:3" targetNodeId="3927049521891160559" resolveInfo="foo" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3927049521891160589">
+              <link role="baseMethodDeclaration:3" targetNodeId="3927049521891160565" resolveInfo="foo" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8628072295753047357">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="3927049521891160582" />
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3927049521891160593">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8628072295753047362">
                   <link role="baseMethodDeclaration:3" targetNodeId="3927049521891160554" resolveInfo="str" />
                 </node>
               </node>

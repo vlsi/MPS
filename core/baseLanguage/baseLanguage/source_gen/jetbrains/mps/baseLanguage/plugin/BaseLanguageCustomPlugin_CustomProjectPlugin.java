@@ -24,12 +24,14 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
       highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
       highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
       highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
+      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer.init();
     }
   }
 
   public void doDispose(MPSProject project) {
     Highlighter highlighter = project.getComponent(Highlighter.class);
     if (highlighter != null) {
+      BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer.dispose();
       highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
       highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
       highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
