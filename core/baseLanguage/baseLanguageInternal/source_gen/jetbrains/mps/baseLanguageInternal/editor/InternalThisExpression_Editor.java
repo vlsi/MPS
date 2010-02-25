@@ -11,19 +11,19 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class InternalThisExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8823_0(editorContext, node);
+    return this.createCollection_8823_fckqsyw8(editorContext, node);
   }
 
-  private EditorCell createCollection_8823_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8823_fckqsyw8(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8823_0");
-    editorCell.addEditorCell(this.createConstant_8823_0(editorContext, node));
+    editorCell.setCellId("Collection_8823_fckqsyw8");
+    editorCell.addEditorCell(this.createConstant_8823_fckqt3o5(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8823_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8823_fckqt3o5(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "_this");
-    editorCell.setCellId("Constant_8823_0");
+    editorCell.setCellId("Constant_8823_fckqt3o5");
     StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;

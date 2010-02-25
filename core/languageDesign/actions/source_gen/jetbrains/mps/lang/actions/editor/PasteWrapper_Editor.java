@@ -21,78 +21,78 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class PasteWrapper_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0044_0(editorContext, node);
+    return this.createCollection_0044_fkzdjtxm(editorContext, node);
   }
 
-  private EditorCell createCollection_0044_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0044_fkzdjtxm(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_0044_0");
-    editorCell.addEditorCell(this.createCollection_0044_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_0044_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0044_0(editorContext, node));
+    editorCell.setCellId("Collection_0044_fkzdjtxm");
+    editorCell.addEditorCell(this.createCollection_0044_fkzdjxbo(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_0044_fkzdkeq4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0044_fkzdjv2g(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0044_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0044_fkzdjxbo(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0044_1");
+    editorCell.setCellId("Collection_0044_fkzdjxbo");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0044_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_0044_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0044_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_0044_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0044_fkzdjxuw(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_0044_fkzdk0b2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0044_fkzdk5ed(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_0044_fkzdk7kk(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0044_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0044_fkzdkeq4(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0044_2");
+    editorCell.setCellId("Collection_0044_fkzdkeq4");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell0044_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0044_0(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell0044_fkzdux76(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0044_fkzduzc1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0044_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0044_fkzdjv2g(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_0044_0");
+    editorCell.setCellId("Constant_0044_fkzdjv2g");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0044_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0044_fkzdjxuw(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "paste wrapper");
-    editorCell.setCellId("Constant_0044_1");
+    editorCell.setCellId("Constant_0044_fkzdjxuw");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0044_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0044_fkzdk5ed(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
-    editorCell.setCellId("Constant_0044_2");
+    editorCell.setCellId("Constant_0044_fkzdk5ed");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createIndentCell0044_0(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell0044_fkzdux76(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createRefCell_0044_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0044_fkzdk0b2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("sourceConcept");
     provider.setNoTargetText("<no sourceConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline0044_0());
+    provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline0044_fkzdk0b3());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -105,12 +105,12 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_0044_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0044_fkzdk7kk(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("targetConcept");
     provider.setNoTargetText("<no targetConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline0044_1());
+    provider.setAuxiliaryCellProvider(new PasteWrapper_Editor._Inline0044_fkzdk7kl());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -123,7 +123,7 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0044_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0044_fkzduzc1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("wrapperFunction");
     provider.setNoTargetText("<no wrapperFunction>");
@@ -140,8 +140,8 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0044_0 extends InlineCellProvider {
-    public _Inline0044_0() {
+  public static class _Inline0044_fkzdk0b3 extends InlineCellProvider {
+    public _Inline0044_fkzdk0b3() {
       super();
     }
 
@@ -150,10 +150,10 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0044_0(editorContext, node);
+      return this.createProperty_0044_fkzdk3uc(editorContext, node);
     }
 
-    private EditorCell createProperty_0044_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0044_fkzdk3uc(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -173,8 +173,8 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline0044_1 extends InlineCellProvider {
-    public _Inline0044_1() {
+  public static class _Inline0044_fkzdk7kl extends InlineCellProvider {
+    public _Inline0044_fkzdk7kl() {
       super();
     }
 
@@ -183,10 +183,10 @@ public class PasteWrapper_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0044_1(editorContext, node);
+      return this.createProperty_0044_fkzdkbl7(editorContext, node);
     }
 
-    private EditorCell createProperty_0044_1(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0044_fkzdkbl7(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

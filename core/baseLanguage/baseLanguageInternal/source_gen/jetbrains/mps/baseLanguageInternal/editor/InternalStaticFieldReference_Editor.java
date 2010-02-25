@@ -15,26 +15,26 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4144_0(editorContext, node);
+    return this.createCollection_4144_ezbqj96z(editorContext, node);
   }
 
-  private EditorCell createCollection_4144_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4144_ezbqj96z(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4144_0");
-    editorCell.addEditorCell(this.createProperty_4144_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4144_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4144_1(editorContext, node));
+    editorCell.setCellId("Collection_4144_ezbqj96z");
+    editorCell.addEditorCell(this.createProperty_4144_ezbqlipq(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4144_ezbqjahx(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4144_ezbqlmr6(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4144_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4144_ezbqjahx(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
-    editorCell.setCellId("Constant_4144_0");
+    editorCell.setCellId("Constant_4144_ezbqjahx");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_4144_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4144_ezbqlipq(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fqClassName");
     provider.setNoTargetText("<no fqClassName>");
@@ -53,7 +53,7 @@ public class InternalStaticFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4144_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4144_ezbqlmr6(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fieldName");
     provider.setNoTargetText("<no fieldName>");

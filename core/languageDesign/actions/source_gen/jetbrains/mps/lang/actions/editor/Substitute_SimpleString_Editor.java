@@ -17,17 +17,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Substitute_SimpleString_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8276_0(editorContext, node);
+    return this.createCollection_8276_f9muey22(editorContext, node);
   }
 
-  private EditorCell createCollection_8276_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8276_f9muey22(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8276_0");
-    editorCell.addEditorCell(this.createProperty_8276_0(editorContext, node));
+    editorCell.setCellId("Collection_8276_f9muey22");
+    editorCell.addEditorCell(this.createProperty_8276_f9muf0gi(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createProperty_8276_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_8276_f9muf0gi(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");

@@ -17,22 +17,22 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class SmartActionParameterReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4053_0(editorContext, node);
+    return this.createCollection_4053_l523emneprqd(editorContext, node);
   }
 
-  private EditorCell createCollection_4053_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4053_l523emneprqd(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4053_0");
-    editorCell.addEditorCell(this.createRefCell_4053_0(editorContext, node));
+    editorCell.setCellId("Collection_4053_l523emneprqd");
+    editorCell.addEditorCell(this.createRefCell_4053_l523emneprqa(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_4053_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_4053_l523emneprqa(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("smartActionParameter");
     provider.setNoTargetText("<no smartActionParameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SmartActionParameterReference_Editor._Inline4053_0());
+    provider.setAuxiliaryCellProvider(new SmartActionParameterReference_Editor._Inline4053_l523emneprqb());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -45,8 +45,8 @@ public class SmartActionParameterReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4053_0 extends InlineCellProvider {
-    public _Inline4053_0() {
+  public static class _Inline4053_l523emneprqb extends InlineCellProvider {
+    public _Inline4053_l523emneprqb() {
       super();
     }
 
@@ -55,10 +55,10 @@ public class SmartActionParameterReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_4053_0(editorContext, node);
+      return this.createProperty_4053_l523emneprqc(editorContext, node);
     }
 
-    private EditorCell createProperty_4053_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_4053_l523emneprqc(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -22,22 +22,22 @@ public class QueryFunction_STVariableInitializer_Behavior {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration")) {
       return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration"), "type", true));
     }
-    return new QueryFunction_STVariableInitializer_Behavior.QuotationClass_6219_0().createNode();
+    return new QueryFunction_STVariableInitializer_Behavior.QuotationClass_6219_l523emnepmzi().createNode();
   }
 
-  public static class QuotationClass_6219_0 {
-    public QuotationClass_6219_0() {
+  public static class QuotationClass_6219_l523emnepmzi {
+    public QuotationClass_6219_l523emnepmzi() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6219_0 = null;
+      SNode quotedNode_6219_nwq9r4qpm0n0 = null;
       {
-        quotedNode_6219_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6219_0 = quotedNode_6219_0;
-        quotedNode1_6219_0.addReference(SReference.create("classifier", quotedNode1_6219_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_6219_0;
+        quotedNode_6219_nwq9r4qpm0n0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6219_nwq9r4qpm0n0 = quotedNode_6219_nwq9r4qpm0n0;
+        quotedNode1_6219_nwq9r4qpm0n0.addReference(SReference.create("classifier", quotedNode1_6219_nwq9r4qpm0n0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_6219_nwq9r4qpm0n0;
       }
       return result;
     }

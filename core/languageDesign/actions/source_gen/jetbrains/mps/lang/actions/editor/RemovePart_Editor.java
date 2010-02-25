@@ -20,20 +20,20 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class RemovePart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1109_0(editorContext, node);
+    return this.createCollection_1109_f0w7ff7x(editorContext, node);
   }
 
-  private EditorCell createCollection_1109_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1109_f0w7ff7x(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1109_0");
-    editorCell.addEditorCell(this.createConstant_1109_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_1109_0(editorContext, node));
+    editorCell.setCellId("Collection_1109_f0w7ff7x");
+    editorCell.addEditorCell(this.createConstant_1109_f0w7fful(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_1109_f0w7fhhq(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1109_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1109_f0w7fful(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove concept");
-    editorCell.setCellId("Constant_1109_0");
+    editorCell.setCellId("Constant_1109_f0w7fful");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -42,12 +42,12 @@ public class RemovePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_1109_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_1109_f0w7fhhq(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("conceptToRemove");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RemovePart_Editor._Inline1109_0());
+    provider.setAuxiliaryCellProvider(new RemovePart_Editor._Inline1109_f0w7fhhr());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -60,8 +60,8 @@ public class RemovePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline1109_0 extends InlineCellProvider {
-    public _Inline1109_0() {
+  public static class _Inline1109_f0w7fhhr extends InlineCellProvider {
+    public _Inline1109_f0w7fhhr() {
       super();
     }
 
@@ -70,10 +70,10 @@ public class RemovePart_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_1109_0(editorContext, node);
+      return this.createProperty_1109_f0w7fio9(editorContext, node);
     }
 
-    private EditorCell createProperty_1109_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_1109_f0w7fio9(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
