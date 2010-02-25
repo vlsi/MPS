@@ -23,47 +23,47 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1580_0(editorContext, node);
+    return this.createCollection_1580_ezl1am23(editorContext, node);
   }
 
-  private EditorCell createCollection_1580_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1580_ezl1am23(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1580_0");
-    editorCell.addEditorCell(this.createConstant_1580_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_1580_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1580_1(editorContext, node));
+    editorCell.setCellId("Collection_1580_ezl1am23");
+    editorCell.addEditorCell(this.createConstant_1580_ezl1amwz(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_1580_ezl1aoz9(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1580_ezl1aqg9(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1580_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1580_ezl1amwz(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
-    editorCell.setCellId("Constant_1580_0");
+    editorCell.setCellId("Constant_1580_ezl1amwz");
     RegexpStylesheet_StyleSheet.getLeftRegexpBrace(editorCell).apply(editorCell);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new PositiveSymbolClassRegexp_Editor.PositiveSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new PositiveSymbolClassRegexp_Editor.PositiveSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu105o7fpap5u06()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_1580_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1580_ezl1aqg9(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
-    editorCell.setCellId("Constant_1580_1");
+    editorCell.setCellId("Constant_1580_ezl1aqg9");
     RegexpStylesheet_StyleSheet.getRightRegexpBrace(editorCell).apply(editorCell);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_1580_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new PositiveSymbolClassRegexp_Editor.partListHandler_1580_0(node, "part", editorContext);
+  private EditorCell createRefNodeList_1580_ezl1aoz9(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new PositiveSymbolClassRegexp_Editor.partListHandler_1580_ezl1aoz9(node, "part", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_part");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class partListHandler_1580_0 extends RefNodeListHandler {
-    public partListHandler_1580_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class partListHandler_1580_ezl1aoz9 extends RefNodeListHandler {
+    public partListHandler_1580_ezl1aoz9(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -104,8 +104,8 @@ public class PositiveSymbolClassRegexp_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class PositiveSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public PositiveSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu0() {
+  public static class PositiveSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu105o7fpap5u06 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public PositiveSymbolClassRegexp_Editor_replaceWith_SymbolClassRegexp_cellMenu105o7fpap5u06() {
     }
 
     public String getReplacementConceptName() {

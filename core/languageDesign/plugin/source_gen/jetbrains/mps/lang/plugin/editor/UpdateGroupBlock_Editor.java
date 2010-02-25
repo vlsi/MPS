@@ -15,26 +15,26 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class UpdateGroupBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9179_0(editorContext, node);
+    return this.createCollection_9179_ftmxiklx(editorContext, node);
   }
 
-  private EditorCell createCollection_9179_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9179_ftmxiklx(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_9179_0");
-    editorCell.addEditorCell(this.createRefNode_9179_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9179_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9179_1(editorContext, node));
+    editorCell.setCellId("Collection_9179_ftmxiklx");
+    editorCell.addEditorCell(this.createRefNode_9179_ftmxini6(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9179_ftmxiq34(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9179_ftmxivsw(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9179_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9179_ftmxiq34(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_9179_0");
+    editorCell.setCellId("Constant_9179_ftmxiq34");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_9179_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9179_ftmxini6(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("updateFunction");
     provider.setNoTargetText("<no updateFunction>");
@@ -51,7 +51,7 @@ public class UpdateGroupBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9179_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9179_ftmxivsw(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("enumerateFunction");
     provider.setNoTargetText("<no enumerate function>");

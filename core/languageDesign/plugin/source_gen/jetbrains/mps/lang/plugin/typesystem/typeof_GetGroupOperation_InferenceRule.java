@@ -26,7 +26,7 @@ public class typeof_GetGroupOperation_InferenceRule extends AbstractInferenceRul
       SNode _nodeToCheck_1029348928467 = getGroupOperation;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1209911244307", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1209911237497", true), (SNode) new typeof_GetGroupOperation_InferenceRule.QuotationClass_0454_0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1209911237497", true), (SNode) new typeof_GetGroupOperation_InferenceRule.QuotationClass_0454_l523emnf2t8m().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -42,19 +42,19 @@ public class typeof_GetGroupOperation_InferenceRule extends AbstractInferenceRul
     return false;
   }
 
-  public static class QuotationClass_0454_0 {
-    public QuotationClass_0454_0() {
+  public static class QuotationClass_0454_l523emnf2t8m {
+    public QuotationClass_0454_l523emnf2t8m() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0454_0 = null;
+      SNode quotedNode_0454_l523emnf2phl = null;
       {
-        quotedNode_0454_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0454_0 = quotedNode_0454_0;
-        quotedNode1_0454_0.addReference(SReference.create("classifier", quotedNode1_0454_0, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)"), SNodeId.fromString("~BaseGroup")));
-        result = quotedNode1_0454_0;
+        quotedNode_0454_l523emnf2phl = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0454_l523emnf2phl = quotedNode_0454_l523emnf2phl;
+        quotedNode1_0454_l523emnf2phl.addReference(SReference.create("classifier", quotedNode1_0454_l523emnf2phl, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)"), SNodeId.fromString("~BaseGroup")));
+        result = quotedNode1_0454_l523emnf2phl;
       }
       return result;
     }
@@ -62,12 +62,12 @@ public class typeof_GetGroupOperation_InferenceRule extends AbstractInferenceRul
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0454_0 = null;
+      SNode quotedNode_0454_l523emnf2phl = null;
       {
-        quotedNode_0454_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0454_0 = quotedNode_0454_0;
-        quotedNode1_0454_0.addReference(SReference.create("classifier", quotedNode1_0454_0, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)"), SNodeId.fromString("~BaseGroup")));
-        result = quotedNode1_0454_0;
+        quotedNode_0454_l523emnf2phl = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0454_l523emnf2phl = quotedNode_0454_l523emnf2phl;
+        quotedNode1_0454_l523emnf2phl.addReference(SReference.create("classifier", quotedNode1_0454_l523emnf2phl, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)"), SNodeId.fromString("~BaseGroup")));
+        result = quotedNode1_0454_l523emnf2phl;
       }
       return result;
     }

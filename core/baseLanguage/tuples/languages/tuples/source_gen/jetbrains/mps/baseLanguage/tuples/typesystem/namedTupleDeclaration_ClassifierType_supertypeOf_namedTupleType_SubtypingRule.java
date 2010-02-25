@@ -21,7 +21,7 @@ public class namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_Sub
   }
 
   public SNode getSubOrSuperType(SNode ntt, TypeCheckingContext typeCheckingContext) {
-    return new namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule.QuotationClass_1616_0().createNode(ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).toListSequence(), SLinkOperations.getTarget(ntt, "classifier", false), typeCheckingContext);
+    return new namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule.QuotationClass_1616_l523emnekyus().createNode(ListSequence.fromList(SLinkOperations.getTargets(ntt, "parameter", true)).toListSequence(), SLinkOperations.getTarget(ntt, "classifier", false), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -36,46 +36,46 @@ public class namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_Sub
     return false;
   }
 
-  public static class QuotationClass_1616_0 {
-    public QuotationClass_1616_0() {
+  public static class QuotationClass_1616_l523emnekyus {
+    public QuotationClass_1616_l523emnekyus() {
     }
 
-    public SNode createNode(Object parameter_1616_0, Object parameter_1616_1, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_1616_l523emnekxc5, Object parameter_1616_l523emnekxca, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1616_0 = null;
-      SNode quotedNode_1616_1 = null;
+      SNode quotedNode_1616_l523emnekxc2 = null;
+      SNode quotedNode_1616_l523emnekxc3 = null;
       {
-        quotedNode_1616_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1616_0 = quotedNode_1616_0;
-        quotedNode1_1616_0.setReferent("classifier", (SNode) parameter_1616_1);
+        quotedNode_1616_l523emnekxc2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1616_l523emnekxc2 = quotedNode_1616_l523emnekxc2;
+        quotedNode1_1616_l523emnekxc2.setReferent("classifier", (SNode) parameter_1616_l523emnekxca);
         {
-          List<SNode> nodes = (List<SNode>) parameter_1616_0;
+          List<SNode> nodes = (List<SNode>) parameter_1616_l523emnekxc5;
           for (SNode child : nodes) {
-            quotedNode_1616_0.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_1616_l523emnekxc2.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
-        result = quotedNode1_1616_0;
+        result = quotedNode1_1616_l523emnekxc2;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_1616_0, Object parameter_1616_1) {
+    public SNode createNode(Object parameter_1616_l523emnekxc5, Object parameter_1616_l523emnekxca) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1616_0 = null;
-      SNode quotedNode_1616_1 = null;
+      SNode quotedNode_1616_l523emnekxc2 = null;
+      SNode quotedNode_1616_l523emnekxc3 = null;
       {
-        quotedNode_1616_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1616_0 = quotedNode_1616_0;
-        quotedNode1_1616_0.setReferent("classifier", (SNode) parameter_1616_1);
+        quotedNode_1616_l523emnekxc2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1616_l523emnekxc2 = quotedNode_1616_l523emnekxc2;
+        quotedNode1_1616_l523emnekxc2.setReferent("classifier", (SNode) parameter_1616_l523emnekxca);
         {
-          List<SNode> nodes = (List<SNode>) parameter_1616_0;
+          List<SNode> nodes = (List<SNode>) parameter_1616_l523emnekxc5;
           for (SNode child : nodes) {
-            quotedNode_1616_0.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_1616_l523emnekxc2.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_1616_0;
+        result = quotedNode1_1616_l523emnekxc2;
       }
       return result;
     }

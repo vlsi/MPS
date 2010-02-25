@@ -37,10 +37,10 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createReadOnlyModelAccessor_3654_0(editorContext, node);
+    return this.createReadOnlyModelAccessor_3654_1qzkl5mbjad5f(editorContext, node);
   }
 
-  private EditorCell createReadOnlyModelAccessor_3654_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_3654_1qzkl5mbjad5f(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return (SPropertyOperations.getBoolean(node, "isOptional") ?
@@ -57,8 +57,8 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ActionParameter_IsOptional.ActionParameter_generic_cellMenu0()}));
-    editorCell.setCellId("ReadOnlyModelAccessor_3654_0");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ActionParameter_IsOptional.ActionParameter_generic_cellMenu1qzkl5mbje6po()}));
+    editorCell.setCellId("ReadOnlyModelAccessor_3654_1qzkl5mbjad5f");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -67,8 +67,8 @@ public class ActionParameter_IsOptional extends AbstractCellProvider {
     return editorCell;
   }
 
-  public static class ActionParameter_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-    public ActionParameter_generic_cellMenu0() {
+  public static class ActionParameter_generic_cellMenu1qzkl5mbje6po extends AbstractCellMenuPart_Generic_Group {
+    public ActionParameter_generic_cellMenu1qzkl5mbje6po() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

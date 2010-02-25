@@ -20,31 +20,31 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0079_0(editorContext, node);
+    return this.createCollection_0079_ftg2j1jj(editorContext, node);
   }
 
-  private EditorCell createCollection_0079_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0079_ftg2j1jj(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0079_0");
-    editorCell.addEditorCell(this.createRefCell_0079_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0079_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0079_0(editorContext, node));
+    editorCell.setCellId("Collection_0079_ftg2j1jj");
+    editorCell.addEditorCell(this.createRefCell_0079_ftg2jj3m(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0079_ftg2jqph(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_0079_ftg2jv9c(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0079_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0079_ftg2jqph(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_0079_0");
+    editorCell.setCellId("Constant_0079_ftg2jqph");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_0079_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0079_ftg2jj3m(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("componentDeclaration");
     provider.setNoTargetText("<no componentDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleComponentReference_Editor._Inline0079_0());
+    provider.setAuxiliaryCellProvider(new NamedTupleComponentReference_Editor._Inline0079_ftg2jj3n());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -57,7 +57,7 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0079_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0079_ftg2jv9c(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -74,8 +74,8 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0079_0 extends InlineCellProvider {
-    public _Inline0079_0() {
+  public static class _Inline0079_ftg2jj3n extends InlineCellProvider {
+    public _Inline0079_ftg2jj3n() {
       super();
     }
 
@@ -84,10 +84,10 @@ public class NamedTupleComponentReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0079_0(editorContext, node);
+      return this.createProperty_0079_ftg2joe5(editorContext, node);
     }
 
-    private EditorCell createProperty_0079_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0079_ftg2joe5(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

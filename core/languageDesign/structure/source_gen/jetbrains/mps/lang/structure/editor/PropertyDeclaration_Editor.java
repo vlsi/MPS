@@ -21,21 +21,21 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5641_0(editorContext, node);
+    return this.createCollection_5641_dtilnad1(editorContext, node);
   }
 
-  private EditorCell createCollection_5641_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5641_dtilnad1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5641_0");
-    editorCell.addEditorCell(this.createProperty_5641_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5641_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_5641_0(editorContext, node));
+    editorCell.setCellId("Collection_5641_dtilnad1");
+    editorCell.addEditorCell(this.createProperty_5641_dtilnad2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5641_dtimjkci(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_5641_e4392wgm(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5641_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5641_dtimjkci(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_5641_0");
+    editorCell.setCellId("Constant_5641_dtimjkci");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -44,7 +44,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_5641_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_5641_dtilnad2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -67,12 +67,12 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_5641_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_5641_e4392wgm(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("dataType");
     provider.setNoTargetText("<no data type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyDeclaration_Editor._Inline5641_0());
+    provider.setAuxiliaryCellProvider(new PropertyDeclaration_Editor._Inline5641_e438z9uc());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -85,8 +85,8 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline5641_0 extends InlineCellProvider {
-    public _Inline5641_0() {
+  public static class _Inline5641_e438z9uc extends InlineCellProvider {
+    public _Inline5641_e438z9uc() {
       super();
     }
 
@@ -95,10 +95,10 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_5641_1(editorContext, node);
+      return this.createProperty_5641_e4392wgn(editorContext, node);
     }
 
-    private EditorCell createProperty_5641_1(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_5641_e4392wgn(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

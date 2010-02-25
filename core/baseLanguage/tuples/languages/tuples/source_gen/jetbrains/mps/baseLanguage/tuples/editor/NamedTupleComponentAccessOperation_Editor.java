@@ -17,22 +17,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2041_0(editorContext, node);
+    return this.createCollection_2041_l523emnekf1q(editorContext, node);
   }
 
-  private EditorCell createCollection_2041_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2041_l523emnekf1q(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2041_0");
-    editorCell.addEditorCell(this.createRefCell_2041_0(editorContext, node));
+    editorCell.setCellId("Collection_2041_l523emnekf1q");
+    editorCell.addEditorCell(this.createRefCell_2041_l523emnekf1n(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_2041_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_2041_l523emnekf1n(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("component");
     provider.setNoTargetText("<no component>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NamedTupleComponentAccessOperation_Editor._Inline2041_0());
+    provider.setAuxiliaryCellProvider(new NamedTupleComponentAccessOperation_Editor._Inline2041_l523emnekf1o());
     editorCell = provider.createEditorCell(editorContext);
     BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -46,8 +46,8 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  public static class _Inline2041_0 extends InlineCellProvider {
-    public _Inline2041_0() {
+  public static class _Inline2041_l523emnekf1o extends InlineCellProvider {
+    public _Inline2041_l523emnekf1o() {
       super();
     }
 
@@ -56,10 +56,10 @@ public class NamedTupleComponentAccessOperation_Editor extends DefaultNodeEditor
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_2041_0(editorContext, node);
+      return this.createProperty_2041_l523emnekf1p(editorContext, node);
     }
 
-    private EditorCell createProperty_2041_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_2041_l523emnekf1p(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

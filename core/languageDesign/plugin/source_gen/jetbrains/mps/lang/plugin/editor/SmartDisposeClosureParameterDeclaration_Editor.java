@@ -18,20 +18,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SmartDisposeClosureParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8938_0(editorContext, node);
+    return this.createCollection_8938_3oucgaimyprt(editorContext, node);
   }
 
-  private EditorCell createCollection_8938_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8938_3oucgaimyprt(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8938_0");
-    editorCell.addEditorCell(this.createConstant_8938_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_8938_0(editorContext, node));
+    editorCell.setCellId("Collection_8938_3oucgaimyprt");
+    editorCell.addEditorCell(this.createConstant_8938_3oucgaimypru(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_8938_3oucgaimyprx(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8938_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8938_3oucgaimypru(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "~");
-    editorCell.setCellId("Constant_8938_0");
+    editorCell.setCellId("Constant_8938_3oucgaimypru");
     BaseLanguageStyle_StyleSheet.getParameter(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -42,7 +42,7 @@ public class SmartDisposeClosureParameterDeclaration_Editor extends DefaultNodeE
     return editorCell;
   }
 
-  private EditorCell createProperty_8938_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_8938_3oucgaimyprx(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

@@ -21,21 +21,21 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class StringConceptProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1328_0(editorContext, node);
+    return this.createCollection_1328_e3ypmayl(editorContext, node);
   }
 
-  private EditorCell createCollection_1328_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1328_e3ypmayl(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1328_0");
-    editorCell.addEditorCell(this.createRefCell_1328_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1328_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_1328_1(editorContext, node));
+    editorCell.setCellId("Collection_1328_e3ypmayl");
+    editorCell.addEditorCell(this.createRefCell_1328_e3ypo4ol(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1328_e3ys3wvg(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_1328_e3ys3wvh(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1328_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1328_e3ys3wvg(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_1328_0");
+    editorCell.setCellId("Constant_1328_e3ys3wvg");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -44,12 +44,12 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_1328_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_1328_e3ypo4ol(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("stringConceptPropertyDeclaration");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StringConceptProperty_Editor._Inline1328_0());
+    provider.setAuxiliaryCellProvider(new StringConceptProperty_Editor._Inline1328_e3ypmkj9());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -62,7 +62,7 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_1328_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_1328_e3ys3wvh(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -85,8 +85,8 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline1328_0 extends InlineCellProvider {
-    public _Inline1328_0() {
+  public static class _Inline1328_e3ypmkj9 extends InlineCellProvider {
+    public _Inline1328_e3ypmkj9() {
       super();
     }
 
@@ -95,10 +95,10 @@ public class StringConceptProperty_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_1328_0(editorContext, node);
+      return this.createProperty_1328_e3ypo4om(editorContext, node);
     }
 
-    private EditorCell createProperty_1328_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_1328_e3ypo4om(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

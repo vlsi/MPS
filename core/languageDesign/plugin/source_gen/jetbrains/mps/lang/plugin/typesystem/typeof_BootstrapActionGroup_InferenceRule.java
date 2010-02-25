@@ -25,7 +25,7 @@ public class typeof_BootstrapActionGroup_InferenceRule extends AbstractInference
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206194021314", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206194003347", true), (SNode) new typeof_BootstrapActionGroup_InferenceRule.QuotationClass_1249_0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1206194003347", true), (SNode) new typeof_BootstrapActionGroup_InferenceRule.QuotationClass_1249_l523emnf2t07().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -41,18 +41,18 @@ public class typeof_BootstrapActionGroup_InferenceRule extends AbstractInference
     return false;
   }
 
-  public static class QuotationClass_1249_0 {
-    public QuotationClass_1249_0() {
+  public static class QuotationClass_1249_l523emnf2t07 {
+    public QuotationClass_1249_l523emnf2t07() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1249_0 = null;
+      SNode quotedNode_1249_l523emnf2p96 = null;
       {
-        quotedNode_1249_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1249_0 = quotedNode_1249_0;
-        result = quotedNode1_1249_0;
+        quotedNode_1249_l523emnf2p96 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1249_l523emnf2p96 = quotedNode_1249_l523emnf2p96;
+        result = quotedNode1_1249_l523emnf2p96;
       }
       return result;
     }
@@ -60,11 +60,11 @@ public class typeof_BootstrapActionGroup_InferenceRule extends AbstractInference
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1249_0 = null;
+      SNode quotedNode_1249_l523emnf2p96 = null;
       {
-        quotedNode_1249_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1249_0 = quotedNode_1249_0;
-        result = quotedNode1_1249_0;
+        quotedNode_1249_l523emnf2p96 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1249_l523emnf2p96 = quotedNode_1249_l523emnf2p96;
+        result = quotedNode1_1249_l523emnf2p96;
       }
       return result;
     }

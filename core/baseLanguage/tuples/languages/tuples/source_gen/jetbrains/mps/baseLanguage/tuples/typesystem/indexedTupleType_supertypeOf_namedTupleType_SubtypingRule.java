@@ -27,7 +27,7 @@ public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends S
   public SNode getSubOrSuperType(SNode ntt, TypeCheckingContext typeCheckingContext) {
     final List<SNode> queue = ListSequence.fromList(new LinkedList<SNode>());
     final List<SNode> pts = SLinkOperations.getTargets(ntt, "parameter", true);
-    return new indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.QuotationClass_8434_0().createNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "component", true)).select(new ISelector<SNode, SNode>() {
+    return new indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.QuotationClass_8434_l523emnekz05().createNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "component", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode cmp) {
         SNode tmp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
         SLinkOperations.setTarget(tmp, "componentType", SNodeOperations.copyNode(SLinkOperations.getTarget(cmp, "type", true)), true);
@@ -63,44 +63,44 @@ public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends S
     return true;
   }
 
-  public static class QuotationClass_8434_0 {
-    public QuotationClass_8434_0() {
+  public static class QuotationClass_8434_l523emnekz05 {
+    public QuotationClass_8434_l523emnekz05() {
     }
 
-    public SNode createNode(Object parameter_8434_0, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_8434_l523emnekxe3, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8434_0 = null;
-      SNode quotedNode_8434_1 = null;
+      SNode quotedNode_8434_l523emnekxe0 = null;
+      SNode quotedNode_8434_l523emnekxe1 = null;
       {
-        quotedNode_8434_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8434_0 = quotedNode_8434_0;
+        quotedNode_8434_l523emnekxe0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8434_l523emnekxe0 = quotedNode_8434_l523emnekxe0;
         {
-          List<SNode> nodes = (List<SNode>) parameter_8434_0;
+          List<SNode> nodes = (List<SNode>) parameter_8434_l523emnekxe3;
           for (SNode child : nodes) {
-            quotedNode_8434_0.addChild("componentType", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_8434_l523emnekxe0.addChild("componentType", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
-        result = quotedNode1_8434_0;
+        result = quotedNode1_8434_l523emnekxe0;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_8434_0) {
+    public SNode createNode(Object parameter_8434_l523emnekxe3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8434_0 = null;
-      SNode quotedNode_8434_1 = null;
+      SNode quotedNode_8434_l523emnekxe0 = null;
+      SNode quotedNode_8434_l523emnekxe1 = null;
       {
-        quotedNode_8434_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8434_0 = quotedNode_8434_0;
+        quotedNode_8434_l523emnekxe0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8434_l523emnekxe0 = quotedNode_8434_l523emnekxe0;
         {
-          List<SNode> nodes = (List<SNode>) parameter_8434_0;
+          List<SNode> nodes = (List<SNode>) parameter_8434_l523emnekxe3;
           for (SNode child : nodes) {
-            quotedNode_8434_0.addChild("componentType", HUtil.copyIfNecessary(child));
+            quotedNode_8434_l523emnekxe0.addChild("componentType", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_8434_0;
+        result = quotedNode1_8434_l523emnekxe0;
       }
       return result;
     }

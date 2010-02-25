@@ -41,30 +41,30 @@ public class ActionParameter_Hint extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8189_1(editorContext, node);
+    return this.createCollection_8189_l523emnf0cjc(editorContext, node);
   }
 
-  private EditorCell createCollection_8189_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8189_l523emnf0cau(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_8189_0");
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8189_0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_1(editorContext, node));
+    editorCell.setCellId("Collection_8189_l523emnf0cau");
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_l523emnf0cav(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8189_l523emnf0cey(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_8189_l523emnf0cf0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8189_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8189_l523emnf0cjc(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8189_1");
-    if (renderingCondition8189_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_8189_0(editorContext, node));
+    editorCell.setCellId("Collection_8189_l523emnf0cjc");
+    if (renderingCondition8189_l523emnf0cj3(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_8189_l523emnf0cau(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_8189_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8189_l523emnf0cey(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_8189_0");
+    editorCell.setCellId("Constant_8189_l523emnf0cey");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -73,12 +73,12 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_8189_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_8189_l523emnf0cav(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(ActionParameter_Behavior.call_getFieldDeclaration_1171743928471867409(node), "annotation", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new ActionParameter_Hint.QuotationClass_8189_0().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
+            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new ActionParameter_Hint.QuotationClass_8189_l523emnf1oei().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
           }
         }).first();
         if (annotation == null) {
@@ -104,7 +104,7 @@ public class ActionParameter_Hint extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_8189_0");
+    editorCell.setCellId("ReadOnlyModelAccessor_8189_l523emnf0cav");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -112,12 +112,12 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_8189_1(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_8189_l523emnf0cf0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(ActionParameter_Behavior.call_getFieldDeclaration_1171743928471867409(node), "annotation", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new ActionParameter_Hint.QuotationClass_8189_1().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
+            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new ActionParameter_Hint.QuotationClass_8189_l523emnf1oi9().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
           }
         }).first();
         if (annotation == null) {
@@ -143,7 +143,7 @@ public class ActionParameter_Hint extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_8189_1");
+    editorCell.setCellId("ReadOnlyModelAccessor_8189_l523emnf0cf0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -151,41 +151,41 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static boolean renderingCondition8189_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition8189_l523emnf0cj3(SNode node, EditorContext editorContext, IScope scope) {
     return ActionParameter_Behavior.call_getFieldDeclaration_1171743928471867409(node) != null;
   }
 
-  public static class QuotationClass_8189_0 {
-    public QuotationClass_8189_0() {
+  public static class QuotationClass_8189_l523emnf1oei {
+    public QuotationClass_8189_l523emnf1oei() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8189_0 = null;
+      SNode quotedNode_8189_8whgk1jcg76p = null;
       {
-        quotedNode_8189_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8189_0 = quotedNode_8189_0;
-        quotedNode1_8189_0.addReference(SReference.create("classifier", quotedNode1_8189_0, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys$Description")));
-        result = quotedNode1_8189_0;
+        quotedNode_8189_8whgk1jcg76p = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8189_8whgk1jcg76p = quotedNode_8189_8whgk1jcg76p;
+        quotedNode1_8189_8whgk1jcg76p.addReference(SReference.create("classifier", quotedNode1_8189_8whgk1jcg76p, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys$Description")));
+        result = quotedNode1_8189_8whgk1jcg76p;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_8189_1 {
-    public QuotationClass_8189_1() {
+  public static class QuotationClass_8189_l523emnf1oi9 {
+    public QuotationClass_8189_l523emnf1oi9() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8189_1 = null;
+      SNode quotedNode_8189_8whgk1jcg79a = null;
       {
-        quotedNode_8189_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8189_1 = quotedNode_8189_1;
-        quotedNode1_8189_1.addReference(SReference.create("classifier", quotedNode1_8189_1, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys$Description")));
-        result = quotedNode1_8189_1;
+        quotedNode_8189_8whgk1jcg79a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8189_8whgk1jcg79a = quotedNode_8189_8whgk1jcg79a;
+        quotedNode1_8189_8whgk1jcg79a.addReference(SReference.create("classifier", quotedNode1_8189_8whgk1jcg79a, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys$Description")));
+        result = quotedNode1_8189_8whgk1jcg79a;
       }
       return result;
     }

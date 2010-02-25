@@ -18,45 +18,45 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5532_0(editorContext, node);
+    return this.createCollection_5532_dtihysfx(editorContext, node);
   }
 
-  private EditorCell createCollection_5532_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5532_dtihysfx(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5532_0");
-    editorCell.addEditorCell(this.createCollection_5532_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5532_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5532_2(editorContext, node));
+    editorCell.setCellId("Collection_5532_dtihysfx");
+    editorCell.addEditorCell(this.createCollection_5532_dtihysge(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5532_dtjxo4vb(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5532_dtjxo4vc(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5532_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5532_dtihysge(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5532_1");
+    editorCell.setCellId("Collection_5532_dtihysge");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5532_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5532_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5532_dtihysgf(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5532_dtihysgg(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5532_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5532_dtjxo4vc(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5532_2");
+    editorCell.setCellId("Collection_5532_dtjxo4vc");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5532_2(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5532_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5532_dtjxo4vd(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5532_dtjxo4ve(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5532_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5532_dtihysgf(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "constrained string datatype:");
-    editorCell.setCellId("Constant_5532_0");
+    editorCell.setCellId("Constant_5532_dtihysgf");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
@@ -66,9 +66,9 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5532_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5532_dtjxo4vb(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5532_1");
+    editorCell.setCellId("Constant_5532_dtjxo4vb");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -77,14 +77,14 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5532_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5532_dtjxo4vd(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    matching regexp:");
-    editorCell.setCellId("Constant_5532_2");
+    editorCell.setCellId("Constant_5532_dtjxo4vd");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_5532_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_5532_dtihysgg(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -102,7 +102,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_5532_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_5532_dtjxo4ve(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("constraint");
     provider.setNoTargetText("<no value>");

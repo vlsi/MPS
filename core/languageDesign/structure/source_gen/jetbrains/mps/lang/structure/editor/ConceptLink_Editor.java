@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class ConceptLink_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_8038_0(editorContext, node);
+    return this.createError_8038_e3yykg6v(editorContext, node);
   }
 
-  private EditorCell createError_8038_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_8038_e3yykg6v(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose link>");
-    editorCell.setCellId("Error_8038_0");
+    editorCell.setCellId("Error_8038_e3yykg6v");
     return editorCell;
   }
 }

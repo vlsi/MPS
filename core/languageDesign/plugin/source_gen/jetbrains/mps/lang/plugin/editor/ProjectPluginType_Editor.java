@@ -20,22 +20,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ProjectPluginType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2742_0(editorContext, node);
+    return this.createCollection_2742_fe2vs69r(editorContext, node);
   }
 
-  private EditorCell createCollection_2742_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2742_fe2vs69r(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2742_0");
-    editorCell.addEditorCell(this.createConstant_2742_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2742_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_2742_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2742_2(editorContext, node));
+    editorCell.setCellId("Collection_2742_fe2vs69r");
+    editorCell.addEditorCell(this.createConstant_2742_fe2vsgah(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2742_fe2vsx19(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_2742_fe2vt6cd(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2742_fe2vszyr(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2742_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2742_fe2vsgah(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "project plugin");
-    editorCell.setCellId("Constant_2742_0");
+    editorCell.setCellId("Constant_2742_fe2vsgah");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -45,9 +45,9 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2742_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2742_fe2vsx19(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_2742_1");
+    editorCell.setCellId("Constant_2742_fe2vsx19");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -58,9 +58,9 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2742_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2742_fe2vszyr(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_2742_2");
+    editorCell.setCellId("Constant_2742_fe2vszyr");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -71,12 +71,12 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_2742_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_2742_fe2vt6cd(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("plugin");
     provider.setNoTargetText("<no plugin>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ProjectPluginType_Editor._Inline2742_0());
+    provider.setAuxiliaryCellProvider(new ProjectPluginType_Editor._Inline2742_fe2vt6ce());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -89,8 +89,8 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline2742_0 extends InlineCellProvider {
-    public _Inline2742_0() {
+  public static class _Inline2742_fe2vt6ce extends InlineCellProvider {
+    public _Inline2742_fe2vt6ce() {
       super();
     }
 
@@ -99,10 +99,10 @@ public class ProjectPluginType_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_2742_0(editorContext, node);
+      return this.createProperty_2742_fe2vt7p2(editorContext, node);
     }
 
-    private EditorCell createProperty_2742_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_2742_fe2vt7p2(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

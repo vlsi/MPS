@@ -29,39 +29,39 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0068_0(editorContext, node);
+    return this.createCollection_0068_bvf417jw83go(editorContext, node);
   }
 
-  private EditorCell createCollection_0068_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0068_bvf417jw83go(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0068_0");
-    editorCell.addEditorCell(this.createRefCell_0068_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_0068_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0068_0(editorContext, node));
+    editorCell.setCellId("Collection_0068_bvf417jw83go");
+    editorCell.addEditorCell(this.createRefCell_0068_bvf417jw83gr(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_0068_1b1xri4d2mlje(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0068_lr4mfderypvh(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0068_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0068_lr4mfderypvh(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_0068_0");
+    editorCell.setCellId("Constant_0068_lr4mfderypvh");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_0068_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new SimpleShortcutChange_Editor.keystrokeListHandler_0068_0(node, "keystroke", editorContext);
+  private EditorCell createRefNodeList_0068_1b1xri4d2mlje(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new SimpleShortcutChange_Editor.keystrokeListHandler_0068_1b1xri4d2mlje(node, "keystroke", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_keystroke");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefCell_0068_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_0068_bvf417jw83gr(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleShortcutChange_Editor._Inline0068_0());
+    provider.setAuxiliaryCellProvider(new SimpleShortcutChange_Editor._Inline0068_bvf417jw83gs());
     editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
@@ -78,8 +78,8 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0068_0 extends InlineCellProvider {
-    public _Inline0068_0() {
+  public static class _Inline0068_bvf417jw83gs extends InlineCellProvider {
+    public _Inline0068_bvf417jw83gs() {
       super();
     }
 
@@ -88,10 +88,10 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0068_0(editorContext, node);
+      return this.createProperty_0068_bvf417jw83gu(editorContext, node);
     }
 
-    private EditorCell createProperty_0068_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_0068_bvf417jw83gu(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -111,8 +111,8 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class keystrokeListHandler_0068_0 extends RefNodeListHandler {
-    public keystrokeListHandler_0068_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class keystrokeListHandler_0068_1b1xri4d2mlje extends RefNodeListHandler {
+    public keystrokeListHandler_0068_1b1xri4d2mlje(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

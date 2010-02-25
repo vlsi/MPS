@@ -25,55 +25,55 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5128_0(editorContext, node);
+    return this.createCollection_5128_bvf417jw83g6(editorContext, node);
   }
 
-  private EditorCell createCollection_5128_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5128_bvf417jw83g6(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5128_0");
-    editorCell.addEditorCell(this.createCollection_5128_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5128_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_5128_0(editorContext, node));
+    editorCell.setCellId("Collection_5128_bvf417jw83g6");
+    editorCell.addEditorCell(this.createCollection_5128_bvf417jw83g9(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5128_bvf417jw83gi(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_5128_bvf417jw83gk(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5128_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5128_bvf417jw83g9(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5128_1");
+    editorCell.setCellId("Collection_5128_bvf417jw83g9");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5128_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5128_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5128_2(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5128_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5128_bvf417jw83ge(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5128_1bp0yohv12gv8(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5128_1bp0yohv12gv6(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5128_bvf417jw83gg(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5128_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5128_bvf417jw83ge(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keymap changes");
-    editorCell.setCellId("Constant_5128_0");
+    editorCell.setCellId("Constant_5128_bvf417jw83ge");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5128_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5128_bvf417jw83gi(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5128_1");
+    editorCell.setCellId("Constant_5128_bvf417jw83gi");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5128_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5128_1bp0yohv12gv6(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
-    editorCell.setCellId("Constant_5128_2");
+    editorCell.setCellId("Constant_5128_1bp0yohv12gv6");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_5128_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new KeymapChangesDeclaration_Editor.shortcutChangeListHandler_5128_0(node, "shortcutChange", editorContext);
+  private EditorCell createRefNodeList_5128_bvf417jw83gk(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new KeymapChangesDeclaration_Editor.shortcutChangeListHandler_5128_bvf417jw83gk(node, "shortcutChange", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_shortcutChange");
     editorCell.setGridLayout(true);
@@ -81,7 +81,7 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_5128_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_5128_bvf417jw83gg(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("keymap");
     provider.setNoTargetText("<no keymap>");
@@ -99,7 +99,7 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_5128_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_5128_1bp0yohv12gv8(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -117,8 +117,8 @@ public class KeymapChangesDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class shortcutChangeListHandler_5128_0 extends RefNodeListHandler {
-    public shortcutChangeListHandler_5128_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class shortcutChangeListHandler_5128_bvf417jw83gk extends RefNodeListHandler {
+    public shortcutChangeListHandler_5128_bvf417jw83gk(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

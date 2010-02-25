@@ -21,17 +21,17 @@ public class check_Antiquotation_NonTypesystemRule extends AbstractNonTypesystem
   public void applyRule(final SNode antiquotation, final TypeCheckingContext typeCheckingContext) {
     SNode annotatedNode = SNodeOperations.getParent(antiquotation);
     do {
-      SNode matchedNode_9107_0 = SNodeOperations.getParent(annotatedNode);
+      SNode matchedNode_9107_fcksb6cj = SNodeOperations.getParent(annotatedNode);
       {
-        boolean matches_9107_0 = false;
+        boolean matches_9107_fcksb6cl = false;
         {
-          SNode matchingNode_9107_0 = SNodeOperations.getParent(annotatedNode);
-          if (matchingNode_9107_0 != null) {
-            matches_9107_0 = SModelUtil_new.isAssignableConcept(matchingNode_9107_0.getConceptFqName(), "jetbrains.mps.lang.quotation.structure.Quotation");
+          SNode matchingNode_9107_fcksb6cl = SNodeOperations.getParent(annotatedNode);
+          if (matchingNode_9107_fcksb6cl != null) {
+            matches_9107_fcksb6cl = SModelUtil_new.isAssignableConcept(matchingNode_9107_fcksb6cl.getConceptFqName(), "jetbrains.mps.lang.quotation.structure.Quotation");
           }
         }
-        if (matches_9107_0) {
-          if (SLinkOperations.getTarget(matchedNode_9107_0, "quotedNode", true) == annotatedNode) {
+        if (matches_9107_fcksb6cl) {
+          if (SLinkOperations.getTarget(matchedNode_9107_fcksb6cj, "quotedNode", true) == annotatedNode) {
             {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();

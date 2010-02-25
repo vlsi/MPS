@@ -17,17 +17,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ReplaceBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0013_0(editorContext, node);
+    return this.createCollection_0013_ezmo4ld0(editorContext, node);
   }
 
-  private EditorCell createCollection_0013_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0013_ezmo4ld0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0013_0");
-    editorCell.addEditorCell(this.createRefNode_0013_0(editorContext, node));
+    editorCell.setCellId("Collection_0013_ezmo4ld0");
+    editorCell.addEditorCell(this.createRefNode_0013_ezmo4nh0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_0013_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_0013_ezmo4nh0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");

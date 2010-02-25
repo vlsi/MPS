@@ -18,25 +18,25 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9889_0(editorContext, node);
+    return this.createCollection_9889_ezmo6u7c(editorContext, node);
   }
 
-  private EditorCell createCollection_9889_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9889_ezmo6u7c(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9889_0");
-    editorCell.addEditorCell(this.createConstant_9889_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9889_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9889_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9889_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9889_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9889_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9889_2(editorContext, node));
+    editorCell.setCellId("Collection_9889_ezmo6u7c");
+    editorCell.addEditorCell(this.createConstant_9889_ezmo6unm(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9889_ezmo6unn(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9889_ezmo6uno(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9889_ezmo6unp(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9889_ezmo6zma(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9889_ezmo70cj(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9889_ezmo70ck(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9889_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9889_ezmo6unm(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replaceAll");
-    editorCell.setCellId("Constant_9889_0");
+    editorCell.setCellId("Constant_9889_ezmo6unm");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -45,9 +45,9 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9889_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9889_ezmo6uno(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
-    editorCell.setCellId("Constant_9889_1");
+    editorCell.setCellId("Constant_9889_ezmo6uno");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -56,9 +56,9 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9889_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9889_ezmo6zma(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_9889_2");
+    editorCell.setCellId("Constant_9889_ezmo6zma");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -67,9 +67,9 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9889_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9889_ezmo70cj(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
-    editorCell.setCellId("Constant_9889_3");
+    editorCell.setCellId("Constant_9889_ezmo70cj");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -78,7 +78,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9889_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9889_ezmo6unn(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");
@@ -95,7 +95,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9889_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9889_ezmo6unp(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expr");
     provider.setNoTargetText("<no expr>");
@@ -116,7 +116,7 @@ public class ReplaceWithRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9889_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9889_ezmo70ck(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("replaceBlock");
     provider.setNoTargetText("<no replaceBlock>");

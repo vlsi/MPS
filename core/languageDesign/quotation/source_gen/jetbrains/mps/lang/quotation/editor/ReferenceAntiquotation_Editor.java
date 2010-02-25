@@ -28,43 +28,43 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6627_0(editorContext, node);
+    return this.createCollection_6627_f9lgg2fu(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6627_1(editorContext, node);
+    return this.createCollection_6627_f9lgg2g6(editorContext, node);
   }
 
-  private EditorCell createCollection_6627_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6627_f9lgg2fu(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6627_0");
-    editorCell.addEditorCell(this.createConstant_6627_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6627_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6627_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6627_1(editorContext, node));
+    editorCell.setCellId("Collection_6627_f9lgg2fu");
+    editorCell.addEditorCell(this.createConstant_6627_f9lgg2fv(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6627_1dawo6v81vsku(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6627_f9lgg2g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6627_f9lgg2g1(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_6627_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6627_f9lgg2g6(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6627_1");
-    editorCell.addEditorCell(this.createConstant_6627_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6627_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6627_4(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6627_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6627_5(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6627_1(editorContext, node));
+    editorCell.setCellId("Collection_6627_f9lgg2g6");
+    editorCell.addEditorCell(this.createConstant_6627_f9lgg2g8(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6627_f9lgg2g9(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6627_f9lgg2gb(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6627_fn8tz7c5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6627_f9lgg2gs(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6627_fn8tz7gj(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6627_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6627_f9lgg2fv(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "^(");
-    editorCell.setCellId("Constant_6627_0");
+    editorCell.setCellId("Constant_6627_f9lgg2fv");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
-          return ReferenceAntiquotation_Editor._StyleParameter_QueryFunction_6627_1((cell == null ?
+          return ReferenceAntiquotation_Editor._StyleParameter_QueryFunction_6627_fhvy7p8n((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -78,14 +78,14 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6627_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6627_f9lgg2g1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")^");
-    editorCell.setCellId("Constant_6627_1");
+    editorCell.setCellId("Constant_6627_f9lgg2g1");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
-          return ReferenceAntiquotation_Editor._StyleParameter_QueryFunction_6627_0((cell == null ?
+          return ReferenceAntiquotation_Editor._StyleParameter_QueryFunction_6627_fhvy7os0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -99,9 +99,9 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6627_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6627_f9lgg2g8(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reference antiquotation");
-    editorCell.setCellId("Constant_6627_2");
+    editorCell.setCellId("Constant_6627_f9lgg2g8");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -110,9 +110,9 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6627_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6627_f9lgg2g9(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_6627_3");
+    editorCell.setCellId("Constant_6627_f9lgg2g9");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -122,21 +122,21 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6627_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6627_f9lgg2gb(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reference role:");
-    editorCell.setCellId("Constant_6627_4");
+    editorCell.setCellId("Constant_6627_f9lgg2gb");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6627_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6627_f9lgg2gs(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "source concept:");
-    editorCell.setCellId("Constant_6627_5");
+    editorCell.setCellId("Constant_6627_f9lgg2gs");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_6627_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_6627_fn8tz7c5(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(node.getRole_());
@@ -150,7 +150,7 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_6627_0");
+    editorCell.setCellId("ReadOnlyModelAccessor_6627_fn8tz7c5");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -158,7 +158,7 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_6627_1(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_6627_fn8tz7gj(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         SNode parent = SNodeOperations.getParent(node);
@@ -177,7 +177,7 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_6627_1");
+    editorCell.setCellId("ReadOnlyModelAccessor_6627_fn8tz7gj");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -185,7 +185,7 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6627_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6627_f9lgg2g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<expr>");
@@ -202,7 +202,7 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6627_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6627_1dawo6v81vsku(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("label");
     provider.setNoTargetText("");
@@ -214,7 +214,7 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
-          return ReferenceAntiquotation_Editor._StyleParameter_QueryFunction_6627_2((cell == null ?
+          return ReferenceAntiquotation_Editor._StyleParameter_QueryFunction_6627_1dawo6v81vskw((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -235,15 +235,15 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_6627_0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_6627_fhvy7os0(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
 
-  private static Color _StyleParameter_QueryFunction_6627_1(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_6627_fhvy7p8n(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
 
-  private static Color _StyleParameter_QueryFunction_6627_2(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_6627_1dawo6v81vskw(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
 }

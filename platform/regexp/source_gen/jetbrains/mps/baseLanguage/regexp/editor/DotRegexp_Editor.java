@@ -14,20 +14,20 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class DotRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9914_0(editorContext, node);
+    return this.createCollection_9914_ezl0tf4i(editorContext, node);
   }
 
-  private EditorCell createCollection_9914_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9914_ezl0tf4i(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9914_0");
+    editorCell.setCellId("Collection_9914_ezl0tf4i");
     editorCell.addKeyMap(new RegexpSequenceByEnter());
-    editorCell.addEditorCell(this.createConstant_9914_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9914_ezl0tful(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9914_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9914_ezl0tful(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
-    editorCell.setCellId("Constant_9914_0");
+    editorCell.setCellId("Constant_9914_ezl0tful");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);

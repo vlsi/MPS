@@ -21,21 +21,21 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9683_0(editorContext, node);
+    return this.createCollection_9683_e3ypg9eq(editorContext, node);
   }
 
-  private EditorCell createCollection_9683_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9683_e3ypg9eq(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9683_0");
-    editorCell.addEditorCell(this.createRefCell_9683_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9683_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9683_1(editorContext, node));
+    editorCell.setCellId("Collection_9683_e3ypg9eq");
+    editorCell.addEditorCell(this.createRefCell_9683_e3ypiagk(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9683_e3ypj0fy(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_9683_e3ypjocn(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9683_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9683_e3ypj0fy(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_9683_0");
+    editorCell.setCellId("Constant_9683_e3ypj0fy");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -44,12 +44,12 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_9683_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_9683_e3ypiagk(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("integerConceptPropertyDeclaration");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IntegerConceptProperty_Editor._Inline9683_0());
+    provider.setAuxiliaryCellProvider(new IntegerConceptProperty_Editor._Inline9683_e3ypgxgn());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -62,7 +62,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_9683_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9683_e3ypjocn(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -84,8 +84,8 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline9683_0 extends InlineCellProvider {
-    public _Inline9683_0() {
+  public static class _Inline9683_e3ypgxgn extends InlineCellProvider {
+    public _Inline9683_e3ypgxgn() {
       super();
     }
 
@@ -94,10 +94,10 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_9683_0(editorContext, node);
+      return this.createProperty_9683_e3ypiagl(editorContext, node);
     }
 
-    private EditorCell createProperty_9683_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_9683_e3ypiagl(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

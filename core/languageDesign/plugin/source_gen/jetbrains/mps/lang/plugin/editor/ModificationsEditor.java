@@ -29,32 +29,32 @@ public class ModificationsEditor extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2716_0(editorContext, node);
+    return this.createCollection_2716_fiiqgajr(editorContext, node);
   }
 
-  private EditorCell createCollection_2716_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2716_fiiqgajr(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_2716_0");
-    editorCell.addEditorCell(this.createConstant_2716_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_2716_1(editorContext, node));
+    editorCell.setCellId("Collection_2716_fiiqgajr");
+    editorCell.addEditorCell(this.createConstant_2716_fiiqgb78(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_2716_fiiqgb7a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2716_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2716_fiiqgb7a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2716_1");
+    editorCell.setCellId("Collection_2716_fiiqgb7a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2716_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_2716_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2716_fiiqgb7b(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_2716_fiiqgb7d(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2716_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2716_fiiqgb78(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "modifications");
-    editorCell.setCellId("Constant_2716_0");
+    editorCell.setCellId("Constant_2716_fiiqgb78");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -63,9 +63,9 @@ public class ModificationsEditor extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_2716_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_2716_fiiqgb7b(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_2716_1");
+    editorCell.setCellId("Constant_2716_fiiqgb7b");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -74,16 +74,16 @@ public class ModificationsEditor extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2716_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ModificationsEditor.modifierListHandler_2716_0(node, "modifier", editorContext);
+  private EditorCell createRefNodeList_2716_fiiqgb7d(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ModificationsEditor.modifierListHandler_2716_fiiqgb7d(node, "modifier", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_modifier");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class modifierListHandler_2716_0 extends RefNodeListHandler {
-    public modifierListHandler_2716_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class modifierListHandler_2716_fiiqgb7d extends RefNodeListHandler {
+    public modifierListHandler_2716_fiiqgb7d(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

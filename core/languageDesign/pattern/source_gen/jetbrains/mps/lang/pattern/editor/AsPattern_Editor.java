@@ -19,21 +19,21 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class AsPattern_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0290_0(editorContext, node);
+    return this.createCollection_0290_ei79so2x(editorContext, node);
   }
 
-  private EditorCell createCollection_0290_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_0290_ei79so2x(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0290_0");
-    editorCell.addEditorCell(this.createConstant_0290_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0290_0(editorContext, node));
-    editorCell.addEditorCell(this.createAttributedNodeCell_0290_0(editorContext, node));
+    editorCell.setCellId("Collection_0290_ei79so2x");
+    editorCell.addEditorCell(this.createConstant_0290_ei79so2y(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_0290_ei7eq7qf(editorContext, node));
+    editorCell.addEditorCell(this.createAttributedNodeCell_0290_eoiis0vn(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0290_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_0290_ei79so2y(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
-    editorCell.setCellId("Constant_0290_0");
+    editorCell.setCellId("Constant_0290_ei79so2y");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -43,7 +43,7 @@ public class AsPattern_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createAttributedNodeCell_0290_0(EditorContext editorContext, SNode node) {
+  private EditorCell createAttributedNodeCell_0290_eoiis0vn(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
@@ -54,7 +54,7 @@ public class AsPattern_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_0290_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_0290_ei7eq7qf(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("varName");
     provider.setNoTargetText("<no varName>");

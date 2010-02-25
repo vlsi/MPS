@@ -36,24 +36,24 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
-  private static Pattern REGEXP0 = Pattern.compile("\\\\u[\\da-fA-F]{4}", 0);
-  private static Pattern REGEXP1 = Pattern.compile("\\(\\w+:?", 0);
-  private static Pattern REGEXP2 = Pattern.compile("[^\\-\\+\\*\\[\\]\\.\\{\\}\\(\\)\\\\\\^'\\$]+", 0);
-  private static Pattern REGEXP3 = Pattern.compile("^\\\\[\\-\\+\\*\\[\\]\\.\\{\\}\\(\\)\\^'\\$]$", 0);
-  private static Pattern REGEXP4 = Pattern.compile("(?:[^\\s\\\\\\[&'\\]\\-]|\\\\[\\-\\[&'\\]])", 0);
-  private static Pattern REGEXP5 = Pattern.compile("[^\\\\]+", 0);
-  private static Pattern REGEXP6 = Pattern.compile("^\\{(\\d+)", 0);
-  private static Pattern REGEXP7 = Pattern.compile("\\{\\d+\\}?", 0);
-  private static Pattern REGEXP8 = Pattern.compile("^\\{(\\d+)", 0);
-  private static Pattern REGEXP9 = Pattern.compile("\\{\\d+(?:,\\}?)?", 0);
-  private static Pattern REGEXP10 = Pattern.compile("\\{\\d+,(\\d+)", 0);
-  private static Pattern REGEXP11 = Pattern.compile("\\{(\\d+)", 0);
-  private static Pattern REGEXP12 = Pattern.compile("\\{\\d+(?:,(?:\\d+\\}?)?)?", 0);
-  private static Pattern REGEXP13 = Pattern.compile("\\{\\d+,(\\d+)", 0);
-  private static Pattern REGEXP14 = Pattern.compile("\\{(\\d+)", 0);
+  private static Pattern REGEXPl523emnej7v8 = Pattern.compile("\\\\u[\\da-fA-F]{4}", 0);
+  private static Pattern REGEXPl523emnej7yc = Pattern.compile("\\(\\w+:?", 0);
+  private static Pattern REGEXPl523emnej80z = Pattern.compile("[^\\-\\+\\*\\[\\]\\.\\{\\}\\(\\)\\\\\\^'\\$]+", 0);
+  private static Pattern REGEXPl523emnej841 = Pattern.compile("^\\\\[\\-\\+\\*\\[\\]\\.\\{\\}\\(\\)\\^'\\$]$", 0);
+  private static Pattern REGEXPl523emnej87l = Pattern.compile("(?:[^\\s\\\\\\[&'\\]\\-]|\\\\[\\-\\[&'\\]])", 0);
+  private static Pattern REGEXPl523emnej8am = Pattern.compile("[^\\\\]+", 0);
+  private static Pattern REGEXPl523emnej8m0 = Pattern.compile("^\\{(\\d+)", 0);
+  private static Pattern REGEXPl523emnej8mq = Pattern.compile("\\{\\d+\\}?", 0);
+  private static Pattern REGEXPl523emnej8p3 = Pattern.compile("^\\{(\\d+)", 0);
+  private static Pattern REGEXPl523emnej8ps = Pattern.compile("\\{\\d+(?:,\\}?)?", 0);
+  private static Pattern REGEXPl523emnej8se = Pattern.compile("\\{\\d+,(\\d+)", 0);
+  private static Pattern REGEXPl523emnej8sz = Pattern.compile("\\{(\\d+)", 0);
+  private static Pattern REGEXPl523emnej8tm = Pattern.compile("\\{\\d+(?:,(?:\\d+\\}?)?)?", 0);
+  private static Pattern REGEXPl523emnej8ug = Pattern.compile("\\{\\d+,(\\d+)", 0);
+  private static Pattern REGEXPl523emnej8uy = Pattern.compile("\\{(\\d+)", 0);
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1175165238942(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new QueriesGenerated.QuotationClass_8087_0().createNode(), false);
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new QueriesGenerated.QuotationClass_8087_l523emnej4ow().createNode(), false);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Regexp_1353467374625925691(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -158,7 +158,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP0.matcher(pattern).matches();
+            return REGEXPl523emnej7v8.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -186,7 +186,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            if (!(REGEXP1.matcher(pattern).matches())) {
+            if (!(REGEXPl523emnej7yc.matcher(pattern).matches())) {
               return "(name:";
             }
             String s = pattern;
@@ -218,7 +218,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP2.matcher(pattern).matches();
+            return REGEXPl523emnej80z.matcher(pattern).matches();
           }
 
           public String getDescriptionText(String pattern) {
@@ -251,7 +251,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP3.matcher(pattern).matches();
+            return REGEXPl523emnej841.matcher(pattern).matches();
           }
 
           public String getDescriptionText(String pattern) {
@@ -292,7 +292,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP4.matcher(pattern).matches();
+            return REGEXPl523emnej87l.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -326,7 +326,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP5.matcher(pattern).matches();
+            return REGEXPl523emnej8am.matcher(pattern).matches();
           }
 
           public String getDescriptionText(String pattern) {
@@ -495,7 +495,7 @@ public class QueriesGenerated {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
           SLinkOperations.setTarget(node, "regexp", _context.getSourceNode(), true);
           {
-            Pattern _pattern_0 = REGEXP6;
+            Pattern _pattern_0 = REGEXPl523emnej8m0;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
               SPropertyOperations.set(node, "n", "" + Integer.parseInt(_matcher_0.group(1)));
@@ -505,7 +505,7 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          if (!(REGEXP7.matcher(pattern).matches())) {
+          if (!(REGEXPl523emnej8mq.matcher(pattern).matches())) {
             return "{n}";
           }
           String s = pattern;
@@ -528,7 +528,7 @@ public class QueriesGenerated {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
           SLinkOperations.setTarget(node, "regexp", _context.getSourceNode(), true);
           {
-            Pattern _pattern_0 = REGEXP8;
+            Pattern _pattern_0 = REGEXPl523emnej8p3;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
               SPropertyOperations.set(node, "n", "" + Integer.parseInt(_matcher_0.group(1)));
@@ -538,7 +538,7 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          if (!(REGEXP9.matcher(pattern).matches())) {
+          if (!(REGEXPl523emnej8ps.matcher(pattern).matches())) {
             return "{n,}";
           }
           String s = pattern;
@@ -564,14 +564,14 @@ public class QueriesGenerated {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), node);
           SLinkOperations.setTarget(node, "regexp", _context.getSourceNode(), true);
           {
-            Pattern _pattern_0 = REGEXP10;
+            Pattern _pattern_0 = REGEXPl523emnej8se;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
               SPropertyOperations.set(node, "m", "" + Integer.parseInt(_matcher_0.group(1)));
             }
           }
           {
-            Pattern _pattern_0 = REGEXP11;
+            Pattern _pattern_0 = REGEXPl523emnej8sz;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
               SPropertyOperations.set(node, "n", "" + Integer.parseInt(_matcher_0.group(1)));
@@ -581,20 +581,20 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          if (!(REGEXP12.matcher(pattern).matches())) {
+          if (!(REGEXPl523emnej8tm.matcher(pattern).matches())) {
             return "{n,m}";
           }
           String left = "n";
           String right = "m";
           {
-            Pattern _pattern_0 = REGEXP13;
+            Pattern _pattern_0 = REGEXPl523emnej8ug;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
               right = _matcher_0.group(1);
             }
           }
           {
-            Pattern _pattern_0 = REGEXP14;
+            Pattern _pattern_0 = REGEXPl523emnej8uy;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
               left = _matcher_0.group(1);
@@ -1076,18 +1076,18 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_8087_0 {
-    public QuotationClass_8087_0() {
+  public static class QuotationClass_8087_l523emnej4ow {
+    public QuotationClass_8087_l523emnej4ow() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9293_0 = null;
+      SNode quotedNode_9293_l523emnej4kp = null;
       {
-        quotedNode_9293_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9293_0 = quotedNode_9293_0;
-        result = quotedNode1_9293_0;
+        quotedNode_9293_l523emnej4kp = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9293_l523emnej4kp = quotedNode_9293_l523emnej4kp;
+        result = quotedNode1_9293_l523emnej4kp;
       }
       return result;
     }

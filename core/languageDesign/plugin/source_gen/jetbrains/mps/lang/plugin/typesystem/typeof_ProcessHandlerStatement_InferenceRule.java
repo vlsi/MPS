@@ -28,7 +28,7 @@ public class typeof_ProcessHandlerStatement_InferenceRule extends AbstractInfere
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "678887849223564330", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(statement, "processHandler", true), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "678887849223564322", true), (SNode) new typeof_ProcessHandlerStatement_InferenceRule.QuotationClass_3940_0().createNode(typeCheckingContext), true, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(statement, "processHandler", true), "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "678887849223564322", true), (SNode) new typeof_ProcessHandlerStatement_InferenceRule.QuotationClass_3940_l523emnf2tn4().createNode(typeCheckingContext), true, _info_12389875345);
     }
   }
 
@@ -44,19 +44,19 @@ public class typeof_ProcessHandlerStatement_InferenceRule extends AbstractInfere
     return false;
   }
 
-  public static class QuotationClass_3940_0 {
-    public QuotationClass_3940_0() {
+  public static class QuotationClass_3940_l523emnf2tn4 {
+    public QuotationClass_3940_l523emnf2tn4() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3940_0 = null;
+      SNode quotedNode_3940_l523emnf2qd8 = null;
       {
-        quotedNode_3940_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3940_0 = quotedNode_3940_0;
-        quotedNode1_3940_0.addReference(SReference.create("classifier", quotedNode1_3940_0, SModelReference.fromString("f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
-        result = quotedNode1_3940_0;
+        quotedNode_3940_l523emnf2qd8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3940_l523emnf2qd8 = quotedNode_3940_l523emnf2qd8;
+        quotedNode1_3940_l523emnf2qd8.addReference(SReference.create("classifier", quotedNode1_3940_l523emnf2qd8, SModelReference.fromString("f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
+        result = quotedNode1_3940_l523emnf2qd8;
       }
       return result;
     }
@@ -64,12 +64,12 @@ public class typeof_ProcessHandlerStatement_InferenceRule extends AbstractInfere
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3940_0 = null;
+      SNode quotedNode_3940_l523emnf2qd8 = null;
       {
-        quotedNode_3940_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3940_0 = quotedNode_3940_0;
-        quotedNode1_3940_0.addReference(SReference.create("classifier", quotedNode1_3940_0, SModelReference.fromString("f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
-        result = quotedNode1_3940_0;
+        quotedNode_3940_l523emnf2qd8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3940_l523emnf2qd8 = quotedNode_3940_l523emnf2qd8;
+        quotedNode1_3940_l523emnf2qd8.addReference(SReference.create("classifier", quotedNode1_3940_l523emnf2qd8, SModelReference.fromString("f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
+        result = quotedNode1_3940_l523emnf2qd8;
       }
       return result;
     }

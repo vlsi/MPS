@@ -21,22 +21,22 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class PersistentPropertyReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4173_0(editorContext, node);
+    return this.createCollection_4173_l523emnf0byz(editorContext, node);
   }
 
-  private EditorCell createCollection_4173_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4173_l523emnf0byz(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4173_0");
-    editorCell.addEditorCell(this.createRefCell_4173_0(editorContext, node));
+    editorCell.setCellId("Collection_4173_l523emnf0byz");
+    editorCell.addEditorCell(this.createRefCell_4173_l523emnf0byv(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_4173_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_4173_l523emnf0byv(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("<no propertyDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PersistentPropertyReference_Editor._Inline4173_0());
+    provider.setAuxiliaryCellProvider(new PersistentPropertyReference_Editor._Inline4173_l523emnf0byw());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -49,8 +49,8 @@ public class PersistentPropertyReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4173_0 extends InlineCellProvider {
-    public _Inline4173_0() {
+  public static class _Inline4173_l523emnf0byw extends InlineCellProvider {
+    public _Inline4173_l523emnf0byw() {
       super();
     }
 
@@ -59,10 +59,10 @@ public class PersistentPropertyReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_4173_0(editorContext, node);
+      return this.createProperty_4173_l523emnf0byx(editorContext, node);
     }
 
-    private EditorCell createProperty_4173_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_4173_l523emnf0byx(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
