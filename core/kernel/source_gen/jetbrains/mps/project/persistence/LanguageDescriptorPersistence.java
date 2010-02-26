@@ -123,6 +123,8 @@ public class LanguageDescriptorPersistence {
 
           boolean result_v3r4p8_a82a0a0d0d0a = AttributeUtils.booleanWithDefault(languageElement.getAttributeValue("compileInMPS"), false);
           result_v3r4p8_a0a0d0d0a.setCompileInMPS(result_v3r4p8_a82a0a0d0d0a);
+          boolean result_v3r4p8_a92a0a0d0d0a = AttributeUtils.booleanWithDefault(languageElement.getAttributeValue("doNotGenerateAdapters"), false);
+          result_v3r4p8_a0a0d0d0a.setDoNotGenerateAdapters(result_v3r4p8_a92a0a0d0d0a);
           return result_v3r4p8_a0a0d0d0a;
         }
       }.invoke();
@@ -238,17 +240,19 @@ public class LanguageDescriptorPersistence {
 
         boolean result_v3r4p8_a12a0a0d0c = descriptor.getCompileInMPS();
         result_v3r4p8_a0a0d0c.setAttribute("compileInMPS", "" + result_v3r4p8_a12a0a0d0c);
+        boolean result_v3r4p8_a22a0a0d0c = descriptor.isDoNotGenerateAdapters();
+        result_v3r4p8_a0a0d0c.setAttribute("doNotGenerateAdapters", "" + result_v3r4p8_a22a0a0d0c);
 
         ModuleDescriptorPersistence.saveDependencies(result_v3r4p8_a0a0d0c, descriptor);
 
-        Element result_v3r4p8_a52a0a0d0c = new Element("extendedLanguages");
+        Element result_v3r4p8_a62a0a0d0c = new Element("extendedLanguages");
         for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedLanguages())) {
-          Element result_v3r4p8_a0a0a52a0a0d0c = new Element("extendedLanguage");
-          String result_v3r4p8_a0a0a0a52a0a0d0c = ref.toString();
-          result_v3r4p8_a0a0a52a0a0d0c.setText(result_v3r4p8_a0a0a0a52a0a0d0c);
-          result_v3r4p8_a52a0a0d0c.addContent(result_v3r4p8_a0a0a52a0a0d0c);
+          Element result_v3r4p8_a0a0a62a0a0d0c = new Element("extendedLanguage");
+          String result_v3r4p8_a0a0a0a62a0a0d0c = ref.toString();
+          result_v3r4p8_a0a0a62a0a0d0c.setText(result_v3r4p8_a0a0a0a62a0a0d0c);
+          result_v3r4p8_a62a0a0d0c.addContent(result_v3r4p8_a0a0a62a0a0d0c);
         }
-        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a52a0a0d0c);
+        result_v3r4p8_a0a0d0c.addContent(result_v3r4p8_a62a0a0d0c);
         return result_v3r4p8_a0a0d0c;
       }
     }.invoke();

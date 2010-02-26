@@ -408,6 +408,10 @@
                     <property name="attributeName:3" value="compileInMPS" />
                     <node role="type:3" type="jetbrains.mps.xmlSchema.structure.BooleanSchemaType:3" id="842994667883029815" />
                   </node>
+                  <node role="typeExpression:3" type="jetbrains.mps.xmlSchema.structure.AttributeDeclaration:3" id="7579759791796017230">
+                    <property name="attributeName:3" value="doNotGenerateAdapters" />
+                    <node role="type:3" type="jetbrains.mps.xmlSchema.structure.BooleanSchemaType:3" id="7579759791796017231" />
+                  </node>
                 </node>
                 <node role="complexTypeReference:3" type="jetbrains.mps.xmlSchema.structure.ComplexTypeReference:3" id="842994667883029816">
                   <link role="complexType:3" targetNodeId="842994667883029875" resolveInfo="moduleType" />
@@ -4527,6 +4531,20 @@
                           </node>
                         </node>
                       </node>
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement:0" id="7579759791796017247">
+                        <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7579759791796017248" />
+                        <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder:0" id="7579759791796017249">
+                          <link role="setter:0" targetNodeId="11.~LanguageDescriptor.setDoNotGenerateAdapters(boolean):void" resolveInfo="setDoNotGenerateAdapters" />
+                          <node role="value:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7579759791796017252">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7579759791796017251">
+                              <link role="variableDeclaration:3" targetNodeId="842994667883031188" resolveInfo="languageElement" />
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.xmlQuery.structure.AccessAttributeOperation:4" id="7579759791796017256">
+                              <link role="attributeDeclaration:4" targetNodeId="7579759791796017230" resolveInfo="doNotGenerateAdapters" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="842994667883031464">
                       <link role="declaration:0" targetNodeId="9015822011646763974" resolveInfo="languageDescriptor" />
@@ -5255,6 +5273,20 @@
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="842994667883031684">
                           <link role="baseMethodDeclaration:3" targetNodeId="11.~ModuleDescriptor.getCompileInMPS():boolean" resolveInfo="getCompileInMPS" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement:0" id="7579759791796018401">
+                    <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7579759791796018402" />
+                    <node role="builder:0" type="jetbrains.mps.xmlQuery.structure.AttributeBuilder:4" id="7579759791796018403">
+                      <link role="attributeDeclaration:4" targetNodeId="7579759791796017230" resolveInfo="doNotGenerateAdapters" />
+                      <node role="value:4" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7579759791796018406">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7579759791796018405">
+                          <link role="variableDeclaration:3" targetNodeId="842994667883031739" resolveInfo="descriptor" />
+                        </node>
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7579759791796018410">
+                          <link role="baseMethodDeclaration:3" targetNodeId="11.~LanguageDescriptor.isDoNotGenerateAdapters():boolean" resolveInfo="isDoNotGenerateAdapters" />
                         </node>
                       </node>
                     </node>

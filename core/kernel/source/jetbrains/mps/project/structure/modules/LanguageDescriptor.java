@@ -77,6 +77,10 @@ public class LanguageDescriptor extends ModuleDescriptor {
     return myDoNotGenerateAdapters;
   }
 
+  public void setDoNotGenerateAdapters(boolean doNotGenerateAdapters) {
+    myDoNotGenerateAdapters = doNotGenerateAdapters;
+  }
+
   @Override
   public boolean updateModelRefs() {
     return RefUpdateUtil.composeUpdates(
