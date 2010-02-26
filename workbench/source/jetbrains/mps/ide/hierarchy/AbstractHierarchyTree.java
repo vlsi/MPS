@@ -43,6 +43,7 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
   protected boolean myOnlyInOneModel;
   protected boolean myShowGeneratorModels;
 
+  //todo store String (concept fqName) instead of class; get rid of adapters
   public AbstractHierarchyTree(AbstractHierarchyView<T> hierarchyView, Class<T> aClass, boolean isParentHierarchy) {
     myHierarchyView = hierarchyView;
     myClass = aClass;
