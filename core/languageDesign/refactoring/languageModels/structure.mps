@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AbstractMoveExpression" conceptFQName="jetbrains.mps.logging.refactoring.structure.AbstractMoveExpression" featureKind="CONCEPT" />
@@ -171,6 +172,7 @@
     <refactoringContext modelVersion="1">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="Refactoring" conceptFQName="jetbrains.mps.lang.refactoring.structure.Refactoring" featureKind="CONCEPT" />
@@ -230,7 +232,6 @@
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1189693812263">
     <property name="name:0" value="OldRefactoring" />
-    <property name="rootable:0" value="true" />
     <property name="package:0" value="Deprecated" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1199455371376">
