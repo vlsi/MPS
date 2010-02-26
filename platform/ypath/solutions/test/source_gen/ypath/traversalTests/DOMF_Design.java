@@ -64,26 +64,26 @@ __switch__:
     }
 
     public SNode getTargetType(String param, SNode nodeType) {
-      return new DOMF_Design.Design_Feature_child.QuotationClass_4985_0().createNode();
+      return new DOMF_Design.Design_Feature_child.QuotationClass_1hzurw_a0a0b0().createNode();
     }
 
     public String parameterToString(String param) {
       return param;
     }
 
-    public static class QuotationClass_4985_0 {
-      public QuotationClass_4985_0() {
+    public static class QuotationClass_1hzurw_a0a0b0 {
+      public QuotationClass_1hzurw_a0a0b0() {
       }
 
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_4164_0 = null;
+        SNode quotedNode_mjsi_a0a0a1 = null;
         {
-          quotedNode_4164_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_4164_0 = quotedNode_4164_0;
-          quotedNode1_4164_0.addReference(SReference.create("classifier", quotedNode1_4164_0, SModelReference.fromString("f:java_stub#org.w3c.dom(org.w3c.dom@java_stub)"), SNodeId.fromString("~Node")));
-          result = quotedNode1_4164_0;
+          quotedNode_mjsi_a0a0a1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_mjsi_a0a0a1 = quotedNode_mjsi_a0a0a1;
+          quotedNode1_mjsi_a0a0a1.addReference(SReference.create("classifier", quotedNode1_mjsi_a0a0a1, SModelReference.fromString("f:java_stub#org.w3c.dom(org.w3c.dom@java_stub)"), SNodeId.fromString("~Node")));
+          result = quotedNode1_mjsi_a0a0a1;
         }
         return result;
       }
