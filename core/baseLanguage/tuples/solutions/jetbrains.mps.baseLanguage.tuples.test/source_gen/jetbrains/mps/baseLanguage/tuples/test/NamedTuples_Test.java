@@ -68,9 +68,9 @@ public class NamedTuples_Test extends TestCase {
     String foo;
     String bar;
     {
-      Tuples._2<String, String> _tmp6211_0 = this.getData();
-      foo = _tmp6211_0._0();
-      bar = _tmp6211_0._1();
+      Tuples._2<String, String> _tmp_w279bq_c0e0 = this.getData();
+      foo = _tmp_w279bq_c0e0._0();
+      bar = _tmp_w279bq_c0e0._1();
     }
     Assert.assertEquals("ABC", foo);
     Assert.assertEquals("XYZ", bar);

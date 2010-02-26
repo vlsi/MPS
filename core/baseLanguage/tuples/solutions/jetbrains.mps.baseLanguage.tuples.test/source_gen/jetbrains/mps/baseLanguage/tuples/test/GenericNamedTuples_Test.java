@@ -21,9 +21,9 @@ public class GenericNamedTuples_Test extends TestCase {
     int x;
     String y;
     {
-      Tuples._2<Integer, String> _tmp6988_0 = pair;
-      x = _tmp6988_0._0();
-      y = _tmp6988_0._1();
+      Tuples._2<Integer, String> _tmp_quuzte_d0b0 = pair;
+      x = _tmp_quuzte_d0b0._0();
+      y = _tmp_quuzte_d0b0._1();
     }
     Assert.assertSame(1, x);
     Assert.assertEquals("abc", y);
