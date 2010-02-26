@@ -324,6 +324,14 @@ public class DebugSession {
       return Collections.emptyList();
     }
 
+    @Nullable
+    public synchronized Value getVariableValue(LocalVariable variable) {
+      if (myStackFrame != null) {
+        return myStackFrame.getValue(variable);
+      }
+      return null;
+    }
+
     // TODO we synchronize over ui state, but do we need to synchronize over jdi ThreadReferences, StackFrames etc?????? Here we access them from EDT.
     @NotNull
     public synchronized List<ThreadReference> getThreads() {
