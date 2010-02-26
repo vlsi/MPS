@@ -22,10 +22,10 @@ import jetbrains.mps.javaParser.JavaCompiler;
 
 public class GetSolutionContentsFromSourceDialogContentPane extends JPanel {
   public GetSolutionContentsFromSourceDialogContentPane myThis;
-  private JLabel myComponent0;
-  private JTextField myName0;
-  private JLabel myComponent1;
-  private PathField mySourcePath0;
+  private JLabel myComponent_b0;
+  private JTextField myName_c0;
+  private JLabel myComponent_d0;
+  private PathField mySourcePath_e0;
   private String mySolutionName;
   private String mySourcePath;
   private MPSProject myProject;
@@ -44,10 +44,10 @@ public class GetSolutionContentsFromSourceDialogContentPane extends JPanel {
     this.myThis = this;
     GetSolutionContentsFromSourceDialogContentPane component = this;
     component.setLayout(new GridLayout(4, 1));
-    component.add(this.createComponent0());
-    component.add(this.createComponent1());
-    component.add(this.createComponent2());
-    component.add(this.createComponent3());
+    component.add(this.createComponent_b0());
+    component.add(this.createComponent_c0());
+    component.add(this.createComponent_d0());
+    component.add(this.createComponent_e0());
     this.myEvents.initialize();
   }
 
@@ -69,7 +69,7 @@ public class GetSolutionContentsFromSourceDialogContentPane extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("solutionName");
-      Object targetObject = this.myName0;
+      Object targetObject = this.myName_c0;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -78,7 +78,7 @@ public class GetSolutionContentsFromSourceDialogContentPane extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("sourcePath");
-      Object targetObject = this.mySourcePath0;
+      Object targetObject = this.mySourcePath_e0;
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -94,29 +94,29 @@ public class GetSolutionContentsFromSourceDialogContentPane extends JPanel {
     }
   }
 
-  private JLabel createComponent0() {
+  private JLabel createComponent_b0() {
     JLabel component = new JLabel();
-    this.myComponent0 = component;
+    this.myComponent_b0 = component;
     component.setText("Name:");
     return component;
   }
 
-  private JTextField createComponent1() {
+  private JTextField createComponent_c0() {
     JTextField component = new JTextField();
-    this.myName0 = component;
+    this.myName_c0 = component;
     return component;
   }
 
-  private JLabel createComponent2() {
+  private JLabel createComponent_d0() {
     JLabel component = new JLabel();
-    this.myComponent1 = component;
+    this.myComponent_d0 = component;
     component.setText("Source Path:");
     return component;
   }
 
-  private PathField createComponent3() {
+  private PathField createComponent_e0() {
     PathField component = new PathField();
-    this.mySourcePath0 = component;
+    this.mySourcePath_e0 = component;
     return component;
   }
 

@@ -73,12 +73,12 @@ public class NewDevKitDialog extends BaseDialog {
   }
 
   @BaseDialog.Button(name = "_OK", position = 0, defaultButton = true)
-  public void buttonMethod0() {
+  public void buttonMethod_a0() {
     myContentPane.onOk();
   }
 
   @BaseDialog.Button(name = "_Cancel", position = 1, defaultButton = false)
-  public void buttonMethod1() {
+  public void buttonMethod_b0() {
     myContentPane.onCancel();
   }
 }

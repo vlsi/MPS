@@ -48,12 +48,12 @@ import jetbrains.mps.util.FileUtil;
 
 public class NewLanguageDialogContentPane extends JPanel {
   public NewLanguageDialogContentPane myThis;
-  private JLabel myComponent0;
-  private JTextField myName0;
-  private JLabel myComponent1;
-  private PathField myPath0;
-  private JCheckBox myNeedRuntime0;
-  private JCheckBox myNeedSandbox0;
+  private JLabel myComponent_b0;
+  private JTextField myName_c0;
+  private JLabel myComponent_d0;
+  private PathField myPath_e0;
+  private JCheckBox myNeedRuntime_f0;
+  private JCheckBox myNeedSandbox_g0;
   private String myLanguageNamespace;
   private String myLanguagePath;
   private MPSProject myProject;
@@ -73,17 +73,17 @@ public class NewLanguageDialogContentPane extends JPanel {
     this.myThis = this;
     NewLanguageDialogContentPane component = this;
     component.setLayout(new GridLayout(6, 1));
-    component.add(this.createComponent0());
-    component.add(this.createComponent1());
-    component.add(this.createComponent2());
-    component.add(this.createComponent3());
-    component.add(this.createComponent4());
-    component.add(this.createComponent5());
+    component.add(this.createComponent_b0());
+    component.add(this.createComponent_c0());
+    component.add(this.createComponent_d0());
+    component.add(this.createComponent_e0());
+    component.add(this.createComponent_f0());
+    component.add(this.createComponent_g0());
     this.myEvents.initialize();
     myThis.setLanguageNamespace("");
     myThis.setLanguagePath("");
-    myThis.myName0.setName("Name");
-    myThis.myPath0.setName("Path");
+    myThis.myName_c0.setName("Name");
+    myThis.myPath_e0.setName("Path");
   }
 
   public Events getEvents() {
@@ -104,7 +104,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("languageNamespace");
-      Object targetObject = this.myName0;
+      Object targetObject = this.myName_c0;
       Property targetProperty = BeanProperty.create("text");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -113,7 +113,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     {
       Object sourceObject = myThis;
       Property sourceProperty = BeanProperty.create("languagePath");
-      Object targetObject = this.myPath0;
+      Object targetObject = this.myPath_e0;
       Property targetProperty = BeanProperty.create("path");
       AutoBinding binding = Bindings.createAutoBinding(AutoBinding.UpdateStrategy.READ_WRITE, sourceObject, sourceProperty, targetObject, targetProperty);
       binding.bind();
@@ -129,42 +129,42 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
   }
 
-  private JLabel createComponent0() {
+  private JLabel createComponent_b0() {
     JLabel component = new JLabel();
-    this.myComponent0 = component;
+    this.myComponent_b0 = component;
     component.setText("Language Namespace:");
     return component;
   }
 
-  private JTextField createComponent1() {
+  private JTextField createComponent_c0() {
     JTextField component = new JTextField();
-    this.myName0 = component;
+    this.myName_c0 = component;
     return component;
   }
 
-  private JLabel createComponent2() {
+  private JLabel createComponent_d0() {
     JLabel component = new JLabel();
-    this.myComponent1 = component;
+    this.myComponent_d0 = component;
     component.setText("Language Path:");
     return component;
   }
 
-  private PathField createComponent3() {
+  private PathField createComponent_e0() {
     PathField component = new PathField();
-    this.myPath0 = component;
+    this.myPath_e0 = component;
     return component;
   }
 
-  private JCheckBox createComponent4() {
+  private JCheckBox createComponent_f0() {
     JCheckBox component = new JCheckBox();
-    this.myNeedRuntime0 = component;
+    this.myNeedRuntime_f0 = component;
     component.setText("Create Runtime Solution");
     return component;
   }
 
-  private JCheckBox createComponent5() {
+  private JCheckBox createComponent_g0() {
     JCheckBox component = new JCheckBox();
-    this.myNeedSandbox0 = component;
+    this.myNeedSandbox_g0 = component;
     component.setText("Create Sandbox Solution");
     return component;
   }
@@ -271,11 +271,11 @@ public class NewLanguageDialogContentPane extends JPanel {
           LanguageAspect.CONSTRAINTS.createNew(language.value, false);
           LanguageAspect.TYPESYSTEM.createNew(language.value, false);
         }
-        if (myThis.myNeedRuntime0.isSelected()) {
+        if (myThis.myNeedRuntime_f0.isSelected()) {
           Solution runtime = myThis.createRuntimeSolution();
           runtime.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".runtime"), runtime.getSModelRoots().get(0));
         }
-        if (myThis.myNeedSandbox0.isSelected()) {
+        if (myThis.myNeedSandbox_g0.isSelected()) {
           Solution sandbox = myThis.createSandboxSolution();
           SModel createdModel = sandbox.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".sandbox"), sandbox.getSModelRoots().get(0)).getSModel();
           createdModel.addLanguage(myThis.getResult());
