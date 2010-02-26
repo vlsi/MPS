@@ -16,6 +16,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.baseLanguage.typesystem.ResolveUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BaseMethodDeclaration_Behavior {
@@ -130,16 +131,7 @@ public class BaseMethodDeclaration_Behavior {
     return null;
   }
 
-  public static boolean call_hasSameSignature_1213877350435(SNode thisNode, SNode checked) {
-    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "name"))) {
-      return false;
-    }
-    if (!(SPropertyOperations.getString(thisNode, "name").equals(SPropertyOperations.getString(checked, "name")))) {
-      return false;
-    }
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).count())) {
-      return false;
-    }
+  public static boolean call_hasSameParameters_855369272314187138(SNode thisNode, SNode checked) {
     String searchedReturnType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(checked, "returnType", true));
     String foundReturnType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(thisNode, "returnType", true));
     if (!(foundReturnType.equals(searchedReturnType))) {
@@ -154,6 +146,26 @@ public class BaseMethodDeclaration_Behavior {
       }
     }
     return same;
+  }
+
+  public static boolean call_hasSameSignature_1213877350435(SNode thisNode, SNode checked) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "name"))) {
+      return false;
+    }
+    if (!(SPropertyOperations.getString(thisNode, "name").equals(SPropertyOperations.getString(checked, "name")))) {
+      return false;
+    }
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).count())) {
+      return false;
+    }
+    if (SNodeOperations.isInstanceOf(checked, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+      SNode thisMethod = SNodeOperations.cast(checked, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      SNode enclosingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      SNode patternMethod = ResolveUtil.processMethodToImplement(enclosingClassifier, thisMethod);
+      return BaseMethodDeclaration_Behavior.call_hasSameParameters_855369272314187138(thisNode, patternMethod);
+    } else {
+      return BaseMethodDeclaration_Behavior.call_hasSameParameters_855369272314187138(thisNode, checked);
+    }
   }
 
   public static String call_getErasureSignature_2830572026628006618(SNode thisNode) {
