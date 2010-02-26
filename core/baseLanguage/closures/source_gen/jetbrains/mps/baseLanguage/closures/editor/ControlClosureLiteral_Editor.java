@@ -16,17 +16,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ControlClosureLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5381_0(editorContext, node);
+    return this.createCollection_z0qohp_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5381_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_z0qohp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5381_0");
-    editorCell.addEditorCell(this.createRefNode_5381_0(editorContext, node));
+    editorCell.setCellId("Collection_z0qohp_a");
+    editorCell.addEditorCell(this.createRefNode_z0qohp_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_5381_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_z0qohp_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");

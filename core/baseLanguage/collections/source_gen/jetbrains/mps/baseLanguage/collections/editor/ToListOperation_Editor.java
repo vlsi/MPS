@@ -12,12 +12,12 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class ToListOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_1502_0(editorContext, node);
+    return this.createConstant_fiobsf_a(editorContext, node);
   }
 
-  private EditorCell createConstant_1502_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_fiobsf_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "toList");
-    editorCell.setCellId("Constant_1502_0");
+    editorCell.setCellId("Constant_fiobsf_a");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();

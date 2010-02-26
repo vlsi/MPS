@@ -51,22 +51,22 @@ public class SequenceType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new SequenceType_Behavior.QuotationClass_3466_0().createNode();
+    return new SequenceType_Behavior.QuotationClass_hzlnln_a0a0e().createNode();
   }
 
-  public static class QuotationClass_3466_0 {
-    public QuotationClass_3466_0() {
+  public static class QuotationClass_hzlnln_a0a0e {
+    public QuotationClass_hzlnln_a0a0e() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3466_0 = null;
+      SNode quotedNode_hzlnln_a0a0d = null;
       {
-        quotedNode_3466_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3466_0 = quotedNode_3466_0;
-        quotedNode1_3466_0.addReference(SReference.create("classifier", quotedNode1_3466_0, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~ISequence")));
-        result = quotedNode1_3466_0;
+        quotedNode_hzlnln_a0a0d = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_hzlnln_a0a0d = quotedNode_hzlnln_a0a0d;
+        quotedNode1_hzlnln_a0a0d.addReference(SReference.create("classifier", quotedNode1_hzlnln_a0a0d, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~ISequence")));
+        result = quotedNode1_hzlnln_a0a0d;
       }
       return result;
     }

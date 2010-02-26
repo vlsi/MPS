@@ -22,28 +22,28 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InequationsGroupsRegistry_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6567_0(editorContext, node);
+    return this.createCollection_tsuh8c_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6567_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_tsuh8c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_6567_0");
-    editorCell.addEditorCell(this.createConstant_6567_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6567_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_6567_0(editorContext, node));
+    editorCell.setCellId("Collection_tsuh8c_a");
+    editorCell.addEditorCell(this.createConstant_tsuh8c_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_tsuh8c_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_tsuh8c_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6567_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_tsuh8c_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Inequations groups registry");
-    editorCell.setCellId("Constant_6567_0");
+    editorCell.setCellId("Constant_tsuh8c_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6567_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_tsuh8c_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_6567_1");
+    editorCell.setCellId("Constant_tsuh8c_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -52,16 +52,16 @@ public class InequationsGroupsRegistry_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6567_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new InequationsGroupsRegistry_Editor.groupListHandler_6567_0(node, "group", editorContext);
+  private EditorCell createRefNodeList_tsuh8c_c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new InequationsGroupsRegistry_Editor.groupListHandler_tsuh8c_c0(node, "group", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_group");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class groupListHandler_6567_0 extends RefNodeListHandler {
-    public groupListHandler_6567_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class groupListHandler_tsuh8c_c0 extends RefNodeListHandler {
+    public groupListHandler_tsuh8c_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER1 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER__0 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -26,7 +26,7 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
   }
 
   public SNode getSubOrSuperType(SNode iterableClassifierType, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.QuotationClass_2313_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_p")), typeCheckingContext);
+    return new supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.QuotationClass_x5x8gb_a0a0a().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_p")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -34,7 +34,7 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.Pattern_2313_0();
+    this.myMatchingPattern = new supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.Pattern_x5x8gb_a0a0a0a2();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -42,35 +42,35 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
     return true;
   }
 
-  public static class Pattern_2313_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_x5x8gb_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_p;
 
-    public Pattern_2313_0() {
+    public Pattern_x5x8gb_a0a0a0a2() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_9805_0;
-        nodeToMatch_9805_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_9805_0.getConceptFqName()))) {
+        SNode nodeToMatch_z7dq1d_a0a;
+        nodeToMatch_z7dq1d_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_z7dq1d_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTER1.getNode();
-          if (nodeToMatch_9805_0.getReferent("classifier") != referent) {
+          referent = SNODE_POINTER__0.getNode();
+          if (nodeToMatch_z7dq1d_a0a.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole9805_0 = "parameter";
-          if (nodeToMatch_9805_0.getChildCount(childRole9805_0) != 1) {
+          String childRole_z7dq1d_ = "parameter";
+          if (nodeToMatch_z7dq1d_a0a.getChildCount(childRole_z7dq1d_) != 1) {
             return false;
           }
           {
             this.PatternVar_p = null;
-            SNode childVar_9805_0 = nodeToMatch_9805_0.getChildren(childRole9805_0).get(0);
-            this.PatternVar_p = childVar_9805_0;
+            SNode childVar_z7dq1d_a0a0 = nodeToMatch_z7dq1d_a0a.getChildren(childRole_z7dq1d_).get(0);
+            this.PatternVar_p = childVar_z7dq1d_a0a0;
           }
         }
       }
@@ -95,58 +95,58 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
     }
   }
 
-  public static class QuotationClass_2313_0 {
-    public QuotationClass_2313_0() {
+  public static class QuotationClass_x5x8gb_a0a0a {
+    public QuotationClass_x5x8gb_a0a0a() {
     }
 
-    public SNode createNode(Object parameter_2313_0, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_x5x8gb_a0a0a0a0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2313_0 = null;
-      SNode quotedNode_2313_1 = null;
+      SNode quotedNode_x5x8gb_a0a0a = null;
+      SNode quotedNode_x5x8gb_a0a0a0 = null;
       {
-        quotedNode_2313_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2313_0 = quotedNode_2313_0;
+        quotedNode_x5x8gb_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_x5x8gb_a0a0a = quotedNode_x5x8gb_a0a0a;
         {
-          quotedNode_2313_1 = (SNode) parameter_2313_0;
-          SNode quotedNode1_2313_1;
-          if (_parameterValues_129834374.contains(quotedNode_2313_1)) {
-            quotedNode1_2313_1 = CopyUtil.copy(quotedNode_2313_1);
+          quotedNode_x5x8gb_a0a0a0 = (SNode) parameter_x5x8gb_a0a0a0a0;
+          SNode quotedNode1_x5x8gb_a0a0a0;
+          if (_parameterValues_129834374.contains(quotedNode_x5x8gb_a0a0a0)) {
+            quotedNode1_x5x8gb_a0a0a0 = CopyUtil.copy(quotedNode_x5x8gb_a0a0a0);
           } else {
-            _parameterValues_129834374.add(quotedNode_2313_1);
-            quotedNode1_2313_1 = quotedNode_2313_1;
+            _parameterValues_129834374.add(quotedNode_x5x8gb_a0a0a0);
+            quotedNode1_x5x8gb_a0a0a0 = quotedNode_x5x8gb_a0a0a0;
           }
-          if (quotedNode1_2313_1 != null) {
-            quotedNode_2313_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_2313_1, typeCheckingContext));
+          if (quotedNode1_x5x8gb_a0a0a0 != null) {
+            quotedNode_x5x8gb_a0a0a.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_x5x8gb_a0a0a0, typeCheckingContext));
           }
         }
-        result = quotedNode1_2313_0;
+        result = quotedNode1_x5x8gb_a0a0a;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_2313_0) {
+    public SNode createNode(Object parameter_x5x8gb_a0a0a0a0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2313_0 = null;
-      SNode quotedNode_2313_1 = null;
+      SNode quotedNode_x5x8gb_a0a0a = null;
+      SNode quotedNode_x5x8gb_a0a0a0 = null;
       {
-        quotedNode_2313_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2313_0 = quotedNode_2313_0;
+        quotedNode_x5x8gb_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_x5x8gb_a0a0a = quotedNode_x5x8gb_a0a0a;
         {
-          quotedNode_2313_1 = (SNode) parameter_2313_0;
-          SNode quotedNode1_2313_1;
-          if (_parameterValues_129834374.contains(quotedNode_2313_1)) {
-            quotedNode1_2313_1 = CopyUtil.copy(quotedNode_2313_1);
+          quotedNode_x5x8gb_a0a0a0 = (SNode) parameter_x5x8gb_a0a0a0a0;
+          SNode quotedNode1_x5x8gb_a0a0a0;
+          if (_parameterValues_129834374.contains(quotedNode_x5x8gb_a0a0a0)) {
+            quotedNode1_x5x8gb_a0a0a0 = CopyUtil.copy(quotedNode_x5x8gb_a0a0a0);
           } else {
-            _parameterValues_129834374.add(quotedNode_2313_1);
-            quotedNode1_2313_1 = quotedNode_2313_1;
+            _parameterValues_129834374.add(quotedNode_x5x8gb_a0a0a0);
+            quotedNode1_x5x8gb_a0a0a0 = quotedNode_x5x8gb_a0a0a0;
           }
-          if (quotedNode1_2313_1 != null) {
-            quotedNode_2313_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_2313_1));
+          if (quotedNode1_x5x8gb_a0a0a0 != null) {
+            quotedNode_x5x8gb_a0a0a.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_x5x8gb_a0a0a0));
           }
         }
-        result = quotedNode1_2313_0;
+        result = quotedNode1_x5x8gb_a0a0a;
       }
       return result;
     }

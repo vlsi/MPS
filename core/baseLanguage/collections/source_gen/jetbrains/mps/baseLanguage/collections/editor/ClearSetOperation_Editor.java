@@ -17,17 +17,17 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class ClearSetOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2838_0(editorContext, node);
+    return this.createCollection_vs9kjh_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2838_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vs9kjh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2838_0");
-    editorCell.addEditorCell(this.createConceptProperty_2838_0(editorContext, node));
+    editorCell.setCellId("Collection_vs9kjh_a");
+    editorCell.addEditorCell(this.createConceptProperty_vs9kjh_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2838_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_vs9kjh_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -36,7 +36,7 @@ public class ClearSetOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ClearSetOperation_Editor.ClearSetOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new ClearSetOperation_Editor.ClearSetOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -47,8 +47,8 @@ public class ClearSetOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class ClearSetOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ClearSetOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
+  public static class ClearSetOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ClearSetOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

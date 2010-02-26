@@ -21,30 +21,30 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SimpleRule_Literal_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5374_0(editorContext, node);
+    return this.createCollection_gdcxxz_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5374_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gdcxxz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5374_0");
-    editorCell.addEditorCell(this.createConstant_5374_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5374_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5374_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5374_1(editorContext, node));
+    editorCell.setCellId("Collection_gdcxxz_a");
+    editorCell.addEditorCell(this.createConstant_gdcxxz_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_gdcxxz_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gdcxxz_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_gdcxxz_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5374_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gdcxxz_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "literal");
-    editorCell.setCellId("Constant_5374_0");
+    editorCell.setCellId("Constant_gdcxxz_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5374_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gdcxxz_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has type");
-    editorCell.setCellId("Constant_5374_1");
+    editorCell.setCellId("Constant_gdcxxz_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -54,7 +54,7 @@ public class SimpleRule_Literal_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5374_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_gdcxxz_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("conceptReference");
     provider.setNoTargetText("<no conceptReference>");
@@ -72,7 +72,7 @@ public class SimpleRule_Literal_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5374_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_gdcxxz_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");

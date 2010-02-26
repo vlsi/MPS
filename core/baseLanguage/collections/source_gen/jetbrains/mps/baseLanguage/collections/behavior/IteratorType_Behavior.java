@@ -39,22 +39,22 @@ public class IteratorType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new IteratorType_Behavior.QuotationClass_1977_0().createNode();
+    return new IteratorType_Behavior.QuotationClass_cgg16c_a0a0d().createNode();
   }
 
-  public static class QuotationClass_1977_0 {
-    public QuotationClass_1977_0() {
+  public static class QuotationClass_cgg16c_a0a0d {
+    public QuotationClass_cgg16c_a0a0d() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1977_0 = null;
+      SNode quotedNode_cgg16c_a0a0c = null;
       {
-        quotedNode_1977_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1977_0 = quotedNode_1977_0;
-        quotedNode1_1977_0.addReference(SReference.create("classifier", quotedNode1_1977_0, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~Iterator")));
-        result = quotedNode1_1977_0;
+        quotedNode_cgg16c_a0a0c = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_cgg16c_a0a0c = quotedNode_cgg16c_a0a0c;
+        quotedNode1_cgg16c_a0a0c.addReference(SReference.create("classifier", quotedNode1_cgg16c_a0a0c, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~Iterator")));
+        result = quotedNode1_cgg16c_a0a0c;
       }
       return result;
     }

@@ -23,22 +23,22 @@ import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 
 public class ConceptRefExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5783_0(editorContext, node);
+    return this.createCollection_l2wej8_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5783_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_l2wej8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5783_0");
-    editorCell.addEditorCell(this.createConstant_5783_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5783_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_5783_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5783_1(editorContext, node));
+    editorCell.setCellId("Collection_l2wej8_a");
+    editorCell.addEditorCell(this.createConstant_l2wej8_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_l2wej8_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_l2wej8_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_l2wej8_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5783_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_l2wej8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
-    editorCell.setCellId("Constant_5783_0");
+    editorCell.setCellId("Constant_l2wej8_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -48,28 +48,28 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5783_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_l2wej8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
-    editorCell.setCellId("Constant_5783_1");
+    editorCell.setCellId("Constant_l2wej8_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5783_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_l2wej8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
-    editorCell.setCellId("Constant_5783_2");
+    editorCell.setCellId("Constant_l2wej8_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_5783_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_l2wej8_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptRefExpression_Editor._Inline5783_0());
+    provider.setAuxiliaryCellProvider(new ConceptRefExpression_Editor._Inline_l2wej8_a2a());
     editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
@@ -86,8 +86,8 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline5783_0 extends InlineCellProvider {
-    public _Inline5783_0() {
+  public static class _Inline_l2wej8_a2a extends InlineCellProvider {
+    public _Inline_l2wej8_a2a() {
       super();
     }
 
@@ -96,10 +96,10 @@ public class ConceptRefExpression_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_5783_0(editorContext, node);
+      return this.createProperty_l2wej8_a0c0(editorContext, node);
     }
 
-    private EditorCell createProperty_5783_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_l2wej8_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

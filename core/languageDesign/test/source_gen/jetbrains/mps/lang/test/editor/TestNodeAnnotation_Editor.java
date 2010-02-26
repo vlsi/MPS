@@ -20,43 +20,43 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class TestNodeAnnotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1303_0(editorContext, node);
+    return this.createCollection_vitjmc_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1303_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vitjmc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1303_0");
-    editorCell.addEditorCell(this.createConstant_1303_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_1303_0(editorContext, node));
-    editorCell.addEditorCell(this.createAttributedNodeCell_1303_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1303_1(editorContext, node));
+    editorCell.setCellId("Collection_vitjmc_a");
+    editorCell.addEditorCell(this.createConstant_vitjmc_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vitjmc_b0(editorContext, node));
+    editorCell.addEditorCell(this.createAttributedNodeCell_vitjmc_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vitjmc_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1303_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vitjmc_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_1303_0");
+    editorCell.setCellId("Constant_vitjmc_a0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1303_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vitjmc_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_1303_1");
+    editorCell.setCellId("Constant_vitjmc_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createAttributedNodeCell_1303_0(EditorContext editorContext, SNode node) {
+  private EditorCell createAttributedNodeCell_vitjmc_c0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
     return editorCell;
   }
 
-  private EditorCell createProperty_1303_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_vitjmc_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

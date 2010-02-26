@@ -21,21 +21,21 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9683_0(editorContext, node);
+    return this.createCollection_r244s6_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9683_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_r244s6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9683_0");
-    editorCell.addEditorCell(this.createRefCell_9683_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9683_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9683_1(editorContext, node));
+    editorCell.setCellId("Collection_r244s6_a");
+    editorCell.addEditorCell(this.createRefCell_r244s6_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_r244s6_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_r244s6_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9683_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_r244s6_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_9683_0");
+    editorCell.setCellId("Constant_r244s6_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -44,12 +44,12 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_9683_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_r244s6_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("integerConceptPropertyDeclaration");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IntegerConceptProperty_Editor._Inline9683_0());
+    provider.setAuxiliaryCellProvider(new IntegerConceptProperty_Editor._Inline_r244s6_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -62,7 +62,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_9683_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_r244s6_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -84,8 +84,8 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline9683_0 extends InlineCellProvider {
-    public _Inline9683_0() {
+  public static class _Inline_r244s6_a0a extends InlineCellProvider {
+    public _Inline_r244s6_a0a() {
       super();
     }
 
@@ -94,10 +94,10 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_9683_0(editorContext, node);
+      return this.createProperty_r244s6_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_9683_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_r244s6_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

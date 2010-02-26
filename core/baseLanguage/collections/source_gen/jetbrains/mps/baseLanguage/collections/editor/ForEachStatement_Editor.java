@@ -27,68 +27,68 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ForEachStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7497_0(editorContext, node);
+    return this.createCollection_kov3ab_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7497_2(editorContext, node);
+    return this.createCollection_kov3ab_a_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7497_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_kov3ab_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7497_0");
-    if (renderingCondition7497_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_7497_1(editorContext, node));
+    editorCell.setCellId("Collection_kov3ab_a");
+    if (renderingCondition_kov3ab_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_kov3ab_a0(editorContext, node));
     }
-    if (renderingCondition7497_2(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_7497_3(editorContext, node));
+    if (renderingCondition_kov3ab_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_kov3ab_b0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_7497_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7497_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7497_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7497_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7497_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7497_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7497_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_kov3ab_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_kov3ab_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_kov3ab_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_kov3ab_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_kov3ab_g0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_kov3ab_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_kov3ab_i0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7497_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_kov3ab_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7497_1");
+    editorCell.setCellId("Collection_kov3ab_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createProperty_7497_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7497_4(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_kov3ab_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_kov3ab_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7497_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_kov3ab_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7497_2");
-    editorCell.addEditorCell(this.createConstant_7497_5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7497_6(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7497_4(editorContext, node));
+    editorCell.setCellId("Collection_kov3ab_a_0");
+    editorCell.addEditorCell(this.createConstant_kov3ab_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_kov3ab_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_kov3ab_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7497_3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_kov3ab_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7497_3");
+    editorCell.setCellId("Collection_kov3ab_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createRefNode_7497_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7497_7(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_kov3ab_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_kov3ab_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kov3ab_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreach");
-    editorCell.setCellId("Constant_7497_0");
+    editorCell.setCellId("Constant_kov3ab_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -98,17 +98,17 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kov3ab_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
-    editorCell.setCellId("Constant_7497_1");
+    editorCell.setCellId("Constant_kov3ab_e0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kov3ab_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_7497_2");
+    editorCell.setCellId("Constant_kov3ab_g0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -118,9 +118,9 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kov3ab_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_7497_3");
+    editorCell.setCellId("Constant_kov3ab_i0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -130,9 +130,9 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kov3ab_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_7497_4");
+    editorCell.setCellId("Constant_kov3ab_b0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -142,9 +142,9 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kov3ab_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
-    editorCell.setCellId("Constant_7497_5");
+    editorCell.setCellId("Constant_kov3ab_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, false);
@@ -153,9 +153,9 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_6(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kov3ab_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_7497_6");
+    editorCell.setCellId("Constant_kov3ab_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -165,9 +165,9 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7497_7(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kov3ab_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_7497_7");
+    editorCell.setCellId("Constant_kov3ab_b1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -177,7 +177,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7497_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_kov3ab_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
@@ -194,13 +194,13 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7497_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_kov3ab_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("inputSequence");
     provider.setNoTargetText("<no inputSequence>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    if (renderingCondition7497_0(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_kov3ab_a5a(node, editorContext, editorContext.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -214,7 +214,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7497_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_kov3ab_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -236,7 +236,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_7497_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_kov3ab_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
@@ -256,7 +256,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7497_3(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_kov3ab_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("loopLabel");
     provider.setNoTargetText("<no loopLabel>");
@@ -273,7 +273,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7497_4(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_kov3ab_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("loopLabel");
     provider.setNoTargetText("<no loopLabel>");
@@ -290,15 +290,15 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition7497_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kov3ab_a5a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "inputSequence", true) == null) || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "inputSequence", true)), "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
-  private static boolean renderingCondition7497_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kov3ab_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
 
-  private static boolean renderingCondition7497_2(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kov3ab_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "loopLabel", true) != null);
   }
 }

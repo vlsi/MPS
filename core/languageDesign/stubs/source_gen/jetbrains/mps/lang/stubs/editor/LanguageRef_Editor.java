@@ -25,10 +25,10 @@ import jetbrains.mps.project.ModuleId;
 
 public class LanguageRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_8703_0(editorContext, node);
+    return this.createProperty_occ0mg_a(editorContext, node);
   }
 
-  private EditorCell createProperty_8703_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_occ0mg_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("languageFqName");
     provider.setNoTargetText("<no languageFqName>");
@@ -36,7 +36,7 @@ public class LanguageRef_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_languageFqName");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LanguageRef_Editor.LanguageRef_generic_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LanguageRef_Editor.LanguageRef_generic_cellMenu_a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -47,8 +47,8 @@ public class LanguageRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class LanguageRef_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-    public LanguageRef_generic_cellMenu0() {
+  public static class LanguageRef_generic_cellMenu_a0a extends AbstractCellMenuPart_Generic_Group {
+    public LanguageRef_generic_cellMenu_a0a() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

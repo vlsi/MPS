@@ -25,22 +25,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class InequationReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0802_1(editorContext, node);
+    return this.createCollection_boi5ax_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0802_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_boi5ax_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0802_1");
-    editorCell.addEditorCell(this.createRefCell_0802_0(editorContext, node));
+    editorCell.setCellId("Collection_boi5ax_a");
+    editorCell.addEditorCell(this.createRefCell_boi5ax_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_0802_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_boi5ax_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("inequation");
     provider.setNoTargetText("<no inequation>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InequationReference_Editor._Inline0802_0());
+    provider.setAuxiliaryCellProvider(new InequationReference_Editor._Inline_boi5ax_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -53,8 +53,8 @@ public class InequationReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0802_0 extends InlineCellProvider {
-    public _Inline0802_0() {
+  public static class _Inline_boi5ax_a0a extends InlineCellProvider {
+    public _Inline_boi5ax_a0a() {
       super();
     }
 
@@ -63,18 +63,18 @@ public class InequationReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createCollection_0802_0(editorContext, node);
+      return this.createCollection_boi5ax_a0a0(editorContext, node);
     }
 
-    private EditorCell createCollection_0802_0(EditorContext editorContext, SNode node) {
+    private EditorCell createCollection_boi5ax_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-      editorCell.setCellId("Collection_0802_0");
-      editorCell.addEditorCell(this.createModelAccess_0802_0(editorContext, node));
-      editorCell.addEditorCell(this.createProperty_0802_0(editorContext, node));
+      editorCell.setCellId("Collection_boi5ax_a0a0");
+      editorCell.addEditorCell(this.createModelAccess_boi5ax_a0a0a(editorContext, node));
+      editorCell.addEditorCell(this.createProperty_boi5ax_b0a0a(editorContext, node));
       return editorCell;
     }
 
-    private EditorCell createModelAccess_0802_0(final EditorContext editorContext, final SNode node) {
+    private EditorCell createModelAccess_boi5ax_a0a0a(final EditorContext editorContext, final SNode node) {
       ModelAccessor modelAccessor = new ModelAccessor() {
         public String getText() {
           return SModelOperations.getModelName(SNodeOperations.getModel(node)) + (SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getAncestor(node, null, false, true), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
@@ -89,7 +89,7 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       };
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
       editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-      editorCell.setCellId("ModelAccess_0802_0");
+      editorCell.setCellId("ModelAccess_boi5ax_a0a0a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.EDITABLE, false);
@@ -98,7 +98,7 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       return editorCell;
     }
 
-    private EditorCell createProperty_0802_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_boi5ax_b0a0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("label");
       provider.setNoTargetText("<no label>");

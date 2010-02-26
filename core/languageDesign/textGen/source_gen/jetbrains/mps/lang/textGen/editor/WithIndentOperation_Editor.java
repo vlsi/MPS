@@ -18,39 +18,39 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class WithIndentOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6519_0(editorContext, node);
+    return this.createCollection_fwuxcr_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6519_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_fwuxcr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6519_0");
-    editorCell.addEditorCell(this.createConstant_6519_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6519_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6519_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6519_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6519_3(editorContext, node));
+    editorCell.setCellId("Collection_fwuxcr_a");
+    editorCell.addEditorCell(this.createConstant_fwuxcr_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_fwuxcr_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_fwuxcr_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_fwuxcr_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_fwuxcr_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6519_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_fwuxcr_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
-    editorCell.setCellId("Constant_6519_0");
+    editorCell.setCellId("Constant_fwuxcr_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6519_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_fwuxcr_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "indent");
-    editorCell.setCellId("Constant_6519_1");
+    editorCell.setCellId("Constant_fwuxcr_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6519_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_fwuxcr_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_6519_2");
+    editorCell.setCellId("Constant_fwuxcr_c0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -60,9 +60,9 @@ public class WithIndentOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6519_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_fwuxcr_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_6519_3");
+    editorCell.setCellId("Constant_fwuxcr_e0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -72,7 +72,7 @@ public class WithIndentOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6519_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_fwuxcr_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("list");
     provider.setNoTargetText("<no list>");

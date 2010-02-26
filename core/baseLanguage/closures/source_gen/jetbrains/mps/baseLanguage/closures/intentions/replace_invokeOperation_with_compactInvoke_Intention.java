@@ -54,46 +54,46 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIn
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
-    SNodeOperations.replaceWithAnother(parent, new replace_invokeOperation_with_compactInvoke_Intention.QuotationClass_4266_0().createNode(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(parent, "operation", true), "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), "parameter", true), SLinkOperations.getTarget(parent, "operand", true)));
+    SNodeOperations.replaceWithAnother(parent, new replace_invokeOperation_with_compactInvoke_Intention.QuotationClass_fknil1_a0a0b0h().createNode(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(parent, "operation", true), "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), "parameter", true), SLinkOperations.getTarget(parent, "operand", true)));
   }
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.closures.intentions";
   }
 
-  public static class QuotationClass_4266_0 {
-    public QuotationClass_4266_0() {
+  public static class QuotationClass_fknil1_a0a0b0h {
+    public QuotationClass_fknil1_a0a0b0h() {
     }
 
-    public SNode createNode(Object parameter_3549_0, Object parameter_3549_1) {
+    public SNode createNode(Object parameter_7ste6_a0a0a0a1a0, Object parameter_7ste6_a0a0a0a1a0_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3549_0 = null;
-      SNode quotedNode_3549_1 = null;
-      SNode quotedNode_3549_2 = null;
+      SNode quotedNode_7ste6_a0a0b0a = null;
+      SNode quotedNode_7ste6_a0a0a1a0 = null;
+      SNode quotedNode_7ste6_a0a0a1a0_0 = null;
       {
-        quotedNode_3549_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3549_0 = quotedNode_3549_0;
+        quotedNode_7ste6_a0a0b0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7ste6_a0a0b0a = quotedNode_7ste6_a0a0b0a;
         {
-          List<SNode> nodes = (List<SNode>) parameter_3549_0;
+          List<SNode> nodes = (List<SNode>) parameter_7ste6_a0a0a0a1a0;
           for (SNode child : nodes) {
-            quotedNode_3549_0.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_7ste6_a0a0b0a.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
         {
-          quotedNode_3549_2 = (SNode) parameter_3549_1;
-          SNode quotedNode1_3549_1;
-          if (_parameterValues_129834374.contains(quotedNode_3549_2)) {
-            quotedNode1_3549_1 = CopyUtil.copy(quotedNode_3549_2);
+          quotedNode_7ste6_a0a0a1a0_0 = (SNode) parameter_7ste6_a0a0a0a1a0_0;
+          SNode quotedNode1_7ste6_a0a0a1a0;
+          if (_parameterValues_129834374.contains(quotedNode_7ste6_a0a0a1a0_0)) {
+            quotedNode1_7ste6_a0a0a1a0 = CopyUtil.copy(quotedNode_7ste6_a0a0a1a0_0);
           } else {
-            _parameterValues_129834374.add(quotedNode_3549_2);
-            quotedNode1_3549_1 = quotedNode_3549_2;
+            _parameterValues_129834374.add(quotedNode_7ste6_a0a0a1a0_0);
+            quotedNode1_7ste6_a0a0a1a0 = quotedNode_7ste6_a0a0a1a0_0;
           }
-          if (quotedNode1_3549_1 != null) {
-            quotedNode_3549_0.addChild("function", HUtil.copyIfNecessary(quotedNode1_3549_1));
+          if (quotedNode1_7ste6_a0a0a1a0 != null) {
+            quotedNode_7ste6_a0a0b0a.addChild("function", HUtil.copyIfNecessary(quotedNode1_7ste6_a0a0a1a0));
           }
         }
-        result = quotedNode1_3549_0;
+        result = quotedNode1_7ste6_a0a0b0a;
       }
       return result;
     }

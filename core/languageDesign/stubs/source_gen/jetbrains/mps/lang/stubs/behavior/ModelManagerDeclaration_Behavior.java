@@ -18,7 +18,7 @@ public class ModelManagerDeclaration_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    return new ModelManagerDeclaration_Behavior.QuotationClass_4389_0().createNode(thisNode);
+    return new ModelManagerDeclaration_Behavior.QuotationClass_v31ybx_a0a0b().createNode(thisNode);
   }
 
   public static SNode call_createType_5553449326502622488(SNode thisNode) {
@@ -29,19 +29,19 @@ public class ModelManagerDeclaration_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_5553449326502622488);
   }
 
-  public static class QuotationClass_4389_0 {
-    public QuotationClass_4389_0() {
+  public static class QuotationClass_v31ybx_a0a0b {
+    public QuotationClass_v31ybx_a0a0b() {
     }
 
-    public SNode createNode(Object parameter_4389_0) {
+    public SNode createNode(Object parameter_v31ybx_a0a0a0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4389_0 = null;
+      SNode quotedNode_v31ybx_a0a0a = null;
       {
-        quotedNode_4389_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.ModelManagerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4389_0 = quotedNode_4389_0;
-        quotedNode1_4389_0.setReferent("declaration", (SNode) parameter_4389_0);
-        result = quotedNode1_4389_0;
+        quotedNode_v31ybx_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.ModelManagerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_v31ybx_a0a0a = quotedNode_v31ybx_a0a0a;
+        quotedNode1_v31ybx_a0a0a.setReferent("declaration", (SNode) parameter_v31ybx_a0a0a0a);
+        result = quotedNode1_v31ybx_a0a0a;
       }
       return result;
     }

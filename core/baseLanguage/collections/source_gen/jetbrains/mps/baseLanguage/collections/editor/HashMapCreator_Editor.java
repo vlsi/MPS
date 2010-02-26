@@ -10,10 +10,10 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class HashMapCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_0674_0(editorContext, node);
+    return this.createComponent_pwna47_a(editorContext, node);
   }
 
-  private EditorCell createComponent_0674_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_pwna47_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new HashMapCreator_editorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;

@@ -23,22 +23,22 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6574_0(editorContext, node);
+    return this.createCollection_kosqrl_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6574_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_kosqrl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6574_0");
+    editorCell.setCellId("Collection_kosqrl_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
     }
-    editorCell.addEditorCell(this.createRefCell_6574_0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_6574_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_kosqrl_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_kosqrl_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_6574_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_kosqrl_b0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new IMethodCall_actualArguments(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     {
@@ -48,12 +48,12 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_6574_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_kosqrl_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("conceptMethodDeclaration");
     provider.setNoTargetText("<no conceptMethodDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Node_ConceptMethodCall_Editor._Inline6574_0());
+    provider.setAuxiliaryCellProvider(new Node_ConceptMethodCall_Editor._Inline_kosqrl_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -66,8 +66,8 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline6574_0 extends InlineCellProvider {
-    public _Inline6574_0() {
+  public static class _Inline_kosqrl_a0a extends InlineCellProvider {
+    public _Inline_kosqrl_a0a() {
       super();
     }
 
@@ -76,10 +76,10 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_6574_0(editorContext, node);
+      return this.createProperty_kosqrl_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_6574_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_kosqrl_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -25,41 +25,41 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class OverloadedOpRulesContainer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9992_0(editorContext, node);
+    return this.createCollection_6g4l6s_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9992_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6g4l6s_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_9992_0");
-    editorCell.addEditorCell(this.createCollection_9992_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9992_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_9992_0(editorContext, node));
+    editorCell.setCellId("Collection_6g4l6s_a");
+    editorCell.addEditorCell(this.createCollection_6g4l6s_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6g4l6s_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_6g4l6s_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_9992_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6g4l6s_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9992_1");
+    editorCell.setCellId("Collection_6g4l6s_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9992_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9992_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6g4l6s_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6g4l6s_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9992_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6g4l6s_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "overloaded operations rules");
-    editorCell.setCellId("Constant_9992_0");
+    editorCell.setCellId("Constant_6g4l6s_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9992_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6g4l6s_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_9992_1");
+    editorCell.setCellId("Constant_6g4l6s_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -68,15 +68,15 @@ public class OverloadedOpRulesContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_9992_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new OverloadedOpRulesContainer_Editor.ruleListHandler_9992_0(node, "rule", editorContext);
+  private EditorCell createRefNodeList_6g4l6s_c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new OverloadedOpRulesContainer_Editor.ruleListHandler_6g4l6s_c0(node, "rule", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_rule");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createProperty_9992_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6g4l6s_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -94,8 +94,8 @@ public class OverloadedOpRulesContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class ruleListHandler_9992_0 extends RefNodeListHandler {
-    public ruleListHandler_9992_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class ruleListHandler_6g4l6s_c0 extends RefNodeListHandler {
+    public ruleListHandler_6g4l6s_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

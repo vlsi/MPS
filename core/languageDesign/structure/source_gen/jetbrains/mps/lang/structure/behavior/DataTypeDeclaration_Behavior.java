@@ -19,7 +19,7 @@ public class DataTypeDeclaration_Behavior {
   }
 
   public static SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
-    return new DataTypeDeclaration_Behavior.QuotationClass_3787_0().createNode();
+    return new DataTypeDeclaration_Behavior.QuotationClass_47r3zh_a0a0b().createNode();
   }
 
   public static boolean call_isSimple_1220268671473(SNode thisNode) {
@@ -94,18 +94,18 @@ public class DataTypeDeclaration_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"), callerConceptFqName, "virtual_toBaseLanguageType_1213877229718", PARAMETERS_1213877229718);
   }
 
-  public static class QuotationClass_3787_0 {
-    public QuotationClass_3787_0() {
+  public static class QuotationClass_47r3zh_a0a0b {
+    public QuotationClass_47r3zh_a0a0b() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3787_0 = null;
+      SNode quotedNode_47r3zh_a0a0a = null;
       {
-        quotedNode_3787_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3787_0 = quotedNode_3787_0;
-        result = quotedNode1_3787_0;
+        quotedNode_47r3zh_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_47r3zh_a0a0a = quotedNode_47r3zh_a0a0a;
+        result = quotedNode1_47r3zh_a0a0a;
       }
       return result;
     }

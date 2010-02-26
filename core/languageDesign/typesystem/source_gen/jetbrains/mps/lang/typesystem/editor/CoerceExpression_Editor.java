@@ -20,53 +20,53 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class CoerceExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5783_0(editorContext, node);
+    return this.createCollection_zfkwl8_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5783_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_zfkwl8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5783_0");
-    editorCell.addEditorCell(this.createConstant_5783_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5783_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5783_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5783_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5783_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5783_3(editorContext, node));
+    editorCell.setCellId("Collection_zfkwl8_a");
+    editorCell.addEditorCell(this.createConstant_zfkwl8_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_zfkwl8_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_zfkwl8_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_zfkwl8_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_zfkwl8_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_zfkwl8_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5783_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_zfkwl8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "coerce");
-    editorCell.setCellId("Constant_5783_0");
+    editorCell.setCellId("Constant_zfkwl8_a0");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new CoerceExpression_Editor.CoerceExpression_Editor_replaceWith_CoerceExpression_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new CoerceExpression_Editor.CoerceExpression_Editor_replaceWith_CoerceExpression_cellMenu_a0a0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_5783_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_zfkwl8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_5783_1");
+    editorCell.setCellId("Constant_zfkwl8_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5783_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_zfkwl8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":<");
-    editorCell.setCellId("Constant_5783_2");
+    editorCell.setCellId("Constant_zfkwl8_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5783_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_zfkwl8_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_5783_3");
+    editorCell.setCellId("Constant_zfkwl8_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_5783_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_zfkwl8_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodeToCoerce");
     provider.setNoTargetText("<no nodeToCoerce>");
@@ -83,7 +83,7 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5783_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_zfkwl8_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("pattern");
     provider.setNoTargetText("<no pattern>");
@@ -100,8 +100,8 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class CoerceExpression_Editor_replaceWith_CoerceExpression_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public CoerceExpression_Editor_replaceWith_CoerceExpression_cellMenu0() {
+  public static class CoerceExpression_Editor_replaceWith_CoerceExpression_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public CoerceExpression_Editor_replaceWith_CoerceExpression_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

@@ -19,20 +19,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SimpleTextGenOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2650_0(editorContext, node);
+    return this.createCollection_yb6w4b_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2650_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_yb6w4b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2650_0");
-    editorCell.addEditorCell(this.createConceptProperty_2650_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2650_0(editorContext, node));
+    editorCell.setCellId("Collection_yb6w4b_a");
+    editorCell.addEditorCell(this.createConceptProperty_yb6w4b_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_yb6w4b_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2650_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_yb6w4b_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_2650_0");
+    editorCell.setCellId("Constant_yb6w4b_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_LEFT, new Padding(-1.0, Measure.SPACES));
@@ -42,7 +42,7 @@ public class SimpleTextGenOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2650_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_yb6w4b_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

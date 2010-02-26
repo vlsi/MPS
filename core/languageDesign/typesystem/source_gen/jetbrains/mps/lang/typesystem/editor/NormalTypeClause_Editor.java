@@ -15,28 +15,28 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class NormalTypeClause_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2932_0(editorContext, node);
+    return this.createCollection_yb6oam_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_2932_0(editorContext, node);
+    return this.createConstant_yb6oam_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2932_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_yb6oam_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2932_0");
-    editorCell.addEditorCell(this.createRefNode_2932_0(editorContext, node));
+    editorCell.setCellId("Collection_yb6oam_a");
+    editorCell.addEditorCell(this.createRefNode_yb6oam_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2932_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_yb6oam_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "NORMAL TYPE CLAUSE");
-    editorCell.setCellId("Constant_2932_0");
+    editorCell.setCellId("Constant_yb6oam_a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_2932_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_yb6oam_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("normalType");
     provider.setNoTargetText("<no normalType>");

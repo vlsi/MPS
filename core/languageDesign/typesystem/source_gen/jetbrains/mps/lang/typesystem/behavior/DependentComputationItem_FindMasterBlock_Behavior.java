@@ -16,22 +16,22 @@ public class DependentComputationItem_FindMasterBlock_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new DependentComputationItem_FindMasterBlock_Behavior.QuotationClass_9219_0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.typesystem.structure.DependentComputationItem"), "blockingNodeConcept", false));
+    return new DependentComputationItem_FindMasterBlock_Behavior.QuotationClass_fiyp4x_a0a0b().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.typesystem.structure.DependentComputationItem"), "blockingNodeConcept", false));
   }
 
-  public static class QuotationClass_9219_0 {
-    public QuotationClass_9219_0() {
+  public static class QuotationClass_fiyp4x_a0a0b {
+    public QuotationClass_fiyp4x_a0a0b() {
     }
 
-    public SNode createNode(Object parameter_9219_0) {
+    public SNode createNode(Object parameter_fiyp4x_a0a0a0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9219_0 = null;
+      SNode quotedNode_fiyp4x_a0a0a = null;
       {
-        quotedNode_9219_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9219_0 = quotedNode_9219_0;
-        quotedNode1_9219_0.setReferent("concept", (SNode) parameter_9219_0);
-        result = quotedNode1_9219_0;
+        quotedNode_fiyp4x_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_fiyp4x_a0a0a = quotedNode_fiyp4x_a0a0a;
+        quotedNode1_fiyp4x_a0a0a.setReferent("concept", (SNode) parameter_fiyp4x_a0a0a0a);
+        result = quotedNode1_fiyp4x_a0a0a;
       }
       return result;
     }

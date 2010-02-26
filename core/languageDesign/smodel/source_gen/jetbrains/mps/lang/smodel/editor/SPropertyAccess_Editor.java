@@ -22,22 +22,22 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class SPropertyAccess_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0768_0(editorContext, node);
+    return this.createCollection_hntvsg_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0768_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_hntvsg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0768_0");
-    editorCell.addEditorCell(this.createRefCell_0768_0(editorContext, node));
+    editorCell.setCellId("Collection_hntvsg_a");
+    editorCell.addEditorCell(this.createRefCell_hntvsg_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_0768_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_hntvsg_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("property");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SPropertyAccess_Editor._Inline0768_0());
+    provider.setAuxiliaryCellProvider(new SPropertyAccess_Editor._Inline_hntvsg_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -50,8 +50,8 @@ public class SPropertyAccess_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0768_0 extends InlineCellProvider {
-    public _Inline0768_0() {
+  public static class _Inline_hntvsg_a0a extends InlineCellProvider {
+    public _Inline_hntvsg_a0a() {
       super();
     }
 
@@ -60,10 +60,10 @@ public class SPropertyAccess_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0768_0(editorContext, node);
+      return this.createProperty_hntvsg_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_0768_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_hntvsg_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

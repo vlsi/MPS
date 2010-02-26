@@ -21,22 +21,22 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class EnumeratorType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9470_0(editorContext, node);
+    return this.createCollection_eivaon_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9470_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_eivaon_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9470_0");
-    editorCell.addEditorCell(this.createConceptProperty_9470_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9470_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9470_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9470_1(editorContext, node));
+    editorCell.setCellId("Collection_eivaon_a");
+    editorCell.addEditorCell(this.createConceptProperty_eivaon_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_eivaon_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_eivaon_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_eivaon_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9470_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_eivaon_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_9470_0");
+    editorCell.setCellId("Constant_eivaon_b0");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -46,9 +46,9 @@ public class EnumeratorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9470_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_eivaon_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_9470_1");
+    editorCell.setCellId("Constant_eivaon_d0");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -58,7 +58,7 @@ public class EnumeratorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9470_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_eivaon_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -82,7 +82,7 @@ public class EnumeratorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9470_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_eivaon_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementType");
     provider.setNoTargetText("<no elementType>");

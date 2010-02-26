@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class SimpleRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_0958_0(editorContext, node);
+    return this.createError_dw2u7z_a(editorContext, node);
   }
 
-  private EditorCell createError_0958_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_dw2u7z_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<abstract simple rule>");
-    editorCell.setCellId("Error_0958_0");
+    editorCell.setCellId("Error_dw2u7z_a");
     return editorCell;
   }
 }

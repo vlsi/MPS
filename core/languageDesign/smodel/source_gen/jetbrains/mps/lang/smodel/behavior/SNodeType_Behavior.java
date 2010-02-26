@@ -48,7 +48,7 @@ public class SNodeType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new SNodeType_Behavior.QuotationClass_9218_0().createNode();
+    return new SNodeType_Behavior.QuotationClass_4ouf01_a0a0e().createNode();
   }
 
   public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
@@ -59,19 +59,19 @@ public class SNodeType_Behavior {
     return "jetbrains.mps.smodel.SNode";
   }
 
-  public static class QuotationClass_9218_0 {
-    public QuotationClass_9218_0() {
+  public static class QuotationClass_4ouf01_a0a0e {
+    public QuotationClass_4ouf01_a0a0e() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9218_0 = null;
+      SNode quotedNode_4ouf01_a0a0d = null;
       {
-        quotedNode_9218_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9218_0 = quotedNode_9218_0;
-        quotedNode1_9218_0.addReference(SReference.create("classifier", quotedNode1_9218_0, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
-        result = quotedNode1_9218_0;
+        quotedNode_4ouf01_a0a0d = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4ouf01_a0a0d = quotedNode_4ouf01_a0a0d;
+        quotedNode1_4ouf01_a0a0d.addReference(SReference.create("classifier", quotedNode1_4ouf01_a0a0d, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
+        result = quotedNode1_4ouf01_a0a0d;
       }
       return result;
     }

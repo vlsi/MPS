@@ -12,28 +12,28 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class UpdateModelByDefaultOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6465_0(editorContext, node);
+    return this.createCollection_rtpxhj_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6465_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_rtpxhj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6465_0");
-    editorCell.addEditorCell(this.createConstant_6465_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6465_1(editorContext, node));
+    editorCell.setCellId("Collection_rtpxhj_a");
+    editorCell.addEditorCell(this.createConstant_rtpxhj_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rtpxhj_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6465_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_rtpxhj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "updateModelByDefault");
-    editorCell.setCellId("Constant_6465_0");
+    editorCell.setCellId("Constant_rtpxhj_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6465_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_rtpxhj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_6465_1");
+    editorCell.setCellId("Constant_rtpxhj_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }

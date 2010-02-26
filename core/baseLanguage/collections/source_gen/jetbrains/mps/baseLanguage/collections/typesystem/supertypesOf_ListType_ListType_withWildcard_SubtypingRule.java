@@ -17,7 +17,7 @@ public class supertypesOf_ListType_ListType_withWildcard_SubtypingRule extends S
   }
 
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_ListType_ListType_withWildcard_SubtypingRule.QuotationClass_3042_0().createNode(typeCheckingContext);
+    return new supertypesOf_ListType_ListType_withWildcard_SubtypingRule.QuotationClass_ms4v5r_a0a0a().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -36,24 +36,24 @@ public class supertypesOf_ListType_ListType_withWildcard_SubtypingRule extends S
     return true;
   }
 
-  public static class QuotationClass_3042_0 {
-    public QuotationClass_3042_0() {
+  public static class QuotationClass_ms4v5r_a0a0a {
+    public QuotationClass_ms4v5r_a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3042_0 = null;
-      SNode quotedNode_3042_1 = null;
+      SNode quotedNode_ms4v5r_a0a0a = null;
+      SNode quotedNode_ms4v5r_a0a0a0 = null;
       {
-        quotedNode_3042_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3042_0 = quotedNode_3042_0;
+        quotedNode_ms4v5r_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_ms4v5r_a0a0a = quotedNode_ms4v5r_a0a0a;
         {
-          quotedNode_3042_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3042_1 = quotedNode_3042_1;
-          quotedNode_3042_0.addChild("elementType", quotedNode1_3042_1);
+          quotedNode_ms4v5r_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_ms4v5r_a0a0a0 = quotedNode_ms4v5r_a0a0a0;
+          quotedNode_ms4v5r_a0a0a.addChild("elementType", quotedNode1_ms4v5r_a0a0a0);
         }
-        result = quotedNode1_3042_0;
+        result = quotedNode1_ms4v5r_a0a0a;
       }
       return result;
     }
@@ -61,17 +61,17 @@ public class supertypesOf_ListType_ListType_withWildcard_SubtypingRule extends S
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3042_0 = null;
-      SNode quotedNode_3042_1 = null;
+      SNode quotedNode_ms4v5r_a0a0a = null;
+      SNode quotedNode_ms4v5r_a0a0a0 = null;
       {
-        quotedNode_3042_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3042_0 = quotedNode_3042_0;
+        quotedNode_ms4v5r_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_ms4v5r_a0a0a = quotedNode_ms4v5r_a0a0a;
         {
-          quotedNode_3042_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3042_1 = quotedNode_3042_1;
-          quotedNode_3042_0.addChild("elementType", quotedNode1_3042_1);
+          quotedNode_ms4v5r_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_ms4v5r_a0a0a0 = quotedNode_ms4v5r_a0a0a0;
+          quotedNode_ms4v5r_a0a0a.addChild("elementType", quotedNode1_ms4v5r_a0a0a0);
         }
-        result = quotedNode1_3042_0;
+        result = quotedNode1_ms4v5r_a0a0a;
       }
       return result;
     }

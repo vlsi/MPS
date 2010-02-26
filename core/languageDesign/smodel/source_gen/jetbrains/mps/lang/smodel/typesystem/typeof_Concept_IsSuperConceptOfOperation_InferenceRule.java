@@ -29,7 +29,7 @@ public class typeof_Concept_IsSuperConceptOfOperation_InferenceRule extends Abst
         BaseIntentionProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206662734160", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206662734162", false), (SNode) new typeof_Concept_IsSuperConceptOfOperation_InferenceRule.QuotationClass_8138_0().createNode(typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206662734162", false), (SNode) new typeof_Concept_IsSuperConceptOfOperation_InferenceRule.QuotationClass_goto9h_a0a1a1a0().createNode(typeCheckingContext), false, _info_12389875345);
       }
     }
   }
@@ -46,18 +46,18 @@ public class typeof_Concept_IsSuperConceptOfOperation_InferenceRule extends Abst
     return false;
   }
 
-  public static class QuotationClass_8138_0 {
-    public QuotationClass_8138_0() {
+  public static class QuotationClass_goto9h_a0a1a1a0 {
+    public QuotationClass_goto9h_a0a1a1a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8138_0 = null;
+      SNode quotedNode_goto9h_a0a1a1a0 = null;
       {
-        quotedNode_8138_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8138_0 = quotedNode_8138_0;
-        result = quotedNode1_8138_0;
+        quotedNode_goto9h_a0a1a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_goto9h_a0a1a1a0 = quotedNode_goto9h_a0a1a1a0;
+        result = quotedNode1_goto9h_a0a1a1a0;
       }
       return result;
     }
@@ -65,11 +65,11 @@ public class typeof_Concept_IsSuperConceptOfOperation_InferenceRule extends Abst
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8138_0 = null;
+      SNode quotedNode_goto9h_a0a1a1a0 = null;
       {
-        quotedNode_8138_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8138_0 = quotedNode_8138_0;
-        result = quotedNode1_8138_0;
+        quotedNode_goto9h_a0a1a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_goto9h_a0a1a1a0 = quotedNode_goto9h_a0a1a1a0;
+        result = quotedNode1_goto9h_a0a1a1a0;
       }
       return result;
     }

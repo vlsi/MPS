@@ -23,41 +23,41 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9117_0(editorContext, node);
+    return this.createCollection_n0n6wp_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9117_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_n0n6wp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9117_0");
-    if (renderingCondition9117_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_9117_1(editorContext, node));
+    editorCell.setCellId("Collection_n0n6wp_a");
+    if (renderingCondition_n0n6wp_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_n0n6wp_a0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_9117_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9117_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9117_2(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9117_0(editorContext, node));
-    if (renderingCondition9117_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_9117_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_n0n6wp_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_n0n6wp_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_n0n6wp_d0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_n0n6wp_e0(editorContext, node));
+    if (renderingCondition_n0n6wp_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_n0n6wp_f0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_9117_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_n0n6wp_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9117_1");
+    editorCell.setCellId("Collection_n0n6wp_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9117_3(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_9117_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9117_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_n0n6wp_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_n0n6wp_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_n0n6wp_c0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_n0n6wp_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    (default)");
-    editorCell.setCellId("Constant_9117_0");
+    editorCell.setCellId("Constant_n0n6wp_f0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -67,9 +67,9 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_n0n6wp_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value");
-    editorCell.setCellId("Constant_9117_1");
+    editorCell.setCellId("Constant_n0n6wp_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -80,9 +80,9 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_n0n6wp_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  presentation");
-    editorCell.setCellId("Constant_9117_2");
+    editorCell.setCellId("Constant_n0n6wp_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -93,9 +93,9 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_n0n6wp_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "identifier");
-    editorCell.setCellId("Constant_9117_3");
+    editorCell.setCellId("Constant_n0n6wp_a0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -106,14 +106,14 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9117_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_n0n6wp_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_9117_4");
+    editorCell.setCellId("Constant_n0n6wp_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_9117_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_n0n6wp_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("externalValue");
     provider.setNoTargetText("<no external value>");
@@ -136,7 +136,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_9117_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_n0n6wp_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("internalValue");
     provider.setNoTargetText("<NULL>");
@@ -160,7 +160,7 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_9117_2(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_n0n6wp_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("javaIdentifier");
     provider.setNoTargetText("<no identifier>");
@@ -184,11 +184,11 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition9117_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_n0n6wp_a5a(SNode node, EditorContext editorContext, IScope scope) {
     return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
   }
 
-  private static boolean renderingCondition9117_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_n0n6wp_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberIdentifierPolicy", "custom", "derive_from_presentation");
   }
 }

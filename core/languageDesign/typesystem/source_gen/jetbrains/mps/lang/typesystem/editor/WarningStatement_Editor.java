@@ -18,65 +18,65 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class WarningStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8935_0(editorContext, node);
+    return this.createCollection_spok58_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8935_1(editorContext, node);
+    return this.createCollection_spok58_a_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8935_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_spok58_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8935_0");
-    editorCell.addEditorCell(this.createConstant_8935_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8935_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8935_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8935_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8935_2(editorContext, node));
+    editorCell.setCellId("Collection_spok58_a");
+    editorCell.addEditorCell(this.createConstant_spok58_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_spok58_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_spok58_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_spok58_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_spok58_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8935_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_spok58_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8935_1");
-    editorCell.addEditorCell(this.createConstant_8935_4(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8935_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8935_5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8935_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8935_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8935_6(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8935_7(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8935_4(editorContext, node));
+    editorCell.setCellId("Collection_spok58_a_0");
+    editorCell.addEditorCell(this.createConstant_spok58_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_spok58_b0_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_spok58_c0_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_spok58_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_spok58_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_spok58_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_spok58_g0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_spok58_h0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_spok58_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "warning");
-    editorCell.setCellId("Constant_8935_0");
+    editorCell.setCellId("Constant_spok58_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_spok58_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
-    editorCell.setCellId("Constant_8935_1");
+    editorCell.setCellId("Constant_spok58_c0");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_spok58_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_8935_2");
+    editorCell.setCellId("Constant_spok58_e0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_spok58_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention to fix a warning(optional)");
-    editorCell.setCellId("Constant_8935_3");
+    editorCell.setCellId("Constant_spok58_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -85,9 +85,9 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_spok58_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node feature to highlight(optional)");
-    editorCell.setCellId("Constant_8935_4");
+    editorCell.setCellId("Constant_spok58_a0_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -96,9 +96,9 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_spok58_c0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_8935_5");
+    editorCell.setCellId("Constant_spok58_c0_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -108,9 +108,9 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_6(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_spok58_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_8935_6");
+    editorCell.setCellId("Constant_spok58_f0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -120,9 +120,9 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8935_7(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_spok58_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreign message source(optional)");
-    editorCell.setCellId("Constant_8935_7");
+    editorCell.setCellId("Constant_spok58_g0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -131,7 +131,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8935_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_spok58_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("warningText");
     provider.setNoTargetText("<error string>");
@@ -148,7 +148,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8935_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_spok58_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodeToReport");
     provider.setNoTargetText("<node to highlight>");
@@ -165,7 +165,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8935_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_spok58_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("helginsIntention");
     provider.setNoTargetText("<no intention>");
@@ -186,7 +186,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8935_3(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_spok58_b0_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("messageTarget");
     provider.setNoTargetText("<no messageTarget>");
@@ -207,7 +207,7 @@ public class WarningStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8935_4(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_spok58_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("foreignMessageSource");
     provider.setNoTargetText("<no foreignMessageSource>");

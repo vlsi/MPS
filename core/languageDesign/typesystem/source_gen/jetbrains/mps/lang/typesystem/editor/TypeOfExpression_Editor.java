@@ -23,40 +23,40 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class TypeOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6237_0(editorContext, node);
+    return this.createCollection_ndq0bl_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6237_1(editorContext, node);
+    return this.createCollection_ndq0bl_a_0(editorContext, node);
   }
 
-  private EditorCell createCollection_6237_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ndq0bl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6237_0");
-    editorCell.addEditorCell(this.createConstant_6237_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6237_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6237_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6237_2(editorContext, node));
+    editorCell.setCellId("Collection_ndq0bl_a");
+    editorCell.addEditorCell(this.createConstant_ndq0bl_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ndq0bl_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ndq0bl_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ndq0bl_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_6237_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ndq0bl_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6237_1");
-    editorCell.addEditorCell(this.createConstant_6237_3(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6237_0(editorContext, node));
+    editorCell.setCellId("Collection_ndq0bl_a_0");
+    editorCell.addEditorCell(this.createConstant_ndq0bl_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_ndq0bl_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6237_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ndq0bl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "typeof");
-    editorCell.setCellId("Constant_6237_0");
+    editorCell.setCellId("Constant_ndq0bl_a0");
     BaseLanguageStyle_StyleSheet.getCompactKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
-          return TypeOfExpression_Editor._StyleParameter_QueryFunction_6237_0((cell == null ?
+          return TypeOfExpression_Editor._StyleParameter_QueryFunction_ndq0bl_a0a0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -70,31 +70,31 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6237_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ndq0bl_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_6237_1");
+    editorCell.setCellId("Constant_ndq0bl_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6237_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ndq0bl_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_6237_2");
+    editorCell.setCellId("Constant_ndq0bl_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6237_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ndq0bl_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "skip dependency on current:");
-    editorCell.setCellId("Constant_6237_3");
+    editorCell.setCellId("Constant_ndq0bl_a0_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_6237_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ndq0bl_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("term");
     provider.setNoTargetText("<no term>");
@@ -111,7 +111,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6237_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ndq0bl_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("skipDependencyOnCurrent");
     provider.setNoTargetText("<no skipDependencyOnCurrent>");
@@ -129,7 +129,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_6237_0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_ndq0bl_a0a0(SNode node, EditorContext editorContext) {
     if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
       return Color.GRAY;
     } else {

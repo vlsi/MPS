@@ -19,26 +19,26 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4548_0(editorContext, node);
+    return this.createCollection_t15it2_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4548_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_t15it2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4548_0");
-    editorCell.addEditorCell(this.createRefCell_4548_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4548_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4548_0(editorContext, node));
+    editorCell.setCellId("Collection_t15it2_a");
+    editorCell.addEditorCell(this.createRefCell_t15it2_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_t15it2_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_t15it2_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4548_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_t15it2_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_4548_0");
+    editorCell.setCellId("Constant_t15it2_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_4548_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_t15it2_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -55,12 +55,12 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_4548_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_t15it2_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("quickFixArgument");
     provider.setNoTargetText("<no quickFixArgument>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TypesystemIntentionArgument_Editor._Inline4548_0());
+    provider.setAuxiliaryCellProvider(new TypesystemIntentionArgument_Editor._Inline_t15it2_a0a());
     editorCell = provider.createEditorCell(editorContext);
     BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -74,8 +74,8 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4548_0 extends InlineCellProvider {
-    public _Inline4548_0() {
+  public static class _Inline_t15it2_a0a extends InlineCellProvider {
+    public _Inline_t15it2_a0a() {
       super();
     }
 
@@ -84,10 +84,10 @@ public class TypesystemIntentionArgument_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_4548_0(editorContext, node);
+      return this.createProperty_t15it2_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_4548_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_t15it2_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

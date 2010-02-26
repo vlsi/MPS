@@ -15,25 +15,25 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class TestInfo_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6068_0(editorContext, node);
+    return this.createCollection_v9r28m_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6068_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_v9r28m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6068_0");
-    editorCell.addEditorCell(this.createConstant_6068_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6068_0(editorContext, node));
+    editorCell.setCellId("Collection_v9r28m_a");
+    editorCell.addEditorCell(this.createConstant_v9r28m_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_v9r28m_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6068_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_v9r28m_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Project path:");
-    editorCell.setCellId("Constant_6068_0");
+    editorCell.setCellId("Constant_v9r28m_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_6068_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_v9r28m_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("projectPath");
     provider.setNoTargetText("<no projectPath>");

@@ -24,22 +24,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class SEnumMemberType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3332_0(editorContext, node);
+    return this.createCollection_qf1ea_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3332_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_qf1ea_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3332_0");
-    editorCell.addEditorCell(this.createConstant_3332_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3332_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_3332_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3332_2(editorContext, node));
+    editorCell.setCellId("Collection_qf1ea_a");
+    editorCell.addEditorCell(this.createConstant_qf1ea_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_qf1ea_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_qf1ea_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_qf1ea_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3332_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_qf1ea_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "enummember");
-    editorCell.setCellId("Constant_3332_0");
+    editorCell.setCellId("Constant_qf1ea_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -49,28 +49,28 @@ public class SEnumMemberType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3332_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_qf1ea_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_3332_1");
+    editorCell.setCellId("Constant_qf1ea_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3332_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_qf1ea_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_3332_2");
+    editorCell.setCellId("Constant_qf1ea_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_3332_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_qf1ea_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("enum");
     provider.setNoTargetText("");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SEnumMemberType_Editor._Inline3332_0());
+    provider.setAuxiliaryCellProvider(new SEnumMemberType_Editor._Inline_qf1ea_a2a());
     editorCell = provider.createEditorCell(editorContext);
     SharedStyles_StyleSheet.getReferenceOnConcept(editorCell).apply(editorCell);
     {
@@ -91,8 +91,8 @@ public class SEnumMemberType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline3332_0 extends InlineCellProvider {
-    public _Inline3332_0() {
+  public static class _Inline_qf1ea_a2a extends InlineCellProvider {
+    public _Inline_qf1ea_a2a() {
       super();
     }
 
@@ -101,10 +101,10 @@ public class SEnumMemberType_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_3332_0(editorContext, node);
+      return this.createProperty_qf1ea_a0c0(editorContext, node);
     }
 
-    private EditorCell createProperty_3332_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_qf1ea_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

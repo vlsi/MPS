@@ -20,36 +20,36 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class TailListOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0067_0(editorContext, node);
+    return this.createCollection_4hj80p_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0067_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4hj80p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0067_0");
-    editorCell.addEditorCell(this.createConceptProperty_0067_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0067_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0067_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0067_1(editorContext, node));
+    editorCell.setCellId("Collection_4hj80p_a");
+    editorCell.addEditorCell(this.createConceptProperty_4hj80p_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4hj80p_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_4hj80p_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4hj80p_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0067_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4hj80p_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_0067_0");
+    editorCell.setCellId("Constant_4hj80p_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0067_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4hj80p_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_0067_1");
+    editorCell.setCellId("Constant_4hj80p_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_0067_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_4hj80p_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -58,7 +58,7 @@ public class TailListOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Collections_Style_StyleSheet.getOperation(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new TailListOperation_Editor.TailListOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new TailListOperation_Editor.TailListOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -69,7 +69,7 @@ public class TailListOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0067_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4hj80p_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fromIndex");
     provider.setNoTargetText("<no fromIndex>");
@@ -86,8 +86,8 @@ public class TailListOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class TailListOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public TailListOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
+  public static class TailListOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public TailListOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

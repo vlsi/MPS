@@ -24,7 +24,7 @@ public class typeof_SEnum_MemberForNameOperation_InferenceRule extends AbstractI
       SNode _nodeToCheck_1029348928467 = operation;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333018573", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333018575", true), (SNode) new typeof_SEnum_MemberForNameOperation_InferenceRule.QuotationClass_6572_0().createNode(SEnumOperation_Behavior.call_getEnum_1240931322043(operation), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333018575", true), (SNode) new typeof_SEnum_MemberForNameOperation_InferenceRule.QuotationClass_ell032_a0a0a0().createNode(SEnumOperation_Behavior.call_getEnum_1240931322043(operation), typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -40,32 +40,32 @@ public class typeof_SEnum_MemberForNameOperation_InferenceRule extends AbstractI
     return false;
   }
 
-  public static class QuotationClass_6572_0 {
-    public QuotationClass_6572_0() {
+  public static class QuotationClass_ell032_a0a0a0 {
+    public QuotationClass_ell032_a0a0a0() {
     }
 
-    public SNode createNode(Object parameter_6572_0, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_ell032_a0a0a0a0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6572_0 = null;
+      SNode quotedNode_ell032_a0a0a0 = null;
       {
-        quotedNode_6572_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6572_0 = quotedNode_6572_0;
-        quotedNode1_6572_0.setReferent("enum", (SNode) parameter_6572_0);
-        result = quotedNode1_6572_0;
+        quotedNode_ell032_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_ell032_a0a0a0 = quotedNode_ell032_a0a0a0;
+        quotedNode1_ell032_a0a0a0.setReferent("enum", (SNode) parameter_ell032_a0a0a0a0);
+        result = quotedNode1_ell032_a0a0a0;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_6572_0) {
+    public SNode createNode(Object parameter_ell032_a0a0a0a0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6572_0 = null;
+      SNode quotedNode_ell032_a0a0a0 = null;
       {
-        quotedNode_6572_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6572_0 = quotedNode_6572_0;
-        quotedNode1_6572_0.setReferent("enum", (SNode) parameter_6572_0);
-        result = quotedNode1_6572_0;
+        quotedNode_ell032_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_ell032_a0a0a0 = quotedNode_ell032_a0a0a0;
+        quotedNode1_ell032_a0a0a0.setReferent("enum", (SNode) parameter_ell032_a0a0a0a0);
+        result = quotedNode1_ell032_a0a0a0;
       }
       return result;
     }

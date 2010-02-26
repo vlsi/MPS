@@ -18,7 +18,7 @@ public class StubsCreatorDeclaration_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    return new StubsCreatorDeclaration_Behavior.QuotationClass_3906_0().createNode(thisNode, thisNode);
+    return new StubsCreatorDeclaration_Behavior.QuotationClass_v97kwv_a0a0b().createNode(thisNode, thisNode);
   }
 
   public static SNode call_createType_5516999836374144781(SNode thisNode) {
@@ -29,20 +29,20 @@ public class StubsCreatorDeclaration_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_5516999836374144781);
   }
 
-  public static class QuotationClass_3906_0 {
-    public QuotationClass_3906_0() {
+  public static class QuotationClass_v97kwv_a0a0b {
+    public QuotationClass_v97kwv_a0a0b() {
     }
 
-    public SNode createNode(Object parameter_3906_0, Object parameter_3906_1) {
+    public SNode createNode(Object parameter_v97kwv_a0a0a0a, Object parameter_v97kwv_a0a0a0a_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3906_0 = null;
+      SNode quotedNode_v97kwv_a0a0a = null;
       {
-        quotedNode_3906_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubsCreatorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3906_0 = quotedNode_3906_0;
-        quotedNode1_3906_0.setReferent("creatorDeclaration", (SNode) parameter_3906_0);
-        quotedNode1_3906_0.setReferent("declaration", (SNode) parameter_3906_1);
-        result = quotedNode1_3906_0;
+        quotedNode_v97kwv_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubsCreatorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_v97kwv_a0a0a = quotedNode_v97kwv_a0a0a;
+        quotedNode1_v97kwv_a0a0a.setReferent("creatorDeclaration", (SNode) parameter_v97kwv_a0a0a0a);
+        quotedNode1_v97kwv_a0a0a.setReferent("declaration", (SNode) parameter_v97kwv_a0a0a0a_0);
+        result = quotedNode1_v97kwv_a0a0a;
       }
       return result;
     }

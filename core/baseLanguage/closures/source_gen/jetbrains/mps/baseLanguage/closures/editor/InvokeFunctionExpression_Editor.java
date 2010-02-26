@@ -29,32 +29,32 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1988_0(editorContext, node);
+    return this.createCollection_m4pbm_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1988_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_m4pbm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1988_0");
-    editorCell.addEditorCell(this.createRefNode_1988_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1988_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1988_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1988_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_1988_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1988_2(editorContext, node));
+    editorCell.setCellId("Collection_m4pbm_a");
+    editorCell.addEditorCell(this.createRefNode_m4pbm_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_m4pbm_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_m4pbm_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_m4pbm_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_m4pbm_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_m4pbm_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1988_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_m4pbm_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
-    editorCell.setCellId("Constant_1988_0");
+    editorCell.setCellId("Constant_m4pbm_b0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1988_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_m4pbm_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "invoke");
-    editorCell.setCellId("Constant_1988_1");
+    editorCell.setCellId("Constant_m4pbm_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
@@ -64,31 +64,31 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1988_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_m4pbm_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_1988_2");
+    editorCell.setCellId("Constant_m4pbm_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1988_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_m4pbm_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_1988_3");
+    editorCell.setCellId("Constant_m4pbm_d0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_1988_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new InvokeFunctionExpression_Editor.parameterListHandler_1988_0(node, "parameter", editorContext);
+  private EditorCell createRefNodeList_m4pbm_e0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new InvokeFunctionExpression_Editor.parameterListHandler_m4pbm_e0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNode_1988_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_m4pbm_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("function");
     provider.setNoTargetText("<no function>");
@@ -105,8 +105,8 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class parameterListHandler_1988_0 extends RefNodeListHandler {
-    public parameterListHandler_1988_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class parameterListHandler_m4pbm_e0 extends RefNodeListHandler {
+    public parameterListHandler_m4pbm_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -129,7 +129,7 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_1988_4(editorContext, node);
+      return this.createConstant_m4pbm_a4a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -157,9 +157,9 @@ public class InvokeFunctionExpression_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_1988_4(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_m4pbm_a4a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_1988_4");
+      editorCell.setCellId("Constant_m4pbm_a4a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));

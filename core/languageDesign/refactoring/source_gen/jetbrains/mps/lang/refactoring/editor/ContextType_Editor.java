@@ -11,12 +11,12 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class ContextType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_4637_0(editorContext, node);
+    return this.createConstant_qgqaoh_a(editorContext, node);
   }
 
-  private EditorCell createConstant_4637_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_qgqaoh_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context");
-    editorCell.setCellId("Constant_4637_0");
+    editorCell.setCellId("Constant_qgqaoh_a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;

@@ -14,17 +14,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SNodeListCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4493_1(editorContext, node);
+    return this.createCollection_qgp85l_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4493_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_qgp85l_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4493_1");
-    editorCell.addEditorCell(this.createRefNode_4493_1(editorContext, node));
+    editorCell.setCellId("Collection_qgp85l_a");
+    editorCell.addEditorCell(this.createRefNode_qgp85l_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_4493_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_qgp85l_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("createdType");
     provider.setNoTargetText("<no createdType>");

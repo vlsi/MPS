@@ -22,35 +22,35 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class AskExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8539_0(editorContext, node);
+    return this.createCollection_egbvfh_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8539_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_egbvfh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8539_0");
-    editorCell.addEditorCell(this.createConstant_8539_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_8539_0(editorContext, node));
+    editorCell.setCellId("Collection_egbvfh_a");
+    editorCell.addEditorCell(this.createConstant_egbvfh_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_egbvfh_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8539_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_egbvfh_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ask for");
-    editorCell.setCellId("Constant_8539_0");
+    editorCell.setCellId("Constant_egbvfh_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_8539_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new AskExpression_Editor.parameterListHandler_8539_0(node, "parameter", editorContext);
+  private EditorCell createRefNodeList_egbvfh_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new AskExpression_Editor.parameterListHandler_egbvfh_b0(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class parameterListHandler_8539_0 extends RefNodeListHandler {
-    public parameterListHandler_8539_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class parameterListHandler_egbvfh_b0 extends RefNodeListHandler {
+    public parameterListHandler_egbvfh_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -17,46 +17,46 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class SubMapOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2095_0(editorContext, node);
+    return this.createCollection_j1ndjk_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2095_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_j1ndjk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2095_0");
-    editorCell.addEditorCell(this.createConceptProperty_2095_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2095_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2095_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2095_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2095_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2095_1(editorContext, node));
+    editorCell.setCellId("Collection_j1ndjk_a");
+    editorCell.addEditorCell(this.createConceptProperty_j1ndjk_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_j1ndjk_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_j1ndjk_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_j1ndjk_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_j1ndjk_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_j1ndjk_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2095_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_j1ndjk_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_2095_0");
+    editorCell.setCellId("Constant_j1ndjk_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2095_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_j1ndjk_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_2095_1");
+    editorCell.setCellId("Constant_j1ndjk_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2095_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_j1ndjk_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_2095_2");
+    editorCell.setCellId("Constant_j1ndjk_d0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2095_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_j1ndjk_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -75,7 +75,7 @@ public class SubMapOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2095_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_j1ndjk_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fromKey");
     provider.setNoTargetText("<no fromKey>");
@@ -92,7 +92,7 @@ public class SubMapOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2095_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_j1ndjk_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("toKey");
     provider.setNoTargetText("<no toKey>");

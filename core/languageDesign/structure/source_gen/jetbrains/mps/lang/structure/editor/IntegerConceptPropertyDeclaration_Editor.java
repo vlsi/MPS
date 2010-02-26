@@ -19,23 +19,23 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4865_0(editorContext, node);
+    return this.createCollection_3jx520_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4865_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3jx520_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4865_0");
-    editorCell.addEditorCell(this.createConstant_4865_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4865_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4865_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4865_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4865_2(editorContext, node));
+    editorCell.setCellId("Collection_3jx520_a");
+    editorCell.addEditorCell(this.createConstant_3jx520_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_3jx520_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3jx520_c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_3jx520_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3jx520_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4865_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3jx520_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "integer");
-    editorCell.setCellId("Constant_4865_0");
+    editorCell.setCellId("Constant_3jx520_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -45,9 +45,9 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createConstant_4865_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3jx520_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<inheritable:");
-    editorCell.setCellId("Constant_4865_1");
+    editorCell.setCellId("Constant_3jx520_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
@@ -57,9 +57,9 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createConstant_4865_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3jx520_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_4865_2");
+    editorCell.setCellId("Constant_3jx520_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
@@ -69,7 +69,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createProperty_4865_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_3jx520_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -91,7 +91,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createProperty_4865_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_3jx520_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("inheritable");
     provider.setNoTargetText("<no inheritable>");

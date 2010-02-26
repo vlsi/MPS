@@ -19,36 +19,36 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class AskBooleanExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1173_0(editorContext, node);
+    return this.createCollection_8j3puq_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1173_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8j3puq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1173_0");
-    editorCell.addEditorCell(this.createConstant_1173_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_1173_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1173_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1173_0(editorContext, node));
+    editorCell.setCellId("Collection_8j3puq_a");
+    editorCell.addEditorCell(this.createConstant_8j3puq_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_8j3puq_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8j3puq_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8j3puq_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1173_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8j3puq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ask for boolean");
-    editorCell.setCellId("Constant_1173_0");
+    editorCell.setCellId("Constant_8j3puq_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1173_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8j3puq_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text");
-    editorCell.setCellId("Constant_1173_1");
+    editorCell.setCellId("Constant_8j3puq_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_1173_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8j3puq_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");
@@ -65,12 +65,12 @@ public class AskBooleanExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_1173_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_8j3puq_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("parameter");
     provider.setNoTargetText("<no parameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AskBooleanExpression_Editor._Inline1173_0());
+    provider.setAuxiliaryCellProvider(new AskBooleanExpression_Editor._Inline_8j3puq_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -83,8 +83,8 @@ public class AskBooleanExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline1173_0 extends InlineCellProvider {
-    public _Inline1173_0() {
+  public static class _Inline_8j3puq_a1a extends InlineCellProvider {
+    public _Inline_8j3puq_a1a() {
       super();
     }
 
@@ -93,10 +93,10 @@ public class AskBooleanExpression_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_1173_0(editorContext, node);
+      return this.createProperty_8j3puq_a0b0(editorContext, node);
     }
 
-    private EditorCell createProperty_1173_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_8j3puq_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

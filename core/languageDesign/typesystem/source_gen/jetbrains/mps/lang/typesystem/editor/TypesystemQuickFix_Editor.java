@@ -26,46 +26,46 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6837_0(editorContext, node);
+    return this.createCollection_la7hkt_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6837_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_la7hkt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_6837_0");
-    editorCell.addEditorCell(this.createCollection_6837_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6837_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6837_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_6837_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6837_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6837_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6837_4(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6837_0(editorContext, node));
+    editorCell.setCellId("Collection_la7hkt_a");
+    editorCell.addEditorCell(this.createCollection_la7hkt_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_la7hkt_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_la7hkt_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_la7hkt_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_la7hkt_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_la7hkt_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_la7hkt_g0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_la7hkt_h0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_6837_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_la7hkt_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6837_1");
+    editorCell.setCellId("Collection_la7hkt_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6837_2(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6837_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_la7hkt_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_la7hkt_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6837_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_la7hkt_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "arguments:");
-    editorCell.setCellId("Constant_6837_0");
+    editorCell.setCellId("Constant_la7hkt_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6837_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_la7hkt_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_6837_1");
+    editorCell.setCellId("Constant_la7hkt_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -74,16 +74,16 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6837_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_la7hkt_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "quick fix");
-    editorCell.setCellId("Constant_6837_2");
+    editorCell.setCellId("Constant_la7hkt_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6837_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_la7hkt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_6837_3");
+    editorCell.setCellId("Constant_la7hkt_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -92,9 +92,9 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6837_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_la7hkt_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_6837_4");
+    editorCell.setCellId("Constant_la7hkt_g0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -103,15 +103,15 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6837_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new TypesystemQuickFix_Editor.quickFixArgumentListHandler_6837_0(node, "quickFixArgument", editorContext);
+  private EditorCell createRefNodeList_la7hkt_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new TypesystemQuickFix_Editor.quickFixArgumentListHandler_la7hkt_d0(node, "quickFixArgument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_quickFixArgument");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createProperty_6837_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_la7hkt_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -129,7 +129,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6837_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_la7hkt_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("executeBlock");
     provider.setNoTargetText("<no executeBlock>");
@@ -146,7 +146,7 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6837_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_la7hkt_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("descriptionBlock");
     provider.setNoTargetText("<no descriptionBlock>");
@@ -163,8 +163,8 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class quickFixArgumentListHandler_6837_0 extends RefNodeListHandler {
-    public quickFixArgumentListHandler_6837_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class quickFixArgumentListHandler_la7hkt_d0 extends RefNodeListHandler {
+    public quickFixArgumentListHandler_la7hkt_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

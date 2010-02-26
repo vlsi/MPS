@@ -24,30 +24,30 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5489_0(editorContext, node);
+    return this.createCollection_mnefyf_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5489_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_mnefyf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5489_0");
-    editorCell.addEditorCell(this.createConstant_5489_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5489_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5489_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_5489_0(editorContext, node));
+    editorCell.setCellId("Collection_mnefyf_a");
+    editorCell.addEditorCell(this.createConstant_mnefyf_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_mnefyf_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mnefyf_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_mnefyf_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5489_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mnefyf_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "var reference");
-    editorCell.setCellId("Constant_5489_0");
+    editorCell.setCellId("Constant_mnefyf_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5489_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mnefyf_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "has var decl role");
-    editorCell.setCellId("Constant_5489_1");
+    editorCell.setCellId("Constant_mnefyf_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -57,7 +57,7 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5489_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_mnefyf_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("conceptReference");
     provider.setNoTargetText("<no conceptReference>");
@@ -75,12 +75,12 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_5489_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_mnefyf_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("link");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SimpleRule_VarRef_Editor._Inline5489_0());
+    provider.setAuxiliaryCellProvider(new SimpleRule_VarRef_Editor._Inline_mnefyf_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -93,8 +93,8 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline5489_0 extends InlineCellProvider {
-    public _Inline5489_0() {
+  public static class _Inline_mnefyf_a3a extends InlineCellProvider {
+    public _Inline_mnefyf_a3a() {
       super();
     }
 
@@ -103,10 +103,10 @@ public class SimpleRule_VarRef_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_5489_0(editorContext, node);
+      return this.createProperty_mnefyf_a0d0(editorContext, node);
     }
 
-    private EditorCell createProperty_5489_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_mnefyf_a0d0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
       provider.setNoTargetText("<no role>");

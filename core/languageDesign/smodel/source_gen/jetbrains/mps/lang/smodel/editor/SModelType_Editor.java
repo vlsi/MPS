@@ -15,12 +15,12 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class SModelType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_8660_0(editorContext, node);
+    return this.createConstant_t3o53y_a(editorContext, node);
   }
 
-  private EditorCell createConstant_8660_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_t3o53y_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model");
-    editorCell.setCellId("Constant_8660_0");
+    editorCell.setCellId("Constant_t3o53y_a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();

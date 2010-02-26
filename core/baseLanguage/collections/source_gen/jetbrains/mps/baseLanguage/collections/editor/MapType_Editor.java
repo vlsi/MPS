@@ -21,40 +21,40 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class MapType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4714_0(editorContext, node);
+    return this.createCollection_y21z1n_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4714_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_y21z1n_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4714_0");
-    editorCell.addEditorCell(this.createConceptProperty_4714_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4714_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4714_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4714_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4714_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4714_1(editorContext, node));
+    editorCell.setCellId("Collection_y21z1n_a");
+    editorCell.addEditorCell(this.createConceptProperty_y21z1n_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y21z1n_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_y21z1n_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y21z1n_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_y21z1n_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_y21z1n_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4714_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_y21z1n_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_4714_0");
+    editorCell.setCellId("Constant_y21z1n_b0");
     Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4714_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_y21z1n_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_4714_1");
+    editorCell.setCellId("Constant_y21z1n_f0");
     Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4714_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_y21z1n_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_4714_2");
+    editorCell.setCellId("Constant_y21z1n_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -63,7 +63,7 @@ public class MapType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4714_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_y21z1n_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("keyType");
     provider.setNoTargetText("<no keyType>");
@@ -80,7 +80,7 @@ public class MapType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4714_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_y21z1n_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("valueType");
     provider.setNoTargetText("<no valueType>");
@@ -97,7 +97,7 @@ public class MapType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_4714_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_y21z1n_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

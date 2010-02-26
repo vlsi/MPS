@@ -14,17 +14,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AbstractEnumeratorOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0283_0(editorContext, node);
+    return this.createCollection_46xx91_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0283_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_46xx91_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0283_0");
-    editorCell.addEditorCell(this.createConceptProperty_0283_0(editorContext, node));
+    editorCell.setCellId("Collection_46xx91_a");
+    editorCell.addEditorCell(this.createConceptProperty_46xx91_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_0283_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_46xx91_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

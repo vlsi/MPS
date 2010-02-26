@@ -18,20 +18,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SmartClosureParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7207_0(editorContext, node);
+    return this.createCollection_k18eec_a(editorContext, node);
   }
 
-  private EditorCell createCollection_7207_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_k18eec_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7207_0");
-    editorCell.addEditorCell(this.createConstant_7207_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7207_0(editorContext, node));
+    editorCell.setCellId("Collection_k18eec_a");
+    editorCell.addEditorCell(this.createConstant_k18eec_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_k18eec_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7207_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_k18eec_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "~");
-    editorCell.setCellId("Constant_7207_0");
+    editorCell.setCellId("Constant_k18eec_a0");
     BaseLanguageStyle_StyleSheet.getParameter(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -42,7 +42,7 @@ public class SmartClosureParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_7207_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_k18eec_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

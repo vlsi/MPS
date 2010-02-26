@@ -14,12 +14,12 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class LinkList_RemoveAllChildrenOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_9398_0(editorContext, node);
+    return this.createConstant_vpuwq5_a(editorContext, node);
   }
 
-  private EditorCell createConstant_9398_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vpuwq5_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove all");
-    editorCell.setCellId("Constant_9398_0");
+    editorCell.setCellId("Constant_vpuwq5_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, true);

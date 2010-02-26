@@ -21,22 +21,22 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2114_0(editorContext, node);
+    return this.createCollection_be8v21_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2114_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_be8v21_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2114_0");
-    editorCell.addEditorCell(this.createConstant_2114_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2114_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2114_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_2114_0(editorContext, node));
+    editorCell.setCellId("Collection_be8v21_a");
+    editorCell.addEditorCell(this.createConstant_be8v21_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_be8v21_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_be8v21_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_be8v21_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2114_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_be8v21_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "aggregation");
-    editorCell.setCellId("Constant_2114_0");
+    editorCell.setCellId("Constant_be8v21_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -46,9 +46,9 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createConstant_2114_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_be8v21_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "target concept:");
-    editorCell.setCellId("Constant_2114_1");
+    editorCell.setCellId("Constant_be8v21_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -58,7 +58,7 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createProperty_2114_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_be8v21_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -80,12 +80,12 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  private EditorCell createRefCell_2114_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_be8v21_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("targetType");
     provider.setNoTargetText("<no target type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AggregationConceptLinkDeclaration_Editor._Inline2114_0());
+    provider.setAuxiliaryCellProvider(new AggregationConceptLinkDeclaration_Editor._Inline_be8v21_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -98,8 +98,8 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public static class _Inline2114_0 extends InlineCellProvider {
-    public _Inline2114_0() {
+  public static class _Inline_be8v21_a3a extends InlineCellProvider {
+    public _Inline_be8v21_a3a() {
       super();
     }
 
@@ -108,10 +108,10 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_2114_1(editorContext, node);
+      return this.createProperty_be8v21_a0d0(editorContext, node);
     }
 
-    private EditorCell createProperty_2114_1(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_be8v21_a0d0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

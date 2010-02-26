@@ -18,10 +18,10 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class NoArgumentsSequenceOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConceptProperty_1243_0(editorContext, node);
+    return this.createConceptProperty_6d3m25_a(editorContext, node);
   }
 
-  private EditorCell createConceptProperty_1243_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_6d3m25_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -34,7 +34,7 @@ public class NoArgumentsSequenceOperation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.EDITABLE, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new NoArgumentsSequenceOperation_Editor.NoArgumentsSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new NoArgumentsSequenceOperation_Editor.NoArgumentsSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -45,8 +45,8 @@ public class NoArgumentsSequenceOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class NoArgumentsSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public NoArgumentsSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu0() {
+  public static class NoArgumentsSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public NoArgumentsSequenceOperation_Editor_replaceWith_SequenceOperation_cellMenu_a0a() {
     }
 
     public String getReplacementConceptName() {

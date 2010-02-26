@@ -15,33 +15,33 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ExpressionContainer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2925_0(editorContext, node);
+    return this.createCollection_pye9rl_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2925_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_pye9rl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2925_0");
-    editorCell.addEditorCell(this.createConstant_2925_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2925_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2925_1(editorContext, node));
+    editorCell.setCellId("Collection_pye9rl_a");
+    editorCell.addEditorCell(this.createConstant_pye9rl_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_pye9rl_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pye9rl_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2925_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pye9rl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_2925_0");
+    editorCell.setCellId("Constant_pye9rl_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2925_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pye9rl_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_2925_1");
+    editorCell.setCellId("Constant_pye9rl_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_2925_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pye9rl_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

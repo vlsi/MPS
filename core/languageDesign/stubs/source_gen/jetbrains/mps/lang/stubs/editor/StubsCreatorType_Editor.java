@@ -22,22 +22,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class StubsCreatorType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0421_0(editorContext, node);
+    return this.createCollection_p622c5_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0421_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_p622c5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0421_0");
-    editorCell.addEditorCell(this.createConstant_0421_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0421_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_0421_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0421_1(editorContext, node));
+    editorCell.setCellId("Collection_p622c5_a");
+    editorCell.addEditorCell(this.createConstant_p622c5_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_p622c5_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_p622c5_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_p622c5_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0421_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_p622c5_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stubCreator");
-    editorCell.setCellId("Constant_0421_0");
+    editorCell.setCellId("Constant_p622c5_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -47,9 +47,9 @@ public class StubsCreatorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0421_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_p622c5_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_0421_1");
+    editorCell.setCellId("Constant_p622c5_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -58,9 +58,9 @@ public class StubsCreatorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0421_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_p622c5_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_0421_2");
+    editorCell.setCellId("Constant_p622c5_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -70,12 +70,12 @@ public class StubsCreatorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_0421_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_p622c5_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("creatorDeclaration");
     provider.setNoTargetText("<no creatorDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StubsCreatorType_Editor._Inline0421_0());
+    provider.setAuxiliaryCellProvider(new StubsCreatorType_Editor._Inline_p622c5_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -88,8 +88,8 @@ public class StubsCreatorType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0421_0 extends InlineCellProvider {
-    public _Inline0421_0() {
+  public static class _Inline_p622c5_a2a extends InlineCellProvider {
+    public _Inline_p622c5_a2a() {
       super();
     }
 
@@ -98,10 +98,10 @@ public class StubsCreatorType_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0421_0(editorContext, node);
+      return this.createProperty_p622c5_a0c0(editorContext, node);
     }
 
-    private EditorCell createProperty_0421_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_p622c5_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

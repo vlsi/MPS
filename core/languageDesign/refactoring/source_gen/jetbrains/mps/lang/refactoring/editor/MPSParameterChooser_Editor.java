@@ -19,53 +19,53 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MPSParameterChooser_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5978_0(editorContext, node);
+    return this.createCollection_ah44qd_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5978_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ah44qd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5978_0");
+    editorCell.setCellId("Collection_ah44qd_a");
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createCollection_5978_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5978_2(editorContext, node));
-    if (renderingCondition5978_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_5978_0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_ah44qd_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_ah44qd_b0(editorContext, node));
+    if (renderingCondition_ah44qd_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_ah44qd_c0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefNode_5978_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ah44qd_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5978_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ah44qd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5978_1");
-    editorCell.addEditorCell(this.createConstant_5978_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5978_1(editorContext, node));
+    editorCell.setCellId("Collection_ah44qd_a0");
+    editorCell.addEditorCell(this.createConstant_ah44qd_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ah44qd_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5978_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ah44qd_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5978_2");
-    editorCell.addEditorCell(this.createConstant_5978_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5978_0(editorContext, node));
+    editorCell.setCellId("Collection_ah44qd_b0");
+    editorCell.addEditorCell(this.createConstant_ah44qd_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_ah44qd_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5978_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ah44qd_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type:");
-    editorCell.setCellId("Constant_5978_0");
+    editorCell.setCellId("Constant_ah44qd_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5978_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ah44qd_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "title:");
-    editorCell.setCellId("Constant_5978_1");
+    editorCell.setCellId("Constant_ah44qd_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_5978_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ah44qd_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("initialValueBlock");
     provider.setNoTargetText("<no initialValueBlock>");
@@ -82,7 +82,7 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5978_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ah44qd_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("paramType");
     provider.setNoTargetText("<no paramType>");
@@ -99,7 +99,7 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_5978_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ah44qd_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("title");
     provider.setNoTargetText("<no title>");
@@ -117,7 +117,7 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5978_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ah44qd_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("filterBlock");
     provider.setNoTargetText("<no filter>");
@@ -134,7 +134,7 @@ public class MPSParameterChooser_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition5978_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ah44qd_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "paramType", true), "jetbrains.mps.lang.refactoring.structure.ModelMPSParameterType") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "paramType", true), "jetbrains.mps.lang.refactoring.structure.ModuleMPSParameterType"));
   }
 }
