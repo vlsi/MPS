@@ -10,28 +10,28 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 import java.util.regex.Matcher;
 
 public class Match_Test extends TestCase {
-  private static Pattern REGEXP15 = Pattern.compile("c{3,}", 0);
-  private static Pattern REGEXP16 = Pattern.compile("c{3,}", 0);
-  private static Pattern REGEXP17 = Pattern.compile("\\w\\w", 0);
-  private static Pattern REGEXP18 = Pattern.compile("(\\w\\w)\\1", 0);
-  private static Pattern REGEXP19 = Pattern.compile(",\\s*", 0);
-  private static Pattern REGEXP20 = Pattern.compile("(\\s*)(?:\\[(\\w+)\\])", 0);
-  private static Pattern REGEXP21 = Pattern.compile("(?:(?:(?:([a-zA-Z_][a-zA-Z_0-9]+))\\[(\\d+)\\])(\\w+))", 0);
-  private static Pattern REGEXP22 = Pattern.compile("!\\s*(\\w+)", 0);
-  private static Pattern REGEXP23 = Pattern.compile("([a-f]+)", 0);
+  private static Pattern REGEXP_a0a0a0 = Pattern.compile("c{3,}", 0);
+  private static Pattern REGEXP_a0b0a0 = Pattern.compile("c{3,}", 0);
+  private static Pattern REGEXP_a0a0a1a = Pattern.compile("\\w\\w", 0);
+  private static Pattern REGEXP_a0b0b0 = Pattern.compile("(\\w\\w)\\1", 0);
+  private static Pattern REGEXP_a0a0a2a = Pattern.compile(",\\s*", 0);
+  private static Pattern REGEXP_a1a3a = Pattern.compile("(\\s*)(?:\\[(\\w+)\\])", 0);
+  private static Pattern REGEXP_a0a0f0_0 = Pattern.compile("(?:(?:(?:([a-zA-Z_][a-zA-Z_0-9]+))\\[(\\d+)\\])(\\w+))", 0);
+  private static Pattern REGEXP_a0a0a = Pattern.compile("!\\s*(\\w+)", 0);
+  private static Pattern REGEXP_a0a0a0_0 = Pattern.compile("([a-f]+)", 0);
 
   public void test_find() throws Exception {
-    Assert.assertTrue(REGEXP15.matcher("acccasdawe").find());
-    Assert.assertFalse(REGEXP16.matcher("accasdawe").find());
+    Assert.assertTrue(REGEXP_a0a0a0.matcher("acccasdawe").find());
+    Assert.assertFalse(REGEXP_a0b0a0.matcher("accasdawe").find());
   }
 
   public void test_match() throws Exception {
-    Assert.assertTrue(REGEXP17.matcher("ww").matches());
-    Assert.assertFalse(REGEXP18.matcher("www").matches());
+    Assert.assertTrue(REGEXP_a0a0a1a.matcher("ww").matches());
+    Assert.assertFalse(REGEXP_a0b0b0.matcher("www").matches());
   }
 
   public void test_split() throws Exception {
-    List<String> list = RegexpOperations.split("abc, def, xxyyy", REGEXP19);
+    List<String> list = RegexpOperations.split("abc, def, xxyyy", REGEXP_a0a0a2a);
     Assert.assertEquals(list.size(), 3);
     Assert.assertEquals("abc", list.get(0));
     Assert.assertEquals("def", list.get(1));
@@ -41,7 +41,7 @@ public class Match_Test extends TestCase {
   public void test_refFromRegexps() throws Exception {
     boolean executed = false;
     {
-      Pattern _pattern_0 = REGEXP20;
+      Pattern _pattern_0 = REGEXP_a1a3a;
       Matcher _matcher_0 = _pattern_0.matcher("asdasd [ww]");
       if (_matcher_0.find()) {
         Assert.assertEquals("ww", _matcher_0.group(2));
@@ -58,21 +58,21 @@ public class Match_Test extends TestCase {
   }
 
   public void test_innerRegexps() throws Exception {
-    Matcher _matcher_5236_0;
-    if ((_matcher_5236_0 = REGEXP21.matcher("_123[3]inner")).find()) {
-      Assert.assertEquals("inner", _matcher_5236_0.group(3));
-      Assert.assertEquals("3", _matcher_5236_0.group(2));
-      Assert.assertEquals("_123", _matcher_5236_0.group(1));
+    Matcher _matcher_vwem4m_a0a5a;
+    if ((_matcher_vwem4m_a0a5a = REGEXP_a0a0f0_0.matcher("_123[3]inner")).find()) {
+      Assert.assertEquals("inner", _matcher_vwem4m_a0a5a.group(3));
+      Assert.assertEquals("3", _matcher_vwem4m_a0a5a.group(2));
+      Assert.assertEquals("_123", _matcher_vwem4m_a0a5a.group(1));
     }
   }
 
   public void check(String searchin) {
-    Matcher _matcher_5236_1;
-    Matcher _matcher_5236_2;
-    if ((_matcher_5236_1 = REGEXP22.matcher(searchin)).find()) {
-      Assert.assertEquals("xyz", _matcher_5236_1.group(1));
-    } else if ((_matcher_5236_2 = REGEXP23.matcher(searchin)).find()) {
-      Assert.assertEquals("aaad", _matcher_5236_2.group(1));
+    Matcher _matcher_vwem4m_a0a0;
+    Matcher _matcher_vwem4m_a0a0a;
+    if ((_matcher_vwem4m_a0a0 = REGEXP_a0a0a.matcher(searchin)).find()) {
+      Assert.assertEquals("xyz", _matcher_vwem4m_a0a0.group(1));
+    } else if ((_matcher_vwem4m_a0a0a = REGEXP_a0a0a0_0.matcher(searchin)).find()) {
+      Assert.assertEquals("aaad", _matcher_vwem4m_a0a0a.group(1));
     } else {
       Assert.fail("no match");
     }

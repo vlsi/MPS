@@ -7,40 +7,40 @@ import java.util.regex.Pattern;
 import junit.framework.Assert;
 
 public class Escaping_Test extends TestCase {
-  private static Pattern REGEXP0 = Pattern.compile("(?:(\\[\\w+\\]|\\(\\w+\\)|\\{\\w+\\})+)", 0);
-  private static Pattern REGEXP1 = Pattern.compile("(?:(\\[\\w+\\]|\\(\\w+\\)|\\{\\w+\\})+)", 0);
-  private static Pattern REGEXP2 = Pattern.compile("(?:(\\[\\w+\\]|\\(\\w+\\)|\\{\\w+\\})+)", 0);
-  private static Pattern REGEXP3 = Pattern.compile("(?:(\\[\\w+\\]|\\(\\w+\\)|\\{\\w+\\})+)", 0);
-  private static Pattern REGEXP4 = Pattern.compile("\\s\\\\\\W[\\w\\D]\\b", 0);
-  private static Pattern REGEXP5 = Pattern.compile("[ac-f\\d\\-]", 0);
-  private static Pattern REGEXP6 = Pattern.compile("[1-9\\w&&[^d-f]]", 0);
-  private static Pattern REGEXP7 = Pattern.compile("[\\w&&[^d-f]]", 0);
-  private static Pattern REGEXP8 = Pattern.compile("'\\'\"\\\"", 0);
-  private static Pattern REGEXP9 = Pattern.compile("^(\\w+)\\1$", 0);
-  private static Pattern REGEXP10 = Pattern.compile("^(?:\\w\\w)+$", 0);
-  private static Pattern REGEXP11 = Pattern.compile("^(?:\\w\\w){2,4}$", 0);
-  private static Pattern REGEXP12 = Pattern.compile("^(?:\\w\\w){2,}$", 0);
-  private static Pattern REGEXP13 = Pattern.compile("^(?:\\w\\w){2}$", 0);
+  private static Pattern REGEXP_a0a0a0a = Pattern.compile("(?:(\\[\\w+\\]|\\(\\w+\\)|\\{\\w+\\})+)", 0);
+  private static Pattern REGEXP_a0a1a0a = Pattern.compile("(?:(\\[\\w+\\]|\\(\\w+\\)|\\{\\w+\\})+)", 0);
+  private static Pattern REGEXP_a0a2a0a = Pattern.compile("(?:(\\[\\w+\\]|\\(\\w+\\)|\\{\\w+\\})+)", 0);
+  private static Pattern REGEXP_a0a3a0a = Pattern.compile("(?:(\\[\\w+\\]|\\(\\w+\\)|\\{\\w+\\})+)", 0);
+  private static Pattern REGEXP_a0a0b0 = Pattern.compile("\\s\\\\\\W[\\w\\D]\\b", 0);
+  private static Pattern REGEXP_a0a0c0 = Pattern.compile("[ac-f\\d\\-]", 0);
+  private static Pattern REGEXP_a0a0d0 = Pattern.compile("[1-9\\w&&[^d-f]]", 0);
+  private static Pattern REGEXP_a0a0e0 = Pattern.compile("[\\w&&[^d-f]]", 0);
+  private static Pattern REGEXP_a0a0f0 = Pattern.compile("'\\'\"\\\"", 0);
+  private static Pattern REGEXP_a0a0g0 = Pattern.compile("^(\\w+)\\1$", 0);
+  private static Pattern REGEXP_a0a0h0 = Pattern.compile("^(?:\\w\\w)+$", 0);
+  private static Pattern REGEXP_a0a0i0 = Pattern.compile("^(?:\\w\\w){2,4}$", 0);
+  private static Pattern REGEXP_a0a0j0 = Pattern.compile("^(?:\\w\\w){2,}$", 0);
+  private static Pattern REGEXP_a0a0k0 = Pattern.compile("^(?:\\w\\w){2}$", 0);
 
   public void test_escapeInLiteral() throws Exception {
-    Assert.assertTrue(REGEXP0.matcher("[asdsa]").matches());
-    Assert.assertTrue(REGEXP1.matcher("(asdsa)").matches());
-    Assert.assertTrue(REGEXP2.matcher("{qq}").matches());
-    Assert.assertFalse(REGEXP3.matcher("s{qq}").matches());
+    Assert.assertTrue(REGEXP_a0a0a0a.matcher("[asdsa]").matches());
+    Assert.assertTrue(REGEXP_a0a1a0a.matcher("(asdsa)").matches());
+    Assert.assertTrue(REGEXP_a0a2a0a.matcher("{qq}").matches());
+    Assert.assertFalse(REGEXP_a0a3a0a.matcher("s{qq}").matches());
   }
 
   public void test_testPredefined() throws Exception {
-    Pattern p = REGEXP4;
+    Pattern p = REGEXP_a0a0b0;
     Assert.assertEquals("\\s\\\\\\W[\\w\\D]\\b", p.pattern());
   }
 
   public void test_range1() throws Exception {
-    Pattern p = REGEXP5;
+    Pattern p = REGEXP_a0a0c0;
     Assert.assertEquals("[ac-f\\d\\-]", p.pattern());
   }
 
   public void test_rangeIntersection() throws Exception {
-    Pattern p = REGEXP6;
+    Pattern p = REGEXP_a0a0d0;
     Assert.assertEquals("[1-9\\w&&[^d-f]]", p.pattern());
     Assert.assertTrue(p.matcher("1").matches());
     Assert.assertTrue(p.matcher("a").matches());
@@ -49,46 +49,46 @@ public class Escaping_Test extends TestCase {
   }
 
   public void test_rangeIntersectionSimple() throws Exception {
-    Pattern p = REGEXP7;
+    Pattern p = REGEXP_a0a0e0;
     Assert.assertEquals("[\\w&&[^d-f]]", p.pattern());
   }
 
   public void test_testStringLiteral() throws Exception {
-    Pattern p = REGEXP8;
+    Pattern p = REGEXP_a0a0f0;
     Assert.assertEquals("'\\'\"\\\"", p.pattern());
     Assert.assertTrue(p.matcher("''\"\"").matches());
   }
 
   public void test_testBackref() throws Exception {
-    Pattern p = REGEXP9;
+    Pattern p = REGEXP_a0a0g0;
     Assert.assertEquals("^(\\w+)\\1$", p.pattern());
     Assert.assertTrue(p.matcher("kbbbwkbbbw").matches());
     Assert.assertFalse(p.matcher("kbbbwkbbw").matches());
   }
 
   public void test_testAutoBrackets() throws Exception {
-    Pattern p = REGEXP10;
+    Pattern p = REGEXP_a0a0h0;
     Assert.assertEquals("^(?:\\w\\w)+$", p.pattern());
     Assert.assertTrue(p.matcher("bwbb").matches());
     Assert.assertFalse(p.matcher("bbb").matches());
   }
 
   public void test_testAutoBrackets24() throws Exception {
-    Pattern p = REGEXP11;
+    Pattern p = REGEXP_a0a0i0;
     Assert.assertEquals("^(?:\\w\\w){2,4}$", p.pattern());
     Assert.assertTrue(p.matcher("bwbbbb").matches());
     Assert.assertFalse(p.matcher("bbaabbaacc").matches());
   }
 
   public void test_testAutoBrackets2ormore() throws Exception {
-    Pattern p = REGEXP12;
+    Pattern p = REGEXP_a0a0j0;
     Assert.assertEquals("^(?:\\w\\w){2,}$", p.pattern());
     Assert.assertTrue(p.matcher("bwbb").matches());
     Assert.assertFalse(p.matcher("bb").matches());
   }
 
   public void test_testAutoBrackets2exactly() throws Exception {
-    Pattern p = REGEXP13;
+    Pattern p = REGEXP_a0a0k0;
     Assert.assertEquals("^(?:\\w\\w){2}$", p.pattern());
     Assert.assertTrue(p.matcher("bwbb").matches());
     Assert.assertFalse(p.matcher("bb").matches());
