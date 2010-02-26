@@ -28,9 +28,7 @@ public class StatementList_DataFlow extends DataFlowBuilder {
     if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "statement", true)).isNotEmpty()) {
       SNode methodLike = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
       if ((methodLike != null)) {
-        if (IMethodLike_Behavior.call_getBody_1239354440022(methodLike) == _context.getNode()) {
-          lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(methodLike);
-        }
+        lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(methodLike);
       }
     }
     for (SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {

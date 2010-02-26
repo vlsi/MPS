@@ -46,13 +46,16 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="9026942911488987238" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9026942911488986363" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9026942911488986364">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="9026942911488987239" />
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9026942911488988029">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="9026942911488988030">
-            <property name="value:3" value="3" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="2432385533254735854">
+          <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2432385533254735855">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2432385533254874877">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2432385533254874878">
+                <property name="value:3" value="2" />
+              </node>
+            </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="9026942911488988031" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="2432385533254872007" />
       </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9026942911488986356" />

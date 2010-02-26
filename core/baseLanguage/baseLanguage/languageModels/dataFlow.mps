@@ -396,33 +396,18 @@
             </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4447433352191878441">
               <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4447433352191878442">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4447433352191878471">
-                  <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4447433352191878472">
-                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4447433352191878502">
-                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="4447433352191878504">
-                        <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4447433352191878508">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4447433352191878507">
-                            <link role="variableDeclaration:3" targetNodeId="4447433352191878463" resolveInfo="methodLike" />
-                          </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4447433352191878512">
-                            <link role="baseMethodDeclaration:16" targetNodeId="6.1239354409446" resolveInfo="getLastStatement" />
-                          </node>
-                        </node>
-                        <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4447433352191878503">
-                          <link role="variableDeclaration:3" targetNodeId="4447433352191878498" resolveInfo="lastStatement" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="4447433352191878481">
-                    <node role="rightExpression:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="4447433352191878484" />
-                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4447433352191878476">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4447433352191878475">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4447433352191878502">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="4447433352191878504">
+                    <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4447433352191878508">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4447433352191878507">
                         <link role="variableDeclaration:3" targetNodeId="4447433352191878463" resolveInfo="methodLike" />
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4447433352191878480">
-                        <link role="baseMethodDeclaration:16" targetNodeId="6.1239354440022" resolveInfo="getBody" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4447433352191878512">
+                        <link role="baseMethodDeclaration:16" targetNodeId="6.1239354409446" resolveInfo="getLastStatement" />
                       </node>
+                    </node>
+                    <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4447433352191878503">
+                      <link role="variableDeclaration:3" targetNodeId="4447433352191878498" resolveInfo="lastStatement" />
                     </node>
                   </node>
                 </node>
