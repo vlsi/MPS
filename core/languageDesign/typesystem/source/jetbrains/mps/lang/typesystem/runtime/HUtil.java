@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
+import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
@@ -52,7 +53,7 @@ public class HUtil {
       SNode copy = CopyUtil.copy(node, new HashMap<SNode, SNode>(), false);
 
       if (typeCheckingContext != null) {
-        if (BaseAdapter.isInstance(copy, RuntimeTypeVariable.class)) {
+        if (isRuntimeTypeVariable(copy)) {
           typeCheckingContext.registerTypeVariable(copy);
         }
       }
@@ -64,6 +65,13 @@ public class HUtil {
 
   public static IMatchingPattern createMatchingPatternByConceptFQName(final String conceptFQName) {
     return new ConceptMatchingPattern(conceptFQName);
+  }
+
+  public static boolean isRuntimeTypeVariable(SNode node) {
+    if (node == null) return false;
+    String conceptFqName = node.getConceptFqName();
+    return RuntimeTypeVariable.concept.equals(conceptFqName)
+      || RuntimeErrorType.concept.equals(conceptFqName);
   }
 
 }

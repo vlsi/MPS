@@ -22,6 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.Toolkit;
@@ -203,7 +204,7 @@ public class CopyPasteUtil {
       } else {
         //otherwise it points out of our node's subtree
         //prefer resolveInfo over direct reference
-        if (BaseAdapter.isInstance(newSourceNode, IMethodCall.class) && oldTargetNode != null) {
+        if (SNodeOperations.isInstanceOf(newSourceNode, IMethodCall.concept) && oldTargetNode != null) {
           // hack: handle ref to methods in a special manner
           newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else {

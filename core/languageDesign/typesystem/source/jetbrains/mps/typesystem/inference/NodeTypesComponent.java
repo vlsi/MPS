@@ -456,7 +456,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
       SNode term = contextEntry.getKey();
       if (term == null) continue;
       SNode type = expandTypeAndPutToContext(term);
-      if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
+      if (type != null && (RuntimeErrorType.concept.equals(type.getConceptFqName()))) {
         RuntimeErrorType errorType = (RuntimeErrorType) BaseAdapter.fromNode(type);
         reportTypeError(term, errorType.getErrorText(), errorType.getNodeModel(), errorType.getNodeId());
       }

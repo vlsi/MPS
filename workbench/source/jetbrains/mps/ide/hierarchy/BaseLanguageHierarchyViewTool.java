@@ -23,6 +23,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -95,7 +96,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView<Classif
       for (SReference usage : usages) {
         SNode sourceNode = usage.getSourceNode();
         if (ClassifierType.CLASSIFIER.equals(usage.getRole())) {
-          if (BaseAdapter.isInstance(sourceNode, ClassifierType.class)) {
+          if (SNodeOperations.isInstanceOf(sourceNode, ClassifierType.concept)) {
             ClassifierType classifierType = (ClassifierType) sourceNode.getAdapter();
             if (classifierType.getParent() instanceof ClassConcept && ClassConcept.SUPERCLASS.equals(classifierType.getRole_())) {
               result.add((Classifier) classifierType.getParent());
@@ -110,7 +111,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView<Classif
         }
 
         if (AnonymousClass.CLASSIFIER.equals(usage.getRole())) {
-          if (BaseAdapter.isInstance(sourceNode, AnonymousClass.class)) {
+          if (SNodeOperations.isInstanceOf(sourceNode, AnonymousClass.concept)) {
             AnonymousClass anonymousClass = (AnonymousClass) sourceNode.getAdapter();
             result.add(anonymousClass);
           }

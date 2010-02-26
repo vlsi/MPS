@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -48,7 +49,7 @@ public class TypeVarScope extends SearchScopeWithNode {
     StatementList statementList = BaseAdapter.fromNode(getEnclosingNode()).getParent(StatementList.class);
     if (statementList != null) {
       Statement currentStatement;
-      if (BaseAdapter.isInstance(myCurrentNode, Statement.class)) {
+      if (SNodeOperations.isInstanceOf(myCurrentNode, Statement.concept)) {
         currentStatement = (Statement) BaseAdapter.fromNode(myCurrentNode);
       } else {
         currentStatement = BaseAdapter.fromNode(getEnclosingNode()).getParent(Statement.class);

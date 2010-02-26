@@ -100,7 +100,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         public void visitReferenceEvent(SModelReferenceEvent event) {
           SReference reference = event.getReference();
           SNode sourceNode = reference.getSourceNode();
-          if (BaseAdapter.isInstance(sourceNode, IMethodCall.class) &&
+          if (SNodeOperations.isInstanceOf(sourceNode, IMethodCall.concept) &&
             IMethodCall.BASE_METHOD_DECLARATION.equals(reference.getRole())) {
             methodCallDeclarationChanged(sourceNode, reResolvedTargets);
           }
@@ -108,7 +108,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
         public void visitPropertyEvent(SModelPropertyEvent event) {
           SNode node = event.getNode();
-          if (BaseAdapter.isInstance(node, BaseMethodDeclaration.class)) {
+          if (SNodeOperations.isInstanceOf(node, BaseMethodDeclaration.concept)) {
             if (BaseMethodDeclaration.NAME.equals(event.getPropertyName())) {
               methodDeclarationNameChanged(node, reResolvedTargets);
               methodDeclarationSignatureChanged(node, reResolvedTargets);

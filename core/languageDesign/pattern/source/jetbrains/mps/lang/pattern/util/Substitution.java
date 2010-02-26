@@ -20,6 +20,8 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.pattern.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
+import jetbrains.mps.lang.smodel.structure.SNodeOperation;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 
@@ -57,9 +59,10 @@ public class Substitution {
   private void goInsideList_internal(SNode attributedNode, HashSet loopVarSet) {
     for (AttributeConcept patternVar : (List<AttributeConcept>) (List) attributedNode.getDescendants(new Condition<SNode>() {
       public boolean met(SNode object) {
-        return BaseAdapter.isInstance(object, PatternVariableDeclaration.class) ||
-          BaseAdapter.isInstance(object, LinkPatternVariableDeclaration.class) ||
-          BaseAdapter.isInstance(object, PropertyPatternVariableDeclaration.class);
+        return
+        SNodeOperations.isInstanceOf(object, PatternVariableDeclaration.concept) ||
+        SNodeOperations.isInstanceOf(object, LinkPatternVariableDeclaration.concept) ||
+        SNodeOperations.isInstanceOf(object, PropertyPatternVariableDeclaration.concept);
       }
     })) {
       loopVarSet.add(patternVar);

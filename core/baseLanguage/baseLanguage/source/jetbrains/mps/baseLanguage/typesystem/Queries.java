@@ -20,6 +20,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 import java.util.Set;
 
@@ -39,8 +40,10 @@ public class Queries {
       assert javaLangJavaStubModelDescriptor != null;
       SModel javaLang = javaLangJavaStubModelDescriptor.getSModel();
       INodeAdapter stringClass = javaLang.getRootAdapterByName("String");
-      if (BaseAdapter.isInstance(leftType, ClassifierType.class) && ((ClassifierType) BaseAdapter.fromNode(leftType)).getClassifier() == stringClass
-        || BaseAdapter.isInstance(rightType, ClassifierType.class) && ((ClassifierType) BaseAdapter.fromNode(rightType)).getClassifier() == stringClass) {
+      if (SNodeOperations.isInstanceOf(leftType, ClassifierType.concept) &&
+        ((ClassifierType) BaseAdapter.fromNode(leftType)).getClassifier() == stringClass
+        || SNodeOperations.isInstanceOf(rightType, ClassifierType.concept) &&
+        ((ClassifierType) BaseAdapter.fromNode(rightType)).getClassifier() == stringClass) {
         ClassifierType classifierType = ClassifierType.newInstance(runtimeTypesModel);
         classifierType.setClassifier((Classifier) stringClass);
         return classifierType.getNode();

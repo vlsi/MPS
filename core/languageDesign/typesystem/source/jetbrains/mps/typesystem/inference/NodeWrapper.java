@@ -18,6 +18,7 @@ package jetbrains.mps.typesystem.inference;
 import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeListVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeHoleType;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
@@ -91,7 +92,7 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
 
         IMatchModifier matchModifier = new IMatchModifier() {
           public boolean accept(SNode node1, SNode node2) {
-            return BaseAdapter.isInstance(node1, RuntimeTypeVariable.class);
+            return HUtil.isRuntimeTypeVariable(node1);
           }
 
           public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
@@ -131,12 +132,23 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
       final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
       boolean b = MatchingUtil.matchNodes(getNode(), wrapper.getNode(), new IMatchModifier() {
         public boolean accept(SNode node1, SNode node2) {
-          return BaseAdapter.isInstance(node1, RuntimeTypeVariable.class) || BaseAdapter.isInstance(node2, RuntimeTypeVariable.class);
+          return HUtil.isRuntimeTypeVariable(node1) || HUtil.isRuntimeTypeVariable(node2);
         }
 
         public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
-          return (!nodes1.isEmpty() && BaseAdapter.isInstance(nodes1.get(0), RuntimeListVariable.class))
-            || (!nodes2.isEmpty() && BaseAdapter.isInstance(nodes2.get(0), RuntimeListVariable.class));
+          if (!nodes1.isEmpty()) {
+            SNode node1 = nodes1.get(0);
+            if (node1 != null && RuntimeListVariable.concept.equals(node1.getConceptFqName())) {
+              return true;
+            }
+          }
+          if (!nodes2.isEmpty()) {
+            SNode node2 = nodes2.get(0);
+            if (node2 != null && RuntimeListVariable.concept.equals(node2.getConceptFqName())) {
+              return true;
+            }
+          }
+          return false;
         }
 
         public void performAction(SNode node1, SNode node2) {
@@ -145,27 +157,35 @@ public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
 
         public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
           if (equationManager == null) return;
-          if (!nodes1.isEmpty() && BaseAdapter.isInstance(nodes1.get(0), RuntimeListVariable.class)) {
-            SNode var = nodes1.get(0);
-            SNode parent = var.getParent();
-            String role = var.getRole_();
-            if (role == null) return;
-            parent.removeChild(var);
-            for (SNode node : nodes2) {
-              SNode runtimeTypesVariable = equationManager.getTypeCheckingContext().createNewRuntimeTypesVariable();
-              parent.addChild(role, runtimeTypesVariable);
-              childEQs.add(new Pair<SNode, SNode>(runtimeTypesVariable, node));
+          if (!nodes1.isEmpty()) {
+            SNode node1 = nodes1.get(0);
+            if (node1 != null && RuntimeListVariable.concept.equals(node1.getConceptFqName())) {
+              SNode var = node1;
+              SNode parent = var.getParent();
+              String role = var.getRole_();
+              if (role == null) return;
+              parent.removeChild(var);
+              for (SNode node : nodes2) {
+                SNode runtimeTypesVariable = equationManager.getTypeCheckingContext().createNewRuntimeTypesVariable();
+                parent.addChild(role, runtimeTypesVariable);
+                childEQs.add(new Pair<SNode, SNode>(runtimeTypesVariable, node));
+              }
+              return;
             }
-          } else if (!nodes2.isEmpty() && BaseAdapter.isInstance(nodes2.get(0), RuntimeListVariable.class)) {
-            SNode var = nodes2.get(0);
-            SNode parent = var.getParent();
-            String role = var.getRole_();
-            if (role == null) return;
-            parent.removeChild(var);
-            for (SNode node : nodes1) {
-              SNode runtimeTypesVariable = equationManager.getTypeCheckingContext().createNewRuntimeTypesVariable();
-              parent.addChild(role, runtimeTypesVariable);
-              childEQs.add(new Pair<SNode, SNode>(runtimeTypesVariable, node));
+          }
+          if (!nodes2.isEmpty()) {
+            SNode node2 = nodes2.get(0);
+            if (node2 != null && RuntimeListVariable.concept.equals(node2.getConceptFqName())) {
+              SNode var = node2;
+              SNode parent = var.getParent();
+              String role = var.getRole_();
+              if (role == null) return;
+              parent.removeChild(var);
+              for (SNode node : nodes1) {
+                SNode runtimeTypesVariable = equationManager.getTypeCheckingContext().createNewRuntimeTypesVariable();
+                parent.addChild(role, runtimeTypesVariable);
+                childEQs.add(new Pair<SNode, SNode>(runtimeTypesVariable, node));
+              }
             }
           }
         }

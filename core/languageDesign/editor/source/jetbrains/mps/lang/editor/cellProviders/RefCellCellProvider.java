@@ -66,7 +66,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
       editorCell = inlineComponent.createEditorCell(context);
     } else {
       editorCell = context.createReferentCell(inlineComponent, getSNode(), effectiveNode, myGenuineRole);
-      if (effectiveNode.getAdapter() instanceof IDeprecatable) {
+      if (SNodeOperations.isInstanceOf(effectiveNode, IDeprecatable.concept)) {
         final SNode conceptDeclaration = SNodeOperations.getConceptDeclaration(node);
         Style inlineStyle = new Style(editorCell) {
           {

@@ -527,6 +527,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     };
   }
 
+  @Deprecated
   public static boolean isInstance(SNode node, Class<? extends INodeAdapter> cls) {
     return cls.isInstance(fromNode(node));
   }

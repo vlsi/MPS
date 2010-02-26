@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.lang.core.structure.IType;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -128,7 +129,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
       if (!node.isRoot()) {
         auxModel.addRoot(node);
       }
-      if (BaseAdapter.isInstance(node, IType.class)) {
+      if (SNodeOperations.isInstanceOf(node, IType.concept)) {
         type = node;
       } else {
         type = TypeChecker.getInstance().getTypeOf(node);

@@ -31,6 +31,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeUpdater;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.AndCondition;
@@ -475,7 +476,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       SModel model = getSModel();
       Condition<SNode> condition = new Condition<SNode>() {
         public boolean met(SNode object) {
-          return !(BaseAdapter.fromNode(object) instanceof AttributeConcept);
+          return !(SNodeOperations.isInstanceOf(object, AttributeConcept.concept));
         }
       };
       List<SNode> filteredRoots = CollectionUtil.filter(model.getRoots(), new AndCondition<SNode>(condition, myNodesCondition));

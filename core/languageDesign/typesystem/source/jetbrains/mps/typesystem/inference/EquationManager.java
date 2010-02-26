@@ -22,6 +22,7 @@ import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
@@ -1426,7 +1427,7 @@ public class EquationManager {
     for (SNode child : children) {
       SNode newChild = expandNode(term, NodeWrapper.createWrapperFromNode(child, this),
         representator, depth + 1, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
-      if (finalExpansion && BaseAdapter.isInstance(newChild, RuntimeTypeVariable.class)) {
+      if (finalExpansion && HUtil.isRuntimeTypeVariable(newChild)) {
         newChild = convertChildVariable(node, child.getRole_(), newChild);
       }
       if (newChild != child) {
@@ -1452,12 +1453,12 @@ public class EquationManager {
     List<SReference> references = new ArrayList<SReference>(wrapper.getNode().getReferences());
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();
-      if (BaseAdapter.isInstance(oldNode, RuntimeTypeVariable.class)) {
+      if (HUtil.isRuntimeTypeVariable(oldNode)) {
         NodeWrapper nodeWrapper = expandNode(term, NodeWrapper.createWrapperFromNode(oldNode, this), representator,
           depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent, false);
         SNode newNode = nodeWrapper == null ? null : nodeWrapper.getNode();
 
-        if (finalExpansion && BaseAdapter.isInstance(newNode, RuntimeTypeVariable.class)) {
+        if (finalExpansion && HUtil.isRuntimeTypeVariable(newNode)) {
           newNode = convertReferentVariable(node, reference.getRole(), newNode);
         }
 

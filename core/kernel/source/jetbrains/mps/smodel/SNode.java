@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Constructor;
@@ -1654,14 +1655,13 @@ public final class SNode {
   }
 
   public ConceptProperty findConceptProperty(String propertyName) {
-    INodeAdapter node = getAdapter();
-    AbstractConceptDeclaration conceptDeclaration;
-    if (node instanceof AbstractConceptDeclaration) {
-      conceptDeclaration = (AbstractConceptDeclaration) node;
+    SNode conceptDeclaration;
+    if (myConceptFqName.equals(ConceptDeclaration.concept) || myConceptFqName.equals(InterfaceConceptDeclaration.concept)) {
+      conceptDeclaration = this;
     } else {
-      conceptDeclaration = node.getConceptDeclarationAdapter();
+      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
     }
-    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
+    return SModelSearchUtil.findConceptProperty((AbstractConceptDeclaration) conceptDeclaration.getAdapter(), propertyName);
   }
 
   public SNode findChildByPath(String path) {
