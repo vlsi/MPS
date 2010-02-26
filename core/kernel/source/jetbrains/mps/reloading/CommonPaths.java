@@ -38,87 +38,57 @@ public class CommonPaths {
   private static IClassPathItem ourIDEAUtilJar = null;
   private static IClassPathItem ourIDEAxtensionsJar = null;
 
-  //todo remove when migration to stubs is finished
-  private static JarFileClassPathItem findBootstrapJarByName(String name) {
-    for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
-      try {
-        File file = new File(url.toURI());
-
-        if (!file.exists()) continue;
-
-        if (file.getPath().endsWith(name)) {
-          return new JarFileClassPathItem(new FileSystemFile(file));
-        }
-      } catch (URISyntaxException e) {
-        LOG.error(e);
-      } catch (IOException e) {
-        LOG.error(e);
-      }
-    }
-    return null;
+  public static List<String> getJDKPath() {
+    return itemToPath(getJDK());
   }
 
-  //todo remove when migration to stubs is finished
+  public static List<String> getMPSPaths() {
+    return itemToPath(getMPSPath());
+  }
+
+
+  private static List<String> itemToPath(IClassPathItem cp) {
+    List<String> result = new ArrayList<String>();
+    for (IClassPathItem item : cp.flatten()) {
+      if (item instanceof FileClassPathItem) {
+        result.add(((FileClassPathItem) item).getClassPath());
+      } else if (item instanceof JarFileClassPathItem) {
+        result.add(((JarFileClassPathItem) item).getFile().getAbsolutePath());
+      } else {
+        throw new IllegalArgumentException(item.getClass().getName());
+      }
+    }
+
+    return result;
+  }
+
   public static IClassPathItem getJDK() {
     if (ourRTJar == null) {
       CompositeClassPathItem composite = new CompositeClassPathItem();
-      if (!SystemInfo.isMac) {
-        addJarForName(composite, "rt.jar");
-        addJarForName(composite, "jsse.jar");
-        addJarForName(composite, "jce.jar");
-        addJarForName(composite, "charsets.jar");
-      } else {
-        addJarForName(composite, "classes.jar");
-        addJarForName(composite, "jsse.jar");
-        addJarForName(composite, "jce.jar");
-        addJarForName(composite, "charsets.jar");
+      for (String s : getJDKJars()) {
+        addJarForName(composite, s);
       }
       ourRTJar = composite;
     }
     return ourRTJar;
   }
 
-  //todo remove when migration to stubs is finished
-  private static void addJarForName(CompositeClassPathItem composite, String name) {
-    JarFileClassPathItem rtJar = findBootstrapJarByName(name);
-    if (rtJar != null) {
-      composite.add(rtJar);
-    } else {
-      LOG.error("Can't find " + name + ". Make sure you are using JDK 5.0");
-    }
-  }
 
-  private static String getFullJarPathByName(String name) {
-    for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
-      try {
-        File file = new File(url.toURI());
-        if (!file.exists()) continue;
-        if (!file.getPath().endsWith(name)) continue;
-
-        return file.getAbsolutePath();
-      } catch (URISyntaxException e) {
-        LOG.error(e);
-      }
-    }
-    return null;
-  }
-
-  public static List<String> getJDKPath() {
+  public static List<String> getJDKJars() {
     List<String> result = new ArrayList<String>();
 
     if (!SystemInfo.isMac) {
-      result.add(getFullJarPathByName("rt.jar"));
+      result.add("rt.jar");
     } else {
-      result.add(getFullJarPathByName("classes.jar"));
+      result.add("classes.jar");
     }
 
-    result.add(getFullJarPathByName("jsse.jar"));
-    result.add(getFullJarPathByName("jce.jar"));
-    result.add(getFullJarPathByName("charsets.jar"));
+    result.add("jsse.jar");
+    result.add("jce.jar");
+    result.add("charsets.jar");
     return result;
   }
 
-  //todo remove when migration to stubs is finished
   public static IClassPathItem getMPSPath() {
     CompositeClassPathItem result = new CompositeClassPathItem();
     result.add(getBaseMPSClassPath());
@@ -157,16 +127,6 @@ public class CommonPaths {
 
     return result;
   }
-
-  //todo
-  public static List<String> getMPSPaths() {
-    List<String> result = new ArrayList<String>();
-
-
-
-    return result;
-  }
-
 
   private static IClassPathItem getLibraryJars() {
     CompositeClassPathItem cp = new CompositeClassPathItem();
@@ -355,6 +315,49 @@ public class CommonPaths {
     String mpsJarPath = PathManager.getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
     if (new File(mpsJarPath).exists()) {
       return mpsJarPath;
+    }
+    return null;
+  }
+
+  private static JarFileClassPathItem findBootstrapJarByName(String name) {
+    for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
+      try {
+        File file = new File(url.toURI());
+
+        if (!file.exists()) continue;
+
+        if (file.getPath().endsWith(name)) {
+          return new JarFileClassPathItem(new FileSystemFile(file));
+        }
+      } catch (URISyntaxException e) {
+        LOG.error(e);
+      } catch (IOException e) {
+        LOG.error(e);
+      }
+    }
+    return null;
+  }
+
+  private static void addJarForName(CompositeClassPathItem composite, String name) {
+    JarFileClassPathItem rtJar = findBootstrapJarByName(name);
+    if (rtJar != null) {
+      composite.add(rtJar);
+    } else {
+      LOG.error("Can't find " + name + ". Make sure you are using JDK 5.0");
+    }
+  }
+
+  private static String getFullJarPathByName(String name) {
+    for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
+      try {
+        File file = new File(url.toURI());
+        if (!file.exists()) continue;
+        if (!file.getPath().endsWith(name)) continue;
+
+        return file.getAbsolutePath();
+      } catch (URISyntaxException e) {
+        LOG.error(e);
+      }
     }
     return null;
   }

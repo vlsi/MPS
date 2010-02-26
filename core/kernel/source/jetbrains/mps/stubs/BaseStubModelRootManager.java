@@ -66,7 +66,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       } else {
 /*
         if (descriptor instanceof BaseSModelDescriptor) {
-          ((BaseSModelDescriptor) descriptor).setModelRootManager(this);
+          BaseSModelDescriptor baseDescriptor = (BaseSModelDescriptor) descriptor;
+          baseDescriptor.setModelRootManager(this);
         }
 */
 
