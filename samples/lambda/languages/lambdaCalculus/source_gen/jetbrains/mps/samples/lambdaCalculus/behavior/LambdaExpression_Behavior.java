@@ -14,7 +14,7 @@ public class LambdaExpression_Behavior {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"), "function", true) == thisNode) && SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")) {
       return SNodeOperations.cast(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication");
 
-    } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression")) {
+    } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")) {
       return LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"));
     }
     return null;

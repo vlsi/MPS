@@ -805,6 +805,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/javaParser/javaParser.iml" filepath="$PROJECT_DIR$/core/javaParser/javaParser.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/javadoc/javadoc.iml" filepath="$PROJECT_DIR$/core/baseLanguage/javadoc/javadoc.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core/kernel" />
+      <module fileurl="file://$PROJECT_DIR$/samples/lambda/lambda.iml" filepath="$PROJECT_DIR$/samples/lambda/lambda.iml" group="samples" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/logging/logging.iml" filepath="$PROJECT_DIR$/core/baseLanguage/logging/logging.iml" group="core/baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/math/math.iml" filepath="$PROJECT_DIR$/core/baseLanguage/math/math.iml" group="core/baseLanguage/math" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/math/runtime/math-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/math/runtime/math-runtime.iml" group="core/baseLanguage/math" />

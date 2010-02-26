@@ -11,6 +11,10 @@ public class AbstractionVarRef_Behavior {
   }
 
   public static boolean call_isInFull_3851847705188496532(SNode thisNode) {
+    SNode appl = LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "variable", false)), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction"));
+    if (null == appl) {
+      return false;
+    }
     return LambdaApplication_Behavior.call_isFullApplication_1308935328408190838(LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "variable", false)), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction")));
   }
 }

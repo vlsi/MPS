@@ -23,7 +23,7 @@ public class typeof_NumericConstant_InferenceRule extends AbstractInferenceRule_
       SNode _nodeToCheck_1029348928467 = numericConstant;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "4530871765544543924", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "4530871765544543928", true), (SNode) new typeof_NumericConstant_InferenceRule.QuotationClass_4697_0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "4530871765544543928", true), (SNode) new typeof_NumericConstant_InferenceRule.QuotationClass_4r4vxo_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -39,18 +39,18 @@ public class typeof_NumericConstant_InferenceRule extends AbstractInferenceRule_
     return false;
   }
 
-  public static class QuotationClass_4697_0 {
-    public QuotationClass_4697_0() {
+  public static class QuotationClass_4r4vxo_a0a0a0 {
+    public QuotationClass_4r4vxo_a0a0a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4697_0 = null;
+      SNode quotedNode_4r4vxo_a0a0a0 = null;
       {
-        quotedNode_4697_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.NumberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4697_0 = quotedNode_4697_0;
-        result = quotedNode1_4697_0;
+        quotedNode_4r4vxo_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.NumberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4r4vxo_a0a0a0 = quotedNode_4r4vxo_a0a0a0;
+        result = quotedNode1_4r4vxo_a0a0a0;
       }
       return result;
     }
@@ -58,11 +58,11 @@ public class typeof_NumericConstant_InferenceRule extends AbstractInferenceRule_
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4697_0 = null;
+      SNode quotedNode_4r4vxo_a0a0a0 = null;
       {
-        quotedNode_4697_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.NumberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4697_0 = quotedNode_4697_0;
-        result = quotedNode1_4697_0;
+        quotedNode_4r4vxo_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.NumberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4r4vxo_a0a0a0 = quotedNode_4r4vxo_a0a0a0;
+        result = quotedNode1_4r4vxo_a0a0a0;
       }
       return result;
     }

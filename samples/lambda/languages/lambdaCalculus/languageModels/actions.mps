@@ -445,5 +445,43 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="8084891409541502195">
+    <property name="name:23" value="Let_Substitute" />
+    <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="8084891409541502197">
+      <link role="applicableConcept:23" targetNodeId="1.4022026349914659049:0" resolveInfo="LambdaExpression" />
+      <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="8084891409541502200">
+        <link role="concept:23" targetNodeId="1.4939219901991602079:0" resolveInfo="LetExpression" />
+        <node role="part:23" type="jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart:23" id="8084891409541502202">
+          <node role="handler:23" type="jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_Handler:23" id="8084891409541502203">
+            <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8084891409541502204">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8084891409541502206">
+                <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8084891409541502207">
+                  <property name="name:3" value="node" />
+                  <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8084891409541502208">
+                    <link role="concept:16" targetNodeId="1.4939219901991602079:0" resolveInfo="LetExpression" />
+                  </node>
+                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8084891409541502210">
+                    <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="8084891409541502211">
+                      <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8084891409541502212">
+                        <link role="concept:16" targetNodeId="1.4939219901991602079:0" resolveInfo="LetExpression" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8084891409541502214">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8084891409541502216">
+                  <link role="variableDeclaration:3" targetNodeId="8084891409541502207" resolveInfo="node" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText:23" type="jetbrains.mps.lang.actions.structure.Substitute_SimpleString:23" id="8084891409541502205">
+            <property name="text:23" value="let" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

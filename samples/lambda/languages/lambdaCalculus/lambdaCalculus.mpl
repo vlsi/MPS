@@ -16,7 +16,9 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath />
+  <classPath>
+    <entry path="${samples_home}/lambda/classes" include="false" />
+  </classPath>
   <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>

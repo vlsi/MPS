@@ -14,17 +14,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class NumericConstant_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3221_0(editorContext, node);
+    return this.createCollection_o1hcdp_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3221_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_o1hcdp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3221_0");
-    editorCell.addEditorCell(this.createProperty_3221_0(editorContext, node));
+    editorCell.setCellId("Collection_o1hcdp_a");
+    editorCell.addEditorCell(this.createProperty_o1hcdp_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createProperty_3221_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_o1hcdp_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");

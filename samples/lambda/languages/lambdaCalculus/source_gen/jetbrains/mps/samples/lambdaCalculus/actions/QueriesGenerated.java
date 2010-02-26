@@ -57,12 +57,12 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LambdaExpression_3978364766705549166(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.Parenthesis");
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode result = SConceptOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.Parenthesis", null);
+            SNode result = SConceptOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression", null);
             return result;
           }
 
@@ -97,6 +97,31 @@ public class QueriesGenerated {
               return pattern;
             }
             return "0";
+          }
+
+          public String getVisibleMatchingText(String pattern) {
+            return this.getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LambdaExpression_8084891409541502197(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.LetExpression");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode node = SConceptOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.LetExpression", null);
+            return node;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "let";
           }
 
           public String getVisibleMatchingText(String pattern) {

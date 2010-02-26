@@ -25,36 +25,36 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class LambdaAbstraction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2227_0(editorContext, node);
+    return this.createCollection_w093uu_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2227_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_w093uu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2227_0");
-    editorCell.addEditorCell(this.createCollection_2227_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2227_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2227_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2227_3(editorContext, node));
+    editorCell.setCellId("Collection_w093uu_a");
+    editorCell.addEditorCell(this.createCollection_w093uu_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_w093uu_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_w093uu_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_w093uu_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2227_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_w093uu_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2227_1");
+    editorCell.setCellId("Collection_w093uu_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
     }
     Abstraction_Variable_actions.setCellActions(editorCell, node, editorContext);
-    editorCell.addEditorCell(this.createConstant_2227_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_2227_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2227_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_w093uu_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_w093uu_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_w093uu_c0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2227_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_w093uu_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_2227_0");
+    editorCell.setCellId("Constant_w093uu_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -64,9 +64,9 @@ public class LambdaAbstraction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2227_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_w093uu_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\\");
-    editorCell.setCellId("Constant_2227_1");
+    editorCell.setCellId("Constant_w093uu_a0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -75,9 +75,9 @@ public class LambdaAbstraction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2227_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_w093uu_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
-    editorCell.setCellId("Constant_2227_2");
+    editorCell.setCellId("Constant_w093uu_c0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -87,9 +87,9 @@ public class LambdaAbstraction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2227_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_w093uu_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_2227_3");
+    editorCell.setCellId("Constant_w093uu_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.MATCHING_LABEL, "abstractionBody");
@@ -99,8 +99,8 @@ public class LambdaAbstraction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2227_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new LambdaAbstraction_Editor.variableListHandler_2227_0(node, "variable", editorContext);
+  private EditorCell createRefNodeList_w093uu_b0a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new LambdaAbstraction_Editor.variableListHandler_w093uu_b0a(node, "variable", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_variable");
     {
@@ -111,7 +111,7 @@ public class LambdaAbstraction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2227_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_w093uu_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -128,8 +128,8 @@ public class LambdaAbstraction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class variableListHandler_2227_0 extends RefNodeListHandler {
-    public variableListHandler_2227_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class variableListHandler_w093uu_b0a extends RefNodeListHandler {
+    public variableListHandler_w093uu_b0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

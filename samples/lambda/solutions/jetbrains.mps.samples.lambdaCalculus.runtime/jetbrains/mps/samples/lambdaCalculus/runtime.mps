@@ -266,6 +266,15 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1308935328408157903" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1308935328408157904" />
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1745225562807772299">
+      <property name="isAbstract:3" value="true" />
+      <property name="name:3" value="copy" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1745225562807772301" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1745225562807772302" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1745225562807772307">
+        <link role="classifier:3" targetNodeId="1308935328408154909" resolveInfo="Function" />
+      </node>
+    </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1308935328408154915">
       <property name="name:3" value="getParamsCount" />
       <property name="isAbstract:3" value="true" />
