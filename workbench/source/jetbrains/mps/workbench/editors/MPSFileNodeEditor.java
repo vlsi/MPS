@@ -75,22 +75,25 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
   }
 
   public DocumentReference[] getDocumentReferences() {
-    List<DocumentReference> docRefs = new ArrayList<DocumentReference>();
-    for (final SNode node : myNodeEditor.getEditedNodes()) {
-      // [++] additional assertions for http://youtrack.jetbrains.net/issue/MPS-7743
-      assert node.isRegistered() : "Edited node is not registered in model";
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          assert !node.getModel().isDisposed() : "Model containing edited node is disposed";
-          SNodePointer nodePointer = new SNodePointer(node);
-          assert nodePointer.getModel() != null : "Unable to locate SModelDescriptor representing edited node model";
-          assert nodePointer.getModel().getSModel().getNodeById(nodePointer.getNodeId()) != null : "Unable to locate edited node";
+    final List<DocumentReference> docRefs = new ArrayList<DocumentReference>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (SNode node : myNodeEditor.getEditedNodes()) {
+          MPSNodeVirtualFile virtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
+          if (!virtualFile.isValid()) {
+            /*
+             * From time to time returned vistualFile is not valid (corresponding node is already
+             * unregistered from the model) so skipping such files.
+             *
+             * See http://youtrack.jetbrains.net/issue/MPS-7743
+             */
+            continue;
+          }
+          docRefs.add(DocumentReferenceManagerImpl.getInstance().create(virtualFile));
         }
-      });
-      // [--] additional assertions for http://youtrack.jetbrains.net/issue/MPS-7743
-      docRefs.add(DocumentReferenceManagerImpl.getInstance().create(MPSNodesVirtualFileSystem.getInstance().getFileFor(node)));
-    }
+      }
+    });
     return docRefs.toArray(new DocumentReference[docRefs.size()]);
   }
 
