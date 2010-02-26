@@ -16,26 +16,26 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class StatementConcept_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5565_0(editorContext, node);
+    return this.createCollection_vm3pdl_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5565_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vm3pdl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5565_0");
-    editorCell.addEditorCell(this.createConstant_5565_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5565_0(editorContext, node));
+    editorCell.setCellId("Collection_vm3pdl_a");
+    editorCell.addEditorCell(this.createConstant_vm3pdl_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vm3pdl_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5565_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vm3pdl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "statement concept");
-    editorCell.setCellId("Constant_5565_0");
+    editorCell.setCellId("Constant_vm3pdl_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_5565_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_vm3pdl_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
-  private static Pattern REGEXP0 = Pattern.compile("[^ ]", 0);
+  private static Pattern REGEXP_a0a0a2a0a0a0a2a0a1a0 = Pattern.compile("[^ ]", 0);
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LinePart_1237218108602(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
@@ -38,7 +38,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP0.matcher(pattern).matches();
+            return REGEXP_a0a0a2a0a0a0a2a0a1a0.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {

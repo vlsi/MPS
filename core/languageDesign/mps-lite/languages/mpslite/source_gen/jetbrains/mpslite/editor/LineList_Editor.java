@@ -18,26 +18,26 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class LineList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4682_0(editorContext, node);
+    return this.createCollection_us9n1_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4682_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_us9n1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4682_0");
-    editorCell.addEditorCell(this.createRefNodeList_4682_0(editorContext, node));
+    editorCell.setCellId("Collection_us9n1_a");
+    editorCell.addEditorCell(this.createRefNodeList_us9n1_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4682_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new LineList_Editor.lineListHandler_4682_0(node, "line", editorContext);
+  private EditorCell createRefNodeList_us9n1_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new LineList_Editor.lineListHandler_us9n1_a0(node, "line", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_line");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class lineListHandler_4682_0 extends RefNodeListHandler {
-    public lineListHandler_4682_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class lineListHandler_us9n1_a0 extends RefNodeListHandler {
+    public lineListHandler_us9n1_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

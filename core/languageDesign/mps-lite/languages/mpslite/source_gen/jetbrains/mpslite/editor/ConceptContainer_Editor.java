@@ -25,43 +25,43 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ConceptContainer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9715_0(editorContext, node);
+    return this.createCollection_d6y0ft_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9715_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_d6y0ft_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_9715_0");
-    editorCell.addEditorCell(this.createCollection_9715_1(editorContext, node));
+    editorCell.setCellId("Collection_d6y0ft_a");
+    editorCell.addEditorCell(this.createCollection_d6y0ft_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_9715_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_d6y0ft_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_9715_1");
+    editorCell.setCellId("Collection_d6y0ft_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9715_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9715_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9715_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9715_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9715_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_9715_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_d6y0ft_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_d6y0ft_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_d6y0ft_c0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_d6y0ft_d0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_d6y0ft_e0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_d6y0ft_f0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9715_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_d6y0ft_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concepts");
-    editorCell.setCellId("Constant_9715_0");
+    editorCell.setCellId("Constant_d6y0ft_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9715_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_d6y0ft_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_9715_1");
+    editorCell.setCellId("Constant_d6y0ft_c0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -70,9 +70,9 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9715_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_d6y0ft_e0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_9715_2");
+    editorCell.setCellId("Constant_d6y0ft_e0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -81,15 +81,15 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_9715_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ConceptContainer_Editor.mpsLiteConceptListHandler_9715_0(node, "mpsLiteConcept", editorContext);
+  private EditorCell createRefNodeList_d6y0ft_f0a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ConceptContainer_Editor.mpsLiteConceptListHandler_d6y0ft_f0a(node, "mpsLiteConcept", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_mpsLiteConcept");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNode_9715_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_d6y0ft_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expressionConcept");
     provider.setNoTargetText("<no expressionConcept>");
@@ -106,7 +106,7 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9715_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_d6y0ft_d0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("statementConcept");
     provider.setNoTargetText("<no statementConcept>");
@@ -123,8 +123,8 @@ public class ConceptContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class mpsLiteConceptListHandler_9715_0 extends RefNodeListHandler {
-    public mpsLiteConceptListHandler_9715_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class mpsLiteConceptListHandler_d6y0ft_f0a extends RefNodeListHandler {
+    public mpsLiteConceptListHandler_d6y0ft_f0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

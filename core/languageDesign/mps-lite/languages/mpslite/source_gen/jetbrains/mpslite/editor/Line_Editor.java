@@ -18,18 +18,18 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Line_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8408_0(editorContext, node);
+    return this.createCollection_78ent8_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8408_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_78ent8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8408_0");
-    editorCell.addEditorCell(this.createRefNodeList_8408_0(editorContext, node));
+    editorCell.setCellId("Collection_78ent8_a");
+    editorCell.addEditorCell(this.createRefNodeList_78ent8_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_8408_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Line_Editor.linePartListHandler_8408_0(node, "linePart", editorContext);
+  private EditorCell createRefNodeList_78ent8_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Line_Editor.linePartListHandler_78ent8_a0(node, "linePart", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_linePart");
     editorCell.addKeyMap(new _Line_Actions());
@@ -37,8 +37,8 @@ public class Line_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class linePartListHandler_8408_0 extends RefNodeListHandler {
-    public linePartListHandler_8408_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class linePartListHandler_78ent8_a0 extends RefNodeListHandler {
+    public linePartListHandler_78ent8_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

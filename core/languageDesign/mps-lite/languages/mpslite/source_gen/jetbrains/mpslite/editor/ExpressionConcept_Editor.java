@@ -16,26 +16,26 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ExpressionConcept_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3892_0(editorContext, node);
+    return this.createCollection_kxhwy6_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3892_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_kxhwy6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3892_0");
-    editorCell.addEditorCell(this.createConstant_3892_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_3892_0(editorContext, node));
+    editorCell.setCellId("Collection_kxhwy6_a");
+    editorCell.addEditorCell(this.createConstant_kxhwy6_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_kxhwy6_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3892_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kxhwy6_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expression concept");
-    editorCell.setCellId("Constant_3892_0");
+    editorCell.setCellId("Constant_kxhwy6_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_3892_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_kxhwy6_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

@@ -18,57 +18,57 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConcreteChildPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4338_0(editorContext, node);
+    return this.createCollection_39prjl_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4338_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_39prjl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4338_0");
+    editorCell.setCellId("Collection_39prjl_a");
     editorCell.addKeyMap(new LinePart_Actions());
-    editorCell.addEditorCell(this.createConstant_4338_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4338_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4338_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4338_1(editorContext, node));
-    if (renderingCondition4338_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_4338_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_39prjl_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_39prjl_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_39prjl_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_39prjl_d0(editorContext, node));
+    if (renderingCondition_39prjl_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_39prjl_e0(editorContext, node));
     }
-    if (renderingCondition4338_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_4338_3(editorContext, node));
+    if (renderingCondition_39prjl_a5a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_39prjl_f0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_4338_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_39prjl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
-    editorCell.setCellId("Constant_4338_0");
+    editorCell.setCellId("Constant_39prjl_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4338_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_39prjl_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
-    editorCell.setCellId("Constant_4338_1");
+    editorCell.setCellId("Constant_39prjl_d0");
     editorCell.addKeyMap(new ChildPart_Actions());
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4338_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_39prjl_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*");
-    editorCell.setCellId("Constant_4338_2");
+    editorCell.setCellId("Constant_39prjl_e0");
     editorCell.addKeyMap(new ChildPart_Actions());
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4338_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_39prjl_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "V");
-    editorCell.setCellId("Constant_4338_3");
+    editorCell.setCellId("Constant_39prjl_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_4338_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_39prjl_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -87,7 +87,7 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4338_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_39prjl_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("conceptReference");
     provider.setNoTargetText("<no conceptReference>");
@@ -104,11 +104,11 @@ public class ConcreteChildPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition4338_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_39prjl_a4a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "multiple");
   }
 
-  private static boolean renderingCondition4338_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_39prjl_a5a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "vertical");
   }
 }
