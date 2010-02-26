@@ -71,14 +71,14 @@ public class JavaStubs extends BaseStubModelRootManager {
     String pack = location.getPrefix();
     IClassPathItem cpItem = StubClassPathCache.getInstance().get(location);
     if (cpItem == null) {
-      return new HashSet<SModelDescriptor>();
+      return new jetbrains.mps.util.misc.hash.HashSet<SModelDescriptor>();
     }
 
     Set<String> subpackages = cpItem.getSubpackages(pack);
 
     if (pack.equals("")) {
     }
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+    Set<SModelDescriptor> result = new jetbrains.mps.util.misc.hash.HashSet<SModelDescriptor>();
     for (String subpackage : subpackages) {
       if (!(cpItem.getAvailableClasses(subpackage).isEmpty())) {
         SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage);
