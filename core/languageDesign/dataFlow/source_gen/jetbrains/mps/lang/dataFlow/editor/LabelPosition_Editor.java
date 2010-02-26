@@ -17,31 +17,31 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class LabelPosition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4497_0(editorContext, node);
+    return this.createCollection_xi88on_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4497_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_xi88on_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4497_0");
-    editorCell.addEditorCell(this.createConstant_4497_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_4497_0(editorContext, node));
+    editorCell.setCellId("Collection_xi88on_a");
+    editorCell.addEditorCell(this.createConstant_xi88on_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_xi88on_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4497_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_xi88on_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "after");
-    editorCell.setCellId("Constant_4497_0");
+    editorCell.setCellId("Constant_xi88on_a0");
     DataFlow_StyleSheet.getPosition(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_4497_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_xi88on_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LabelPosition_Editor._Inline4497_0());
+    provider.setAuxiliaryCellProvider(new LabelPosition_Editor._Inline_xi88on_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -54,8 +54,8 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4497_0 extends InlineCellProvider {
-    public _Inline4497_0() {
+  public static class _Inline_xi88on_a1a extends InlineCellProvider {
+    public _Inline_xi88on_a1a() {
       super();
     }
 
@@ -64,10 +64,10 @@ public class LabelPosition_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_4497_0(editorContext, node);
+      return this.createProperty_xi88on_a0b0(editorContext, node);
     }
 
-    private EditorCell createProperty_4497_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_xi88on_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

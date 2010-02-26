@@ -16,19 +16,19 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class SuperNodeExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3177_0(editorContext, node);
+    return this.createCollection_n52m2z_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3177_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_n52m2z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3177_0");
-    editorCell.addEditorCell(this.createConstant_3177_0(editorContext, node));
+    editorCell.setCellId("Collection_n52m2z_a");
+    editorCell.addEditorCell(this.createConstant_n52m2z_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3177_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_n52m2z_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "super");
-    editorCell.setCellId("Constant_3177_0");
+    editorCell.setCellId("Constant_n52m2z_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);

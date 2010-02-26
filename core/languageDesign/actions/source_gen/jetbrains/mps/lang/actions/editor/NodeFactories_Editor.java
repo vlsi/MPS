@@ -26,51 +26,51 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class NodeFactories_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5274_0(editorContext, node);
+    return this.createCollection_lyzgir_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5274_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_lyzgir_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5274_0");
-    editorCell.addEditorCell(this.createCollection_5274_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5274_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5274_2(editorContext, node));
+    editorCell.setCellId("Collection_lyzgir_a");
+    editorCell.addEditorCell(this.createCollection_lyzgir_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_lyzgir_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_lyzgir_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5274_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_lyzgir_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5274_1");
+    editorCell.setCellId("Collection_lyzgir_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5274_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5274_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_lyzgir_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_lyzgir_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5274_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_lyzgir_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5274_2");
+    editorCell.setCellId("Collection_lyzgir_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createRefNodeList_5274_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_lyzgir_a2a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5274_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_lyzgir_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node factories");
-    editorCell.setCellId("Constant_5274_0");
+    editorCell.setCellId("Constant_lyzgir_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5274_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_lyzgir_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5274_1");
+    editorCell.setCellId("Constant_lyzgir_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -79,8 +79,8 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_5274_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new NodeFactories_Editor.nodeFactoryListHandler_5274_0(node, "nodeFactory", editorContext);
+  private EditorCell createRefNodeList_lyzgir_a2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new NodeFactories_Editor.nodeFactoryListHandler_lyzgir_a2a(node, "nodeFactory", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_nodeFactory");
     {
@@ -92,7 +92,7 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_5274_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_lyzgir_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -115,8 +115,8 @@ public class NodeFactories_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class nodeFactoryListHandler_5274_0 extends RefNodeListHandler {
-    public nodeFactoryListHandler_5274_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class nodeFactoryListHandler_lyzgir_a2a extends RefNodeListHandler {
+    public nodeFactoryListHandler_lyzgir_a2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

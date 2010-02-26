@@ -16,34 +16,34 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ProcessHandlerStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7832_0(editorContext, node);
+    return this.createCollection_ofw75o_a(editorContext, node);
   }
 
-  private EditorCell createCollection_7832_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ofw75o_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7832_0");
-    editorCell.addEditorCell(this.createConstant_7832_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7832_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7832_1(editorContext, node));
+    editorCell.setCellId("Collection_ofw75o_a");
+    editorCell.addEditorCell(this.createConstant_ofw75o_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ofw75o_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ofw75o_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7832_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ofw75o_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "process handler");
-    editorCell.setCellId("Constant_7832_0");
+    editorCell.setCellId("Constant_ofw75o_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7832_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ofw75o_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_7832_1");
+    editorCell.setCellId("Constant_ofw75o_c0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_7832_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ofw75o_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("processHandler");
     provider.setNoTargetText("<no processHandler>");

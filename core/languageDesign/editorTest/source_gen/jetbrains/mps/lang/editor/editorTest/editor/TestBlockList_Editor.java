@@ -21,21 +21,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TestBlockList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2941_0(editorContext, node);
+    return this.createCollection_mkv9rd_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2941_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_mkv9rd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2941_0");
-    editorCell.addEditorCell(this.createConstant_2941_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_2941_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2941_1(editorContext, node));
+    editorCell.setCellId("Collection_mkv9rd_a");
+    editorCell.addEditorCell(this.createConstant_mkv9rd_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_mkv9rd_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mkv9rd_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2941_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mkv9rd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_2941_0");
+    editorCell.setCellId("Constant_mkv9rd_a0");
     TestLanguage_StyleSheet_StyleSheet.getBaseStyle(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -45,16 +45,16 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2941_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mkv9rd_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_2941_1");
+    editorCell.setCellId("Constant_mkv9rd_c0");
     TestLanguage_StyleSheet_StyleSheet.getBaseStyle(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2941_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new TestBlockList_Editor.statementListHandler_2941_0(node, "statement", editorContext);
+  private EditorCell createRefNodeList_mkv9rd_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new TestBlockList_Editor.statementListHandler_mkv9rd_b0(node, "statement", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_statement");
     {
@@ -67,8 +67,8 @@ public class TestBlockList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class statementListHandler_2941_0 extends RefNodeListHandler {
-    public statementListHandler_2941_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class statementListHandler_mkv9rd_b0 extends RefNodeListHandler {
+    public statementListHandler_mkv9rd_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

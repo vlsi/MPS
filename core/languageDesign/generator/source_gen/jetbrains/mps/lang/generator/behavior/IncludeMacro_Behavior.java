@@ -14,30 +14,30 @@ public class IncludeMacro_Behavior {
 
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
-      GeneratedMatchingPattern pattern_5347_0 = new IncludeMacro_Behavior.Pattern_5347_0();
-      SNode coercedNode_5347_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_5347_0);
-      if (coercedNode_5347_0 != null) {
-        return ((SNode) pattern_5347_0.getFieldValue("PatternVar_concept"));
+      GeneratedMatchingPattern pattern_wfrqja_a0a = new IncludeMacro_Behavior.Pattern_wfrqja_a0a0a0a1();
+      SNode coercedNode_wfrqja_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_wfrqja_a0a);
+      if (coercedNode_wfrqja_a0a != null) {
+        return ((SNode) pattern_wfrqja_a0a.getFieldValue("PatternVar_concept"));
       } else {
       }
     }
     return NodeMacro_Behavior.callSuper_getInputNodeTypeInsideOfMacro_1213877290799(thisNode, "jetbrains.mps.lang.generator.structure.IncludeMacro");
   }
 
-  public static class Pattern_5347_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_wfrqja_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_concept;
 
-    public Pattern_5347_0() {
+    public Pattern_wfrqja_a0a0a0a1() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_5347_0;
-        nodeToMatch_5347_0 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_5347_0.getConceptFqName()))) {
+        SNode nodeToMatch_wfrqja_a0a0a0;
+        nodeToMatch_wfrqja_a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_wfrqja_a0a0a0.getConceptFqName()))) {
           return false;
         }
-        this.PatternVar_concept = nodeToMatch_5347_0.getReferent("concept");
+        this.PatternVar_concept = nodeToMatch_wfrqja_a0a0a0.getReferent("concept");
       }
       return true;
     }

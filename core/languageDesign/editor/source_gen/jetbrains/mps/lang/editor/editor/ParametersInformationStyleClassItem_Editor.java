@@ -18,26 +18,26 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ParametersInformationStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3696_0(editorContext, node);
+    return this.createCollection_foagvc_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3696_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_foagvc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3696_0");
-    editorCell.addEditorCell(this.createConceptProperty_3696_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3696_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_3696_0(editorContext, node));
+    editorCell.setCellId("Collection_foagvc_a");
+    editorCell.addEditorCell(this.createConceptProperty_foagvc_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_foagvc_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_foagvc_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3696_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_foagvc_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_3696_0");
+    editorCell.setCellId("Constant_foagvc_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_3696_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_foagvc_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -56,12 +56,12 @@ public class ParametersInformationStyleClassItem_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  private EditorCell createRefCell_3696_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_foagvc_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("parametersInformation");
     provider.setNoTargetText("<no parametersInformation>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ParametersInformationStyleClassItem_Editor._Inline3696_0());
+    provider.setAuxiliaryCellProvider(new ParametersInformationStyleClassItem_Editor._Inline_foagvc_a2a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -74,8 +74,8 @@ public class ParametersInformationStyleClassItem_Editor extends DefaultNodeEdito
     return editorCell;
   }
 
-  public static class _Inline3696_0 extends InlineCellProvider {
-    public _Inline3696_0() {
+  public static class _Inline_foagvc_a2a extends InlineCellProvider {
+    public _Inline_foagvc_a2a() {
       super();
     }
 
@@ -84,10 +84,10 @@ public class ParametersInformationStyleClassItem_Editor extends DefaultNodeEdito
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_3696_0(editorContext, node);
+      return this.createProperty_foagvc_a0c0(editorContext, node);
     }
 
-    private EditorCell createProperty_3696_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_foagvc_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -11,35 +11,35 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class LinkAttributeConcept_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2506_0(editorContext, node);
+    return this.createCollection_iyj26b_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2506_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_iyj26b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2506_0");
-    editorCell.addEditorCell(this.createConstant_2506_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2506_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2506_2(editorContext, node));
+    editorCell.setCellId("Collection_iyj26b_a");
+    editorCell.addEditorCell(this.createConstant_iyj26b_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_iyj26b_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_iyj26b_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2506_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_iyj26b_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$(");
-    editorCell.setCellId("Constant_2506_0");
+    editorCell.setCellId("Constant_iyj26b_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2506_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_iyj26b_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<reference cell>");
-    editorCell.setCellId("Constant_2506_1");
+    editorCell.setCellId("Constant_iyj26b_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2506_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_iyj26b_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")$");
-    editorCell.setCellId("Constant_2506_2");
+    editorCell.setCellId("Constant_iyj26b_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }

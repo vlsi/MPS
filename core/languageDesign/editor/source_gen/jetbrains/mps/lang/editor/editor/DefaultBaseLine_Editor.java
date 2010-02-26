@@ -19,35 +19,35 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class DefaultBaseLine_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8134_0(editorContext, node);
+    return this.createCollection_4pywwz_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8134_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4pywwz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8134_0");
-    editorCell.addEditorCell(this.createConstant_8134_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8134_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_8134_0(editorContext, node));
+    editorCell.setCellId("Collection_4pywwz_a");
+    editorCell.addEditorCell(this.createConstant_4pywwz_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4pywwz_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_4pywwz_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8134_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4pywwz_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default-baseline");
-    editorCell.setCellId("Constant_8134_0");
+    editorCell.setCellId("Constant_4pywwz_a0");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new DefaultBaseLine_Editor.DefaultBaseLine_Editor_replaceWith_StyleClassItem_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new DefaultBaseLine_Editor.DefaultBaseLine_Editor_replaceWith_StyleClassItem_cellMenu_a0a0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_8134_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4pywwz_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_8134_1");
+    editorCell.setCellId("Constant_4pywwz_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_8134_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4pywwz_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("baseline");
     provider.setNoTargetText("<no baseline>");
@@ -65,8 +65,8 @@ public class DefaultBaseLine_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class DefaultBaseLine_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public DefaultBaseLine_Editor_replaceWith_StyleClassItem_cellMenu0() {
+  public static class DefaultBaseLine_Editor_replaceWith_StyleClassItem_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public DefaultBaseLine_Editor_replaceWith_StyleClassItem_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

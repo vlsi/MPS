@@ -16,18 +16,18 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class SmartActionParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3006_0(editorContext, node);
+    return this.createCollection_lej8rl_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3006_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_lej8rl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3006_0");
-    editorCell.addEditorCell(this.createRefNode_3006_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_3006_0(editorContext, node));
+    editorCell.setCellId("Collection_lej8rl_a");
+    editorCell.addEditorCell(this.createRefNode_lej8rl_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_lej8rl_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_3006_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_lej8rl_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -44,7 +44,7 @@ public class SmartActionParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_3006_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_lej8rl_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

@@ -13,11 +13,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ConceptMethodDeclaration_Visibility extends AbstractCellMenuComponent {
   public ConceptMethodDeclaration_Visibility() {
-    super(new SubstituteInfoPart[]{new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu1(),new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu2()});
+    super(new SubstituteInfoPart[]{new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu_a0_0(),new ConceptMethodDeclaration_Visibility.ConceptMethodDeclaration_generic_cellMenu_b0()});
   }
 
-  public static class ConceptMethodDeclaration_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
-    public ConceptMethodDeclaration_generic_cellMenu1() {
+  public static class ConceptMethodDeclaration_generic_cellMenu_a0_0 extends AbstractCellMenuPart_Generic_Item {
+    public ConceptMethodDeclaration_generic_cellMenu_a0_0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -29,8 +29,8 @@ public class ConceptMethodDeclaration_Visibility extends AbstractCellMenuCompone
     }
   }
 
-  public static class ConceptMethodDeclaration_generic_cellMenu2 extends AbstractCellMenuPart_Generic_Item {
-    public ConceptMethodDeclaration_generic_cellMenu2() {
+  public static class ConceptMethodDeclaration_generic_cellMenu_b0 extends AbstractCellMenuPart_Generic_Item {
+    public ConceptMethodDeclaration_generic_cellMenu_b0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {

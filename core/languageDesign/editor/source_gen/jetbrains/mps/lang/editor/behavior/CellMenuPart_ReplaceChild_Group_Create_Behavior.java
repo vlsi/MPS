@@ -22,22 +22,22 @@ public class CellMenuPart_ReplaceChild_Group_Create_Behavior {
     SNode hostMenuPart = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", false, false);
     SNode editedLink = CellMenuPart_Abstract_Behavior.call_getEditedLink_1219409839992(hostMenuPart);
     SNode conceptOfChild = SLinkOperations.getTarget(editedLink, "target", false);
-    return new CellMenuPart_ReplaceChild_Group_Create_Behavior.QuotationClass_9639_0().createNode(conceptOfChild);
+    return new CellMenuPart_ReplaceChild_Group_Create_Behavior.QuotationClass_tzpw84_a0e0b().createNode(conceptOfChild);
   }
 
-  public static class QuotationClass_9639_0 {
-    public QuotationClass_9639_0() {
+  public static class QuotationClass_tzpw84_a0e0b {
+    public QuotationClass_tzpw84_a0e0b() {
     }
 
-    public SNode createNode(Object parameter_9639_0) {
+    public SNode createNode(Object parameter_tzpw84_a0a0e0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9639_0 = null;
+      SNode quotedNode_tzpw84_a0e0a = null;
       {
-        quotedNode_9639_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9639_0 = quotedNode_9639_0;
-        quotedNode1_9639_0.setReferent("concept", (SNode) parameter_9639_0);
-        result = quotedNode1_9639_0;
+        quotedNode_tzpw84_a0e0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_tzpw84_a0e0a = quotedNode_tzpw84_a0e0a;
+        quotedNode1_tzpw84_a0e0a.setReferent("concept", (SNode) parameter_tzpw84_a0a0e0a);
+        result = quotedNode1_tzpw84_a0e0a;
       }
       return result;
     }

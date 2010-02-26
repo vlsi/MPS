@@ -15,35 +15,35 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class EmitCodeForStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4758_0(editorContext, node);
+    return this.createCollection_aipk5v_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4758_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_aipk5v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4758_0");
-    editorCell.addEditorCell(this.createConstant_4758_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4758_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4758_0(editorContext, node));
+    editorCell.setCellId("Collection_aipk5v_a");
+    editorCell.addEditorCell(this.createConstant_aipk5v_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_aipk5v_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_aipk5v_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4758_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_aipk5v_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "code");
-    editorCell.setCellId("Constant_4758_0");
+    editorCell.setCellId("Constant_aipk5v_a0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4758_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_aipk5v_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
-    editorCell.setCellId("Constant_4758_1");
+    editorCell.setCellId("Constant_aipk5v_b0");
     DataFlow_StyleSheet.getInstruction(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_4758_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_aipk5v_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("codeFor");
     provider.setNoTargetText("<no codeFor>");

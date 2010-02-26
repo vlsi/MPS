@@ -15,18 +15,18 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class RelativePosition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4377_0(editorContext, node);
+    return this.createCollection_wv5dgr_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4377_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_wv5dgr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4377_0");
-    editorCell.addEditorCell(this.createConceptProperty_4377_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4377_0(editorContext, node));
+    editorCell.setCellId("Collection_wv5dgr_a");
+    editorCell.addEditorCell(this.createConceptProperty_wv5dgr_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_wv5dgr_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_4377_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_wv5dgr_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -45,7 +45,7 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4377_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_wv5dgr_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("relativeTo");
     provider.setNoTargetText("<no relativeTo>");

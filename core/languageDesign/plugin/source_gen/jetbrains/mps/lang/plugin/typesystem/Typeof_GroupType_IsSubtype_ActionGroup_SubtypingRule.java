@@ -20,7 +20,7 @@ public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends Subtyp
   }
 
   public SNode getSubOrSuperType(SNode groupType, TypeCheckingContext typeCheckingContext) {
-    return new Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule.QuotationClass_6310_0().createNode(typeCheckingContext);
+    return new Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule.QuotationClass_o1uhq5_a0a0a().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -35,19 +35,19 @@ public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends Subtyp
     return false;
   }
 
-  public static class QuotationClass_6310_0 {
-    public QuotationClass_6310_0() {
+  public static class QuotationClass_o1uhq5_a0a0a {
+    public QuotationClass_o1uhq5_a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6310_0 = null;
+      SNode quotedNode_o1uhq5_a0a0a = null;
       {
-        quotedNode_6310_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6310_0 = quotedNode_6310_0;
-        quotedNode1_6310_0.addReference(SReference.create("classifier", quotedNode1_6310_0, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.actions(jetbrains.mps.plugins.pluginparts.actions@java_stub)"), SNodeId.fromString("~GeneratedActionGroup")));
-        result = quotedNode1_6310_0;
+        quotedNode_o1uhq5_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_o1uhq5_a0a0a = quotedNode_o1uhq5_a0a0a;
+        quotedNode1_o1uhq5_a0a0a.addReference(SReference.create("classifier", quotedNode1_o1uhq5_a0a0a, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.actions(jetbrains.mps.plugins.pluginparts.actions@java_stub)"), SNodeId.fromString("~GeneratedActionGroup")));
+        result = quotedNode1_o1uhq5_a0a0a;
       }
       return result;
     }
@@ -55,12 +55,12 @@ public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends Subtyp
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6310_0 = null;
+      SNode quotedNode_o1uhq5_a0a0a = null;
       {
-        quotedNode_6310_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6310_0 = quotedNode_6310_0;
-        quotedNode1_6310_0.addReference(SReference.create("classifier", quotedNode1_6310_0, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.actions(jetbrains.mps.plugins.pluginparts.actions@java_stub)"), SNodeId.fromString("~GeneratedActionGroup")));
-        result = quotedNode1_6310_0;
+        quotedNode_o1uhq5_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_o1uhq5_a0a0a = quotedNode_o1uhq5_a0a0a;
+        quotedNode1_o1uhq5_a0a0a.addReference(SReference.create("classifier", quotedNode1_o1uhq5_a0a0a, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.actions(jetbrains.mps.plugins.pluginparts.actions@java_stub)"), SNodeId.fromString("~GeneratedActionGroup")));
+        result = quotedNode1_o1uhq5_a0a0a;
       }
       return result;
     }

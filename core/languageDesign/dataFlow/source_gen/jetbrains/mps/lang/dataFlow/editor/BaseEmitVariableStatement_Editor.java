@@ -15,18 +15,18 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class BaseEmitVariableStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2483_0(editorContext, node);
+    return this.createCollection_w7ohj2_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2483_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_w7ohj2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2483_0");
-    editorCell.addEditorCell(this.createConceptProperty_2483_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2483_0(editorContext, node));
+    editorCell.setCellId("Collection_w7ohj2_a");
+    editorCell.addEditorCell(this.createConceptProperty_w7ohj2_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_w7ohj2_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2483_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_w7ohj2_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -45,7 +45,7 @@ public class BaseEmitVariableStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2483_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_w7ohj2_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");

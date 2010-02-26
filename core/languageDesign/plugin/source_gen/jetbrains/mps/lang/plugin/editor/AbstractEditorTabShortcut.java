@@ -34,32 +34,32 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7612_0(editorContext, node);
+    return this.createCollection_b2s42e_a(editorContext, node);
   }
 
-  private EditorCell createCollection_7612_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_b2s42e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7612_0");
+    editorCell.setCellId("Collection_b2s42e_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7612_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7612_0(editorContext, node));
-    if (renderingCondition7612_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createReadOnlyModelAccessor_7612_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_b2s42e_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_b2s42e_b0(editorContext, node));
+    if (renderingCondition_b2s42e_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createReadOnlyModelAccessor_b2s42e_c0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_7612_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_b2s42e_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "shortcut char:");
-    editorCell.setCellId("Constant_7612_0");
+    editorCell.setCellId("Constant_b2s42e_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_7612_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_b2s42e_c0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return "(alt shift " + SPropertyOperations.getString(node, "shortcutChar").toUpperCase() + ")";
@@ -73,12 +73,12 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_7612_0");
+    editorCell.setCellId("ReadOnlyModelAccessor_b2s42e_c0");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     return editorCell;
   }
 
-  private EditorCell createProperty_7612_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_b2s42e_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("shortcutChar");
     provider.setNoTargetText("<no shortcut>");
@@ -97,7 +97,7 @@ public class AbstractEditorTabShortcut extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static boolean renderingCondition7612_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_b2s42e_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "shortcutChar"));
   }
 }

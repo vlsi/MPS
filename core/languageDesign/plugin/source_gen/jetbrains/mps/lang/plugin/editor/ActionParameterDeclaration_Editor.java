@@ -27,45 +27,45 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6987_0(editorContext, node);
+    return this.createCollection_n7yf1e_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_6987_1(editorContext, node);
+    return this.createComponent_n7yf1e_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6987_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_n7yf1e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6987_0");
-    editorCell.addEditorCell(this.createRefNode_6987_0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_6987_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6987_0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_6987_0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_6987_2(editorContext, node));
+    editorCell.setCellId("Collection_n7yf1e_a");
+    editorCell.addEditorCell(this.createRefNode_n7yf1e_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_n7yf1e_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_n7yf1e_c0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_n7yf1e_d0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_n7yf1e_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_6987_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_n7yf1e_b0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ActionParameter_NameCellComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_6987_1(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_n7yf1e_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ActionParameter_Hint(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_6987_2(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_n7yf1e_e0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ActionParameter_IsOptional(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_6987_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_n7yf1e_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "key:");
-    editorCell.setCellId("Constant_6987_0");
+    editorCell.setCellId("Constant_n7yf1e_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -75,7 +75,7 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_6987_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_n7yf1e_d0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return SPropertyOperations.getString(ActionParameter_Behavior.call_getFieldDeclaration_1171743928471867409(node), "name");
@@ -89,11 +89,11 @@ public class ActionParameterDeclaration_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_6987_0");
+    editorCell.setCellId("ReadOnlyModelAccessor_n7yf1e_d0");
     return editorCell;
   }
 
-  private EditorCell createRefNode_6987_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_n7yf1e_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");

@@ -18,7 +18,7 @@ public class MultitabbedEditorTab_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    return new MultitabbedEditorTab_Behavior.QuotationClass_5074_0().createNode();
+    return new MultitabbedEditorTab_Behavior.QuotationClass_rydvjr_a0a0b().createNode();
   }
 
   public static SNode call_createType_144706109457735808(SNode thisNode) {
@@ -29,18 +29,18 @@ public class MultitabbedEditorTab_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_144706109457735808);
   }
 
-  public static class QuotationClass_5074_0 {
-    public QuotationClass_5074_0() {
+  public static class QuotationClass_rydvjr_a0a0b {
+    public QuotationClass_rydvjr_a0a0b() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5074_0 = null;
+      SNode quotedNode_rydvjr_a0a0a = null;
       {
-        quotedNode_5074_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.MultitabbedEditorTabType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5074_0 = quotedNode_5074_0;
-        result = quotedNode1_5074_0;
+        quotedNode_rydvjr_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.MultitabbedEditorTabType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_rydvjr_a0a0a = quotedNode_rydvjr_a0a0a;
+        result = quotedNode1_rydvjr_a0a0a;
       }
       return result;
     }

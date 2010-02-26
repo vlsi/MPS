@@ -20,22 +20,22 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class ActionParameterReferenceOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6115_0(editorContext, node);
+    return this.createCollection_keprta_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6115_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_keprta_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6115_0");
-    editorCell.addEditorCell(this.createRefCell_6115_0(editorContext, node));
+    editorCell.setCellId("Collection_keprta_a");
+    editorCell.addEditorCell(this.createRefCell_keprta_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_6115_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_keprta_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("parameterDeclaration");
     provider.setNoTargetText("<no parameterDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionParameterReferenceOperation_Editor._Inline6115_0());
+    provider.setAuxiliaryCellProvider(new ActionParameterReferenceOperation_Editor._Inline_keprta_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -48,8 +48,8 @@ public class ActionParameterReferenceOperation_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
-  public static class _Inline6115_0 extends InlineCellProvider {
-    public _Inline6115_0() {
+  public static class _Inline_keprta_a0a extends InlineCellProvider {
+    public _Inline_keprta_a0a() {
       super();
     }
 
@@ -58,10 +58,10 @@ public class ActionParameterReferenceOperation_Editor extends DefaultNodeEditor 
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_6115_0(editorContext, node);
+      return this.createProperty_keprta_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_6115_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_keprta_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

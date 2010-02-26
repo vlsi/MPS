@@ -20,69 +20,69 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_Block_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0905_0(editorContext, node);
+    return this.createCollection_paqmtn_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0905_3(editorContext, node);
+    return this.createCollection_paqmtn_a_0(editorContext, node);
   }
 
-  private EditorCell createCollection_0905_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_paqmtn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_0905_0");
+    editorCell.setCellId("Collection_paqmtn_a");
     Styles_StyleSheet.getBorderedCollection(editorCell).apply(editorCell);
-    editorCell.addEditorCell(this.createCollection_0905_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_0905_2(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0905_1(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_paqmtn_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_paqmtn_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_paqmtn_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0905_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_paqmtn_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0905_1");
+    editorCell.setCellId("Collection_paqmtn_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createRefNode_0905_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0905_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_paqmtn_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_paqmtn_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0905_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_paqmtn_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0905_2");
+    editorCell.setCellId("Collection_paqmtn_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
-    editorCell.addEditorCell(this.createIndentCell0905_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0905_0(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell_paqmtn_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_paqmtn_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0905_3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_paqmtn_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_0905_3");
+    editorCell.setCellId("Collection_paqmtn_a_0");
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createComponent_0905_0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_paqmtn_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_0905_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_paqmtn_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _CellModel_Common(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createIndentCell0905_0(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_paqmtn_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createRefNode_0905_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_paqmtn_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -99,7 +99,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0905_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_paqmtn_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("header");
     provider.setNoTargetText("<no header>");
@@ -116,7 +116,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_0905_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_paqmtn_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("openBrace");
     provider.setNoTargetText("{");
@@ -141,7 +141,7 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_0905_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_paqmtn_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("closeBrace");
     provider.setNoTargetText("}");

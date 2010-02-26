@@ -16,25 +16,25 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AttractsFocusBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4747_0(editorContext, node);
+    return this.createCollection_on5i7m_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4747_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_on5i7m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4747_0");
-    editorCell.addEditorCell(this.createConstant_4747_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4747_0(editorContext, node));
+    editorCell.setCellId("Collection_on5i7m_a");
+    editorCell.addEditorCell(this.createConstant_on5i7m_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_on5i7m_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4747_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_on5i7m_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attracts focus");
-    editorCell.setCellId("Constant_4747_0");
+    editorCell.setCellId("Constant_on5i7m_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_4747_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_on5i7m_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("child");
     provider.setNoTargetText("<no child>");

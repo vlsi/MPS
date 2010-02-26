@@ -20,44 +20,44 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5064_0(editorContext, node);
+    return this.createCollection_sexq64_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5064_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_sexq64_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5064_0");
-    editorCell.addEditorCell(this.createConstant_5064_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5064_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5064_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_5064_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5064_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_5064_1(editorContext, node));
+    editorCell.setCellId("Collection_sexq64_a");
+    editorCell.addEditorCell(this.createConstant_sexq64_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_sexq64_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_sexq64_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_sexq64_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_sexq64_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_sexq64_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5064_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_sexq64_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
-    editorCell.setCellId("Constant_5064_0");
+    editorCell.setCellId("Constant_sexq64_a0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5064_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_sexq64_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_5064_1");
+    editorCell.setCellId("Constant_sexq64_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5064_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_sexq64_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
-    editorCell.setCellId("Constant_5064_2");
+    editorCell.setCellId("Constant_sexq64_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_5064_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_sexq64_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -79,12 +79,12 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_5064_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_sexq64_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("sourceConcept");
     provider.setNoTargetText("<no input concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline5064_0());
+    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline_sexq64_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -97,12 +97,12 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_5064_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_sexq64_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("targetConcept");
     provider.setNoTargetText("<no output concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline5064_1());
+    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_Editor._Inline_sexq64_a5a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -115,8 +115,8 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline5064_0 extends InlineCellProvider {
-    public _Inline5064_0() {
+  public static class _Inline_sexq64_a3a extends InlineCellProvider {
+    public _Inline_sexq64_a3a() {
       super();
     }
 
@@ -125,10 +125,10 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_5064_1(editorContext, node);
+      return this.createProperty_sexq64_a0d0(editorContext, node);
     }
 
-    private EditorCell createProperty_5064_1(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_sexq64_a0d0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -152,8 +152,8 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline5064_1 extends InlineCellProvider {
-    public _Inline5064_1() {
+  public static class _Inline_sexq64_a5a extends InlineCellProvider {
+    public _Inline_sexq64_a5a() {
       super();
     }
 
@@ -162,10 +162,10 @@ public class MappingLabelDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_5064_2(editorContext, node);
+      return this.createProperty_sexq64_a0f0(editorContext, node);
     }
 
-    private EditorCell createProperty_5064_2(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_sexq64_a0f0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

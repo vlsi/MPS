@@ -21,48 +21,48 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5883_0(editorContext, node);
+    return this.createCollection_dqg0vp_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5883_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_dqg0vp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5883_0");
-    editorCell.addEditorCell(this.createConstant_5883_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5883_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5883_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5883_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5883_2(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5883_2(editorContext, node));
+    editorCell.setCellId("Collection_dqg0vp_a");
+    editorCell.addEditorCell(this.createConstant_dqg0vp_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dqg0vp_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_dqg0vp_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dqg0vp_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dqg0vp_e0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_dqg0vp_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5883_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_dqg0vp_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5883_1");
+    editorCell.setCellId("Collection_dqg0vp_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
-    editorCell.addEditorCell(this.createRefNodeList_5883_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_dqg0vp_a2a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5883_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_dqg0vp_f0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5883_2");
+    editorCell.setCellId("Collection_dqg0vp_f0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
-    editorCell.addEditorCell(this.createRefNodeList_5883_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_dqg0vp_a5a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5883_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dqg0vp_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Debug info initializer");
-    editorCell.setCellId("Constant_5883_0");
+    editorCell.setCellId("Constant_dqg0vp_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -71,9 +71,9 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5883_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dqg0vp_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concepts to add debug info:");
-    editorCell.setCellId("Constant_5883_1");
+    editorCell.setCellId("Constant_dqg0vp_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -82,9 +82,9 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5883_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dqg0vp_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concepts of vars:");
-    editorCell.setCellId("Constant_5883_2");
+    editorCell.setCellId("Constant_dqg0vp_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -93,9 +93,9 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5883_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dqg0vp_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_5883_3");
+    editorCell.setCellId("Constant_dqg0vp_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -105,8 +105,8 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_5883_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new DebugInfoInitializer_Editor.conceptsToDebugListHandler_5883_0(node, "conceptsToDebug", editorContext);
+  private EditorCell createRefNodeList_dqg0vp_a2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new DebugInfoInitializer_Editor.conceptsToDebugListHandler_dqg0vp_a2a(node, "conceptsToDebug", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_conceptsToDebug");
     {
@@ -117,8 +117,8 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_5883_1(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new DebugInfoInitializer_Editor.conceptsOfVarsListHandler_5883_0(node, "conceptsOfVars", editorContext);
+  private EditorCell createRefNodeList_dqg0vp_a5a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new DebugInfoInitializer_Editor.conceptsOfVarsListHandler_dqg0vp_a5a(node, "conceptsOfVars", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_conceptsOfVars");
     {
@@ -129,8 +129,8 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class conceptsToDebugListHandler_5883_0 extends RefNodeListHandler {
-    public conceptsToDebugListHandler_5883_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class conceptsToDebugListHandler_dqg0vp_a2a extends RefNodeListHandler {
+    public conceptsToDebugListHandler_dqg0vp_a2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -171,8 +171,8 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class conceptsOfVarsListHandler_5883_0 extends RefNodeListHandler {
-    public conceptsOfVarsListHandler_5883_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class conceptsOfVarsListHandler_dqg0vp_a5a extends RefNodeListHandler {
+    public conceptsOfVarsListHandler_dqg0vp_a5a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

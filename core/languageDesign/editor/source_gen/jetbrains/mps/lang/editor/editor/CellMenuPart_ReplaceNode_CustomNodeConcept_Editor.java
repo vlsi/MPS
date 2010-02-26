@@ -20,45 +20,45 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7061_0(editorContext, node);
+    return this.createCollection_ourakl_a(editorContext, node);
   }
 
-  private EditorCell createCollection_7061_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ourakl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_7061_0");
-    editorCell.addEditorCell(this.createCollection_7061_2(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_7061_1(editorContext, node));
+    editorCell.setCellId("Collection_ourakl_a");
+    editorCell.addEditorCell(this.createCollection_ourakl_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_ourakl_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7061_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ourakl_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7061_1");
+    editorCell.setCellId("Collection_ourakl_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7061_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7061_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7061_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_7061_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ourakl_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ourakl_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ourakl_c1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_ourakl_d1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7061_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ourakl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7061_2");
+    editorCell.setCellId("Collection_ourakl_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7061_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ourakl_a0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7061_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ourakl_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace with");
-    editorCell.setCellId("Constant_7061_0");
+    editorCell.setCellId("Constant_ourakl_b1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
@@ -67,9 +67,9 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     return editorCell;
   }
 
-  private EditorCell createConstant_7061_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ourakl_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_7061_1");
+    editorCell.setCellId("Constant_ourakl_c1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -78,9 +78,9 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     return editorCell;
   }
 
-  private EditorCell createConstant_7061_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ourakl_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace node (custom node concept)");
-    editorCell.setCellId("Constant_7061_2");
+    editorCell.setCellId("Constant_ourakl_a0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -90,9 +90,9 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     return editorCell;
   }
 
-  private EditorCell createConstant_7061_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ourakl_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_7061_3");
+    editorCell.setCellId("Constant_ourakl_a1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -101,12 +101,12 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     return editorCell;
   }
 
-  private EditorCell createRefCell_7061_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_ourakl_d1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("replacementConcept");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline7061_0());
+    provider.setAuxiliaryCellProvider(new CellMenuPart_ReplaceNode_CustomNodeConcept_Editor._Inline_ourakl_a3b0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -119,8 +119,8 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     return editorCell;
   }
 
-  public static class _Inline7061_0 extends InlineCellProvider {
-    public _Inline7061_0() {
+  public static class _Inline_ourakl_a3b0 extends InlineCellProvider {
+    public _Inline_ourakl_a3b0() {
       super();
     }
 
@@ -129,10 +129,10 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept_Editor extends DefaultNo
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_7061_0(editorContext, node);
+      return this.createProperty_ourakl_a0d1a(editorContext, node);
     }
 
-    private EditorCell createProperty_7061_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_ourakl_a0d1a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

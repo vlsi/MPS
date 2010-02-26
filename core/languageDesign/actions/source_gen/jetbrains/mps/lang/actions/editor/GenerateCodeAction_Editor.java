@@ -26,44 +26,44 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class GenerateCodeAction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5804_0(editorContext, node);
+    return this.createCollection_imc6ai_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5804_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_imc6ai_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5804_0");
-    editorCell.addEditorCell(this.createCollection_5804_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5804_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5804_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5804_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5804_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5804_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_5804_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5804_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5804_5(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5804_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5804_7(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5804_6(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5804_2(editorContext, node));
+    editorCell.setCellId("Collection_imc6ai_a");
+    editorCell.addEditorCell(this.createCollection_imc6ai_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_imc6ai_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_imc6ai_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_imc6ai_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_imc6ai_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_imc6ai_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_imc6ai_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_imc6ai_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_imc6ai_i0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_imc6ai_j0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_imc6ai_k0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_imc6ai_l0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_imc6ai_m0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5804_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_imc6ai_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5804_1");
+    editorCell.setCellId("Collection_imc6ai_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5804_8(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5804_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_imc6ai_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_imc6ai_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_imc6ai_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_5804_0");
+    editorCell.setCellId("Constant_imc6ai_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -72,16 +72,16 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_imc6ai_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is applicable:");
-    editorCell.setCellId("Constant_5804_1");
+    editorCell.setCellId("Constant_imc6ai_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_imc6ai_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_5804_2");
+    editorCell.setCellId("Constant_imc6ai_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -90,16 +90,16 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_imc6ai_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameters");
-    editorCell.setCellId("Constant_5804_3");
+    editorCell.setCellId("Constant_imc6ai_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_imc6ai_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_5804_4");
+    editorCell.setCellId("Constant_imc6ai_h0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -108,23 +108,23 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_imc6ai_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get action UI");
-    editorCell.setCellId("Constant_5804_5");
+    editorCell.setCellId("Constant_imc6ai_i0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_6(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_imc6ai_l0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "execute");
-    editorCell.setCellId("Constant_5804_6");
+    editorCell.setCellId("Constant_imc6ai_l0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_7(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_imc6ai_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_5804_7");
+    editorCell.setCellId("Constant_imc6ai_k0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -133,22 +133,22 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5804_8(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_imc6ai_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generate code");
-    editorCell.setCellId("Constant_5804_8");
+    editorCell.setCellId("Constant_imc6ai_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_5804_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new GenerateCodeAction_Editor.smartActionParameterListHandler_5804_0(node, "smartActionParameter", editorContext);
+  private EditorCell createRefNodeList_imc6ai_g0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new GenerateCodeAction_Editor.smartActionParameterListHandler_imc6ai_g0(node, "smartActionParameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_smartActionParameter");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNode_5804_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_imc6ai_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("isApplicable");
     provider.setNoTargetText("<no isApplicable>");
@@ -165,7 +165,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5804_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_imc6ai_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("getActionUI");
     provider.setNoTargetText("<no getActionUI>");
@@ -182,7 +182,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5804_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_imc6ai_m0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("executeSmartAction");
     provider.setNoTargetText("<no executeSmartAction>");
@@ -199,7 +199,7 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_5804_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_imc6ai_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("description");
     provider.setNoTargetText("<no description>");
@@ -217,8 +217,8 @@ public class GenerateCodeAction_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class smartActionParameterListHandler_5804_0 extends RefNodeListHandler {
-    public smartActionParameterListHandler_5804_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class smartActionParameterListHandler_imc6ai_g0 extends RefNodeListHandler {
+    public smartActionParameterListHandler_imc6ai_g0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

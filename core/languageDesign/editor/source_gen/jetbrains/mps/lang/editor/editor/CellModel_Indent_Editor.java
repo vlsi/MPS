@@ -13,12 +13,12 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_Indent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_8904_0(editorContext, node);
+    return this.createConstant_l8ulis_a(editorContext, node);
   }
 
-  private EditorCell createConstant_8904_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_l8ulis_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "--->");
-    editorCell.setCellId("Constant_8904_0");
+    editorCell.setCellId("Constant_l8ulis_a");
     Styles_StyleSheet.getRootCellModelStyle(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();

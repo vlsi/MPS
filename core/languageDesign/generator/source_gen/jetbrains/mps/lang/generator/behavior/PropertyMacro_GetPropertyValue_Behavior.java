@@ -32,21 +32,21 @@ public class PropertyMacro_GetPropertyValue_Behavior {
         return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);
       }
     }
-    return new PropertyMacro_GetPropertyValue_Behavior.QuotationClass_9283_0().createNode();
+    return new PropertyMacro_GetPropertyValue_Behavior.QuotationClass_90g9ox_a0f0b().createNode();
   }
 
-  public static class QuotationClass_9283_0 {
-    public QuotationClass_9283_0() {
+  public static class QuotationClass_90g9ox_a0f0b {
+    public QuotationClass_90g9ox_a0f0b() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9283_0 = null;
+      SNode quotedNode_90g9ox_a0f0a = null;
       {
-        quotedNode_9283_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9283_0 = quotedNode_9283_0;
-        result = quotedNode1_9283_0;
+        quotedNode_90g9ox_a0f0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_90g9ox_a0f0a = quotedNode_90g9ox_a0f0a;
+        result = quotedNode1_90g9ox_a0f0a;
       }
       return result;
     }

@@ -19,97 +19,97 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0355_0(editorContext, node);
+    return this.createCollection_jiwbly_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0355_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jiwbly_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_0355_0");
-    editorCell.addEditorCell(this.createCollection_0355_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_0355_2(editorContext, node));
+    editorCell.setCellId("Collection_jiwbly_a");
+    editorCell.addEditorCell(this.createCollection_jiwbly_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_jiwbly_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0355_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jiwbly_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0355_1");
+    editorCell.setCellId("Collection_jiwbly_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0355_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jiwbly_a0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0355_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jiwbly_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0355_2");
+    editorCell.setCellId("Collection_jiwbly_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0355_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_0355_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jiwbly_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_jiwbly_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0355_3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jiwbly_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_0355_3");
+    editorCell.setCellId("Collection_jiwbly_b1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.setGridLayout(true);
     editorCell.setCanBeFolded(true);
-    editorCell.addEditorCell(this.createCollection_0355_5(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_0355_6(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_0355_4(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_jiwbly_a1b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_jiwbly_b1b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_jiwbly_c1b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0355_4(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jiwbly_c1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0355_4");
+    editorCell.setCellId("Collection_jiwbly_c1b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0355_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0355_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0355_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jiwbly_a2b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jiwbly_b2b1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_jiwbly_c2b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0355_5(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jiwbly_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0355_5");
+    editorCell.setCellId("Collection_jiwbly_a1b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0355_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0355_5(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0355_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jiwbly_a0b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jiwbly_b0b1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_jiwbly_c0b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0355_6(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jiwbly_b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0355_6");
+    editorCell.setCellId("Collection_jiwbly_b1b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0355_6(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0355_7(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0355_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jiwbly_a1b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jiwbly_b1b1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_jiwbly_c1b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0355_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jiwbly_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace child (custom action)");
-    editorCell.setCellId("Constant_0355_0");
+    editorCell.setCellId("Constant_jiwbly_a0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -119,9 +119,9 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0355_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jiwbly_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_0355_1");
+    editorCell.setCellId("Constant_jiwbly_a1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -130,16 +130,16 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0355_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jiwbly_a2b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create new child");
-    editorCell.setCellId("Constant_0355_2");
+    editorCell.setCellId("Constant_jiwbly_a2b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0355_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jiwbly_b2b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_0355_3");
+    editorCell.setCellId("Constant_jiwbly_b2b1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -148,16 +148,16 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0355_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jiwbly_a0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
-    editorCell.setCellId("Constant_0355_4");
+    editorCell.setCellId("Constant_jiwbly_a0b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0355_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jiwbly_b0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_0355_5");
+    editorCell.setCellId("Constant_jiwbly_b0b1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -166,16 +166,16 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0355_6(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jiwbly_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
-    editorCell.setCellId("Constant_0355_6");
+    editorCell.setCellId("Constant_jiwbly_a1b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0355_7(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jiwbly_b1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_0355_7");
+    editorCell.setCellId("Constant_jiwbly_b1b1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -184,7 +184,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0355_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_jiwbly_c2b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("createFunction");
     provider.setNoTargetText("<default>");
@@ -201,7 +201,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_0355_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_jiwbly_c0b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("matchingText");
     provider.setNoTargetText("<none>");
@@ -223,7 +223,7 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_0355_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_jiwbly_c1b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("descriptionText");
     provider.setNoTargetText("<none>");

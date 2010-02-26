@@ -15,19 +15,19 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class WildcardPattern_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1606_0(editorContext, node);
+    return this.createCollection_4sx1p7_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1606_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4sx1p7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1606_0");
-    editorCell.addEditorCell(this.createConstant_1606_0(editorContext, node));
+    editorCell.setCellId("Collection_4sx1p7_a");
+    editorCell.addEditorCell(this.createConstant_4sx1p7_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1606_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4sx1p7_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "_");
-    editorCell.setCellId("Constant_1606_0");
+    editorCell.setCellId("Constant_4sx1p7_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);

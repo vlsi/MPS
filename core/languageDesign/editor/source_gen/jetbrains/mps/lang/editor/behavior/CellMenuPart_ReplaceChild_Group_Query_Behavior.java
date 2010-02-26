@@ -21,60 +21,60 @@ public class CellMenuPart_ReplaceChild_Group_Query_Behavior {
     SNode hostMenuPart = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group");
     SNode parameterObjectType = SLinkOperations.getTarget(hostMenuPart, "parameterObjectType", true);
     if (parameterObjectType == null) {
-      return new CellMenuPart_ReplaceChild_Group_Query_Behavior.QuotationClass_7915_0().createNode();
+      return new CellMenuPart_ReplaceChild_Group_Query_Behavior.QuotationClass_ygqhl6_a0a0c0b().createNode();
     }
-    return SNodeOperations.copyNode(new CellMenuPart_ReplaceChild_Group_Query_Behavior.QuotationClass_7915_1().createNode(parameterObjectType));
+    return SNodeOperations.copyNode(new CellMenuPart_ReplaceChild_Group_Query_Behavior.QuotationClass_ygqhl6_a0a3a1().createNode(parameterObjectType));
   }
 
-  public static class QuotationClass_7915_0 {
-    public QuotationClass_7915_0() {
+  public static class QuotationClass_ygqhl6_a0a0c0b {
+    public QuotationClass_ygqhl6_a0a0c0b() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7915_0 = null;
-      SNode quotedNode_7915_1 = null;
+      SNode quotedNode_ygqhl6_a0a0c0a = null;
+      SNode quotedNode_ygqhl6_a0a0a2a0 = null;
       {
-        quotedNode_7915_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7915_0 = quotedNode_7915_0;
+        quotedNode_ygqhl6_a0a0c0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_ygqhl6_a0a0c0a = quotedNode_ygqhl6_a0a0c0a;
         {
-          quotedNode_7915_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_7915_1 = quotedNode_7915_1;
-          quotedNode_7915_0.addChild("elementType", quotedNode1_7915_1);
+          quotedNode_ygqhl6_a0a0a2a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_ygqhl6_a0a0a2a0 = quotedNode_ygqhl6_a0a0a2a0;
+          quotedNode_ygqhl6_a0a0c0a.addChild("elementType", quotedNode1_ygqhl6_a0a0a2a0);
         }
-        result = quotedNode1_7915_0;
+        result = quotedNode1_ygqhl6_a0a0c0a;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_7915_1 {
-    public QuotationClass_7915_1() {
+  public static class QuotationClass_ygqhl6_a0a3a1 {
+    public QuotationClass_ygqhl6_a0a3a1() {
     }
 
-    public SNode createNode(Object parameter_7915_0) {
+    public SNode createNode(Object parameter_ygqhl6_a0a0a0d0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7915_2 = null;
-      SNode quotedNode_7915_3 = null;
+      SNode quotedNode_ygqhl6_a0a3a0 = null;
+      SNode quotedNode_ygqhl6_a0a0d0a = null;
       {
-        quotedNode_7915_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7915_2 = quotedNode_7915_2;
+        quotedNode_ygqhl6_a0a3a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_ygqhl6_a0a3a0 = quotedNode_ygqhl6_a0a3a0;
         {
-          quotedNode_7915_3 = (SNode) parameter_7915_0;
-          SNode quotedNode1_7915_3;
-          if (_parameterValues_129834374.contains(quotedNode_7915_3)) {
-            quotedNode1_7915_3 = CopyUtil.copy(quotedNode_7915_3);
+          quotedNode_ygqhl6_a0a0d0a = (SNode) parameter_ygqhl6_a0a0a0d0a;
+          SNode quotedNode1_ygqhl6_a0a0d0a;
+          if (_parameterValues_129834374.contains(quotedNode_ygqhl6_a0a0d0a)) {
+            quotedNode1_ygqhl6_a0a0d0a = CopyUtil.copy(quotedNode_ygqhl6_a0a0d0a);
           } else {
-            _parameterValues_129834374.add(quotedNode_7915_3);
-            quotedNode1_7915_3 = quotedNode_7915_3;
+            _parameterValues_129834374.add(quotedNode_ygqhl6_a0a0d0a);
+            quotedNode1_ygqhl6_a0a0d0a = quotedNode_ygqhl6_a0a0d0a;
           }
-          if (quotedNode1_7915_3 != null) {
-            quotedNode_7915_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_7915_3));
+          if (quotedNode1_ygqhl6_a0a0d0a != null) {
+            quotedNode_ygqhl6_a0a3a0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_ygqhl6_a0a0d0a));
           }
         }
-        result = quotedNode1_7915_2;
+        result = quotedNode1_ygqhl6_a0a3a0;
       }
       return result;
     }

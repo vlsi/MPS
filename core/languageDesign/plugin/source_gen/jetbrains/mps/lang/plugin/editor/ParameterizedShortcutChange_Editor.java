@@ -29,26 +29,26 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1789_0(editorContext, node);
+    return this.createCollection_ecw4ny_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1789_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ecw4ny_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1789_0");
-    editorCell.addEditorCell(this.createRefCell_1789_0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_1789_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1789_0(editorContext, node));
+    editorCell.setCellId("Collection_ecw4ny_a");
+    editorCell.addEditorCell(this.createRefCell_ecw4ny_a0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_ecw4ny_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ecw4ny_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1789_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ecw4ny_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "NOT IMPLEMENTED YET");
-    editorCell.setCellId("Constant_1789_0");
+    editorCell.setCellId("Constant_ecw4ny_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_1789_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_ecw4ny_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         StringBuilder params = new StringBuilder();
@@ -68,16 +68,16 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_1789_0");
+    editorCell.setCellId("ReadOnlyModelAccessor_ecw4ny_b0");
     return editorCell;
   }
 
-  private EditorCell createRefCell_1789_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_ecw4ny_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ParameterizedShortcutChange_Editor._Inline1789_0());
+    provider.setAuxiliaryCellProvider(new ParameterizedShortcutChange_Editor._Inline_ecw4ny_a0a());
     editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
@@ -94,8 +94,8 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline1789_0 extends InlineCellProvider {
-    public _Inline1789_0() {
+  public static class _Inline_ecw4ny_a0a extends InlineCellProvider {
+    public _Inline_ecw4ny_a0a() {
       super();
     }
 
@@ -104,10 +104,10 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_1789_0(editorContext, node);
+      return this.createProperty_ecw4ny_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_1789_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_ecw4ny_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -30,59 +30,59 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class TemplateDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7348_0(editorContext, node);
+    return this.createCollection_pyph5i_a(editorContext, node);
   }
 
-  private EditorCell createCollection_7348_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_pyph5i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_7348_0");
-    editorCell.addEditorCell(this.createCollection_7348_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7348_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7348_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7348_0(editorContext, node));
+    editorCell.setCellId("Collection_pyph5i_a");
+    editorCell.addEditorCell(this.createCollection_pyph5i_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pyph5i_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pyph5i_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_pyph5i_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7348_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_pyph5i_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_7348_1");
+    editorCell.setCellId("Collection_pyph5i_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createCollection_7348_2(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_7348_3(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_pyph5i_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_pyph5i_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7348_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_pyph5i_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7348_2");
+    editorCell.setCellId("Collection_pyph5i_a0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7348_2(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7348_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pyph5i_a0a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_pyph5i_b0a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7348_3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_pyph5i_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7348_3");
+    editorCell.setCellId("Collection_pyph5i_b0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_7348_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_7348_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pyph5i_a1a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_pyph5i_b1a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7348_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pyph5i_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content node:");
-    editorCell.setCellId("Constant_7348_0");
+    editorCell.setCellId("Constant_pyph5i_c0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -92,9 +92,9 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7348_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pyph5i_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_7348_1");
+    editorCell.setCellId("Constant_pyph5i_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -103,9 +103,9 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7348_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pyph5i_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "template");
-    editorCell.setCellId("Constant_7348_2");
+    editorCell.setCellId("Constant_pyph5i_a0a0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -115,15 +115,15 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7348_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pyph5i_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input");
-    editorCell.setCellId("Constant_7348_3");
+    editorCell.setCellId("Constant_pyph5i_a1a0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_7348_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pyph5i_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("contentNode");
     provider.setNoTargetText("<no content node>");
@@ -140,7 +140,7 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_7348_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_pyph5i_b0a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -152,7 +152,7 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new TemplateDeclaration_Editor.TemplateDeclaration_name_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new TemplateDeclaration_Editor.TemplateDeclaration_name_cellMenu_a0b0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -163,12 +163,12 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_7348_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_pyph5i_b1a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<any node>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplateDeclaration_Editor._Inline7348_0());
+    provider.setAuxiliaryCellProvider(new TemplateDeclaration_Editor._Inline_pyph5i_a1b0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -181,8 +181,8 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline7348_0 extends InlineCellProvider {
-    public _Inline7348_0() {
+  public static class _Inline_pyph5i_a1b0a extends InlineCellProvider {
+    public _Inline_pyph5i_a1b0a() {
       super();
     }
 
@@ -191,10 +191,10 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_7348_1(editorContext, node);
+      return this.createProperty_pyph5i_a0b1a0(editorContext, node);
     }
 
-    private EditorCell createProperty_7348_1(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_pyph5i_a0b1a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -218,8 +218,8 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class TemplateDeclaration_name_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
-    public TemplateDeclaration_name_cellMenu0() {
+  public static class TemplateDeclaration_name_cellMenu_a0b0a0 extends AbstractCellMenuPart_PropertyValues {
+    public TemplateDeclaration_name_cellMenu_a0b0a0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {

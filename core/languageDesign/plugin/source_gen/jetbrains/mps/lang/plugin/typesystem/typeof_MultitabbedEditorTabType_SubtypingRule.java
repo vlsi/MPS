@@ -20,7 +20,7 @@ public class typeof_MultitabbedEditorTabType_SubtypingRule extends SubtypingRule
   }
 
   public SNode getSubOrSuperType(SNode tabType, TypeCheckingContext typeCheckingContext) {
-    return new typeof_MultitabbedEditorTabType_SubtypingRule.QuotationClass_5775_0().createNode(typeCheckingContext);
+    return new typeof_MultitabbedEditorTabType_SubtypingRule.QuotationClass_aofz3z_a0a0a().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -35,19 +35,19 @@ public class typeof_MultitabbedEditorTabType_SubtypingRule extends SubtypingRule
     return false;
   }
 
-  public static class QuotationClass_5775_0 {
-    public QuotationClass_5775_0() {
+  public static class QuotationClass_aofz3z_a0a0a {
+    public QuotationClass_aofz3z_a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5775_0 = null;
+      SNode quotedNode_aofz3z_a0a0a = null;
       {
-        quotedNode_5775_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5775_0 = quotedNode_5775_0;
-        quotedNode1_5775_0.addReference(SReference.create("classifier", quotedNode1_5775_0, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.tabbedEditor(jetbrains.mps.plugins.pluginparts.tabbedEditor@java_stub)"), SNodeId.fromString("~BaseMultiTab")));
-        result = quotedNode1_5775_0;
+        quotedNode_aofz3z_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_aofz3z_a0a0a = quotedNode_aofz3z_a0a0a;
+        quotedNode1_aofz3z_a0a0a.addReference(SReference.create("classifier", quotedNode1_aofz3z_a0a0a, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.tabbedEditor(jetbrains.mps.plugins.pluginparts.tabbedEditor@java_stub)"), SNodeId.fromString("~BaseMultiTab")));
+        result = quotedNode1_aofz3z_a0a0a;
       }
       return result;
     }
@@ -55,12 +55,12 @@ public class typeof_MultitabbedEditorTabType_SubtypingRule extends SubtypingRule
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5775_0 = null;
+      SNode quotedNode_aofz3z_a0a0a = null;
       {
-        quotedNode_5775_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5775_0 = quotedNode_5775_0;
-        quotedNode1_5775_0.addReference(SReference.create("classifier", quotedNode1_5775_0, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.tabbedEditor(jetbrains.mps.plugins.pluginparts.tabbedEditor@java_stub)"), SNodeId.fromString("~BaseMultiTab")));
-        result = quotedNode1_5775_0;
+        quotedNode_aofz3z_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_aofz3z_a0a0a = quotedNode_aofz3z_a0a0a;
+        quotedNode1_aofz3z_a0a0a.addReference(SReference.create("classifier", quotedNode1_aofz3z_a0a0a, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.tabbedEditor(jetbrains.mps.plugins.pluginparts.tabbedEditor@java_stub)"), SNodeId.fromString("~BaseMultiTab")));
+        result = quotedNode1_aofz3z_a0a0a;
       }
       return result;
     }

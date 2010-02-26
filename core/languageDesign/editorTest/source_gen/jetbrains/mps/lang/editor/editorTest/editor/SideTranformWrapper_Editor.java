@@ -19,42 +19,42 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SideTranformWrapper_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0431_0(editorContext, node);
+    return this.createCollection_6v8cz3_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0431_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6v8cz3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0431_0");
-    editorCell.addEditorCell(this.createConstant_0431_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0431_0(editorContext, node));
-    if (renderingCondition0431_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_0431_1(editorContext, node));
+    editorCell.setCellId("Collection_6v8cz3_a");
+    editorCell.addEditorCell(this.createConstant_6v8cz3_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_6v8cz3_b0(editorContext, node));
+    if (renderingCondition_6v8cz3_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_6v8cz3_c0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_0431_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6v8cz3_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0431_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_6v8cz3_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0431_1");
+    editorCell.setCellId("Collection_6v8cz3_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_0431_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6v8cz3_a2a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0431_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6v8cz3_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "right");
-    editorCell.setCellId("Constant_0431_0");
+    editorCell.setCellId("Constant_6v8cz3_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0431_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6v8cz3_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_0431_1");
+    editorCell.setCellId("Constant_6v8cz3_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -63,9 +63,9 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0431_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_6v8cz3_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_0431_2");
+    editorCell.setCellId("Constant_6v8cz3_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -74,7 +74,7 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0431_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6v8cz3_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("child");
     provider.setNoTargetText("<no child>");
@@ -92,7 +92,7 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition0431_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_6v8cz3_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "rightOpen");
   }
 }

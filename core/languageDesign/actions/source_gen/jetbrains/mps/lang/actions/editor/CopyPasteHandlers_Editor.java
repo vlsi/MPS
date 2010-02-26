@@ -26,77 +26,77 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2789_0(editorContext, node);
+    return this.createCollection_ffwobm_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2789_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ffwobm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_2789_0");
-    editorCell.addEditorCell(this.createCollection_2789_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2789_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_2789_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2789_2(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_2789_3(editorContext, node));
+    editorCell.setCellId("Collection_ffwobm_a");
+    editorCell.addEditorCell(this.createCollection_ffwobm_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ffwobm_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_ffwobm_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ffwobm_d0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_ffwobm_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2789_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ffwobm_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2789_1");
+    editorCell.setCellId("Collection_ffwobm_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2789_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2789_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ffwobm_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_ffwobm_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2789_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ffwobm_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_2789_2");
+    editorCell.setCellId("Collection_ffwobm_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createRefNodeList_2789_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ffwobm_a2a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2789_3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ffwobm_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_2789_3");
+    editorCell.setCellId("Collection_ffwobm_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createRefNodeList_2789_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ffwobm_a4a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2789_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ffwobm_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy paste handlers");
-    editorCell.setCellId("Constant_2789_0");
+    editorCell.setCellId("Constant_ffwobm_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2789_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ffwobm_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_2789_1");
+    editorCell.setCellId("Constant_ffwobm_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2789_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ffwobm_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_2789_2");
+    editorCell.setCellId("Constant_ffwobm_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2789_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CopyPasteHandlers_Editor.postProcessorListHandler_2789_0(node, "postProcessor", editorContext);
+  private EditorCell createRefNodeList_ffwobm_a2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CopyPasteHandlers_Editor.postProcessorListHandler_ffwobm_a2a(node, "postProcessor", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_postProcessor");
     {
@@ -107,8 +107,8 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2789_1(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CopyPasteHandlers_Editor.preProcessorListHandler_2789_0(node, "preProcessor", editorContext);
+  private EditorCell createRefNodeList_ffwobm_a4a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CopyPasteHandlers_Editor.preProcessorListHandler_ffwobm_a4a(node, "preProcessor", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_preProcessor");
     {
@@ -119,7 +119,7 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_2789_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ffwobm_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -137,8 +137,8 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class postProcessorListHandler_2789_0 extends RefNodeListHandler {
-    public postProcessorListHandler_2789_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class postProcessorListHandler_ffwobm_a2a extends RefNodeListHandler {
+    public postProcessorListHandler_ffwobm_a2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -186,8 +186,8 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class preProcessorListHandler_2789_0 extends RefNodeListHandler {
-    public preProcessorListHandler_2789_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class preProcessorListHandler_ffwobm_a4a extends RefNodeListHandler {
+    public preProcessorListHandler_ffwobm_a4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

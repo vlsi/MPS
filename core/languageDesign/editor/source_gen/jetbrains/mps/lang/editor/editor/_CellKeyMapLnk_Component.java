@@ -26,22 +26,22 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8023_0(editorContext, node);
+    return this.createCollection_teu4t0_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8023_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_teu4t0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8023_0");
-    editorCell.addEditorCell(this.createRefCell_8023_0(editorContext, node));
+    editorCell.setCellId("Collection_teu4t0_a");
+    editorCell.addEditorCell(this.createRefCell_teu4t0_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_8023_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_teu4t0_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("keyMap");
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new _CellKeyMapLnk_Component._Inline8023_0());
+    provider.setAuxiliaryCellProvider(new _CellKeyMapLnk_Component._Inline_teu4t0_a0a());
     editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
@@ -58,8 +58,8 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  public static class _Inline8023_0 extends InlineCellProvider {
-    public _Inline8023_0() {
+  public static class _Inline_teu4t0_a0a extends InlineCellProvider {
+    public _Inline_teu4t0_a0a() {
       super();
     }
 
@@ -68,10 +68,10 @@ public class _CellKeyMapLnk_Component extends AbstractCellProvider {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8023_0(editorContext, node);
+      return this.createProperty_teu4t0_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_8023_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_teu4t0_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

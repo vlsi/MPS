@@ -27,22 +27,22 @@ public class QueryFunction_SideTransform_ConceptHandler_Behavior {
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", false, false);
-    return new QueryFunction_SideTransform_ConceptHandler_Behavior.QuotationClass_4394_0().createNode(SLinkOperations.getTarget(ancestor, "concept", false));
+    return new QueryFunction_SideTransform_ConceptHandler_Behavior.QuotationClass_qx4gwz_a0b0c().createNode(SLinkOperations.getTarget(ancestor, "concept", false));
   }
 
-  public static class QuotationClass_4394_0 {
-    public QuotationClass_4394_0() {
+  public static class QuotationClass_qx4gwz_a0b0c {
+    public QuotationClass_qx4gwz_a0b0c() {
     }
 
-    public SNode createNode(Object parameter_4394_0) {
+    public SNode createNode(Object parameter_qx4gwz_a0a0b0b) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4394_0 = null;
+      SNode quotedNode_qx4gwz_a0b0b = null;
       {
-        quotedNode_4394_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4394_0 = quotedNode_4394_0;
-        quotedNode1_4394_0.setReferent("concept", (SNode) parameter_4394_0);
-        result = quotedNode1_4394_0;
+        quotedNode_qx4gwz_a0b0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_qx4gwz_a0b0b = quotedNode_qx4gwz_a0b0b;
+        quotedNode1_qx4gwz_a0b0b.setReferent("concept", (SNode) parameter_qx4gwz_a0a0b0b);
+        result = quotedNode1_qx4gwz_a0b0b;
       }
       return result;
     }

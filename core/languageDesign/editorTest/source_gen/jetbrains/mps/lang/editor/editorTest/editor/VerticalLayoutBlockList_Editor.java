@@ -19,42 +19,42 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1615_1(editorContext, node);
+    return this.createCollection_s783cw_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1615_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_s783cw_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_1615_0");
+    editorCell.setCellId("Collection_s783cw_b0");
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createRefNodeList_1615_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_s783cw_a1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_1615_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_s783cw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1615_1");
-    editorCell.addEditorCell(this.createConstant_1615_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_1615_0(editorContext, node));
+    editorCell.setCellId("Collection_s783cw_a");
+    editorCell.addEditorCell(this.createConstant_s783cw_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_s783cw_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1615_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_s783cw_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vertical layout");
-    editorCell.setCellId("Constant_1615_0");
+    editorCell.setCellId("Constant_s783cw_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_1615_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new VerticalLayoutBlockList_Editor.statementListHandler_1615_0(node, "statement", editorContext);
+  private EditorCell createRefNodeList_s783cw_a1a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new VerticalLayoutBlockList_Editor.statementListHandler_s783cw_a1a(node, "statement", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_statement");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class statementListHandler_1615_0 extends RefNodeListHandler {
-    public statementListHandler_1615_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class statementListHandler_s783cw_a1a extends RefNodeListHandler {
+    public statementListHandler_s783cw_a1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

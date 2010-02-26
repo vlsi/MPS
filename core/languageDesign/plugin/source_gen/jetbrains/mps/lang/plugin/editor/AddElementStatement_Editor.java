@@ -16,34 +16,34 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AddElementStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3560_0(editorContext, node);
+    return this.createCollection_92vjrw_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3560_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_92vjrw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3560_0");
-    editorCell.addEditorCell(this.createConstant_3560_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_3560_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3560_1(editorContext, node));
+    editorCell.setCellId("Collection_92vjrw_a");
+    editorCell.addEditorCell(this.createConstant_92vjrw_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_92vjrw_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_92vjrw_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3560_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_92vjrw_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "addJavaAction");
-    editorCell.setCellId("Constant_3560_0");
+    editorCell.setCellId("Constant_92vjrw_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_3560_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_92vjrw_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_3560_1");
+    editorCell.setCellId("Constant_92vjrw_c0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_3560_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_92vjrw_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

@@ -19,26 +19,26 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class PositionChildrenStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4122_0(editorContext, node);
+    return this.createCollection_1duzn9_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4122_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1duzn9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4122_0");
-    editorCell.addEditorCell(this.createConceptProperty_4122_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4122_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4122_0(editorContext, node));
+    editorCell.setCellId("Collection_1duzn9_a");
+    editorCell.addEditorCell(this.createConceptProperty_1duzn9_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1duzn9_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_1duzn9_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4122_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1duzn9_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_4122_0");
+    editorCell.setCellId("Constant_1duzn9_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_4122_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_1duzn9_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -47,7 +47,7 @@ public class PositionChildrenStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new PositionChildrenStyleClassItem_Editor.PositionChildrenStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new PositionChildrenStyleClassItem_Editor.PositionChildrenStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -58,7 +58,7 @@ public class PositionChildrenStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4122_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_1duzn9_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("position");
     provider.setNoTargetText("<no position>");
@@ -76,8 +76,8 @@ public class PositionChildrenStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class PositionChildrenStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public PositionChildrenStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
+  public static class PositionChildrenStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public PositionChildrenStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

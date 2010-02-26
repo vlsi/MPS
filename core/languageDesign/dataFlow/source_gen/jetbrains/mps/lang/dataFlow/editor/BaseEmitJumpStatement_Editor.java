@@ -15,18 +15,18 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8719_0(editorContext, node);
+    return this.createCollection_bs8xw7_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8719_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_bs8xw7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8719_0");
-    editorCell.addEditorCell(this.createConceptProperty_8719_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8719_0(editorContext, node));
+    editorCell.setCellId("Collection_bs8xw7_a");
+    editorCell.addEditorCell(this.createConceptProperty_bs8xw7_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_bs8xw7_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_8719_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_bs8xw7_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -45,7 +45,7 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8719_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_bs8xw7_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("jumpTo");
     provider.setNoTargetText("<no jumpTo>");

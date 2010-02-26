@@ -29,31 +29,31 @@ import jetbrains.mps.smodel.SModel;
 
 public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2890_0(editorContext, node);
+    return this.createCollection_4fi5xp_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2890_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4fi5xp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2890_0");
-    editorCell.addEditorCell(this.createConceptProperty_2890_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2890_0(editorContext, node));
-    if (renderingCondition2890_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createProperty_2890_0(editorContext, node));
+    editorCell.setCellId("Collection_4fi5xp_a");
+    editorCell.addEditorCell(this.createConceptProperty_4fi5xp_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4fi5xp_b0(editorContext, node));
+    if (renderingCondition_4fi5xp_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createProperty_4fi5xp_c0(editorContext, node));
     }
-    if (renderingCondition2890_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_2890_0(editorContext, node));
+    if (renderingCondition_4fi5xp_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_4fi5xp_d0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_2890_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_4fi5xp_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_2890_0");
+    editorCell.setCellId("Constant_4fi5xp_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_2890_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_4fi5xp_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -62,7 +62,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     Styles_StyleSheet.getItem(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new UnderlinedStyleClassItem_Editor.UnderlinedStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new UnderlinedStyleClassItem_Editor.UnderlinedStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -73,7 +73,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_2890_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_4fi5xp_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("underlined");
     provider.setNoTargetText("<no underlined>");
@@ -81,7 +81,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_underlined");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new UnderlinedStyleClassItem_Editor.UnderlinedStyleClassItem_underlined_cellMenu0(),new UnderlinedStyleClassItem_Editor.UnderlinedStyleClassItem_generic_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new UnderlinedStyleClassItem_Editor.UnderlinedStyleClassItem_underlined_cellMenu_a0c0(),new UnderlinedStyleClassItem_Editor.UnderlinedStyleClassItem_generic_cellMenu_b0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -92,7 +92,7 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2890_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4fi5xp_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");
     provider.setNoTargetText("<no query>");
@@ -112,16 +112,16 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition2890_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4fi5xp_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) == null;
   }
 
-  private static boolean renderingCondition2890_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_4fi5xp_a3a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "query", true) != null);
   }
 
-  public static class UnderlinedStyleClassItem_underlined_cellMenu0 extends AbstractCellMenuPart_PropertyValues {
-    public UnderlinedStyleClassItem_underlined_cellMenu0() {
+  public static class UnderlinedStyleClassItem_underlined_cellMenu_a0c0 extends AbstractCellMenuPart_PropertyValues {
+    public UnderlinedStyleClassItem_underlined_cellMenu_a0c0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
@@ -129,8 +129,8 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class UnderlinedStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public UnderlinedStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu0() {
+  public static class UnderlinedStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public UnderlinedStyleClassItem_Editor_replaceWith_StyleClassItem_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -138,8 +138,8 @@ public class UnderlinedStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class UnderlinedStyleClassItem_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
-    public UnderlinedStyleClassItem_generic_cellMenu0() {
+  public static class UnderlinedStyleClassItem_generic_cellMenu_b0c0 extends AbstractCellMenuPart_Generic_Item {
+    public UnderlinedStyleClassItem_generic_cellMenu_b0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {

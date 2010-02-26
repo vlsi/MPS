@@ -20,22 +20,22 @@ import jetbrains.mps.nodeEditor.style.Measure;
 
 public class ActionDataParameterReferenceOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6775_0(editorContext, node);
+    return this.createCollection_867j1v_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6775_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_867j1v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6775_0");
-    editorCell.addEditorCell(this.createRefCell_6775_0(editorContext, node));
+    editorCell.setCellId("Collection_867j1v_a");
+    editorCell.addEditorCell(this.createRefCell_867j1v_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_6775_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_867j1v_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("parameterDeclaration");
     provider.setNoTargetText("<no parameterDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionDataParameterReferenceOperation_Editor._Inline6775_0());
+    provider.setAuxiliaryCellProvider(new ActionDataParameterReferenceOperation_Editor._Inline_867j1v_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -48,8 +48,8 @@ public class ActionDataParameterReferenceOperation_Editor extends DefaultNodeEdi
     return editorCell;
   }
 
-  public static class _Inline6775_0 extends InlineCellProvider {
-    public _Inline6775_0() {
+  public static class _Inline_867j1v_a0a extends InlineCellProvider {
+    public _Inline_867j1v_a0a() {
       super();
     }
 
@@ -58,10 +58,10 @@ public class ActionDataParameterReferenceOperation_Editor extends DefaultNodeEdi
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_6775_0(editorContext, node);
+      return this.createProperty_867j1v_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_6775_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_867j1v_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -16,26 +16,26 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class NavigatableNodeStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9598_0(editorContext, node);
+    return this.createCollection_nu7w75_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9598_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_nu7w75_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9598_0");
-    editorCell.addEditorCell(this.createConceptProperty_9598_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9598_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9598_0(editorContext, node));
+    editorCell.setCellId("Collection_nu7w75_a");
+    editorCell.addEditorCell(this.createConceptProperty_nu7w75_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_nu7w75_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_nu7w75_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9598_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_nu7w75_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_9598_0");
+    editorCell.setCellId("Constant_nu7w75_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9598_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_nu7w75_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -54,7 +54,7 @@ public class NavigatableNodeStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9598_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_nu7w75_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("functionNode");
     provider.setNoTargetText("<no functionNode>");

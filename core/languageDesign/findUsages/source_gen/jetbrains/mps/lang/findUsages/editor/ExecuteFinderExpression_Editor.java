@@ -21,40 +21,40 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8327_0(editorContext, node);
+    return this.createCollection_ydcqpo_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8327_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ydcqpo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8327_0");
-    editorCell.addEditorCell(this.createConstant_8327_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_8327_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8327_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8327_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8327_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8327_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8327_3(editorContext, node));
+    editorCell.setCellId("Collection_ydcqpo_a");
+    editorCell.addEditorCell(this.createConstant_ydcqpo_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_ydcqpo_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ydcqpo_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ydcqpo_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ydcqpo_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ydcqpo_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ydcqpo_g0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8327_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ydcqpo_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "execute");
-    editorCell.setCellId("Constant_8327_0");
+    editorCell.setCellId("Constant_ydcqpo_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8327_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ydcqpo_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_8327_1");
+    editorCell.setCellId("Constant_ydcqpo_c0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8327_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ydcqpo_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_8327_2");
+    editorCell.setCellId("Constant_ydcqpo_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -63,20 +63,20 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8327_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ydcqpo_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_8327_3");
+    editorCell.setCellId("Constant_ydcqpo_g0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_8327_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_ydcqpo_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("finder");
     provider.setNoTargetText("<no finder>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExecuteFinderExpression_Editor._Inline8327_0());
+    provider.setAuxiliaryCellProvider(new ExecuteFinderExpression_Editor._Inline_ydcqpo_a1a());
     editorCell = provider.createEditorCell(editorContext);
     BaseLanguageStyle_StyleSheet.getMethodName(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -90,7 +90,7 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8327_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ydcqpo_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("queryNode");
     provider.setNoTargetText("<node>");
@@ -107,7 +107,7 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8327_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ydcqpo_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("queryScope");
     provider.setNoTargetText("<same scope>");
@@ -124,8 +124,8 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline8327_0 extends InlineCellProvider {
-    public _Inline8327_0() {
+  public static class _Inline_ydcqpo_a1a extends InlineCellProvider {
+    public _Inline_ydcqpo_a1a() {
       super();
     }
 
@@ -134,10 +134,10 @@ public class ExecuteFinderExpression_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8327_0(editorContext, node);
+      return this.createProperty_ydcqpo_a0b0(editorContext, node);
     }
 
-    private EditorCell createProperty_8327_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_ydcqpo_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<finder>");

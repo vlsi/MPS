@@ -14,18 +14,18 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class BracesStubBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7901_0(editorContext, node);
+    return this.createCollection_cjxhcm_a(editorContext, node);
   }
 
-  private EditorCell createCollection_7901_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_cjxhcm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7901_0");
+    editorCell.setCellId("Collection_cjxhcm_a");
     editorCell.setUsesBraces(true);
-    editorCell.addEditorCell(this.createConceptProperty_7901_0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_cjxhcm_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_7901_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_cjxhcm_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

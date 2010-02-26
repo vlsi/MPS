@@ -21,20 +21,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class RGBColor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1526_0(editorContext, node);
+    return this.createCollection_7cvrmj_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1526_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7cvrmj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1526_0");
-    editorCell.addEditorCell(this.createConstant_1526_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_1526_0(editorContext, node));
+    editorCell.setCellId("Collection_7cvrmj_a");
+    editorCell.addEditorCell(this.createConstant_7cvrmj_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_7cvrmj_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1526_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7cvrmj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
-    editorCell.setCellId("Constant_1526_0");
+    editorCell.setCellId("Constant_7cvrmj_a0");
     BaseLanguageStyle_StyleSheet.getNumericLiteral(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -45,7 +45,7 @@ public class RGBColor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_1526_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_7cvrmj_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");

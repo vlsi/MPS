@@ -24,53 +24,53 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8866_1(editorContext, node);
+    return this.createCollection_gkr2rl_a_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8866_0(editorContext, node);
+    return this.createCollection_gkr2rl_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8866_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gkr2rl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_8866_0");
+    editorCell.setCellId("Collection_gkr2rl_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8866_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8866_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_8866_5(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gkr2rl_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gkr2rl_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_gkr2rl_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8866_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gkr2rl_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8866_1");
-    editorCell.addEditorCell(this.createCollection_8866_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8866_2(editorContext, node));
-    if (renderingCondition8866_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_8866_6(editorContext, node));
+    editorCell.setCellId("Collection_gkr2rl_a_0");
+    editorCell.addEditorCell(this.createCollection_gkr2rl_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gkr2rl_b0_0(editorContext, node));
+    if (renderingCondition_gkr2rl_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_gkr2rl_c0_0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createCollection_8866_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8866_3(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_gkr2rl_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gkr2rl_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8866_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gkr2rl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_8866_2");
+    editorCell.setCellId("Collection_gkr2rl_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createComponent_8866_0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_gkr2rl_a0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8866_3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gkr2rl_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_8866_3");
+    editorCell.setCellId("Collection_gkr2rl_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -78,57 +78,57 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.gray);
     }
     editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createRefNode_8866_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_8866_4(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_gkr2rl_a3a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_gkr2rl_b3a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8866_4(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gkr2rl_b3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8866_4");
+    editorCell.setCellId("Collection_gkr2rl_b3a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8866_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8866_5(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8866_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gkr2rl_a1d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gkr2rl_b1d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_gkr2rl_c1d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8866_5(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gkr2rl_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8866_5");
+    editorCell.setCellId("Collection_gkr2rl_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8866_6(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_8866_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gkr2rl_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_gkr2rl_b2a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8866_6(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gkr2rl_c0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8866_6");
+    editorCell.setCellId("Collection_gkr2rl_c0_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createRefCell_8866_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8866_7(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_gkr2rl_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gkr2rl_b2a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_8866_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_gkr2rl_a0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new BaseMappingRule_premise(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gkr2rl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weaving rule");
-    editorCell.setCellId("Constant_8866_0");
+    editorCell.setCellId("Constant_gkr2rl_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -139,9 +139,9 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gkr2rl_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_8866_1");
+    editorCell.setCellId("Constant_gkr2rl_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -150,9 +150,9 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gkr2rl_b0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
-    editorCell.setCellId("Constant_8866_2");
+    editorCell.setCellId("Constant_gkr2rl_b0_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -161,9 +161,9 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gkr2rl_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_8866_3");
+    editorCell.setCellId("Constant_gkr2rl_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, true);
@@ -173,17 +173,17 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gkr2rl_a1d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context");
-    editorCell.setCellId("Constant_8866_4");
+    editorCell.setCellId("Constant_gkr2rl_a1d0");
     Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gkr2rl_b1d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_8866_5");
+    editorCell.setCellId("Constant_gkr2rl_b1d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -193,21 +193,21 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_6(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gkr2rl_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
-    editorCell.setCellId("Constant_8866_6");
+    editorCell.setCellId("Constant_gkr2rl_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8866_7(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gkr2rl_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_8866_7");
+    editorCell.setCellId("Constant_gkr2rl_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_8866_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_gkr2rl_a3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("ruleConsequence");
     provider.setNoTargetText("<no ruleConsequence>");
@@ -224,7 +224,7 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8866_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_gkr2rl_c1d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("contextNodeQuery");
     provider.setNoTargetText("<no context node>");
@@ -241,12 +241,12 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_8866_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_gkr2rl_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Weaving_MappingRule_Editor._Inline8866_0());
+    provider.setAuxiliaryCellProvider(new Weaving_MappingRule_Editor._Inline_gkr2rl_a1c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -259,12 +259,12 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_8866_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_gkr2rl_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Weaving_MappingRule_Editor._Inline8866_1());
+    provider.setAuxiliaryCellProvider(new Weaving_MappingRule_Editor._Inline_gkr2rl_a0c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -277,12 +277,12 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition8866_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gkr2rl_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 
-  public static class _Inline8866_0 extends InlineCellProvider {
-    public _Inline8866_0() {
+  public static class _Inline_gkr2rl_a1c0 extends InlineCellProvider {
+    public _Inline_gkr2rl_a1c0() {
       super();
     }
 
@@ -291,10 +291,10 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8866_0(editorContext, node);
+      return this.createProperty_gkr2rl_a0b2a(editorContext, node);
     }
 
-    private EditorCell createProperty_8866_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_gkr2rl_a0b2a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -318,8 +318,8 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline8866_1 extends InlineCellProvider {
-    public _Inline8866_1() {
+  public static class _Inline_gkr2rl_a0c0 extends InlineCellProvider {
+    public _Inline_gkr2rl_a0c0() {
       super();
     }
 
@@ -328,10 +328,10 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8866_1(editorContext, node);
+      return this.createProperty_gkr2rl_a0a2a(editorContext, node);
     }
 
-    private EditorCell createProperty_8866_1(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_gkr2rl_a0a2a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

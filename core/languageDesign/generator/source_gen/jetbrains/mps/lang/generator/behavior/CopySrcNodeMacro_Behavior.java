@@ -14,30 +14,30 @@ public class CopySrcNodeMacro_Behavior {
 
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
-      GeneratedMatchingPattern pattern_8614_0 = new CopySrcNodeMacro_Behavior.Pattern_8614_0();
-      SNode coercedNode_8614_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_8614_0);
-      if (coercedNode_8614_0 != null) {
-        return ((SNode) pattern_8614_0.getFieldValue("PatternVar_concept"));
+      GeneratedMatchingPattern pattern_7c1mz_a0a = new CopySrcNodeMacro_Behavior.Pattern_7c1mz_a0a0a0a1();
+      SNode coercedNode_7c1mz_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_7c1mz_a0a);
+      if (coercedNode_7c1mz_a0a != null) {
+        return ((SNode) pattern_7c1mz_a0a.getFieldValue("PatternVar_concept"));
       } else {
       }
     }
     return null;
   }
 
-  public static class Pattern_8614_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_7c1mz_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_concept;
 
-    public Pattern_8614_0() {
+    public Pattern_7c1mz_a0a0a0a1() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_8614_0;
-        nodeToMatch_8614_0 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_8614_0.getConceptFqName()))) {
+        SNode nodeToMatch_7c1mz_a0a0a0;
+        nodeToMatch_7c1mz_a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_7c1mz_a0a0a0.getConceptFqName()))) {
           return false;
         }
-        this.PatternVar_concept = nodeToMatch_8614_0.getReferent("concept");
+        this.PatternVar_concept = nodeToMatch_7c1mz_a0a0a0.getReferent("concept");
       }
       return true;
     }

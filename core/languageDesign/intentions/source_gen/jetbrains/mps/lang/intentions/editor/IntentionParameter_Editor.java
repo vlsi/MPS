@@ -18,17 +18,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class IntentionParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1903_0(editorContext, node);
+    return this.createCollection_csxlk7_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1903_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_csxlk7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1903_0");
-    editorCell.addEditorCell(this.createConceptProperty_1903_0(editorContext, node));
+    editorCell.setCellId("Collection_csxlk7_a");
+    editorCell.addEditorCell(this.createConceptProperty_csxlk7_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_1903_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_csxlk7_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<ConceptFunctionParameter with no alias>");

@@ -17,36 +17,36 @@ import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 
 public class AddTabOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0985_0(editorContext, node);
+    return this.createCollection_9ces18_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0985_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9ces18_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0985_0");
-    editorCell.addEditorCell(this.createConceptProperty_0985_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0985_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0985_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0985_1(editorContext, node));
+    editorCell.setCellId("Collection_9ces18_a");
+    editorCell.addEditorCell(this.createConceptProperty_9ces18_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9ces18_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9ces18_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9ces18_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0985_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9ces18_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_0985_0");
+    editorCell.setCellId("Constant_9ces18_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0985_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9ces18_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_0985_1");
+    editorCell.setCellId("Constant_9ces18_d0");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_0985_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9ces18_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("tab");
     provider.setNoTargetText("<no tab>");
@@ -63,7 +63,7 @@ public class AddTabOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_0985_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_9ces18_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

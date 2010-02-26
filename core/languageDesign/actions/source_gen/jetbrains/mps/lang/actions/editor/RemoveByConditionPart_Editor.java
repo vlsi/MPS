@@ -19,43 +19,43 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6871_0(editorContext, node);
+    return this.createCollection_kx3b3w_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6871_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_kx3b3w_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_6871_0");
-    editorCell.addEditorCell(this.createCollection_6871_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_6871_2(editorContext, node));
+    editorCell.setCellId("Collection_kx3b3w_a");
+    editorCell.addEditorCell(this.createCollection_kx3b3w_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_kx3b3w_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_6871_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_kx3b3w_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6871_1");
+    editorCell.setCellId("Collection_kx3b3w_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6871_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_kx3b3w_a0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_6871_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_kx3b3w_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6871_2");
+    editorCell.setCellId("Collection_kx3b3w_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell6871_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6871_0(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell_kx3b3w_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_kx3b3w_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6871_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kx3b3w_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "remove by condition");
-    editorCell.setCellId("Constant_6871_0");
+    editorCell.setCellId("Constant_kx3b3w_a0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -64,12 +64,12 @@ public class RemoveByConditionPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createIndentCell6871_0(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_kx3b3w_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createRefNode_6871_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_kx3b3w_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");

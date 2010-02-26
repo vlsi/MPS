@@ -18,21 +18,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ResultStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5094_0(editorContext, node);
+    return this.createCollection_sbkml9_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5094_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_sbkml9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5094_0");
-    editorCell.addEditorCell(this.createConstant_5094_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5094_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5094_1(editorContext, node));
+    editorCell.setCellId("Collection_sbkml9_a");
+    editorCell.addEditorCell(this.createConstant_sbkml9_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_sbkml9_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_sbkml9_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5094_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_sbkml9_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "add result");
-    editorCell.setCellId("Constant_5094_0");
+    editorCell.setCellId("Constant_sbkml9_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -41,9 +41,9 @@ public class ResultStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_5094_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_sbkml9_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_5094_1");
+    editorCell.setCellId("Constant_sbkml9_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -52,7 +52,7 @@ public class ResultStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5094_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_sbkml9_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("foundNode");
     provider.setNoTargetText("<no foundNode>");
