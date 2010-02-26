@@ -29,27 +29,27 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class IndexedTupleType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8965_0(editorContext, node);
+    return this.createCollection_kdtlb1_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8965_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_kdtlb1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8965_0");
-    editorCell.addEditorCell(this.createConceptProperty_8965_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_8965_0(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_8965_1(editorContext, node));
+    editorCell.setCellId("Collection_kdtlb1_a");
+    editorCell.addEditorCell(this.createConceptProperty_kdtlb1_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_kdtlb1_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_kdtlb1_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_8965_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new IndexedTupleType_Editor.componentTypeListHandler_8965_0(node, "componentType", editorContext);
+  private EditorCell createRefNodeList_kdtlb1_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new IndexedTupleType_Editor.componentTypeListHandler_kdtlb1_b0(node, "componentType", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_componentType");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_8965_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_kdtlb1_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("leftBracket");
     provider.setNoTargetText("<no leftBracket>");
@@ -73,7 +73,7 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_8965_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_kdtlb1_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("rightBracket");
     provider.setNoTargetText("<no rightBracket>");
@@ -97,8 +97,8 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class componentTypeListHandler_8965_0 extends RefNodeListHandler {
-    public componentTypeListHandler_8965_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class componentTypeListHandler_kdtlb1_b0 extends RefNodeListHandler {
+    public componentTypeListHandler_kdtlb1_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -121,7 +121,7 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_8965_0(editorContext, node);
+      return this.createConstant_kdtlb1_a1a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -149,9 +149,9 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_8965_0(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_kdtlb1_a1a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_8965_0");
+      editorCell.setCellId("Constant_kdtlb1_a1a");
       editorCell.setDefaultText("");
       return editorCell;
     }

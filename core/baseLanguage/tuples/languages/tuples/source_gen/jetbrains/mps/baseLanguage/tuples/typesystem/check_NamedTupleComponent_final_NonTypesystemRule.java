@@ -27,10 +27,10 @@ public class check_NamedTupleComponent_final_NonTypesystemRule extends AbstractN
   public void applyRule(final SNode expression, final TypeCheckingContext typeCheckingContext) {
     if (expression == SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(expression), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "lValue", true)) {
       {
-        IMatchingPattern pattern_2398_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType");
-        SNode coercedNode_2398_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expression), pattern_2398_0, typeCheckingContext);
-        if (coercedNode_2398_0 != null) {
-          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(coercedNode_2398_0, "classifier", false), "component", true)).any(new IWhereFilter<SNode>() {
+        IMatchingPattern pattern_g7ekqv_a0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType");
+        SNode coercedNode_g7ekqv_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expression), pattern_g7ekqv_a0a0, typeCheckingContext);
+        if (coercedNode_g7ekqv_a0a0 != null) {
+          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(coercedNode_g7ekqv_a0a0, "classifier", false), "component", true)).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode cmp) {
               return SPropertyOperations.getBoolean(cmp, "final");
             }

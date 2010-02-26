@@ -17,40 +17,40 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class MatrixInverseOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_6700_1(editorContext, node);
+    return this.createComponent_j4oyiy_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6700_0(editorContext, node);
+    return this.createCollection_j4oyiy_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6700_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_j4oyiy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6700_0");
-    editorCell.addEditorCell(this.createConstant_6700_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_6700_0(editorContext, node));
+    editorCell.setCellId("Collection_j4oyiy_a");
+    editorCell.addEditorCell(this.createConstant_j4oyiy_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_j4oyiy_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_6700_1(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_j4oyiy_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ExponentOperation_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_6700_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_j4oyiy_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "precision setting:");
-    editorCell.setCellId("Constant_6700_0");
+    editorCell.setCellId("Constant_j4oyiy_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_6700_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_j4oyiy_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("context");
     provider.setNoTargetText("<no context>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatrixInverseOperation_Editor._Inline6700_0());
+    provider.setAuxiliaryCellProvider(new MatrixInverseOperation_Editor._Inline_j4oyiy_a1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -63,8 +63,8 @@ public class MatrixInverseOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline6700_0 extends InlineCellProvider {
-    public _Inline6700_0() {
+  public static class _Inline_j4oyiy_a1a extends InlineCellProvider {
+    public _Inline_j4oyiy_a1a() {
       super();
     }
 
@@ -73,10 +73,10 @@ public class MatrixInverseOperation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createComponent_6700_0(editorContext, node);
+      return this.createComponent_j4oyiy_a0b0(editorContext, node);
     }
 
-    private EditorCell createComponent_6700_0(EditorContext editorContext, SNode node) {
+    private EditorCell createComponent_j4oyiy_a0b0(EditorContext editorContext, SNode node) {
       AbstractCellProvider provider = new MathContextEditorPart(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
       return editorCell;

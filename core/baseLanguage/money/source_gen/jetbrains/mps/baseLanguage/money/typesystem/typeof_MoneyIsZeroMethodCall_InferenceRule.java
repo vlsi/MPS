@@ -23,7 +23,7 @@ public class typeof_MoneyIsZeroMethodCall_InferenceRule extends AbstractInferenc
       SNode _nodeToCheck_1029348928467 = moneyIsZeroMethodCall;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)", "1187618239848", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)", "1187618229155", true), (SNode) new typeof_MoneyIsZeroMethodCall_InferenceRule.QuotationClass_9063_0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)", "1187618229155", true), (SNode) new typeof_MoneyIsZeroMethodCall_InferenceRule.QuotationClass_xrh9nw_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -39,18 +39,18 @@ public class typeof_MoneyIsZeroMethodCall_InferenceRule extends AbstractInferenc
     return false;
   }
 
-  public static class QuotationClass_9063_0 {
-    public QuotationClass_9063_0() {
+  public static class QuotationClass_xrh9nw_a0a0a0 {
+    public QuotationClass_xrh9nw_a0a0a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9063_0 = null;
+      SNode quotedNode_xrh9nw_a0a0a0 = null;
       {
-        quotedNode_9063_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9063_0 = quotedNode_9063_0;
-        result = quotedNode1_9063_0;
+        quotedNode_xrh9nw_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_xrh9nw_a0a0a0 = quotedNode_xrh9nw_a0a0a0;
+        result = quotedNode1_xrh9nw_a0a0a0;
       }
       return result;
     }
@@ -58,11 +58,11 @@ public class typeof_MoneyIsZeroMethodCall_InferenceRule extends AbstractInferenc
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9063_0 = null;
+      SNode quotedNode_xrh9nw_a0a0a0 = null;
       {
-        quotedNode_9063_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9063_0 = quotedNode_9063_0;
-        result = quotedNode1_9063_0;
+        quotedNode_xrh9nw_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_xrh9nw_a0a0a0 = quotedNode_xrh9nw_a0a0a0;
+        result = quotedNode1_xrh9nw_a0a0a0;
       }
       return result;
     }

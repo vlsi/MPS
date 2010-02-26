@@ -17,22 +17,22 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 
 public class TextCommentLinePart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9581_0(editorContext, node);
+    return this.createCollection_x1gmbt_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9581_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_x1gmbt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9581_0");
+    editorCell.setCellId("Collection_x1gmbt_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
-    editorCell.addEditorCell(this.createModelAccess_9581_0(editorContext, node));
+    editorCell.addEditorCell(this.createModelAccess_x1gmbt_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createModelAccess_9581_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createModelAccess_x1gmbt_a0(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         return SPropertyOperations.getString(node, "text");
@@ -49,7 +49,7 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
     };
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ModelAccess_9581_0");
+    editorCell.setCellId("ModelAccess_x1gmbt_a0");
     editorCell.addKeyMap(new TextCommentLinePart_KeyMap());
     editorCell.setDefaultText("");
     return editorCell;

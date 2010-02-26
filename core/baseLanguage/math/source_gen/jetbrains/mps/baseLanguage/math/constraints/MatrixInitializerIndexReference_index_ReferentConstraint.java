@@ -32,31 +32,31 @@ public class MatrixInitializerIndexReference_index_ReferentConstraint extends Ba
     List<SNode> indices = new ArrayList<SNode>();
     while (n != null) {
       do {
-        SNode matchedNode_4513_0 = n;
+        SNode matchedNode_5upoaw_a0c0a0 = n;
         {
-          boolean matches_4513_0 = false;
+          boolean matches_5upoaw_a0a2a0a = false;
           {
-            SNode matchingNode_4513_0 = n;
-            if (matchingNode_4513_0 != null) {
-              matches_4513_0 = SModelUtil_new.isAssignableConcept(matchingNode_4513_0.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer");
+            SNode matchingNode_5upoaw_a0a2a0a = n;
+            if (matchingNode_5upoaw_a0a2a0a != null) {
+              matches_5upoaw_a0a2a0a = SModelUtil_new.isAssignableConcept(matchingNode_5upoaw_a0a2a0a.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer");
             }
           }
-          if (matches_4513_0) {
-            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_4513_0, "colIndex", true));
-            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_4513_0, "rowIndex", true));
+          if (matches_5upoaw_a0a2a0a) {
+            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "colIndex", true));
+            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "rowIndex", true));
             break;
           }
         }
         {
-          boolean matches_4513_1 = false;
+          boolean matches_5upoaw_b0a2a0a = false;
           {
-            SNode matchingNode_4513_1 = n;
-            if (matchingNode_4513_1 != null) {
-              matches_4513_1 = SModelUtil_new.isAssignableConcept(matchingNode_4513_1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorInitializer");
+            SNode matchingNode_5upoaw_b0a2a0a = n;
+            if (matchingNode_5upoaw_b0a2a0a != null) {
+              matches_5upoaw_b0a2a0a = SModelUtil_new.isAssignableConcept(matchingNode_5upoaw_b0a2a0a.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorInitializer");
             }
           }
-          if (matches_4513_1) {
-            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_4513_0, "rowIndex", true));
+          if (matches_5upoaw_b0a2a0a) {
+            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_5upoaw_a0c0a0, "rowIndex", true));
             break;
           }
         }

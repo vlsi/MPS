@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class MatrixInitializerIndexReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0818_0(editorContext, node);
+    return this.createCollection_sfo61_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0818_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_sfo61_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0818_0");
-    editorCell.addEditorCell(this.createRefCell_0818_0(editorContext, node));
+    editorCell.setCellId("Collection_sfo61_a");
+    editorCell.addEditorCell(this.createRefCell_sfo61_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_0818_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_sfo61_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("index");
     provider.setNoTargetText("<no index>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatrixInitializerIndexReference_Editor._Inline0818_0());
+    provider.setAuxiliaryCellProvider(new MatrixInitializerIndexReference_Editor._Inline_sfo61_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class MatrixInitializerIndexReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline0818_0 extends InlineCellProvider {
-    public _Inline0818_0() {
+  public static class _Inline_sfo61_a0a extends InlineCellProvider {
+    public _Inline_sfo61_a0a() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class MatrixInitializerIndexReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_0818_0(editorContext, node);
+      return this.createProperty_sfo61_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_0818_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_sfo61_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

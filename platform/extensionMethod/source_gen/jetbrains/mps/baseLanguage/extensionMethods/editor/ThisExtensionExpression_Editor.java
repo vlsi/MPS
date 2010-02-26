@@ -12,19 +12,19 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class ThisExtensionExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2461_0(editorContext, node);
+    return this.createCollection_ladbll_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2461_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ladbll_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2461_0");
-    editorCell.addEditorCell(this.createConstant_2461_0(editorContext, node));
+    editorCell.setCellId("Collection_ladbll_a");
+    editorCell.addEditorCell(this.createConstant_ladbll_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2461_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ladbll_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
-    editorCell.setCellId("Constant_2461_0");
+    editorCell.setCellId("Constant_ladbll_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;

@@ -24,33 +24,33 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createAlternation_8203_0(editorContext, node);
+    return this.createAlternation_kpqhey_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_8203_0(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_kpqhey_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = ThisClassifierExpression_Editor.renderingCondition8203_0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = ThisClassifierExpression_Editor.renderingCondition_kpqhey_a0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createCollection_8203_0(editorContext, node);
+      editorCell = this.createCollection_kpqhey_a0(editorContext, node);
     } else {
-      editorCell = this.createConstant_8203_0(editorContext, node);
+      editorCell = this.createConstant_kpqhey_a0(editorContext, node);
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_8203_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_kpqhey_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8203_0");
-    editorCell.addEditorCell(this.createRefCell_8203_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8203_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8203_2(editorContext, node));
+    editorCell.setCellId("Collection_kpqhey_a0");
+    editorCell.addEditorCell(this.createRefCell_kpqhey_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_kpqhey_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_kpqhey_c0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8203_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kpqhey_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
-    editorCell.setCellId("Constant_8203_0");
+    editorCell.setCellId("Constant_kpqhey_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -60,17 +60,17 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8203_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kpqhey_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
-    editorCell.setCellId("Constant_8203_1");
+    editorCell.setCellId("Constant_kpqhey_b0a");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8203_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_kpqhey_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
-    editorCell.setCellId("Constant_8203_2");
+    editorCell.setCellId("Constant_kpqhey_c0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -80,12 +80,12 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_8203_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_kpqhey_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ThisClassifierExpression_Editor._Inline8203_0());
+    provider.setAuxiliaryCellProvider(new ThisClassifierExpression_Editor._Inline_kpqhey_a0a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -98,12 +98,12 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition8203_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_kpqhey_a0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "classifier", false) != null;
   }
 
-  public static class _Inline8203_0 extends InlineCellProvider {
-    public _Inline8203_0() {
+  public static class _Inline_kpqhey_a0a0 extends InlineCellProvider {
+    public _Inline_kpqhey_a0a0() {
       super();
     }
 
@@ -112,10 +112,10 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8203_0(editorContext, node);
+      return this.createProperty_kpqhey_a0a0a(editorContext, node);
     }
 
-    private EditorCell createProperty_8203_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_kpqhey_a0a0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

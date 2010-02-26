@@ -24,26 +24,26 @@ public class MessageComponent extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5894_1(editorContext, node);
+    return this.createCollection_8rtror_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5894_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8rtror_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5894_0");
-    editorCell.addEditorCell(this.createRefNode_5894_0(editorContext, node));
+    editorCell.setCellId("Collection_8rtror_a0");
+    editorCell.addEditorCell(this.createRefNode_8rtror_a0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5894_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8rtror_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5894_1");
-    if (renderingCondition5894_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_5894_0(editorContext, node));
+    editorCell.setCellId("Collection_8rtror_a");
+    if (renderingCondition_8rtror_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_8rtror_a0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createRefNode_5894_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8rtror_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("message");
     provider.setNoTargetText("<no message>");
@@ -60,7 +60,7 @@ public class MessageComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static boolean renderingCondition5894_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_8rtror_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "message", true) != null);
   }
 }

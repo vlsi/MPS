@@ -15,18 +15,18 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class SimpleBuilderParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0932_0(editorContext, node);
+    return this.createCollection_xr9bg6_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0932_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_xr9bg6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0932_0");
-    editorCell.addEditorCell(this.createRefNode_0932_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0932_0(editorContext, node));
+    editorCell.setCellId("Collection_xr9bg6_a");
+    editorCell.addEditorCell(this.createRefNode_xr9bg6_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_xr9bg6_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_0932_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_xr9bg6_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -43,7 +43,7 @@ public class SimpleBuilderParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_0932_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_xr9bg6_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

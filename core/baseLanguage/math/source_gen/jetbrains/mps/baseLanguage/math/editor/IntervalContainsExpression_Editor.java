@@ -21,27 +21,27 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class IntervalContainsExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3936_0(editorContext, node);
+    return this.createCollection_8gz0ko_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3936_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8gz0ko_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3936_0");
-    editorCell.addEditorCell(this.createRefNode_3936_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3936_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_3936_1(editorContext, node));
+    editorCell.setCellId("Collection_8gz0ko_a");
+    editorCell.addEditorCell(this.createRefNode_8gz0ko_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_8gz0ko_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8gz0ko_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3936_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8gz0ko_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "contains");
-    editorCell.setCellId("Constant_3936_0");
+    editorCell.setCellId("Constant_8gz0ko_b0");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalContainsExpression_Editor.IntervalContainsExpression_Editor_replaceWith_BinaryOperation_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IntervalContainsExpression_Editor.IntervalContainsExpression_Editor_replaceWith_BinaryOperation_cellMenu_a0b0()}));
     return editorCell;
   }
 
-  private EditorCell createRefNode_3936_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8gz0ko_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -59,7 +59,7 @@ public class IntervalContainsExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_3936_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_8gz0ko_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightExpression");
     provider.setNoTargetText("<no rightExpression>");
@@ -77,8 +77,8 @@ public class IntervalContainsExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class IntervalContainsExpression_Editor_replaceWith_BinaryOperation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public IntervalContainsExpression_Editor_replaceWith_BinaryOperation_cellMenu0() {
+  public static class IntervalContainsExpression_Editor_replaceWith_BinaryOperation_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public IntervalContainsExpression_Editor_replaceWith_BinaryOperation_cellMenu_a0b0() {
     }
 
     public String getReplacementConceptName() {

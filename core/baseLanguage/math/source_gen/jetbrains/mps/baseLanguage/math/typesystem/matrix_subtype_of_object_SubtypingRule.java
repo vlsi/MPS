@@ -20,7 +20,7 @@ public class matrix_subtype_of_object_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode matrixType, TypeCheckingContext typeCheckingContext) {
-    return new matrix_subtype_of_object_SubtypingRule.QuotationClass_4872_0().createNode(typeCheckingContext);
+    return new matrix_subtype_of_object_SubtypingRule.QuotationClass_9nrg6k_a0a0a().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -35,19 +35,19 @@ public class matrix_subtype_of_object_SubtypingRule extends SubtypingRule_Runtim
     return false;
   }
 
-  public static class QuotationClass_4872_0 {
-    public QuotationClass_4872_0() {
+  public static class QuotationClass_9nrg6k_a0a0a {
+    public QuotationClass_9nrg6k_a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4872_0 = null;
+      SNode quotedNode_9nrg6k_a0a0a = null;
       {
-        quotedNode_4872_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4872_0 = quotedNode_4872_0;
-        quotedNode1_4872_0.addReference(SReference.create("classifier", quotedNode1_4872_0, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)"), SNodeId.fromString("~Matrix")));
-        result = quotedNode1_4872_0;
+        quotedNode_9nrg6k_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9nrg6k_a0a0a = quotedNode_9nrg6k_a0a0a;
+        quotedNode1_9nrg6k_a0a0a.addReference(SReference.create("classifier", quotedNode1_9nrg6k_a0a0a, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)"), SNodeId.fromString("~Matrix")));
+        result = quotedNode1_9nrg6k_a0a0a;
       }
       return result;
     }
@@ -55,12 +55,12 @@ public class matrix_subtype_of_object_SubtypingRule extends SubtypingRule_Runtim
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4872_0 = null;
+      SNode quotedNode_9nrg6k_a0a0a = null;
       {
-        quotedNode_4872_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4872_0 = quotedNode_4872_0;
-        quotedNode1_4872_0.addReference(SReference.create("classifier", quotedNode1_4872_0, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)"), SNodeId.fromString("~Matrix")));
-        result = quotedNode1_4872_0;
+        quotedNode_9nrg6k_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9nrg6k_a0a0a = quotedNode_9nrg6k_a0a0a;
+        quotedNode1_9nrg6k_a0a0a.addReference(SReference.create("classifier", quotedNode1_9nrg6k_a0a0a, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)"), SNodeId.fromString("~Matrix")));
+        result = quotedNode1_9nrg6k_a0a0a;
       }
       return result;
     }

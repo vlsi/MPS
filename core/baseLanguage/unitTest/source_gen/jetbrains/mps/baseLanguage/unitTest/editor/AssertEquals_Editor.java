@@ -19,30 +19,30 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AssertEquals_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9097_0(editorContext, node);
+    return this.createCollection_q24t2b_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9097_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_q24t2b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9097_0");
-    editorCell.addEditorCell(this.createConstant_9097_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9097_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9097_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9097_1(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_9097_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9097_1(editorContext, node));
+    editorCell.setCellId("Collection_q24t2b_a");
+    editorCell.addEditorCell(this.createConstant_q24t2b_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_q24t2b_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_q24t2b_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_q24t2b_d0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_q24t2b_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_q24t2b_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_9097_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_q24t2b_e0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new MessageComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_9097_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_q24t2b_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert");
-    editorCell.setCellId("Constant_9097_0");
+    editorCell.setCellId("Constant_q24t2b_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
@@ -51,9 +51,9 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9097_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_q24t2b_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_9097_1");
+    editorCell.setCellId("Constant_q24t2b_f0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -62,9 +62,9 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9097_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_q24t2b_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "equals");
-    editorCell.setCellId("Constant_9097_2");
+    editorCell.setCellId("Constant_q24t2b_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
@@ -73,7 +73,7 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9097_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_q24t2b_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expected");
     provider.setNoTargetText("expected");
@@ -90,7 +90,7 @@ public class AssertEquals_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9097_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_q24t2b_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("actual");
     provider.setNoTargetText("actual");

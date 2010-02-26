@@ -16,36 +16,36 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2817_0(editorContext, node);
+    return this.createCollection_pessfj_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2817_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_pessfj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2817_0");
-    editorCell.addEditorCell(this.createRefNode_2817_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2817_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2817_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2817_1(editorContext, node));
+    editorCell.setCellId("Collection_pessfj_a");
+    editorCell.addEditorCell(this.createRefNode_pessfj_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pessfj_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_pessfj_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pessfj_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2817_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pessfj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
-    editorCell.setCellId("Constant_2817_0");
+    editorCell.setCellId("Constant_pessfj_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2817_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pessfj_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
-    editorCell.setCellId("Constant_2817_1");
+    editorCell.setCellId("Constant_pessfj_d0");
     BaseLanguageStyle_StyleSheet.getRightBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_2817_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pessfj_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("tuple");
     provider.setNoTargetText("<no tuple>");
@@ -62,7 +62,7 @@ public class IndexedTupleMemberAccessExpression_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createRefNode_2817_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pessfj_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("index");
     provider.setNoTargetText("<no index>");

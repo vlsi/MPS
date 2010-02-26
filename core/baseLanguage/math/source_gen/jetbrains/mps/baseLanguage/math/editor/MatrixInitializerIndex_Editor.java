@@ -13,10 +13,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MatrixInitializerIndex_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_6283_1(editorContext, node);
+    return this.createProperty_bnuud9_a_0(editorContext, node);
   }
 
-  private EditorCell createProperty_6283_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_bnuud9_a_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

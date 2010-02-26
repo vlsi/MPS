@@ -23,27 +23,27 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class LinkInlineDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0775_0(editorContext, node);
+    return this.createCollection_bju3wr_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0775_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_bju3wr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0775_0");
-    editorCell.addEditorCell(this.createConceptProperty_0775_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0775_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_0775_0(editorContext, node));
+    editorCell.setCellId("Collection_bju3wr_a");
+    editorCell.addEditorCell(this.createConceptProperty_bju3wr_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_bju3wr_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_bju3wr_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_0775_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new LinkInlineDocTag_Editor.lineListHandler_0775_0(node, "line", editorContext);
+  private EditorCell createRefNodeList_bju3wr_c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new LinkInlineDocTag_Editor.lineListHandler_bju3wr_c0(node, "line", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_line");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_0775_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_bju3wr_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -62,7 +62,7 @@ public class LinkInlineDocTag_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0775_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_bju3wr_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("reference");
     provider.setNoTargetText("<no reference>");
@@ -79,8 +79,8 @@ public class LinkInlineDocTag_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class lineListHandler_0775_0 extends RefNodeListHandler {
-    public lineListHandler_0775_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class lineListHandler_bju3wr_c0 extends RefNodeListHandler {
+    public lineListHandler_bju3wr_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

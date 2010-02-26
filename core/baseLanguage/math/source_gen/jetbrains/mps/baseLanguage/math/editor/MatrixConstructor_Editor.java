@@ -31,60 +31,60 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class MatrixConstructor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createAlternation_4845_0(editorContext, node);
+    return this.createAlternation_lhhqxl_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4845_0(editorContext, node);
+    return this.createCollection_lhhqxl_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_4845_0(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_lhhqxl_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = MatrixConstructor_Editor.renderingCondition4845_0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = MatrixConstructor_Editor.renderingCondition_lhhqxl_a0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createCollection_4845_2(editorContext, node);
+      editorCell = this.createCollection_lhhqxl_a0_0(editorContext, node);
     } else {
-      editorCell = this.createCollection_4845_1(editorContext, node);
+      editorCell = this.createCollection_lhhqxl_a0(editorContext, node);
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_4845_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_lhhqxl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4845_0");
-    editorCell.addEditorCell(this.createConstant_4845_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4845_0(editorContext, node));
+    editorCell.setCellId("Collection_lhhqxl_a");
+    editorCell.addEditorCell(this.createConstant_lhhqxl_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_lhhqxl_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4845_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_lhhqxl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4845_1");
-    editorCell.addEditorCell(this.createEmpty_4845_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_4845_0(editorContext, node));
-    editorCell.addEditorCell(this.createEmpty_4845_3(editorContext, node));
+    editorCell.setCellId("Collection_lhhqxl_a0");
+    editorCell.addEditorCell(this.createEmpty_lhhqxl_a0a_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_lhhqxl_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_lhhqxl_c0a_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4845_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_lhhqxl_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4845_2");
-    editorCell.addEditorCell(this.createEmpty_4845_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_4845_1(editorContext, node));
-    editorCell.addEditorCell(this.createEmpty_4845_2(editorContext, node));
+    editorCell.setCellId("Collection_lhhqxl_a0_0");
+    editorCell.addEditorCell(this.createEmpty_lhhqxl_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_lhhqxl_b0a_0(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_lhhqxl_c0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4845_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_lhhqxl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "column:");
-    editorCell.setCellId("Constant_4845_0");
+    editorCell.setCellId("Constant_lhhqxl_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4845_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new MatrixConstructor_Editor.componentsListHandler_4845_0(node, "components", editorContext);
+  private EditorCell createRefNodeList_lhhqxl_b0a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new MatrixConstructor_Editor.componentsListHandler_lhhqxl_b0a(node, "components", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Table(), false);
     editorCell.setCellId("refNodeList_components");
     {
@@ -97,8 +97,8 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4845_1(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new MatrixConstructor_Editor.componentsListHandler_4845_1(node, "components", editorContext);
+  private EditorCell createRefNodeList_lhhqxl_b0a_0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new MatrixConstructor_Editor.componentsListHandler_lhhqxl_b0a_0(node, "components", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Table(), false);
     editorCell.setCellId("refNodeList_components_1");
     {
@@ -111,7 +111,7 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4845_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_lhhqxl_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("column");
     provider.setNoTargetText("<no column>");
@@ -129,9 +129,9 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createEmpty_4845_0(EditorContext editorContext, SNode node) {
+  private EditorCell createEmpty_lhhqxl_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setCellId("Empty_4845_0");
+    editorCell.setCellId("Empty_lhhqxl_a0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -139,9 +139,9 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createEmpty_4845_1(EditorContext editorContext, SNode node) {
+  private EditorCell createEmpty_lhhqxl_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setCellId("Empty_4845_1");
+    editorCell.setCellId("Empty_lhhqxl_a0a_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -149,9 +149,9 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createEmpty_4845_2(EditorContext editorContext, SNode node) {
+  private EditorCell createEmpty_lhhqxl_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setCellId("Empty_4845_2");
+    editorCell.setCellId("Empty_lhhqxl_c0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -159,9 +159,9 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createEmpty_4845_3(EditorContext editorContext, SNode node) {
+  private EditorCell createEmpty_lhhqxl_c0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setCellId("Empty_4845_3");
+    editorCell.setCellId("Empty_lhhqxl_c0a_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -169,12 +169,12 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition4845_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_lhhqxl_a0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "column");
   }
 
-  private static class componentsListHandler_4845_0 extends RefNodeListHandler {
-    public componentsListHandler_4845_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class componentsListHandler_lhhqxl_b0a extends RefNodeListHandler {
+    public componentsListHandler_lhhqxl_b0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -222,8 +222,8 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class componentsListHandler_4845_1 extends RefNodeListHandler {
-    public componentsListHandler_4845_1(SNode ownerNode, String childRole, EditorContext context) {
+  private static class componentsListHandler_lhhqxl_b0a_0 extends RefNodeListHandler {
+    public componentsListHandler_lhhqxl_b0a_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

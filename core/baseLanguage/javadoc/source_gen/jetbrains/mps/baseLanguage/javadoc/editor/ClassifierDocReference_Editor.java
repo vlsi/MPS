@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ClassifierDocReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9880_0(editorContext, node);
+    return this.createCollection_yqqfxo_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9880_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_yqqfxo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9880_0");
-    editorCell.addEditorCell(this.createRefCell_9880_0(editorContext, node));
+    editorCell.setCellId("Collection_yqqfxo_a");
+    editorCell.addEditorCell(this.createRefCell_yqqfxo_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_9880_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_yqqfxo_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClassifierDocReference_Editor._Inline9880_0());
+    provider.setAuxiliaryCellProvider(new ClassifierDocReference_Editor._Inline_yqqfxo_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class ClassifierDocReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline9880_0 extends InlineCellProvider {
-    public _Inline9880_0() {
+  public static class _Inline_yqqfxo_a0a extends InlineCellProvider {
+    public _Inline_yqqfxo_a0a() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class ClassifierDocReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_9880_0(editorContext, node);
+      return this.createProperty_yqqfxo_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_9880_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_yqqfxo_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

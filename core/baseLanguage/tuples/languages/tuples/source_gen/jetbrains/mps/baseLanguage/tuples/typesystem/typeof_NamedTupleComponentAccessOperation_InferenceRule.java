@@ -37,7 +37,7 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414716", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414718", true), (SNode) new typeof_NamedTupleComponentAccessOperation_InferenceRule.QuotationClass_7207_0().createNode(tupleDecl, PTYPES, typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414718", true), (SNode) new typeof_NamedTupleComponentAccessOperation_InferenceRule.QuotationClass_kga4po_a0a3a0().createNode(tupleDecl, PTYPES, typeCheckingContext), false, _info_12389875345);
     }
     SNode opType = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "component", false), "type", true));
     if (SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
@@ -74,46 +74,46 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
     return false;
   }
 
-  public static class QuotationClass_7207_0 {
-    public QuotationClass_7207_0() {
+  public static class QuotationClass_kga4po_a0a3a0 {
+    public QuotationClass_kga4po_a0a3a0() {
     }
 
-    public SNode createNode(Object parameter_7207_0, Object parameter_7207_1, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_kga4po_a0a0a3a0, Object parameter_kga4po_a0a0a0d0a, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7207_0 = null;
-      SNode quotedNode_7207_1 = null;
+      SNode quotedNode_kga4po_a0a3a0 = null;
+      SNode quotedNode_kga4po_a0a0d0a = null;
       {
-        quotedNode_7207_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7207_0 = quotedNode_7207_0;
-        quotedNode1_7207_0.setReferent("classifier", (SNode) parameter_7207_0);
+        quotedNode_kga4po_a0a3a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_kga4po_a0a3a0 = quotedNode_kga4po_a0a3a0;
+        quotedNode1_kga4po_a0a3a0.setReferent("classifier", (SNode) parameter_kga4po_a0a0a3a0);
         {
-          List<SNode> nodes = (List<SNode>) parameter_7207_1;
+          List<SNode> nodes = (List<SNode>) parameter_kga4po_a0a0a0d0a;
           for (SNode child : nodes) {
-            quotedNode_7207_0.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_kga4po_a0a3a0.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
-        result = quotedNode1_7207_0;
+        result = quotedNode1_kga4po_a0a3a0;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_7207_0, Object parameter_7207_1) {
+    public SNode createNode(Object parameter_kga4po_a0a0a3a0, Object parameter_kga4po_a0a0a0d0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7207_0 = null;
-      SNode quotedNode_7207_1 = null;
+      SNode quotedNode_kga4po_a0a3a0 = null;
+      SNode quotedNode_kga4po_a0a0d0a = null;
       {
-        quotedNode_7207_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7207_0 = quotedNode_7207_0;
-        quotedNode1_7207_0.setReferent("classifier", (SNode) parameter_7207_0);
+        quotedNode_kga4po_a0a3a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_kga4po_a0a3a0 = quotedNode_kga4po_a0a3a0;
+        quotedNode1_kga4po_a0a3a0.setReferent("classifier", (SNode) parameter_kga4po_a0a0a3a0);
         {
-          List<SNode> nodes = (List<SNode>) parameter_7207_1;
+          List<SNode> nodes = (List<SNode>) parameter_kga4po_a0a0a0d0a;
           for (SNode child : nodes) {
-            quotedNode_7207_0.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_kga4po_a0a3a0.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_7207_0;
+        result = quotedNode1_kga4po_a0a3a0;
       }
       return result;
     }

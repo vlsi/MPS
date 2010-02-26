@@ -22,18 +22,18 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class TestMethodList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8171_0(editorContext, node);
+    return this.createCollection_bc5hcd_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8171_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_bc5hcd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8171_0");
-    editorCell.addEditorCell(this.createRefNodeList_8171_0(editorContext, node));
+    editorCell.setCellId("Collection_bc5hcd_a");
+    editorCell.addEditorCell(this.createRefNodeList_bc5hcd_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_8171_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new TestMethodList_Editor.testMethodListHandler_8171_0(node, "testMethod", editorContext);
+  private EditorCell createRefNodeList_bc5hcd_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new TestMethodList_Editor.testMethodListHandler_bc5hcd_a0(node, "testMethod", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_testMethod");
     {
@@ -44,8 +44,8 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class testMethodListHandler_8171_0 extends RefNodeListHandler {
-    public testMethodListHandler_8171_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class testMethodListHandler_bc5hcd_a0 extends RefNodeListHandler {
+    public testMethodListHandler_bc5hcd_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -68,7 +68,7 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_8171_0(editorContext, node);
+      return this.createConstant_bc5hcd_a0a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -89,9 +89,9 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_8171_0(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_bc5hcd_a0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<test methods>>");
-      editorCell.setCellId("Constant_8171_0");
+      editorCell.setCellId("Constant_bc5hcd_a0a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.EDITABLE, false);

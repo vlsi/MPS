@@ -222,30 +222,30 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InequationReplacementRule_Runtime eliminationRule = new vector_vector_replacement_rule_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider0("jetbrains.mps.baseLanguage.structure.ShiftLeftExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider1("jetbrains.mps.baseLanguage.structure.BitwiseAndExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider2("jetbrains.mps.baseLanguage.structure.BitwiseOrExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider3("jetbrains.mps.baseLanguage.structure.BitwiseXorExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider4("jetbrains.mps.baseLanguage.structure.ShiftRightExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider5("jetbrains.mps.baseLanguage.structure.RemExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider6("jetbrains.mps.baseLanguage.structure.LessThanExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider7("jetbrains.mps.baseLanguage.structure.GreaterThanExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider8("jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider9("jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider10("jetbrains.mps.baseLanguage.structure.PlusExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider11("jetbrains.mps.baseLanguage.structure.MinusExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider12("jetbrains.mps.baseLanguage.structure.MulExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider13("jetbrains.mps.baseLanguage.structure.DivExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider14("jetbrains.mps.baseLanguage.structure.PlusExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider15("jetbrains.mps.baseLanguage.structure.MinusExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider16("jetbrains.mps.baseLanguage.structure.MulExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider17("jetbrains.mps.baseLanguage.structure.MulExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider18("jetbrains.mps.baseLanguage.structure.DivExpression"));
-    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider19("jetbrains.mps.baseLanguage.structure.MulExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_f("jetbrains.mps.baseLanguage.structure.ShiftLeftExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_h("jetbrains.mps.baseLanguage.structure.BitwiseAndExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_i("jetbrains.mps.baseLanguage.structure.BitwiseOrExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_j("jetbrains.mps.baseLanguage.structure.BitwiseXorExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_g("jetbrains.mps.baseLanguage.structure.ShiftRightExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_e("jetbrains.mps.baseLanguage.structure.RemExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_k("jetbrains.mps.baseLanguage.structure.LessThanExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_l("jetbrains.mps.baseLanguage.structure.GreaterThanExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_m("jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_n("jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_a("jetbrains.mps.baseLanguage.structure.PlusExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_b("jetbrains.mps.baseLanguage.structure.MinusExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_c("jetbrains.mps.baseLanguage.structure.MulExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_d("jetbrains.mps.baseLanguage.structure.DivExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_o("jetbrains.mps.baseLanguage.structure.PlusExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_p("jetbrains.mps.baseLanguage.structure.MinusExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_q("jetbrains.mps.baseLanguage.structure.MulExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_r("jetbrains.mps.baseLanguage.structure.MulExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_s("jetbrains.mps.baseLanguage.structure.DivExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider_t("jetbrains.mps.baseLanguage.structure.MulExpression"));
   }
 
-  public static class CustomOverloadedOperationsTypesProvider0 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider0(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_f extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_f(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigInteger;
       this.myRightOperandType = MathTypeUtil.qInt;
       this.myOperationConceptFQName = conceptFQ;
@@ -260,8 +260,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider1 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider1(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_h extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_h(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigInteger;
       this.myRightOperandType = MathTypeUtil.qBigInteger;
       this.myOperationConceptFQName = conceptFQ;
@@ -276,8 +276,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider2 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider2(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_i extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_i(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigInteger;
       this.myRightOperandType = MathTypeUtil.qBigInteger;
       this.myOperationConceptFQName = conceptFQ;
@@ -292,8 +292,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider3 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider3(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_j extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_j(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigInteger;
       this.myRightOperandType = MathTypeUtil.qBigInteger;
       this.myOperationConceptFQName = conceptFQ;
@@ -308,8 +308,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider4 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider4(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_g extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_g(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigInteger;
       this.myRightOperandType = MathTypeUtil.qInt;
       this.myOperationConceptFQName = conceptFQ;
@@ -324,8 +324,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider5 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider5(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_e extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_e(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigInteger;
       this.myRightOperandType = MathTypeUtil.qBigInteger;
       this.myOperationConceptFQName = conceptFQ;
@@ -340,8 +340,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider6 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider6(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_k extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_k(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigDecimal;
       this.myRightOperandType = MathTypeUtil.qBigDecimal;
       this.myOperationConceptFQName = conceptFQ;
@@ -356,8 +356,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider7 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider7(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_l extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_l(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigDecimal;
       this.myRightOperandType = MathTypeUtil.qBigDecimal;
       this.myOperationConceptFQName = conceptFQ;
@@ -372,8 +372,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider8 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider8(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_m extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_m(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigDecimal;
       this.myRightOperandType = MathTypeUtil.qBigDecimal;
       this.myOperationConceptFQName = conceptFQ;
@@ -388,8 +388,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider9 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider9(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_n extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_n(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigDecimal;
       this.myRightOperandType = MathTypeUtil.qBigDecimal;
       this.myOperationConceptFQName = conceptFQ;
@@ -404,8 +404,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider10 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider10(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_a extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_a(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigComplex;
       this.myRightOperandType = MathTypeUtil.qBigComplex;
       this.myOperationConceptFQName = conceptFQ;
@@ -420,8 +420,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider11 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider11(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_b extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_b(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigComplex;
       this.myRightOperandType = MathTypeUtil.qBigComplex;
       this.myOperationConceptFQName = conceptFQ;
@@ -436,8 +436,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider12 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider12(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_c extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_c(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigComplex;
       this.myRightOperandType = MathTypeUtil.qBigComplex;
       this.myOperationConceptFQName = conceptFQ;
@@ -452,8 +452,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider13 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider13(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_d extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_d(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigComplex;
       this.myRightOperandType = MathTypeUtil.qBigComplex;
       this.myOperationConceptFQName = conceptFQ;
@@ -468,8 +468,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider14 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider14(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_o extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_o(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBCMatrix;
       this.myRightOperandType = MathTypeUtil.qBCMatrix;
       this.myOperationConceptFQName = conceptFQ;
@@ -484,8 +484,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider15 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider15(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_p extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_p(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBCMatrix;
       this.myRightOperandType = MathTypeUtil.qBCMatrix;
       this.myOperationConceptFQName = conceptFQ;
@@ -500,8 +500,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider16 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider16(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_q extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_q(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBigComplex;
       this.myRightOperandType = MathTypeUtil.qBCMatrix;
       this.myOperationConceptFQName = conceptFQ;
@@ -516,8 +516,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider17 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider17(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_r extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_r(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBCMatrix;
       this.myRightOperandType = MathTypeUtil.qBigComplex;
       this.myOperationConceptFQName = conceptFQ;
@@ -536,8 +536,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider18 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider18(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_s extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_s(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBCMatrix;
       this.myRightOperandType = MathTypeUtil.qBigComplex;
       this.myOperationConceptFQName = conceptFQ;
@@ -556,8 +556,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class CustomOverloadedOperationsTypesProvider19 extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider19(String conceptFQ) {
+  public static class CustomOverloadedOperationsTypesProvider_t extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_t(String conceptFQ) {
       this.myLeftOperandType = MathTypeUtil.qBCMatrix;
       this.myRightOperandType = MathTypeUtil.qBCMatrix;
       this.myOperationConceptFQName = conceptFQ;

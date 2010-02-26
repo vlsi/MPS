@@ -10,10 +10,10 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class ExponentialOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_1706_0(editorContext, node);
+    return this.createComponent_glunh1_a(editorContext, node);
   }
 
-  private EditorCell createComponent_1706_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_glunh1_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ExponentOperation_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;

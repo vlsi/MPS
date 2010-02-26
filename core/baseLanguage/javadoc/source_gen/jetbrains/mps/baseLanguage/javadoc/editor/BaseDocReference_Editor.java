@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class BaseDocReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_3656_0(editorContext, node);
+    return this.createError_k7fcgk_a(editorContext, node);
   }
 
-  private EditorCell createError_3656_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_k7fcgk_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no target>");
-    editorCell.setCellId("Error_3656_0");
+    editorCell.setCellId("Error_k7fcgk_a");
     return editorCell;
   }
 }

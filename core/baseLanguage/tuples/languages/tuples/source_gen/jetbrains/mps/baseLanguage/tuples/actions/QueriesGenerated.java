@@ -93,7 +93,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new QueriesGenerated.QuotationClass_8087_0().createNode((item));
+                return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j().createNode((item));
               }
             });
           }
@@ -218,19 +218,19 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_8087_0 {
-    public QuotationClass_8087_0() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j() {
     }
 
-    public SNode createNode(Object parameter_9035_0) {
+    public SNode createNode(Object parameter_vpowte_a0a0a0a0b0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9035_0 = null;
+      SNode quotedNode_vpowte_a0a0a0b0 = null;
       {
-        quotedNode_9035_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9035_0 = quotedNode_9035_0;
-        quotedNode1_9035_0.setReferent("classifier", (SNode) parameter_9035_0);
-        result = quotedNode1_9035_0;
+        quotedNode_vpowte_a0a0a0b0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_vpowte_a0a0a0b0 = quotedNode_vpowte_a0a0a0b0;
+        quotedNode1_vpowte_a0a0a0b0.setReferent("classifier", (SNode) parameter_vpowte_a0a0a0a0b0);
+        result = quotedNode1_vpowte_a0a0a0b0;
       }
       return result;
     }

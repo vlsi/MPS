@@ -33,7 +33,7 @@ public class extended_interfaces_supertypesOf_namedTupleType_SubtypingRule exten
           ListSequence.fromList(paramTypes).addElement(pt);
         }
       }
-      ListSequence.fromList(result).addElement(new extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.QuotationClass_2344_0().createNode(paramTypes, SLinkOperations.getTarget(ct, "classifier", false), typeCheckingContext));
+      ListSequence.fromList(result).addElement(new extended_interfaces_supertypesOf_namedTupleType_SubtypingRule.QuotationClass_byqpn8_a0a0c0b0a().createNode(paramTypes, SLinkOperations.getTarget(ct, "classifier", false), typeCheckingContext));
     }
     return result;
   }
@@ -50,46 +50,46 @@ public class extended_interfaces_supertypesOf_namedTupleType_SubtypingRule exten
     return true;
   }
 
-  public static class QuotationClass_2344_0 {
-    public QuotationClass_2344_0() {
+  public static class QuotationClass_byqpn8_a0a0c0b0a {
+    public QuotationClass_byqpn8_a0a0c0b0a() {
     }
 
-    public SNode createNode(Object parameter_2344_0, Object parameter_2344_1, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_byqpn8_a0a0a0a2a1a0, Object parameter_byqpn8_a0a0a0c0b0a, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2344_0 = null;
-      SNode quotedNode_2344_1 = null;
+      SNode quotedNode_byqpn8_a0a0c0b0a = null;
+      SNode quotedNode_byqpn8_a0a0a2a1a0 = null;
       {
-        quotedNode_2344_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2344_0 = quotedNode_2344_0;
-        quotedNode1_2344_0.setReferent("classifier", (SNode) parameter_2344_1);
+        quotedNode_byqpn8_a0a0c0b0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_byqpn8_a0a0c0b0a = quotedNode_byqpn8_a0a0c0b0a;
+        quotedNode1_byqpn8_a0a0c0b0a.setReferent("classifier", (SNode) parameter_byqpn8_a0a0a0c0b0a);
         {
-          List<SNode> nodes = (List<SNode>) parameter_2344_0;
+          List<SNode> nodes = (List<SNode>) parameter_byqpn8_a0a0a0a2a1a0;
           for (SNode child : nodes) {
-            quotedNode_2344_0.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_byqpn8_a0a0c0b0a.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
-        result = quotedNode1_2344_0;
+        result = quotedNode1_byqpn8_a0a0c0b0a;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_2344_0, Object parameter_2344_1) {
+    public SNode createNode(Object parameter_byqpn8_a0a0a0a2a1a0, Object parameter_byqpn8_a0a0a0c0b0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2344_0 = null;
-      SNode quotedNode_2344_1 = null;
+      SNode quotedNode_byqpn8_a0a0c0b0a = null;
+      SNode quotedNode_byqpn8_a0a0a2a1a0 = null;
       {
-        quotedNode_2344_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2344_0 = quotedNode_2344_0;
-        quotedNode1_2344_0.setReferent("classifier", (SNode) parameter_2344_1);
+        quotedNode_byqpn8_a0a0c0b0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_byqpn8_a0a0c0b0a = quotedNode_byqpn8_a0a0c0b0a;
+        quotedNode1_byqpn8_a0a0c0b0a.setReferent("classifier", (SNode) parameter_byqpn8_a0a0a0c0b0a);
         {
-          List<SNode> nodes = (List<SNode>) parameter_2344_0;
+          List<SNode> nodes = (List<SNode>) parameter_byqpn8_a0a0a0a2a1a0;
           for (SNode child : nodes) {
-            quotedNode_2344_0.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_byqpn8_a0a0c0b0a.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_2344_0;
+        result = quotedNode1_byqpn8_a0a0c0b0a;
       }
       return result;
     }

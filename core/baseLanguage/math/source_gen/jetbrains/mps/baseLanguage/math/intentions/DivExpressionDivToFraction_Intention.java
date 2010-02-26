@@ -41,53 +41,53 @@ public class DivExpressionDivToFraction_Intention extends BaseIntention implemen
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNodeOperations.replaceWithAnother(node, new DivExpressionDivToFraction_Intention.QuotationClass_0590_0().createNode(SLinkOperations.getTarget(node, "leftExpression", true), SLinkOperations.getTarget(node, "rightExpression", true)));
+    SNodeOperations.replaceWithAnother(node, new DivExpressionDivToFraction_Intention.QuotationClass_hz695l_a0a0a0f().createNode(SLinkOperations.getTarget(node, "leftExpression", true), SLinkOperations.getTarget(node, "rightExpression", true)));
   }
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.math.intentions";
   }
 
-  public static class QuotationClass_0590_0 {
-    public QuotationClass_0590_0() {
+  public static class QuotationClass_hz695l_a0a0a0f {
+    public QuotationClass_hz695l_a0a0a0f() {
     }
 
-    public SNode createNode(Object parameter_4981_0, Object parameter_4981_1) {
+    public SNode createNode(Object parameter_drx02_a0a0a0a0a0, Object parameter_drx02_a0a0a0a0a0_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4981_0 = null;
-      SNode quotedNode_4981_1 = null;
-      SNode quotedNode_4981_2 = null;
+      SNode quotedNode_drx02_a0a0a0a = null;
+      SNode quotedNode_drx02_a0a0a0a0 = null;
+      SNode quotedNode_drx02_a0a0a0a0_0 = null;
       {
-        quotedNode_4981_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4981_0 = quotedNode_4981_0;
+        quotedNode_drx02_a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_drx02_a0a0a0a = quotedNode_drx02_a0a0a0a;
         {
-          quotedNode_4981_1 = (SNode) parameter_4981_0;
-          SNode quotedNode1_4981_1;
-          if (_parameterValues_129834374.contains(quotedNode_4981_1)) {
-            quotedNode1_4981_1 = CopyUtil.copy(quotedNode_4981_1);
+          quotedNode_drx02_a0a0a0a0 = (SNode) parameter_drx02_a0a0a0a0a0;
+          SNode quotedNode1_drx02_a0a0a0a0;
+          if (_parameterValues_129834374.contains(quotedNode_drx02_a0a0a0a0)) {
+            quotedNode1_drx02_a0a0a0a0 = CopyUtil.copy(quotedNode_drx02_a0a0a0a0);
           } else {
-            _parameterValues_129834374.add(quotedNode_4981_1);
-            quotedNode1_4981_1 = quotedNode_4981_1;
+            _parameterValues_129834374.add(quotedNode_drx02_a0a0a0a0);
+            quotedNode1_drx02_a0a0a0a0 = quotedNode_drx02_a0a0a0a0;
           }
-          if (quotedNode1_4981_1 != null) {
-            quotedNode_4981_0.addChild("numerator", HUtil.copyIfNecessary(quotedNode1_4981_1));
+          if (quotedNode1_drx02_a0a0a0a0 != null) {
+            quotedNode_drx02_a0a0a0a.addChild("numerator", HUtil.copyIfNecessary(quotedNode1_drx02_a0a0a0a0));
           }
         }
         {
-          quotedNode_4981_2 = (SNode) parameter_4981_1;
-          SNode quotedNode1_4981_2;
-          if (_parameterValues_129834374.contains(quotedNode_4981_2)) {
-            quotedNode1_4981_2 = CopyUtil.copy(quotedNode_4981_2);
+          quotedNode_drx02_a0a0a0a0_0 = (SNode) parameter_drx02_a0a0a0a0a0_0;
+          SNode quotedNode1_drx02_a0a0a0a0_0;
+          if (_parameterValues_129834374.contains(quotedNode_drx02_a0a0a0a0_0)) {
+            quotedNode1_drx02_a0a0a0a0_0 = CopyUtil.copy(quotedNode_drx02_a0a0a0a0_0);
           } else {
-            _parameterValues_129834374.add(quotedNode_4981_2);
-            quotedNode1_4981_2 = quotedNode_4981_2;
+            _parameterValues_129834374.add(quotedNode_drx02_a0a0a0a0_0);
+            quotedNode1_drx02_a0a0a0a0_0 = quotedNode_drx02_a0a0a0a0_0;
           }
-          if (quotedNode1_4981_2 != null) {
-            quotedNode_4981_0.addChild("denominator", HUtil.copyIfNecessary(quotedNode1_4981_2));
+          if (quotedNode1_drx02_a0a0a0a0_0 != null) {
+            quotedNode_drx02_a0a0a0a.addChild("denominator", HUtil.copyIfNecessary(quotedNode1_drx02_a0a0a0a0_0));
           }
         }
-        result = quotedNode1_4981_0;
+        result = quotedNode1_drx02_a0a0a0a;
       }
       return result;
     }

@@ -23,22 +23,22 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class MathFuncExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8904_0(editorContext, node);
+    return this.createCollection_957ayc_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8904_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_957ayc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8904_0");
-    editorCell.addEditorCell(this.createConceptProperty_8904_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8904_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8904_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8904_1(editorContext, node));
+    editorCell.setCellId("Collection_957ayc_a");
+    editorCell.addEditorCell(this.createConceptProperty_957ayc_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_957ayc_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_957ayc_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_957ayc_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8904_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_957ayc_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_8904_0");
+    editorCell.setCellId("Constant_957ayc_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
@@ -48,9 +48,9 @@ public class MathFuncExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8904_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_957ayc_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_8904_1");
+    editorCell.setCellId("Constant_957ayc_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
@@ -60,7 +60,7 @@ public class MathFuncExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_8904_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_957ayc_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -73,7 +73,7 @@ public class MathFuncExpression_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new MathFuncExpression_Editor.MathFuncExpression_Editor_replaceWith_MathFuncExpression_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new MathFuncExpression_Editor.MathFuncExpression_Editor_replaceWith_MathFuncExpression_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -84,7 +84,7 @@ public class MathFuncExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8904_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_957ayc_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("param");
     provider.setNoTargetText("<no param>");
@@ -101,8 +101,8 @@ public class MathFuncExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class MathFuncExpression_Editor_replaceWith_MathFuncExpression_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public MathFuncExpression_Editor_replaceWith_MathFuncExpression_cellMenu0() {
+  public static class MathFuncExpression_Editor_replaceWith_MathFuncExpression_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public MathFuncExpression_Editor_replaceWith_MathFuncExpression_cellMenu_a0a0() {
     }
 
     public String getReplacementConceptName() {

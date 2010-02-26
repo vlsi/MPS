@@ -34,23 +34,23 @@ public class MethodDocReference_methodDeclaration_ReferentConstraint extends Bas
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IVisible") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true) == new MethodDocReference_methodDeclaration_ReferentConstraint.QuotationClass_1607_0().createNode();
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IVisible") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true) == new MethodDocReference_methodDeclaration_ReferentConstraint.QuotationClass_lifv18_a0a0a0a0a0a2().createNode();
       }
     });
   }
 
-  public static class QuotationClass_1607_0 {
-    public QuotationClass_1607_0() {
+  public static class QuotationClass_lifv18_a0a0a0a0a0a2 {
+    public QuotationClass_lifv18_a0a0a0a0a0a2() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0363_0 = null;
+      SNode quotedNode_8et2et_a0a0a0a0a0a0a = null;
       {
-        quotedNode_0363_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0363_0 = quotedNode_0363_0;
-        result = quotedNode1_0363_0;
+        quotedNode_8et2et_a0a0a0a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8et2et_a0a0a0a0a0a0a = quotedNode_8et2et_a0a0a0a0a0a0a;
+        result = quotedNode1_8et2et_a0a0a0a0a0a0a;
       }
       return result;
     }

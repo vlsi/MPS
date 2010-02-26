@@ -18,30 +18,30 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
 
 public class PowExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3700_0(editorContext, node);
+    return this.createCollection_ysso2m_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3700_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ysso2m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3700_0");
-    editorCell.addEditorCell(this.createCollection_3700_1(editorContext, node));
-    editorCell.addEditorCell(this.createEmpty_3700_0(editorContext, node));
+    editorCell.setCellId("Collection_ysso2m_a");
+    editorCell.addEditorCell(this.createCollection_ysso2m_a0(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_ysso2m_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_3700_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ysso2m_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
-    editorCell.setCellId("Collection_3700_1");
+    editorCell.setCellId("Collection_ysso2m_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createRefNode_3700_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_3700_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ysso2m_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ysso2m_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_3700_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ysso2m_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("base");
     provider.setNoTargetText("<no base>");
@@ -58,7 +58,7 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_3700_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ysso2m_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("exponent");
     provider.setNoTargetText("<no exponent>");
@@ -80,9 +80,9 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createEmpty_3700_0(EditorContext editorContext, SNode node) {
+  private EditorCell createEmpty_ysso2m_b0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setCellId("Empty_3700_0");
+    editorCell.setCellId("Empty_ysso2m_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);

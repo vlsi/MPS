@@ -34,26 +34,26 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitConfigEditor extends JPanel {
   public JUnitConfigEditor myThis;
-  private JPanel myComponent0;
-  private JLabel myComponent1;
-  private JbRadioButton myIsProject0;
-  private JbRadioButton myIsModule0;
-  private JbRadioButton myIsModel0;
-  private JbRadioButton myIsClass0;
-  private JbRadioButton myIsMethod0;
-  private JPanel myMainPanel0;
-  private JPanel myProjectPanel0;
-  private JLabel myComponent2;
-  private JTextField myComponent3;
-  private JPanel myModulePanel0;
-  private JLabel myComponent4;
-  private ModuleChooserComponent myModuleName0;
-  private JPanel myModelPanel0;
-  private JLabel myComponent5;
-  private ModelChooserComponent myModelName0;
-  private ListPanel myTestCases0;
-  private ListPanel myTestMethods0;
-  private JavaConfigOptions myJavaOptions0;
+  private JPanel myComponent_b0;
+  private JLabel myComponent_c1a;
+  private JbRadioButton myIsProject_d1a;
+  private JbRadioButton myIsModule_e1a;
+  private JbRadioButton myIsModel_f1a;
+  private JbRadioButton myIsClass_g1a;
+  private JbRadioButton myIsMethod_h1a;
+  private JPanel myMainPanel_c0;
+  private JPanel myProjectPanel_d2a;
+  private JLabel myComponent_c3c0;
+  private JTextField myComponent_d3c0;
+  private JPanel myModulePanel_e2a;
+  private JLabel myComponent_c4c0;
+  private ModuleChooserComponent myModuleName_d4c0;
+  private JPanel myModelPanel_f2a;
+  private JLabel myComponent_c5c0;
+  private ModelChooserComponent myModelName_d5c0;
+  private ListPanel myTestCases_d0;
+  private ListPanel myTestMethods_e0;
+  private JavaConfigOptions myJavaOptions_f0;
   private MPSProject myProject;
   private ButtonGroup myGroup;
   private SModel myModel;
@@ -77,15 +77,15 @@ public class JUnitConfigEditor extends JPanel {
     myThis.setNodes(new ArrayList<SNode>());
     myThis.setMethods(new ArrayList<SNode>());
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent0(), LayoutUtil.createFieldConstraints(0));
-    component.add(this.createComponent7(), LayoutUtil.createPanelConstraints(1));
-    component.add(this.createComponent17(), LayoutUtil.createPanelConstraints(1));
-    component.add(this.createComponent18(), LayoutUtil.createPanelConstraints(1));
-    component.add(this.createComponent19(), LayoutUtil.createPanelConstraints(2));
+    component.add(this.createComponent_b0(), LayoutUtil.createFieldConstraints(0));
+    component.add(this.createComponent_c0(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_d0(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_e0(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_f0(), LayoutUtil.createPanelConstraints(2));
     this.myEvents.initialize();
-    myThis.myJavaOptions0.setMakeBeforeRun(true);
-    myThis.myTestCases0.init(myThis.getNodes(), false);
-    myThis.myTestMethods0.init(myThis.getMethods(), true);
+    myThis.myJavaOptions_f0.setMakeBeforeRun(true);
+    myThis.myTestCases_d0.init(myThis.getNodes(), false);
+    myThis.myTestMethods_e0.init(myThis.getMethods(), true);
   }
 
   public Events getEvents() {
@@ -113,29 +113,29 @@ public class JUnitConfigEditor extends JPanel {
     }
   }
 
-  private JPanel createComponent0() {
+  private JPanel createComponent_b0() {
     JPanel component = new JPanel();
-    this.myComponent0 = component;
+    this.myComponent_b0 = component;
     component.setLayout(new FlowLayout(FlowLayout.LEFT));
-    component.add(this.createComponent1());
-    component.add(this.createComponent2());
-    component.add(this.createComponent3());
-    component.add(this.createComponent4());
-    component.add(this.createComponent5());
-    component.add(this.createComponent6());
+    component.add(this.createComponent_c1a());
+    component.add(this.createComponent_d1a());
+    component.add(this.createComponent_e1a());
+    component.add(this.createComponent_f1a());
+    component.add(this.createComponent_g1a());
+    component.add(this.createComponent_h1a());
     return component;
   }
 
-  private JLabel createComponent1() {
+  private JLabel createComponent_c1a() {
     JLabel component = new JLabel();
-    this.myComponent1 = component;
+    this.myComponent_c1a = component;
     component.setText("Test:");
     return component;
   }
 
-  private JbRadioButton createComponent2() {
+  private JbRadioButton createComponent_d1a() {
     JbRadioButton component = new JbRadioButton();
-    this.myIsProject0 = component;
+    this.myIsProject_d1a = component;
     component.setText("All in Project");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
@@ -146,9 +146,9 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JbRadioButton createComponent3() {
+  private JbRadioButton createComponent_e1a() {
     JbRadioButton component = new JbRadioButton();
-    this.myIsModule0 = component;
+    this.myIsModule_e1a = component;
     component.setText("All in Module");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
@@ -159,9 +159,9 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JbRadioButton createComponent4() {
+  private JbRadioButton createComponent_f1a() {
     JbRadioButton component = new JbRadioButton();
-    this.myIsModel0 = component;
+    this.myIsModel_f1a = component;
     component.setText("All in Model");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
@@ -172,9 +172,9 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JbRadioButton createComponent5() {
+  private JbRadioButton createComponent_g1a() {
     JbRadioButton component = new JbRadioButton();
-    this.myIsClass0 = component;
+    this.myIsClass_g1a = component;
     component.setText("Class");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
@@ -185,9 +185,9 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JbRadioButton createComponent6() {
+  private JbRadioButton createComponent_h1a() {
     JbRadioButton component = new JbRadioButton();
-    this.myIsMethod0 = component;
+    this.myIsMethod_h1a = component;
     component.setText("Method");
     component.setGroup(myThis.getGroup());
     component.addActionListener(new ActionListener() {
@@ -198,60 +198,60 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JPanel createComponent7() {
+  private JPanel createComponent_c0() {
     JPanel component = new JPanel();
-    this.myMainPanel0 = component;
+    this.myMainPanel_c0 = component;
     component.setBorder(new TitledBorder("Test"));
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent8(), LayoutUtil.createPanelConstraints(0));
-    component.add(this.createComponent11(), LayoutUtil.createPanelConstraints(0));
-    component.add(this.createComponent14(), LayoutUtil.createPanelConstraints(0));
+    component.add(this.createComponent_d2a(), LayoutUtil.createPanelConstraints(0));
+    component.add(this.createComponent_e2a(), LayoutUtil.createPanelConstraints(0));
+    component.add(this.createComponent_f2a(), LayoutUtil.createPanelConstraints(0));
     return component;
   }
 
-  private JPanel createComponent8() {
+  private JPanel createComponent_d2a() {
     JPanel component = new JPanel();
-    this.myProjectPanel0 = component;
+    this.myProjectPanel_d2a = component;
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent9(), LayoutUtil.createLabelConstraints(0));
-    component.add(this.createComponent10(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_c3c0(), LayoutUtil.createLabelConstraints(0));
+    component.add(this.createComponent_d3c0(), LayoutUtil.createPanelConstraints(1));
     return component;
   }
 
-  private JLabel createComponent9() {
+  private JLabel createComponent_c3c0() {
     JLabel component = new JLabel();
-    this.myComponent2 = component;
+    this.myComponent_c3c0 = component;
     component.setText("Project:");
     return component;
   }
 
-  private JTextField createComponent10() {
+  private JTextField createComponent_d3c0() {
     JTextField component = new JTextField();
-    this.myComponent3 = component;
+    this.myComponent_d3c0 = component;
     component.setText(myThis.getProject().getComponent(Project.class).getName());
     component.setEditable(false);
     return component;
   }
 
-  private JPanel createComponent11() {
+  private JPanel createComponent_e2a() {
     JPanel component = new JPanel();
-    this.myModulePanel0 = component;
+    this.myModulePanel_e2a = component;
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent12(), LayoutUtil.createLabelConstraints(0));
-    component.add(this.createComponent13(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_c4c0(), LayoutUtil.createLabelConstraints(0));
+    component.add(this.createComponent_d4c0(), LayoutUtil.createPanelConstraints(1));
     return component;
   }
 
-  private JLabel createComponent12() {
+  private JLabel createComponent_c4c0() {
     JLabel component = new JLabel();
-    this.myComponent4 = component;
+    this.myComponent_c4c0 = component;
     component.setText("Module:");
     return component;
   }
 
-  private ModuleChooserComponent createComponent13() {
+  private ModuleChooserComponent createComponent_d4c0() {
     ModuleChooserComponent component = new ModuleChooserComponent();
-    this.myModuleName0 = component;
+    this.myModuleName_d4c0 = component;
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onModuleChange();
@@ -260,25 +260,25 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JPanel createComponent14() {
+  private JPanel createComponent_f2a() {
     JPanel component = new JPanel();
-    this.myModelPanel0 = component;
+    this.myModelPanel_f2a = component;
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent15(), LayoutUtil.createLabelConstraints(0));
-    component.add(this.createComponent16(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent_c5c0(), LayoutUtil.createLabelConstraints(0));
+    component.add(this.createComponent_d5c0(), LayoutUtil.createPanelConstraints(1));
     return component;
   }
 
-  private JLabel createComponent15() {
+  private JLabel createComponent_c5c0() {
     JLabel component = new JLabel();
-    this.myComponent5 = component;
+    this.myComponent_c5c0 = component;
     component.setText("Model:");
     return component;
   }
 
-  private ModelChooserComponent createComponent16() {
+  private ModelChooserComponent createComponent_d5c0() {
     ModelChooserComponent component = new ModelChooserComponent();
-    this.myModelName0 = component;
+    this.myModelName_d5c0 = component;
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onModelChange();
@@ -287,9 +287,9 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private ListPanel createComponent17() {
+  private ListPanel createComponent_d0() {
     ListPanel component = new ListPanel();
-    this.myTestCases0 = component;
+    this.myTestCases_d0 = component;
     component.setLayout(new GridBagLayout());
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
@@ -299,9 +299,9 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private ListPanel createComponent18() {
+  private ListPanel createComponent_e0() {
     ListPanel component = new ListPanel();
-    this.myTestMethods0 = component;
+    this.myTestMethods_e0 = component;
     component.setLayout(new GridBagLayout());
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
@@ -311,9 +311,9 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JavaConfigOptions createComponent19() {
+  private JavaConfigOptions createComponent_f0() {
     JavaConfigOptions component = new JavaConfigOptions();
-    this.myJavaOptions0 = component;
+    this.myJavaOptions_f0 = component;
     return component;
   }
 
@@ -398,7 +398,7 @@ public class JUnitConfigEditor extends JPanel {
       public void run() {
         SNode testCase = TestRunUtil.getTestNode(nodeName);
         ListSequence.fromList(myThis.getNodes()).addElement(testCase);
-        myThis.myTestCases0.addItem(testCase);
+        myThis.myTestCases_d0.addItem(testCase);
       }
     });
   }
@@ -408,7 +408,7 @@ public class JUnitConfigEditor extends JPanel {
       public void run() {
         SNode testMethod = TestRunUtil.getTestMethod(nodeName, methodName);
         ListSequence.fromList(myThis.getMethods()).addElement(testMethod);
-        myThis.myTestMethods0.addItem(testMethod);
+        myThis.myTestMethods_e0.addItem(testMethod);
       }
     });
   }
@@ -453,7 +453,7 @@ public class JUnitConfigEditor extends JPanel {
         } else {
           config.getStateObject().module = null;
         }
-        JUnitRunTypes type = myThis.getType(myThis.myIsModule0.isSelected(), myThis.myIsModel0.isSelected(), myThis.myIsClass0.isSelected(), myThis.myIsMethod0.isSelected());
+        JUnitRunTypes type = myThis.getType(myThis.myIsModule_e1a.isSelected(), myThis.myIsModel_f1a.isSelected(), myThis.myIsClass_g1a.isSelected(), myThis.myIsMethod_h1a.isSelected());
         if (type != null) {
           config.getStateObject().type = type;
         }
@@ -462,37 +462,37 @@ public class JUnitConfigEditor extends JPanel {
     if (config.getStateObject().myParams == null) {
       config.getStateObject().myParams = new ConfigRunParameters();
     }
-    myThis.myJavaOptions0.apply(config.getStateObject().myParams);
+    myThis.myJavaOptions_f0.apply(config.getStateObject().myParams);
   }
 
   public void reset(final DefaultJUnit_Configuration config) {
     if (config.getStateObject().type != null) {
       switch (config.getStateObject().type) {
         case METHOD:
-          myThis.myIsMethod0.setSelected(true);
+          myThis.myIsMethod_h1a.setSelected(true);
           break;
         case NODE:
-          myThis.myIsClass0.setSelected(true);
+          myThis.myIsClass_g1a.setSelected(true);
           break;
         case MODEL:
-          myThis.myIsModel0.setSelected(true);
+          myThis.myIsModel_f1a.setSelected(true);
           break;
         case MODULE:
-          myThis.myIsModule0.setSelected(true);
+          myThis.myIsModule_e1a.setSelected(true);
           break;
         case PROJECT:
-          myThis.myIsProject0.setSelected(true);
+          myThis.myIsProject_d1a.setSelected(true);
         default:
       }
     } else {
-      myThis.myIsProject0.setSelected(true);
+      myThis.myIsProject_d1a.setSelected(true);
     }
     List<String> nodes = TestRunUtil.getValues(config.getStateObject().node, config.getStateObject().nodes);
     List<String> methods = TestRunUtil.getValues(config.getStateObject().method, config.getStateObject().methods);
     myThis.setNodes(new ArrayList<SNode>());
     myThis.setMethods(new ArrayList<SNode>());
-    myThis.myTestCases0.clear();
-    myThis.myTestMethods0.clear();
+    myThis.myTestCases_d0.clear();
+    myThis.myTestMethods_e0.clear();
     for (String nodeName : nodes) {
       myThis.addNodeValue(nodeName);
       if (ListSequence.fromList(nodes).first().equals(nodeName)) {
@@ -501,11 +501,11 @@ public class JUnitConfigEditor extends JPanel {
             if (ListSequence.fromList(myThis.getNodes()).isNotEmpty() && SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first()) != null) {
               String modelName = SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first()).getSModelFqName().toString();
               myThis.setModelValue(modelName);
-              myThis.myModelName0.setText(modelName);
+              myThis.myModelName_d5c0.setText(modelName);
               if (SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first()).getModelDescriptor() != null && SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first()).getModelDescriptor().getModule() != null) {
                 String moduleName = SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first()).getModelDescriptor().getModule().getModuleFqName();
                 myThis.setModuleValue(moduleName);
-                myThis.myModuleName0.setText(moduleName);
+                myThis.myModuleName_d4c0.setText(moduleName);
               }
             }
           }
@@ -520,63 +520,63 @@ public class JUnitConfigEditor extends JPanel {
       if (myThis.getModel() != null && myThis.getModel().getModelDescriptor() != null && myThis.getModel().getModelDescriptor().getModule() != null) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            myThis.myModelName0.setText(config.getStateObject().model);
+            myThis.myModelName_d5c0.setText(config.getStateObject().model);
             String moduleName = myThis.getModel().getModelDescriptor().getModule().getModuleFqName();
             myThis.setModuleValue(moduleName);
-            myThis.myModuleName0.setText(moduleName);
+            myThis.myModuleName_d4c0.setText(moduleName);
           }
         });
       }
     }
     if (config.getStateObject().module != null) {
       myThis.setModuleValue(config.getStateObject().module);
-      myThis.myModuleName0.setText(config.getStateObject().module);
+      myThis.myModuleName_d4c0.setText(config.getStateObject().module);
     }
     myThis.onSelect();
-    myThis.myJavaOptions0.reset(config.getStateObject().myParams);
+    myThis.myJavaOptions_f0.reset(config.getStateObject().myParams);
   }
 
   public void dispose() {
-    myThis.myModelName0.dispose();
-    myThis.myModuleName0.dispose();
-    myThis.myJavaOptions0.dispose();
+    myThis.myModelName_d5c0.dispose();
+    myThis.myModuleName_d4c0.dispose();
+    myThis.myJavaOptions_f0.dispose();
   }
 
   public void onSelect() {
-    myThis.myProjectPanel0.setVisible(false);
-    myThis.myModulePanel0.setVisible(false);
-    myThis.myModelPanel0.setVisible(false);
-    myThis.myTestCases0.setVisible(false);
-    myThis.myTestMethods0.setVisible(false);
-    myThis.myMainPanel0.setVisible(true);
-    if (myThis.myIsModule0.isSelected()) {
-      myThis.myModulePanel0.setVisible(true);
-    } else if (myThis.myIsModel0.isSelected()) {
-      myThis.myModelPanel0.setVisible(true);
-    } else if (myThis.myIsClass0.isSelected()) {
-      myThis.myTestCases0.setVisible(true);
-      myThis.myMainPanel0.setVisible(false);
-    } else if (myThis.myIsMethod0.isSelected()) {
-      myThis.myTestMethods0.setVisible(true);
-      myThis.myMainPanel0.setVisible(false);
-    } else if (myThis.myIsProject0.isSelected()) {
-      myThis.myProjectPanel0.setVisible(true);
+    myThis.myProjectPanel_d2a.setVisible(false);
+    myThis.myModulePanel_e2a.setVisible(false);
+    myThis.myModelPanel_f2a.setVisible(false);
+    myThis.myTestCases_d0.setVisible(false);
+    myThis.myTestMethods_e0.setVisible(false);
+    myThis.myMainPanel_c0.setVisible(true);
+    if (myThis.myIsModule_e1a.isSelected()) {
+      myThis.myModulePanel_e2a.setVisible(true);
+    } else if (myThis.myIsModel_f1a.isSelected()) {
+      myThis.myModelPanel_f2a.setVisible(true);
+    } else if (myThis.myIsClass_g1a.isSelected()) {
+      myThis.myTestCases_d0.setVisible(true);
+      myThis.myMainPanel_c0.setVisible(false);
+    } else if (myThis.myIsMethod_h1a.isSelected()) {
+      myThis.myTestMethods_e0.setVisible(true);
+      myThis.myMainPanel_c0.setVisible(false);
+    } else if (myThis.myIsProject_d1a.isSelected()) {
+      myThis.myProjectPanel_d2a.setVisible(true);
     }
   }
 
   public void onModelChange() {
-    myThis.setModelValue(myThis.myModelName0.getText());
+    myThis.setModelValue(myThis.myModelName_d5c0.getText());
   }
 
   public void onModuleChange() {
-    myThis.setModuleValue(myThis.myModuleName0.getText());
+    myThis.setModuleValue(myThis.myModuleName_d4c0.getText());
   }
 
   public void onNodeChange() {
-    myThis.setNodes((List<SNode>) myThis.myTestCases0.getItems());
+    myThis.setNodes((List<SNode>) myThis.myTestCases_d0.getItems());
   }
 
   public void onMethodChange() {
-    myThis.setMethods((List<SNode>) myThis.myTestMethods0.getItems());
+    myThis.setMethods((List<SNode>) myThis.myTestMethods_e0.getItems());
   }
 }

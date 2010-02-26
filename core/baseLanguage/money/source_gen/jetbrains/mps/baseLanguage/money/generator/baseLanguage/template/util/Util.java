@@ -14,7 +14,7 @@ public class Util {
   public static boolean isPlusMinusExpressionMoneyExpression(SNode expr) {
     SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "rightExpression", true));
     SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "leftExpression", true));
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new Util.QuotationClass_7074_1().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new Util.QuotationClass_7074_0().createNode())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new Util.QuotationClass_sd8x_a1a0a2a0_0().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new Util.QuotationClass_sd8x_a1a0a2a0().createNode())) {
       return true;
     }
     return false;
@@ -23,75 +23,75 @@ public class Util {
   public static boolean isMulDivExpressionMoneyExpression(SNode expr) {
     SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "rightExpression", true));
     SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "leftExpression", true));
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new Util.QuotationClass_7074_3().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new Util.QuotationClass_7074_2().createNode())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new Util.QuotationClass_sd8x_a1a0a2a1_0().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new Util.QuotationClass_sd8x_a1a0a2a1().createNode())) {
       return true;
     }
     return false;
   }
 
-  public static class QuotationClass_7074_0 {
-    public QuotationClass_7074_0() {
+  public static class QuotationClass_sd8x_a1a0a2a0 {
+    public QuotationClass_sd8x_a1a0a2a0() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7074_0 = null;
+      SNode quotedNode_sd8x_a1a0a2a0 = null;
       {
-        quotedNode_7074_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7074_0 = quotedNode_7074_0;
-        result = quotedNode1_7074_0;
+        quotedNode_sd8x_a1a0a2a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_sd8x_a1a0a2a0 = quotedNode_sd8x_a1a0a2a0;
+        result = quotedNode1_sd8x_a1a0a2a0;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_7074_1 {
-    public QuotationClass_7074_1() {
+  public static class QuotationClass_sd8x_a1a0a2a0_0 {
+    public QuotationClass_sd8x_a1a0a2a0_0() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7074_1 = null;
+      SNode quotedNode_sd8x_a1a0a2a0_0 = null;
       {
-        quotedNode_7074_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7074_1 = quotedNode_7074_1;
-        result = quotedNode1_7074_1;
+        quotedNode_sd8x_a1a0a2a0_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_sd8x_a1a0a2a0_0 = quotedNode_sd8x_a1a0a2a0_0;
+        result = quotedNode1_sd8x_a1a0a2a0_0;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_7074_2 {
-    public QuotationClass_7074_2() {
+  public static class QuotationClass_sd8x_a1a0a2a1 {
+    public QuotationClass_sd8x_a1a0a2a1() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7074_2 = null;
+      SNode quotedNode_sd8x_a1a0a2a1 = null;
       {
-        quotedNode_7074_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7074_2 = quotedNode_7074_2;
-        result = quotedNode1_7074_2;
+        quotedNode_sd8x_a1a0a2a1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_sd8x_a1a0a2a1 = quotedNode_sd8x_a1a0a2a1;
+        result = quotedNode1_sd8x_a1a0a2a1;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_7074_3 {
-    public QuotationClass_7074_3() {
+  public static class QuotationClass_sd8x_a1a0a2a1_0 {
+    public QuotationClass_sd8x_a1a0a2a1_0() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7074_3 = null;
+      SNode quotedNode_sd8x_a1a0a2a1_0 = null;
       {
-        quotedNode_7074_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7074_3 = quotedNode_7074_3;
-        result = quotedNode1_7074_3;
+        quotedNode_sd8x_a1a0a2a1_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_sd8x_a1a0a2a1_0 = quotedNode_sd8x_a1a0a2a1_0;
+        result = quotedNode1_sd8x_a1a0a2a1_0;
       }
       return result;
     }

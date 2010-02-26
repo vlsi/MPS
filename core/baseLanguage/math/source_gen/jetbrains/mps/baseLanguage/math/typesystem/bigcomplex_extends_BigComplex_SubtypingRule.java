@@ -20,7 +20,7 @@ public class bigcomplex_extends_BigComplex_SubtypingRule extends SubtypingRule_R
   }
 
   public SNode getSubOrSuperType(SNode bigComplexType, TypeCheckingContext typeCheckingContext) {
-    return new bigcomplex_extends_BigComplex_SubtypingRule.QuotationClass_5273_0().createNode(typeCheckingContext);
+    return new bigcomplex_extends_BigComplex_SubtypingRule.QuotationClass_ertxks_a0a0a().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -35,19 +35,19 @@ public class bigcomplex_extends_BigComplex_SubtypingRule extends SubtypingRule_R
     return false;
   }
 
-  public static class QuotationClass_5273_0 {
-    public QuotationClass_5273_0() {
+  public static class QuotationClass_ertxks_a0a0a {
+    public QuotationClass_ertxks_a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5273_0 = null;
+      SNode quotedNode_ertxks_a0a0a = null;
       {
-        quotedNode_5273_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5273_0 = quotedNode_5273_0;
-        quotedNode1_5273_0.addReference(SReference.create("classifier", quotedNode1_5273_0, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)"), SNodeId.fromString("~BigComplex")));
-        result = quotedNode1_5273_0;
+        quotedNode_ertxks_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_ertxks_a0a0a = quotedNode_ertxks_a0a0a;
+        quotedNode1_ertxks_a0a0a.addReference(SReference.create("classifier", quotedNode1_ertxks_a0a0a, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)"), SNodeId.fromString("~BigComplex")));
+        result = quotedNode1_ertxks_a0a0a;
       }
       return result;
     }
@@ -55,12 +55,12 @@ public class bigcomplex_extends_BigComplex_SubtypingRule extends SubtypingRule_R
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5273_0 = null;
+      SNode quotedNode_ertxks_a0a0a = null;
       {
-        quotedNode_5273_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5273_0 = quotedNode_5273_0;
-        quotedNode1_5273_0.addReference(SReference.create("classifier", quotedNode1_5273_0, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)"), SNodeId.fromString("~BigComplex")));
-        result = quotedNode1_5273_0;
+        quotedNode_ertxks_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_ertxks_a0a0a = quotedNode_ertxks_a0a0a;
+        quotedNode1_ertxks_a0a0a.addReference(SReference.create("classifier", quotedNode1_ertxks_a0a0a, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)"), SNodeId.fromString("~BigComplex")));
+        result = quotedNode1_ertxks_a0a0a;
       }
       return result;
     }

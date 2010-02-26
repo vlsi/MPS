@@ -78,67 +78,67 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_5867364036373950596(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode childRef = new QueriesGenerated.QuotationClass_8087_0().createNode(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "builder", true), _context.getOutputNode(), "builderVar"));
+    SNode childRef = new QueriesGenerated.QuotationClass_x583g4_a0a0a41().createNode(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "builder", true), _context.getOutputNode(), "builderVar"));
     SNode parentBuilder = Builder_Behavior.call_getContextBuilder_7057666463730306577(SLinkOperations.getTarget(_context.getNode(), "builder", true));
-    SNode parentRef = new QueriesGenerated.QuotationClass_8087_1().createNode(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(parentBuilder, _context.getOutputNode(), "builderVar"));
+    SNode parentRef = new QueriesGenerated.QuotationClass_x583g4_a0a2a41().createNode(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(parentBuilder, _context.getOutputNode(), "builderVar"));
     return Builder_Behavior.call_getAttachStatement_7288041816792215495(parentBuilder, SLinkOperations.getTarget(_context.getNode(), "builder", true), parentRef, childRef);
   }
 
   public static SNode mapSrcMacro_mapper_5867364036373952047(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode context = Builder_Behavior.call_getContextBuilder_7057666463730306577(_context.getNode());
-    SNode ref = new QueriesGenerated.QuotationClass_8087_2().createNode(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(context, _context.getOutputNode(), "builderVar"));
+    SNode ref = new QueriesGenerated.QuotationClass_x583g4_a0a1a51().createNode(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(context, _context.getOutputNode(), "builderVar"));
     return Builder_Behavior.call_getCreatorExpression_7057666463730727863(_context.getNode(), ref);
   }
 
-  public static class QuotationClass_8087_0 {
-    public QuotationClass_8087_0() {
+  public static class QuotationClass_x583g4_a0a0a41 {
+    public QuotationClass_x583g4_a0a0a41() {
     }
 
-    public SNode createNode(Object parameter_8087_0) {
+    public SNode createNode(Object parameter_x583g4_a0a0a0a41) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_0 = null;
+      SNode quotedNode_x583g4_a0a0a41 = null;
       {
-        quotedNode_8087_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_0 = quotedNode_8087_0;
-        quotedNode1_8087_0.setReferent("variableDeclaration", (SNode) parameter_8087_0);
-        result = quotedNode1_8087_0;
+        quotedNode_x583g4_a0a0a41 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_x583g4_a0a0a41 = quotedNode_x583g4_a0a0a41;
+        quotedNode1_x583g4_a0a0a41.setReferent("variableDeclaration", (SNode) parameter_x583g4_a0a0a0a41);
+        result = quotedNode1_x583g4_a0a0a41;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_8087_1 {
-    public QuotationClass_8087_1() {
+  public static class QuotationClass_x583g4_a0a2a41 {
+    public QuotationClass_x583g4_a0a2a41() {
     }
 
-    public SNode createNode(Object parameter_8087_1) {
+    public SNode createNode(Object parameter_x583g4_a0a0a2a41) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_1 = null;
+      SNode quotedNode_x583g4_a0a2a41 = null;
       {
-        quotedNode_8087_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_1 = quotedNode_8087_1;
-        quotedNode1_8087_1.setReferent("variableDeclaration", (SNode) parameter_8087_1);
-        result = quotedNode1_8087_1;
+        quotedNode_x583g4_a0a2a41 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_x583g4_a0a2a41 = quotedNode_x583g4_a0a2a41;
+        quotedNode1_x583g4_a0a2a41.setReferent("variableDeclaration", (SNode) parameter_x583g4_a0a0a2a41);
+        result = quotedNode1_x583g4_a0a2a41;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_8087_2 {
-    public QuotationClass_8087_2() {
+  public static class QuotationClass_x583g4_a0a1a51 {
+    public QuotationClass_x583g4_a0a1a51() {
     }
 
-    public SNode createNode(Object parameter_8087_2) {
+    public SNode createNode(Object parameter_x583g4_a0a0a1a51) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_2 = null;
+      SNode quotedNode_x583g4_a0a1a51 = null;
       {
-        quotedNode_8087_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_2 = quotedNode_8087_2;
-        quotedNode1_8087_2.setReferent("variableDeclaration", (SNode) parameter_8087_2);
-        result = quotedNode1_8087_2;
+        quotedNode_x583g4_a0a1a51 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_x583g4_a0a1a51 = quotedNode_x583g4_a0a1a51;
+        quotedNode1_x583g4_a0a1a51.setReferent("variableDeclaration", (SNode) parameter_x583g4_a0a0a1a51);
+        result = quotedNode1_x583g4_a0a1a51;
       }
       return result;
     }

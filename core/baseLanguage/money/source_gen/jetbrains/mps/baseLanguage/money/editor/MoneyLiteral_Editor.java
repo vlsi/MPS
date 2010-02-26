@@ -14,18 +14,18 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MoneyLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0189_0(editorContext, node);
+    return this.createCollection_84i1v2_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0189_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_84i1v2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0189_0");
-    editorCell.addEditorCell(this.createProperty_0189_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0189_1(editorContext, node));
+    editorCell.setCellId("Collection_84i1v2_a");
+    editorCell.addEditorCell(this.createProperty_84i1v2_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_84i1v2_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createProperty_0189_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_84i1v2_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("amount");
     provider.setNoTargetText("<no amount>");
@@ -43,7 +43,7 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_0189_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_84i1v2_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("currency");
     provider.setNoTargetText("<no currency>");

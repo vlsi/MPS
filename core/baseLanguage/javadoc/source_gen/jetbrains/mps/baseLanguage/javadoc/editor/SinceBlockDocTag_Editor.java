@@ -15,26 +15,26 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SinceBlockDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1513_0(editorContext, node);
+    return this.createCollection_jbrn6z_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1513_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jbrn6z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1513_0");
-    editorCell.addEditorCell(this.createConstant_1513_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_1513_0(editorContext, node));
+    editorCell.setCellId("Collection_jbrn6z_a");
+    editorCell.addEditorCell(this.createConstant_jbrn6z_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_jbrn6z_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1513_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jbrn6z_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@since");
-    editorCell.setCellId("Constant_1513_0");
+    editorCell.setCellId("Constant_jbrn6z_a0");
     DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_1513_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_jbrn6z_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");
