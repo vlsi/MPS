@@ -125,14 +125,6 @@
       <property name="id" value="d44dab97-aaac-44cb-9745-8a14db674c03" />
       <property name="name" value="jetbrains.mps.baseLanguage.tuples.runtime" />
     </node>
-    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="701559220729405157">
-      <property name="id" value="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
-      <property name="name" value="JDK" />
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="701559220729405158">
-      <property name="id" value="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
-      <property name="name" value="MPS.Classpath" />
-    </node>
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="701559220729405159">
       <property name="id" value="88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5" />
       <property name="name" value="jetbrains.mps.debug" />
