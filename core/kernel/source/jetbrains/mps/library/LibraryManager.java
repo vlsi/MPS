@@ -165,7 +165,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
           descriptor.setExternallyVisible(true);
 
           //todo what should be here?
-          descriptor.setDontLoadClasses(descrClass.getName().equals(MPS_StubDescriptor.class.getName()));
+          descriptor.setDontLoadClasses(true);
 
           for (String path : descr.getPaths()) {
             StubModelsEntry sme = new StubModelsEntry();
