@@ -21,48 +21,48 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9896_0(editorContext, node);
+    return this.createCollection_416fys_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9896_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_416fys_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9896_0");
-    editorCell.addEditorCell(this.createConstant_9896_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9896_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_9896_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9896_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9896_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9896_2(editorContext, node));
+    editorCell.setCellId("Collection_416fys_a");
+    editorCell.addEditorCell(this.createConstant_416fys_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_416fys_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_416fys_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_416fys_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_416fys_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_416fys_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_9896_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_416fys_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_9896_1");
+    editorCell.setCellId("Collection_416fys_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.DRAW_BRACKETS, true);
       style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.lightGray);
     }
-    editorCell.addEditorCell(this.createCollection_9896_2(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_416fys_a2a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_9896_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_416fys_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9896_2");
+    editorCell.setCellId("Collection_416fys_a2a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createRefNode_9896_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_416fys_a0c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9896_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_416fys_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=>");
-    editorCell.setCellId("Constant_9896_0");
+    editorCell.setCellId("Constant_416fys_d0");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -72,31 +72,31 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9896_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_416fys_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_9896_1");
+    editorCell.setCellId("Constant_416fys_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9896_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_416fys_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_9896_2");
+    editorCell.setCellId("Constant_416fys_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9896_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_416fys_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extract");
-    editorCell.setCellId("Constant_9896_3");
+    editorCell.setCellId("Constant_416fys_a0");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_9896_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_416fys_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("innerExpr");
     provider.setNoTargetText("<no innerExpr>");
@@ -113,7 +113,7 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9896_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_416fys_a0c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("stmts");
     provider.setNoTargetText("<no stmts>");

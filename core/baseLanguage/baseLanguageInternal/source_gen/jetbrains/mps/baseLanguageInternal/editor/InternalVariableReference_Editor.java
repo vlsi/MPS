@@ -28,22 +28,22 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class InternalVariableReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8666_0(editorContext, node);
+    return this.createCollection_7tajt9_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8666_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7tajt9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8666_0");
-    editorCell.addEditorCell(this.createConstant_8666_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8666_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8666_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_8666_0(editorContext, node));
+    editorCell.setCellId("Collection_7tajt9_a");
+    editorCell.addEditorCell(this.createConstant_7tajt9_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7tajt9_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7tajt9_c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_7tajt9_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8666_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7tajt9_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
-    editorCell.setCellId("Constant_8666_0");
+    editorCell.setCellId("Constant_7tajt9_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.MATCHING_LABEL, "SquareBrace");
@@ -52,9 +52,9 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_8666_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7tajt9_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
-    editorCell.setCellId("Constant_8666_1");
+    editorCell.setCellId("Constant_7tajt9_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.MATCHING_LABEL, "SquareBrace");
@@ -63,7 +63,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8666_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7tajt9_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -80,7 +80,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_8666_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_7tajt9_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -89,7 +89,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_name");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new InternalVariableReference_Editor.InternalVariableReference_name_postfixCellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new InternalVariableReference_Editor.InternalVariableReference_name_postfixCellMenu_a0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -100,8 +100,8 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class InternalVariableReference_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public InternalVariableReference_name_postfixCellMenu0() {
+  public static class InternalVariableReference_name_postfixCellMenu_a0d0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public InternalVariableReference_name_postfixCellMenu_a0d0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {

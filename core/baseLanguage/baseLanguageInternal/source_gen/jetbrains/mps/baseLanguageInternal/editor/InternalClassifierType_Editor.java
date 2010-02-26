@@ -31,119 +31,119 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class InternalClassifierType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createAlternation_7316_0(editorContext, node);
+    return this.createAlternation_7zoim2_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_7316_0(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_7zoim2_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = InternalClassifierType_Editor.renderingCondition7316_0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = InternalClassifierType_Editor.renderingCondition_7zoim2_a0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createCollection_7316_1(editorContext, node);
+      editorCell = this.createCollection_7zoim2_a0_0(editorContext, node);
     } else {
-      editorCell = this.createCollection_7316_0(editorContext, node);
+      editorCell = this.createCollection_7zoim2_a0(editorContext, node);
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_7316_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7zoim2_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7316_0");
-    editorCell.addEditorCell(this.createConstant_7316_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7316_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7316_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_7316_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7316_2(editorContext, node));
+    editorCell.setCellId("Collection_7zoim2_a0");
+    editorCell.addEditorCell(this.createConstant_7zoim2_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_7zoim2_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7zoim2_c0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_7zoim2_d0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7zoim2_e0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7316_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7zoim2_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7316_1");
-    editorCell.addEditorCell(this.createConstant_7316_3(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7316_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7316_4(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_7316_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7316_5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7316_6(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_7316_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7316_7(editorContext, node));
+    editorCell.setCellId("Collection_7zoim2_a0_0");
+    editorCell.addEditorCell(this.createConstant_7zoim2_a0a_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_7zoim2_b0a_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7zoim2_c0a_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_7zoim2_d0a_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7zoim2_e0a_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7zoim2_f0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_7zoim2_g0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7zoim2_h0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7316_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7zoim2_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
-    editorCell.setCellId("Constant_7316_0");
+    editorCell.setCellId("Constant_7zoim2_a0a");
     StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7316_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7zoim2_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
-    editorCell.setCellId("Constant_7316_1");
+    editorCell.setCellId("Constant_7zoim2_c0a");
     StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7316_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7zoim2_e0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
-    editorCell.setCellId("Constant_7316_2");
+    editorCell.setCellId("Constant_7zoim2_e0a");
     StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7316_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7zoim2_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
-    editorCell.setCellId("Constant_7316_3");
+    editorCell.setCellId("Constant_7zoim2_a0a_0");
     StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7316_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7zoim2_c0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
-    editorCell.setCellId("Constant_7316_4");
+    editorCell.setCellId("Constant_7zoim2_c0a_0");
     StyleSheet_StyleSheet.getInternalKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7316_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7zoim2_e0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
-    editorCell.setCellId("Constant_7316_5");
+    editorCell.setCellId("Constant_7zoim2_e0a_0");
     StyleSheet_StyleSheet.getSquareBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7316_6(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7zoim2_f0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_7316_6");
+    editorCell.setCellId("Constant_7zoim2_f0a");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7316_7(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7zoim2_h0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_7316_7");
+    editorCell.setCellId("Constant_7zoim2_h0a");
     BaseLanguageStyle_StyleSheet.getBaseAngleBracket(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_7316_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new InternalClassifierType_Editor.parameterListHandler_7316_0(node, "parameter", editorContext);
+  private EditorCell createRefNodeList_7zoim2_g0a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new InternalClassifierType_Editor.parameterListHandler_7zoim2_g0a(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createProperty_7316_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_7zoim2_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fqClassName");
     provider.setNoTargetText("<no fqClassName>");
@@ -161,12 +161,12 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_7316_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_7zoim2_d0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline7316_0());
+    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline_7zoim2_a3a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -179,7 +179,7 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_7316_2(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_7zoim2_b0a_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fqClassName");
     provider.setNoTargetText("<no fqClassName>");
@@ -197,12 +197,12 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_7316_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_7zoim2_d0a_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline7316_1());
+    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline_7zoim2_a3a0_0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -215,12 +215,12 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition7316_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_7zoim2_a0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
   }
 
-  public static class _Inline7316_0 extends InlineCellProvider {
-    public _Inline7316_0() {
+  public static class _Inline_7zoim2_a3a0 extends InlineCellProvider {
+    public _Inline_7zoim2_a3a0() {
       super();
     }
 
@@ -229,10 +229,10 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_7316_1(editorContext, node);
+      return this.createProperty_7zoim2_a0d0a(editorContext, node);
     }
 
-    private EditorCell createProperty_7316_1(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_7zoim2_a0d0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -252,8 +252,8 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline7316_1 extends InlineCellProvider {
-    public _Inline7316_1() {
+  public static class _Inline_7zoim2_a3a0_0 extends InlineCellProvider {
+    public _Inline_7zoim2_a3a0_0() {
       super();
     }
 
@@ -262,10 +262,10 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_7316_3(editorContext, node);
+      return this.createProperty_7zoim2_a0d0a_0(editorContext, node);
     }
 
-    private EditorCell createProperty_7316_3(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_7zoim2_a0d0a_0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -285,8 +285,8 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class parameterListHandler_7316_0 extends RefNodeListHandler {
-    public parameterListHandler_7316_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class parameterListHandler_7zoim2_g0a extends RefNodeListHandler {
+    public parameterListHandler_7zoim2_g0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
