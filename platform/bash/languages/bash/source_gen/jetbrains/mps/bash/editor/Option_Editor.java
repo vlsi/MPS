@@ -18,27 +18,27 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Option_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0985_0(editorContext, node);
+    return this.createCollection_nr3cqj_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0985_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_nr3cqj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0985_0");
-    editorCell.addEditorCell(this.createConstant_0985_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0985_0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_0985_0(editorContext, node));
+    editorCell.setCellId("Collection_nr3cqj_a");
+    editorCell.addEditorCell(this.createConstant_nr3cqj_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_nr3cqj_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_nr3cqj_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_0985_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_nr3cqj_c0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ExternalCommandDescription_EditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_0985_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_nr3cqj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
-    editorCell.setCellId("Constant_0985_0");
+    editorCell.setCellId("Constant_nr3cqj_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -47,7 +47,7 @@ public class Option_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_0985_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_nr3cqj_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("symbol");
     provider.setNoTargetText("<no symbol>");

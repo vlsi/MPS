@@ -17,18 +17,18 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class PreVariableExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9749_0(editorContext, node);
+    return this.createCollection_f3l2sa_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9749_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_f3l2sa_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9749_0");
-    editorCell.addEditorCell(this.createConceptProperty_9749_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9749_0(editorContext, node));
+    editorCell.setCellId("Collection_f3l2sa_a");
+    editorCell.addEditorCell(this.createConceptProperty_f3l2sa_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_f3l2sa_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_9749_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_f3l2sa_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("word");
     provider.setNoTargetText("<no word>");
@@ -45,7 +45,7 @@ public class PreVariableExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9749_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_f3l2sa_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("sign");
     provider.setNoTargetText("<no sign>");

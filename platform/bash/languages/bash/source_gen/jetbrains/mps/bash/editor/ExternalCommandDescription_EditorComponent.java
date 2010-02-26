@@ -28,22 +28,22 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5917_0(editorContext, node);
+    return this.createCollection_3xyrme_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5917_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3xyrme_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5917_0");
-    if (renderingCondition5917_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_5917_0(editorContext, node));
+    editorCell.setCellId("Collection_3xyrme_a");
+    if (renderingCondition_3xyrme_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_3xyrme_a0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createProperty_5917_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_3xyrme_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5917_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3xyrme_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
-    editorCell.setCellId("Constant_5917_0");
+    editorCell.setCellId("Constant_3xyrme_a0");
     BashLanguageStyle_StyleSheet.getExternalCommandDescription(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -53,7 +53,7 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
     return editorCell;
   }
 
-  private EditorCell createProperty_5917_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_3xyrme_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("description");
     provider.setNoTargetText("<no description>");
@@ -73,7 +73,7 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
     return editorCell;
   }
 
-  private static boolean renderingCondition5917_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_3xyrme_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "description"));
   }
 }

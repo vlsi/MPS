@@ -21,10 +21,10 @@ public class Option_EditorComponent extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_5270_0(editorContext, node);
+    return this.createProperty_6h1fs3_a(editorContext, node);
   }
 
-  private EditorCell createProperty_5270_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_6h1fs3_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("symbol");
     provider.setNoTargetText("<no symbol>");

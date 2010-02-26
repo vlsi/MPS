@@ -13,10 +13,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SimpleWord_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_2736_0(editorContext, node);
+    return this.createProperty_mu2ba0_a(editorContext, node);
   }
 
-  private EditorCell createProperty_2736_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_mu2ba0_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("word");
     provider.setNoTargetText("<no word>");

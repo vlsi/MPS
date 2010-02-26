@@ -15,18 +15,18 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class SimpleCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0547_0(editorContext, node);
+    return this.createCollection_7qu9ix_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0547_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7qu9ix_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0547_0");
-    editorCell.addEditorCell(this.createProperty_0547_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0547_0(editorContext, node));
+    editorCell.setCellId("Collection_7qu9ix_a");
+    editorCell.addEditorCell(this.createProperty_7qu9ix_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7qu9ix_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createProperty_0547_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_7qu9ix_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -45,7 +45,7 @@ public class SimpleCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0547_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7qu9ix_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("paramList");
     provider.setNoTargetText("<no paramList>");

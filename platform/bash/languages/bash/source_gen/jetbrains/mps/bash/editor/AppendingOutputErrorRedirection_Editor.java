@@ -17,20 +17,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AppendingOutputErrorRedirection_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2031_0(editorContext, node);
+    return this.createCollection_48p65r_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2031_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_48p65r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2031_0");
-    editorCell.addEditorCell(this.createConstant_2031_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2031_0(editorContext, node));
+    editorCell.setCellId("Collection_48p65r_a");
+    editorCell.addEditorCell(this.createConstant_48p65r_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_48p65r_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2031_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_48p65r_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&>>");
-    editorCell.setCellId("Constant_2031_0");
+    editorCell.setCellId("Constant_48p65r_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -39,7 +39,7 @@ public class AppendingOutputErrorRedirection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2031_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_48p65r_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("word");
     provider.setNoTargetText("<no word>");

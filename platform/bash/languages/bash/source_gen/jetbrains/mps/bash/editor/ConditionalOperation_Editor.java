@@ -15,35 +15,35 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ConditionalOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2789_0(editorContext, node);
+    return this.createCollection_rh1v5h_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2789_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_rh1v5h_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2789_0");
-    editorCell.addEditorCell(this.createRefNode_2789_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2789_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2789_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2789_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2789_2(editorContext, node));
+    editorCell.setCellId("Collection_rh1v5h_a");
+    editorCell.addEditorCell(this.createRefNode_rh1v5h_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rh1v5h_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_rh1v5h_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rh1v5h_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_rh1v5h_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2789_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_rh1v5h_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?");
-    editorCell.setCellId("Constant_2789_0");
+    editorCell.setCellId("Constant_rh1v5h_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2789_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_rh1v5h_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_2789_1");
+    editorCell.setCellId("Constant_rh1v5h_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_2789_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_rh1v5h_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("testExpression");
     provider.setNoTargetText("<no testExpression>");
@@ -60,7 +60,7 @@ public class ConditionalOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2789_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_rh1v5h_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("ifTrue");
     provider.setNoTargetText("<no ifTrue>");
@@ -77,7 +77,7 @@ public class ConditionalOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2789_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_rh1v5h_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("ifFalse");
     provider.setNoTargetText("<no ifFalse>");

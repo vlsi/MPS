@@ -18,21 +18,21 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class DuplicateInputFileDiscriptor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2722_0(editorContext, node);
+    return this.createCollection_pj1m0f_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2722_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_pj1m0f_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2722_0");
-    editorCell.addEditorCell(this.createProperty_2722_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2722_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2722_0(editorContext, node));
+    editorCell.setCellId("Collection_pj1m0f_a");
+    editorCell.addEditorCell(this.createProperty_pj1m0f_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pj1m0f_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_pj1m0f_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2722_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pj1m0f_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<&");
-    editorCell.setCellId("Constant_2722_0");
+    editorCell.setCellId("Constant_pj1m0f_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -42,7 +42,7 @@ public class DuplicateInputFileDiscriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_2722_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_pj1m0f_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("n");
     provider.setNoTargetText("<no n>");
@@ -61,7 +61,7 @@ public class DuplicateInputFileDiscriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2722_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pj1m0f_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("word");
     provider.setNoTargetText("<no word>");

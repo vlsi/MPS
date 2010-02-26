@@ -21,21 +21,21 @@ public class typeof_TreePathOperation_InferenceRule extends AbstractInferenceRul
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext) {
     SNode parent = SNodeOperations.getParent(op);
     do {
-      SNode matchedNode_7306_0 = parent;
+      SNode matchedNode_vxuw1n_b0 = parent;
       {
-        boolean matches_7306_0 = false;
+        boolean matches_vxuw1n_a1a = false;
         {
-          SNode matchingNode_7306_0 = parent;
-          if (matchingNode_7306_0 != null) {
-            matches_7306_0 = SModelUtil_new.isAssignableConcept(matchingNode_7306_0.getConceptFqName(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+          SNode matchingNode_vxuw1n_a1a = parent;
+          if (matchingNode_vxuw1n_a1a != null) {
+            matches_vxuw1n_a1a = SModelUtil_new.isAssignableConcept(matchingNode_vxuw1n_a1a.getConceptFqName(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
           }
         }
-        if (matches_7306_0) {
+        if (matches_vxuw1n_a1a) {
           {
             SNode _nodeToCheck_1029348928467 = op;
             BaseIntentionProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1178551167101", 0, intentionProvider);
-            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1178551167102", true), (SNode) typeCheckingContext.typeOf(matchedNode_7306_0, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1178551167104", true), _info_12389875345);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1178551167102", true), (SNode) typeCheckingContext.typeOf(matchedNode_vxuw1n_b0, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1178551167104", true), _info_12389875345);
           }
           break;
         }

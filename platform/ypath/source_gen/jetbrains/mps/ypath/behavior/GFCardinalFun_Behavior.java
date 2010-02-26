@@ -14,21 +14,21 @@ public class GFCardinalFun_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new GFCardinalFun_Behavior.QuotationClass_6785_0().createNode();
+    return new GFCardinalFun_Behavior.QuotationClass_6qd3p4_a0a0b().createNode();
   }
 
-  public static class QuotationClass_6785_0 {
-    public QuotationClass_6785_0() {
+  public static class QuotationClass_6qd3p4_a0a0b {
+    public QuotationClass_6qd3p4_a0a0b() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6785_0 = null;
+      SNode quotedNode_6qd3p4_a0a0a = null;
       {
-        quotedNode_6785_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6785_0 = quotedNode_6785_0;
-        result = quotedNode1_6785_0;
+        quotedNode_6qd3p4_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6qd3p4_a0a0a = quotedNode_6qd3p4_a0a0a;
+        result = quotedNode1_6qd3p4_a0a0a;
       }
       return result;
     }

@@ -18,26 +18,26 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class WordList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3804_0(editorContext, node);
+    return this.createCollection_v3gbj6_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3804_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_v3gbj6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3804_0");
-    editorCell.addEditorCell(this.createRefNodeList_3804_0(editorContext, node));
+    editorCell.setCellId("Collection_v3gbj6_a");
+    editorCell.addEditorCell(this.createRefNodeList_v3gbj6_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_3804_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new WordList_Editor.wordsListHandler_3804_0(node, "words", editorContext);
+  private EditorCell createRefNodeList_v3gbj6_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new WordList_Editor.wordsListHandler_v3gbj6_a0(node, "words", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_words");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class wordsListHandler_3804_0 extends RefNodeListHandler {
-    public wordsListHandler_3804_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class wordsListHandler_v3gbj6_a0 extends RefNodeListHandler {
+    public wordsListHandler_v3gbj6_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

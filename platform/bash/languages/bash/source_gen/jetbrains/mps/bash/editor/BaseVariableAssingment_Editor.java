@@ -17,19 +17,19 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class BaseVariableAssingment_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1872_0(editorContext, node);
+    return this.createCollection_b1zjm8_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1872_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_b1zjm8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1872_0");
-    editorCell.addEditorCell(this.createRefNode_1872_0(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_1872_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1872_1(editorContext, node));
+    editorCell.setCellId("Collection_b1zjm8_a");
+    editorCell.addEditorCell(this.createRefNode_b1zjm8_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_b1zjm8_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_b1zjm8_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_1872_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_b1zjm8_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("lvalue");
     provider.setNoTargetText("<no lvalue>");
@@ -46,7 +46,7 @@ public class BaseVariableAssingment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_1872_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_b1zjm8_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("assingmentSign");
     provider.setNoTargetText("<no assingmentSign>");
@@ -70,7 +70,7 @@ public class BaseVariableAssingment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1872_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_b1zjm8_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");

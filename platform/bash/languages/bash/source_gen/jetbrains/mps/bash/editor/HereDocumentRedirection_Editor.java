@@ -20,56 +20,56 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class HereDocumentRedirection_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8837_0(editorContext, node);
+    return this.createCollection_l3f4id_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8837_1(editorContext, node);
+    return this.createCollection_l3f4id_a_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8837_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_l3f4id_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8837_0");
-    editorCell.addEditorCell(this.createConstant_8837_0(editorContext, node));
-    if (renderingCondition8837_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_8837_1(editorContext, node));
+    editorCell.setCellId("Collection_l3f4id_a");
+    editorCell.addEditorCell(this.createConstant_l3f4id_a0(editorContext, node));
+    if (renderingCondition_l3f4id_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_l3f4id_b0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefNode_8837_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8837_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8837_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_l3f4id_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_l3f4id_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_l3f4id_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8837_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_l3f4id_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8837_1");
-    editorCell.addEditorCell(this.createConstant_8837_2(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_8837_0(editorContext, node));
+    editorCell.setCellId("Collection_l3f4id_a_0");
+    editorCell.addEditorCell(this.createConstant_l3f4id_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_l3f4id_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8837_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_l3f4id_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<");
-    editorCell.setCellId("Constant_8837_0");
+    editorCell.setCellId("Constant_l3f4id_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8837_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_l3f4id_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
-    editorCell.setCellId("Constant_8837_1");
+    editorCell.setCellId("Constant_l3f4id_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8837_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_l3f4id_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strip tabs:");
-    editorCell.setCellId("Constant_8837_2");
+    editorCell.setCellId("Constant_l3f4id_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_8837_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_l3f4id_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("word");
     provider.setNoTargetText("<no word>");
@@ -90,7 +90,7 @@ public class HereDocumentRedirection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8837_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_l3f4id_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("heredocument");
     provider.setNoTargetText("<no heredocument>");
@@ -112,7 +112,7 @@ public class HereDocumentRedirection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8837_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_l3f4id_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("delimiter");
     provider.setNoTargetText("<no delimiter>");
@@ -129,7 +129,7 @@ public class HereDocumentRedirection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_8837_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_l3f4id_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("striptabs");
     provider.setNoTargetText("<no striptabs>");
@@ -147,7 +147,7 @@ public class HereDocumentRedirection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition8837_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_l3f4id_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "striptabs");
   }
 }

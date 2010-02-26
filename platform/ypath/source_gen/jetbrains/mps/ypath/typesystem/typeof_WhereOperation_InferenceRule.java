@@ -21,16 +21,16 @@ public class typeof_WhereOperation_InferenceRule extends AbstractInferenceRule_R
   public void applyRule(final SNode wop, final TypeCheckingContext typeCheckingContext) {
     SNode parent = SNodeOperations.getParent(wop);
     do {
-      SNode matchedNode_8206_0 = parent;
+      SNode matchedNode_55k1k7_b0 = parent;
       {
-        boolean matches_8206_0 = false;
+        boolean matches_55k1k7_a1a = false;
         {
-          SNode matchingNode_8206_0 = parent;
-          if (matchingNode_8206_0 != null) {
-            matches_8206_0 = SModelUtil_new.isAssignableConcept(matchingNode_8206_0.getConceptFqName(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+          SNode matchingNode_55k1k7_a1a = parent;
+          if (matchingNode_55k1k7_a1a != null) {
+            matches_55k1k7_a1a = SModelUtil_new.isAssignableConcept(matchingNode_55k1k7_a1a.getConceptFqName(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
           }
         }
-        if (matches_8206_0) {
+        if (matches_55k1k7_a1a) {
           if ((SLinkOperations.getTarget(wop, "filter", true) != null)) {
             typeCheckingContext.typeOf(wop, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "4234084459083991231", true);
           }

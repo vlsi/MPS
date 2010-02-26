@@ -18,22 +18,22 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class OptionReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8138_0(editorContext, node);
+    return this.createCollection_l8ia57_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8138_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_l8ia57_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8138_0");
-    editorCell.addEditorCell(this.createRefCell_8138_0(editorContext, node));
+    editorCell.setCellId("Collection_l8ia57_a");
+    editorCell.addEditorCell(this.createRefCell_l8ia57_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_8138_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_l8ia57_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("option");
     provider.setNoTargetText("<no option>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new OptionReference_Editor._Inline8138_0());
+    provider.setAuxiliaryCellProvider(new OptionReference_Editor._Inline_l8ia57_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -46,8 +46,8 @@ public class OptionReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline8138_0 extends InlineCellProvider {
-    public _Inline8138_0() {
+  public static class _Inline_l8ia57_a0a extends InlineCellProvider {
+    public _Inline_l8ia57_a0a() {
       super();
     }
 
@@ -56,10 +56,10 @@ public class OptionReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8138_0(editorContext, node);
+      return this.createProperty_l8ia57_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_8138_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_l8ia57_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("symbol");
       provider.setNoTargetText("<no symbol>");

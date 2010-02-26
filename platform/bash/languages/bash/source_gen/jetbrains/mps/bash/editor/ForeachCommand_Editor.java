@@ -25,40 +25,40 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ForeachCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0299_0(editorContext, node);
+    return this.createCollection_h3ozxh_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0299_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_h3ozxh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0299_0");
-    editorCell.addEditorCell(this.createConstant_0299_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0299_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0299_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_0299_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0299_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0299_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0299_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0299_3(editorContext, node));
+    editorCell.setCellId("Collection_h3ozxh_a");
+    editorCell.addEditorCell(this.createConstant_h3ozxh_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_h3ozxh_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_h3ozxh_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_h3ozxh_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_h3ozxh_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_h3ozxh_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_h3ozxh_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_h3ozxh_h0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0299_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_h3ozxh_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
-    editorCell.setCellId("Constant_0299_0");
+    editorCell.setCellId("Constant_h3ozxh_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0299_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_h3ozxh_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
-    editorCell.setCellId("Constant_0299_1");
+    editorCell.setCellId("Constant_h3ozxh_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0299_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_h3ozxh_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
-    editorCell.setCellId("Constant_0299_2");
+    editorCell.setCellId("Constant_h3ozxh_f0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -67,16 +67,16 @@ public class ForeachCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0299_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_h3ozxh_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "done");
-    editorCell.setCellId("Constant_0299_3");
+    editorCell.setCellId("Constant_h3ozxh_h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0299_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_h3ozxh_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_0299_4");
+    editorCell.setCellId("Constant_h3ozxh_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -85,15 +85,15 @@ public class ForeachCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_0299_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ForeachCommand_Editor.wordListListHandler_0299_0(node, "wordList", editorContext);
+  private EditorCell createRefNodeList_h3ozxh_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ForeachCommand_Editor.wordListListHandler_h3ozxh_d0(node, "wordList", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_wordList");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNode_0299_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_h3ozxh_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("commands");
     provider.setNoTargetText("<no commands>");
@@ -115,7 +115,7 @@ public class ForeachCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0299_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_h3ozxh_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("variable");
     provider.setNoTargetText("<no variable>");
@@ -132,8 +132,8 @@ public class ForeachCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class wordListListHandler_0299_0 extends RefNodeListHandler {
-    public wordListListHandler_0299_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class wordListListHandler_h3ozxh_d0 extends RefNodeListHandler {
+    public wordListListHandler_h3ozxh_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

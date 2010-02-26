@@ -15,24 +15,24 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CommentedText_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3247_0(editorContext, node);
+    return this.createCollection_svaf00_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3247_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_svaf00_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3247_0");
-    editorCell.addEditorCell(this.createComponent_3247_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_3247_0(editorContext, node));
+    editorCell.setCellId("Collection_svaf00_a");
+    editorCell.addEditorCell(this.createComponent_svaf00_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_svaf00_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_3247_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_svaf00_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new CommentSymbol(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createProperty_3247_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_svaf00_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("comment");
     provider.setNoTargetText("<no comment>");

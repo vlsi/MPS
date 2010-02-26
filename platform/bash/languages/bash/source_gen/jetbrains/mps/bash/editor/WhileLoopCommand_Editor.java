@@ -17,45 +17,45 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class WhileLoopCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4954_0(editorContext, node);
+    return this.createCollection_hz2vvf_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4954_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_hz2vvf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4954_0");
-    editorCell.addEditorCell(this.createConstant_4954_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_4954_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4954_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4954_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4954_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4954_3(editorContext, node));
+    editorCell.setCellId("Collection_hz2vvf_a");
+    editorCell.addEditorCell(this.createConstant_hz2vvf_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_hz2vvf_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_hz2vvf_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_hz2vvf_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_hz2vvf_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_hz2vvf_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4954_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_hz2vvf_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_4954_1");
-    editorCell.addEditorCell(this.createRefNode_4954_0(editorContext, node));
+    editorCell.setCellId("Collection_hz2vvf_b0");
+    editorCell.addEditorCell(this.createRefNode_hz2vvf_a1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4954_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_hz2vvf_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "while");
-    editorCell.setCellId("Constant_4954_0");
+    editorCell.setCellId("Constant_hz2vvf_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4954_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_hz2vvf_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_4954_1");
+    editorCell.setCellId("Constant_hz2vvf_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4954_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_hz2vvf_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
-    editorCell.setCellId("Constant_4954_2");
+    editorCell.setCellId("Constant_hz2vvf_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -64,14 +64,14 @@ public class WhileLoopCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4954_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_hz2vvf_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "done");
-    editorCell.setCellId("Constant_4954_3");
+    editorCell.setCellId("Constant_hz2vvf_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_4954_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_hz2vvf_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("testCommand");
     provider.setNoTargetText("<no testCommand>");
@@ -88,7 +88,7 @@ public class WhileLoopCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4954_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_hz2vvf_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("commands");
     provider.setNoTargetText("<no commands>");

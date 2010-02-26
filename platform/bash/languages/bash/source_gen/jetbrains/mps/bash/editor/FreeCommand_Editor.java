@@ -18,26 +18,26 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class FreeCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3533_0(editorContext, node);
+    return this.createCollection_9xjwpi_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3533_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9xjwpi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_3533_0");
-    editorCell.addEditorCell(this.createRefNodeList_3533_0(editorContext, node));
+    editorCell.setCellId("Collection_9xjwpi_a");
+    editorCell.addEditorCell(this.createRefNodeList_9xjwpi_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_3533_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new FreeCommand_Editor.translatedWordListHandler_3533_0(node, "translatedWord", editorContext);
+  private EditorCell createRefNodeList_9xjwpi_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new FreeCommand_Editor.translatedWordListHandler_9xjwpi_a0(node, "translatedWord", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_translatedWord");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class translatedWordListHandler_3533_0 extends RefNodeListHandler {
-    public translatedWordListHandler_3533_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class translatedWordListHandler_9xjwpi_a0 extends RefNodeListHandler {
+    public translatedWordListHandler_9xjwpi_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

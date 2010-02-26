@@ -17,10 +17,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LambdaMethodParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_6133_0(editorContext, node);
+    return this.createProperty_w8gms5_a(editorContext, node);
   }
 
-  private EditorCell createProperty_6133_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_w8gms5_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

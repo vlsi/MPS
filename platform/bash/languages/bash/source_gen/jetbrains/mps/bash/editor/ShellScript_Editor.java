@@ -27,26 +27,26 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ShellScript_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4495_0(editorContext, node);
+    return this.createCollection_jf4pm0_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4495_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jf4pm0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4495_0");
-    editorCell.addEditorCell(this.createConstant_4495_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4495_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4495_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_4495_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4495_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4495_4(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4495_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4495_0(editorContext, node));
+    editorCell.setCellId("Collection_jf4pm0_a");
+    editorCell.addEditorCell(this.createConstant_jf4pm0_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jf4pm0_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jf4pm0_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_jf4pm0_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jf4pm0_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jf4pm0_f0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_jf4pm0_g0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_jf4pm0_h0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4495_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jf4pm0_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#!/bin/sh");
-    editorCell.setCellId("Constant_4495_0");
+    editorCell.setCellId("Constant_jf4pm0_a0");
     BashLanguageStyle_StyleSheet.getActivationRecord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -56,25 +56,25 @@ public class ShellScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4495_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jf4pm0_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
-    editorCell.setCellId("Constant_4495_1");
+    editorCell.setCellId("Constant_jf4pm0_e0");
     BashLanguageStyle_StyleSheet.getCommentSymbol(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4495_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jf4pm0_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
-    editorCell.setCellId("Constant_4495_2");
+    editorCell.setCellId("Constant_jf4pm0_b0");
     BashLanguageStyle_StyleSheet.getCommentSymbol(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4495_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jf4pm0_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "used variables:");
-    editorCell.setCellId("Constant_4495_3");
+    editorCell.setCellId("Constant_jf4pm0_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -83,9 +83,9 @@ public class ShellScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4495_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_jf4pm0_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name:");
-    editorCell.setCellId("Constant_4495_4");
+    editorCell.setCellId("Constant_jf4pm0_f0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
@@ -94,8 +94,8 @@ public class ShellScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4495_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ShellScript_Editor.usedVarsListHandler_4495_0(node, "usedVars", editorContext);
+  private EditorCell createRefNodeList_jf4pm0_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ShellScript_Editor.usedVarsListHandler_jf4pm0_d0(node, "usedVars", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_usedVars");
     {
@@ -106,7 +106,7 @@ public class ShellScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4495_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_jf4pm0_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -129,7 +129,7 @@ public class ShellScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4495_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_jf4pm0_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("commands");
     provider.setNoTargetText("<no commands>");
@@ -146,8 +146,8 @@ public class ShellScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class usedVarsListHandler_4495_0 extends RefNodeListHandler {
-    public usedVarsListHandler_4495_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class usedVarsListHandler_jf4pm0_d0 extends RefNodeListHandler {
+    public usedVarsListHandler_jf4pm0_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

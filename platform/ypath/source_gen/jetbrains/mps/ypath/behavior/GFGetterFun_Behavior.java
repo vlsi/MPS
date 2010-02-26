@@ -17,22 +17,22 @@ public class GFGetterFun_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new GFGetterFun_Behavior.QuotationClass_9364_0().createNode();
+    return new GFGetterFun_Behavior.QuotationClass_kkk3v2_a0a0b().createNode();
   }
 
-  public static class QuotationClass_9364_0 {
-    public QuotationClass_9364_0() {
+  public static class QuotationClass_kkk3v2_a0a0b {
+    public QuotationClass_kkk3v2_a0a0b() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9364_0 = null;
+      SNode quotedNode_kkk3v2_a0a0a = null;
       {
-        quotedNode_9364_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9364_0 = quotedNode_9364_0;
-        quotedNode1_9364_0.addReference(SReference.create("concept", quotedNode1_9364_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), SNodeId.fromString("1068431790191")));
-        result = quotedNode1_9364_0;
+        quotedNode_kkk3v2_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_kkk3v2_a0a0a = quotedNode_kkk3v2_a0a0a;
+        quotedNode1_kkk3v2_a0a0a.addReference(SReference.create("concept", quotedNode1_kkk3v2_a0a0a, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), SNodeId.fromString("1068431790191")));
+        result = quotedNode1_kkk3v2_a0a0a;
       }
       return result;
     }

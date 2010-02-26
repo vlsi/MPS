@@ -23,26 +23,26 @@ public class OptionDeclaration_EditorComponent extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1658_0(editorContext, node);
+    return this.createCollection_vqukkr_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1658_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vqukkr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1658_0");
-    editorCell.addEditorCell(this.createProperty_1658_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1658_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_1658_1(editorContext, node));
+    editorCell.setCellId("Collection_vqukkr_a");
+    editorCell.addEditorCell(this.createProperty_vqukkr_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vqukkr_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vqukkr_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1658_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vqukkr_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
-    editorCell.setCellId("Constant_1658_0");
+    editorCell.setCellId("Constant_vqukkr_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_1658_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_vqukkr_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("symbol");
     provider.setNoTargetText("<no symbol>");
@@ -60,7 +60,7 @@ public class OptionDeclaration_EditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createProperty_1658_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_vqukkr_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("description");
     provider.setNoTargetText("<no description>");

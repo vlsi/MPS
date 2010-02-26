@@ -25,62 +25,62 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Calcualtor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6304_0(editorContext, node);
+    return this.createCollection_wuvdxc_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6304_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_wuvdxc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_6304_0");
-    editorCell.addEditorCell(this.createCollection_6304_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_6304_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6304_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_6304_1(editorContext, node));
+    editorCell.setCellId("Collection_wuvdxc_a");
+    editorCell.addEditorCell(this.createCollection_wuvdxc_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_wuvdxc_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_wuvdxc_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_wuvdxc_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_6304_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_wuvdxc_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6304_1");
+    editorCell.setCellId("Collection_wuvdxc_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_6304_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6304_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_wuvdxc_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_wuvdxc_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6304_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_wuvdxc_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "calculator");
-    editorCell.setCellId("Constant_6304_0");
+    editorCell.setCellId("Constant_wuvdxc_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6304_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_wuvdxc_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_6304_1");
+    editorCell.setCellId("Constant_wuvdxc_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6304_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Calcualtor_Editor.inputFieldListHandler_6304_0(node, "inputField", editorContext);
+  private EditorCell createRefNodeList_wuvdxc_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Calcualtor_Editor.inputFieldListHandler_wuvdxc_b0(node, "inputField", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_inputField");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6304_1(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Calcualtor_Editor.outputFieldListHandler_6304_0(node, "outputField", editorContext);
+  private EditorCell createRefNodeList_wuvdxc_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Calcualtor_Editor.outputFieldListHandler_wuvdxc_d0(node, "outputField", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_outputField");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createProperty_6304_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_wuvdxc_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -98,8 +98,8 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class inputFieldListHandler_6304_0 extends RefNodeListHandler {
-    public inputFieldListHandler_6304_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class inputFieldListHandler_wuvdxc_b0 extends RefNodeListHandler {
+    public inputFieldListHandler_wuvdxc_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -140,8 +140,8 @@ public class Calcualtor_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class outputFieldListHandler_6304_0 extends RefNodeListHandler {
-    public outputFieldListHandler_6304_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class outputFieldListHandler_wuvdxc_d0 extends RefNodeListHandler {
+    public outputFieldListHandler_wuvdxc_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

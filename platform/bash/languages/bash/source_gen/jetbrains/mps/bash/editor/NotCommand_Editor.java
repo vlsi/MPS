@@ -15,25 +15,25 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class NotCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8852_0(editorContext, node);
+    return this.createCollection_9cgksq_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8852_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9cgksq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8852_0");
-    editorCell.addEditorCell(this.createConstant_8852_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8852_0(editorContext, node));
+    editorCell.setCellId("Collection_9cgksq_a");
+    editorCell.addEditorCell(this.createConstant_9cgksq_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9cgksq_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8852_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_9cgksq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "!");
-    editorCell.setCellId("Constant_8852_0");
+    editorCell.setCellId("Constant_9cgksq_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_8852_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9cgksq_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("command");
     provider.setNoTargetText("<no command>");

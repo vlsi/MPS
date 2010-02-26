@@ -18,21 +18,21 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class UnaryConditionalExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0381_0(editorContext, node);
+    return this.createCollection_ejkdta_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0381_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ejkdta_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0381_0");
-    editorCell.addEditorCell(this.createConstant_0381_0(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_0381_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0381_0(editorContext, node));
+    editorCell.setCellId("Collection_ejkdta_a");
+    editorCell.addEditorCell(this.createConstant_ejkdta_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_ejkdta_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ejkdta_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0381_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ejkdta_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
-    editorCell.setCellId("Constant_0381_0");
+    editorCell.setCellId("Constant_ejkdta_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -41,7 +41,7 @@ public class UnaryConditionalExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_0381_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_ejkdta_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("op");
     provider.setNoTargetText("<no op>");
@@ -60,7 +60,7 @@ public class UnaryConditionalExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0381_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ejkdta_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("word");
     provider.setNoTargetText("<no word>");

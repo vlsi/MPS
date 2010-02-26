@@ -22,26 +22,26 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class RedirectedCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9844_0(editorContext, node);
+    return this.createCollection_t9ej7i_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9844_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_t9ej7i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9844_0");
-    editorCell.addEditorCell(this.createRefNode_9844_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_9844_0(editorContext, node));
+    editorCell.setCellId("Collection_t9ej7i_a");
+    editorCell.addEditorCell(this.createRefNode_t9ej7i_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_t9ej7i_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_9844_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new RedirectedCommand_Editor.redirectionListHandler_9844_0(node, "redirection", editorContext);
+  private EditorCell createRefNodeList_t9ej7i_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new RedirectedCommand_Editor.redirectionListHandler_t9ej7i_b0(node, "redirection", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_redirection");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNode_9844_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_t9ej7i_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("command");
     provider.setNoTargetText("<no command>");
@@ -58,8 +58,8 @@ public class RedirectedCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class redirectionListHandler_9844_0 extends RefNodeListHandler {
-    public redirectionListHandler_9844_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class redirectionListHandler_t9ej7i_b0 extends RefNodeListHandler {
+    public redirectionListHandler_t9ej7i_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -22,21 +22,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BasedIntegerLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4248_0(editorContext, node);
+    return this.createCollection_x1itjo_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4248_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_x1itjo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4248_0");
-    editorCell.addEditorCell(this.createProperty_4248_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4248_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4248_1(editorContext, node));
+    editorCell.setCellId("Collection_x1itjo_a");
+    editorCell.addEditorCell(this.createProperty_x1itjo_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_x1itjo_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_x1itjo_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4248_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_x1itjo_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
-    editorCell.setCellId("Constant_4248_0");
+    editorCell.setCellId("Constant_x1itjo_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
@@ -48,7 +48,7 @@ public class BasedIntegerLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4248_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_x1itjo_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("base");
     provider.setNoTargetText("<no base>");
@@ -70,7 +70,7 @@ public class BasedIntegerLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4248_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_x1itjo_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -81,7 +81,7 @@ public class BasedIntegerLiteral_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
     }
-    if (renderingCondition4248_0(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_x1itjo_a2a(node, editorContext, editorContext.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -95,7 +95,7 @@ public class BasedIntegerLiteral_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition4248_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_x1itjo_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getInteger(node, "base") != 0;
   }
 }

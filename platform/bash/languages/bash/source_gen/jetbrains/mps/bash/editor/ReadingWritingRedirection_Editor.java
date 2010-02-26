@@ -18,21 +18,21 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class ReadingWritingRedirection_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5952_0(editorContext, node);
+    return this.createCollection_hq0hq0_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5952_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_hq0hq0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5952_0");
-    editorCell.addEditorCell(this.createProperty_5952_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5952_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5952_0(editorContext, node));
+    editorCell.setCellId("Collection_hq0hq0_a");
+    editorCell.addEditorCell(this.createProperty_hq0hq0_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_hq0hq0_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_hq0hq0_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5952_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_hq0hq0_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<>");
-    editorCell.setCellId("Constant_5952_0");
+    editorCell.setCellId("Constant_hq0hq0_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -42,7 +42,7 @@ public class ReadingWritingRedirection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_5952_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_hq0hq0_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("n");
     provider.setNoTargetText("<no n>");
@@ -61,7 +61,7 @@ public class ReadingWritingRedirection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5952_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_hq0hq0_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("word");
     provider.setNoTargetText("<no word>");

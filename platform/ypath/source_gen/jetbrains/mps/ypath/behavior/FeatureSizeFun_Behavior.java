@@ -14,21 +14,21 @@ public class FeatureSizeFun_Behavior {
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return new FeatureSizeFun_Behavior.QuotationClass_5447_0().createNode();
+    return new FeatureSizeFun_Behavior.QuotationClass_oaigro_a0a0b().createNode();
   }
 
-  public static class QuotationClass_5447_0 {
-    public QuotationClass_5447_0() {
+  public static class QuotationClass_oaigro_a0a0b {
+    public QuotationClass_oaigro_a0a0b() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5447_0 = null;
+      SNode quotedNode_oaigro_a0a0a = null;
       {
-        quotedNode_5447_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5447_0 = quotedNode_5447_0;
-        result = quotedNode1_5447_0;
+        quotedNode_oaigro_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_oaigro_a0a0a = quotedNode_oaigro_a0a0a;
+        result = quotedNode1_oaigro_a0a0a;
       }
       return result;
     }

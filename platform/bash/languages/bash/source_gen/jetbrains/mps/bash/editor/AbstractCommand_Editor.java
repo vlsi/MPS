@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class AbstractCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_9139_0(editorContext, node);
+    return this.createError_fgy581_a(editorContext, node);
   }
 
-  private EditorCell createError_9139_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_fgy581_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no command>");
-    editorCell.setCellId("Error_9139_0");
+    editorCell.setCellId("Error_fgy581_a");
     return editorCell;
   }
 }

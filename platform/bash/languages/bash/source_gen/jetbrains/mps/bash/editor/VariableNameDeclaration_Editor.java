@@ -16,10 +16,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class VariableNameDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_4551_0(editorContext, node);
+    return this.createProperty_mh31l8_a(editorContext, node);
   }
 
-  private EditorCell createProperty_4551_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_mh31l8_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

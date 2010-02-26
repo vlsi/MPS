@@ -18,27 +18,27 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class HeadCommandList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8893_0(editorContext, node);
+    return this.createCollection_vppg5t_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8893_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vppg5t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8893_0");
-    editorCell.addEditorCell(this.createRefNode_8893_0(editorContext, node));
-    if (renderingCondition8893_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_8893_1(editorContext, node));
+    editorCell.setCellId("Collection_vppg5t_a");
+    editorCell.addEditorCell(this.createRefNode_vppg5t_a0(editorContext, node));
+    if (renderingCondition_vppg5t_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_vppg5t_b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_8893_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vppg5t_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8893_1");
-    editorCell.addEditorCell(this.createRefNode_8893_1(editorContext, node));
+    editorCell.setCellId("Collection_vppg5t_b0");
+    editorCell.addEditorCell(this.createRefNode_vppg5t_a1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_8893_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_vppg5t_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("base");
     provider.setNoTargetText("<no base>");
@@ -58,7 +58,7 @@ public class HeadCommandList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8893_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_vppg5t_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("following");
     provider.setNoTargetText("?c");
@@ -75,7 +75,7 @@ public class HeadCommandList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition8893_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_vppg5t_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return !(Command_Behavior.call_isAbstractCommand_3905757829907341138(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "base", true), "command", true)));
   }
 }

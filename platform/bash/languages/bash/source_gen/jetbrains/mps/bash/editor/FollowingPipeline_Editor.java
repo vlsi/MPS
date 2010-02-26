@@ -17,18 +17,18 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class FollowingPipeline_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0361_0(editorContext, node);
+    return this.createCollection_51z91o_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0361_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_51z91o_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0361_0");
-    editorCell.addEditorCell(this.createConceptProperty_0361_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0361_0(editorContext, node));
+    editorCell.setCellId("Collection_51z91o_a");
+    editorCell.addEditorCell(this.createConceptProperty_51z91o_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_51z91o_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_0361_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_51z91o_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("pypetype");
     provider.setNoTargetText("<no pypetype>");
@@ -52,7 +52,7 @@ public class FollowingPipeline_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0361_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_51z91o_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("basePipeline");
     provider.setNoTargetText("<no basePipeline>");

@@ -16,49 +16,49 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class TreePathCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6851_0(editorContext, node);
+    return this.createCollection_43a2k1_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6851_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_43a2k1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6851_0");
-    editorCell.addEditorCell(this.createComponent_6851_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6851_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6851_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6851_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6851_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6851_2(editorContext, node));
+    editorCell.setCellId("Collection_43a2k1_a");
+    editorCell.addEditorCell(this.createComponent_43a2k1_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_43a2k1_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_43a2k1_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_43a2k1_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_43a2k1_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_43a2k1_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_6851_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_43a2k1_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new TreePath_component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_6851_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_43a2k1_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_6851_0");
+    editorCell.setCellId("Constant_43a2k1_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6851_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_43a2k1_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_6851_1");
+    editorCell.setCellId("Constant_43a2k1_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6851_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_43a2k1_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_6851_2");
+    editorCell.setCellId("Constant_43a2k1_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_6851_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_43a2k1_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("parentBlock");
     provider.setNoTargetText("<no parentBlock>");
@@ -75,7 +75,7 @@ public class TreePathCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6851_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_43a2k1_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("childrenBlock");
     provider.setNoTargetText("<no childrenBlock>");

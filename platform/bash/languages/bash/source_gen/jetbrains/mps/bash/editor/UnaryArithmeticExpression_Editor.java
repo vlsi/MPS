@@ -17,18 +17,18 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class UnaryArithmeticExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0395_0(editorContext, node);
+    return this.createCollection_83ikxp_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0395_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_83ikxp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0395_0");
-    editorCell.addEditorCell(this.createConceptProperty_0395_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0395_0(editorContext, node));
+    editorCell.setCellId("Collection_83ikxp_a");
+    editorCell.addEditorCell(this.createConceptProperty_83ikxp_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_83ikxp_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_0395_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_83ikxp_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("sign");
     provider.setNoTargetText("<no sign>");
@@ -50,7 +50,7 @@ public class UnaryArithmeticExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0395_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_83ikxp_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class InputFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9871_0(editorContext, node);
+    return this.createCollection_tvw6ko_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9871_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_tvw6ko_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9871_0");
-    editorCell.addEditorCell(this.createRefCell_9871_0(editorContext, node));
+    editorCell.setCellId("Collection_tvw6ko_a");
+    editorCell.addEditorCell(this.createRefCell_tvw6ko_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_9871_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_tvw6ko_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("field");
     provider.setNoTargetText("<no field>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InputFieldReference_Editor._Inline9871_0());
+    provider.setAuxiliaryCellProvider(new InputFieldReference_Editor._Inline_tvw6ko_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class InputFieldReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline9871_0 extends InlineCellProvider {
-    public _Inline9871_0() {
+  public static class _Inline_tvw6ko_a0a extends InlineCellProvider {
+    public _Inline_tvw6ko_a0a() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class InputFieldReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_9871_0(editorContext, node);
+      return this.createProperty_tvw6ko_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_9871_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_tvw6ko_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

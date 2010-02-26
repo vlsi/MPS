@@ -18,26 +18,26 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class GeneralizedWord_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1930_0(editorContext, node);
+    return this.createCollection_1ribud_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1930_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1ribud_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1930_0");
-    editorCell.addEditorCell(this.createRefNodeList_1930_0(editorContext, node));
+    editorCell.setCellId("Collection_1ribud_a");
+    editorCell.addEditorCell(this.createRefNodeList_1ribud_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_1930_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new GeneralizedWord_Editor.unitsListHandler_1930_0(node, "units", editorContext);
+  private EditorCell createRefNodeList_1ribud_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new GeneralizedWord_Editor.unitsListHandler_1ribud_a0(node, "units", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Flow(), false);
     editorCell.setCellId("refNodeList_units");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class unitsListHandler_1930_0 extends RefNodeListHandler {
-    public unitsListHandler_1930_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class unitsListHandler_1ribud_a0 extends RefNodeListHandler {
+    public unitsListHandler_1ribud_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

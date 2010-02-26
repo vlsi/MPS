@@ -17,19 +17,19 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class BaseCommandSubstitution_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6363_0(editorContext, node);
+    return this.createCollection_jm0ki2_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6363_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jm0ki2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6363_0");
-    editorCell.addEditorCell(this.createConceptProperty_6363_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6363_0(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_6363_1(editorContext, node));
+    editorCell.setCellId("Collection_jm0ki2_a");
+    editorCell.addEditorCell(this.createConceptProperty_jm0ki2_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_jm0ki2_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_jm0ki2_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_6363_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_jm0ki2_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("left");
     provider.setNoTargetText("<no left>");
@@ -51,7 +51,7 @@ public class BaseCommandSubstitution_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6363_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_jm0ki2_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("command");
     provider.setNoTargetText("<no command>");
@@ -68,7 +68,7 @@ public class BaseCommandSubstitution_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_6363_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_jm0ki2_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("right");
     provider.setNoTargetText("<no right>");

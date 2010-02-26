@@ -14,17 +14,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class VisitNodesStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9923_0(editorContext, node);
+    return this.createCollection_1gl3z5_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9923_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1gl3z5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9923_0");
-    editorCell.addEditorCell(this.createRefNode_9923_0(editorContext, node));
+    editorCell.setCellId("Collection_1gl3z5_a");
+    editorCell.addEditorCell(this.createRefNode_1gl3z5_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_9923_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1gl3z5_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("visitBlock");
     provider.setNoTargetText("<no visitBlock>");

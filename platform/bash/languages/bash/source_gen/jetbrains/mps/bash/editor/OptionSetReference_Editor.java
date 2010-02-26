@@ -21,20 +21,20 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class OptionSetReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6018_0(editorContext, node);
+    return this.createCollection_yyez4n_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6018_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_yyez4n_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6018_0");
-    editorCell.addEditorCell(this.createConstant_6018_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_6018_0(editorContext, node));
+    editorCell.setCellId("Collection_yyez4n_a");
+    editorCell.addEditorCell(this.createConstant_yyez4n_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_yyez4n_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6018_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_yyez4n_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
-    editorCell.setCellId("Constant_6018_0");
+    editorCell.setCellId("Constant_yyez4n_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -43,16 +43,16 @@ public class OptionSetReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6018_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new OptionSetReference_Editor.refToOptionsListHandler_6018_0(node, "refToOptions", editorContext);
+  private EditorCell createRefNodeList_yyez4n_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new OptionSetReference_Editor.refToOptionsListHandler_yyez4n_b0(node, "refToOptions", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Flow(), false);
     editorCell.setCellId("refNodeList_refToOptions");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class refToOptionsListHandler_6018_0 extends RefNodeListHandler {
-    public refToOptionsListHandler_6018_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class refToOptionsListHandler_yyez4n_b0 extends RefNodeListHandler {
+    public refToOptionsListHandler_yyez4n_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

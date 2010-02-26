@@ -22,17 +22,17 @@ public class TreePath_component extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4193_0(editorContext, node);
+    return this.createCollection_4etf8g_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4193_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_4etf8g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4193_0");
-    editorCell.addEditorCell(this.createRefNode_4193_0(editorContext, node));
+    editorCell.setCellId("Collection_4etf8g_a");
+    editorCell.addEditorCell(this.createRefNode_4etf8g_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_4193_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_4etf8g_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("treePathType");
     provider.setNoTargetText("<no treePathType>");

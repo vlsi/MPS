@@ -26,46 +26,46 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class CaseClause_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6717_1(editorContext, node);
+    return this.createCollection_hfuf06_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6717_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_hfuf06_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6717_0");
+    editorCell.setCellId("Collection_hfuf06_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     }
-    editorCell.addEditorCell(this.createRefNodeList_6717_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6717_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6717_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6717_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_hfuf06_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_hfuf06_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_hfuf06_c0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_hfuf06_d0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_6717_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_hfuf06_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6717_1");
-    editorCell.addEditorCell(this.createCollection_6717_0(editorContext, node));
+    editorCell.setCellId("Collection_hfuf06_a");
+    editorCell.addEditorCell(this.createCollection_hfuf06_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6717_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_hfuf06_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_6717_0");
+    editorCell.setCellId("Constant_hfuf06_b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6717_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CaseClause_Editor.patternsListHandler_6717_0(node, "patterns", editorContext);
+  private EditorCell createRefNodeList_hfuf06_a0a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CaseClause_Editor.patternsListHandler_hfuf06_a0a(node, "patterns", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_patterns");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNode_6717_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_hfuf06_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("command");
     provider.setNoTargetText("<no command>");
@@ -82,7 +82,7 @@ public class CaseClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6717_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_hfuf06_d0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("terminator");
     provider.setNoTargetText("<no terminator>");
@@ -99,8 +99,8 @@ public class CaseClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class patternsListHandler_6717_0 extends RefNodeListHandler {
-    public patternsListHandler_6717_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class patternsListHandler_hfuf06_a0a extends RefNodeListHandler {
+    public patternsListHandler_hfuf06_a0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

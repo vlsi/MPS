@@ -30,37 +30,37 @@ import jetbrains.mps.smodel.SModel;
 
 public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4147_0(editorContext, node);
+    return this.createCollection_gl82dd_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_4147_0(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_gl82dd_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = TreeNodeKindProperty_Editor.renderingCondition4147_0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = TreeNodeKindProperty_Editor.renderingCondition_gl82dd_a0a(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createConstant_4147_1(editorContext, node);
+      editorCell = this.createConstant_gl82dd_a0a(editorContext, node);
     } else {
-      editorCell = this.createConstant_4147_2(editorContext, node);
+      editorCell = this.createConstant_gl82dd_a0a_0(editorContext, node);
     }
     TreeNodeKindProperty_default_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TreeNodeKindProperty_Editor.TreeNodeKindProperty_generic_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new TreeNodeKindProperty_Editor.TreeNodeKindProperty_generic_cellMenu_a0a0()}));
     return editorCell;
   }
 
-  private EditorCell createCollection_4147_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gl82dd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4147_0");
+    editorCell.setCellId("Collection_gl82dd_a");
     editorCell.addKeyMap(new keymap_TreeNodeKindProperty());
-    editorCell.addEditorCell(this.createAlternation_4147_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4147_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4147_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4147_0(editorContext, node));
+    editorCell.addEditorCell(this.createAlternation_gl82dd_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_gl82dd_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_gl82dd_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_gl82dd_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4147_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gl82dd_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_4147_0");
+    editorCell.setCellId("Constant_gl82dd_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -69,9 +69,9 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4147_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gl82dd_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");
-    editorCell.setCellId("Constant_4147_1");
+    editorCell.setCellId("Constant_gl82dd_a0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -82,9 +82,9 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4147_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_gl82dd_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_4147_2");
+    editorCell.setCellId("Constant_gl82dd_a0a_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, false);
@@ -93,7 +93,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4147_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_gl82dd_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -112,7 +112,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4147_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_gl82dd_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("getter");
     provider.setNoTargetText("<no getter>");
@@ -129,12 +129,12 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition4147_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_gl82dd_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "default");
   }
 
-  public static class TreeNodeKindProperty_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-    public TreeNodeKindProperty_generic_cellMenu0() {
+  public static class TreeNodeKindProperty_generic_cellMenu_a0a0 extends AbstractCellMenuPart_Generic_Group {
+    public TreeNodeKindProperty_generic_cellMenu_a0a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

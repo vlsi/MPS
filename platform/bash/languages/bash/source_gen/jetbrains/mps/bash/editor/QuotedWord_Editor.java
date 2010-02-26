@@ -21,19 +21,19 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class QuotedWord_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9786_0(editorContext, node);
+    return this.createCollection_9fobtp_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9786_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_9fobtp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9786_0");
-    editorCell.addEditorCell(this.createConceptProperty_9786_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9786_0(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_9786_1(editorContext, node));
+    editorCell.setCellId("Collection_9fobtp_a");
+    editorCell.addEditorCell(this.createConceptProperty_9fobtp_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_9fobtp_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_9fobtp_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_9786_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_9fobtp_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("word");
     provider.setNoTargetText("<no word>");
@@ -57,7 +57,7 @@ public class QuotedWord_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9786_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_9fobtp_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("quotetype");
     provider.setNoTargetText("<no quotetype>");
@@ -82,7 +82,7 @@ public class QuotedWord_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9786_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_9fobtp_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("quotetype");
     provider.setNoTargetText("<no quotetype>");

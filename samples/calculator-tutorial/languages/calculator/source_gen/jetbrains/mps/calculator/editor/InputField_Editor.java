@@ -15,25 +15,25 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InputField_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3692_0(editorContext, node);
+    return this.createCollection_bx1j8e_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3692_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_bx1j8e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3692_0");
-    editorCell.addEditorCell(this.createConstant_3692_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_3692_0(editorContext, node));
+    editorCell.setCellId("Collection_bx1j8e_a");
+    editorCell.addEditorCell(this.createConstant_bx1j8e_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_bx1j8e_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3692_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_bx1j8e_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input");
-    editorCell.setCellId("Constant_3692_0");
+    editorCell.setCellId("Constant_bx1j8e_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_3692_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_bx1j8e_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

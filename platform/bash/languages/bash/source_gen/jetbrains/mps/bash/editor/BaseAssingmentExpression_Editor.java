@@ -17,19 +17,19 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class BaseAssingmentExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6508_0(editorContext, node);
+    return this.createCollection_kpt6iq_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6508_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_kpt6iq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6508_0");
-    editorCell.addEditorCell(this.createRefNode_6508_0(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_6508_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_6508_1(editorContext, node));
+    editorCell.setCellId("Collection_kpt6iq_a");
+    editorCell.addEditorCell(this.createRefNode_kpt6iq_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_kpt6iq_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_kpt6iq_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_6508_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_kpt6iq_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("lValue");
     provider.setNoTargetText("<no lValue>");
@@ -46,7 +46,7 @@ public class BaseAssingmentExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_6508_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_kpt6iq_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("sign");
     provider.setNoTargetText("<no sign>");
@@ -70,7 +70,7 @@ public class BaseAssingmentExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6508_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_kpt6iq_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rValue");
     provider.setNoTargetText("<no rValue>");

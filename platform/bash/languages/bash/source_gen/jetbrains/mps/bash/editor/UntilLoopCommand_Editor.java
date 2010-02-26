@@ -17,45 +17,45 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class UntilLoopCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2845_0(editorContext, node);
+    return this.createCollection_itgc41_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2845_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_itgc41_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2845_0");
-    editorCell.addEditorCell(this.createConstant_2845_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_2845_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2845_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2845_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2845_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2845_1(editorContext, node));
+    editorCell.setCellId("Collection_itgc41_a");
+    editorCell.addEditorCell(this.createConstant_itgc41_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_itgc41_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_itgc41_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_itgc41_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_itgc41_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_itgc41_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2845_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_itgc41_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_2845_1");
-    editorCell.addEditorCell(this.createRefNode_2845_0(editorContext, node));
+    editorCell.setCellId("Collection_itgc41_b0");
+    editorCell.addEditorCell(this.createRefNode_itgc41_a1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2845_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_itgc41_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "until");
-    editorCell.setCellId("Constant_2845_0");
+    editorCell.setCellId("Constant_itgc41_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2845_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_itgc41_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "done");
-    editorCell.setCellId("Constant_2845_1");
+    editorCell.setCellId("Constant_itgc41_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2845_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_itgc41_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
-    editorCell.setCellId("Constant_2845_2");
+    editorCell.setCellId("Constant_itgc41_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -64,14 +64,14 @@ public class UntilLoopCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2845_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_itgc41_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_2845_3");
+    editorCell.setCellId("Constant_itgc41_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_2845_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_itgc41_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("testCommand");
     provider.setNoTargetText("<no testCommand>");
@@ -88,7 +88,7 @@ public class UntilLoopCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2845_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_itgc41_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("commands");
     provider.setNoTargetText("<no commands>");

@@ -15,24 +15,24 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CommentedFollowingCommandList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0058_0(editorContext, node);
+    return this.createCollection_oucwfv_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0058_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_oucwfv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0058_0");
-    editorCell.addEditorCell(this.createComponent_0058_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0058_0(editorContext, node));
+    editorCell.setCellId("Collection_oucwfv_a");
+    editorCell.addEditorCell(this.createComponent_oucwfv_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_oucwfv_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_0058_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_oucwfv_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new CommentSymbol(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createRefNode_0058_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_oucwfv_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("command");
     provider.setNoTargetText("<no command>");

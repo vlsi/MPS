@@ -18,26 +18,26 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ArgumentListReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8364_0(editorContext, node);
+    return this.createCollection_8ydzq6_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8364_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8ydzq6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8364_0");
-    editorCell.addEditorCell(this.createRefNodeList_8364_0(editorContext, node));
+    editorCell.setCellId("Collection_8ydzq6_a");
+    editorCell.addEditorCell(this.createRefNodeList_8ydzq6_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_8364_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ArgumentListReference_Editor.wordsListHandler_8364_0(node, "words", editorContext);
+  private EditorCell createRefNodeList_8ydzq6_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ArgumentListReference_Editor.wordsListHandler_8ydzq6_a0(node, "words", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_words");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class wordsListHandler_8364_0 extends RefNodeListHandler {
-    public wordsListHandler_8364_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class wordsListHandler_8ydzq6_a0 extends RefNodeListHandler {
+    public wordsListHandler_8ydzq6_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

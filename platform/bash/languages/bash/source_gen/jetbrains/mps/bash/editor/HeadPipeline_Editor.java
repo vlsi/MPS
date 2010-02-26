@@ -18,27 +18,27 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class HeadPipeline_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4390_0(editorContext, node);
+    return this.createCollection_zb0qmt_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4390_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_zb0qmt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4390_0");
-    editorCell.addEditorCell(this.createRefNode_4390_0(editorContext, node));
-    if (renderingCondition4390_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_4390_1(editorContext, node));
+    editorCell.setCellId("Collection_zb0qmt_a");
+    editorCell.addEditorCell(this.createRefNode_zb0qmt_a0(editorContext, node));
+    if (renderingCondition_zb0qmt_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_zb0qmt_b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_4390_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_zb0qmt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4390_1");
-    editorCell.addEditorCell(this.createRefNode_4390_1(editorContext, node));
+    editorCell.setCellId("Collection_zb0qmt_b0");
+    editorCell.addEditorCell(this.createRefNode_zb0qmt_a1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_4390_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_zb0qmt_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("command");
     provider.setNoTargetText("<no command>");
@@ -58,7 +58,7 @@ public class HeadPipeline_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4390_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_zb0qmt_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("following");
     provider.setNoTargetText("?p");
@@ -75,7 +75,7 @@ public class HeadPipeline_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition4390_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_zb0qmt_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return !(Command_Behavior.call_isAbstractCommand_3905757829907341138(SLinkOperations.getTarget(node, "command", true)));
   }
 }

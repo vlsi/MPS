@@ -18,42 +18,42 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class OptionWithParam_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7130_0(editorContext, node);
+    return this.createCollection_3ybyml_a(editorContext, node);
   }
 
-  private EditorCell createCollection_7130_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3ybyml_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7130_0");
-    editorCell.addEditorCell(this.createConstant_7130_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_7130_1(editorContext, node));
+    editorCell.setCellId("Collection_3ybyml_a");
+    editorCell.addEditorCell(this.createConstant_3ybyml_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_3ybyml_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7130_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_3ybyml_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7130_1");
+    editorCell.setCellId("Collection_3ybyml_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
-    editorCell.addEditorCell(this.createConstant_7130_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7130_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7130_2(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7130_1(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_7130_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3ybyml_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_3ybyml_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_3ybyml_c1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_3ybyml_d1a(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_3ybyml_e1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_7130_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_3ybyml_e1a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ExternalCommandDescription_EditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_7130_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3ybyml_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
-    editorCell.setCellId("Constant_7130_0");
+    editorCell.setCellId("Constant_3ybyml_a1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -62,9 +62,9 @@ public class OptionWithParam_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7130_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3ybyml_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "option with parameter");
-    editorCell.setCellId("Constant_7130_1");
+    editorCell.setCellId("Constant_3ybyml_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -73,14 +73,14 @@ public class OptionWithParam_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7130_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_3ybyml_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
-    editorCell.setCellId("Constant_7130_2");
+    editorCell.setCellId("Constant_3ybyml_c1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_7130_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_3ybyml_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("symbol");
     provider.setNoTargetText("<no symbol>");
@@ -98,7 +98,7 @@ public class OptionWithParam_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_7130_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_3ybyml_d1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

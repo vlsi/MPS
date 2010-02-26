@@ -17,31 +17,31 @@ import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 
 public class GroupingCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6956_0(editorContext, node);
+    return this.createCollection_ny89z6_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6956_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ny89z6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6956_0");
-    editorCell.addEditorCell(this.createConceptProperty_6956_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_6956_1(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_6956_1(editorContext, node));
+    editorCell.setCellId("Collection_ny89z6_a");
+    editorCell.addEditorCell(this.createConceptProperty_ny89z6_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_ny89z6_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_ny89z6_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_6956_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ny89z6_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6956_1");
+    editorCell.setCellId("Collection_ny89z6_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     }
-    editorCell.addEditorCell(this.createRefNode_6956_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ny89z6_a1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_6956_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ny89z6_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("commands");
     provider.setNoTargetText("<no commands>");
@@ -58,7 +58,7 @@ public class GroupingCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_6956_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_ny89z6_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("leftBracket");
     provider.setNoTargetText("<no leftBracket>");
@@ -80,7 +80,7 @@ public class GroupingCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_6956_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_ny89z6_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("rigthBracket");
     provider.setNoTargetText("<no rigthBracket>");

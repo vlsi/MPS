@@ -17,44 +17,44 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class ForCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9546_0(editorContext, node);
+    return this.createCollection_1fo3k5_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9546_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1fo3k5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9546_0");
-    editorCell.addEditorCell(this.createConstant_9546_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9546_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9546_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9546_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9546_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9546_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9546_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9546_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9546_5(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9546_6(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9546_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9546_7(editorContext, node));
+    editorCell.setCellId("Collection_1fo3k5_a");
+    editorCell.addEditorCell(this.createConstant_1fo3k5_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1fo3k5_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1fo3k5_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1fo3k5_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1fo3k5_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1fo3k5_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1fo3k5_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1fo3k5_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1fo3k5_i0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1fo3k5_j0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1fo3k5_k0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1fo3k5_l0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9546_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1fo3k5_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
-    editorCell.setCellId("Constant_9546_0");
+    editorCell.setCellId("Constant_1fo3k5_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9546_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1fo3k5_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "((");
-    editorCell.setCellId("Constant_9546_1");
+    editorCell.setCellId("Constant_1fo3k5_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9546_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1fo3k5_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_9546_2");
+    editorCell.setCellId("Constant_1fo3k5_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -63,9 +63,9 @@ public class ForCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9546_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1fo3k5_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_9546_3");
+    editorCell.setCellId("Constant_1fo3k5_f0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -74,23 +74,23 @@ public class ForCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9546_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1fo3k5_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "))");
-    editorCell.setCellId("Constant_9546_4");
+    editorCell.setCellId("Constant_1fo3k5_h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9546_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1fo3k5_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_9546_5");
+    editorCell.setCellId("Constant_1fo3k5_i0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9546_6(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1fo3k5_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
-    editorCell.setCellId("Constant_9546_6");
+    editorCell.setCellId("Constant_1fo3k5_j0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -99,14 +99,14 @@ public class ForCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9546_7(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1fo3k5_l0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "done");
-    editorCell.setCellId("Constant_9546_7");
+    editorCell.setCellId("Constant_1fo3k5_l0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_9546_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1fo3k5_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("accord");
     provider.setNoTargetText("<no accord>");
@@ -123,7 +123,7 @@ public class ForCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9546_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1fo3k5_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");
@@ -140,7 +140,7 @@ public class ForCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9546_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1fo3k5_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("iteration");
     provider.setNoTargetText("<no iteration>");
@@ -157,7 +157,7 @@ public class ForCommand_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9546_3(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1fo3k5_k0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("commands");
     provider.setNoTargetText("<no commands>");
