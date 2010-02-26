@@ -27,43 +27,43 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ListAntiquotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7120_0(editorContext, node);
+    return this.createCollection_yxrtdc_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7120_1(editorContext, node);
+    return this.createCollection_yxrtdc_a_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7120_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_yxrtdc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7120_0");
-    editorCell.addEditorCell(this.createConstant_7120_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_7120_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7120_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7120_1(editorContext, node));
+    editorCell.setCellId("Collection_yxrtdc_a");
+    editorCell.addEditorCell(this.createConstant_yxrtdc_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_yxrtdc_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_yxrtdc_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_yxrtdc_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7120_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_yxrtdc_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7120_1");
-    editorCell.addEditorCell(this.createConstant_7120_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7120_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7120_4(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_7120_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7120_5(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_7120_1(editorContext, node));
+    editorCell.setCellId("Collection_yxrtdc_a_0");
+    editorCell.addEditorCell(this.createConstant_yxrtdc_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_yxrtdc_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_yxrtdc_c0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_yxrtdc_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_yxrtdc_e0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_yxrtdc_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7120_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_yxrtdc_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*(");
-    editorCell.setCellId("Constant_7120_0");
+    editorCell.setCellId("Constant_yxrtdc_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
-          return ListAntiquotation_Editor._StyleParameter_QueryFunction_7120_0((cell == null ?
+          return ListAntiquotation_Editor._StyleParameter_QueryFunction_yxrtdc_a0a0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -77,14 +77,14 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7120_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_yxrtdc_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")*");
-    editorCell.setCellId("Constant_7120_1");
+    editorCell.setCellId("Constant_yxrtdc_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
-          return ListAntiquotation_Editor._StyleParameter_QueryFunction_7120_1((cell == null ?
+          return ListAntiquotation_Editor._StyleParameter_QueryFunction_yxrtdc_a0d0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -98,9 +98,9 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7120_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_yxrtdc_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "list antiquotation");
-    editorCell.setCellId("Constant_7120_2");
+    editorCell.setCellId("Constant_yxrtdc_a0_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -109,9 +109,9 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7120_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_yxrtdc_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_7120_3");
+    editorCell.setCellId("Constant_yxrtdc_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -121,21 +121,21 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7120_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_yxrtdc_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed node concept:");
-    editorCell.setCellId("Constant_7120_4");
+    editorCell.setCellId("Constant_yxrtdc_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7120_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_yxrtdc_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed node role in parent:");
-    editorCell.setCellId("Constant_7120_5");
+    editorCell.setCellId("Constant_yxrtdc_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_7120_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_yxrtdc_d0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         SNode parent = SNodeOperations.getParent(node);
@@ -154,7 +154,7 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_7120_0");
+    editorCell.setCellId("ReadOnlyModelAccessor_yxrtdc_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -162,7 +162,7 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_7120_1(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_yxrtdc_f0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         SNode parent = SNodeOperations.getParent(node);
@@ -181,7 +181,7 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_7120_1");
+    editorCell.setCellId("ReadOnlyModelAccessor_yxrtdc_f0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -189,7 +189,7 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7120_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_yxrtdc_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<expr>");
@@ -206,7 +206,7 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_7120_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_yxrtdc_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("label");
     provider.setNoTargetText("");
@@ -218,7 +218,7 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
-          return ListAntiquotation_Editor._StyleParameter_QueryFunction_7120_2((cell == null ?
+          return ListAntiquotation_Editor._StyleParameter_QueryFunction_yxrtdc_a0b0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -239,15 +239,15 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_7120_0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_yxrtdc_a0a0(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
 
-  private static Color _StyleParameter_QueryFunction_7120_1(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_yxrtdc_a0d0(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
 
-  private static Color _StyleParameter_QueryFunction_7120_2(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_yxrtdc_a0b0(SNode node, EditorContext editorContext) {
     return Colors.BROWN;
   }
 }

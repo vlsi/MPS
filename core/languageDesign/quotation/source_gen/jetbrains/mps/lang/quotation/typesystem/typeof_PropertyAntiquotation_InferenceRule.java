@@ -25,7 +25,7 @@ public class typeof_PropertyAntiquotation_InferenceRule extends AbstractInferenc
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196866840326", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196866830959", true), (SNode) new typeof_PropertyAntiquotation_InferenceRule.QuotationClass_1613_0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959034a(jetbrains.mps.lang.quotation.typesystem)", "1196866830959", true), (SNode) new typeof_PropertyAntiquotation_InferenceRule.QuotationClass_r9cjy_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -41,18 +41,18 @@ public class typeof_PropertyAntiquotation_InferenceRule extends AbstractInferenc
     return false;
   }
 
-  public static class QuotationClass_1613_0 {
-    public QuotationClass_1613_0() {
+  public static class QuotationClass_r9cjy_a0a0a0 {
+    public QuotationClass_r9cjy_a0a0a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1613_0 = null;
+      SNode quotedNode_r9cjy_a0a0a0 = null;
       {
-        quotedNode_1613_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1613_0 = quotedNode_1613_0;
-        result = quotedNode1_1613_0;
+        quotedNode_r9cjy_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_r9cjy_a0a0a0 = quotedNode_r9cjy_a0a0a0;
+        result = quotedNode1_r9cjy_a0a0a0;
       }
       return result;
     }
@@ -60,11 +60,11 @@ public class typeof_PropertyAntiquotation_InferenceRule extends AbstractInferenc
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1613_0 = null;
+      SNode quotedNode_r9cjy_a0a0a0 = null;
       {
-        quotedNode_1613_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1613_0 = quotedNode_1613_0;
-        result = quotedNode1_1613_0;
+        quotedNode_r9cjy_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_r9cjy_a0a0a0 = quotedNode_r9cjy_a0a0a0;
+        result = quotedNode1_r9cjy_a0a0a0;
       }
       return result;
     }
