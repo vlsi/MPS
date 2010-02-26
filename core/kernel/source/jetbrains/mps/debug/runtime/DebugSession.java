@@ -1,9 +1,7 @@
 package jetbrains.mps.debug.runtime;
 
 import com.intellij.execution.process.ProcessHandler;
-import com.sun.jdi.IncompatibleThreadStateException;
-import com.sun.jdi.StackFrame;
-import com.sun.jdi.ThreadReference;
+import com.sun.jdi.*;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
@@ -13,6 +11,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public class DebugSession {
   private static final Logger LOG = Logger.getLogger(DebugSession.class);
@@ -298,6 +297,28 @@ public class DebugSession {
           return myThread.frames();
         } catch (IncompatibleThreadStateException e) {
           LOG.error(e);
+        }
+      }
+      return Collections.emptyList();
+    }
+
+    @NotNull
+    public synchronized Map<LocalVariable, Value> getLocalVariablesValues() {
+      if (myStackFrame != null) {
+        try {
+          return myStackFrame.getValues(myStackFrame.visibleVariables());
+        } catch (AbsentInformationException ignore) {
+        }
+      }
+      return Collections.emptyMap();
+    }
+
+    @NotNull
+    public synchronized List<LocalVariable> getLocalVariables() {
+      if (myStackFrame != null) {
+        try {
+          return myStackFrame.visibleVariables();
+        } catch (AbsentInformationException ignore) {
         }
       }
       return Collections.emptyList();
