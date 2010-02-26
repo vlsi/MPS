@@ -38,5 +38,7 @@ public abstract class Function {
 
   public abstract Object eval();
 
+  public abstract Function copy();
+
   public abstract int getParamsCount();
 }

@@ -361,6 +361,7 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3978364766705456156">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3978364766705456162">
         <property name="text:32" value="(" />
+        <link role="actionMap:32" targetNodeId="6213838193799310583" resolveInfo="ParenthesisActions" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="14027134441303192">
           <property name="flag:32" value="true" />
         </node>
@@ -370,6 +371,7 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3978364766705456161">
         <property name="text:32" value=")" />
+        <link role="actionMap:32" targetNodeId="6213838193799310583" resolveInfo="ParenthesisActions" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="14027134441303193">
           <property name="flag:32" value="true" />
         </node>
@@ -434,6 +436,41 @@
         <link role="relationDeclaration:32" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="8360767178776332102" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="6213838193799310583">
+    <property name="name:32" value="ParenthesisActions" />
+    <link role="applicableConcept:32" targetNodeId="1.3978364766705449817:0" resolveInfo="ParenthesisExpression" />
+    <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="6213838193799316931">
+      <property name="actionId:32" value="delete_action_id" />
+      <node role="executeFunction:32" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction:32" id="6213838193799316932">
+        <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6213838193799316933">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6213838193799316940">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6213838193799316941">
+              <property name="name:3" value="expr" />
+              <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="6213838193799316942">
+                <link role="concept:16" targetNodeId="1.4022026349914659049:0" resolveInfo="LambdaExpression" />
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6213838193799316945">
+                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="6213838193799316944" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6213838193799338280">
+                  <link role="link:16" targetNodeId="1.3978364766705449818:0" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6213838193799338282">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6213838193799338289">
+              <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="6213838193799338283" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation:16" id="6213838193799338293">
+                <node role="replacementNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6213838193799338295">
+                  <link role="variableDeclaration:3" targetNodeId="6213838193799316941" resolveInfo="expr" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

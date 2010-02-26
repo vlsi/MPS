@@ -17,11 +17,7 @@ public class sim {
   }
 
   public static Object let_532475184622082807(Function a) {
-    return ((Function) (a)).apply(lambdaAbstr_532475184622086163(2));
-  }
-
-  public static Integer lambdaAbstr_532475184622086163(Integer x) {
-    return x * 5;
+    return ((Function) (a.copy())).apply(((Function) a.copy()).apply(2));
   }
 
   public static class Function_532475184622082811 extends Function {

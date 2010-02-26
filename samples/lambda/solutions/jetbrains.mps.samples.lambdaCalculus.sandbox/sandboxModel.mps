@@ -129,10 +129,8 @@
           <node role="argument:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="16975121357043138">
             <property name="value:0" value="1" />
           </node>
-          <node role="function:0" type="jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression:0" id="8899433705216016417">
-            <node role="expression:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LetRef:0" id="8899433705216016421">
-              <link role="variable:0" targetNodeId="8899433705215886346" resolveInfo="qw" />
-            </node>
+          <node role="function:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LetRef:0" id="8899433705216016421">
+            <link role="variable:0" targetNodeId="8899433705215886346" resolveInfo="qw" />
           </node>
         </node>
         <node role="expressions:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication:0" id="16975121357043156">
@@ -175,18 +173,8 @@
           <node role="argument:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="532475184622086150">
             <property name="value:0" value="2" />
           </node>
-          <node role="function:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction:0" id="532475184622086163">
-            <node role="variable:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable:0" id="532475184622086164">
-              <property name="name:0" value="x" />
-            </node>
-            <node role="body:0" type="jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation:0" id="532475184622086184">
-              <node role="left:0" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef:0" id="532475184622086183">
-                <link role="variable:0" targetNodeId="532475184622086164" resolveInfo="x" />
-              </node>
-              <node role="right:0" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:0" id="532475184622086204">
-                <property name="value:0" value="5" />
-              </node>
-            </node>
+          <node role="function:0" type="jetbrains.mps.samples.lambdaCalculus.structure.LetRef:0" id="6213838193798813989">
+            <link role="variable:0" targetNodeId="532475184622082810" resolveInfo="sq" />
           </node>
         </node>
       </node>

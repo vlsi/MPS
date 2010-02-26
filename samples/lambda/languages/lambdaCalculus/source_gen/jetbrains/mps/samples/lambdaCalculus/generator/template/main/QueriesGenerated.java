@@ -7,6 +7,7 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.samples.lambdaCalculus.behavior.LambdaExpression_Behavior;
 import jetbrains.mps.samples.lambdaCalculus.behavior.LambdaApplication_Behavior;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.samples.lambdaCalculus.behavior.AbstractionVarRef_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -15,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.samples.lambdaCalculus.behavior.LambdaAbstraction_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -30,11 +30,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1745225562807772209(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "variable", false), "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType");
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "variable", false)), "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType");
   }
 
   public static boolean baseMappingRule_Condition_1745225562807772232(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "variable", false), "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType"));
+    return !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "variable", false)), "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType"));
   }
 
   public static boolean baseMappingRule_Condition_1823182225212631178(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
