@@ -70,13 +70,13 @@ public class LatticeUtil {
 
   public static IWrapper join(IWrapper wrapper1, IWrapper wrapper2) {
     JoinType joinType = JoinType.newInstance(TypeChecker.getInstance().getRuntimeTypesModel());
-    if (BaseAdapter.isInstance(wrapper1.getNode(), JoinType.class)) {
+    if (isJoinNode(wrapper1.getNode())) {
       JoinType joinWrapper1 = (JoinType) wrapper1.getNode().getAdapter();
       for (BaseConcept bc : joinWrapper1.getArguments()) {
         joinType.addArgument(HUtil.copyIfNecessary(bc));
       }
 
-      if (BaseAdapter.isInstance(wrapper2.getNode(), JoinType.class)) {
+      if (isJoinNode(wrapper2.getNode())) {
         JoinType joinWrapper2 = (JoinType) wrapper2.getNode().getAdapter();
         for (BaseConcept bc : joinWrapper2.getArguments()) {
           joinType.addArgument(HUtil.copyIfNecessary(bc));
@@ -84,7 +84,7 @@ public class LatticeUtil {
       } else {
         joinType.addArgument(HUtil.copyIfNecessary((BaseConcept) (BaseAdapter.fromNode(wrapper2.getNode()))));
       }
-    } else if (BaseAdapter.isInstance(wrapper2.getNode(), JoinType.class)) {
+    } else if (isJoinNode(wrapper2.getNode())) {
       JoinType joinWrapper2 = (JoinType) wrapper2.getNode().getAdapter();
       joinType.addArgument(HUtil.copyIfNecessary((BaseConcept) (BaseAdapter.fromNode(wrapper1.getNode()))));
       for (BaseConcept bc : joinWrapper2.getArguments()) {
@@ -115,12 +115,12 @@ public class LatticeUtil {
 
   public static IWrapper meet(IWrapper wrapper1, IWrapper wrapper2) {
     MeetType meetType = MeetType.newInstance(TypeChecker.getInstance().getRuntimeTypesModel());
-    if (BaseAdapter.isInstance(wrapper1.getNode(), MeetType.class)) {
+    if (isMeetNode(wrapper1.getNode())) {
       MeetType meetWrapper1 = (MeetType) wrapper1.getNode().getAdapter();
       for (BaseConcept bc : meetWrapper1.getArguments()) {
         meetType.addArgument(HUtil.copyIfNecessary(bc));
       }
-      if (BaseAdapter.isInstance(wrapper2.getNode(), MeetType.class)) {
+      if (isMeetNode(wrapper2.getNode())) {
         MeetType meetWrapper2 = (MeetType) wrapper2.getNode().getAdapter();
         for (BaseConcept bc : meetWrapper2.getArguments()) {
           meetType.addArgument(HUtil.copyIfNecessary(bc));
@@ -128,7 +128,7 @@ public class LatticeUtil {
       } else {
         meetType.addArgument(HUtil.copyIfNecessary((BaseConcept) (BaseAdapter.fromNode(wrapper2.getNode()))));
       }
-    } else if (BaseAdapter.isInstance(wrapper2.getNode(), MeetType.class)) {
+    } else if (isMeetNode(wrapper2.getNode())) {
       MeetType meetWrapper2 = (MeetType) wrapper2.getNode().getAdapter();
       meetType.addArgument(HUtil.copyIfNecessary((BaseConcept) (BaseAdapter.fromNode(wrapper1.getNode()))));
       for (BaseConcept bc : meetWrapper2.getArguments()) {
@@ -183,17 +183,17 @@ public class LatticeUtil {
   }
 
   public static boolean isMeet(SNode node) {
-    return BaseAdapter.isInstance(node, MeetType.class) ||
+    return isMeetNode(node) ||
       MeetAnnotation_AnnotationLink.getMeetAnnotation((BaseConcept) node.getAdapter()) != null;
   }
 
   public static boolean isJoin(SNode node) {
-    return BaseAdapter.isInstance(node, JoinType.class) ||
+    return isJoinNode(node) ||
       JoinAnnotation_AnnotationLink.getJoinAnnotation((BaseConcept) node.getAdapter()) != null;
   }
 
   public static List<SNode> getMeetArguments(SNode meet) {
-    if (BaseAdapter.isInstance(meet, MeetType.class)) {
+    if (isMeetNode(meet)) {
       return meet.getChildren(MeetType.ARGUMENT);
     } else {
       MeetContainer meetContainer = MeetAnnotation_AnnotationLink.getMeetAnnotation((BaseConcept) meet.getAdapter());
@@ -203,12 +203,22 @@ public class LatticeUtil {
   }
 
   public static List<SNode> getJoinArguments(SNode join) {
-    if (BaseAdapter.isInstance(join, JoinType.class)) {
+    if (isJoinNode(join)) {
       return join.getChildren(JoinType.ARGUMENT);
     } else {
       JoinContainer joinContainer = JoinAnnotation_AnnotationLink.getJoinAnnotation((BaseConcept) join.getAdapter());
       JoinType joinType = joinContainer.getJoinType();
       return joinType.getNode().getChildren(JoinType.ARGUMENT);
     }
+  }
+
+  private static boolean isJoinNode(SNode node) {
+    if (node == null) return false;
+    return JoinType.concept.equals(node.getConceptFqName());
+  }
+
+  private static boolean isMeetNode(SNode node) {
+    if (node == null) return false;
+    return MeetType.concept.equals(node.getConceptFqName());
   }
 }
