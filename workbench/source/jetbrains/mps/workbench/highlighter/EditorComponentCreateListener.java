@@ -17,14 +17,15 @@ package jetbrains.mps.workbench.highlighter;
 
 import com.intellij.util.messages.Topic;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import org.jetbrains.annotations.NotNull;
 
 public interface EditorComponentCreateListener {
   Topic<EditorComponentCreateListener> EDITOR_COMPONENT_CREATION =
     new Topic<EditorComponentCreateListener>("editor component creation and disposal", EditorComponentCreateListener.class);
 
   // This is invoked in the end of EditorComponent constructor
-  void editorComponentCreated(EditorComponent editorComponent);
+  void editorComponentCreated(@NotNull EditorComponent editorComponent);
 
   // This is invoked before EditorComponent is disposed
-  void editorComponentDisposed(EditorComponent editorComponent);
+  void editorComponentDisposed(@NotNull EditorComponent editorComponent);
 }

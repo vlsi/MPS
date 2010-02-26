@@ -78,8 +78,19 @@ public class NodeEditorComponent extends EditorComponent {
         adjustInspector();
       }
     });
+  }
 
-    notifyCreation();
+  @Override
+  protected void editNode(SNode node) {
+    if (myNode != null) {
+      notifyDisposal();
+    }
+
+    super.editNode(node);
+
+    if (myNode != null) {
+      notifyCreation();
+    }
   }
 
   private void adjustInspector() {
