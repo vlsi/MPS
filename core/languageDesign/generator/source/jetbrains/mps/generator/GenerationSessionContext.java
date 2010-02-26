@@ -152,11 +152,31 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return mySessionObjects.get(key);
   }
 
-  public String createUniqueName(String roughName) {
-    return createUniqueName(roughName, null);
+  private static String nodeUniqueId(SNode node) {
+    StringBuilder sb = new StringBuilder();
+    SNode parent = node.getParent();
+
+    boolean sym = true;
+    while (parent != null) {
+      int index = parent.getIndexOfChild(node);
+      if (index == 0) {
+        sb.append(sym ? 'a' : '0');
+      }
+      while (index > 0) {
+        int curr = sym ? 'a' + (index % 26) : '0' + (index % 10);
+        index /= sym ? 26 : 10;
+        sb.appendCodePoint(curr);
+      }
+      sym = !sym;
+      node = parent;
+      parent = node.getParent();
+    }
+    return sb.toString();
   }
 
-  public String createUniqueName(String roughName, SNode contextNode) {
+  public String createUniqueName(String roughName, SNode contextNode, SNode inputNode) {
+    String uniqueSuffix = null;
+
     if (contextNode != null) {
       // find topmost 'named' ancestor
       INamedConcept topmostNamed = null;
@@ -171,21 +191,30 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       if (topmostNamed != null) {
         String name = topmostNamed.getName();
         if (name != null) {
-          String contextSuffix = String.valueOf(name.hashCode());
-          if (contextSuffix.length() > 4) {
-            contextSuffix = contextSuffix.substring(contextSuffix.length() - 4); // make it a bit shorter
-          }
-          // modify roughName
-          roughName = roughName + contextSuffix + "_";
+          uniqueSuffix = Integer.toString(name.hashCode() >>> 1, Character.MAX_RADIX);
         }
       }
     } // if(contextNode != null)
 
-    String uniqueName;
-    int count = 0;
-    while (true) {
-      uniqueName = roughName + (count++);
-      if (!myUsedNames.contains(uniqueName)) break;
+    if (inputNode != null) {
+      if (uniqueSuffix == null) {
+        uniqueSuffix = nodeUniqueId(inputNode);
+      } else {
+        uniqueSuffix = uniqueSuffix + "_" + nodeUniqueId(inputNode);
+      }
+    }
+
+    if (uniqueSuffix != null) {
+      roughName = roughName.endsWith("_") ? roughName + uniqueSuffix : roughName + "_" + uniqueSuffix;
+    }
+    String uniqueName = roughName;
+
+    if (uniqueSuffix == null || myUsedNames.contains(uniqueName)) {
+      roughName += "_";
+      for (int count = 0; ; count++) {
+        uniqueName = roughName + count;
+        if (!myUsedNames.contains(uniqueName)) break;
+      }
     }
     myUsedNames.add(uniqueName);
     return uniqueName;
