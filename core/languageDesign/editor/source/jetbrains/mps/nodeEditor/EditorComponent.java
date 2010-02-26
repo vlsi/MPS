@@ -73,6 +73,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.highlighter.EditorComponentCreateListener;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -505,6 +506,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         updateStatusBarMessage();
       }
     });
+  }
+
+  protected void notifyCreation() {
+    assert myOperationContext != null;
+    EditorComponentCreateListener listener = myOperationContext.getProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
+    listener.editorComponentCreated(this);
+  }
+
+  protected void notifyDisposal() {
+    if (myOperationContext == null) {
+      LOG.error("Notify disposal with empty operation context");
+      return;
+    }
+    EditorComponentCreateListener listener = myOperationContext.getProject().getMessageBus().syncPublisher(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION);
+    listener.editorComponentDisposed(this);
   }
 
   protected boolean onEscape() {

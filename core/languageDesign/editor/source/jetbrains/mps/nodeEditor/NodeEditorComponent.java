@@ -78,6 +78,8 @@ public class NodeEditorComponent extends EditorComponent {
         adjustInspector();
       }
     });
+
+    notifyCreation();
   }
 
   private void adjustInspector() {
@@ -152,6 +154,7 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   public void dispose() {
+    notifyDisposal();
     InspectorTool inspectorTool = getInspectorTool();
     if (inspectorTool != null) {
       if (inspectorTool.getInspector().getEditedNode() == this.getLastInspectedNode()) {
