@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class Regexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_2317_0(editorContext, node);
+    return this.createError_rogptd_a(editorContext, node);
   }
 
-  private EditorCell createError_2317_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_rogptd_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "regexp");
-    editorCell.setCellId("Error_2317_0");
+    editorCell.setCellId("Error_rogptd_a");
     return editorCell;
   }
 }

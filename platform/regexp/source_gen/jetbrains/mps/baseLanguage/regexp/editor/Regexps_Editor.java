@@ -29,23 +29,23 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Regexps_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2642_0(editorContext, node);
+    return this.createCollection_fnjk3l_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2642_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_fnjk3l_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2642_0");
-    editorCell.addEditorCell(this.createConstant_2642_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2642_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2642_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_2642_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2642_2(editorContext, node));
+    editorCell.setCellId("Collection_fnjk3l_a");
+    editorCell.addEditorCell(this.createConstant_fnjk3l_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_fnjk3l_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_fnjk3l_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_fnjk3l_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_fnjk3l_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2642_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_fnjk3l_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "regexps");
-    editorCell.setCellId("Constant_2642_0");
+    editorCell.setCellId("Constant_fnjk3l_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -54,9 +54,9 @@ public class Regexps_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2642_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_fnjk3l_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_2642_1");
+    editorCell.setCellId("Constant_fnjk3l_c0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -67,9 +67,9 @@ public class Regexps_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2642_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_fnjk3l_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_2642_2");
+    editorCell.setCellId("Constant_fnjk3l_e0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -79,8 +79,8 @@ public class Regexps_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2642_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Regexps_Editor.regexpListHandler_2642_0(node, "regexp", editorContext);
+  private EditorCell createRefNodeList_fnjk3l_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Regexps_Editor.regexpListHandler_fnjk3l_d0(node, "regexp", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_regexp");
     {
@@ -92,7 +92,7 @@ public class Regexps_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_2642_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_fnjk3l_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -110,8 +110,8 @@ public class Regexps_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class regexpListHandler_2642_0 extends RefNodeListHandler {
-    public regexpListHandler_2642_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class regexpListHandler_fnjk3l_d0 extends RefNodeListHandler {
+    public regexpListHandler_fnjk3l_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

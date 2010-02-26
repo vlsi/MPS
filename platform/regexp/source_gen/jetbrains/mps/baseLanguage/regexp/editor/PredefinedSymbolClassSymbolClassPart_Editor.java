@@ -21,52 +21,52 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8173_0(editorContext, node);
+    return this.createCollection_u0vlk9_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8173_1(editorContext, node);
+    return this.createCollection_u0vlk9_a_0(editorContext, node);
   }
 
-  private EditorCell createCollection_8173_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_u0vlk9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8173_0");
-    editorCell.addEditorCell(this.createRefCell_8173_0(editorContext, node));
+    editorCell.setCellId("Collection_u0vlk9_a");
+    editorCell.addEditorCell(this.createRefCell_u0vlk9_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8173_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_u0vlk9_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_8173_1");
-    editorCell.addEditorCell(this.createCollection_8173_2(editorContext, node));
+    editorCell.setCellId("Collection_u0vlk9_a_0");
+    editorCell.addEditorCell(this.createCollection_u0vlk9_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_8173_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_u0vlk9_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8173_2");
+    editorCell.setCellId("Collection_u0vlk9_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_8173_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_8173_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_u0vlk9_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_u0vlk9_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8173_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_u0vlk9_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Description:");
-    editorCell.setCellId("Constant_8173_0");
+    editorCell.setCellId("Constant_u0vlk9_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_8173_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_u0vlk9_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PredefinedSymbolClassSymbolClassPart_Editor._Inline8173_0());
+    provider.setAuxiliaryCellProvider(new PredefinedSymbolClassSymbolClassPart_Editor._Inline_u0vlk9_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -79,12 +79,12 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  private EditorCell createRefCell_8173_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_u0vlk9_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("declaration");
     provider.setNoTargetText("<no declaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PredefinedSymbolClassSymbolClassPart_Editor._Inline8173_1());
+    provider.setAuxiliaryCellProvider(new PredefinedSymbolClassSymbolClassPart_Editor._Inline_u0vlk9_a1a0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -97,8 +97,8 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  public static class _Inline8173_0 extends InlineCellProvider {
-    public _Inline8173_0() {
+  public static class _Inline_u0vlk9_a0a extends InlineCellProvider {
+    public _Inline_u0vlk9_a0a() {
       super();
     }
 
@@ -107,10 +107,10 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8173_0(editorContext, node);
+      return this.createProperty_u0vlk9_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_8173_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_u0vlk9_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -135,8 +135,8 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     }
   }
 
-  public static class _Inline8173_1 extends InlineCellProvider {
-    public _Inline8173_1() {
+  public static class _Inline_u0vlk9_a1a0 extends InlineCellProvider {
+    public _Inline_u0vlk9_a1a0() {
       super();
     }
 
@@ -145,10 +145,10 @@ public class PredefinedSymbolClassSymbolClassPart_Editor extends DefaultNodeEdit
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8173_1(editorContext, node);
+      return this.createProperty_u0vlk9_a0b0a(editorContext, node);
     }
 
-    private EditorCell createProperty_8173_1(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_u0vlk9_a0b0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("description");
       provider.setNoTargetText("<no description>");

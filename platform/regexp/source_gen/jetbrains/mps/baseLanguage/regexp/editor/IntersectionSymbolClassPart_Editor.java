@@ -17,19 +17,19 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class IntersectionSymbolClassPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7554_0(editorContext, node);
+    return this.createCollection_b4by2p_a(editorContext, node);
   }
 
-  private EditorCell createCollection_7554_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_b4by2p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7554_0");
-    editorCell.addEditorCell(this.createRefNode_7554_0(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_7554_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7554_1(editorContext, node));
+    editorCell.setCellId("Collection_b4by2p_a");
+    editorCell.addEditorCell(this.createRefNode_b4by2p_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_b4by2p_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_b4by2p_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_7554_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_b4by2p_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("left");
     provider.setNoTargetText("<no left>");
@@ -47,7 +47,7 @@ public class IntersectionSymbolClassPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_7554_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_b4by2p_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -70,7 +70,7 @@ public class IntersectionSymbolClassPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7554_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_b4by2p_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("right");
     provider.setNoTargetText("<no right>");

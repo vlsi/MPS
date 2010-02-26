@@ -29,50 +29,50 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4843_0(editorContext, node);
+    return this.createCollection_879g1p_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4843_1(editorContext, node);
+    return this.createCollection_879g1p_a_0(editorContext, node);
   }
 
-  private EditorCell createCollection_4843_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_879g1p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4843_0");
-    editorCell.addEditorCell(this.createConstant_4843_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4843_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4843_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4843_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4843_5(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4843_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4843_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4843_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4843_2(editorContext, node));
+    editorCell.setCellId("Collection_879g1p_a");
+    editorCell.addEditorCell(this.createConstant_879g1p_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_879g1p_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_879g1p_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_879g1p_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_879g1p_e0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_879g1p_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_879g1p_g0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_879g1p_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_879g1p_i0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4843_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_879g1p_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_4843_1");
-    editorCell.addEditorCell(this.createCollection_4843_2(editorContext, node));
+    editorCell.setCellId("Collection_879g1p_a_0");
+    editorCell.addEditorCell(this.createCollection_879g1p_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4843_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_879g1p_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4843_2");
+    editorCell.setCellId("Collection_879g1p_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_4843_6(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_4843_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_879g1p_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_879g1p_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4843_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_879g1p_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "regexp");
-    editorCell.setCellId("Constant_4843_0");
+    editorCell.setCellId("Constant_879g1p_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -81,9 +81,9 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4843_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_879g1p_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_4843_1");
+    editorCell.setCellId("Constant_879g1p_c0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -94,9 +94,9 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4843_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_879g1p_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_4843_2");
+    editorCell.setCellId("Constant_879g1p_i0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -106,9 +106,9 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4843_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_879g1p_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_4843_3");
+    editorCell.setCellId("Constant_879g1p_g0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -117,9 +117,9 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4843_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_879g1p_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_4843_4");
+    editorCell.setCellId("Constant_879g1p_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -128,9 +128,9 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4843_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_879g1p_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "//");
-    editorCell.setCellId("Constant_4843_5");
+    editorCell.setCellId("Constant_879g1p_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
@@ -139,14 +139,14 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4843_6(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_879g1p_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "regexp:");
-    editorCell.setCellId("Constant_4843_6");
+    editorCell.setCellId("Constant_879g1p_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_4843_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_879g1p_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return (Regexp_Behavior.call_isValid_4759120547781297301(SLinkOperations.getTarget(node, "regexp", true)) ?
@@ -163,11 +163,11 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_4843_0");
+    editorCell.setCellId("ReadOnlyModelAccessor_879g1p_b0a");
     return editorCell;
   }
 
-  private EditorCell createProperty_4843_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_879g1p_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -185,7 +185,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4843_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_879g1p_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("regexp");
     provider.setNoTargetText("<no regexp>");
@@ -206,7 +206,7 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4843_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_879g1p_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("description");
     provider.setNoTargetText("no description");

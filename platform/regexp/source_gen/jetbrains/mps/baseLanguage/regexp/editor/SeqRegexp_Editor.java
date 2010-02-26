@@ -14,18 +14,18 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SeqRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1524_0(editorContext, node);
+    return this.createCollection_29a7ya_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1524_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_29a7ya_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1524_0");
-    editorCell.addEditorCell(this.createRefNode_1524_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1524_1(editorContext, node));
+    editorCell.setCellId("Collection_29a7ya_a");
+    editorCell.addEditorCell(this.createRefNode_29a7ya_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_29a7ya_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_1524_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_29a7ya_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("left");
     provider.setNoTargetText("<no left>");
@@ -43,7 +43,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1524_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_29a7ya_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("right");
     provider.setNoTargetText("<no right>");

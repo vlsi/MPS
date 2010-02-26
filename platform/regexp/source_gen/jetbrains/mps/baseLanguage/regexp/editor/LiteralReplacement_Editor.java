@@ -18,17 +18,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LiteralReplacement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4217_0(editorContext, node);
+    return this.createCollection_c83cf8_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4217_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_c83cf8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4217_0");
-    editorCell.addEditorCell(this.createProperty_4217_0(editorContext, node));
+    editorCell.setCellId("Collection_c83cf8_a");
+    editorCell.addEditorCell(this.createProperty_c83cf8_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createProperty_4217_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_c83cf8_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");

@@ -17,26 +17,26 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class DialogDimensions_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_3895_0(editorContext, node);
+    return this.createCollection_daw9nf_a(editorContext, node);
   }
 
-  private EditorCell createCollection_3895_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_daw9nf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_3895_0");
-    editorCell.addEditorCell(this.createConstant_3895_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_3895_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3895_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_3895_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3895_2(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_3895_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_3895_3(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_3895_3(editorContext, node));
+    editorCell.setCellId("Collection_daw9nf_a");
+    editorCell.addEditorCell(this.createConstant_daw9nf_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_daw9nf_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_daw9nf_c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_daw9nf_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_daw9nf_e0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_daw9nf_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_daw9nf_g0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_daw9nf_h0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_3895_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_daw9nf_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "left:");
-    editorCell.setCellId("Constant_3895_0");
+    editorCell.setCellId("Constant_daw9nf_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -45,9 +45,9 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3895_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_daw9nf_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "top:");
-    editorCell.setCellId("Constant_3895_1");
+    editorCell.setCellId("Constant_daw9nf_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -56,9 +56,9 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3895_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_daw9nf_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "width:");
-    editorCell.setCellId("Constant_3895_2");
+    editorCell.setCellId("Constant_daw9nf_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -67,9 +67,9 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_3895_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_daw9nf_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "height:");
-    editorCell.setCellId("Constant_3895_3");
+    editorCell.setCellId("Constant_daw9nf_g0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -78,7 +78,7 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_3895_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_daw9nf_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("left");
     provider.setNoTargetText("<no left>");
@@ -96,7 +96,7 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_3895_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_daw9nf_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("top");
     provider.setNoTargetText("<no top>");
@@ -114,7 +114,7 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_3895_2(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_daw9nf_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("width");
     provider.setNoTargetText("<no width>");
@@ -132,7 +132,7 @@ public class DialogDimensions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_3895_3(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_daw9nf_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("height");
     provider.setNoTargetText("<no height>");
