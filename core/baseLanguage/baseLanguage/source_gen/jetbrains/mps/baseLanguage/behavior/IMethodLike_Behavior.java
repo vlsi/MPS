@@ -20,12 +20,25 @@ public class IMethodLike_Behavior {
   }
 
   public static SNode virtual_getLastStatement_1239354409446(SNode thisNode) {
+    return IMethodLike_Behavior.call_getLastStatement_2432385533253965663(thisNode, IMethodLike_Behavior.call_getBody_1239354440022(thisNode));
+  }
+
+  public static SNode call_getLastStatement_2432385533253965663(SNode thisNode, SNode statementList) {
     List<SNode> statements = new ArrayList<SNode>();
-    ListSequence.fromList(statements).addSequence(ListSequence.fromList(SLinkOperations.getTargets(IMethodLike_Behavior.call_getBody_1239354440022(thisNode), "statement", true)));
+    ListSequence.fromList(statements).addSequence(ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)));
     while (SNodeOperations.getConceptDeclaration(ListSequence.fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.getConceptDeclaration(ListSequence.fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.RemarkStatement")) {
       ListSequence.fromList(statements).removeLastElement();
     }
-    return ListSequence.fromList(statements).last();
+    SNode lastStatement = ListSequence.fromList(statements).last();
+    if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+      SNode innerStatementList = SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true);
+      if (ListSequence.fromList(SLinkOperations.getTargets(innerStatementList, "statement", true)).isEmpty()) {
+        return lastStatement;
+      } else {
+        return IMethodLike_Behavior.call_getLastStatement_2432385533253965663(thisNode, innerStatementList);
+      }
+    }
+    return lastStatement;
   }
 
   public static SNode call_getExpectedRetType_1239354342632(SNode thisNode) {
