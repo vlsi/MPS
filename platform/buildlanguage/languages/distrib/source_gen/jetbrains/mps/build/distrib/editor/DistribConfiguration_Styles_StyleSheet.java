@@ -26,7 +26,7 @@ public class DistribConfiguration_Styles_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
       public Boolean calculate(EditorCell cell) {
-        return DistribConfiguration_Styles_StyleSheet._StyleParameter_QueryFunction_4592_0((cell == null ?
+        return DistribConfiguration_Styles_StyleSheet._StyleParameter_QueryFunction_t0kmh4_a1b((cell == null ?
           null :
           cell.getSNode()
         ), (cell == null ?
@@ -51,7 +51,7 @@ public class DistribConfiguration_Styles_StyleSheet {
     return style;
   }
 
-  private static boolean _StyleParameter_QueryFunction_4592_0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_t0kmh4_a1b(SNode node, EditorContext editorContext) {
     return true;
   }
 }

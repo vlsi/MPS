@@ -21,18 +21,18 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ComponentsList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0824_0(editorContext, node);
+    return this.createCollection_exgfj0_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0824_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_exgfj0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0824_0");
-    editorCell.addEditorCell(this.createRefNodeList_0824_0(editorContext, node));
+    editorCell.setCellId("Collection_exgfj0_a");
+    editorCell.addEditorCell(this.createRefNodeList_exgfj0_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_0824_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ComponentsList_Editor.entryListHandler_0824_0(node, "entry", editorContext);
+  private EditorCell createRefNodeList_exgfj0_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ComponentsList_Editor.entryListHandler_exgfj0_a0(node, "entry", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_entry");
     {
@@ -44,8 +44,8 @@ public class ComponentsList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class entryListHandler_0824_0 extends RefNodeListHandler {
-    public entryListHandler_0824_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class entryListHandler_exgfj0_a0 extends RefNodeListHandler {
+    public entryListHandler_exgfj0_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

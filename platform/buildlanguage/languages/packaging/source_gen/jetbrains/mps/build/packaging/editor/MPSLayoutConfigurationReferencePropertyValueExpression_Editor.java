@@ -16,22 +16,22 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2583_0(editorContext, node);
+    return this.createCollection_71sslv_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2583_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_71sslv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2583_0");
-    editorCell.addEditorCell(this.createRefCell_2583_0(editorContext, node));
+    editorCell.setCellId("Collection_71sslv_a");
+    editorCell.addEditorCell(this.createRefCell_71sslv_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_2583_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_71sslv_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("configuration");
     provider.setNoTargetText("<no configuration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MPSLayoutConfigurationReferencePropertyValueExpression_Editor._Inline2583_0());
+    provider.setAuxiliaryCellProvider(new MPSLayoutConfigurationReferencePropertyValueExpression_Editor._Inline_71sslv_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -44,8 +44,8 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
     return editorCell;
   }
 
-  public static class _Inline2583_0 extends InlineCellProvider {
-    public _Inline2583_0() {
+  public static class _Inline_71sslv_a0a extends InlineCellProvider {
+    public _Inline_71sslv_a0a() {
       super();
     }
 
@@ -54,10 +54,10 @@ public class MPSLayoutConfigurationReferencePropertyValueExpression_Editor exten
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_2583_0(editorContext, node);
+      return this.createProperty_71sslv_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_2583_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_71sslv_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("fullName");
       provider.setNoTargetText("<no fullName>");

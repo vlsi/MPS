@@ -13,10 +13,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class StringCommandLinePart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_4187_0(editorContext, node);
+    return this.createProperty_h1v4qt_a(editorContext, node);
   }
 
-  private EditorCell createProperty_4187_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_h1v4qt_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");

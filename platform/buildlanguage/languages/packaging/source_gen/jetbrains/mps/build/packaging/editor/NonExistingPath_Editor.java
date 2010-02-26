@@ -18,38 +18,38 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class NonExistingPath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4895_0(editorContext, node);
+    return this.createCollection_hlyy47_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4895_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_hlyy47_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4895_0");
-    editorCell.addEditorCell(this.createCollection_4895_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4895_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4895_0(editorContext, node));
+    editorCell.setCellId("Collection_hlyy47_a");
+    editorCell.addEditorCell(this.createCollection_hlyy47_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_hlyy47_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_hlyy47_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4895_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_hlyy47_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4895_1");
+    editorCell.setCellId("Collection_hlyy47_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createRefNode_4895_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_hlyy47_a0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4895_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_hlyy47_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
-    editorCell.setCellId("Constant_4895_0");
+    editorCell.setCellId("Constant_hlyy47_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_4895_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_hlyy47_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("macro");
     provider.setNoTargetText("<no macro>");
@@ -66,7 +66,7 @@ public class NonExistingPath_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_4895_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_hlyy47_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("pathToCheck");
     provider.setNoTargetText("<no pathToCheck>");

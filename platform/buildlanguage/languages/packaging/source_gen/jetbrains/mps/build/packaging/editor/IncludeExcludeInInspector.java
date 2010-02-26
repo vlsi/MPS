@@ -23,50 +23,50 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2096_0(editorContext, node);
+    return this.createCollection_1f9za8_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2096_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1f9za8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_2096_0");
-    editorCell.addEditorCell(this.createCollection_2096_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_2096_2(editorContext, node));
+    editorCell.setCellId("Collection_1f9za8_a");
+    editorCell.addEditorCell(this.createCollection_1f9za8_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_1f9za8_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2096_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1f9za8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2096_1");
-    editorCell.addEditorCell(this.createConstant_2096_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2096_0(editorContext, node));
+    editorCell.setCellId("Collection_1f9za8_a0");
+    editorCell.addEditorCell(this.createConstant_1f9za8_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_1f9za8_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2096_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1f9za8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2096_2");
-    editorCell.addEditorCell(this.createConstant_2096_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2096_1(editorContext, node));
+    editorCell.setCellId("Collection_1f9za8_b0");
+    editorCell.addEditorCell(this.createConstant_1f9za8_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_1f9za8_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2096_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1f9za8_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "excludes");
-    editorCell.setCellId("Constant_2096_0");
+    editorCell.setCellId("Constant_1f9za8_a0a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2096_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1f9za8_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "includes");
-    editorCell.setCellId("Constant_2096_1");
+    editorCell.setCellId("Constant_1f9za8_a1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_2096_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_1f9za8_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("excludes");
     provider.setNoTargetText("<no excludes>");
@@ -85,7 +85,7 @@ public class IncludeExcludeInInspector extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createProperty_2096_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_1f9za8_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("includes");
     provider.setNoTargetText("<no includes>");

@@ -16,7 +16,7 @@ public class CustomMpsStyles_StyleSheet {
     style.putAll(PackagingStyles_StyleSheet.getVariable(null));
     style.set(StyleAttributes.UNDERLINED, new AttributeCalculator<Boolean>() {
       public Boolean calculate(EditorCell cell) {
-        return CustomMpsStyles_StyleSheet._StyleParameter_QueryFunction_1345_0((cell == null ?
+        return CustomMpsStyles_StyleSheet._StyleParameter_QueryFunction_bu7lcg_a0a((cell == null ?
           null :
           cell.getSNode()
         ), (cell == null ?
@@ -28,7 +28,7 @@ public class CustomMpsStyles_StyleSheet {
     return style;
   }
 
-  private static boolean _StyleParameter_QueryFunction_1345_0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_bu7lcg_a0a(SNode node, EditorContext editorContext) {
     return true;
   }
 }

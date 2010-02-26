@@ -26,106 +26,106 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5815_0(editorContext, node);
+    return this.createCollection_rvqdrg_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5815_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_rvqdrg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5815_0");
-    editorCell.addEditorCell(this.createConstant_5815_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5815_1(editorContext, node));
+    editorCell.setCellId("Collection_rvqdrg_a");
+    editorCell.addEditorCell(this.createConstant_rvqdrg_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_rvqdrg_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5815_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_rvqdrg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5815_1");
+    editorCell.setCellId("Collection_rvqdrg_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell5815_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5815_2(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell_rvqdrg_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_rvqdrg_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5815_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_rvqdrg_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5815_2");
+    editorCell.setCellId("Collection_rvqdrg_b1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createCollection_5815_3(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5815_4(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_rvqdrg_a1b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_rvqdrg_b1b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5815_3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_rvqdrg_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5815_3");
+    editorCell.setCellId("Collection_rvqdrg_a1b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5815_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5815_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rvqdrg_a0b1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_rvqdrg_b0b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5815_4(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_rvqdrg_b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5815_4");
+    editorCell.setCellId("Collection_rvqdrg_b1b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_5815_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_5815_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rvqdrg_a1b1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_rvqdrg_b1b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5815_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_rvqdrg_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "digital signature configuration");
-    editorCell.setCellId("Constant_5815_0");
+    editorCell.setCellId("Constant_rvqdrg_a0");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5815_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_rvqdrg_a0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path to executable");
-    editorCell.setCellId("Constant_5815_1");
+    editorCell.setCellId("Constant_rvqdrg_a0b1a");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5815_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_rvqdrg_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "command line");
-    editorCell.setCellId("Constant_5815_2");
+    editorCell.setCellId("Constant_rvqdrg_a1b1a");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_5815_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new DigitalSignatureWindowsConfiguration_Editor.commandLineListHandler_5815_0(node, "commandLine", editorContext);
+  private EditorCell createRefNodeList_rvqdrg_b1b1a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new DigitalSignatureWindowsConfiguration_Editor.commandLineListHandler_rvqdrg_b1b1a(node, "commandLine", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_commandLine");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createIndentCell5815_0(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_rvqdrg_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createRefNode_5815_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_rvqdrg_b0b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("pathToExecutable");
     provider.setNoTargetText("<no pathToExecutable>");
@@ -142,8 +142,8 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
     return editorCell;
   }
 
-  private static class commandLineListHandler_5815_0 extends RefNodeListHandler {
-    public commandLineListHandler_5815_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class commandLineListHandler_rvqdrg_b1b1a extends RefNodeListHandler {
+    public commandLineListHandler_rvqdrg_b1b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -28,36 +28,36 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class MacroReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6371_0(editorContext, node);
+    return this.createCollection_yfwtie_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6371_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_yfwtie_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6371_0");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu2()}));
-    if (renderingCondition6371_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createProperty_6371_0(editorContext, node));
+    editorCell.setCellId("Collection_yfwtie_a");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0a()}));
+    if (renderingCondition_yfwtie_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createProperty_yfwtie_a0(editorContext, node));
     }
-    if (renderingCondition6371_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_6371_0(editorContext, node));
+    if (renderingCondition_yfwtie_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_yfwtie_b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createConstant_6371_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_yfwtie_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no macro");
-    editorCell.setCellId("Constant_6371_0");
+    editorCell.setCellId("Constant_yfwtie_b0");
     PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0b0()}));
     return editorCell;
   }
 
-  private EditorCell createProperty_6371_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_yfwtie_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -70,7 +70,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -81,18 +81,18 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition6371_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_yfwtie_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "name"));
   }
 
-  private static boolean renderingCondition6371_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_yfwtie_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return StringUtils.isEmpty(SPropertyOperations.getString(node, "name"));
   }
 
-  public static class MacroReference_component_cellMenu0 implements SubstituteInfoPart {
+  public static class MacroReference_component_cellMenu_a0a0 implements SubstituteInfoPart {
     private MacroReference_MenuComponent myComponent;
 
-    public MacroReference_component_cellMenu0() {
+    public MacroReference_component_cellMenu_a0a0() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
@@ -101,10 +101,10 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class MacroReference_component_cellMenu1 implements SubstituteInfoPart {
+  public static class MacroReference_component_cellMenu_a0b0 implements SubstituteInfoPart {
     private MacroReference_MenuComponent myComponent;
 
-    public MacroReference_component_cellMenu1() {
+    public MacroReference_component_cellMenu_a0b0() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
@@ -113,10 +113,10 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class MacroReference_component_cellMenu2 implements SubstituteInfoPart {
+  public static class MacroReference_component_cellMenu_a0a implements SubstituteInfoPart {
     private MacroReference_MenuComponent myComponent;
 
-    public MacroReference_component_cellMenu2() {
+    public MacroReference_component_cellMenu_a0a() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 

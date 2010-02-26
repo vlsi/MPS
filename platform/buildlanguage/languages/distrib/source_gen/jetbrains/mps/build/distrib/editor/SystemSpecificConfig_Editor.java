@@ -13,10 +13,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SystemSpecificConfig_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConceptProperty_8745_0(editorContext, node);
+    return this.createConceptProperty_40bcp0_a(editorContext, node);
   }
 
-  private EditorCell createConceptProperty_8745_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_40bcp0_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("operatingSystem");
     provider.setNoTargetText("<no operatingSystem>");

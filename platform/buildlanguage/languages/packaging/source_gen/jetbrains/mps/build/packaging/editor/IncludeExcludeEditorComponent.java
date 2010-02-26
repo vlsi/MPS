@@ -27,59 +27,59 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0446_0(editorContext, node);
+    return this.createCollection_ex5pkv_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0446_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ex5pkv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0446_0");
+    editorCell.setCellId("Collection_ex5pkv_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    if (renderingCondition0446_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_0446_1(editorContext, node));
+    if (renderingCondition_ex5pkv_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_ex5pkv_a0(editorContext, node));
     }
-    if (renderingCondition0446_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_0446_2(editorContext, node));
+    if (renderingCondition_ex5pkv_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_ex5pkv_b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_0446_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ex5pkv_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0446_1");
-    editorCell.addEditorCell(this.createConstant_0446_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0446_0(editorContext, node));
+    editorCell.setCellId("Collection_ex5pkv_a0");
+    editorCell.addEditorCell(this.createConstant_ex5pkv_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_ex5pkv_b0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_0446_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ex5pkv_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_0446_2");
-    editorCell.addEditorCell(this.createConstant_0446_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_0446_1(editorContext, node));
+    editorCell.setCellId("Collection_ex5pkv_b0");
+    editorCell.addEditorCell(this.createConstant_ex5pkv_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_ex5pkv_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0446_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ex5pkv_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "excludes");
-    editorCell.setCellId("Constant_0446_0");
+    editorCell.setCellId("Constant_ex5pkv_a0a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0446_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ex5pkv_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "includes");
-    editorCell.setCellId("Constant_0446_1");
+    editorCell.setCellId("Constant_ex5pkv_a1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_0446_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ex5pkv_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("excludes");
     provider.setNoTargetText("<no excludes>");
@@ -98,7 +98,7 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createProperty_0446_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ex5pkv_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("includes");
     provider.setNoTargetText("<no includes>");
@@ -117,11 +117,11 @@ public class IncludeExcludeEditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static boolean renderingCondition0446_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ex5pkv_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "excludes") != null && SPropertyOperations.getString(node, "excludes").length() > 0;
   }
 
-  private static boolean renderingCondition0446_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_ex5pkv_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "includes") != null && SPropertyOperations.getString(node, "includes").length() > 0;
   }
 }

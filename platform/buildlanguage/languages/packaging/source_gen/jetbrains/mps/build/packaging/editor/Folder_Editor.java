@@ -28,91 +28,91 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Folder_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5234_0(editorContext, node);
+    return this.createCollection_ngx833_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5234_3(editorContext, node);
+    return this.createCollection_ngx833_a_0(editorContext, node);
   }
 
-  private EditorCell createCollection_5234_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ngx833_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5234_0");
-    editorCell.addEditorCell(this.createCollection_5234_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5234_2(editorContext, node));
+    editorCell.setCellId("Collection_ngx833_a");
+    editorCell.addEditorCell(this.createCollection_ngx833_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_ngx833_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5234_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ngx833_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5234_1");
+    editorCell.setCellId("Collection_ngx833_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConceptProperty_5234_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5234_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5234_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5234_1(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_5234_3(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_5234_1(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_ngx833_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ngx833_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ngx833_c0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ngx833_d0a(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_ngx833_e0a(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_ngx833_f0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5234_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ngx833_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5234_2");
+    editorCell.setCellId("Collection_ngx833_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createIndentCell5234_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_5234_0(editorContext, node));
+    editorCell.addEditorCell(this.createIndentCell_ngx833_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ngx833_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_5234_3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ngx833_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5234_3");
-    editorCell.addEditorCell(this.createComponent_5234_2(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_5234_0(editorContext, node));
+    editorCell.setCellId("Collection_ngx833_a_0");
+    editorCell.addEditorCell(this.createComponent_ngx833_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_ngx833_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_5234_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_ngx833_b0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ConfigurationReferencesEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_5234_1(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_ngx833_f0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ConfigurationReferencesEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_5234_2(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_ngx833_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new IncludeExcludeInInspector(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_5234_3(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_ngx833_e0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new IncludeExcludeEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_5234_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ngx833_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
-    editorCell.setCellId("Constant_5234_0");
+    editorCell.setCellId("Constant_ngx833_c0a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_5234_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Folder_Editor.entryListHandler_5234_0(node, "entry", editorContext);
+  private EditorCell createRefNodeList_ngx833_b1a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Folder_Editor.entryListHandler_ngx833_b1a(node, "entry", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_entry");
     {
@@ -124,12 +124,12 @@ public class Folder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createIndentCell5234_0(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_ngx833_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createConceptProperty_5234_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_ngx833_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -148,7 +148,7 @@ public class Folder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5234_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ngx833_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("title");
     provider.setNoTargetText("<no title>");
@@ -165,7 +165,7 @@ public class Folder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5234_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ngx833_d0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("sourcePath");
     provider.setNoTargetText("<no sourcePath>");
@@ -182,8 +182,8 @@ public class Folder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class entryListHandler_5234_0 extends RefNodeListHandler {
-    public entryListHandler_5234_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class entryListHandler_ngx833_b1a extends RefNodeListHandler {
+    public entryListHandler_ngx833_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -206,7 +206,7 @@ public class Folder_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_5234_1(editorContext, node);
+      return this.createConstant_ngx833_a1b0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -227,9 +227,9 @@ public class Folder_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_5234_1(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_ngx833_a1b0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<entries>");
-      editorCell.setCellId("Constant_5234_1");
+      editorCell.setCellId("Constant_ngx833_a1b0");
       PackagingStyles_StyleSheet.getHint(editorCell).apply(editorCell);
       editorCell.setDefaultText("");
       return editorCell;

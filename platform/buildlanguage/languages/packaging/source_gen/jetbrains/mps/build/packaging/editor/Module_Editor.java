@@ -25,36 +25,36 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Module_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6816_0(editorContext, node);
+    return this.createCollection_iuuvkg_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_6816_0(editorContext, node);
+    return this.createComponent_iuuvkg_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6816_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_iuuvkg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6816_0");
+    editorCell.setCellId("Collection_iuuvkg_a");
     editorCell.addKeyMap(new Module_KeyMap());
-    editorCell.addEditorCell(this.createConceptProperty_6816_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6816_0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_6816_1(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_iuuvkg_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_iuuvkg_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_iuuvkg_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_6816_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_iuuvkg_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ConfigurationReferencesEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_6816_1(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_iuuvkg_c0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ConfigurationReferencesEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_6816_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_iuuvkg_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -73,7 +73,7 @@ public class Module_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6816_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_iuuvkg_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -82,7 +82,7 @@ public class Module_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new Module_Editor.Module_generic_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new Module_Editor.Module_generic_cellMenu_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -93,8 +93,8 @@ public class Module_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class Module_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-    public Module_generic_cellMenu0() {
+  public static class Module_generic_cellMenu_a0b0 extends AbstractCellMenuPart_Generic_Group {
+    public Module_generic_cellMenu_a0b0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

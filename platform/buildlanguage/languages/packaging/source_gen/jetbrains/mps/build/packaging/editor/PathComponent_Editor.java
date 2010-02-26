@@ -17,10 +17,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class PathComponent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_2580_0(editorContext, node);
+    return this.createProperty_9051ve_a(editorContext, node);
   }
 
-  private EditorCell createProperty_2580_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_9051ve_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("path");
     provider.setNoTargetText("<no path>");

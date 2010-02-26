@@ -17,43 +17,43 @@ import jetbrains.mps.nodeEditor.FocusPolicy;
 
 public class Variable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6096_0(editorContext, node);
+    return this.createCollection_pfjbyg_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6096_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_pfjbyg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6096_0");
-    editorCell.addEditorCell(this.createConceptProperty_6096_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6096_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6096_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6096_1(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6096_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_6096_2(editorContext, node));
+    editorCell.setCellId("Collection_pfjbyg_a");
+    editorCell.addEditorCell(this.createConceptProperty_pfjbyg_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_pfjbyg_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pfjbyg_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pfjbyg_d0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_pfjbyg_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pfjbyg_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_6096_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pfjbyg_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_6096_0");
+    editorCell.setCellId("Constant_pfjbyg_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6096_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pfjbyg_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "${");
-    editorCell.setCellId("Constant_6096_1");
+    editorCell.setCellId("Constant_pfjbyg_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6096_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pfjbyg_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_6096_2");
+    editorCell.setCellId("Constant_pfjbyg_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_6096_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_pfjbyg_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -72,7 +72,7 @@ public class Variable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6096_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_pfjbyg_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -91,7 +91,7 @@ public class Variable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6096_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_pfjbyg_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("antName");
     provider.setNoTargetText("<no antName>");

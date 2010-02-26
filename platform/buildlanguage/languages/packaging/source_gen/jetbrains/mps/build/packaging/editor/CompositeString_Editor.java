@@ -18,23 +18,23 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CompositeString_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4772_0(editorContext, node);
+    return this.createCollection_oikoa_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4772_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_oikoa_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4772_0");
+    editorCell.setCellId("Collection_oikoa_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(0.3, Measure.SPACES));
     }
     CompositeString_RT.setCellActions(editorCell, node, editorContext);
-    editorCell.addEditorCell(this.createRefNode_4772_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4772_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_oikoa_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_oikoa_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_4772_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_oikoa_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("left");
     provider.setNoTargetText("<no left>");
@@ -52,7 +52,7 @@ public class CompositeString_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4772_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_oikoa_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("right");
     provider.setNoTargetText("<no right>");

@@ -21,26 +21,26 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class CompositePathComponent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6133_0(editorContext, node);
+    return this.createCollection_ke0l65_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6133_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ke0l65_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_6133_0");
-    editorCell.addEditorCell(this.createRefNodeList_6133_0(editorContext, node));
+    editorCell.setCellId("Collection_ke0l65_a");
+    editorCell.addEditorCell(this.createRefNodeList_ke0l65_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6133_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CompositePathComponent_Editor.pathComponentListHandler_6133_0(node, "pathComponent", editorContext);
+  private EditorCell createRefNodeList_ke0l65_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CompositePathComponent_Editor.pathComponentListHandler_ke0l65_a0(node, "pathComponent", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_pathComponent");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class pathComponentListHandler_6133_0 extends RefNodeListHandler {
-    public pathComponentListHandler_6133_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class pathComponentListHandler_ke0l65_a0 extends RefNodeListHandler {
+    public pathComponentListHandler_ke0l65_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

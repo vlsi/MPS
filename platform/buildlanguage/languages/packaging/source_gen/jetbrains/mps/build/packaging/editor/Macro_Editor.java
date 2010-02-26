@@ -15,25 +15,25 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Macro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4944_0(editorContext, node);
+    return this.createCollection_diu3eo_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4944_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_diu3eo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4944_0");
-    editorCell.addEditorCell(this.createConstant_4944_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4944_0(editorContext, node));
+    editorCell.setCellId("Collection_diu3eo_a");
+    editorCell.addEditorCell(this.createConstant_diu3eo_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_diu3eo_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4944_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_diu3eo_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "macro");
-    editorCell.setCellId("Constant_4944_0");
+    editorCell.setCellId("Constant_diu3eo_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_4944_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_diu3eo_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
