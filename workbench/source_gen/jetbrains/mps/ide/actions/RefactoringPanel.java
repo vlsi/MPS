@@ -22,6 +22,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JOptionPane;
+import java.util.Map;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -74,8 +77,8 @@ public class RefactoringPanel {
         final StringBuilder stringBuilder = new StringBuilder();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            RefactoringPanel.this.collectInformation(context.getMovedNodes(), stringBuilder);
-            RefactoringPanel.this.collectInformation(context.getSourceNodes(), stringBuilder);
+            RefactoringPanel.this.collectInformation(context.getMovedNodes(), stringBuilder, "Changed");
+            RefactoringPanel.this.collectInformation(context.getSourceNodes(), stringBuilder, "Source");
             RefactoringPanel.this.collectInformation(context.getConceptFeatures(), stringBuilder);
           }
         });
@@ -84,10 +87,55 @@ public class RefactoringPanel {
     };
   }
 
+  private void collectInformation(Map<SNode, Set<SNode>> rootToChilds, StringBuilder stringBuilder, String caption) {
+    if (rootToChilds.isEmpty()) {
+      return;
+    }
+    stringBuilder.append("<html><u><b>" + caption + ":</b></u>\n");
+    for (SNode root : rootToChilds.keySet()) {
+      stringBuilder.append("\nIn root '<b>" + root + "</b>': ");
+      Set<SNode> childs = rootToChilds.get(root);
+      for (SNode child : childs) {
+        stringBuilder.append(child);
+        if (SetSequence.fromSet(childs).last() == child) {
+          stringBuilder.append(".");
+        } else {
+          stringBuilder.append(", \n");
+        }
+      }
+    }
+    stringBuilder.append("</html>\n\n");
+  }
+
+  private String highlightDiff(String mainString, String toCompare) {
+    StringBuilder builder = new StringBuilder();
+    String[] mainPart = mainString.split("\\.");
+    String[] comparePart = toCompare.split("\\.");
+    for (int i = 0; i < mainPart.length; i++) {
+      boolean isDiff = true;
+      for (int j = i; j < comparePart.length; j++) {
+        if (mainPart[i].equals(comparePart[j])) {
+          isDiff = false;
+          break;
+        }
+      }
+      if (isDiff) {
+        builder.append("<b>" + mainPart[i] + "</b>");
+      } else {
+        builder.append(mainPart[i]);
+      }
+      if (i != mainPart.length - 1) {
+        builder.append(".");
+      }
+    }
+    return builder.toString();
+  }
+
   private void collectInformation(List<Pair> pairs, StringBuilder stringBuilder) {
     if (pairs.isEmpty()) {
       return;
     }
+    stringBuilder.append("<html><u><b>" + "Concepts" + ":</b></u></html>\n");
     for (Pair pair : pairs) {
       boolean isCreated = pair.o1 == null;
       boolean isRemoved = pair.o2 == null;
@@ -99,7 +147,9 @@ public class RefactoringPanel {
       } else if (isRemoved) {
         stringBuilder.append(pair.o1.toString() + " removed");
       } else {
-        stringBuilder.append(pair.o1.toString() + " -> " + pair.o2.toString());
+        String s1 = pair.o1.toString();
+        String s2 = pair.o2.toString();
+        stringBuilder.append("<html>" + this.highlightDiff(s1, s2) + " -> " + this.highlightDiff(s2, s1) + "</html>");
       }
       stringBuilder.append("\n");
     }

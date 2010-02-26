@@ -596,8 +596,8 @@ public class RefactoringContext {
     return result;
   }
 
-  private List<Pair> removeChildrens(List<Pair<SNode, SNode>> pairs) {
-    List<Pair> result = new ArrayList<Pair>();
+  private List<Pair<SNode, SNode>> removeChildrens(List<Pair<SNode, SNode>> pairs) {
+    List<Pair<SNode, SNode>> result = new ArrayList<Pair<SNode, SNode>>();
     result.addAll(pairs);
     for (Pair<SNode, SNode> pair : pairs) {
       boolean isSecond = pair.o1 == null;
@@ -614,7 +614,7 @@ public class RefactoringContext {
     return result;
   }
 
-  private List<Pair> getNodes(Map<FullNodeId, FullNodeId> map) {
+  private List<Pair<SNode, SNode>> getNodes(Map<FullNodeId, FullNodeId> map) {
     List<Pair<SNode, SNode>> result = new ArrayList<Pair<SNode, SNode>>();
     for (FullNodeId fullNodeId : map.keySet()) {
       SNode first = fullNodeId.getNode();
@@ -624,12 +624,27 @@ public class RefactoringContext {
     return removeChildrens(result);
   }
 
-  public List<Pair> getMovedNodes() {
-    return getNodes(myMoveMap);
+  private Map<SNode, Set<SNode>> getRootToNodes(List<Pair<SNode, SNode>> pairs) {
+    Map<SNode, Set<SNode>> result = new HashMap<SNode, Set<SNode>>();
+    for (Pair<SNode, SNode> pair : pairs) {
+      boolean isSecond = pair.o1 == null;
+      SNode node = (isSecond)? pair.o2 : pair.o1;
+      if (node == null) continue;
+      SNode root = node.getContainingRoot();
+      if (!result.containsKey(root)) {
+        result.put(root, new HashSet<SNode>());
+      }
+      result.get(root).add(node);
+    }
+    return result;
   }
 
-  public List<Pair> getSourceNodes() {
-    return getNodes(mySourceMap);
+  public Map<SNode, Set<SNode>> getMovedNodes() {
+    return getRootToNodes(getNodes(myMoveMap));
+  }
+
+  public Map<SNode, Set<SNode>> getSourceNodes() {
+    return getRootToNodes(getNodes(mySourceMap));
   }
 
   public void fromElement(Element element) {
