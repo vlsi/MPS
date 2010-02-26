@@ -31,7 +31,7 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
 
   public void applyRule(final SNode func, final TypeCheckingContext typeCheckingContext) {
     SNode expectedRetType = ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(func);
-    boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new typeOf_ConceptFunction_InferenceRule.QuotationClass_5080_0().createNode(typeCheckingContext)));
+    boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new typeOf_ConceptFunction_InferenceRule.QuotationClass_bbraw4_a1a0a0a1a0().createNode(typeCheckingContext)));
     if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       // function is expected to return value of any type 
       expectedRetType = null;
@@ -154,18 +154,18 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
     return false;
   }
 
-  public static class QuotationClass_5080_0 {
-    public QuotationClass_5080_0() {
+  public static class QuotationClass_bbraw4_a1a0a0a1a0 {
+    public QuotationClass_bbraw4_a1a0a0a1a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5080_0 = null;
+      SNode quotedNode_bbraw4_a1a0a0a1a0 = null;
       {
-        quotedNode_5080_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5080_0 = quotedNode_5080_0;
-        result = quotedNode1_5080_0;
+        quotedNode_bbraw4_a1a0a0a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_bbraw4_a1a0a0a1a0 = quotedNode_bbraw4_a1a0a0a1a0;
+        result = quotedNode1_bbraw4_a1a0a0a1a0;
       }
       return result;
     }
@@ -173,11 +173,11 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5080_0 = null;
+      SNode quotedNode_bbraw4_a1a0a0a1a0 = null;
       {
-        quotedNode_5080_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5080_0 = quotedNode_5080_0;
-        result = quotedNode1_5080_0;
+        quotedNode_bbraw4_a1a0a0a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_bbraw4_a1a0a0a1a0 = quotedNode_bbraw4_a1a0a0a1a0;
+        result = quotedNode1_bbraw4_a1a0a0a1a0;
       }
       return result;
     }

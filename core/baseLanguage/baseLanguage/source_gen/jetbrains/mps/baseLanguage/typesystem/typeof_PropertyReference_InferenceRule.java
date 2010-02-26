@@ -35,7 +35,7 @@ public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRul
         BaseIntentionProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1201468086542", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1201468086552", true), (SNode) new typeof_PropertyReference_InferenceRule.QuotationClass_9138_0().createNode(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1201468086552", true), (SNode) new typeof_PropertyReference_InferenceRule.QuotationClass_jcpbj3_a0a1a1a0().createNode(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), typeCheckingContext), false, _info_12389875345);
       }
     }
   }
@@ -52,32 +52,32 @@ public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRul
     return false;
   }
 
-  public static class QuotationClass_9138_0 {
-    public QuotationClass_9138_0() {
+  public static class QuotationClass_jcpbj3_a0a1a1a0 {
+    public QuotationClass_jcpbj3_a0a1a1a0() {
     }
 
-    public SNode createNode(Object parameter_9138_0, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_jcpbj3_a0a0a1a1a0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9138_0 = null;
+      SNode quotedNode_jcpbj3_a0a1a1a0 = null;
       {
-        quotedNode_9138_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9138_0 = quotedNode_9138_0;
-        quotedNode1_9138_0.setReferent("classifier", (SNode) parameter_9138_0);
-        result = quotedNode1_9138_0;
+        quotedNode_jcpbj3_a0a1a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_jcpbj3_a0a1a1a0 = quotedNode_jcpbj3_a0a1a1a0;
+        quotedNode1_jcpbj3_a0a1a1a0.setReferent("classifier", (SNode) parameter_jcpbj3_a0a0a1a1a0);
+        result = quotedNode1_jcpbj3_a0a1a1a0;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_9138_0) {
+    public SNode createNode(Object parameter_jcpbj3_a0a0a1a1a0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9138_0 = null;
+      SNode quotedNode_jcpbj3_a0a1a1a0 = null;
       {
-        quotedNode_9138_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9138_0 = quotedNode_9138_0;
-        quotedNode1_9138_0.setReferent("classifier", (SNode) parameter_9138_0);
-        result = quotedNode1_9138_0;
+        quotedNode_jcpbj3_a0a1a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_jcpbj3_a0a1a1a0 = quotedNode_jcpbj3_a0a1a1a0;
+        quotedNode1_jcpbj3_a0a1a1a0.setReferent("classifier", (SNode) parameter_jcpbj3_a0a0a1a1a0);
+        result = quotedNode1_jcpbj3_a0a1a1a0;
       }
       return result;
     }

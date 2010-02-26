@@ -25,7 +25,7 @@ public class typeOf_IfStatement_InferenceRule extends AbstractInferenceRule_Runt
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "condition should be boolean", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176898861472", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(ifStatement, "condition", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176898833121", true), (SNode) new typeOf_IfStatement_InferenceRule.QuotationClass_5434_0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(ifStatement, "condition", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1176898833121", true), (SNode) new typeOf_IfStatement_InferenceRule.QuotationClass_ffe21p_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -41,18 +41,18 @@ public class typeOf_IfStatement_InferenceRule extends AbstractInferenceRule_Runt
     return false;
   }
 
-  public static class QuotationClass_5434_0 {
-    public QuotationClass_5434_0() {
+  public static class QuotationClass_ffe21p_a0a0a0 {
+    public QuotationClass_ffe21p_a0a0a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5434_0 = null;
+      SNode quotedNode_ffe21p_a0a0a0 = null;
       {
-        quotedNode_5434_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5434_0 = quotedNode_5434_0;
-        result = quotedNode1_5434_0;
+        quotedNode_ffe21p_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_ffe21p_a0a0a0 = quotedNode_ffe21p_a0a0a0;
+        result = quotedNode1_ffe21p_a0a0a0;
       }
       return result;
     }
@@ -60,11 +60,11 @@ public class typeOf_IfStatement_InferenceRule extends AbstractInferenceRule_Runt
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5434_0 = null;
+      SNode quotedNode_ffe21p_a0a0a0 = null;
       {
-        quotedNode_5434_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5434_0 = quotedNode_5434_0;
-        result = quotedNode1_5434_0;
+        quotedNode_ffe21p_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_ffe21p_a0a0a0 = quotedNode_ffe21p_a0a0a0;
+        result = quotedNode1_ffe21p_a0a0a0;
       }
       return result;
     }

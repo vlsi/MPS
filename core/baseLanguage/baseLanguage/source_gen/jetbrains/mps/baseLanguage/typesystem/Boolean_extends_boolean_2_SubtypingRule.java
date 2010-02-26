@@ -16,7 +16,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
 public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER0 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Boolean");
+  private static SNodePointer SNODE_POINTER_ = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Boolean");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -24,7 +24,7 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
   }
 
   public SNode getSubOrSuperType(SNode boolType, TypeCheckingContext typeCheckingContext) {
-    return new Boolean_extends_boolean_2_SubtypingRule.QuotationClass_9314_0().createNode(typeCheckingContext);
+    return new Boolean_extends_boolean_2_SubtypingRule.QuotationClass_9ehkah_a0a0a().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -32,7 +32,7 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new Boolean_extends_boolean_2_SubtypingRule.Pattern_9314_0();
+    this.myMatchingPattern = new Boolean_extends_boolean_2_SubtypingRule.Pattern_9ehkah_a0a0a0a2();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -40,21 +40,21 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
     return true;
   }
 
-  public static class Pattern_9314_0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_9314_0() {
+  public static class Pattern_9ehkah_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_9ehkah_a0a0a0a2() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_7374_0;
-        nodeToMatch_7374_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_7374_0.getConceptFqName()))) {
+        SNode nodeToMatch_7vgvj3_a0a;
+        nodeToMatch_7vgvj3_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_7vgvj3_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTER0.getNode();
-          if (nodeToMatch_7374_0.getReferent("classifier") != referent) {
+          referent = SNODE_POINTER_.getNode();
+          if (nodeToMatch_7vgvj3_a0a.getReferent("classifier") != referent) {
             return false;
           }
         }
@@ -74,18 +74,18 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
     }
   }
 
-  public static class QuotationClass_9314_0 {
-    public QuotationClass_9314_0() {
+  public static class QuotationClass_9ehkah_a0a0a {
+    public QuotationClass_9ehkah_a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9314_0 = null;
+      SNode quotedNode_9ehkah_a0a0a = null;
       {
-        quotedNode_9314_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9314_0 = quotedNode_9314_0;
-        result = quotedNode1_9314_0;
+        quotedNode_9ehkah_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9ehkah_a0a0a = quotedNode_9ehkah_a0a0a;
+        result = quotedNode1_9ehkah_a0a0a;
       }
       return result;
     }
@@ -93,11 +93,11 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9314_0 = null;
+      SNode quotedNode_9ehkah_a0a0a = null;
       {
-        quotedNode_9314_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9314_0 = quotedNode_9314_0;
-        result = quotedNode1_9314_0;
+        quotedNode_9ehkah_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9ehkah_a0a0a = quotedNode_9ehkah_a0a0a;
+        result = quotedNode1_9ehkah_a0a0a;
       }
       return result;
     }

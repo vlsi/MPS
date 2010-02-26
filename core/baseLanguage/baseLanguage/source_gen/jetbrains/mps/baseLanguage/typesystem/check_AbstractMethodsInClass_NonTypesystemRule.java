@@ -23,17 +23,17 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
       SNode classifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         do {
-          SNode matchedNode_2070_0 = classifier;
+          SNode matchedNode_qfxa59_a0b0a0 = classifier;
           {
-            boolean matches_2070_0 = false;
+            boolean matches_qfxa59_a0a1a0a = false;
             {
-              SNode matchingNode_2070_0 = classifier;
-              if (matchingNode_2070_0 != null) {
-                matches_2070_0 = SModelUtil_new.isAssignableConcept(matchingNode_2070_0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+              SNode matchingNode_qfxa59_a0a1a0a = classifier;
+              if (matchingNode_qfxa59_a0a1a0a != null) {
+                matches_qfxa59_a0a1a0a = SModelUtil_new.isAssignableConcept(matchingNode_qfxa59_a0a1a0a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
               }
             }
-            if (matches_2070_0) {
-              if ((matchedNode_2070_0 != null) && !(SPropertyOperations.getBoolean(matchedNode_2070_0, "abstractClass"))) {
+            if (matches_qfxa59_a0a1a0a) {
+              if ((matchedNode_qfxa59_a0b0a0 != null) && !(SPropertyOperations.getBoolean(matchedNode_qfxa59_a0b0a0, "abstractClass"))) {
                 {
                   BaseIntentionProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();

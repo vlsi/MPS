@@ -28,7 +28,7 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
   public List<SNode> getSubOrSuperTypes(SNode arrayType, TypeCheckingContext typeCheckingContext) {
     // see JLS 3.0 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(arrayType, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      return CollectionUtil.list(new PrimitiveArraySupertypes_SubtypingRule.QuotationClass_2572_0().createNode(typeCheckingContext), new PrimitiveArraySupertypes_SubtypingRule.QuotationClass_2572_1().createNode(typeCheckingContext), new PrimitiveArraySupertypes_SubtypingRule.QuotationClass_2572_2().createNode(typeCheckingContext));
+      return CollectionUtil.list(new PrimitiveArraySupertypes_SubtypingRule.QuotationClass_l6pagy_a0a0a1a0().createNode(typeCheckingContext), new PrimitiveArraySupertypes_SubtypingRule.QuotationClass_l6pagy_a1a0a1a0().createNode(typeCheckingContext), new PrimitiveArraySupertypes_SubtypingRule.QuotationClass_l6pagy_a2a0a1a0().createNode(typeCheckingContext));
     }
     return ListSequence.fromList(new ArrayList<SNode>());
   }
@@ -45,19 +45,19 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
     return false;
   }
 
-  public static class QuotationClass_2572_0 {
-    public QuotationClass_2572_0() {
+  public static class QuotationClass_l6pagy_a0a0a1a0 {
+    public QuotationClass_l6pagy_a0a0a1a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2572_0 = null;
+      SNode quotedNode_l6pagy_a0a0a1a0 = null;
       {
-        quotedNode_2572_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2572_0 = quotedNode_2572_0;
-        quotedNode1_2572_0.addReference(SReference.create("classifier", quotedNode1_2572_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_2572_0;
+        quotedNode_l6pagy_a0a0a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_l6pagy_a0a0a1a0 = quotedNode_l6pagy_a0a0a1a0;
+        quotedNode1_l6pagy_a0a0a1a0.addReference(SReference.create("classifier", quotedNode1_l6pagy_a0a0a1a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_l6pagy_a0a0a1a0;
       }
       return result;
     }
@@ -65,30 +65,30 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2572_0 = null;
+      SNode quotedNode_l6pagy_a0a0a1a0 = null;
       {
-        quotedNode_2572_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2572_0 = quotedNode_2572_0;
-        quotedNode1_2572_0.addReference(SReference.create("classifier", quotedNode1_2572_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_2572_0;
+        quotedNode_l6pagy_a0a0a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_l6pagy_a0a0a1a0 = quotedNode_l6pagy_a0a0a1a0;
+        quotedNode1_l6pagy_a0a0a1a0.addReference(SReference.create("classifier", quotedNode1_l6pagy_a0a0a1a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_l6pagy_a0a0a1a0;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_2572_1 {
-    public QuotationClass_2572_1() {
+  public static class QuotationClass_l6pagy_a1a0a1a0 {
+    public QuotationClass_l6pagy_a1a0a1a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2572_1 = null;
+      SNode quotedNode_l6pagy_a1a0a1a0 = null;
       {
-        quotedNode_2572_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2572_1 = quotedNode_2572_1;
-        quotedNode1_2572_1.addReference(SReference.create("classifier", quotedNode1_2572_1, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~Serializable")));
-        result = quotedNode1_2572_1;
+        quotedNode_l6pagy_a1a0a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_l6pagy_a1a0a1a0 = quotedNode_l6pagy_a1a0a1a0;
+        quotedNode1_l6pagy_a1a0a1a0.addReference(SReference.create("classifier", quotedNode1_l6pagy_a1a0a1a0, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~Serializable")));
+        result = quotedNode1_l6pagy_a1a0a1a0;
       }
       return result;
     }
@@ -96,30 +96,30 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2572_1 = null;
+      SNode quotedNode_l6pagy_a1a0a1a0 = null;
       {
-        quotedNode_2572_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2572_1 = quotedNode_2572_1;
-        quotedNode1_2572_1.addReference(SReference.create("classifier", quotedNode1_2572_1, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~Serializable")));
-        result = quotedNode1_2572_1;
+        quotedNode_l6pagy_a1a0a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_l6pagy_a1a0a1a0 = quotedNode_l6pagy_a1a0a1a0;
+        quotedNode1_l6pagy_a1a0a1a0.addReference(SReference.create("classifier", quotedNode1_l6pagy_a1a0a1a0, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~Serializable")));
+        result = quotedNode1_l6pagy_a1a0a1a0;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_2572_2 {
-    public QuotationClass_2572_2() {
+  public static class QuotationClass_l6pagy_a2a0a1a0 {
+    public QuotationClass_l6pagy_a2a0a1a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2572_2 = null;
+      SNode quotedNode_l6pagy_a2a0a1a0 = null;
       {
-        quotedNode_2572_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2572_2 = quotedNode_2572_2;
-        quotedNode1_2572_2.addReference(SReference.create("classifier", quotedNode1_2572_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
-        result = quotedNode1_2572_2;
+        quotedNode_l6pagy_a2a0a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_l6pagy_a2a0a1a0 = quotedNode_l6pagy_a2a0a1a0;
+        quotedNode1_l6pagy_a2a0a1a0.addReference(SReference.create("classifier", quotedNode1_l6pagy_a2a0a1a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
+        result = quotedNode1_l6pagy_a2a0a1a0;
       }
       return result;
     }
@@ -127,12 +127,12 @@ public class PrimitiveArraySupertypes_SubtypingRule extends SubtypingRule_Runtim
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2572_2 = null;
+      SNode quotedNode_l6pagy_a2a0a1a0 = null;
       {
-        quotedNode_2572_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2572_2 = quotedNode_2572_2;
-        quotedNode1_2572_2.addReference(SReference.create("classifier", quotedNode1_2572_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
-        result = quotedNode1_2572_2;
+        quotedNode_l6pagy_a2a0a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_l6pagy_a2a0a1a0 = quotedNode_l6pagy_a2a0a1a0;
+        quotedNode1_l6pagy_a2a0a1a0.addReference(SReference.create("classifier", quotedNode1_l6pagy_a2a0a1a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
+        result = quotedNode1_l6pagy_a2a0a1a0;
       }
       return result;
     }

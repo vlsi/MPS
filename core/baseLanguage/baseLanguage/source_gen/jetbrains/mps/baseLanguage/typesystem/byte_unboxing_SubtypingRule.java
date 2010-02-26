@@ -16,7 +16,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
 public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER3 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Byte");
+  private static SNodePointer SNODE_POINTER__2 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Byte");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -24,7 +24,7 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   }
 
   public SNode getSubOrSuperType(SNode byteType, TypeCheckingContext typeCheckingContext) {
-    return new byte_unboxing_SubtypingRule.QuotationClass_8651_0().createNode(typeCheckingContext);
+    return new byte_unboxing_SubtypingRule.QuotationClass_1sray5_a0a0a().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -32,7 +32,7 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new byte_unboxing_SubtypingRule.Pattern_8651_0();
+    this.myMatchingPattern = new byte_unboxing_SubtypingRule.Pattern_1sray5_a0a0a0a2();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -40,21 +40,21 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     return true;
   }
 
-  public static class Pattern_8651_0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_8651_0() {
+  public static class Pattern_1sray5_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_1sray5_a0a0a0a2() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_7849_0;
-        nodeToMatch_7849_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_7849_0.getConceptFqName()))) {
+        SNode nodeToMatch_omlyur_a0a;
+        nodeToMatch_omlyur_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_omlyur_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTER3.getNode();
-          if (nodeToMatch_7849_0.getReferent("classifier") != referent) {
+          referent = SNODE_POINTER__2.getNode();
+          if (nodeToMatch_omlyur_a0a.getReferent("classifier") != referent) {
             return false;
           }
         }
@@ -74,18 +74,18 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     }
   }
 
-  public static class QuotationClass_8651_0 {
-    public QuotationClass_8651_0() {
+  public static class QuotationClass_1sray5_a0a0a {
+    public QuotationClass_1sray5_a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8651_0 = null;
+      SNode quotedNode_1sray5_a0a0a = null;
       {
-        quotedNode_8651_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8651_0 = quotedNode_8651_0;
-        result = quotedNode1_8651_0;
+        quotedNode_1sray5_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1sray5_a0a0a = quotedNode_1sray5_a0a0a;
+        result = quotedNode1_1sray5_a0a0a;
       }
       return result;
     }
@@ -93,11 +93,11 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8651_0 = null;
+      SNode quotedNode_1sray5_a0a0a = null;
       {
-        quotedNode_8651_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8651_0 = quotedNode_8651_0;
-        result = quotedNode1_8651_0;
+        quotedNode_1sray5_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1sray5_a0a0a = quotedNode_1sray5_a0a0a;
+        result = quotedNode1_1sray5_a0a0a;
       }
       return result;
     }

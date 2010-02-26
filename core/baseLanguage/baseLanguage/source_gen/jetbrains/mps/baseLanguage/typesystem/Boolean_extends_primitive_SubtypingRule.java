@@ -21,7 +21,7 @@ public class Boolean_extends_primitive_SubtypingRule extends SubtypingRule_Runti
   }
 
   public SNode getSubOrSuperType(SNode boolType, TypeCheckingContext typeCheckingContext) {
-    return SLinkOperations.getTarget(new Boolean_extends_primitive_SubtypingRule.QuotationClass_1266_0().createNode(typeCheckingContext), "descriptor", false);
+    return SLinkOperations.getTarget(new Boolean_extends_primitive_SubtypingRule.QuotationClass_w2562n_a0a0a0().createNode(typeCheckingContext), "descriptor", false);
   }
 
   public String getApplicableConceptFQName() {
@@ -36,19 +36,19 @@ public class Boolean_extends_primitive_SubtypingRule extends SubtypingRule_Runti
     return false;
   }
 
-  public static class QuotationClass_1266_0 {
-    public QuotationClass_1266_0() {
+  public static class QuotationClass_w2562n_a0a0a0 {
+    public QuotationClass_w2562n_a0a0a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1266_0 = null;
+      SNode quotedNode_w2562n_a0a0a0 = null;
       {
-        quotedNode_1266_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1266_0 = quotedNode_1266_0;
-        quotedNode1_1266_0.addReference(SReference.create("descriptor", quotedNode1_1266_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
-        result = quotedNode1_1266_0;
+        quotedNode_w2562n_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_w2562n_a0a0a0 = quotedNode_w2562n_a0a0a0;
+        quotedNode1_w2562n_a0a0a0.addReference(SReference.create("descriptor", quotedNode1_w2562n_a0a0a0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
+        result = quotedNode1_w2562n_a0a0a0;
       }
       return result;
     }
@@ -56,12 +56,12 @@ public class Boolean_extends_primitive_SubtypingRule extends SubtypingRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1266_0 = null;
+      SNode quotedNode_w2562n_a0a0a0 = null;
       {
-        quotedNode_1266_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1266_0 = quotedNode_1266_0;
-        quotedNode1_1266_0.addReference(SReference.create("descriptor", quotedNode1_1266_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
-        result = quotedNode1_1266_0;
+        quotedNode_w2562n_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_w2562n_a0a0a0 = quotedNode_w2562n_a0a0a0;
+        quotedNode1_w2562n_a0a0a0.addReference(SReference.create("descriptor", quotedNode1_w2562n_a0a0a0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
+        result = quotedNode1_w2562n_a0a0a0;
       }
       return result;
     }

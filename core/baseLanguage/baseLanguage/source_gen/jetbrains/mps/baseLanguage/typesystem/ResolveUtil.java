@@ -141,7 +141,7 @@ outer:
           if (ListSequence.fromList(params).count() > index) {
             SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(index)));
           } else {
-            SNodeOperations.replaceWithAnother(varRef, new ResolveUtil.QuotationClass_2818_0().createNode());
+            SNodeOperations.replaceWithAnother(varRef, new ResolveUtil.QuotationClass_txu8l3_a0a0a0a1a2a0a01a3().createNode());
           }
         }
       }
@@ -221,19 +221,19 @@ outer:
     }
   }
 
-  public static class QuotationClass_2818_0 {
-    public QuotationClass_2818_0() {
+  public static class QuotationClass_txu8l3_a0a0a0a1a2a0a01a3 {
+    public QuotationClass_txu8l3_a0a0a0a1a2a0a01a3() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2818_0 = null;
+      SNode quotedNode_txu8l3_a0a0a0a1a2a0a01a3 = null;
       {
-        quotedNode_2818_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2818_0 = quotedNode_2818_0;
-        quotedNode1_2818_0.addReference(SReference.create("classifier", quotedNode1_2818_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_2818_0;
+        quotedNode_txu8l3_a0a0a0a1a2a0a01a3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_txu8l3_a0a0a0a1a2a0a01a3 = quotedNode_txu8l3_a0a0a0a1a2a0a01a3;
+        quotedNode1_txu8l3_a0a0a0a1a2a0a01a3.addReference(SReference.create("classifier", quotedNode1_txu8l3_a0a0a0a1a2a0a01a3, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_txu8l3_a0a0a0a1a2a0a01a3;
       }
       return result;
     }

@@ -20,7 +20,7 @@ public class short_boxing_SubtypingRule extends SubtypingRule_Runtime implements
   }
 
   public SNode getSubOrSuperType(SNode shortType, TypeCheckingContext typeCheckingContext) {
-    return new short_boxing_SubtypingRule.QuotationClass_1282_0().createNode(typeCheckingContext);
+    return new short_boxing_SubtypingRule.QuotationClass_xys8ef_a0a0a().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -35,19 +35,19 @@ public class short_boxing_SubtypingRule extends SubtypingRule_Runtime implements
     return true;
   }
 
-  public static class QuotationClass_1282_0 {
-    public QuotationClass_1282_0() {
+  public static class QuotationClass_xys8ef_a0a0a {
+    public QuotationClass_xys8ef_a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1282_0 = null;
+      SNode quotedNode_xys8ef_a0a0a = null;
       {
-        quotedNode_1282_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1282_0 = quotedNode_1282_0;
-        quotedNode1_1282_0.addReference(SReference.create("classifier", quotedNode1_1282_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Short")));
-        result = quotedNode1_1282_0;
+        quotedNode_xys8ef_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_xys8ef_a0a0a = quotedNode_xys8ef_a0a0a;
+        quotedNode1_xys8ef_a0a0a.addReference(SReference.create("classifier", quotedNode1_xys8ef_a0a0a, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Short")));
+        result = quotedNode1_xys8ef_a0a0a;
       }
       return result;
     }
@@ -55,12 +55,12 @@ public class short_boxing_SubtypingRule extends SubtypingRule_Runtime implements
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1282_0 = null;
+      SNode quotedNode_xys8ef_a0a0a = null;
       {
-        quotedNode_1282_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1282_0 = quotedNode_1282_0;
-        quotedNode1_1282_0.addReference(SReference.create("classifier", quotedNode1_1282_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Short")));
-        result = quotedNode1_1282_0;
+        quotedNode_xys8ef_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_xys8ef_a0a0a = quotedNode_xys8ef_a0a0a;
+        quotedNode1_xys8ef_a0a0a.addReference(SReference.create("classifier", quotedNode1_xys8ef_a0a0a, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Short")));
+        result = quotedNode1_xys8ef_a0a0a;
       }
       return result;
     }

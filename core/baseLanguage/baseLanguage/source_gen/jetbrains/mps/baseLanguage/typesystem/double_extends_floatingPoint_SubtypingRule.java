@@ -21,7 +21,7 @@ public class double_extends_floatingPoint_SubtypingRule extends SubtypingRule_Ru
   }
 
   public SNode getSubOrSuperType(SNode doubleType, TypeCheckingContext typeCheckingContext) {
-    return SLinkOperations.getTarget(new double_extends_floatingPoint_SubtypingRule.QuotationClass_5322_0().createNode(typeCheckingContext), "descriptor", false);
+    return SLinkOperations.getTarget(new double_extends_floatingPoint_SubtypingRule.QuotationClass_424orp_a0a0a0().createNode(typeCheckingContext), "descriptor", false);
   }
 
   public String getApplicableConceptFQName() {
@@ -36,19 +36,19 @@ public class double_extends_floatingPoint_SubtypingRule extends SubtypingRule_Ru
     return false;
   }
 
-  public static class QuotationClass_5322_0 {
-    public QuotationClass_5322_0() {
+  public static class QuotationClass_424orp_a0a0a0 {
+    public QuotationClass_424orp_a0a0a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5322_0 = null;
+      SNode quotedNode_424orp_a0a0a0 = null;
       {
-        quotedNode_5322_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5322_0 = quotedNode_5322_0;
-        quotedNode1_5322_0.addReference(SReference.create("descriptor", quotedNode1_5322_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683630235")));
-        result = quotedNode1_5322_0;
+        quotedNode_424orp_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_424orp_a0a0a0 = quotedNode_424orp_a0a0a0;
+        quotedNode1_424orp_a0a0a0.addReference(SReference.create("descriptor", quotedNode1_424orp_a0a0a0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683630235")));
+        result = quotedNode1_424orp_a0a0a0;
       }
       return result;
     }
@@ -56,12 +56,12 @@ public class double_extends_floatingPoint_SubtypingRule extends SubtypingRule_Ru
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5322_0 = null;
+      SNode quotedNode_424orp_a0a0a0 = null;
       {
-        quotedNode_5322_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5322_0 = quotedNode_5322_0;
-        quotedNode1_5322_0.addReference(SReference.create("descriptor", quotedNode1_5322_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683630235")));
-        result = quotedNode1_5322_0;
+        quotedNode_424orp_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_424orp_a0a0a0 = quotedNode_424orp_a0a0a0;
+        quotedNode1_424orp_a0a0a0.addReference(SReference.create("descriptor", quotedNode1_424orp_a0a0a0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683630235")));
+        result = quotedNode1_424orp_a0a0a0;
       }
       return result;
     }

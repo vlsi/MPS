@@ -33,13 +33,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
           {
-            GeneratedMatchingPattern pattern_9891_0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_9163_1(SLinkOperations.getTarget(supertype, "classifier", false));
-            SNode coercedNode_9891_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(t), pattern_9891_0, typeCheckingContext);
-            if (coercedNode_9891_0 != null) {
+            GeneratedMatchingPattern pattern_n8ubly_a0a0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_1s2zdh_a0a0a0a0a1a1(SLinkOperations.getTarget(supertype, "classifier", false));
+            SNode coercedNode_n8ubly_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(t), pattern_n8ubly_a0a0, typeCheckingContext);
+            if (coercedNode_n8ubly_a0a0 != null) {
               {
                 SNode typeParam;
                 SNode myParam;
-                Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_9891_0, "parameter", true)).iterator();
+                Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_n8ubly_a0a0, "parameter", true)).iterator();
                 Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
                 while (true) {
                   if (!(typeParam_iterator.hasNext())) {
@@ -114,13 +114,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     {
       final SNode t = subtype;
       {
-        GeneratedMatchingPattern pattern_9891_1 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_9163_1(SLinkOperations.getTarget(supertype, "classifier", false));
-        SNode coercedNode_9891_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_9891_1);
-        if (coercedNode_9891_1 != null) {
+        GeneratedMatchingPattern pattern_n8ubly_a0a0_0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_1s2zdh_a0a0a0a0a1a1(SLinkOperations.getTarget(supertype, "classifier", false));
+        SNode coercedNode_n8ubly_a0a0_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_n8ubly_a0a0_0);
+        if (coercedNode_n8ubly_a0a0_0 != null) {
           {
             SNode typeParam;
             SNode myParam;
-            Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_9891_1, "parameter", true)).iterator();
+            Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_n8ubly_a0a0_0, "parameter", true)).iterator();
             Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
             while (true) {
               if (!(typeParam_iterator.hasNext())) {
@@ -182,34 +182,34 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
 
-  public static class Pattern_9163_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_1s2zdh_a0a0a0a0a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> PatternVar_l;
     /*package*/ SNode PatternVar_ignored;
-    /*package*/ Object AntiquotationField9891_0;
+    /*package*/ Object AntiquotationField_n8ubly_a0a0a0a0a;
 
-    public Pattern_9163_0(Object parameter_9891_0) {
-      this.AntiquotationField9891_0 = parameter_9891_0;
+    public Pattern_1s2zdh_a0a0a0a0a0(Object parameter_n8ubly_a0a0a0a0a) {
+      this.AntiquotationField_n8ubly_a0a0a0a0a = parameter_n8ubly_a0a0a0a0a;
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_9891_0;
-        nodeToMatch_9891_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_9891_0.getConceptFqName()))) {
+        SNode nodeToMatch_n8ubly_a0a0a0a;
+        nodeToMatch_n8ubly_a0a0a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_n8ubly_a0a0a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField9891_0;
-          if (nodeToMatch_9891_0.getReferent("classifier") != referent) {
+          referent = (SNode) this.AntiquotationField_n8ubly_a0a0a0a0a;
+          if (nodeToMatch_n8ubly_a0a0a0a.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole9891_0 = "parameter";
+          String childRole_n8ubly_ = "parameter";
           this.PatternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           this.PatternVar_ignored = null;
-          for (SNode childVar : nodeToMatch_9891_0.getChildren(childRole9891_0)) {
+          for (SNode childVar : nodeToMatch_n8ubly_a0a0a0a.getChildren(childRole_n8ubly_)) {
             this.PatternVar_ignored = childVar;
             ListSequence.fromList(this.PatternVar_l).addElement(childVar);
           }
@@ -240,34 +240,34 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     }
   }
 
-  public static class Pattern_9163_1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_1s2zdh_a0a0a0a0a1a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> PatternVar_l;
     /*package*/ SNode PatternVar_ignored;
-    /*package*/ Object AntiquotationField9891_1;
+    /*package*/ Object AntiquotationField_n8ubly_a0a0a0a0a_0;
 
-    public Pattern_9163_1(Object parameter_9891_1) {
-      this.AntiquotationField9891_1 = parameter_9891_1;
+    public Pattern_1s2zdh_a0a0a0a0a1a1(Object parameter_n8ubly_a0a0a0a0a_0) {
+      this.AntiquotationField_n8ubly_a0a0a0a0a_0 = parameter_n8ubly_a0a0a0a0a_0;
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_9891_1;
-        nodeToMatch_9891_1 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_9891_1.getConceptFqName()))) {
+        SNode nodeToMatch_n8ubly_a0a0a0a_0;
+        nodeToMatch_n8ubly_a0a0a0a_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_n8ubly_a0a0a0a_0.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField9891_1;
-          if (nodeToMatch_9891_1.getReferent("classifier") != referent) {
+          referent = (SNode) this.AntiquotationField_n8ubly_a0a0a0a0a_0;
+          if (nodeToMatch_n8ubly_a0a0a0a_0.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole9891_1 = "parameter";
+          String childRole_n8ubly__0 = "parameter";
           this.PatternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           this.PatternVar_ignored = null;
-          for (SNode childVar : nodeToMatch_9891_1.getChildren(childRole9891_1)) {
+          for (SNode childVar : nodeToMatch_n8ubly_a0a0a0a_0.getChildren(childRole_n8ubly__0)) {
             this.PatternVar_ignored = childVar;
             ListSequence.fromList(this.PatternVar_l).addElement(childVar);
           }

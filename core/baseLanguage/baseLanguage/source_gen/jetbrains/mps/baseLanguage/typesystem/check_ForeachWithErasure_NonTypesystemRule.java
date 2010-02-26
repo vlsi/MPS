@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  private static SNodePointer SNODE_POINTER10 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER__9 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
 
   public check_ForeachWithErasure_NonTypesystemRule() {
   }
@@ -37,12 +37,12 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       return;
     }
     {
-      GeneratedMatchingPattern pattern_3248_0 = new check_ForeachWithErasure_NonTypesystemRule.Pattern_9843_0();
-      SNode coercedNode_3248_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(iterableType, pattern_3248_0, typeCheckingContext);
-      if (coercedNode_3248_0 != null) {
+      GeneratedMatchingPattern pattern_gn1qzs_c0 = new check_ForeachWithErasure_NonTypesystemRule.Pattern_aftnu9_a0a0a2a0();
+      SNode coercedNode_gn1qzs_c0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(iterableType, pattern_gn1qzs_c0, typeCheckingContext);
+      if (coercedNode_gn1qzs_c0 != null) {
       } else {
         // not an iterable or an erasure 
-        if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true), new check_ForeachWithErasure_NonTypesystemRule.QuotationClass_9843_0().createNode(typeCheckingContext)))) {
+        if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true), new check_ForeachWithErasure_NonTypesystemRule.QuotationClass_aftnu9_a0a0b0a2a2a0().createNode(typeCheckingContext)))) {
           {
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
@@ -65,35 +65,35 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     return false;
   }
 
-  public static class Pattern_9843_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_aftnu9_a0a0a2a0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_p;
 
-    public Pattern_9843_0() {
+    public Pattern_aftnu9_a0a0a2a0() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_3248_0;
-        nodeToMatch_3248_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_3248_0.getConceptFqName()))) {
+        SNode nodeToMatch_gn1qzs_a0a2a;
+        nodeToMatch_gn1qzs_a0a2a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_gn1qzs_a0a2a.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTER10.getNode();
-          if (nodeToMatch_3248_0.getReferent("classifier") != referent) {
+          referent = SNODE_POINTER__9.getNode();
+          if (nodeToMatch_gn1qzs_a0a2a.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole3248_0 = "parameter";
-          if (nodeToMatch_3248_0.getChildCount(childRole3248_0) != 1) {
+          String childRole_gn1qzs_ = "parameter";
+          if (nodeToMatch_gn1qzs_a0a2a.getChildCount(childRole_gn1qzs_) != 1) {
             return false;
           }
           {
             this.PatternVar_p = null;
-            SNode childVar_3248_0 = nodeToMatch_3248_0.getChildren(childRole3248_0).get(0);
-            this.PatternVar_p = childVar_3248_0;
+            SNode childVar_gn1qzs_a0a0c0 = nodeToMatch_gn1qzs_a0a2a.getChildren(childRole_gn1qzs_).get(0);
+            this.PatternVar_p = childVar_gn1qzs_a0a0c0;
           }
         }
       }
@@ -118,19 +118,19 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     }
   }
 
-  public static class QuotationClass_9843_0 {
-    public QuotationClass_9843_0() {
+  public static class QuotationClass_aftnu9_a0a0b0a2a2a0 {
+    public QuotationClass_aftnu9_a0a0b0a2a2a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9843_0 = null;
+      SNode quotedNode_aftnu9_a0a0b0a2a2a0 = null;
       {
-        quotedNode_9843_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9843_0 = quotedNode_9843_0;
-        quotedNode1_9843_0.addReference(SReference.create("classifier", quotedNode1_9843_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_9843_0;
+        quotedNode_aftnu9_a0a0b0a2a2a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_aftnu9_a0a0b0a2a2a0 = quotedNode_aftnu9_a0a0b0a2a2a0;
+        quotedNode1_aftnu9_a0a0b0a2a2a0.addReference(SReference.create("classifier", quotedNode1_aftnu9_a0a0b0a2a2a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_aftnu9_a0a0b0a2a2a0;
       }
       return result;
     }
@@ -138,12 +138,12 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9843_0 = null;
+      SNode quotedNode_aftnu9_a0a0b0a2a2a0 = null;
       {
-        quotedNode_9843_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9843_0 = quotedNode_9843_0;
-        quotedNode1_9843_0.addReference(SReference.create("classifier", quotedNode1_9843_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_9843_0;
+        quotedNode_aftnu9_a0a0b0a2a2a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_aftnu9_a0a0b0a2a2a0 = quotedNode_aftnu9_a0a0b0a2a2a0;
+        quotedNode1_aftnu9_a0a0b0a2a2a0.addReference(SReference.create("classifier", quotedNode1_aftnu9_a0a0b0a2a2a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_aftnu9_a0a0b0a2a2a0;
       }
       return result;
     }

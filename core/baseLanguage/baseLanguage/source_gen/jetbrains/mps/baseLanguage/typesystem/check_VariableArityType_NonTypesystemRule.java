@@ -19,21 +19,21 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
 
   public void applyRule(final SNode variableArityType, final TypeCheckingContext typeCheckingContext) {
     do {
-      SNode matchedNode_2444_0 = SNodeOperations.getParent(variableArityType);
+      SNode matchedNode_x4f43m_a0 = SNodeOperations.getParent(variableArityType);
       {
-        boolean matches_2444_0 = false;
+        boolean matches_x4f43m_a0a = false;
         {
-          SNode matchingNode_2444_0 = SNodeOperations.getParent(variableArityType);
-          if (matchingNode_2444_0 != null) {
-            matches_2444_0 = SModelUtil_new.isAssignableConcept(matchingNode_2444_0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+          SNode matchingNode_x4f43m_a0a = SNodeOperations.getParent(variableArityType);
+          if (matchingNode_x4f43m_a0a != null) {
+            matches_x4f43m_a0a = SModelUtil_new.isAssignableConcept(matchingNode_x4f43m_a0a.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
           }
         }
-        if (matches_2444_0) {
-          if ((SNodeOperations.getNextSibling(matchedNode_2444_0) != null)) {
+        if (matches_x4f43m_a0a) {
+          if ((SNodeOperations.getNextSibling(matchedNode_x4f43m_a0) != null)) {
             {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(matchedNode_2444_0, "parameter of variable arity must be a last one", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921711936", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(matchedNode_x4f43m_a0, "parameter of variable arity must be a last one", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921711936", intentionProvider, errorTarget);
             }
           }
           break;

@@ -16,7 +16,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
 public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER6 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Long");
+  private static SNodePointer SNODE_POINTER__5 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Long");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -24,7 +24,7 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   }
 
   public SNode getSubOrSuperType(SNode longType, TypeCheckingContext typeCheckingContext) {
-    return new long_unboxing_SubtypingRule.QuotationClass_6823_0().createNode(typeCheckingContext);
+    return new long_unboxing_SubtypingRule.QuotationClass_34hpo3_a0a0a().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -32,7 +32,7 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new long_unboxing_SubtypingRule.Pattern_6823_0();
+    this.myMatchingPattern = new long_unboxing_SubtypingRule.Pattern_34hpo3_a0a0a0a2();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -40,21 +40,21 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     return true;
   }
 
-  public static class Pattern_6823_0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_6823_0() {
+  public static class Pattern_34hpo3_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_34hpo3_a0a0a0a2() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_8739_0;
-        nodeToMatch_8739_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_8739_0.getConceptFqName()))) {
+        SNode nodeToMatch_4kdzcp_a0a;
+        nodeToMatch_4kdzcp_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_4kdzcp_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTER6.getNode();
-          if (nodeToMatch_8739_0.getReferent("classifier") != referent) {
+          referent = SNODE_POINTER__5.getNode();
+          if (nodeToMatch_4kdzcp_a0a.getReferent("classifier") != referent) {
             return false;
           }
         }
@@ -74,18 +74,18 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     }
   }
 
-  public static class QuotationClass_6823_0 {
-    public QuotationClass_6823_0() {
+  public static class QuotationClass_34hpo3_a0a0a {
+    public QuotationClass_34hpo3_a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6823_0 = null;
+      SNode quotedNode_34hpo3_a0a0a = null;
       {
-        quotedNode_6823_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6823_0 = quotedNode_6823_0;
-        result = quotedNode1_6823_0;
+        quotedNode_34hpo3_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_34hpo3_a0a0a = quotedNode_34hpo3_a0a0a;
+        result = quotedNode1_34hpo3_a0a0a;
       }
       return result;
     }
@@ -93,11 +93,11 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6823_0 = null;
+      SNode quotedNode_34hpo3_a0a0a = null;
       {
-        quotedNode_6823_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6823_0 = quotedNode_6823_0;
-        result = quotedNode1_6823_0;
+        quotedNode_34hpo3_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_34hpo3_a0a0a = quotedNode_34hpo3_a0a0a;
+        result = quotedNode1_34hpo3_a0a0a;
       }
       return result;
     }

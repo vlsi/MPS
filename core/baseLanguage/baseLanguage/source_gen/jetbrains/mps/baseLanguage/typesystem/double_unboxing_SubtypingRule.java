@@ -16,7 +16,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
 public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER2 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Double");
+  private static SNodePointer SNODE_POINTER__1 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Double");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -24,7 +24,7 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
   }
 
   public SNode getSubOrSuperType(SNode doubleType, TypeCheckingContext typeCheckingContext) {
-    return new double_unboxing_SubtypingRule.QuotationClass_3966_0().createNode(typeCheckingContext);
+    return new double_unboxing_SubtypingRule.QuotationClass_jy4zax_a0a0a().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -32,7 +32,7 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new double_unboxing_SubtypingRule.Pattern_3966_0();
+    this.myMatchingPattern = new double_unboxing_SubtypingRule.Pattern_jy4zax_a0a0a0a2();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -40,21 +40,21 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
     return true;
   }
 
-  public static class Pattern_3966_0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_3966_0() {
+  public static class Pattern_jy4zax_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_jy4zax_a0a0a0a2() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_9070_0;
-        nodeToMatch_9070_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_9070_0.getConceptFqName()))) {
+        SNode nodeToMatch_31y3xb_a0a;
+        nodeToMatch_31y3xb_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_31y3xb_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTER2.getNode();
-          if (nodeToMatch_9070_0.getReferent("classifier") != referent) {
+          referent = SNODE_POINTER__1.getNode();
+          if (nodeToMatch_31y3xb_a0a.getReferent("classifier") != referent) {
             return false;
           }
         }
@@ -74,18 +74,18 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
     }
   }
 
-  public static class QuotationClass_3966_0 {
-    public QuotationClass_3966_0() {
+  public static class QuotationClass_jy4zax_a0a0a {
+    public QuotationClass_jy4zax_a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3966_0 = null;
+      SNode quotedNode_jy4zax_a0a0a = null;
       {
-        quotedNode_3966_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3966_0 = quotedNode_3966_0;
-        result = quotedNode1_3966_0;
+        quotedNode_jy4zax_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_jy4zax_a0a0a = quotedNode_jy4zax_a0a0a;
+        result = quotedNode1_jy4zax_a0a0a;
       }
       return result;
     }
@@ -93,11 +93,11 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3966_0 = null;
+      SNode quotedNode_jy4zax_a0a0a = null;
       {
-        quotedNode_3966_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3966_0 = quotedNode_3966_0;
-        result = quotedNode1_3966_0;
+        quotedNode_jy4zax_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_jy4zax_a0a0a = quotedNode_jy4zax_a0a0a;
+        result = quotedNode1_jy4zax_a0a0a;
       }
       return result;
     }

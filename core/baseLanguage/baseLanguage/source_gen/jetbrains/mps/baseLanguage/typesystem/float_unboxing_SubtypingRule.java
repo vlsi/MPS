@@ -16,7 +16,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
 public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER4 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Float");
+  private static SNodePointer SNODE_POINTER__3 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Float");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -24,7 +24,7 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
   }
 
   public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext) {
-    return new float_unboxing_SubtypingRule.QuotationClass_2903_0().createNode(typeCheckingContext);
+    return new float_unboxing_SubtypingRule.QuotationClass_4czxhf_a0a0a().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -32,7 +32,7 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new float_unboxing_SubtypingRule.Pattern_2903_0();
+    this.myMatchingPattern = new float_unboxing_SubtypingRule.Pattern_4czxhf_a0a0a0a2();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -40,21 +40,21 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
     return true;
   }
 
-  public static class Pattern_2903_0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_2903_0() {
+  public static class Pattern_4czxhf_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_4czxhf_a0a0a0a2() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_7837_0;
-        nodeToMatch_7837_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_7837_0.getConceptFqName()))) {
+        SNode nodeToMatch_yblmix_a0a;
+        nodeToMatch_yblmix_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_yblmix_a0a.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTER4.getNode();
-          if (nodeToMatch_7837_0.getReferent("classifier") != referent) {
+          referent = SNODE_POINTER__3.getNode();
+          if (nodeToMatch_yblmix_a0a.getReferent("classifier") != referent) {
             return false;
           }
         }
@@ -74,18 +74,18 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
     }
   }
 
-  public static class QuotationClass_2903_0 {
-    public QuotationClass_2903_0() {
+  public static class QuotationClass_4czxhf_a0a0a {
+    public QuotationClass_4czxhf_a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2903_0 = null;
+      SNode quotedNode_4czxhf_a0a0a = null;
       {
-        quotedNode_2903_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2903_0 = quotedNode_2903_0;
-        result = quotedNode1_2903_0;
+        quotedNode_4czxhf_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4czxhf_a0a0a = quotedNode_4czxhf_a0a0a;
+        result = quotedNode1_4czxhf_a0a0a;
       }
       return result;
     }
@@ -93,11 +93,11 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2903_0 = null;
+      SNode quotedNode_4czxhf_a0a0a = null;
       {
-        quotedNode_2903_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2903_0 = quotedNode_2903_0;
-        result = quotedNode1_2903_0;
+        quotedNode_4czxhf_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4czxhf_a0a0a = quotedNode_4czxhf_a0a0a;
+        result = quotedNode1_4czxhf_a0a0a;
       }
       return result;
     }

@@ -17,7 +17,7 @@ public class byte_extends_short_SubtypingRule extends SubtypingRule_Runtime impl
   }
 
   public SNode getSubOrSuperType(SNode byteType, TypeCheckingContext typeCheckingContext) {
-    return new byte_extends_short_SubtypingRule.QuotationClass_1677_0().createNode(typeCheckingContext);
+    return new byte_extends_short_SubtypingRule.QuotationClass_jozoh5_a0a0a().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -32,18 +32,18 @@ public class byte_extends_short_SubtypingRule extends SubtypingRule_Runtime impl
     return false;
   }
 
-  public static class QuotationClass_1677_0 {
-    public QuotationClass_1677_0() {
+  public static class QuotationClass_jozoh5_a0a0a {
+    public QuotationClass_jozoh5_a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1677_0 = null;
+      SNode quotedNode_jozoh5_a0a0a = null;
       {
-        quotedNode_1677_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1677_0 = quotedNode_1677_0;
-        result = quotedNode1_1677_0;
+        quotedNode_jozoh5_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_jozoh5_a0a0a = quotedNode_jozoh5_a0a0a;
+        result = quotedNode1_jozoh5_a0a0a;
       }
       return result;
     }
@@ -51,11 +51,11 @@ public class byte_extends_short_SubtypingRule extends SubtypingRule_Runtime impl
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1677_0 = null;
+      SNode quotedNode_jozoh5_a0a0a = null;
       {
-        quotedNode_1677_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1677_0 = quotedNode_1677_0;
-        result = quotedNode1_1677_0;
+        quotedNode_jozoh5_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_jozoh5_a0a0a = quotedNode_jozoh5_a0a0a;
+        result = quotedNode1_jozoh5_a0a0a;
       }
       return result;
     }
