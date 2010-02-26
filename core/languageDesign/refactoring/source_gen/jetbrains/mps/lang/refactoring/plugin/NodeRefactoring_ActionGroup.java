@@ -7,6 +7,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
+import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.ide.actions.NodeActions_ActionGroup;
 import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
@@ -20,7 +23,17 @@ public class NodeRefactoring_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
+outer:
       for (IRefactoring refactoring : ListSequence.fromList(RefactoringUtil.getAllRefactorings())) {
+        // @hack 
+        if (refactoring instanceof OldRefactoringAdapter) {
+          List<String> old = ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.core.scripts.Rename", "jetbrains.mps.lang.structure.scripts.RenameConcept", "jetbrains.mps.lang.structure.scripts.RenameLink", "jetbrains.mps.lang.structure.scripts.RenameProperty");
+          for (String name : ListSequence.fromList(old)) {
+            if (((OldRefactoringAdapter) refactoring).getRefactoringClassName().equals(name)) {
+              continue outer;
+            }
+          }
+        }
         if (refactoring.getRefactoringTarget().getTarget() == IRefactoringTarget.TargetType.NODE) {
           NodeRefactoring_ActionGroup.this.add(RefactoringHelper.getActionForRefactoring(refactoring));
         }

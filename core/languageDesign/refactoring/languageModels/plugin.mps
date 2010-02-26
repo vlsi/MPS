@@ -58,6 +58,90 @@
             <link role="classConcept:3" targetNodeId="2.~RefactoringUtil" resolveInfo="RefactoringUtil" />
           </node>
           <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5003188907306244662">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="278927758244366461">
+              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="278927758244366840">
+                <property name="text:3" value="@hack" />
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7163273296928998114">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7163273296928998115">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="278927758244377645">
+                  <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="278927758244377646">
+                    <property name="name:3" value="old" />
+                    <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="278927758244377647">
+                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="278927758244377648" />
+                    </node>
+                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="278927758244377649">
+                      <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="278927758244377650">
+                        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="278927758244377651" />
+                        <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="278927758244377652">
+                          <property name="value:3" value="jetbrains.mps.lang.core.scripts.Rename" />
+                        </node>
+                        <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="278927758244377653">
+                          <property name="value:3" value="jetbrains.mps.lang.structure.scripts.RenameConcept" />
+                        </node>
+                        <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="278927758244377654">
+                          <property name="value:3" value="jetbrains.mps.lang.structure.scripts.RenameLink" />
+                        </node>
+                        <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="278927758244377655">
+                          <property name="value:3" value="jetbrains.mps.lang.structure.scripts.RenameProperty" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="278927758244377639">
+                  <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="278927758244377640">
+                    <property name="name:7" value="name" />
+                  </node>
+                  <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="278927758244377642">
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="278927758244377659">
+                      <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="278927758244377660">
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="278927758244377697">
+                          <node role="loopLabelReference:3" type="jetbrains.mps.baseLanguage.structure.LoopLabelReference:3" id="278927758244377698">
+                            <link role="loopLabel:3" targetNodeId="278927758244377691" resolveInfo="outer" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="278927758244377662">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="278927758244377663">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="278927758244377664">
+                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="278927758244377665">
+                              <node role="expression:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="278927758244377666">
+                                <link role="variable:7" targetNodeId="5003188907306244658" resolveInfo="refactoring" />
+                              </node>
+                              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="278927758244377667">
+                                <link role="classifier:3" targetNodeId="2.~OldRefactoringAdapter" resolveInfo="OldRefactoringAdapter" />
+                              </node>
+                            </node>
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="278927758244377668">
+                            <link role="baseMethodDeclaration:3" targetNodeId="2.~OldRefactoringAdapter.getRefactoringClassName():java.lang.String" resolveInfo="getRefactoringClassName" />
+                          </node>
+                        </node>
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="278927758244377669">
+                          <link role="baseMethodDeclaration:3" targetNodeId="21.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="8949646146181242315">
+                            <link role="variable:7" targetNodeId="278927758244377640" resolveInfo="name" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="278927758244377656">
+                    <link role="variableDeclaration:3" targetNodeId="278927758244377646" resolveInfo="old" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="7163273296928998127">
+                <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7163273296928998131">
+                  <link role="classifier:3" targetNodeId="2.~OldRefactoringAdapter" resolveInfo="OldRefactoringAdapter" />
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="7163273296928998118">
+                  <link role="variable:7" targetNodeId="5003188907306244658" resolveInfo="refactoring" />
+                </node>
+              </node>
+            </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1909926480506229857">
               <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1909926480506229858">
                 <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.AddElementStatement:23" id="1909926480506229896">
@@ -90,6 +174,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node role="loopLabel:7" type="jetbrains.mps.baseLanguage.structure.LoopLabel:3" id="278927758244377691">
+            <property name="name:3" value="outer" />
           </node>
         </node>
       </node>
