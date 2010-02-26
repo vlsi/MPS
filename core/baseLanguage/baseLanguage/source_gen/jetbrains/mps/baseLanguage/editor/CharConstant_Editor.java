@@ -19,17 +19,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CharConstant_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2322_0(editorContext, node);
+    return this.createCollection_d77dl_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_2322_0(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_d77dl_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = CharConstant_Editor.renderingCondition2322_0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = CharConstant_Editor.renderingCondition_d77dl_a1a(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createProperty_2322_0(editorContext, node);
+      editorCell = this.createProperty_d77dl_a1a(editorContext, node);
     } else {
-      editorCell = this.createProperty_2322_1(editorContext, node);
+      editorCell = this.createProperty_d77dl_a1a_0(editorContext, node);
     }
     {
       Style style = editorCell.getStyle();
@@ -38,32 +38,32 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_2322_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_d77dl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2322_0");
-    editorCell.addEditorCell(this.createConstant_2322_0(editorContext, node));
-    editorCell.addEditorCell(this.createAlternation_2322_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2322_1(editorContext, node));
+    editorCell.setCellId("Collection_d77dl_a");
+    editorCell.addEditorCell(this.createConstant_d77dl_a0(editorContext, node));
+    editorCell.addEditorCell(this.createAlternation_d77dl_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_d77dl_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2322_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_d77dl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "'");
-    editorCell.setCellId("Constant_2322_0");
+    editorCell.setCellId("Constant_d77dl_a0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2322_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_d77dl_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "'");
-    editorCell.setCellId("Constant_2322_1");
+    editorCell.setCellId("Constant_d77dl_c0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createProperty_2322_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_d77dl_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("charConstant");
     provider.setNoTargetText("<no charConstant>");
@@ -82,7 +82,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_2322_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_d77dl_a1a_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("charConstant");
     provider.setNoTargetText("<no charConstant>");
@@ -101,7 +101,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition2322_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_d77dl_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(node, "charConstant", null) || !(SPropertyOperations.getString(node, "charConstant").startsWith("\\"));
   }
 }

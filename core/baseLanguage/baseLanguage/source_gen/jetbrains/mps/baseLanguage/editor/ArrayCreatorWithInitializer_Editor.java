@@ -27,23 +27,23 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0557_0(editorContext, node);
+    return this.createCollection_ym22pt_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0557_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ym22pt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0557_0");
-    editorCell.addEditorCell(this.createRefNode_0557_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0557_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0557_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_0557_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0557_2(editorContext, node));
+    editorCell.setCellId("Collection_ym22pt_a");
+    editorCell.addEditorCell(this.createRefNode_ym22pt_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ym22pt_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ym22pt_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ym22pt_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ym22pt_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0557_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ym22pt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[]");
-    editorCell.setCellId("Constant_0557_0");
+    editorCell.setCellId("Constant_ym22pt_b0");
     BaseLanguageStyle_StyleSheet.getBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -53,9 +53,9 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0557_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ym22pt_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_0557_1");
+    editorCell.setCellId("Constant_ym22pt_c0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -66,9 +66,9 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_0557_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ym22pt_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_0557_2");
+    editorCell.setCellId("Constant_ym22pt_e0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -78,8 +78,8 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_0557_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ArrayCreatorWithInitializer_Editor.initValueListHandler_0557_0(node, "initValue", editorContext);
+  private EditorCell createRefNodeList_ym22pt_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ArrayCreatorWithInitializer_Editor.initValueListHandler_ym22pt_d0(node, "initValue", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_initValue");
     {
@@ -90,7 +90,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0557_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ym22pt_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("componentType");
     provider.setNoTargetText("<no componentType>");
@@ -110,8 +110,8 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class initValueListHandler_0557_0 extends RefNodeListHandler {
-    public initValueListHandler_0557_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class initValueListHandler_ym22pt_d0 extends RefNodeListHandler {
+    public initValueListHandler_ym22pt_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -134,7 +134,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_0557_3(editorContext, node);
+      return this.createConstant_ym22pt_a3a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -162,9 +162,9 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_0557_3(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_ym22pt_a3a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-      editorCell.setCellId("Constant_0557_3");
+      editorCell.setCellId("Constant_ym22pt_a3a");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.SELECTABLE, true);

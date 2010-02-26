@@ -16,28 +16,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 
 public class Type_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createAlternation_9010_0(editorContext, node);
+    return this.createAlternation_a1nfgp_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_9010_0(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_a1nfgp_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = Type_Editor.renderingCondition9010_0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = Type_Editor.renderingCondition_a1nfgp_a0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createError_9010_0(editorContext, node);
+      editorCell = this.createError_a1nfgp_a0(editorContext, node);
     } else {
-      editorCell = this.createConceptProperty_9010_0(editorContext, node);
+      editorCell = this.createConceptProperty_a1nfgp_a0(editorContext, node);
     }
     return editorCell;
   }
 
-  private EditorCell createError_9010_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_a1nfgp_a0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<type>");
-    editorCell.setCellId("Error_9010_0");
+    editorCell.setCellId("Error_a1nfgp_a0");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_9010_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_a1nfgp_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<type has no alias>");
@@ -56,7 +56,7 @@ public class Type_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition9010_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_a1nfgp_a0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getBoolean(node, "abstract");
   }
 }

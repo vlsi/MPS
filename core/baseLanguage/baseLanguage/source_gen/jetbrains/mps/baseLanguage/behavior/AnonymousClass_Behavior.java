@@ -20,7 +20,7 @@ public class AnonymousClass_Behavior {
   }
 
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
-    return new AnonymousClass_Behavior.QuotationClass_0842_0().createNode(SLinkOperations.getTargets(thisNode, "typeParameter", true), SLinkOperations.getTarget(thisNode, "classifier", false));
+    return new AnonymousClass_Behavior.QuotationClass_mhnjwj_a0a0b().createNode(SLinkOperations.getTargets(thisNode, "typeParameter", true), SLinkOperations.getTarget(thisNode, "classifier", false));
   }
 
   public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
@@ -32,26 +32,26 @@ public class AnonymousClass_Behavior {
     }
   }
 
-  public static class QuotationClass_0842_0 {
-    public QuotationClass_0842_0() {
+  public static class QuotationClass_mhnjwj_a0a0b {
+    public QuotationClass_mhnjwj_a0a0b() {
     }
 
-    public SNode createNode(Object parameter_0842_0, Object parameter_0842_1) {
+    public SNode createNode(Object parameter_mhnjwj_a0a0a0a0, Object parameter_mhnjwj_a0a0a0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0842_0 = null;
-      SNode quotedNode_0842_1 = null;
+      SNode quotedNode_mhnjwj_a0a0a = null;
+      SNode quotedNode_mhnjwj_a0a0a0 = null;
       {
-        quotedNode_0842_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0842_0 = quotedNode_0842_0;
-        quotedNode1_0842_0.setReferent("classifier", (SNode) parameter_0842_1);
+        quotedNode_mhnjwj_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_mhnjwj_a0a0a = quotedNode_mhnjwj_a0a0a;
+        quotedNode1_mhnjwj_a0a0a.setReferent("classifier", (SNode) parameter_mhnjwj_a0a0a0a);
         {
-          List<SNode> nodes = (List<SNode>) parameter_0842_0;
+          List<SNode> nodes = (List<SNode>) parameter_mhnjwj_a0a0a0a0;
           for (SNode child : nodes) {
-            quotedNode_0842_0.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_mhnjwj_a0a0a.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_0842_0;
+        result = quotedNode1_mhnjwj_a0a0a;
       }
       return result;
     }

@@ -26,60 +26,60 @@ import jetbrains.mps.smodel.SModel;
 
 public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4685_0(editorContext, node);
+    return this.createCollection_5sxwue_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4685_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_5sxwue_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4685_0");
-    editorCell.addEditorCell(this.createRefCell_4685_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4685_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4685_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4685_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4685_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4685_3(editorContext, node));
+    editorCell.setCellId("Collection_5sxwue_a");
+    editorCell.addEditorCell(this.createRefCell_5sxwue_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5sxwue_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5sxwue_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5sxwue_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_5sxwue_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5sxwue_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4685_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5sxwue_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
-    editorCell.setCellId("Constant_4685_0");
+    editorCell.setCellId("Constant_5sxwue_b0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4685_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5sxwue_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "valueOf");
-    editorCell.setCellId("Constant_4685_1");
+    editorCell.setCellId("Constant_5sxwue_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new EnumValueOfExpression_Editor.EnumValueOfExpression_customReplace_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new EnumValueOfExpression_Editor.EnumValueOfExpression_customReplace_cellMenu_a0c0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_4685_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5sxwue_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_4685_2");
+    editorCell.setCellId("Constant_5sxwue_d0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4685_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_5sxwue_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_4685_3");
+    editorCell.setCellId("Constant_5sxwue_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefCell_4685_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_5sxwue_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("enumClass");
     provider.setNoTargetText("<no enumClass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumValueOfExpression_Editor._Inline4685_0());
+    provider.setAuxiliaryCellProvider(new EnumValueOfExpression_Editor._Inline_5sxwue_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -92,7 +92,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4685_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_5sxwue_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("<no value>");
@@ -109,8 +109,8 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline4685_0 extends InlineCellProvider {
-    public _Inline4685_0() {
+  public static class _Inline_5sxwue_a0a extends InlineCellProvider {
+    public _Inline_5sxwue_a0a() {
       super();
     }
 
@@ -119,10 +119,10 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_4685_0(editorContext, node);
+      return this.createProperty_5sxwue_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_4685_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_5sxwue_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -142,8 +142,8 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class EnumValueOfExpression_customReplace_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public EnumValueOfExpression_customReplace_cellMenu0() {
+  public static class EnumValueOfExpression_customReplace_cellMenu_a0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public EnumValueOfExpression_customReplace_cellMenu_a0c0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

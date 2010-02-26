@@ -14,17 +14,17 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8176_0(editorContext, node);
+    return this.createCollection_2fh3co_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8176_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_2fh3co_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8176_0");
-    editorCell.addEditorCell(this.createRefNode_8176_0(editorContext, node));
+    editorCell.setCellId("Collection_2fh3co_a");
+    editorCell.addEditorCell(this.createRefNode_2fh3co_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_8176_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_2fh3co_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("annotationInstance");
     provider.setNoTargetText("<no annotationInstance>");

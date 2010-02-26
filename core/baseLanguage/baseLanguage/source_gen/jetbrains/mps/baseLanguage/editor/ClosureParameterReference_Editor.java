@@ -20,22 +20,22 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ClosureParameterReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8575_0(editorContext, node);
+    return this.createCollection_7sr5h3_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8575_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_7sr5h3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8575_0");
-    editorCell.addEditorCell(this.createRefCell_8575_0(editorContext, node));
+    editorCell.setCellId("Collection_7sr5h3_a");
+    editorCell.addEditorCell(this.createRefCell_7sr5h3_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefCell_8575_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_7sr5h3_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("closureParameter");
     provider.setNoTargetText("<no closureParameter>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClosureParameterReference_Editor._Inline8575_0());
+    provider.setAuxiliaryCellProvider(new ClosureParameterReference_Editor._Inline_7sr5h3_a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -48,8 +48,8 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline8575_0 extends InlineCellProvider {
-    public _Inline8575_0() {
+  public static class _Inline_7sr5h3_a0a extends InlineCellProvider {
+    public _Inline_7sr5h3_a0a() {
       super();
     }
 
@@ -58,10 +58,10 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_8575_0(editorContext, node);
+      return this.createProperty_7sr5h3_a0a0(editorContext, node);
     }
 
-    private EditorCell createProperty_8575_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_7sr5h3_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

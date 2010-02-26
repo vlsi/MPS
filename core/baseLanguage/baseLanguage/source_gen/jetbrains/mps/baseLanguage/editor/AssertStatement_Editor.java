@@ -20,44 +20,44 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AssertStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7459_0(editorContext, node);
+    return this.createCollection_avk0kx_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7459_2(editorContext, node);
+    return this.createCollection_avk0kx_a_0(editorContext, node);
   }
 
-  private EditorCell createCollection_7459_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_avk0kx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7459_0");
-    editorCell.addEditorCell(this.createConstant_7459_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7459_0(editorContext, node));
-    if (renderingCondition7459_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_7459_1(editorContext, node));
+    editorCell.setCellId("Collection_avk0kx_a");
+    editorCell.addEditorCell(this.createConstant_avk0kx_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_avk0kx_b0(editorContext, node));
+    if (renderingCondition_avk0kx_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_avk0kx_c0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_7459_3(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_avk0kx_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7459_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_avk0kx_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7459_1");
-    editorCell.addEditorCell(this.createConstant_7459_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7459_1(editorContext, node));
+    editorCell.setCellId("Collection_avk0kx_c0");
+    editorCell.addEditorCell(this.createConstant_avk0kx_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_avk0kx_b2a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_7459_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_avk0kx_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7459_2");
-    editorCell.addEditorCell(this.createConstant_7459_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7459_2(editorContext, node));
+    editorCell.setCellId("Collection_avk0kx_a_0");
+    editorCell.addEditorCell(this.createConstant_avk0kx_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_avk0kx_b0_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_avk0kx_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert");
-    editorCell.setCellId("Constant_7459_0");
+    editorCell.setCellId("Constant_avk0kx_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -66,29 +66,29 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_avk0kx_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_7459_1");
+    editorCell.setCellId("Constant_avk0kx_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_avk0kx_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Error message : ");
-    editorCell.setCellId("Constant_7459_2");
+    editorCell.setCellId("Constant_avk0kx_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7459_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_avk0kx_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_7459_3");
+    editorCell.setCellId("Constant_avk0kx_d0");
     BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_7459_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_avk0kx_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");
@@ -105,7 +105,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7459_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_avk0kx_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("message");
     provider.setNoTargetText("<no message>");
@@ -122,7 +122,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7459_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_avk0kx_b0_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("message");
     provider.setNoTargetText("<no message>");
@@ -143,7 +143,7 @@ public class AssertStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition7459_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_avk0kx_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "message", true) != null;
   }
 }

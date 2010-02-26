@@ -32,7 +32,7 @@ public class FieldDeclaration_Behavior {
 
   public static String call_getGetterName_1213877243782(SNode thisNode) {
     String prefix = "get";
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), new FieldDeclaration_Behavior.QuotationClass_9617_0().createNode())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), new FieldDeclaration_Behavior.QuotationClass_dh5t54_a1a0b0b().createNode())) {
       prefix = "is";
     }
     return prefix + NameUtil.capitalize(SPropertyOperations.getString(thisNode, "name"));
@@ -136,18 +136,18 @@ public class FieldDeclaration_Behavior {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506730, project);
   }
 
-  public static class QuotationClass_9617_0 {
-    public QuotationClass_9617_0() {
+  public static class QuotationClass_dh5t54_a1a0b0b {
+    public QuotationClass_dh5t54_a1a0b0b() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9617_0 = null;
+      SNode quotedNode_dh5t54_a1a0b0a = null;
       {
-        quotedNode_9617_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9617_0 = quotedNode_9617_0;
-        result = quotedNode1_9617_0;
+        quotedNode_dh5t54_a1a0b0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_dh5t54_a1a0b0a = quotedNode_dh5t54_a1a0b0a;
+        result = quotedNode1_dh5t54_a1a0b0a;
       }
       return result;
     }

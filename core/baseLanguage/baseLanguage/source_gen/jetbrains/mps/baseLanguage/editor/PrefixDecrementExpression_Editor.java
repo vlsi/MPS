@@ -18,20 +18,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class PrefixDecrementExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9277_0(editorContext, node);
+    return this.createCollection_oco0i1_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9277_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_oco0i1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9277_0");
-    editorCell.addEditorCell(this.createConstant_9277_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9277_0(editorContext, node));
+    editorCell.setCellId("Collection_oco0i1_a");
+    editorCell.addEditorCell(this.createConstant_oco0i1_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_oco0i1_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9277_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_oco0i1_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "--");
-    editorCell.setCellId("Constant_9277_0");
+    editorCell.setCellId("Constant_oco0i1_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
@@ -44,7 +44,7 @@ public class PrefixDecrementExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9277_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_oco0i1_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");

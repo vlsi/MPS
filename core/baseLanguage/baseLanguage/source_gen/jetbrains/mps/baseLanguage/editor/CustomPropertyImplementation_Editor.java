@@ -18,20 +18,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0068_0(editorContext, node);
+    return this.createCollection_mlq0a_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0068_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_mlq0a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0068_0");
-    editorCell.addEditorCell(this.createRefNode_0068_0(editorContext, node));
-    if (renderingCondition0068_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_0068_1(editorContext, node));
+    editorCell.setCellId("Collection_mlq0a_a");
+    editorCell.addEditorCell(this.createRefNode_mlq0a_a0(editorContext, node));
+    if (renderingCondition_mlq0a_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_mlq0a_b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createRefNode_0068_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_mlq0a_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("getAccessor");
     provider.setNoTargetText("<no getAccessor>");
@@ -52,7 +52,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0068_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_mlq0a_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("setAccessor");
     provider.setNoTargetText("<no setAccessor>");
@@ -73,7 +73,7 @@ public class CustomPropertyImplementation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition0068_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_mlq0a_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "setAccessor", true) != null);
   }
 }

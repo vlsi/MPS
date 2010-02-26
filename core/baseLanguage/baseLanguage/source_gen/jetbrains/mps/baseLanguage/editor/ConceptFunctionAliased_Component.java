@@ -36,23 +36,23 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7219_0(editorContext, node);
+    return this.createCollection_ohhbpy_a(editorContext, node);
   }
 
-  private EditorCell createCollection_7219_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ohhbpy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_7219_0");
-    editorCell.addEditorCell(this.createConceptProperty_7219_0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_7219_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7219_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7219_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7219_1(editorContext, node));
+    editorCell.setCellId("Collection_ohhbpy_a");
+    editorCell.addEditorCell(this.createConceptProperty_ohhbpy_a0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_ohhbpy_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ohhbpy_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ohhbpy_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ohhbpy_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7219_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ohhbpy_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_7219_0");
+    editorCell.setCellId("Constant_ohhbpy_c0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -62,9 +62,9 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_7219_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ohhbpy_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_7219_1");
+    editorCell.setCellId("Constant_ohhbpy_e0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -74,7 +74,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_7219_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_ohhbpy_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         StringBuilder result = new StringBuilder();
@@ -106,7 +106,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_7219_0");
+    editorCell.setCellId("ReadOnlyModelAccessor_ohhbpy_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
@@ -116,7 +116,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7219_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ohhbpy_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -138,7 +138,7 @@ public class ConceptFunctionAliased_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_7219_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_ohhbpy_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");

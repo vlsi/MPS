@@ -18,8 +18,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class IterateOverIterable_Intention extends BaseIntention implements Intention {
-  private static SNodePointer SNODE_POINTER1 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
-  private static SNodePointer SNODE_POINTER0 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER__0 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_ = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
 
   public IterateOverIterable_Intention() {
   }
@@ -52,18 +52,18 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), new IterateOverIterable_Intention.Pattern_9539_0(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), new IterateOverIterable_Intention.Pattern_w1n2qe_a1a0a0a0g(), true) != null);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
     {
-      GeneratedMatchingPattern pattern_2336_0 = new IterateOverIterable_Intention.Pattern_9539_1();
-      SNode coercedNode_2336_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), pattern_2336_0);
-      if (coercedNode_2336_0 != null) {
+      GeneratedMatchingPattern pattern_6isygg_a0a = new IterateOverIterable_Intention.Pattern_w1n2qe_a0a0a0a7();
+      SNode coercedNode_6isygg_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), pattern_6isygg_a0a);
+      if (coercedNode_6isygg_a0a != null) {
         SNode foreachStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
         SNode variableDeclaration = SLinkOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-        SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(((SNode) pattern_2336_0.getFieldValue("PatternVar_elem"))), true);
-        SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(((SNode) pattern_2336_0.getFieldValue("PatternVar_elem")))));
+        SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(((SNode) pattern_6isygg_a0a.getFieldValue("PatternVar_elem"))), true);
+        SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(((SNode) pattern_6isygg_a0a.getFieldValue("PatternVar_elem")))));
         SLinkOperations.setTarget(foreachStatement, "iterable", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), true);
         SNodeOperations.insertNextSiblingChild(node, foreachStatement);
         SNodeOperations.deleteNode(node);
@@ -76,35 +76,35 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
     return "jetbrains.mps.baseLanguage.intentions";
   }
 
-  public static class Pattern_9539_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_w1n2qe_a1a0a0a0g extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_elem;
 
-    public Pattern_9539_0() {
+    public Pattern_w1n2qe_a1a0a0a0g() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_2336_1;
-        nodeToMatch_2336_1 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_2336_1.getConceptFqName()))) {
+        SNode nodeToMatch_6isygg_a0a0a0a0;
+        nodeToMatch_6isygg_a0a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_6isygg_a0a0a0a0.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTER1.getNode();
-          if (nodeToMatch_2336_1.getReferent("classifier") != referent) {
+          referent = SNODE_POINTER__0.getNode();
+          if (nodeToMatch_6isygg_a0a0a0a0.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole2336_1 = "parameter";
-          if (nodeToMatch_2336_1.getChildCount(childRole2336_1) != 1) {
+          String childRole_6isygg__0 = "parameter";
+          if (nodeToMatch_6isygg_a0a0a0a0.getChildCount(childRole_6isygg__0) != 1) {
             return false;
           }
           {
             this.PatternVar_elem = null;
-            SNode childVar_2336_1 = nodeToMatch_2336_1.getChildren(childRole2336_1).get(0);
-            this.PatternVar_elem = childVar_2336_1;
+            SNode childVar_6isygg_a0a0a0a0a = nodeToMatch_6isygg_a0a0a0a0.getChildren(childRole_6isygg__0).get(0);
+            this.PatternVar_elem = childVar_6isygg_a0a0a0a0a;
           }
         }
       }
@@ -129,35 +129,35 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
     }
   }
 
-  public static class Pattern_9539_1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_w1n2qe_a0a0a0a7 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_elem;
 
-    public Pattern_9539_1() {
+    public Pattern_w1n2qe_a0a0a0a7() {
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_2336_0;
-        nodeToMatch_2336_0 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_2336_0.getConceptFqName()))) {
+        SNode nodeToMatch_6isygg_a0a0a0;
+        nodeToMatch_6isygg_a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_6isygg_a0a0a0.getConceptFqName()))) {
           return false;
         }
         {
           SNode referent;
-          referent = SNODE_POINTER0.getNode();
-          if (nodeToMatch_2336_0.getReferent("classifier") != referent) {
+          referent = SNODE_POINTER_.getNode();
+          if (nodeToMatch_6isygg_a0a0a0.getReferent("classifier") != referent) {
             return false;
           }
         }
         {
-          String childRole2336_0 = "parameter";
-          if (nodeToMatch_2336_0.getChildCount(childRole2336_0) != 1) {
+          String childRole_6isygg_ = "parameter";
+          if (nodeToMatch_6isygg_a0a0a0.getChildCount(childRole_6isygg_) != 1) {
             return false;
           }
           {
             this.PatternVar_elem = null;
-            SNode childVar_2336_0 = nodeToMatch_2336_0.getChildren(childRole2336_0).get(0);
-            this.PatternVar_elem = childVar_2336_0;
+            SNode childVar_6isygg_a0a0a0a = nodeToMatch_6isygg_a0a0a0.getChildren(childRole_6isygg_).get(0);
+            this.PatternVar_elem = childVar_6isygg_a0a0a0a;
           }
         }
       }

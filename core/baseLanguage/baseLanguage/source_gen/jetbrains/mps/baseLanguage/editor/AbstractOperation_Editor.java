@@ -12,10 +12,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class AbstractOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCustom_3927_0(editorContext, node);
+    return this.createCustom_13zen7_a(editorContext, node);
   }
 
-  private EditorCell createCustom_3927_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createCustom_13zen7_a(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
@@ -26,7 +26,7 @@ public class AbstractOperation_Editor extends DefaultNodeEditor {
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_3927_0");
+    editorCell.setCellId("Custom_13zen7_a");
     return editorCell;
   }
 }

@@ -20,23 +20,23 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1878_0(editorContext, node);
+    return this.createCollection_89tgy3_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1878_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_89tgy3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1878_0");
+    editorCell.setCellId("Collection_89tgy3_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
     }
-    editorCell.addEditorCell(this.createRefNode_1878_0(editorContext, node));
-    editorCell.addEditorCell(this.createConceptProperty_1878_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1878_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_89tgy3_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConceptProperty_89tgy3_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_89tgy3_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNode_1878_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_89tgy3_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("lValue");
     provider.setNoTargetText("<no lValue>");
@@ -58,7 +58,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1878_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_89tgy3_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rValue");
     provider.setNoTargetText("<no rValue>");
@@ -80,7 +80,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_1878_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_89tgy3_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no operation>");
@@ -89,7 +89,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("conceptProperty_alias");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BaseAssignmentExpression_Editor.BaseAssignmentExpression_Editor_replaceWith_BaseAssignmentExpression_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BaseAssignmentExpression_Editor.BaseAssignmentExpression_Editor_replaceWith_BaseAssignmentExpression_cellMenu_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -100,8 +100,8 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class BaseAssignmentExpression_Editor_replaceWith_BaseAssignmentExpression_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public BaseAssignmentExpression_Editor_replaceWith_BaseAssignmentExpression_cellMenu0() {
+  public static class BaseAssignmentExpression_Editor_replaceWith_BaseAssignmentExpression_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public BaseAssignmentExpression_Editor_replaceWith_BaseAssignmentExpression_cellMenu_a0b0() {
     }
 
     public String getReplacementConceptName() {

@@ -19,10 +19,10 @@ import jetbrains.mps.baseLanguage.behavior.CommentPart_Behavior;
 
 public class TextCommentPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_7849_0(editorContext, node);
+    return this.createProperty_z1r74j_a(editorContext, node);
   }
 
-  private EditorCell createProperty_7849_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_z1r74j_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
     provider.setNoTargetText("<no text>");
@@ -35,7 +35,7 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
-          return TextCommentPart_Editor._StyleParameter_QueryFunction_7849_0((cell == null ?
+          return TextCommentPart_Editor._StyleParameter_QueryFunction_z1r74j_a1a((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -56,7 +56,7 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static Color _StyleParameter_QueryFunction_7849_0(SNode node, EditorContext editorContext) {
+  private static Color _StyleParameter_QueryFunction_z1r74j_a1a(SNode node, EditorContext editorContext) {
     if (CommentPart_Behavior.call_isToDo_7236590470026152831(node)) {
       return Color.BLUE;
     } else {

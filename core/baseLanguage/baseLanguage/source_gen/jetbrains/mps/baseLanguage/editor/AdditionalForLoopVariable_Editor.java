@@ -20,47 +20,47 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9194_0(editorContext, node);
+    return this.createCollection_165sw5_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9194_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_165sw5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9194_0");
-    editorCell.addEditorCell(this.createComponent_9194_0(editorContext, node));
-    if (renderingCondition9194_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_9194_1(editorContext, node));
+    editorCell.setCellId("Collection_165sw5_a");
+    editorCell.addEditorCell(this.createComponent_165sw5_a0(editorContext, node));
+    if (renderingCondition_165sw5_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_165sw5_b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_9194_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_165sw5_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9194_1");
+    editorCell.setCellId("Collection_165sw5_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9194_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9194_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_165sw5_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_165sw5_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_9194_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_165sw5_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new VariableDeclaration_NameCellComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_9194_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_165sw5_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_9194_0");
+    editorCell.setCellId("Constant_165sw5_a1a");
     BaseLanguageStyle_StyleSheet.getOperator(editorCell).apply(editorCell);
     LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_9194_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_165sw5_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("initializer");
     provider.setNoTargetText("<no initializer>");
@@ -82,7 +82,7 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition9194_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_165sw5_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 }

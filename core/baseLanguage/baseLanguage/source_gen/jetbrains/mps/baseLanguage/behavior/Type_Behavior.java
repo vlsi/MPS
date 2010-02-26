@@ -84,10 +84,10 @@ public class Type_Behavior {
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     {
-      IMatchingPattern pattern_8537_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SNode coercedNode_8537_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_8537_0);
-      if (coercedNode_8537_0 != null) {
-        return new Type_Behavior.QuotationClass_8537_0().createNode(SLinkOperations.getTarget(coercedNode_8537_0, "classifier", false));
+      IMatchingPattern pattern_smb55n_a0j = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode coercedNode_smb55n_a0j = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_smb55n_a0j);
+      if (coercedNode_smb55n_a0j != null) {
+        return new Type_Behavior.QuotationClass_smb55n_a0a0c0a0k().createNode(SLinkOperations.getTarget(coercedNode_smb55n_a0j, "classifier", false));
       } else {
         throw new UnsupportedOperationException();
       }
@@ -96,9 +96,9 @@ public class Type_Behavior {
 
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     {
-      GeneratedMatchingPattern pattern_8537_1 = new Type_Behavior.Pattern_8537_0(thisNode);
-      SNode coercedNode_8537_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_8537_1);
-      if (coercedNode_8537_1 != null) {
+      GeneratedMatchingPattern pattern_smb55n_a0k = new Type_Behavior.Pattern_smb55n_a0a0a0a11(thisNode);
+      SNode coercedNode_smb55n_a0k = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_smb55n_a0k);
+      if (coercedNode_smb55n_a0k != null) {
         return true;
       } else {
       }
@@ -222,36 +222,36 @@ public class Type_Behavior {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getLooseType_5744862332972792015", PARAMETERS_5744862332972792015);
   }
 
-  public static class QuotationClass_8537_0 {
-    public QuotationClass_8537_0() {
+  public static class QuotationClass_smb55n_a0a0c0a0k {
+    public QuotationClass_smb55n_a0a0c0a0k() {
     }
 
-    public SNode createNode(Object parameter_8537_1) {
+    public SNode createNode(Object parameter_smb55n_a0a0a0c0a0j) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8537_0 = null;
+      SNode quotedNode_smb55n_a0a0c0a0j = null;
       {
-        quotedNode_8537_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8537_0 = quotedNode_8537_0;
-        quotedNode1_8537_0.setReferent("classifier", (SNode) parameter_8537_1);
-        result = quotedNode1_8537_0;
+        quotedNode_smb55n_a0a0c0a0j = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_smb55n_a0a0c0a0j = quotedNode_smb55n_a0a0c0a0j;
+        quotedNode1_smb55n_a0a0c0a0j.setReferent("classifier", (SNode) parameter_smb55n_a0a0a0c0a0j);
+        result = quotedNode1_smb55n_a0a0c0a0j;
       }
       return result;
     }
   }
 
-  public static class Pattern_8537_0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ Object AntiquotationField8537_0;
+  public static class Pattern_smb55n_a0a0a0a11 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ Object AntiquotationField_smb55n_a0a0a0a01;
 
-    public Pattern_8537_0(Object parameter_8537_0) {
-      this.AntiquotationField8537_0 = parameter_8537_0;
+    public Pattern_smb55n_a0a0a0a11(Object parameter_smb55n_a0a0a0a01) {
+      this.AntiquotationField_smb55n_a0a0a0a01 = parameter_smb55n_a0a0a0a01;
     }
 
     public boolean match(SNode nodeToMatch) {
       {
-        SNode nodeToMatch_8537_0;
-        nodeToMatch_8537_0 = nodeToMatch;
-        if (!("jetbrains.mps.lang.core.structure.BaseConcept".equals(nodeToMatch_8537_0.getConceptFqName()))) {
+        SNode nodeToMatch_smb55n_a0a0a01;
+        nodeToMatch_smb55n_a0a0a01 = nodeToMatch;
+        if (!("jetbrains.mps.lang.core.structure.BaseConcept".equals(nodeToMatch_smb55n_a0a0a01.getConceptFqName()))) {
           return false;
         }
       }

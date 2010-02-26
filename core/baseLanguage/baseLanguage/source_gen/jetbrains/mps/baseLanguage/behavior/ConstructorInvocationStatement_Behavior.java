@@ -27,53 +27,53 @@ public class ConstructorInvocationStatement_Behavior {
     SNode concept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for (SNode tvd : SLinkOperations.getTargets(concept, "typeVariableDeclaration", true)) {
-      ListSequence.fromList(typeVarRefs).addElement(new ConstructorInvocationStatement_Behavior.QuotationClass_0196_1().createNode(tvd));
+      ListSequence.fromList(typeVarRefs).addElement(new ConstructorInvocationStatement_Behavior.QuotationClass_teq92u_a0a0a0c0b().createNode(tvd));
     }
-    return new ConstructorInvocationStatement_Behavior.QuotationClass_0196_0().createNode(typeVarRefs, concept);
+    return new ConstructorInvocationStatement_Behavior.QuotationClass_teq92u_a0d0b().createNode(typeVarRefs, concept);
   }
 
   public static Map<TypeVariableDeclaration, Type> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
     return new HashMap<TypeVariableDeclaration, Type>();
   }
 
-  public static class QuotationClass_0196_0 {
-    public QuotationClass_0196_0() {
+  public static class QuotationClass_teq92u_a0d0b {
+    public QuotationClass_teq92u_a0d0b() {
     }
 
-    public SNode createNode(Object parameter_0196_1, Object parameter_0196_2) {
+    public SNode createNode(Object parameter_teq92u_a0a0a3a0, Object parameter_teq92u_a0a0d0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0196_1 = null;
-      SNode quotedNode_0196_2 = null;
+      SNode quotedNode_teq92u_a0d0a = null;
+      SNode quotedNode_teq92u_a0a3a0 = null;
       {
-        quotedNode_0196_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0196_1 = quotedNode_0196_1;
-        quotedNode1_0196_1.setReferent("classifier", (SNode) parameter_0196_2);
+        quotedNode_teq92u_a0d0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_teq92u_a0d0a = quotedNode_teq92u_a0d0a;
+        quotedNode1_teq92u_a0d0a.setReferent("classifier", (SNode) parameter_teq92u_a0a0d0a);
         {
-          List<SNode> nodes = (List<SNode>) parameter_0196_1;
+          List<SNode> nodes = (List<SNode>) parameter_teq92u_a0a0a3a0;
           for (SNode child : nodes) {
-            quotedNode_0196_1.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_teq92u_a0d0a.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_0196_1;
+        result = quotedNode1_teq92u_a0d0a;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_0196_1 {
-    public QuotationClass_0196_1() {
+  public static class QuotationClass_teq92u_a0a0a0c0b {
+    public QuotationClass_teq92u_a0a0a0c0b() {
     }
 
-    public SNode createNode(Object parameter_0196_0) {
+    public SNode createNode(Object parameter_teq92u_a0a0a0a0c0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0196_0 = null;
+      SNode quotedNode_teq92u_a0a0a0c0a = null;
       {
-        quotedNode_0196_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0196_0 = quotedNode_0196_0;
-        quotedNode1_0196_0.setReferent("typeVariableDeclaration", (SNode) parameter_0196_0);
-        result = quotedNode1_0196_0;
+        quotedNode_teq92u_a0a0a0c0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_teq92u_a0a0a0c0a = quotedNode_teq92u_a0a0a0c0a;
+        quotedNode1_teq92u_a0a0a0c0a.setReferent("typeVariableDeclaration", (SNode) parameter_teq92u_a0a0a0a0c0a);
+        result = quotedNode1_teq92u_a0a0a0c0a;
       }
       return result;
     }

@@ -115,7 +115,7 @@ public class ClassConcept_Behavior {
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "superclass", true) != null ?
       SLinkOperations.getTarget(thisNode, "superclass", true) :
-      new ClassConcept_Behavior.QuotationClass_6833_0().createNode()
+      new ClassConcept_Behavior.QuotationClass_xjj00_a0a0a7().createNode()
     );
   }
 
@@ -151,19 +151,19 @@ public class ClassConcept_Behavior {
     return SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
   }
 
-  public static class QuotationClass_6833_0 {
-    public QuotationClass_6833_0() {
+  public static class QuotationClass_xjj00_a0a0a7 {
+    public QuotationClass_xjj00_a0a0a7() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6833_0 = null;
+      SNode quotedNode_xjj00_a0a0a6 = null;
       {
-        quotedNode_6833_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6833_0 = quotedNode_6833_0;
-        quotedNode1_6833_0.addReference(SReference.create("classifier", quotedNode1_6833_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_6833_0;
+        quotedNode_xjj00_a0a0a6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_xjj00_a0a0a6 = quotedNode_xjj00_a0a0a6;
+        quotedNode1_xjj00_a0a0a6.addReference(SReference.create("classifier", quotedNode1_xjj00_a0a0a6, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_xjj00_a0a0a6;
       }
       return result;
     }

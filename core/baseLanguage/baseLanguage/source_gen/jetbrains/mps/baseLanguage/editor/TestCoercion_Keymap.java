@@ -17,8 +17,8 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class TestCoercion_Keymap extends EditorCellKeyMap {
-  private static SNodePointer SNODE_POINTER0 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
-  private static SNodePointer SNODE_POINTER1 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_ = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER__0 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
 
   public TestCoercion_Keymap() {
     this.setApplicableToEveryModel(true);
@@ -83,9 +83,9 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       }
       {
         text = text + "\n\ncoerce to Iterable<..>";
-        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new TestCoercion_Keymap.TestCoercion_Keymap_Action0.Pattern_3548_0(), true);
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new TestCoercion_Keymap.TestCoercion_Keymap_Action0.Pattern_b5sqja_a1a0a1a5a4a(), true);
         text = text + "\nweak  : " + coercedType;
-        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new TestCoercion_Keymap.TestCoercion_Keymap_Action0.Pattern_3548_1(), false);
+        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new TestCoercion_Keymap.TestCoercion_Keymap_Action0.Pattern_b5sqja_a1a0a3a5a4a(), false);
         text = text + "\nstrong: " + coercedType;
       }
       {
@@ -102,21 +102,21 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       return "ctrl alt shift T";
     }
 
-    public static class Pattern_3548_0 extends GeneratedMatchingPattern implements IMatchingPattern {
-      public Pattern_3548_0() {
+    public static class Pattern_b5sqja_a1a0a1a5a4a extends GeneratedMatchingPattern implements IMatchingPattern {
+      public Pattern_b5sqja_a1a0a1a5a4a() {
       }
 
       public boolean match(SNode nodeToMatch) {
         {
-          SNode nodeToMatch_3548_0;
-          nodeToMatch_3548_0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_3548_0.getConceptFqName()))) {
+          SNode nodeToMatch_b5sqja_a0a0a1a5a0a;
+          nodeToMatch_b5sqja_a0a0a1a5a0a = nodeToMatch;
+          if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_b5sqja_a0a0a1a5a0a.getConceptFqName()))) {
             return false;
           }
           {
             SNode referent;
-            referent = SNODE_POINTER0.getNode();
-            if (nodeToMatch_3548_0.getReferent("classifier") != referent) {
+            referent = SNODE_POINTER_.getNode();
+            if (nodeToMatch_b5sqja_a0a0a1a5a0a.getReferent("classifier") != referent) {
               return false;
             }
           }
@@ -136,21 +136,21 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       }
     }
 
-    public static class Pattern_3548_1 extends GeneratedMatchingPattern implements IMatchingPattern {
-      public Pattern_3548_1() {
+    public static class Pattern_b5sqja_a1a0a3a5a4a extends GeneratedMatchingPattern implements IMatchingPattern {
+      public Pattern_b5sqja_a1a0a3a5a4a() {
       }
 
       public boolean match(SNode nodeToMatch) {
         {
-          SNode nodeToMatch_3548_1;
-          nodeToMatch_3548_1 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_3548_1.getConceptFqName()))) {
+          SNode nodeToMatch_b5sqja_a0a0a3a5a0a;
+          nodeToMatch_b5sqja_a0a0a3a5a0a = nodeToMatch;
+          if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_b5sqja_a0a0a3a5a0a.getConceptFqName()))) {
             return false;
           }
           {
             SNode referent;
-            referent = SNODE_POINTER1.getNode();
-            if (nodeToMatch_3548_1.getReferent("classifier") != referent) {
+            referent = SNODE_POINTER__0.getNode();
+            if (nodeToMatch_b5sqja_a0a0a3a5a0a.getReferent("classifier") != referent) {
               return false;
             }
           }

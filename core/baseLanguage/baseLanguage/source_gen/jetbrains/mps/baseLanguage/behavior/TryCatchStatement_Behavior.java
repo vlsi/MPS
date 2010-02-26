@@ -31,7 +31,7 @@ public class TryCatchStatement_Behavior {
       Set<SNode> toRemove = SetSequence.fromSet(new HashSet());
       for (SNode thrownFromBody : SetSequence.fromSet(thrownsFromBody)) {
         SNode catchedType = SLinkOperations.getTarget(SLinkOperations.getTarget(caatch, "throwable", true), "type", true);
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(new TryCatchStatement_Behavior.QuotationClass_7170_0().createNode(thrownFromBody), catchedType)) {
+        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(new TryCatchStatement_Behavior.QuotationClass_1bi1ep_a0a0b0c0e0c().createNode(thrownFromBody), catchedType)) {
           SetSequence.fromSet(toRemove).addElement(thrownFromBody);
         }
       }
@@ -45,19 +45,19 @@ public class TryCatchStatement_Behavior {
     }
   }
 
-  public static class QuotationClass_7170_0 {
-    public QuotationClass_7170_0() {
+  public static class QuotationClass_1bi1ep_a0a0b0c0e0c {
+    public QuotationClass_1bi1ep_a0a0b0c0e0c() {
     }
 
-    public SNode createNode(Object parameter_7170_0) {
+    public SNode createNode(Object parameter_1bi1ep_a0a0a0b0c0e0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7170_0 = null;
+      SNode quotedNode_1bi1ep_a0a0b0c0e0a = null;
       {
-        quotedNode_7170_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7170_0 = quotedNode_7170_0;
-        quotedNode1_7170_0.setReferent("classifier", (SNode) parameter_7170_0);
-        result = quotedNode1_7170_0;
+        quotedNode_1bi1ep_a0a0b0c0e0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1bi1ep_a0a0b0c0e0a = quotedNode_1bi1ep_a0a0b0c0e0a;
+        quotedNode1_1bi1ep_a0a0b0c0e0a.setReferent("classifier", (SNode) parameter_1bi1ep_a0a0a0b0c0e0a);
+        result = quotedNode1_1bi1ep_a0a0b0c0e0a;
       }
       return result;
     }

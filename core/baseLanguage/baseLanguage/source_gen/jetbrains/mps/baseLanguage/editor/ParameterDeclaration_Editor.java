@@ -31,84 +31,84 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4085_1(editorContext, node);
+    return this.createCollection_vsmugd_a_0(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4085_0(editorContext, node);
+    return this.createCollection_vsmugd_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4085_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vsmugd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4085_0");
-    editorCell.addEditorCell(this.createConstant_4085_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_4085_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4085_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_4085_0(editorContext, node));
+    editorCell.setCellId("Collection_vsmugd_a");
+    editorCell.addEditorCell(this.createConstant_vsmugd_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vsmugd_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vsmugd_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_vsmugd_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4085_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vsmugd_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4085_1");
-    editorCell.addEditorCell(this.createCollection_4085_2(editorContext, node));
+    editorCell.setCellId("Collection_vsmugd_a_0");
+    editorCell.addEditorCell(this.createCollection_vsmugd_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4085_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vsmugd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4085_2");
+    editorCell.setCellId("Collection_vsmugd_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    if (renderingCondition4085_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_4085_3(editorContext, node));
+    if (renderingCondition_vsmugd_a0a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_vsmugd_a0a(editorContext, node));
     }
-    if (renderingCondition4085_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_4085_1(editorContext, node));
+    if (renderingCondition_vsmugd_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_vsmugd_b0a(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefNode_4085_0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_4085_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vsmugd_c0a(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_vsmugd_d0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_4085_3(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vsmugd_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4085_3");
+    editorCell.setCellId("Collection_vsmugd_a0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createRefNodeList_4085_1(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_vsmugd_a0a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_4085_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_vsmugd_d0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new VariableDeclaration_NameCellComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_4085_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vsmugd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final :");
-    editorCell.setCellId("Constant_4085_0");
+    editorCell.setCellId("Constant_vsmugd_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4085_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vsmugd_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
-    editorCell.setCellId("Constant_4085_1");
+    editorCell.setCellId("Constant_vsmugd_b0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_4085_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vsmugd_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotations:");
-    editorCell.setCellId("Constant_4085_2");
+    editorCell.setCellId("Constant_vsmugd_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -117,8 +117,8 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4085_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ParameterDeclaration_Editor.annotationListHandler_4085_0(node, "annotation", editorContext);
+  private EditorCell createRefNodeList_vsmugd_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ParameterDeclaration_Editor.annotationListHandler_vsmugd_d0(node, "annotation", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_annotation");
     {
@@ -129,15 +129,15 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4085_1(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ParameterDeclaration_Editor.annotationListHandler_4085_1(node, "annotation", editorContext);
+  private EditorCell createRefNodeList_vsmugd_a0a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ParameterDeclaration_Editor.annotationListHandler_vsmugd_a0a0(node, "annotation", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_annotation_1");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createProperty_4085_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_vsmugd_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isFinal");
     provider.setNoTargetText("<no isFinal>");
@@ -159,7 +159,7 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4085_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_vsmugd_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -176,16 +176,16 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition4085_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_vsmugd_a1a0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
-  private static boolean renderingCondition4085_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_vsmugd_a0a0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).count() > 0;
   }
 
-  private static class annotationListHandler_4085_0 extends RefNodeListHandler {
-    public annotationListHandler_4085_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class annotationListHandler_vsmugd_d0 extends RefNodeListHandler {
+    public annotationListHandler_vsmugd_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -226,8 +226,8 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class annotationListHandler_4085_1 extends RefNodeListHandler {
-    public annotationListHandler_4085_1(SNode ownerNode, String childRole, EditorContext context) {
+  private static class annotationListHandler_vsmugd_a0a0 extends RefNodeListHandler {
+    public annotationListHandler_vsmugd_a0a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

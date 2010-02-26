@@ -30,72 +30,72 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1944_0(editorContext, node);
+    return this.createCollection_bfm5ok_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1944_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_bfm5ok_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1944_0");
-    editorCell.addEditorCell(this.createProperty_1944_0(editorContext, node));
-    if (renderingCondition1944_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_1944_1(editorContext, node));
+    editorCell.setCellId("Collection_bfm5ok_a");
+    editorCell.addEditorCell(this.createProperty_bfm5ok_a0(editorContext, node));
+    if (renderingCondition_bfm5ok_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_bfm5ok_b0(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_1944_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_bfm5ok_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1944_1");
+    editorCell.setCellId("Collection_bfm5ok_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1944_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1944_0(editorContext, node));
-    if (renderingCondition1944_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_1944_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_bfm5ok_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_bfm5ok_b1a(editorContext, node));
+    if (renderingCondition_bfm5ok_a2b0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_bfm5ok_c1a(editorContext, node));
     }
     return editorCell;
   }
 
-  private EditorCell createCollection_1944_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_bfm5ok_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1944_2");
+    editorCell.setCellId("Collection_bfm5ok_c1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1944_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_1944_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_bfm5ok_a2b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_bfm5ok_b2b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1944_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_bfm5ok_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
-    editorCell.setCellId("Constant_1944_0");
+    editorCell.setCellId("Constant_bfm5ok_a1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1944_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_bfm5ok_a2b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&");
-    editorCell.setCellId("Constant_1944_1");
+    editorCell.setCellId("Constant_bfm5ok_a2b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_1944_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new TypeVariableDeclaration_Editor.auxBoundsListHandler_1944_0(node, "auxBounds", editorContext);
+  private EditorCell createRefNodeList_bfm5ok_b2b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new TypeVariableDeclaration_Editor.auxBoundsListHandler_bfm5ok_b2b0(node, "auxBounds", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_auxBounds");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createProperty_1944_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_bfm5ok_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -114,7 +114,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1944_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_bfm5ok_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("bound");
     provider.setNoTargetText("<no bound>");
@@ -132,16 +132,16 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition1944_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bfm5ok_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "bound", true) != null);
   }
 
-  private static boolean renderingCondition1944_1(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_bfm5ok_a2b0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "auxBounds", true)).isNotEmpty();
   }
 
-  private static class auxBoundsListHandler_1944_0 extends RefNodeListHandler {
-    public auxBoundsListHandler_1944_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class auxBoundsListHandler_bfm5ok_b2b0 extends RefNodeListHandler {
+    public auxBoundsListHandler_bfm5ok_b2b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

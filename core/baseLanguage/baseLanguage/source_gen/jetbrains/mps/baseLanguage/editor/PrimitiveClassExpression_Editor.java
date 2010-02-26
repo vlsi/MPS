@@ -16,29 +16,29 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class PrimitiveClassExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8931_0(editorContext, node);
+    return this.createCollection_bw5rf5_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8931_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_bw5rf5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8931_0");
-    editorCell.addEditorCell(this.createRefNode_8931_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8931_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8931_1(editorContext, node));
+    editorCell.setCellId("Collection_bw5rf5_a");
+    editorCell.addEditorCell(this.createRefNode_bw5rf5_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_bw5rf5_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_bw5rf5_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8931_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_bw5rf5_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
-    editorCell.setCellId("Constant_8931_0");
+    editorCell.setCellId("Constant_bw5rf5_b0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_8931_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_bw5rf5_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class");
-    editorCell.setCellId("Constant_8931_1");
+    editorCell.setCellId("Constant_bw5rf5_c0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
@@ -48,7 +48,7 @@ public class PrimitiveClassExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8931_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_bw5rf5_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("primitiveType");
     provider.setNoTargetText("<no primitiveType>");

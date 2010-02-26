@@ -27,25 +27,25 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class UsingStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4975_0(editorContext, node);
+    return this.createCollection_pkcf3k_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4975_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_pkcf3k_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4975_0");
-    editorCell.addEditorCell(this.createConstant_4975_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4975_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_4975_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4975_3(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4975_4(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4975_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4975_5(editorContext, node));
+    editorCell.setCellId("Collection_pkcf3k_a");
+    editorCell.addEditorCell(this.createConstant_pkcf3k_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pkcf3k_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_pkcf3k_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pkcf3k_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pkcf3k_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_pkcf3k_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pkcf3k_g0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4975_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pkcf3k_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "using");
-    editorCell.setCellId("Constant_4975_0");
+    editorCell.setCellId("Constant_pkcf3k_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
@@ -54,9 +54,9 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4975_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pkcf3k_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_4975_1");
+    editorCell.setCellId("Constant_pkcf3k_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.MATCHING_LABEL, "parensesis");
@@ -65,9 +65,9 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4975_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pkcf3k_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_4975_3");
+    editorCell.setCellId("Constant_pkcf3k_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.MATCHING_LABEL, "parensesis");
@@ -76,9 +76,9 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4975_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pkcf3k_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_4975_4");
+    editorCell.setCellId("Constant_pkcf3k_e0");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -88,23 +88,23 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4975_5(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pkcf3k_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_4975_5");
+    editorCell.setCellId("Constant_pkcf3k_g0");
     BaseLanguageStyle_StyleSheet.getMatching(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_4975_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new UsingStatement_Editor.resourceListHandler_4975_0(node, "resource", editorContext);
+  private EditorCell createRefNodeList_pkcf3k_c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new UsingStatement_Editor.resourceListHandler_pkcf3k_c0(node, "resource", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_resource");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNode_4975_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pkcf3k_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");
@@ -126,8 +126,8 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class resourceListHandler_4975_0 extends RefNodeListHandler {
-    public resourceListHandler_4975_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class resourceListHandler_pkcf3k_c0 extends RefNodeListHandler {
+    public resourceListHandler_pkcf3k_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -150,7 +150,7 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_4975_2(editorContext, node);
+      return this.createConstant_pkcf3k_a2a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -178,9 +178,9 @@ public class UsingStatement_Editor extends DefaultNodeEditor {
       }
     }
 
-    private EditorCell createConstant_4975_2(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_pkcf3k_a2a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no resources>");
-      editorCell.setCellId("Constant_4975_2");
+      editorCell.setCellId("Constant_pkcf3k_a2a");
       editorCell.setDefaultText("");
       return editorCell;
     }

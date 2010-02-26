@@ -68,7 +68,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
       return false;
     }
     // check it's instance of RuntimeException 
-    if (!(ClassConcept_Behavior.call_isDescendant_1213877355812(exceptionJavaType, (SNode) SLinkOperations.getTarget(new AddRuntimeExceptionToMethodSignature_Intention.QuotationClass_1793_0().createNode(), "classifier", false)))) {
+    if (!(ClassConcept_Behavior.call_isDescendant_1213877355812(exceptionJavaType, (SNode) SLinkOperations.getTarget(new AddRuntimeExceptionToMethodSignature_Intention.QuotationClass_11l094_a0a1a0j0g().createNode(), "classifier", false)))) {
       return false;
     }
     // check if it's not thrown by a method yet 
@@ -91,19 +91,19 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
     return "jetbrains.mps.baseLanguage.intentions";
   }
 
-  public static class QuotationClass_1793_0 {
-    public QuotationClass_1793_0() {
+  public static class QuotationClass_11l094_a0a1a0j0g {
+    public QuotationClass_11l094_a0a1a0j0g() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8100_0 = null;
+      SNode quotedNode_7gg82q_a0a0a0a9a0 = null;
       {
-        quotedNode_8100_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8100_0 = quotedNode_8100_0;
-        quotedNode1_8100_0.addReference(SReference.create("classifier", quotedNode1_8100_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
-        result = quotedNode1_8100_0;
+        quotedNode_7gg82q_a0a0a0a9a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7gg82q_a0a0a0a9a0 = quotedNode_7gg82q_a0a0a0a9a0;
+        quotedNode1_7gg82q_a0a0a0a9a0.addReference(SReference.create("classifier", quotedNode1_7gg82q_a0a0a0a9a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
+        result = quotedNode1_7gg82q_a0a0a0a9a0;
       }
       return result;
     }

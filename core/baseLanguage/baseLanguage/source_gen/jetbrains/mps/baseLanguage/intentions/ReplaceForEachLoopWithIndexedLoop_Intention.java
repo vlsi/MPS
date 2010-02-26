@@ -68,7 +68,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
     // 
     final SNode forVariableDeclaration = SLinkOperations.setNewChild(forStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     SPropertyOperations.set(forVariableDeclaration, "name", "i");
-    SLinkOperations.setTarget(forVariableDeclaration, "type", new ReplaceForEachLoopWithIndexedLoop_Intention.QuotationClass_1422_0().createNode(), true);
+    SLinkOperations.setTarget(forVariableDeclaration, "type", new ReplaceForEachLoopWithIndexedLoop_Intention.QuotationClass_nfmyw1_a2a9a7().createNode(), true);
     SLinkOperations.setNewChild(forVariableDeclaration, "initializer", "jetbrains.mps.baseLanguage.structure.IntegerConstant");
     SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(forVariableDeclaration, "initializer", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (0));
     // 
@@ -111,18 +111,18 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
     return "jetbrains.mps.baseLanguage.intentions";
   }
 
-  public static class QuotationClass_1422_0 {
-    public QuotationClass_1422_0() {
+  public static class QuotationClass_nfmyw1_a2a9a7 {
+    public QuotationClass_nfmyw1_a2a9a7() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8731_0 = null;
+      SNode quotedNode_zgbvoa_a0a0j0a = null;
       {
-        quotedNode_8731_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8731_0 = quotedNode_8731_0;
-        result = quotedNode1_8731_0;
+        quotedNode_zgbvoa_a0a0j0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_zgbvoa_a0a0j0a = quotedNode_zgbvoa_a0a0j0a;
+        result = quotedNode1_zgbvoa_a0a0j0a;
       }
       return result;
     }

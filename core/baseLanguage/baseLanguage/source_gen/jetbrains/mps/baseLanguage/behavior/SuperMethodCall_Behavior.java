@@ -22,49 +22,49 @@ public class SuperMethodCall_Behavior {
     SNode concept = ClassConcept_Behavior.getContextClass_8008512149545173402(thisNode);
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for (SNode tvd : SLinkOperations.getTargets(concept, "typeVariableDeclaration", true)) {
-      ListSequence.fromList(typeVarRefs).addElement(new SuperMethodCall_Behavior.QuotationClass_7225_1().createNode(tvd));
+      ListSequence.fromList(typeVarRefs).addElement(new SuperMethodCall_Behavior.QuotationClass_ypylvf_a0a0a0c0b().createNode(tvd));
     }
-    return new SuperMethodCall_Behavior.QuotationClass_7225_0().createNode(typeVarRefs, concept);
+    return new SuperMethodCall_Behavior.QuotationClass_ypylvf_a0d0b().createNode(typeVarRefs, concept);
   }
 
-  public static class QuotationClass_7225_0 {
-    public QuotationClass_7225_0() {
+  public static class QuotationClass_ypylvf_a0d0b {
+    public QuotationClass_ypylvf_a0d0b() {
     }
 
-    public SNode createNode(Object parameter_7225_1, Object parameter_7225_2) {
+    public SNode createNode(Object parameter_ypylvf_a0a0a3a0, Object parameter_ypylvf_a0a0d0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7225_1 = null;
-      SNode quotedNode_7225_2 = null;
+      SNode quotedNode_ypylvf_a0d0a = null;
+      SNode quotedNode_ypylvf_a0a3a0 = null;
       {
-        quotedNode_7225_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7225_1 = quotedNode_7225_1;
-        quotedNode1_7225_1.setReferent("classifier", (SNode) parameter_7225_2);
+        quotedNode_ypylvf_a0d0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_ypylvf_a0d0a = quotedNode_ypylvf_a0d0a;
+        quotedNode1_ypylvf_a0d0a.setReferent("classifier", (SNode) parameter_ypylvf_a0a0d0a);
         {
-          List<SNode> nodes = (List<SNode>) parameter_7225_1;
+          List<SNode> nodes = (List<SNode>) parameter_ypylvf_a0a0a3a0;
           for (SNode child : nodes) {
-            quotedNode_7225_1.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_ypylvf_a0d0a.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_7225_1;
+        result = quotedNode1_ypylvf_a0d0a;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_7225_1 {
-    public QuotationClass_7225_1() {
+  public static class QuotationClass_ypylvf_a0a0a0c0b {
+    public QuotationClass_ypylvf_a0a0a0c0b() {
     }
 
-    public SNode createNode(Object parameter_7225_0) {
+    public SNode createNode(Object parameter_ypylvf_a0a0a0a0c0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7225_0 = null;
+      SNode quotedNode_ypylvf_a0a0a0c0a = null;
       {
-        quotedNode_7225_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7225_0 = quotedNode_7225_0;
-        quotedNode1_7225_0.setReferent("typeVariableDeclaration", (SNode) parameter_7225_0);
-        result = quotedNode1_7225_0;
+        quotedNode_ypylvf_a0a0a0c0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_ypylvf_a0a0a0c0a = quotedNode_ypylvf_a0a0a0c0a;
+        quotedNode1_ypylvf_a0a0a0c0a.setReferent("typeVariableDeclaration", (SNode) parameter_ypylvf_a0a0a0a0c0a);
+        result = quotedNode1_ypylvf_a0a0a0c0a;
       }
       return result;
     }

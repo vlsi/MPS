@@ -60,38 +60,38 @@ public class AbstractClassifierReference_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), new AbstractClassifierReference_KeyMap.AbstractClassifierReference_KeyMap_Action0.QuotationClass_3628_0().createNode(SLinkOperations.getTarget(node, "classifier", false)));
+      SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), new AbstractClassifierReference_KeyMap.AbstractClassifierReference_KeyMap_Action0.QuotationClass_l22mu2_a1a0a4a().createNode(SLinkOperations.getTarget(node, "classifier", false)));
     }
 
     public String getKeyStroke() {
       return "none SPACE";
     }
 
-    public static class QuotationClass_3628_0 {
-      public QuotationClass_3628_0() {
+    public static class QuotationClass_l22mu2_a1a0a4a {
+      public QuotationClass_l22mu2_a1a0a4a() {
       }
 
-      public SNode createNode(Object parameter_3628_0) {
+      public SNode createNode(Object parameter_l22mu2_a0a0a0a0a0a0) {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3628_0 = null;
-        SNode quotedNode_3628_1 = null;
-        SNode quotedNode_3628_2 = null;
+        SNode quotedNode_l22mu2_a0a0a0a0 = null;
+        SNode quotedNode_l22mu2_a0a0a0a0a = null;
+        SNode quotedNode_l22mu2_a0a0a0a0a0 = null;
         {
-          quotedNode_3628_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3628_0 = quotedNode_3628_0;
+          quotedNode_l22mu2_a0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_l22mu2_a0a0a0a0 = quotedNode_l22mu2_a0a0a0a0;
           {
-            quotedNode_3628_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-            SNode quotedNode1_3628_1 = quotedNode_3628_1;
+            quotedNode_l22mu2_a0a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+            SNode quotedNode1_l22mu2_a0a0a0a0a = quotedNode_l22mu2_a0a0a0a0a;
             {
-              quotedNode_3628_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-              SNode quotedNode1_3628_2 = quotedNode_3628_2;
-              quotedNode1_3628_2.setReferent("classifier", (SNode) parameter_3628_0);
-              quotedNode_3628_1.addChild("type", quotedNode1_3628_2);
+              quotedNode_l22mu2_a0a0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+              SNode quotedNode1_l22mu2_a0a0a0a0a0 = quotedNode_l22mu2_a0a0a0a0a0;
+              quotedNode1_l22mu2_a0a0a0a0a0.setReferent("classifier", (SNode) parameter_l22mu2_a0a0a0a0a0a0);
+              quotedNode_l22mu2_a0a0a0a0a.addChild("type", quotedNode1_l22mu2_a0a0a0a0a0);
             }
-            quotedNode_3628_0.addChild("localVariableDeclaration", quotedNode1_3628_1);
+            quotedNode_l22mu2_a0a0a0a0.addChild("localVariableDeclaration", quotedNode1_l22mu2_a0a0a0a0a);
           }
-          result = quotedNode1_3628_0;
+          result = quotedNode1_l22mu2_a0a0a0a0;
         }
         return result;
       }

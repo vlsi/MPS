@@ -15,36 +15,36 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AsExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1550_0(editorContext, node);
+    return this.createCollection_k61n5d_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1550_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_k61n5d_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1550_0");
-    editorCell.addEditorCell(this.createRefNode_1550_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_1550_1(editorContext, node));
+    editorCell.setCellId("Collection_k61n5d_a");
+    editorCell.addEditorCell(this.createRefNode_k61n5d_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_k61n5d_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_1550_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_k61n5d_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1550_1");
+    editorCell.setCellId("Collection_k61n5d_b0");
     AsExpression_Delete.setCellActions(editorCell, node, editorContext);
-    editorCell.addEditorCell(this.createConstant_1550_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1550_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_k61n5d_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_k61n5d_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1550_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_k61n5d_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
-    editorCell.setCellId("Constant_1550_0");
+    editorCell.setCellId("Constant_k61n5d_a1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     AsExpression_Delete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_1550_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_k61n5d_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");
@@ -61,7 +61,7 @@ public class AsExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1550_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_k61n5d_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("classifierType");
     provider.setNoTargetText("<no classifierType>");

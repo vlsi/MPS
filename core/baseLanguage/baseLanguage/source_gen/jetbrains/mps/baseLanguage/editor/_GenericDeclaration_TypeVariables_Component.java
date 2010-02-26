@@ -30,25 +30,25 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9618_0(editorContext, node);
+    return this.createCollection_k0lfun_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9618_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_k0lfun_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9618_0");
+    editorCell.setCellId("Collection_k0lfun_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_9618_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_9618_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9618_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_k0lfun_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_k0lfun_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_k0lfun_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9618_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_k0lfun_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_9618_0");
+    editorCell.setCellId("Constant_k0lfun_a0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -60,9 +60,9 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     return editorCell;
   }
 
-  private EditorCell createConstant_9618_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_k0lfun_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_9618_1");
+    editorCell.setCellId("Constant_k0lfun_c0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -74,16 +74,16 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_9618_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new _GenericDeclaration_TypeVariables_Component.typeVariableDeclarationListHandler_9618_0(node, "typeVariableDeclaration", editorContext);
+  private EditorCell createRefNodeList_k0lfun_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new _GenericDeclaration_TypeVariables_Component.typeVariableDeclarationListHandler_k0lfun_b0(node, "typeVariableDeclaration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_typeVariableDeclaration");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class typeVariableDeclarationListHandler_9618_0 extends RefNodeListHandler {
-    public typeVariableDeclarationListHandler_9618_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class typeVariableDeclarationListHandler_k0lfun_b0 extends RefNodeListHandler {
+    public typeVariableDeclarationListHandler_k0lfun_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

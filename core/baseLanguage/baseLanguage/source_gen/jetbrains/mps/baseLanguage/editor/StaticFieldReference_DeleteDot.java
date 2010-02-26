@@ -32,22 +32,22 @@ public class StaticFieldReference_DeleteDot {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithAnother(node, new StaticFieldReference_DeleteDot.StaticFieldReference_DeleteDot_DELETE.QuotationClass_5038_0().createNode(SLinkOperations.getTarget(node, "classifier", false)));
+      SNodeOperations.replaceWithAnother(node, new StaticFieldReference_DeleteDot.StaticFieldReference_DeleteDot_DELETE.QuotationClass_65e73j_a1a0a1a().createNode(SLinkOperations.getTarget(node, "classifier", false)));
     }
 
-    public static class QuotationClass_5038_0 {
-      public QuotationClass_5038_0() {
+    public static class QuotationClass_65e73j_a1a0a1a {
+      public QuotationClass_65e73j_a1a0a1a() {
       }
 
-      public SNode createNode(Object parameter_5038_0) {
+      public SNode createNode(Object parameter_65e73j_a0a0a0a0a0) {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_5038_0 = null;
+        SNode quotedNode_65e73j_a0a0a0a0 = null;
         {
-          quotedNode_5038_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5038_0 = quotedNode_5038_0;
-          quotedNode1_5038_0.setReferent("classifier", (SNode) parameter_5038_0);
-          result = quotedNode1_5038_0;
+          quotedNode_65e73j_a0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_65e73j_a0a0a0a0 = quotedNode_65e73j_a0a0a0a0;
+          quotedNode1_65e73j_a0a0a0a0.setReferent("classifier", (SNode) parameter_65e73j_a0a0a0a0a0);
+          result = quotedNode1_65e73j_a0a0a0a0;
         }
         return result;
       }

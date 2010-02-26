@@ -15,45 +15,45 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class SubstringExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5565_0(editorContext, node);
+    return this.createCollection_vmnbe9_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5565_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vmnbe9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5565_0");
-    editorCell.addEditorCell(this.createRefNode_5565_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5565_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5565_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5565_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_5565_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5565_2(editorContext, node));
+    editorCell.setCellId("Collection_vmnbe9_a");
+    editorCell.addEditorCell(this.createRefNode_vmnbe9_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vmnbe9_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vmnbe9_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vmnbe9_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_vmnbe9_e0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vmnbe9_f0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_5565_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vmnbe9_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
-    editorCell.setCellId("Constant_5565_0");
+    editorCell.setCellId("Constant_vmnbe9_b0");
     BaseLanguageStyle_StyleSheet.getLeftParenAfterName(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5565_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vmnbe9_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_5565_1");
+    editorCell.setCellId("Constant_vmnbe9_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_5565_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_vmnbe9_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
-    editorCell.setCellId("Constant_5565_2");
+    editorCell.setCellId("Constant_vmnbe9_f0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_5565_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_vmnbe9_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("operand");
     provider.setNoTargetText("<no operand>");
@@ -70,7 +70,7 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5565_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_vmnbe9_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("startIndex");
     provider.setNoTargetText("0");
@@ -87,7 +87,7 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_5565_2(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_vmnbe9_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("endIndex");
     provider.setNoTargetText("end");

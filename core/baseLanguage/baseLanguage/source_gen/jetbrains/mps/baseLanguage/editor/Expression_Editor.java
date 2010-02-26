@@ -20,22 +20,22 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 
 public class Expression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createAlternation_6116_0(editorContext, node);
+    return this.createAlternation_1ltshm_a(editorContext, node);
   }
 
-  private EditorCell createAlternation_6116_0(EditorContext editorContext, SNode node) {
+  private EditorCell createAlternation_1ltshm_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
-    alternationCondition = Expression_Editor.renderingCondition6116_0(node, editorContext, editorContext.getOperationContext().getScope());
+    alternationCondition = Expression_Editor.renderingCondition_1ltshm_a0(node, editorContext, editorContext.getOperationContext().getScope());
     EditorCell editorCell = null;
     if (alternationCondition) {
-      editorCell = this.createCustom_6116_0(editorContext, node);
+      editorCell = this.createCustom_1ltshm_a0(editorContext, node);
     } else {
-      editorCell = this.createConceptProperty_6116_0(editorContext, node);
+      editorCell = this.createConceptProperty_1ltshm_a0(editorContext, node);
     }
     return editorCell;
   }
 
-  private EditorCell createCustom_6116_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createCustom_1ltshm_a0(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
@@ -49,11 +49,11 @@ public class Expression_Editor extends DefaultNodeEditor {
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_6116_0");
+    editorCell.setCellId("Custom_1ltshm_a0");
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_6116_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConceptProperty_1ltshm_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
     provider.setRole("alias");
     provider.setNoTargetText("<no alias>");
@@ -71,7 +71,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition6116_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_1ltshm_a0(SNode node, EditorContext editorContext, IScope scope) {
     return SConceptPropertyOperations.getString(node, "alias") == null;
   }
 }

@@ -16,20 +16,20 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 
 public class ConceptFunction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_3364_0(editorContext, node);
+    return this.createComponent_qilpva_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCustom_3364_0(editorContext, node);
+    return this.createCustom_qilpva_a(editorContext, node);
   }
 
-  private EditorCell createComponent_3364_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_qilpva_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ConceptFunction_Component(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createCustom_3364_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createCustom_qilpva_a(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
@@ -56,7 +56,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_3364_0");
+    editorCell.setCellId("Custom_qilpva_a");
     return editorCell;
   }
 }

@@ -13,10 +13,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class LoopLabel_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_0212_0(editorContext, node);
+    return this.createProperty_ukble6_a(editorContext, node);
   }
 
-  private EditorCell createProperty_0212_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ukble6_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

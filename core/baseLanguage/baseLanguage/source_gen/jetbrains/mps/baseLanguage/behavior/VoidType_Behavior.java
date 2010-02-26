@@ -17,22 +17,22 @@ public class VoidType_Behavior {
   }
 
   public static SNode virtual_getUnboxedType_1213877337320(SNode thisNode) {
-    return new VoidType_Behavior.QuotationClass_5341_0().createNode();
+    return new VoidType_Behavior.QuotationClass_s71av5_a0a0b().createNode();
   }
 
-  public static class QuotationClass_5341_0 {
-    public QuotationClass_5341_0() {
+  public static class QuotationClass_s71av5_a0a0b {
+    public QuotationClass_s71av5_a0a0b() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5341_0 = null;
+      SNode quotedNode_s71av5_a0a0a = null;
       {
-        quotedNode_5341_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5341_0 = quotedNode_5341_0;
-        quotedNode1_5341_0.addReference(SReference.create("classifier", quotedNode1_5341_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Void")));
-        result = quotedNode1_5341_0;
+        quotedNode_s71av5_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_s71av5_a0a0a = quotedNode_s71av5_a0a0a;
+        quotedNode1_s71av5_a0a0a.addReference(SReference.create("classifier", quotedNode1_s71av5_a0a0a, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Void")));
+        result = quotedNode1_s71av5_a0a0a;
       }
       return result;
     }

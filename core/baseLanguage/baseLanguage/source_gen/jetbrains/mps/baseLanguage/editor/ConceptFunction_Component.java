@@ -36,22 +36,22 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_8338_0(editorContext, node);
+    return this.createCollection_trik0f_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8338_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_trik0f_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8338_0");
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_8338_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8338_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8338_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_8338_1(editorContext, node));
+    editorCell.setCellId("Collection_trik0f_a");
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_trik0f_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_trik0f_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_trik0f_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_trik0f_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_8338_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_trik0f_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_8338_0");
+    editorCell.setCellId("Constant_trik0f_b0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -62,9 +62,9 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_8338_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_trik0f_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_8338_1");
+    editorCell.setCellId("Constant_trik0f_d0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -75,7 +75,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_8338_0(final EditorContext editorContext, final SNode node) {
+  private EditorCell createReadOnlyModelAccessor_trik0f_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         StringBuilder result = new StringBuilder();
@@ -113,7 +113,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-    editorCell.setCellId("ReadOnlyModelAccessor_8338_0");
+    editorCell.setCellId("ReadOnlyModelAccessor_trik0f_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
@@ -123,7 +123,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createRefNode_8338_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_trik0f_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
     provider.setNoTargetText("<no body>");

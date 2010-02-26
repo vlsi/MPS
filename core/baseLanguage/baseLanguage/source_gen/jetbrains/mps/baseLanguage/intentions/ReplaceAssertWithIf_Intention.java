@@ -57,7 +57,7 @@ public class ReplaceAssertWithIf_Intention extends BaseIntention implements Inte
   public void execute(final SNode node, final EditorContext editorContext) {
     // produce throw statement 
     SNode throwStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThrowStatement", null);
-    SNode newExpr = new ReplaceAssertWithIf_Intention.QuotationClass_3590_0().createNode();
+    SNode newExpr = new ReplaceAssertWithIf_Intention.QuotationClass_iey3o5_a0a2a7().createNode();
     SLinkOperations.setTarget(throwStatement, "throwable", newExpr, true);
     // produce if statement 
     SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
@@ -73,25 +73,25 @@ public class ReplaceAssertWithIf_Intention extends BaseIntention implements Inte
     return "jetbrains.mps.baseLanguage.intentions";
   }
 
-  public static class QuotationClass_3590_0 {
-    public QuotationClass_3590_0() {
+  public static class QuotationClass_iey3o5_a0a2a7 {
+    public QuotationClass_iey3o5_a0a2a7() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9869_0 = null;
-      SNode quotedNode_9869_1 = null;
+      SNode quotedNode_a1x6vi_a0a2a0 = null;
+      SNode quotedNode_a1x6vi_a0a0c0a = null;
       {
-        quotedNode_9869_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9869_0 = quotedNode_9869_0;
+        quotedNode_a1x6vi_a0a2a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_a1x6vi_a0a2a0 = quotedNode_a1x6vi_a0a2a0;
         {
-          quotedNode_9869_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_9869_1 = quotedNode_9869_1;
-          quotedNode1_9869_1.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9869_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~IllegalArgumentException.<init>()")));
-          quotedNode_9869_0.addChild("creator", quotedNode1_9869_1);
+          quotedNode_a1x6vi_a0a0c0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_a1x6vi_a0a0c0a = quotedNode_a1x6vi_a0a0c0a;
+          quotedNode1_a1x6vi_a0a0c0a.addReference(SReference.create("baseMethodDeclaration", quotedNode1_a1x6vi_a0a0c0a, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~IllegalArgumentException.<init>()")));
+          quotedNode_a1x6vi_a0a2a0.addChild("creator", quotedNode1_a1x6vi_a0a0c0a);
         }
-        result = quotedNode1_9869_0;
+        result = quotedNode1_a1x6vi_a0a2a0;
       }
       return result;
     }

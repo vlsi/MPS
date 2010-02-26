@@ -22,26 +22,26 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ArrayCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_5783_0(editorContext, node);
+    return this.createCollection_qich58_a(editorContext, node);
   }
 
-  private EditorCell createCollection_5783_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_qich58_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5783_0");
-    editorCell.addEditorCell(this.createRefNode_5783_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_5783_0(editorContext, node));
+    editorCell.setCellId("Collection_qich58_a");
+    editorCell.addEditorCell(this.createRefNode_qich58_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_qich58_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_5783_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ArrayCreator_Editor.dimensionExpressionListHandler_5783_0(node, "dimensionExpression", editorContext);
+  private EditorCell createRefNodeList_qich58_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ArrayCreator_Editor.dimensionExpressionListHandler_qich58_b0(node, "dimensionExpression", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_dimensionExpression");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNode_5783_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_qich58_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("componentType");
     provider.setNoTargetText("<no componentType>");
@@ -58,8 +58,8 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class dimensionExpressionListHandler_5783_0 extends RefNodeListHandler {
-    public dimensionExpressionListHandler_5783_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dimensionExpressionListHandler_qich58_b0 extends RefNodeListHandler {
+    public dimensionExpressionListHandler_qich58_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

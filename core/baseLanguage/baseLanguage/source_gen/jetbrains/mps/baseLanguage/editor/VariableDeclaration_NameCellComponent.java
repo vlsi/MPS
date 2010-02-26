@@ -39,10 +39,10 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_7633_0(editorContext, node);
+    return this.createProperty_j36akn_a(editorContext, node);
   }
 
-  private EditorCell createProperty_7633_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_j36akn_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -54,11 +54,11 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     }
-    if (renderingCondition7633_0(node, editorContext, editorContext.getScope())) {
+    if (renderingCondition_j36akn_a0(node, editorContext, editorContext.getScope())) {
       editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu_a0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -69,12 +69,12 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     return editorCell;
   }
 
-  private static boolean renderingCondition7633_0(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_j36akn_a0(SNode node, EditorContext editorContext, IScope scope) {
     return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "type", true)) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type") && !(Type_Behavior.call_hasMissingParameters_3508583411997314206(SLinkOperations.getTarget(node, "type", true)));
   }
 
-  public static class VariableDeclaration_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public VariableDeclaration_name_postfixCellMenu0() {
+  public static class VariableDeclaration_name_postfixCellMenu_a0a extends AbstractCellMenuPart_PropertyPostfixHints {
+    public VariableDeclaration_name_postfixCellMenu_a0a() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {

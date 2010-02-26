@@ -22,21 +22,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9553_0(editorContext, node);
+    return this.createCollection_ghsvq8_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9553_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ghsvq8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_9553_0");
-    editorCell.addEditorCell(this.createConstant_9553_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_9553_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9553_1(editorContext, node));
+    editorCell.setCellId("Collection_ghsvq8_a");
+    editorCell.addEditorCell(this.createConstant_ghsvq8_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ghsvq8_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ghsvq8_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9553_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ghsvq8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/*");
-    editorCell.setCellId("Constant_9553_0");
+    editorCell.setCellId("Constant_ghsvq8_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
@@ -47,9 +47,9 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_9553_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ghsvq8_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*/");
-    editorCell.setCellId("Constant_9553_1");
+    editorCell.setCellId("Constant_ghsvq8_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
@@ -59,8 +59,8 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_9553_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new CommentedStatementsBlock_Editor.statementListHandler_9553_0(node, "statement", editorContext);
+  private EditorCell createRefNodeList_ghsvq8_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new CommentedStatementsBlock_Editor.statementListHandler_ghsvq8_b0(node, "statement", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_statement");
     {
@@ -72,8 +72,8 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class statementListHandler_9553_0 extends RefNodeListHandler {
-    public statementListHandler_9553_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class statementListHandler_ghsvq8_b0 extends RefNodeListHandler {
+    public statementListHandler_ghsvq8_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

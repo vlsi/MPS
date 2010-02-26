@@ -28,58 +28,58 @@ import jetbrains.mps.smodel.SModel;
 
 public class ElsifClause_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1596_0(editorContext, node);
+    return this.createCollection_m61dlm_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1596_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_m61dlm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1596_0");
+    editorCell.setCellId("Collection_m61dlm_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.POSITION, "next-line");
     }
-    editorCell.addEditorCell(this.createConstant_1596_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1596_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1596_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1596_2(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1596_3(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1596_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1596_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_m61dlm_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_m61dlm_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_m61dlm_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_m61dlm_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_m61dlm_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_m61dlm_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_m61dlm_g0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1596_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_m61dlm_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "else if");
-    editorCell.setCellId("Constant_1596_0");
+    editorCell.setCellId("Constant_m61dlm_a0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, true);
     }
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu_a0a0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_1596_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_m61dlm_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_1596_1");
+    editorCell.setCellId("Constant_m61dlm_b0");
     BaseLanguageStyle_StyleSheet.getLeftParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1596_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_m61dlm_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_1596_2");
+    editorCell.setCellId("Constant_m61dlm_d0");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1596_3(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_m61dlm_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_1596_3");
+    editorCell.setCellId("Constant_m61dlm_e0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -89,9 +89,9 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1596_4(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_m61dlm_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_1596_4");
+    editorCell.setCellId("Constant_m61dlm_g0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -102,7 +102,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1596_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_m61dlm_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
     provider.setNoTargetText("<no condition>");
@@ -119,7 +119,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1596_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_m61dlm_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("statementList");
     provider.setNoTargetText("<no statementList>");
@@ -141,8 +141,8 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class ElsifClause_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Group {
-    public ElsifClause_generic_cellMenu0() {
+  public static class ElsifClause_generic_cellMenu_a0a0 extends AbstractCellMenuPart_Generic_Group {
+    public ElsifClause_generic_cellMenu_a0a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

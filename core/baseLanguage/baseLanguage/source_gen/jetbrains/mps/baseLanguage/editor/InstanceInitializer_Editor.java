@@ -17,22 +17,22 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InstanceInitializer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2081_0(editorContext, node);
+    return this.createCollection_t233bj_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2081_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_t233bj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2081_0");
-    editorCell.addEditorCell(this.createConstant_2081_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2081_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2081_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2081_2(editorContext, node));
+    editorCell.setCellId("Collection_t233bj_a");
+    editorCell.addEditorCell(this.createConstant_t233bj_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_t233bj_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_t233bj_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_t233bj_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2081_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_t233bj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_2081_0");
+    editorCell.setCellId("Constant_t233bj_a0");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -42,9 +42,9 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2081_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_t233bj_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_2081_1");
+    editorCell.setCellId("Constant_t233bj_c0");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -54,9 +54,9 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_2081_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_t233bj_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_2081_2");
+    editorCell.setCellId("Constant_t233bj_d0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -66,7 +66,7 @@ public class InstanceInitializer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2081_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_t233bj_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("statementList");
     provider.setNoTargetText("<no statementList>");

@@ -13,12 +13,12 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Number_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_0029_0(editorContext, node);
+    return this.createConstant_ydd9ch_a(editorContext, node);
   }
 
-  private EditorCell createConstant_0029_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ydd9ch_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "number");
-    editorCell.setCellId("Constant_0029_0");
+    editorCell.setCellId("Constant_ydd9ch_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);

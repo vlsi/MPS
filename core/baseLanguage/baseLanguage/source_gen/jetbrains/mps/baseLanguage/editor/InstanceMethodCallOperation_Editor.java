@@ -19,23 +19,23 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2215_0(editorContext, node);
+    return this.createCollection_jyer24_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2215_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_jyer24_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2215_0");
+    editorCell.setCellId("Collection_jyer24_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
     }
-    editorCell.addEditorCell(this.createComponent_2215_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_2215_0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_2215_0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_jyer24_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_jyer24_b0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_jyer24_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createComponent_2215_0(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_jyer24_c0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new IMethodCall_actualArguments(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     {
@@ -45,7 +45,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_2215_1(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_jyer24_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new IMethodCall_typeArguments(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     {
@@ -55,12 +55,12 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_2215_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_jyer24_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("instanceMethodDeclaration");
     provider.setNoTargetText("<no method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InstanceMethodCallOperation_Editor._Inline2215_0());
+    provider.setAuxiliaryCellProvider(new InstanceMethodCallOperation_Editor._Inline_jyer24_a1a());
     editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
@@ -77,8 +77,8 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline2215_0 extends InlineCellProvider {
-    public _Inline2215_0() {
+  public static class _Inline_jyer24_a1a extends InlineCellProvider {
+    public _Inline_jyer24_a1a() {
       super();
     }
 
@@ -87,10 +87,10 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_2215_0(editorContext, node);
+      return this.createProperty_jyer24_a0b0(editorContext, node);
     }
 
-    private EditorCell createProperty_2215_0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_jyer24_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

@@ -36,21 +36,21 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
   }
 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4313_0(editorContext, node);
+    return this.createCollection_8989zw_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4313_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_8989zw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4313_0");
+    editorCell.setCellId("Collection_8989zw_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createProperty_4313_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_8989zw_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createProperty_4313_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_8989zw_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -62,7 +62,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.STRIKE_OUT, new AttributeCalculator<Boolean>() {
         public Boolean calculate(EditorCell cell) {
-          return BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_4313_0((cell == null ?
+          return BaseMethodDeclaration_NameCellComponent._StyleParameter_QueryFunction_8989zw_a0a0((cell == null ?
             null :
             cell.getSNode()
           ), (cell == null ?
@@ -73,7 +73,7 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
       });
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -84,12 +84,12 @@ public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvide
     return editorCell;
   }
 
-  private static boolean _StyleParameter_QueryFunction_4313_0(SNode node, EditorContext editorContext) {
+  private static boolean _StyleParameter_QueryFunction_8989zw_a0a0(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept")) && IDeprecatable_Behavior.call_isDeprecated_1224609060727(node);
   }
 
-  public static class BaseMethodDeclaration_name_postfixCellMenu0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public BaseMethodDeclaration_name_postfixCellMenu0() {
+  public static class BaseMethodDeclaration_name_postfixCellMenu_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public BaseMethodDeclaration_name_postfixCellMenu_a0a0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {

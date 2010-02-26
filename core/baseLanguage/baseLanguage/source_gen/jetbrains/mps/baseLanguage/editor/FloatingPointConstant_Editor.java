@@ -16,10 +16,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class FloatingPointConstant_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_9378_0(editorContext, node);
+    return this.createProperty_rprh1r_a(editorContext, node);
   }
 
-  private EditorCell createProperty_9378_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_rprh1r_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
     provider.setNoTargetText("?.?");

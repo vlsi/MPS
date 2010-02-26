@@ -17,27 +17,27 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class InstanceOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2984_0(editorContext, node);
+    return this.createCollection_pg66x0_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2984_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_pg66x0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_2984_0");
-    editorCell.addEditorCell(this.createRefNode_2984_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2984_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_2984_1(editorContext, node));
+    editorCell.setCellId("Collection_pg66x0_a");
+    editorCell.addEditorCell(this.createRefNode_pg66x0_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pg66x0_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_pg66x0_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2984_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pg66x0_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "instanceof");
-    editorCell.setCellId("Constant_2984_0");
+    editorCell.setCellId("Constant_pg66x0_b0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_2984_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pg66x0_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftExpression");
     provider.setNoTargetText("<no leftExpression>");
@@ -58,7 +58,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2984_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pg66x0_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("classType");
     provider.setNoTargetText("<no classType>");
