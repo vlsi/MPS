@@ -24,8 +24,8 @@ import jetbrains.mps.vfs.VFileSystem;
 
 public class ModuleDescriptorPersistence {
   public static void loadDependencies(ModuleDescriptor descriptor, Element root) {
-    ModuleDescriptor result_9364_0 = descriptor;
-    result_9364_0.getDependencies().addAll(loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(root, "dependencies")).first()));
+    ModuleDescriptor result_dxyzb6_a0a0 = descriptor;
+    result_dxyzb6_a0a0.getDependencies().addAll(loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(root, "dependencies")).first()));
 
     descriptor.getUsedLanguages().addAll(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(root, "usedLanguages")).first(), "usedLanguage")).select(new ISelector<Element, ModuleReference>() {
       public ModuleReference select(Element ul) {
@@ -53,41 +53,41 @@ public class ModuleDescriptorPersistence {
   }
 
   public static void saveDependencies(Element result, ModuleDescriptor descriptor) {
-    Element result_9364_1 = result;
+    Element result_dxyzb6_a0a1 = result;
     if (!(descriptor.getDependencies().isEmpty())) {
-      Element result_9364_2 = new Element("dependencies");
-      saveDependencyList(result_9364_2, descriptor.getDependencies());
-      result_9364_1.addContent(result_9364_2);
+      Element result_dxyzb6_a0a0a0a1 = new Element("dependencies");
+      saveDependencyList(result_dxyzb6_a0a0a0a1, descriptor.getDependencies());
+      result_dxyzb6_a0a1.addContent(result_dxyzb6_a0a0a0a1);
     }
 
     if (!(descriptor.getUsedLanguages().isEmpty())) {
-      Element result_9364_3 = new Element("usedLanguages");
+      Element result_dxyzb6_a0a2a0a1 = new Element("usedLanguages");
       for (ModuleReference langRef : ListSequence.fromList(descriptor.getUsedLanguages())) {
-        Element result_9364_4 = new Element("usedLanguage");
-        String result_9364_5 = langRef.toString();
-        result_9364_4.setText(result_9364_5);
-        result_9364_3.addContent(result_9364_4);
+        Element result_dxyzb6_a0a0a0a2a0a1 = new Element("usedLanguage");
+        String result_dxyzb6_a0a0a0a0a2a0a1 = langRef.toString();
+        result_dxyzb6_a0a0a0a2a0a1.setText(result_dxyzb6_a0a0a0a0a2a0a1);
+        result_dxyzb6_a0a2a0a1.addContent(result_dxyzb6_a0a0a0a2a0a1);
       }
-      result_9364_1.addContent(result_9364_3);
+      result_dxyzb6_a0a1.addContent(result_dxyzb6_a0a2a0a1);
     }
 
     if (!(descriptor.getUsedDevkits().isEmpty())) {
-      Element result_9364_6 = new Element("usedDevKits");
+      Element result_dxyzb6_a0a4a0a1 = new Element("usedDevKits");
       for (ModuleReference dkRef : ListSequence.fromList(descriptor.getUsedDevkits())) {
-        Element result_9364_7 = new Element("usedDevKit");
-        String result_9364_8 = dkRef.toString();
-        result_9364_7.setText(result_9364_8);
-        result_9364_6.addContent(result_9364_7);
+        Element result_dxyzb6_a0a0a0a4a0a1 = new Element("usedDevKit");
+        String result_dxyzb6_a0a0a0a0a4a0a1 = dkRef.toString();
+        result_dxyzb6_a0a0a0a4a0a1.setText(result_dxyzb6_a0a0a0a0a4a0a1);
+        result_dxyzb6_a0a4a0a1.addContent(result_dxyzb6_a0a0a0a4a0a1);
       }
-      result_9364_1.addContent(result_9364_6);
+      result_dxyzb6_a0a1.addContent(result_dxyzb6_a0a4a0a1);
     }
 
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = (LanguageDescriptor) descriptor;
       if (!(ld.getRuntimeModules().isEmpty())) {
-        Element result_9364_9 = new Element("runtime");
-        saveDependencyList(result_9364_9, ld.getRuntimeModules());
-        result_9364_1.addContent(result_9364_9);
+        Element result_dxyzb6_a0a1a6a0a1 = new Element("runtime");
+        saveDependencyList(result_dxyzb6_a0a1a6a0a1, ld.getRuntimeModules());
+        result_dxyzb6_a0a1.addContent(result_dxyzb6_a0a1a6a0a1);
       }
     }
   }
@@ -97,12 +97,12 @@ public class ModuleDescriptorPersistence {
       public Dependency select(final Element d) {
         return new _FunctionTypes._return_P0_E0<Dependency>() {
           public Dependency invoke() {
-            Dependency result_9364_10 = new Dependency();
-            ModuleReference result_9364_11 = ModuleReference.fromString(d.getText());
-            result_9364_10.setModuleRef(result_9364_11);
-            boolean result_9364_12 = AttributeUtils.booleanWithDefault(d.getAttributeValue("reexport"), true);
-            result_9364_10.setReexport(result_9364_12);
-            return result_9364_10;
+            Dependency result_dxyzb6_a0a0a0a0a0a2 = new Dependency();
+            ModuleReference result_dxyzb6_a0a0a0a0a0a0a2 = ModuleReference.fromString(d.getText());
+            result_dxyzb6_a0a0a0a0a0a2.setModuleRef(result_dxyzb6_a0a0a0a0a0a0a2);
+            boolean result_dxyzb6_a1a0a0a0a0a0a2 = AttributeUtils.booleanWithDefault(d.getAttributeValue("reexport"), true);
+            result_dxyzb6_a0a0a0a0a0a2.setReexport(result_dxyzb6_a1a0a0a0a0a0a2);
+            return result_dxyzb6_a0a0a0a0a0a2;
           }
         }.invoke();
       }
@@ -110,14 +110,14 @@ public class ModuleDescriptorPersistence {
   }
 
   private static void saveDependencyList(Element depElement, List<Dependency> dependencies) {
-    Element result_9364_13 = depElement;
+    Element result_dxyzb6_a0a3 = depElement;
     for (Dependency md : ListSequence.fromList(dependencies)) {
-      Element result_9364_14 = new Element("dependency");
-      String result_9364_15 = md.getModuleRef().toString();
-      result_9364_14.setText(result_9364_15);
-      boolean result_9364_16 = md.isReexport();
-      result_9364_14.setAttribute("reexport", "" + result_9364_16);
-      result_9364_13.addContent(result_9364_14);
+      Element result_dxyzb6_a0a0a0a3 = new Element("dependency");
+      String result_dxyzb6_a0a0a0a0a3 = md.getModuleRef().toString();
+      result_dxyzb6_a0a0a0a3.setText(result_dxyzb6_a0a0a0a0a3);
+      boolean result_dxyzb6_a1a0a0a0a3 = md.isReexport();
+      result_dxyzb6_a0a0a0a3.setAttribute("reexport", "" + result_dxyzb6_a1a0a0a0a3);
+      result_dxyzb6_a0a3.addContent(result_dxyzb6_a0a0a0a3);
     }
   }
 
@@ -132,30 +132,30 @@ public class ModuleDescriptorPersistence {
   private static ModelRoot loadModelRoot(final Element modelRootElement, final IFile file, final Macros macros) {
     return new _FunctionTypes._return_P0_E0<ModelRoot>() {
       public ModelRoot invoke() {
-        ModelRoot result_9364_17 = new ModelRoot();
-        String result_9364_18 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("namespacePrefix"), "");
-        result_9364_17.setPrefix(result_9364_18);
+        ModelRoot result_dxyzb6_a0a0a5 = new ModelRoot();
+        String result_dxyzb6_a0a0a0a5 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("namespacePrefix"), "");
+        result_dxyzb6_a0a0a5.setPrefix(result_dxyzb6_a0a0a0a5);
         if (modelRootElement.getAttributeValue("persistenceHandler") != null) {
-          String result_9364_19 = modelRootElement.getAttributeValue("persistenceHandler");
-          result_9364_17.setHandlerClass(result_9364_19);
+          String result_dxyzb6_a0a1a0a0a5 = modelRootElement.getAttributeValue("persistenceHandler");
+          result_dxyzb6_a0a0a5.setHandlerClass(result_dxyzb6_a0a1a0a0a5);
         }
         String pathName = modelRootElement.getAttributeValue("path");
         if (pathName == null) {
           // left for compatibility 
           pathName = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("rootPath"), "");
         }
-        String result_9364_20 = macros.expandPath(pathName, file);
-        result_9364_17.setPath(result_9364_20);
+        String result_dxyzb6_a4a0a0a5 = macros.expandPath(pathName, file);
+        result_dxyzb6_a0a0a5.setPath(result_dxyzb6_a4a0a0a5);
         if (ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).isNotEmpty()) {
-          ModelRootManager result_9364_21 = new ModelRootManager();
+          ModelRootManager result_dxyzb6_a0a5a0a0a5 = new ModelRootManager();
           Element manager = ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first();
-          String result_9364_22 = AttributeUtils.stringWithDefault(manager.getAttributeValue("moduleId"), "");
-          result_9364_21.setModuleId(result_9364_22);
-          String result_9364_23 = AttributeUtils.stringWithDefault(manager.getAttributeValue("className"), "");
-          result_9364_21.setClassName(result_9364_23);
-          result_9364_17.setManager(result_9364_21);
+          String result_dxyzb6_a1a0a5a0a0a5 = AttributeUtils.stringWithDefault(manager.getAttributeValue("moduleId"), "");
+          result_dxyzb6_a0a5a0a0a5.setModuleId(result_dxyzb6_a1a0a5a0a0a5);
+          String result_dxyzb6_a2a0a5a0a0a5 = AttributeUtils.stringWithDefault(manager.getAttributeValue("className"), "");
+          result_dxyzb6_a0a5a0a0a5.setClassName(result_dxyzb6_a2a0a5a0a0a5);
+          result_dxyzb6_a0a0a5.setManager(result_dxyzb6_a0a5a0a0a5);
         }
-        return result_9364_17;
+        return result_dxyzb6_a0a0a5;
       }
     }.invoke();
   }
@@ -171,70 +171,70 @@ public class ModuleDescriptorPersistence {
   private static StubModelsEntry loadModelEntry(final Element modelRootElement, final IFile file, final Macros macros) {
     return new _FunctionTypes._return_P0_E0<StubModelsEntry>() {
       public StubModelsEntry invoke() {
-        StubModelsEntry result_9364_24 = new StubModelsEntry();
-        String result_9364_25 = macros.expandPath(modelRootElement.getAttributeValue("path"), file);
-        result_9364_24.setPath(result_9364_25);
-        ModelRootManager result_9364_26 = new ModelRootManager();
-        String result_9364_27 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("moduleId"), "");
-        result_9364_26.setModuleId(result_9364_27);
-        String result_9364_28 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("className"), "");
-        result_9364_26.setClassName(result_9364_28);
-        result_9364_24.setManager(result_9364_26);
-        boolean result_9364_29 = AttributeUtils.booleanWithDefault(modelRootElement.getAttributeValue("include"), false);
-        result_9364_24.setIncludedInVCS(result_9364_29);
-        return result_9364_24;
+        StubModelsEntry result_dxyzb6_a0a0a7 = new StubModelsEntry();
+        String result_dxyzb6_a0a0a0a7 = macros.expandPath(modelRootElement.getAttributeValue("path"), file);
+        result_dxyzb6_a0a0a7.setPath(result_dxyzb6_a0a0a0a7);
+        ModelRootManager result_dxyzb6_a1a0a0a7 = new ModelRootManager();
+        String result_dxyzb6_a0a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("moduleId"), "");
+        result_dxyzb6_a1a0a0a7.setModuleId(result_dxyzb6_a0a1a0a0a7);
+        String result_dxyzb6_a1a1a0a0a7 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("className"), "");
+        result_dxyzb6_a1a0a0a7.setClassName(result_dxyzb6_a1a1a0a0a7);
+        result_dxyzb6_a0a0a7.setManager(result_dxyzb6_a1a0a0a7);
+        boolean result_dxyzb6_a2a0a0a7 = AttributeUtils.booleanWithDefault(modelRootElement.getAttributeValue("include"), false);
+        result_dxyzb6_a0a0a7.setIncludedInVCS(result_dxyzb6_a2a0a0a7);
+        return result_dxyzb6_a0a0a7;
       }
     }.invoke();
   }
 
   public static void saveModelRoots(Element modelsElement, List<ModelRoot> modelRoots, IFile file, Macros macros) {
-    Element result_9364_30 = modelsElement;
+    Element result_dxyzb6_a0a8 = modelsElement;
     for (ModelRoot root : ListSequence.fromList(modelRoots)) {
-      Element result_9364_31 = new Element("modelRoot");
-      String result_9364_32 = macros.shrinkPath((root.getPath() == null ?
+      Element result_dxyzb6_a0a0a0a8 = new Element("modelRoot");
+      String result_dxyzb6_a0a0a0a0a8 = macros.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
       ), file);
-      result_9364_31.setAttribute("path", "" + result_9364_32);
-      String result_9364_33 = (root.getPrefix() == null ?
+      result_dxyzb6_a0a0a0a8.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a8);
+      String result_dxyzb6_a1a0a0a0a8 = (root.getPrefix() == null ?
         "" :
         root.getPrefix()
       );
-      result_9364_31.setAttribute("namespacePrefix", "" + result_9364_33);
+      result_dxyzb6_a0a0a0a8.setAttribute("namespacePrefix", "" + result_dxyzb6_a1a0a0a0a8);
       if (root.getHandlerClass() != null) {
-        String result_9364_34 = root.getHandlerClass();
-        result_9364_31.setAttribute("persistenceHandler", "" + result_9364_34);
+        String result_dxyzb6_a0a2a0a0a0a8 = root.getHandlerClass();
+        result_dxyzb6_a0a0a0a8.setAttribute("persistenceHandler", "" + result_dxyzb6_a0a2a0a0a0a8);
       }
       if (root.getManager() != null) {
-        Element result_9364_35 = new Element("manager");
-        String result_9364_36 = root.getManager().getModuleId();
-        result_9364_35.setAttribute("moduleId", "" + result_9364_36);
-        String result_9364_37 = root.getManager().getClassName();
-        result_9364_35.setAttribute("className", "" + result_9364_37);
-        result_9364_31.addContent(result_9364_35);
+        Element result_dxyzb6_a0a3a0a0a0a8 = new Element("manager");
+        String result_dxyzb6_a0a0a3a0a0a0a8 = root.getManager().getModuleId();
+        result_dxyzb6_a0a3a0a0a0a8.setAttribute("moduleId", "" + result_dxyzb6_a0a0a3a0a0a0a8);
+        String result_dxyzb6_a1a0a3a0a0a0a8 = root.getManager().getClassName();
+        result_dxyzb6_a0a3a0a0a0a8.setAttribute("className", "" + result_dxyzb6_a1a0a3a0a0a0a8);
+        result_dxyzb6_a0a0a0a8.addContent(result_dxyzb6_a0a3a0a0a0a8);
       }
-      result_9364_30.addContent(result_9364_31);
+      result_dxyzb6_a0a8.addContent(result_dxyzb6_a0a0a0a8);
     }
   }
 
   public static void saveStubModelEntries(Element modelsElement, List<StubModelsEntry> modelRoots, IFile file, Macros macros) {
-    Element result_9364_38 = modelsElement;
+    Element result_dxyzb6_a0a9 = modelsElement;
     for (StubModelsEntry root : ListSequence.fromList(modelRoots)) {
-      Element result_9364_39 = new Element("stubModelEntry");
-      String result_9364_40 = macros.shrinkPath((root.getPath() == null ?
+      Element result_dxyzb6_a0a0a0a9 = new Element("stubModelEntry");
+      String result_dxyzb6_a0a0a0a0a9 = macros.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
       ), file);
-      result_9364_39.setAttribute("path", "" + result_9364_40);
-      boolean result_9364_41 = root.isIncludedInVCS();
-      result_9364_39.setAttribute("include", "" + result_9364_41);
-      Element result_9364_42 = new Element("manager");
-      String result_9364_43 = root.getManager().getModuleId();
-      result_9364_42.setAttribute("moduleId", "" + result_9364_43);
-      String result_9364_44 = root.getManager().getClassName();
-      result_9364_42.setAttribute("className", "" + result_9364_44);
-      result_9364_39.addContent(result_9364_42);
-      result_9364_38.addContent(result_9364_39);
+      result_dxyzb6_a0a0a0a9.setAttribute("path", "" + result_dxyzb6_a0a0a0a0a9);
+      boolean result_dxyzb6_a1a0a0a0a9 = root.isIncludedInVCS();
+      result_dxyzb6_a0a0a0a9.setAttribute("include", "" + result_dxyzb6_a1a0a0a0a9);
+      Element result_dxyzb6_a2a0a0a0a9 = new Element("manager");
+      String result_dxyzb6_a0a2a0a0a0a9 = root.getManager().getModuleId();
+      result_dxyzb6_a2a0a0a0a9.setAttribute("moduleId", "" + result_dxyzb6_a0a2a0a0a0a9);
+      String result_dxyzb6_a1a2a0a0a0a9 = root.getManager().getClassName();
+      result_dxyzb6_a2a0a0a0a9.setAttribute("className", "" + result_dxyzb6_a1a2a0a0a0a9);
+      result_dxyzb6_a0a0a0a9.addContent(result_dxyzb6_a2a0a0a0a9);
+      result_dxyzb6_a0a9.addContent(result_dxyzb6_a0a0a0a9);
     }
   }
 

@@ -32,50 +32,50 @@ public class SolutionDescriptorPersistence {
 
       descriptor = new _FunctionTypes._return_P0_E0<SolutionDescriptor>() {
         public SolutionDescriptor invoke() {
-          SolutionDescriptor result_3591_0 = new SolutionDescriptor();
-          String result_3591_1 = solutionElement.getAttributeValue("name");
-          result_3591_0.setNamespace(result_3591_1);
+          SolutionDescriptor result_8ckma3_a0a0g0c0a = new SolutionDescriptor();
+          String result_8ckma3_a0a0a0g0c0a = solutionElement.getAttributeValue("name");
+          result_8ckma3_a0a0g0c0a.setNamespace(result_8ckma3_a0a0a0g0c0a);
 
           if (solutionElement.getAttributeValue("uuid") != null) {
-            String result_3591_2 = solutionElement.getAttributeValue("uuid");
-            result_3591_0.setUUID(result_3591_2);
+            String result_8ckma3_a0a2a0a0g0c0a = solutionElement.getAttributeValue("uuid");
+            result_8ckma3_a0a0g0c0a.setUUID(result_8ckma3_a0a2a0a0g0c0a);
           }
 
-          boolean result_3591_3 = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("extenallyVisible"), true);
-          result_3591_0.setExternallyVisible(result_3591_3);
-          boolean result_3591_4 = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("dontLoadClasses"), false);
-          result_3591_0.setDontLoadClasses(result_3591_4);
-          boolean result_3591_5 = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("compileInMPS"), false);
-          result_3591_0.setCompileInMPS(result_3591_5);
-          boolean result_3591_6 = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("java-stubs-enabled"), true);
-          result_3591_0.setEnableJavaStubs(result_3591_6);
+          boolean result_8ckma3_a4a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("extenallyVisible"), true);
+          result_8ckma3_a0a0g0c0a.setExternallyVisible(result_8ckma3_a4a0a0g0c0a);
+          boolean result_8ckma3_a5a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("dontLoadClasses"), false);
+          result_8ckma3_a0a0g0c0a.setDontLoadClasses(result_8ckma3_a5a0a0g0c0a);
+          boolean result_8ckma3_a6a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("compileInMPS"), false);
+          result_8ckma3_a0a0g0c0a.setCompileInMPS(result_8ckma3_a6a0a0g0c0a);
+          boolean result_8ckma3_a7a0a0g0c0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("java-stubs-enabled"), true);
+          result_8ckma3_a0a0g0c0a.setEnableJavaStubs(result_8ckma3_a7a0a0g0c0a);
 
           if (StringUtils.isNotEmpty(solutionElement.getAttributeValue("generatorOutputPath"))) {
-            String result_3591_7 = macros.expandPath(solutionElement.getAttributeValue("generatorOutputPath"), file);
-            result_3591_0.setOutputPath(result_3591_7);
+            String result_8ckma3_a0a9a0a0g0c0a = macros.expandPath(solutionElement.getAttributeValue("generatorOutputPath"), file);
+            result_8ckma3_a0a0g0c0a.setOutputPath(result_8ckma3_a0a9a0a0g0c0a);
           }
 
-          result_3591_0.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "models")).first(), "modelRoot"), file, macros));
+          result_8ckma3_a0a0g0c0a.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "models")).first(), "modelRoot"), file, macros));
 
           if (ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "stubModelEntries")).isNotEmpty()) {
-            result_3591_0.getStubModelEntries().addAll(ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(solutionElement, "stubModelEntries"), file, macros));
+            result_8ckma3_a0a0g0c0a.getStubModelEntries().addAll(ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(solutionElement, "stubModelEntries"), file, macros));
           }
 
-          ModuleDescriptorPersistence.loadDependencies(result_3591_0, solutionElement);
+          ModuleDescriptorPersistence.loadDependencies(result_8ckma3_a0a0g0c0a, solutionElement);
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "runtimeClassPath")).first(), "entry")))) {
             // runtime classpath left for compatibility 
-            ClassPathEntry result_3591_8 = new ClassPathEntry();
-            String result_3591_9 = macros.expandPath(entryElement.getAttributeValue("path"), file);
-            result_3591_8.setPath(result_3591_9);
-            boolean result_3591_10 = AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false);
-            result_3591_8.setIncludedInVCS(result_3591_10);
-            result_3591_0.getClassPaths().add(result_3591_8);
+            ClassPathEntry result_8ckma3_a1a61a0a0g0c0a = new ClassPathEntry();
+            String result_8ckma3_a0a1a61a0a0g0c0a = macros.expandPath(entryElement.getAttributeValue("path"), file);
+            result_8ckma3_a1a61a0a0g0c0a.setPath(result_8ckma3_a0a1a61a0a0g0c0a);
+            boolean result_8ckma3_a1a1a61a0a0g0c0a = AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false);
+            result_8ckma3_a1a61a0a0g0c0a.setIncludedInVCS(result_8ckma3_a1a1a61a0a0g0c0a);
+            result_8ckma3_a0a0g0c0a.getClassPaths().add(result_8ckma3_a1a61a0a0g0c0a);
           }
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "sourcePath")).first(), "source"))) {
-            result_3591_0.getSourcePaths().add(macros.expandPath(entryElement.getAttributeValue("path"), file));
+            result_8ckma3_a0a0g0c0a.getSourcePaths().add(macros.expandPath(entryElement.getAttributeValue("path"), file));
           }
-          return result_3591_0;
+          return result_8ckma3_a0a0g0c0a;
         }
       }.invoke();
     } catch (Exception e) {
@@ -96,62 +96,62 @@ public class SolutionDescriptorPersistence {
     final Macros macros = Macros.solutionDescriptor();
     Element solElem = new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
-        Element result_3591_11 = new Element("solution");
+        Element result_8ckma3_a0a0d0b = new Element("solution");
         if (descriptor.getNamespace() != null) {
-          String result_3591_12 = descriptor.getNamespace();
-          result_3591_11.setAttribute("name", "" + result_3591_12);
+          String result_8ckma3_a0a0a0a0d0b = descriptor.getNamespace();
+          result_8ckma3_a0a0d0b.setAttribute("name", "" + result_8ckma3_a0a0a0a0d0b);
         }
         if (descriptor.getUUID() != null) {
-          String result_3591_13 = descriptor.getUUID();
-          result_3591_11.setAttribute("uuid", "" + result_3591_13);
+          String result_8ckma3_a0a1a0a0d0b = descriptor.getUUID();
+          result_8ckma3_a0a0d0b.setAttribute("uuid", "" + result_8ckma3_a0a1a0a0d0b);
         }
-        boolean result_3591_14 = descriptor.isExternallyVisible();
-        result_3591_11.setAttribute("extenallyVisible", "" + result_3591_14);
+        boolean result_8ckma3_a2a0a0d0b = descriptor.isExternallyVisible();
+        result_8ckma3_a0a0d0b.setAttribute("extenallyVisible", "" + result_8ckma3_a2a0a0d0b);
         if (descriptor.isDontLoadClasses()) {
-          boolean result_3591_15 = true;
-          result_3591_11.setAttribute("dontLoadClasses", "" + result_3591_15);
+          boolean result_8ckma3_a0a3a0a0d0b = true;
+          result_8ckma3_a0a0d0b.setAttribute("dontLoadClasses", "" + result_8ckma3_a0a3a0a0d0b);
         }
-        boolean result_3591_16 = descriptor.getCompileInMPS();
-        result_3591_11.setAttribute("compileInMPS", "" + result_3591_16);
-        boolean result_3591_17 = descriptor.getEnableJavaStubs();
-        result_3591_11.setAttribute("java-stubs-enabled", "" + result_3591_17);
+        boolean result_8ckma3_a4a0a0d0b = descriptor.getCompileInMPS();
+        result_8ckma3_a0a0d0b.setAttribute("compileInMPS", "" + result_8ckma3_a4a0a0d0b);
+        boolean result_8ckma3_a5a0a0d0b = descriptor.getEnableJavaStubs();
+        result_8ckma3_a0a0d0b.setAttribute("java-stubs-enabled", "" + result_8ckma3_a5a0a0d0b);
         if (descriptor.getOutputPath() != null) {
-          String result_3591_18 = macros.shrinkPath(descriptor.getOutputPath(), file);
-          result_3591_11.setAttribute("generatorOutputPath", "" + result_3591_18);
+          String result_8ckma3_a0a6a0a0d0b = macros.shrinkPath(descriptor.getOutputPath(), file);
+          result_8ckma3_a0a0d0b.setAttribute("generatorOutputPath", "" + result_8ckma3_a0a6a0a0d0b);
         }
 
-        Element result_3591_19 = new Element("models");
-        ModuleDescriptorPersistence.saveModelRoots(result_3591_19, descriptor.getModelRoots(), file, macros);
-        result_3591_11.addContent(result_3591_19);
+        Element result_8ckma3_a8a0a0d0b = new Element("models");
+        ModuleDescriptorPersistence.saveModelRoots(result_8ckma3_a8a0a0d0b, descriptor.getModelRoots(), file, macros);
+        result_8ckma3_a0a0d0b.addContent(result_8ckma3_a8a0a0d0b);
 
         if (!(descriptor.getStubModelEntries().isEmpty())) {
-          Element result_3591_20 = new Element("stubModelEntries");
-          ModuleDescriptorPersistence.saveStubModelEntries(result_3591_20, descriptor.getStubModelEntries(), file, macros);
-          result_3591_11.addContent(result_3591_20);
+          Element result_8ckma3_a0a01a0a0d0b = new Element("stubModelEntries");
+          ModuleDescriptorPersistence.saveStubModelEntries(result_8ckma3_a0a01a0a0d0b, descriptor.getStubModelEntries(), file, macros);
+          result_8ckma3_a0a0d0b.addContent(result_8ckma3_a0a01a0a0d0b);
         }
 
-        Element result_3591_21 = new Element("classPath");
+        Element result_8ckma3_a21a0a0d0b = new Element("classPath");
         for (ClassPathEntry entry : ListSequence.fromList(descriptor.getClassPaths())) {
-          Element result_3591_22 = new Element("entry");
-          String result_3591_23 = macros.shrinkPath(entry.getPath(), file);
-          result_3591_22.setAttribute("path", "" + result_3591_23);
-          boolean result_3591_24 = entry.isIncludedInVCS();
-          result_3591_22.setAttribute("include", "" + result_3591_24);
-          result_3591_21.addContent(result_3591_22);
+          Element result_8ckma3_a0a0a21a0a0d0b = new Element("entry");
+          String result_8ckma3_a0a0a0a21a0a0d0b = macros.shrinkPath(entry.getPath(), file);
+          result_8ckma3_a0a0a21a0a0d0b.setAttribute("path", "" + result_8ckma3_a0a0a0a21a0a0d0b);
+          boolean result_8ckma3_a1a0a0a21a0a0d0b = entry.isIncludedInVCS();
+          result_8ckma3_a0a0a21a0a0d0b.setAttribute("include", "" + result_8ckma3_a1a0a0a21a0a0d0b);
+          result_8ckma3_a21a0a0d0b.addContent(result_8ckma3_a0a0a21a0a0d0b);
         }
-        result_3591_11.addContent(result_3591_21);
+        result_8ckma3_a0a0d0b.addContent(result_8ckma3_a21a0a0d0b);
 
-        Element result_3591_25 = new Element("sourcePath");
+        Element result_8ckma3_a41a0a0d0b = new Element("sourcePath");
         for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
-          Element result_3591_26 = new Element("source");
-          String result_3591_27 = macros.shrinkPath(p, file);
-          result_3591_26.setAttribute("path", "" + result_3591_27);
-          result_3591_25.addContent(result_3591_26);
+          Element result_8ckma3_a0a0a41a0a0d0b = new Element("source");
+          String result_8ckma3_a0a0a0a41a0a0d0b = macros.shrinkPath(p, file);
+          result_8ckma3_a0a0a41a0a0d0b.setAttribute("path", "" + result_8ckma3_a0a0a0a41a0a0d0b);
+          result_8ckma3_a41a0a0d0b.addContent(result_8ckma3_a0a0a41a0a0d0b);
         }
-        result_3591_11.addContent(result_3591_25);
+        result_8ckma3_a0a0d0b.addContent(result_8ckma3_a41a0a0d0b);
 
-        ModuleDescriptorPersistence.saveDependencies(result_3591_11, descriptor);
-        return result_3591_11;
+        ModuleDescriptorPersistence.saveDependencies(result_8ckma3_a0a0d0b, descriptor);
+        return result_8ckma3_a0a0d0b;
       }
     }.invoke();
 
