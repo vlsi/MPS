@@ -115,7 +115,11 @@ public class Type_Behavior {
   }
 
   public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode) {
-    return SNodeOperations.copyNode(thisNode);
+    SNode looseType = SNodeOperations.copyNode(thisNode);
+    for (SNode varRef : SNodeOperations.getDescendants(looseType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})) {
+      SNodeOperations.replaceWithAnother(varRef, Type_Behavior.call_getLooseType_5744862332972792015(varRef));
+    }
+    return looseType;
   }
 
   public static List<String> call_getVariableSuffixes_1213877337304(SNode thisNode) {
