@@ -17,21 +17,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class QuantityTemporalProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9222_0(editorContext, node);
+    return this.createCollection_pitxl1_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9222_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_pitxl1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9222_0");
-    editorCell.addEditorCell(this.createRefNode_9222_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9222_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9222_1(editorContext, node));
+    editorCell.setCellId("Collection_pitxl1_a");
+    editorCell.addEditorCell(this.createRefNode_pitxl1_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pitxl1_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_pitxl1_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9222_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_pitxl1_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ": ");
-    editorCell.setCellId("Constant_9222_0");
+    editorCell.setCellId("Constant_pitxl1_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -40,7 +40,7 @@ public class QuantityTemporalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9222_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pitxl1_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("date");
     provider.setNoTargetText("<no date>");
@@ -57,7 +57,7 @@ public class QuantityTemporalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_9222_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_pitxl1_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("quantity");
     provider.setNoTargetText("<no quantity>");

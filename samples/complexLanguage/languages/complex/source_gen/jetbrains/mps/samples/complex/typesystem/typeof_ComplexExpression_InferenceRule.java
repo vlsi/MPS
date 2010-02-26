@@ -26,7 +26,7 @@ public class typeof_ComplexExpression_InferenceRule extends AbstractInferenceRul
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "1196268989250", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "1196268989252", true), (SNode) new typeof_ComplexExpression_InferenceRule.QuotationClass_5360_0().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "1196268989252", true), (SNode) new typeof_ComplexExpression_InferenceRule.QuotationClass_l75no8_a0a0a0().createNode(typeCheckingContext), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
@@ -48,18 +48,18 @@ public class typeof_ComplexExpression_InferenceRule extends AbstractInferenceRul
     return false;
   }
 
-  public static class QuotationClass_5360_0 {
-    public QuotationClass_5360_0() {
+  public static class QuotationClass_l75no8_a0a0a0 {
+    public QuotationClass_l75no8_a0a0a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5360_0 = null;
+      SNode quotedNode_l75no8_a0a0a0 = null;
       {
-        quotedNode_5360_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5360_0 = quotedNode_5360_0;
-        result = quotedNode1_5360_0;
+        quotedNode_l75no8_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_l75no8_a0a0a0 = quotedNode_l75no8_a0a0a0;
+        result = quotedNode1_l75no8_a0a0a0;
       }
       return result;
     }
@@ -67,11 +67,11 @@ public class typeof_ComplexExpression_InferenceRule extends AbstractInferenceRul
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5360_0 = null;
+      SNode quotedNode_l75no8_a0a0a0 = null;
       {
-        quotedNode_5360_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5360_0 = quotedNode_5360_0;
-        result = quotedNode1_5360_0;
+        quotedNode_l75no8_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_l75no8_a0a0a0 = quotedNode_l75no8_a0a0a0;
+        result = quotedNode1_l75no8_a0a0a0;
       }
       return result;
     }

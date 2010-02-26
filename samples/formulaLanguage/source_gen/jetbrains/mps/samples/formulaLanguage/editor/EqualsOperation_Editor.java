@@ -21,32 +21,32 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class EqualsOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_4892_0(editorContext, node);
+    return this.createCollection_mhwek2_a(editorContext, node);
   }
 
-  private EditorCell createCollection_4892_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_mhwek2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_4892_0");
-    editorCell.addEditorCell(this.createRefNode_4892_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4892_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_4892_1(editorContext, node));
+    editorCell.setCellId("Collection_mhwek2_a");
+    editorCell.addEditorCell(this.createRefNode_mhwek2_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mhwek2_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_mhwek2_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_4892_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mhwek2_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "==");
-    editorCell.setCellId("Constant_4892_0");
+    editorCell.setCellId("Constant_mhwek2_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, true);
     }
     Operation_symbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new EqualsOperation_Editor.EqualsOperation_Editor_replaceWith_Operation_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new EqualsOperation_Editor.EqualsOperation_Editor_replaceWith_Operation_cellMenu_a0b0()}));
     return editorCell;
   }
 
-  private EditorCell createRefNode_4892_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_mhwek2_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftOperand");
     provider.setNoTargetText("<no leftOperand>");
@@ -64,7 +64,7 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_4892_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_mhwek2_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightOperand");
     provider.setNoTargetText("<no rightOperand>");
@@ -82,8 +82,8 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class EqualsOperation_Editor_replaceWith_Operation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public EqualsOperation_Editor_replaceWith_Operation_cellMenu0() {
+  public static class EqualsOperation_Editor_replaceWith_Operation_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public EqualsOperation_Editor_replaceWith_Operation_cellMenu_a0b0() {
     }
 
     public String getReplacementConceptName() {

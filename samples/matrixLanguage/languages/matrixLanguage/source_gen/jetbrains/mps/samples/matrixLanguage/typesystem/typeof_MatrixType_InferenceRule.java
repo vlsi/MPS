@@ -28,7 +28,7 @@ public class typeof_MatrixType_InferenceRule extends AbstractInferenceRule_Runti
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590452(jetbrains.mps.samples.matrixLanguage.typesystem)", "1210166478532", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(nodeToCheck, "scalarType", true), (SNode) SLinkOperations.getTarget(new typeof_MatrixType_InferenceRule.QuotationClass_4383_0().createNode(typeCheckingContext), "descriptor", false), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(nodeToCheck, "scalarType", true), (SNode) SLinkOperations.getTarget(new typeof_MatrixType_InferenceRule.QuotationClass_fdz8xr_a0a0a0a().createNode(typeCheckingContext), "descriptor", false), false, _info_12389875345);
     }
   }
 
@@ -44,19 +44,19 @@ public class typeof_MatrixType_InferenceRule extends AbstractInferenceRule_Runti
     return false;
   }
 
-  public static class QuotationClass_4383_0 {
-    public QuotationClass_4383_0() {
+  public static class QuotationClass_fdz8xr_a0a0a0a {
+    public QuotationClass_fdz8xr_a0a0a0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4383_0 = null;
+      SNode quotedNode_fdz8xr_a0a0a0a = null;
       {
-        quotedNode_4383_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4383_0 = quotedNode_4383_0;
-        quotedNode1_4383_0.addReference(SReference.create("descriptor", quotedNode1_4383_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_4383_0;
+        quotedNode_fdz8xr_a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_fdz8xr_a0a0a0a = quotedNode_fdz8xr_a0a0a0a;
+        quotedNode1_fdz8xr_a0a0a0a.addReference(SReference.create("descriptor", quotedNode1_fdz8xr_a0a0a0a, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+        result = quotedNode1_fdz8xr_a0a0a0a;
       }
       return result;
     }
@@ -64,12 +64,12 @@ public class typeof_MatrixType_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4383_0 = null;
+      SNode quotedNode_fdz8xr_a0a0a0a = null;
       {
-        quotedNode_4383_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4383_0 = quotedNode_4383_0;
-        quotedNode1_4383_0.addReference(SReference.create("descriptor", quotedNode1_4383_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_4383_0;
+        quotedNode_fdz8xr_a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_fdz8xr_a0a0a0a = quotedNode_fdz8xr_a0a0a0a;
+        quotedNode1_fdz8xr_a0a0a0a.addReference(SReference.create("descriptor", quotedNode1_fdz8xr_a0a0a0a, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+        result = quotedNode1_fdz8xr_a0a0a0a;
       }
       return result;
     }

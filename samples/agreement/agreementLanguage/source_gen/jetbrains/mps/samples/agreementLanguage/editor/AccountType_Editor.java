@@ -17,10 +17,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class AccountType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createProperty_0843_0(editorContext, node);
+    return this.createProperty_rq4bg2_a(editorContext, node);
   }
 
-  private EditorCell createProperty_0843_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_rq4bg2_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

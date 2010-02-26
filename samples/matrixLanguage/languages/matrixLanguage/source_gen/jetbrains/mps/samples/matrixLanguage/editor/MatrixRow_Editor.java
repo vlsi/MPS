@@ -21,26 +21,26 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class MatrixRow_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6019_0(editorContext, node);
+    return this.createCollection_c0uqeh_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6019_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_c0uqeh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6019_0");
-    editorCell.addEditorCell(this.createRefNodeList_6019_0(editorContext, node));
+    editorCell.setCellId("Collection_c0uqeh_a");
+    editorCell.addEditorCell(this.createRefNodeList_c0uqeh_a0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_6019_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new MatrixRow_Editor.itemsListHandler_6019_0(node, "items", editorContext);
+  private EditorCell createRefNodeList_c0uqeh_a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new MatrixRow_Editor.itemsListHandler_c0uqeh_a0(node, "items", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
     editorCell.setCellId("refNodeList_items");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private static class itemsListHandler_6019_0 extends RefNodeListHandler {
-    public itemsListHandler_6019_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class itemsListHandler_c0uqeh_a0 extends RefNodeListHandler {
+    public itemsListHandler_c0uqeh_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

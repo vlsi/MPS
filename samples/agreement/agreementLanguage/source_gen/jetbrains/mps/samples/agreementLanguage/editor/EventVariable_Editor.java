@@ -18,18 +18,18 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class EventVariable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_6854_0(editorContext, node);
+    return this.createCollection_d70nsb_a(editorContext, node);
   }
 
-  private EditorCell createCollection_6854_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_d70nsb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6854_0");
-    editorCell.addEditorCell(this.createProperty_6854_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6854_1(editorContext, node));
+    editorCell.setCellId("Collection_d70nsb_a");
+    editorCell.addEditorCell(this.createProperty_d70nsb_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_d70nsb_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createProperty_6854_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_d70nsb_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -52,7 +52,7 @@ public class EventVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6854_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_d70nsb_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");

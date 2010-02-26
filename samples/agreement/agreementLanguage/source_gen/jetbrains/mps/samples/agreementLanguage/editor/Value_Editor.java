@@ -27,52 +27,52 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class Value_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_2389_0(editorContext, node);
+    return this.createCollection_wn8465_a(editorContext, node);
   }
 
-  private EditorCell createCollection_2389_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_wn8465_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_2389_0");
-    editorCell.addEditorCell(this.createCollection_2389_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_2389_2(editorContext, node));
+    editorCell.setCellId("Collection_wn8465_a");
+    editorCell.addEditorCell(this.createCollection_wn8465_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_wn8465_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2389_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_wn8465_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2389_1");
+    editorCell.setCellId("Collection_wn8465_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2389_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2389_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2389_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_wn8465_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_wn8465_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_wn8465_c0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_2389_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_wn8465_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2389_2");
+    editorCell.setCellId("Collection_wn8465_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_2389_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_2389_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_wn8465_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_wn8465_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_2389_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_wn8465_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value");
-    editorCell.setCellId("Constant_2389_0");
+    editorCell.setCellId("Constant_wn8465_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_2389_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_wn8465_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
-    editorCell.setCellId("Constant_2389_1");
+    editorCell.setCellId("Constant_wn8465_a1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -81,8 +81,8 @@ public class Value_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_2389_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Value_Editor.quantityListHandler_2389_0(node, "quantity", editorContext);
+  private EditorCell createRefNodeList_wn8465_b1a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Value_Editor.quantityListHandler_wn8465_b1a(node, "quantity", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_quantity");
     {
@@ -93,7 +93,7 @@ public class Value_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_2389_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_wn8465_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -115,7 +115,7 @@ public class Value_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_2389_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_wn8465_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -138,8 +138,8 @@ public class Value_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class quantityListHandler_2389_0 extends RefNodeListHandler {
-    public quantityListHandler_2389_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class quantityListHandler_wn8465_b1a extends RefNodeListHandler {
+    public quantityListHandler_wn8465_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -162,7 +162,7 @@ public class Value_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_2389_2(editorContext, node);
+      return this.createConstant_wn8465_a1b0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -183,9 +183,9 @@ public class Value_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_2389_2(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_wn8465_a1b0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press <Ctrl>+<Enter> to add Quantity");
-      editorCell.setCellId("Constant_2389_2");
+      editorCell.setCellId("Constant_wn8465_a1b0");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);

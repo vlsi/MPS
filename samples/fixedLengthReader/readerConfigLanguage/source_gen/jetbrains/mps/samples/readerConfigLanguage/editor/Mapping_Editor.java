@@ -27,52 +27,52 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Mapping_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_1426_0(editorContext, node);
+    return this.createCollection_mcrsin_a(editorContext, node);
   }
 
-  private EditorCell createCollection_1426_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_mcrsin_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_1426_0");
-    editorCell.addEditorCell(this.createCollection_1426_1(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_1426_2(editorContext, node));
+    editorCell.setCellId("Collection_mcrsin_a");
+    editorCell.addEditorCell(this.createCollection_mcrsin_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_mcrsin_b0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_1426_1(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_mcrsin_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1426_1");
+    editorCell.setCellId("Collection_mcrsin_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1426_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_1426_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_1426_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mcrsin_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_mcrsin_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_mcrsin_c0a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCollection_1426_2(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_mcrsin_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_1426_2");
+    editorCell.setCellId("Collection_mcrsin_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_1426_1(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_1426_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_mcrsin_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_mcrsin_b1a(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_1426_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mcrsin_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping");
-    editorCell.setCellId("Constant_1426_0");
+    editorCell.setCellId("Constant_mcrsin_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1426_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_mcrsin_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
-    editorCell.setCellId("Constant_1426_1");
+    editorCell.setCellId("Constant_mcrsin_a1a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -81,8 +81,8 @@ public class Mapping_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_1426_0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new Mapping_Editor.fieldListHandler_1426_0(node, "field", editorContext);
+  private EditorCell createRefNodeList_mcrsin_b1a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new Mapping_Editor.fieldListHandler_mcrsin_b1a(node, "field", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_field");
     editorCell.setGridLayout(true);
@@ -90,7 +90,7 @@ public class Mapping_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_1426_0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_mcrsin_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("code");
     provider.setNoTargetText("<no code>");
@@ -108,7 +108,7 @@ public class Mapping_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_1426_1(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_mcrsin_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("targetClass");
     provider.setNoTargetText("<no target class>");
@@ -126,8 +126,8 @@ public class Mapping_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class fieldListHandler_1426_0 extends RefNodeListHandler {
-    public fieldListHandler_1426_0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class fieldListHandler_mcrsin_b1a extends RefNodeListHandler {
+    public fieldListHandler_mcrsin_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -150,7 +150,7 @@ public class Mapping_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_1426_2(editorContext, node);
+      return this.createConstant_mcrsin_a1b0(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -171,9 +171,9 @@ public class Mapping_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(editorContext);
     }
 
-    private EditorCell createConstant_1426_2(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_mcrsin_a1b0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press <Ctrl>-<Enter> to add field");
-      editorCell.setCellId("Constant_1426_2");
+      editorCell.setCellId("Constant_mcrsin_a1b0");
       {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);

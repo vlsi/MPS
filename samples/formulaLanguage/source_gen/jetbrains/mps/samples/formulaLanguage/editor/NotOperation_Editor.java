@@ -15,41 +15,41 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class NotOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_9256_0(editorContext, node);
+    return this.createCollection_avdpng_a(editorContext, node);
   }
 
-  private EditorCell createCollection_9256_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_avdpng_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9256_0");
-    editorCell.addEditorCell(this.createConstant_9256_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9256_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_9256_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_9256_1(editorContext, node));
+    editorCell.setCellId("Collection_avdpng_a");
+    editorCell.addEditorCell(this.createConstant_avdpng_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_avdpng_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_avdpng_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_avdpng_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_9256_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_avdpng_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "!");
-    editorCell.setCellId("Constant_9256_0");
+    editorCell.setCellId("Constant_avdpng_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9256_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_avdpng_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_9256_1");
+    editorCell.setCellId("Constant_avdpng_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_9256_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_avdpng_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_9256_2");
+    editorCell.setCellId("Constant_avdpng_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_9256_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_avdpng_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftOperand");
     provider.setNoTargetText("<no leftOperand>");

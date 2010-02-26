@@ -15,42 +15,42 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class DegreeComplexExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_0960_0(editorContext, node);
+    return this.createCollection_q607mw_a(editorContext, node);
   }
 
-  private EditorCell createCollection_0960_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_q607mw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_0960_0");
-    editorCell.addEditorCell(this.createConstant_0960_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0960_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0960_1(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_0960_2(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0960_1(editorContext, node));
+    editorCell.setCellId("Collection_q607mw_a");
+    editorCell.addEditorCell(this.createConstant_q607mw_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_q607mw_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_q607mw_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_q607mw_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_q607mw_e0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_0960_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_q607mw_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_0960_0");
+    editorCell.setCellId("Constant_q607mw_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0960_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_q607mw_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_0960_1");
+    editorCell.setCellId("Constant_q607mw_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_0960_2(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_q607mw_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "^");
-    editorCell.setCellId("Constant_0960_2");
+    editorCell.setCellId("Constant_q607mw_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNode_0960_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_q607mw_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("complexExpression");
     provider.setNoTargetText("<no complexExpression>");
@@ -67,7 +67,7 @@ public class DegreeComplexExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_0960_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_q607mw_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("degree");
     provider.setNoTargetText("<no degree>");

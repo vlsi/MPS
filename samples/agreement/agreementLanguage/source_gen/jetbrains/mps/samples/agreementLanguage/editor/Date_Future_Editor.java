@@ -14,12 +14,12 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Date_Future_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_4696_0(editorContext, node);
+    return this.createConstant_8433h8_a(editorContext, node);
   }
 
-  private EditorCell createConstant_4696_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_8433h8_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "FUTURE");
-    editorCell.setCellId("Constant_4696_0");
+    editorCell.setCellId("Constant_8433h8_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);

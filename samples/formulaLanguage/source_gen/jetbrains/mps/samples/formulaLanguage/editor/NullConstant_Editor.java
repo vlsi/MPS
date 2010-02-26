@@ -14,12 +14,12 @@ import jetbrains.mps.nodeEditor.MPSColors;
 
 public class NullConstant_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createConstant_0177_0(editorContext, node);
+    return this.createConstant_b8zjk_a(editorContext, node);
   }
 
-  private EditorCell createConstant_0177_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_b8zjk_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null");
-    editorCell.setCellId("Constant_0177_0");
+    editorCell.setCellId("Constant_b8zjk_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);

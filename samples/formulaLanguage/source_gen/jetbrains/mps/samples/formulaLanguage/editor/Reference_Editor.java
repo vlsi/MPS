@@ -10,12 +10,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class Reference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createError_3521_0(editorContext, node);
+    return this.createError_d3lpcg_a(editorContext, node);
   }
 
-  private EditorCell createError_3521_0(EditorContext editorContext, SNode node) {
+  private EditorCell createError_d3lpcg_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "?reference?");
-    editorCell.setCellId("Error_3521_0");
+    editorCell.setCellId("Error_d3lpcg_a");
     return editorCell;
   }
 }

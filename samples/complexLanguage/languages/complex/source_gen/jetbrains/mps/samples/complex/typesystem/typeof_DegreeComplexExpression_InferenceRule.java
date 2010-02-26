@@ -24,7 +24,7 @@ public class typeof_DegreeComplexExpression_InferenceRule extends AbstractInfere
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "degree", true);
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "1196422206628", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "1196422187043", true), (SNode) new typeof_DegreeComplexExpression_InferenceRule.QuotationClass_5300_0().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "1196422187043", true), (SNode) new typeof_DegreeComplexExpression_InferenceRule.QuotationClass_12zmle_a0a0a0().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -40,18 +40,18 @@ public class typeof_DegreeComplexExpression_InferenceRule extends AbstractInfere
     return false;
   }
 
-  public static class QuotationClass_5300_0 {
-    public QuotationClass_5300_0() {
+  public static class QuotationClass_12zmle_a0a0a0 {
+    public QuotationClass_12zmle_a0a0a0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5300_0 = null;
+      SNode quotedNode_12zmle_a0a0a0 = null;
       {
-        quotedNode_5300_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5300_0 = quotedNode_5300_0;
-        result = quotedNode1_5300_0;
+        quotedNode_12zmle_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_12zmle_a0a0a0 = quotedNode_12zmle_a0a0a0;
+        result = quotedNode1_12zmle_a0a0a0;
       }
       return result;
     }
@@ -59,11 +59,11 @@ public class typeof_DegreeComplexExpression_InferenceRule extends AbstractInfere
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5300_0 = null;
+      SNode quotedNode_12zmle_a0a0a0 = null;
       {
-        quotedNode_5300_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5300_0 = quotedNode_5300_0;
-        result = quotedNode1_5300_0;
+        quotedNode_12zmle_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_12zmle_a0a0a0 = quotedNode_12zmle_a0a0a0;
+        result = quotedNode1_12zmle_a0a0a0;
       }
       return result;
     }

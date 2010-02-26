@@ -17,21 +17,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class PostingRuleTemporalProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7513_0(editorContext, node);
+    return this.createCollection_ju370r_a(editorContext, node);
   }
 
-  private EditorCell createCollection_7513_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ju370r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7513_0");
-    editorCell.addEditorCell(this.createRefNode_7513_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7513_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_7513_1(editorContext, node));
+    editorCell.setCellId("Collection_ju370r_a");
+    editorCell.addEditorCell(this.createRefNode_ju370r_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ju370r_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ju370r_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7513_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ju370r_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ": ");
-    editorCell.setCellId("Constant_7513_0");
+    editorCell.setCellId("Constant_ju370r_b0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -40,7 +40,7 @@ public class PostingRuleTemporalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7513_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ju370r_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("date");
     provider.setNoTargetText("<no date>");
@@ -57,7 +57,7 @@ public class PostingRuleTemporalProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7513_1(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ju370r_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("postingRule");
     provider.setNoTargetText("<no postingRule>");

@@ -173,13 +173,13 @@ public class QueriesGenerated {
     SNode event = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty")), "jetbrains.mps.samples.agreementLanguage.structure.Event");
     SNode eventType = SLinkOperations.getTarget(event, "type", false);
     if ("SERVICE CALL".equals(SPropertyOperations.getString(eventType, "name"))) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_0().createNode(), "variableDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a2a13().createNode(), "variableDeclaration", false);
     }
     if ("USAGE".equals(SPropertyOperations.getString(eventType, "name"))) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_1().createNode(), "variableDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a3a13().createNode(), "variableDeclaration", false);
     }
     if ("TAX".equals(SPropertyOperations.getString(eventType, "name"))) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_2().createNode(), "variableDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a4a13().createNode(), "variableDeclaration", false);
     }
     return null;
   }
@@ -188,13 +188,13 @@ public class QueriesGenerated {
     SNode postingRule = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty"), "value", true);
     SNode accountType = SLinkOperations.getTarget(postingRule, "account", false);
     if ("base-usage".equals(SPropertyOperations.getString(accountType, "name"))) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_3().createNode(), "enumConstantDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a2a23().createNode(), "enumConstantDeclaration", false);
     }
     if ("service".equals(SPropertyOperations.getString(accountType, "name"))) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_4().createNode(), "enumConstantDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a3a23().createNode(), "enumConstantDeclaration", false);
     }
     if ("tax".equals(SPropertyOperations.getString(accountType, "name"))) {
-      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_5().createNode(), "enumConstantDeclaration", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a4a23().createNode(), "enumConstantDeclaration", false);
     }
     // error 
     return null;
@@ -368,115 +368,115 @@ __switch__:
     }).toListSequence();
   }
 
-  public static class QuotationClass_8087_0 {
-    public QuotationClass_8087_0() {
+  public static class QuotationClass_x583g4_a0a0a2a13 {
+    public QuotationClass_x583g4_a0a0a2a13() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_0 = null;
+      SNode quotedNode_x583g4_a0a0a2a13 = null;
       {
-        quotedNode_8087_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_0 = quotedNode_8087_0;
-        quotedNode1_8087_0.addReference(SReference.create("classifier", quotedNode1_8087_0, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType")));
-        quotedNode1_8087_0.addReference(SReference.create("variableDeclaration", quotedNode1_8087_0, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType.SERVICE_CALL")));
-        result = quotedNode1_8087_0;
+        quotedNode_x583g4_a0a0a2a13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_x583g4_a0a0a2a13 = quotedNode_x583g4_a0a0a2a13;
+        quotedNode1_x583g4_a0a0a2a13.addReference(SReference.create("classifier", quotedNode1_x583g4_a0a0a2a13, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType")));
+        quotedNode1_x583g4_a0a0a2a13.addReference(SReference.create("variableDeclaration", quotedNode1_x583g4_a0a0a2a13, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType.SERVICE_CALL")));
+        result = quotedNode1_x583g4_a0a0a2a13;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_8087_1 {
-    public QuotationClass_8087_1() {
+  public static class QuotationClass_x583g4_a0a0a3a13 {
+    public QuotationClass_x583g4_a0a0a3a13() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_1 = null;
+      SNode quotedNode_x583g4_a0a0a3a13 = null;
       {
-        quotedNode_8087_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_1 = quotedNode_8087_1;
-        quotedNode1_8087_1.addReference(SReference.create("classifier", quotedNode1_8087_1, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType")));
-        quotedNode1_8087_1.addReference(SReference.create("variableDeclaration", quotedNode1_8087_1, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType.USAGE")));
-        result = quotedNode1_8087_1;
+        quotedNode_x583g4_a0a0a3a13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_x583g4_a0a0a3a13 = quotedNode_x583g4_a0a0a3a13;
+        quotedNode1_x583g4_a0a0a3a13.addReference(SReference.create("classifier", quotedNode1_x583g4_a0a0a3a13, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType")));
+        quotedNode1_x583g4_a0a0a3a13.addReference(SReference.create("variableDeclaration", quotedNode1_x583g4_a0a0a3a13, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType.USAGE")));
+        result = quotedNode1_x583g4_a0a0a3a13;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_8087_2 {
-    public QuotationClass_8087_2() {
+  public static class QuotationClass_x583g4_a0a0a4a13 {
+    public QuotationClass_x583g4_a0a0a4a13() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_2 = null;
+      SNode quotedNode_x583g4_a0a0a4a13 = null;
       {
-        quotedNode_8087_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_2 = quotedNode_8087_2;
-        quotedNode1_8087_2.addReference(SReference.create("classifier", quotedNode1_8087_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType")));
-        quotedNode1_8087_2.addReference(SReference.create("variableDeclaration", quotedNode1_8087_2, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType.TAX")));
-        result = quotedNode1_8087_2;
+        quotedNode_x583g4_a0a0a4a13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_x583g4_a0a0a4a13 = quotedNode_x583g4_a0a0a4a13;
+        quotedNode1_x583g4_a0a0a4a13.addReference(SReference.create("classifier", quotedNode1_x583g4_a0a0a4a13, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType")));
+        quotedNode1_x583g4_a0a0a4a13.addReference(SReference.create("variableDeclaration", quotedNode1_x583g4_a0a0a4a13, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~EventType.TAX")));
+        result = quotedNode1_x583g4_a0a0a4a13;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_8087_3 {
-    public QuotationClass_8087_3() {
+  public static class QuotationClass_x583g4_a0a0a2a23 {
+    public QuotationClass_x583g4_a0a0a2a23() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_3 = null;
+      SNode quotedNode_x583g4_a0a0a2a23 = null;
       {
-        quotedNode_8087_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_3 = quotedNode_8087_3;
-        quotedNode1_8087_3.addReference(SReference.create("enumClass", quotedNode1_8087_3, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType")));
-        quotedNode1_8087_3.addReference(SReference.create("enumConstantDeclaration", quotedNode1_8087_3, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType.BASE_USAGE")));
-        result = quotedNode1_8087_3;
+        quotedNode_x583g4_a0a0a2a23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_x583g4_a0a0a2a23 = quotedNode_x583g4_a0a0a2a23;
+        quotedNode1_x583g4_a0a0a2a23.addReference(SReference.create("enumClass", quotedNode1_x583g4_a0a0a2a23, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType")));
+        quotedNode1_x583g4_a0a0a2a23.addReference(SReference.create("enumConstantDeclaration", quotedNode1_x583g4_a0a0a2a23, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType.BASE_USAGE")));
+        result = quotedNode1_x583g4_a0a0a2a23;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_8087_4 {
-    public QuotationClass_8087_4() {
+  public static class QuotationClass_x583g4_a0a0a3a23 {
+    public QuotationClass_x583g4_a0a0a3a23() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_4 = null;
+      SNode quotedNode_x583g4_a0a0a3a23 = null;
       {
-        quotedNode_8087_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_4 = quotedNode_8087_4;
-        quotedNode1_8087_4.addReference(SReference.create("enumClass", quotedNode1_8087_4, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType")));
-        quotedNode1_8087_4.addReference(SReference.create("enumConstantDeclaration", quotedNode1_8087_4, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType.SERVICE")));
-        result = quotedNode1_8087_4;
+        quotedNode_x583g4_a0a0a3a23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_x583g4_a0a0a3a23 = quotedNode_x583g4_a0a0a3a23;
+        quotedNode1_x583g4_a0a0a3a23.addReference(SReference.create("enumClass", quotedNode1_x583g4_a0a0a3a23, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType")));
+        quotedNode1_x583g4_a0a0a3a23.addReference(SReference.create("enumConstantDeclaration", quotedNode1_x583g4_a0a0a3a23, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType.SERVICE")));
+        result = quotedNode1_x583g4_a0a0a3a23;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_8087_5 {
-    public QuotationClass_8087_5() {
+  public static class QuotationClass_x583g4_a0a0a4a23 {
+    public QuotationClass_x583g4_a0a0a4a23() {
     }
 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8087_5 = null;
+      SNode quotedNode_x583g4_a0a0a4a23 = null;
       {
-        quotedNode_8087_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8087_5 = quotedNode_8087_5;
-        quotedNode1_8087_5.addReference(SReference.create("enumClass", quotedNode1_8087_5, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType")));
-        quotedNode1_8087_5.addReference(SReference.create("enumConstantDeclaration", quotedNode1_8087_5, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType.TAX")));
-        result = quotedNode1_8087_5;
+        quotedNode_x583g4_a0a0a4a23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_x583g4_a0a0a4a23 = quotedNode_x583g4_a0a0a4a23;
+        quotedNode1_x583g4_a0a0a4a23.addReference(SReference.create("enumClass", quotedNode1_x583g4_a0a0a4a23, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType")));
+        quotedNode1_x583g4_a0a0a4a23.addReference(SReference.create("enumConstantDeclaration", quotedNode1_x583g4_a0a0a4a23, SModelReference.fromString("f:java_stub#postingrules(postingrules@java_stub)"), SNodeId.fromString("~AccountType.TAX")));
+        result = quotedNode1_x583g4_a0a0a4a23;
       }
       return result;
     }

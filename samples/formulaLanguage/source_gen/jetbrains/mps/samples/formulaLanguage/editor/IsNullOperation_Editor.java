@@ -22,29 +22,29 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 
 public class IsNullOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_7734_0(editorContext, node);
+    return this.createCollection_ehpdiz_a(editorContext, node);
   }
 
-  private EditorCell createCollection_7734_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_ehpdiz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_7734_0");
-    editorCell.addEditorCell(this.createRefNode_7734_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7734_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7734_1(editorContext, node));
+    editorCell.setCellId("Collection_ehpdiz_a");
+    editorCell.addEditorCell(this.createRefNode_ehpdiz_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ehpdiz_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ehpdiz_c0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_7734_0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ehpdiz_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
-    editorCell.setCellId("Constant_7734_0");
+    editorCell.setCellId("Constant_ehpdiz_b0");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IsNullOperation_Editor.IsNullOperation_Editor_replaceWith_Operation_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new IsNullOperation_Editor.IsNullOperation_Editor_replaceWith_Operation_cellMenu_a0b0()}));
     return editorCell;
   }
 
-  private EditorCell createConstant_7734_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ehpdiz_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "isNull");
-    editorCell.setCellId("Constant_7734_1");
+    editorCell.setCellId("Constant_ehpdiz_c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
@@ -53,7 +53,7 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7734_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_ehpdiz_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftOperand");
     provider.setNoTargetText("<no leftOperand>");
@@ -70,8 +70,8 @@ public class IsNullOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class IsNullOperation_Editor_replaceWith_Operation_cellMenu0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public IsNullOperation_Editor_replaceWith_Operation_cellMenu0() {
+  public static class IsNullOperation_Editor_replaceWith_Operation_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public IsNullOperation_Editor_replaceWith_Operation_cellMenu_a0b0() {
     }
 
     public String getReplacementConceptName() {
