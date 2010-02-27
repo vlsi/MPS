@@ -64,7 +64,7 @@ public abstract class AbstractModule implements IModule {
   public static final String CACHES_DIR = "caches";
   public static final String PACKAGE_SUFFIX = "mpsarch.jar";
 
-  public static final boolean USE_INCREMETAL_STUBS_RELOADING = true;
+  public static final boolean USE_INCREMETAL_STUBS_RELOADING = false;
 
   public static void registerModelCreationListener(ModelCreationListener listener) {
     myModelCreationListeners.add(listener);
@@ -725,7 +725,7 @@ public abstract class AbstractModule implements IModule {
 
 
       //todo remove this code - for GWT only
-      if (!(sm instanceof BaseStubModelDescriptor))return;
+      if (!(sm instanceof BaseStubModelDescriptor)) continue;
 
       //assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
       ((BaseStubModelDescriptor) sm).markReload();
