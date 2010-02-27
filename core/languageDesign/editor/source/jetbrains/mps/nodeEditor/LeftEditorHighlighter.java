@@ -29,8 +29,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -42,6 +42,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.*;
 import java.util.List;
+import java.util.Map.Entry;
 
 /**
  * This class should be called in UI (EventDispatch) thread only
@@ -67,7 +68,6 @@ public class LeftEditorHighlighter extends JComponent {
   private Set<HighlighterBracket> myUnresolvedBrackets = new HashSet<HighlighterBracket>();
 
   private Map<CellInfo, FoldingButton> myFoldingButtons = new HashMap<CellInfo, FoldingButton>();
-  private Set<FoldingButton> myUnresolvedFoldingButtons = new HashSet<FoldingButton>();
 
   private BookmarkListener myListener;
   private BookmarkManager myBookmarkManager = null;
@@ -135,18 +135,8 @@ public class LeftEditorHighlighter extends JComponent {
 
   @Override
   public void paint(Graphics g) {
-    Rectangle bounds = g.getClipBounds();
-    g.setColor(getBackground());
-    g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
-
-    // same as in EditorComponent.paint() method
-    EditorCell deepestCell = myEditorComponent.getDeepestSelectedCell();
-    if (deepestCell instanceof EditorCell_Label) {
-      g.setColor(EditorComponent.CARET_ROW_COLOR);
-      g.fillRect(bounds.x, deepestCell.getY(), bounds.width,
-        deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
-    }
-    UIUtil.drawVDottedLine((Graphics2D) g, mySeparatorLineX, bounds.y, bounds.y + bounds.height, getBackground(), Color.gray);
+    paintBackgroundAndFoldingLine(g);
+    paintIconRenderers(g);
 
     for (HighlighterBracket bracket : myBrackets.values()) {
       bracket.paint(g);
@@ -158,7 +148,29 @@ public class LeftEditorHighlighter extends JComponent {
     for (FoldingButton button : myFoldingButtons.values()) {
       button.paint(g, mySeparatorLineX);
     }
-    paintIconRenderers(g);
+  }
+
+  private void paintBackgroundAndFoldingLine(Graphics g) {
+    Graphics2D g2d = (Graphics2D) g;
+    Rectangle bounds = g.getClipBounds();
+    g.setColor(getBackground());
+    g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+
+    // same as in EditorComponent.paint() method
+    EditorCell deepestCell = myEditorComponent.getDeepestSelectedCell();
+    if (deepestCell instanceof EditorCell_Label) {
+      g.setColor(EditorComponent.CARET_ROW_COLOR);
+      int selectedCellY = deepestCell.getY();
+      int selectedCellHeight = deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset();
+      g.fillRect(bounds.x, selectedCellY, bounds.width, selectedCellHeight);
+      // Drawing folding line
+      UIUtil.drawVDottedLine(g2d, mySeparatorLineX,  bounds.y, selectedCellY, getBackground(), Color.gray);
+      UIUtil.drawVDottedLine(g2d, mySeparatorLineX, selectedCellY, selectedCellY + selectedCellHeight, EditorComponent.CARET_ROW_COLOR, Color.gray);
+      UIUtil.drawVDottedLine(g2d, mySeparatorLineX, selectedCellY + selectedCellHeight, bounds.y + bounds.height, getBackground(), Color.gray);
+    } else {
+      // Drawing folding line
+      UIUtil.drawVDottedLine(g2d, mySeparatorLineX, bounds.y, bounds.y + bounds.height, getBackground(), Color.gray);
+    }
   }
 
   private void paintIconRenderers(final Graphics g) {
@@ -184,6 +196,10 @@ public class LeftEditorHighlighter extends JComponent {
     }.run();
   }
 
+  void repaint(FoldingButton button) {
+    repaint(mySeparatorLineX - FoldingButton.HALF_WIDTH, button.getY(), FoldingButton.HALF_WIDTH * 2 + 1, button.getHeight() + 1);
+  }
+
   public void unHighlight(EditorCell cell) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.unHighlight() should be called in eventDispatchThread";
     myBrackets.remove(cell.getCellInfo());
@@ -195,9 +211,9 @@ public class LeftEditorHighlighter extends JComponent {
     myBrackets.put(cell.getCellInfo(), new HighlighterBracket(cell, cell2, c, myEditorComponent));
   }
 
-  private void markFoldable(EditorCell cell) {
+  private void markFoldable(EditorCell_Collection cell) {
     if (cell.getEditor() != myEditorComponent) throw new IllegalArgumentException("cell must be from my editor");
-    myFoldingButtons.put(cell.getCellInfo(), new FoldingButton(cell));
+    myFoldingButtons.put(cell.getCellInfo(), new FoldingButton(cell, getBackground()));
   }
 
   private void addBookmark(SNode node, int number) {
@@ -259,13 +275,15 @@ public class LeftEditorHighlighter extends JComponent {
     deleteUnresolvedBrackets();
 
     if (updateFolding) {
-      for (FoldingButton button : myFoldingButtons.values()) {
-        button.relayout();
+      for (Iterator<Entry<CellInfo, FoldingButton>> it = myFoldingButtons.entrySet().iterator(); it.hasNext();) {
+        Entry<CellInfo, FoldingButton> nextEntry = it.next();
+        if (!nextEntry.getValue().relayout()) {
+          it.remove();
+        }
       }
-      deleteUnresolvedFoldingButtons();
     }
 
-    myBracketsAndFoldingButtonsWidth = myFoldingButtons.isEmpty() ? 0 : FoldingButton.WIDTH/2;
+    myBracketsAndFoldingButtonsWidth = myFoldingButtons.isEmpty() ? 0 : FoldingButton.HALF_WIDTH;
     myBracketEdges.clear();
     myBracketsLayoutStack.clear();
     // from top to bottom
@@ -322,13 +340,6 @@ public class LeftEditorHighlighter extends JComponent {
       myBrackets.remove(bracket.myEditorCellInfo1);
     }
     myUnresolvedBrackets.clear();
-  }
-
-  private void deleteUnresolvedFoldingButtons() {
-    for (FoldingButton button : myUnresolvedFoldingButtons) {
-      myFoldingButtons.remove(button.myCellInfo);
-    }
-    myUnresolvedFoldingButtons.clear();
   }
 
   private BookmarkManager getBookmarkManager() {
@@ -481,11 +492,26 @@ public class LeftEditorHighlighter extends JComponent {
 TODO: handle mouse events for LeftHighlighter elements here and return from this method in case event
 is consumed by corresponding element.
 */
+    switch (e.getID()) {
+      case MouseEvent.MOUSE_ENTERED:
+      case MouseEvent.MOUSE_EXITED:
+      case MouseEvent.MOUSE_PRESSED:
+//      case MouseEvent.MOUSE_CLICKED:
+//      case MouseEvent.MOUSE_RELEASED:
+    }
     super.processMouseEvent(e);
   }
 
-  private boolean isInBracketsAndFoldingButtons(MouseEvent e) {
-    return e.getX() >= mySeparatorLineX - FoldingButton.WIDTH / 2 && e.getX() <= mySeparatorLineX + FoldingButton.WIDTH / 2;
+  @Override
+  protected void processMouseMotionEvent(MouseEvent e) {
+    switch (e.getID()) {
+      case MouseEvent.MOUSE_MOVED:
+    }
+    super.processMouseMotionEvent(e);
+  }
+
+  private boolean isInFoldingButtons(MouseEvent e) {
+    return Math.abs(mySeparatorLineX - e.getX()) <= FoldingButton.HALF_WIDTH;
   }
 
   private class HighlighterBracket {
@@ -601,43 +627,51 @@ is consumed by corresponding element.
     }
   }
 
-  private class FoldingButton {
+  private static class FoldingButton {
+    public static final int HALF_WIDTH = 4;
+
+    private static final int HEIGHT = HALF_WIDTH * 5 / 2;
+    private static final int CANT_HEIGHT = HALF_WIDTH * 3 / 2;
+
     private CellInfo myCellInfo;
     private EditorComponent myEditor;
     private int myY1;
     private int myY2;
     private boolean myIsHidden = false;
-    public static final int WIDTH = 8;
     private boolean myIsFolded = false;
     private boolean myMouseOver = false;
+    private Color myBackgroundColor;
 
-    public FoldingButton(EditorCell cell) {
+    public FoldingButton(@NotNull EditorCell_Collection cell, @NotNull Color background) {
+      //TODO: Can we hold cell directly instad of CellInfo here?
       myCellInfo = cell.getCellInfo();
+      assert myCellInfo != null : "CellInfo unavailable for: " + cell;
       myEditor = cell.getEditor();
+      myBackgroundColor = background;
     }
 
-    public void relayout() {
-      if (myCellInfo == null) return;
+    public boolean relayout() {
       EditorCell cell = getCell();
       if (cell instanceof EditorCell_Collection) {
         myIsHidden = cell.isUnderFolded();
-        myIsFolded = ((EditorCell_Collection) cell).isFolded();
-        if (myIsHidden) return;
-        myY1 = cell.getY();
-        myY2 = cell.getY() + cell.getHeight();
-      } else {
-        LeftEditorHighlighter.this.myUnresolvedFoldingButtons.add(this);
+        if (!myIsHidden) {
+          myIsFolded = ((EditorCell_Collection) cell).isFolded();
+          myY1 = cell.getY();
+          myY2 = cell.getY() + cell.getHeight() - cell.getTopInset() - cell.getBottomInset() - 1;
+        }
+        return true;
       }
+      return false;
     }
 
-    public Color getBorderColor() {
-      return myMouseOver ? Color.BLUE : Color.DARK_GRAY;
+    private Color getBorderColor() {
+      return myMouseOver ? Color.blue : Color.gray;
     }
 
     public void paintFeedback(Graphics g, int x) {
       if (myMouseOver && !myIsFolded) {
         g.setColor(getBorderColor());
-        g.drawLine(x, myY1 + FoldingButton.WIDTH, x, myY2 - FoldingButton.WIDTH);
+        g.drawLine(x, myY1 + HEIGHT, x, myY2 - HEIGHT);
       }
     }
 
@@ -645,10 +679,10 @@ is consumed by corresponding element.
       if (myIsHidden) return;
       Color borderColor = getBorderColor();
       if (!myIsFolded) {
-        int xs[] = {x, x - WIDTH / 2, x - WIDTH / 2, x - WIDTH * 3 / 8, x, x + WIDTH * 3 / 8, x + WIDTH / 2, x + WIDTH / 2};
-        int ys[] = {myY1, myY1, myY1 + WIDTH / 2, myY1 + WIDTH * 7 / 8, myY1 + WIDTH, myY1 + WIDTH * 7 / 8, myY1 + WIDTH / 2, myY1};
+        int xs[] = {x - HALF_WIDTH, x - HALF_WIDTH, x, x + HALF_WIDTH, x + HALF_WIDTH};
+        int ys[] = {myY1, myY1 + CANT_HEIGHT, myY1 + HEIGHT, myY1 + CANT_HEIGHT, myY1};
 
-        g.setColor(Color.WHITE);
+        g.setColor(myBackgroundColor);
         g.fillPolygon(xs, ys, xs.length);
         g.setColor(borderColor);
         g.drawPolygon(xs, ys, xs.length);
@@ -657,24 +691,24 @@ is consumed by corresponding element.
           ys[i] = myY2 - (ys[i] - myY1);
         }
 
-        g.setColor(Color.WHITE);
+        g.setColor(myBackgroundColor);
         g.fillPolygon(xs, ys, xs.length);
         g.setColor(borderColor);
         g.drawPolygon(xs, ys, xs.length);
 
-        g.setColor(Color.DARK_GRAY);
-        g.drawLine(x - WIDTH / 4, myY1 + WIDTH / 2, x + WIDTH / 4, myY1 + WIDTH / 2);
-        g.drawLine(x - WIDTH / 4, myY2 - WIDTH / 2, x + WIDTH / 4, myY2 - WIDTH / 2);
+        g.setColor(borderColor);
+        g.drawLine(x - HALF_WIDTH / 2, myY1 + HALF_WIDTH, x + HALF_WIDTH / 2, myY1 + HALF_WIDTH);
+        g.drawLine(x - HALF_WIDTH / 2, myY2 - HALF_WIDTH, x + HALF_WIDTH / 2, myY2 - HALF_WIDTH);
 
       } else {
-        g.setColor(Color.LIGHT_GRAY);
-        //noinspection SuspiciousNameCombination
-        g.fillOval(x - WIDTH / 2, (myY1 + myY2 - WIDTH) / 2, WIDTH, WIDTH);
+        g.setColor(myBackgroundColor);
+        g.fillRect(x - HALF_WIDTH, (myY1 + myY2) / 2 - HALF_WIDTH, HALF_WIDTH * 2, HALF_WIDTH * 2);
         g.setColor(borderColor);
-        g.drawOval(x - WIDTH / 2, (myY1 + myY2 - WIDTH) / 2, WIDTH, WIDTH);
-        g.setColor(Color.WHITE);
-        g.drawLine(x - WIDTH / 4, (myY1 + myY2) / 2, x + WIDTH / 4, (myY1 + myY2) / 2);
-        g.drawLine(x, (myY1 + myY2) / 2 + WIDTH / 4, x, (myY1 + myY2) / 2 - WIDTH / 4);
+        g.drawRect(x - HALF_WIDTH, (myY1 + myY2) / 2 - HALF_WIDTH, HALF_WIDTH * 2, HALF_WIDTH * 2);
+
+        g.setColor(Color.black);
+        g.drawLine(x - HALF_WIDTH / 2, (myY1 + myY2) / 2, x + HALF_WIDTH / 2, (myY1 + myY2) / 2);
+        g.drawLine(x, (myY1 + myY2) / 2 + HALF_WIDTH / 2, x, (myY1 + myY2) / 2 - HALF_WIDTH / 2);
       }
     }
 
@@ -692,31 +726,29 @@ is consumed by corresponding element.
         } else {
           collection.fold();
         }
-      } else {
-        LeftEditorHighlighter.this.myUnresolvedFoldingButtons.add(this);
       }
     }
 
     public void mouseEntered() {
       myMouseOver = true;
-      repaint(mySeparatorLineX - WIDTH / 2, myY1, WIDTH + 1, myY2 - myY1 + 1);
     }
 
     public void mouseExited() {
       myMouseOver = false;
-      repaint(mySeparatorLineX - WIDTH / 2, myY1, WIDTH + 1, myY2 - myY1 + 1);
     }
 
     public boolean isInside(int y) {
-      if (!myIsFolded && ((y >= myY1 && y <= myY1 + FoldingButton.WIDTH)
-        || (y <= myY2 && y >= myY2 - FoldingButton.WIDTH))) {
-        return true;
-      }
-      if (myIsFolded && y >= (myY1 + myY2 - FoldingButton.WIDTH) / 2 &&
-        y <= (myY1 + myY2 + FoldingButton.WIDTH) / 2) {
-        return true;
-      }
-      return false;
+      return myIsFolded ?
+        Math.abs(y - (myY1 + myY2) / 2) <= HALF_WIDTH :
+        (myY1 <= y && y <= myY1 + HEIGHT) || (myY2 - HEIGHT <= y && y <= myY2);
+    }
+
+    public int getY() {
+      return myY1;
+    }
+
+    public int getHeight() {
+      return myY2 - myY1;
     }
   }
 
@@ -762,7 +794,7 @@ is consumed by corresponding element.
   private class MyMouseListener extends MouseAdapter {
 
     public void mouseClicked(MouseEvent e) {
-      if (!isInBracketsAndFoldingButtons(e)) {
+      if (!isInFoldingButtons(e)) {
         return;
       }
       for (FoldingButton button : myFoldingButtons.values()) {
@@ -778,6 +810,8 @@ is consumed by corresponding element.
       for (FoldingButton button : myFoldingButtons.values()) {
         if (button.myMouseOver) {
           button.mouseExited();
+          repaint(button);
+          break;
         }
       }
     }
@@ -786,15 +820,17 @@ is consumed by corresponding element.
   private class MyMouseEnterListener extends MouseMotionAdapter {
 
     public void mouseMoved(MouseEvent e) {
-      if (isInBracketsAndFoldingButtons(e)) {
+      if (isInFoldingButtons(e)) {
         for (FoldingButton button : myFoldingButtons.values()) {
           if (button.isInside(e.getY())) {
             if (!button.myMouseOver) {
               button.mouseEntered();
+              repaint(button);
             }
           } else {
             if (button.myMouseOver) {
               button.mouseExited();
+              repaint(button);
             }
           }
         }
@@ -802,6 +838,8 @@ is consumed by corresponding element.
         for (FoldingButton button : myFoldingButtons.values()) {
           if (button.myMouseOver) {
             button.mouseExited();
+            repaint(button);
+            break;
           }
         }
       }
