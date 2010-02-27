@@ -123,13 +123,16 @@ public abstract class AbstractModule implements IModule {
     return getModuleFqName();
   }
 
-  protected void reloadAfterDescriptorChange() {
+  protected void reloadAfterDescriptorChange(boolean reloadStubs) {
     MPSModuleRepository.getInstance().unRegisterModules(this);
     rereadModels();
 
     updatePackagedDescriptorClasspath();
     updateClassPath();
-    updateStubs();
+
+    if (reloadStubs){
+      updateStubs();
+    }
   }
 
   public void onModuleLoad() {
@@ -687,14 +690,13 @@ public abstract class AbstractModule implements IModule {
 
   public void updateClassPath() {
     myCachedClassPathItem = null;
+    myIncludedStubPaths = getIncludedStubPaths();
   }
 
   public void updateStubs() {
     if (ModelReloading.USE_OLD_STUBS_RELOADING){
       SModelRepository.getInstance().refreshModels();
     }
-
-    myIncludedStubPaths = getIncludedStubPaths();
 
     disposeAllStubManagers();
     releaseOldStubs();

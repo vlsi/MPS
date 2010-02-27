@@ -56,7 +56,7 @@ public class Generator extends AbstractModule {
     setModulePointer(mp);
 
     upgradeGeneratorDescriptor();
-    reloadAfterDescriptorChange();
+    reloadAfterDescriptorChange(false);
   }
 
   private void upgradeGeneratorDescriptor() {
