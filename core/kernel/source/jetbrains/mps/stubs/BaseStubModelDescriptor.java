@@ -11,7 +11,6 @@ import java.util.List;
 
 public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
   private List<StubPath> myStubPaths;
-  private boolean myNeedsReloading = true;
 
   public BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
     super(manager, modelFile, modelReference);
@@ -27,24 +26,7 @@ public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
     myStubPaths.add(sp);
   }
 
-  public void refresh() {
-    if (!myNeedsReloading) return;
-    super.refresh();
-  }
-
   public List<StubPath> getPaths() {
     return myStubPaths == null ? new ArrayList<StubPath>() : myStubPaths;
-  }
-
-  public boolean isNeedsReloading() {
-    return myNeedsReloading;
-  }
-
-  public void markReload() {
-    myNeedsReloading = true;
-  }
-
-  public void unmarkReload() {
-    myNeedsReloading = false;
   }
 }

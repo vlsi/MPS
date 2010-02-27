@@ -32,7 +32,7 @@ import java.util.Set;
 public interface IModelRootManager {
   public static final IModelRootManager NULL_MANAGER = new NullModelRootManager();
 
-  void updateModels(@NotNull SModelRoot root, @NotNull IModule owner);
+  void updateModels(@NotNull SModelRoot root, @NotNull IModule owner, List<StubPath> notChangedStubs);
 
   @NotNull
   SModel loadModel(@NotNull SModelDescriptor modelDescriptor);

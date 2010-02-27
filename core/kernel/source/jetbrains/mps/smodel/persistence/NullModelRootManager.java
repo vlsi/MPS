@@ -29,7 +29,7 @@ import java.util.List;
 class NullModelRootManager extends BaseMPSModelRootManager {
   public static final Logger LOG = Logger.getLogger(NullModelRootManager.class);
 
-  public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner) {
+  public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner, List<StubPath> notChangedStubs) {
     LOG.error("Can't read from Null Model Root Manager");
   }
 

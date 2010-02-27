@@ -462,7 +462,7 @@ public abstract class AbstractModule implements IModule {
           SModelRoot root = new SModelRoot(this, modelRoot);
           mySModelRoots.add(root);
           IModelRootManager manager = root.getManager();
-          manager.updateModels(root, this);
+          manager.updateModels(root, this, new ArrayList<StubPath>());
         } catch (Exception e) {
           LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
         }
@@ -694,45 +694,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void updateStubs() {
-    disposeAllStubManagers();
-    releaseOldStubs();
-
-    CleanupManager.getInstance().cleanup();
-    MPSModuleRepository.getInstance().invalidateCaches();
-
-    loadNewStubs();
-  }
-
-
-  private void disposeAllStubManagers() {
-    for (StubPath sp : myLoadedStubPaths) {
-      BaseStubModelRootManager mrm = sp.getModelRootManager();
-      if (mrm != null) {
-        mrm.dispose();
-        sp.setModelRootManager(null);
-      }
-    }
-
-    myLoadedStubPaths.clear();
-  }
-
-  @Override
-  public void markOldStubModels() {
-    List<StubPath> stubPathList = computeNotChangedStubPaths();
-    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
-      if (!SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
-      if (notChanged(stubPathList, sm)) continue;
-
-
-      //todo remove this code - for GWT only
-      if (!(sm instanceof BaseStubModelDescriptor)) continue;
-
-      //assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
-      ((BaseStubModelDescriptor) sm).markReload();
-    }
-  }
-
-  private List<StubPath> computeNotChangedStubPaths() {
     /*
       We have to update stub path in the following cases:
       * a new path which didn't existed
@@ -758,7 +719,40 @@ public abstract class AbstractModule implements IModule {
         }
       }
     }
-    return notChangedStubPaths;
+
+    disposeAllStubManagers();
+    releaseOldStubs(notChangedStubPaths);
+
+    CleanupManager.getInstance().cleanup();
+    MPSModuleRepository.getInstance().invalidateCaches();
+
+    loadNewStubs(notChangedStubPaths);
+  }
+
+  private void disposeAllStubManagers() {
+    for (StubPath sp : myLoadedStubPaths) {
+      BaseStubModelRootManager mrm = sp.getModelRootManager();
+      if (mrm != null) {
+        mrm.dispose();
+        sp.setModelRootManager(null);
+      }
+    }
+
+    myLoadedStubPaths.clear();
+  }
+
+  private void releaseOldStubs(List<StubPath> notChangedStubs) {
+    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
+      if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
+        if (notChanged(notChangedStubs, sm)) continue;
+
+        if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
+          SModelRepository.getInstance().removeModelDescriptor(sm);
+        } else {
+          SModelRepository.getInstance().unRegisterModelDescriptor(sm, this);
+        }
+      }
+    }
   }
 
   private boolean notChanged(List<StubPath> notChangedStubPaths, SModelDescriptor sm) {
@@ -772,20 +766,7 @@ public abstract class AbstractModule implements IModule {
     return true;
   }
 
-  private void releaseOldStubs() {
-    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
-      if (!(sm instanceof BaseStubModelDescriptor)) continue;
-      if (!(((BaseStubModelDescriptor) sm).isNeedsReloading())) continue;
-
-      if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
-        SModelRepository.getInstance().removeModelDescriptor(sm);
-      } else {
-        SModelRepository.getInstance().unRegisterModelDescriptor(sm, this);
-      }
-    }
-  }
-
-  private void loadNewStubs() {
+  private void loadNewStubs(List<StubPath> notChangedStubPaths) {
     List<StubPath> stubModels = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
 
     for (StubPath sp : stubModels) {
@@ -793,7 +774,7 @@ public abstract class AbstractModule implements IModule {
       sp.setModelRootManager(manager);
 
       if (manager == null) continue;
-      manager.updateModels(sp.getPath(), "", this);
+      manager.updateModels(sp.getPath(), "", this, notChangedStubPaths);
 
       myLoadedStubPaths.add(sp);
     }

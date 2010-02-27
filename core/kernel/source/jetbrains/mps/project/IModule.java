@@ -146,5 +146,4 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   List<SNodeDescriptor> getStubsRootNodeDescriptors();
 
-  void markOldStubModels();
 }
