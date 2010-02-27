@@ -44,7 +44,8 @@ import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.JComponent;
 import javax.swing.event.ChangeEvent;
 import java.io.File;
 import java.util.ArrayList;

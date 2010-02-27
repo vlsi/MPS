@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.intellij.ide.projectView.impl;
 
 import com.intellij.ProjectTopics;
@@ -62,6 +63,7 @@ import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
@@ -421,7 +423,7 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
     newPane.setTreeChangeListener(myTreeChangeListener);
     myAutoScrollToSourceHandler.install(newPane.myTree);
 
-    newPane.getComponentToFocus().requestFocus();
+    IdeFocusManager.getInstance(myProject).requestFocus(newPane.getComponentToFocus(), false);
     updateToolWindowTitle();
 
     newPane.restoreExpandedPaths();
@@ -475,7 +477,7 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
           } else {
             String presentable = pane.getPresentableSubIdName(subId);
             if (index == -1) {
-              setText(pane.getTitle() + ": " + presentable);
+              setText(presentable);
               setIcon(pane.getIcon());
             } else {
               // indent sub id
@@ -1348,7 +1350,9 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
   public boolean isShowMembers(String paneId) {
     return getPaneOptionValue(myShowMembers, paneId, ourShowMembersDefaults);
   }
-  
+
+  // MPS Patch: added method
+  @Patch
   public void setShowMembers(boolean value, String paneId) {
     setPaneOption(myShowMembers, value, paneId, true);
   }

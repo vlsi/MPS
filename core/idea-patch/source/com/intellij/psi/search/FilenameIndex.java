@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.intellij.psi.search;
 
 import com.intellij.ide.impl.ProjectUtil;
@@ -24,23 +25,18 @@ import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.openapi.wm.ex.WindowManagerEx;
 import com.intellij.util.ArrayUtil;
-import com.intellij.util.ui.FilePathSplittingPolicy;
 import com.intellij.util.indexing.*;
 import com.intellij.util.io.EnumeratorStringDescriptor;
 import com.intellij.util.io.KeyDescriptor;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiDirectory;
 import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
-import java.util.*;
 import java.io.File;
+import java.util.*;
 
 /**
  * @author yole
@@ -90,7 +86,7 @@ public class FilenameIndex extends ScalarIndexExtension<String> {
     final Collection<VirtualFile> files = FileBasedIndex.getInstance().getContainingFiles(NAME, name, scope);
     if (files.isEmpty()) return NavigationItem.EMPTY_NAVIGATION_ITEM_ARRAY;
     List<NavigationItem> result = new ArrayList<NavigationItem>();
-    for(final VirtualFile file: files) {
+    for (final VirtualFile file : files) {
       if (!file.isValid()) continue;
       FileNavigationItem item = new FileNavigationItem(name, file, project);
       result.add(item);

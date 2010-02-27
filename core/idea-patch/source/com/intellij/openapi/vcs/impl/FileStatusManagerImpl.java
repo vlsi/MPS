@@ -1,5 +1,5 @@
 /*
- * Copyright 2000-2010 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -80,7 +80,7 @@ public class FileStatusManagerImpl extends FileStatusManager implements ProjectC
   public FileStatus calcStatus(@NotNull VirtualFile virtualFile) {
     // Patched for MPS: special check for MPSNodeVirtualFile
     if ((virtualFile.isInLocalFileSystem() || virtualFile instanceof MPSNodeVirtualFile)
-        && myFileStatusProvider != null) {
+      && myFileStatusProvider != null) {
       for (FileStatusProvider extension : myExtensions.getValue()) {
         FileStatus status = extension.getFileStatus(virtualFile);
         if (status != null) {
@@ -117,7 +117,8 @@ public class FileStatusManagerImpl extends FileStatusManager implements ProjectC
     return "FileStatusManager";
   }
 
-  public void initComponent() { }
+  public void initComponent() {
+  }
 
   @Patch
   public void addFileStatusListener(FileStatusListener listener) {
@@ -167,7 +168,7 @@ public class FileStatusManagerImpl extends FileStatusManager implements ProjectC
       return;
     }
 
-    if ((file == null) || (! file.isValid())) return;
+    if ((file == null) || (!file.isValid())) return;
     FileStatus cachedStatus = getCachedStatus(file);
     if (cachedStatus == null) return;
     FileStatus newStatus = calcStatus(file);

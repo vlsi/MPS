@@ -129,8 +129,6 @@
                             text="New Dummy Project"/>
                     <action id="OpenFile" class="com.intellij.ide.actions.OpenFileAction"
                             icon="/actions/menu-open.png"/>
-                    <action id="OpenRemoteFile" class="com.intellij.ide.actions.OpenRemoteFileAction"
-                            text="Open Remote File..." internal="true"/>
                     <group id="$LRU" class="com.intellij.ide.actions.RecentProjectsGroup" popup="true"/>
                     <action id="CloseProject" class="com.intellij.ide.actions.CloseProjectAction"/>
                 </group>
@@ -269,9 +267,9 @@
                 <action id="ToggleDockMode" class="com.intellij.ide.actions.ToggleDockModeAction"/>
                 <action id="ToggleFloatingMode" class="com.intellij.ide.actions.ToggleFloatingModeAction"/>
                 <action id="ToggleSideMode" class="com.intellij.ide.actions.ToggleSideModeAction"/>
-                <!--<action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
-                <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>
-                -->
+                <!--MPS Patch
+                <action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
+                <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>-->
                 <group id="ResizeToolWindowGroup" popup="true">
                     <action id="ResizeToolWindowLeft" class="com.intellij.ide.actions.ResizeToolWindowAction$Left"/>
                     <action id="ResizeToolWindowRight" class="com.intellij.ide.actions.ResizeToolWindowAction$Right"/>
@@ -338,6 +336,9 @@
                 <group id="HelpMenuAdditions"/>
                 <!--MPS Patch End-->
                 <separator/>
+                <!--MPS Patch Start: comment out next action-->
+                <!--<action id="CheckForUpdate" class="com.intellij.openapi.updateSettings.impl.CheckForUpdateAction"/>-->
+                <!--MPS Patch End-->
                 <action id="About" class="com.intellij.ide.actions.AboutAction"/>
             </group>
 

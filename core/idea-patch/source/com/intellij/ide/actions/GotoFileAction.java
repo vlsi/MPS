@@ -1,5 +1,5 @@
 /*
- * Copyright 2000-2010 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,9 @@ import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.fileTypes.FileTypes;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.JBPopupListener;
@@ -41,12 +41,14 @@ import com.intellij.psi.search.FilenameIndex.FileNavigationItem;
 import com.intellij.navigation.NavigationItem;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.BoxLayout;
+import javax.swing.Icon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
-import java.util.List;
 
 import jetbrains.mps.util.annotation.Patch;
 
@@ -142,8 +144,7 @@ public class GotoFileAction extends GotoActionBase implements DumbAware {
         public void setSelected(final AnActionEvent e, final boolean state) {
           if (state) {
             createPopup();
-          }
-          else {
+          } else {
             close();
           }
         }
@@ -255,8 +256,8 @@ public class GotoFileAction extends GotoActionBase implements DumbAware {
         return;
       }
       myPopup = JBPopupFactory.getInstance().createComponentPopupBuilder(myChooserPanel, myChooser).setModalContext(false).setFocusable(false)
-          .setResizable(true).setCancelOnClickOutside(false).setMinSize(new Dimension(200, 200))
-          .setDimensionServiceKey(myProject, "GotoFile_FileTypePopup", false).createPopup();
+        .setResizable(true).setCancelOnClickOutside(false).setMinSize(new Dimension(200, 200))
+        .setDimensionServiceKey(myProject, "GotoFile_FileTypePopup", false).createPopup();
       myPopup.addListener(new JBPopupListener.Adapter() {
         public void onClosed(LightweightWindowEvent event) {
           myPopup = null;

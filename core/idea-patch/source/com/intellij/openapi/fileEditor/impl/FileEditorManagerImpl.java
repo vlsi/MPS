@@ -65,8 +65,11 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.File;
@@ -872,6 +875,17 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
     } else {
       return EMPTY_EDITOR_ARRAY;
     }
+  }
+
+  @NotNull
+  @Override
+  public FileEditor[] getAllEditors(@NotNull VirtualFile file) {
+    List<EditorWithProviderComposite> editorComposites = getEditorComposites(file);
+    List<FileEditor> editors = new ArrayList<FileEditor>();
+    for (EditorWithProviderComposite composite : editorComposites) {
+      editors.addAll(Arrays.asList(composite.getEditors()));
+    }
+    return editors.toArray(new FileEditor[editors.size()]);
   }
 
   @Nullable

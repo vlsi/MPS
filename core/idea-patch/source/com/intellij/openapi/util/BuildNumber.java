@@ -1,3 +1,22 @@
+/*
+ * Copyright 2000-2009 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * @author max
+ */
 package com.intellij.openapi.util;
 
 import com.intellij.openapi.util.text.StringUtil;
@@ -38,8 +57,7 @@ public class BuildNumber implements Comparable<BuildNumber> {
 
     if (myBuildNumber != Integer.MAX_VALUE) {
       builder.append(myBuildNumber);
-    }
-    else {
+    } else {
       builder.append("SNAPSHOT");
     }
 
@@ -51,7 +69,7 @@ public class BuildNumber implements Comparable<BuildNumber> {
     if (version == null) return null;
 
     // MPS Patch Start
-    // MPS versioning is not that complicated as in IDEA 
+    // MPS versioning is not that complicated as in IDEA
     if (BUILD_NUMBER.equals(version) || version.contains("SNAPSHOT")) return defaultBuildNumber();
 
     try {
@@ -106,7 +124,7 @@ public class BuildNumber implements Comparable<BuildNumber> {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    BuildNumber that = (BuildNumber)o;
+    BuildNumber that = (BuildNumber) o;
 
     if (myBaselineVersion != that.myBaselineVersion) return false;
     if (myBuildNumber != that.myBuildNumber) return false;

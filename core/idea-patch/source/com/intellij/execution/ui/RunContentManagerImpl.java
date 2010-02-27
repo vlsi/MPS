@@ -257,6 +257,9 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
   public void showRunContent(@NotNull final Executor executor, final RunContentDescriptor descriptor) {
     if (ApplicationManager.getApplication().isUnitTestMode()) return;
 
+    final ToolWindow toolWindow = ToolWindowManager.getInstance(myProject).getToolWindow(executor.getToolWindowId());
+    final boolean wasInActiveWindow = toolWindow != null && toolWindow.isActive();
+
     final ContentManager contentManager = getContentManagerForRunner(executor);
     RunContentDescriptor oldDescriptor = chooseReuseContentForDescriptor(contentManager, descriptor);
 
@@ -325,13 +328,15 @@ public class RunContentManagerImpl implements RunContentManager, Disposable {
   @Nullable
   public RunContentDescriptor getReuseContent(final Executor requestor, DataContext dataContext) {
     if (ApplicationManager.getApplication().isUnitTestMode()) return null;
-    RunContentDescriptor runContentDescriptor = GenericProgramRunner.CONTENT_TO_REUSE_DATA_KEY.getData(dataContext);
+    return getReuseContent(requestor, GenericProgramRunner.CONTENT_TO_REUSE_DATA_KEY.getData(dataContext));
+  }
 
-    if (runContentDescriptor != null) return runContentDescriptor;
+  public RunContentDescriptor getReuseContent(Executor requestor, @Nullable RunContentDescriptor contentToReuse) {
+    if (ApplicationManager.getApplication().isUnitTestMode()) return null;
+    if (contentToReuse != null) return contentToReuse;
 
     final ContentManager contentManager = getContentManagerForRunner(requestor);
-
-    return chooseReuseContentForDescriptor(contentManager, runContentDescriptor);
+    return chooseReuseContentForDescriptor(contentManager, contentToReuse);
   }
 
   public RunContentDescriptor findContentDescriptor(final Executor requestor, final ProcessHandler handler) {

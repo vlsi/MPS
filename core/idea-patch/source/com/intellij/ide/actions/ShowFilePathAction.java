@@ -1,5 +1,5 @@
 /*
- * Copyright 2000-2010 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,11 +32,12 @@ import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.awt.RelativePoint;
+import com.intellij.util.ArrayUtil;
 import com.intellij.util.ui.EmptyIcon;
 import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import javax.swing.Icon;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.event.MouseEvent;
 import java.io.File;
@@ -179,7 +180,7 @@ public class ShowFilePathAction extends AnAction {
       try {
         File parent = ioFile.getParentFile();
         if (parent != null) {
-          Runtime.getRuntime().exec(cmd + " " + path, new String[0], parent);
+          Runtime.getRuntime().exec(cmd + " " + path, ArrayUtil.EMPTY_STRING_ARRAY, parent);
         } else {
           Runtime.getRuntime().exec(cmd + " " + path);
         }

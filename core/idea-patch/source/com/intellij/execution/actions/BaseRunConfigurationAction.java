@@ -31,7 +31,7 @@ import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.ui.awt.RelativePoint;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import javax.swing.Icon;
 import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.util.Collections;

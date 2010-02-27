@@ -72,6 +72,8 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
   private List<Element> myUnloadedElements = null;
   private JDOMExternalizableStringList myOrder = new JDOMExternalizableStringList();
 
+  private final List<RunManagerListener> myListeners = ContainerUtil.createEmptyCOWList();
+
   @Patch
   public RunManagerImpl(final Project project,
                         PropertiesComponent propertiesComponent,
@@ -510,6 +512,8 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
 
     myOrder.readExternal(parentNode);
     mySelectedConfig = parentNode.getAttributeValue(SELECTED_ATTR);
+
+    fireBeforeRunTasksUpdated();
   }
 
   @Patch
@@ -789,10 +793,12 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
       //}
     }
     myConfigurationToBeforeTasksMap.put(runConfiguration, taskMap);
+    fireBeforeRunTasksUpdated();
   }
 
   public final void resetBeforeRunTasks(final RunConfiguration runConfiguration) {
     myConfigurationToBeforeTasksMap.remove(runConfiguration);
+    fireBeforeRunTasksUpdated();
   }
 
   public void addConfiguration(final RunnerAndConfigurationSettingsImpl settings, final boolean isShared) {
@@ -810,6 +816,22 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
       if (!o.isTemplate() && isConfigurationShared(o) && !existing.contains(getUniqueName(o.getConfiguration()))) {
         it.remove();
       }
+    }
+  }
+
+  @Override
+  public void addRunManagerListener(RunManagerListener listener) {
+    myListeners.add(listener);
+  }
+
+  @Override
+  public void removeRunManagerListener(RunManagerListener listener) {
+    myListeners.remove(listener);
+  }
+
+  public void fireBeforeRunTasksUpdated() {
+    for (RunManagerListener each : myListeners) {
+      each.beforeRunTasksChanged();
     }
   }
 

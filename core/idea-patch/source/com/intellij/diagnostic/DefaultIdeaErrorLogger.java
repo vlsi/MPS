@@ -20,7 +20,7 @@ import com.intellij.openapi.diagnostic.ErrorLogger;
 import com.intellij.openapi.diagnostic.IdeaLoggingEvent;
 import org.jetbrains.annotations.NonNls;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
 
 import jetbrains.mps.runtime.BundleClassLoader;
