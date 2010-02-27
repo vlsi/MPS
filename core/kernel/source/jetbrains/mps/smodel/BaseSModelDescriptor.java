@@ -215,6 +215,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myModelRootManager = modelRootManager;
   }
 
+  public IModelRootManager getModelRootManager() {
+    return myModelRootManager;
+  }
+
   protected void updateDiskTimestamp() {
   }
 

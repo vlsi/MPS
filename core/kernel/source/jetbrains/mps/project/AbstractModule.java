@@ -64,7 +64,7 @@ public abstract class AbstractModule implements IModule {
   public static final String CACHES_DIR = "caches";
   public static final String PACKAGE_SUFFIX = "mpsarch.jar";
 
-  private static final boolean USE_INCREMETAL_STUBS_RELOADING = false;
+  private static final boolean USE_INCREMETAL_STUBS_RELOADING = true;
 
   public static void registerModelCreationListener(ModelCreationListener listener) {
     myModelCreationListeners.add(listener);
