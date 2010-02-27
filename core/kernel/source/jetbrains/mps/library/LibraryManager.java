@@ -117,7 +117,6 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
         if (l.isBootstrap()) {
           for (IModule m : modules) {
             m.updateClassPath();
-            m.updateStubs();
           }
         }
       }

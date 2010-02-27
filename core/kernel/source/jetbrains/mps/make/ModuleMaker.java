@@ -243,7 +243,6 @@ public class ModuleMaker {
 
     for (IModule module : modules) {
       module.updateClassPath();
-      module.updateStubs();
     }
 
     return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
