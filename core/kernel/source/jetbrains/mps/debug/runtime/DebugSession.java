@@ -3,6 +3,7 @@ package jetbrains.mps.debug.runtime;
 import com.intellij.execution.process.ProcessHandler;
 import com.sun.jdi.*;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
+import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
@@ -92,11 +93,16 @@ public class DebugSession {
     return myUiState;
   }
 
-  // TODO call when user selects something in ui and changes state
   private void fireStateChanged() {
-    for (SessionChangeListener listener : myListeners) {
-      listener.stateChanged(this);
-    }
+    // UiState often executes this method under lock, so we do not want deadlocks here and do all notifications asynchronously
+    myEventsProcessor.getManagerThread().schedule(new DebuggerCommand() {
+      @Override
+      protected void action() throws Exception {
+        for (SessionChangeListener listener : myListeners) {
+          listener.stateChanged(DebugSession.this);
+        }
+      }
+    });
   }
 
   public void addChangeListener(@NotNull SessionChangeListener listener) {
