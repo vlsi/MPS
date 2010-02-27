@@ -39,7 +39,6 @@ public class EmbeddableEditor {
     this.myModel = ProjectModels.createDescriptorFor(this.myOwner);
     this.myModel.getSModel().addDevKit(LanguageDesign_DevKit.get());
     this.setNode(node);
-    this.myPanel = new EmbeddableEditorPanel(this.myFileNodeEditor);
   }
 
   public void setNode(SNode node) {
@@ -50,6 +49,11 @@ public class EmbeddableEditor {
       }
     });
     this.myFileNodeEditor = new MPSFileNodeEditor(this.myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(this.myNode));
+    if (this.myPanel == null) {
+      this.myPanel = new EmbeddableEditorPanel(this.myFileNodeEditor);
+    } else {
+      this.myPanel.setEditor(this.myFileNodeEditor);
+    }
   }
 
   public JComponent getComponenet() {
