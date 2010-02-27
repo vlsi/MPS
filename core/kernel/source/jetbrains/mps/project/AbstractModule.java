@@ -64,7 +64,7 @@ public abstract class AbstractModule implements IModule {
   public static final String CACHES_DIR = "caches";
   public static final String PACKAGE_SUFFIX = "mpsarch.jar";
 
-  public static final boolean USE_INCREMETAL_STUBS_RELOADING = false;
+  private static final boolean USE_INCREMETAL_STUBS_RELOADING = false;
 
   public static void registerModelCreationListener(ModelCreationListener listener) {
     myModelCreationListeners.add(listener);
@@ -743,9 +743,9 @@ public abstract class AbstractModule implements IModule {
 
   private void releaseOldStubs(List<StubPath> notChangedStubs) {
     for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
-      if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
-        if (notChanged(notChangedStubs, sm)) continue;
+      if (notChanged(notChangedStubs, sm)) continue;
 
+      if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
         if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
           SModelRepository.getInstance().removeModelDescriptor(sm);
         } else {
@@ -767,6 +767,13 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void loadNewStubs(List<StubPath> notChangedStubPaths) {
+    //todo[CP] remove this when JDK and Classpath migrated. Will be supported by another framework
+    for (SModelRoot mr : getSModelRoots()) {
+      IModelRootManager m = mr.getManager();
+      if (!(m instanceof BaseStubModelRootManager)) continue;
+      m.updateModels(mr, this, notChangedStubPaths);
+    }
+
     List<StubPath> stubModels = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
 
     for (StubPath sp : stubModels) {
@@ -1045,11 +1052,6 @@ public abstract class AbstractModule implements IModule {
       int result = myPath != null ? myPath.hashCode() : 0;
       result = 31 * result + (myManager != null ? myManager.hashCode() : 0);
       return result;
-    }
-
-    @Override
-    public String toString() {
-      return myPath + "{" + myManager + '}';
     }
   }
 

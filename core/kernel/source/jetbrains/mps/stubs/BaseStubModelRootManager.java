@@ -64,35 +64,33 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
           LOG.warning("Loading the same java_stub package twice : " + descriptor.getLongName() + " from " + repository.getOwners(descriptor));
         }
       } else {
-        if (AbstractModule.USE_INCREMETAL_STUBS_RELOADING) {
-          if (descriptor instanceof BaseSModelDescriptor) {
-            BaseSModelDescriptor baseDescriptor = (BaseSModelDescriptor) descriptor;
+/*
+        if (descriptor instanceof BaseSModelDescriptor) {
+          BaseSModelDescriptor baseDescriptor = (BaseSModelDescriptor) descriptor;
+          baseDescriptor.setModelRootManager(this);
+        }
+*/
 
-            //todo this is a hack - comparing classes by names
-            if (baseDescriptor.getModelRootManager().getClass().getName().equals(this.getClass().getName())) {
-              baseDescriptor.setModelRootManager(this);
-            }
-          }
-
-          if (!descriptor.isInitialized()) {
-            if (!myDescriptorsWithListener.contains(descriptor)) {
-              descriptor.addModelListener(myInitializationListener);
-              myDescriptorsWithListener.add(descriptor);
-            }
-          } else {
-            if (descriptor instanceof BaseStubModelDescriptor) {
-              for (StubPath sp : ((BaseStubModelDescriptor) descriptor).getPaths()) {
-                if (!notChangedStubs.contains(sp)) {
-                  updateModelInLoadingState(descriptor, descriptor.getSModel());
-                  break;
-                }
-              }
-            } else {
-              updateModelInLoadingState(descriptor, descriptor.getSModel());
-            }
+        if (!descriptor.isInitialized()) {
+          if (!myDescriptorsWithListener.contains(descriptor)) {
+            descriptor.addModelListener(myInitializationListener);
+            myDescriptorsWithListener.add(descriptor);
           }
         } else {
-          updateModelInLoadingState(descriptor, descriptor.getSModel());
+/*
+          if (descriptor instanceof BaseStubModelDescriptor) {
+            for (StubPath sp : ((BaseStubModelDescriptor) descriptor).getPaths()) {
+              if (!notChangedStubs.contains(sp)) {
+                updateModelInLoadingState(descriptor, descriptor.getSModel());
+                break;
+              }
+            }
+          } else {
+*/
+            updateModelInLoadingState(descriptor, descriptor.getSModel());
+/*
+          }
+*/
         }
       }
     }
