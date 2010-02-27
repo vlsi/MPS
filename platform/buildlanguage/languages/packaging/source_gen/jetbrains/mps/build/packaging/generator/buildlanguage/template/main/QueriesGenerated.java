@@ -948,7 +948,7 @@ public class QueriesGenerated {
       for (IModule module : SetSequence.fromSet(modules)) {
         List<IModule> dependency = module.getAllDependOnModules();
         for (IModule dependent : ListSequence.fromList(dependency)) {
-          if (!(dependent instanceof Generator) && !(SetSequence.fromSet(modules).contains(dependent))) {
+          if (!(dependent instanceof Generator) && !(SetSequence.fromSet(modules).contains(dependent)) && !(dependent.isPackaged()) && dependent.getDescriptorFile() != null) {
             String errorText = "Required module " + dependent.getModuleFqName() + " is absent. Used by module " + module.getModuleFqName() + ".";
             System.err.println(errorText);
             _context.showErrorMessage(null, errorText);
