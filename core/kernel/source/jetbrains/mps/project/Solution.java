@@ -193,7 +193,7 @@ public class Solution extends AbstractModule {
     return false;
   }
 
-  protected boolean areJavaStubsEnabled() {
+  public boolean areJavaStubsEnabled() {
     return getSolutionDescriptor().getEnableJavaStubs();
   }
 

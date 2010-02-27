@@ -76,7 +76,8 @@ public class SModelRepository implements ApplicationComponent {
       public void run() {
         LOG.debug("Model refresh");
         for (IModule m: MPSModuleRepository.getInstance().getAllModules()){
-          m.markOldStubModels();
+          //todo get rid of casting
+          (new ModelReloading(((AbstractModule) m))).markOldStubModels();
         }
 
         for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myModelDescriptors)) {

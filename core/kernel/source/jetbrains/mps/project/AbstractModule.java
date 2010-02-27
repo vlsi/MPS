@@ -64,8 +64,6 @@ public abstract class AbstractModule implements IModule {
   public static final String CACHES_DIR = "caches";
   public static final String PACKAGE_SUFFIX = "mpsarch.jar";
 
-  public static final boolean USE_INCREMETAL_STUBS_RELOADING = true;
-
   public static void registerModelCreationListener(ModelCreationListener listener) {
     myModelCreationListeners.add(listener);
   }
@@ -655,7 +653,7 @@ public abstract class AbstractModule implements IModule {
 
   //-----------stubs--------------
 
-  protected boolean areJavaStubsEnabled() {
+  public boolean areJavaStubsEnabled() {
     return true;
   }
 
@@ -692,7 +690,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void updateStubs() {
-    if (!USE_INCREMETAL_STUBS_RELOADING){
+    if (ModelReloading.USE_OLD_STUBS_RELOADING){
       SModelRepository.getInstance().refreshModels();
     }
 
@@ -707,6 +705,10 @@ public abstract class AbstractModule implements IModule {
     loadNewStubs();
   }
 
+  //todo for stubs reloading only
+  public List<StubPath> getLoadedStubPaths() {
+    return myLoadedStubPaths;
+  }
 
   private void disposeAllStubManagers() {
     for (StubPath sp : myLoadedStubPaths) {
@@ -718,62 +720,6 @@ public abstract class AbstractModule implements IModule {
     }
 
     myLoadedStubPaths.clear();
-  }
-
-  @Override
-  public void markOldStubModels() {
-    List<StubPath> stubPathList = computeNotChangedStubPaths();
-    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
-      if (!SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
-      if (notChanged(stubPathList, sm)) continue;
-
-
-      //todo remove this code - for GWT only
-      if (!(sm instanceof BaseStubModelDescriptor)) continue;
-
-      //assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
-      ((BaseStubModelDescriptor) sm).markReload();
-    }
-  }
-
-  private List<StubPath> computeNotChangedStubPaths() {
-    /*
-      We have to update stub path in the following cases:
-      * a new path which didn't existed
-      * an old path which does not exist any more
-      * timestamp for this path has changed (stubs change)
-      * model root manager for the path has changed (manager change leading to stubs change)
-    */
-
-    //we do not touch models whose loaded status, files and manager were not changed
-    List<StubPath> notChangedStubPaths = new ArrayList<StubPath>();
-
-    List<StubPath> newStubs = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
-
-    if (USE_INCREMETAL_STUBS_RELOADING) {
-      //todo make time linear [due to stubs list size this is not very significant]
-      for (StubPath os : myLoadedStubPaths) {
-        for (StubPath ns : newStubs) {
-          if (os.equals(ns)) {
-            if (os.isFresh()) {
-              notChangedStubPaths.add(ns);
-            }
-          }
-        }
-      }
-    }
-    return notChangedStubPaths;
-  }
-
-  private boolean notChanged(List<StubPath> notChangedStubPaths, SModelDescriptor sm) {
-    if (!(sm instanceof BaseStubModelDescriptor)) return false;
-    BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) sm;
-
-    for (StubPath s : baseDescriptor.getPaths()) {
-      if (!notChangedStubPaths.contains(s)) return false;
-    }
-
-    return true;
   }
 
   private void releaseOldStubs() {

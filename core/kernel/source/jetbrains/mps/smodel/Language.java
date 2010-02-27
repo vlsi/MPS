@@ -765,7 +765,7 @@ public class Language extends AbstractModule {
 
   //-----------stubs--------------
 
-  protected boolean areJavaStubsEnabled() {
+  public boolean areJavaStubsEnabled() {
     return getLanguageDescriptor().getEnableJavaStubs();
   }
 

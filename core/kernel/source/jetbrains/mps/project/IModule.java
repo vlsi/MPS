@@ -147,6 +147,4 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   boolean setStubPathExcluded(String path, boolean b);
 
   List<SNodeDescriptor> getStubsRootNodeDescriptors();
-
-  void markOldStubModels();
 }

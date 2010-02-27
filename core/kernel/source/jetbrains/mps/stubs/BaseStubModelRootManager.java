@@ -66,7 +66,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       } else {
         descriptor = oldDescr;
 
-        if (AbstractModule.USE_INCREMETAL_STUBS_RELOADING) {
+        if (!ModelReloading.USE_OLD_STUBS_RELOADING) {
           if (descriptor instanceof BaseSModelDescriptor) {
             BaseSModelDescriptor baseDescriptor = (BaseSModelDescriptor) descriptor;
 
@@ -82,7 +82,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
             myDescriptorsWithListener.add(descriptor);
           }
         } else {
-          if (AbstractModule.USE_INCREMETAL_STUBS_RELOADING) {
+          if (!ModelReloading.USE_OLD_STUBS_RELOADING) {
             if (descriptor instanceof BaseStubModelDescriptor) {
               if (((BaseStubModelDescriptor) descriptor).isNeedsReloading()) {
                 updateModelInLoadingState(descriptor, descriptor.getSModel());
