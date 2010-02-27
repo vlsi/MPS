@@ -284,8 +284,10 @@ public abstract class AbstractModule implements IModule {
 
   private IFile getClassesDirParent() {
     if (isPackaged()) {
-      String filename = getBundleHome().getAbsolutePath();
-      return VFileSystem.toIFile(VFileSystem.getFile(filename));
+      String filename = getBundleHome().getAbsolutePath() + "!";
+      VirtualFile file = VFileSystem.getFile(filename);
+      if (file == null) return null;
+      return VFileSystem.toIFile(file);
     } else {
       if (getDescriptorFile() == null) return null;
       return getDescriptorFile().getParent();
