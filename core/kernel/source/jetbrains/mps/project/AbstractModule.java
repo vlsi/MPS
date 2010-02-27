@@ -64,7 +64,7 @@ public abstract class AbstractModule implements IModule {
   public static final String CACHES_DIR = "caches";
   public static final String PACKAGE_SUFFIX = "mpsarch.jar";
 
-  public static final boolean USE_INCREMETAL_STUBS_RELOADING = false;
+  public static final boolean USE_INCREMETAL_STUBS_RELOADING = true;
 
   public static void registerModelCreationListener(ModelCreationListener listener) {
     myModelCreationListeners.add(listener);
@@ -125,12 +125,13 @@ public abstract class AbstractModule implements IModule {
     return getModuleFqName();
   }
 
-  protected void reload() {
+  protected void reloadAfterDescriptorChange() {
     MPSModuleRepository.getInstance().unRegisterModules(this);
     rereadModels();
 
     updatePackagedDescriptorClasspath();
     updateClassPath();
+    updateStubs();
   }
 
   public void onModuleLoad() {
@@ -687,17 +688,16 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void updateClassPath() {
+    myCachedClassPathItem = null;
+  }
+
+  public void updateStubs() {
     if (!USE_INCREMETAL_STUBS_RELOADING){
       SModelRepository.getInstance().refreshModels();
     }
 
-    myCachedClassPathItem = null;
     myIncludedStubPaths = getIncludedStubPaths();
 
-    updateStubs();
-  }
-
-  private void updateStubs() {
     disposeAllStubManagers();
     releaseOldStubs();
 
@@ -892,21 +892,17 @@ public abstract class AbstractModule implements IModule {
 
   public IClassPathItem getClassPathItem() {
     if (myCachedClassPathItem == null) {
-      updateClassPathItem();
-    }
-    return myCachedClassPathItem;
-  }
-
-  private void updateClassPathItem() {
-    myCachedClassPathItem = new CompositeClassPathItem();
-    for (StubPath path : getAllStubPaths()) {
-      try {
-        IClassPathItem pathItem = AbstractClassPathItem.createFromPath(path.getPath(), this);
-        myCachedClassPathItem.add(pathItem);
-      } catch (IOException e) {
-        LOG.error(e.getMessage());
+      myCachedClassPathItem = new CompositeClassPathItem();
+      for (StubPath path : getAllStubPaths()) {
+        try {
+          IClassPathItem pathItem = AbstractClassPathItem.createFromPath(path.getPath(), this);
+          myCachedClassPathItem.add(pathItem);
+        } catch (IOException e) {
+          LOG.error(e.getMessage());
+        }
       }
     }
+    return myCachedClassPathItem;
   }
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {

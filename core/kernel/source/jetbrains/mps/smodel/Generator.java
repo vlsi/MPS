@@ -15,16 +15,12 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.lang.generator.generationContext.structure.GenerationContext_Language;
-import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
-import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.runtime.BytecodeLocator;
@@ -60,7 +56,7 @@ public class Generator extends AbstractModule {
     setModulePointer(mp);
 
     upgradeGeneratorDescriptor();
-    reload();
+    reloadAfterDescriptorChange();
   }
 
   private void upgradeGeneratorDescriptor() {

@@ -129,7 +129,7 @@ public class Solution extends AbstractModule {
 
     setModulePointer(mp);
 
-    reload();
+    reloadAfterDescriptorChange();
 
     MPSModuleRepository.getInstance().fireModuleChanged(this);
 

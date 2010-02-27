@@ -191,6 +191,7 @@ public class ClassLoaderManager implements ApplicationComponent {
           if (updateClassPath) {
             for (IModule m : myRepository.getAllModules()) {
               m.updateClassPath();
+              m.updateStubs();
             }
           }
         }

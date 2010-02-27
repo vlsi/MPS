@@ -112,7 +112,7 @@ public class DevKit extends AbstractModule {
       setModulePointer(mp);
     }
 
-    reload();
+    reloadAfterDescriptorChange();
     moduleRepo.fireModuleChanged(this);
 
     if (reloadClasses) {

@@ -104,7 +104,7 @@ public class Language extends AbstractModule {
 
   }
 
-  protected void reload() {
+  protected void reloadAfterDescriptorChange() {
     MPSModuleRepository.getInstance().unRegisterModules(this);
 
     for (Generator generator : getGenerators()) {
@@ -115,6 +115,7 @@ public class Language extends AbstractModule {
     updatePackagedDescriptorClasspath();
     updateLanguageRuntimeClassPathItem();
     updateClassPath();
+    updateStubs();
     revalidateGenerators();
   }
 
@@ -328,7 +329,7 @@ public class Language extends AbstractModule {
     ModuleReference reference = new ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getUUID());
     setModulePointer(reference);
 
-    reload();
+    reloadAfterDescriptorChange();
 
     MPSModuleRepository.getInstance().fireModuleChanged(this);
 
