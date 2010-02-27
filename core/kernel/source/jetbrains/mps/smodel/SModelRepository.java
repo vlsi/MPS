@@ -75,19 +75,13 @@ public class SModelRepository implements ApplicationComponent {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         LOG.debug("Model refresh");
-        for (IModule m: MPSModuleRepository.getInstance().getAllModules()){
-          //todo get rid of casting
-          (new ModelReloading(((AbstractModule) m))).markOldStubModels();
-        }
+        ModelReloading.markOldStubs();
 
         for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myModelDescriptors)) {
           m.refresh();
         }
-        
-        for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myModelDescriptors)) {
-          if (!(m instanceof BaseStubModelDescriptor)) continue;
-          ((BaseStubModelDescriptor) m).unmarkReload();
-        }
+
+        ModelReloading.markNewStubs();
         LOG.debug("Model refresh done");
       }
     });
