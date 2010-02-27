@@ -30,6 +30,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.stubs.BaseLibStubDescriptor;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -138,7 +139,9 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
       List<VirtualFile> classfiles = new ArrayList<VirtualFile>();
 
       addDescriptorClassFiles(classfiles, getStubDir(l, l.getClassesGen()));
-      addDescriptorClassFiles(classfiles, getStubDir(l, l.getClassesDir()));
+      if (!EqualUtil.equals(l.getClassesGen(),l.getClassesDir())){
+        addDescriptorClassFiles(classfiles, getStubDir(l, l.getClassesDir()));
+      }
 
       List<String> files = new ArrayList<String>();
       for (VirtualFile f : classfiles) {
