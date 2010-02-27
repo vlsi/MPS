@@ -687,6 +687,10 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void updateClassPath() {
+    if (!USE_INCREMETAL_STUBS_RELOADING){
+      SModelRepository.getInstance().refreshModels();
+    }
+
     myCachedClassPathItem = null;
     myIncludedStubPaths = getIncludedStubPaths();
 
