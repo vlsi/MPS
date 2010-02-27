@@ -352,5 +352,20 @@ public class DebugSession {
       }
       return Collections.emptyList();
     }
+
+    @Nullable
+    public String getSourceFileName() {
+      if (myStackFrame == null) return null;
+      try {
+        return myStackFrame.location().sourceName();
+      } catch (AbsentInformationException e) {
+      }
+      return null;
+    }
+
+    public int getPosition() {
+      if (myStackFrame == null) return 0;
+      return myStackFrame.location().lineNumber();
+    }
   }
 }
