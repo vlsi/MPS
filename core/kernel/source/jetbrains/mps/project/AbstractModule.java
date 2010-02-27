@@ -130,7 +130,7 @@ public abstract class AbstractModule implements IModule {
     updatePackagedDescriptorClasspath();
     updateClassPath();
 
-    if (reloadStubs){
+    if (reloadStubs) {
       updateStubs();
     }
   }
@@ -267,8 +267,27 @@ public abstract class AbstractModule implements IModule {
   }
 
   public IFile getClassesGen() {
-    if (getDescriptorFile() == null) return null;
-    return getDescriptorFile().getParent().child("classes_gen");
+    IFile classesDirParent = getClassesDirParent();
+    if (classesDirParent == null) return null;
+
+    return classesDirParent.child("classes_gen");
+  }
+
+  public IFile getClassesDir() {
+    IFile classesDirParent = getClassesDirParent();
+    if (classesDirParent == null) return null;
+
+    return classesDirParent.child("classes");
+  }
+
+  private IFile getClassesDirParent() {
+    if (isPackaged()) {
+      String filename = getBundleHome() + "!" + getModuleFqName().replace('.', File.separatorChar);
+      return VFileSystem.toIFile(VFileSystem.getFile(filename));
+    } else {
+      if (getDescriptorFile() == null) return null;
+      return getDescriptorFile().getParent();
+    }
   }
 
   private List<ModelRoot> getModelRoots() {
@@ -704,6 +723,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo for stubs reloading only
+
   public List<StubPath> getLoadedStubPaths() {
     return myLoadedStubPaths;
   }

@@ -21,7 +21,6 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.xmlb.annotations.Transient;
-import jetbrains.mps.baseLanguage.stubs.MPS_StubDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -138,8 +137,8 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
 
       List<VirtualFile> classfiles = new ArrayList<VirtualFile>();
 
-      addDescriptorClassFiles(classfiles, getStubDir(l));
-      addDescriptorClassFiles(classfiles, getStubDir2(l));
+      addDescriptorClassFiles(classfiles, getStubDir(l, l.getClassesGen()));
+      addDescriptorClassFiles(classfiles, getStubDir(l, l.getClassesDir()));
 
       List<String> files = new ArrayList<String>();
       for (VirtualFile f : classfiles) {
@@ -193,18 +192,9 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     classfiles.addAll(Arrays.asList(classesGenFile.getChildren()));
   }
 
-  private String getStubDir(Language l) {
-    IFile cg = l.getClassesGen();
-    if (cg == null) return null;
-    return cg.getAbsolutePath() + File.separator + l.getModuleFqName().replace('.', File.separatorChar) + File.separator + LanguageAspect.STUBS.getName();
-  }
-
-  private String getStubDir2(Language l) {
-    if (l.getDescriptorFile() == null) return null;
-    IFile cd = l.getDescriptorFile().getParent().child("classes");
-    if (cd == null) return null;
-    String classesDir = cd.getAbsolutePath();
-    return classesDir + File.separator + l.getModuleFqName().replace('.', File.separatorChar) + File.separator + LanguageAspect.STUBS.getName();
+  private String getStubDir(Language l, IFile classes) {
+    if (classes == null) return null;
+    return classes.getAbsolutePath() + File.separator + l.getModuleFqName().replace('.', File.separatorChar) + File.separator + LanguageAspect.STUBS.getName();
   }
 
   private String getName(Language l, String fileName) {
