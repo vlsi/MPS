@@ -57,7 +57,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     SModelRepository repository = SModelRepository.getInstance();
 
     for (SModelDescriptor descriptor : getModelDescriptors(myLocation)) {
-      if (repository.getModelDescriptor(descriptor.getSModelReference()) == null) {
+      SModelDescriptor oldDescr = repository.getModelDescriptor(descriptor.getSModelReference());
+      if (oldDescr == null) {
         repository.registerModelDescriptor(descriptor, module);
 
         if (repository.getOwners(descriptor).size() > 1) {
@@ -65,6 +66,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
         }
       } else {
         if (AbstractModule.USE_INCREMETAL_STUBS_RELOADING) {
+          descriptor = oldDescr;
+
           if (descriptor instanceof BaseSModelDescriptor) {
             BaseSModelDescriptor baseDescriptor = (BaseSModelDescriptor) descriptor;
 
@@ -74,7 +77,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
             }
           }
 
-          if (!descriptor.isInitialized()) {
+          if (!descriptor.isInitialized())
+          {
             if (!myDescriptorsWithListener.contains(descriptor)) {
               descriptor.addModelListener(myInitializationListener);
               myDescriptorsWithListener.add(descriptor);
