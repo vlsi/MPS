@@ -35,7 +35,7 @@ public class StepInto_Action extends GeneratedAction {
     try {
       {
         DebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-        event.getPresentation().setEnabled(debugSession != null && debugSession.isPaused());
+        event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled());
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

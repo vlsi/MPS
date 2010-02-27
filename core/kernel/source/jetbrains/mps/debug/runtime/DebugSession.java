@@ -40,6 +40,10 @@ public class DebugSession {
     return myExecutionState.equals(ExecutionState.Stopped);
   }
 
+  public boolean isStepEnabled() {
+    return isPaused() && myUiState.isPausedOnBreakpoint();
+  }
+
   public void resume() {
     myEventsProcessor.resume(myUiState.getContext());
   }
@@ -366,6 +370,13 @@ public class DebugSession {
     public int getPosition() {
       if (myStackFrame == null) return 0;
       return myStackFrame.location().lineNumber();
+    }
+
+    public boolean isPausedOnBreakpoint() {
+      if (myContext != null) {
+        return myEventsProcessor.getSuspendManager().getPausedContexts().contains(myContext);  
+      }
+      return false;
     }
   }
 }

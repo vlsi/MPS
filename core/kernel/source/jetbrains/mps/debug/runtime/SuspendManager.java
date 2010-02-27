@@ -169,7 +169,7 @@ public class SuspendManager {
     return myPausedByUserContext;
   }
 
-  public void pausedByUser(SuspendContext suspendContext) {
+  public void setPausedByUser(SuspendContext suspendContext) {
     myPausedByUserContext = suspendContext;
   }
 

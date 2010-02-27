@@ -425,7 +425,7 @@ public class DebugVMEventsProcessor {
       getVirtualMachine().suspend();
       SuspendManager suspendManager = getSuspendManager();
       SuspendContext suspendContext = suspendManager.pushSuspendContextWithVotesNumber(EventRequest.SUSPEND_ALL, 0);
-      suspendManager.pausedByUser(suspendContext);
+      suspendManager.setPausedByUser(suspendContext);
       getMulticaster().paused(suspendContext);
     }
   }
