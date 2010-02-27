@@ -34,18 +34,22 @@ public class EmbeddableEditor {
   private SNode myNode;
 
   public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode node) {
-    this.myNode = node;
     this.myOwner = owner;
     this.myModel = ProjectModels.createDescriptorFor(this.myOwner);
     this.myModel.getSModel().addDevKit(LanguageDesign_DevKit.get());
+    this.setNode(node);
+    this.myPanel = new EmbeddableEditorPanel(this.myFileNodeEditor);
+    this.myContext = context;
+  }
+
+  public void setNode(SNode node) {
+    this.myNode = node;
     this.myModel.getSModel().runLoadingAction(new Runnable() {
       public void run() {
         EmbeddableEditor.this.myModel.getSModel().addRoot(EmbeddableEditor.this.myNode);
       }
     });
-    this.myFileNodeEditor = new MPSFileNodeEditor(context, MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
-    this.myPanel = new EmbeddableEditorPanel(this.myFileNodeEditor);
-    this.myContext = context;
+    this.myFileNodeEditor = new MPSFileNodeEditor(this.myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(this.myNode));
   }
 
   public JComponent getComponenet() {
