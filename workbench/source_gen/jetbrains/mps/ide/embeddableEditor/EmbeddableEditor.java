@@ -35,11 +35,11 @@ public class EmbeddableEditor {
 
   public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode node) {
     this.myOwner = owner;
+    this.myContext = context;
     this.myModel = ProjectModels.createDescriptorFor(this.myOwner);
     this.myModel.getSModel().addDevKit(LanguageDesign_DevKit.get());
     this.setNode(node);
     this.myPanel = new EmbeddableEditorPanel(this.myFileNodeEditor);
-    this.myContext = context;
   }
 
   public void setNode(SNode node) {
