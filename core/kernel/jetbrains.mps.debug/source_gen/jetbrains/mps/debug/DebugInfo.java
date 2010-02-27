@@ -89,7 +89,7 @@ public class DebugInfo {
     Set<VarPositionInfo> noRootVars = MapSequence.fromMap(this.myRootToVarPositions).get(UNSPECIFIED_ROOT);
     if (noRootVars != null) {
       for (PositionInfo position : noRootVars) {
-        Element e = new Element(NODE_INFO);
+        Element e = new Element(VAR_INFO);
         position.saveTo(e);
         root.addContent(e);
       }
