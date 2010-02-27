@@ -267,22 +267,24 @@ public abstract class AbstractModule implements IModule {
   }
 
   public IFile getClassesGen() {
-    IFile classesDirParent = getClassesDirParent();
-    if (classesDirParent == null) return null;
+    IFile classesDir = getClassesDirParent();
+    if (classesDir == null) return null;
+    if (isPackaged()) return classesDir;
 
-    return classesDirParent.child("classes_gen");
+    return classesDir.child("classes_gen");
   }
 
   public IFile getClassesDir() {
-    IFile classesDirParent = getClassesDirParent();
-    if (classesDirParent == null) return null;
+    IFile classesDir = getClassesDirParent();
+    if (classesDir == null) return null;
+    if (isPackaged()) return classesDir;
 
-    return classesDirParent.child("classes");
+    return classesDir.child("classes");
   }
 
   private IFile getClassesDirParent() {
     if (isPackaged()) {
-      String filename = getBundleHome() + "!" + getModuleFqName().replace('.', File.separatorChar);
+      String filename = getBundleHome().getAbsolutePath();
       return VFileSystem.toIFile(VFileSystem.getFile(filename));
     } else {
       if (getDescriptorFile() == null) return null;
