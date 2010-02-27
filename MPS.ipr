@@ -1633,13 +1633,6 @@
         <root url="jar://$PROJECT_DIR$/lib/junit4/junit-4.1-src.jar!/" />
       </SOURCES>
     </library>
-    <library name="Alloy">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/alloy/alloy.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
     <library name="Commons-codec">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/commons-codec/commons-codec-1.3.jar!/" />
