@@ -19,9 +19,11 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vfs.IFile;
@@ -73,8 +75,17 @@ public class SModelRepository implements ApplicationComponent {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         LOG.debug("Model refresh");
+        for (IModule m: MPSModuleRepository.getInstance().getAllModules()){
+          m.markOldStubModels();
+        }
+
         for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myModelDescriptors)) {
           m.refresh();
+        }
+        
+        for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myModelDescriptors)) {
+          if (!(m instanceof BaseStubModelDescriptor)) continue;
+          ((BaseStubModelDescriptor) m).unmarkReload();
         }
         LOG.debug("Model refresh done");
       }
