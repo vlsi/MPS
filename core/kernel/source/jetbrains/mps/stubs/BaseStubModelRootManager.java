@@ -17,7 +17,6 @@ package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModelRoot;
@@ -47,11 +46,11 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   private StubLocation myLocation;
 
-  public final void updateModels(@NotNull SModelRoot root, @NotNull IModule module, List<StubPath> notChangedStubs) {
-    updateModels(root.getPath(), root.getPrefix(), module, notChangedStubs);
+  public final void updateModels(@NotNull SModelRoot root, @NotNull IModule module) {
+    updateModels(root.getPath(), root.getPrefix(), module);
   }
 
-  public final void updateModels(String path, String prefix, @NotNull IModule module, List<StubPath> notChangedStubs) {
+  public final void updateModels(String path, String prefix, @NotNull IModule module) {
     myLocation = new StubLocation(path, prefix, module);
 
     SModelRepository repository = SModelRepository.getInstance();
@@ -77,19 +76,16 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
             }
           }
 
-          if (!descriptor.isInitialized())
-          {
+          if (!descriptor.isInitialized()) {
             if (!myDescriptorsWithListener.contains(descriptor)) {
               descriptor.addModelListener(myInitializationListener);
               myDescriptorsWithListener.add(descriptor);
             }
           } else {
             if (descriptor instanceof BaseStubModelDescriptor) {
-              for (StubPath sp : ((BaseStubModelDescriptor) descriptor).getPaths()) {
-                if (!notChangedStubs.contains(sp)) {
-                  updateModelInLoadingState(descriptor, descriptor.getSModel());
-                  break;
-                }
+              if (((BaseStubModelDescriptor) descriptor).isNeedsReloading()) {
+                updateModelInLoadingState(descriptor, descriptor.getSModel());
+                break;
               }
             } else {
               updateModelInLoadingState(descriptor, descriptor.getSModel());

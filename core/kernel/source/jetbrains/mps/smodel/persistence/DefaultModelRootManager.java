@@ -50,7 +50,7 @@ import java.util.Set;
 public class DefaultModelRootManager extends BaseMPSModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
-  public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner, List<StubPath> notChangedStubs) {
+  public void updateModels(@NotNull SModelRoot root, @NotNull IModule owner) {
     readModelDescriptors(FileSystem.getFile(root.getPath()), root, owner);
   }
 
