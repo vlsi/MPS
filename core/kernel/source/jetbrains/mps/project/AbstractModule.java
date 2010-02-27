@@ -694,10 +694,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   public void updateStubs() {
-    if (ModelReloading.USE_OLD_STUBS_RELOADING){
-      SModelRepository.getInstance().refreshModels();
-    }
-
     disposeAllStubManagers();
     releaseOldStubs();
 
