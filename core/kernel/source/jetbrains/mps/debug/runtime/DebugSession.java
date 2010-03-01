@@ -146,8 +146,13 @@ public class DebugSession {
     }
   }
 
-  public void addHighLevelFunctionsProvider(IHighLevelFunctionsProvider dumbHighLevelFunctionsProvider) {
+  public void setHighLevelFunctionsProvider(IHighLevelFunctionsProvider dumbHighLevelFunctionsProvider) {
     myProvider = dumbHighLevelFunctionsProvider;
+  }
+
+  @NotNull
+  public IHighLevelFunctionsProvider getProvider() {
+    return myProvider;
   }
 
   public enum ExecutionState {
