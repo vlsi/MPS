@@ -6208,9 +6208,9 @@
                 <property name="value:3" value="10" />
               </node>
             </node>
-            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="654795966042672298">
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330192717">
               <property name="caretPosition:4" value="0" />
-              <property name="cellId:4" value="Collection_9211_0" />
+              <property name="cellId:4" value="Collection_zedcwq_a" />
             </node>
           </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="654795966042521263">
@@ -6374,9 +6374,9 @@
                             </node>
                           </node>
                         </node>
-                        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="222793074662099231">
+                        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330192718">
                           <property name="caretPosition:4" value="0" />
-                          <property name="cellId:4" value="Collection_9211_0" />
+                          <property name="cellId:4" value="Collection_zedcwq_a" />
                         </node>
                       </node>
                     </node>
@@ -6501,9 +6501,9 @@
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="222793074662091861" />
               </node>
             </node>
-            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="222793074662091882">
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330192719">
               <property name="caretPosition:4" value="0" />
-              <property name="cellId:4" value="Collection_9211_0" />
+              <property name="cellId:4" value="Collection_zedcwq_a" />
             </node>
           </node>
         </node>
@@ -6615,9 +6615,9 @@
                             <property name="value:3" value="10" />
                           </node>
                         </node>
-                        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2671731496587878922">
+                        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330192720">
                           <property name="caretPosition:4" value="0" />
-                          <property name="cellId:4" value="Collection_9211_0" />
+                          <property name="cellId:4" value="Collection_zedcwq_a" />
                         </node>
                       </node>
                     </node>
@@ -6798,9 +6798,9 @@
                 <link role="variableDeclaration:3" targetNodeId="6769498721974583574" resolveInfo="myInt" />
               </node>
             </node>
-            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6769498721974638235">
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330192721">
               <property name="caretPosition:4" value="0" />
-              <property name="cellId:4" value="Collection_9211_0" />
+              <property name="cellId:4" value="Collection_zedcwq_a" />
             </node>
           </node>
         </node>
@@ -6954,9 +6954,9 @@
                   <link role="classifier:3" targetNodeId="8350369201053315003" resolveInfo="Post_Static_1" />
                 </node>
               </node>
-              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="8350369201053334942">
+              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330192722">
                 <property name="caretPosition:4" value="0" />
-                <property name="cellId:4" value="Collection_9211_0" />
+                <property name="cellId:4" value="Collection_zedcwq_a" />
               </node>
             </node>
           </node>
@@ -7133,7 +7133,7 @@
             <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="9066272936957379540">
               <link role="concept:16" targetNodeId="35.1138411891628:16" resolveInfo="SNodeOperation" />
               <link role="baseMethodDeclaration:16" targetNodeId="36.1213877508847" resolveInfo="getLeftNodeConcept" />
-              <node role="testNode$attribute:16" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="9066272936957379541">
+              <node role="testNode$attribute:16" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330192724">
                 <property name="isLastPosition:4" value="true" />
                 <property name="useLabelSelection:4" value="true" />
                 <property name="selectionStart:4" value="18" />
@@ -7164,15 +7164,15 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7075734325385964946" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7075734325385964947">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9066272936957371430">
-            <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="9066272936957379534">
+            <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="2576168041330192725">
               <link role="concept:16" targetNodeId="35.1138411891628:16" resolveInfo="SNodeOperation" />
               <link role="baseMethodDeclaration:16" targetNodeId="36.1213877508847" resolveInfo="getLeftNodeConcept" />
-              <node role="testNode$attribute:16" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="9066272936957387643">
+              <node role="testNode$attribute:16" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330192726">
                 <property name="isLastPosition:4" value="true" />
                 <property name="useLabelSelection:4" value="true" />
                 <property name="selectionStart:4" value="0" />
                 <property name="selectionEnd:4" value="0" />
-                <property name="cellId:4" value="Constant_4497_1" />
+                <property name="cellId:4" value="Constant_arlg9k_a1a" />
               </node>
             </node>
           </node>
@@ -7243,12 +7243,12 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8221415467041346669">
               <link role="classifier:3" targetNodeId="7.~List" resolveInfo="List" />
               <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="8221415467041346670">
-                <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="8221415467041392574">
+                <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330192727">
                   <property name="isLastPosition:4" value="true" />
                   <property name="useLabelSelection:4" value="true" />
                   <property name="selectionStart:4" value="0" />
                   <property name="selectionEnd:4" value="0" />
-                  <property name="cellId:4" value="Error_9010_0" />
+                  <property name="cellId:4" value="Error_a1nfgp_a0" />
                 </node>
               </node>
             </node>
