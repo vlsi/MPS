@@ -161,6 +161,7 @@ public class DebugSession {
     public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
       myExecutionState = ExecutionState.Stopped;
       myUiState.setContext(null);
+      fireSessionResumed(DebugSession.this); // TODO hack
     }
   }
 
