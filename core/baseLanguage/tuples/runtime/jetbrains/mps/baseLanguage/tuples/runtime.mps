@@ -210,7 +210,7 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1238932917110">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1238932917111">
-                <link role="baseMethodDeclaration:3" targetNodeId="1.~StringBuilder.&lt;init&gt;(java.lang.CharSequence)" resolveInfo="StringBuilder" />
+                <link role="baseMethodDeclaration:3" targetNodeId="1.~StringBuilder.&lt;init&gt;(java.lang.String)" resolveInfo="StringBuilder" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1238932917112">
                   <property name="value:3" value="[" />
                 </node>
@@ -234,14 +234,14 @@
                     <link role="variableDeclaration:3" targetNodeId="1238932917108" resolveInfo="sb" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238932917123">
-                    <link role="baseMethodDeclaration:3" targetNodeId="1.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="1.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1238932917124">
                       <link role="variableDeclaration:3" targetNodeId="1238932917114" resolveInfo="sep" />
                     </node>
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238932917125">
-                  <link role="baseMethodDeclaration:3" targetNodeId="1.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="1.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1238932917126">
                     <link role="baseMethodDeclaration:3" targetNodeId="1.~String.valueOf(java.lang.Object):java.lang.String" resolveInfo="valueOf" />
                     <link role="classConcept:3" targetNodeId="1.~String" resolveInfo="String" />
@@ -305,7 +305,7 @@
                 <link role="variableDeclaration:3" targetNodeId="1238932917108" resolveInfo="sb" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238932917152">
-                <link role="baseMethodDeclaration:3" targetNodeId="1.~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolveInfo="append" />
+                <link role="baseMethodDeclaration:3" targetNodeId="1.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1238932917153">
                   <property name="value:3" value="]" />
                 </node>

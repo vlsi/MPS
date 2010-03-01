@@ -7,6 +7,7 @@
   <sourcePath />
   <usedLanguages>
     <usedLanguage>a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)</usedLanguage>
+    <usedLanguage>954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)</usedLanguage>
   </usedLanguages>
 </solution>
 
