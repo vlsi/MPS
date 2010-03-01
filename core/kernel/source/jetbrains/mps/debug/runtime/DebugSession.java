@@ -401,6 +401,14 @@ public class DebugSession {
       return null;
     }
 
+    @Nullable
+    public Value getThisObject() {
+      if (myStackFrame != null) {
+        return myStackFrame.thisObject();
+      }
+      return null;
+    }
+
     @NotNull
     public List<ThreadReference> getThreads() {
       if (myExecutionState.equals(ExecutionState.Paused)) {
