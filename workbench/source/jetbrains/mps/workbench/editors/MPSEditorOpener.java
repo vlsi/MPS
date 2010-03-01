@@ -46,6 +46,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
+import java.awt.Component;
 import java.util.*;
 
 public class MPSEditorOpener implements ProjectComponent {
@@ -245,7 +246,14 @@ public class MPSEditorOpener implements ProjectComponent {
     if (!cellInInspector) {
       final ToolWindowManager manager = ToolWindowManager.getInstance(myProject);
       manager.activateEditorComponent();
-      getFocusManager().requestFocus(nodeEditor.getCurrentEditorComponent(), false);
+      Component toBeFocused;
+      // Workaround for: http://youtrack.jetbrains.net/issue/MPS-7882
+      if (nodeEditor.getCurrentEditorComponent() != null) {
+        toBeFocused = nodeEditor.getCurrentEditorComponent();
+      } else {
+        toBeFocused = nodeEditor.getComponent();
+      }
+      getFocusManager().requestFocus(toBeFocused, false);
     } else {
       final InspectorTool inspectorTool = getInspector();
       inspectorTool.getToolWindow().activate(null);
