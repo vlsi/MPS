@@ -125,6 +125,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.project.reloading.StubReloadManager</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.smodel.GarbageCollector</implementation-class>
         </component>
 
