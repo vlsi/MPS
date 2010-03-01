@@ -63,7 +63,7 @@ public class InformationDialog extends BaseDialog {
       return;
     }
     this.setCaption(this.myConceptsPanel, "Concept Features");
-    JPanel centerPanel = new JPanel(new GridLayout(pairs.size(), 1));
+    JPanel centerPanel = new JPanel(new GridLayout(pairs.size() + 2, 1));
     for (Pair pair : pairs) {
       boolean isCreated = pair.o1 == null;
       boolean isRemoved = pair.o2 == null;
