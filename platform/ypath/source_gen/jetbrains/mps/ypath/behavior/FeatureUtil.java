@@ -105,6 +105,7 @@ public class FeatureUtil {
     String treepathAspectName = SPropertyOperations.getString(SNodeOperations.getAncestor(feature, "jetbrains.mps.ypath.structure.TreePathAspect", false, false), "name") + "_" + suffix;
     String featureName = suffix + "_" + IFeature_Behavior.call_getFullName_1213877499608(SNodeOperations.cast(feature, "jetbrains.mps.ypath.structure.IFeature"));
     String fqClassName = JavaNameUtil.fqClassName(feature, treepathAspectName + "$" + featureName);
+    System.out.println("**** getFeatureDesign[" + fqClassName + "]");
     IFeatureDesign featureDesign = DesignPartLoader.getInstance().getFeatureDesign(fqClassName, SNodeOperations.getModel(feature));
     if (featureDesign == null) {
       LOG.error("Cannot load feature design: " + fqClassName);

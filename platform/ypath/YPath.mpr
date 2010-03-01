@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4">
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -30,9 +30,9 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfModule runnable="false" name="main" moduleRef="ypath.main" />
-      <genConfModule runnable="false" name="sandbox" moduleRef="ypath.sandbox" />
-      <genConfModule runnable="false" name="test" moduleRef="ypath.test" />
+      <genConfModule name="main" moduleRef="ypath.main" />
+      <genConfModule name="sandbox" moduleRef="ypath.sandbox" />
+      <genConfModule name="test" moduleRef="ypath.test" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
@@ -45,9 +45,18 @@
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
-        <entry key="/Volumes/Sparky/Development/MPS-workspace/CHARISMA">
+        <entry key="$PROJECT_DIR$/../../../CHARISMA">
           <value>
             <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="http://svn.jetbrains.org/teamsys/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
               <option name="branchUrls">
                 <list>
                   <option value="http://svn.jetbrains.org/teamsys/tags" />
@@ -60,6 +69,20 @@
         <entry key="$APPLICATION_HOME_DIR$">
           <value>
             <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="http://svn.jetbrains.org/mps/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="http://svn.jetbrains.org/mps/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
               <option name="branchUrls">
                 <list>
                   <option value="http://svn.jetbrains.org/mps/branches" />
@@ -70,49 +93,37 @@
             </SvnBranchConfiguration>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/classes/jetbrains/mps/ypath/internal">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="branchUrls">
-                <list>
-                  <option value="http://svn.jetbrains.org/mps/branches" />
-                  <option value="http://svn.jetbrains.org/mps/tags" />
-                </list>
-              </option>
-              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/classes/jetbrains/mps/ypath/scripts">
-          <value>
-            <SvnBranchConfiguration>
-              <option name="branchUrls">
-                <list>
-                  <option value="http://svn.jetbrains.org/mps/branches" />
-                  <option value="http://svn.jetbrains.org/mps/tags" />
-                </list>
-              </option>
-              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-        <entry key="/Volumes/Sparky/Development/MPS-workspace/OAF">
+        <entry key="$PROJECT_DIR$/../../../OAF">
           <value>
             <SvnBranchConfiguration>
               <option name="trunkUrl" value="http://svn.jetbrains.org/oaf/trunk" />
             </SvnBranchConfiguration>
           </value>
         </entry>
-        <entry key="/Volumes/Sparky/Development/MPS-workspace/TREEWRITE">
+        <entry key="$PROJECT_DIR$/../../../TREEWRITE">
           <value>
             <SvnBranchConfiguration>
               <option name="trunkUrl" value="http://svn.jetbrains.org/mps-app/treewrite/trunk" />
             </SvnBranchConfiguration>
           </value>
         </entry>
-        <entry key="/Volumes/Sparky/Development/MPS-workspace/WEBR-DNQ">
+        <entry key="$PROJECT_DIR$/../../../WEBR-DNQ">
           <value>
             <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="http://svn.jetbrains.org/webr-dnq/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="http://svn.jetbrains.org/webr-dnq/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
               <option name="branchUrls">
                 <list>
                   <option value="http://svn.jetbrains.org/webr-dnq/branches" />
@@ -130,10 +141,9 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="/Volumes/Sparky/Development/MPS-workspace" vcs="svn" />
+    <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$/../../.." vcs="svn" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
-  <UsedPathMacros>
-  </UsedPathMacros>
 </project>
 

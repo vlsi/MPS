@@ -37,7 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
-  <maxImportIndex value="25" />
+  <maxImportIndex value="26" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895905ae(jetbrains.mps.ypath.structure)" version="0" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -53,6 +53,7 @@
   <import index="22" modelUID="f:java_stub#jetbrains.mps.ypath.design(jetbrains.mps.ypath.design@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="25" modelUID="f:java_stub#jetbrains.mps.ypath.plugin(jetbrains.mps.ypath.plugin@java_stub)" version="-1" />
+  <import index="26" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877220697">
     <property name="package" value="treePath.features.functions" />
     <link role="concept" targetNodeId="1.1184593387281:0" resolveInfo="ParameterQueryFun" />
@@ -3252,6 +3253,30 @@
                   </node>
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4581582910845927398">
                     <property name="value:3" value="$" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3781236886101614206">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3781236886101614207">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3781236886101614208">
+              <link role="classifier:3" targetNodeId="5.~System" />
+              <link role="variableDeclaration:3" targetNodeId="5.~System.out" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3781236886101614209">
+              <link role="baseMethodDeclaration:3" targetNodeId="26.~PrintStream.println(java.lang.String):void" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3781236886101614263">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3781236886101614266">
+                  <property name="value:3" value="]" />
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3781236886101614227">
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3781236886101614210">
+                    <property name="value:3" value="**** getFeatureDesign[" />
+                  </node>
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3781236886101614246">
+                    <link role="variableDeclaration:3" targetNodeId="4581582910845927391" resolveInfo="fqClassName" />
                   </node>
                 </node>
               </node>
