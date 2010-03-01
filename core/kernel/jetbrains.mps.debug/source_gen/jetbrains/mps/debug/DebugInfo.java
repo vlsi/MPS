@@ -187,14 +187,23 @@ public class DebugInfo {
 
   public SNode getVarForLine(String file, int line, SModel model, String varName) {
     List<VarPositionInfo> resultList = ListSequence.fromList(new ArrayList<VarPositionInfo>());
+    VarPositionInfo secondGuess = null;
     for (Set<VarPositionInfo> val : MapSequence.fromMap(this.myRootToVarPositions).values()) {
       for (VarPositionInfo element : val) {
-        if (ObjectUtils.equals(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
-          ListSequence.fromList(resultList).addElement(element);
+        if (ObjectUtils.equals(element.getFileName(), file)) {
+          if (element.getStartLine() <= line && line <= element.getEndLine()) {
+            ListSequence.fromList(resultList).addElement(element);
+          } else if (line >= element.getEndLine() && element.getVarName().equals(varName)) {
+            // here we are searching the nearest possible variable 
+            // TODO this is a hack 
+            if (secondGuess == null || secondGuess.getEndLine() <= element.getEndLine()) {
+              secondGuess = element;
+            }
+          }
         }
       }
     }
-    if (ListSequence.fromList(resultList).isEmpty()) {
+    if (ListSequence.fromList(resultList).isEmpty() && secondGuess == null) {
       return null;
     }
     Iterable<VarPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<VarPositionInfo, Comparable<?>>() {
@@ -210,7 +219,10 @@ public class DebugInfo {
       }
     }
     if (nodeId == null) {
-      return null;
+      if (secondGuess == null) {
+        return null;
+      }
+      nodeId = secondGuess.getNodeId();
     }
     return model.getNodeById(nodeId);
   }
