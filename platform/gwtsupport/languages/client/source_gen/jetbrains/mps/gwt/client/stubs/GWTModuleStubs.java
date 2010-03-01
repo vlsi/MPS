@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -65,10 +66,14 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
     List<Tuples._3<String, String, SNode>> modlst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.gwt.client.structure.GWTModule", null);
     for (String modres : ListSequence.fromList(pi.resources(pkg))) {
-      SNode module = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.GWTModule")), sample);
-      module.setId(GWTModuleReader.createId(pi.baseName(modres)));
-      SPropertyOperations.set(module, "name", pi.baseName(modres));
-      SModelOperations.addRootNode(model, module);
+      SNodeId id = GWTModuleReader.createId(pi.baseName(modres));
+      SNode module = (SNode) model.getNodeById(id);
+      if ((module == null)) {
+        module = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.gwt.client.structure.GWTModule")), sample);
+        module.setId(id);
+        SPropertyOperations.set(module, "name", pi.baseName(modres));
+        SModelOperations.addRootNode(model, module);
+      }
       ListSequence.fromList(modlst).addElement(MultiTuple.<String,String,SNode>from(pkg, modres, module));
     }
     GWTModuleReader reader = new GWTModuleReader(new GWTModuleReader.Resolver() {

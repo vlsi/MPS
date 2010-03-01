@@ -4,8 +4,9 @@ package jetbrains.mps.gwt.client.stubs;
 
 import jetbrains.mps.smodel.SNode;
 import org.jdom.Document;
-import org.jdom.Element;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jdom.Element;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -14,7 +15,6 @@ import org.jdom.filter.ElementFilter;
 import java.util.List;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
@@ -33,6 +33,8 @@ public class GWTModuleReader {
 
   public void read(SNode gwtmod, Document doc) throws GWTModuleFormatException {
     this.module = gwtmod;
+    SLinkOperations.setTarget(this.module, "renameTo", null, true);
+    ListSequence.fromList(SLinkOperations.getTargets(this.module, "element", true)).clear();
     Element root = doc.getRootElement();
     if ("module".equals(root.getName())) {
       this.readModule(root);
