@@ -3,7 +3,6 @@ package jetbrains.mps.debug.runtime;
 import com.intellij.execution.process.ProcessHandler;
 import com.sun.jdi.*;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
-import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
@@ -97,16 +96,11 @@ public class DebugSession {
     return myUiState;
   }
 
+  // DO NOT CALL UNDER LOCK!
   private void fireStateChanged() {
-    // UiState often executes this method under lock, so we do not want deadlocks here and do all notifications asynchronously
-    myEventsProcessor.getManagerThread().schedule(new DebuggerCommand() {
-      @Override
-      protected void action() throws Exception {
-        for (SessionChangeListener listener : myListeners) {
-          listener.stateChanged(DebugSession.this);
-        }
-      }
-    });
+    for (SessionChangeListener listener : myListeners) {
+      listener.stateChanged(DebugSession.this);
+    }
   }
 
   public void addChangeListener(@NotNull SessionChangeListener listener) {
@@ -182,21 +176,29 @@ public class DebugSession {
     private StackFrame myStackFrame = null;
 
     // changes state on pause/resume
-    private synchronized void paused(SuspendContext context) {
-      // we select new context even if we are already on some other context
-      // user probably wants to know about new paused contexts
-      setContext(context);
+    private void paused(SuspendContext context) {
+      synchronized (this) {
+        // we select new context even if we are already on some other context
+        // user probably wants to know about new paused contexts
+        setContext(context);
+      }
+
+      fireStateChanged();
     }
 
-    private synchronized void resumed(SuspendContext context) {
-      if (context != myContext) return;
+    private void resumed(SuspendContext context) {
+      synchronized (this) {
+        if (context != myContext) return;
 
-      List<SuspendContext> allPausedContexts = getAllPausedContexts();
-      if (allPausedContexts.isEmpty()) {
-        setContext(null);
-      } else {
-        setContext(allPausedContexts.get(0));
+        List<SuspendContext> allPausedContexts = getAllPausedContexts();
+        if (allPausedContexts.isEmpty()) {
+          setContext(null);
+        } else {
+          setContext(allPausedContexts.get(0));
+        }
       }
+
+      fireStateChanged();
     }
 
     private List<SuspendContext> getAllPausedContexts() {
@@ -234,40 +236,47 @@ public class DebugSession {
 
         updateFrame();
       }
-      fireStateChanged();
     }
 
     // changes state on user selection
-    public synchronized void selectThread(ThreadReference thread) {
-      if (thread == null) {
-        myContext = null;
-        myThread = null;
-        myStackFrame = null;
-      } else {
-        myThread = thread;
-        LOG.assertLog(myContext != null);
-        if (!myContext.suspends(thread)) {
-          System.err.println(" my current context " + myContext + " does not suspends thread " + thread);
+    public void selectThread(ThreadReference thread) {
+      synchronized (this) {
+        if (thread == null) {
           myContext = null;
-          for (SuspendContext context : getAllPausedContexts()) {
-            System.err.println("checking context " + context);
-            if (context.suspends(thread)) {
-              System.err.println("context " + context + " suspends thread " + thread);
-              myContext = context;
-              break;
+          myThread = null;
+          myStackFrame = null;
+        } else {
+          myThread = thread;
+          LOG.assertLog(myContext != null);
+          if (!myContext.suspends(thread)) {
+            System.err.println(" my current context " + myContext + " does not suspends thread " + thread);
+            myContext = null;
+            for (SuspendContext context : getAllPausedContexts()) {
+              System.err.println("checking context " + context);
+              if (context.suspends(thread)) {
+                System.err.println("context " + context + " suspends thread " + thread);
+                myContext = context;
+                break;
+              }
             }
+            LOG.assertLog(myContext != null); // in case some botva is going on
           }
-          LOG.assertLog(myContext != null); // in case some botva is going on
+          updateFrame();
         }
-        updateFrame();
       }
       fireStateChanged();
     }
 
-    public synchronized void selectFrame(StackFrame frame) {
-      LOG.assertLog(frame == null || frame.thread() == myThread);
-      if (myStackFrame != frame) {
-        myStackFrame = frame;
+    public void selectFrame(StackFrame frame) {
+      boolean changed = false;
+      synchronized (this) {
+        LOG.assertLog(frame == null || frame.thread() == myThread);
+        if (myStackFrame != frame) {
+          myStackFrame = frame;
+          changed = true;
+        }
+      }
+      if (changed) {
         fireStateChanged();
       }
     }
@@ -359,7 +368,7 @@ public class DebugSession {
     }
 
     @Nullable
-    public String getSourceFileName() {
+    public synchronized String getSourceFileName() {
       if (myStackFrame == null) return null;
       try {
         return myStackFrame.location().sourceName();
@@ -368,14 +377,14 @@ public class DebugSession {
       return null;
     }
 
-    public int getPosition() {
+    public synchronized int getPosition() {
       if (myStackFrame == null) return 0;
       return myStackFrame.location().lineNumber();
     }
 
-    public boolean isPausedOnBreakpoint() {
+    public synchronized boolean isPausedOnBreakpoint() {
       if (myContext != null) {
-        return myEventsProcessor.getSuspendManager().getPausedContexts().contains(myContext);  
+        return myEventsProcessor.getSuspendManager().getPausedContexts().contains(myContext);
       }
       return false;
     }
