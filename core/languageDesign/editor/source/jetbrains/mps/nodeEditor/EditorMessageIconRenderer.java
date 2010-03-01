@@ -1,9 +1,11 @@
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.Icon;
+import java.awt.Cursor;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,6 +24,10 @@ public interface EditorMessageIconRenderer {
   IconRendererType getType();
 
   EditorCell getAnchorCell(EditorCell bigCell);
+
+  Cursor getMouseOwerCursor();
+
+  AnAction getClickAction();
 
   enum IconRendererType {
     OVERRIDEN_METHOD(1),

@@ -26,4 +26,6 @@ import java.awt.event.MouseEvent;
  */
 public interface LeftMarginMouseListener {
   public void mousePressed(MouseEvent e, EditorComponent editorComponent);
+  public void mouseReleased(MouseEvent e, EditorComponent editorComponent);
+  public void mouseClicked(MouseEvent e, EditorComponent editorComponent);
 }

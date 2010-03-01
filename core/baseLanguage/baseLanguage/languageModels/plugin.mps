@@ -11753,6 +11753,37 @@
         </node>
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5150524726935215826">
+      <property name="name:3" value="getMouseOwerCursor" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5150524726935265183">
+        <link role="classifier:3" targetNodeId="17.~Cursor" resolveInfo="Cursor" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5150524726935215828" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5150524726935215829">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5150524726935265184">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5150524726935265186">
+            <link role="baseMethodDeclaration:3" targetNodeId="17.~Cursor.getPredefinedCursor(int):java.awt.Cursor" resolveInfo="getPredefinedCursor" />
+            <link role="classConcept:3" targetNodeId="17.~Cursor" resolveInfo="Cursor" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5150524726935310950">
+              <link role="classifier:3" targetNodeId="17.~Cursor" resolveInfo="Cursor" />
+              <link role="variableDeclaration:3" targetNodeId="17.~Cursor.HAND_CURSOR" resolveInfo="HAND_CURSOR" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2769330170999145996">
+      <property name="name:3" value="getClickAction" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2769330170999145997" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2769330170999145998">
+        <link role="classifier:3" targetNodeId="68.~AnAction" resolveInfo="AnAction" />
+      </node>
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2769330170999145999">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2769330170999148267">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="356593036585326886" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8832748096582845324">
     <property name="package:3" value="run.interface" />

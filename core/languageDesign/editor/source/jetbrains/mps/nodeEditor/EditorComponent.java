@@ -434,7 +434,23 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myLeftHighlighter.addMouseListener(new MouseAdapter() {
       @Override
       public void mousePressed(MouseEvent e) {
-        processLeftMarginPress(e);
+        for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
+          listener.mousePressed(e, EditorComponent.this);
+        }
+      }
+
+      @Override
+      public void mouseReleased(MouseEvent e) {
+        for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
+          listener.mouseReleased(e, EditorComponent.this);
+        }
+      }
+
+      @Override
+      public void mouseClicked(MouseEvent e) {
+        for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
+          listener.mouseClicked(e, EditorComponent.this);
+        }
       }
     });
     myScrollPane.setRowHeaderView(myLeftHighlighter);
@@ -1700,12 +1716,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void removeLeftMarginPressListener(LeftMarginMouseListener listener) {
     myLeftMarginPressListeners.remove(listener);
-  }
-
-  private void processLeftMarginPress(MouseEvent mouseEvent) {
-    for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
-      listener.mousePressed(mouseEvent, this);
-    }
   }
 
   private void processCoordSelection(MouseEvent mouseEvent) {
