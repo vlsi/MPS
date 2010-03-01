@@ -98,12 +98,12 @@
                   </node>
                   <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230058635648" />
                 </node>
-                <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1104477524484219573">
+                <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239497578">
                   <property name="isLastPosition:4" value="true" />
                   <property name="useLabelSelection:4" value="true" />
                   <property name="selectionStart:4" value="12" />
                   <property name="selectionEnd:4" value="12" />
-                  <property name="cellId:4" value="ReferencePresentation_1871_0" />
+                  <property name="cellId:4" value="ReferencePresentation_msf9u8_a0a0a" />
                 </node>
               </node>
             </node>
@@ -137,12 +137,12 @@
                   <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230058635664" />
                 </node>
                 <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="1932269937152530084">
-                  <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1472904739617870120">
+                  <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239497579">
                     <property name="isLastPosition:4" value="true" />
                     <property name="useLabelSelection:4" value="true" />
                     <property name="selectionStart:4" value="0" />
                     <property name="selectionEnd:4" value="0" />
-                    <property name="cellId:4" value="Error_9010_0" />
+                    <property name="cellId:4" value="Error_a1nfgp_a0" />
                   </node>
                 </node>
               </node>
@@ -276,11 +276,12 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635716" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230058635717" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230058635718">
-        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152533952">
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239505471">
           <property name="isLastPosition:4" value="true" />
+          <property name="useLabelSelection:4" value="true" />
           <property name="selectionStart:4" value="0" />
           <property name="selectionEnd:4" value="0" />
-          <property name="cellId:4" value="Constant_6577_0" />
+          <property name="cellId:4" value="Constant_u338ov_a0a" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1230058635720">
@@ -332,11 +333,12 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635739" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230058635740" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230058635741">
-        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152533959">
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239513368">
           <property name="isLastPosition:4" value="true" />
+          <property name="useLabelSelection:4" value="true" />
           <property name="selectionStart:4" value="0" />
           <property name="selectionEnd:4" value="0" />
-          <property name="cellId:4" value="Constant_6577_0" />
+          <property name="cellId:4" value="Constant_u338ov_a0a" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1230058635743">
@@ -399,9 +401,12 @@
             <property name="value:3" value="true" />
           </node>
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230306297162">
-            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1230306308352">
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519678">
               <property name="isLastPosition:4" value="true" />
-              <property name="cellId:4" value="Constant_6577_0" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="0" />
+              <property name="selectionEnd:4" value="0" />
+              <property name="cellId:4" value="Constant_u338ov_a0a" />
             </node>
           </node>
         </node>
@@ -453,9 +458,12 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635797" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230058635798" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230058635799">
-        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1230058635800">
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519679">
           <property name="isLastPosition:4" value="true" />
-          <property name="cellId:4" value="Constant_6577_0" />
+          <property name="useLabelSelection:4" value="true" />
+          <property name="selectionStart:4" value="0" />
+          <property name="selectionEnd:4" value="0" />
+          <property name="cellId:4" value="Constant_u338ov_a0a" />
         </node>
       </node>
     </node>
@@ -495,9 +503,12 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1230058635848">
             <property name="value:3" value="2" />
           </node>
-          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1230058635849">
+          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519680">
             <property name="isLastPosition:4" value="true" />
-            <property name="cellId:4" value="Constant_9211_0" />
+            <property name="useLabelSelection:4" value="true" />
+            <property name="selectionStart:4" value="1" />
+            <property name="selectionEnd:4" value="1" />
+            <property name="cellId:4" value="Constant_zedcwq_b0" />
           </node>
         </node>
       </node>
@@ -515,9 +526,12 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635855" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230058635856" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230058635857">
-        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1230058635858">
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519681">
           <property name="isLastPosition:4" value="true" />
-          <property name="cellId:4" value="Constant_6577_0" />
+          <property name="useLabelSelection:4" value="true" />
+          <property name="selectionStart:4" value="0" />
+          <property name="selectionEnd:4" value="0" />
+          <property name="cellId:4" value="Constant_u338ov_a0a" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1230058635859">
@@ -546,12 +560,13 @@
         <link role="classifier:3" targetNodeId="1.~Object" resolveInfo="Object" />
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230058635869" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230058635870">
-        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152537832">
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6119773791239527583">
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041329997287">
           <property name="isLastPosition:4" value="true" />
+          <property name="useLabelSelection:4" value="true" />
           <property name="selectionStart:4" value="0" />
           <property name="selectionEnd:4" value="0" />
-          <property name="cellId:4" value="Constant_6577_0" />
+          <property name="cellId:4" value="Constant_u338ov_a0a" />
         </node>
       </node>
     </node>
@@ -564,11 +579,12 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230058635875">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1230058635876">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1230058635877">
-            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152537833">
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041329997288">
               <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
               <property name="selectionStart:4" value="4" />
               <property name="selectionEnd:4" value="4" />
-              <property name="cellId:4" value="Constant_8892_0" />
+              <property name="cellId:4" value="Constant_ttt6c2_a" />
             </node>
           </node>
         </node>
@@ -588,9 +604,12 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230058635883" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230058635884" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230058635885">
-        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1237483747586">
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519683">
           <property name="isLastPosition:4" value="true" />
-          <property name="cellId:4" value="Constant_6577_0" />
+          <property name="useLabelSelection:4" value="true" />
+          <property name="selectionStart:4" value="0" />
+          <property name="selectionEnd:4" value="0" />
+          <property name="cellId:4" value="Constant_u338ov_a0a" />
         </node>
       </node>
     </node>
@@ -612,9 +631,12 @@
           </node>
           <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="1236015825218">
             <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236015825219">
-              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1237483281789">
+              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519684">
                 <property name="isLastPosition:4" value="true" />
-                <property name="cellId:4" value="Constant_6577_0" />
+                <property name="useLabelSelection:4" value="true" />
+                <property name="selectionStart:4" value="0" />
+                <property name="selectionEnd:4" value="0" />
+                <property name="cellId:4" value="Constant_u338ov_a0a" />
               </node>
             </node>
           </node>
@@ -662,11 +684,12 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230058635928" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230058635929">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1932269937152537834">
-          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152537835">
+          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519685">
             <property name="isLastPosition:4" value="true" />
+            <property name="useLabelSelection:4" value="true" />
             <property name="selectionStart:4" value="0" />
             <property name="selectionEnd:4" value="0" />
-            <property name="cellId:4" value="Constant_3869_0" />
+            <property name="cellId:4" value="Constant_7h2wce_a" />
           </node>
         </node>
       </node>
@@ -711,8 +734,11 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1230119731920">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1230119731921">
             <property name="value:3" value="3" />
-            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1230119764499">
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519686">
               <property name="caretPosition:4" value="0" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="0" />
+              <property name="selectionEnd:4" value="0" />
               <property name="cellId:4" value="property_value" />
             </node>
           </node>
@@ -728,9 +754,9 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1230119954133">
             <property name="value:3" value="3" />
           </node>
-          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1230130246961">
+          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519687">
             <property name="caretPosition:4" value="0" />
-            <property name="cellId:4" value="Collection_9211_0" />
+            <property name="cellId:4" value="Collection_zedcwq_a" />
           </node>
         </node>
       </node>
@@ -758,9 +784,9 @@
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230132506157" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230132506158" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230132506159" />
-        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1230137161024">
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519688">
           <property name="caretPosition:4" value="0" />
-          <property name="cellId:4" value="property_name" />
+          <property name="cellId:4" value="Collection_1x071y_a" />
         </node>
       </node>
     </node>
@@ -772,9 +798,9 @@
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230132540713" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230132540714" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230132540715" />
-        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1230137499217">
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519689">
           <property name="caretPosition:4" value="0" />
-          <property name="cellId:4" value="Collection_5292_0" />
+          <property name="cellId:4" value="Collection_1x071y_a" />
         </node>
       </node>
     </node>
@@ -846,20 +872,22 @@
       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1230224846077">
         <property name="value:3" value="" />
         <node role="mockAnnotation$attribute:3" type="jetbrains.mps.lang.test.structure.MockAnnotation:4" id="1230225025952" />
-        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152537841">
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041329963515">
           <property name="isLastPosition:4" value="true" />
+          <property name="useLabelSelection:4" value="true" />
           <property name="selectionStart:4" value="1" />
           <property name="selectionEnd:4" value="1" />
-          <property name="cellId:4" value="Constant_3246_1" />
+          <property name="cellId:4" value="Constant_fgt3_c0" />
         </node>
       </node>
     </node>
     <node role="result:4" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1230225066152">
-      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1230225072625">
-        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1230225072878">
+      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2576168041329963516">
+        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2576168041329972248">
           <property name="value:3" value="1" />
-          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152537842">
+          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041329972249">
             <property name="isLastPosition:4" value="true" />
+            <property name="useLabelSelection:4" value="true" />
             <property name="selectionStart:4" value="1" />
             <property name="selectionEnd:4" value="1" />
             <property name="cellId:4" value="property_value" />
@@ -892,8 +920,11 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1230306750673">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1230306750674">
             <link role="variableDeclaration:3" targetNodeId="1230303930359" resolveInfo="name" />
-            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1230306753222">
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330005182">
               <property name="isLastPosition:4" value="true" />
+              <property name="useLabelSelection:4" value="true" />
+              <property name="selectionStart:4" value="4" />
+              <property name="selectionEnd:4" value="4" />
               <property name="cellId:4" value="property_name" />
             </node>
           </node>
@@ -917,9 +948,12 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1230306765359">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.collections.structure.MapElement:7" id="1230306766908">
             <node role="key:7" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1230306766910">
-              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1230306768554">
+              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330005186">
                 <property name="isLastPosition:4" value="true" />
-                <property name="cellId:4" value="Custom_6116_0" />
+                <property name="useLabelSelection:4" value="true" />
+                <property name="selectionStart:4" value="0" />
+                <property name="selectionEnd:4" value="0" />
+                <property name="cellId:4" value="Custom_1ltshm_a0" />
               </node>
             </node>
             <node role="map:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1230306765360">
@@ -1015,8 +1049,9 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1231855295018">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1231855294830">
               <link role="variableDeclaration:3" targetNodeId="1231855289514" resolveInfo="a" />
-              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152542068">
+              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330005189">
                 <property name="isLastPosition:4" value="true" />
+                <property name="useLabelSelection:4" value="true" />
                 <property name="selectionStart:4" value="1" />
                 <property name="selectionEnd:4" value="1" />
                 <property name="cellId:4" value="property_name" />
@@ -1041,13 +1076,14 @@
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1231855312398">
               <link role="variableDeclaration:3" targetNodeId="1231855312400" resolveInfo="a" />
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1932269937152542069">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2576168041330005190">
               <link role="baseMethodDeclaration:3" targetNodeId="1.~String.toString():java.lang.String" resolveInfo="toString" />
-              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152542070">
+              <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330005191">
                 <property name="isLastPosition:4" value="true" />
+                <property name="useLabelSelection:4" value="true" />
                 <property name="selectionStart:4" value="1" />
                 <property name="selectionEnd:4" value="1" />
-                <property name="cellId:4" value="Constant_4497_2" />
+                <property name="cellId:4" value="Constant_arlg9k_c0" />
               </node>
             </node>
           </node>
@@ -1072,11 +1108,12 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1231856205437" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1231856205438" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1231856205439">
-        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152542071">
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041329989392">
           <property name="isLastPosition:4" value="true" />
+          <property name="useLabelSelection:4" value="true" />
           <property name="selectionStart:4" value="0" />
           <property name="selectionEnd:4" value="0" />
-          <property name="cellId:4" value="Constant_6577_0" />
+          <property name="cellId:4" value="Constant_u338ov_a0a" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1231856223087">
@@ -1128,11 +1165,12 @@
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1232031357070" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1232031357071" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1232031357072">
-          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152542073">
+          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330005192">
             <property name="isLastPosition:4" value="true" />
+            <property name="useLabelSelection:4" value="true" />
             <property name="selectionStart:4" value="0" />
             <property name="selectionEnd:4" value="0" />
-            <property name="cellId:4" value="Constant_6577_0" />
+            <property name="cellId:4" value="Constant_u338ov_a0a" />
           </node>
         </node>
       </node>
@@ -1153,8 +1191,9 @@
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1232031450346">
               <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1232031450412">
                 <property name="value:3" value="0" />
-                <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152542074">
+                <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330005202">
                   <property name="isLastPosition:4" value="true" />
+                  <property name="useLabelSelection:4" value="true" />
                   <property name="selectionStart:4" value="1" />
                   <property name="selectionEnd:4" value="1" />
                   <property name="cellId:4" value="property_value" />
@@ -1191,11 +1230,12 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="3306263087786489573">
-          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152542075">
+          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330005204">
             <property name="isLastPosition:4" value="true" />
+            <property name="useLabelSelection:4" value="true" />
             <property name="selectionStart:4" value="0" />
             <property name="selectionEnd:4" value="0" />
-            <property name="cellId:4" value="Constant_3869_0" />
+            <property name="cellId:4" value="Constant_7h2wce_a" />
           </node>
         </node>
       </node>
@@ -1209,11 +1249,12 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1232033142391">
             <property name="value:3" value="3" />
           </node>
-          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1932269937152542076">
+          <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="2576168041330005205">
             <property name="isLastPosition:4" value="true" />
+            <property name="useLabelSelection:4" value="true" />
             <property name="selectionStart:4" value="1" />
             <property name="selectionEnd:4" value="1" />
-            <property name="cellId:4" value="Constant_9211_0" />
+            <property name="cellId:4" value="Constant_zedcwq_b0" />
           </node>
         </node>
       </node>
