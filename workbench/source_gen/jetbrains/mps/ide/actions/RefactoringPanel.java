@@ -115,11 +115,16 @@ public class RefactoringPanel {
     JLabel refactoringName = new JLabel(name);
     SNode refactoringNode = this.findRefactoringNode(name);
     itemPanel.add(refactoringName);
-    JButton infoButton = new JButton("Show Information");
-    infoButton.addActionListener(this.getGoToInformationListener(refactoringContext));
-    itemPanel.add(infoButton);
+    if (refactoringContext.hasInformation()) {
+      JButton infoButton = new JButton("Information");
+      infoButton.addActionListener(this.getGoToInformationListener(refactoringContext));
+      itemPanel.add(infoButton);
+    } else {
+      JLabel infoLabel = new JLabel("<html><i>no information</i></html>");
+      itemPanel.add(infoLabel);
+    }
     if (refactoringNode != null) {
-      JButton button = new JButton("Go To '" + SPropertyOperations.getString(SNodeOperations.cast(refactoringNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") + "' action");
+      JButton button = new JButton(SPropertyOperations.getString(SNodeOperations.cast(refactoringNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
       button.addActionListener(this.getGoToRefactoringListener(refactoringNode));
       button.setIcon(IconManager.getIconFor(refactoringNode));
       itemPanel.add(button);

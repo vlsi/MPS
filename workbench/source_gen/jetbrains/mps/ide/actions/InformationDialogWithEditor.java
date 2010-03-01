@@ -85,8 +85,16 @@ public class InformationDialogWithEditor extends InformationDialog {
       public void run() {
         Map<SNode, Set<SNode>> movedNodes = InformationDialogWithEditor.this.getRefactoringContext().getMovedNodes();
         Map<SNode, Set<SNode>> sourceNodes = InformationDialogWithEditor.this.getRefactoringContext().getSourceNodes();
-        InformationDialogWithEditor.this.collectInformation(movedNodes, "Changed Nodes", InformationDialogWithEditor.this.myChangedPanel);
-        InformationDialogWithEditor.this.collectInformation(sourceNodes, "Source Nodes", InformationDialogWithEditor.this.mySourcePanel);
+        if (movedNodes.isEmpty()) {
+          InformationDialogWithEditor.this.myChangedPanel = null;
+        } else {
+          InformationDialogWithEditor.this.collectInformation(movedNodes, "Changed Nodes", InformationDialogWithEditor.this.myChangedPanel);
+        }
+        if (sourceNodes.isEmpty()) {
+          InformationDialogWithEditor.this.mySourcePanel = null;
+        } else {
+          InformationDialogWithEditor.this.collectInformation(sourceNodes, "Source Nodes", InformationDialogWithEditor.this.mySourcePanel);
+        }
         InformationDialogWithEditor.this.collectInformation(InformationDialogWithEditor.this.getRefactoringContext().getConceptFeatures());
         if (!(movedNodes.isEmpty())) {
           InformationDialogWithEditor.this.myFirstValidNode = (SNode) movedNodes.keySet().toArray()[0];
@@ -123,9 +131,17 @@ public class InformationDialogWithEditor extends InformationDialog {
   @Override
   protected JComponent getSimplePanel() {
     JPanel panel = new JPanel(new BorderLayout());
-    JPanel centerPanel = new JPanel(new GridLayout(2, 1));
-    centerPanel.add(this.myChangedPanel);
-    centerPanel.add(this.mySourcePanel);
+    int row = (this.myChangedPanel == null || this.mySourcePanel == null ?
+      1 :
+      2
+    );
+    JPanel centerPanel = new JPanel(new GridLayout(row, 1));
+    if (this.myChangedPanel != null) {
+      centerPanel.add(this.myChangedPanel);
+    }
+    if (this.mySourcePanel != null) {
+      centerPanel.add(this.mySourcePanel);
+    }
     panel.add(super.getSimplePanel(), BorderLayout.PAGE_START);
     panel.add(centerPanel, BorderLayout.CENTER);
     return panel;

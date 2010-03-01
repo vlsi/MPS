@@ -651,6 +651,10 @@ public class RefactoringContext {
     return myMoveMap.isEmpty() && mySourceMap.isEmpty();
   }
 
+  public boolean hasInformation() {
+    return !(isEmptyMaps() && myConceptFeatureMap.isEmpty());
+  }
+
   public void fromElement(Element element) {
     try {
       String versionString = element.getAttributeValue(MODEL_VERSION);
