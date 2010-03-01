@@ -19,6 +19,7 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.UIUtil;
@@ -37,6 +38,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -622,7 +625,9 @@ public class LeftEditorHighlighter extends JComponent {
       AnAction action = iconRenderer.getClickAction();
       if (e.getButton() == MouseEvent.BUTTON1 && action != null) {
         if (e.getID() == MouseEvent.MOUSE_CLICKED) {
-          action.actionPerformed(new AnActionEvent(e, DataManager.getInstance().getDataContext(myEditorComponent), ICON_AREA, action.getTemplatePresentation(), ActionManager.getInstance(), e.getModifiers()));
+          AnActionEvent actionEvent = new AnActionEvent(e, new LeftEditorHighlighterDataContext(myEditorComponent, iconRenderer.getNode()), ICON_AREA, action.getTemplatePresentation(), ActionManager.getInstance(), e.getModifiers());
+          action.update(actionEvent);
+          action.actionPerformed(actionEvent);
         }
         e.consume();
       }
@@ -980,7 +985,7 @@ public class LeftEditorHighlighter extends JComponent {
 
     @Override
     public String getTooltipText() {
-      String nodePresentation = ModelAccess.instance().runReadAction(new Computable<String> () {
+      String nodePresentation = ModelAccess.instance().runReadAction(new Computable<String>() {
         @Override
         public String compute() {
           return myNode.getPresentation();
@@ -1010,14 +1015,12 @@ public class LeftEditorHighlighter extends JComponent {
 
     @Override
     public Cursor getMouseOwerCursor() {
-      // TODO: return HAND cursor from here
-      return null;
+      return myNumber != -1 ? Cursor.getPredefinedCursor(Cursor.HAND_CURSOR) : null;
     }
 
     @Override
     public AnAction getClickAction() {
-      // TODO: navigate to corresponding bookmark
-      return null;
+      return myNumber != -1 ? ActionManager.getInstance().getAction("jetbrains.mps.ide#action#jetbrains.mps.ide.actions.GoToBookmark" + myNumber + "_Action") : null;
     }
   }
 
@@ -1039,6 +1042,29 @@ public class LeftEditorHighlighter extends JComponent {
 
     public EditorMessageIconRenderer getIconRenderer() {
       return myIconRenderer;
+    }
+  }
+
+  private static class LeftEditorHighlighterDataContext implements DataContext {
+    private DataContext myEditorDataContext;
+    private SNode mySelectedNode;
+    private EditorCell myNodeCell;
+
+    public LeftEditorHighlighterDataContext(@NotNull EditorComponent editorComponent, SNode selectedNode) {
+      myEditorDataContext = DataManager.getInstance().getDataContext(editorComponent);
+      mySelectedNode = selectedNode;
+      myNodeCell = editorComponent.findNodeCell(mySelectedNode);
+    }
+
+    @Override
+    public Object getData(@NonNls String dataId) {
+      if (MPSDataKeys.NODE.getName().equals(dataId)) {
+        return mySelectedNode;
+      }
+      if (MPSDataKeys.EDITOR_CELL.getName().equals(dataId)) {
+        return myNodeCell;
+      }
+      return myEditorDataContext.getData(dataId);
     }
   }
 }

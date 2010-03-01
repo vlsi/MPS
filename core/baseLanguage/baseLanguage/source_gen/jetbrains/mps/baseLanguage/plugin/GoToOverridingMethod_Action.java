@@ -29,9 +29,10 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.GlobalScope;
 import javax.swing.SwingUtilities;
+import com.intellij.ui.awt.RelativePoint;
+import java.awt.event.MouseEvent;
 import java.awt.Rectangle;
 import java.awt.Point;
-import com.intellij.ui.awt.RelativePoint;
 
 public class GoToOverridingMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -147,10 +148,15 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
 
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          Rectangle cellBounds = GoToOverridingMethod_Action.this.editorContext.getSelectedCell().getBounds();
-          Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
-          RelativePoint relPpoint = new RelativePoint(GoToOverridingMethod_Action.this.editorComponent, point);
-          GoToHelper.showOverridingMethodsMenu(SetSequence.fromSet(nodes).toListSequence(), relPpoint, GoToOverridingMethod_Action.this.project);
+          RelativePoint relativePoint;
+          if (event.getInputEvent() instanceof MouseEvent) {
+            relativePoint = new RelativePoint((MouseEvent) event.getInputEvent());
+          } else {
+            Rectangle cellBounds = GoToOverridingMethod_Action.this.editorContext.getSelectedCell().getBounds();
+            Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
+            relativePoint = new RelativePoint(GoToOverridingMethod_Action.this.editorComponent, point);
+          }
+          GoToHelper.showOverridingMethodsMenu(SetSequence.fromSet(nodes).toListSequence(), relativePoint, GoToOverridingMethod_Action.this.project);
         }
       });
     } catch (Throwable t) {
