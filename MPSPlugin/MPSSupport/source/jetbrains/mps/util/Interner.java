@@ -32,6 +32,7 @@ public class Interner {
     synchronized (myCache) {
       String result = myCache.tryKey(s);
       if (result != null) {
+        assert result.equals(s);
         return result;
       }
       // Ensure we cache only what's necessary!
