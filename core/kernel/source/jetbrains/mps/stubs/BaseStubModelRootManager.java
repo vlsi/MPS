@@ -21,7 +21,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
-import jetbrains.mps.project.reloading.StubReloadManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -82,7 +81,14 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
             myDescriptorsWithListener.add(descriptor);
           }
         } else {
-          updateModelInLoadingState(descriptor, descriptor.getSModel());
+          if (descriptor instanceof BaseStubModelDescriptor) {
+            if (((BaseStubModelDescriptor) descriptor).isNeedsReloading()) {
+              updateModelInLoadingState(descriptor, descriptor.getSModel());
+              break;
+            }
+          } else {
+            updateModelInLoadingState(descriptor, descriptor.getSModel());
+          }
         }
       }
     }
@@ -125,15 +131,11 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
   }
 
-  private void updateModelInLoadingState(SModelDescriptor descriptor, SModel model) {
-    if (descriptor instanceof BaseStubModelDescriptor) {
-      if (!StubReloadManager.getInstance().needsUpdate((BaseStubModelDescriptor) descriptor, myLocation)) return;
-    }
-
+  private void updateModelInLoadingState(SModelDescriptor modelDescriptor, SModel model) {
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
-      updateModel(myLocation, new ModelInfo(descriptor, model));
+      updateModel(myLocation, new ModelInfo(modelDescriptor, model));
     } finally {
       model.setLoading(wasLoading);
     }
