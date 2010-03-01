@@ -1453,12 +1453,12 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1932269937152549843">
             <link role="classifier:3" targetNodeId="1.~Math" resolveInfo="Math" />
             <link role="variableDeclaration:3" targetNodeId="1.~Math.E" resolveInfo="E" />
-            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="7725307805110950806">
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="5391692903113793685">
               <property name="isLastPosition:4" value="true" />
               <property name="useLabelSelection:4" value="true" />
               <property name="selectionStart:4" value="1" />
               <property name="selectionEnd:4" value="1" />
-              <property name="cellId:4" value="property_name" />
+              <property name="cellId:4" value="property_name_1" />
             </node>
           </node>
         </node>
@@ -4234,12 +4234,12 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1083877150830981898">
             <link role="classifier:3" targetNodeId="25.~Color" resolveInfo="Color" />
             <link role="variableDeclaration:3" targetNodeId="25.~Color.BLACK" resolveInfo="BLACK" />
-            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1083877150830981899">
+            <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="5391692903113803023">
               <property name="isLastPosition:4" value="true" />
               <property name="useLabelSelection:4" value="true" />
               <property name="selectionStart:4" value="5" />
               <property name="selectionEnd:4" value="5" />
-              <property name="cellId:4" value="property_name" />
+              <property name="cellId:4" value="property_name_1" />
             </node>
           </node>
         </node>
