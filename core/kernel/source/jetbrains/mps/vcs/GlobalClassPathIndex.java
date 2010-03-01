@@ -255,7 +255,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
         myExcludedClassPath.add(classPathFile);
       }
     } else {
-      // if classpath is included, we check that it is included in every else module
+      // if classpath is included, we check that it is included in every other module
       ArrayList<IModule> modules = myClassPathIndex.get(classPathFile);
       if (modules == null) {
         putModuleInIndex(module, classPathFile);
@@ -278,7 +278,8 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   private void putModuleInIndex(IModule module, String classPathFile) {
     ArrayList<IModule> modules = new ArrayList<IModule>();
     modules.add(module);
-    myClassPathIndex.put(classPathFile, modules);
+    List<IModule> prev = myClassPathIndex.put(classPathFile, modules);
+    LOG.assertLog(prev == null);
   }
 
   private void excludeClassesGen(IModule module) {
