@@ -22,6 +22,7 @@ public class DebugSession {
 
   private ExecutionState myExecutionState = ExecutionState.WaitingAttach;
   private ProcessHandler myProcessHandler;
+  private IHighLevelFunctionsProvider myProvider;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor) {
     myEventsProcessor = eventsProcessor;
@@ -145,6 +146,10 @@ public class DebugSession {
     }
   }
 
+  public void addHighLevelFunctionsProvider(IHighLevelFunctionsProvider dumbHighLevelFunctionsProvider) {
+    myProvider = dumbHighLevelFunctionsProvider;
+  }
+
   public enum ExecutionState {
     Stopped,
     Running,
@@ -190,6 +195,7 @@ public class DebugSession {
   }
 
   // This class is immutable
+  // DO NOT STORE LINKS TO IT (EXCEPT IN DebugSession.myUiState)
   public class UiState {
     @Nullable
     private final SuspendContext myContext;
@@ -251,9 +257,8 @@ public class DebugSession {
     private StackFrame findStackFrame() {
       StackFrame frame = null;
       try {
-        System.err.println("frames " + myThread.frames());
         if (myThread.frameCount() > 0) {
-          frame = myThread.frame(0);
+          frame = myProvider.findDeepestGoodFrame(myThread.frames());
         } else {
           frame = null;
         }
