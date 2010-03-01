@@ -35,7 +35,7 @@ public class SmartReferenseUpdateOnChange_Test extends BaseTransformationTest {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SNode testNode = SNodeOperations.cast(TestBody.this.getNodeById("2345623147105496859"), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-          EditorCell editorCell = editorComponent.findCellWithId(testNode, "ReferencePresentation_9185_0");
+          EditorCell editorCell = editorComponent.findCellWithId(testNode, "ReferencePresentation_91bvrs_a0a0");
           Assert.assertEquals("SmartReferenseUpdat", ((EditorCell_Label) editorCell).getText());
         }
       });
