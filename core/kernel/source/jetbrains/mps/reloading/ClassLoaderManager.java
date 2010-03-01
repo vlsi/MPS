@@ -126,14 +126,14 @@ public class ClassLoaderManager implements ApplicationComponent {
       indicator.setText2("Disposing old classes...");
       callBeforeReloadHandlers();
 
-      indicator.setText2("Refreshing models...");
-      SModelRepository.getInstance().refreshModels();
-
       indicator.setText2("Updating classpath...");
       updateClassPath(true);
 
       indicator.setText2("Refreshing models...");
       SModelRepository.getInstance().refreshModels();
+
+      indicator.setText2("Updating stub models...");
+      updateStubs();
 
       indicator.setText2("Reloading classes...");
       callReloadHandlers();
@@ -143,6 +143,16 @@ public class ClassLoaderManager implements ApplicationComponent {
     } finally {
       indicator.popState();
     }
+  }
+
+  private void updateStubs() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (IModule m : myRepository.getAllModules()) {
+          m.updateStubs();
+        }
+      }
+    });
   }
 
   public void updateClassPath(final boolean updateClassPath) {
@@ -194,7 +204,6 @@ public class ClassLoaderManager implements ApplicationComponent {
           if (updateClassPath) {
             for (IModule m : myRepository.getAllModules()) {
               m.updateClassPath();
-              m.updateStubs();
             }
           }
         }
