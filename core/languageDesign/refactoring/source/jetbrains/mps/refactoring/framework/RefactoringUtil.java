@@ -15,14 +15,18 @@
  */
 package jetbrains.mps.refactoring.framework;
 
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
+import jetbrains.mps.lang.refactoring.structure.Refactoring;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 
 import java.util.*;
 
@@ -35,6 +39,27 @@ public class RefactoringUtil {
       if (refClass.getName().equals(className)) return r;
     }
     return null;
+  }
+
+  public static List<SNode> getAllRefactoringNodes() {
+    final List<SNode> availableRefactorings = new ArrayList<SNode>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        Set<SNode> newRefactorings = FindUsagesManager.getInstance().findInstances(
+          ((ConceptDeclaration) SConceptOperations.findConceptDeclaration(Refactoring.concept).getAdapter()),
+          GlobalScope.getInstance(),
+          new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()),
+          false);
+        Set<SNode> oldRefactorings = FindUsagesManager.getInstance().findInstances(
+          ((ConceptDeclaration) SConceptOperations.findConceptDeclaration(OldRefactoring.concept).getAdapter()),
+          GlobalScope.getInstance(),
+          new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()),
+          false);
+        availableRefactorings.addAll(newRefactorings);
+        availableRefactorings.addAll(oldRefactorings);
+      }
+    });
+    return availableRefactorings;
   }
 
   public static List<IRefactoring> getAllRefactorings() {
