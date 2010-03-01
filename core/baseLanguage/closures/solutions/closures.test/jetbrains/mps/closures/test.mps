@@ -6692,6 +6692,44 @@
               <link role="variableDeclaration:3" targetNodeId="4073449185570422578" resolveInfo="count" />
             </node>
           </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="3294521177951978007">
+            <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="3294521177951978008">
+              <property name="text:3" value="testing compilation" />
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3294521177951870035">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression:3" id="3294521177951870053">
+              <node role="function:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="3294521177951870054">
+                <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3294521177951870055">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3294521177951870056">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3294521177951870057" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3294521177951977984">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression:3" id="3294521177951977996">
+              <node role="function:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="3294521177951977997">
+                <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3294521177951977998">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3294521177951977999">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3294521177951978000" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3294521177951978010">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression:3" id="3294521177951978020">
+              <node role="function:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="3294521177951978021">
+                <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3294521177951978022">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.closures.structure.YieldStatement:3" id="3294521177951978023">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3294521177951978024" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

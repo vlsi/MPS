@@ -317,6 +317,50 @@ __switch__:
       }
     };
     Assert.assertSame(4, count.value);
+    // testing compilation 
+    new _FunctionTypes._return_P0_E0<Object>() {
+      public Object invoke() {
+        return null;
+      }
+    }.invoke();
+    new _FunctionTypes._return_P0_E0<Object>() {
+      public Object invoke() {
+        return null;
+      }
+    }.invoke();
+    new _FunctionTypes._return_P0_E0<Iterable<Object>>() {
+      public Iterable<Object> invoke() {
+        return new Iterable<Object>() {
+          public Iterator<Object> iterator() {
+            return new YieldingIterator<Object>() {
+              private int __CP__ = 0;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 2:
+                      this.__CP__ = 1;
+                      this.yield(null);
+                      return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    }.invoke();
   }
 
   public void acceptWorker(Worker one, Worker two) {
