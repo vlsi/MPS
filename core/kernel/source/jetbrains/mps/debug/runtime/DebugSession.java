@@ -12,12 +12,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class DebugSession {
   private static final Logger LOG = Logger.getLogger(DebugSession.class);
   private final DebugVMEventsProcessor myEventsProcessor;
   private final List<SessionChangeListener> myListeners = new ArrayList<SessionChangeListener>();
-  private final UiState myUiState = new UiState();
+  private final AtomicReference<UiState> myUiState = new AtomicReference<UiState>(new UiState(null));
 
   private ExecutionState myExecutionState = ExecutionState.WaitingAttach;
   private ProcessHandler myProcessHandler;
@@ -40,11 +41,13 @@ public class DebugSession {
   }
 
   public boolean isStepEnabled() {
-    return isPaused() && myUiState.isPausedOnBreakpoint();
+    return isPaused() && getUiState().isPausedOnBreakpoint();
   }
 
   public void resume() {
-    myEventsProcessor.resume(myUiState.getContext());
+    SuspendContext context = getUiState().getContext();
+    LOG.assertLog(context != null);
+    myEventsProcessor.resume(context);
   }
 
   public void pause() {
@@ -68,8 +71,11 @@ public class DebugSession {
   }
 
   private void step(StepType type) {
-    // TODO we actually can't step through paused by user context
-    myEventsProcessor.step(type, myUiState.getContext());
+    DebugSession.UiState state = getUiState();
+    SuspendContext context = state.getContext();
+    LOG.assertLog(context != null);
+    LOG.assertLog(state.isPausedOnBreakpoint());
+    myEventsProcessor.step(type, context);
   }
 
   DebugVMEventsProcessor getEventsProcessor() {
@@ -85,18 +91,34 @@ public class DebugSession {
   }
 
   private void pause(SuspendContext suspendContext) {
-    myUiState.paused(suspendContext);
+    DebugSession.UiState state = getUiState();
+    setState(state, state.paused(suspendContext));
   }
 
   private void resume(SuspendContext suspendContext) {
-    myUiState.resumed(suspendContext);
+    DebugSession.UiState state = getUiState();
+    setState(state, state.resumed(suspendContext));
   }
 
   public UiState getUiState() {
-    return myUiState;
+    return myUiState.get();
   }
 
-  // DO NOT CALL UNDER LOCK!
+  private void trySetState(UiState oldState, UiState newState) {
+    if (myUiState.compareAndSet(oldState, newState)) {
+      fireStateChanged();
+    }
+  }
+
+  private void setState(UiState oldState, UiState newState) {
+    while (!myUiState.compareAndSet(oldState, newState)) {
+      System.err.println("OOPS! somebody changed UiState");
+      // TODO we do not care here if user selected something, we just replace old state. But we might do something more clever, like remember what user selected.
+      oldState = getUiState();
+    }
+    fireStateChanged();
+  }
+
   private void fireStateChanged() {
     for (SessionChangeListener listener : myListeners) {
       listener.stateChanged(DebugSession.this);
@@ -154,7 +176,7 @@ public class DebugSession {
     @Override
     public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
       myExecutionState = ExecutionState.Stopped;
-      myUiState.setContext(null);
+      setState(getUiState(), new UiState(null));
       fireSessionResumed(DebugSession.this); // TODO hack
     }
   }
@@ -167,38 +189,114 @@ public class DebugSession {
     public void resumed(DebugSession session);
   }
 
+  // This class is immutable
   public class UiState {
     @Nullable
-    private SuspendContext myContext = null;
+    private final SuspendContext myContext;
     @Nullable
-    private ThreadReference myThread = null;
+    private final ThreadReference myThread;
     @Nullable
-    private StackFrame myStackFrame = null;
+    private final StackFrame myStackFrame;
 
-    // changes state on pause/resume
-    private void paused(SuspendContext context) {
-      synchronized (this) {
-        // we select new context even if we are already on some other context
-        // user probably wants to know about new paused contexts
-        setContext(context);
+    private UiState(@Nullable SuspendContext context) {
+      myContext = context;
+
+      if (context == null) {
+        myThread = null;
+        myStackFrame = null;
+      } else {
+        myThread = findThread();
+        LOG.assertLog(myThread != null);
+        myStackFrame = findStackFrame();
       }
-
-      fireStateChanged();
     }
 
-    private void resumed(SuspendContext context) {
-      synchronized (this) {
-        if (context != myContext) return;
+    // This constructor is called when user selects some thread from ui
+    private UiState(@NotNull UiState previousState, @Nullable ThreadReference thread) {
+      if (thread == null) {
+        myContext = null;
+        myThread = null;
+        myStackFrame = null;
+      } else {
+        myThread = thread;
+        myContext = findContext(previousState);
+        LOG.assertLog(myContext != null); // in case some botva is going on
+        myStackFrame = findStackFrame();
+      }
+    }
 
-        List<SuspendContext> allPausedContexts = getAllPausedContexts();
-        if (allPausedContexts.isEmpty()) {
-          setContext(null);
-        } else {
-          setContext(allPausedContexts.get(0));
+    // This constructor is called when user selects some frame from ui
+    private UiState(@NotNull UiState previousState, @Nullable StackFrame frame) {
+      LOG.assertLog(frame == null || frame.thread() == previousState.myThread);
+      myContext = previousState.myContext;
+      myThread = previousState.myThread;
+      myStackFrame = frame;
+    }
+
+    private SuspendContext findContext(@NotNull UiState previousState) {
+      SuspendContext newContext = previousState.myContext;
+      LOG.assertLog(newContext != null);
+      if (!newContext.suspends(myThread)) {
+        newContext = null;
+        for (SuspendContext context : getAllPausedContexts()) {
+          if (context.suspends(myThread)) {
+            newContext = context;
+            break;
+          }
         }
       }
+      return newContext;
+    }
 
-      fireStateChanged();
+    private StackFrame findStackFrame() {
+      StackFrame frame = null;
+      try {
+        System.err.println("frames " + myThread.frames());
+        if (myThread.frameCount() > 0) {
+          frame = myThread.frame(0);
+        } else {
+          frame = null;
+        }
+      } catch (IncompatibleThreadStateException e) {
+        LOG.error(e);
+      }
+      return frame;
+    }
+
+    private ThreadReference findThread() {
+      ThreadReference thread = myContext.getThread();
+      if (thread == null) {
+        List<ThreadReference> threads = myEventsProcessor.getVirtualMachine().allThreads();
+        thread = threads.get(0);
+        for (ThreadReference t : threads) {
+          // TODO this is a hack to filter out system threads
+          if (!t.threadGroup().name().equals("system")) {
+            thread = t;
+            break;
+          }
+        }
+      }
+      return thread;
+    }
+
+    // changes state on pause/resume
+    private UiState paused(SuspendContext context) {
+      // we select new context even if we are already on some other context
+      // user probably wants to know about new paused contexts
+      return new UiState(context);
+    }
+
+    @Nullable
+    private UiState resumed(SuspendContext context) {
+      //TODO if some other context is resumed it does not mean that those changes does not concern us. We still want to display correct threads state.
+      if (context != myContext) return null;
+
+      SuspendContext newContext = null;
+      List<SuspendContext> allPausedContexts = getAllPausedContexts();
+      if (!allPausedContexts.isEmpty()) {
+        newContext = allPausedContexts.get(0);
+      }
+      return new UiState(newContext);
     }
 
     private List<SuspendContext> getAllPausedContexts() {
@@ -210,108 +308,49 @@ public class DebugSession {
       return CollectionUtil.union(suspendManager.getPausedContexts(), Collections.singletonList(context));
     }
 
-    // retrieve thread and frame from given context
-    private void setContext(@Nullable SuspendContext context) {
-      if (context == null) {
-        myContext = null;
-        myThread = null;
-        myStackFrame = null;
-      } else {
-        myContext = context;
-
-        myThread = myContext.getThread();
-        if (myThread == null) {
-          List<ThreadReference> threads = myEventsProcessor.getVirtualMachine().allThreads();
-          myThread = threads.get(0);
-          for (ThreadReference t : threads) {
-            // TODO this is a hack to filter out system threads
-            if (!t.threadGroup().name().equals("system")) {
-              myThread = t;
-              break;
-            }
-          }
-        }
-
-        LOG.assertLog(myThread != null);
-
-        updateFrame();
-      }
-    }
-
     // changes state on user selection
-    public void selectThread(ThreadReference thread) {
-      synchronized (this) {
-        if (thread == null) {
-          myContext = null;
-          myThread = null;
-          myStackFrame = null;
-        } else {
-          myThread = thread;
-          LOG.assertLog(myContext != null);
-          if (!myContext.suspends(thread)) {
-            System.err.println(" my current context " + myContext + " does not suspends thread " + thread);
-            myContext = null;
-            for (SuspendContext context : getAllPausedContexts()) {
-              System.err.println("checking context " + context);
-              if (context.suspends(thread)) {
-                System.err.println("context " + context + " suspends thread " + thread);
-                myContext = context;
-                break;
-              }
-            }
-            LOG.assertLog(myContext != null); // in case some botva is going on
-          }
-          updateFrame();
-        }
-      }
-      fireStateChanged();
+    private UiState selectThreadInternal(@Nullable ThreadReference thread) {
+      return new UiState(this, thread);
     }
 
-    public void selectFrame(StackFrame frame) {
-      boolean changed = false;
-      synchronized (this) {
-        LOG.assertLog(frame == null || frame.thread() == myThread);
-        if (myStackFrame != frame) {
-          myStackFrame = frame;
-          changed = true;
-        }
+    private UiState selectFrameInternal(@Nullable StackFrame frame) {
+      if (myStackFrame != frame) {
+        return new UiState(this, frame);
       }
-      if (changed) {
-        fireStateChanged();
+      return this;
+    }
+
+    public void selectThread(@Nullable ThreadReference thread) {
+      UiState newState = selectThreadInternal(thread);
+      if (newState != this) {
+        trySetState(this, newState);
       }
     }
 
-    private void updateFrame() {
-      LOG.assertLog(myThread != null);
-      try {
-        System.err.println("frames " + myThread.frames());
-        if (myThread.frameCount() > 0) {
-          myStackFrame = myThread.frame(0);
-        } else {
-          myStackFrame = null;
-        }
-      } catch (IncompatibleThreadStateException e) {
-        LOG.error(e);
+    public void selectFrame(@Nullable StackFrame frame) {
+      UiState newState = selectFrameInternal(frame);
+      if (newState != this) {
+        trySetState(this, newState);
       }
     }
 
     @Nullable
-    public synchronized SuspendContext getContext() {
+    public SuspendContext getContext() {
       return myContext;
     }
 
     @Nullable
-    public synchronized ThreadReference getThread() {
+    public ThreadReference getThread() {
       return myThread;
     }
 
     @Nullable
-    public synchronized StackFrame getStackFrame() {
+    public StackFrame getStackFrame() {
       return myStackFrame;
     }
 
     @NotNull
-    public synchronized List<StackFrame> getStackFrames() {
+    public List<StackFrame> getStackFrames() {
       if (myThread != null) {
         try {
           return myThread.frames();
@@ -323,7 +362,7 @@ public class DebugSession {
     }
 
     @NotNull
-    public synchronized Map<LocalVariable, Value> getLocalVariablesValues() {
+    public Map<LocalVariable, Value> getLocalVariablesValues() {
       if (myStackFrame != null) {
         try {
           return myStackFrame.getValues(myStackFrame.visibleVariables());
@@ -334,7 +373,7 @@ public class DebugSession {
     }
 
     @NotNull
-    public synchronized List<LocalVariable> getLocalVariables() {
+    public List<LocalVariable> getLocalVariables() {
       if (myStackFrame != null) {
         try {
           return myStackFrame.visibleVariables();
@@ -345,16 +384,15 @@ public class DebugSession {
     }
 
     @Nullable
-    public synchronized Value getVariableValue(LocalVariable variable) {
+    public Value getVariableValue(LocalVariable variable) {
       if (myStackFrame != null) {
         return myStackFrame.getValue(variable);
       }
       return null;
     }
 
-    // TODO we synchronize over ui state, but do we need to synchronize over jdi ThreadReferences, StackFrames etc?????? Here we access them from EDT.
     @NotNull
-    public synchronized List<ThreadReference> getThreads() {
+    public List<ThreadReference> getThreads() {
       if (myExecutionState.equals(ExecutionState.Paused)) {
         List<ThreadReference> result = new ArrayList<ThreadReference>();
         for (ThreadReference threadReference : myEventsProcessor.getVirtualMachine().allThreads()) {
@@ -368,7 +406,7 @@ public class DebugSession {
     }
 
     @Nullable
-    public synchronized String getSourceFileName() {
+    public String getSourceFileName() {
       if (myStackFrame == null) return null;
       try {
         return myStackFrame.location().sourceName();
@@ -377,12 +415,12 @@ public class DebugSession {
       return null;
     }
 
-    public synchronized int getPosition() {
+    public int getPosition() {
       if (myStackFrame == null) return 0;
       return myStackFrame.location().lineNumber();
     }
 
-    public synchronized boolean isPausedOnBreakpoint() {
+    public boolean isPausedOnBreakpoint() {
       if (myContext != null) {
         return myEventsProcessor.getSuspendManager().getPausedContexts().contains(myContext);
       }
