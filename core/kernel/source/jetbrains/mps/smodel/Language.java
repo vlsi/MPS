@@ -115,7 +115,9 @@ public class Language extends AbstractModule {
     updatePackagedDescriptorClasspath();
     updateLanguageRuntimeClassPathItem();
     updateClassPath();
-    updateStubs();
+    if (reloadClasses) {
+      updateStubs();
+    }
     revalidateGenerators();
   }
 

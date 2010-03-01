@@ -75,6 +75,7 @@ public class SModelRepository implements ApplicationComponent {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         LOG.debug("Model refresh");
+
         ModelReloading.markOldStubs();
 
         for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myModelDescriptors)) {

@@ -126,6 +126,9 @@ public class ClassLoaderManager implements ApplicationComponent {
       indicator.setText2("Disposing old classes...");
       callBeforeReloadHandlers();
 
+      indicator.setText2("Refreshing models...");
+      SModelRepository.getInstance().refreshModels();
+
       indicator.setText2("Updating classpath...");
       updateClassPath(true);
 
