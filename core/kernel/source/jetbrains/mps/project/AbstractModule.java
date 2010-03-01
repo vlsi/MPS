@@ -27,6 +27,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
+import jetbrains.mps.project.reloading.StubReloadManager;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.*;
@@ -747,7 +748,7 @@ public abstract class AbstractModule implements IModule {
   private void releaseOldStubs() {
     for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
       if (!(sm instanceof BaseStubModelDescriptor)) continue;
-      if (!(((BaseStubModelDescriptor) sm).isNeedsReloading())) continue;
+      if (!StubReloadManager.getInstance().needsFullReload((BaseStubModelDescriptor) sm)) continue;
 
       if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
         SModelRepository.getInstance().removeModelDescriptor(sm);
