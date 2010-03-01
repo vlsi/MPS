@@ -83,6 +83,10 @@ public class EmbeddableEditor {
     }
   }
 
+  public void selectNode(SNode node) {
+    this.myFileNodeEditor.getNodeEditor().selectNode(node);
+  }
+
   public GenerationResult generate(final Set<IClassPathItem> additionalClasspath) {
     if (this.myNode == null) {
       return null;
