@@ -10,7 +10,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.NodeEditor;
 import javax.swing.JComponent;
+import java.util.List;
+import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.Set;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
@@ -32,10 +36,16 @@ public class EmbeddableEditor {
   private SModelDescriptor myModel;
   private ModelOwner myOwner;
   private SNode myNode;
+  private boolean myIsEditable;
 
   public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode node) {
+    this(context, owner, node, true);
+  }
+
+  public EmbeddableEditor(IOperationContext context, ModelOwner owner, SNode node, boolean editable) {
     this.myOwner = owner;
     this.myContext = context;
+    this.myIsEditable = editable;
     this.myModel = ProjectModels.createDescriptorFor(this.myOwner);
     this.myModel.getSModel().addDevKit(LanguageDesign_DevKit.get());
     this.setNode(node);
@@ -49,6 +59,11 @@ public class EmbeddableEditor {
       }
     });
     this.myFileNodeEditor = new MPSFileNodeEditor(this.myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(this.myNode));
+    IEditor editor = this.myFileNodeEditor.getNodeEditor();
+    if (editor instanceof NodeEditor) {
+      NodeEditor nodeEditor = (NodeEditor) editor;
+      nodeEditor.setEditable(this.myIsEditable);
+    }
     if (this.myPanel == null) {
       this.myPanel = new EmbeddableEditorPanel(this.myFileNodeEditor);
     } else {
@@ -58,6 +73,14 @@ public class EmbeddableEditor {
 
   public JComponent getComponenet() {
     return this.myPanel;
+  }
+
+  public void mark(List<EditorMessage> messages) {
+    IEditor editor = this.myFileNodeEditor.getNodeEditor();
+    if (editor instanceof NodeEditor) {
+      NodeEditor nodeEditor = (NodeEditor) editor;
+      nodeEditor.mark(messages);
+    }
   }
 
   public GenerationResult generate(final Set<IClassPathItem> additionalClasspath) {

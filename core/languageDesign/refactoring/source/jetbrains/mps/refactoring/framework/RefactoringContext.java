@@ -647,6 +647,10 @@ public class RefactoringContext {
     return getRootToNodes(getNodes(mySourceMap));
   }
 
+  public boolean isEmptyMaps() {
+    return myMoveMap.isEmpty() && mySourceMap.isEmpty();
+  }
+
   public void fromElement(Element element) {
     try {
       String versionString = element.getAttributeValue(MODEL_VERSION);

@@ -68,7 +68,12 @@ public class RefactoringPanel {
   private ActionListener getGoToInformationListener(final RefactoringContext context) {
     return new ActionListener() {
       public void actionPerformed(ActionEvent event) {
-        RefactoringInformationDialog dialog = new RefactoringInformationDialog(RefactoringPanel.this.myContext, context);
+        BaseDialog dialog;
+        if (context.isEmptyMaps()) {
+          dialog = new RefactoringInformationDialog(RefactoringPanel.this.myContext, context);
+        } else {
+          dialog = new RefactoringInformationDialogWithEditor(RefactoringPanel.this.myContext, context);
+        }
         dialog.showDialog();
       }
     };

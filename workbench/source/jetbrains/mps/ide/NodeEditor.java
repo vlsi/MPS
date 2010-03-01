@@ -17,10 +17,7 @@ package jetbrains.mps.ide;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import jetbrains.mps.nodeEditor.CellSelectionListener;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.NodeEditorComponent;
+import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -112,6 +109,15 @@ public class NodeEditor implements IEditor {
 
   public void repaint() {
     myEditorComponent.repaint();
+  }
+
+  public void setEditable(boolean editable) {
+    myEditorComponent.setEditable(editable);
+  }
+
+  public void mark(List<EditorMessage> messages) {
+    NodeHighlightManager highlightManager = myEditorComponent.getHighlightManager();
+    highlightManager.mark(messages);
   }
 
   @Nullable
