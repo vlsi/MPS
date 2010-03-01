@@ -297,6 +297,7 @@ public class DebugInfo {
   }
 
   public static boolean isNodeSutable(SNode node) {
+    // TODO could not find any usages of this method. May I delete it? 
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
   }
 }

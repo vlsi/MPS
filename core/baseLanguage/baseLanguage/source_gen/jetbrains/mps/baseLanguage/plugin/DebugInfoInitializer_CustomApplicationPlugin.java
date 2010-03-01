@@ -26,5 +26,10 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
         return SLinkOperations.getTarget(key, "variableDeclaration", false);
       }
     });
+    manager.addVariableConcept("jetbrains.mps.baseLanguage.structure.ParameterReference", new Mapper<SNode, SNode>() {
+      public SNode value(SNode key) {
+        return SLinkOperations.getTarget(key, "variableDeclaration", false);
+      }
+    });
   }
 }

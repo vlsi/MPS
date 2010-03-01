@@ -7551,6 +7551,15 @@
         </node>
       </node>
     </node>
+    <node role="conceptsOfVars:23" type="jetbrains.mps.lang.plugin.structure.VariableNodeItem:23" id="369966109717050328">
+      <link role="concept:23" targetNodeId="1.1068581242874:3" resolveInfo="ParameterReference" />
+      <node role="varEntity:23" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="369966109717097830">
+        <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.VariableNodeExpression:23" id="369966109717097829" />
+        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="369966109717097834">
+          <link role="link:16" targetNodeId="1.1070567982819:3" />
+        </node>
+      </node>
+    </node>
     <node role="conceptsToDebug:23" type="jetbrains.mps.lang.plugin.structure.ConceptReference:23" id="5191407547578560720">
       <link role="declaration:23" targetNodeId="1.1068580123157:3" resolveInfo="Statement" />
     </node>
