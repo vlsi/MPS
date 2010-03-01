@@ -70,9 +70,9 @@ public class RefactoringPanel {
       public void actionPerformed(ActionEvent event) {
         BaseDialog dialog;
         if (context.isEmptyMaps()) {
-          dialog = new RefactoringInformationDialog(RefactoringPanel.this.myContext, context);
+          dialog = new InformationDialog(RefactoringPanel.this.myContext, context);
         } else {
-          dialog = new RefactoringInformationDialogWithEditor(RefactoringPanel.this.myContext, context);
+          dialog = new InformationDialogWithEditor(RefactoringPanel.this.myContext, context);
         }
         dialog.showDialog();
       }
