@@ -37,6 +37,15 @@ public class IMethodCall_typeArguments extends AbstractCellProvider {
     return this.createCollection_q1hswy_a(editorContext, node);
   }
 
+  private EditorCell createCollection_q1hswy_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_q1hswy_a");
+    if (renderingCondition_q1hswy_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_q1hswy_a0(editorContext, node));
+    }
+    return editorCell;
+  }
+
   private EditorCell createCollection_q1hswy_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q1hswy_a0");
@@ -47,15 +56,6 @@ public class IMethodCall_typeArguments extends AbstractCellProvider {
     editorCell.addEditorCell(this.createConstant_q1hswy_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_q1hswy_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_q1hswy_c0a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_q1hswy_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_q1hswy_a");
-    if (renderingCondition_q1hswy_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_q1hswy_a0(editorContext, node));
-    }
     return editorCell;
   }
 

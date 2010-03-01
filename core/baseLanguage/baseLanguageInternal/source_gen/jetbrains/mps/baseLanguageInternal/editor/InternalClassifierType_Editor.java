@@ -161,13 +161,13 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_7zoim2_d0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("classifier");
-    provider.setNoTargetText("<no classifier>");
+  private EditorCell createProperty_7zoim2_b0a_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("fqClassName");
+    provider.setNoTargetText("<no fqClassName>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline_7zoim2_a3a0());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_fqClassName_1");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -179,13 +179,13 @@ public class InternalClassifierType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_7zoim2_b0a_0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("fqClassName");
-    provider.setNoTargetText("<no fqClassName>");
+  private EditorCell createRefCell_7zoim2_d0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("classifier");
+    provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new InternalClassifierType_Editor._Inline_7zoim2_a3a0());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_fqClassName_1");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

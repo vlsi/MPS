@@ -56,13 +56,6 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_z2b22p_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
-    editorCell.setCellId("Constant_z2b22p_e0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_z2b22p_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_z2b22p_a0");
@@ -85,6 +78,13 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_z2b22p_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
+    editorCell.setCellId("Constant_z2b22p_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -121,13 +121,13 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_z2b22p_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_z2b22p_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("methodName");
-    provider.setNoTargetText("<no methodName>");
+    provider.setRole("fqClassName");
+    provider.setNoTargetText("<no fqClassName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_methodName");
+    editorCell.setCellId("property_fqClassName");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -140,13 +140,13 @@ public class InternalStaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_z2b22p_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_z2b22p_i0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("fqClassName");
-    provider.setNoTargetText("<no fqClassName>");
+    provider.setRole("methodName");
+    provider.setNoTargetText("<no methodName>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_fqClassName");
+    editorCell.setCellId("property_methodName");
     StyleSheet_StyleSheet.getInternalName(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

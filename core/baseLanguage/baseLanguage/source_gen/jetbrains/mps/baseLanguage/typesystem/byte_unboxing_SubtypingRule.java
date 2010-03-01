@@ -8,12 +8,12 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   private static SNodePointer SNODE_POINTER__2 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Byte");
@@ -38,6 +38,35 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class QuotationClass_1sray5_a0a0a {
+    public QuotationClass_1sray5_a0a0a() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1sray5_a0a0a = null;
+      {
+        quotedNode_1sray5_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1sray5_a0a0a = quotedNode_1sray5_a0a0a;
+        result = quotedNode1_1sray5_a0a0a;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1sray5_a0a0a = null;
+      {
+        quotedNode_1sray5_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1sray5_a0a0a = quotedNode_1sray5_a0a0a;
+        result = quotedNode1_1sray5_a0a0a;
+      }
+      return result;
+    }
   }
 
   public static class Pattern_1sray5_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
@@ -71,35 +100,6 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
 
     public Object getFieldValue(String fieldName) {
       return null;
-    }
-  }
-
-  public static class QuotationClass_1sray5_a0a0a {
-    public QuotationClass_1sray5_a0a0a() {
-    }
-
-    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1sray5_a0a0a = null;
-      {
-        quotedNode_1sray5_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1sray5_a0a0a = quotedNode_1sray5_a0a0a;
-        result = quotedNode1_1sray5_a0a0a;
-      }
-      return result;
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1sray5_a0a0a = null;
-      {
-        quotedNode_1sray5_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1sray5_a0a0a = quotedNode_1sray5_a0a0a;
-        result = quotedNode1_1sray5_a0a0a;
-      }
-      return result;
     }
   }
 }

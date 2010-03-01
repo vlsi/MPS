@@ -70,18 +70,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_uc5iyq_d0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
-    editorCell.setCellId("Constant_uc5iyq_d0a");
-    BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_uc5iyq_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " * ");
     editorCell.setCellId("Constant_uc5iyq_b0a");
@@ -102,11 +90,23 @@ public class _DeprecatedPart extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static boolean renderingCondition_uc5iyq_a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isDeprecated");
+  private EditorCell createConstant_uc5iyq_d0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
+    editorCell.setCellId("Constant_uc5iyq_d0a");
+    BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
   private static boolean renderingCondition_uc5iyq_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isDeprecated");
+  }
+
+  private static boolean renderingCondition_uc5iyq_a0a0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isDeprecated");
   }
 }

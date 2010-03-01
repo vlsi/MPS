@@ -36,6 +36,24 @@ public class ConstructorInvocationStatement_Behavior {
     return new HashMap<TypeVariableDeclaration, Type>();
   }
 
+  public static class QuotationClass_teq92u_a0a0a0c0b {
+    public QuotationClass_teq92u_a0a0a0c0b() {
+    }
+
+    public SNode createNode(Object parameter_teq92u_a0a0a0a0c0a) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_teq92u_a0a0a0c0a = null;
+      {
+        quotedNode_teq92u_a0a0a0c0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_teq92u_a0a0a0c0a = quotedNode_teq92u_a0a0a0c0a;
+        quotedNode1_teq92u_a0a0a0c0a.setReferent("typeVariableDeclaration", (SNode) parameter_teq92u_a0a0a0a0c0a);
+        result = quotedNode1_teq92u_a0a0a0c0a;
+      }
+      return result;
+    }
+  }
+
   public static class QuotationClass_teq92u_a0d0b {
     public QuotationClass_teq92u_a0d0b() {
     }
@@ -56,24 +74,6 @@ public class ConstructorInvocationStatement_Behavior {
           }
         }
         result = quotedNode1_teq92u_a0d0a;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_teq92u_a0a0a0c0b {
-    public QuotationClass_teq92u_a0a0a0c0b() {
-    }
-
-    public SNode createNode(Object parameter_teq92u_a0a0a0a0c0a) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_teq92u_a0a0a0c0a = null;
-      {
-        quotedNode_teq92u_a0a0a0c0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_teq92u_a0a0a0c0a = quotedNode_teq92u_a0a0a0c0a;
-        quotedNode1_teq92u_a0a0a0c0a.setReferent("typeVariableDeclaration", (SNode) parameter_teq92u_a0a0a0a0c0a);
-        result = quotedNode1_teq92u_a0a0a0c0a;
       }
       return result;
     }

@@ -35,22 +35,22 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_jyer24_c0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IMethodCall_actualArguments(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    return editorCell;
-  }
-
   private EditorCell createComponent_jyer24_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new IMethodCall_typeArguments(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createComponent_jyer24_c0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new IMethodCall_actualArguments(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
     return editorCell;
   }

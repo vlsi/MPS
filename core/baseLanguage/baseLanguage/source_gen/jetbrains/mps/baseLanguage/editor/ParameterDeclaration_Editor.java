@@ -19,9 +19,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -31,26 +31,16 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class ParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_vsmugd_a_0(editorContext, node);
+    return this.createCollection_vsmugd_a(editorContext, node);
   }
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_vsmugd_a(editorContext, node);
+    return this.createCollection_vsmugd_a_0(editorContext, node);
   }
 
   private EditorCell createCollection_vsmugd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vsmugd_a");
-    editorCell.addEditorCell(this.createConstant_vsmugd_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vsmugd_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_vsmugd_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_vsmugd_d0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_vsmugd_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_vsmugd_a_0");
     editorCell.addEditorCell(this.createCollection_vsmugd_a0(editorContext, node));
     return editorCell;
   }
@@ -84,16 +74,19 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_vsmugd_d0a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new VariableDeclaration_NameCellComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+  private EditorCell createCollection_vsmugd_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_vsmugd_a_0");
+    editorCell.addEditorCell(this.createConstant_vsmugd_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vsmugd_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_vsmugd_c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_vsmugd_d0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createConstant_vsmugd_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final :");
-    editorCell.setCellId("Constant_vsmugd_a0");
-    editorCell.setDefaultText("");
+  private EditorCell createComponent_vsmugd_d0a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new VariableDeclaration_NameCellComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -102,6 +95,13 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_vsmugd_b0a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_vsmugd_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final :");
+    editorCell.setCellId("Constant_vsmugd_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -117,22 +117,22 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_vsmugd_d0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ParameterDeclaration_Editor.annotationListHandler_vsmugd_d0(node, "annotation", editorContext);
+  private EditorCell createRefNodeList_vsmugd_a0a0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ParameterDeclaration_Editor.annotationListHandler_vsmugd_a0a0(node, "annotation", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_annotation");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_vsmugd_a0a0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ParameterDeclaration_Editor.annotationListHandler_vsmugd_a0a0(node, "annotation", editorContext);
+  private EditorCell createRefNodeList_vsmugd_d0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ParameterDeclaration_Editor.annotationListHandler_vsmugd_d0(node, "annotation", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_annotation_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -176,16 +176,16 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_vsmugd_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isFinal");
-  }
-
   private static boolean renderingCondition_vsmugd_a0a0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).count() > 0;
   }
 
-  private static class annotationListHandler_vsmugd_d0 extends RefNodeListHandler {
-    public annotationListHandler_vsmugd_d0(SNode ownerNode, String childRole, EditorContext context) {
+  private static boolean renderingCondition_vsmugd_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isFinal");
+  }
+
+  private static class annotationListHandler_vsmugd_a0a0 extends RefNodeListHandler {
+    public annotationListHandler_vsmugd_a0a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -226,8 +226,8 @@ public class ParameterDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class annotationListHandler_vsmugd_a0a0 extends RefNodeListHandler {
-    public annotationListHandler_vsmugd_a0a0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class annotationListHandler_vsmugd_d0 extends RefNodeListHandler {
+    public annotationListHandler_vsmugd_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

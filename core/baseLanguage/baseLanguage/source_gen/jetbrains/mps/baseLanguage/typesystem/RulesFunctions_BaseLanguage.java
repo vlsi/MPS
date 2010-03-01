@@ -170,6 +170,9 @@ __switch__:
                       this.__CP__ = 12;
                       this.yield(_11_returnStmt);
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
@@ -188,9 +191,6 @@ __switch__:
                       break;
                     case 13:
                       this.__CP__ = 14;
-                      break;
-                    case 0:
-                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;
