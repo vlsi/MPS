@@ -26,11 +26,11 @@ import javax.swing.ImageIcon;
  * To change this template use File | Settings | File Templates.
  */
 public class Icons {
-  public static final Icon BREAKPOINT = new ImageIcon(Icons.class.getResource("db_set_breakpoint.png"));
-  public static final Icon INV_BREAKPOINT = new ImageIcon(Icons.class.getResource("db_invalid_breakpoint.png"));
-  public static final Icon VARIABLE_PRIMITIVE = new ImageIcon(Icons.class.getResource("db_primitive.png"));
-  public static final Icon VARIABLE_OBJECT = new ImageIcon(Icons.class.getResource("db_object.png"));
-  public static final Icon THREAD_RUNNING = new ImageIcon(Icons.class.getResource("db_thread_running.png"));
-  public static final Icon THREAD_SUSPENDED = new ImageIcon(Icons.class.getResource("db_thread_suspended.png"));
-  public static final Icon THREAD_AT_BREAKPOINT = new ImageIcon(Icons.class.getResource("db_thread_at_breakpoint.png"));
+  public static final Icon BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_set_breakpoint.png"));
+  public static final Icon INV_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_invalid_breakpoint.png"));
+  public static final Icon VARIABLE_PRIMITIVE = new ImageIcon(Icons.class.getResource("ui/icons/db_primitive.png"));
+  public static final Icon VARIABLE_OBJECT = new ImageIcon(Icons.class.getResource("ui/icons/db_object.png"));
+  public static final Icon THREAD_RUNNING = new ImageIcon(Icons.class.getResource("ui/icons/db_thread_running.png"));
+  public static final Icon THREAD_SUSPENDED = new ImageIcon(Icons.class.getResource("ui/icons/db_thread_suspended.png"));
+  public static final Icon THREAD_AT_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_thread_at_breakpoint.png"));
 }
