@@ -18,6 +18,8 @@ package jetbrains.mps.generator;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -26,12 +28,11 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TransientModelsModule extends AbstractModule implements ProjectComponent {
@@ -45,7 +46,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   //the second parameter is needed because there is a time dependency -
   //MPSProjectHolder must be disposed after TransientModelsModule for
   //the module's models to be disposed
-  public TransientModelsModule(Project project,MPSProjectHolder mpsProject) {
+  public TransientModelsModule(Project project, MPSProjectHolder mpsProject) {
     myProject = project;
     ModuleReference reference = ModuleReference.fromString("TransientModule " + myNumber);
     setModulePointer(reference);
@@ -92,7 +93,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   public Class getClass(String fqName) {
     if (myInvocationContext == null) {
       throw new IllegalStateException();
-    }    
+    }
     return myInvocationContext.getClass(fqName);
   }
 
@@ -156,6 +157,12 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   public SModelDescriptor createTransientModel(String name, String stereotype) {
     SModelFqName fqName = new SModelFqName(name, stereotype);
     DefaultSModelDescriptor result = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelReference(fqName, SModelId.generate())) {
+
+      @Override
+      protected FastNodeFinder createFastNodeFinder() {
+        return new TransientModelNodeFinder(this);
+      }
+
       protected SModel loadModel() {
         return new SModel(getSModelReference());
       }

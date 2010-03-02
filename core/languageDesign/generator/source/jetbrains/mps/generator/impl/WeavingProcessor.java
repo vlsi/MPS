@@ -136,7 +136,7 @@ public class WeavingProcessor {
       return;
     }
     boolean includeInheritors = rule.getApplyToConceptInheritors();
-    List<SNode> nodes = myFastNodeFinder.getNodes(applicableConcept, includeInheritors);
+    Iterable<SNode> nodes = myFastNodeFinder.getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
       if (myGenerator.getExecutor().checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode())) {
         SNode outputContextNode = myGenerator.getExecutor().getContextNodeForWeavingingRule(applicableNode, rule);

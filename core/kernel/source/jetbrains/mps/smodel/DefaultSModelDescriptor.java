@@ -710,9 +710,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   public FastNodeFinder getFastNodeFinder() {
     if (myFastNodeFinder == null) {
-      myFastNodeFinder = new FastNodeFinder(this);
+      myFastNodeFinder = createFastNodeFinder();
     }
     return myFastNodeFinder;
+  }
+
+  protected FastNodeFinder createFastNodeFinder() {
+    return new DefaultFastNodeFinder(this);
   }
 
   @Override

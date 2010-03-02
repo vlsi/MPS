@@ -617,7 +617,7 @@ public class SModel implements Iterable<SNode> {
   @NotNull
   List<SModelListener> getWeakModelListeners() {
     synchronized (myListenersLock) {
-      List<SModelListener> result = new ArrayList<SModelListener>();
+      List<SModelListener> result = new ArrayList<SModelListener>(myWeakListeners.size());
 
       for (SModelListener l : myWeakListeners) {
         if (l == null) continue;

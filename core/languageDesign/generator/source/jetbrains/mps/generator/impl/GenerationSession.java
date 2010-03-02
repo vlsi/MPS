@@ -181,25 +181,25 @@ public class GenerationSession {
     // -----------------------
     // reverse roots order
     // -----------------------
-    if (myParallelGeneration && inputModel == mySessionContext.getOriginalInputModel()) {
-      SModel currentInputModel_clone = createTransientModel();
-      if (myLogger.needsInfo()) {
-        myLogger.info("reversing roots '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
-      }
-      List<SNode> rrr = currentInputModel.getRoots();
-      SNode[] roots = rrr.toArray(new SNode[rrr.size()]);
-      for (int i = 0; i < roots.length / 2; i++) {
-        SNode temp = roots[i];
-        roots[i] = roots[roots.length - 1 - i];
-        roots[roots.length - 1 - i] = temp;
-      }
-      for (SNode node : roots) {
-        SNode outputNode = CloneUtil.clone(node, currentInputModel_clone, true);
-        currentInputModel_clone.addRoot(outputNode);
-      }
-      recycleWasteModel(currentInputModel);
-      currentInputModel = currentInputModel_clone;
-    }
+//    if (false && myParallelGeneration && inputModel == mySessionContext.getOriginalInputModel()) {
+//      SModel currentInputModel_clone = createTransientModel();
+//      if (myLogger.needsInfo()) {
+//        myLogger.info("reversing roots '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
+//      }
+//      List<SNode> rrr = currentInputModel.getRoots();
+//      SNode[] roots = rrr.toArray(new SNode[rrr.size()]);
+//      for (int i = 0; i < roots.length / 2; i++) {
+//        SNode temp = roots[i];
+//        roots[i] = roots[roots.length - 1 - i];
+//        roots[roots.length - 1 - i] = temp;
+//      }
+//      for (SNode node : roots) {
+//        SNode outputNode = CloneUtil.clone(node, currentInputModel_clone, true);
+//        currentInputModel_clone.addRoot(outputNode);
+//      }
+//      recycleWasteModel(currentInputModel);
+//      currentInputModel = currentInputModel_clone;
+//    }
 
     // -----------------------
     // run pre-processing scripts
@@ -239,6 +239,7 @@ public class GenerationSession {
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
       currentInputModel.setLoading(false);
+      currentInputModel.getModelDescriptor().disposeFastNodeFinder();
       tracer.startTracing(currentInputModel, transientModel);
       if (!applyRules(currentInputModel, transientModel, false, ruleManager)) {
         // nothing has been generated
