@@ -69,42 +69,42 @@ public class ClosureLiteral_Behavior {
     public QuotationClass_l77foe_a0a0d() {
     }
 
-    public SNode createNode(Object parameter_l77foe_a0a0a0a2, Object parameter_l77foe_a0a0a0a2_0, Object parameter_l77foe_a0a0a0a2_1) {
+    public SNode createNode(Object parameter_7, Object parameter_8, Object parameter_9) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_l77foe_a0a0c = null;
-      SNode quotedNode_l77foe_a0a0a2 = null;
-      SNode quotedNode_l77foe_a0a0a2_0 = null;
-      SNode quotedNode_l77foe_a0a0a2_1 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
       {
-        quotedNode_l77foe_a0a0c = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_l77foe_a0a0c = quotedNode_l77foe_a0a0c;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5 = quotedNode_1;
         {
-          List<SNode> nodes = (List<SNode>) parameter_l77foe_a0a0a0a2;
+          List<SNode> nodes = (List<SNode>) parameter_7;
           for (SNode child : nodes) {
-            quotedNode_l77foe_a0a0c.addChild("parameterType", HUtil.copyIfNecessary(child));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(child));
           }
         }
         {
-          quotedNode_l77foe_a0a0a2_0 = (SNode) parameter_l77foe_a0a0a0a2_0;
-          SNode quotedNode1_l77foe_a0a0a2;
-          if (_parameterValues_129834374.contains(quotedNode_l77foe_a0a0a2_0)) {
-            quotedNode1_l77foe_a0a0a2 = CopyUtil.copy(quotedNode_l77foe_a0a0a2_0);
+          quotedNode_3 = (SNode) parameter_8;
+          SNode quotedNode1_6;
+          if (_parameterValues_129834374.contains(quotedNode_3)) {
+            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
           } else {
-            _parameterValues_129834374.add(quotedNode_l77foe_a0a0a2_0);
-            quotedNode1_l77foe_a0a0a2 = quotedNode_l77foe_a0a0a2_0;
+            _parameterValues_129834374.add(quotedNode_3);
+            quotedNode1_6 = quotedNode_3;
           }
-          if (quotedNode1_l77foe_a0a0a2 != null) {
-            quotedNode_l77foe_a0a0c.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_l77foe_a0a0a2));
+          if (quotedNode1_6 != null) {
+            quotedNode_1.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_6));
           }
         }
         {
-          List<SNode> nodes = (List<SNode>) parameter_l77foe_a0a0a0a2_1;
+          List<SNode> nodes = (List<SNode>) parameter_9;
           for (SNode child : nodes) {
-            quotedNode_l77foe_a0a0c.addChild("throwsType", HUtil.copyIfNecessary(child));
+            quotedNode_1.addChild("throwsType", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_l77foe_a0a0c;
+        result = quotedNode1_5;
       }
       return result;
     }
@@ -117,12 +117,12 @@ public class ClosureLiteral_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_l77foe_a0c0f = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_l77foe_a0c0f = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_l77foe_a0c0f = quotedNode_l77foe_a0c0f;
-        quotedNode1_l77foe_a0c0f.addReference(SReference.create("classifier", quotedNode1_l77foe_a0c0f, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_l77foe_a0c0f;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_2;
       }
       return result;
     }

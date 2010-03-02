@@ -16,11 +16,11 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SortedSetType_Behavior {
   private static Class[] PARAMETERS_7602110602933345983 = {SNode.class ,SModel.class};
@@ -47,6 +47,37 @@ public class SortedSetType_Behavior {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.SortedSetType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345983, targetModel);
   }
 
+  public static class QuotationClass_7p913d_a0a0b0b {
+    public QuotationClass_7p913d_a0a0b0b() {
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        {
+          quotedNode_2 = (SNode) parameter_5;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
+          }
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
+          }
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
+  }
+
   public static class QuotationClass_7p913d_a0a0c {
     public QuotationClass_7p913d_a0a0c() {
     }
@@ -54,43 +85,12 @@ public class SortedSetType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7p913d_a0a0b = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_7p913d_a0a0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7p913d_a0a0b = quotedNode_7p913d_a0a0b;
-        quotedNode1_7p913d_a0a0b.addReference(SReference.create("classifier", quotedNode1_7p913d_a0a0b, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedSet")));
-        result = quotedNode1_7p913d_a0a0b;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_7p913d_a0a0b0b {
-    public QuotationClass_7p913d_a0a0b0b() {
-    }
-
-    public SNode createNode(Object parameter_7p913d_a0a0a0a1a0) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_7p913d_a0a0b0a = null;
-      SNode quotedNode_7p913d_a0a0a1a0 = null;
-      {
-        quotedNode_7p913d_a0a0b0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_7p913d_a0a0b0a = quotedNode_7p913d_a0a0b0a;
-        {
-          quotedNode_7p913d_a0a0a1a0 = (SNode) parameter_7p913d_a0a0a0a1a0;
-          SNode quotedNode1_7p913d_a0a0a1a0;
-          if (_parameterValues_129834374.contains(quotedNode_7p913d_a0a0a1a0)) {
-            quotedNode1_7p913d_a0a0a1a0 = CopyUtil.copy(quotedNode_7p913d_a0a0a1a0);
-          } else {
-            _parameterValues_129834374.add(quotedNode_7p913d_a0a0a1a0);
-            quotedNode1_7p913d_a0a0a1a0 = quotedNode_7p913d_a0a0a1a0;
-          }
-          if (quotedNode1_7p913d_a0a0a1a0 != null) {
-            quotedNode_7p913d_a0a0b0a.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_7p913d_a0a0a1a0));
-          }
-        }
-        result = quotedNode1_7p913d_a0a0b0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedSet")));
+        result = quotedNode1_2;
       }
       return result;
     }

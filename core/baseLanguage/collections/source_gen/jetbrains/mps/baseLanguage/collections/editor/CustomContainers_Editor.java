@@ -106,12 +106,12 @@ public class CustomContainers_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createIndentCell_xp0b50_a2a(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_xp0b50_b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createIndentCell_xp0b50_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_xp0b50_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }

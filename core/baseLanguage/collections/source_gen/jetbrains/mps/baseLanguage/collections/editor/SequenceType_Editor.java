@@ -54,10 +54,10 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_z5ycp4_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_z5ycp4_c1a");
-    Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
+  private EditorCell createConstant_z5ycp4_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
+    editorCell.setCellId("Constant_z5ycp4_a1a");
+    Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, false);
@@ -66,10 +66,10 @@ public class SequenceType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_z5ycp4_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
-    editorCell.setCellId("Constant_z5ycp4_a1a");
-    Collections_Style_StyleSheet.getLeftAngleBracket(editorCell).apply(editorCell);
+  private EditorCell createConstant_z5ycp4_c1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    editorCell.setCellId("Constant_z5ycp4_c1a");
+    Collections_Style_StyleSheet.getRightAngleBracket(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.EDITABLE, false);

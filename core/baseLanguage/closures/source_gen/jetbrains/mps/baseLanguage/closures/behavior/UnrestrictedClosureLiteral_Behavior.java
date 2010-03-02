@@ -24,56 +24,56 @@ public class UnrestrictedClosureLiteral_Behavior {
     public QuotationClass_8me3g4_a0a0b() {
     }
 
-    public SNode createNode(Object parameter_8me3g4_a0a0a0a0, Object parameter_8me3g4_a0a0a0a0_0, Object parameter_8me3g4_a0a0a0a0_1, Object parameter_8me3g4_a0a0a0a0_2) {
+    public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11, Object parameter_12) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8me3g4_a0a0a = null;
-      SNode quotedNode_8me3g4_a0a0a0 = null;
-      SNode quotedNode_8me3g4_a0a0a0_0 = null;
-      SNode quotedNode_8me3g4_a0a0a0_1 = null;
-      SNode quotedNode_8me3g4_a0a0a0_2 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
       {
-        quotedNode_8me3g4_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8me3g4_a0a0a = quotedNode_8me3g4_a0a0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6 = quotedNode_1;
         {
-          List<SNode> nodes = (List<SNode>) parameter_8me3g4_a0a0a0a0;
+          List<SNode> nodes = (List<SNode>) parameter_9;
           for (SNode child : nodes) {
-            quotedNode_8me3g4_a0a0a.addChild("parameterType", HUtil.copyIfNecessary(child));
+            quotedNode_1.addChild("parameterType", HUtil.copyIfNecessary(child));
           }
         }
         {
-          quotedNode_8me3g4_a0a0a0_0 = (SNode) parameter_8me3g4_a0a0a0a0_0;
-          SNode quotedNode1_8me3g4_a0a0a0;
-          if (_parameterValues_129834374.contains(quotedNode_8me3g4_a0a0a0_0)) {
-            quotedNode1_8me3g4_a0a0a0 = CopyUtil.copy(quotedNode_8me3g4_a0a0a0_0);
+          quotedNode_3 = (SNode) parameter_10;
+          SNode quotedNode1_7;
+          if (_parameterValues_129834374.contains(quotedNode_3)) {
+            quotedNode1_7 = CopyUtil.copy(quotedNode_3);
           } else {
-            _parameterValues_129834374.add(quotedNode_8me3g4_a0a0a0_0);
-            quotedNode1_8me3g4_a0a0a0 = quotedNode_8me3g4_a0a0a0_0;
+            _parameterValues_129834374.add(quotedNode_3);
+            quotedNode1_7 = quotedNode_3;
           }
-          if (quotedNode1_8me3g4_a0a0a0 != null) {
-            quotedNode_8me3g4_a0a0a.addChild("terminateType", HUtil.copyIfNecessary(quotedNode1_8me3g4_a0a0a0));
+          if (quotedNode1_7 != null) {
+            quotedNode_1.addChild("terminateType", HUtil.copyIfNecessary(quotedNode1_7));
           }
         }
         {
-          quotedNode_8me3g4_a0a0a0_1 = (SNode) parameter_8me3g4_a0a0a0a0_1;
-          SNode quotedNode1_8me3g4_a0a0a0_0;
-          if (_parameterValues_129834374.contains(quotedNode_8me3g4_a0a0a0_1)) {
-            quotedNode1_8me3g4_a0a0a0_0 = CopyUtil.copy(quotedNode_8me3g4_a0a0a0_1);
+          quotedNode_4 = (SNode) parameter_11;
+          SNode quotedNode1_8;
+          if (_parameterValues_129834374.contains(quotedNode_4)) {
+            quotedNode1_8 = CopyUtil.copy(quotedNode_4);
           } else {
-            _parameterValues_129834374.add(quotedNode_8me3g4_a0a0a0_1);
-            quotedNode1_8me3g4_a0a0a0_0 = quotedNode_8me3g4_a0a0a0_1;
+            _parameterValues_129834374.add(quotedNode_4);
+            quotedNode1_8 = quotedNode_4;
           }
-          if (quotedNode1_8me3g4_a0a0a0_0 != null) {
-            quotedNode_8me3g4_a0a0a.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_8me3g4_a0a0a0_0));
+          if (quotedNode1_8 != null) {
+            quotedNode_1.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_8));
           }
         }
         {
-          List<SNode> nodes = (List<SNode>) parameter_8me3g4_a0a0a0a0_2;
+          List<SNode> nodes = (List<SNode>) parameter_12;
           for (SNode child : nodes) {
-            quotedNode_8me3g4_a0a0a.addChild("throwsType", HUtil.copyIfNecessary(child));
+            quotedNode_1.addChild("throwsType", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_8me3g4_a0a0a;
+        result = quotedNode1_6;
       }
       return result;
     }

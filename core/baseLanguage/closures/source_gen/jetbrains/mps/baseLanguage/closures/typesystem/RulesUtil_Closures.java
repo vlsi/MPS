@@ -41,12 +41,12 @@ public class RulesUtil_Closures {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6hhi7_a0a0a0a0a0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_6hhi7_a0a0a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6hhi7_a0a0a0a0a0a = quotedNode_6hhi7_a0a0a0a0a0a;
-        quotedNode1_6hhi7_a0a0a0a0a0a.addReference(SReference.create("classifier", quotedNode1_6hhi7_a0a0a0a0a0a, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~FunctionTypes")));
-        result = quotedNode1_6hhi7_a0a0a0a0a0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~FunctionTypes")));
+        result = quotedNode1_2;
       }
       return result;
     }

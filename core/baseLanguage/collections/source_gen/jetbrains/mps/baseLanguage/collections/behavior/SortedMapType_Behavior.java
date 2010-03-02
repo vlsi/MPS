@@ -16,11 +16,11 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SortedMapType_Behavior {
   private static Class[] PARAMETERS_7602110602933345941 = {SNode.class ,SModel.class};
@@ -47,6 +47,51 @@ public class SortedMapType_Behavior {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.SortedMapType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345941, targetModel);
   }
 
+  public static class QuotationClass_zek8do_a0a0b0b {
+    public QuotationClass_zek8do_a0a0b0b() {
+    }
+
+    public SNode createNode(Object parameter_7, Object parameter_8) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
+        {
+          quotedNode_2 = (SNode) parameter_7;
+          SNode quotedNode1_5;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_5 = CopyUtil.copy(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_5 = quotedNode_2;
+          }
+          if (quotedNode1_5 != null) {
+            quotedNode_1.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_5));
+          }
+        }
+        {
+          quotedNode_3 = (SNode) parameter_8;
+          SNode quotedNode1_6;
+          if (_parameterValues_129834374.contains(quotedNode_3)) {
+            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+          } else {
+            _parameterValues_129834374.add(quotedNode_3);
+            quotedNode1_6 = quotedNode_3;
+          }
+          if (quotedNode1_6 != null) {
+            quotedNode_1.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_6));
+          }
+        }
+        result = quotedNode1_4;
+      }
+      return result;
+    }
+  }
+
   public static class QuotationClass_zek8do_a0a0c {
     public QuotationClass_zek8do_a0a0c() {
     }
@@ -54,57 +99,12 @@ public class SortedMapType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_zek8do_a0a0b = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_zek8do_a0a0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_zek8do_a0a0b = quotedNode_zek8do_a0a0b;
-        quotedNode1_zek8do_a0a0b.addReference(SReference.create("classifier", quotedNode1_zek8do_a0a0b, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedMap")));
-        result = quotedNode1_zek8do_a0a0b;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_zek8do_a0a0b0b {
-    public QuotationClass_zek8do_a0a0b0b() {
-    }
-
-    public SNode createNode(Object parameter_zek8do_a0a0a0a1a0, Object parameter_zek8do_a0a0a0a1a0_0) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_zek8do_a0a0b0a = null;
-      SNode quotedNode_zek8do_a0a0a1a0 = null;
-      SNode quotedNode_zek8do_a0a0a1a0_0 = null;
-      {
-        quotedNode_zek8do_a0a0b0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_zek8do_a0a0b0a = quotedNode_zek8do_a0a0b0a;
-        {
-          quotedNode_zek8do_a0a0a1a0 = (SNode) parameter_zek8do_a0a0a0a1a0;
-          SNode quotedNode1_zek8do_a0a0a1a0;
-          if (_parameterValues_129834374.contains(quotedNode_zek8do_a0a0a1a0)) {
-            quotedNode1_zek8do_a0a0a1a0 = CopyUtil.copy(quotedNode_zek8do_a0a0a1a0);
-          } else {
-            _parameterValues_129834374.add(quotedNode_zek8do_a0a0a1a0);
-            quotedNode1_zek8do_a0a0a1a0 = quotedNode_zek8do_a0a0a1a0;
-          }
-          if (quotedNode1_zek8do_a0a0a1a0 != null) {
-            quotedNode_zek8do_a0a0b0a.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_zek8do_a0a0a1a0));
-          }
-        }
-        {
-          quotedNode_zek8do_a0a0a1a0_0 = (SNode) parameter_zek8do_a0a0a0a1a0_0;
-          SNode quotedNode1_zek8do_a0a0a1a0_0;
-          if (_parameterValues_129834374.contains(quotedNode_zek8do_a0a0a1a0_0)) {
-            quotedNode1_zek8do_a0a0a1a0_0 = CopyUtil.copy(quotedNode_zek8do_a0a0a1a0_0);
-          } else {
-            _parameterValues_129834374.add(quotedNode_zek8do_a0a0a1a0_0);
-            quotedNode1_zek8do_a0a0a1a0_0 = quotedNode_zek8do_a0a0a1a0_0;
-          }
-          if (quotedNode1_zek8do_a0a0a1a0_0 != null) {
-            quotedNode_zek8do_a0a0b0a.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_zek8do_a0a0a1a0_0));
-          }
-        }
-        result = quotedNode1_zek8do_a0a0b0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedMap")));
+        result = quotedNode1_2;
       }
       return result;
     }

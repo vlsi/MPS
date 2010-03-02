@@ -70,16 +70,16 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "actualParameter", true)).count() == 0 && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "controlClosure", true), "parameter", true)).count() == 0;
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClosureControlStatement_1236960289987(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "actualParameter", true)).count() == 0 && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "controlClosure", true), "parameter", true)).count() > 0;
+  }
+
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1235747455803(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(TypeChecker.getInstance().getTypeOf(_context.getSourceNode())), "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1236794030042(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.getIndexInParent(_context.getSourceNode()) == 0 && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement") && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement"), "controlClosure", true), "parameter", true)).count() == 0;
-  }
-
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClosureControlStatement_1236960289987(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "actualParameter", true)).count() == 0 && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "controlClosure", true), "parameter", true)).count() > 0;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_2324090868901293319(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -224,13 +224,39 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ClosureControlStatement_1236960289986(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.addNewChild(_context.getSourceNode(), "actualParameter", "jetbrains.mps.baseLanguage.structure.Expression");
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return ":";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "add parameter";
+        }
+      });
+    }
+    return result;
+  }
+
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1235747446457(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0s().createNode(_context.getSourceNode()));
+          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0t().createNode(_context.getSourceNode()));
         }
 
         public String getMatchingText(String pattern) {
@@ -275,32 +301,6 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ClosureControlStatement_1236960289986(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
-          SLinkOperations.addNewChild(_context.getSourceNode(), "actualParameter", "jetbrains.mps.baseLanguage.structure.Expression");
-          return _context.getSourceNode();
-        }
-
-        public String getMatchingText(String pattern) {
-          return ":";
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "add parameter";
-        }
-      });
-    }
-    return result;
-  }
-
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Type_2324090868901292790(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
@@ -323,32 +323,32 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0s {
-    public QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0s() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0t {
+    public QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0t() {
     }
 
-    public SNode createNode(Object parameter_hyoqyy_a0a0a0a0a0a0a) {
+    public SNode createNode(Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_hyoqyy_a0a0a0a0a0 = null;
-      SNode quotedNode_hyoqyy_a0a0a0a0a0a = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
       {
-        quotedNode_hyoqyy_a0a0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_hyoqyy_a0a0a0a0a0 = quotedNode_hyoqyy_a0a0a0a0a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_hyoqyy_a0a0a0a0a0a = (SNode) parameter_hyoqyy_a0a0a0a0a0a0a;
-          SNode quotedNode1_hyoqyy_a0a0a0a0a0a;
-          if (_parameterValues_129834374.contains(quotedNode_hyoqyy_a0a0a0a0a0a)) {
-            quotedNode1_hyoqyy_a0a0a0a0a0a = CopyUtil.copy(quotedNode_hyoqyy_a0a0a0a0a0a);
+          quotedNode_2 = (SNode) parameter_5;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_hyoqyy_a0a0a0a0a0a);
-            quotedNode1_hyoqyy_a0a0a0a0a0a = quotedNode_hyoqyy_a0a0a0a0a0a;
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
           }
-          if (quotedNode1_hyoqyy_a0a0a0a0a0a != null) {
-            quotedNode_hyoqyy_a0a0a0a0a0.addChild("function", HUtil.copyIfNecessary(quotedNode1_hyoqyy_a0a0a0a0a0a));
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("function", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
-        result = quotedNode1_hyoqyy_a0a0a0a0a0;
+        result = quotedNode1_3;
       }
       return result;
     }

@@ -303,12 +303,12 @@ with_meet:
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_ksvwin_a0a0b = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_ksvwin_a0a0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_ksvwin_a0a0b = quotedNode_ksvwin_a0a0b;
-        quotedNode1_ksvwin_a0a0b.addReference(SReference.create("classifier", quotedNode1_ksvwin_a0a0b, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_ksvwin_a0a0b;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -321,11 +321,11 @@ with_meet:
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_ksvwin_a0b0b0h = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_ksvwin_a0b0b0h = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_ksvwin_a0b0b0h = quotedNode_ksvwin_a0b0b0h;
-        result = quotedNode1_ksvwin_a0b0b0h;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -335,15 +335,15 @@ with_meet:
     public QuotationClass_ksvwin_a0a3a01() {
     }
 
-    public SNode createNode(Object parameter_ksvwin_a0a0a3a9) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_ksvwin_a0a3a9 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_ksvwin_a0a3a9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_ksvwin_a0a3a9 = quotedNode_ksvwin_a0a3a9;
-        quotedNode1_ksvwin_a0a3a9.setReferent("classifier", (SNode) parameter_ksvwin_a0a0a3a9);
-        result = quotedNode1_ksvwin_a0a3a9;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -353,15 +353,15 @@ with_meet:
     public QuotationClass_ksvwin_a0a3a11() {
     }
 
-    public SNode createNode(Object parameter_ksvwin_a0a0a3a01) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_ksvwin_a0a3a01 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_ksvwin_a0a3a01 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_ksvwin_a0a3a01 = quotedNode_ksvwin_a0a3a01;
-        quotedNode1_ksvwin_a0a3a01.setReferent("classifier", (SNode) parameter_ksvwin_a0a0a3a01);
-        result = quotedNode1_ksvwin_a0a3a01;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -371,15 +371,15 @@ with_meet:
     public QuotationClass_ksvwin_a0a3a21() {
     }
 
-    public SNode createNode(Object parameter_ksvwin_a0a0a3a11) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_ksvwin_a0a3a11 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_ksvwin_a0a3a11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_ksvwin_a0a3a11 = quotedNode_ksvwin_a0a3a11;
-        quotedNode1_ksvwin_a0a3a11.setReferent("classifier", (SNode) parameter_ksvwin_a0a0a3a11);
-        result = quotedNode1_ksvwin_a0a3a11;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -392,11 +392,11 @@ with_meet:
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_ksvwin_a0a0a21 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_ksvwin_a0a0a21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_ksvwin_a0a0a21 = quotedNode_ksvwin_a0a0a21;
-        result = quotedNode1_ksvwin_a0a0a21;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -409,11 +409,11 @@ with_meet:
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_ksvwin_a0a0a31 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_ksvwin_a0a0a31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_ksvwin_a0a0a31 = quotedNode_ksvwin_a0a0a31;
-        result = quotedNode1_ksvwin_a0a0a31;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }

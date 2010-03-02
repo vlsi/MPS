@@ -44,6 +44,22 @@ public class HashMapCreator_editorComponent extends AbstractCellProvider {
     return this.createCollection_s4nv53_a(editorContext, node);
   }
 
+  private EditorCell createCollection_s4nv53_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_s4nv53_a");
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_s4nv53_a0(editorContext, node));
+    if (renderingCondition_s4nv53_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_s4nv53_b0(editorContext, node));
+    }
+    if (renderingCondition_s4nv53_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_s4nv53_c0(editorContext, node));
+    }
+    if (renderingCondition_s4nv53_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_s4nv53_d0(editorContext, node));
+    }
+    return editorCell;
+  }
+
   private EditorCell createCollection_s4nv53_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_s4nv53_b0");
@@ -62,22 +78,6 @@ public class HashMapCreator_editorComponent extends AbstractCellProvider {
       editorCell.addEditorCell(this.createRefNode_s4nv53_d1a(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_s4nv53_e1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_s4nv53_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_s4nv53_a");
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_s4nv53_a0(editorContext, node));
-    if (renderingCondition_s4nv53_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_s4nv53_b0(editorContext, node));
-    }
-    if (renderingCondition_s4nv53_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_s4nv53_c0(editorContext, node));
-    }
-    if (renderingCondition_s4nv53_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_s4nv53_d0(editorContext, node));
-    }
     return editorCell;
   }
 
@@ -238,20 +238,20 @@ public class HashMapCreator_editorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private static boolean renderingCondition_s4nv53_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "keyType", true) != null) || (SLinkOperations.getTarget(node, "valueType", true) != null);
-  }
-
   private static boolean renderingCondition_s4nv53_a1b0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "keyType", true) != null);
+  }
+
+  private static boolean renderingCondition_s4nv53_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "keyType", true) != null) && (SLinkOperations.getTarget(node, "valueType", true) != null);
   }
 
   private static boolean renderingCondition_s4nv53_a3b0(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "valueType", true) != null);
   }
 
-  private static boolean renderingCondition_s4nv53_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "keyType", true) != null) && (SLinkOperations.getTarget(node, "valueType", true) != null);
+  private static boolean renderingCondition_s4nv53_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "keyType", true) != null) || (SLinkOperations.getTarget(node, "valueType", true) != null);
   }
 
   private static boolean renderingCondition_s4nv53_a2a(SNode node, EditorContext editorContext, IScope scope) {

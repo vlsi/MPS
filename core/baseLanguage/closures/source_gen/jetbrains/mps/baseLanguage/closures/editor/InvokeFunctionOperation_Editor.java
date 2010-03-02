@@ -98,16 +98,16 @@ public class InvokeFunctionOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_9wclje_a3a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_9wclje_a2a(SNode node, EditorContext editorContext, IScope scope) {
     /*
-      ListSequence.fromList(InvokeFunctionOperation_Behavior.call_getParameters_418758558327452981(node)).count() == 0;
+      ListSequence.fromList(InvokeFunctionOperation_Behavior.call_getParameters_418758558327452981(node)).count() > 0;
     */
     return false;
   }
 
-  private static boolean renderingCondition_9wclje_a2a(SNode node, EditorContext editorContext, IScope scope) {
+  private static boolean renderingCondition_9wclje_a3a(SNode node, EditorContext editorContext, IScope scope) {
     /*
-      ListSequence.fromList(InvokeFunctionOperation_Behavior.call_getParameters_418758558327452981(node)).count() > 0;
+      ListSequence.fromList(InvokeFunctionOperation_Behavior.call_getParameters_418758558327452981(node)).count() == 0;
     */
     return false;
   }

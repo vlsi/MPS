@@ -55,19 +55,6 @@ public class AbstractContainerCreator_Component extends AbstractCellProvider {
     return this.createCollection_jky4mt_a(editorContext, node);
   }
 
-  private EditorCell createCollection_jky4mt_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_jky4mt_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_jky4mt_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_jky4mt_b1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_jky4mt_c1a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_jky4mt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jky4mt_a");
@@ -84,6 +71,19 @@ public class AbstractContainerCreator_Component extends AbstractCellProvider {
     if (renderingCondition_jky4mt_a4a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_jky4mt_e0(editorContext, node));
     }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_jky4mt_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_jky4mt_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_jky4mt_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_jky4mt_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_jky4mt_c1a(editorContext, node));
     return editorCell;
   }
 

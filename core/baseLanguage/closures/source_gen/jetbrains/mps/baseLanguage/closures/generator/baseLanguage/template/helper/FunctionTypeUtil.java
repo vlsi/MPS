@@ -271,11 +271,11 @@ with_meet:
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2t0coq_a0b0b0e = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_2t0coq_a0b0b0e = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2t0coq_a0b0b0e = quotedNode_2t0coq_a0b0b0e;
-        result = quotedNode1_2t0coq_a0b0b0e;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
