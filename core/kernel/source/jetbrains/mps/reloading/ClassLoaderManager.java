@@ -155,7 +155,7 @@ public class ClassLoaderManager implements ApplicationComponent {
     });
   }
 
-  private void updateClassPath() {
+  public void updateClassPath() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         synchronized (myLock) {

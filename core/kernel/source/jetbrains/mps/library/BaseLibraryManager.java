@@ -132,7 +132,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
           }
         }
         onAfterModulesRead();
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        ClassLoaderManager.getInstance().updateClassPath();
         fireOnLoad(myOwner);
 
         CleanupManager.getInstance().cleanup();
