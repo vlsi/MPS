@@ -3,6 +3,7 @@ package jetbrains.mps.build.ant.brokenRefs;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -10,9 +11,19 @@ import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.vfs.MPSExtentions;
+import jetbrains.mps.TestMain;
+import jetbrains.mps.util.FileUtil;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.io.File;
+
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.ProjectManager;
 
 public class TestBrokenReferencesWorker extends MpsWorker {
   private final IBuildServerMessageFormat myBuildServerMessageFormat = TestBrokenReferencesWorker.getBuildServerMessageFormat();
@@ -28,6 +39,26 @@ public class TestBrokenReferencesWorker extends MpsWorker {
 
   public static IBuildServerMessageFormat getBuildServerMessageFormat() {
     return new TeamCityMessageFormat();
+  }
+
+  public void work() {
+    setupEnvironment();
+
+    Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
+
+    for (File file : mpsProjects.keySet()) {
+      if (!file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT)) continue;
+
+      final MPSProject p = TestMain.loadProject(file);
+      info("Loaded project " + p);
+
+      executeTask(p, new ObjectsToProcess(Collections.singleton(p), new java.util.HashSet<IModule>(), new java.util.HashSet<SModelDescriptor>()));
+
+      disposeProject(p);
+      dispose();
+    }
+
+    showStatistic();
   }
 
   protected void executeTask(MPSProject project, final ObjectsToProcess go) {
