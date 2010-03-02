@@ -230,10 +230,6 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.smodel.BackgroundModelLoader</implementation-class>
-        </component>
-
-        <component>
             <implementation-class>jetbrains.mps.smodel.persistence.PersistenceSettings</implementation-class>
         </component>
 
