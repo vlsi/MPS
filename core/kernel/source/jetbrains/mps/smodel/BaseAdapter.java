@@ -495,6 +495,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return result;
   }
 
+  @Deprecated
   public static INodeAdapter fromNode(SNode node) {
     if (node == null) {
       return null;

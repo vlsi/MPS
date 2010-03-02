@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
-import jetbrains.mps.baseLanguage.LastStatementUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.textGen.TextGenManager;
 
@@ -19,7 +18,7 @@ public class StatementList_TextGen extends SNodeTextGen {
     SNode lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(methodLike);
     for (int i = 0; i < size; i++) {
       SNode statement = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).toListSequence()).getElement(i);
-      if (statement == lastStatement && (LastStatementUtil.canMakeReturnStatement(statement, null))) {
+      if (statement == lastStatement && (LastStatementUtil.canMakeReturnStatement(statement))) {
         SNode expressionStatement = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
         SNode returnStatement = SModelOperations.createNewNode(SNodeOperations.getModel(statement), "jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
         SNode expression = SNodeOperations.copyNode(SLinkOperations.getTarget(expressionStatement, "expression", true));
