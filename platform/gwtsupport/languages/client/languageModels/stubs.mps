@@ -1005,8 +1005,8 @@
       <node role="parameter:0" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6487379123666154181">
         <property name="name:3" value="result" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SetType:7" id="6487379123666154185">
-          <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3418629154864493240">
-            <link role="classifier:3" targetNodeId="3.~BaseStubModelDescriptor" resolveInfo="BaseStubModelDescriptor" />
+          <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6487379123666154187">
+            <link role="classifier:3" targetNodeId="4.~SModelDescriptor" resolveInfo="SModelDescriptor" />
           </node>
         </node>
       </node>
@@ -1174,15 +1174,8 @@
                           <link role="variableDeclaration:3" targetNodeId="6487379123666154181" resolveInfo="result" />
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation:7" id="6487379123666154260">
-                          <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="3418629154864493254">
-                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="3418629154864493255">
-                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3418629154864493256">
-                                <link role="variableDeclaration:3" targetNodeId="6487379123666154241" resolveInfo="descByFqName" />
-                              </node>
-                              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3418629154864493260">
-                                <link role="classifier:3" targetNodeId="3.~BaseStubModelDescriptor" resolveInfo="BaseStubModelDescriptor" />
-                              </node>
-                            </node>
+                          <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6487379123666154261">
+                            <link role="variableDeclaration:3" targetNodeId="6487379123666154241" resolveInfo="descByFqName" />
                           </node>
                         </node>
                       </node>
@@ -1207,12 +1200,12 @@
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6487379123666154271">
                         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6487379123666154272">
                           <property name="name:3" value="desc" />
-                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3418629154864493264">
-                            <link role="classifier:3" targetNodeId="3.~BaseStubModelDescriptor" resolveInfo="BaseStubModelDescriptor" />
+                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6487379123666154273">
+                            <link role="classifier:3" targetNodeId="4.~DefaultSModelDescriptor" resolveInfo="DefaultSModelDescriptor" />
                           </node>
                           <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6487379123666154274">
                             <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6487379123666154275">
-                              <link role="baseMethodDeclaration:3" targetNodeId="3.~BaseStubModelDescriptor.&lt;init&gt;(jetbrains.mps.smodel.persistence.IModelRootManager,jetbrains.mps.vfs.IFile,jetbrains.mps.smodel.SModelReference)" resolveInfo="BaseStubModelDescriptor" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="4.~DefaultSModelDescriptor.&lt;init&gt;(jetbrains.mps.smodel.persistence.IModelRootManager,jetbrains.mps.vfs.IFile,jetbrains.mps.smodel.SModelReference)" resolveInfo="DefaultSModelDescriptor" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6487379123666154276">
                                 <link role="variableDeclaration:3" targetNodeId="6487379123666154171" resolveInfo="mrm" />
                               </node>
@@ -1493,14 +1486,14 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6487379123666157518">
             <property name="name:3" value="result" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SetType:7" id="6487379123666157519">
-              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3418629154864493238">
-                <link role="classifier:3" targetNodeId="3.~BaseStubModelDescriptor" resolveInfo="BaseStubModelDescriptor" />
+              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6487379123666157520">
+                <link role="classifier:3" targetNodeId="4.~SModelDescriptor" resolveInfo="SModelDescriptor" />
               </node>
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6487379123666157521">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator:7" id="6487379123666157522">
-                <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3418629154864493239">
-                  <link role="classifier:3" targetNodeId="3.~BaseStubModelDescriptor" resolveInfo="BaseStubModelDescriptor" />
+                <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6487379123666157523">
+                  <link role="classifier:3" targetNodeId="4.~SModelDescriptor" resolveInfo="SModelDescriptor" />
                 </node>
               </node>
             </node>

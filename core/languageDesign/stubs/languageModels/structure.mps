@@ -80,8 +80,8 @@
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="368569065472982680">
       <link role="conceptLinkDeclaration:0" targetNodeId="2v.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
       <node role="target:0" type="jetbrains.mps.baseLanguage.collections.structure.SetType:7" id="368569065472982682">
-        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3418629154864419546">
-          <link role="classifier:3" targetNodeId="2.~BaseStubModelDescriptor" resolveInfo="BaseStubModelDescriptor" />
+        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="368569065472988613">
+          <link role="classifier:3" targetNodeId="3.~SModelDescriptor" resolveInfo="SModelDescriptor" />
         </node>
       </node>
     </node>

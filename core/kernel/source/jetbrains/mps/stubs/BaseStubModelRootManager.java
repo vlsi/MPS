@@ -145,7 +145,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     return Collections.emptySet();
   }
 
-  protected abstract Set<BaseStubModelDescriptor> getModelDescriptors(StubLocation location);
+  protected abstract Set<SModelDescriptor> getModelDescriptors(StubLocation location);
 
   protected abstract void updateModel(StubLocation location, ModelInfo modelInfo);
 

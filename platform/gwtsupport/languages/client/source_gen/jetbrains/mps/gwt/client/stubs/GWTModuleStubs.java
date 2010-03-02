@@ -31,10 +31,10 @@ import org.jdom.input.SAXBuilder;
 import java.io.IOException;
 import org.jdom.JDOMException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
@@ -107,13 +107,13 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
     SNodeOperations.deleteNode(sample);
   }
 
-  protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
-    Set<BaseStubModelDescriptor> result = SetSequence.fromSet(new HashSet<BaseStubModelDescriptor>());
+  protected Set<SModelDescriptor> getModelDescriptors(final StubLocation location) {
+    Set<SModelDescriptor> result = SetSequence.fromSet(new HashSet<SModelDescriptor>());
     GWTModuleStubs.this.collectDescriptors(GWTModuleStubs.this, location, result);
     return result;
   }
 
-  private void collectDescriptors(IModelRootManager mrm, StubLocation loc, Set<BaseStubModelDescriptor> result) {
+  private void collectDescriptors(IModelRootManager mrm, StubLocation loc, Set<SModelDescriptor> result) {
     String pkg = loc.getPrefix();
     PathItem pi = new GWTModulePathItem(loc.getPath());
     for (String subpkg : ListSequence.fromList(pi.subpackages(pkg))) {
@@ -124,9 +124,9 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
         SModelDescriptor descByFqName = SModelRepository.getInstance().getModelDescriptor(smref2);
         if (descById != null && descByFqName != null) {
           SModelRepository.getInstance().addOwnerForDescriptor(descByFqName, loc.getModule());
-          SetSequence.fromSet(result).addElement(((BaseStubModelDescriptor) descByFqName));
+          SetSequence.fromSet(result).addElement(descByFqName);
         } else {
-          BaseStubModelDescriptor desc = new BaseStubModelDescriptor(mrm, null, smref);
+          DefaultSModelDescriptor desc = new DefaultSModelDescriptor(mrm, null, smref);
           SetSequence.fromSet(result).addElement(desc);
         }
       }
