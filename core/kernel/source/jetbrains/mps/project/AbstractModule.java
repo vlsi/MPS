@@ -899,9 +899,6 @@ public abstract class AbstractModule implements IModule {
   @Nullable
   private BaseStubModelRootManager createStubManager(StubPath sp) {
     try {
-      //this is a hack, but we need it since MPS is written in Java (otherwise managers itselves couldn't be loaded)
-      if (sp.getManager().equals(LanguageID.JAVA_MANAGER)) return new JavaStubs();
-
       String moduleId = sp.getManager().getModuleId();
       String className = sp.getManager().getClassName();
 
