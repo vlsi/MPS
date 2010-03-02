@@ -169,10 +169,10 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_q2jz9e_f2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ClassifierDocComment_Editor.paramListHandler_q2jz9e_f2a(node, "param", editorContext);
+  private EditorCell createRefNodeList_q2jz9e_e2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ClassifierDocComment_Editor.seeListHandler_q2jz9e_e2a(node, "see", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_param");
+    editorCell.setCellId("refNodeList_see");
     DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -183,10 +183,10 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_q2jz9e_e2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ClassifierDocComment_Editor.seeListHandler_q2jz9e_e2a(node, "see", editorContext);
+  private EditorCell createRefNodeList_q2jz9e_f2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ClassifierDocComment_Editor.paramListHandler_q2jz9e_f2a(node, "param", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_see");
+    editorCell.setCellId("refNodeList_param");
     DocumentationCommentStyleSheet_StyleSheet.getComment(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -209,16 +209,16 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty();
   }
 
-  private static boolean renderingCondition_q2jz9e_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(BaseDocComment_Behavior.call_isTagSectionEmpty_8465538089690623795(node));
+  private static boolean renderingCondition_q2jz9e_a4c0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty();
   }
 
   private static boolean renderingCondition_q2jz9e_a5c0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
   }
 
-  private static boolean renderingCondition_q2jz9e_a4c0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty();
+  private static boolean renderingCondition_q2jz9e_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(BaseDocComment_Behavior.call_isTagSectionEmpty_8465538089690623795(node));
   }
 
   private static class bodyListHandler_q2jz9e_b0 extends RefNodeListHandler {
@@ -404,8 +404,8 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class paramListHandler_q2jz9e_f2a extends RefNodeListHandler {
-    public paramListHandler_q2jz9e_f2a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class seeListHandler_q2jz9e_e2a extends RefNodeListHandler {
+    public seeListHandler_q2jz9e_e2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -446,8 +446,8 @@ public class ClassifierDocComment_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class seeListHandler_q2jz9e_e2a extends RefNodeListHandler {
-    public seeListHandler_q2jz9e_e2a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class paramListHandler_q2jz9e_f2a extends RefNodeListHandler {
+    public paramListHandler_q2jz9e_f2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

@@ -31,21 +31,6 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_xnhqer_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
-    editorCell.setCellId("Constant_xnhqer_b0");
-    DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      style.set(StyleAttributes.SELECTABLE, true);
-    }
-    IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_xnhqer_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_xnhqer_a0");
@@ -54,6 +39,21 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.MATCHING_LABEL, "brace");
+      style.set(StyleAttributes.SELECTABLE, true);
+    }
+    IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_xnhqer_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
+    editorCell.setCellId("Constant_xnhqer_b0");
+    DocumentationCommentStyleSheet_StyleSheet.getCommentTag(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
       style.set(StyleAttributes.SELECTABLE, true);
     }
     IntlineTagCommentLinePart_Actions.setCellActions(editorCell, node, editorContext);

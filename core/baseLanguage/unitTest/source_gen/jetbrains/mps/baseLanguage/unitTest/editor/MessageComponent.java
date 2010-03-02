@@ -27,19 +27,19 @@ public class MessageComponent extends AbstractCellProvider {
     return this.createCollection_8rtror_a(editorContext, node);
   }
 
-  private EditorCell createCollection_8rtror_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_8rtror_a0");
-    editorCell.addEditorCell(this.createRefNode_8rtror_a0a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_8rtror_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8rtror_a");
     if (renderingCondition_8rtror_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_8rtror_a0(editorContext, node));
     }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_8rtror_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_8rtror_a0");
+    editorCell.addEditorCell(this.createRefNode_8rtror_a0a(editorContext, node));
     return editorCell;
   }
 

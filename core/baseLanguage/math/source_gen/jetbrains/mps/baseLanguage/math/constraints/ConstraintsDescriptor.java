@@ -12,8 +12,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListSequence.fromList(this.myConstraints).addElement(new MathSymbolIndexReference_indexRef_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new MatrixInitializerIndexReference_index_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new MathSymbolIndexReference_indexRef_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

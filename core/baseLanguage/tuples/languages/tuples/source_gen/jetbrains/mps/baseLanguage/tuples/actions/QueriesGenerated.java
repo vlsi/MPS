@@ -50,11 +50,11 @@ public class QueriesGenerated {
     return !(SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"), "final"));
   }
 
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_NamedTupleDeclaration_1240501255930(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_NamedTupleDeclaration_1240501315568(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "extends", true)).count() == 0;
   }
 
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_NamedTupleDeclaration_1240501315568(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_NamedTupleDeclaration_1240501255930(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "extends", true)).count() == 0;
   }
 
@@ -152,7 +152,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_NamedTupleDeclaration_1240501250120(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_NamedTupleDeclaration_1240501306093(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
@@ -174,7 +174,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_NamedTupleDeclaration_1240501306093(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_NamedTupleDeclaration_1240501250120(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
@@ -222,15 +222,15 @@ public class QueriesGenerated {
     public QuotationClass_x583g4_a0a0a0a0a0a0a0c0c0a0b0j() {
     }
 
-    public SNode createNode(Object parameter_vpowte_a0a0a0a0b0) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_vpowte_a0a0a0b0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_vpowte_a0a0a0b0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_vpowte_a0a0a0b0 = quotedNode_vpowte_a0a0a0b0;
-        quotedNode1_vpowte_a0a0a0b0.setReferent("classifier", (SNode) parameter_vpowte_a0a0a0a0b0);
-        result = quotedNode1_vpowte_a0a0a0b0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }

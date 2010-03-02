@@ -45,11 +45,11 @@ public class FieldDocReference_fieldDeclaration_ReferentConstraint extends BaseN
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_z69vxe_a0a0a0a0a0a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_z69vxe_a0a0a0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_z69vxe_a0a0a0a0a0a0 = quotedNode_z69vxe_a0a0a0a0a0a0;
-        result = quotedNode1_z69vxe_a0a0a0a0a0a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }

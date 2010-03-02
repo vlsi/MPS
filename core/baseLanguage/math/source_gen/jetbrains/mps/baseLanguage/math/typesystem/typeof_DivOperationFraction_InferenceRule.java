@@ -87,25 +87,25 @@ public class typeof_DivOperationFraction_InferenceRule extends AbstractInference
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_ladpqm_a0a0a0a0a4a0 = null;
-      SNode quotedNode_ladpqm_a0a0a0a0a0e0a = null;
-      SNode quotedNode_ladpqm_a0a0a0a0a0e0a_0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
       {
-        quotedNode_ladpqm_a0a0a0a0a4a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_ladpqm_a0a0a0a0a4a0 = quotedNode_ladpqm_a0a0a0a0a4a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_ladpqm_a0a0a0a0a0e0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_ladpqm_a0a0a0a0a0e0a = quotedNode_ladpqm_a0a0a0a0a0e0a;
-          quotedNode1_ladpqm_a0a0a0a0a0e0a.setProperty("value", "1");
-          quotedNode_ladpqm_a0a0a0a0a4a0.addChild("rightExpression", quotedNode1_ladpqm_a0a0a0a0a0e0a);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode1_5.setProperty("value", "1");
+          quotedNode_1.addChild("rightExpression", quotedNode1_5);
         }
         {
-          quotedNode_ladpqm_a0a0a0a0a0e0a_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_ladpqm_a0a0a0a0a0e0a_0 = quotedNode_ladpqm_a0a0a0a0a0e0a_0;
-          quotedNode1_ladpqm_a0a0a0a0a0e0a_0.setProperty("value", "1");
-          quotedNode_ladpqm_a0a0a0a0a4a0.addChild("leftExpression", quotedNode1_ladpqm_a0a0a0a0a0e0a_0);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_3;
+          quotedNode1_6.setProperty("value", "1");
+          quotedNode_1.addChild("leftExpression", quotedNode1_6);
         }
-        result = quotedNode1_ladpqm_a0a0a0a0a4a0;
+        result = quotedNode1_4;
       }
       return result;
     }
@@ -113,25 +113,25 @@ public class typeof_DivOperationFraction_InferenceRule extends AbstractInference
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_ladpqm_a0a0a0a0a4a0 = null;
-      SNode quotedNode_ladpqm_a0a0a0a0a0e0a = null;
-      SNode quotedNode_ladpqm_a0a0a0a0a0e0a_0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
       {
-        quotedNode_ladpqm_a0a0a0a0a4a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_ladpqm_a0a0a0a0a4a0 = quotedNode_ladpqm_a0a0a0a0a4a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_ladpqm_a0a0a0a0a0e0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_ladpqm_a0a0a0a0a0e0a = quotedNode_ladpqm_a0a0a0a0a0e0a;
-          quotedNode1_ladpqm_a0a0a0a0a0e0a.setProperty("value", "1");
-          quotedNode_ladpqm_a0a0a0a0a4a0.addChild("rightExpression", quotedNode1_ladpqm_a0a0a0a0a0e0a);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode1_5.setProperty("value", "1");
+          quotedNode_1.addChild("rightExpression", quotedNode1_5);
         }
         {
-          quotedNode_ladpqm_a0a0a0a0a0e0a_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_ladpqm_a0a0a0a0a0e0a_0 = quotedNode_ladpqm_a0a0a0a0a0e0a_0;
-          quotedNode1_ladpqm_a0a0a0a0a0e0a_0.setProperty("value", "1");
-          quotedNode_ladpqm_a0a0a0a0a4a0.addChild("leftExpression", quotedNode1_ladpqm_a0a0a0a0a0e0a_0);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_3;
+          quotedNode1_6.setProperty("value", "1");
+          quotedNode_1.addChild("leftExpression", quotedNode1_6);
         }
-        result = quotedNode1_ladpqm_a0a0a0a0a4a0;
+        result = quotedNode1_4;
       }
       return result;
     }

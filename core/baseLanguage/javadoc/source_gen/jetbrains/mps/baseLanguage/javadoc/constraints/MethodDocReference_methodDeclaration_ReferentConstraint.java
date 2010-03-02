@@ -46,11 +46,11 @@ public class MethodDocReference_methodDeclaration_ReferentConstraint extends Bas
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8et2et_a0a0a0a0a0a0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8et2et_a0a0a0a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8et2et_a0a0a0a0a0a0a = quotedNode_8et2et_a0a0a0a0a0a0a;
-        result = quotedNode1_8et2et_a0a0a0a0a0a0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }

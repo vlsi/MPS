@@ -31,7 +31,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qhskw8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qhskw8_a");
-    editorCell.addEditorCell(this.createConstant_qhskw8_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_qhskw8_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qhskw8_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_qhskw8_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qhskw8_d0(editorContext, node));
@@ -44,7 +44,7 @@ public class MatrixType_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_qhskw8_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qhskw8_a_0");
-    editorCell.addEditorCell(this.createConstant_qhskw8_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_qhskw8_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_qhskw8_b0_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_qhskw8_c0(editorContext, node));
     if (renderingCondition_qhskw8_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
@@ -68,6 +68,17 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_qhskw8_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matrix type");
+    editorCell.setCellId("Constant_qhskw8_a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createConstant_qhskw8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rows");
     editorCell.setCellId("Constant_qhskw8_b0");
@@ -82,9 +93,16 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_qhskw8_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_qhskw8_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "elementType");
+    editorCell.setCellId("Constant_qhskw8_f0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_qhskw8_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matrix");
-    editorCell.setCellId("Constant_qhskw8_a0");
+    editorCell.setCellId("Constant_qhskw8_a0_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -102,9 +120,9 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_qhskw8_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_qhskw8_e0");
+  private EditorCell createConstant_qhskw8_a3a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    editorCell.setCellId("Constant_qhskw8_a3a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
@@ -125,31 +143,13 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_qhskw8_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matrix type");
-    editorCell.setCellId("Constant_qhskw8_a0_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_qhskw8_a3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_qhskw8_a3a");
+  private EditorCell createConstant_qhskw8_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    editorCell.setCellId("Constant_qhskw8_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_qhskw8_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "elementType");
-    editorCell.setCellId("Constant_qhskw8_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -200,23 +200,6 @@ public class MatrixType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_qhskw8_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("elementType");
-    provider.setNoTargetText("<no elementType>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
   private EditorCell createProperty_qhskw8_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("rows");
@@ -256,6 +239,23 @@ public class MatrixType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNode_qhskw8_g0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("elementType");
+    provider.setNoTargetText("<no elementType>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_qhskw8_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementType");
     provider.setNoTargetText("<no elementType>");

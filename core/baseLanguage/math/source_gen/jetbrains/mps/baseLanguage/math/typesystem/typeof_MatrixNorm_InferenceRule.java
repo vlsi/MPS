@@ -112,12 +112,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0a2a2a0a0a0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0a2a2a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0a2a2a0a0a0a = quotedNode_8pyikg_a0a0a2a2a0a0a0a;
-        quotedNode1_8pyikg_a0a0a2a2a0a0a0a.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0a2a2a0a0a0a, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
-        result = quotedNode1_8pyikg_a0a0a2a2a0a0a0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -125,12 +125,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0a2a2a0a0a0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0a2a2a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0a2a2a0a0a0a = quotedNode_8pyikg_a0a0a2a2a0a0a0a;
-        quotedNode1_8pyikg_a0a0a2a2a0a0a0a.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0a2a2a0a0a0a, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
-        result = quotedNode1_8pyikg_a0a0a2a2a0a0a0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -143,12 +143,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a1a2a2a0a0a0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a1a2a2a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a1a2a2a0a0a0a = quotedNode_8pyikg_a0a1a2a2a0a0a0a;
-        quotedNode1_8pyikg_a0a1a2a2a0a0a0a.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a1a2a2a0a0a0a, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-        result = quotedNode1_8pyikg_a0a1a2a2a0a0a0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -156,12 +156,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a1a2a2a0a0a0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a1a2a2a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a1a2a2a0a0a0a = quotedNode_8pyikg_a0a1a2a2a0a0a0a;
-        quotedNode1_8pyikg_a0a1a2a2a0a0a0a.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a1a2a2a0a0a0a, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-        result = quotedNode1_8pyikg_a0a1a2a2a0a0a0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -174,12 +174,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0a2a2a0a0a0a_0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0a2a2a0a0a0a_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0a2a2a0a0a0a_0 = quotedNode_8pyikg_a0a0a2a2a0a0a0a_0;
-        quotedNode1_8pyikg_a0a0a2a2a0a0a0a_0.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0a2a2a0a0a0a_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Short")));
-        result = quotedNode1_8pyikg_a0a0a2a2a0a0a0a_0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Short")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -187,12 +187,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0a2a2a0a0a0a_0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0a2a2a0a0a0a_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0a2a2a0a0a0a_0 = quotedNode_8pyikg_a0a0a2a2a0a0a0a_0;
-        quotedNode1_8pyikg_a0a0a2a2a0a0a0a_0.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0a2a2a0a0a0a_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Short")));
-        result = quotedNode1_8pyikg_a0a0a2a2a0a0a0a_0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Short")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -205,12 +205,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0a2a2a0a0a0a_1 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0a2a2a0a0a0a_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0a2a2a0a0a0a_1 = quotedNode_8pyikg_a0a0a2a2a0a0a0a_1;
-        quotedNode1_8pyikg_a0a0a2a2a0a0a0a_1.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0a2a2a0a0a0a_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Byte")));
-        result = quotedNode1_8pyikg_a0a0a2a2a0a0a0a_1;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Byte")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -218,12 +218,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0a2a2a0a0a0a_1 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0a2a2a0a0a0a_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0a2a2a0a0a0a_1 = quotedNode_8pyikg_a0a0a2a2a0a0a0a_1;
-        quotedNode1_8pyikg_a0a0a2a2a0a0a0a_1.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0a2a2a0a0a0a_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Byte")));
-        result = quotedNode1_8pyikg_a0a0a2a2a0a0a0a_1;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Byte")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -236,12 +236,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0c0c0a0a0a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0c0c0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0c0c0a0a0a0 = quotedNode_8pyikg_a0a0c0c0a0a0a0;
-        quotedNode1_8pyikg_a0a0c0c0a0a0a0.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0c0c0a0a0a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
-        result = quotedNode1_8pyikg_a0a0c0c0a0a0a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -249,12 +249,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0c0c0a0a0a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0c0c0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0c0c0a0a0a0 = quotedNode_8pyikg_a0a0c0c0a0a0a0;
-        quotedNode1_8pyikg_a0a0c0c0a0a0a0.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0c0c0a0a0a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
-        result = quotedNode1_8pyikg_a0a0c0c0a0a0a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -267,12 +267,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0a0c0c0a0a0a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0a0c0c0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0a0c0c0a0a0a0 = quotedNode_8pyikg_a0a0a0c0c0a0a0a0;
-        quotedNode1_8pyikg_a0a0a0c0c0a0a0a0.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0a0c0c0a0a0a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Long")));
-        result = quotedNode1_8pyikg_a0a0a0c0c0a0a0a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Long")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -280,12 +280,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0a0c0c0a0a0a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0a0c0c0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0a0c0c0a0a0a0 = quotedNode_8pyikg_a0a0a0c0c0a0a0a0;
-        quotedNode1_8pyikg_a0a0a0c0c0a0a0a0.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0a0c0c0a0a0a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Long")));
-        result = quotedNode1_8pyikg_a0a0a0c0c0a0a0a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Long")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -298,12 +298,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a1a0c0c0a0a0a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a1a0c0c0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a1a0c0c0a0a0a0 = quotedNode_8pyikg_a0a1a0c0c0a0a0a0;
-        quotedNode1_8pyikg_a0a1a0c0c0a0a0a0.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a1a0c0c0a0a0a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-        result = quotedNode1_8pyikg_a0a1a0c0c0a0a0a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -311,12 +311,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a1a0c0c0a0a0a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a1a0c0c0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a1a0c0c0a0a0a0 = quotedNode_8pyikg_a0a1a0c0c0a0a0a0;
-        quotedNode1_8pyikg_a0a1a0c0c0a0a0a0.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a1a0c0c0a0a0a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-        result = quotedNode1_8pyikg_a0a1a0c0c0a0a0a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -329,12 +329,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0c0c0a0a0a0_0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0c0c0a0a0a0_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0c0c0a0a0a0_0 = quotedNode_8pyikg_a0a0c0c0a0a0a0_0;
-        quotedNode1_8pyikg_a0a0c0c0a0a0a0_0.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0c0c0a0a0a0_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Long")));
-        result = quotedNode1_8pyikg_a0a0c0c0a0a0a0_0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Long")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -342,12 +342,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0c0c0a0a0a0_0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0c0c0a0a0a0_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0c0c0a0a0a0_0 = quotedNode_8pyikg_a0a0c0c0a0a0a0_0;
-        quotedNode1_8pyikg_a0a0c0c0a0a0a0_0.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0c0c0a0a0a0_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Long")));
-        result = quotedNode1_8pyikg_a0a0c0c0a0a0a0_0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Long")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -360,12 +360,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0a0c0a0a0a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0a0c0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0a0c0a0a0a0 = quotedNode_8pyikg_a0a0a0c0a0a0a0;
-        quotedNode1_8pyikg_a0a0a0c0a0a0a0.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0a0c0a0a0a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-        result = quotedNode1_8pyikg_a0a0a0c0a0a0a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -373,12 +373,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8pyikg_a0a0a0c0a0a0a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_8pyikg_a0a0a0c0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8pyikg_a0a0a0c0a0a0a0 = quotedNode_8pyikg_a0a0a0c0a0a0a0;
-        quotedNode1_8pyikg_a0a0a0c0a0a0a0.addReference(SReference.create("classifier", quotedNode1_8pyikg_a0a0a0c0a0a0a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-        result = quotedNode1_8pyikg_a0a0a0c0a0a0a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+        result = quotedNode1_2;
       }
       return result;
     }

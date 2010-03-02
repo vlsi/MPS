@@ -363,11 +363,11 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0a = quotedNode_i9t80i_a0a;
-        result = quotedNode1_i9t80i_a0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -380,17 +380,17 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0b = null;
-      SNode quotedNode_i9t80i_a0a1 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
       {
-        quotedNode_i9t80i_a0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0b = quotedNode_i9t80i_a0b;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_i9t80i_a0a1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_i9t80i_a0a1 = quotedNode_i9t80i_a0a1;
-          quotedNode_i9t80i_a0b.addChild("elementType", quotedNode1_i9t80i_a0a1);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
+          quotedNode_1.addChild("elementType", quotedNode1_4);
         }
-        result = quotedNode1_i9t80i_a0b;
+        result = quotedNode1_3;
       }
       return result;
     }
@@ -403,11 +403,11 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0c = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0c = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigIntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0c = quotedNode_i9t80i_a0c;
-        result = quotedNode1_i9t80i_a0c;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigIntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -420,11 +420,11 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0d = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0d = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0d = quotedNode_i9t80i_a0d;
-        result = quotedNode1_i9t80i_a0d;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -437,11 +437,11 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0e = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0e = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0e = quotedNode_i9t80i_a0e;
-        result = quotedNode1_i9t80i_a0e;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -454,12 +454,12 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0f = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0f = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0f = quotedNode_i9t80i_a0f;
-        quotedNode1_i9t80i_a0f.addReference(SReference.create("classifier", quotedNode1_i9t80i_a0f, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Long")));
-        result = quotedNode1_i9t80i_a0f;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Long")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -472,11 +472,11 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0g = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0g = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0g = quotedNode_i9t80i_a0g;
-        result = quotedNode1_i9t80i_a0g;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -489,11 +489,11 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0h = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0h = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0h = quotedNode_i9t80i_a0h;
-        result = quotedNode1_i9t80i_a0h;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -506,11 +506,11 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0i = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0i = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0i = quotedNode_i9t80i_a0i;
-        result = quotedNode1_i9t80i_a0i;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -523,12 +523,12 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0j = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0j = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0j = quotedNode_i9t80i_a0j;
-        quotedNode1_i9t80i_a0j.addReference(SReference.create("classifier", quotedNode1_i9t80i_a0j, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
-        result = quotedNode1_i9t80i_a0j;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -541,11 +541,11 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0k = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0k = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0k = quotedNode_i9t80i_a0k;
-        result = quotedNode1_i9t80i_a0k;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -558,12 +558,12 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0l = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0l = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0l = quotedNode_i9t80i_a0l;
-        quotedNode1_i9t80i_a0l.addReference(SReference.create("classifier", quotedNode1_i9t80i_a0l, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float")));
-        result = quotedNode1_i9t80i_a0l;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -576,11 +576,11 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0m = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0m = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0m = quotedNode_i9t80i_a0m;
-        result = quotedNode1_i9t80i_a0m;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -593,12 +593,12 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0n = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0n = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0n = quotedNode_i9t80i_a0n;
-        quotedNode1_i9t80i_a0n.addReference(SReference.create("classifier", quotedNode1_i9t80i_a0n, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-        result = quotedNode1_i9t80i_a0n;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -608,28 +608,28 @@ public class MathTypeUtil {
     public QuotationClass_i9t80i_a0a0a() {
     }
 
-    public SNode createNode(Object parameter_i9t80i_a0a0a0a0) {
+    public SNode createNode(Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0a0a = null;
-      SNode quotedNode_i9t80i_a0a0a0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
       {
-        quotedNode_i9t80i_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0a0a = quotedNode_i9t80i_a0a0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_i9t80i_a0a0a0 = (SNode) parameter_i9t80i_a0a0a0a0;
-          SNode quotedNode1_i9t80i_a0a0a0;
-          if (_parameterValues_129834374.contains(quotedNode_i9t80i_a0a0a0)) {
-            quotedNode1_i9t80i_a0a0a0 = CopyUtil.copy(quotedNode_i9t80i_a0a0a0);
+          quotedNode_2 = (SNode) parameter_5;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_i9t80i_a0a0a0);
-            quotedNode1_i9t80i_a0a0a0 = quotedNode_i9t80i_a0a0a0;
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
           }
-          if (quotedNode1_i9t80i_a0a0a0 != null) {
-            quotedNode_i9t80i_a0a0a.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_i9t80i_a0a0a0));
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
-        result = quotedNode1_i9t80i_a0a0a;
+        result = quotedNode1_3;
       }
       return result;
     }
@@ -639,28 +639,28 @@ public class MathTypeUtil {
     public QuotationClass_i9t80i_a0a0b() {
     }
 
-    public SNode createNode(Object parameter_i9t80i_a0a0a0a1) {
+    public SNode createNode(Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0a0b = null;
-      SNode quotedNode_i9t80i_a0a0a1 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
       {
-        quotedNode_i9t80i_a0a0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.VectorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0a0b = quotedNode_i9t80i_a0a0b;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.VectorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_i9t80i_a0a0a1 = (SNode) parameter_i9t80i_a0a0a0a1;
-          SNode quotedNode1_i9t80i_a0a0a1;
-          if (_parameterValues_129834374.contains(quotedNode_i9t80i_a0a0a1)) {
-            quotedNode1_i9t80i_a0a0a1 = CopyUtil.copy(quotedNode_i9t80i_a0a0a1);
+          quotedNode_2 = (SNode) parameter_5;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_i9t80i_a0a0a1);
-            quotedNode1_i9t80i_a0a0a1 = quotedNode_i9t80i_a0a0a1;
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
           }
-          if (quotedNode1_i9t80i_a0a0a1 != null) {
-            quotedNode_i9t80i_a0a0b.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_i9t80i_a0a0a1));
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
-        result = quotedNode1_i9t80i_a0a0b;
+        result = quotedNode1_3;
       }
       return result;
     }
@@ -673,12 +673,12 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0a0a0a4 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0a0a0a4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0a0a0a4 = quotedNode_i9t80i_a0a0a0a4;
-        quotedNode1_i9t80i_a0a0a0a4.addReference(SReference.create("classifier", quotedNode1_i9t80i_a0a0a0a4, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float")));
-        result = quotedNode1_i9t80i_a0a0a0a4;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -691,12 +691,12 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0a0a0e = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_i9t80i_a0a0a0e = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0a0a0e = quotedNode_i9t80i_a0a0a0e;
-        quotedNode1_i9t80i_a0a0a0e.addReference(SReference.create("classifier", quotedNode1_i9t80i_a0a0a0e, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-        result = quotedNode1_i9t80i_a0a0a0e;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -709,23 +709,23 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0a0a0q = null;
-      SNode quotedNode_i9t80i_a0a0a0a61 = null;
-      SNode quotedNode_i9t80i_a0a0a0a61_0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
       {
-        quotedNode_i9t80i_a0a0a0q = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0a0a0q = quotedNode_i9t80i_a0a0a0q;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_i9t80i_a0a0a0a61 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_i9t80i_a0a0a0a61 = quotedNode_i9t80i_a0a0a0a61;
-          quotedNode_i9t80i_a0a0a0q.addChild("type", quotedNode1_i9t80i_a0a0a0a61);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode_1.addChild("type", quotedNode1_5);
         }
         {
-          quotedNode_i9t80i_a0a0a0a61_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_i9t80i_a0a0a0a61_0 = quotedNode_i9t80i_a0a0a0a61_0;
-          quotedNode_i9t80i_a0a0a0q.addChild("expression", quotedNode1_i9t80i_a0a0a0a61_0);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_3;
+          quotedNode_1.addChild("expression", quotedNode1_6);
         }
-        result = quotedNode1_i9t80i_a0a0a0q;
+        result = quotedNode1_4;
       }
       return result;
     }
@@ -738,23 +738,23 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0a0b0q = null;
-      SNode quotedNode_i9t80i_a0a0a1a61 = null;
-      SNode quotedNode_i9t80i_a0a0a1a61_0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
       {
-        quotedNode_i9t80i_a0a0b0q = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0a0b0q = quotedNode_i9t80i_a0a0b0q;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_i9t80i_a0a0a1a61 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_i9t80i_a0a0a1a61 = quotedNode_i9t80i_a0a0a1a61;
-          quotedNode_i9t80i_a0a0b0q.addChild("type", quotedNode1_i9t80i_a0a0a1a61);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode_1.addChild("type", quotedNode1_5);
         }
         {
-          quotedNode_i9t80i_a0a0a1a61_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_i9t80i_a0a0a1a61_0 = quotedNode_i9t80i_a0a0a1a61_0;
-          quotedNode_i9t80i_a0a0b0q.addChild("expression", quotedNode1_i9t80i_a0a0a1a61_0);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_3;
+          quotedNode_1.addChild("expression", quotedNode1_6);
         }
-        result = quotedNode1_i9t80i_a0a0b0q;
+        result = quotedNode1_4;
       }
       return result;
     }
@@ -767,23 +767,23 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0a0c0q = null;
-      SNode quotedNode_i9t80i_a0a0a2a61 = null;
-      SNode quotedNode_i9t80i_a0a0a2a61_0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
       {
-        quotedNode_i9t80i_a0a0c0q = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0a0c0q = quotedNode_i9t80i_a0a0c0q;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_i9t80i_a0a0a2a61 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_i9t80i_a0a0a2a61 = quotedNode_i9t80i_a0a0a2a61;
-          quotedNode_i9t80i_a0a0c0q.addChild("type", quotedNode1_i9t80i_a0a0a2a61);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode_1.addChild("type", quotedNode1_5);
         }
         {
-          quotedNode_i9t80i_a0a0a2a61_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_i9t80i_a0a0a2a61_0 = quotedNode_i9t80i_a0a0a2a61_0;
-          quotedNode_i9t80i_a0a0c0q.addChild("expression", quotedNode1_i9t80i_a0a0a2a61_0);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_3;
+          quotedNode_1.addChild("expression", quotedNode1_6);
         }
-        result = quotedNode1_i9t80i_a0a0c0q;
+        result = quotedNode1_4;
       }
       return result;
     }
@@ -796,23 +796,23 @@ public class MathTypeUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_i9t80i_a0a0d0q = null;
-      SNode quotedNode_i9t80i_a0a0a3a61 = null;
-      SNode quotedNode_i9t80i_a0a0a3a61_0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
       {
-        quotedNode_i9t80i_a0a0d0q = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_i9t80i_a0a0d0q = quotedNode_i9t80i_a0a0d0q;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_i9t80i_a0a0a3a61 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_i9t80i_a0a0a3a61 = quotedNode_i9t80i_a0a0a3a61;
-          quotedNode_i9t80i_a0a0d0q.addChild("type", quotedNode1_i9t80i_a0a0a3a61);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode_1.addChild("type", quotedNode1_5);
         }
         {
-          quotedNode_i9t80i_a0a0a3a61_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_i9t80i_a0a0a3a61_0 = quotedNode_i9t80i_a0a0a3a61_0;
-          quotedNode_i9t80i_a0a0d0q.addChild("expression", quotedNode1_i9t80i_a0a0a3a61_0);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_3;
+          quotedNode_1.addChild("expression", quotedNode1_6);
         }
-        result = quotedNode1_i9t80i_a0a0d0q;
+        result = quotedNode1_4;
       }
       return result;
     }

@@ -12,10 +12,10 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListSequence.fromList(this.myConstraints).addElement(new StringLiteralRegexp_text_PropertyConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new LiteralReplacement_text_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PredefinedSymbolClassDeclaration_shortDescription_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new RegexpDeclaration_shortDescription_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new StringLiteralRegexp_text_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LiteralReplacement_text_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new MatchVariableReference_match_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new MatchVariableReferenceRegexp_match_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new MatchVariableReferenceReplacement_match_ReferentConstraint());

@@ -63,11 +63,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a0 = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a0 = quotedNode_3ist9o_a0a0a0;
-          result = quotedNode1_3ist9o_a0a0a0;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -80,11 +80,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a0a = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a0a = quotedNode_3ist9o_a0a0a0a;
-          result = quotedNode1_3ist9o_a0a0a0a;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -97,11 +97,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a1a0a = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a1a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a1a0a = quotedNode_3ist9o_a0a1a0a;
-          result = quotedNode1_3ist9o_a0a1a0a;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -130,11 +130,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a1 = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a1 = quotedNode_3ist9o_a0a0a1;
-          result = quotedNode1_3ist9o_a0a0a1;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -147,11 +147,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a0b = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a0b = quotedNode_3ist9o_a0a0a0b;
-          result = quotedNode1_3ist9o_a0a0a0b;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -164,11 +164,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a1a0b = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a1a0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a1a0b = quotedNode_3ist9o_a0a1a0b;
-          result = quotedNode1_3ist9o_a0a1a0b;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -197,11 +197,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a2 = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a2 = quotedNode_3ist9o_a0a0a2;
-          result = quotedNode1_3ist9o_a0a0a2;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -214,11 +214,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a0c = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a0c = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a0c = quotedNode_3ist9o_a0a0a0c;
-          result = quotedNode1_3ist9o_a0a0a0c;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -231,11 +231,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a1a0c = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a1a0c = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a1a0c = quotedNode_3ist9o_a0a1a0c;
-          result = quotedNode1_3ist9o_a0a1a0c;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -264,11 +264,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a3 = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a3 = quotedNode_3ist9o_a0a0a3;
-          result = quotedNode1_3ist9o_a0a0a3;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -281,11 +281,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a0d = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a0d = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a0d = quotedNode_3ist9o_a0a0a0d;
-          result = quotedNode1_3ist9o_a0a0a0d;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -298,11 +298,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a1a0d = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a1a0d = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a1a0d = quotedNode_3ist9o_a0a1a0d;
-          result = quotedNode1_3ist9o_a0a1a0d;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -331,11 +331,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a4 = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a4 = quotedNode_3ist9o_a0a0a4;
-          result = quotedNode1_3ist9o_a0a0a4;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -348,11 +348,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a0e = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a0e = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a0e = quotedNode_3ist9o_a0a0a0e;
-          result = quotedNode1_3ist9o_a0a0a0e;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -365,11 +365,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a1a0e = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a1a0e = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a1a0e = quotedNode_3ist9o_a0a1a0e;
-          result = quotedNode1_3ist9o_a0a1a0e;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }

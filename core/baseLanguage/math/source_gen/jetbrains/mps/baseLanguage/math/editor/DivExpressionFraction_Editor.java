@@ -24,6 +24,15 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     return this.createCollection_ksgn1c_a(editorContext, node);
   }
 
+  private EditorCell createCollection_ksgn1c_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_ksgn1c_a");
+    editorCell.addEditorCell(this.createEmpty_ksgn1c_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_ksgn1c_b0(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_ksgn1c_c0(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createCollection_ksgn1c_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ksgn1c_b0");
@@ -35,15 +44,6 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_ksgn1c_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCustom_ksgn1c_b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ksgn1c_c1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_ksgn1c_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ksgn1c_a");
-    editorCell.addEditorCell(this.createEmpty_ksgn1c_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_ksgn1c_b0(editorContext, node));
-    editorCell.addEditorCell(this.createEmpty_ksgn1c_c0(editorContext, node));
     return editorCell;
   }
 
