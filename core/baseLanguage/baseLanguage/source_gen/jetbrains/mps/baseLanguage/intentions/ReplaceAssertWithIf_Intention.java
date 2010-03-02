@@ -80,18 +80,18 @@ public class ReplaceAssertWithIf_Intention extends BaseIntention implements Inte
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_a1x6vi_a0a2a0 = null;
-      SNode quotedNode_a1x6vi_a0a0c0a = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
       {
-        quotedNode_a1x6vi_a0a2a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_a1x6vi_a0a2a0 = quotedNode_a1x6vi_a0a2a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_a1x6vi_a0a0c0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_a1x6vi_a0a0c0a = quotedNode_a1x6vi_a0a0c0a;
-          quotedNode1_a1x6vi_a0a0c0a.addReference(SReference.create("baseMethodDeclaration", quotedNode1_a1x6vi_a0a0c0a, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~IllegalArgumentException.<init>()")));
-          quotedNode_a1x6vi_a0a2a0.addChild("creator", quotedNode1_a1x6vi_a0a0c0a);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
+          quotedNode1_4.addReference(SReference.create("baseMethodDeclaration", quotedNode1_4, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~IllegalArgumentException.<init>()")));
+          quotedNode_1.addChild("creator", quotedNode1_4);
         }
-        result = quotedNode1_a1x6vi_a0a2a0;
+        result = quotedNode1_3;
       }
       return result;
     }

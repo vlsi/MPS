@@ -100,12 +100,12 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_r5g8rc_a1a0a0a1a1a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_r5g8rc_a1a0a0a1a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_r5g8rc_a1a0a0a1a1a0 = quotedNode_r5g8rc_a1a0a0a1a1a0;
-        quotedNode1_r5g8rc_a1a0a0a1a1a0.addReference(SReference.create("classifier", quotedNode1_r5g8rc_a1a0a0a1a1a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
-        result = quotedNode1_r5g8rc_a1a0a0a1a1a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -113,12 +113,12 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_r5g8rc_a1a0a0a1a1a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_r5g8rc_a1a0a0a1a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_r5g8rc_a1a0a0a1a1a0 = quotedNode_r5g8rc_a1a0a0a1a1a0;
-        quotedNode1_r5g8rc_a1a0a0a1a1a0.addReference(SReference.create("classifier", quotedNode1_r5g8rc_a1a0a0a1a1a0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
-        result = quotedNode1_r5g8rc_a1a0a0a1a1a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -131,12 +131,12 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_r5g8rc_a1a0a0a1a1a0_0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_r5g8rc_a1a0a0a1a1a0_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_r5g8rc_a1a0a0a1a1a0_0 = quotedNode_r5g8rc_a1a0a0a1a1a0_0;
-        quotedNode1_r5g8rc_a1a0a0a1a1a0_0.addReference(SReference.create("classifier", quotedNode1_r5g8rc_a1a0a0a1a1a0_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Error")));
-        result = quotedNode1_r5g8rc_a1a0a0a1a1a0_0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Error")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -144,12 +144,12 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_r5g8rc_a1a0a0a1a1a0_0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_r5g8rc_a1a0a0a1a1a0_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_r5g8rc_a1a0a0a1a1a0_0 = quotedNode_r5g8rc_a1a0a0a1a1a0_0;
-        quotedNode1_r5g8rc_a1a0a0a1a1a0_0.addReference(SReference.create("classifier", quotedNode1_r5g8rc_a1a0a0a1a1a0_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Error")));
-        result = quotedNode1_r5g8rc_a1a0a0a1a1a0_0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Error")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -162,12 +162,12 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     public SNode createNode(Object parameter_r5g8rc_a0a0a0a0a0a0d0a1a1a0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_r5g8rc_a0a0a0a0a0d0a1a1a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_r5g8rc_a0a0a0a0a0d0a1a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_r5g8rc_a0a0a0a0a0d0a1a1a0 = quotedNode_r5g8rc_a0a0a0a0a0d0a1a1a0;
-        quotedNode1_r5g8rc_a0a0a0a0a0d0a1a1a0.setReferent("classifier", (SNode) parameter_r5g8rc_a0a0a0a0a0a0d0a1a1a0);
-        result = quotedNode1_r5g8rc_a0a0a0a0a0d0a1a1a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_r5g8rc_a0a0a0a0a0a0d0a1a1a0);
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -175,12 +175,12 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     public SNode createNode(Object parameter_r5g8rc_a0a0a0a0a0a0d0a1a1a0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_r5g8rc_a0a0a0a0a0d0a1a1a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_r5g8rc_a0a0a0a0a0d0a1a1a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_r5g8rc_a0a0a0a0a0d0a1a1a0 = quotedNode_r5g8rc_a0a0a0a0a0d0a1a1a0;
-        quotedNode1_r5g8rc_a0a0a0a0a0d0a1a1a0.setReferent("classifier", (SNode) parameter_r5g8rc_a0a0a0a0a0a0d0a1a1a0);
-        result = quotedNode1_r5g8rc_a0a0a0a0a0d0a1a1a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_r5g8rc_a0a0a0a0a0a0d0a1a1a0);
+        result = quotedNode1_2;
       }
       return result;
     }

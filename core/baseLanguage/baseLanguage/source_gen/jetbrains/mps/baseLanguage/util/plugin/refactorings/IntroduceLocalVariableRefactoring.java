@@ -44,46 +44,46 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     public SNode createNode(Object parameter_nngwe4_a0a0a0a0a0, Object parameter_nngwe4_a0a0a0a0a0_0, Object parameter_nngwe4_a0a0a0a0a) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_nngwe4_a0a0a0 = null;
-      SNode quotedNode_nngwe4_a0a0a0a = null;
-      SNode quotedNode_nngwe4_a0a0a0a0 = null;
-      SNode quotedNode_nngwe4_a0a0a0a0_0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
       {
-        quotedNode_nngwe4_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_nngwe4_a0a0a0 = quotedNode_nngwe4_a0a0a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5 = quotedNode_1;
         {
-          quotedNode_nngwe4_a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_nngwe4_a0a0a0a = quotedNode_nngwe4_a0a0a0a;
-          quotedNode1_nngwe4_a0a0a0a.setProperty("name", (String) parameter_nngwe4_a0a0a0a0a);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_2;
+          quotedNode1_6.setProperty("name", (String) parameter_nngwe4_a0a0a0a0a);
           {
-            quotedNode_nngwe4_a0a0a0a0 = (SNode) parameter_nngwe4_a0a0a0a0a0;
-            SNode quotedNode1_nngwe4_a0a0a0a0;
-            if (_parameterValues_129834374.contains(quotedNode_nngwe4_a0a0a0a0)) {
-              quotedNode1_nngwe4_a0a0a0a0 = CopyUtil.copy(quotedNode_nngwe4_a0a0a0a0);
+            quotedNode_3 = (SNode) parameter_nngwe4_a0a0a0a0a0;
+            SNode quotedNode1_7;
+            if (_parameterValues_129834374.contains(quotedNode_3)) {
+              quotedNode1_7 = CopyUtil.copy(quotedNode_3);
             } else {
-              _parameterValues_129834374.add(quotedNode_nngwe4_a0a0a0a0);
-              quotedNode1_nngwe4_a0a0a0a0 = quotedNode_nngwe4_a0a0a0a0;
+              _parameterValues_129834374.add(quotedNode_3);
+              quotedNode1_7 = quotedNode_3;
             }
-            if (quotedNode1_nngwe4_a0a0a0a0 != null) {
-              quotedNode_nngwe4_a0a0a0a.addChild("type", HUtil.copyIfNecessary(quotedNode1_nngwe4_a0a0a0a0));
+            if (quotedNode1_7 != null) {
+              quotedNode_2.addChild("type", HUtil.copyIfNecessary(quotedNode1_7));
             }
           }
           {
-            quotedNode_nngwe4_a0a0a0a0_0 = (SNode) parameter_nngwe4_a0a0a0a0a0_0;
-            SNode quotedNode1_nngwe4_a0a0a0a0_0;
-            if (_parameterValues_129834374.contains(quotedNode_nngwe4_a0a0a0a0_0)) {
-              quotedNode1_nngwe4_a0a0a0a0_0 = CopyUtil.copy(quotedNode_nngwe4_a0a0a0a0_0);
+            quotedNode_4 = (SNode) parameter_nngwe4_a0a0a0a0a0_0;
+            SNode quotedNode1_8;
+            if (_parameterValues_129834374.contains(quotedNode_4)) {
+              quotedNode1_8 = CopyUtil.copy(quotedNode_4);
             } else {
-              _parameterValues_129834374.add(quotedNode_nngwe4_a0a0a0a0_0);
-              quotedNode1_nngwe4_a0a0a0a0_0 = quotedNode_nngwe4_a0a0a0a0_0;
+              _parameterValues_129834374.add(quotedNode_4);
+              quotedNode1_8 = quotedNode_4;
             }
-            if (quotedNode1_nngwe4_a0a0a0a0_0 != null) {
-              quotedNode_nngwe4_a0a0a0a.addChild("initializer", HUtil.copyIfNecessary(quotedNode1_nngwe4_a0a0a0a0_0));
+            if (quotedNode1_8 != null) {
+              quotedNode_2.addChild("initializer", HUtil.copyIfNecessary(quotedNode1_8));
             }
           }
-          quotedNode_nngwe4_a0a0a0.addChild("localVariableDeclaration", quotedNode1_nngwe4_a0a0a0a);
+          quotedNode_1.addChild("localVariableDeclaration", quotedNode1_6);
         }
-        result = quotedNode1_nngwe4_a0a0a0;
+        result = quotedNode1_5;
       }
       return result;
     }

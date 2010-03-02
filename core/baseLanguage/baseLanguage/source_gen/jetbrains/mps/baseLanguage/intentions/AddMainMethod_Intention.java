@@ -67,49 +67,49 @@ public class AddMainMethod_Intention extends BaseIntention implements Intention 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_92yx0t_a0a0a0 = null;
-      SNode quotedNode_92yx0t_a0a0a0a = null;
-      SNode quotedNode_92yx0t_a0a0a0a_0 = null;
-      SNode quotedNode_92yx0t_a0a0a0a_1 = null;
-      SNode quotedNode_92yx0t_a0a0a0a_2 = null;
-      SNode quotedNode_92yx0t_a0a0a0a0 = null;
-      SNode quotedNode_92yx0t_a0a0a0a0a = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      SNode quotedNode_7 = null;
       {
-        quotedNode_92yx0t_a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_92yx0t_a0a0a0 = quotedNode_92yx0t_a0a0a0;
-        quotedNode1_92yx0t_a0a0a0.setProperty("name", "main");
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_1;
+        quotedNode1_8.setProperty("name", "main");
         {
-          quotedNode_92yx0t_a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_92yx0t_a0a0a0a = quotedNode_92yx0t_a0a0a0a;
-          quotedNode_92yx0t_a0a0a0.addChild("returnType", quotedNode1_92yx0t_a0a0a0a);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_9 = quotedNode_2;
+          quotedNode_1.addChild("returnType", quotedNode1_9);
         }
         {
-          quotedNode_92yx0t_a0a0a0a_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_92yx0t_a0a0a0a_0 = quotedNode_92yx0t_a0a0a0a_0;
-          quotedNode_92yx0t_a0a0a0.addChild("visibility", quotedNode1_92yx0t_a0a0a0a_0);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_10 = quotedNode_3;
+          quotedNode_1.addChild("visibility", quotedNode1_10);
         }
         {
-          quotedNode_92yx0t_a0a0a0a_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_92yx0t_a0a0a0a_1 = quotedNode_92yx0t_a0a0a0a_1;
-          quotedNode_92yx0t_a0a0a0.addChild("body", quotedNode1_92yx0t_a0a0a0a_1);
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_11 = quotedNode_4;
+          quotedNode_1.addChild("body", quotedNode1_11);
         }
         {
-          quotedNode_92yx0t_a0a0a0a_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_92yx0t_a0a0a0a_2 = quotedNode_92yx0t_a0a0a0a_2;
-          quotedNode1_92yx0t_a0a0a0a_2.setProperty("name", "args");
+          quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_12 = quotedNode_5;
+          quotedNode1_12.setProperty("name", "args");
           {
-            quotedNode_92yx0t_a0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-            SNode quotedNode1_92yx0t_a0a0a0a0 = quotedNode_92yx0t_a0a0a0a0;
+            quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+            SNode quotedNode1_13 = quotedNode_6;
             {
-              quotedNode_92yx0t_a0a0a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-              SNode quotedNode1_92yx0t_a0a0a0a0a = quotedNode_92yx0t_a0a0a0a0a;
-              quotedNode_92yx0t_a0a0a0a0.addChild("componentType", quotedNode1_92yx0t_a0a0a0a0a);
+              quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+              SNode quotedNode1_14 = quotedNode_7;
+              quotedNode_6.addChild("componentType", quotedNode1_14);
             }
-            quotedNode_92yx0t_a0a0a0a_2.addChild("type", quotedNode1_92yx0t_a0a0a0a0);
+            quotedNode_5.addChild("type", quotedNode1_13);
           }
-          quotedNode_92yx0t_a0a0a0.addChild("parameter", quotedNode1_92yx0t_a0a0a0a_2);
+          quotedNode_1.addChild("parameter", quotedNode1_12);
         }
-        result = quotedNode1_92yx0t_a0a0a0;
+        result = quotedNode1_8;
       }
       return result;
     }

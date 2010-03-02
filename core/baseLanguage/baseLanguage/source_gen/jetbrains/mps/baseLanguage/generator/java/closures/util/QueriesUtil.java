@@ -85,24 +85,24 @@ public class QueriesUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_w9106s_a0a0a7a2 = null;
-      SNode quotedNode_w9106s_a0a0a0h0c = null;
-      SNode quotedNode_w9106s_a0a0a0h0c_0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
       {
-        quotedNode_w9106s_a0a0a7a2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_w9106s_a0a0a7a2 = quotedNode_w9106s_a0a0a7a2;
-        quotedNode1_w9106s_a0a0a7a2.setProperty("fieldName", "_enclosingClass");
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
+        quotedNode1_4.setProperty("fieldName", "_enclosingClass");
         {
-          quotedNode_w9106s_a0a0a0h0c = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_w9106s_a0a0a0h0c = quotedNode_w9106s_a0a0a0h0c;
-          quotedNode_w9106s_a0a0a7a2.addChild("instance", quotedNode1_w9106s_a0a0a0h0c);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode_1.addChild("instance", quotedNode1_5);
         }
         {
-          quotedNode_w9106s_a0a0a0h0c_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_w9106s_a0a0a0h0c_0 = quotedNode_w9106s_a0a0a0h0c_0;
-          quotedNode_w9106s_a0a0a7a2.addChild("fieldType", quotedNode1_w9106s_a0a0a0h0c_0);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_3;
+          quotedNode_1.addChild("fieldType", quotedNode1_6);
         }
-        result = quotedNode1_w9106s_a0a0a7a2;
+        result = quotedNode1_4;
       }
       return result;
     }
@@ -115,12 +115,12 @@ public class QueriesUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_w9106s_a0a0a0d = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_w9106s_a0a0a0d = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_w9106s_a0a0a0d = quotedNode_w9106s_a0a0a0d;
-        quotedNode1_w9106s_a0a0a0d.addReference(SReference.create("classifier", quotedNode1_w9106s_a0a0a0d, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_w9106s_a0a0a0d;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_2;
       }
       return result;
     }

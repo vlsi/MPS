@@ -233,12 +233,12 @@ public class Type_Behavior {
     public SNode createNode(Object parameter_smb55n_a0a0a0c0a0j) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_smb55n_a0a0c0a0j = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_smb55n_a0a0c0a0j = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_smb55n_a0a0c0a0j = quotedNode_smb55n_a0a0c0a0j;
-        quotedNode1_smb55n_a0a0c0a0j.setReferent("classifier", (SNode) parameter_smb55n_a0a0a0c0a0j);
-        result = quotedNode1_smb55n_a0a0c0a0j;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_smb55n_a0a0a0c0a0j);
+        result = quotedNode1_2;
       }
       return result;
     }

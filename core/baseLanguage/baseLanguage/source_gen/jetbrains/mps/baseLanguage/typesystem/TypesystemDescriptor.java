@@ -933,12 +933,12 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a0a0 = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a0a0 = quotedNode_3ist9o_a0a0a0a0;
-          quotedNode1_3ist9o_a0a0a0a0.addReference(SReference.create("descriptor", quotedNode1_3ist9o_a0a0a0a0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-          result = quotedNode1_3ist9o_a0a0a0a0;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          quotedNode1_2.addReference(SReference.create("descriptor", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -951,12 +951,12 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0b0a0 = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0b0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0b0a0 = quotedNode_3ist9o_a0a0b0a0;
-          quotedNode1_3ist9o_a0a0b0a0.addReference(SReference.create("descriptor", quotedNode1_3ist9o_a0a0b0a0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-          result = quotedNode1_3ist9o_a0a0b0a0;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          quotedNode1_2.addReference(SReference.create("descriptor", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -985,11 +985,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a1 = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a1 = quotedNode_3ist9o_a0a0a1;
-          result = quotedNode1_3ist9o_a0a0a1;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -1002,12 +1002,12 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a0a1 = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a0a1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a0a1 = quotedNode_3ist9o_a0a0a0a1;
-          quotedNode1_3ist9o_a0a0a0a1.addReference(SReference.create("descriptor", quotedNode1_3ist9o_a0a0a0a1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-          result = quotedNode1_3ist9o_a0a0a0a1;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          quotedNode1_2.addReference(SReference.create("descriptor", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -1020,12 +1020,12 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0b0a1 = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0b0a1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0b0a1 = quotedNode_3ist9o_a0a0b0a1;
-          quotedNode1_3ist9o_a0a0b0a1.addReference(SReference.create("descriptor", quotedNode1_3ist9o_a0a0b0a1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-          result = quotedNode1_3ist9o_a0a0b0a1;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          quotedNode1_2.addReference(SReference.create("descriptor", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -1054,12 +1054,12 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a0a0a2 = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a0a0a2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a0a0a2 = quotedNode_3ist9o_a0a0a0a2;
-          quotedNode1_3ist9o_a0a0a0a2.addReference(SReference.create("descriptor", quotedNode1_3ist9o_a0a0a0a2, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-          result = quotedNode1_3ist9o_a0a0a0a2;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          quotedNode1_2.addReference(SReference.create("descriptor", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -1072,12 +1072,12 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       public SNode createNode() {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_3ist9o_a0a1a0c = null;
+        SNode quotedNode_1 = null;
         {
-          quotedNode_3ist9o_a0a1a0c = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3ist9o_a0a1a0c = quotedNode_3ist9o_a0a1a0c;
-          quotedNode1_3ist9o_a0a1a0c.addReference(SReference.create("classifier", quotedNode1_3ist9o_a0a1a0c, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-          result = quotedNode1_3ist9o_a0a1a0c;
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_1;
+          quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+          result = quotedNode1_2;
         }
         return result;
       }
@@ -1091,11 +1091,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3ist9o_a0a0a0a0a0a0a191a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_3ist9o_a0a0a0a0a0a0a191a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3ist9o_a0a0a0a0a0a0a191a0 = quotedNode_3ist9o_a0a0a0a0a0a0a191a0;
-        result = quotedNode1_3ist9o_a0a0a0a0a0a0a191a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -1108,11 +1108,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3ist9o_a0a0a0a0a0a0a0jh0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_3ist9o_a0a0a0a0a0a0a0jh0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3ist9o_a0a0a0a0a0a0a0jh0a = quotedNode_3ist9o_a0a0a0a0a0a0a0jh0a;
-        result = quotedNode1_3ist9o_a0a0a0a0a0a0a0jh0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }

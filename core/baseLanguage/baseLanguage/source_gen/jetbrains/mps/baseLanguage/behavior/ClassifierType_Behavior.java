@@ -168,12 +168,12 @@ public class ClassifierType_Behavior {
     public SNode createNode(Object parameter_hz3823_a0a0a0d) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_hz3823_a0a0d = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_hz3823_a0a0d = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_hz3823_a0a0d = quotedNode_hz3823_a0a0d;
-        quotedNode1_hz3823_a0a0d.setReferent("classifier", (SNode) parameter_hz3823_a0a0a0d);
-        result = quotedNode1_hz3823_a0a0d;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_hz3823_a0a0a0d);
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -278,11 +278,11 @@ public class ClassifierType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_hz3823_a0a0g = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_hz3823_a0a0g = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_hz3823_a0a0g = quotedNode_hz3823_a0a0g;
-        result = quotedNode1_hz3823_a0a0g;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }

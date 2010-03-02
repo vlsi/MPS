@@ -48,12 +48,12 @@ public class SuperConstructorInvocation_constructorDeclaration_ReferentConstrain
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6sxar7_a0a0a0a3a0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_6sxar7_a0a0a0a3a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6sxar7_a0a0a0a3a0a = quotedNode_6sxar7_a0a0a0a3a0a;
-        quotedNode1_6sxar7_a0a0a0a3a0a.addReference(SReference.create("classifier", quotedNode1_6sxar7_a0a0a0a3a0a, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_6sxar7_a0a0a0a3a0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_2;
       }
       return result;
     }
