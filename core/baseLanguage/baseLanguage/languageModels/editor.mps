@@ -15288,6 +15288,9 @@
         <property name="text:32" value="//" />
         <link role="actionMap:32" targetNodeId="6173498004806798033" resolveInfo="UncommentSingleLineComment" />
         <link role="styleClass:32" targetNodeId="1198594875276" resolveInfo="Comment" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="5052922865790729032">
+          <property name="style:32" value="BOLD_ITALIC" />
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="6329021646629175163">
         <link role="relationDeclaration:32" targetNodeId="17.6329021646629175155:3" />
