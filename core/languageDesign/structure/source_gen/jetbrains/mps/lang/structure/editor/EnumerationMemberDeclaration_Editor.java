@@ -17,9 +17,9 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
 
 public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -55,14 +55,22 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_n0n6wp_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    (default)");
-    editorCell.setCellId("Constant_n0n6wp_f0");
+  private EditorCell createConstant_n0n6wp_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "identifier");
+    editorCell.setCellId("Constant_n0n6wp_a0a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_n0n6wp_c0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    editorCell.setCellId("Constant_n0n6wp_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -93,37 +101,30 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_n0n6wp_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "identifier");
-    editorCell.setCellId("Constant_n0n6wp_a0a");
+  private EditorCell createConstant_n0n6wp_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    (default)");
+    editorCell.setCellId("Constant_n0n6wp_f0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_n0n6wp_c0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_n0n6wp_c0a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_n0n6wp_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_n0n6wp_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("externalValue");
-    provider.setNoTargetText("<no external value>");
+    provider.setRole("javaIdentifier");
+    provider.setNoTargetText("<no identifier>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_externalValue");
+    editorCell.setCellId("property_javaIdentifier");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -160,18 +161,17 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_n0n6wp_b0a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_n0n6wp_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("javaIdentifier");
-    provider.setNoTargetText("<no identifier>");
+    provider.setRole("externalValue");
+    provider.setNoTargetText("<no external value>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_javaIdentifier");
+    editorCell.setCellId("property_externalValue");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -184,11 +184,11 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_n0n6wp_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
-  }
-
   private static boolean renderingCondition_n0n6wp_a0a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberIdentifierPolicy", "custom", "derive_from_presentation");
+  }
+
+  private static boolean renderingCondition_n0n6wp_a5a(SNode node, EditorContext editorContext, IScope scope) {
+    return node == EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
   }
 }

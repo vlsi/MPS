@@ -80,28 +80,28 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractI
     public QuotationClass_o4tfis_a0a0a3a0() {
     }
 
-    public SNode createNode(Object parameter_o4tfis_a0a0a0a3a0, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_o4tfis_a0a0a3a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_o4tfis_a0a0a3a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_o4tfis_a0a0a3a0 = quotedNode_o4tfis_a0a0a3a0;
-        quotedNode1_o4tfis_a0a0a3a0.setReferent("concept", (SNode) parameter_o4tfis_a0a0a0a3a0);
-        result = quotedNode1_o4tfis_a0a0a3a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_o4tfis_a0a0a0a3a0) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_o4tfis_a0a0a3a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_o4tfis_a0a0a3a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_o4tfis_a0a0a3a0 = quotedNode_o4tfis_a0a0a3a0;
-        quotedNode1_o4tfis_a0a0a3a0.setReferent("concept", (SNode) parameter_o4tfis_a0a0a0a3a0);
-        result = quotedNode1_o4tfis_a0a0a3a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -111,28 +111,28 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractI
     public QuotationClass_o4tfis_a0a0a0d0a() {
     }
 
-    public SNode createNode(Object parameter_o4tfis_a0a0a0a0d0a, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_o4tfis_a0a0a0d0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_o4tfis_a0a0a0d0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_o4tfis_a0a0a0d0a = quotedNode_o4tfis_a0a0a0d0a;
-        quotedNode1_o4tfis_a0a0a0d0a.setReferent("elementConcept", (SNode) parameter_o4tfis_a0a0a0a0d0a);
-        result = quotedNode1_o4tfis_a0a0a0d0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("elementConcept", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }
 
-    public SNode createNode(Object parameter_o4tfis_a0a0a0a0d0a) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_o4tfis_a0a0a0d0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_o4tfis_a0a0a0d0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_o4tfis_a0a0a0d0a = quotedNode_o4tfis_a0a0a0d0a;
-        quotedNode1_o4tfis_a0a0a0d0a.setReferent("elementConcept", (SNode) parameter_o4tfis_a0a0a0a0d0a);
-        result = quotedNode1_o4tfis_a0a0a0d0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("elementConcept", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -145,11 +145,11 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractI
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_o4tfis_a0a1a7a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_o4tfis_a0a1a7a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_o4tfis_a0a1a7a0 = quotedNode_o4tfis_a0a1a7a0;
-        result = quotedNode1_o4tfis_a0a1a7a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -157,11 +157,11 @@ public class typeof_LinkAttributeAccessQualifier_InferenceRule extends AbstractI
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_o4tfis_a0a1a7a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_o4tfis_a0a1a7a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_o4tfis_a0a1a7a0 = quotedNode_o4tfis_a0a1a7a0;
-        result = quotedNode1_o4tfis_a0a1a7a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }

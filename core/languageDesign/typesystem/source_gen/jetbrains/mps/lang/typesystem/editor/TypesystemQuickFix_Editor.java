@@ -56,24 +56,6 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_la7hkt_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "arguments:");
-    editorCell.setCellId("Constant_la7hkt_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_la7hkt_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_la7hkt_e0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_la7hkt_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "quick fix");
     editorCell.setCellId("Constant_la7hkt_a0a");
@@ -84,6 +66,24 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_la7hkt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_la7hkt_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_la7hkt_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "arguments:");
+    editorCell.setCellId("Constant_la7hkt_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_la7hkt_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_la7hkt_e0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -129,10 +129,10 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_la7hkt_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_la7hkt_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("executeBlock");
-    provider.setNoTargetText("<no executeBlock>");
+    provider.setRole("descriptionBlock");
+    provider.setNoTargetText("<no descriptionBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -146,10 +146,10 @@ public class TypesystemQuickFix_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_la7hkt_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_la7hkt_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("descriptionBlock");
-    provider.setNoTargetText("<no descriptionBlock>");
+    provider.setRole("executeBlock");
+    provider.setNoTargetText("<no executeBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

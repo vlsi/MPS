@@ -28,7 +28,7 @@ public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tc2pit_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tc2pit_a");
-    editorCell.addEditorCell(this.createConstant_tc2pit_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_tc2pit_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_tc2pit_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tc2pit_c0(editorContext, node));
     return editorCell;
@@ -37,29 +37,15 @@ public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_tc2pit_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tc2pit_a_0");
-    editorCell.addEditorCell(this.createConstant_tc2pit_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_tc2pit_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_tc2pit_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_tc2pit_c0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_tc2pit_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
-    editorCell.setCellId("Constant_tc2pit_a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_tc2pit_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "indent");
-    editorCell.setCellId("Constant_tc2pit_b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_tc2pit_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_tc2pit_a0_0");
+    editorCell.setCellId("Constant_tc2pit_a0");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -77,6 +63,20 @@ public class ConstantStringAppendPart_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_tc2pit_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
+    editorCell.setCellId("Constant_tc2pit_a0_0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_tc2pit_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "indent");
+    editorCell.setCellId("Constant_tc2pit_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }

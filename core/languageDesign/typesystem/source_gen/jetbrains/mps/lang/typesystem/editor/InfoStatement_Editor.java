@@ -73,17 +73,6 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_x0qgth_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention linked with info message(optional)");
-    editorCell.setCellId("Constant_x0qgth_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_x0qgth_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node feature to highlight(optional)");
     editorCell.setCellId("Constant_x0qgth_a0_0");
@@ -101,6 +90,17 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_x0qgth_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention linked with info message(optional)");
+    editorCell.setCellId("Constant_x0qgth_d0");
+    {
+      Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
@@ -164,10 +164,10 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_x0qgth_e0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_x0qgth_b0_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("helginsIntention");
-    provider.setNoTargetText("<no intention>");
+    provider.setRole("messageTarget");
+    provider.setNoTargetText("<no messageTarget>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     {
@@ -185,10 +185,10 @@ public class InfoStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_x0qgth_b0_0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_x0qgth_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("messageTarget");
-    provider.setNoTargetText("<no messageTarget>");
+    provider.setRole("helginsIntention");
+    provider.setNoTargetText("<no intention>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     {

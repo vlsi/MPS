@@ -33,16 +33,16 @@ public class StubsCreatorDeclaration_Behavior {
     public QuotationClass_v97kwv_a0a0b() {
     }
 
-    public SNode createNode(Object parameter_v97kwv_a0a0a0a, Object parameter_v97kwv_a0a0a0a_0) {
+    public SNode createNode(Object parameter_3, Object parameter_4) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_v97kwv_a0a0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_v97kwv_a0a0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubsCreatorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_v97kwv_a0a0a = quotedNode_v97kwv_a0a0a;
-        quotedNode1_v97kwv_a0a0a.setReferent("creatorDeclaration", (SNode) parameter_v97kwv_a0a0a0a);
-        quotedNode1_v97kwv_a0a0a.setReferent("declaration", (SNode) parameter_v97kwv_a0a0a0a_0);
-        result = quotedNode1_v97kwv_a0a0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubsCreatorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("creatorDeclaration", (SNode) parameter_3);
+        quotedNode1_2.setReferent("declaration", (SNode) parameter_4);
+        result = quotedNode1_2;
       }
       return result;
     }

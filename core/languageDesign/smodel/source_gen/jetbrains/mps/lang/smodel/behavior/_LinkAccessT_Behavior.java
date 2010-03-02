@@ -47,15 +47,15 @@ public class _LinkAccessT_Behavior {
     public QuotationClass_bquv25_a0a0a0c() {
     }
 
-    public SNode createNode(Object parameter_bquv25_a0a0a0a0b) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_bquv25_a0a0a0b = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_bquv25_a0a0a0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_bquv25_a0a0a0b = quotedNode_bquv25_a0a0a0b;
-        quotedNode1_bquv25_a0a0a0b.setReferent("concept", (SNode) parameter_bquv25_a0a0a0a0b);
-        result = quotedNode1_bquv25_a0a0a0b;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -65,15 +65,15 @@ public class _LinkAccessT_Behavior {
     public QuotationClass_bquv25_a0b0c() {
     }
 
-    public SNode createNode(Object parameter_bquv25_a0a0b0b) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_bquv25_a0b0b = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_bquv25_a0b0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_bquv25_a0b0b = quotedNode_bquv25_a0b0b;
-        quotedNode1_bquv25_a0b0b.setReferent("elementConcept", (SNode) parameter_bquv25_a0a0b0b);
-        result = quotedNode1_bquv25_a0b0b;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("elementConcept", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }

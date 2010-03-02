@@ -33,29 +33,6 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_asco8r_a(editorContext, node);
   }
 
-  private EditorCell createCollection_asco8r_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_asco8r_a0a");
-    editorCell.addEditorCell(this.createConstant_asco8r_a0a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_asco8r_b0a0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_asco8r_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_asco8r_b1a");
-    editorCell.addEditorCell(this.createRefNode_asco8r_a1b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_asco8r_b1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_asco8r_c1b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_asco8r_d1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_asco8r_e1b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_asco8r_f1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_asco8r_g1b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_asco8r_h1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_asco8r_i1b0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_asco8r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_asco8r_a");
@@ -85,6 +62,14 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_asco8r_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_asco8r_a0a");
+    editorCell.addEditorCell(this.createConstant_asco8r_a0a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_asco8r_b0a0(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createCollection_asco8r_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_asco8r_b0");
@@ -97,9 +82,32 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_asco8r_b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_asco8r_b1a");
+    editorCell.addEditorCell(this.createRefNode_asco8r_a1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_asco8r_b1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_asco8r_c1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_asco8r_d1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_asco8r_e1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_asco8r_f1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_asco8r_g1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_asco8r_h1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_asco8r_i1b0(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_asco8r_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stubs creator");
     editorCell.setCellId("Constant_asco8r_a0a0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_asco8r_b0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    editorCell.setCellId("Constant_asco8r_b0a");
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -128,14 +136,6 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_asco8r_h1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_asco8r_h1b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_asco8r_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_asco8r_b0a");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }

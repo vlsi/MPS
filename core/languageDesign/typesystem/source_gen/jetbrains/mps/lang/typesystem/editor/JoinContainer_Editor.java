@@ -28,16 +28,16 @@ public class JoinContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_csx0sa_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_csx0sa_c0");
+  private EditorCell createConstant_csx0sa_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "join<");
+    editorCell.setCellId("Constant_csx0sa_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_csx0sa_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "join<");
-    editorCell.setCellId("Constant_csx0sa_a0");
+  private EditorCell createConstant_csx0sa_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    editorCell.setCellId("Constant_csx0sa_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }

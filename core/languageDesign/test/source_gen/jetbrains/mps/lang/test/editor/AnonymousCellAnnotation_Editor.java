@@ -93,6 +93,15 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_ql48ef_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell");
+    editorCell.setCellId("Constant_ql48ef_b0");
+    transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
+    Annotation_Actions.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createConstant_ql48ef_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_ql48ef_d0");
@@ -104,11 +113,9 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_ql48ef_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell");
-    editorCell.setCellId("Constant_ql48ef_b0");
-    transformationTest_StyleSheet.getEditorOperation(editorCell).apply(editorCell);
-    Annotation_Actions.setCellActions(editorCell, node, editorContext);
+  private EditorCell createConstant_ql48ef_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is in inspector");
+    editorCell.setCellId("Constant_ql48ef_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -148,13 +155,6 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_ql48ef_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is in inspector");
-    editorCell.setCellId("Constant_ql48ef_a0_0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createAttributedNodeCell_ql48ef_c0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
@@ -162,13 +162,13 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_ql48ef_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ql48ef_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("cellId");
-    provider.setNoTargetText("<no cellId>");
+    provider.setRole("isInInspector");
+    provider.setNoTargetText("<no isInInspector>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_cellId");
+    editorCell.setCellId("property_isInInspector");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
@@ -184,14 +184,17 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createNonEmptyProperty_ql48ef_a5a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ql48ef_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("caretPosition");
-    provider.setNoTargetText("<no caretPosition>");
-    provider.setAllowsEmptyTarget(true);
+    provider.setRole("cellId");
+    provider.setNoTargetText("<no cellId>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_caretPosition");
+    editorCell.setCellId("property_cellId");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -247,17 +250,14 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_ql48ef_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createNonEmptyProperty_ql48ef_a5a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("isInInspector");
-    provider.setNoTargetText("<no isInInspector>");
+    provider.setRole("caretPosition");
+    provider.setNoTargetText("<no caretPosition>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_isInInspector");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
+    editorCell.setCellId("property_caretPosition");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

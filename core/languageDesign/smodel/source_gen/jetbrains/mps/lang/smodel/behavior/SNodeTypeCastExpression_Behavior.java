@@ -46,11 +46,11 @@ public class SNodeTypeCastExpression_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_cjhknp_a1a0a0b0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_cjhknp_a1a0a0b0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_cjhknp_a1a0a0b0a = quotedNode_cjhknp_a1a0a0b0a;
-        result = quotedNode1_cjhknp_a1a0a0b0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
       }
       return result;
     }

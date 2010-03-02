@@ -100,16 +100,16 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6h6dhy_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not generate:");
-    editorCell.setCellId("Constant_6h6dhy_a0");
+  private EditorCell createConstant_6h6dhy_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-G");
+    editorCell.setCellId("Constant_6h6dhy_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6h6dhy_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-G");
-    editorCell.setCellId("Constant_6h6dhy_f0");
+  private EditorCell createConstant_6h6dhy_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not generate:");
+    editorCell.setCellId("Constant_6h6dhy_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -184,17 +184,13 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_6h6dhy_b4a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("specializedLink");
-    provider.setNoTargetText("<none>");
+  private EditorCell createProperty_6h6dhy_b0_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("doNotGenerate");
+    provider.setNoTargetText("<no doNotGenerate>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LinkDeclaration_Editor._Inline_6h6dhy_a1e0());
     editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BORDER, true);
-    }
+    editorCell.setCellId("property_doNotGenerate");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -228,13 +224,17 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_6h6dhy_b0_0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("doNotGenerate");
-    provider.setNoTargetText("<no doNotGenerate>");
+  private EditorCell createRefCell_6h6dhy_b4a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("specializedLink");
+    provider.setNoTargetText("<none>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new LinkDeclaration_Editor._Inline_6h6dhy_a1e0());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_doNotGenerate");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.DRAW_BORDER, true);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -256,39 +256,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_6h6dhy_a5a(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "doNotGenerate");
-  }
-
-  public static class _Inline_6h6dhy_a1e0 extends InlineCellProvider {
-    public _Inline_6h6dhy_a1e0() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_6h6dhy_a0b4a(editorContext, node);
-    }
-
-    private EditorCell createProperty_6h6dhy_a0b4a(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole("role");
-      provider.setNoTargetText("<no role>");
-      provider.setReadOnly(true);
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_role_1");
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-      } else
-      return editorCell;
-    }
   }
 
   public static class _Inline_6h6dhy_a0a extends InlineCellProvider {
@@ -316,6 +283,39 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         Style style = editorCell.getStyle();
         style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
       }
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      SNode attributeConcept = provider.getRoleAttribute();
+      Class attributeKind = provider.getRoleAttributeClass();
+      if (attributeConcept != null) {
+        IOperationContext opContext = editorContext.getOperationContext();
+        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      } else
+      return editorCell;
+    }
+  }
+
+  public static class _Inline_6h6dhy_a1e0 extends InlineCellProvider {
+    public _Inline_6h6dhy_a1e0() {
+      super();
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createProperty_6h6dhy_a0b4a(editorContext, node);
+    }
+
+    private EditorCell createProperty_6h6dhy_a0b4a(EditorContext editorContext, SNode node) {
+      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+      provider.setRole("role");
+      provider.setNoTargetText("<no role>");
+      provider.setReadOnly(true);
+      EditorCell editorCell;
+      editorCell = provider.createEditorCell(editorContext);
+      editorCell.setCellId("property_role_1");
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

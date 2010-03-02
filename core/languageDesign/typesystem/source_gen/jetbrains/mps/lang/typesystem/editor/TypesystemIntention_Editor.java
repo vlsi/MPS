@@ -56,13 +56,6 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_il97sk_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply immediately:");
-    editorCell.setCellId("Constant_il97sk_b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_il97sk_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_il97sk_b0a");
@@ -75,6 +68,13 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_il97sk_d0a");
     BaseLanguageStyle_StyleSheet.getRightParen(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_il97sk_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply immediately:");
+    editorCell.setCellId("Constant_il97sk_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }

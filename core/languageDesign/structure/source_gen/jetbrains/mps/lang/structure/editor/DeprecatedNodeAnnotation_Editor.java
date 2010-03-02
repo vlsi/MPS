@@ -54,28 +54,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_cv1jro_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_cv1jro_a_0");
-    editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createCollection_cv1jro_a0_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_cv1jro_b0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_cv1jro_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_cv1jro_a0_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_cv1jro_a0a_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_cv1jro_b0a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_cv1jro_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cv1jro_b0a");
@@ -103,6 +81,28 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_cv1jro_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_cv1jro_a_0");
+    editorCell.setGridLayout(true);
+    editorCell.addEditorCell(this.createCollection_cv1jro_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_cv1jro_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_cv1jro_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_cv1jro_a0_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_cv1jro_a0a_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_cv1jro_b0a(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createCollection_cv1jro_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cv1jro_b0");
@@ -124,17 +124,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_cv1jro_a0a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
-    editorCell.setCellId("Constant_cv1jro_a0a_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_cv1jro_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_cv1jro_a1a0");
@@ -143,6 +132,19 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.MATCHING_LABEL, "brace");
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_cv1jro_c1a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_cv1jro_c1a0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.MATCHING_LABEL, "brace");
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -160,14 +162,12 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_cv1jro_c1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_cv1jro_c1a0");
+  private EditorCell createConstant_cv1jro_a0a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
+    editorCell.setCellId("Constant_cv1jro_a0a_0");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.MATCHING_LABEL, "brace");
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -191,7 +191,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_cv1jro_b0a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_cv1jro_b1a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("comment");
     provider.setNoTargetText("<no comment>");
@@ -202,6 +202,8 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+      style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
+      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -237,7 +239,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_cv1jro_b1a0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_cv1jro_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("comment");
     provider.setNoTargetText("<no comment>");
@@ -248,8 +250,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
-      style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -285,11 +285,11 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_cv1jro_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "build") != null;
-  }
-
   private static boolean renderingCondition_cv1jro_a1a0(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getString(node, "comment") != null;
+  }
+
+  private static boolean renderingCondition_cv1jro_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getString(node, "build") != null;
   }
 }
