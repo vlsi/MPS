@@ -275,14 +275,6 @@ public abstract class AbstractModule implements IModule {
     return classesDir.child("classes_gen");
   }
 
-  public IFile getClassesDir() {
-    IFile classesDir = getClassesDirParent();
-    if (classesDir == null) return null;
-    if (isPackaged()) return classesDir;
-
-    return classesDir.child("classes");
-  }
-
   private IFile getClassesDirParent() {
     if (isPackaged()) {
       String filename = getBundleHome().getAbsolutePath() + "!";

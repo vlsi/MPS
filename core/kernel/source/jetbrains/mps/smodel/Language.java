@@ -27,6 +27,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
@@ -61,6 +62,7 @@ public class Language extends AbstractModule {
 
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators = new ArrayList<Generator>();
+  private List<Solution> myStubSolutions = new ArrayList<Solution>();
 
   private HashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new HashMap<String, AbstractConceptDeclaration>();
   private IClassPathItem myLanguageRuntimeClasspathCache;
@@ -71,6 +73,8 @@ public class Language extends AbstractModule {
   private
   @Nullable
   Set<IRefactoring> myCachedRefactorings = null;
+
+  private boolean myFirstLoad = true;
 
   private List<Language> myAllExtendedLanguages = new ArrayList<Language>();
 
@@ -96,6 +100,27 @@ public class Language extends AbstractModule {
 
     language.setLanguageDescriptor(languageDescriptor, false);
     repository.addModule(language, moduleOwner);
+
+    if (language.myFirstLoad) {
+      language.myFirstLoad = false;
+      for (StubSolution ss : languageDescriptor.getStubSolutions()) {
+        SolutionDescriptor descriptor = new SolutionDescriptor();
+        descriptor.setUUID(ss.getId().toString());
+        descriptor.setNamespace(ss.getName());
+
+        descriptor.setCompileInMPS(false);
+        descriptor.setEnableJavaStubs(true);
+
+        descriptor.setExternallyVisible(true);
+
+        //todo what should be here?
+        descriptor.setDontLoadClasses(true);
+
+        Solution solution = Solution.newInstance(descriptor, language);
+        language.myStubSolutions.add(solution);
+      }
+    }
+
 
     return language;
   }

@@ -127,7 +127,7 @@ public class ClassLoaderManager implements ApplicationComponent {
       callBeforeReloadHandlers();
 
       indicator.setText2("Updating classpath...");
-      updateClassPath(true);
+      updateClassPath();
 
       indicator.setText2("Refreshing models...");
       SModelRepository.getInstance().refreshModels();
@@ -155,7 +155,7 @@ public class ClassLoaderManager implements ApplicationComponent {
     });
   }
 
-  public void updateClassPath(final boolean updateClassPath) {
+  private void updateClassPath() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         synchronized (myLock) {
@@ -201,10 +201,8 @@ public class ClassLoaderManager implements ApplicationComponent {
 
           myRuntimeEnvironment.reloadAll();
 
-          if (updateClassPath) {
-            for (IModule m : myRepository.getAllModules()) {
-              m.updateClassPath();
-            }
+          for (IModule m : myRepository.getAllModules()) {
+            m.updateClassPath();
           }
         }
       }

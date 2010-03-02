@@ -71,7 +71,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
 
   @Override
   protected void onAfterModulesRead() {
-
+    ClassLoaderManager.getInstance().init(LibraryManager.this);
   }
 
   @Override
@@ -120,11 +120,6 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
         }
       }
     }
-
-    //todo move the first call to OnAfterModulesRead, remove the others
-    ClassLoaderManager.getInstance().init(LibraryManager.this);
-    ClassLoaderManager.getInstance().updateClassPath(false);
-    StubSolutionsLoader.getInstance().loadSolutions();
 
     fireOnLoad(myBootstrapLibrariesOwner);
     fireOnLoad(myPredefinedLibrariesOwner);

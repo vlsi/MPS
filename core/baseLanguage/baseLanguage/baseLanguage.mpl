@@ -23,6 +23,10 @@
       <mapping-priorities />
     </generator>
   </generators>
+    <stubSolutions>
+        <stubSolution moduleName="JDK" moduleId="6354ebe7-c22a-4a0f-ac54-50b52ab9b065"/>
+        <stubSolution moduleName="MPS.Classpath" moduleId="37a3367b-1fb2-44d8-aa6b-18075e74e003"/>
+    </stubSolutions>
   <classPath>
     <entry path="${language_descriptor}/classes" include="false" />
     <entry path="${mps_home}/lib/asm/asm.jar" include="false" />
