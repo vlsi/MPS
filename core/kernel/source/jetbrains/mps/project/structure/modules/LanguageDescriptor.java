@@ -29,6 +29,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
   private List<Dependency> myRuntimeModules;
   private List<ClassPathEntry> myRuntimeClassPaths;
   private List<StubModelsEntry> myRuntimeStubModels;
+  private List<StubSolution> myStubSolutions;
   private boolean myDoNotGenerateAdapters = false;
 
   public LanguageDescriptor() {
@@ -39,6 +40,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
     myRuntimeModules = new ArrayList<Dependency>();
     myRuntimeClassPaths = new ArrayList<ClassPathEntry>();
     myRuntimeStubModels = new ArrayList<StubModelsEntry>();
+    myStubSolutions = new ArrayList<StubSolution>(); 
   }
 
   public String getGenPath() {
@@ -71,6 +73,10 @@ public class LanguageDescriptor extends ModuleDescriptor {
 
   public List<StubModelsEntry> getRuntimeStubModels() {
     return myRuntimeStubModels;
+  }
+
+  public List<StubSolution> getStubSolutions() {
+    return myStubSolutions;
   }
 
   public boolean isDoNotGenerateAdapters() {
