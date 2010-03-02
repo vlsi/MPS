@@ -103,26 +103,6 @@ public class ReferentsCreator {
     private boolean process(TypeDeclaration typeDeclaration) {
       char[][] name = typeDeclaration.binding.compoundName;
       SourceTypeBinding binding = typeDeclaration.binding;
-      if (binding instanceof LocalTypeBinding) {
-        char[] localName = binding.constantPoolName();
-        if (localName == null) {
-          /*
-          * Weird case: if JDT determines that this local class is totally
-          * uninstantiable, it won't bother allocating a local name.
-          */
-          return false;
-        }
-
-        //todo do it in another manner; anonymous inner classes for instance should be treated w/o name
-        for (int i = 0, c = localName.length; i < c; ++i) {
-          if (localName[i] == '/') {
-            localName[i] = '.';
-          }
-        }
-        name = new char[1][0];
-        name[0] = localName;
-      }
-
       SModel model = myReferentsCreator.myCurrentModel;
       Classifier classifier;
       Visibility visibility = getClassVisibility(binding);
@@ -214,13 +194,6 @@ public class ReferentsCreator {
 
     private boolean process(TypeDeclaration typeDeclaration) {
       SourceTypeBinding binding = typeDeclaration.binding;
-      if (binding.constantPoolName() == null) {
-        /*
-         * Weird case: if JDT determines that this local class is totally
-         * uninstantiable, it won't bother allocating a local name.
-         */
-        return false;
-      }
       Classifier classifier = (Classifier) myReferentsCreator.myBindingMap.get(binding);
       try {
         boolean isTopLevel = true;
