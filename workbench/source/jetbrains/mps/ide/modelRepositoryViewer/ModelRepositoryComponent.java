@@ -37,6 +37,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 import java.awt.Color;
+import java.awt.Font;
 
 /**
  * @author Kostik
@@ -121,7 +122,8 @@ public class ModelRepositoryComponent {
       protected void doUpdatePresentation() {
         setIcon(IconManager.getIconFor(myModelDescriptor));
         if (SModelRepository.getInstance().isChanged(myModelDescriptor)) {
-          setColor(new Color(0x00, 0x00, 0x90));
+          setFontStyle(getFontStyle() | Font.BOLD);
+          //setColor(new Color(0x00, 0x00, 0x90));
         }
         setColor(Color.BLACK);
         setNodeIdentifier(myModelDescriptor.getLongName());

@@ -45,6 +45,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.Color;
+import java.awt.Font;
 import java.util.*;
 
 public class SModelTreeNode extends MPSTreeNodeEx {
@@ -128,9 +129,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   protected void doUpdatePresentation() {
     SModelDescriptor sm = getSModelDescriptor();
     if (sm != null && sm.isInitialized() && SModelRepository.getInstance().isChanged(sm)) {
-      setColor(new Color(0x00, 0x00, 0x90));
+      setFontStyle(getFontStyle() | Font.BOLD);
+      //setColor(new Color(0x00, 0x00, 0x90));
     } else {
-      setColor(Color.BLACK);
+      //setColor(Color.BLACK);
     }
 
 // [Dirty implementation of VCS highlighting in editor
