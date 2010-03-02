@@ -61,7 +61,7 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
     public QuotationClass_wq7qsi_a0a1a0() {
     }
 
-    public SNode createNode(Object parameter_wq7qsi_a0a0a0b0a, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -70,7 +70,7 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = (SNode) parameter_wq7qsi_a0a0a0b0a;
+          quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_4 = CopyUtil.copy(quotedNode_2);
@@ -87,7 +87,7 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
       return result;
     }
 
-    public SNode createNode(Object parameter_wq7qsi_a0a0a0b0a) {
+    public SNode createNode(Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -96,7 +96,7 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = (SNode) parameter_wq7qsi_a0a0a0b0a;
+          quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_4 = CopyUtil.copy(quotedNode_2);

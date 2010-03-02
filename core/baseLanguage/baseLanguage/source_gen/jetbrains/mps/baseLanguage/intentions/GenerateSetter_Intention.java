@@ -121,7 +121,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
     public QuotationClass_hfod7k_a0a0a7a3a7() {
     }
 
-    public SNode createNode(Object parameter_9nyxiy_a0a0a0a0a0a0h0d0a, Object parameter_9nyxiy_a0a0a0a0a0a0h0d0a_0, Object parameter_9nyxiy_a0a0a0a0a7a3a0, Object parameter_9nyxiy_a0a0a0a0h0d0a, Object parameter_9nyxiy_a0a0a0a7a3a0) {
+    public SNode createNode(Object parameter_25, Object parameter_26, Object parameter_27, Object parameter_28, Object parameter_29) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -139,7 +139,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_13 = quotedNode_1;
-        quotedNode1_13.setProperty("name", (String) parameter_9nyxiy_a0a0a0a7a3a0);
+        quotedNode1_13.setProperty("name", (String) parameter_29);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_14 = quotedNode_2;
@@ -168,7 +168,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
                 quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                 SNode quotedNode1_20 = quotedNode_10;
                 {
-                  quotedNode_11 = (SNode) parameter_9nyxiy_a0a0a0a0a0a0h0d0a;
+                  quotedNode_11 = (SNode) parameter_25;
                   SNode quotedNode1_21;
                   if (_parameterValues_129834374.contains(quotedNode_11)) {
                     quotedNode1_21 = CopyUtil.copy(quotedNode_11);
@@ -183,7 +183,7 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
                 {
                   quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                   SNode quotedNode1_22 = quotedNode_12;
-                  quotedNode1_22.setReferent("fieldDeclaration", (SNode) parameter_9nyxiy_a0a0a0a0a0a0h0d0a_0);
+                  quotedNode1_22.setReferent("fieldDeclaration", (SNode) parameter_26);
                   quotedNode_10.addChild("operation", quotedNode1_22);
                 }
                 quotedNode_8.addChild("lValue", quotedNode1_20);
@@ -197,9 +197,9 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
         {
           quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_23 = quotedNode_5;
-          quotedNode1_23.setProperty("name", (String) parameter_9nyxiy_a0a0a0a0h0d0a);
+          quotedNode1_23.setProperty("name", (String) parameter_28);
           {
-            quotedNode_7 = (SNode) parameter_9nyxiy_a0a0a0a0a7a3a0;
+            quotedNode_7 = (SNode) parameter_27;
             SNode quotedNode1_24;
             if (_parameterValues_129834374.contains(quotedNode_7)) {
               quotedNode1_24 = CopyUtil.copy(quotedNode_7);

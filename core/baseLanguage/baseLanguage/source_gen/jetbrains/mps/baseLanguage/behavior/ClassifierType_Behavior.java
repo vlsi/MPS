@@ -165,14 +165,14 @@ public class ClassifierType_Behavior {
     public QuotationClass_hz3823_a0a0e() {
     }
 
-    public SNode createNode(Object parameter_hz3823_a0a0a0d) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_hz3823_a0a0a0d);
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

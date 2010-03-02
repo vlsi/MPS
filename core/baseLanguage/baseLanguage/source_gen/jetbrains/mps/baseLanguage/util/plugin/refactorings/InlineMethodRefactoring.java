@@ -293,7 +293,7 @@ public class InlineMethodRefactoring {
     public QuotationClass_49noxv_a0a0a0b0b() {
     }
 
-    public SNode createNode(Object parameter_49noxv_a0a0a0a0a1a1) {
+    public SNode createNode(Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -302,7 +302,7 @@ public class InlineMethodRefactoring {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = (SNode) parameter_49noxv_a0a0a0a0a1a1;
+          quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_4 = CopyUtil.copy(quotedNode_2);

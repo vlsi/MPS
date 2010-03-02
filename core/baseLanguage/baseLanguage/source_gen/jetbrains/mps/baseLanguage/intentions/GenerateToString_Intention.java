@@ -109,14 +109,14 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     public QuotationClass_6enhg7_a0a2a4a7() {
     }
 
-    public SNode createNode(Object parameter_satqj4_a0a0a2a4a0) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setProperty("value", (String) parameter_satqj4_a0a0a2a4a0);
+        quotedNode1_2.setProperty("value", (String) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -127,7 +127,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     public QuotationClass_6enhg7_a0a3a4a7() {
     }
 
-    public SNode createNode(Object parameter_satqj4_a0a0a0d0e0a, Object parameter_satqj4_a0a0a0d0e0a_0) {
+    public SNode createNode(Object parameter_7, Object parameter_8) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -137,7 +137,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = (SNode) parameter_satqj4_a0a0a0d0e0a;
+          quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_5 = CopyUtil.copy(quotedNode_2);
@@ -150,7 +150,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
           }
         }
         {
-          quotedNode_3 = (SNode) parameter_satqj4_a0a0a0d0e0a_0;
+          quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_6 = CopyUtil.copy(quotedNode_3);
@@ -172,7 +172,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     public QuotationClass_6enhg7_a0a0a4a4a7() {
     }
 
-    public SNode createNode(Object parameter_satqj4_a0a0a0a0e0e0a, Object parameter_satqj4_a0a0a0a0e0e0a_0) {
+    public SNode createNode(Object parameter_7, Object parameter_8) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -184,11 +184,11 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
-          quotedNode1_5.setProperty("value", (String) parameter_satqj4_a0a0a0a0e0e0a);
+          quotedNode1_5.setProperty("value", (String) parameter_7);
           quotedNode_1.addChild("leftExpression", quotedNode1_5);
         }
         {
-          quotedNode_3 = (SNode) parameter_satqj4_a0a0a0a0e0e0a_0;
+          quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_6 = CopyUtil.copy(quotedNode_3);
@@ -210,7 +210,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     public QuotationClass_6enhg7_a0a1a4a4a7() {
     }
 
-    public SNode createNode(Object parameter_satqj4_a0a0a0b0e0e0a, Object parameter_satqj4_a0a0a0b0e0e0a_0) {
+    public SNode createNode(Object parameter_7, Object parameter_8) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -220,7 +220,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = (SNode) parameter_satqj4_a0a0a0b0e0e0a;
+          quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_5 = CopyUtil.copy(quotedNode_2);
@@ -233,7 +233,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
           }
         }
         {
-          quotedNode_3 = (SNode) parameter_satqj4_a0a0a0b0e0e0a_0;
+          quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_6 = CopyUtil.copy(quotedNode_3);
@@ -255,7 +255,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     public QuotationClass_6enhg7_a0a0a0e0e0h() {
     }
 
-    public SNode createNode(Object parameter_satqj4_a0a0a0a0a4a4a0, Object parameter_satqj4_a0a0a0a0a4a4a0_0) {
+    public SNode createNode(Object parameter_7, Object parameter_8) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -265,7 +265,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = (SNode) parameter_satqj4_a0a0a0a0a4a4a0;
+          quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_5 = CopyUtil.copy(quotedNode_2);
@@ -278,7 +278,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
           }
         }
         {
-          quotedNode_3 = (SNode) parameter_satqj4_a0a0a0a0a4a4a0_0;
+          quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_6 = CopyUtil.copy(quotedNode_3);
@@ -300,7 +300,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     public QuotationClass_6enhg7_a0a1a0e0e0h() {
     }
 
-    public SNode createNode(Object parameter_satqj4_a0a0a0b0a4a4a0, Object parameter_satqj4_a0a0a0b0a4a4a0_0) {
+    public SNode createNode(Object parameter_7, Object parameter_8) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -310,7 +310,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = (SNode) parameter_satqj4_a0a0a0b0a4a4a0;
+          quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_5 = CopyUtil.copy(quotedNode_2);
@@ -323,7 +323,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
           }
         }
         {
-          quotedNode_3 = (SNode) parameter_satqj4_a0a0a0b0a4a4a0_0;
+          quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_6 = CopyUtil.copy(quotedNode_3);
@@ -345,14 +345,14 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     public QuotationClass_6enhg7_a0a0a5a7() {
     }
 
-    public SNode createNode(Object parameter_satqj4_a0a0a0a5a0) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setProperty("value", (String) parameter_satqj4_a0a0a0a5a0);
+        quotedNode1_2.setProperty("value", (String) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -363,7 +363,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     public QuotationClass_6enhg7_a0a0a0f0h() {
     }
 
-    public SNode createNode(Object parameter_satqj4_a0a0a0a0a5a0) {
+    public SNode createNode(Object parameter_7) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -379,7 +379,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
           quotedNode_1.addChild("rightExpression", quotedNode1_5);
         }
         {
-          quotedNode_3 = (SNode) parameter_satqj4_a0a0a0a0a5a0;
+          quotedNode_3 = (SNode) parameter_7;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_6 = CopyUtil.copy(quotedNode_3);
@@ -401,7 +401,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     public QuotationClass_6enhg7_a0a0a6a7() {
     }
 
-    public SNode createNode(Object parameter_satqj4_a0a0a0a0a0g0a) {
+    public SNode createNode(Object parameter_15) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -432,7 +432,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
             quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
             SNode quotedNode1_12 = quotedNode_6;
             {
-              quotedNode_7 = (SNode) parameter_satqj4_a0a0a0a0a0g0a;
+              quotedNode_7 = (SNode) parameter_15;
               SNode quotedNode1_13;
               if (_parameterValues_129834374.contains(quotedNode_7)) {
                 quotedNode1_13 = CopyUtil.copy(quotedNode_7);

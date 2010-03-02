@@ -3987,7 +3987,7 @@ __switch__:
     public QuotationClass_x583g4_a0a0e0a0a0a0a0c0a0b0zd() {
     }
 
-    public SNode createNode(Object parameter_nkius4_a0a0a0a0e0a0a0, Object parameter_nkius4_a0a0a0a0e0a0a0_0) {
+    public SNode createNode(Object parameter_9, Object parameter_10) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -4001,7 +4001,7 @@ __switch__:
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           {
-            quotedNode_3 = (SNode) parameter_nkius4_a0a0a0a0e0a0a0;
+            quotedNode_3 = (SNode) parameter_9;
             SNode quotedNode1_7;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
               quotedNode1_7 = CopyUtil.copy(quotedNode_3);
@@ -4014,7 +4014,7 @@ __switch__:
             }
           }
           {
-            quotedNode_4 = (SNode) parameter_nkius4_a0a0a0a0e0a0a0_0;
+            quotedNode_4 = (SNode) parameter_10;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
               quotedNode1_8 = CopyUtil.copy(quotedNode_4);
@@ -4038,7 +4038,7 @@ __switch__:
     public QuotationClass_x583g4_a0a0a4a0a0a0a0a2a0a1a301() {
     }
 
-    public SNode createNode(Object parameter_nkius4_a0a0a0a0e0a0a0_1, Object parameter_nkius4_a0a0a0a0e0a0a0_2) {
+    public SNode createNode(Object parameter_7, Object parameter_8) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -4048,7 +4048,7 @@ __switch__:
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_2 = (SNode) parameter_nkius4_a0a0a0a0e0a0a0_1;
+          quotedNode_2 = (SNode) parameter_7;
           SNode quotedNode1_5;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_5 = CopyUtil.copy(quotedNode_2);
@@ -4061,7 +4061,7 @@ __switch__:
           }
         }
         {
-          quotedNode_3 = (SNode) parameter_nkius4_a0a0a0a0e0a0a0_2;
+          quotedNode_3 = (SNode) parameter_8;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_6 = CopyUtil.copy(quotedNode_3);
@@ -4083,7 +4083,7 @@ __switch__:
     public QuotationClass_x583g4_a0a0a0a0a0a1a0a1a471() {
     }
 
-    public SNode createNode(Object parameter_lyc2g5_a0a0a0a0a1a) {
+    public SNode createNode(Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -4091,7 +4091,7 @@ __switch__:
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_lyc2g5_a0a0a0a0a1a);
+        quotedNode1_3.setReferent("classifier", (SNode) parameter_5);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
@@ -4107,7 +4107,7 @@ __switch__:
     public QuotationClass_x583g4_a0a0b0a0a0a0b0a0b0sg() {
     }
 
-    public SNode createNode(Object parameter_lyc2g5_a0a0a0a0b0a0b0) {
+    public SNode createNode(Object parameter_7) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -4120,7 +4120,7 @@ __switch__:
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           {
-            quotedNode_3 = (SNode) parameter_lyc2g5_a0a0a0a0b0a0b0;
+            quotedNode_3 = (SNode) parameter_7;
             SNode quotedNode1_6;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
               quotedNode1_6 = CopyUtil.copy(quotedNode_3);
@@ -4144,7 +4144,7 @@ __switch__:
     public QuotationClass_x583g4_a0a0a0a0a0a0a1a0a2a471() {
     }
 
-    public SNode createNode(Object parameter_lyc2g5_a0a0a0a0a0a0a1b0) {
+    public SNode createNode(Object parameter_9) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -4163,7 +4163,7 @@ __switch__:
             {
               quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_8 = quotedNode_4;
-              quotedNode1_8.setReferent("classifier", (SNode) parameter_lyc2g5_a0a0a0a0a0a0a1b0);
+              quotedNode1_8.setReferent("classifier", (SNode) parameter_9);
               quotedNode_3.addChild("componentType", quotedNode1_8);
             }
             quotedNode_2.addChild("type", quotedNode1_7);

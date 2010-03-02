@@ -40,14 +40,14 @@ public class ConstructorInvocationStatement_Behavior {
     public QuotationClass_teq92u_a0a0a0c0b() {
     }
 
-    public SNode createNode(Object parameter_teq92u_a0a0a0a0c0a) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_teq92u_a0a0a0a0c0a);
+        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;
@@ -58,7 +58,7 @@ public class ConstructorInvocationStatement_Behavior {
     public QuotationClass_teq92u_a0d0b() {
     }
 
-    public SNode createNode(Object parameter_teq92u_a0a0a3a0, Object parameter_teq92u_a0a0d0a) {
+    public SNode createNode(Object parameter_4, Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -66,9 +66,9 @@ public class ConstructorInvocationStatement_Behavior {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_teq92u_a0a0d0a);
+        quotedNode1_3.setReferent("classifier", (SNode) parameter_5);
         {
-          List<SNode> nodes = (List<SNode>) parameter_teq92u_a0a0a3a0;
+          List<SNode> nodes = (List<SNode>) parameter_4;
           for (SNode child : nodes) {
             quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
           }

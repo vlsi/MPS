@@ -158,7 +158,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a2a7() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a2a0, Object parameter_xa7tcf_a0a0a0b0a0a2a0, Object parameter_xa7tcf_a0a0d0a0a2a0, Object parameter_xa7tcf_a0a0a3a0a0c0a) {
+    public SNode createNode(Object parameter_73, Object parameter_74, Object parameter_75, Object parameter_76) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -237,7 +237,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EqualsExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_45 = quotedNode_13;
               {
-                quotedNode_18 = (SNode) parameter_xa7tcf_a0a0a0a0a2a0;
+                quotedNode_18 = (SNode) parameter_73;
                 SNode quotedNode1_46;
                 if (_parameterValues_129834374.contains(quotedNode_18)) {
                   quotedNode1_46 = CopyUtil.copy(quotedNode_18);
@@ -302,7 +302,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                   SNode quotedNode1_57 = quotedNode_29;
                   {
-                    quotedNode_33 = (SNode) parameter_xa7tcf_a0a0a0b0a0a2a0;
+                    quotedNode_33 = (SNode) parameter_74;
                     SNode quotedNode1_58;
                     if (_parameterValues_129834374.contains(quotedNode_33)) {
                       quotedNode1_58 = CopyUtil.copy(quotedNode_33);
@@ -359,7 +359,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               {
                 quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                 SNode quotedNode1_66 = quotedNode_23;
-                quotedNode1_66.setReferent("classifier", (SNode) parameter_xa7tcf_a0a0d0a0a2a0);
+                quotedNode1_66.setReferent("classifier", (SNode) parameter_75);
                 quotedNode_16.addChild("type", quotedNode1_66);
               }
               {
@@ -368,7 +368,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 {
                   quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                   SNode quotedNode1_68 = quotedNode_31;
-                  quotedNode1_68.setReferent("classifier", (SNode) parameter_xa7tcf_a0a0a3a0a0c0a);
+                  quotedNode1_68.setReferent("classifier", (SNode) parameter_76);
                   quotedNode_24.addChild("type", quotedNode1_68);
                 }
                 {
@@ -416,7 +416,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a0a2a8a7() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a0a0a2a8a0, Object parameter_xa7tcf_a0a0a0a0a0a0a2a8a0_0, Object parameter_xa7tcf_a0a1a0a0a0a0a2a8a0, Object parameter_xa7tcf_a0a1a0a0a0a0a2a8a0_0) {
+    public SNode createNode(Object parameter_27, Object parameter_28, Object parameter_29, Object parameter_30) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -469,7 +469,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_21 = quotedNode_8;
               {
-                quotedNode_10 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a2a8a0;
+                quotedNode_10 = (SNode) parameter_27;
                 SNode quotedNode1_22;
                 if (_parameterValues_129834374.contains(quotedNode_10)) {
                   quotedNode1_22 = CopyUtil.copy(quotedNode_10);
@@ -482,7 +482,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 }
               }
               {
-                quotedNode_11 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a2a8a0_0;
+                quotedNode_11 = (SNode) parameter_28;
                 SNode quotedNode1_23;
                 if (_parameterValues_129834374.contains(quotedNode_11)) {
                   quotedNode1_23 = CopyUtil.copy(quotedNode_11);
@@ -500,7 +500,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_24 = quotedNode_9;
               {
-                quotedNode_12 = (SNode) parameter_xa7tcf_a0a1a0a0a0a0a2a8a0;
+                quotedNode_12 = (SNode) parameter_29;
                 SNode quotedNode1_25;
                 if (_parameterValues_129834374.contains(quotedNode_12)) {
                   quotedNode1_25 = CopyUtil.copy(quotedNode_12);
@@ -513,7 +513,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 }
               }
               {
-                quotedNode_13 = (SNode) parameter_xa7tcf_a0a1a0a0a0a0a2a8a0_0;
+                quotedNode_13 = (SNode) parameter_30;
                 SNode quotedNode1_26;
                 if (_parameterValues_129834374.contains(quotedNode_13)) {
                   quotedNode1_26 = CopyUtil.copy(quotedNode_13);
@@ -541,7 +541,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a0a0c0i0h() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a0a0a0c0i0a, Object parameter_xa7tcf_a0a0a0a0a0a0a0c0i0a_0, Object parameter_xa7tcf_a0a1a0a0a0a0a0c0i0a, Object parameter_xa7tcf_a0a1a0a0a0a0a0c0i0a_0) {
+    public SNode createNode(Object parameter_27, Object parameter_28, Object parameter_29, Object parameter_30) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -578,7 +578,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_18 = quotedNode_7;
               {
-                quotedNode_10 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0c0i0a;
+                quotedNode_10 = (SNode) parameter_27;
                 SNode quotedNode1_19;
                 if (_parameterValues_129834374.contains(quotedNode_10)) {
                   quotedNode1_19 = CopyUtil.copy(quotedNode_10);
@@ -591,7 +591,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 }
               }
               {
-                quotedNode_11 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0c0i0a_0;
+                quotedNode_11 = (SNode) parameter_28;
                 SNode quotedNode1_20;
                 if (_parameterValues_129834374.contains(quotedNode_11)) {
                   quotedNode1_20 = CopyUtil.copy(quotedNode_11);
@@ -609,7 +609,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_21 = quotedNode_8;
               {
-                quotedNode_12 = (SNode) parameter_xa7tcf_a0a1a0a0a0a0a0c0i0a;
+                quotedNode_12 = (SNode) parameter_29;
                 SNode quotedNode1_22;
                 if (_parameterValues_129834374.contains(quotedNode_12)) {
                   quotedNode1_22 = CopyUtil.copy(quotedNode_12);
@@ -622,7 +622,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 }
               }
               {
-                quotedNode_13 = (SNode) parameter_xa7tcf_a0a1a0a0a0a0a0c0i0a_0;
+                quotedNode_13 = (SNode) parameter_30;
                 SNode quotedNode1_23;
                 if (_parameterValues_129834374.contains(quotedNode_13)) {
                   quotedNode1_23 = CopyUtil.copy(quotedNode_13);
@@ -666,7 +666,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a0a0c0i0h_0() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a0a0a2a8a0_1, Object parameter_xa7tcf_a0a0a0a0a0a0a2a8a0_2, Object parameter_xa7tcf_a0a0a0a0a0a0a2a8a0_3, Object parameter_xa7tcf_a0a0a0a0a0a0a2a8a0_4) {
+    public SNode createNode(Object parameter_23, Object parameter_24, Object parameter_25, Object parameter_26) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -690,7 +690,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
             SNode quotedNode1_14 = quotedNode_4;
             {
-              quotedNode_7 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a2a8a0_1;
+              quotedNode_7 = (SNode) parameter_23;
               SNode quotedNode1_15;
               if (_parameterValues_129834374.contains(quotedNode_7)) {
                 quotedNode1_15 = CopyUtil.copy(quotedNode_7);
@@ -703,7 +703,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               }
             }
             {
-              quotedNode_8 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a2a8a0_2;
+              quotedNode_8 = (SNode) parameter_24;
               SNode quotedNode1_16;
               if (_parameterValues_129834374.contains(quotedNode_8)) {
                 quotedNode1_16 = CopyUtil.copy(quotedNode_8);
@@ -721,7 +721,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
             SNode quotedNode1_17 = quotedNode_5;
             {
-              quotedNode_9 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a2a8a0_3;
+              quotedNode_9 = (SNode) parameter_25;
               SNode quotedNode1_18;
               if (_parameterValues_129834374.contains(quotedNode_9)) {
                 quotedNode1_18 = CopyUtil.copy(quotedNode_9);
@@ -734,7 +734,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               }
             }
             {
-              quotedNode_10 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a2a8a0_4;
+              quotedNode_10 = (SNode) parameter_26;
               SNode quotedNode1_19;
               if (_parameterValues_129834374.contains(quotedNode_10)) {
                 quotedNode1_19 = CopyUtil.copy(quotedNode_10);
@@ -776,7 +776,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a0c0i0h() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a0a0c0i0a, Object parameter_xa7tcf_a0a0a0a0a0a0c0i0a_0, Object parameter_xa7tcf_a0a1a0a0a0a0c0i0a, Object parameter_xa7tcf_a0a1a0a0a0a0c0i0a_0) {
+    public SNode createNode(Object parameter_25, Object parameter_26, Object parameter_27, Object parameter_28) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -806,7 +806,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_16 = quotedNode_6;
               {
-                quotedNode_9 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0c0i0a;
+                quotedNode_9 = (SNode) parameter_25;
                 SNode quotedNode1_17;
                 if (_parameterValues_129834374.contains(quotedNode_9)) {
                   quotedNode1_17 = CopyUtil.copy(quotedNode_9);
@@ -819,7 +819,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 }
               }
               {
-                quotedNode_10 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0c0i0a_0;
+                quotedNode_10 = (SNode) parameter_26;
                 SNode quotedNode1_18;
                 if (_parameterValues_129834374.contains(quotedNode_10)) {
                   quotedNode1_18 = CopyUtil.copy(quotedNode_10);
@@ -837,7 +837,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_19 = quotedNode_7;
               {
-                quotedNode_11 = (SNode) parameter_xa7tcf_a0a1a0a0a0a0c0i0a;
+                quotedNode_11 = (SNode) parameter_27;
                 SNode quotedNode1_20;
                 if (_parameterValues_129834374.contains(quotedNode_11)) {
                   quotedNode1_20 = CopyUtil.copy(quotedNode_11);
@@ -850,7 +850,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 }
               }
               {
-                quotedNode_12 = (SNode) parameter_xa7tcf_a0a1a0a0a0a0c0i0a_0;
+                quotedNode_12 = (SNode) parameter_28;
                 SNode quotedNode1_21;
                 if (_parameterValues_129834374.contains(quotedNode_12)) {
                   quotedNode1_21 = CopyUtil.copy(quotedNode_12);
@@ -894,7 +894,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a1c0i0h() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a0a0a1c0i0a, Object parameter_xa7tcf_a0a0a0a0a0a0a1c0i0a_0, Object parameter_xa7tcf_a0a0a0a0a0a0b2a8a0, Object parameter_xa7tcf_a0a0a0a0a0a0b2a8a0_0, Object parameter_xa7tcf_a0a0a0a0a0a1c0i0a, Object parameter_xa7tcf_a0a0a0a0a0a1c0i0a_0, Object parameter_xa7tcf_a0a0a0a0a0a1c0i0a_1, Object parameter_xa7tcf_a0a0a0a0a0a1c0i0a_2) {
+    public SNode createNode(Object parameter_49, Object parameter_50, Object parameter_51, Object parameter_52, Object parameter_53, Object parameter_54, Object parameter_55, Object parameter_56) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -957,7 +957,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                   SNode quotedNode1_33 = quotedNode_20;
                   {
-                    quotedNode_23 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a1c0i0a;
+                    quotedNode_23 = (SNode) parameter_49;
                     SNode quotedNode1_34;
                     if (_parameterValues_129834374.contains(quotedNode_23)) {
                       quotedNode1_34 = CopyUtil.copy(quotedNode_23);
@@ -970,7 +970,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     }
                   }
                   {
-                    quotedNode_24 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a1c0i0a_0;
+                    quotedNode_24 = (SNode) parameter_50;
                     SNode quotedNode1_35;
                     if (_parameterValues_129834374.contains(quotedNode_24)) {
                       quotedNode1_35 = CopyUtil.copy(quotedNode_24);
@@ -990,7 +990,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                 SNode quotedNode1_36 = quotedNode_15;
                 {
-                  quotedNode_21 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0b2a8a0;
+                  quotedNode_21 = (SNode) parameter_51;
                   SNode quotedNode1_37;
                   if (_parameterValues_129834374.contains(quotedNode_21)) {
                     quotedNode1_37 = CopyUtil.copy(quotedNode_21);
@@ -1003,7 +1003,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   }
                 }
                 {
-                  quotedNode_22 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0b2a8a0_0;
+                  quotedNode_22 = (SNode) parameter_52;
                   SNode quotedNode1_38;
                   if (_parameterValues_129834374.contains(quotedNode_22)) {
                     quotedNode1_38 = CopyUtil.copy(quotedNode_22);
@@ -1033,7 +1033,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_41 = quotedNode_11;
               {
-                quotedNode_16 = (SNode) parameter_xa7tcf_a0a0a0a0a0a1c0i0a;
+                quotedNode_16 = (SNode) parameter_53;
                 SNode quotedNode1_42;
                 if (_parameterValues_129834374.contains(quotedNode_16)) {
                   quotedNode1_42 = CopyUtil.copy(quotedNode_16);
@@ -1046,7 +1046,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 }
               }
               {
-                quotedNode_17 = (SNode) parameter_xa7tcf_a0a0a0a0a0a1c0i0a_0;
+                quotedNode_17 = (SNode) parameter_54;
                 SNode quotedNode1_43;
                 if (_parameterValues_129834374.contains(quotedNode_17)) {
                   quotedNode1_43 = CopyUtil.copy(quotedNode_17);
@@ -1074,7 +1074,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_46 = quotedNode_13;
               {
-                quotedNode_18 = (SNode) parameter_xa7tcf_a0a0a0a0a0a1c0i0a_1;
+                quotedNode_18 = (SNode) parameter_55;
                 SNode quotedNode1_47;
                 if (_parameterValues_129834374.contains(quotedNode_18)) {
                   quotedNode1_47 = CopyUtil.copy(quotedNode_18);
@@ -1087,7 +1087,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 }
               }
               {
-                quotedNode_19 = (SNode) parameter_xa7tcf_a0a0a0a0a0a1c0i0a_2;
+                quotedNode_19 = (SNode) parameter_56;
                 SNode quotedNode1_48;
                 if (_parameterValues_129834374.contains(quotedNode_19)) {
                   quotedNode1_48 = CopyUtil.copy(quotedNode_19);
@@ -1115,7 +1115,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a0c0i0h_0() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a0a0a0c0i0a_1, Object parameter_xa7tcf_a0a0a0a0a0a0a0c0i0a_2, Object parameter_xa7tcf_a0a0a0a0a0a0a0a2a8a0, Object parameter_xa7tcf_a0a0a0a0a0a0a0a2a8a0_0, Object parameter_xa7tcf_a0a0a0a0a0a0c0i0a_1, Object parameter_xa7tcf_a0a0a0a0a0a0c0i0a_2, Object parameter_xa7tcf_a0a0a0a0a0a0c0i0a_3, Object parameter_xa7tcf_a0a0a0a0a0a0c0i0a_4) {
+    public SNode createNode(Object parameter_55, Object parameter_56, Object parameter_57, Object parameter_58, Object parameter_59, Object parameter_60, Object parameter_61, Object parameter_62) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -1181,7 +1181,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                   SNode quotedNode1_36 = quotedNode_20;
                   {
-                    quotedNode_22 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0c0i0a_1;
+                    quotedNode_22 = (SNode) parameter_55;
                     SNode quotedNode1_37;
                     if (_parameterValues_129834374.contains(quotedNode_22)) {
                       quotedNode1_37 = CopyUtil.copy(quotedNode_22);
@@ -1194,7 +1194,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     }
                   }
                   {
-                    quotedNode_23 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0c0i0a_2;
+                    quotedNode_23 = (SNode) parameter_56;
                     SNode quotedNode1_38;
                     if (_parameterValues_129834374.contains(quotedNode_23)) {
                       quotedNode1_38 = CopyUtil.copy(quotedNode_23);
@@ -1220,7 +1220,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                     SNode quotedNode1_41 = quotedNode_24;
                     {
-                      quotedNode_26 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0a2a8a0;
+                      quotedNode_26 = (SNode) parameter_57;
                       SNode quotedNode1_42;
                       if (_parameterValues_129834374.contains(quotedNode_26)) {
                         quotedNode1_42 = CopyUtil.copy(quotedNode_26);
@@ -1233,7 +1233,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       }
                     }
                     {
-                      quotedNode_27 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0a2a8a0_0;
+                      quotedNode_27 = (SNode) parameter_58;
                       SNode quotedNode1_43;
                       if (_parameterValues_129834374.contains(quotedNode_27)) {
                         quotedNode1_43 = CopyUtil.copy(quotedNode_27);
@@ -1273,7 +1273,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_47 = quotedNode_11;
               {
-                quotedNode_16 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0c0i0a_1;
+                quotedNode_16 = (SNode) parameter_59;
                 SNode quotedNode1_48;
                 if (_parameterValues_129834374.contains(quotedNode_16)) {
                   quotedNode1_48 = CopyUtil.copy(quotedNode_16);
@@ -1286,7 +1286,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 }
               }
               {
-                quotedNode_17 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0c0i0a_2;
+                quotedNode_17 = (SNode) parameter_60;
                 SNode quotedNode1_49;
                 if (_parameterValues_129834374.contains(quotedNode_17)) {
                   quotedNode1_49 = CopyUtil.copy(quotedNode_17);
@@ -1314,7 +1314,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_52 = quotedNode_13;
               {
-                quotedNode_18 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0c0i0a_3;
+                quotedNode_18 = (SNode) parameter_61;
                 SNode quotedNode1_53;
                 if (_parameterValues_129834374.contains(quotedNode_18)) {
                   quotedNode1_53 = CopyUtil.copy(quotedNode_18);
@@ -1327,7 +1327,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 }
               }
               {
-                quotedNode_19 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0c0i0a_4;
+                quotedNode_19 = (SNode) parameter_62;
                 SNode quotedNode1_54;
                 if (_parameterValues_129834374.contains(quotedNode_19)) {
                   quotedNode1_54 = CopyUtil.copy(quotedNode_19);
@@ -1489,7 +1489,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a2a22a7() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0c0w0a) {
+    public SNode createNode(Object parameter_7) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -1505,7 +1505,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
           quotedNode_1.addChild("leftExpression", quotedNode1_5);
         }
         {
-          quotedNode_3 = (SNode) parameter_xa7tcf_a0a0a0c0w0a;
+          quotedNode_3 = (SNode) parameter_7;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_6 = CopyUtil.copy(quotedNode_3);
@@ -1527,7 +1527,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a0d0w0h() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a0a3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a0a0a3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a0a0a3a22a0_0, Object parameter_xa7tcf_a0a0a0a0a0a0a0a3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a0a3a22a0_0, Object parameter_xa7tcf_a0a0a0a0a0d0w0a) {
+    public SNode createNode(Object parameter_37, Object parameter_38, Object parameter_39, Object parameter_40, Object parameter_41, Object parameter_42) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -1558,7 +1558,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
             SNode quotedNode1_21 = quotedNode_3;
             {
-              quotedNode_5 = (SNode) parameter_xa7tcf_a0a0a0a0a0a3a22a0;
+              quotedNode_5 = (SNode) parameter_37;
               SNode quotedNode1_22;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
                 quotedNode1_22 = CopyUtil.copy(quotedNode_5);
@@ -1600,7 +1600,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                         quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                         SNode quotedNode1_30 = quotedNode_16;
                         {
-                          quotedNode_17 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0a0a3a22a0;
+                          quotedNode_17 = (SNode) parameter_38;
                           SNode quotedNode1_31;
                           if (_parameterValues_129834374.contains(quotedNode_17)) {
                             quotedNode1_31 = CopyUtil.copy(quotedNode_17);
@@ -1613,7 +1613,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                           }
                         }
                         {
-                          quotedNode_18 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0a0a3a22a0_0;
+                          quotedNode_18 = (SNode) parameter_39;
                           SNode quotedNode1_32;
                           if (_parameterValues_129834374.contains(quotedNode_18)) {
                             quotedNode1_32 = CopyUtil.copy(quotedNode_18);
@@ -1635,7 +1635,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                     SNode quotedNode1_33 = quotedNode_11;
                     {
-                      quotedNode_13 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0a3a22a0;
+                      quotedNode_13 = (SNode) parameter_40;
                       SNode quotedNode1_34;
                       if (_parameterValues_129834374.contains(quotedNode_13)) {
                         quotedNode1_34 = CopyUtil.copy(quotedNode_13);
@@ -1648,7 +1648,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       }
                     }
                     {
-                      quotedNode_14 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0a3a22a0_0;
+                      quotedNode_14 = (SNode) parameter_41;
                       SNode quotedNode1_35;
                       if (_parameterValues_129834374.contains(quotedNode_14)) {
                         quotedNode1_35 = CopyUtil.copy(quotedNode_14);
@@ -1671,7 +1671,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_2.addChild("rValue", quotedNode1_21);
           }
           {
-            quotedNode_4 = (SNode) parameter_xa7tcf_a0a0a0a0a0d0w0a;
+            quotedNode_4 = (SNode) parameter_42;
             SNode quotedNode1_36;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
               quotedNode1_36 = CopyUtil.copy(quotedNode_4);
@@ -1695,7 +1695,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a1d0w0h() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a0a0b3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0b3a22a0_0, Object parameter_xa7tcf_a0a0a0a0a0b3a22a0, Object parameter_xa7tcf_a0a0a0a0a1d0w0a) {
+    public SNode createNode(Object parameter_21, Object parameter_22, Object parameter_23, Object parameter_24) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -1724,7 +1724,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                 SNode quotedNode1_15 = quotedNode_7;
                 {
-                  quotedNode_9 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0b3a22a0;
+                  quotedNode_9 = (SNode) parameter_21;
                   SNode quotedNode1_16;
                   if (_parameterValues_129834374.contains(quotedNode_9)) {
                     quotedNode1_16 = CopyUtil.copy(quotedNode_9);
@@ -1737,7 +1737,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   }
                 }
                 {
-                  quotedNode_10 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0b3a22a0_0;
+                  quotedNode_10 = (SNode) parameter_22;
                   SNode quotedNode1_17;
                   if (_parameterValues_129834374.contains(quotedNode_10)) {
                     quotedNode1_17 = CopyUtil.copy(quotedNode_10);
@@ -1759,7 +1759,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_3.addChild("rightExpression", quotedNode1_14);
             }
             {
-              quotedNode_6 = (SNode) parameter_xa7tcf_a0a0a0a0a0b3a22a0;
+              quotedNode_6 = (SNode) parameter_23;
               SNode quotedNode1_19;
               if (_parameterValues_129834374.contains(quotedNode_6)) {
                 quotedNode1_19 = CopyUtil.copy(quotedNode_6);
@@ -1774,7 +1774,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_2.addChild("rValue", quotedNode1_13);
           }
           {
-            quotedNode_4 = (SNode) parameter_xa7tcf_a0a0a0a0a1d0w0a;
+            quotedNode_4 = (SNode) parameter_24;
             SNode quotedNode1_20;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
               quotedNode1_20 = CopyUtil.copy(quotedNode_4);
@@ -1798,7 +1798,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a0c3a22a7() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a0c3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a2d0w0a, Object parameter_xa7tcf_a0a0a0a0a0a0a2d0w0a_0, Object parameter_xa7tcf_a0a0a0a0a0a0a0c3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a0c3a22a0_0) {
+    public SNode createNode(Object parameter_31, Object parameter_32, Object parameter_33, Object parameter_34, Object parameter_35) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -1823,7 +1823,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_17 = quotedNode_2;
           {
-            quotedNode_3 = (SNode) parameter_xa7tcf_a0a0a0a0a0c3a22a0;
+            quotedNode_3 = (SNode) parameter_31;
             SNode quotedNode1_18;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
               quotedNode1_18 = CopyUtil.copy(quotedNode_3);
@@ -1847,7 +1847,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                 quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                 SNode quotedNode1_21 = quotedNode_8;
                 {
-                  quotedNode_10 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a2d0w0a;
+                  quotedNode_10 = (SNode) parameter_32;
                   SNode quotedNode1_22;
                   if (_parameterValues_129834374.contains(quotedNode_10)) {
                     quotedNode1_22 = CopyUtil.copy(quotedNode_10);
@@ -1860,7 +1860,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   }
                 }
                 {
-                  quotedNode_11 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a2d0w0a_0;
+                  quotedNode_11 = (SNode) parameter_33;
                   SNode quotedNode1_23;
                   if (_parameterValues_129834374.contains(quotedNode_11)) {
                     quotedNode1_23 = CopyUtil.copy(quotedNode_11);
@@ -1898,7 +1898,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                   quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                   SNode quotedNode1_28 = quotedNode_13;
                   {
-                    quotedNode_14 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0c3a22a0;
+                    quotedNode_14 = (SNode) parameter_34;
                     SNode quotedNode1_29;
                     if (_parameterValues_129834374.contains(quotedNode_14)) {
                       quotedNode1_29 = CopyUtil.copy(quotedNode_14);
@@ -1911,7 +1911,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     }
                   }
                   {
-                    quotedNode_15 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0c3a22a0_0;
+                    quotedNode_15 = (SNode) parameter_35;
                     SNode quotedNode1_30;
                     if (_parameterValues_129834374.contains(quotedNode_15)) {
                       quotedNode1_30 = CopyUtil.copy(quotedNode_15);
@@ -1943,7 +1943,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a1a2d0w0h() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a1a2d0w0a, Object parameter_xa7tcf_a0a0a0a0b0c3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a1a2d0w0a, Object parameter_xa7tcf_a0a0a0a0a0a1a2d0w0a) {
+    public SNode createNode(Object parameter_29, Object parameter_30, Object parameter_31, Object parameter_32) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -1967,7 +1967,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_16 = quotedNode_2;
           {
-            quotedNode_3 = (SNode) parameter_xa7tcf_a0a0a0a1a2d0w0a;
+            quotedNode_3 = (SNode) parameter_29;
             SNode quotedNode1_17;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
               quotedNode1_17 = CopyUtil.copy(quotedNode_3);
@@ -1983,7 +1983,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
             SNode quotedNode1_18 = quotedNode_4;
             {
-              quotedNode_5 = (SNode) parameter_xa7tcf_a0a0a0a0b0c3a22a0;
+              quotedNode_5 = (SNode) parameter_30;
               SNode quotedNode1_19;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
                 quotedNode1_19 = CopyUtil.copy(quotedNode_5);
@@ -2022,7 +2022,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                         quotedNode_12.addChild("rightExpression", quotedNode1_26);
                       }
                       {
-                        quotedNode_14 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a1a2d0w0a;
+                        quotedNode_14 = (SNode) parameter_31;
                         SNode quotedNode1_27;
                         if (_parameterValues_129834374.contains(quotedNode_14)) {
                           quotedNode1_27 = CopyUtil.copy(quotedNode_14);
@@ -2039,7 +2039,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_9.addChild("rightExpression", quotedNode1_24);
                   }
                   {
-                    quotedNode_11 = (SNode) parameter_xa7tcf_a0a0a0a0a0a1a2d0w0a;
+                    quotedNode_11 = (SNode) parameter_32;
                     SNode quotedNode1_28;
                     if (_parameterValues_129834374.contains(quotedNode_11)) {
                       quotedNode1_28 = CopyUtil.copy(quotedNode_11);
@@ -2071,7 +2071,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a3a22a7() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a3a22a0_0, Object parameter_xa7tcf_a0a0a0a0a0a3a22a0_1, Object parameter_xa7tcf_a0a0a0a0a0d0w0a_0) {
+    public SNode createNode(Object parameter_17, Object parameter_18, Object parameter_19, Object parameter_20) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -2089,7 +2089,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_2;
           {
-            quotedNode_3 = (SNode) parameter_xa7tcf_a0a0a0a0a3a22a0;
+            quotedNode_3 = (SNode) parameter_17;
             SNode quotedNode1_11;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
               quotedNode1_11 = CopyUtil.copy(quotedNode_3);
@@ -2108,7 +2108,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_13 = quotedNode_5;
               {
-                quotedNode_7 = (SNode) parameter_xa7tcf_a0a0a0a0a0a3a22a0_0;
+                quotedNode_7 = (SNode) parameter_18;
                 SNode quotedNode1_14;
                 if (_parameterValues_129834374.contains(quotedNode_7)) {
                   quotedNode1_14 = CopyUtil.copy(quotedNode_7);
@@ -2123,13 +2123,13 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               {
                 quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                 SNode quotedNode1_15 = quotedNode_8;
-                quotedNode1_15.setReferent("fieldDeclaration", (SNode) parameter_xa7tcf_a0a0a0a0a0a3a22a0_1);
+                quotedNode1_15.setReferent("fieldDeclaration", (SNode) parameter_19);
                 quotedNode_5.addChild("operation", quotedNode1_15);
               }
               quotedNode_4.addChild("rightExpression", quotedNode1_13);
             }
             {
-              quotedNode_6 = (SNode) parameter_xa7tcf_a0a0a0a0a0d0w0a_0;
+              quotedNode_6 = (SNode) parameter_20;
               SNode quotedNode1_16;
               if (_parameterValues_129834374.contains(quotedNode_6)) {
                 quotedNode1_16 = CopyUtil.copy(quotedNode_6);
@@ -2155,7 +2155,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a3d0w0h() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a3d0w0a, Object parameter_xa7tcf_a0a0a0a0a0d3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a0d3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a0d3a22a0_0, Object parameter_xa7tcf_a0a0a0a0a0a0a0d3a22a0_1, Object parameter_xa7tcf_a0a0a0a0a0a0a0d3a22a0_2) {
+    public SNode createNode(Object parameter_35, Object parameter_36, Object parameter_37, Object parameter_38, Object parameter_39, Object parameter_40) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -2182,7 +2182,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_19 = quotedNode_2;
           {
-            quotedNode_3 = (SNode) parameter_xa7tcf_a0a0a0a0a3d0w0a;
+            quotedNode_3 = (SNode) parameter_35;
             SNode quotedNode1_20;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
               quotedNode1_20 = CopyUtil.copy(quotedNode_3);
@@ -2198,7 +2198,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
             SNode quotedNode1_21 = quotedNode_4;
             {
-              quotedNode_5 = (SNode) parameter_xa7tcf_a0a0a0a0a0d3a22a0;
+              quotedNode_5 = (SNode) parameter_36;
               SNode quotedNode1_22;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
                 quotedNode1_22 = CopyUtil.copy(quotedNode_5);
@@ -2225,7 +2225,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                     SNode quotedNode1_26 = quotedNode_11;
                     {
-                      quotedNode_14 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0d3a22a0;
+                      quotedNode_14 = (SNode) parameter_37;
                       SNode quotedNode1_27;
                       if (_parameterValues_129834374.contains(quotedNode_14)) {
                         quotedNode1_27 = CopyUtil.copy(quotedNode_14);
@@ -2240,7 +2240,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     {
                       quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                       SNode quotedNode1_28 = quotedNode_15;
-                      quotedNode1_28.setReferent("fieldDeclaration", (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0d3a22a0_0);
+                      quotedNode1_28.setReferent("fieldDeclaration", (SNode) parameter_38);
                       quotedNode_11.addChild("operation", quotedNode1_28);
                     }
                     quotedNode_8.addChild("actualArgument", quotedNode1_26);
@@ -2260,7 +2260,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                     SNode quotedNode1_31 = quotedNode_12;
                     {
-                      quotedNode_16 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0d3a22a0_1;
+                      quotedNode_16 = (SNode) parameter_39;
                       SNode quotedNode1_32;
                       if (_parameterValues_129834374.contains(quotedNode_16)) {
                         quotedNode1_32 = CopyUtil.copy(quotedNode_16);
@@ -2275,7 +2275,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     {
                       quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                       SNode quotedNode1_33 = quotedNode_17;
-                      quotedNode1_33.setReferent("fieldDeclaration", (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0d3a22a0_2);
+                      quotedNode1_33.setReferent("fieldDeclaration", (SNode) parameter_40);
                       quotedNode_12.addChild("operation", quotedNode1_33);
                     }
                     quotedNode_10.addChild("leftExpression", quotedNode1_31);
@@ -2306,7 +2306,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a4d0w0h() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a4d0w0a, Object parameter_xa7tcf_a0a0a0a0a0e3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a0e3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a0e3a22a0_0, Object parameter_xa7tcf_a0a0a0a0a0a0a0a4d0w0a, Object parameter_xa7tcf_a0a0a0a0a0a0a0a4d0w0a_0) {
+    public SNode createNode(Object parameter_39, Object parameter_40, Object parameter_41, Object parameter_42, Object parameter_43, Object parameter_44) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -2335,7 +2335,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_21 = quotedNode_2;
           {
-            quotedNode_3 = (SNode) parameter_xa7tcf_a0a0a0a0a4d0w0a;
+            quotedNode_3 = (SNode) parameter_39;
             SNode quotedNode1_22;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
               quotedNode1_22 = CopyUtil.copy(quotedNode_3);
@@ -2351,7 +2351,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
             SNode quotedNode1_23 = quotedNode_4;
             {
-              quotedNode_5 = (SNode) parameter_xa7tcf_a0a0a0a0a0e3a22a0;
+              quotedNode_5 = (SNode) parameter_40;
               SNode quotedNode1_24;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
                 quotedNode1_24 = CopyUtil.copy(quotedNode_5);
@@ -2387,7 +2387,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                     SNode quotedNode1_30 = quotedNode_12;
                     {
-                      quotedNode_15 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0e3a22a0;
+                      quotedNode_15 = (SNode) parameter_41;
                       SNode quotedNode1_31;
                       if (_parameterValues_129834374.contains(quotedNode_15)) {
                         quotedNode1_31 = CopyUtil.copy(quotedNode_15);
@@ -2400,7 +2400,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       }
                     }
                     {
-                      quotedNode_16 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0e3a22a0_0;
+                      quotedNode_16 = (SNode) parameter_42;
                       SNode quotedNode1_32;
                       if (_parameterValues_129834374.contains(quotedNode_16)) {
                         quotedNode1_32 = CopyUtil.copy(quotedNode_16);
@@ -2428,7 +2428,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                       SNode quotedNode1_35 = quotedNode_17;
                       {
-                        quotedNode_18 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0a4d0w0a;
+                        quotedNode_18 = (SNode) parameter_43;
                         SNode quotedNode1_36;
                         if (_parameterValues_129834374.contains(quotedNode_18)) {
                           quotedNode1_36 = CopyUtil.copy(quotedNode_18);
@@ -2441,7 +2441,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                         }
                       }
                       {
-                        quotedNode_19 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0a4d0w0a_0;
+                        quotedNode_19 = (SNode) parameter_44;
                         SNode quotedNode1_37;
                         if (_parameterValues_129834374.contains(quotedNode_19)) {
                           quotedNode1_37 = CopyUtil.copy(quotedNode_19);
@@ -2483,7 +2483,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a5d0w0h() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a0f3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a0f3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a0f3a22a0_0, Object parameter_xa7tcf_a0a0a0a0a0a0a0f3a22a0_1, Object parameter_xa7tcf_a0a0a0a0a0a0a0f3a22a0_2, Object parameter_xa7tcf_a0a0a0a0a5d0w0a) {
+    public SNode createNode(Object parameter_35, Object parameter_36, Object parameter_37, Object parameter_38, Object parameter_39, Object parameter_40) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -2513,7 +2513,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
             SNode quotedNode1_20 = quotedNode_3;
             {
-              quotedNode_5 = (SNode) parameter_xa7tcf_a0a0a0a0a0f3a22a0;
+              quotedNode_5 = (SNode) parameter_35;
               SNode quotedNode1_21;
               if (_parameterValues_129834374.contains(quotedNode_5)) {
                 quotedNode1_21 = CopyUtil.copy(quotedNode_5);
@@ -2546,7 +2546,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                     SNode quotedNode1_26 = quotedNode_11;
                     {
-                      quotedNode_14 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0f3a22a0;
+                      quotedNode_14 = (SNode) parameter_36;
                       SNode quotedNode1_27;
                       if (_parameterValues_129834374.contains(quotedNode_14)) {
                         quotedNode1_27 = CopyUtil.copy(quotedNode_14);
@@ -2559,7 +2559,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       }
                     }
                     {
-                      quotedNode_15 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0f3a22a0_0;
+                      quotedNode_15 = (SNode) parameter_37;
                       SNode quotedNode1_28;
                       if (_parameterValues_129834374.contains(quotedNode_15)) {
                         quotedNode1_28 = CopyUtil.copy(quotedNode_15);
@@ -2587,7 +2587,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                     SNode quotedNode1_31 = quotedNode_13;
                     {
-                      quotedNode_16 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0f3a22a0_1;
+                      quotedNode_16 = (SNode) parameter_38;
                       SNode quotedNode1_32;
                       if (_parameterValues_129834374.contains(quotedNode_16)) {
                         quotedNode1_32 = CopyUtil.copy(quotedNode_16);
@@ -2600,7 +2600,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       }
                     }
                     {
-                      quotedNode_17 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0f3a22a0_2;
+                      quotedNode_17 = (SNode) parameter_39;
                       SNode quotedNode1_33;
                       if (_parameterValues_129834374.contains(quotedNode_17)) {
                         quotedNode1_33 = CopyUtil.copy(quotedNode_17);
@@ -2623,7 +2623,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_2.addChild("rValue", quotedNode1_20);
           }
           {
-            quotedNode_4 = (SNode) parameter_xa7tcf_a0a0a0a0a5d0w0a;
+            quotedNode_4 = (SNode) parameter_40;
             SNode quotedNode1_34;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
               quotedNode1_34 = CopyUtil.copy(quotedNode_4);
@@ -2647,7 +2647,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a6d0w0h() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a0a0a0g3a22a0, Object parameter_xa7tcf_a0a0a0a0a0a0a0g3a22a0_0, Object parameter_xa7tcf_a0a0a0a0a0a0a0g3a22a0_1, Object parameter_xa7tcf_a0a0a0a0a0a0a0g3a22a0_2, Object parameter_xa7tcf_a0a0a0a0a0g3a22a0, Object parameter_xa7tcf_a0a0a0a0a6d0w0a) {
+    public SNode createNode(Object parameter_37, Object parameter_38, Object parameter_39, Object parameter_40, Object parameter_41, Object parameter_42) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -2701,7 +2701,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                     SNode quotedNode1_27 = quotedNode_12;
                     {
-                      quotedNode_15 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0g3a22a0;
+                      quotedNode_15 = (SNode) parameter_37;
                       SNode quotedNode1_28;
                       if (_parameterValues_129834374.contains(quotedNode_15)) {
                         quotedNode1_28 = CopyUtil.copy(quotedNode_15);
@@ -2714,7 +2714,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       }
                     }
                     {
-                      quotedNode_16 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0g3a22a0_0;
+                      quotedNode_16 = (SNode) parameter_38;
                       SNode quotedNode1_29;
                       if (_parameterValues_129834374.contains(quotedNode_16)) {
                         quotedNode1_29 = CopyUtil.copy(quotedNode_16);
@@ -2737,7 +2737,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                     SNode quotedNode1_31 = quotedNode_13;
                     {
-                      quotedNode_17 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0g3a22a0_1;
+                      quotedNode_17 = (SNode) parameter_39;
                       SNode quotedNode1_32;
                       if (_parameterValues_129834374.contains(quotedNode_17)) {
                         quotedNode1_32 = CopyUtil.copy(quotedNode_17);
@@ -2750,7 +2750,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       }
                     }
                     {
-                      quotedNode_18 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0g3a22a0_2;
+                      quotedNode_18 = (SNode) parameter_40;
                       SNode quotedNode1_33;
                       if (_parameterValues_129834374.contains(quotedNode_18)) {
                         quotedNode1_33 = CopyUtil.copy(quotedNode_18);
@@ -2777,7 +2777,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_3.addChild("rightExpression", quotedNode1_22);
             }
             {
-              quotedNode_6 = (SNode) parameter_xa7tcf_a0a0a0a0a0g3a22a0;
+              quotedNode_6 = (SNode) parameter_41;
               SNode quotedNode1_35;
               if (_parameterValues_129834374.contains(quotedNode_6)) {
                 quotedNode1_35 = CopyUtil.copy(quotedNode_6);
@@ -2792,7 +2792,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_2.addChild("rValue", quotedNode1_21);
           }
           {
-            quotedNode_4 = (SNode) parameter_xa7tcf_a0a0a0a0a6d0w0a;
+            quotedNode_4 = (SNode) parameter_42;
             SNode quotedNode1_36;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
               quotedNode1_36 = CopyUtil.copy(quotedNode_4);
@@ -2816,7 +2816,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0a0d0w0h_0() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a0a0a0a0a3a22a0_1, Object parameter_xa7tcf_a0a0a0a0a0a0a0a3a22a0_2, Object parameter_xa7tcf_a0a0a0a0a0a0a0a0a3a22a0_1, Object parameter_xa7tcf_a0a0a0a0a0a0a0a0a3a22a0_2, Object parameter_xa7tcf_a0a0a0a0a0a3a22a0_2, Object parameter_xa7tcf_a0a0a0a0a0d0w0a_1) {
+    public SNode createNode(Object parameter_43, Object parameter_44, Object parameter_45, Object parameter_46, Object parameter_47, Object parameter_48) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -2873,7 +2873,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                     SNode quotedNode1_30 = quotedNode_12;
                     {
-                      quotedNode_15 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0a3a22a0_1;
+                      quotedNode_15 = (SNode) parameter_43;
                       SNode quotedNode1_31;
                       if (_parameterValues_129834374.contains(quotedNode_15)) {
                         quotedNode1_31 = CopyUtil.copy(quotedNode_15);
@@ -2886,7 +2886,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                       }
                     }
                     {
-                      quotedNode_16 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0a3a22a0_2;
+                      quotedNode_16 = (SNode) parameter_44;
                       SNode quotedNode1_32;
                       if (_parameterValues_129834374.contains(quotedNode_16)) {
                         quotedNode1_32 = CopyUtil.copy(quotedNode_16);
@@ -2915,7 +2915,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                         quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                         SNode quotedNode1_36 = quotedNode_18;
                         {
-                          quotedNode_20 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0a0a3a22a0_1;
+                          quotedNode_20 = (SNode) parameter_45;
                           SNode quotedNode1_37;
                           if (_parameterValues_129834374.contains(quotedNode_20)) {
                             quotedNode1_37 = CopyUtil.copy(quotedNode_20);
@@ -2928,7 +2928,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
                           }
                         }
                         {
-                          quotedNode_21 = (SNode) parameter_xa7tcf_a0a0a0a0a0a0a0a0a3a22a0_2;
+                          quotedNode_21 = (SNode) parameter_46;
                           SNode quotedNode1_38;
                           if (_parameterValues_129834374.contains(quotedNode_21)) {
                             quotedNode1_38 = CopyUtil.copy(quotedNode_21);
@@ -2965,7 +2965,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
               quotedNode_3.addChild("rightExpression", quotedNode1_25);
             }
             {
-              quotedNode_6 = (SNode) parameter_xa7tcf_a0a0a0a0a0a3a22a0_2;
+              quotedNode_6 = (SNode) parameter_47;
               SNode quotedNode1_41;
               if (_parameterValues_129834374.contains(quotedNode_6)) {
                 quotedNode1_41 = CopyUtil.copy(quotedNode_6);
@@ -2980,7 +2980,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
             quotedNode_2.addChild("rValue", quotedNode1_24);
           }
           {
-            quotedNode_4 = (SNode) parameter_xa7tcf_a0a0a0a0a0d0w0a_1;
+            quotedNode_4 = (SNode) parameter_48;
             SNode quotedNode1_42;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
               quotedNode1_42 = CopyUtil.copy(quotedNode_4);
@@ -3004,7 +3004,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     public QuotationClass_4qz7hx_a0a0x0h() {
     }
 
-    public SNode createNode(Object parameter_xa7tcf_a0a0a0a32a0) {
+    public SNode createNode(Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -3013,7 +3013,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_2 = (SNode) parameter_xa7tcf_a0a0a0a32a0;
+          quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_4 = CopyUtil.copy(quotedNode_2);

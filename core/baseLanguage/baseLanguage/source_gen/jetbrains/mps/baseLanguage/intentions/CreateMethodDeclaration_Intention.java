@@ -106,7 +106,7 @@ public class CreateMethodDeclaration_Intention extends BaseIntention implements 
     public QuotationClass_qv3pxx_a0a6a7() {
     }
 
-    public SNode createNode(Object parameter_v1wtfy_a0a0a0g0a, Object parameter_v1wtfy_a0a0a6a0) {
+    public SNode createNode(Object parameter_9, Object parameter_10) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -116,9 +116,9 @@ public class CreateMethodDeclaration_Intention extends BaseIntention implements 
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
-        quotedNode1_5.setProperty("name", (String) parameter_v1wtfy_a0a0a6a0);
+        quotedNode1_5.setProperty("name", (String) parameter_10);
         {
-          quotedNode_2 = (SNode) parameter_v1wtfy_a0a0a0g0a;
+          quotedNode_2 = (SNode) parameter_9;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_6 = CopyUtil.copy(quotedNode_2);
@@ -167,14 +167,14 @@ public class CreateMethodDeclaration_Intention extends BaseIntention implements 
     public QuotationClass_qv3pxx_a1a9a7() {
     }
 
-    public SNode createNode(Object parameter_v1wtfy_a0a0a0j0a) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("baseMethodDeclaration", (SNode) parameter_v1wtfy_a0a0a0j0a);
+        quotedNode1_2.setReferent("baseMethodDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

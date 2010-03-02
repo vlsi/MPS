@@ -30,7 +30,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     public QuotationClass_2jj2z2_a0a0a0() {
     }
 
-    public SNode createNode(Object parameter_2jj2z2_a0a0a0a0a, Object parameter_2jj2z2_a0a0a0a0a_0, Object parameter_2jj2z2_a0a0a0a0) {
+    public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -41,14 +41,14 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
         quotedNode1_5.setProperty("isFinal", "true");
-        quotedNode1_5.setProperty("name", (String) parameter_2jj2z2_a0a0a0a0);
+        quotedNode1_5.setProperty("name", (String) parameter_11);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode_1.addChild("visibility", quotedNode1_6);
         }
         {
-          quotedNode_3 = (SNode) parameter_2jj2z2_a0a0a0a0a;
+          quotedNode_3 = (SNode) parameter_9;
           SNode quotedNode1_7;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_7 = CopyUtil.copy(quotedNode_3);
@@ -61,7 +61,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
           }
         }
         {
-          quotedNode_4 = (SNode) parameter_2jj2z2_a0a0a0a0a_0;
+          quotedNode_4 = (SNode) parameter_10;
           SNode quotedNode1_8;
           if (_parameterValues_129834374.contains(quotedNode_4)) {
             quotedNode1_8 = CopyUtil.copy(quotedNode_4);
@@ -83,14 +83,14 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     public QuotationClass_2jj2z2_a0a0d0a() {
     }
 
-    public SNode createNode(Object parameter_2jj2z2_a0a0a0d0a) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_2jj2z2_a0a0a0d0a);
+        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

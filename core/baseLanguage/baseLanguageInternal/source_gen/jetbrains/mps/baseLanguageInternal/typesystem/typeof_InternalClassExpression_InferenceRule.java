@@ -49,7 +49,7 @@ public class typeof_InternalClassExpression_InferenceRule extends AbstractInfere
     public QuotationClass_qvdecd_a0a0a0() {
     }
 
-    public SNode createNode(Object parameter_qvdecd_a0a0a0a0a, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -59,7 +59,7 @@ public class typeof_InternalClassExpression_InferenceRule extends AbstractInfere
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Class")));
         {
-          quotedNode_2 = (SNode) parameter_qvdecd_a0a0a0a0a;
+          quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_4 = CopyUtil.copy(quotedNode_2);
@@ -76,7 +76,7 @@ public class typeof_InternalClassExpression_InferenceRule extends AbstractInfere
       return result;
     }
 
-    public SNode createNode(Object parameter_qvdecd_a0a0a0a0a) {
+    public SNode createNode(Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -86,7 +86,7 @@ public class typeof_InternalClassExpression_InferenceRule extends AbstractInfere
         SNode quotedNode1_3 = quotedNode_1;
         quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Class")));
         {
-          quotedNode_2 = (SNode) parameter_qvdecd_a0a0a0a0a;
+          quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_4 = CopyUtil.copy(quotedNode_2);

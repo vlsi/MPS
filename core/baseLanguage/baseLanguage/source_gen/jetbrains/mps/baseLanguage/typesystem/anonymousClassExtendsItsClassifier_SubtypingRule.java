@@ -58,7 +58,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
     public QuotationClass_r0kks7_a0a0a0a0c0b0b0a() {
     }
 
-    public SNode createNode(Object parameter_r0kks7_a0a0a0a0a0a2a1a1a0, Object parameter_r0kks7_a0a0a0a0a0c0b0b0a, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_4, Object parameter_5, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -66,9 +66,9 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_r0kks7_a0a0a0a0a0c0b0b0a);
+        quotedNode1_3.setReferent("classifier", (SNode) parameter_5);
         {
-          List<SNode> nodes = (List<SNode>) parameter_r0kks7_a0a0a0a0a0a2a1a1a0;
+          List<SNode> nodes = (List<SNode>) parameter_4;
           for (SNode child : nodes) {
             quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
           }
@@ -78,7 +78,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
       return result;
     }
 
-    public SNode createNode(Object parameter_r0kks7_a0a0a0a0a0a2a1a1a0, Object parameter_r0kks7_a0a0a0a0a0c0b0b0a) {
+    public SNode createNode(Object parameter_4, Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -86,9 +86,9 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setReferent("classifier", (SNode) parameter_r0kks7_a0a0a0a0a0c0b0b0a);
+        quotedNode1_3.setReferent("classifier", (SNode) parameter_5);
         {
-          List<SNode> nodes = (List<SNode>) parameter_r0kks7_a0a0a0a0a0a2a1a1a0;
+          List<SNode> nodes = (List<SNode>) parameter_4;
           for (SNode child : nodes) {
             quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
           }

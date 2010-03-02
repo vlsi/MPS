@@ -49,14 +49,14 @@ public class TryCatchStatement_Behavior {
     public QuotationClass_1bi1ep_a0a0b0c0e0c() {
     }
 
-    public SNode createNode(Object parameter_1bi1ep_a0a0a0b0c0e0a) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_1bi1ep_a0a0a0b0c0e0a);
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

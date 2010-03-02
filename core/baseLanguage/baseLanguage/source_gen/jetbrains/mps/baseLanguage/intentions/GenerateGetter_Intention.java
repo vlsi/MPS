@@ -117,7 +117,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
     public QuotationClass_wkvgdi_a0a0a5a2a7() {
     }
 
-    public SNode createNode(Object parameter_6tp75s_a0a0a0a0f0c0a, Object parameter_6tp75s_a0a0a0a0a0a5a2a0, Object parameter_6tp75s_a0a0a0a0a0a5a2a0_0, Object parameter_6tp75s_a0a0a0a5a2a0) {
+    public SNode createNode(Object parameter_17, Object parameter_18, Object parameter_19, Object parameter_20) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -131,9 +131,9 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_9 = quotedNode_1;
-        quotedNode1_9.setProperty("name", (String) parameter_6tp75s_a0a0a0a5a2a0);
+        quotedNode1_9.setProperty("name", (String) parameter_20);
         {
-          quotedNode_2 = (SNode) parameter_6tp75s_a0a0a0a0f0c0a;
+          quotedNode_2 = (SNode) parameter_17;
           SNode quotedNode1_10;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_10 = CopyUtil.copy(quotedNode_2);
@@ -160,7 +160,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_14 = quotedNode_6;
               {
-                quotedNode_7 = (SNode) parameter_6tp75s_a0a0a0a0a0a5a2a0;
+                quotedNode_7 = (SNode) parameter_18;
                 SNode quotedNode1_15;
                 if (_parameterValues_129834374.contains(quotedNode_7)) {
                   quotedNode1_15 = CopyUtil.copy(quotedNode_7);
@@ -175,7 +175,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
               {
                 quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                 SNode quotedNode1_16 = quotedNode_8;
-                quotedNode1_16.setReferent("fieldDeclaration", (SNode) parameter_6tp75s_a0a0a0a0a0a5a2a0_0);
+                quotedNode1_16.setReferent("fieldDeclaration", (SNode) parameter_19);
                 quotedNode_6.addChild("operation", quotedNode1_16);
               }
               quotedNode_5.addChild("expression", quotedNode1_14);

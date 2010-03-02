@@ -71,7 +71,7 @@ public class AbstractClassifierReference_KeyMap extends EditorCellKeyMap {
       public QuotationClass_l22mu2_a1a0a4a() {
       }
 
-      public SNode createNode(Object parameter_l22mu2_a0a0a0a0a0a0) {
+      public SNode createNode(Object parameter_7) {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
         SNode quotedNode_1 = null;
@@ -86,7 +86,7 @@ public class AbstractClassifierReference_KeyMap extends EditorCellKeyMap {
             {
               quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_6 = quotedNode_3;
-              quotedNode1_6.setReferent("classifier", (SNode) parameter_l22mu2_a0a0a0a0a0a0);
+              quotedNode1_6.setReferent("classifier", (SNode) parameter_7);
               quotedNode_2.addChild("type", quotedNode1_6);
             }
             quotedNode_1.addChild("localVariableDeclaration", quotedNode1_5);

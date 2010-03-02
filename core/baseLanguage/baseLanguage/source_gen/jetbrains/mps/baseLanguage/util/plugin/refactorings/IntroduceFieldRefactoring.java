@@ -66,7 +66,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     public QuotationClass_baxqxe_a0a0a1a1() {
     }
 
-    public SNode createNode(Object parameter_baxqxe_a0a0a0a0b0b, Object parameter_baxqxe_a0a0a0a0b0b_0, Object parameter_baxqxe_a0a0a0a1a1) {
+    public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -76,14 +76,14 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
-        quotedNode1_5.setProperty("name", (String) parameter_baxqxe_a0a0a0a1a1);
+        quotedNode1_5.setProperty("name", (String) parameter_11);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
           quotedNode_1.addChild("visibility", quotedNode1_6);
         }
         {
-          quotedNode_3 = (SNode) parameter_baxqxe_a0a0a0a0b0b;
+          quotedNode_3 = (SNode) parameter_9;
           SNode quotedNode1_7;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_7 = CopyUtil.copy(quotedNode_3);
@@ -96,7 +96,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
           }
         }
         {
-          quotedNode_4 = (SNode) parameter_baxqxe_a0a0a0a0b0b_0;
+          quotedNode_4 = (SNode) parameter_10;
           SNode quotedNode1_8;
           if (_parameterValues_129834374.contains(quotedNode_4)) {
             quotedNode1_8 = CopyUtil.copy(quotedNode_4);
@@ -118,7 +118,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     public QuotationClass_baxqxe_a0a0a0b0b() {
     }
 
-    public SNode createNode(Object parameter_baxqxe_a0a0a0a0a1a1, Object parameter_baxqxe_a0a0a0a0b0b_1) {
+    public SNode createNode(Object parameter_7, Object parameter_8) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -127,14 +127,14 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
-        quotedNode1_4.setProperty("name", (String) parameter_baxqxe_a0a0a0a0b0b_1);
+        quotedNode1_4.setProperty("name", (String) parameter_8);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_5 = quotedNode_2;
           quotedNode_1.addChild("visibility", quotedNode1_5);
         }
         {
-          quotedNode_3 = (SNode) parameter_baxqxe_a0a0a0a0a1a1;
+          quotedNode_3 = (SNode) parameter_7;
           SNode quotedNode1_6;
           if (_parameterValues_129834374.contains(quotedNode_3)) {
             quotedNode1_6 = CopyUtil.copy(quotedNode_3);
@@ -156,7 +156,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     public QuotationClass_baxqxe_a0a4a1() {
     }
 
-    public SNode createNode(Object parameter_baxqxe_a0a0a0a0e0b, Object parameter_baxqxe_a0a0a0a4a1) {
+    public SNode createNode(Object parameter_13, Object parameter_14) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -182,13 +182,13 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
             {
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_11 = quotedNode_6;
-              quotedNode1_11.setReferent("fieldDeclaration", (SNode) parameter_baxqxe_a0a0a0a0e0b);
+              quotedNode1_11.setReferent("fieldDeclaration", (SNode) parameter_13);
               quotedNode_3.addChild("operation", quotedNode1_11);
             }
             quotedNode_2.addChild("lValue", quotedNode1_9);
           }
           {
-            quotedNode_4 = (SNode) parameter_baxqxe_a0a0a0a4a1;
+            quotedNode_4 = (SNode) parameter_14;
             SNode quotedNode1_12;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
               quotedNode1_12 = CopyUtil.copy(quotedNode_4);
@@ -212,7 +212,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     public QuotationClass_baxqxe_a0a0h0b() {
     }
 
-    public SNode createNode(Object parameter_baxqxe_a0a0a0a7a1) {
+    public SNode createNode(Object parameter_7) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -229,7 +229,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_3;
-          quotedNode1_6.setReferent("fieldDeclaration", (SNode) parameter_baxqxe_a0a0a0a7a1);
+          quotedNode1_6.setReferent("fieldDeclaration", (SNode) parameter_7);
           quotedNode_1.addChild("operation", quotedNode1_6);
         }
         result = quotedNode1_4;

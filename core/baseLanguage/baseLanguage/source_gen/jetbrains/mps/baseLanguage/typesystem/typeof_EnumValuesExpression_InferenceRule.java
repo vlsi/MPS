@@ -44,7 +44,7 @@ public class typeof_EnumValuesExpression_InferenceRule extends AbstractInference
     public QuotationClass_pii9m7_a0a0a0() {
     }
 
-    public SNode createNode(Object parameter_pii9m7_a0a0a0a0a, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -55,7 +55,7 @@ public class typeof_EnumValuesExpression_InferenceRule extends AbstractInference
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setReferent("classifier", (SNode) parameter_pii9m7_a0a0a0a0a);
+          quotedNode1_4.setReferent("classifier", (SNode) parameter_5);
           quotedNode_1.addChild("componentType", quotedNode1_4);
         }
         result = quotedNode1_3;
@@ -63,7 +63,7 @@ public class typeof_EnumValuesExpression_InferenceRule extends AbstractInference
       return result;
     }
 
-    public SNode createNode(Object parameter_pii9m7_a0a0a0a0a) {
+    public SNode createNode(Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -74,7 +74,7 @@ public class typeof_EnumValuesExpression_InferenceRule extends AbstractInference
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setReferent("classifier", (SNode) parameter_pii9m7_a0a0a0a0a);
+          quotedNode1_4.setReferent("classifier", (SNode) parameter_5);
           quotedNode_1.addChild("componentType", quotedNode1_4);
         }
         result = quotedNode1_3;

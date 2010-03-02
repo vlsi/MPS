@@ -156,7 +156,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
     public QuotationClass_43x4b2_a0a0a4a4a7() {
     }
 
-    public SNode createNode(Object parameter_5trf1k_a0a0a0a0e0e0a, Object parameter_5trf1k_a0a0a0a0a0a4a4a0, Object parameter_5trf1k_a0a0a0a0a0a4a4a0_0, Object parameter_5trf1k_a0a0a0a4a4a0) {
+    public SNode createNode(Object parameter_17, Object parameter_18, Object parameter_19, Object parameter_20) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -170,9 +170,9 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_9 = quotedNode_1;
-        quotedNode1_9.setProperty("name", (String) parameter_5trf1k_a0a0a0a4a4a0);
+        quotedNode1_9.setProperty("name", (String) parameter_20);
         {
-          quotedNode_2 = (SNode) parameter_5trf1k_a0a0a0a0e0e0a;
+          quotedNode_2 = (SNode) parameter_17;
           SNode quotedNode1_10;
           if (_parameterValues_129834374.contains(quotedNode_2)) {
             quotedNode1_10 = CopyUtil.copy(quotedNode_2);
@@ -199,7 +199,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
               quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
               SNode quotedNode1_14 = quotedNode_6;
               {
-                quotedNode_7 = (SNode) parameter_5trf1k_a0a0a0a0a0a4a4a0;
+                quotedNode_7 = (SNode) parameter_18;
                 SNode quotedNode1_15;
                 if (_parameterValues_129834374.contains(quotedNode_7)) {
                   quotedNode1_15 = CopyUtil.copy(quotedNode_7);
@@ -214,7 +214,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
               {
                 quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                 SNode quotedNode1_16 = quotedNode_8;
-                quotedNode1_16.setReferent("fieldDeclaration", (SNode) parameter_5trf1k_a0a0a0a0a0a4a4a0_0);
+                quotedNode1_16.setReferent("fieldDeclaration", (SNode) parameter_19);
                 quotedNode_6.addChild("operation", quotedNode1_16);
               }
               quotedNode_5.addChild("expression", quotedNode1_14);
@@ -233,7 +233,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
     public QuotationClass_43x4b2_a0a0a11a4a7() {
     }
 
-    public SNode createNode(Object parameter_5trf1k_a0a0a0a0a0a0l0e0a, Object parameter_5trf1k_a0a0a0a0a0a0l0e0a_0, Object parameter_5trf1k_a0a0a0a0a11a4a0, Object parameter_5trf1k_a0a0a0a0l0e0a, Object parameter_5trf1k_a0a0a0a11a4a0) {
+    public SNode createNode(Object parameter_25, Object parameter_26, Object parameter_27, Object parameter_28, Object parameter_29) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -251,7 +251,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_13 = quotedNode_1;
-        quotedNode1_13.setProperty("name", (String) parameter_5trf1k_a0a0a0a11a4a0);
+        quotedNode1_13.setProperty("name", (String) parameter_29);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_14 = quotedNode_2;
@@ -280,7 +280,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
                 quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                 SNode quotedNode1_20 = quotedNode_10;
                 {
-                  quotedNode_11 = (SNode) parameter_5trf1k_a0a0a0a0a0a0l0e0a;
+                  quotedNode_11 = (SNode) parameter_25;
                   SNode quotedNode1_21;
                   if (_parameterValues_129834374.contains(quotedNode_11)) {
                     quotedNode1_21 = CopyUtil.copy(quotedNode_11);
@@ -295,7 +295,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
                 {
                   quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
                   SNode quotedNode1_22 = quotedNode_12;
-                  quotedNode1_22.setReferent("fieldDeclaration", (SNode) parameter_5trf1k_a0a0a0a0a0a0l0e0a_0);
+                  quotedNode1_22.setReferent("fieldDeclaration", (SNode) parameter_26);
                   quotedNode_10.addChild("operation", quotedNode1_22);
                 }
                 quotedNode_8.addChild("lValue", quotedNode1_20);
@@ -309,9 +309,9 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
         {
           quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_23 = quotedNode_5;
-          quotedNode1_23.setProperty("name", (String) parameter_5trf1k_a0a0a0a0l0e0a);
+          quotedNode1_23.setProperty("name", (String) parameter_28);
           {
-            quotedNode_7 = (SNode) parameter_5trf1k_a0a0a0a0a11a4a0;
+            quotedNode_7 = (SNode) parameter_27;
             SNode quotedNode1_24;
             if (_parameterValues_129834374.contains(quotedNode_7)) {
               quotedNode1_24 = CopyUtil.copy(quotedNode_7);

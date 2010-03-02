@@ -41,7 +41,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     public QuotationClass_nngwe4_a0a0a0() {
     }
 
-    public SNode createNode(Object parameter_nngwe4_a0a0a0a0a0, Object parameter_nngwe4_a0a0a0a0a0_0, Object parameter_nngwe4_a0a0a0a0a) {
+    public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -54,9 +54,9 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_6 = quotedNode_2;
-          quotedNode1_6.setProperty("name", (String) parameter_nngwe4_a0a0a0a0a);
+          quotedNode1_6.setProperty("name", (String) parameter_11);
           {
-            quotedNode_3 = (SNode) parameter_nngwe4_a0a0a0a0a0;
+            quotedNode_3 = (SNode) parameter_9;
             SNode quotedNode1_7;
             if (_parameterValues_129834374.contains(quotedNode_3)) {
               quotedNode1_7 = CopyUtil.copy(quotedNode_3);
@@ -69,7 +69,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
             }
           }
           {
-            quotedNode_4 = (SNode) parameter_nngwe4_a0a0a0a0a0_0;
+            quotedNode_4 = (SNode) parameter_10;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
               quotedNode1_8 = CopyUtil.copy(quotedNode_4);

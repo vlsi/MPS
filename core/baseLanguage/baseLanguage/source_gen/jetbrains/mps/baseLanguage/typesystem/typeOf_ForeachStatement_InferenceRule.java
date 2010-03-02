@@ -58,7 +58,7 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
     public QuotationClass_9mvp38_a0a1a0() {
     }
 
-    public SNode createNode(Object parameter_9mvp38_a0a0a0a1a0, Object parameter_9mvp38_a0a1a0a1a0, final TypeCheckingContext typeCheckingContext) {
+    public SNode createNode(Object parameter_11, Object parameter_12, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -74,7 +74,7 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
           SNode quotedNode1_7 = quotedNode_2;
           quotedNode1_7.addReference(SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
           {
-            quotedNode_4 = (SNode) parameter_9mvp38_a0a0a0a1a0;
+            quotedNode_4 = (SNode) parameter_11;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
               quotedNode1_8 = CopyUtil.copy(quotedNode_4);
@@ -92,7 +92,7 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_3;
           {
-            quotedNode_5 = (SNode) parameter_9mvp38_a0a1a0a1a0;
+            quotedNode_5 = (SNode) parameter_12;
             SNode quotedNode1_10;
             if (_parameterValues_129834374.contains(quotedNode_5)) {
               quotedNode1_10 = CopyUtil.copy(quotedNode_5);
@@ -111,7 +111,7 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
       return result;
     }
 
-    public SNode createNode(Object parameter_9mvp38_a0a0a0a1a0, Object parameter_9mvp38_a0a1a0a1a0) {
+    public SNode createNode(Object parameter_11, Object parameter_12) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -127,7 +127,7 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
           SNode quotedNode1_7 = quotedNode_2;
           quotedNode1_7.addReference(SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
           {
-            quotedNode_4 = (SNode) parameter_9mvp38_a0a0a0a1a0;
+            quotedNode_4 = (SNode) parameter_11;
             SNode quotedNode1_8;
             if (_parameterValues_129834374.contains(quotedNode_4)) {
               quotedNode1_8 = CopyUtil.copy(quotedNode_4);
@@ -145,7 +145,7 @@ public class typeOf_ForeachStatement_InferenceRule extends AbstractInferenceRule
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_9 = quotedNode_3;
           {
-            quotedNode_5 = (SNode) parameter_9mvp38_a0a1a0a1a0;
+            quotedNode_5 = (SNode) parameter_12;
             SNode quotedNode1_10;
             if (_parameterValues_129834374.contains(quotedNode_5)) {
               quotedNode1_10 = CopyUtil.copy(quotedNode_5);
