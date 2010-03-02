@@ -132,6 +132,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       setFontStyle(getFontStyle() | Font.BOLD);
       //setColor(new Color(0x00, 0x00, 0x90));
     } else {
+      setFontStyle(getFontStyle() | ~(Font.BOLD));
       //setColor(Color.BLACK);
     }
 
