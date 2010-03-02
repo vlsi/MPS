@@ -16,6 +16,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.workbench.actions.imports.ImportHelper;
 
 public class AddModelImportByRoot_Action extends GeneratedAction {
@@ -83,7 +84,10 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
       EditorCell selectedCell = AddModelImportByRoot_Action.this.editorComponent.getSelectedCell();
       String initialText = "";
       if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isErrorState()) {
-        initialText = ((EditorCell_Label) selectedCell).getRenderedText();
+        EditorCell_Label editorCellLabel = (EditorCell_Label) selectedCell;
+        if (editorCellLabel.isErrorState() && !(StringUtils.isEmpty(editorCellLabel.getText()))) {
+          initialText = ((EditorCell_Label) selectedCell).getRenderedText();
+        }
       }
       ImportHelper.addModelImportByRoot(AddModelImportByRoot_Action.this.project, AddModelImportByRoot_Action.this.mpsProject, AddModelImportByRoot_Action.this.module, AddModelImportByRoot_Action.this.model, initialText);
     } catch (Throwable t) {
