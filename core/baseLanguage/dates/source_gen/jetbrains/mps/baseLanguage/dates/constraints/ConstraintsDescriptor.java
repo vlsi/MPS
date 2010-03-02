@@ -13,8 +13,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new DateFormat_isPublic_PropertyConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new PeriodFormat_isPublic_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TimeZoneIDExpression_timezone_id_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PeriodFormat_isPublic_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PeriodPropertyFormatToken_minDigits_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TimeZoneNameOperation_property_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TokenConditionalPair_format_ReferentConstraint());
@@ -23,8 +23,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new DateTimePropertyFormatToken_dateTimePropertyFormatType_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new FixedLocaleFormatToken_dateFormat_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ReferenceFormatToken_dateFormat_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new FormatPeriodExpression_format_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new FormatDateTimeExpression_dateFormat_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new FormatPeriodExpression_format_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PeriodReferenceFormatToken_format_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PeriodPropertyFormatToken_property_ReferentConstraint());
   }

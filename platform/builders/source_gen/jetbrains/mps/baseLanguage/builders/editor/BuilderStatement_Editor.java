@@ -50,6 +50,14 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_idzzzw_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    editorCell.setCellId("Constant_idzzzw_b0");
+    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createConstant_idzzzw_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_idzzzw_a2a");
@@ -70,14 +78,6 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
     }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_idzzzw_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
-    editorCell.setCellId("Constant_idzzzw_b0");
-    BaseLanguageStyle_StyleSheet.getSemicolon(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -120,11 +120,11 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_idzzzw_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(Builder_Behavior.call_isLeaf_7057666463730595159(SLinkOperations.getTarget(node, "builder", true)));
-  }
-
   private static boolean renderingCondition_idzzzw_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return Builder_Behavior.call_isLeaf_7057666463730595159(SLinkOperations.getTarget(node, "builder", true));
+  }
+
+  private static boolean renderingCondition_idzzzw_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(Builder_Behavior.call_isLeaf_7057666463730595159(SLinkOperations.getTarget(node, "builder", true)));
   }
 }

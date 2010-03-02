@@ -12,12 +12,12 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListSequence.fromList(this.myConstraints).addElement(new BeanPropertyBuilder_setter_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new SimpleBuilderPropertyBuilder_declaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new SimpleBuilderParameterReference_parameter_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new SimpleBuilderDeclaration_extends_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new BeanBuilder_constructor_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new SimpleBuilder_declaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SimpleBuilderParameterReference_parameter_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new BeanPropertyBuilder_setter_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new BeanBuilder_constructor_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SimpleBuilderPropertyBuilder_declaration_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new SimpleBuilderDeclaration_extends_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

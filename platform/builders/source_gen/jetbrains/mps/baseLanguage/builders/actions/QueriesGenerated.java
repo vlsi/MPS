@@ -54,13 +54,13 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuilderCreator_7057666463730193405(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_7057666463730278808(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", null);
+          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", null);
           SLinkOperations.setTarget(result, "builder", nodeToWrap, true);
           return result;
         }
@@ -84,13 +84,13 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_7057666463730278808(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_BuilderCreator_7057666463730193405(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder");
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", null);
+          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", null);
           SLinkOperations.setTarget(result, "builder", nodeToWrap, true);
           return result;
         }

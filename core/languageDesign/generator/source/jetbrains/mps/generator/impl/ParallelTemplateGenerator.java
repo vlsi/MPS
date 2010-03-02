@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class ParallelTemplateGenerator extends TemplateGenerator {
 
-  public static /*final*/ boolean PARALLELING_ENABLED = false;
+  public static /*final*/ boolean PARALLELING_ENABLED = true;
 
   private GenerationTaskPool myPool;
 
