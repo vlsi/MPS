@@ -248,6 +248,10 @@
       <property name="id" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
       <property name="name" value="jetbrains.mps.lang.textGen" />
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="5553093862837345262">
+      <property name="id" value="ef703a71-a5a3-42af-b53c-ddced816ad5c" />
+      <property name="name" value="jetbrains.mps.lang.stubs" />
+    </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="4062013737453621585">
     <property name="name:7" value="platform" />
