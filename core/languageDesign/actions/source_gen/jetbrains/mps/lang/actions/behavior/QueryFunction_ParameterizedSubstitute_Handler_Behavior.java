@@ -33,15 +33,15 @@ public class QueryFunction_ParameterizedSubstitute_Handler_Behavior {
     public QuotationClass_494qzt_a0c0c() {
     }
 
-    public SNode createNode(Object parameter_494qzt_a0a0c0b) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_494qzt_a0c0b = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_494qzt_a0c0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_494qzt_a0c0b = quotedNode_494qzt_a0c0b;
-        quotedNode1_494qzt_a0c0b.setReferent("concept", (SNode) parameter_494qzt_a0a0c0b);
-        result = quotedNode1_494qzt_a0c0b;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }

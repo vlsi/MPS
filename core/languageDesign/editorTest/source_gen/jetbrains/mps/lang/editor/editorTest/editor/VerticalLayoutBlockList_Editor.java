@@ -22,19 +22,19 @@ public class VerticalLayoutBlockList_Editor extends DefaultNodeEditor {
     return this.createCollection_s783cw_a(editorContext, node);
   }
 
-  private EditorCell createCollection_s783cw_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_s783cw_b0");
-    editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createRefNodeList_s783cw_a1a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_s783cw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_s783cw_a");
     editorCell.addEditorCell(this.createConstant_s783cw_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_s783cw_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_s783cw_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_s783cw_b0");
+    editorCell.setGridLayout(true);
+    editorCell.addEditorCell(this.createRefNodeList_s783cw_a1a(editorContext, node));
     return editorCell;
   }
 

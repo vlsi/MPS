@@ -24,18 +24,6 @@ public class PastePostProcessor_Editor extends DefaultNodeEditor {
     return this.createCollection_gbheja_a(editorContext, node);
   }
 
-  private EditorCell createCollection_gbheja_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_gbheja_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createIndentCell_gbheja_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_gbheja_b1a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_gbheja_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_gbheja_a");
@@ -53,6 +41,18 @@ public class PastePostProcessor_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_gbheja_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_gbheja_b0a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_gbheja_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_gbheja_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createIndentCell_gbheja_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_gbheja_b1a(editorContext, node));
     return editorCell;
   }
 

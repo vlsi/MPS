@@ -30,16 +30,16 @@ public class PropertyAttributeConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6ejrtx_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")$");
-    editorCell.setCellId("Constant_6ejrtx_c0");
+  private EditorCell createConstant_6ejrtx_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property attribute concept");
+    editorCell.setCellId("Constant_6ejrtx_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6ejrtx_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property attribute concept");
-    editorCell.setCellId("Constant_6ejrtx_b0");
+  private EditorCell createConstant_6ejrtx_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")$");
+    editorCell.setCellId("Constant_6ejrtx_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }

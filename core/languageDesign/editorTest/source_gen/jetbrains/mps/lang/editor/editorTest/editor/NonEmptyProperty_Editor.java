@@ -48,10 +48,10 @@ public class NonEmptyProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createNonEmptyProperty_vbxoaj_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_vbxoaj_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
-    provider.setNoTargetText("<no value>");
+    provider.setNoTargetText("no value");
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
@@ -67,10 +67,10 @@ public class NonEmptyProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_vbxoaj_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createNonEmptyProperty_vbxoaj_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
-    provider.setNoTargetText("no value");
+    provider.setNoTargetText("<no value>");
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);

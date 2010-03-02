@@ -167,23 +167,23 @@ public class ConceptBehavior_Behavior {
     public QuotationClass_xahq23_a0a0b0a0a0e() {
     }
 
-    public SNode createNode(Object parameter_xahq23_a0a0a0b0a0a0d, Object parameter_xahq23_a0a0a0b0a0a0d_0, Object parameter_xahq23_a0a0a0a1a0a0a3) {
+    public SNode createNode(Object parameter_4, Object parameter_5, Object parameter_6) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_xahq23_a0a0b0a0a0d = null;
-      SNode quotedNode_xahq23_a0a0a1a0a0a3 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
       {
-        quotedNode_xahq23_a0a0b0a0a0d = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_xahq23_a0a0b0a0a0d = quotedNode_xahq23_a0a0b0a0a0d;
-        quotedNode1_xahq23_a0a0b0a0a0d.setReferent("baseMethodDeclaration", (SNode) parameter_xahq23_a0a0a0b0a0a0d_0);
-        quotedNode1_xahq23_a0a0b0a0a0d.setReferent("concept", (SNode) parameter_xahq23_a0a0a0b0a0a0d);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        quotedNode1_3.setReferent("baseMethodDeclaration", (SNode) parameter_5);
+        quotedNode1_3.setReferent("concept", (SNode) parameter_4);
         {
-          List<SNode> nodes = (List<SNode>) parameter_xahq23_a0a0a0a1a0a0a3;
+          List<SNode> nodes = (List<SNode>) parameter_6;
           for (SNode child : nodes) {
-            quotedNode_xahq23_a0a0b0a0a0d.addChild("actualArgument", HUtil.copyIfNecessary(child));
+            quotedNode_1.addChild("actualArgument", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_xahq23_a0a0b0a0a0d;
+        result = quotedNode1_3;
       }
       return result;
     }

@@ -81,9 +81,20 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_703hqq_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "surround with actions:");
-    editorCell.setCellId("Constant_703hqq_f0");
+  private EditorCell createConstant_703hqq_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "smart editor actions");
+    editorCell.setCellId("Constant_703hqq_a0a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_703hqq_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    editorCell.setCellId("Constant_703hqq_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -106,20 +117,9 @@ public class SmartEditorActions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_703hqq_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "smart editor actions");
-    editorCell.setCellId("Constant_703hqq_a0a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_703hqq_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_703hqq_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
+  private EditorCell createConstant_703hqq_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "surround with actions:");
+    editorCell.setCellId("Constant_703hqq_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }

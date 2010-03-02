@@ -39,17 +39,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
-  private EditorCell createCollection_lbq9sy_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_lbq9sy_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createRefNodeList_lbq9sy_a2a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_lbq9sy_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lbq9sy_a0");
@@ -62,6 +51,24 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
     return editorCell;
   }
 
+  private EditorCell createCollection_lbq9sy_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_lbq9sy_c0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createRefNodeList_lbq9sy_a2a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_lbq9sy_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "side transform actions");
+    editorCell.setCellId("Constant_lbq9sy_a0a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createConstant_lbq9sy_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_lbq9sy_b0");
@@ -69,13 +76,6 @@ public class SideTransformHintSubstituteActions_Editor extends DefaultNodeEditor
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_lbq9sy_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "side transform actions");
-    editorCell.setCellId("Constant_lbq9sy_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }

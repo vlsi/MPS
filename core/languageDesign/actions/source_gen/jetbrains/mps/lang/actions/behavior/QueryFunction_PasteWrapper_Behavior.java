@@ -27,15 +27,15 @@ public class QueryFunction_PasteWrapper_Behavior {
     public QuotationClass_cqz97t_a0a0c() {
     }
 
-    public SNode createNode(Object parameter_cqz97t_a0a0a0b) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_cqz97t_a0a0b = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_cqz97t_a0a0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_cqz97t_a0a0b = quotedNode_cqz97t_a0a0b;
-        quotedNode1_cqz97t_a0a0b.setReferent("concept", (SNode) parameter_cqz97t_a0a0a0b);
-        result = quotedNode1_cqz97t_a0a0b;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }
