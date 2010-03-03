@@ -4,7 +4,7 @@
     <taskdef resource="jetbrains/mps/build/ant/antlib.xml"
              classpath="${mps.home}/platform/buildlanguage/ant/classes"/>
 
-    <target name="all" depends="generation.tests, broken.references.test"/>
+    <target name="all" depends="generation.tests"/>
 
     <jvmargs id="mps.args">
         <arg value="-Xss1024k"/>
