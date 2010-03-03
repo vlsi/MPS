@@ -22,6 +22,7 @@ import com.intellij.execution.Executor;
 import com.intellij.execution.executors.DefaultRunExecutor;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.options.ConfigurationException;
+import jetbrains.mps.debug.integration.runconfigs.RemoteConfiguration;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
@@ -34,6 +35,6 @@ public class MPSProgramRunner extends DefaultProgramRunner {
   }
 
   public boolean canRun(@NotNull String executorId, @NotNull RunProfile profile) {
-    return executorId.equals(DefaultRunExecutor.EXECUTOR_ID);
+    return executorId.equals(DefaultRunExecutor.EXECUTOR_ID) && !(profile instanceof RemoteConfiguration);
   }
 }

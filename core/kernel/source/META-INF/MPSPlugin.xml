@@ -89,5 +89,7 @@
         <syntaxHighlighter key="MPS Project" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
 
         <editorTabTitleProvider implementation="jetbrains.mps.workbench.editors.EditorTabTitleProviderImpl"/>
+
+        <configurationType implementation="jetbrains.mps.debug.integration.runconfigs.RemoteConfigurationType"/>
     </extensions>
 </idea-plugin>

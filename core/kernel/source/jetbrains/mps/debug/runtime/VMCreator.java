@@ -18,6 +18,7 @@ import com.sun.jdi.connect.Connector;
 import com.sun.jdi.connect.Connector.Argument;
 import com.sun.jdi.connect.IllegalConnectorArgumentsException;
 import com.sun.jdi.connect.ListeningConnector;
+import jetbrains.mps.debug.integration.runconfigs.RemoteDebugProcessHandler;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
@@ -102,7 +103,7 @@ public class VMCreator {
 
   private void fixStopBugUnderLinux(final ProcessHandler processHandler, final DebugSession session) {
 // TODO uncomment when implementing remote connections
-//    if (!(processHandler instanceof RemoteDebugProcessHandler)) {
+    if (!(processHandler instanceof RemoteDebugProcessHandler)) {
       // add listener only to non-remote process handler:
       // on Unix systems destroying process does not cause VMDeathEvent to be generated,
       // so we need to call debugProcess.stop() explicitly for graceful termination.
@@ -121,7 +122,7 @@ public class VMCreator {
 //            }
         }
       });
-//    }
+    }
   }
 
   private void fail() {

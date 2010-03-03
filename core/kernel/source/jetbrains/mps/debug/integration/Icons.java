@@ -33,4 +33,5 @@ public class Icons {
   public static final Icon THREAD_RUNNING = new ImageIcon(Icons.class.getResource("ui/icons/db_thread_running.png"));
   public static final Icon THREAD_SUSPENDED = new ImageIcon(Icons.class.getResource("ui/icons/db_thread_suspended.png"));
   public static final Icon THREAD_AT_BREAKPOINT = new ImageIcon(Icons.class.getResource("ui/icons/db_thread_at_breakpoint.png"));
+  public static final Icon RUNCONFIGURATION_REMOTE = new ImageIcon(Icons.class.getResource("ui/icons/db_runconfig_remote.png"));
 }
