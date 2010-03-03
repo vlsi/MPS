@@ -64,29 +64,28 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
         if (repository.getOwners(descriptor).size() > 1) {
           LOG.warning("Loading the same java_stub package twice : " + descriptor.getLongName() + " from " + repository.getOwners(descriptor));
         }
-      } else {
+      } else{
         descriptor = oldDescr;
+      }
 
-        if (descriptor instanceof BaseSModelDescriptor) {
-          BaseSModelDescriptor baseDescriptor = (BaseSModelDescriptor) descriptor;
+      if (descriptor instanceof BaseSModelDescriptor) {
+        BaseSModelDescriptor baseDescriptor = (BaseSModelDescriptor) descriptor;
 
-          //todo this is a hack - comparing classes by names
-          if (baseDescriptor.getModelRootManager().getClass().getName().equals(this.getClass().getName())) {
-            baseDescriptor.setModelRootManager(this);
-          }
-        }
-
-        if (!descriptor.isInitialized()) {
-          if (!myDescriptorsWithListener.contains(descriptor)) {
-            descriptor.addModelListener(myInitializationListener);
-            myDescriptorsWithListener.add(descriptor);
-          }
-        } else {
-          updateModelInLoadingState(descriptor, descriptor.getSModel(), false);
+        //todo this is a hack - comparing classes by names
+        if (baseDescriptor.getModelRootManager().getClass().getName().equals(this.getClass().getName())) {
+          baseDescriptor.setModelRootManager(this);
         }
       }
-    }
 
+      if (!descriptor.isInitialized()) {
+        if (!myDescriptorsWithListener.contains(descriptor)) {
+          descriptor.addModelListener(myInitializationListener);
+          myDescriptorsWithListener.add(descriptor);
+        }
+      } else {
+        updateModelInLoadingState(descriptor, descriptor.getSModel(), false);
+      }
+    }
   }
 
   @NotNull
