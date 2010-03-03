@@ -1,35 +1,35 @@
 package jetbrains.mps.debug.runtime;
 
-import com.sun.jdi.connect.Connector;
-import com.sun.jdi.connect.ListeningConnector;
-import com.sun.jdi.connect.IllegalConnectorArgumentsException;
-import com.sun.jdi.connect.Connector.Argument;
-import com.sun.jdi.VirtualMachine;
-import com.sun.jdi.VirtualMachineManager;
-import com.sun.jdi.Bootstrap;
-import com.intellij.util.concurrency.Semaphore;
-import com.intellij.execution.process.ProcessAdapter;
-import com.intellij.execution.process.ProcessEvent;
-import com.intellij.execution.process.ProcessListener;
+import com.intellij.execution.ExecutionException;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.Executor;
-import com.intellij.execution.ExecutionException;
-import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.RunProfileState;
+import com.intellij.execution.process.ProcessAdapter;
+import com.intellij.execution.process.ProcessEvent;
+import com.intellij.execution.process.ProcessHandler;
+import com.intellij.execution.process.ProcessListener;
+import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.openapi.project.Project;
+import com.intellij.util.concurrency.Semaphore;
+import com.sun.jdi.Bootstrap;
+import com.sun.jdi.VirtualMachine;
+import com.sun.jdi.VirtualMachineManager;
+import com.sun.jdi.connect.Connector;
+import com.sun.jdi.connect.Connector.Argument;
+import com.sun.jdi.connect.IllegalConnectorArgumentsException;
+import com.sun.jdi.connect.ListeningConnector;
+import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
-import java.util.Map;
-import java.util.List;
-import java.util.Iterator;
 import java.util.ArrayList;
-
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
-import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
-import org.jetbrains.annotations.Nullable;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -89,13 +89,39 @@ public class VMCreator {
           myExecutionResult.getProcessHandler().addProcessListener(processListener);
         }
         myProcessListeners.clear();
-        myDebuggerSession.setProcessHandler(myExecutionResult.getProcessHandler());
+        ProcessHandler processHandler = myExecutionResult.getProcessHandler();
+        myDebuggerSession.setProcessHandler(processHandler);
+        fixStopBugUnderLinux(processHandler, myDebuggerSession);
       }
     } catch (ExecutionException e) {
       fail();
       throw e;
     }
     return myExecutionResult;
+  }
+
+  private void fixStopBugUnderLinux(final ProcessHandler processHandler, final DebugSession session) {
+// TODO uncomment when implementing remote connections
+//    if (!(processHandler instanceof RemoteDebugProcessHandler)) {
+      // add listener only to non-remote process handler:
+      // on Unix systems destroying process does not cause VMDeathEvent to be generated,
+      // so we need to call debugProcess.stop() explicitly for graceful termination.
+      // RemoteProcessHandler on the other hand will call debugProcess.stop() as a part of destroyProcess() and detachProcess() implementation,
+      // so we shouldn't add the listener to avoid calling stop() twice
+      processHandler.addProcessListener(new ProcessAdapter() {
+        public void processWillTerminate(ProcessEvent event, boolean willBeDestroyed) {
+          if (event.getProcessHandler() != processHandler) return;
+            // if current thread is a "debugger manager thread", stop will execute synchronously
+            session.getEventsProcessor().stop(willBeDestroyed);
+
+            // wait at most 10 seconds: the problem is that debugProcess.stop() can hang if there are troubles in the debuggee
+            // if processWillTerminate() is called from AWT thread debugProcess.waitFor() will block it and the whole app will hang
+//            if (!DebuggerManagerThread.isManagerThread()) {
+//              session.getEventsProcessor().waitFor(10000);
+//            }
+        }
+      });
+//    }
   }
 
   private void fail() {
@@ -210,7 +236,7 @@ public class VMCreator {
           LOG.error(ex);
           throw new RunFailedException(ex);
         } finally {
-          if(myArguments != null) {
+          if (myArguments != null) {
             try {
               connector.stopListening(myArguments);
             } catch (IllegalArgumentException e) {
@@ -228,7 +254,7 @@ public class VMCreator {
       throw new RunFailedException(e);
     } catch (IllegalConnectorArgumentsException e) {
       throw new RunFailedException(e);
-    }    finally {
+    } finally {
       myArguments = null;
     }
   }
@@ -245,15 +271,13 @@ public class VMCreator {
     List connectors;
     if (SOCKET_ATTACHING_CONNECTOR_NAME.equals(connectorName) || SHMEM_ATTACHING_CONNECTOR_NAME.equals(connectorName)) {
       connectors = virtualMachineManager.attachingConnectors();
-    }
-    else if (SOCKET_LISTENING_CONNECTOR_NAME.equals(connectorName) || SHMEM_LISTENING_CONNECTOR_NAME.equals(connectorName)) {
+    } else if (SOCKET_LISTENING_CONNECTOR_NAME.equals(connectorName) || SHMEM_LISTENING_CONNECTOR_NAME.equals(connectorName)) {
       connectors = virtualMachineManager.listeningConnectors();
-    }
-    else {
+    } else {
       return null;
     }
     for (Iterator it = connectors.iterator(); it.hasNext();) {
-      Connector connector = (Connector)it.next();
+      Connector connector = (Connector) it.next();
       if (connectorName.equals(connector.name())) {
         return connector;
       }
@@ -266,11 +290,10 @@ public class VMCreator {
   }
 
   public void addProcessListener(ProcessListener processListener) {
-    synchronized(myProcessListeners) {
-      if(myExecutionResult != null) {
+    synchronized (myProcessListeners) {
+      if (myExecutionResult != null) {
         myExecutionResult.getProcessHandler().addProcessListener(processListener);
-      }
-      else {
+      } else {
         myProcessListeners.add(processListener);
       }
     }
@@ -279,10 +302,9 @@ public class VMCreator {
 
   public void removeProcessListener(ProcessListener processListener) {
     synchronized (myProcessListeners) {
-      if(myExecutionResult != null) {
+      if (myExecutionResult != null) {
         myExecutionResult.getProcessHandler().removeProcessListener(processListener);
-      }
-      else {
+      } else {
         myProcessListeners.remove(processListener);
       }
     }
@@ -291,8 +313,8 @@ public class VMCreator {
   private void executeAfterProcessStarted(final Runnable run) {
     RunsAfterProcessStarted processListener = new RunsAfterProcessStarted(run);
     addProcessListener(processListener);
-    if(myExecutionResult != null) {
-      if(myExecutionResult.getProcessHandler().isStartNotified()) {
+    if (myExecutionResult != null) {
+      if (myExecutionResult.getProcessHandler().isStartNotified()) {
         processListener.run();
       }
     }
@@ -309,12 +331,13 @@ public class VMCreator {
   private class RunsAfterProcessStarted extends ProcessAdapter {
     private Runnable myRunnable;
     private boolean alreadyRun = false;
+
     public RunsAfterProcessStarted(Runnable runnable) {
       myRunnable = runnable;
     }
 
     public synchronized void run() {
-      if(!alreadyRun) {
+      if (!alreadyRun) {
         alreadyRun = true;
         myRunnable.run();
       }

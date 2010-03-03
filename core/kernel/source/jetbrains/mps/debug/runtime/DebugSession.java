@@ -56,7 +56,7 @@ public class DebugSession {
   }
 
   public void stop() {
-    myEventsProcessor.stop();
+    myEventsProcessor.stop(true);
   }
 
   public void stepOver() {

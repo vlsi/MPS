@@ -385,8 +385,8 @@ public class DebugVMEventsProcessor {
     getManagerThread().schedule(new PauseCommand());
   }
 
-  public void stop() {
-    getManagerThread().invokeTerminalCommand(new StopCommand(true));
+  public void stop(boolean terminate) {
+    getManagerThread().invokeTerminalCommand(new StopCommand(terminate));
   }
 
   public void step(StepType type, @NotNull SuspendContext suspendContext) {
