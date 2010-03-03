@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.IClassPathItem;
 import java.util.ArrayList;
+import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.EachClassPathItemVisitor;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
@@ -42,12 +43,21 @@ public class ModuleUtil {
 
   public static List<String> retrieveClassPath(IClassPathItem cpitem) {
     final List<String> result = ListSequence.fromList(new ArrayList<String>());
+    final List<String> jdk = CommonPaths.getJDKPath();
     cpitem.accept(new EachClassPathItemVisitor() {
       public void visit(FileClassPathItem p0) {
+        // filter out JDK 
+        if (jdk.contains(p0.getClassPath())) {
+          return;
+        }
         ListSequence.fromList(result).addElement(p0.getClassPath());
       }
 
       public void visit(JarFileClassPathItem p0) {
+        // filter out JDK 
+        if (jdk.contains(p0.getIFile().getPath())) {
+          return;
+        }
         ListSequence.fromList(result).addElement(p0.getIFile().getPath());
       }
     });
