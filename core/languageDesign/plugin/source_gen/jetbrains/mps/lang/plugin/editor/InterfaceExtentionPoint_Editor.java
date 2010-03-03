@@ -40,13 +40,6 @@ public class InterfaceExtentionPoint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_bz5rxc_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "internal-id");
-    editorCell.setCellId("Constant_bz5rxc_d0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_bz5rxc_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "bootstrap label");
     editorCell.setCellId("Constant_bz5rxc_b0");
@@ -54,6 +47,13 @@ public class InterfaceExtentionPoint_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_bz5rxc_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "internal-id");
+    editorCell.setCellId("Constant_bz5rxc_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }

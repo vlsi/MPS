@@ -16,8 +16,8 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -25,16 +25,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 public class RunModuleConfigCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2e5ul8_a(editorContext, node);
-  }
-
-  private EditorCell createCollection_2e5ul8_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_2e5ul8_a0a");
-    editorCell.addEditorCell(this.createConstant_2e5ul8_a0a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_2e5ul8_b0a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_2e5ul8_c0a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_2e5ul8_d0a0(editorContext, node));
-    return editorCell;
   }
 
   private EditorCell createCollection_2e5ul8_a(EditorContext editorContext, SNode node) {
@@ -63,6 +53,16 @@ public class RunModuleConfigCreator_Editor extends DefaultNodeEditor {
     if (renderingCondition_2e5ul8_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_2e5ul8_b0a(editorContext, node));
     }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_2e5ul8_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_2e5ul8_a0a");
+    editorCell.addEditorCell(this.createConstant_2e5ul8_a0a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_2e5ul8_b0a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2e5ul8_c0a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_2e5ul8_d0a0(editorContext, node));
     return editorCell;
   }
 
@@ -136,12 +136,11 @@ public class RunModuleConfigCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_2e5ul8_d0a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("rcType");
-    provider.setNoTargetText("<no rcType>");
+  private EditorCell createRefNode_2e5ul8_b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("createModuleRunConfigBlock");
+    provider.setNoTargetText("<no createModuleRunConfigBlock>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new RunModuleConfigCreator_Editor._Inline_2e5ul8_a3a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -154,11 +153,12 @@ public class RunModuleConfigCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_2e5ul8_b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("createModuleRunConfigBlock");
-    provider.setNoTargetText("<no createModuleRunConfigBlock>");
+  private EditorCell createRefCell_2e5ul8_d0a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("rcType");
+    provider.setNoTargetText("<no rcType>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new RunModuleConfigCreator_Editor._Inline_2e5ul8_a3a0a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

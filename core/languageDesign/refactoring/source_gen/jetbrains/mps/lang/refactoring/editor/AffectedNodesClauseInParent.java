@@ -32,6 +32,15 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return this.createCollection_33nozx_a(editorContext, node);
   }
 
+  private EditorCell createCollection_33nozx_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_33nozx_a");
+    if (renderingCondition_33nozx_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_33nozx_a0(editorContext, node));
+    }
+    return editorCell;
+  }
+
   private EditorCell createCollection_33nozx_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_33nozx_a0");
@@ -41,15 +50,6 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     }
     editorCell.addEditorCell(this.createConstant_33nozx_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_33nozx_b0a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_33nozx_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_33nozx_a");
-    if (renderingCondition_33nozx_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_33nozx_a0(editorContext, node));
-    }
     return editorCell;
   }
 

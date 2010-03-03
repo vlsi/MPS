@@ -24,41 +24,6 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return this.createCollection_rna4g_a(editorContext, node);
   }
 
-  private EditorCell createCollection_rna4g_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_rna4g_b1a");
-    editorCell.setGridLayout(true);
-    editorCell.addEditorCell(this.createCollection_rna4g_a1b0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_rna4g_b1b0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_rna4g_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_rna4g_a1b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_rna4g_a0b1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_rna4g_b0b1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_rna4g_c0b1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_rna4g_b1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_rna4g_b1b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_rna4g_a1b1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_rna4g_b1b1a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_rna4g_c1b1a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_rna4g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_rna4g_a");
@@ -100,9 +65,52 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_rna4g_b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_rna4g_b1a");
+    editorCell.setGridLayout(true);
+    editorCell.addEditorCell(this.createCollection_rna4g_a1b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_rna4g_b1b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_rna4g_a1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_rna4g_a1b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_rna4g_a0b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rna4g_b0b1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_rna4g_c0b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_rna4g_b1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_rna4g_b1b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_rna4g_a1b1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rna4g_b1b1a(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_rna4g_c1b1a(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_rna4g_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Generate Plugins");
     editorCell.setCellId("Constant_rna4g_a0a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_rna4g_b0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    editorCell.setCellId("Constant_rna4g_b0a");
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -131,14 +139,6 @@ public class GeneratePlugins_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_rna4g_b1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_rna4g_b1b1a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_rna4g_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_rna4g_b0a");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }

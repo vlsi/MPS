@@ -44,21 +44,21 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return this.createCollection_xpsq7t_a(editorContext, node);
   }
 
-  private EditorCell createCollection_xpsq7t_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_xpsq7t_a0");
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_xpsq7t_a0a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_xpsq7t_b0a(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_xpsq7t_c0a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_xpsq7t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xpsq7t_a");
     if (renderingCondition_xpsq7t_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_xpsq7t_a0(editorContext, node));
     }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_xpsq7t_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_xpsq7t_a0");
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_xpsq7t_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_xpsq7t_b0a(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_xpsq7t_c0a(editorContext, node));
     return editorCell;
   }
 
@@ -162,12 +162,12 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_xpsq7t_a0a0a0a0a0a0a0a0a0a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_xpsq7t_a0a0a0a0a0a0a0a0a0a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_xpsq7t_a0a0a0a0a0a0a0a0a0a0 = quotedNode_xpsq7t_a0a0a0a0a0a0a0a0a0a0;
-        quotedNode1_xpsq7t_a0a0a0a0a0a0a0a0a0a0.addReference(SReference.create("classifier", quotedNode1_xpsq7t_a0a0a0a0a0a0a0a0a0a0, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys$Description")));
-        result = quotedNode1_xpsq7t_a0a0a0a0a0a0a0a0a0a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys$Description")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -180,12 +180,12 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_xpsq7t_a0a0a0a0a0a0a0a0a0c0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_xpsq7t_a0a0a0a0a0a0a0a0a0c0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_xpsq7t_a0a0a0a0a0a0a0a0a0c0 = quotedNode_xpsq7t_a0a0a0a0a0a0a0a0a0c0;
-        quotedNode1_xpsq7t_a0a0a0a0a0a0a0a0a0c0.addReference(SReference.create("classifier", quotedNode1_xpsq7t_a0a0a0a0a0a0a0a0a0c0, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys$Description")));
-        result = quotedNode1_xpsq7t_a0a0a0a0a0a0a0a0a0c0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys$Description")));
+        result = quotedNode1_2;
       }
       return result;
     }

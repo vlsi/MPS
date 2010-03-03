@@ -49,14 +49,14 @@ public class ActionDataParameterDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_d8l4wt_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ActionParameter_Hint(node);
+  private EditorCell createComponent_d8l4wt_e0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ActionParameter_IsOptional(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_d8l4wt_e0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ActionParameter_IsOptional(node);
+  private EditorCell createComponent_d8l4wt_a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ActionParameter_Hint(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }

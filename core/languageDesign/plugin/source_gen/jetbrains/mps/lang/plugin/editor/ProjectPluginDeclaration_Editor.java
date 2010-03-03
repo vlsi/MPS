@@ -33,29 +33,6 @@ public class ProjectPluginDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_904nkf_a(editorContext, node);
   }
 
-  private EditorCell createCollection_904nkf_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_904nkf_a0a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_904nkf_a0a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_904nkf_b0a0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_904nkf_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_904nkf_b1a");
-    editorCell.addEditorCell(this.createRefNodeList_904nkf_a1b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_904nkf_b1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_904nkf_c1b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_904nkf_d1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_904nkf_e1b0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_904nkf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_904nkf_a");
@@ -85,6 +62,18 @@ public class ProjectPluginDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_904nkf_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_904nkf_a0a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_904nkf_a0a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_904nkf_b0a0(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createCollection_904nkf_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_904nkf_b0");
@@ -97,9 +86,28 @@ public class ProjectPluginDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_904nkf_b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_904nkf_b1a");
+    editorCell.addEditorCell(this.createRefNodeList_904nkf_a1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_904nkf_b1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_904nkf_c1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_904nkf_d1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_904nkf_e1b0(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_904nkf_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "project plugin");
     editorCell.setCellId("Constant_904nkf_a0a0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_904nkf_b0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    editorCell.setCellId("Constant_904nkf_b0a");
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -122,14 +130,6 @@ public class ProjectPluginDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_904nkf_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_904nkf_b0a");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -4,28 +4,19 @@ package jetbrains.mps.lang.script.generator.baseLanguage.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.script.util.ScriptNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.script.util.ScriptNameUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_1177464650516(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ScriptNameUtil.getMigrationScriptClassName(_context.getNode());
-  }
-
   public static Object propertyMacro_GetPropertyValue_1177464819480(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "title");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1177465342820(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode affectedConcept = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance"), "affectedInstanceConcept", false);
-    return NameUtil.nodeFQName(affectedConcept);
   }
 
   public static Object propertyMacro_GetPropertyValue_1177555396906(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -44,8 +35,17 @@ public class QueriesGenerated {
     );
   }
 
+  public static Object propertyMacro_GetPropertyValue_1177465342820(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode affectedConcept = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance"), "affectedInstanceConcept", false);
+    return NameUtil.nodeFQName(affectedConcept);
+  }
+
   public static Object propertyMacro_GetPropertyValue_1225457131443(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "showAsIntention");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1177464650516(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ScriptNameUtil.getMigrationScriptClassName(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_1206121352567(final IOperationContext operationContext, final IfMacroContext _context) {
