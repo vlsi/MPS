@@ -35,7 +35,7 @@ public class TShortArrayListDecorator extends AbstractList<Short> implements Lis
 
   @Override
   public boolean equals(Object that) {
-    if (that instanceof TShortArrayListDecorator && this.primList == ((TShortArrayListDecorator)that).primList) {
+    if (that instanceof TShortArrayListDecorator && this.primList == ((TShortArrayListDecorator) that).primList) {
       return true;
     }
     return super.equals(that);
@@ -136,7 +136,7 @@ public class TShortArrayListDecorator extends AbstractList<Short> implements Lis
   }
 
   @Override
-  public <T extends Object>T[] toArray(T[] array) {
+  public <T extends Object> T[] toArray(T[] array) {
     return super.toArray(array);
   }
 
@@ -180,7 +180,7 @@ public class TShortArrayListDecorator extends AbstractList<Short> implements Lis
   }
 
   protected short unwrap(Object value) {
-    return ((Short)value).shortValue();
+    return ((Short) value).shortValue();
   }
 
   public class TShortListIterator implements ListIterator<Short> {

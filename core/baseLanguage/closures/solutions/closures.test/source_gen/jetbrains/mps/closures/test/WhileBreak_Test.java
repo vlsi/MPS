@@ -38,13 +38,6 @@ __switch__:
                       }
                       this.__CP__ = 6;
                       break;
-                    case 6:
-                      if (true) {
-                        this.__CP__ = 7;
-                        break;
-                      }
-                      this.__CP__ = 8;
-                      break;
                     case 4:
                       if (_3_condition) {
                         this.__CP__ = 5;
@@ -52,12 +45,26 @@ __switch__:
                       }
                       this.__CP__ = 1;
                       break;
+                    case 6:
+                      if (true) {
+                        this.__CP__ = 7;
+                        break;
+                      }
+                      this.__CP__ = 8;
+                      break;
                     case 11:
                       this.__CP__ = 12;
                       this.yield(1);
                       return true;
                     case 0:
                       this._3_condition = true;
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this.__CP__ = 6;
+                      break;
+                    case 8:
+                      _3_condition = false;
                       this.__CP__ = 4;
                       break;
                     case 7:
@@ -71,13 +78,6 @@ __switch__:
                       break;
                     case 15:
                       this.__CP__ = 1;
-                      break;
-                    case 5:
-                      this.__CP__ = 6;
-                      break;
-                    case 8:
-                      _3_condition = false;
-                      this.__CP__ = 4;
                       break;
                     default:
                       break __loop__;

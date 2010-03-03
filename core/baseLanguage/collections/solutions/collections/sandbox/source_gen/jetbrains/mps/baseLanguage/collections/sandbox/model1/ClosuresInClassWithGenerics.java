@@ -35,14 +35,14 @@ __switch__:
                       this.__CP__ = 5;
                       this.yield((T2) "s");
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
                     case 5:
                       this.__CP__ = 1;
-                      break;
-                    case 0:
-                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;

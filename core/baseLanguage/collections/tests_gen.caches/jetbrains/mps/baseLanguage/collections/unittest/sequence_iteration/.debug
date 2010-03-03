@@ -70,5 +70,63 @@
   <nodeInfo nodeId="1165597014892" fileName="Sequence_iteration1.java" startLine="149" startPosition="0" endLine="215" endPosition="0" />
   <nodeInfo nodeId="1165451039404" fileName="Sequence_iteration1.java" startLine="77" startPosition="0" endLine="149" endPosition="0" />
   <nodeInfo nodeId="1165597014964" fileName="Sequence_iteration1.java" startLine="215" startPosition="0" endLine="288" endPosition="0" />
+  <varInfo nodeId="1165600539986" fileName="Sequence_iteration2.java" startLine="65" startPosition="42" endLine="65" endPosition="44" varName="ss" />
+  <varInfo nodeId="1165600539991" fileName="Sequence_iteration2.java" startLine="66" startPosition="31" endLine="66" endPosition="36" varName="count" />
+  <varInfo nodeId="1165600539993" fileName="Sequence_iteration2.java" startLine="66" startPosition="38" endLine="66" endPosition="39" varName="s" />
+  <varInfo nodeId="1165449589321" fileName="Sequence_iteration1.java" startLine="66" startPosition="42" endLine="66" endPosition="44" varName="ss" />
+  <varInfo nodeId="1238145922636" fileName="Sequence_iteration2.java" startLine="67" startPosition="6" endLine="67" endPosition="11" varName="count" />
+  <varInfo nodeId="1165449778217" fileName="Sequence_iteration1.java" startLine="67" startPosition="31" endLine="67" endPosition="36" varName="count" />
+  <varInfo nodeId="1165449790000" fileName="Sequence_iteration1.java" startLine="67" startPosition="38" endLine="67" endPosition="39" varName="s" />
+  <varInfo nodeId="1238145924581" fileName="Sequence_iteration1.java" startLine="68" startPosition="6" endLine="68" endPosition="11" varName="count" />
+  <varInfo nodeId="1165600609908" fileName="Sequence_iteration2.java" startLine="69" startPosition="50" endLine="69" endPosition="52" varName="ss" />
+  <varInfo nodeId="1165451179269" fileName="Sequence_iteration1.java" startLine="70" startPosition="24" endLine="70" endPosition="29" varName="count" />
+  <varInfo nodeId="1165601480485" fileName="Sequence_iteration2.java" startLine="70" startPosition="33" endLine="70" endPosition="44" varName="count_inner" />
+  <varInfo nodeId="1165601476919" fileName="Sequence_iteration2.java" startLine="70" startPosition="46" endLine="70" endPosition="53" varName="s_inner" />
+  <varInfo nodeId="1238145923532" fileName="Sequence_iteration2.java" startLine="71" startPosition="8" endLine="71" endPosition="19" varName="count_inner" />
+  <varInfo nodeId="1165453645683" fileName="Sequence_iteration1.java" startLine="71" startPosition="42" endLine="71" endPosition="44" varName="ss" />
+  <varInfo nodeId="1165453683913" fileName="Sequence_iteration1.java" startLine="72" startPosition="32" endLine="72" endPosition="37" varName="count" />
+  <varInfo nodeId="1165453645690" fileName="Sequence_iteration1.java" startLine="72" startPosition="44" endLine="72" endPosition="45" varName="s" />
+  <varInfo nodeId="1238145924530" fileName="Sequence_iteration1.java" startLine="73" startPosition="6" endLine="73" endPosition="11" varName="count" />
+  <varInfo nodeId="1165601501811" fileName="Sequence_iteration2.java" startLine="73" startPosition="26" endLine="73" endPosition="37" varName="count_inner" />
+  <varInfo nodeId="1165453645699" fileName="Sequence_iteration1.java" startLine="75" startPosition="24" endLine="75" endPosition="29" varName="count" />
+  <varInfo nodeId="1165454291902" fileName="Sequence_iteration1.java" startLine="136" startPosition="42" endLine="136" endPosition="44" varName="ss" />
+  <varInfo nodeId="1165454291907" fileName="Sequence_iteration1.java" startLine="137" startPosition="31" endLine="137" endPosition="36" varName="count" />
+  <varInfo nodeId="1165454291909" fileName="Sequence_iteration1.java" startLine="137" startPosition="38" endLine="137" endPosition="39" varName="s" />
+  <varInfo nodeId="1238145920292" fileName="Sequence_iteration1.java" startLine="138" startPosition="6" endLine="138" endPosition="11" varName="count" />
+  <varInfo nodeId="1165454291918" fileName="Sequence_iteration1.java" startLine="140" startPosition="24" endLine="140" endPosition="29" varName="count" />
+  <varInfo nodeId="1165454291922" fileName="Sequence_iteration1.java" startLine="142" startPosition="42" endLine="142" endPosition="44" varName="ss" />
+  <varInfo nodeId="1165454361631" fileName="Sequence_iteration1.java" startLine="143" startPosition="31" endLine="143" endPosition="36" varName="count" />
+  <varInfo nodeId="1165454291932" fileName="Sequence_iteration1.java" startLine="143" startPosition="38" endLine="143" endPosition="39" varName="s" />
+  <varInfo nodeId="1238145924209" fileName="Sequence_iteration1.java" startLine="144" startPosition="6" endLine="144" endPosition="11" varName="count" />
+  <varInfo nodeId="1165454291941" fileName="Sequence_iteration1.java" startLine="146" startPosition="24" endLine="146" endPosition="29" varName="count" />
+  <varInfo nodeId="1224596674704" fileName="Sequence_iteration1.java" startLine="172" startPosition="35" endLine="172" endPosition="48" varName="sequence_size" />
+  <varInfo nodeId="1165597014922" fileName="Sequence_iteration1.java" startLine="204" startPosition="42" endLine="204" endPosition="44" varName="ss" />
+  <varInfo nodeId="1165597014927" fileName="Sequence_iteration1.java" startLine="205" startPosition="31" endLine="205" endPosition="36" varName="count" />
+  <varInfo nodeId="1165597014929" fileName="Sequence_iteration1.java" startLine="205" startPosition="38" endLine="205" endPosition="39" varName="s" />
+  <varInfo nodeId="1238145925464" fileName="Sequence_iteration1.java" startLine="206" startPosition="6" endLine="206" endPosition="11" varName="count" />
+  <varInfo nodeId="1165597014938" fileName="Sequence_iteration1.java" startLine="208" startPosition="24" endLine="208" endPosition="29" varName="count" />
+  <varInfo nodeId="1165597236256" fileName="Sequence_iteration1.java" startLine="208" startPosition="31" endLine="208" endPosition="44" varName="sequence_size" />
+  <varInfo nodeId="1165597014942" fileName="Sequence_iteration1.java" startLine="209" startPosition="42" endLine="209" endPosition="44" varName="ss" />
+  <varInfo nodeId="1165597014950" fileName="Sequence_iteration1.java" startLine="210" startPosition="32" endLine="210" endPosition="37" varName="count" />
+  <varInfo nodeId="1165597297212" fileName="Sequence_iteration1.java" startLine="210" startPosition="40" endLine="210" endPosition="53" varName="sequence_size" />
+  <varInfo nodeId="1165597014952" fileName="Sequence_iteration1.java" startLine="210" startPosition="56" endLine="210" endPosition="57" varName="s" />
+  <varInfo nodeId="1238145920410" fileName="Sequence_iteration1.java" startLine="211" startPosition="6" endLine="211" endPosition="11" varName="count" />
+  <varInfo nodeId="1165597014961" fileName="Sequence_iteration1.java" startLine="213" startPosition="24" endLine="213" endPosition="29" varName="count" />
+  <varInfo nodeId="1165597313963" fileName="Sequence_iteration1.java" startLine="213" startPosition="31" endLine="213" endPosition="44" varName="sequence_size" />
+  <varInfo nodeId="1224596674596" fileName="Sequence_iteration1.java" startLine="239" startPosition="35" endLine="239" endPosition="48" varName="sequence_size" />
+  <varInfo nodeId="1165597015011" fileName="Sequence_iteration1.java" startLine="275" startPosition="42" endLine="275" endPosition="44" varName="ss" />
+  <varInfo nodeId="1165597015016" fileName="Sequence_iteration1.java" startLine="276" startPosition="31" endLine="276" endPosition="36" varName="count" />
+  <varInfo nodeId="1165597015018" fileName="Sequence_iteration1.java" startLine="276" startPosition="38" endLine="276" endPosition="39" varName="s" />
+  <varInfo nodeId="1238145920695" fileName="Sequence_iteration1.java" startLine="277" startPosition="6" endLine="277" endPosition="11" varName="count" />
+  <varInfo nodeId="1165597015027" fileName="Sequence_iteration1.java" startLine="279" startPosition="24" endLine="279" endPosition="29" varName="count" />
+  <varInfo nodeId="1165597382137" fileName="Sequence_iteration1.java" startLine="279" startPosition="31" endLine="279" endPosition="44" varName="sequence_size" />
+  <varInfo nodeId="1165597390310" fileName="Sequence_iteration1.java" startLine="280" startPosition="43" endLine="280" endPosition="56" varName="sequence_size" />
+  <varInfo nodeId="1165597015035" fileName="Sequence_iteration1.java" startLine="281" startPosition="42" endLine="281" endPosition="44" varName="ss" />
+  <varInfo nodeId="1165597015040" fileName="Sequence_iteration1.java" startLine="282" startPosition="31" endLine="282" endPosition="36" varName="count" />
+  <varInfo nodeId="1165597015042" fileName="Sequence_iteration1.java" startLine="282" startPosition="38" endLine="282" endPosition="39" varName="s" />
+  <varInfo nodeId="1238145924802" fileName="Sequence_iteration1.java" startLine="283" startPosition="6" endLine="283" endPosition="11" varName="count" />
+  <varInfo nodeId="1165597015051" fileName="Sequence_iteration1.java" startLine="285" startPosition="24" endLine="285" endPosition="29" varName="count" />
+  <varInfo nodeId="1165597416514" fileName="Sequence_iteration1.java" startLine="285" startPosition="31" endLine="285" endPosition="44" varName="sequence_size" />
+  <varInfo nodeId="1165597426113" fileName="Sequence_iteration1.java" startLine="286" startPosition="43" endLine="286" endPosition="56" varName="sequence_size" />
 </debugInfo>
 

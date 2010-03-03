@@ -8,11 +8,10 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 
-/* package */class C1 {
-
+/*package*/ class C1 {
   private int fff;
 
-  /* package */void m1() {
+  /*package*/ void m1() {
     List<List<String>> lll = ListSequence.fromList(new ArrayList<List<String>>());
   }
 
@@ -35,16 +34,14 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 
   public void m5() {
     Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure() {
-
       public Iterable<T> iterable() {
         "1";
         "2";
         return "3";
       }
     });
-    for(String s : Sequence.fromIterable(ss)) {
+    for (String s : Sequence.fromIterable(ss)) {
       System.out.println(s);
     }
   }
-
 }

@@ -8,19 +8,15 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class FibonacciSequence {
-
-  /* package */FibonacciSequence() {
+  /*package*/ FibonacciSequence() {
   }
 
   public Iterable<Integer> numbers(final int max) {
-    return Sequence.fromClosure(new ISequenceClosure <Integer>() {
-
+    return Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _6_n_;
               private int _7_n__;
@@ -63,6 +59,9 @@ __switch__:
                       this.__CP__ = 16;
                       this.yield(_11_n);
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
@@ -83,9 +82,6 @@ __switch__:
                     case 13:
                       this.__CP__ = 1;
                       break;
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
                     default:
                       break __loop__;
                   }
@@ -98,5 +94,4 @@ __switch__:
       }
     });
   }
-
 }

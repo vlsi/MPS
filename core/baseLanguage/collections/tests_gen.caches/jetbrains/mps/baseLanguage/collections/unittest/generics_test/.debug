@@ -10,10 +10,10 @@
   <nodeInfo nodeId="1172029203866" fileName="Generics1_Test.java" startLine="18" startPosition="49" endLine="19" endPosition="18" />
   <nodeInfo nodeId="1172029277744" fileName="Generics1_Test.java" startLine="20" startPosition="57" endLine="21" endPosition="47" />
   <nodeInfo nodeId="1172029203880" fileName="Generics1_Test.java" startLine="21" startPosition="47" endLine="22" endPosition="14" />
-  <nodeInfo nodeId="1224596674960" fileName="MySequence.java" startLine="56" startPosition="27" endLine="57" endPosition="63" />
+  <nodeInfo nodeId="1224596674960" fileName="MySequence.java" startLine="59" startPosition="27" endLine="60" endPosition="63" />
   <nodeInfo nodeId="1170879079306" fileName="MySequence.java" startLine="79" startPosition="27" endLine="80" endPosition="16" />
   <nodeInfo nodeId="1170879915003" fileName="BooleanSequence.java" startLine="8" startPosition="0" endLine="10" endPosition="3" />
-  <nodeInfo nodeId="1224596680523" fileName="MySequence.java" startLine="60" startPosition="27" endLine="62" endPosition="28" />
+  <nodeInfo nodeId="1224596680523" fileName="MySequence.java" startLine="63" startPosition="27" endLine="65" endPosition="28" />
   <nodeInfo nodeId="1172029188742" fileName="Generics1_Test.java" startLine="11" startPosition="50" endLine="14" endPosition="5" />
   <nodeInfo nodeId="1170879946355" fileName="BooleanSequence.java" startLine="12" startPosition="33" endLine="16" endPosition="5" />
   <nodeInfo nodeId="1172029203870" fileName="Generics1_Test.java" startLine="19" startPosition="18" endLine="23" endPosition="5" />
@@ -23,5 +23,11 @@
   <nodeInfo nodeId="1172029195858" fileName="Generics1_Test.java" startLine="16" startPosition="0" endLine="25" endPosition="0" />
   <nodeInfo nodeId="1170878998354" fileName="MySequence.java" startLine="11" startPosition="33" endLine="76" endPosition="7" />
   <nodeInfo nodeId="1170878984788" fileName="MySequence.java" startLine="10" startPosition="33" endLine="78" endPosition="0" />
+  <varInfo nodeId="1172029188745" fileName="Generics1_Test.java" startLine="12" startPosition="46" endLine="12" endPosition="51" varName="bools" />
+  <varInfo nodeId="1172029269303" fileName="Generics1_Test.java" startLine="13" startPosition="24" endLine="13" endPosition="28" varName="bool" />
+  <varInfo nodeId="1172029203873" fileName="Generics1_Test.java" startLine="20" startPosition="43" endLine="20" endPosition="47" varName="ints" />
+  <varInfo nodeId="1172029280997" fileName="Generics1_Test.java" startLine="21" startPosition="26" endLine="21" endPosition="31" varName="count" />
+  <varInfo nodeId="1172029284779" fileName="Generics1_Test.java" startLine="21" startPosition="33" endLine="21" endPosition="34" varName="i" />
+  <varInfo nodeId="1238145924548" fileName="Generics1_Test.java" startLine="22" startPosition="6" endLine="22" endPosition="11" varName="count" />
 </debugInfo>
 

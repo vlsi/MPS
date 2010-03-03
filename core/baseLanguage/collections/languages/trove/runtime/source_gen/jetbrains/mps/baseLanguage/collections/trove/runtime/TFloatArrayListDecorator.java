@@ -35,7 +35,7 @@ public class TFloatArrayListDecorator extends AbstractList<Float> implements Lis
 
   @Override
   public boolean equals(Object that) {
-    if (that instanceof TFloatArrayListDecorator && this.primList == ((TFloatArrayListDecorator)that).primList) {
+    if (that instanceof TFloatArrayListDecorator && this.primList == ((TFloatArrayListDecorator) that).primList) {
       return true;
     }
     return super.equals(that);
@@ -136,7 +136,7 @@ public class TFloatArrayListDecorator extends AbstractList<Float> implements Lis
   }
 
   @Override
-  public <T extends Object>T[] toArray(T[] array) {
+  public <T extends Object> T[] toArray(T[] array) {
     return super.toArray(array);
   }
 
@@ -180,7 +180,7 @@ public class TFloatArrayListDecorator extends AbstractList<Float> implements Lis
   }
 
   protected float unwrap(Object value) {
-    return ((Float)value).floatValue();
+    return ((Float) value).floatValue();
   }
 
   public class TFloatListIterator implements ListIterator<Float> {

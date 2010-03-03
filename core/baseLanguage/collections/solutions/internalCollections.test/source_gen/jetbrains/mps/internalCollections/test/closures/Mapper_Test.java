@@ -225,6 +225,9 @@ __switch__:
                       this.__CP__ = 8;
                       this.yield(it);
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
@@ -233,9 +236,6 @@ __switch__:
                       break;
                     case 9:
                       throw new StopIteratingException();
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
                     default:
                       break __loop__;
                   }
@@ -288,6 +288,9 @@ __switch__:
                       this.__CP__ = 8;
                       this.yield(it);
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
@@ -296,9 +299,6 @@ __switch__:
                       break;
                     case 9:
                       throw new StopIteratingException();
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
                     default:
                       break __loop__;
                   }
@@ -347,6 +347,9 @@ __switch__:
                       this.__CP__ = 7;
                       this.yield(5);
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
@@ -355,9 +358,6 @@ __switch__:
                       break;
                     case 7:
                       throw new StopIteratingException();
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
                     default:
                       break __loop__;
                   }
@@ -403,6 +403,9 @@ __switch__:
                       this.__CP__ = 6;
                       this.yield(999);
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
@@ -410,9 +413,6 @@ __switch__:
                       throw new StopIteratingException();
                     case 5:
                       this.__CP__ = 7;
-                      break;
-                    case 0:
-                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;
@@ -459,6 +459,9 @@ __switch__:
                       this.__CP__ = 7;
                       this.yield(5);
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
@@ -467,9 +470,6 @@ __switch__:
                       break;
                     case 7:
                       throw new StopIteratingException();
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
                     default:
                       break __loop__;
                   }
@@ -515,6 +515,9 @@ __switch__:
                       this.__CP__ = 6;
                       this.yield(999);
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
@@ -522,9 +525,6 @@ __switch__:
                       throw new StopIteratingException();
                     case 5:
                       this.__CP__ = 7;
-                      break;
-                    case 0:
-                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;

@@ -35,7 +35,7 @@ public class TIntArrayListDecorator extends AbstractList<Integer> implements Lis
 
   @Override
   public boolean equals(Object that) {
-    if (that instanceof TIntArrayListDecorator && this.primList == ((TIntArrayListDecorator)that).primList) {
+    if (that instanceof TIntArrayListDecorator && this.primList == ((TIntArrayListDecorator) that).primList) {
       return true;
     }
     return super.equals(that);
@@ -136,7 +136,7 @@ public class TIntArrayListDecorator extends AbstractList<Integer> implements Lis
   }
 
   @Override
-  public <T extends Object>T[] toArray(T[] array) {
+  public <T extends Object> T[] toArray(T[] array) {
     return super.toArray(array);
   }
 
@@ -180,7 +180,7 @@ public class TIntArrayListDecorator extends AbstractList<Integer> implements Lis
   }
 
   protected int unwrap(Object value) {
-    return ((Integer)value).intValue();
+    return ((Integer) value).intValue();
   }
 
   public class TIntegerListIterator implements ListIterator<Integer> {

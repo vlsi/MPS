@@ -50,6 +50,9 @@ __switch__:
                       this.__CP__ = 4;
                       this.yield(_7_next);
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
@@ -59,9 +62,6 @@ __switch__:
                       break;
                     case 9:
                       this.__CP__ = 1;
-                      break;
-                    case 0:
-                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;

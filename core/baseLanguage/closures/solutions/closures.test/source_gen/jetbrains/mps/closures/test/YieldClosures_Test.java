@@ -580,19 +580,19 @@ __switch__:
                       _8_j++;
                       this.__CP__ = 9;
                       break;
-                    case 14:
-                      if (_4_i < _8_j) {
-                        this.__CP__ = 16;
-                        break;
-                      }
-                      this.__CP__ = 11;
-                      break;
                     case 12:
                       if (_4_i + _8_j < 5) {
                         this.__CP__ = 13;
                         break;
                       }
                       this.__CP__ = 14;
+                      break;
+                    case 14:
+                      if (_4_i < _8_j) {
+                        this.__CP__ = 16;
+                        break;
+                      }
+                      this.__CP__ = 11;
                       break;
                     case 18:
                       this.__CP__ = 11;
@@ -608,12 +608,12 @@ __switch__:
                     case 10:
                       this.__CP__ = 12;
                       break;
+                    case 13:
+                      this.__CP__ = 11;
+                      break;
                     case 16:
                       _3_a = _3_a + _4_i + _8_j;
                       this.__CP__ = 18;
-                      break;
-                    case 13:
-                      this.__CP__ = 11;
                       break;
                     default:
                       break __loop__;
@@ -814,13 +814,13 @@ __switch__:
                       this.__CP__ = 5;
                       this.yield(_2_i * 100);
                       return true;
-                    case 14:
-                      this.__CP__ = 15;
-                      this.yield(_2_i * 10000);
-                      return true;
                     case 12:
                       this.__CP__ = 5;
                       this.yield(_2_i * 1000);
+                      return true;
+                    case 14:
+                      this.__CP__ = 15;
+                      this.yield(_2_i * 10000);
                       return true;
                     case 18:
                       this.__CP__ = 5;
@@ -838,11 +838,11 @@ __switch__:
                     case 9:
                       this.__CP__ = 10;
                       break;
-                    case 13:
-                      this.__CP__ = 14;
-                      break;
                     case 11:
                       this.__CP__ = 12;
+                      break;
+                    case 13:
+                      this.__CP__ = 14;
                       break;
                     case 15:
                       this.__CP__ = 16;
@@ -902,19 +902,19 @@ __switch__:
                       }
                       this.__CP__ = 8;
                       break;
-                    case 6:
-                      if (_3_val != 0) {
-                        this.__CP__ = 12;
-                        break;
-                      }
-                      this.__CP__ = 1;
-                      break;
                     case 8:
                       if (true) {
                         this.__CP__ = 9;
                         break;
                       }
                       this.__CP__ = 6;
+                      break;
+                    case 6:
+                      if (_3_val != 0) {
+                        this.__CP__ = 12;
+                        break;
+                      }
+                      this.__CP__ = 1;
                       break;
                     case 13:
                       this.__CP__ = 1;
@@ -928,13 +928,13 @@ __switch__:
                       _3_val = 42;
                       this.__CP__ = 6;
                       break;
-                    case 12:
-                      this.__CP__ = 13;
-                      break;
                     case 9:
                       this._11_foo = -1;
                       _3_val = 24;
                       this.__CP__ = 6;
+                      break;
+                    case 12:
+                      this.__CP__ = 13;
                       break;
                     default:
                       break __loop__;
@@ -973,8 +973,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _2__yield;
-              private Iterator<Integer> _2__yield_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -984,29 +982,12 @@ __switch__:
                     case -1:
                       assert false : "Internal error";
                       return false;
-                    case 2:
-                      this._2__yield_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3).iterator();
-                    case 3:
-                      if (!(this._2__yield_it.hasNext())) {
-                        this.__CP__ = 5;
-                        break;
-                      }
-                      this._2__yield = this._2__yield_it.next();
-                      this.__CP__ = 4;
-                      break;
-                    case 6:
-                      this.__CP__ = 3;
-                      this.yield(_2__yield);
-                      return true;
                     case 0:
                       this.__CP__ = 2;
                       break;
                     case 5:
                       //  last statement 
                       this.__CP__ = 1;
-                      break;
-                    case 4:
-                      this.__CP__ = 6;
                       break;
                     default:
                       break __loop__;
@@ -1032,8 +1013,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _3__yield;
-              private Iterator<Integer> _3__yield_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1043,29 +1022,12 @@ __switch__:
                     case -1:
                       assert false : "Internal error";
                       return false;
-                    case 3:
-                      this._3__yield_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 3).iterator();
-                    case 4:
-                      if (!(this._3__yield_it.hasNext())) {
-                        this.__CP__ = 1;
-                        break;
-                      }
-                      this._3__yield = this._3__yield_it.next();
-                      this.__CP__ = 5;
-                      break;
                     case 2:
                       this.__CP__ = 3;
                       this.yield(1);
                       return true;
-                    case 6:
-                      this.__CP__ = 4;
-                      this.yield(_3__yield);
-                      return true;
                     case 0:
                       this.__CP__ = 2;
-                      break;
-                    case 5:
-                      this.__CP__ = 6;
                       break;
                     default:
                       break __loop__;
@@ -1091,10 +1053,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _2__yield;
-              private Iterator<Integer> _2__yield_it;
-              private Integer _6__yield;
-              private Iterator<Integer> _6__yield_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1104,42 +1062,8 @@ __switch__:
                     case -1:
                       assert false : "Internal error";
                       return false;
-                    case 2:
-                      this._2__yield_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2).iterator();
-                    case 3:
-                      if (!(this._2__yield_it.hasNext())) {
-                        this.__CP__ = 5;
-                        break;
-                      }
-                      this._2__yield = this._2__yield_it.next();
-                      this.__CP__ = 4;
-                      break;
-                    case 5:
-                      this._6__yield_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 3, 4).iterator();
-                    case 7:
-                      if (!(this._6__yield_it.hasNext())) {
-                        this.__CP__ = 1;
-                        break;
-                      }
-                      this._6__yield = this._6__yield_it.next();
-                      this.__CP__ = 8;
-                      break;
-                    case 6:
-                      this.__CP__ = 3;
-                      this.yield(_2__yield);
-                      return true;
-                    case 9:
-                      this.__CP__ = 7;
-                      this.yield(_6__yield);
-                      return true;
                     case 0:
                       this.__CP__ = 2;
-                      break;
-                    case 4:
-                      this.__CP__ = 6;
-                      break;
-                    case 8:
-                      this.__CP__ = 9;
                       break;
                     default:
                       break __loop__;
@@ -1166,8 +1090,6 @@ __switch__:
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _2_i;
-              private Integer _6__yield;
-              private Iterator<Integer> _6__yield_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1190,28 +1112,11 @@ __switch__:
                       _2_i++;
                       this.__CP__ = 3;
                       break;
-                    case 6:
-                      this._6__yield_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), _2_i).iterator();
-                    case 7:
-                      if (!(this._6__yield_it.hasNext())) {
-                        this.__CP__ = 5;
-                        break;
-                      }
-                      this._6__yield = this._6__yield_it.next();
-                      this.__CP__ = 8;
-                      break;
-                    case 9:
-                      this.__CP__ = 7;
-                      this.yield(_6__yield);
-                      return true;
                     case 0:
                       this.__CP__ = 2;
                       break;
                     case 4:
                       this.__CP__ = 6;
-                      break;
-                    case 8:
-                      this.__CP__ = 9;
                       break;
                     default:
                       break __loop__;

@@ -4,8 +4,7 @@ package typesSandbox;
 
 import jetbrains.mps.internalCollections.test.closures.Util_Test;
 import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.ITranslator;
-import jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -21,9 +20,9 @@ public class InnerClosures_Test extends Util_Test {
     itr = SEQ;
     seq = itr;
     SEQ = itr;
-    seq.translate(new ITranslator<String>() {
-      public ISequence<S> translate(final String it) {
-        return new ISequenceIterableAdapter<Integer>() {
+    seq.translate(new ITranslator2<String, Integer>() {
+      public Iterable<Integer> translate(final String it) {
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
@@ -54,8 +53,8 @@ __switch__:
         };
       }
     });
-    seq.translate(new ITranslator<String>() {
-      public ISequence<S> translate(String it) {
+    seq.translate(new ITranslator2<String, Integer>() {
+      public Iterable<Integer> translate(String it) {
         return new _FunctionTypes._return_P1_E0<Iterable<Integer>, String>() {
           public Iterable<Integer> invoke(final String it2) {
             return new Iterable<Integer>() {

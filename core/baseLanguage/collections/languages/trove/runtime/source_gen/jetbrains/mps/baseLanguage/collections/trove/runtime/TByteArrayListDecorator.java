@@ -35,7 +35,7 @@ public class TByteArrayListDecorator extends AbstractList<Byte> implements List<
 
   @Override
   public boolean equals(Object that) {
-    if (that instanceof TByteArrayListDecorator && this.primList == ((TByteArrayListDecorator)that).primList) {
+    if (that instanceof TByteArrayListDecorator && this.primList == ((TByteArrayListDecorator) that).primList) {
       return true;
     }
     return super.equals(that);
@@ -136,7 +136,7 @@ public class TByteArrayListDecorator extends AbstractList<Byte> implements List<
   }
 
   @Override
-  public <T extends Object>T[] toArray(T[] array) {
+  public <T extends Object> T[] toArray(T[] array) {
     return super.toArray(array);
   }
 
@@ -180,7 +180,7 @@ public class TByteArrayListDecorator extends AbstractList<Byte> implements List<
   }
 
   protected byte unwrap(Object value) {
-    return ((Byte)value).byteValue();
+    return ((Byte) value).byteValue();
   }
 
   public class TByteListIterator implements ListIterator<Byte> {

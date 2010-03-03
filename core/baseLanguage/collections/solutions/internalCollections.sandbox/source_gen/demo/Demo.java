@@ -10,17 +10,13 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class Demo {
-
   public static void main(String[] args) {
     Iterable<Integer> seq;
-    Sequence.fromIterable(seq).translate(new ITranslator2 <Integer, Integer>() {
-
+    Sequence.fromIterable(seq).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer i) {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -48,19 +44,15 @@ __switch__:
           }
         };
       }
-    }).where(new IWhereFilter <Integer>() {
-
+    }).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer i) {
         return true;
       }
-    }).select(new ISelector <Integer, Iterable<Integer>>() {
-
+    }).select(new ISelector<Integer, Iterable<Integer>>() {
       public Iterable<Integer> select(final Integer i) {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -89,14 +81,11 @@ __switch__:
         };
       }
     });
-    Sequence.fromIterable(seq).translate(new ITranslator2 <Integer, Integer>() {
-
+    Sequence.fromIterable(seq).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
-        return new Iterable <Integer>() {
-
+        return new Iterable<Integer>() {
           public Iterator<Integer> iterator() {
-            return new YieldingIterator <Integer>() {
-
+            return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -124,18 +113,15 @@ __switch__:
           }
         };
       }
-    }).where(new IWhereFilter <Integer>() {
-
+    }).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer it) {
         return true;
       }
-    }).select(new ISelector <Integer, Integer>() {
-
+    }).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
         return it;
       }
     });
     Sequence.fromIterable(seq).count();
   }
-
 }

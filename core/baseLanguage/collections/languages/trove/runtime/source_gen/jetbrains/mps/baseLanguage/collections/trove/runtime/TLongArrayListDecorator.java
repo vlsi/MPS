@@ -35,7 +35,7 @@ public class TLongArrayListDecorator extends AbstractList<Long> implements List<
 
   @Override
   public boolean equals(Object that) {
-    if (that instanceof TLongArrayListDecorator && this.primList == ((TLongArrayListDecorator)that).primList) {
+    if (that instanceof TLongArrayListDecorator && this.primList == ((TLongArrayListDecorator) that).primList) {
       return true;
     }
     return super.equals(that);
@@ -136,7 +136,7 @@ public class TLongArrayListDecorator extends AbstractList<Long> implements List<
   }
 
   @Override
-  public <T extends Object>T[] toArray(T[] array) {
+  public <T extends Object> T[] toArray(T[] array) {
     return super.toArray(array);
   }
 
@@ -180,7 +180,7 @@ public class TLongArrayListDecorator extends AbstractList<Long> implements List<
   }
 
   protected long unwrap(Object value) {
-    return ((Long)value).longValue();
+    return ((Long) value).longValue();
   }
 
   public class TLongListIterator implements ListIterator<Long> {

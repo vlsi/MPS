@@ -41,14 +41,14 @@ __switch__:
                       this.__CP__ = 5;
                       this.yield("s");
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
                     case 5:
                       this.__CP__ = 1;
-                      break;
-                    case 0:
-                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;
@@ -92,15 +92,15 @@ __switch__:
                       this.__CP__ = 5;
                       this.yield("a");
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
                     case 5:
                       throw new StopIteratingException();
                       this.__CP__ = 1;
-                      break;
-                    case 0:
-                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;

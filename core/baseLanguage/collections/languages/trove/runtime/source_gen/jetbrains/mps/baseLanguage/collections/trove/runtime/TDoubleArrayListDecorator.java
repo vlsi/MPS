@@ -35,7 +35,7 @@ public class TDoubleArrayListDecorator extends AbstractList<Double> implements L
 
   @Override
   public boolean equals(Object that) {
-    if (that instanceof TDoubleArrayListDecorator && this.primList == ((TDoubleArrayListDecorator)that).primList) {
+    if (that instanceof TDoubleArrayListDecorator && this.primList == ((TDoubleArrayListDecorator) that).primList) {
       return true;
     }
     return super.equals(that);
@@ -136,7 +136,7 @@ public class TDoubleArrayListDecorator extends AbstractList<Double> implements L
   }
 
   @Override
-  public <T extends Object>T[] toArray(T[] array) {
+  public <T extends Object> T[] toArray(T[] array) {
     return super.toArray(array);
   }
 
@@ -180,7 +180,7 @@ public class TDoubleArrayListDecorator extends AbstractList<Double> implements L
   }
 
   protected double unwrap(Object value) {
-    return ((Double)value).doubleValue();
+    return ((Double) value).doubleValue();
   }
 
   public class TDoubleListIterator implements ListIterator<Double> {
