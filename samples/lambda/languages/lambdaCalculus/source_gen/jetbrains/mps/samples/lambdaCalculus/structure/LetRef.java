@@ -7,20 +7,19 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LetRef extends LambdaExpression {
+public class LetRef extends VariableReference {
   public static final String concept = "jetbrains.mps.samples.lambdaCalculus.structure.LetRef";
-  public static final String VARIABLE = "variable";
 
   public LetRef(SNode node) {
     super(node);
   }
 
   public LetVariable getVariable() {
-    return (LetVariable) this.getReferent(LetVariable.class, LetRef.VARIABLE);
+    return this.ensureAdapter(LetVariable.class, "variable", this.getVariable());
   }
 
   public void setVariable(LetVariable node) {
-    super.setReferent(LetRef.VARIABLE, node);
+    this.setVariable(node);
   }
 
   public static LetRef newInstance(SModel sm, boolean init) {

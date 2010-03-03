@@ -7,20 +7,19 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AbstractionVarRef extends LambdaExpression {
+public class AbstractionVarRef extends VariableReference {
   public static final String concept = "jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef";
-  public static final String VARIABLE = "variable";
 
   public AbstractionVarRef(SNode node) {
     super(node);
   }
 
   public AbstractionVariable getVariable() {
-    return (AbstractionVariable) this.getReferent(AbstractionVariable.class, AbstractionVarRef.VARIABLE);
+    return this.ensureAdapter(AbstractionVariable.class, "variable", this.getVariable());
   }
 
   public void setVariable(AbstractionVariable node) {
-    super.setReferent(AbstractionVarRef.VARIABLE, node);
+    this.setVariable(node);
   }
 
   public static AbstractionVarRef newInstance(SModel sm, boolean init) {

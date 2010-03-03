@@ -14,9 +14,28 @@ public class LambdaExpression_Behavior {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"), "function", true) == thisNode) && SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")) {
       return SNodeOperations.cast(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication");
 
-    } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")) {
+    } else if (SNodeOperations.getParent(thisNode) != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.Program"))) {
       return LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"));
     }
     return null;
+  }
+
+  public static boolean call_hasParameterRefs_7397484091645986293(SNode thisNode) {
+    SNode node = thisNode;
+    while (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"))) {
+      node = SNodeOperations.getParent(node);
+    }
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression")) {
+      return true;
+    }
+    return LambdaExpression_Behavior.call_isInFull_7347119454575591465(thisNode);
+  }
+
+  public static boolean call_isInFull_7347119454575591465(SNode thisNode) {
+    SNode appl = LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(thisNode);
+    if (null == appl) {
+      return false;
+    }
+    return LambdaApplication_Behavior.call_isFullApplication_1308935328408190838(LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(thisNode));
   }
 }

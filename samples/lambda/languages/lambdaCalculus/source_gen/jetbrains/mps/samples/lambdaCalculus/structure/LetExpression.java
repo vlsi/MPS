@@ -7,14 +7,41 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LetExpression extends LambdaExpression {
+public class LetExpression extends LambdaExpression implements VariableOwner {
   public static final String concept = "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String VALUE = "value";
   public static final String EXPRESSION = "expression";
   public static final String VARIABLE = "variable";
 
   public LetExpression(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(LetExpression.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(LetExpression.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(LetExpression.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(LetExpression.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(LetExpression.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(LetExpression.VIRTUAL_PACKAGE, value);
   }
 
   public LambdaExpression getValue() {

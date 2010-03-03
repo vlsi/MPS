@@ -13,15 +13,15 @@ public class sim {
   }
 
   public static Object eval() {
-    return let_532475184622082807(new sim.Function_532475184622082811());
+    return (Integer) let_8981808925914862498(new sim.Function_8981808925914862502());
   }
 
-  public static Object let_532475184622082807(Function a) {
-    return ((Function) (a.copy())).apply(((Function) a.copy()).apply(2));
+  public static Object let_8981808925914862498(Function sq) {
+    return ((Integer) ((Function) sq.copy()).apply((Integer) ((Function) sq.copy()).apply(2)));
   }
 
-  public static class Function_532475184622082811 extends Function {
-    public Function_532475184622082811() {
+  public static class Function_8981808925914862502 extends Function {
+    public Function_8981808925914862502() {
     }
 
     public Object eval() {
@@ -35,7 +35,7 @@ public class sim {
     }
 
     public Function copy() {
-      return new sim.Function_532475184622082811();
+      return new sim.Function_8981808925914862502();
     }
   }
 }

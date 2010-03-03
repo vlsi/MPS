@@ -12,8 +12,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
-    ListSequence.fromList(this.myConstraints).addElement(new LetRef_variable_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new AbstractionVarRef_variable_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new VariableReference_variable_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

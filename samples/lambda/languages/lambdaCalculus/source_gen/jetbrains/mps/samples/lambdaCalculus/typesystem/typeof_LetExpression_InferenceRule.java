@@ -22,6 +22,12 @@ public class typeof_LetExpression_InferenceRule extends AbstractInferenceRule_Ru
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "8648463567088576075", 0, intentionProvider);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "8648463567088554707", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(letExpression, "value", true), "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "8648463567088576080", true), _info_12389875345);
     }
+    {
+      SNode _nodeToCheck_1029348928467 = letExpression;
+      BaseIntentionProvider intentionProvider = null;
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "2952945671068962366", 0, intentionProvider);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "2952945671068962363", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(letExpression, "expression", true), "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "2952945671068962371", true), _info_12389875345);
+    }
   }
 
   public String getApplicableConceptFQName() {
