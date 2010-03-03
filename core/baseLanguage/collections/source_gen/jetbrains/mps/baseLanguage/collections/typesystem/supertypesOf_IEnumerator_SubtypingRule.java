@@ -18,7 +18,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER__4 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IEnumerator");
+  private static SNodePointer SNODE_POINTER_24ecqj_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IEnumerator");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -114,7 +114,7 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__4.getNode();
+          referent = SNODE_POINTER_24ecqj_a0a1a0a1a2a0a0a0a0a0a2.getNode();
           if (nodeToMatch_4sudxd_a0a.getReferent("classifier") != referent) {
             return false;
           }

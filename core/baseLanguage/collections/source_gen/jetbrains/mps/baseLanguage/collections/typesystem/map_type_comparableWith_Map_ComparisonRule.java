@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER__11 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~Map");
+  private static SNodePointer SNODE_POINTER_yoc8ci_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~Map");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
@@ -58,7 +58,7 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__11.getNode();
+          referent = SNODE_POINTER_yoc8ci_a0a1a0a1a2a0a0a0a0a0a3.getNode();
           if (nodeToMatch_a1tqv3_a0a.getReferent("classifier") != referent) {
             return false;
           }

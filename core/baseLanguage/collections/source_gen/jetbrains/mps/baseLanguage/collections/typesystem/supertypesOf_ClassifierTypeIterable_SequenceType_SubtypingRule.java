@@ -18,7 +18,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER__0 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_x5x8gb_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -114,7 +114,7 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__0.getNode();
+          referent = SNODE_POINTER_x5x8gb_a0a1a0a1a2a0a0a0a0a0a2.getNode();
           if (nodeToMatch_z7dq1d_a0a.getReferent("classifier") != referent) {
             return false;
           }

@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER__14 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime.backports(jetbrains.mps.internal.collections.runtime.backports@java_stub)", "~Deque");
+  private static SNodePointer SNODE_POINTER_9xe6am_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime.backports(jetbrains.mps.internal.collections.runtime.backports@java_stub)", "~Deque");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
@@ -57,7 +57,7 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__14.getNode();
+          referent = SNODE_POINTER_9xe6am_a0a1a0a1a2a0a0a0a0a0a3.getNode();
           if (nodeToMatch_drfijn_a0a.getReferent("classifier") != referent) {
             return false;
           }

@@ -4,8 +4,8 @@ package jetbrains.mps.lang.pattern.generator.baseLanguage.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -49,10 +49,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1238253770475(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getProperty("referentId");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1238253780750(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("SNODE_POINTER", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1190931377378(final IOperationContext operationContext, final PropertyMacroContext _context) {

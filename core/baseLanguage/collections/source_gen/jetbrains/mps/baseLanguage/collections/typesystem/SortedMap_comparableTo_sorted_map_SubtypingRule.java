@@ -18,7 +18,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER__5 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~SortedMap");
+  private static SNodePointer SNODE_POINTER_nagdzg_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~SortedMap");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -143,7 +143,7 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__5.getNode();
+          referent = SNODE_POINTER_nagdzg_a0a1a0a1a2a0a0a0a0a0a2.getNode();
           if (nodeToMatch_1q5lf6_a0a.getReferent("classifier") != referent) {
             return false;
           }

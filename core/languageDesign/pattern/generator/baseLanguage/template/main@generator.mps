@@ -1021,7 +1021,8 @@
                               <link role="baseMethodDeclaration:3" targetNodeId="3.~SNodePointer.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
                             </node>
                             <node role="operand:3" type="jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression:1" id="1238253769100">
-                              <property name="fieldName:1" value="POINTER" />
+                              <property name="fieldName:1" value="SNODE_POINTER" />
+                              <property name="makeUnique:1" value="true" />
                               <node role="expression:1" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1238253770462">
                                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1238253770463">
                                   <link role="baseMethodDeclaration:3" targetNodeId="3.~SNodePointer.&lt;init&gt;(java.lang.String,java.lang.String)" resolveInfo="SNodePointer" />
@@ -1060,26 +1061,6 @@
                                                 </node>
                                               </node>
                                             </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node role="propertyMacro$property_attribute$fieldName:1" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1238253780749">
-                                <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1238253780750">
-                                  <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238253780751">
-                                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1238253785205">
-                                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1238253785989">
-                                        <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="1238253785206" />
-                                        <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName:0" id="1238253792571">
-                                          <node role="baseName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1238253804416">
-                                            <property name="value:3" value="SNODE_POINTER" />
-                                          </node>
-                                          <node role="contextNode:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1238253845894">
-                                            <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1238253821792" />
-                                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation:16" id="1238253849165" />
                                           </node>
                                         </node>
                                       </node>

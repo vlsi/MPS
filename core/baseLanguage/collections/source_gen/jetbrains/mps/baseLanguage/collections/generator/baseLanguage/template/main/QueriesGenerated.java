@@ -40,16 +40,16 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
-  private static SNodePointer SNODE_POINTER_ = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ISequence");
-  private static SNodePointer SNODE_POINTER__0 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IListSequence");
-  private static SNodePointer SNODE_POINTER__1 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IMapSequence");
-  private static SNodePointer SNODE_POINTER__2 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ISetSequence");
-  private static SNodePointer SNODE_POINTER__3 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IEnumerator$Iterator");
-  private static SNodePointer SNODE_POINTER__4 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ISortedMapSequence");
-  private static SNodePointer SNODE_POINTER__5 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ISortedSetSequence");
-  private static SNodePointer SNODE_POINTER__6 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IQueueSequence");
-  private static SNodePointer SNODE_POINTER__7 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ICollectionSequence");
-  private static SNodePointer SNODE_POINTER__8 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IDequeSequence");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a0v = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ISequence");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a36 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IListSequence");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a66 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IMapSequence");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a27 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ISetSequence");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a48 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IEnumerator$Iterator");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a68 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ISortedMapSequence");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a09 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ISortedSetSequence");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a49 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IQueueSequence");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a89 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~ICollectionSequence");
+  private static SNodePointer SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a801 = new SNodePointer("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)", "~IDequeSequence");
 
   public static boolean baseMappingRule_Condition_1208621031113(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation");
@@ -2355,7 +2355,7 @@ public class QueriesGenerated {
         }
         {
           SNode referent;
-          referent = SNODE_POINTER_.getNode();
+          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a0v.getNode();
           if (nodeToMatch_x583g4_a0a0a0a0v.getReferent("classifier") != referent) {
             return false;
           }
@@ -2389,7 +2389,7 @@ public class QueriesGenerated {
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__0.getNode();
+          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a36.getNode();
           if (nodeToMatch_x583g4_a0a0a0a36.getReferent("classifier") != referent) {
             return false;
           }
@@ -2423,7 +2423,7 @@ public class QueriesGenerated {
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__1.getNode();
+          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a66.getNode();
           if (nodeToMatch_x583g4_a0a0a0a66.getReferent("classifier") != referent) {
             return false;
           }
@@ -2457,7 +2457,7 @@ public class QueriesGenerated {
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__2.getNode();
+          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a27.getNode();
           if (nodeToMatch_x583g4_a0a0a0a27.getReferent("classifier") != referent) {
             return false;
           }
@@ -2491,7 +2491,7 @@ public class QueriesGenerated {
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__3.getNode();
+          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a48.getNode();
           if (nodeToMatch_x583g4_a0a0a0a48.getReferent("classifier") != referent) {
             return false;
           }
@@ -2525,7 +2525,7 @@ public class QueriesGenerated {
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__4.getNode();
+          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a68.getNode();
           if (nodeToMatch_x583g4_a0a0a0a68.getReferent("classifier") != referent) {
             return false;
           }
@@ -2559,7 +2559,7 @@ public class QueriesGenerated {
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__5.getNode();
+          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a09.getNode();
           if (nodeToMatch_x583g4_a0a0a0a09.getReferent("classifier") != referent) {
             return false;
           }
@@ -2593,7 +2593,7 @@ public class QueriesGenerated {
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__6.getNode();
+          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a49.getNode();
           if (nodeToMatch_x583g4_a0a0a0a49.getReferent("classifier") != referent) {
             return false;
           }
@@ -2627,7 +2627,7 @@ public class QueriesGenerated {
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__7.getNode();
+          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a89.getNode();
           if (nodeToMatch_x583g4_a0a0a0a89.getReferent("classifier") != referent) {
             return false;
           }
@@ -2661,7 +2661,7 @@ public class QueriesGenerated {
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__8.getNode();
+          referent = SNODE_POINTER_x583g4_a0a1a0a1a2a0a0a1a0a0a801.getNode();
           if (nodeToMatch_x583g4_a0a0a0a801.getReferent("classifier") != referent) {
             return false;
           }
