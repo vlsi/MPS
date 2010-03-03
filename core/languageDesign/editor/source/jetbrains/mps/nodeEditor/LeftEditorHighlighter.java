@@ -463,7 +463,7 @@ public class LeftEditorHighlighter extends JComponent {
 
   private int getIconCoordinate(EditorMessageIconRenderer renderer) {
     EditorCell anchorCell = getAnchorCell(renderer);
-    if (anchorCell == null) {
+    if (anchorCell == null || anchorCell.isUnderFolded()) {
       // no anchorCell 
       return -1;
     }
