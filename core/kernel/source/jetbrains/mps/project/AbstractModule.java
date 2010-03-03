@@ -754,7 +754,13 @@ public abstract class AbstractModule implements IModule {
       sp.setModelRootManager(manager);
 
       if (manager == null) continue;
-      manager.updateModels(sp.getPath(), "", this);
+
+      //todo can be removed before 1.2. this try-block is to help to migrate to BaseStubModelDescriptor on sources
+      try {
+        manager.updateModels(sp.getPath(), "", this);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
 
       myLoadedStubPaths.add(sp);
     }

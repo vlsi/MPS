@@ -56,7 +56,15 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
     SModelRepository repository = SModelRepository.getInstance();
 
-    for (SModelDescriptor descriptor : getModelDescriptors(myLocation)) {
+    Set<BaseStubModelDescriptor> models = new HashSet<BaseStubModelDescriptor>();
+
+    try {
+      models = getModelDescriptors(myLocation);
+    } catch (Throwable t) {
+      LOG.error(t);
+    }
+
+    for (BaseSModelDescriptor descriptor : models) {
       SModelDescriptor oldDescr = repository.getModelDescriptor(descriptor.getSModelReference());
       if (oldDescr == null) {
         repository.registerModelDescriptor(descriptor, module);
@@ -64,17 +72,15 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
         if (repository.getOwners(descriptor).size() > 1) {
           LOG.warning("Loading the same java_stub package twice : " + descriptor.getLongName() + " from " + repository.getOwners(descriptor));
         }
-      } else{
-        descriptor = oldDescr;
+      } else {
+        descriptor = (BaseStubModelDescriptor) oldDescr;
       }
 
-      if (descriptor instanceof BaseSModelDescriptor) {
-        BaseSModelDescriptor baseDescriptor = (BaseSModelDescriptor) descriptor;
+      BaseSModelDescriptor baseDescriptor = (BaseSModelDescriptor) descriptor;
 
-        //todo this is a hack - comparing classes by names
-        if (baseDescriptor.getModelRootManager().getClass().getName().equals(this.getClass().getName())) {
-          baseDescriptor.setModelRootManager(this);
-        }
+      //todo this is a hack - comparing classes by names
+      if (baseDescriptor.getModelRootManager().getClass().getName().equals(this.getClass().getName())) {
+        baseDescriptor.setModelRootManager(this);
       }
 
       if (!descriptor.isInitialized()) {
@@ -93,7 +99,15 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     SModel model = new SModel(modelDescriptor.getSModelReference());
     ourTimestamps.put(model.getSModelReference(), timestamp(modelDescriptor));
 
-    for (Language l : getLanguagesToImport()) {
+    Set<Language> languages = new HashSet<Language>();
+
+    try {
+      languages = getLanguagesToImport();
+    } catch (Throwable t) {
+      LOG.error(t);
+    }
+
+    for (Language l : languages) {
       model.addLanguage(l);
     }
 
@@ -126,15 +140,15 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   private void updateModelInLoadingState(SModelDescriptor descriptor, SModel model, boolean forceUpdate) {
     if (!forceUpdate) {
-      if (descriptor instanceof BaseStubModelDescriptor) {
-        if (!StubReloadManager.getInstance().needsUpdate((BaseStubModelDescriptor) descriptor, myLocation)) return;
-      }
+      if (!StubReloadManager.getInstance().needsUpdate((BaseStubModelDescriptor) descriptor, myLocation)) return;
     }
 
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
       updateModel(myLocation, new ModelInfo(descriptor, model));
+    } catch (Throwable t) {
+      LOG.error(t);
     } finally {
       model.setLoading(wasLoading);
     }
@@ -144,7 +158,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     return Collections.emptySet();
   }
 
-  protected abstract Set<SModelDescriptor> getModelDescriptors(StubLocation location);
+  protected abstract Set<BaseStubModelDescriptor> getModelDescriptors(StubLocation location);
 
   protected abstract void updateModel(StubLocation location, ModelInfo modelInfo);
 

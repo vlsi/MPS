@@ -392,8 +392,8 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="3798212845297904658" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3798212845297904659">
         <link role="classifier:3" targetNodeId="6.~Set" resolveInfo="Set" />
-        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3798212845297904660">
-          <link role="classifier:3" targetNodeId="7.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3418629154864459003">
+          <link role="classifier:3" targetNodeId="5.~BaseStubModelDescriptor" resolveInfo="BaseStubModelDescriptor" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3798212845297904661">
