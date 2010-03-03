@@ -23,7 +23,7 @@ import jetbrains.mps.library.StubSolutionsLoader;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.reloading.ModelReloading;
+import jetbrains.mps.project.reloading.StubReloadManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
@@ -131,15 +131,11 @@ public class ClassLoaderManager implements ApplicationComponent {
       indicator.setText2("Updating classpath...");
       updateClassPath();
 
-      ModelReloading.markOldStubs();
-
       indicator.setText2("Refreshing models...");
       SModelRepository.getInstance().refreshModels();
 
       indicator.setText2("Updating stub models...");
-      updateStubs();
-
-      ModelReloading.markNewStubs();
+      StubReloadManager.getInstance().reload();
 
       indicator.setText2("Reloading classes...");
       callReloadHandlers();
@@ -149,17 +145,6 @@ public class ClassLoaderManager implements ApplicationComponent {
     } finally {
       indicator.popState();
     }
-  }
-
-  private void updateStubs() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        StubSolutionsLoader.getInstance().loadNewStubSolutions();
-        for (IModule m : myRepository.getAllModules()) {
-          m.updateStubs();
-        }
-      }
-    });
   }
 
   private void updateClassPath() {
