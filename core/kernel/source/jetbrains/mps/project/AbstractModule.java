@@ -124,16 +124,12 @@ public abstract class AbstractModule implements IModule {
     return getModuleFqName();
   }
 
-  protected void reloadAfterDescriptorChange(boolean reloadStubs) {
+  protected void reloadAfterDescriptorChange() {
     MPSModuleRepository.getInstance().unRegisterModules(this);
     rereadModels();
 
     updatePackagedDescriptorClasspath();
     updateClassPath();
-
-    if (reloadStubs) {
-      updateStubs();
-    }
   }
 
   public void onModuleLoad() {
