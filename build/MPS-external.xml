@@ -384,12 +384,12 @@
     <delete dir="${deploy.dir}/help-build.pack.mps.src" />
   </target>
   <target name="clean.after" depends="do.the.job">
+    <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/samples.zip.tmp" />
-    <delete dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
     <delete dir="${deploy.dir}/MPS-buildTools.zip.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/idea-patch.jar.tmp" />
     <delete dir="${deploy.dir}/MPS/lib/mps.jar.tmp" />
-    <delete dir="${deploy.dir}/MPS/lib/MPS-src.zip.tmp" />
+    <delete dir="${deploy.dir}/MPS/platform/generate.ant.task.jar.tmp" />
   </target>
   <target name="replace_a4a92b0">
     <fail unless="mps_home" message="Property mps_home unspecified." />
