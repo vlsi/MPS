@@ -5668,6 +5668,34 @@
       <link role="styleClass:32" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="492938830216689732">
+    <property name="package:32" value="RunConfigs.Configuration.Execute" />
+    <link role="conceptDeclaration:32" targetNodeId="1.492938830216689663:23" resolveInfo="GetUserDataExpression" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="492938830216695146">
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="492938830216695147" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="492938830216695148">
+        <link role="relationDeclaration:32" targetNodeId="14.1137473891462:0" resolveInfo="alias" />
+        <link role="styleClass:32" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="492938830216695150">
+        <property name="text:32" value="(" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="3553731226128128199" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="3553731226128128195">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="492938830216708353">
+        <link role="relationDeclaration:32" targetNodeId="1.492938830216704705:23" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="492938830216695152">
+        <property name="text:32" value=")" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="3553731226128128200">
+          <property name="flag:32" value="true" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="3553731226128128202" />
+      </node>
+    </node>
+  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="936299881288560420">
     <property name="package:32" value="Custom.DebugInfo" />
     <link role="conceptDeclaration:32" targetNodeId="1.936299881288560358:23" resolveInfo="ScopeNodeItem" />

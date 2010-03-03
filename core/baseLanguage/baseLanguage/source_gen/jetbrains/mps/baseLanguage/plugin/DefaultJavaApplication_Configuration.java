@@ -18,6 +18,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
+import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
@@ -37,6 +38,7 @@ import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner;
 import com.intellij.execution.executors.DefaultDebugExecutor;
+import jetbrains.mps.debug.DebuggerKeys;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.actions.DefaultProcessHandler;
 import com.intellij.execution.ui.ExecutionConsole;
@@ -105,7 +107,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   }
 
   public RunProfileState getState(@NotNull final Executor executor, @NotNull final ExecutionEnvironment environment) throws ExecutionException {
-    return new RunProfileState() {
+    return new BaseRunProfileState() {
       @Nullable
       public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
         Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
@@ -141,9 +143,9 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
 
           final ClassRunner classRunner = new ClassRunner();
           if (executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID)) {
-            classRunner.setDebugPort(DefaultJavaApplication_Configuration.this.getStateObject().parameters.getHardcodedDebugPort());
+            String args = this.getUserData(DebuggerKeys.CONNECTION_SETTINGS);
+            classRunner.setDebugArguments(args);
           }
-
           ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions())));
           consoleComponent = consoleView.getComponent();
           consoleDispose = new Runnable() {

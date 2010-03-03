@@ -423,6 +423,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "target", true);
   }
 
+  public static SNode sourceNodeQuery_4593326532895577392(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "argument", true);
+  }
+
   public static Iterable sourceNodesQuery_7840798570674946693(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(_context.getNode()), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

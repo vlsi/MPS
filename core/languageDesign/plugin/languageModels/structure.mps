@@ -3888,6 +3888,24 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="492938830216689663">
+    <property name="package:0" value="RunConfigs.Configuration.Execute" />
+    <property name="name:0" value="GetUserDataExpression" />
+    <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="492938830216689689">
+      <property name="value:0" value="user data" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="492938830216704705">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="argument" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="492938830216854113">
+      <link role="intfc:0" targetNodeId="678887849223527750:23" resolveInfo="ExecuteSpecific" />
+    </node>
+  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="936299881288560358">
     <property name="package:0" value="Custom.DebugInfo" />
     <property name="name:0" value="ScopeNodeItem" />

@@ -202,7 +202,7 @@ public class VMCreator {
         throw new IOException("debugger already listening");
       }
 
-      final String address = myConnectionSettings.getAddress();
+      final String address = myConnectionSettings.getPort();
 
       if (myConnectionSettings.isServerMode()) {
         ListeningConnector connector = (ListeningConnector) findConnector(
