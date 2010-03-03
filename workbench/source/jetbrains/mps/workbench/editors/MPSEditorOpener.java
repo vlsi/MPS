@@ -201,7 +201,19 @@ public class MPSEditorOpener implements ProjectComponent {
 
     //open editor
     SNode containingRoot = node.getContainingRoot();
-    assert containingRoot != null : "Containing root was not found for node: " + node.toString();
+    // [++] for http://youtrack.jetbrains.net/issue/MPS-7663
+    if (containingRoot == null) {
+      SNode current = node;
+      while (current.getParent() != null) {
+        current = current.getParent();
+      }
+      assert false : "Containing root was not found for node: " + node.toString() +
+        ", top-level node: " + current +
+        ", isDisposed: " + node.isDisposed() +
+        ", model: " + node.getModel() +
+        (node.getModel() != null ? ", modelDisposed: " + node.getModel().isDisposed(): "");
+    }
+    // [--] for http://youtrack.jetbrains.net/issue/MPS-7663
     final IEditor nodeEditor = openEditor(containingRoot, context, openBaseNode);
 
     //restore inspector state for opened editor (if exists)
