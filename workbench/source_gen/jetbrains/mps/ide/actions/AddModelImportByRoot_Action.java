@@ -40,9 +40,16 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
     return "ctrl R";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    return !(AddModelImportByRoot_Action.this.model.isReadOnly());
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "AddModelImportByRoot", t);

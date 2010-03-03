@@ -17,7 +17,7 @@ public class GenerateModule_Action extends GeneratedAction {
   private AnAction action;
 
   public GenerateModule_Action(AnAction action_par) {
-    super("Generate Module", "", ICON);
+    super("Generate Modules in Project", "", ICON);
     this.action = action_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
@@ -26,7 +26,7 @@ public class GenerateModule_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl F9";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

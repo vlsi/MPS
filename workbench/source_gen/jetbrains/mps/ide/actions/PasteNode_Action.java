@@ -51,7 +51,7 @@ public class PasteNode_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return PasteNode_Action.this.getPasteData() != null;
+    return !(PasteNode_Action.this.contextModel.isReadOnly()) && PasteNode_Action.this.getPasteData() != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

@@ -35,9 +35,16 @@ public class AddModelImport_Action extends GeneratedAction {
     return "ctrl M";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    return !(AddModelImport_Action.this.model.isReadOnly());
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "AddModelImport", t);

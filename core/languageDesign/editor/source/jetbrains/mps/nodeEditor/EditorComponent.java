@@ -3101,6 +3101,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         public Boolean compute() {
           if (getEditorContext() == null) return false;
           if (getSelectedCell() == null) return false;
+          if (getEditorContext().getModel().isNotEditable()) {
+            return false;
+          }
           return getSelectedCell().canExecuteAction(CellActionType.PASTE);
         }
       });
