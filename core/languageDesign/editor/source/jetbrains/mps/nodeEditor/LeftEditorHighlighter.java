@@ -60,8 +60,9 @@ import java.util.List;
 public class LeftEditorHighlighter extends JComponent {
   public static final String ICON_AREA = "LeftEditorHighlighterIconArea";
 
-  private static final int MIN_SEAPEATOR_LINE_X = 30;
-  private static final int MIN_RIGHT_FOLDING_AREA_WIDTH = 5;
+  private static final int MIN_ICON_RENDERERS_WIDTH = 14;
+  private static final int MIN_LEFT_FOLDING_AREA_WIDTH = 7;
+  private static final int MIN_RIGHT_FOLDING_AREA_WIDTH = 4;
   private static final int GAP_BETWEEN_ICONS = 3;
   private static final int LEFT_GAP = 1;
 
@@ -80,11 +81,11 @@ public class LeftEditorHighlighter extends JComponent {
 
   private boolean myMouseIsInFoldingArea;
 
-  private int myFoldingLineX = MIN_SEAPEATOR_LINE_X;
-  private int myIconRenderersWidth = 0;
-  private int myLeftFoldingAreaWidth = 0;
-  private int myRightFoldingAreaWidth = 0;
-  private int myWidth = 0;
+  private int myFoldingLineX;
+  private int myIconRenderersWidth;
+  private int myLeftFoldingAreaWidth;
+  private int myRightFoldingAreaWidth;
+  private int myWidth;
 
   public LeftEditorHighlighter(EditorComponent editorComponent) {
     setBackground(Color.white);
@@ -294,8 +295,8 @@ public class LeftEditorHighlighter extends JComponent {
   }
 
   private void recalculateFoldingAreaWidth(boolean updateFolding, boolean updateBraces) {
-    myLeftFoldingAreaWidth = 0;
-    myRightFoldingAreaWidth = 0;
+    myLeftFoldingAreaWidth = MIN_LEFT_FOLDING_AREA_WIDTH;
+    myRightFoldingAreaWidth = MIN_RIGHT_FOLDING_AREA_WIDTH;
     // Layouting painterss
     for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
       if (painter instanceof FoldingButtonsPainter) {
@@ -404,7 +405,7 @@ public class LeftEditorHighlighter extends JComponent {
       renderersForLine.add(new IconRendererLayoutConstraint(renderer));
     }
 
-    myIconRenderersWidth = 0;
+    myIconRenderersWidth = MIN_ICON_RENDERERS_WIDTH;
     myMaxIconHeight = 0;
     int[] sortedYCoordinates = myLineToRenderersMap.keys();
     Arrays.sort(sortedYCoordinates);
@@ -423,13 +424,17 @@ public class LeftEditorHighlighter extends JComponent {
       int rowUpperBoundY = y - maxIconHeight / 2;
       int offset;
       if (lastRowLowerBound > 0 && lastRowLowerBound >= rowUpperBoundY) {
-        offset = lastRowWidth;
+        offset = lastRowWidth + GAP_BETWEEN_ICONS;
       } else {
         offset = LEFT_GAP;
       }
-      for (IconRendererLayoutConstraint rendererConstraint : row) {
+      for (Iterator<IconRendererLayoutConstraint> it = row.iterator(); it.hasNext();) {
+        IconRendererLayoutConstraint rendererConstraint = it.next();
         rendererConstraint.setX(offset);
-        offset += rendererConstraint.getIconRenderer().getIcon().getIconWidth() + GAP_BETWEEN_ICONS;
+        offset += rendererConstraint.getIconRenderer().getIcon().getIconWidth();
+        if (it.hasNext()) {
+          offset += GAP_BETWEEN_ICONS;
+        }
       }
       lastRowLowerBound = rowUpperBoundY + maxIconHeight;
       lastRowWidth = offset;
@@ -439,8 +444,8 @@ public class LeftEditorHighlighter extends JComponent {
 
   private void updateSeparatorLinePosition() {
     // addint 1 pixel for folding line itself
-    myFoldingLineX = Math.max(MIN_SEAPEATOR_LINE_X, myIconRenderersWidth + myLeftFoldingAreaWidth + 1);
-    int newWidth = myFoldingLineX + Math.max(MIN_RIGHT_FOLDING_AREA_WIDTH, myRightFoldingAreaWidth);
+    myFoldingLineX = myIconRenderersWidth + myLeftFoldingAreaWidth + 1;
+    int newWidth = myFoldingLineX + myRightFoldingAreaWidth;
     if (myWidth != newWidth) {
       myWidth = newWidth;
       firePreferredSizeChanged();
@@ -453,7 +458,7 @@ public class LeftEditorHighlighter extends JComponent {
 
   @Override
   public Dimension getPreferredSize() {
-    return new Dimension(myWidth, myEditorComponent.getPreferredSize().height);
+    return new Dimension(myWidth + 1, myEditorComponent.getPreferredSize().height);
   }
 
   private int getIconCoordinate(EditorMessageIconRenderer renderer) {
