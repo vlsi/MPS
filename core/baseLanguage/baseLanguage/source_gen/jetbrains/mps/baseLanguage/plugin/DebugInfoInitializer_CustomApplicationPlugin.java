@@ -7,6 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.DebugInfoManager;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
@@ -21,14 +22,9 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
     manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
     manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
     manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-    manager.addVariableConcept("jetbrains.mps.baseLanguage.structure.LocalVariableReference", new Mapper<SNode, SNode>() {
-      public SNode value(SNode key) {
-        return SLinkOperations.getTarget(key, "variableDeclaration", false);
-      }
-    });
-    manager.addVariableConcept("jetbrains.mps.baseLanguage.structure.ParameterReference", new Mapper<SNode, SNode>() {
-      public SNode value(SNode key) {
-        return SLinkOperations.getTarget(key, "variableDeclaration", false);
+    manager.addScopeConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper<SNode, List<SNode>>() {
+      public List<SNode> value(SNode scopeNode) {
+        return SLinkOperations.getTargets(scopeNode, "parameter", true);
       }
     });
   }

@@ -13,7 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 public class DebugInfoInitializer extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.DebugInfoInitializer";
   public static final String CONCEPTS_TO_DEBUG = "conceptsToDebug";
-  public static final String CONCEPTS_OF_VARS = "conceptsOfVars";
+  public static final String SCOPE_CONCEPTS = "scopeConcepts";
 
   public DebugInfoInitializer(SNode node) {
     super(node);
@@ -39,24 +39,24 @@ public class DebugInfoInitializer extends BaseConcept {
     this.insertChild(prev, DebugInfoInitializer.CONCEPTS_TO_DEBUG, node);
   }
 
-  public int getConceptsOfVarsesCount() {
-    return this.getChildCount(DebugInfoInitializer.CONCEPTS_OF_VARS);
+  public int getScopeConceptsesCount() {
+    return this.getChildCount(DebugInfoInitializer.SCOPE_CONCEPTS);
   }
 
-  public Iterator<VariableNodeItem> conceptsOfVarses() {
-    return this.children(VariableNodeItem.class, DebugInfoInitializer.CONCEPTS_OF_VARS);
+  public Iterator<ScopeNodeItem> scopeConceptses() {
+    return this.children(ScopeNodeItem.class, DebugInfoInitializer.SCOPE_CONCEPTS);
   }
 
-  public List<VariableNodeItem> getConceptsOfVarses() {
-    return this.getChildren(VariableNodeItem.class, DebugInfoInitializer.CONCEPTS_OF_VARS);
+  public List<ScopeNodeItem> getScopeConceptses() {
+    return this.getChildren(ScopeNodeItem.class, DebugInfoInitializer.SCOPE_CONCEPTS);
   }
 
-  public void addConceptsOfVars(VariableNodeItem node) {
-    this.addChild(DebugInfoInitializer.CONCEPTS_OF_VARS, node);
+  public void addScopeConcepts(ScopeNodeItem node) {
+    this.addChild(DebugInfoInitializer.SCOPE_CONCEPTS, node);
   }
 
-  public void insertConceptsOfVars(VariableNodeItem prev, VariableNodeItem node) {
-    this.insertChild(prev, DebugInfoInitializer.CONCEPTS_OF_VARS, node);
+  public void insertScopeConcepts(ScopeNodeItem prev, ScopeNodeItem node) {
+    this.insertChild(prev, DebugInfoInitializer.SCOPE_CONCEPTS, node);
   }
 
   public static DebugInfoInitializer newInstance(SModel sm, boolean init) {

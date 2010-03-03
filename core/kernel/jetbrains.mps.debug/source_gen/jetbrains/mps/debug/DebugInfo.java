@@ -25,19 +25,19 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.io.File;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DebugInfo {
   private static final String DEBUG_INFO = "debugInfo";
   private static final String NODE_INFO = "nodeInfo";
   private static final String VAR_INFO = "varInfo";
+  private static final String SCOPE_INFO = "scopeInfo";
   private static final String ROOT = "root";
   private static final String ROOT_ID_ATTR = "nodeId";
   private static final String UNSPECIFIED_ROOT = "";
   private static Logger LOG = Logger.getLogger(DebugInfo.class);
 
   private Map<String, Set<PositionInfo>> myRootToPositions = MapSequence.fromMap(new LinkedHashMap<String, Set<PositionInfo>>(16, (float) 0.75, false));
-  private Map<String, Set<VarPositionInfo>> myRootToVarPositions = MapSequence.fromMap(new LinkedHashMap<String, Set<VarPositionInfo>>(16, (float) 0.75, false));
+  private Map<String, Set<ScopePositionInfo>> myRootToScopePositions = MapSequence.fromMap(new LinkedHashMap<String, Set<ScopePositionInfo>>(16, (float) 0.75, false));
   private SModel myModel;
 
   public DebugInfo() {
@@ -47,8 +47,8 @@ public class DebugInfo {
     this.addPosition(position, UNSPECIFIED_ROOT);
   }
 
-  public void addVarPosition(VarPositionInfo position) {
-    this.addVarPosition(position, UNSPECIFIED_ROOT);
+  public void addScopePosition(ScopePositionInfo positionInfo) {
+    this.addScopePosition(positionInfo, UNSPECIFIED_ROOT);
   }
 
   public void addPosition(PositionInfo position, String rootNodeId) {
@@ -63,14 +63,14 @@ public class DebugInfo {
     SetSequence.fromSet(info).addElement(position);
   }
 
-  public void addVarPosition(VarPositionInfo position, String rootNodeId) {
+  public void addScopePosition(ScopePositionInfo position, String rootNodeId) {
     if (rootNodeId == null) {
       rootNodeId = UNSPECIFIED_ROOT;
     }
-    Set<VarPositionInfo> info = MapSequence.fromMap(this.myRootToVarPositions).get(rootNodeId);
+    Set<ScopePositionInfo> info = MapSequence.fromMap(this.myRootToScopePositions).get(rootNodeId);
     if (info == null) {
-      info = SetSequence.fromSet(new TreeSet<VarPositionInfo>());
-      MapSequence.fromMap(this.myRootToVarPositions).put(rootNodeId, info);
+      info = SetSequence.fromSet(new TreeSet<ScopePositionInfo>());
+      MapSequence.fromMap(this.myRootToScopePositions).put(rootNodeId, info);
     }
     SetSequence.fromSet(info).addElement(position);
   }
@@ -86,10 +86,10 @@ public class DebugInfo {
         root.addContent(e);
       }
     }
-    Set<VarPositionInfo> noRootVars = MapSequence.fromMap(this.myRootToVarPositions).get(UNSPECIFIED_ROOT);
-    if (noRootVars != null) {
-      for (PositionInfo position : noRootVars) {
-        Element e = new Element(VAR_INFO);
+    Set<ScopePositionInfo> noRootScopes = MapSequence.fromMap(this.myRootToScopePositions).get(UNSPECIFIED_ROOT);
+    if (noRootScopes != null) {
+      for (ScopePositionInfo position : noRootScopes) {
+        Element e = new Element(SCOPE_INFO);
         position.saveTo(e);
         root.addContent(e);
       }
@@ -114,7 +114,7 @@ public class DebugInfo {
         re.addContent(e);
       }
     }
-    for (String rootId : SetSequence.fromSet(MapSequence.fromMap(this.myRootToVarPositions).keySet()).where(new IWhereFilter<String>() {
+    for (String rootId : SetSequence.fromSet(MapSequence.fromMap(this.myRootToScopePositions).keySet()).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return !(ObjectUtils.equals(it, UNSPECIFIED_ROOT));
       }
@@ -130,8 +130,8 @@ public class DebugInfo {
       }
       re.setAttribute(ROOT_ID_ATTR, rootId);
       root.addContent(re);
-      for (PositionInfo position : MapSequence.fromMap(this.myRootToVarPositions).get(rootId)) {
-        Element e = new Element(VAR_INFO);
+      for (ScopePositionInfo position : MapSequence.fromMap(this.myRootToScopePositions).get(rootId)) {
+        Element e = new Element(SCOPE_INFO);
         position.saveTo(e);
         re.addContent(e);
       }
@@ -186,9 +186,9 @@ public class DebugInfo {
   }
 
   public SNode getVarForLine(String file, int line, SModel model, String varName) {
-    List<VarPositionInfo> resultList = ListSequence.fromList(new ArrayList<VarPositionInfo>());
-    for (Set<VarPositionInfo> val : MapSequence.fromMap(this.myRootToVarPositions).values()) {
-      for (VarPositionInfo element : val) {
+    List<ScopePositionInfo> resultList = ListSequence.fromList(new ArrayList<ScopePositionInfo>());
+    for (Set<ScopePositionInfo> val : MapSequence.fromMap(this.myRootToScopePositions).values()) {
+      for (ScopePositionInfo element : val) {
         if (ObjectUtils.equals(element.getFileName(), file) && element.getStartLine() <= line && line <= element.getEndLine()) {
           ListSequence.fromList(resultList).addElement(element);
         }
@@ -197,22 +197,18 @@ public class DebugInfo {
     if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
-    Iterable<VarPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<VarPositionInfo, Comparable<?>>() {
-      public Comparable<?> select(VarPositionInfo it) {
+    Iterable<ScopePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<ScopePositionInfo, Comparable<?>>() {
+      public Comparable<?> select(ScopePositionInfo it) {
         return it;
       }
     }, true);
-    String nodeId = null;
-    for (VarPositionInfo varPosition : sorted) {
-      if (varPosition.getVarName().equals(varName)) {
-        nodeId = varPosition.getNodeId();
-        break;
+    for (ScopePositionInfo info : sorted) {
+      SNode var = info.getVarNode(varName, model);
+      if (var != null) {
+        return var;
       }
     }
-    if (nodeId == null) {
-      return null;
-    }
-    return model.getNodeById(nodeId);
+    return null;
   }
 
   public PositionInfo getPositionForNode(String nodeId) {
@@ -260,16 +256,16 @@ public class DebugInfo {
       for (Element e : ((List<Element>) root.getChildren(NODE_INFO))) {
         result.addPosition(new PositionInfo(e));
       }
-      for (Element e : ((List<Element>) root.getChildren(VAR_INFO))) {
-        result.addVarPosition(new VarPositionInfo(e));
+      for (Element e : ((List<Element>) root.getChildren(SCOPE_INFO))) {
+        result.addScopePosition(new ScopePositionInfo(e));
       }
       for (Element re : ((List<Element>) root.getChildren(ROOT))) {
         String rootId = re.getAttributeValue(ROOT_ID_ATTR);
         for (Element e : ((List<Element>) re.getChildren(NODE_INFO))) {
           result.addPosition(new PositionInfo(e), rootId);
         }
-        for (Element e : ((List<Element>) re.getChildren(VAR_INFO))) {
-          result.addVarPosition(new VarPositionInfo(e), rootId);
+        for (Element e : ((List<Element>) re.getChildren(SCOPE_INFO))) {
+          result.addScopePosition(new ScopePositionInfo(e), rootId);
         }
       }
     } catch (DataConversionException e) {
@@ -282,10 +278,5 @@ public class DebugInfo {
     String modelName = model.getLongName().replace(".", File.separator);
     String debugPath = modelName.substring(0, modelName.length()) + File.separator + ".debug";
     return FileSystem.getFile(outputDir + File.separator + debugPath);
-  }
-
-  public static boolean isNodeSutable(SNode node) {
-    // TODO could not find any usages of this method. May I delete it? 
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
   }
 }

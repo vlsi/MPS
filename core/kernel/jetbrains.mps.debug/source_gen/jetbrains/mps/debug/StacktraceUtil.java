@@ -87,10 +87,10 @@ public class StacktraceUtil {
       final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (varName == null) {
-            nodeToShow.value = result.getNodeForLine(file, position, descriptor.getSModel());
-          } else {
+          if (varName != null) {
             nodeToShow.value = result.getVarForLine(file, position, descriptor.getSModel(), varName);
+          } else {
+            nodeToShow.value = result.getNodeForLine(file, position, descriptor.getSModel());
           }
         }
       });

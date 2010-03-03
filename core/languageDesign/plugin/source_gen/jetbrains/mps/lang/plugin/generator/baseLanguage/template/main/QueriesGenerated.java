@@ -518,8 +518,8 @@ public class QueriesGenerated {
     return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "declaration", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_6925065918170478781(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "concept", false));
+  public static Object propertyMacro_GetPropertyValue_5177675550061758218(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "scopeConcept", false));
   }
 
   public static Object referenceMacro_GetReferent_1227015434861(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1294,8 +1294,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "initBlock", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_6925065918170478802(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "varEntity", true);
+  public static SNode sourceNodeQuery_5177675550061758237(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variablesGetter", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_5158570261712548831(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1535,7 +1535,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_6030304139513191221(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "conceptsOfVars", true);
+    return SLinkOperations.getTargets(_context.getNode(), "scopeConcepts", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_5508914264443136191(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {

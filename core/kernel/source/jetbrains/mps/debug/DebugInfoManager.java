@@ -17,13 +17,9 @@ package jetbrains.mps.debug;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.*;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -35,7 +31,8 @@ public class DebugInfoManager implements ApplicationComponent {
   }
 
   private Set<String> myDebuggableConcepts = new HashSet<String>();
-  private Map<String, Mapper<SNode, SNode>> myVariableConceptsAndGetters = new HashMap<String, Mapper<SNode, SNode>>();
+  private Map<String, Mapper<SNode, List<SNode>>> myScopeConceptsAndGetters =
+    new HashMap<String, Mapper<SNode, List<SNode>>>();
 
   @NotNull
   public String getComponentName() {
@@ -50,12 +47,12 @@ public class DebugInfoManager implements ApplicationComponent {
     myDebuggableConcepts.remove(fqName);
   }
 
-  public void addVariableConcept(String fqName, Mapper<SNode, SNode> namedEntityGetter) {
-    myVariableConceptsAndGetters.put(fqName, namedEntityGetter);
+  public void addScopeConcept(String fqName, Mapper<SNode, List<SNode>> varsGetter) {
+    myScopeConceptsAndGetters.put(fqName, varsGetter);
   }
 
-  public void removeVariableConcept(String fqName) {
-    myVariableConceptsAndGetters.remove(fqName);
+  public void removeScopeConcept(String fqName) {
+    myScopeConceptsAndGetters.remove(fqName);
   }
 
   public boolean isDebuggableNode(SNode node) {
@@ -65,20 +62,20 @@ public class DebugInfoManager implements ApplicationComponent {
     return false;
   }
 
-  public boolean isVariableNode(SNode node) {
-    for (String concept : myVariableConceptsAndGetters.keySet()) {
+  public boolean isScopeNode(SNode node) {
+    for (String concept : myScopeConceptsAndGetters.keySet()) {
       if (SNodeOperations.isInstanceOf(node, concept)) return true;
     }
     return false;
   }
 
-  public SNode getVariableNamedEntity(SNode node) {
-    for (String concept : myVariableConceptsAndGetters.keySet()) {
-      if (SNodeOperations.isInstanceOf(node, concept)) {
-        return myVariableConceptsAndGetters.get(concept).value(node);
+  public List<SNode> getVarsInScope(SNode scopeNode) {
+    for (String concept : myScopeConceptsAndGetters.keySet()) {
+      if (SNodeOperations.isInstanceOf(scopeNode, concept)) {
+        return myScopeConceptsAndGetters.get(concept).value(scopeNode);
       }
     }
-    return null;
+    return new ArrayList<SNode>(0);
   }
 
   public void initComponent() {

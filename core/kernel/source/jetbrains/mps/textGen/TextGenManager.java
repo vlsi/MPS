@@ -28,6 +28,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.debug.PositionInfo;
 import jetbrains.mps.debug.DebugInfoManager;
 import jetbrains.mps.debug.VarPositionInfo;
+import jetbrains.mps.debug.ScopePositionInfo;
 
 import java.util.Map;
 import java.util.List;
@@ -57,11 +58,11 @@ public class TextGenManager {
   }
 
   private HashMap<SNode, PositionInfo> myPositions;
-  private HashMap<SNode, VarPositionInfo> myVarPositions;
+  private HashMap<SNode, ScopePositionInfo> myScopePositions;
 
   public TextGenerationResult generateText(IOperationContext context, SNode node) {
     myPositions = new HashMap<SNode, PositionInfo>();
-    myVarPositions = new HashMap<SNode, VarPositionInfo>();
+    myScopePositions = new HashMap<SNode, ScopePositionInfo>();
     TextGenBuffer buffer = new TextGenBuffer();
     buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
     appendNodeText(context, buffer, node, null);
@@ -71,14 +72,14 @@ public class TextGenManager {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
-    for (SNode n : myVarPositions.keySet()) {
-      PositionInfo position = myVarPositions.get(n);
+    for (SNode n : myScopePositions.keySet()) {
+      PositionInfo position = myScopePositions.get(n);
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
     List<String> dependencies = getUserObjectCollection(DEPENDENCY, node, buffer);
     List<String> extend = getUserObjectCollection(EXTENDS, node, buffer);
-    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), myPositions, myVarPositions, dependencies, extend);
+    return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), myPositions, myScopePositions, dependencies, extend);
   }
 
   public boolean canGenerateTextFor(SNode node) {
@@ -120,12 +121,14 @@ public class TextGenManager {
       if (DebugInfoManager.getInstance().isDebuggableNode(node)) {
         myPositions.put(node, info);
       }
-      if (DebugInfoManager.getInstance().isVariableNode(node)) {
-        VarPositionInfo varPositionInfo = new VarPositionInfo();
-        varPositionInfo.fillFrom(info);
-        String name = DebugInfoManager.getInstance().getVariableNamedEntity(node).getName();
-        varPositionInfo.setVarName(name);
-        myVarPositions.put(node, varPositionInfo);
+      if (DebugInfoManager.getInstance().isScopeNode(node)) {
+        ScopePositionInfo scopePositionInfo = new ScopePositionInfo();
+        scopePositionInfo.fillFrom(info);
+        List<SNode> vars = DebugInfoManager.getInstance().getVarsInScope(node);
+        for (SNode var : vars) {
+          scopePositionInfo.addVarInfo(var);
+        }
+        myScopePositions.put(node, scopePositionInfo);
       }
     } catch (Exception e) {
       buffer.foundError();
@@ -185,19 +188,19 @@ public class TextGenManager {
     private String myText;
     private boolean myContainErrors;
     private HashMap<SNode, PositionInfo> myPositions;
-    private HashMap<SNode, VarPositionInfo> myVarPositions;
+    private HashMap<SNode, ScopePositionInfo> myScopePositions;
     private Map<String, String> myDependencies = new HashMap<String, String>();
 
     private TextGenerationResult(String text,
                                  boolean containErrors,
                                  HashMap<SNode, PositionInfo> positions,
-                                 HashMap<SNode, VarPositionInfo> varPositions,
+                                 HashMap<SNode, ScopePositionInfo> scopePositions,
                                  List<String> dependencies,
                                  List<String> extend) {
       myText = text;
       myContainErrors = containErrors;
       myPositions = positions;
-      myVarPositions = varPositions;
+      myScopePositions = scopePositions;
       for (String s : dependencies) {
         myDependencies.put(s, DEPENDENCY);
       }
@@ -218,8 +221,8 @@ public class TextGenManager {
       return myPositions;
     }
 
-    public Map<SNode, VarPositionInfo> getVarPositions() {
-      return myVarPositions;
+    public Map<SNode, ScopePositionInfo> getScopePositions() {
+      return myScopePositions;
     }
 
     public Map<String, String> getDependencies() {

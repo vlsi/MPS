@@ -95,7 +95,7 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dqg0vp_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concepts of vars:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "scope concepts:");
     editorCell.setCellId("Constant_dqg0vp_e0");
     {
       Style style = editorCell.getStyle();
@@ -118,9 +118,9 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_dqg0vp_a5a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new DebugInfoInitializer_Editor.conceptsOfVarsListHandler_dqg0vp_a5a(node, "conceptsOfVars", editorContext);
+    AbstractCellListHandler handler = new DebugInfoInitializer_Editor.scopeConceptsListHandler_dqg0vp_a5a(node, "scopeConcepts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_conceptsOfVars");
+    editorCell.setCellId("refNodeList_scopeConcepts");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
@@ -171,8 +171,8 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class conceptsOfVarsListHandler_dqg0vp_a5a extends RefNodeListHandler {
-    public conceptsOfVarsListHandler_dqg0vp_a5a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class scopeConceptsListHandler_dqg0vp_a5a extends RefNodeListHandler {
+    public scopeConceptsListHandler_dqg0vp_a5a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

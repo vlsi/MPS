@@ -2546,5 +2546,61 @@
       <link role="concept:3" targetNodeId="4.5857416866788524756:23" resolveInfo="VariableNodeItem" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="936299881288561887">
+    <property name="name:3" value="typeof_ConceptFunctionParameter_ScopeNode" />
+    <property name="package:3" value="Custom.DebugInfo" />
+    <property name="overrides:3" value="true" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="936299881288561888">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="936299881288572325">
+        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="936299881288572326">
+          <property name="name:3" value="scopeNodeItem" />
+          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="936299881288572327">
+            <link role="concept:16" targetNodeId="4.936299881288560358:23" resolveInfo="ScopeNodeItem" />
+          </node>
+          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="936299881288572328">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="936299881288572329">
+              <link role="applicableNode:3" targetNodeId="936299881288561889" resolveInfo="scopeNode" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="936299881288572330">
+              <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="936299881288572331">
+                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="936299881288572332">
+                  <link role="conceptDeclaration:16" targetNodeId="4.936299881288560358:23" resolveInfo="ScopeNodeItem" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="936299881288562172">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="936299881288572334">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="936299881288572335">
+            <node role="quotedNode:0" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="936299881288572337">
+              <node role="referenceAntiquotation$link_attribute$concept:16" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="936299881288572338">
+                <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="936299881288572341">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="936299881288572340">
+                    <link role="variableDeclaration:3" targetNodeId="936299881288572326" resolveInfo="scopeNodeItem" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="936299881288572345">
+                    <link role="link:16" targetNodeId="4.936299881288560371:23" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="936299881288562175">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="936299881288562169">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="936299881288562171">
+              <link role="applicableNode:3" targetNodeId="936299881288561889" resolveInfo="scopeNode" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="936299881288561889">
+      <property name="name:3" value="scopeNode" />
+      <link role="concept:3" targetNodeId="4.936299881288561816:23" resolveInfo="ConceptFunctionParameter_ScopeNode" />
+    </node>
+  </node>
 </model>
 

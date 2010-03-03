@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="15">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AbstractEditorTab" conceptFQName="jetbrains.mps.bootstrap.pluginLanguage.structure.AbstractEditorTab" featureKind="CONCEPT" />
@@ -379,6 +380,7 @@
     <refactoringContext modelVersion="16">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="NoPlugin" conceptFQName="jetbrains.mps.lang.plugin.structure.NoPlugin" featureKind="CONCEPT" />
@@ -389,6 +391,7 @@
     <refactoringContext modelVersion="17">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameProperty" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="suppressApplicationPlugin" conceptFQName="jetbrains.mps.lang.plugin.structure.GeneratePlugins" featureKind="PROPERTY" />
@@ -399,6 +402,7 @@
     <refactoringContext modelVersion="18">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameProperty" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="suppressProjectPlugin" conceptFQName="jetbrains.mps.lang.plugin.structure.GeneratePlugins" featureKind="PROPERTY" />
@@ -409,6 +413,7 @@
     <refactoringContext modelVersion="19">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ActionReference" conceptFQName="jetbrains.mps.lang.plugin.structure.ActionReference" featureKind="CONCEPT" />
@@ -419,6 +424,7 @@
     <refactoringContext modelVersion="20">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ExtentionPoint" conceptFQName="jetbrains.mps.lang.plugin.structure.ExtentionPoint" featureKind="CONCEPT" />
@@ -429,6 +435,7 @@
     <refactoringContext modelVersion="21">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ExtensionPoint" conceptFQName="jetbrains.mps.lang.plugin.structure.ExtensionPoint" featureKind="CONCEPT" />
@@ -439,6 +446,7 @@
     <refactoringContext modelVersion="22">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ConceptFunctionParameter_Index" conceptFQName="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Index" featureKind="CONCEPT" />
@@ -449,6 +457,7 @@
     <refactoringContext modelVersion="23">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.refactorings.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="GetSelectedTab" conceptFQName="jetbrains.mps.lang.plugin.structure.GetSelectedTab" featureKind="CONCEPT" />
@@ -3666,11 +3675,11 @@
       <property name="sourceCardinality:0" value="0..n" />
       <link role="target:0" targetNodeId="5124230653299542673:23" resolveInfo="ConceptReference" />
     </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6030304139513186662">
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="936299881288593712">
       <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="conceptsOfVars" />
+      <property name="role:0" value="scopeConcepts" />
       <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="5857416866788524756:23" resolveInfo="VariableNodeItem" />
+      <link role="target:0" targetNodeId="936299881288560358:23" resolveInfo="ScopeNodeItem" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="485694842828664424">
@@ -3876,6 +3885,51 @@
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5857416866788535168">
       <property name="value:0" value="varNode" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="936299881288560358">
+    <property name="package:0" value="Custom.DebugInfo" />
+    <property name="name:0" value="ScopeNodeItem" />
+    <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5177675550061605585">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="variablesGetter" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="936299881288561741:23" resolveInfo="ConceptFunction_GetVariables" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="936299881288560371">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="scopeConcept" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="8.1071489090640:0" resolveInfo="ConceptDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="936299881288561741">
+    <property name="package:0" value="Custom.DebugInfo" />
+    <property name="name:0" value="ConceptFunction_GetVariables" />
+    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="936299881288561767">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
+      <node role="target:0" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="936299881288561775">
+        <link role="elementConcept:16" targetNodeId="6.1169194658468:0" resolveInfo="INamedConcept" />
+      </node>
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="936299881288572353">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="936299881288561816:23" resolveInfo="ConceptFunctionParameter_ScopeNode" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="936299881288561816">
+    <property name="package:0" value="Custom.DebugInfo" />
+    <property name="name:0" value="ConceptFunctionParameter_ScopeNode" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="936299881288561841">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
+      <node role="target:0" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="936299881288561849" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="936299881288561856">
+      <property name="value:0" value="scopeNode" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>

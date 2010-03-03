@@ -24,6 +24,7 @@ import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.debug.DebugInfo;
 import jetbrains.mps.debug.PositionInfo;
 import jetbrains.mps.debug.VarPositionInfo;
+import jetbrains.mps.debug.ScopePositionInfo;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
@@ -193,8 +194,8 @@ public class FileGenerationManager implements ApplicationComponent {
 
   private void fillDebugInfo(DebugInfo info, String rootNodeId, SNode outputNode, TextGenerationResult result) {
     Map<SNode, PositionInfo> positions = result.getPositions();
-    Map<SNode, VarPositionInfo> varPositions = result.getVarPositions();
-    if (positions == null && varPositions == null) {
+    Map<SNode, ScopePositionInfo> scopePositions = result.getScopePositions();
+    if (positions == null && scopePositions == null) {
       return;
     }
     String fileName = outputNode.getName() + ".java";
@@ -211,16 +212,16 @@ public class FileGenerationManager implements ApplicationComponent {
         }
       }
     }
-    if (varPositions != null) {
-      for (SNode out : varPositions.keySet()) {
+    if (scopePositions != null) {
+      for (SNode out : scopePositions.keySet()) {
         SNode input = out;
         input = getOriginalInputNode(input);
         if (input != null && !(input.isDisposed())) {
-          VarPositionInfo positionInfo = result.getVarPositions().get(out);
+          ScopePositionInfo positionInfo = result.getScopePositions().get(out);
           positionInfo.setNodeId(input.getId());
           info.setModel(input.getModel());
           positionInfo.setFileName(fileName);
-          info.addVarPosition(positionInfo, rootNodeId);
+          info.addScopePosition(positionInfo, rootNodeId);
         }
       }
     }
