@@ -74,22 +74,22 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
         }
       } else {
         descriptor = (BaseStubModelDescriptor) oldDescr;
+      }
 
-        BaseSModelDescriptor baseDescriptor = (BaseSModelDescriptor) descriptor;
+      BaseSModelDescriptor baseDescriptor = (BaseSModelDescriptor) descriptor;
 
-        //todo this is a hack - comparing classes by names
-        if (baseDescriptor.getModelRootManager().getClass().getName().equals(this.getClass().getName())) {
-          baseDescriptor.setModelRootManager(this);
+      //todo this is a hack - comparing classes by names
+      if (baseDescriptor.getModelRootManager().getClass().getName().equals(this.getClass().getName())) {
+        baseDescriptor.setModelRootManager(this);
+      }
+
+      if (!descriptor.isInitialized()) {
+        if (!myDescriptorsWithListener.contains(descriptor)) {
+          descriptor.addModelListener(myInitializationListener);
+          myDescriptorsWithListener.add(descriptor);
         }
-
-        if (!descriptor.isInitialized()) {
-          if (!myDescriptorsWithListener.contains(descriptor)) {
-            descriptor.addModelListener(myInitializationListener);
-            myDescriptorsWithListener.add(descriptor);
-          }
-        } else {
-          updateModelInLoadingState(descriptor, descriptor.getSModel(), false);
-        }
+      } else {
+        updateModelInLoadingState(descriptor, descriptor.getSModel(), false);
       }
     }
   }
