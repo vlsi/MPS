@@ -13,6 +13,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.ArrayCreator", new ArrayCreator_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", new ArrayCreatorWithInitializer_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ArrayLiteral", new ArrayLiteral_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.AsExpression", new AsExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.AssertStatement", new AssertStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.AssignmentExpression", new AssignmentExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", new BaseAssignmentExpression_DataFlow());

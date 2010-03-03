@@ -2294,5 +2294,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="6023428257643051553">
+    <link role="conceptDeclaration:0" targetNodeId="1.1224071154655:3" resolveInfo="AsExpression" />
+    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="6023428257643051554">
+      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6023428257643051555">
+        <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="6023428257643052113">
+          <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6023428257643052116">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="6023428257643052115" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6023428257643052120">
+              <link role="link:16" targetNodeId="1.1224071154656:3" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
