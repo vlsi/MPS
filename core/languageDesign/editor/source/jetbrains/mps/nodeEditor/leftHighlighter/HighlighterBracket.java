@@ -1,9 +1,9 @@
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
-import com.sun.istack.internal.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -14,6 +14,7 @@ import java.awt.Graphics;
  */
 public class HighlighterBracket {
   private static final int BRACKET_LINE_THICKNESS = 2;
+  private static final int ADDITIONAL_HORIZONTAL_SHIFT = 3;
 
   private BracketEdge myBegginingEdge = new BracketEdge(0, true);
   private BracketEdge myEndingEdge = new BracketEdge(0, false);
@@ -25,7 +26,7 @@ public class HighlighterBracket {
   private int myLevel = 1;
 
   public static int getBracketWidth(int level) {
-    return 2 * BRACKET_LINE_THICKNESS + (level - 1) * BRACKET_LINE_THICKNESS * 3 / 2;
+    return 2 * BRACKET_LINE_THICKNESS + (level - 1) * BRACKET_LINE_THICKNESS * 3 / 2 + ADDITIONAL_HORIZONTAL_SHIFT;
   }
 
   public HighlighterBracket(CellInfo cellInfo, CellInfo secondCellInfo, Color c, EditorComponent editorComponent) {
@@ -64,10 +65,11 @@ public class HighlighterBracket {
   public void paint(Graphics g) {
     g.setColor(myColor);
     int bracketWidth = getBracketWidth(getLevel());
-    int horizontalSegmentWidth = bracketWidth - BRACKET_LINE_THICKNESS;
-    g.fillRect(-horizontalSegmentWidth, getY1(), horizontalSegmentWidth, BRACKET_LINE_THICKNESS);
+    int horizontalSegmentStart = bracketWidth - BRACKET_LINE_THICKNESS;
+    int horizontalSegmentWidth = bracketWidth - BRACKET_LINE_THICKNESS - ADDITIONAL_HORIZONTAL_SHIFT;
+    g.fillRect(-horizontalSegmentStart, getY1(), horizontalSegmentWidth, BRACKET_LINE_THICKNESS);
     g.fillRect(-bracketWidth, getY1(), BRACKET_LINE_THICKNESS, getY2() - getY1());
-    g.fillRect(-horizontalSegmentWidth, getY2() - BRACKET_LINE_THICKNESS, horizontalSegmentWidth, BRACKET_LINE_THICKNESS);
+    g.fillRect(-horizontalSegmentStart, getY2() - BRACKET_LINE_THICKNESS, horizontalSegmentWidth, BRACKET_LINE_THICKNESS);
   }
 
   public CellInfo getCell() {

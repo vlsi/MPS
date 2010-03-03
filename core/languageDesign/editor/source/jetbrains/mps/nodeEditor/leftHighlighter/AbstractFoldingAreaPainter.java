@@ -1,8 +1,8 @@
 package jetbrains.mps.nodeEditor.leftHighlighter;
 
-import com.sun.istack.internal.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.LeftEditorHighlighter;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;

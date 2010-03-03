@@ -14,6 +14,7 @@ import java.awt.Graphics;
  * Date: 02.03.2010
  */
 class FoldingButton {
+  public static final int ADDITIONAL_VERTICAL_SHIFT = 3;
   public static final int HALF_WIDTH = 4;
 
   private static final int HEIGHT = HALF_WIDTH * 5 / 2;
@@ -42,8 +43,8 @@ class FoldingButton {
       myIsHidden = cell.isUnderFolded();
       if (!myIsHidden) {
         myIsFolded = ((EditorCell_Collection) cell).isFolded();
-        myY1 = cell.getY();
-        myY2 = cell.getY() + cell.getHeight() - cell.getTopInset() - cell.getBottomInset() - 1;
+        myY1 = cell.getY() + ADDITIONAL_VERTICAL_SHIFT;
+        myY2 = cell.getY() + cell.getHeight() - cell.getTopInset() - cell.getBottomInset() - 1 - ADDITIONAL_VERTICAL_SHIFT;
       }
       return true;
     }
