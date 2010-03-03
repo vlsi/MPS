@@ -43,10 +43,10 @@ public class OperationsUtil {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _10_io;
-              private SNode _18_io;
               private SNode _6_po;
               private Iterator<SNode> _6_po_it;
+              private SNode _10_io;
+              private SNode _18_io;
 
               protected boolean moveToNext() {
 __loop__:
@@ -95,6 +95,9 @@ __switch__:
                       this.__CP__ = 3;
                       this.yield(_18_io);
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this.__CP__ = 4;
                       break;
@@ -122,9 +125,6 @@ __switch__:
                       break;
                     case 15:
                       this.__CP__ = 1;
-                      break;
-                    case 0:
-                      this.__CP__ = 2;
                       break;
                     default:
                       break __loop__;

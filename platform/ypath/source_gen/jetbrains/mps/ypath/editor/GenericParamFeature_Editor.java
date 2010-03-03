@@ -282,17 +282,6 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_a19ihi_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_a19ihi_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_a19ihi_a2a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_a19ihi_b4b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_a19ihi_b4b1a");
@@ -325,6 +314,17 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_a19ihi_a1b4b1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_a19ihi_b1b4b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_a19ihi_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_a19ihi_c0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_a19ihi_a2a(editorContext, node));
     return editorCell;
   }
 
@@ -496,13 +496,6 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_a19ihi_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_a19ihi_a2a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_a19ihi_a0b4b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get");
     editorCell.setCellId("Constant_a19ihi_a0b4b1a");
@@ -518,6 +511,13 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_a19ihi_a2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    editorCell.setCellId("Constant_a19ihi_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -586,25 +586,6 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_a19ihi_c0a5a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("opposite");
-    provider.setNoTargetText("<no opposite>");
-    EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenericParamFeature_Editor._Inline_a19ihi_a2a0f0a());
-    editorCell = provider.createEditorCell(editorContext);
-    IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
   private EditorCell createRefNode_a19ihi_b1b1b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("parameterQueryFunction");
@@ -645,6 +626,25 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no getter>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefCell_a19ihi_c0a5a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("opposite");
+    provider.setNoTargetText("<no opposite>");
+    EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new GenericParamFeature_Editor._Inline_a19ihi_a2a0f0a());
+    editorCell = provider.createEditorCell(editorContext);
+    IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

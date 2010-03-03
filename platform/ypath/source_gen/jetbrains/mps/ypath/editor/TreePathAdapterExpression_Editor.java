@@ -34,7 +34,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7bcc0k_a");
     if (renderingCondition_7bcc0k_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_7bcc0k_a0_0(editorContext, node));
+      editorCell.addEditorCell(this.createConstant_7bcc0k_a0(editorContext, node));
     }
     editorCell.addEditorCell(this.createRefNode_7bcc0k_b0(editorContext, node));
     return editorCell;
@@ -43,26 +43,26 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_7bcc0k_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7bcc0k_a_0");
-    editorCell.addEditorCell(this.createConstant_7bcc0k_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7bcc0k_a0_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_7bcc0k_b0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_7bcc0k_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "treepath aspect:");
-    editorCell.setCellId("Constant_7bcc0k_a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_7bcc0k_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "!");
-    editorCell.setCellId("Constant_7bcc0k_a0_0");
+    editorCell.setCellId("Constant_7bcc0k_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
     }
     TreePathAdapterExpression_DELETE.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_7bcc0k_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "treepath aspect:");
+    editorCell.setCellId("Constant_7bcc0k_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }

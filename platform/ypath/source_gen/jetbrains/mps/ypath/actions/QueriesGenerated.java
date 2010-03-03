@@ -139,6 +139,16 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1180026401346(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.SwitchNodeKindStatement");
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
+    }
+    return result;
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_VisitParameterDeclaration_1180018851746(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
@@ -165,16 +175,6 @@ public class QueriesGenerated {
         }
       };
       ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createChildSubstituteActions(_context.getParentNode(), _context.getCurrentTargetNode(), wrappedConcept, setter, operationContext)));
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1180026401346(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode conceptToAdd = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.SwitchNodeKindStatement");
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
     }
     return result;
   }
@@ -767,23 +767,6 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static void removeActionsByCondition_1178108370239(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
-    Iterator<INodeSubstituteAction> actions = _context.getActions();
-    while (actions.hasNext()) {
-      INodeSubstituteAction current = actions.next();
-      final SNode concept = current.getOutputConcept();
-      SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperation");
-      Condition cond = new Condition() {
-        public boolean met(Object object) {
-          return !(SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.ypath.structure.IterateOperation"));
-        }
-      };
-      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
-        actions.remove();
-      }
-    }
-  }
-
   public static void removeActionsByCondition_1178108596882(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while (actions.hasNext()) {
@@ -793,6 +776,23 @@ public class QueriesGenerated {
       Condition cond = new Condition() {
         public boolean met(Object object) {
           return !(SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.ypath.structure.FromOperation"));
+        }
+      };
+      if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
+        actions.remove();
+      }
+    }
+  }
+
+  public static void removeActionsByCondition_1178108370239(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
+    Iterator<INodeSubstituteAction> actions = _context.getActions();
+    while (actions.hasNext()) {
+      INodeSubstituteAction current = actions.next();
+      final SNode concept = current.getOutputConcept();
+      SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperation");
+      Condition cond = new Condition() {
+        public boolean met(Object object) {
+          return !(SConceptOperations.isExactly(_context.getChildConcept(), "jetbrains.mps.ypath.structure.IterateOperation"));
         }
       };
       if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(concept)) && cond.met(concept)) {
