@@ -48,8 +48,8 @@ public class TestClosure {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _6_bar;
               private int _3_foo;
+              private int _6_bar;
               private int _13_bar;
               private int _20_bar;
 
@@ -100,6 +100,10 @@ __switch__:
                       _20_bar++;
                       this.__CP__ = 21;
                       break;
+                    case 4:
+                      this.__CP__ = 5;
+                      this.yield((Integer) _3_foo);
+                      return true;
                     case 11:
                       this.__CP__ = 12;
                       this.yield((Integer) _6_bar);
@@ -112,21 +116,17 @@ __switch__:
                       this.__CP__ = 19;
                       this.yield((Integer) _13_bar);
                       return true;
+                    case 19:
+                      this.__CP__ = 20;
+                      this.yield((Integer) _13_bar + 1);
+                      return true;
                     case 20:
                       this.__CP__ = 16;
                       this.yield((Integer) _13_bar + _3_foo);
                       return true;
-                    case 4:
-                      this.__CP__ = 5;
-                      this.yield((Integer) _3_foo);
-                      return true;
                     case 24:
                       this.__CP__ = 23;
                       this.yield((Integer) _20_bar);
-                      return true;
-                    case 19:
-                      this.__CP__ = 20;
-                      this.yield((Integer) _13_bar + 1);
                       return true;
                     case 0:
                       this._3_foo = -1;
@@ -419,9 +419,9 @@ __switch__:
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
               private int _3_i;
-              private int _9_j;
               private TestClosure.Enm[] _4_consts;
               private TestClosure.Enm _5_e;
+              private int _9_j;
               private int _14_r;
 
               protected boolean moveToNext() {
@@ -488,10 +488,6 @@ __switch__:
                       _9_j--;
                       this.__CP__ = 11;
                       break;
-                    case 24:
-                      assert false;
-                      this.__CP__ = 16;
-                      break;
                     case 17:
                       _14_r = _9_j + 10;
                       this.__CP__ = 16;
@@ -502,6 +498,10 @@ __switch__:
                       break;
                     case 20:
                       _14_r = _9_j + 1000;
+                      this.__CP__ = 16;
+                      break;
+                    case 24:
+                      assert false;
                       this.__CP__ = 16;
                       break;
                     default:
