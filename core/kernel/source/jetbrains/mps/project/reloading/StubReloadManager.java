@@ -2,7 +2,7 @@ package jetbrains.mps.project.reloading;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.library.StubSolutionsLoader;
+import jetbrains.mps.project.reloading.StubSolutionsLoader;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
@@ -39,13 +39,14 @@ public class StubReloadManager implements ApplicationComponent {
       public void run() {
         markOldStubs();
         SModelRepository.getInstance().refreshModels();
+        StubSolutionsLoader.getInstance().loadNewStubSolutions();
         updateStubs();
         markNewStubs();
       }
     });
   }
 
-  public static void markNewStubs() {
+  public void markNewStubs() {
     List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptors();
     for (SModelDescriptor m : new ArrayList<SModelDescriptor>(models)) {
       if (!(m instanceof BaseStubModelDescriptor)) continue;
@@ -54,14 +55,13 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private void updateStubs() {
-    StubSolutionsLoader.getInstance().loadNewStubSolutions();
     for (IModule m : myRepos.getAllModules()) {
       m.updateStubs();
     }
   }
 
 
-  public void markOldStubs() {
+  private void markOldStubs() {
     if (myFirstReload) {
       myFirstReload = false;
       List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptors();

@@ -125,7 +125,7 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.library.StubSolutionsLoader</implementation-class>
+            <implementation-class>jetbrains.mps.project.reloading.StubSolutionsLoader</implementation-class>
         </component>
 
         <component>
