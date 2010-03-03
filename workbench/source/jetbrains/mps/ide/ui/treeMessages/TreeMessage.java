@@ -39,4 +39,8 @@ public class TreeMessage {
   public TreeMessageOwner getOwner() {
     return myOwner;
   }
+
+  public int getPriority() {
+    return 0;
+  }
 }

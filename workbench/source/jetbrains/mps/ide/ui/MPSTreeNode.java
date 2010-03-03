@@ -308,12 +308,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     doUpdatePresentation();
     if (myTreeMessages != null) {
       Color c = null;
+      int maxColorPriority = Integer.MIN_VALUE;
       String additionalText = null;
+      int maxAdditionalTextPriority = Integer.MIN_VALUE;
       for (TreeMessage message : myTreeMessages) {
-        if (c == null && message.alternatesColor()) {
+        if (maxColorPriority < message.getPriority() && message.alternatesColor()) {
           c = message.getColor();
         }
-        if (additionalText == null && message.hasAdditionalText()) {
+        if (maxAdditionalTextPriority < message.getPriority() && message.hasAdditionalText()) {
           additionalText = message.getAdditionalText();
         }
       }
