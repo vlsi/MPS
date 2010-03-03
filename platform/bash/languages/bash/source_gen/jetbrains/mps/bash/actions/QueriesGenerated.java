@@ -307,81 +307,6 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_AbstractCommand_975347375211919463(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.RedirectedCommand");
-      Calculable calculable = new Calculable() {
-        public Object calculate() {
-          return ListSequence.fromListAndArray(new ArrayList<String>(), ">", "&>", "<");
-        }
-      };
-      Iterable<String> parameterObjects = (Iterable<String>) calculable.calculate();
-      assert parameterObjects != null;
-      for (final String item : parameterObjects) {
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
-            SNode redirectedCommand = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.RedirectedCommand", null);
-            SNode redirection;
-            if ((item).equals(">")) {
-              redirection = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.OutputRedirection", null);
-            } else if ((item).equals("&>")) {
-              redirection = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.OutputErrorRedirection", null);
-            } else {
-              redirection = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.InputRedirection", null);
-            }
-            ListSequence.fromList(SLinkOperations.getTargets(redirectedCommand, "redirection", true)).addElement(redirection);
-            SNode command = _context.getSourceNode();
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), redirectedCommand);
-            SLinkOperations.setTarget(redirectedCommand, "command", command, true);
-            return redirectedCommand;
-          }
-
-          public SNode getOutputConcept() {
-            return concept;
-          }
-
-          public String getDescriptionText(String text) {
-            if ((item).equals(">")) {
-              return "redirect output";
-            } else if ((item).equals("&>")) {
-              return "redirect error output";
-            }
-            return "redirect input";
-          }
-        });
-      }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_CommandTerminator_2635812496400429947(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedText");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
-          SNode commonCommand = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.bash.structure.CommandList", false, false);
-          SLinkOperations.setNewChild(commonCommand, "comment", "jetbrains.mps.bash.structure.CommentedText");
-          return SLinkOperations.getTarget(commonCommand, "comment", true);
-        }
-
-        public String getMatchingText(String pattern) {
-          return "#";
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "simple text comment";
-        }
-      });
-    }
-    return result;
-  }
-
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IGeneralizedWordUnit_3147078024758607987(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
@@ -401,43 +326,6 @@ public class QueriesGenerated {
           return this.getMatchingText(pattern);
         }
       });
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ArithmeticExpression_3263637656461345409(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.BinaryArithmeticExpression");
-      Iterable<SNode> concepts;
-      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
-      for (final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          continue;
-        }
-        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
-          continue;
-        }
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            {
-              SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ArithmeticExpression");
-              while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression")) {
-                SNode parent = SNodeOperations.cast(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression");
-                if (SConceptPropertyOperations.getInteger(result, "priority") < SConceptPropertyOperations.getInteger(parent, "priority")) {
-                  source = parent;
-                } else {
-                  break;
-                }
-              }
-              SNodeOperations.replaceWithAnother(source, result);
-              SLinkOperations.setTarget(result, "leftExpression", source, true);
-              return result;
-            }
-          }
-        });
-      }
     }
     return result;
   }
@@ -479,10 +367,10 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ConditionalExpression_3835416431562616055(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ArithmeticExpression_3263637656461345409(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CombiningConditionalExpression");
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.BinaryArithmeticExpression");
       Iterable<SNode> concepts;
       concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
       for (final SNode subconcept : concepts) {
@@ -496,11 +384,209 @@ public class QueriesGenerated {
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
             {
-              SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ConditionalExpression");
+              SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ArithmeticExpression");
+              while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression")) {
+                SNode parent = SNodeOperations.cast(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression");
+                if (SConceptPropertyOperations.getInteger(result, "priority") < SConceptPropertyOperations.getInteger(parent, "priority")) {
+                  source = parent;
+                } else {
+                  break;
+                }
+              }
               SNodeOperations.replaceWithAnother(source, result);
-              SLinkOperations.setTarget(result, "left", source, true);
+              SLinkOperations.setTarget(result, "leftExpression", source, true);
               return result;
             }
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_CommandTerminator_2635812496400429947(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedText");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode commonCommand = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.bash.structure.CommandList", false, false);
+          SLinkOperations.setNewChild(commonCommand, "comment", "jetbrains.mps.bash.structure.CommentedText");
+          return SLinkOperations.getTarget(commonCommand, "comment", true);
+        }
+
+        public String getMatchingText(String pattern) {
+          return "#";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "simple text comment";
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FollowingCommandList_8474643070110067667(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedFollowingCommandList");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode comment = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.CommentedFollowingCommandList", null);
+          SNodeOperations.replaceWithAnother(_context.getSourceNode(), comment);
+          SLinkOperations.setTarget(comment, "command", _context.getSourceNode(), true);
+          return comment;
+        }
+
+        public String getMatchingText(String pattern) {
+          if (pattern.startsWith("#")) {
+            return pattern;
+          }
+          return "";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Command_8457058248752905941(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedCommandList");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode comment = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.CommentedCommandList", null);
+          SNode sourceCommandList = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.bash.structure.CommandList", false, false);
+          SNodeOperations.replaceWithAnother(sourceCommandList, comment);
+          SLinkOperations.setTarget(comment, "commandList", sourceCommandList, true);
+          return comment;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "#";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FollowingCommandList_8474643070113186812(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.FollowingCommandList");
+      Iterable<SNode> concepts;
+      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
+      for (final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          continue;
+        }
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
+        }
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+            SLinkOperations.setNewChild(SLinkOperations.getTarget(SLinkOperations.getTarget(result, "baseCommand", true), "base", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
+            SLinkOperations.setTarget(SLinkOperations.getTarget(result, "baseCommand", true), "following", _context.getSourceNode(), true);
+            return result;
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FollowingCommandList_8474643070112660721(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.FollowingCommandList");
+      Iterable<SNode> concepts;
+      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
+      for (final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          continue;
+        }
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
+        }
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SLinkOperations.setTarget(SLinkOperations.getTarget(result, "baseCommand", true), "following", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "following", true), true);
+            SLinkOperations.setTarget(SLinkOperations.getTarget(result, "baseCommand", true), "base", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "base", true), true);
+            SLinkOperations.setTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "following", result, true);
+            SLinkOperations.setNewChild(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "base", "jetbrains.mps.bash.structure.HeadPipeline");
+            SLinkOperations.setNewChild(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "base", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
+            return _context.getSourceNode();
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FollowingPipeline_3905757829908118148(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.FollowingPipeline");
+      Iterable<SNode> concepts;
+      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
+      for (final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          continue;
+        }
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
+        }
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SLinkOperations.setTarget(SLinkOperations.getTarget(result, "basePipeline", true), "following", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "following", true), true);
+            SLinkOperations.setTarget(SLinkOperations.getTarget(result, "basePipeline", true), "command", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "command", true), true);
+            SLinkOperations.setNewChild(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
+            SLinkOperations.setTarget(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "following", result, true);
+            return result;
+          }
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FollowingPipeline_3905757829908027951(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.FollowingPipeline");
+      Iterable<SNode> concepts;
+      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
+      for (final SNode subconcept : concepts) {
+        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
+          continue;
+        }
+        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
+          continue;
+        }
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
+          public SNode doSubstitute(String pattern) {
+            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
+            SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+            SLinkOperations.setTarget(SLinkOperations.getTarget(result, "basePipeline", true), "following", _context.getSourceNode(), true);
+            SLinkOperations.setNewChild(SLinkOperations.getTarget(result, "basePipeline", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
+            return result;
           }
         });
       }
@@ -537,10 +623,10 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FollowingPipeline_3905757829908027951(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_ConditionalExpression_3835416431562616055(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.FollowingPipeline");
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CombiningConditionalExpression");
       Iterable<SNode> concepts;
       concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
       for (final SNode subconcept : concepts) {
@@ -553,10 +639,12 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-            SLinkOperations.setTarget(SLinkOperations.getTarget(result, "basePipeline", true), "following", _context.getSourceNode(), true);
-            SLinkOperations.setNewChild(SLinkOperations.getTarget(result, "basePipeline", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
-            return result;
+            {
+              SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ConditionalExpression");
+              SNodeOperations.replaceWithAnother(source, result);
+              SLinkOperations.setTarget(result, "left", source, true);
+              return result;
+            }
           }
         });
       }
@@ -564,135 +652,47 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FollowingPipeline_3905757829908118148(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_AbstractCommand_975347375211919463(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.FollowingPipeline");
-      Iterable<SNode> concepts;
-      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
-      for (final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          continue;
+      final SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.RedirectedCommand");
+      Calculable calculable = new Calculable() {
+        public Object calculate() {
+          return ListSequence.fromListAndArray(new ArrayList<String>(), ">", "&>", "<");
         }
-        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
-          continue;
-        }
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
+      };
+      Iterable<String> parameterObjects = (Iterable<String>) calculable.calculate();
+      assert parameterObjects != null;
+      for (final String item : parameterObjects) {
+        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            SLinkOperations.setTarget(SLinkOperations.getTarget(result, "basePipeline", true), "following", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "following", true), true);
-            SLinkOperations.setTarget(SLinkOperations.getTarget(result, "basePipeline", true), "command", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "command", true), true);
-            SLinkOperations.setNewChild(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
-            SLinkOperations.setTarget(SLinkOperations.getTarget(_context.getSourceNode(), "basePipeline", true), "following", result, true);
-            return result;
+            SNode redirectedCommand = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.RedirectedCommand", null);
+            SNode redirection;
+            if ((item).equals(">")) {
+              redirection = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.OutputRedirection", null);
+            } else if ((item).equals("&>")) {
+              redirection = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.OutputErrorRedirection", null);
+            } else {
+              redirection = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.InputRedirection", null);
+            }
+            ListSequence.fromList(SLinkOperations.getTargets(redirectedCommand, "redirection", true)).addElement(redirection);
+            SNode command = _context.getSourceNode();
+            SNodeOperations.replaceWithAnother(_context.getSourceNode(), redirectedCommand);
+            SLinkOperations.setTarget(redirectedCommand, "command", command, true);
+            return redirectedCommand;
           }
-        });
-      }
-    }
-    return result;
-  }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Command_8457058248752905941(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedCommandList");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
-          SNode comment = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.CommentedCommandList", null);
-          SNode sourceCommandList = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.bash.structure.CommandList", false, false);
-          SNodeOperations.replaceWithAnother(sourceCommandList, comment);
-          SLinkOperations.setTarget(comment, "commandList", sourceCommandList, true);
-          return comment;
-        }
-
-        public String getMatchingText(String pattern) {
-          return "#";
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FollowingCommandList_8474643070110067667(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.CommentedFollowingCommandList");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
-          SNode comment = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.CommentedFollowingCommandList", null);
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), comment);
-          SLinkOperations.setTarget(comment, "command", _context.getSourceNode(), true);
-          return comment;
-        }
-
-        public String getMatchingText(String pattern) {
-          if (pattern.startsWith("#")) {
-            return pattern;
+          public SNode getOutputConcept() {
+            return concept;
           }
-          return "";
-        }
 
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-      });
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FollowingCommandList_8474643070112660721(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.FollowingCommandList");
-      Iterable<SNode> concepts;
-      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
-      for (final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          continue;
-        }
-        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
-          continue;
-        }
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            SLinkOperations.setTarget(SLinkOperations.getTarget(result, "baseCommand", true), "following", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "following", true), true);
-            SLinkOperations.setTarget(SLinkOperations.getTarget(result, "baseCommand", true), "base", SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "base", true), true);
-            SLinkOperations.setTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "following", result, true);
-            SLinkOperations.setNewChild(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "base", "jetbrains.mps.bash.structure.HeadPipeline");
-            SLinkOperations.setNewChild(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getSourceNode(), "baseCommand", true), "base", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
-            return _context.getSourceNode();
-          }
-        });
-      }
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_FollowingCommandList_8474643070113186812(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.FollowingCommandList");
-      Iterable<SNode> concepts;
-      concepts = SConceptOperations.getAllSubConcepts(concept, _context.getModel(), operationContext.getScope());
-      for (final SNode subconcept : concepts) {
-        if (!(SNodeOperations.isInstanceOf(subconcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
-          continue;
-        }
-        if (SConceptPropertyOperations.getBoolean(subconcept, "abstract")) {
-          continue;
-        }
-        ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(subconcept, _context.getSourceNode()) {
-          public SNode doSubstitute(String pattern) {
-            SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(subconcept), null);
-            SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
-            SLinkOperations.setNewChild(SLinkOperations.getTarget(SLinkOperations.getTarget(result, "baseCommand", true), "base", true), "command", "jetbrains.mps.bash.structure.AbstractCommand");
-            SLinkOperations.setTarget(SLinkOperations.getTarget(result, "baseCommand", true), "following", _context.getSourceNode(), true);
-            return result;
+          public String getDescriptionText(String text) {
+            if ((item).equals(">")) {
+              return "redirect output";
+            } else if ((item).equals("&>")) {
+              return "redirect error output";
+            }
+            return "redirect input";
           }
         });
       }

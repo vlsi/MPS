@@ -29,6 +29,13 @@ public class CaseClause_Editor extends DefaultNodeEditor {
     return this.createCollection_hfuf06_a(editorContext, node);
   }
 
+  private EditorCell createCollection_hfuf06_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_hfuf06_a");
+    editorCell.addEditorCell(this.createCollection_hfuf06_a0(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createCollection_hfuf06_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hfuf06_a0");
@@ -40,13 +47,6 @@ public class CaseClause_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_hfuf06_b0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hfuf06_c0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_hfuf06_d0a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_hfuf06_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_hfuf06_a");
-    editorCell.addEditorCell(this.createCollection_hfuf06_a0(editorContext, node));
     return editorCell;
   }
 

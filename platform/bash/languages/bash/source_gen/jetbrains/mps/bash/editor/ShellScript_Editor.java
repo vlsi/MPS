@@ -56,14 +56,6 @@ public class ShellScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_jf4pm0_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
-    editorCell.setCellId("Constant_jf4pm0_e0");
-    BashLanguageStyle_StyleSheet.getCommentSymbol(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_jf4pm0_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
     editorCell.setCellId("Constant_jf4pm0_b0");
@@ -79,6 +71,14 @@ public class ShellScript_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_jf4pm0_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
+    editorCell.setCellId("Constant_jf4pm0_e0");
+    BashLanguageStyle_StyleSheet.getCommentSymbol(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
