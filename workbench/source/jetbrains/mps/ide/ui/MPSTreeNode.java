@@ -338,7 +338,11 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
     myTreeMessages.add(message);
     if (updatePresentation) {
-      updatePresentation();
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          updatePresentation();
+        }
+      });
     }
   }
 
@@ -355,7 +359,11 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
       myTreeMessages.add(message);
     }
     if (updatePresentation) {
-      updatePresentation();
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          updatePresentation();
+        }
+      });
     }
   }
 
@@ -368,7 +376,11 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
       myTreeMessages.remove(message);
     }
     if (updatePresentation) {
-      updatePresentation();
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          updatePresentation();
+        }
+      });
     }
   }
 
@@ -381,7 +393,11 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
       }
     }
     if (updatePresentation) {
-      updatePresentation();
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          updatePresentation();
+        }
+      });
     }
   }
 
