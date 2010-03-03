@@ -49,5 +49,6 @@ public class ScopePositionInfo extends PositionInfo {
     VarInfo varInfo = new VarInfo();
     varInfo.setNodeId(node.getId());
     varInfo.setVarName(node.getName());
+    MapSequence.fromMap(this.myVars).put(varInfo.getVarName(), varInfo);
   }
 }
