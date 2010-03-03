@@ -304,6 +304,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test_ab2f0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.test.runtime_bb2f0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.textGen_cb2f0" />
+    <antcall target="MPS-languages.pack.jetbrains.mps.lang.stubs_db2f0" />
     <mkdir dir="${deploy.dir}/MPS/core/languageDesign" />
     <antcall target="MPS-languages.pack.jetbrains.mps.kernel_d5a" />
     <mkdir dir="${deploy.dir}/MPS/core" />
