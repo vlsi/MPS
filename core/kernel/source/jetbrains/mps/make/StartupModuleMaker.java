@@ -50,7 +50,11 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           }
         });
         indicator[0].popState();
-        ClassLoaderManager.getInstance().reloadAll(indicator[0]);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            ClassLoaderManager.getInstance().reloadAll(indicator[0]);
+          }
+        });
       }
     });
   }
