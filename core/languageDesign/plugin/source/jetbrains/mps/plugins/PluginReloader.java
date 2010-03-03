@@ -16,10 +16,12 @@
 package jetbrains.mps.plugins;
 
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
@@ -54,6 +56,15 @@ public class PluginReloader implements ApplicationComponent {
       });
     }
   };
+  private ClassLoaderManager myClassLoaderManager;
+  private ProjectManager myProjectManager;
+  private ApplicationPluginManager myPluginManager;
+
+  public PluginReloader(ClassLoaderManager classLoaderManager,ProjectManager projectManager,ApplicationPluginManager pluginManager) {
+    myClassLoaderManager = classLoaderManager;
+    myProjectManager = projectManager;
+    myPluginManager = pluginManager;
+  }
 
   private void reloadAllPlugins() {
     disposePlugins();
@@ -61,7 +72,7 @@ public class PluginReloader implements ApplicationComponent {
   }
 
   private void loadPlugins() {
-    ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).loadPlugins();
+    myPluginManager.loadPlugins();
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       p.getComponent(ProjectPluginManager.class).loadPlugins();
     }
@@ -79,7 +90,7 @@ public class PluginReloader implements ApplicationComponent {
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       p.getComponent(ProjectPluginManager.class).disposePlugins();
     }
-    ApplicationManager.getApplication().getComponent(ApplicationPluginManager.class).disposePlugins();
+    myPluginManager.disposePlugins();
   }
 
   //----------------COMPONENT STUFF---------------------
@@ -91,12 +102,12 @@ public class PluginReloader implements ApplicationComponent {
   }
 
   public void initComponent() {
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
-    ProjectManager.getInstance().addProjectManagerListener(myProjectListener);
+    myClassLoaderManager.addReloadHandler(myReloadListener);
+    myProjectManager.addProjectManagerListener(myProjectListener);
   }
 
   public void disposeComponent() {
-    ProjectManager.getInstance().removeProjectManagerListener(myProjectListener);
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+    myProjectManager.removeProjectManagerListener(myProjectListener);
+    myClassLoaderManager.removeReloadHandler(myReloadListener);
   }
 }

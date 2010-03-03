@@ -74,13 +74,10 @@ public class SModelRepository implements ApplicationComponent {
       public void run() {
         LOG.debug("Model refresh");
 
-        ModelReloading.markOldStubs();
-
         for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myModelDescriptors)) {
           m.refresh();
         }
 
-        ModelReloading.markNewStubs();
         LOG.debug("Model refresh done");
       }
     });

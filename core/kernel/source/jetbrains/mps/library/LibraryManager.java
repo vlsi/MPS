@@ -59,9 +59,12 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   private MPSModuleOwner myPredefinedLibrariesOwner;
   private boolean myInitializing = false;
   private final Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
+  private ClassLoaderManager myClm;
 
-  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm, StubSolutionsLoader loader) {
+
+  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm, StubSolutionsLoader loader,ClassLoaderManager clm) {
     super(repo);
+    myClm = clm;
   }
 
   @Nls
@@ -71,7 +74,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
 
   @Override
   protected void onAfterModulesRead() {
-    ClassLoaderManager.getInstance().init(LibraryManager.this);
+    myClm.init(LibraryManager.this);
   }
 
   @Override

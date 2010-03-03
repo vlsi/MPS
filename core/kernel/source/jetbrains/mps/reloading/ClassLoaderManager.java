@@ -17,11 +17,13 @@ package jetbrains.mps.reloading;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.reloading.ModelReloading;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
@@ -129,11 +131,15 @@ public class ClassLoaderManager implements ApplicationComponent {
       indicator.setText2("Updating classpath...");
       updateClassPath();
 
+      ModelReloading.markOldStubs();
+
       indicator.setText2("Refreshing models...");
       SModelRepository.getInstance().refreshModels();
 
       indicator.setText2("Updating stub models...");
       updateStubs();
+
+      ModelReloading.markNewStubs();
 
       indicator.setText2("Reloading classes...");
       callReloadHandlers();
