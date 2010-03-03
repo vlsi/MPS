@@ -21,7 +21,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.reloading.StubSolutionsLoader;
+import jetbrains.mps.project.reloading.StubReloadManager;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
@@ -53,7 +53,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   private ClassLoaderManager myClm;
 
 
-  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm, StubSolutionsLoader loader,ClassLoaderManager clm) {
+  public LibraryManager(MPSModuleRepository repo, ModelConstraintsManager cm, StubReloadManager loader,ClassLoaderManager clm) {
     super(repo);
     myClm = clm;
   }

@@ -2,11 +2,18 @@ package jetbrains.mps.project.reloading;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.project.reloading.StubSolutionsLoader;
+import jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.stubs.BaseLibStubDescriptor;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.stubs.StubLocation;
 import org.jetbrains.annotations.NotNull;
@@ -15,6 +22,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StubReloadManager implements ApplicationComponent {
+  private static final Logger LOG = Logger.getLogger(StubReloadManager.class);
+
+  //todo dispose old solutions
+  private List<String> myLoadedSolutions = new ArrayList<String>();
   private MPSModuleRepository myRepos;
   private boolean myFirstReload = true;
 
@@ -39,14 +50,64 @@ public class StubReloadManager implements ApplicationComponent {
       public void run() {
         markOldStubs();
         SModelRepository.getInstance().refreshModels();
-        StubSolutionsLoader.getInstance().loadNewStubSolutions();
+        loadNewStubSolutions();
         updateStubs();
         markNewStubs();
       }
     });
   }
 
-  public void markNewStubs() {
+  public void loadNewStubSolutions() {
+    for (BaseLibStubDescriptor d : createLibDescrs()) {
+      if (myLoadedSolutions.contains(d.getModuleId())) continue;
+
+      myLoadedSolutions.add(d.getModuleId());
+      Solution solution = this.myRepos.getSolution(new ModuleReference(d.getModuleName(), d.getModuleId()));
+      assert solution != null : d.getModuleName();
+
+      SolutionDescriptor sd = solution.getModuleDescriptor();
+
+      for (String path : d.getPaths()) {
+        StubModelsEntry sme = new StubModelsEntry();
+        sme.setIncludedInVCS(false);
+        sme.setPath(path);
+        sme.setManager(d.getManager());
+        sd.getStubModelEntries().add(sme);
+      }
+
+      solution.setSolutionDescriptor(sd, false);
+    }
+  }
+
+  private List<BaseLibStubDescriptor> createLibDescrs() {
+    List<BaseLibStubDescriptor> result = new ArrayList<BaseLibStubDescriptor>();
+
+    List<Language> languages = this.myRepos.getAllLanguages();
+    for (Language l : languages) {
+      SModelDescriptor descriptor = LanguageAspect.STUBS.get(l);
+      if (descriptor == null) continue;
+
+      List<SNode> nodes = descriptor.getSModel().getRoots(new IsInstanceCondition(LibraryStubDescriptor.concept));
+
+      for (SNode node : nodes) {
+        Class descrClass = l.getClass(l.getModuleFqName() + "." + LanguageAspect.STUBS.getName() + "." + node.getName() + "_StubDescriptor");
+        if (descrClass == null) continue;
+
+        try {
+          BaseLibStubDescriptor descr = (BaseLibStubDescriptor) descrClass.newInstance();
+          result.add(descr);
+        } catch (InstantiationException e) {
+          LOG.error(e);
+        } catch (IllegalAccessException e) {
+          LOG.error(e);
+        }
+      }
+    }
+
+    return result;
+  }
+
+  private void markNewStubs() {
     List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptors();
     for (SModelDescriptor m : new ArrayList<SModelDescriptor>(models)) {
       if (!(m instanceof BaseStubModelDescriptor)) continue;
@@ -141,6 +202,6 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-
+    myLoadedSolutions.clear();
   }
 }
