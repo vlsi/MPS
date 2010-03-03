@@ -18,8 +18,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class IterateOverIterable_Intention extends BaseIntention implements Intention {
-  private static SNodePointer SNODE_POINTER__0 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
-  private static SNodePointer SNODE_POINTER_ = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_w1n2qe_a0a1a0a1a2a0a0a1a0a0a0g = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_w1n2qe_a0a1a0a1a2a0a0a0a0a0a7 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
 
   public IterateOverIterable_Intention() {
   }
@@ -91,7 +91,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__0.getNode();
+          referent = SNODE_POINTER_w1n2qe_a0a1a0a1a2a0a0a1a0a0a0g.getNode();
           if (nodeToMatch_6isygg_a0a0a0a0.getReferent("classifier") != referent) {
             return false;
           }
@@ -144,7 +144,7 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
         }
         {
           SNode referent;
-          referent = SNODE_POINTER_.getNode();
+          referent = SNODE_POINTER_w1n2qe_a0a1a0a1a2a0a0a0a0a0a7.getNode();
           if (nodeToMatch_6isygg_a0a0a0.getReferent("classifier") != referent) {
             return false;
           }

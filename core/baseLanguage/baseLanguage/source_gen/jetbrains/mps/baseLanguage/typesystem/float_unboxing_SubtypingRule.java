@@ -16,7 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER__3 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Float");
+  private static SNodePointer SNODE_POINTER_4czxhf_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Float");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -82,7 +82,7 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__3.getNode();
+          referent = SNODE_POINTER_4czxhf_a0a1a0a1a2a0a0a0a0a0a2.getNode();
           if (nodeToMatch_yblmix_a0a.getReferent("classifier") != referent) {
             return false;
           }

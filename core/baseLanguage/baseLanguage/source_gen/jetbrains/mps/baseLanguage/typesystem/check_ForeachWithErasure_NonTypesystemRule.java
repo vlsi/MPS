@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  private static SNodePointer SNODE_POINTER__9 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_aftnu9_a0a1a0a1a2a0a0a0a0a2a0 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
 
   public check_ForeachWithErasure_NonTypesystemRule() {
   }
@@ -80,7 +80,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__9.getNode();
+          referent = SNODE_POINTER_aftnu9_a0a1a0a1a2a0a0a0a0a2a0.getNode();
           if (nodeToMatch_gn1qzs_a0a2a.getReferent("classifier") != referent) {
             return false;
           }

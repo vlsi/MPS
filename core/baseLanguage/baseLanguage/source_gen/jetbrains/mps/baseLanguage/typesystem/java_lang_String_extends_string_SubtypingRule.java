@@ -16,7 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER__8 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~String");
+  private static SNodePointer SNODE_POINTER_cxnqcy_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~String");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -82,7 +82,7 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__8.getNode();
+          referent = SNODE_POINTER_cxnqcy_a0a1a0a1a2a0a0a0a0a0a2.getNode();
           if (nodeToMatch_imi2rc_a0a.getReferent("classifier") != referent) {
             return false;
           }

@@ -17,8 +17,8 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class TestCoercion_Keymap extends EditorCellKeyMap {
-  private static SNodePointer SNODE_POINTER_ = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
-  private static SNodePointer SNODE_POINTER__0 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_b5sqja_a0a1a0a1a2a0a0a1a0a1a5a4a = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER_b5sqja_a0a1a0a1a2a0a0a1a0a3a5a4a = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
 
   public TestCoercion_Keymap() {
     this.setApplicableToEveryModel(true);
@@ -115,7 +115,7 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
           }
           {
             SNode referent;
-            referent = SNODE_POINTER_.getNode();
+            referent = SNODE_POINTER_b5sqja_a0a1a0a1a2a0a0a1a0a1a5a4a.getNode();
             if (nodeToMatch_b5sqja_a0a0a1a5a0a.getReferent("classifier") != referent) {
               return false;
             }
@@ -149,7 +149,7 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
           }
           {
             SNode referent;
-            referent = SNODE_POINTER__0.getNode();
+            referent = SNODE_POINTER_b5sqja_a0a1a0a1a2a0a0a1a0a3a5a4a.getNode();
             if (nodeToMatch_b5sqja_a0a0a3a5a0a.getReferent("classifier") != referent) {
               return false;
             }

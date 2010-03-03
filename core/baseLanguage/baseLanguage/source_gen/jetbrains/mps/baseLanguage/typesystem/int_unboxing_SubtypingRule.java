@@ -16,7 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class int_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER__4 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Integer");
+  private static SNodePointer SNODE_POINTER_nhleq2_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Integer");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -82,7 +82,7 @@ public class int_unboxing_SubtypingRule extends SubtypingRule_Runtime implements
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__4.getNode();
+          referent = SNODE_POINTER_nhleq2_a0a1a0a1a2a0a0a0a0a0a2.getNode();
           if (nodeToMatch_pyyrzk_a0a.getReferent("classifier") != referent) {
             return false;
           }

@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 public class ClassifierType_Behavior {
   private static Class[] PARAMETERS_9011026350741578236 = {SNode.class};
-  private static SNodePointer SNODE_POINTER_ = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Object");
+  private static SNodePointer SNODE_POINTER_hz3823_a0a1a0a1a2a0a0a0a1a1a0a0a6 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Object");
 
   public static void init(SNode thisNode) {
   }
@@ -192,7 +192,7 @@ public class ClassifierType_Behavior {
         }
         {
           SNode referent;
-          referent = SNODE_POINTER_.getNode();
+          referent = SNODE_POINTER_hz3823_a0a1a0a1a2a0a0a0a1a1a0a0a6.getNode();
           if (nodeToMatch_hz3823_a0a0a0a0f.getReferent("classifier") != referent) {
             return false;
           }

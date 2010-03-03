@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule extends ComparisonRule_Runtime {
-  private static SNodePointer SNODE_POINTER__2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
+  private static SNodePointer SNODE_POINTER_vbthi0_a0a1a0a1a2a0a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1083171877298");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
 
@@ -55,7 +55,7 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__2.getNode();
+          referent = SNODE_POINTER_vbthi0_a0a1a0a1a2a0a0a0a0a0a3.getNode();
           if (nodeToMatch_ityt7t_a0a.getReferent("concept") != referent) {
             return false;
           }

@@ -16,7 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_ = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Boolean");
+  private static SNodePointer SNODE_POINTER_9ehkah_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Boolean");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -82,7 +82,7 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
         }
         {
           SNode referent;
-          referent = SNODE_POINTER_.getNode();
+          referent = SNODE_POINTER_9ehkah_a0a1a0a1a2a0a0a0a0a0a2.getNode();
           if (nodeToMatch_7vgvj3_a0a.getReferent("classifier") != referent) {
             return false;
           }

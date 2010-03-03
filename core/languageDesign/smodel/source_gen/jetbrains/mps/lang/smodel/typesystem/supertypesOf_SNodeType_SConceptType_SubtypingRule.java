@@ -16,7 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER__1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
+  private static SNodePointer SNODE_POINTER_6gcjzy_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -82,7 +82,7 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__1.getNode();
+          referent = SNODE_POINTER_6gcjzy_a0a1a0a1a2a0a0a0a0a0a2.getNode();
           if (nodeToMatch_auyr2c_a0a.getReferent("concept") != referent) {
             return false;
           }

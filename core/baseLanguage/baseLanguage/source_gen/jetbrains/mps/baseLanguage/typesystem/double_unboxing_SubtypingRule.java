@@ -16,7 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER__1 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Double");
+  private static SNodePointer SNODE_POINTER_jy4zax_a0a1a0a1a2a0a0a0a0a0a2 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Double");
 
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
@@ -82,7 +82,7 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
         }
         {
           SNode referent;
-          referent = SNODE_POINTER__1.getNode();
+          referent = SNODE_POINTER_jy4zax_a0a1a0a1a2a0a0a0a0a0a2.getNode();
           if (nodeToMatch_31y3xb_a0a.getReferent("classifier") != referent) {
             return false;
           }
