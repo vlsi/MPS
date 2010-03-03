@@ -17,9 +17,9 @@ package jetbrains.mps.reloading;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.library.LibraryManager;
+import jetbrains.mps.library.StubSolutionsLoader;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -154,6 +154,7 @@ public class ClassLoaderManager implements ApplicationComponent {
   private void updateStubs() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        StubSolutionsLoader.getInstance().loadNewStubSolutions();
         for (IModule m : myRepository.getAllModules()) {
           m.updateStubs();
         }
@@ -161,7 +162,7 @@ public class ClassLoaderManager implements ApplicationComponent {
     });
   }
 
-  public void updateClassPath() {
+  private void updateClassPath() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         synchronized (myLock) {
