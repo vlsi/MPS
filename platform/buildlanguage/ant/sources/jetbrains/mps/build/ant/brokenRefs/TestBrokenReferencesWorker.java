@@ -41,26 +41,6 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     return new TeamCityMessageFormat();
   }
 
-  public void work() {
-    setupEnvironment();
-
-    Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
-
-    for (File file : mpsProjects.keySet()) {
-      if (!file.getName().endsWith(MPSExtentions.DOT_MPS_PROJECT)) continue;
-
-      final MPSProject p = TestMain.loadProject(file);
-      info("Loaded project " + p);
-
-      executeTask(p, new ObjectsToProcess(Collections.singleton(p), new java.util.HashSet<IModule>(), new java.util.HashSet<SModelDescriptor>()));
-
-      disposeProject(p);
-      dispose();
-    }
-
-    showStatistic();
-  }
-
   protected void executeTask(MPSProject project, final ObjectsToProcess go) {
     for (MPSProject p : go.getProjects()) {
       extractModels(go.getModels(), p);
