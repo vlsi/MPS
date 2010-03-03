@@ -193,14 +193,11 @@ public class DebugSession {
 
   public static interface SessionChangeListener {
     public void stateChanged(DebugSession session);
-
     public void paused(DebugSession session);
-
     public void resumed(DebugSession session);
   }
 
   // This class is immutable
-  // DO NOT STORE LINKS TO IT (EXCEPT IN DebugSession.myUiState)
   public class UiState {
     @Nullable
     private final SuspendContext myContext;
