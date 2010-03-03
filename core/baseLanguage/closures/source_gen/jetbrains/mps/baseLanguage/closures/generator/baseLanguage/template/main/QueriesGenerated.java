@@ -47,7 +47,6 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.PrepStatementUtil;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.WrappersUtils;
-import java.util.Iterator;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -4004,52 +4003,6 @@ public class QueriesGenerated {
           FunctionTypeUtil.prepAdaptations(_context, SLinkOperations.getTarget(pdecl, "type", true), arg);
         }
         idx++;
-      }
-    }
-  }
-
-  public static void mappingScript_CodeBlock_1229012655006(final IOperationContext operationContext, final MappingScriptContext _context) {
-    for (SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
-      List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(cl, "body", true), "statement", true);
-      List<SNode> allYas = ListSequence.fromList(new ArrayList<SNode>());
-      List<SNode> allYs = ListSequence.fromList(new ArrayList<SNode>());
-      ListSequence.fromList(allYas).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement", false, new String[]{})));
-      ListSequence.fromList(allYs).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(cl, "jetbrains.mps.baseLanguage.closures.structure.YieldStatement", false, new String[]{})));
-      for (Iterator<SNode> it = ListSequence.fromList(allYas).iterator(); it.hasNext();) {
-        if (SNodeOperations.getAncestorWhereConceptInList(it.next(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false) != cl) {
-          it.remove();
-        }
-      }
-      for (Iterator<SNode> it = ListSequence.fromList(allYs).iterator(); it.hasNext();) {
-        if (SNodeOperations.getAncestorWhereConceptInList(it.next(), new String[]{"jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral","jetbrains.mps.baseLanguage.structure.IStatementListContainer","jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock"}, false, false) != cl) {
-          it.remove();
-        }
-      }
-      switch (ListSequence.fromList(allYas).count()) {
-        case 0:
-          break;
-        case 1:
-          if (ListSequence.fromList(allYas).getElement(0) == ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1) && ListSequence.fromList(allYs).isEmpty()) {
-            SNode yas = SNodeOperations.cast(ListSequence.fromList(allYas).getElement(0), "jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement");
-            SNode rs = SNodeOperations.replaceWithNewChild(yas, "jetbrains.mps.baseLanguage.structure.ReturnStatement");
-            SLinkOperations.setTarget(rs, "expression", SNodeOperations.detachNode(SLinkOperations.getTarget(yas, "expression", true)), true);
-            break;
-          }
-          //  fall through 
-        default:
-          for (SNode yas : allYas) {
-            SNode elementType = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(yas, "expression", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true), "elementType", true);
-            SNode fes = SNodeOperations.replaceWithNewChild(yas, "jetbrains.mps.baseLanguage.structure.ForeachStatement");
-            //  now fes.body.statement contains a copy of yas. 
-            ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(fes, "body", true), "statement", true)).clear();
-            SLinkOperations.setTarget(fes, "iterable", SNodeOperations.detachNode(SLinkOperations.getTarget(yas, "expression", true)), true);
-            SNode var = SLinkOperations.setNewChild(fes, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-            SPropertyOperations.set(var, "name", "_yield");
-            SLinkOperations.setTarget(var, "type", SNodeOperations.copyNode(elementType), true);
-            SNode ys = SLinkOperations.addNewChild(SLinkOperations.getTarget(fes, "body", true), "statement", "jetbrains.mps.baseLanguage.closures.structure.YieldStatement");
-            SNode lvr = SLinkOperations.setNewChild(ys, "expression", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
-            SLinkOperations.setTarget(lvr, "variableDeclaration", var, false);
-          }
       }
     }
   }
