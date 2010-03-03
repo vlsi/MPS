@@ -22,7 +22,7 @@ public class DebugSession {
 
   private ExecutionState myExecutionState = ExecutionState.WaitingAttach;
   private ProcessHandler myProcessHandler;
-  private IHighLevelFunctionsProvider myProvider;
+  private IGoodFramesProvider myProvider;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor) {
     myEventsProcessor = eventsProcessor;
@@ -146,12 +146,12 @@ public class DebugSession {
     }
   }
 
-  public void setHighLevelFunctionsProvider(IHighLevelFunctionsProvider dumbHighLevelFunctionsProvider) {
+  public void setHighLevelFunctionsProvider(IGoodFramesProvider dumbHighLevelFunctionsProvider) {
     myProvider = dumbHighLevelFunctionsProvider;
   }
 
   @NotNull
-  public IHighLevelFunctionsProvider getProvider() {
+  public IGoodFramesProvider getProvider() {
     return myProvider;
   }
 
