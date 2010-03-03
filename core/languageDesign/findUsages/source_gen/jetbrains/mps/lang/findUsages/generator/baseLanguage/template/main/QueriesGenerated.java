@@ -4,24 +4,16 @@ package jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_1197207280632(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "forConcept", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1197207280707(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(_context.getNode());
-  }
-
   public static Object propertyMacro_GetPropertyValue_1200410510458(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return FinderDeclaration_Behavior.call_getGeneratedClassLongName_1213877240120(_context.getNode());
   }
@@ -34,16 +26,16 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "longDescription");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1197207280632(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "forConcept", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1197207280707(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(_context.getNode());
+  }
+
   public static Object propertyMacro_GetPropertyValue_1212240333211(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return FinderDeclaration_Behavior.call_getGeneratedClassLongName_1213877240120(SLinkOperations.getTarget(_context.getNode(), "finder", false));
-  }
-
-  public static boolean ifMacro_Condition_1212240333229(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "queryScope", true) == null;
-  }
-
-  public static boolean ifMacro_Condition_1212240333248(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.findUsages.structure.FindBlock", false, false) != null;
   }
 
   public static boolean ifMacro_Condition_1216396960791(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -58,20 +50,28 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1216397346723(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "categorizeBlock", true) != null;
-  }
-
   public static boolean ifMacro_Condition_1218978335315(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "searchedNodesBlock", true) != null;
   }
 
-  public static SNode sourceNodeQuery_1197207280679(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true), "body", true);
+  public static boolean ifMacro_Condition_1216397346723(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "categorizeBlock", true) != null;
   }
 
-  public static SNode sourceNodeQuery_1206462965299(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "categorizeBlock", true), "body", true);
+  public static boolean ifMacro_Condition_1212240333229(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "queryScope", true) == null;
+  }
+
+  public static boolean ifMacro_Condition_1212240333248(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.findUsages.structure.FindBlock", false, false) != null;
+  }
+
+  public static SNode sourceNodeQuery_1216396990767(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isVisibleBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1197207280679(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1206533715312(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -80,6 +80,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1206533783913(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "searchedNodesBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1206462965299(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "categorizeBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1206533809816(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -96,9 +100,5 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1212240333240(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "queryScope", true);
-  }
-
-  public static SNode sourceNodeQuery_1216396990767(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isVisibleBlock", true), "body", true);
   }
 }

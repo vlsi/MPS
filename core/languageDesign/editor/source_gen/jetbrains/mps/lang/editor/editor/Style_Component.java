@@ -50,18 +50,6 @@ public class Style_Component extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createCollection_zdjsuv_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_zdjsuv_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createIndentCell_zdjsuv_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_zdjsuv_b1a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_zdjsuv_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zdjsuv_a0");
@@ -72,6 +60,18 @@ public class Style_Component extends AbstractCellProvider {
     editorCell.addEditorCell(this.createConstant_zdjsuv_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_zdjsuv_b0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_zdjsuv_c0a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_zdjsuv_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_zdjsuv_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createIndentCell_zdjsuv_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_zdjsuv_b1a(editorContext, node));
     return editorCell;
   }
 

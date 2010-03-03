@@ -81,6 +81,9 @@ __switch__:
                       this.__CP__ = 9;
                       this.yield(_5_output);
                       return true;
+                    case 0:
+                      this.__CP__ = 2;
+                      break;
                     case 2:
                       this._5_output = genctx.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(it, genctx.getOutputNode(), "generatedClass");
                       this.__CP__ = 6;
@@ -90,9 +93,6 @@ __switch__:
                       break;
                     case 9:
                       throw new StopIteratingException();
-                    case 0:
-                      this.__CP__ = 2;
-                      break;
                     default:
                       break __loop__;
                   }

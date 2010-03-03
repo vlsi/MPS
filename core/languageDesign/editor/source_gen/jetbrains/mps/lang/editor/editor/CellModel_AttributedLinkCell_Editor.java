@@ -62,14 +62,6 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_54f2vs_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed link");
-    editorCell.setCellId("Constant_54f2vs_c0");
-    Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_54f2vs_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[//");
     editorCell.setCellId("Constant_54f2vs_b0");
@@ -79,6 +71,14 @@ public class CellModel_AttributedLinkCell_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.DRAW_BORDER, true);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_54f2vs_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed link");
+    editorCell.setCellId("Constant_54f2vs_c0");
+    Styles_StyleSheet.getAttributedCellLabel(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }

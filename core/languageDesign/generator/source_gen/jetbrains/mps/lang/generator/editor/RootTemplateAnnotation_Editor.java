@@ -63,18 +63,6 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1qmre8_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input");
-    editorCell.setCellId("Constant_1qmre8_a1a0");
-    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_1qmre8_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root template");
     editorCell.setCellId("Constant_1qmre8_a0a");
@@ -82,6 +70,18 @@ public class RootTemplateAnnotation_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_1qmre8_a1a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input");
+    editorCell.setCellId("Constant_1qmre8_a1a0");
+    Styles_StyleSheet.getGeneratorKeyWord(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.setDefaultText("");
     return editorCell;

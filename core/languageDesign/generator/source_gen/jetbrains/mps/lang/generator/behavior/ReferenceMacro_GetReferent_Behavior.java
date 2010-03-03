@@ -41,15 +41,15 @@ public class ReferenceMacro_GetReferent_Behavior {
     public QuotationClass_mxwyp3_a0a7a1() {
     }
 
-    public SNode createNode(Object parameter_mxwyp3_a0a0a7a0) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_mxwyp3_a0a7a0 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_mxwyp3_a0a7a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_mxwyp3_a0a7a0 = quotedNode_mxwyp3_a0a7a0;
-        quotedNode1_mxwyp3_a0a7a0.setReferent("concept", (SNode) parameter_mxwyp3_a0a0a7a0);
-        result = quotedNode1_mxwyp3_a0a7a0;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -59,27 +59,27 @@ public class ReferenceMacro_GetReferent_Behavior {
     public QuotationClass_mxwyp3_a0a0j0b() {
     }
 
-    public SNode createNode(Object parameter_mxwyp3_a0a0a0a9a0) {
+    public SNode createNode(Object parameter_7) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_mxwyp3_a0a0j0a = null;
-      SNode quotedNode_mxwyp3_a0a0a9a0 = null;
-      SNode quotedNode_mxwyp3_b0a0a9a0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
       {
-        quotedNode_mxwyp3_a0a0j0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_mxwyp3_a0a0j0a = quotedNode_mxwyp3_a0a0j0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
         {
-          quotedNode_mxwyp3_a0a0a9a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_mxwyp3_a0a0a9a0 = quotedNode_mxwyp3_a0a0a9a0;
-          quotedNode1_mxwyp3_a0a0a9a0.setReferent("concept", (SNode) parameter_mxwyp3_a0a0a0a9a0);
-          quotedNode_mxwyp3_a0a0j0a.addChild("argument", quotedNode1_mxwyp3_a0a0a9a0);
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode1_5.setReferent("concept", (SNode) parameter_7);
+          quotedNode_1.addChild("argument", quotedNode1_5);
         }
         {
-          quotedNode_mxwyp3_b0a0a9a0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_mxwyp3_b0a0a9a0 = quotedNode_mxwyp3_b0a0a9a0;
-          quotedNode_mxwyp3_a0a0j0a.addChild("argument", quotedNode1_mxwyp3_b0a0a9a0);
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_3;
+          quotedNode_1.addChild("argument", quotedNode1_6);
         }
-        result = quotedNode1_mxwyp3_a0a0j0a;
+        result = quotedNode1_4;
       }
       return result;
     }

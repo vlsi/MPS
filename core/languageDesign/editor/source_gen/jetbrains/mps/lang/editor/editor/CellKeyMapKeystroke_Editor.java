@@ -127,6 +127,15 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public static class CellKeyMapKeystroke_modifiers_cellMenu_a0b0 extends AbstractCellMenuPart_PropertyValues {
+    public CellKeyMapKeystroke_modifiers_cellMenu_a0b0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), EditorCellKeyMap.KEY_MODIFIERS_NONE, EditorCellKeyMap.KEY_MODIFIERS_CTRL, EditorCellKeyMap.KEY_MODIFIERS_ALT, EditorCellKeyMap.KEY_MODIFIERS_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_ALT_SHIFT);
+    }
+  }
+
   public static class CellKeyMapKeystroke_keycode_cellMenu_a0d0 extends AbstractCellMenuPart_PropertyValues {
     public CellKeyMapKeystroke_keycode_cellMenu_a0d0() {
     }
@@ -135,15 +144,6 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
       List<String> keycodes = ListSequence.fromListAndArray(new ArrayList<String>(), EditorCellKeyMap.KEY_CODE_DIGIT, EditorCellKeyMap.KEY_CODE_LETTER, EditorCellKeyMap.KEY_CODE_LETTER_OR_DIGIT, EditorCellKeyMap.KEY_CODE_SPACE, EditorCellKeyMap.KEY_CODE_CHAR);
       ListSequence.fromList(keycodes).addSequence(ListSequence.fromList(EditorCellKeyMap.getVirtualKeycodes()));
       return keycodes;
-    }
-  }
-
-  public static class CellKeyMapKeystroke_modifiers_cellMenu_a0b0 extends AbstractCellMenuPart_PropertyValues {
-    public CellKeyMapKeystroke_modifiers_cellMenu_a0b0() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), EditorCellKeyMap.KEY_MODIFIERS_NONE, EditorCellKeyMap.KEY_MODIFIERS_CTRL, EditorCellKeyMap.KEY_MODIFIERS_ALT, EditorCellKeyMap.KEY_MODIFIERS_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_ALT_SHIFT);
     }
   }
 }

@@ -34,14 +34,14 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_jiideg_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new CopyScrNodeMacro_inspector(node);
+  private EditorCell createComponent_jiideg_b0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new NodeMacro_postfix(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createComponent_jiideg_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new NodeMacro_postfix(node);
+  private EditorCell createComponent_jiideg_a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new CopyScrNodeMacro_inspector(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }

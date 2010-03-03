@@ -47,11 +47,12 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_e7cx8x_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_e7cx8x_a_0");
-    editorCell.addEditorCell(this.createConstant_e7cx8x_a0_0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_e7cx8x_b0(editorContext, node));
+  private EditorCell createCollection_e7cx8x_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_e7cx8x_c0");
+    if (renderingCondition_e7cx8x_a0c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_e7cx8x_a2a(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -68,12 +69,11 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_e7cx8x_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_e7cx8x_c0");
-    if (renderingCondition_e7cx8x_a0c0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_e7cx8x_a2a(editorContext, node));
-    }
+  private EditorCell createCollection_e7cx8x_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_e7cx8x_a_0");
+    editorCell.addEditorCell(this.createConstant_e7cx8x_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_e7cx8x_b0(editorContext, node));
     return editorCell;
   }
 
@@ -101,20 +101,6 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_e7cx8x_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$$");
-    editorCell.setCellId("Constant_e7cx8x_a0_0");
-    Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
-    }
-    MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new NodeMacro_Editor.NodeMacro_Editor_replaceWith_NodeMacro_cellMenu_a0a0()}));
-    return editorCell;
-  }
-
   private EditorCell createConstant_e7cx8x_a0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_e7cx8x_a0c0");
@@ -134,6 +120,20 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_e7cx8x_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$$");
+    editorCell.setCellId("Constant_e7cx8x_a0_0");
+    Styles_StyleSheet.getMacroStart(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
+    }
+    MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPart[]{new NodeMacro_Editor.NodeMacro_Editor_replaceWith_NodeMacro_cellMenu_a0a0()}));
     return editorCell;
   }
 

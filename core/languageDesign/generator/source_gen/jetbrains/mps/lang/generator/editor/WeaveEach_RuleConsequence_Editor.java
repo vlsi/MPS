@@ -66,17 +66,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_hfot0g_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply");
-    editorCell.setCellId("Constant_hfot0g_a1a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_hfot0g_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_hfot0g_b0a");
@@ -84,6 +73,17 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "punctuation");
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_hfot0g_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply");
+    editorCell.setCellId("Constant_hfot0g_a1a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
     }
     editorCell.setDefaultText("");
     return editorCell;

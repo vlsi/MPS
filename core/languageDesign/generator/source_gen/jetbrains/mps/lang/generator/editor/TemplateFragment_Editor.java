@@ -37,21 +37,9 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.addEditorCell(this.createConstant_73o0fl_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_73o0fl_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_73o0fl_b0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_73o0fl_c0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_73o0fl_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_73o0fl_a_0");
-    editorCell.addEditorCell(this.createConstant_73o0fl_a0(editorContext, node));
-    if (renderingCondition_73o0fl_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefCell_73o0fl_b0(editorContext, node));
-    }
-    editorCell.addEditorCell(this.createAttributedNodeCell_73o0fl_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_73o0fl_d0(editorContext, node));
     return editorCell;
   }
 
@@ -68,19 +56,6 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_73o0fl_b2a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_73o0fl_b2a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_73o0fl_a1c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_73o0fl_b1c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_73o0fl_c1c0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_73o0fl_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_73o0fl_a2a");
@@ -94,37 +69,34 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_73o0fl_b2a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_73o0fl_b2a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_73o0fl_a1c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_73o0fl_b1c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_73o0fl_c1c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_73o0fl_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_73o0fl_a_0");
+    editorCell.addEditorCell(this.createConstant_73o0fl_a0_0(editorContext, node));
+    if (renderingCondition_73o0fl_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefCell_73o0fl_b0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createAttributedNodeCell_73o0fl_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_73o0fl_d0(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_73o0fl_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<TF");
-    editorCell.setCellId("Constant_73o0fl_a0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
-    }
-    MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_73o0fl_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "TF>");
-    editorCell.setCellId("Constant_73o0fl_d0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, true);
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
-      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
-    }
-    MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_73o0fl_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "template fragment");
-    editorCell.setCellId("Constant_73o0fl_a0_0");
+    editorCell.setCellId("Constant_73o0fl_a0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -138,6 +110,24 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_73o0fl_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_73o0fl_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_73o0fl_a0c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
+    editorCell.setCellId("Constant_73o0fl_a0c0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_73o0fl_b0c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_73o0fl_b0c0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -168,20 +158,30 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_73o0fl_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
-    editorCell.setCellId("Constant_73o0fl_a0c0");
+  private EditorCell createConstant_73o0fl_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<TF");
+    editorCell.setCellId("Constant_73o0fl_a0_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, true);
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
+      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
+    }
+    MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_73o0fl_b0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_73o0fl_b0c0");
+  private EditorCell createConstant_73o0fl_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "TF>");
+    editorCell.setCellId("Constant_73o0fl_d0");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, true);
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
+      style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
     }
+    MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -41,13 +41,13 @@ public class ActionParameterDeclaration_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_ax10d1_a0a0a0a1 = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_ax10d1_a0a0a0a1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_ax10d1_a0a0a0a1 = quotedNode_ax10d1_a0a0a0a1;
-        quotedNode1_ax10d1_a0a0a0a1.addReference(SReference.create("classifier", quotedNode1_ax10d1_a0a0a0a1, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys")));
-        quotedNode1_ax10d1_a0a0a0a1.addReference(SReference.create("variableDeclaration", quotedNode1_ax10d1_a0a0a0a1, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys.NODE")));
-        result = quotedNode1_ax10d1_a0a0a0a1;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys")));
+        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys.NODE")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -60,13 +60,13 @@ public class ActionParameterDeclaration_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_ax10d1_a0a0a0a0b = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_ax10d1_a0a0a0a0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_ax10d1_a0a0a0a0b = quotedNode_ax10d1_a0a0a0a0b;
-        quotedNode1_ax10d1_a0a0a0a0b.addReference(SReference.create("classifier", quotedNode1_ax10d1_a0a0a0a0b, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys")));
-        quotedNode1_ax10d1_a0a0a0a0b.addReference(SReference.create("variableDeclaration", quotedNode1_ax10d1_a0a0a0a0b, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys.CONTEXT_MODEL")));
-        result = quotedNode1_ax10d1_a0a0a0a0b;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys")));
+        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys.CONTEXT_MODEL")));
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -79,13 +79,13 @@ public class ActionParameterDeclaration_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_ax10d1_a0a0a1a0b = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_ax10d1_a0a0a1a0b = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_ax10d1_a0a0a1a0b = quotedNode_ax10d1_a0a0a1a0b;
-        quotedNode1_ax10d1_a0a0a1a0b.addReference(SReference.create("classifier", quotedNode1_ax10d1_a0a0a1a0b, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys")));
-        quotedNode1_ax10d1_a0a0a1a0b.addReference(SReference.create("variableDeclaration", quotedNode1_ax10d1_a0a0a1a0b, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys.NODES")));
-        result = quotedNode1_ax10d1_a0a0a1a0b;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys")));
+        quotedNode1_2.addReference(SReference.create("variableDeclaration", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)"), SNodeId.fromString("~MPSDataKeys.NODES")));
+        result = quotedNode1_2;
       }
       return result;
     }

@@ -117,6 +117,17 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_8hdu2g_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_8hdu2g_b0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createConstant_8hdu2g_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Constant cell:");
     editorCell.setCellId("Constant_8hdu2g_c0");
@@ -137,17 +148,6 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text*");
     editorCell.setCellId("Constant_8hdu2g_a1d0");
     Styles_StyleSheet.getProperty(editorCell).apply(editorCell);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_8hdu2g_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_8hdu2g_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -327,12 +327,12 @@ public class CellModel_Constant_Editor extends DefaultNodeEditor {
     return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
   }
 
-  private static boolean _StyleParameter_QueryFunction_8hdu2g_a5b0(SNode node, EditorContext editorContext) {
-    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
-  }
-
   private static int _StyleParameter_QueryFunction_8hdu2g_a4b0(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getFontSize_1221216397365(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_8hdu2g_a5b0(SNode node, EditorContext editorContext) {
+    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
   }
 
   private static boolean _StyleParameter_QueryFunction_8hdu2g_a6b0(SNode node, EditorContext editorContext) {

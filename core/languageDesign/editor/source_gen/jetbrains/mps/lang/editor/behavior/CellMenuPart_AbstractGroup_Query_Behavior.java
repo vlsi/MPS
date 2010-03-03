@@ -30,28 +30,28 @@ public class CellMenuPart_AbstractGroup_Query_Behavior {
     public QuotationClass_b08ikr_a0d0b() {
     }
 
-    public SNode createNode(Object parameter_b08ikr_a0a0a3a0) {
+    public SNode createNode(Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_b08ikr_a0d0a = null;
-      SNode quotedNode_b08ikr_a0a3a0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
       {
-        quotedNode_b08ikr_a0d0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_b08ikr_a0d0a = quotedNode_b08ikr_a0d0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
         {
-          quotedNode_b08ikr_a0a3a0 = (SNode) parameter_b08ikr_a0a0a3a0;
-          SNode quotedNode1_b08ikr_a0a3a0;
-          if (_parameterValues_129834374.contains(quotedNode_b08ikr_a0a3a0)) {
-            quotedNode1_b08ikr_a0a3a0 = CopyUtil.copy(quotedNode_b08ikr_a0a3a0);
+          quotedNode_2 = (SNode) parameter_5;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = CopyUtil.copy(quotedNode_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_b08ikr_a0a3a0);
-            quotedNode1_b08ikr_a0a3a0 = quotedNode_b08ikr_a0a3a0;
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
           }
-          if (quotedNode1_b08ikr_a0a3a0 != null) {
-            quotedNode_b08ikr_a0d0a.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_b08ikr_a0a3a0));
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
-        result = quotedNode1_b08ikr_a0d0a;
+        result = quotedNode1_3;
       }
       return result;
     }

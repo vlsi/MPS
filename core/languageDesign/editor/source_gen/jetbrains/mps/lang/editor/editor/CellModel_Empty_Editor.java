@@ -17,32 +17,32 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class CellModel_Empty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_uq4f57_a(editorContext, node);
-  }
-
-  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_uq4f57_a_0(editorContext, node);
   }
 
-  private EditorCell createCollection_uq4f57_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_uq4f57_a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.DRAW_BORDER, true);
-    }
-    editorCell.addEditorCell(this.createConceptProperty_uq4f57_a0(editorContext, node));
-    return editorCell;
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_uq4f57_a(editorContext, node);
   }
 
-  private EditorCell createCollection_uq4f57_a_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_uq4f57_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_uq4f57_a_0");
+    editorCell.setCellId("Collection_uq4f57_a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createComponent_uq4f57_a0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_uq4f57_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_uq4f57_a_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.DRAW_BORDER, true);
+    }
+    editorCell.addEditorCell(this.createConceptProperty_uq4f57_a0(editorContext, node));
     return editorCell;
   }
 

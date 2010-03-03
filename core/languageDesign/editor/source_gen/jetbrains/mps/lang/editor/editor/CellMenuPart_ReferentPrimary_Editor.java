@@ -10,8 +10,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -26,18 +26,6 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_rsvjao_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_rsvjao_b0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_rsvjao_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_rsvjao_b1a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_rsvjao_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rsvjao_a0");
@@ -49,15 +37,15 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_rsvjao_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no customization needed");
-    editorCell.setCellId("Constant_rsvjao_b1a");
+  private EditorCell createCollection_rsvjao_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_rsvjao_b0");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+      style.set(StyleAttributes.SELECTABLE, false);
     }
-    editorCell.setDefaultText("");
+    editorCell.addEditorCell(this.createConstant_rsvjao_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rsvjao_b1a(editorContext, node));
     return editorCell;
   }
 
@@ -79,6 +67,18 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_rsvjao_b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no customization needed");
+    editorCell.setCellId("Constant_rsvjao_b1a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
     }
     editorCell.setDefaultText("");
     return editorCell;

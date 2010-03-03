@@ -24,29 +24,16 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_c84kqv_a_0(editorContext, node);
-  }
-
-  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_c84kqv_a(editorContext, node);
   }
 
-  private EditorCell createCollection_c84kqv_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_c84kqv_a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_c84kqv_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_c84kqv_b0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_c84kqv_c0(editorContext, node));
-    return editorCell;
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_c84kqv_a_0(editorContext, node);
   }
 
-  private EditorCell createCollection_c84kqv_a_0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_c84kqv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_c84kqv_a_0");
+    editorCell.setCellId("Collection_c84kqv_a");
     editorCell.addEditorCell(this.createCollection_c84kqv_a0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_c84kqv_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_c84kqv_c0(editorContext, node));
@@ -79,18 +66,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_c84kqv_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_c84kqv_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_c84kqv_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_c84kqv_b2a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_c84kqv_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c84kqv_b1a");
@@ -103,9 +78,64 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_c84kqv_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_c84kqv_a_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_c84kqv_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_c84kqv_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_c84kqv_c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_c84kqv_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_c84kqv_c0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_c84kqv_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_c84kqv_b2a(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createComponent_c84kqv_a0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new BaseMappingRule_premise(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createConstant_c84kqv_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
+    editorCell.setCellId("Constant_c84kqv_a1a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_c84kqv_b1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_c84kqv_b1b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_c84kqv_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_c84kqv_c0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.EDITABLE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    }
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -133,39 +163,9 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_c84kqv_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
-    editorCell.setCellId("Constant_c84kqv_a1a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_c84kqv_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_c84kqv_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    }
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_c84kqv_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_c84kqv_a2a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_c84kqv_b1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_c84kqv_b1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -175,24 +175,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     provider.setRole("ruleConsequence");
     provider.setNoTargetText("<no ruleConsequence>");
     EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefCell_c84kqv_b2a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("labelDeclaration");
-    provider.setNoTargetText("<no labelDeclaration>");
-    EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Reduction_MappingRule_Editor._Inline_c84kqv_a1c0());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -223,12 +205,30 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createRefCell_c84kqv_b2a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("labelDeclaration");
+    provider.setNoTargetText("<no labelDeclaration>");
+    EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new Reduction_MappingRule_Editor._Inline_c84kqv_a1c0());
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private static boolean renderingCondition_c84kqv_a1b0(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
 
-  public static class _Inline_c84kqv_a1c0 extends InlineCellProvider {
-    public _Inline_c84kqv_a1c0() {
+  public static class _Inline_c84kqv_a0b1a extends InlineCellProvider {
+    public _Inline_c84kqv_a0b1a() {
       super();
     }
 
@@ -237,10 +237,10 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_c84kqv_a0b2a(editorContext, node);
+      return this.createProperty_c84kqv_a0a1b0(editorContext, node);
     }
 
-    private EditorCell createProperty_c84kqv_a0b2a(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_c84kqv_a0a1b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -264,8 +264,8 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class _Inline_c84kqv_a0b1a extends InlineCellProvider {
-    public _Inline_c84kqv_a0b1a() {
+  public static class _Inline_c84kqv_a1c0 extends InlineCellProvider {
+    public _Inline_c84kqv_a1c0() {
       super();
     }
 
@@ -274,10 +274,10 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_c84kqv_a0a1b0(editorContext, node);
+      return this.createProperty_c84kqv_a0b2a(editorContext, node);
     }
 
-    private EditorCell createProperty_c84kqv_a0a1b0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_c84kqv_a0b2a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

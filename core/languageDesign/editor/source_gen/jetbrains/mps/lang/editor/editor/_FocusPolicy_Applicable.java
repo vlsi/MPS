@@ -30,6 +30,15 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     return this.createCollection_pmdlax_a(editorContext, node);
   }
 
+  private EditorCell createCollection_pmdlax_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_pmdlax_a");
+    if (renderingCondition_pmdlax_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_pmdlax_a0(editorContext, node));
+    }
+    return editorCell;
+  }
+
   private EditorCell createCollection_pmdlax_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_pmdlax_a0");
@@ -50,15 +59,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createRefNode_pmdlax_a1a0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_pmdlax_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_pmdlax_a");
-    if (renderingCondition_pmdlax_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_pmdlax_a0(editorContext, node));
-    }
     return editorCell;
   }
 

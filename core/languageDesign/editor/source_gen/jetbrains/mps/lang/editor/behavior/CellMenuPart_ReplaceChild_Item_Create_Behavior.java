@@ -29,15 +29,15 @@ public class CellMenuPart_ReplaceChild_Item_Create_Behavior {
     public QuotationClass_jf8h0a_a0e0b() {
     }
 
-    public SNode createNode(Object parameter_jf8h0a_a0a0e0a) {
+    public SNode createNode(Object parameter_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_jf8h0a_a0e0a = null;
+      SNode quotedNode_1 = null;
       {
-        quotedNode_jf8h0a_a0e0a = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_jf8h0a_a0e0a = quotedNode_jf8h0a_a0e0a;
-        quotedNode1_jf8h0a_a0e0a.setReferent("concept", (SNode) parameter_jf8h0a_a0a0e0a);
-        result = quotedNode1_jf8h0a_a0e0a;
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("concept", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }

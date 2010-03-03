@@ -25,9 +25,9 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -121,28 +121,6 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class FontStyleStyleClassItem_generic_cellMenu_a0d0 extends AbstractCellMenuPart_Generic_Group {
-    public FontStyleStyleClassItem_generic_cellMenu_a0d0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"));
-    }
-
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext);
-    }
-
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
-      SPropertyOperations.set(node, "style", SEnumOperations.getEnumMemberValue(parameterObject));
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
-  }
-
   public static class FontStyleStyleClassItem_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public FontStyleStyleClassItem_generic_cellMenu_a0c0() {
     }
@@ -160,6 +138,28 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
       if (ObjectUtils.equals(parameterObject, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))) {
         SLinkOperations.setTarget(node, "query", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", null), true);
       }
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+  }
+
+  public static class FontStyleStyleClassItem_generic_cellMenu_a0d0 extends AbstractCellMenuPart_Generic_Group {
+    public FontStyleStyleClassItem_generic_cellMenu_a0d0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"));
+    }
+
+    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext);
+    }
+
+    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
+      SPropertyOperations.set(node, "style", SEnumOperations.getEnumMemberValue(parameterObject));
     }
 
     public boolean isReferentPresentation() {
