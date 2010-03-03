@@ -9,6 +9,9 @@ import jetbrains.mps.util.Mapper;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private static Logger LOG = Logger.getLogger(DebugInfoInitializer_CustomApplicationPlugin.class);
@@ -25,6 +28,27 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
     manager.addScopeConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper<SNode, List<SNode>>() {
       public List<SNode> value(SNode scopeNode) {
         return SLinkOperations.getTargets(scopeNode, "parameter", true);
+      }
+    });
+    manager.addScopeConcept("jetbrains.mps.baseLanguage.structure.StatementList", new Mapper<SNode, List<SNode>>() {
+      public List<SNode> value(SNode scopeNode) {
+        List<SNode> result = new ArrayList<SNode>();
+        for (SNode statement : SLinkOperations.getTargets(scopeNode, "statement", true)) {
+          if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
+            ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true));
+          }
+        }
+        return result;
+      }
+    });
+    manager.addScopeConcept("jetbrains.mps.baseLanguage.structure.ForeachStatement", new Mapper<SNode, List<SNode>>() {
+      public List<SNode> value(SNode scopeNode) {
+        return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(scopeNode, "variable", true));
+      }
+    });
+    manager.addScopeConcept("jetbrains.mps.baseLanguage.structure.ForStatement", new Mapper<SNode, List<SNode>>() {
+      public List<SNode> value(SNode scopeNode) {
+        return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(scopeNode, "variable", true));
       }
     });
   }
