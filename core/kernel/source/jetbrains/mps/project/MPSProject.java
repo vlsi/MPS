@@ -85,8 +85,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         }
       }
     });
-
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
 
   public IScope getScope() {
