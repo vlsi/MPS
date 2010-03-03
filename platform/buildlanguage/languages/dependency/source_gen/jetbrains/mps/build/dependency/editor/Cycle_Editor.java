@@ -39,19 +39,6 @@ public class Cycle_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_hz5thv_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_hz5thv_c0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createIndentCell_hz5thv_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_hz5thv_b2a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_hz5thv_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hz5thv_a0");
@@ -90,6 +77,19 @@ public class Cycle_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_hz5thv_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_hz5thv_b1b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_hz5thv_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_hz5thv_c0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createIndentCell_hz5thv_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_hz5thv_b2a(editorContext, node));
     return editorCell;
   }
 
@@ -170,12 +170,12 @@ public class Cycle_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createIndentCell_hz5thv_a2a(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_hz5thv_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
 
-  private EditorCell createIndentCell_hz5thv_a1a(EditorContext editorContext, SNode node) {
+  private EditorCell createIndentCell_hz5thv_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }

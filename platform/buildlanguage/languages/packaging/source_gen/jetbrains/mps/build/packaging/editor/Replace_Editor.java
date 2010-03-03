@@ -54,13 +54,6 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_m6tzv0_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_m6tzv0_a_0");
-    editorCell.addEditorCell(this.createComponent_m6tzv0_a0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_m6tzv0_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_m6tzv0_b0");
@@ -70,6 +63,13 @@ public class Replace_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createIndentCell_m6tzv0_a1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_m6tzv0_b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_m6tzv0_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_m6tzv0_a_0");
+    editorCell.addEditorCell(this.createComponent_m6tzv0_a0(editorContext, node));
     return editorCell;
   }
 
@@ -127,14 +127,12 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConceptProperty_m6tzv0_a0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
+  private EditorCell createRefNode_m6tzv0_d0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("sourcePath");
+    provider.setNoTargetText("<no sourcePath>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -146,12 +144,14 @@ public class Replace_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_m6tzv0_d0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("sourcePath");
-    provider.setNoTargetText("<no sourcePath>");
+  private EditorCell createConceptProperty_m6tzv0_a0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
+    provider.setRole("alias");
+    provider.setNoTargetText("<no alias>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("conceptProperty_alias");
+    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

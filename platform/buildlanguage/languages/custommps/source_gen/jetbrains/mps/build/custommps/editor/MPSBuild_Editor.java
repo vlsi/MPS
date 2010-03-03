@@ -11,16 +11,16 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.build.packaging.editor.IncludeExcludeEditorComponent;
-import jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector;
 import jetbrains.mps.build.packaging.editor.ConfigurationReferencesEditorComponent;
 import jetbrains.mps.build.packaging.editor.CompositecomponentEntriesEditorComponent;
+import jetbrains.mps.build.packaging.editor.IncludeExcludeInInspector;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.build.packaging.editor.PackagingStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
@@ -99,18 +99,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_ek3l5j_c0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IncludeExcludeInInspector(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    return editorCell;
-  }
-
-  private EditorCell createComponent_ek3l5j_d0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ConfigurationReferencesEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    return editorCell;
-  }
-
   private EditorCell createComponent_ek3l5j_c0a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new ConfigurationReferencesEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
@@ -119,6 +107,18 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
 
   private EditorCell createComponent_ek3l5j_b0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new CompositecomponentEntriesEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_ek3l5j_c0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new IncludeExcludeInInspector(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createComponent_ek3l5j_d0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ConfigurationReferencesEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
@@ -136,25 +136,6 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_ek3l5j_a1a");
     PackagingStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_ek3l5j_a0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
     return editorCell;
   }
 
@@ -181,6 +162,25 @@ public class MPSBuild_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("<no licencePath>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConceptProperty_ek3l5j_a0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
+    provider.setRole("alias");
+    provider.setNoTargetText("<no alias>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("conceptProperty_alias");
+    PackagingStyles_StyleSheet.getProjectComponent(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

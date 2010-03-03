@@ -36,6 +36,15 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
     return this.createCollection_qws93t_a(editorContext, node);
   }
 
+  private EditorCell createCollection_qws93t_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_qws93t_a");
+    if (renderingCondition_qws93t_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_qws93t_a0(editorContext, node));
+    }
+    return editorCell;
+  }
+
   private EditorCell createCollection_qws93t_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_qws93t_a0");
@@ -45,15 +54,6 @@ public class ConfigurationReferencesEditorComponent extends AbstractCellProvider
     }
     editorCell.addEditorCell(this.createConstant_qws93t_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_qws93t_b0a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_qws93t_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_qws93t_a");
-    if (renderingCondition_qws93t_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createCollection_qws93t_a0(editorContext, node));
-    }
     return editorCell;
   }
 

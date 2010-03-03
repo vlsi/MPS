@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -53,13 +53,13 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_o0ejdp_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("macro");
-    provider.setNoTargetText("<no macro>");
+  private EditorCell createProperty_o0ejdp_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("path");
+    provider.setNoTargetText("<no path>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PathHolder_Editor._Inline_o0ejdp_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_path");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -71,13 +71,13 @@ public class PathHolder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_o0ejdp_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("path");
-    provider.setNoTargetText("<no path>");
+  private EditorCell createRefCell_o0ejdp_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("macro");
+    provider.setNoTargetText("<no macro>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new PathHolder_Editor._Inline_o0ejdp_a0a());
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_path");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

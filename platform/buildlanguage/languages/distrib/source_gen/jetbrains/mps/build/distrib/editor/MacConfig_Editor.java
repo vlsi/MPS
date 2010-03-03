@@ -14,10 +14,10 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -57,18 +57,6 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_14tw65_b4a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_14tw65_b4a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_14tw65_a1e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_14tw65_b1e0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_14tw65_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_14tw65_a4a");
@@ -79,6 +67,18 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createConstant_14tw65_a0e0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_14tw65_b0e0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_14tw65_b4a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_14tw65_b4a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_14tw65_a1e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_14tw65_b1e0(editorContext, node));
     return editorCell;
   }
 
@@ -102,17 +102,17 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_14tw65_a1e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon file");
-    editorCell.setCellId("Constant_14tw65_a1e0");
+  private EditorCell createConstant_14tw65_a0e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java application stub path");
+    editorCell.setCellId("Constant_14tw65_a0e0");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_14tw65_a0e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java application stub path");
-    editorCell.setCellId("Constant_14tw65_a0e0");
+  private EditorCell createConstant_14tw65_a1e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon file");
+    editorCell.setCellId("Constant_14tw65_a1e0");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -153,14 +153,12 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return result;
   }
 
-  private EditorCell createConceptProperty_14tw65_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
+  private EditorCell createRefNode_14tw65_b0e0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("javaApplicationStubPath");
+    provider.setNoTargetText("<no javaApplicationStubPath>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -189,12 +187,14 @@ public class MacConfig_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_14tw65_b0e0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("javaApplicationStubPath");
-    provider.setNoTargetText("<no javaApplicationStubPath>");
+  private EditorCell createConceptProperty_14tw65_a0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
+    provider.setRole("alias");
+    provider.setNoTargetText("<no alias>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("conceptProperty_alias");
+    DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

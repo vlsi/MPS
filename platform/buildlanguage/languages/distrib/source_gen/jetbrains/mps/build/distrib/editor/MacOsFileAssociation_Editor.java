@@ -48,17 +48,17 @@ public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6x0kfx_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon:");
-    editorCell.setCellId("Constant_6x0kfx_g0");
+  private EditorCell createConstant_6x0kfx_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "role:");
+    editorCell.setCellId("Constant_6x0kfx_e0");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_6x0kfx_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "role:");
-    editorCell.setCellId("Constant_6x0kfx_e0");
+  private EditorCell createConstant_6x0kfx_g0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon:");
+    editorCell.setCellId("Constant_6x0kfx_g0");
     DistribConfiguration_Styles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -100,10 +100,10 @@ public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6x0kfx_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6x0kfx_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("icon");
-    provider.setNoTargetText("<no icon>");
+    provider.setRole("role");
+    provider.setNoTargetText("<no role>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -117,10 +117,10 @@ public class MacOsFileAssociation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_6x0kfx_f0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_6x0kfx_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("role");
-    provider.setNoTargetText("<no role>");
+    provider.setRole("icon");
+    provider.setNoTargetText("<no icon>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

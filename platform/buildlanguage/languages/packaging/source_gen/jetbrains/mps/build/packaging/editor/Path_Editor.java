@@ -49,10 +49,10 @@ public class Path_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_kwgg2r_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_kwgg2r_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("compositePathComponent");
-    provider.setNoTargetText("<no compositePathComponent>");
+    provider.setRole("macro");
+    provider.setNoTargetText("<no macro>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -66,10 +66,10 @@ public class Path_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_kwgg2r_a0a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_kwgg2r_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("macro");
-    provider.setNoTargetText("<no macro>");
+    provider.setRole("compositePathComponent");
+    provider.setNoTargetText("<no compositePathComponent>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
