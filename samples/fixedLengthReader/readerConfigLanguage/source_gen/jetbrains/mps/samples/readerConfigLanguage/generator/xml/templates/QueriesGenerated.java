@@ -9,18 +9,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_1197682178699(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1197682196973(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "code");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1197682227372(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "targetClass");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1197682253810(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -33,11 +21,23 @@ public class QueriesGenerated {
     return "" + SPropertyOperations.getInteger(_context.getNode(), "end");
   }
 
-  public static Iterable sourceNodesQuery_1197682117533(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "mapping", true);
+  public static Object propertyMacro_GetPropertyValue_1197682196973(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "code");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1197682227372(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "targetClass");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1197682178699(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Iterable sourceNodesQuery_1197682238161(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "field", true);
+  }
+
+  public static Iterable sourceNodesQuery_1197682117533(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "mapping", true);
   }
 }

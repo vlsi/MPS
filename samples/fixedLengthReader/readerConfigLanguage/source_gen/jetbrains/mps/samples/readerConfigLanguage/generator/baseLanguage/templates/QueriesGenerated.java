@@ -14,19 +14,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_1197680735636(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1197681064561(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String suffix = SPropertyOperations.getString(_context.getNode(), "targetClass");
-    int index = suffix.lastIndexOf(".");
-    if (index > 0) {
-      suffix = suffix.substring(index + 1);
-    }
-    return "Configure" + suffix;
-  }
-
   public static Object propertyMacro_GetPropertyValue_1197681249881(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "code");
   }
@@ -40,6 +27,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1197681859608(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1197681064561(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String suffix = SPropertyOperations.getString(_context.getNode(), "targetClass");
+    int index = suffix.lastIndexOf(".");
+    if (index > 0) {
+      suffix = suffix.substring(index + 1);
+    }
+    return "Configure" + suffix;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1197680735636(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
@@ -57,11 +57,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "mapping", true);
   }
 
-  public static Iterable sourceNodesQuery_1197681041037(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "mapping", true);
-  }
-
   public static Iterable sourceNodesQuery_1197681816362(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "field", true);
+  }
+
+  public static Iterable sourceNodesQuery_1197681041037(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "mapping", true);
   }
 }
