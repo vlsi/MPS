@@ -19,7 +19,6 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
-import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.library.LibraryManager;
@@ -901,6 +900,8 @@ public abstract class AbstractModule implements IModule {
   @Nullable
   private BaseStubModelRootManager createStubManager(StubPath sp) {
     try {
+      if (sp.getManager() == null) return null;
+
       String moduleId = sp.getManager().getModuleId();
       String className = sp.getManager().getClassName();
 

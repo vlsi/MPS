@@ -15,21 +15,13 @@
  */
 package jetbrains.mps.workbench.dialogs.project;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task.Modal;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.annotations.NotNull;
 
 import java.awt.HeadlessException;
+import java.util.List;
 
 public abstract class BasePropertiesDialog extends BaseTabbedBindedDialog {
   protected BasePropertiesDialog(String text, IOperationContext operationContext) throws HeadlessException {
@@ -54,5 +46,27 @@ public abstract class BasePropertiesDialog extends BaseTabbedBindedDialog {
   @BaseDialog.Button(position = 2, name = "Apply", mnemonic = 'A')
   public void buttonApply() {
     saveChanges();
+  }
+
+  protected String getErrorString() {
+    return null;
+  }
+
+  protected final boolean checkValidity() {
+    String errorString = getErrorString();
+    if (errorString != null) {
+      setErrorText(errorString);
+      return false;
+    }
+    return true;
+  }
+
+  protected String checkStubModels(List<StubModelsEntry> models) {
+    for (StubModelsEntry me : models) {
+      if (me.getManager() == null) {
+        return "Manager is not specified for root " + me.getPath();
+      }
+    }
+    return null;
   }
 }
