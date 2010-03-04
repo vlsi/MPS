@@ -52,4 +52,16 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
       }
     });
   }
+
+  public void doDispose() {
+    DebugInfoManager manager = DebugInfoManager.getInstance();
+    manager.removeDebuggableConcept("jetbrains.mps.baseLanguage.structure.Statement");
+    manager.removeDebuggableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    manager.removeDebuggableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+    manager.removeDebuggableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.StatementList");
+    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForeachStatement");
+    manager.removeScopeConcept("jetbrains.mps.baseLanguage.structure.ForStatement");
+  }
 }
