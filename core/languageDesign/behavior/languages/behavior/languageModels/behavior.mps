@@ -44,6 +44,7 @@
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="20" modelUID="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" version="-1" />
+  <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1225194243289">
     <property name="package" value="Behavior" />
     <link role="concept" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
@@ -653,6 +654,41 @@
                   <node role="actualArgument:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1225194243569" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1225194243570">
                     <link role="variableDeclaration:3" targetNodeId="1225194243574" resolveInfo="nodesToExtract" />
+                  </node>
+                  <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3430761957596392605">
+                    <property name="name:3" value="createNewMethod" />
+                    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3430761957596392606" />
+                    <node role="returnType:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3430761957596392607">
+                      <link role="concept:16" targetNodeId="5.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
+                    </node>
+                    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3430761957596392608">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3430761957596392617">
+                        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3430761957596392618">
+                          <property name="name:3" value="container" />
+                          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3430761957596392619" />
+                          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3430761957596392620">
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3430761957596392621">
+                              <link role="baseMethodDeclaration:3" targetNodeId="20.8492459591399164425" resolveInfo="getContainerMethod" />
+                            </node>
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="3430761957596392622" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3430761957596392629">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3430761957596392640">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3430761957596392632">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3430761957596392631">
+                              <link role="variableDeclaration:3" targetNodeId="3430761957596392618" resolveInfo="container" />
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation:16" id="3430761957596392636" />
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_NewInstance:16" id="3430761957596392647" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3430761957596392609">
+                      <link role="annotation:3" targetNodeId="2v.~Override" />
+                    </node>
                   </node>
                 </node>
               </node>

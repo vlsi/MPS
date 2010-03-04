@@ -88,6 +88,12 @@ public class ConceptBehavior_Behavior {
         }
         return null;
       }
+
+      @Override
+      public SNode createNewMethod() {
+        SNode container = this.getContainerMethod();
+        return SConceptOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(container)), null);
+      }
     };
     return result;
   }
