@@ -34,8 +34,6 @@ public class StartupModuleMaker extends AbstractProjectComponent {
   public StartupModuleMaker(Project project) {
     super(project);
 
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
-
     StartupManagerEx.getInstanceEx(myProject).registerPreStartupActivity(new Runnable() {
       public void run() {
         final ProgressIndicator[] indicator = {ProgressManager.getInstance().getProgressIndicator()};
@@ -45,16 +43,16 @@ public class StartupModuleMaker extends AbstractProjectComponent {
         indicator[0].pushState();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            ModuleMaker maker = new ModuleMaker();
-            maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator[0]);
-          }
-        });
-        indicator[0].popState();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
+            if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
+              ModuleMaker maker = new ModuleMaker();
+              maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), indicator[0]);
+            }
+
             ClassLoaderManager.getInstance().reloadAll(indicator[0]);
           }
         });
+
+        indicator[0].popState();
       }
     });
   }
