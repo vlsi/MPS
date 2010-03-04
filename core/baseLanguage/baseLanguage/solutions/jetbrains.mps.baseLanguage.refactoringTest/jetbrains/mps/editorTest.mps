@@ -784,7 +784,7 @@
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230132506157" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230132506158" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230132506159" />
-        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519688">
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6268328477151531281">
           <property name="caretPosition:4" value="0" />
           <property name="cellId:4" value="Collection_1x071y_a" />
         </node>
@@ -798,7 +798,7 @@
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1230132540713" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1230132540714" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230132540715" />
-        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6119773791239519689">
+        <node role="testNode$attribute:3" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6268328477151531282">
           <property name="caretPosition:4" value="0" />
           <property name="cellId:4" value="Collection_1x071y_a" />
         </node>
@@ -5043,12 +5043,12 @@
     <node role="nodeToEdit:4" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList:5" id="5633355289409998034">
       <node role="statement:5" type="jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty:5" id="5633355289410070947">
         <property name="value:5" value="p" />
-        <node role="testNode$attribute:5" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="1074527630453750805">
+        <node role="testNode$attribute:5" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation:4" id="6268328477151507213">
           <property name="isLastPosition:4" value="true" />
           <property name="useLabelSelection:4" value="true" />
           <property name="selectionStart:4" value="1" />
           <property name="selectionEnd:4" value="1" />
-          <property name="cellId:4" value="property_value" />
+          <property name="cellId:4" value="property_value_1" />
         </node>
       </node>
     </node>
