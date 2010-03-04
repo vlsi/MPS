@@ -35,14 +35,14 @@ public class AddParameter_Test extends BaseTransformationTest {
       this.addNodeById("1230052943764");
       this.addNodeById("1230052943773");
       ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("1230052943766"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(new AddParameter_Test.TestBody.QuotationClass_8855_0().createNode());
+      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(new AddParameter_Test.TestBody.QuotationClass_pqwgtw_a0a0d0a0().createNode());
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052943766"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943765"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943774"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
 
-    public static class QuotationClass_8855_0 {
-      public QuotationClass_8855_0() {
+    public static class QuotationClass_pqwgtw_a0a0d0a0 {
+      public QuotationClass_pqwgtw_a0a0d0a0() {
       }
 
       public SNode createNode() {
@@ -52,14 +52,14 @@ public class AddParameter_Test extends BaseTransformationTest {
         SNode quotedNode_2 = null;
         {
           quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_1 = quotedNode_1;
-          quotedNode1_1.setProperty("name", "a");
+          SNode quotedNode1_3 = quotedNode_1;
+          quotedNode1_3.setProperty("name", "a");
           {
             quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-            SNode quotedNode1_2 = quotedNode_2;
-            quotedNode_1.addChild("type", quotedNode1_2);
+            SNode quotedNode1_4 = quotedNode_2;
+            quotedNode_1.addChild("type", quotedNode1_4);
           }
-          result = quotedNode1_1;
+          result = quotedNode1_3;
         }
         return result;
       }

@@ -49,7 +49,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="14" />
+  <maxImportIndex value="15" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="4" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
@@ -59,6 +59,7 @@
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="14" modelUID="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" version="-1" />
+  <import index="15" modelUID="r:dcadbfa7-83f0-4739-b7da-972547bdba71(jetbrains.mps.refactoringTestNotGenerate)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052406553">
     <property name="name:4" value="ChangeMethodParametersForStatement" />
     <property name="package:4" value="extractMethod" />
@@ -7678,11 +7679,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1230052989333">
-    <property name="name:0" value="SandboxConcept" />
-    <property name="package:0" value="inlineMethod" />
-    <link role="extends:0" targetNodeId="11.1133920641626:0" resolveInfo="BaseConcept" />
-  </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1230052989334">
     <property name="name:4" value="SimpleInlineWithOneReturn" />
     <property name="package:4" value="inlineMethod" />
@@ -7832,7 +7828,7 @@
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1230053040724">
                 <property name="name:3" value="bla" />
                 <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1230053040725">
-                  <link role="concept:16" targetNodeId="1230052989333" resolveInfo="SandboxConcept" />
+                  <link role="concept:16" targetNodeId="15.615242969172383335" resolveInfo="SandboxConcept" />
                 </node>
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1230053040726" />
               </node>
@@ -7872,7 +7868,7 @@
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1230053040742">
                 <property name="name:3" value="bla" />
                 <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1230053040743">
-                  <link role="concept:16" targetNodeId="1230052989333" resolveInfo="SandboxConcept" />
+                  <link role="concept:16" targetNodeId="15.615242969172383335" resolveInfo="SandboxConcept" />
                 </node>
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1230053040744" />
               </node>
@@ -7947,7 +7943,7 @@
     <property name="package:4" value="inlineMethod.behavior" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053040768">
       <node role="nodeToCheck:4" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230053040769">
-        <link role="concept" targetNodeId="1230052989333" resolveInfo="SandboxConcept" />
+        <link role="concept" targetNodeId="15.615242969172383335" resolveInfo="SandboxConcept" />
         <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1230053040770">
           <property name="name" value="b" />
           <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1230053040771" />
@@ -7956,7 +7952,7 @@
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1230053040774">
                 <property name="name:3" value="node" />
                 <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1230053040775">
-                  <link role="concept:16" targetNodeId="1230052989333" resolveInfo="SandboxConcept" />
+                  <link role="concept:16" targetNodeId="15.615242969172383335" resolveInfo="SandboxConcept" />
                 </node>
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1230053040776" />
               </node>
@@ -8050,7 +8046,7 @@
     </node>
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053040816">
       <node role="nodeToCheck:4" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230053040817">
-        <link role="concept" targetNodeId="1230052989333" resolveInfo="SandboxConcept" />
+        <link role="concept" targetNodeId="15.615242969172383335" resolveInfo="SandboxConcept" />
         <node role="staticMethod" type="jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration" id="1230053040818">
           <property name="name" value="b" />
           <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1230053040819" />
@@ -8059,7 +8055,7 @@
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1230053040822">
                 <property name="name:3" value="node" />
                 <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1230053040823">
-                  <link role="concept:16" targetNodeId="1230052989333" resolveInfo="SandboxConcept" />
+                  <link role="concept:16" targetNodeId="15.615242969172383335" resolveInfo="SandboxConcept" />
                 </node>
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1230053040824" />
               </node>
@@ -8154,7 +8150,7 @@
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1230053040865">
         <property name="name:3" value="node" />
         <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1230053040866">
-          <link role="concept:16" targetNodeId="1230052989333" resolveInfo="SandboxConcept" />
+          <link role="concept:16" targetNodeId="15.615242969172383335" resolveInfo="SandboxConcept" />
         </node>
         <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1230053040867" />
       </node>
@@ -8163,7 +8159,7 @@
       <node role="nodeToCheck:4" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1230053040869">
         <property name="name:3" value="node" />
         <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1230053040870">
-          <link role="concept:16" targetNodeId="1230052989333" resolveInfo="SandboxConcept" />
+          <link role="concept:16" targetNodeId="15.615242969172383335" resolveInfo="SandboxConcept" />
         </node>
         <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1230053040871" />
       </node>
@@ -8214,7 +8210,7 @@
     <property name="package:4" value="inlineMethod.behavior" />
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053040889">
       <node role="nodeToCheck:4" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230053040890">
-        <link role="concept" targetNodeId="1230052989333" resolveInfo="SandboxConcept" />
+        <link role="concept" targetNodeId="15.615242969172383335" resolveInfo="SandboxConcept" />
         <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230053040891">
           <property name="name" value="foo" />
           <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1230053040892" />
@@ -8253,7 +8249,7 @@
     </node>
     <node role="nodesToCheck:4" type="jetbrains.mps.lang.test.structure.TestNode:4" id="1230053040907">
       <node role="nodeToCheck:4" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230053040908">
-        <link role="concept" targetNodeId="1230052989333" resolveInfo="SandboxConcept" />
+        <link role="concept" targetNodeId="15.615242969172383335" resolveInfo="SandboxConcept" />
         <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230053040909">
           <property name="name" value="foo" />
           <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1230053040910" />
