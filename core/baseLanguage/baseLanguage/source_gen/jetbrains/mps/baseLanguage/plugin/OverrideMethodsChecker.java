@@ -21,8 +21,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import java.util.Iterator;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -31,6 +36,9 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
 public class OverrideMethodsChecker extends EditorCheckerAdapter {
+  private static final int MAX_MESSAGE_NUMBER = 5;
+  private static String TOOLTIP_INDENT = "<br>&nbsp;&nbsp;&nbsp;&nbsp;";
+
   private boolean myIndexWasNotReady;
 
   public OverrideMethodsChecker() {
@@ -49,36 +57,101 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     for (SNode containedClassifier : Sequence.fromIterable(classifiers)) {
       this.collectOverridenMethods(containedClassifier, result);
+      this.collectOverridingMethods(containedClassifier, result);
     }
     return result;
   }
 
+  public void collectOverridingMethods(SNode container, Set<EditorMessage> messages) {
+  }
+
   private void collectOverridenMethods(SNode container, Set<EditorMessage> messages) {
-    List<SNode> methods = SLinkOperations.getTargets(container, "method", true);
-    if (ListSequence.fromList(methods).isEmpty()) {
-      return;
-    }
-
-    List<SNode> methodsCopy = new ArrayList<SNode>();
-    for (SNode method : ListSequence.fromList(methods)) {
-      if (SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
-        continue;
+    /*
+      List<SNode> methods = SLinkOperations.getTargets(container, "method", true);
+      if (ListSequence.fromList(methods).isEmpty()) {
+        return;
       }
-      ListSequence.fromList(methodsCopy).addElement(method);
-    }
-    if (ListSequence.fromList(methodsCopy).isEmpty()) {
+      // creating a copy of methods collection because of future modifications applied to it in <node> method 
+      List<SNode> methodsCopy = new ArrayList<SNode>();
+      for (SNode method : ListSequence.fromList(methods)) {
+        if (SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+          continue;
+        }
+        ListSequence.fromList(methodsCopy).addElement(method);
+      }
+      if (ListSequence.fromList(methodsCopy).isEmpty()) {
+        return;
+      }
+    */
+
+    Iterable<SNode> methods = ListSequence.fromList(SLinkOperations.getTargets(container, "method", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SPropertyOperations.getBoolean(it, "isFinal") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
+      }
+    });
+    if (Sequence.fromIterable(methods).isEmpty()) {
       return;
     }
-
     List<SNode> derivedClasses = ClassifierSuccessorsFinder.getDerivedClassifiers(container, GlobalScope.getInstance());
+    Iterable<SNode> derivedClassifiers = ListSequence.fromList(derivedClasses).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (it != null);
+      }
+    });
     if (ListSequence.fromList(derivedClasses).isEmpty()) {
       return;
     }
-    this.createOverridenMethodsMessages(methodsCopy, derivedClasses, messages);
+    this.createOverridenMethodsMessagesFull(methods, derivedClassifiers, messages);
   }
 
-  private void createOverridenMethodsMessages(List<SNode> methods, List<SNode> derivedClasses, Set<EditorMessage> messages) {
-    for (Iterator<SNode> derivedClassesIt = ListSequence.fromList(derivedClasses).iterator(); derivedClassesIt.hasNext() && ListSequence.fromList(methods).isNotEmpty();) {
+  private void createOverridenMethodsMessagesFull(Iterable<SNode> methods, Iterable<SNode> derivedClassifiers, Set<EditorMessage> messages) {
+    Map<SNode, List<SNode>> overridingClassifiersMap = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
+    for (SNode derivedClassifier : Sequence.fromIterable(derivedClassifiers)) {
+      for (SNode derivedClassifierMethod : ListSequence.fromList(SLinkOperations.getTargets(derivedClassifier, "method", true))) {
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(derivedClassifierMethod, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+          continue;
+        }
+        for (SNode method : Sequence.fromIterable(methods)) {
+          if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(derivedClassifierMethod, method)) {
+            List<SNode> overridingMethods = MapSequence.fromMap(overridingClassifiersMap).get(method);
+            if (overridingMethods == null) {
+              overridingMethods = new ArrayList<SNode>();
+              MapSequence.fromMap(overridingClassifiersMap).put(method, overridingMethods);
+            }
+            ListSequence.fromList(overridingMethods).addElement(derivedClassifier);
+            break;
+          }
+        }
+      }
+    }
+    for (SNode overridenMethod : SetSequence.fromSet(MapSequence.fromMap(overridingClassifiersMap).keySet())) {
+      StringBuffer tooltip = new StringBuffer("<html><body>Is ");
+      tooltip.append((SPropertyOperations.getBoolean(overridenMethod, "isAbstract") ?
+        "implemented" :
+        "overriden"
+      ));
+      tooltip.append(" in");
+      int messageCounter = 0;
+      for (SNode overridingClassifier : ListSequence.fromList(MapSequence.fromMap(overridingClassifiersMap).get(overridenMethod))) {
+        tooltip.append(TOOLTIP_INDENT);
+        tooltip.append(BaseConcept_Behavior.call_getPresentation_1213877396640(overridingClassifier));
+        if (++messageCounter >= MAX_MESSAGE_NUMBER) {
+          tooltip.append(TOOLTIP_INDENT);
+          tooltip.append("...");
+          break;
+        }
+      }
+      tooltip.append("</body></html>");
+      SetSequence.fromSet(messages).addElement(new OverrideEditorMessage(overridenMethod, this, tooltip.toString()));
+    }
+  }
+
+  private void createOverridenMethodsMessages(List<SNode> methods, Iterable<SNode> derivedClasses, Set<EditorMessage> messages) {
+    for (Iterator<SNode> derivedClassesIt = Sequence.fromIterable(derivedClasses).iterator(); derivedClassesIt.hasNext() && ListSequence.fromList(methods).isNotEmpty();) {
       SNode nextNode = derivedClassesIt.next();
       if (!(SNodeOperations.isInstanceOf(nextNode, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
         continue;
