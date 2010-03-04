@@ -56,8 +56,7 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     }
   }
 
-  private SNode getNodeWithoutAttributes(BaseAddMethodDialog.MethodTreeNode methodTreeNode) {
-    SNode methodNode = methodTreeNode.getMethod().getNode();
+  private SNode getNodeWithoutAttributes(SNode methodNode) {
     for (SNode child : SNodeOperations.getChildren(methodNode)) {
       this.removeAttributes(child);
     }
@@ -113,15 +112,17 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     List<BaseMethodDeclaration> result = new ArrayList<BaseMethodDeclaration>();
     List<SNode> methods = new ArrayList<SNode>();
     for (BaseAddMethodDialog.MethodTreeNode methodNode : methodNodes) {
-      SNode method = this.getNodeWithoutAttributes(methodNode);
-      SModel model = SNodeOperations.getModel(method);
-      if (SModelStereotype.isStubModelStereotype(model.getStereotype())) {
-        this.setVariableNames(method);
-      }
+      SNode method = methodNode.getMethod().getNode();
       methods.add(method);
     }
     List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> addedMethods = this.myContainerStrategy.doAddMethods(methods);
     for (StratergyAddMethodDialog.ContainerStrategy.MethodAddition added : addedMethods) {
+      BaseMethodDeclaration addedMethodAdapter = added.getResult();
+      SNode addedMethod = this.getNodeWithoutAttributes(addedMethodAdapter.getNode());
+      SModel sourceModel = added.getSource().getNode().getModel();
+      if (SModelStereotype.isStubModelStereotype(sourceModel.getStereotype())) {
+        this.setVariableNames(addedMethod);
+      }
       result.add(added.getResult());
       this.myAdditionStrategy.updateMethod(added.getSource().getNode(), added.getResult().getNode());
     }
