@@ -35,10 +35,18 @@ public class ApplicationPluginManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(ApplicationPluginManager.class);
 
   private List<BaseApplicationPlugin> mySortedPlugins = new ArrayList<BaseApplicationPlugin>();
-  private BaseApplicationPlugin myIDEPlugin;
 
   public void loadPlugins() {
     mySortedPlugins = createPlugins();
+
+    BaseApplicationPlugin idePlugin = null;
+
+    for (BaseApplicationPlugin p : mySortedPlugins) {
+      if (p.getClass().getName().equals(Ide_ApplicationPlugin.class.getName())) {
+        idePlugin = p;
+        break;
+      }
+    }
 
     for (BaseApplicationPlugin plugin : mySortedPlugins) {
       try {
@@ -72,7 +80,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
       }
     }
 
-    GroupAdjuster.adjustTopLevelGroups((BaseApplicationPlugin) myIDEPlugin);
+    GroupAdjuster.adjustTopLevelGroups((BaseApplicationPlugin) idePlugin);
     GroupAdjuster.refreshCustomizations();
   }
 
@@ -85,12 +93,6 @@ public class ApplicationPluginManager implements ApplicationComponent {
     }
 
     List<BaseApplicationPlugin> plugins = PluginUtil.createPlugins(modules, new ApplicationPluginCreator());
-    for (BaseApplicationPlugin p : plugins) {
-      if (p.getClass().getName().equals(Ide_ApplicationPlugin.class.getName())) {
-        myIDEPlugin = p;
-        break;
-      }
-    }
 
     return plugins;
   }
