@@ -222,6 +222,10 @@
     <property name="name:0" value="NumberType" />
     <property name="package:0" value="types" />
     <link role="extends:0" targetNodeId="4530871765544139480:1" resolveInfo="LambdaType" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2985097847315904383">
+      <property name="value:0" value="number" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4530871765544139489">
     <property name="name:0" value="StringType" />

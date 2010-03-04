@@ -5,6 +5,7 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class LambdaExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -22,17 +23,14 @@ public class LambdaExpression_Behavior {
 
   public static boolean call_hasParameterRefs_7397484091645986293(SNode thisNode) {
     SNode node = thisNode;
-    if (SNodeOperations.getParent(node) == null) {
-      return false;
-    }
     node = SNodeOperations.getParent(node);
-    while (node != null && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"))) {
+    while (node != null && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner") && !(ListSequence.fromList(VariableOwner_Behavior.call_getVariables_8981808925914841576(SNodeOperations.cast(node, "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner"))).contains(SNodeOperations.as(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.Variable"))))) {
       node = SNodeOperations.getParent(node);
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression")) {
       return true;
     }
-    return LambdaExpression_Behavior.call_isInFull_7347119454575591465(thisNode);
+    return LambdaExpression_Behavior.call_isInFull_7347119454575591465(node);
   }
 
   public static boolean call_isInFull_7347119454575591465(SNode thisNode) {

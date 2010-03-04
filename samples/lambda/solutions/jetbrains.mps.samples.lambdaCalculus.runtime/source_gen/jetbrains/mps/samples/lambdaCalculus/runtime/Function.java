@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public abstract class Function {
   protected List myArgs = new ArrayList();
+  protected String myType;
 
   public Function() {
   }
@@ -25,14 +26,22 @@ public abstract class Function {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("Function(");
+    int j = 0;
     for (Object arg : this.myArgs) {
       sb.append(arg);
-      sb.append(", ");
+      if (j != this.getParamsCount() - 1) {
+        sb.append(", ");
+      }
+      j++;
     }
     for (int i = this.myArgs.size(); i < this.getParamsCount(); i++) {
-      sb.append("__, ");
+      sb.append("__");
+      if (i != this.getParamsCount() - 1) {
+        sb.append(", ");
+      }
     }
-    sb.append(")");
+    sb.append(") : ");
+    sb.append(this.myType);
     return sb.toString();
   }
 

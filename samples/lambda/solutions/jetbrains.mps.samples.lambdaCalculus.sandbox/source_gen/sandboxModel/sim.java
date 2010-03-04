@@ -26,9 +26,11 @@ public class sim {
     private List myOuterVars = new ArrayList();
 
     public Function_2167053794906818092() {
+      this.myType = "(number->number)";
     }
 
     public Function_2167053794906818092(List outerVars) {
+      this.myType = "(number->number)";
       this.myOuterVars.addAll(outerVars);
     }
 

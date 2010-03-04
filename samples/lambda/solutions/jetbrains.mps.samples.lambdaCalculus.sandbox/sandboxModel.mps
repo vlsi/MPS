@@ -175,5 +175,66 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.samples.lambdaCalculus.structure.Program:1" id="816130369292806252">
+    <property name="name:1" value="letlet" />
+    <node role="expression:1" type="jetbrains.mps.samples.lambdaCalculus.structure.LetExpression:1" id="816130369292806253">
+      <node role="value:1" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:1" id="816130369292806254">
+        <property name="value:1" value="1" />
+      </node>
+      <node role="expression:1" type="jetbrains.mps.samples.lambdaCalculus.structure.LetExpression:1" id="816130369292806255">
+        <node role="value:1" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:1" id="816130369292806256">
+          <property name="value:1" value="2" />
+        </node>
+        <node role="expression:1" type="jetbrains.mps.samples.lambdaCalculus.structure.AddOperation:1" id="816130369292806257">
+          <node role="right:1" type="jetbrains.mps.samples.lambdaCalculus.structure.LetRef:1" id="816130369292806258">
+            <link role="variable:1" targetNodeId="816130369292806260" resolveInfo="q2" />
+          </node>
+          <node role="left:1" type="jetbrains.mps.samples.lambdaCalculus.structure.LetRef:1" id="816130369292806259">
+            <link role="variable:1" targetNodeId="816130369292806261" resolveInfo="q1" />
+          </node>
+        </node>
+        <node role="variable:1" type="jetbrains.mps.samples.lambdaCalculus.structure.LetVariable:1" id="816130369292806260">
+          <property name="name:1" value="q2" />
+        </node>
+      </node>
+      <node role="variable:1" type="jetbrains.mps.samples.lambdaCalculus.structure.LetVariable:1" id="816130369292806261">
+        <property name="name:1" value="q1" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.samples.lambdaCalculus.structure.Program:1" id="816130369292806262">
+    <property name="name:1" value="test" />
+    <node role="expression:1" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction:1" id="816130369292806265">
+      <node role="variable:1" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable:1" id="816130369292806266">
+        <property name="name:1" value="x" />
+      </node>
+      <node role="body:1" type="jetbrains.mps.samples.lambdaCalculus.structure.LetExpression:1" id="816130369292806267">
+        <node role="value:1" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction:1" id="816130369292806268">
+          <node role="variable:1" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable:1" id="816130369292806269">
+            <property name="name:1" value="y" />
+          </node>
+          <node role="body:1" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef:1" id="816130369292806270">
+            <link role="variable:1" targetNodeId="816130369292806269" resolveInfo="y" />
+          </node>
+        </node>
+        <node role="variable:1" type="jetbrains.mps.samples.lambdaCalculus.structure.LetVariable:1" id="816130369292806271">
+          <property name="name:1" value="qw" />
+        </node>
+        <node role="expression:1" type="jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication:1" id="816130369292806272">
+          <node role="argument:1" type="jetbrains.mps.samples.lambdaCalculus.structure.AddOperation:1" id="816130369292806273">
+            <node role="right:1" type="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef:1" id="816130369292806274">
+              <link role="variable:1" targetNodeId="816130369292806266" resolveInfo="x" />
+            </node>
+            <node role="left:1" type="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant:1" id="816130369292806275">
+              <property name="value:1" value="5" />
+            </node>
+          </node>
+          <node role="function:1" type="jetbrains.mps.samples.lambdaCalculus.structure.LetRef:1" id="816130369292806276">
+            <link role="variable:1" targetNodeId="816130369292806271" resolveInfo="qw" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

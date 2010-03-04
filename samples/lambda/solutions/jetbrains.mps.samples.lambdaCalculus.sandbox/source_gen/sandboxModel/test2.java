@@ -30,10 +30,12 @@ public class test2 {
     private List myOuterVars = new ArrayList();
 
     public Function_5277476162361145078(Integer x) {
+      this.myType = "(number->number)";
       this.myOuterVars.add(x);
     }
 
     public Function_5277476162361145078(List outerVars) {
+      this.myType = "(number->number)";
       this.myOuterVars.addAll(outerVars);
     }
 
