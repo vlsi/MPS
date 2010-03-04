@@ -129,10 +129,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   protected void doUpdatePresentation() {
     SModelDescriptor sm = getSModelDescriptor();
     if (sm != null && sm.isInitialized() && SModelRepository.getInstance().isChanged(sm)) {
-      setFontStyle(getFontStyle() | Font.BOLD);
+      //setFontStyle(getFontStyle() | Font.BOLD);
       //setColor(new Color(0x00, 0x00, 0x90));
     } else {
-      setFontStyle(getFontStyle() | ~(Font.BOLD));
+      //setFontStyle(getFontStyle() | ~(Font.BOLD));
       //setColor(Color.BLACK);
     }
 
