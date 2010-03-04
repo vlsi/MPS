@@ -65,7 +65,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
 
     @Override
-    public void finishGeneration() {
+    public void finishGeneration(ITaskProgressHelper progressHelper) {
       //
     }
   };

@@ -34,7 +34,7 @@ public abstract class GenerationHandlerBase implements IGenerationHandler {
   }
 
   @Override
-  public void finishGeneration() {
+  public void finishGeneration(ITaskProgressHelper progressHelper) {
     myLogger = null;
   }
 

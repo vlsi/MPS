@@ -96,7 +96,7 @@ public class GenerationController {
     long startJobTime = System.currentTimeMillis();
 
     myGenerationHandler.startGeneration(myLogger);
-    TaskProgressHelper progressHelper = new TaskProgressHelper(myProgress, totalJob, startJobTime);
+    ITaskProgressHelper progressHelper = new TaskProgressHelper(myProgress, totalJob, startJobTime);
 
     try {
       boolean generationOK = true;
@@ -125,7 +125,7 @@ public class GenerationController {
       myLogger.handleException(t);
       return false;
     } finally {
-      myGenerationHandler.finishGeneration();
+      myGenerationHandler.finishGeneration(progressHelper);
     }
   }
 

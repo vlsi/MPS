@@ -44,6 +44,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.locks.ReentrantLock;
 
 
 @State(
@@ -67,6 +68,8 @@ public class GeneratorManager {
   private GenerationSettings mySettings;
   private Project myProject;
   private boolean myGeneratingRequirements;
+
+  private ReentrantLock myGeneratorLock = new ReentrantLock();
 
   public GeneratorManager(Project project, GenerationSettings settings) {
     myProject = project;
@@ -295,31 +298,36 @@ public class GeneratorManager {
                                 final boolean saveTransientModels
   ) {
     final boolean[] result = new boolean[1];
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        final MPSProject project = inputModels.get(0).o2.getMPSProject();
-        project.getComponentSafe(TransientModelsModule.class).clearAll();
-        if (!saveTransientModels) {
-          project.getComponentSafe(GenerationTracer.class).discardTracing();
+    if(!myGeneratorLock.tryLock()) {
+      messages.handle(new Message(MessageKind.ERROR, "generator is not reenterable"));
+      return false;
+    }
+    try {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          final MPSProject project = inputModels.get(0).o2.getMPSProject();
+          project.getComponentSafe(TransientModelsModule.class).clearAll();
+          if (!saveTransientModels) {
+            project.getComponentSafe(GenerationTracer.class).discardTracing();
+          }
+
+          IGenerationTracer tracer = saveTransientModels
+            ? project.getComponentSafe(GenerationTracer.class)
+            : new NullGenerationTracer();
+          tracer.startTracing();
+
+          fireBeforeGeneration(inputModels);
+          GenerationController gc = new GenerationController(new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, tracer, progress, messages, saveTransientModels);
+          result[0] = gc.generate();
+          tracer.finishTracing();
+          fireAfterGeneration(inputModels);
+
+          CleanupManager.getInstance().cleanup();
         }
-
-        IGenerationTracer tracer = saveTransientModels
-          ? project.getComponentSafe(GenerationTracer.class)
-          : new NullGenerationTracer();
-        tracer.startTracing();
-
-        fireBeforeGeneration(inputModels);
-        GenerationController gc = new GenerationController(new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, tracer, progress, messages, saveTransientModels);
-          //mySettings.isUseNewGenerator()
-          //  ? new GenerationController2(GeneratorManager.this, new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, progress, messages, saveTransientModels)
-          //  : new GenerationController(GeneratorManager.this, new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, progress, messages, saveTransientModels);
-        result[0] = gc.generate();
-        tracer.finishTracing();
-        fireAfterGeneration(inputModels);
-
-        CleanupManager.getInstance().cleanup();
-      }
-    });
+      });
+    } finally {
+      myGeneratorLock.unlock();
+    }
     return result[0];
   }
 

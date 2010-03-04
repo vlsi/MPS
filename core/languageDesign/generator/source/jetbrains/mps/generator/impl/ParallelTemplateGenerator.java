@@ -5,7 +5,8 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.impl.GenerationTaskPool.GenerationTask;
+import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
+import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
 import jetbrains.mps.generator.util.IPerformanceTracer;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -19,13 +20,14 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   public static /*final*/ boolean PARALLELING_ENABLED = true;
 
-  private GenerationTaskPool myPool;
+  private IGenerationTaskPool myPool;
 
   public ParallelTemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                                    IGeneratorLogger logger, RuleManager ruleManager,
                                    SModel inputModel, SModel outputModel, boolean isStrict, IPerformanceTracer performance) {
     super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, isStrict, performance);
-    myPool = new GenerationTaskPool();
+    myPool = new SimpleGenerationTaskPool(); 
+        //new GenerationTaskPool(progressMonitor);
   }
 
   @Override

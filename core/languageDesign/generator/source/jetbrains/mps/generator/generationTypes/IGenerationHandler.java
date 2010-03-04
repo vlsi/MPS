@@ -35,7 +35,7 @@ public interface IGenerationHandler {
 
   void startGeneration(IGeneratorLogger logger);
 
-  void finishGeneration();
+  void finishGeneration(ITaskProgressHelper progressHelper);
 
   boolean canHandle(SModelDescriptor inputModel);
 
