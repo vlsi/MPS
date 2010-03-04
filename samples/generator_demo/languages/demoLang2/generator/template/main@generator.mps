@@ -191,7 +191,7 @@
               <link role="variableDeclaration:3" targetNodeId="1228517514696" resolveInfo="frame" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1228517514742">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~Component.setVisible(boolean):void" resolveInfo="setVisible" />
+              <link role="baseMethodDeclaration:3" targetNodeId="6.~Window.setVisible(boolean):void" resolveInfo="setVisible" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1228517514743">
                 <property name="value:3" value="true" />
               </node>
