@@ -34,16 +34,16 @@ public class QueriesGenerated {
     }), "value");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1228531189338(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName(_context.getTemplateValue(), null);
+  }
+
   public static Object propertyMacro_GetPropertyValue_1228530922047(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
     }), "value");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1228531189338(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName(_context.getTemplateValue(), null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1228531236411(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -90,7 +90,7 @@ public class QueriesGenerated {
     });
   }
 
-  public static SNode templateFragment_ContextNodeQuery_1228531534788(final IOperationContext operationContext, final TemplateFragmentContext _context) {
+  public static SNode templateFragment_ContextNodeQuery_1228531789982(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     SNode demoApp = SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode method = ListSequence.fromList(SLinkOperations.getTargets(demoApp, "staticMethod", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -100,7 +100,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(method, "body", true);
   }
 
-  public static SNode templateFragment_ContextNodeQuery_1228531789982(final IOperationContext operationContext, final TemplateFragmentContext _context) {
+  public static SNode templateFragment_ContextNodeQuery_1228531534788(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     SNode demoApp = SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode method = ListSequence.fromList(SLinkOperations.getTargets(demoApp, "staticMethod", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

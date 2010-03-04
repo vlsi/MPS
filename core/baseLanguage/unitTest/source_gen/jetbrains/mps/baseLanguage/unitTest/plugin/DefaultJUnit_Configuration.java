@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
+import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
@@ -127,7 +128,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
   }
 
   public RunProfileState getState(@NotNull final Executor executor, @NotNull final ExecutionEnvironment environment) throws ExecutionException {
-    return new RunProfileState() {
+    return new BaseRunProfileState() {
       @Nullable
       public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
         Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());

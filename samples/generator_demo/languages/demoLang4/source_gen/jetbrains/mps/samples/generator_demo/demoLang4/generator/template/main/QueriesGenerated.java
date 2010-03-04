@@ -86,6 +86,10 @@ public class QueriesGenerated {
     }) != null);
   }
 
+  public static SNode sourceNodeQuery_1228680307376(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "rootElement", true);
+  }
+
   public static SNode sourceNodeQuery_1228678752614(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -100,10 +104,6 @@ public class QueriesGenerated {
         return SPropertyOperations.getString(it, "name").equals("background");
       }
     });
-  }
-
-  public static SNode sourceNodeQuery_1228680307376(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "rootElement", true);
   }
 
   public static SNode sourceNodeQuery_1228681296807(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
