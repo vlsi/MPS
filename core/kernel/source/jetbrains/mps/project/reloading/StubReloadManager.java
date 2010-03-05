@@ -44,20 +44,42 @@ public class StubReloadManager implements ApplicationComponent {
     myRepos = repos;
   }
 
-  public boolean needsUpdate(BaseStubModelDescriptor descriptor, StubLocation location) {
-    return needsFullReload(descriptor);
-  }
-
   public List<StubPath> getLoadedStubPathsFor(AbstractModule m) {
     return myLoadedStubPaths.get(m.getModuleId());
   }
 
   public void reload() {
     loadNewStubSolutions();
+
     markOldStubs();
     SModelRepository.getInstance().refreshModels();
-    updateStubs();
+
+    for (AbstractModule m: getAllModules()){
+      disposeAllStubManagers();
+      releaseOldStubs(((AbstractModule) m));
+    }
+
+    CleanupManager.getInstance().cleanup();
+    MPSModuleRepository.getInstance().invalidateCaches();
+
+    for (IModule m : getAllModules()) {
+      loadNewStubs(((AbstractModule) m));
+    }
+
     markNewStubs();
+  }
+
+  private List<AbstractModule> getAllModules() {
+    List<AbstractModule> modules = new ArrayList<AbstractModule>();
+    for (IModule m : myRepos.getAllModules()) {
+      if (!(m instanceof AbstractModule)) continue;
+      modules.add(((AbstractModule) m));
+    }
+    return modules;
+  }
+
+  public boolean needsUpdate(BaseStubModelDescriptor descriptor, StubLocation location) {
+    return needsFullReload(descriptor);
   }
 
   private boolean needsFullReload(BaseStubModelDescriptor model) {
@@ -122,20 +144,6 @@ public class StubReloadManager implements ApplicationComponent {
     }
   }
 
-  private void updateStubs() {
-    for (IModule m : myRepos.getAllModules()) {
-      if (!(m instanceof AbstractModule)) continue;
-      disposeAllStubManagers();
-      releaseOldStubs(((AbstractModule) m));
-    }
-    CleanupManager.getInstance().cleanup();
-    MPSModuleRepository.getInstance().invalidateCaches();
-    for (IModule m : myRepos.getAllModules()) {
-      if (!(m instanceof AbstractModule)) continue;
-      loadNewStubs(((AbstractModule) m));
-    }
-  }
-
   private void disposeAllStubManagers() {
     for (StubPath sp : myLoadedStubPaths.getAllStubPaths()) {
       BaseStubModelRootManager mrm = sp.getModelRootManager();
@@ -181,7 +189,6 @@ public class StubReloadManager implements ApplicationComponent {
       myLoadedStubPaths.add(m, sp);
     }
   }
-
 
   @Nullable
   private BaseStubModelRootManager createStubManager(AbstractModule m, StubPath sp) {
