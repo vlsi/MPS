@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="1">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ClosureLiteral" conceptFQName="jetbrains.mps.closures.structure.ClosureLiteral" featureKind="CONCEPT" />
@@ -43,6 +44,7 @@
     <refactoringContext modelVersion="2">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ControlAbstraction" conceptFQName="jetbrains.mps.baseLanguage.closures.structure.ControlAbstraction" featureKind="CONCEPT" />
@@ -53,6 +55,7 @@
     <refactoringContext modelVersion="3">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="unrestrictedClosure" conceptFQName="jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement" featureKind="CHILD" />
@@ -170,6 +173,10 @@
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1239707713724">
       <link role="intfc:0" targetNodeId="2.1239354281271:3" resolveInfo="IMethodLike" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="890797661671409019">
+      <property name="name:0" value="forceMultiLine" />
+      <link role="dataType:0" targetNodeId="1.1082983657063:0" resolveInfo="boolean" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1199711271002">

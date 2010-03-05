@@ -717,5 +717,59 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="890797661671409032">
+    <property name="name:8" value="ToggleMultiLine" />
+    <link role="forConcept:8" targetNodeId="1.1199569711397:3" resolveInfo="ClosureLiteral" />
+    <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="890797661671409033">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="890797661671409034">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="890797661671419360">
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="890797661671419364">
+            <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="890797661671419363" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="890797661671440699">
+              <link role="property:16" targetNodeId="1.890797661671409019:3" resolveInfo="forceMultiLine" />
+            </node>
+          </node>
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="890797661671419362">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="890797661671440700">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="890797661671440702">
+                <property name="value:3" value="Remove Force Multi Line" />
+              </node>
+            </node>
+          </node>
+          <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="890797661671440703">
+            <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="890797661671440704">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="890797661671440705">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="890797661671440707">
+                  <property name="value:3" value="Make Force Multi Line" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction:8" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock:8" id="890797661671409035">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="890797661671409036">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="890797661671440708">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="890797661671440715">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="890797661671440718">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="890797661671440721">
+                <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="890797661671440720" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="890797661671440725">
+                  <link role="property:16" targetNodeId="1.890797661671409019:3" resolveInfo="forceMultiLine" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="890797661671440710">
+              <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="890797661671440709" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="890797661671440714">
+                <link role="property:16" targetNodeId="1.890797661671409019:3" resolveInfo="forceMultiLine" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

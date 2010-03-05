@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
@@ -44,7 +45,7 @@ public class ClosureLiteral_Behavior {
   }
 
   public static boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
-    return true;
+    return !(SPropertyOperations.getBoolean(thisNode, "forceMultiLine"));
   }
 
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {

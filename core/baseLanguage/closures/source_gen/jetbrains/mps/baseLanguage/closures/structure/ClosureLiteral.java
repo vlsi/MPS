@@ -20,6 +20,7 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String FORCE_MULTI_LINE = "forceMultiLine";
   public static final String BODY = "body";
   public static final String PARAMETER = "parameter";
 
@@ -49,6 +50,14 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
 
   public void setVirtualPackage(String value) {
     this.setProperty(ClosureLiteral.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getForceMultiLine() {
+    return this.getBooleanProperty(ClosureLiteral.FORCE_MULTI_LINE);
+  }
+
+  public void setForceMultiLine(boolean value) {
+    this.setBooleanProperty(ClosureLiteral.FORCE_MULTI_LINE, value);
   }
 
   public StatementList getBody() {

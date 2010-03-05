@@ -245,8 +245,13 @@
       <link role="overriddenMethod" targetNodeId="9.1237546012856" resolveInfo="isStatementListCompactable" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237540575570">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1237540583054">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1237540583806">
-            <property name="value:3" value="true" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="890797661671445451">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="890797661671445456">
+              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="890797661671445455" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="890797661671445460">
+                <link role="property:16" targetNodeId="1.890797661671409019:3" resolveInfo="forceMultiLine" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
