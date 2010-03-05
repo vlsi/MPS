@@ -86,6 +86,7 @@ public class LeftEditorHighlighter extends JComponent {
   private int myLeftFoldingAreaWidth;
   private int myRightFoldingAreaWidth;
   private int myWidth;
+  private int myHeight;
 
   public LeftEditorHighlighter(EditorComponent editorComponent) {
     setBackground(Color.white);
@@ -446,8 +447,10 @@ public class LeftEditorHighlighter extends JComponent {
     // addint 1 pixel for folding line itself
     myFoldingLineX = myIconRenderersWidth + myLeftFoldingAreaWidth + 1;
     int newWidth = myFoldingLineX + myRightFoldingAreaWidth;
-    if (myWidth != newWidth) {
+    int newHeight = myEditorComponent.getPreferredSize().height;
+    if (myWidth != newWidth || myHeight != newHeight) {
       myWidth = newWidth;
+      myHeight = newHeight;
       firePreferredSizeChanged();
     }
   }
