@@ -11,6 +11,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.openapi.util.WriteExternalException;
+import jetbrains.mps.debug.RemoteSettingsEditor;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -20,26 +21,30 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 
 public class RemoteConfiguration extends BaseRunConfig {
-  
+  private RemoteSettingsEditor myRemoteSettingsEditor;
+
   protected RemoteConfiguration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
 
   @Override
   public SettingsEditor<? extends RunConfiguration> getConfigurationEditor() {
-    return new SettingsEditor<RunConfiguration>() {
+    return new SettingsEditor<RemoteConfiguration>() {
       @Override
-      protected void resetEditorFrom(RunConfiguration s) {
+      protected void resetEditorFrom(RemoteConfiguration s) {
+        myRemoteSettingsEditor.reset(s);
       }
 
       @Override
-      protected void applyEditorTo(RunConfiguration s) throws ConfigurationException {
+      protected void applyEditorTo(RemoteConfiguration s) throws ConfigurationException {
+        myRemoteSettingsEditor.apply(s);
       }
 
       @NotNull
       @Override
       protected JComponent createEditor() {
-        return new JLabel("Remote Configuration");
+        myRemoteSettingsEditor = new RemoteSettingsEditor();
+        return myRemoteSettingsEditor;
       }
 
       @Override
@@ -60,7 +65,7 @@ public class RemoteConfiguration extends BaseRunConfig {
 
   @Override
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment env) throws ExecutionException {
-    return new RemoteRunProfileState(env);
+    return new RemoteRunProfileState(env.getProject());
   }
 
   @Override

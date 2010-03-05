@@ -25,12 +25,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RemoteRunProfileState extends BaseRunProfileState {
-  private final ExecutionEnvironment myEnvironment;
   private final Project myProject;
 
-  public RemoteRunProfileState(ExecutionEnvironment environment) {
-    myEnvironment = environment;
-    myProject = environment.getProject();
+  public RemoteRunProfileState(Project project) {
+    myProject = project;
   }
 
   @Override
