@@ -15,6 +15,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.debug.StacktraceUtil;
+import jetbrains.mps.debug.runtime.DebugConnectionSettings;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -26,9 +27,15 @@ import java.util.List;
 
 public class RemoteRunProfileState extends BaseRunProfileState {
   private final Project myProject;
+  private final DebugConnectionSettings mySettings;
 
-  public RemoteRunProfileState(Project project) {
+  public RemoteRunProfileState(Project project, DebugConnectionSettings settings) {
     myProject = project;
+    mySettings = settings;
+  }
+
+  public DebugConnectionSettings getSettings() {
+    return mySettings;
   }
 
   @Override

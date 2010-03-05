@@ -8,11 +8,11 @@ package jetbrains.mps.debug.runtime;
  * To change this template use File | Settings | File Templates.
  */
 public class DebugConnectionSettings { //just a record
-  private boolean myUseSockets;
-  private boolean myServerMode;
-  private boolean mySuspend;
-  private String myHostName;
-  private String myPort;
+  private boolean myUseSockets = true;
+  private boolean myServerMode = false;
+  private boolean mySuspend = false;
+  private String myHostName = "localhost";
+  private int myPort = 5005;
 
   public boolean isUseSockets() {
     return myUseSockets;
@@ -30,7 +30,7 @@ public class DebugConnectionSettings { //just a record
     return myHostName;
   }
 
-  public String getPort() {
+  public int getPort() {
     return myPort;
   }
 
@@ -46,7 +46,7 @@ public class DebugConnectionSettings { //just a record
     myHostName = hostName;
   }
 
-  public void setPort(String port) {
+  public void setPort(int port) {
     myPort = port;
   }
 

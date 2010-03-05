@@ -204,12 +204,10 @@ public class VMCreator {
         throw new IOException("debugger already listening");
       }
 
-      final String port = myConnectionSettings.getPort();
-
       if (myConnectionSettings.isServerMode()) {
         ListeningConnector connector = (ListeningConnector) findConnector(
           myConnectionSettings.isUseSockets() ? SOCKET_LISTENING_CONNECTOR_NAME : SHMEM_LISTENING_CONNECTOR_NAME);
-        fillConnectorArguments(connector, port);
+        fillConnectorArguments(connector);
 
         connector.startListening(myArguments);
         myDebugVMEventsProcessor.getMulticaster().connectorIsReady();
@@ -231,7 +229,7 @@ public class VMCreator {
         }
       } else {
         AttachingConnector connector = (AttachingConnector) findConnector(myConnectionSettings.isUseSockets() ? SOCKET_ATTACHING_CONNECTOR_NAME : SHMEM_ATTACHING_CONNECTOR_NAME);
-        fillConnectorArguments(connector, port);
+        fillConnectorArguments(connector);
         try {
           return connector.attach(myArguments);
         } catch (IOException ex) {
@@ -249,7 +247,7 @@ public class VMCreator {
     }
   }
 
-  private void fillConnectorArguments(Connector connector, String port) throws RunFailedException {
+  private void fillConnectorArguments(Connector connector) throws RunFailedException {
     if (connector == null) {
       throw new RunFailedException("debug connector not found");
     }
@@ -258,13 +256,10 @@ public class VMCreator {
       throw new RunFailedException("no debug listen port");
     }
 
-    if (port == null) {
-      throw new RunFailedException("no debug listen port");
-    }
     // negative port number means the caller leaves to debugger to decide at which hport to listen
     final Argument portArg = myConnectionSettings.isUseSockets() ? myArguments.get("port") : myArguments.get("name");
     if (portArg != null) {
-      portArg.setValue(port);
+      portArg.setValue(Integer.toString(myConnectionSettings.getPort()));
     }
     final Argument timeoutArg = myArguments.get("timeout");
     if (timeoutArg != null) {
