@@ -75,7 +75,6 @@ public abstract class AbstractModule implements IModule {
   private ModuleScope myScope = new ModuleScope();
 
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
-  private List<StubPath> myLoadedStubPaths = new ArrayList<StubPath>();
 
   private Set<String> myIncludedStubPaths;
   private CompositeClassPathItem myCachedClassPathItem;
@@ -489,7 +488,6 @@ public abstract class AbstractModule implements IModule {
     for (SModelRoot root : mySModelRoots) {
       root.dispose();
     }
-    disposeAllStubManagers();
     mySModelRoots.clear();
   }
 
@@ -699,72 +697,6 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  public void updateClassPath() {
-    myCachedClassPathItem = null;
-    myIncludedStubPaths = getIncludedStubPaths();
-  }
-
-  public void updateStubs() {
-    disposeAllStubManagers();
-    releaseOldStubs();
-
-    CleanupManager.getInstance().cleanup();
-    MPSModuleRepository.getInstance().invalidateCaches();
-
-    loadNewStubs();
-  }
-
-  //todo for stubs reloading only
-
-  public List<StubPath> getLoadedStubPaths() {
-    return myLoadedStubPaths;
-  }
-
-  private void disposeAllStubManagers() {
-    for (StubPath sp : myLoadedStubPaths) {
-      BaseStubModelRootManager mrm = sp.getModelRootManager();
-      if (mrm != null) {
-        mrm.dispose();
-        sp.setModelRootManager(null);
-      }
-    }
-
-    myLoadedStubPaths.clear();
-  }
-
-  private void releaseOldStubs() {
-    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
-      if (!(sm instanceof BaseStubModelDescriptor)) continue;
-      if (!StubReloadManager.getInstance().needsFullReload((BaseStubModelDescriptor) sm)) continue;
-
-      if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
-        SModelRepository.getInstance().removeModelDescriptor(sm);
-      } else {
-        SModelRepository.getInstance().unRegisterModelDescriptor(sm, this);
-      }
-    }
-  }
-
-  private void loadNewStubs() {
-    List<StubPath> stubModels = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
-
-    for (StubPath sp : stubModels) {
-      BaseStubModelRootManager manager = createStubManager(sp);
-      sp.setModelRootManager(manager);
-
-      if (manager == null) continue;
-
-      //todo can be removed before 1.2. this try-block is to help to migrate to BaseStubModelDescriptor on sources
-      try {
-        manager.updateModels(sp.getPath(), "", this);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-
-      myLoadedStubPaths.add(sp);
-    }
-  }
-
   private Set<String> getIncludedStubPaths() {
     LinkedHashSet<String> result = new LinkedHashSet<String>();
     ModuleDescriptor descriptor = getModuleDescriptor();
@@ -799,6 +731,60 @@ public abstract class AbstractModule implements IModule {
     }
 
     return changed;
+  }
+
+  @Override
+  public List<SNodeDescriptor> getStubsRootNodeDescriptors() {
+    List<SNodeDescriptor> result = new ArrayList<SNodeDescriptor>();
+
+    for (SModelRoot root : getSModelRoots()) {
+      IModelRootManager manager = root.getManager();
+      if (manager instanceof BaseStubModelRootManager) {
+        result.addAll(((BaseStubModelRootManager) manager).getRootNodeDescriptors(new StubLocation(root.getPath(), root.getPrefix(), this)));
+      }
+    }
+
+    for (StubPath path : StubReloadManager.getInstance().getLoadedStubPathsFor(this)) {
+      IModelRootManager m = path.getModelRootManager();
+      if (m instanceof BaseStubModelRootManager) {
+        result.addAll(((BaseStubModelRootManager) m).getRootNodeDescriptors(new StubLocation(path.getPath(), "", this)));
+      }
+    }
+
+    return result;
+  }
+
+  //todo[CP] remove this method when got rid of classpaths
+
+  protected List<StubModelsEntry> getStubModelEntries() {
+    List<ClassPathEntry> cp = getModuleDescriptor().getClassPaths();
+    List<StubModelsEntry> sm = getModuleDescriptor().getStubModelEntries();
+
+    return toStubModelEntries(cp, sm);
+  }
+
+  //todo[CP] remove this method when got rid of classpaths
+
+  protected List<StubModelsEntry> toStubModelEntries(List<ClassPathEntry> cp, List<StubModelsEntry> sm) {
+    ArrayList<StubModelsEntry> result = new ArrayList<StubModelsEntry>();
+
+    result.addAll(sm);
+    for (ClassPathEntry entry : cp) {
+      StubModelsEntry sme = new StubModelsEntry();
+      sme.setPath(entry.getPath());
+      sme.setManager(LanguageID.JAVA_MANAGER);
+      sme.setIncludedInVCS(entry.isIncludedInVCS());
+      result.add(sme);
+    }
+
+    return result;
+  }
+
+  //-----------classpath--------------
+
+  public void updateClassPath() {
+    myCachedClassPathItem = null;
+    myIncludedStubPaths = getIncludedStubPaths();
   }
 
   //todo check this code. Wy not to do it where we add jars?
@@ -875,82 +861,11 @@ public abstract class AbstractModule implements IModule {
     return new ClasspathCollector(modules).collect(includeJDK, includeMPS);
   }
 
-
-  @Override
-  public List<SNodeDescriptor> getStubsRootNodeDescriptors() {
-    List<SNodeDescriptor> result = new ArrayList<SNodeDescriptor>();
-
-    for (SModelRoot root : getSModelRoots()) {
-      IModelRootManager manager = root.getManager();
-      if (manager instanceof BaseStubModelRootManager) {
-        result.addAll(((BaseStubModelRootManager) manager).getRootNodeDescriptors(new StubLocation(root.getPath(), root.getPrefix(), this)));
-      }
-    }
-
-    for (StubPath path : myLoadedStubPaths) {
-      IModelRootManager m = path.getModelRootManager();
-      if (m instanceof BaseStubModelRootManager) {
-        result.addAll(((BaseStubModelRootManager) m).getRootNodeDescriptors(new StubLocation(path.getPath(), "", this)));
-      }
-    }
-
-    return result;
-  }
-
-  @Nullable
-  private BaseStubModelRootManager createStubManager(StubPath sp) {
-    try {
-      if (sp.getManager() == null) return null;
-
-      String moduleId = sp.getManager().getModuleId();
-      String className = sp.getManager().getClassName();
-
-      // TODO: fixme
-      // while loading a language we can't refer to it by ID, since it hasn't been created yet
-      // fortunately, we don't have to
-      if (this.getModuleId().equals(ModuleId.fromString(moduleId))) {
-        // well, that's weird... this causes an NPE in ClassLoaderManager
-        return (BaseStubModelRootManager) BaseStubModelRootManager.create(this, className);
-      }
-
-      return (BaseStubModelRootManager) BaseStubModelRootManager.create(moduleId, className);
-    } catch (ManagerNotFoundException e) {
-      LOG.error("Can't create stub manager " + sp.getManager().getClassName() + " for " + sp.getPath(), e);
-      return null;
-    }
-  }
-
   public BytecodeLocator getBytecodeLocator() {
     return new ModuleBytecodeLocator();
   }
 
-  //todo[CP] remove this method when got rid of classpaths
-
-  protected List<StubModelsEntry> getStubModelEntries() {
-    List<ClassPathEntry> cp = getModuleDescriptor().getClassPaths();
-    List<StubModelsEntry> sm = getModuleDescriptor().getStubModelEntries();
-
-    return toStubModelEntries(cp, sm);
-  }
-
-  //todo[CP] remove this method when got rid of classpaths
-
-  protected List<StubModelsEntry> toStubModelEntries(List<ClassPathEntry> cp, List<StubModelsEntry> sm) {
-    ArrayList<StubModelsEntry> result = new ArrayList<StubModelsEntry>();
-
-    result.addAll(sm);
-    for (ClassPathEntry entry : cp) {
-      StubModelsEntry sme = new StubModelsEntry();
-      sme.setPath(entry.getPath());
-      sme.setManager(LanguageID.JAVA_MANAGER);
-      sme.setIncludedInVCS(entry.isIncludedInVCS());
-      result.add(sme);
-    }
-
-    return result;
-  }
-
-  //-----------stubs end--------------
+  //----------------------------------
 
   public static class StubPath {
     private String myPath;

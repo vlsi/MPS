@@ -124,8 +124,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   void updateClassPath();
 
-  void updateStubs();
-
   void save();
 
   void onModuleLoad();

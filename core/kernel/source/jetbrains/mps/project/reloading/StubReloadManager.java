@@ -2,11 +2,14 @@ package jetbrains.mps.project.reloading;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.lang.stubs.structure.LibraryStubDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -15,10 +18,13 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.stubs.BaseLibStubDescriptor;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
+import jetbrains.mps.stubs.BaseStubModelRootManager;
 import jetbrains.mps.stubs.StubLocation;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class StubReloadManager implements ApplicationComponent {
@@ -26,8 +32,9 @@ public class StubReloadManager implements ApplicationComponent {
 
   //todo dispose old solutions
   private List<String> myLoadedSolutions = new ArrayList<String>();
-  private MPSModuleRepository myRepos;
+  private MyStubPaths myLoadedStubPaths = new MyStubPaths();
   private boolean myFirstReload = true;
+  private MPSModuleRepository myRepos;
 
   public static StubReloadManager getInstance() {
     return ApplicationManager.getApplication().getComponent(StubReloadManager.class);
@@ -37,27 +44,31 @@ public class StubReloadManager implements ApplicationComponent {
     myRepos = repos;
   }
 
-  public boolean needsFullReload(BaseStubModelDescriptor model) {
-    return model.isNeedsReloading();
-  }
-
   public boolean needsUpdate(BaseStubModelDescriptor descriptor, StubLocation location) {
     return needsFullReload(descriptor);
+  }
+
+  public List<StubPath> getLoadedStubPathsFor(AbstractModule m) {
+    return myLoadedStubPaths.get(m.getModuleId());
   }
 
   public void reload() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        loadNewStubSolutions();
         markOldStubs();
         SModelRepository.getInstance().refreshModels();
-        loadNewStubSolutions();
         updateStubs();
         markNewStubs();
       }
     });
   }
 
-  public void loadNewStubSolutions() {
+  private boolean needsFullReload(BaseStubModelDescriptor model) {
+    return model.isNeedsReloading();
+  }
+
+  private void loadNewStubSolutions() {
     for (BaseLibStubDescriptor d : createLibDescrs()) {
       if (myLoadedSolutions.contains(d.getModuleId())) continue;
 
@@ -117,7 +128,85 @@ public class StubReloadManager implements ApplicationComponent {
 
   private void updateStubs() {
     for (IModule m : myRepos.getAllModules()) {
-      m.updateStubs();
+      if (!(m instanceof AbstractModule)) continue;
+      disposeAllStubManagers();
+      releaseOldStubs(((AbstractModule) m));
+    }
+    CleanupManager.getInstance().cleanup();
+    MPSModuleRepository.getInstance().invalidateCaches();
+    for (IModule m : myRepos.getAllModules()) {
+      if (!(m instanceof AbstractModule)) continue;
+      loadNewStubs(((AbstractModule) m));
+    }
+  }
+
+  private void disposeAllStubManagers() {
+    for (StubPath sp : myLoadedStubPaths.getAllStubPaths()) {
+      BaseStubModelRootManager mrm = sp.getModelRootManager();
+      if (mrm != null) {
+        mrm.dispose();
+        sp.setModelRootManager(null);
+      }
+    }
+
+    myLoadedStubPaths.clear();
+  }
+
+
+  private void releaseOldStubs(AbstractModule m) {
+    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(m)) {
+      if (!(sm instanceof BaseStubModelDescriptor)) continue;
+      if (!StubReloadManager.getInstance().needsFullReload((BaseStubModelDescriptor) sm)) continue;
+
+      if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
+        SModelRepository.getInstance().removeModelDescriptor(sm);
+      } else {
+        SModelRepository.getInstance().unRegisterModelDescriptor(sm, m);
+      }
+    }
+  }
+
+  private void loadNewStubs(AbstractModule m) {
+    List<StubPath> stubModels = m.areJavaStubsEnabled() ? m.getAllStubPaths() : m.getStubPaths();
+
+    for (StubPath sp : stubModels) {
+      BaseStubModelRootManager manager = createStubManager(m, sp);
+      sp.setModelRootManager(manager);
+
+      if (manager == null) continue;
+
+      //todo can be removed before 1.2. this try-block is to help to migrate to BaseStubModelDescriptor on sources
+      try {
+        manager.updateModels(sp.getPath(), "", m);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+
+      myLoadedStubPaths.add(m, sp);
+    }
+  }
+
+
+  @Nullable
+  private BaseStubModelRootManager createStubManager(AbstractModule m, StubPath sp) {
+    try {
+      if (sp.getManager() == null) return null;
+
+      String moduleId = sp.getManager().getModuleId();
+      String className = sp.getManager().getClassName();
+
+      // TODO: fixme
+      // while loading a language we can't refer to it by ID, since it hasn't been created yet
+      // fortunately, we don't have to
+      if (m.getModuleId().equals(ModuleId.fromString(moduleId))) {
+        // well, that's weird... this causes an NPE in ClassLoaderManager
+        return (BaseStubModelRootManager) BaseStubModelRootManager.create((AbstractModule) m, className);
+      }
+
+      return (BaseStubModelRootManager) BaseStubModelRootManager.create(moduleId, className);
+    } catch (ManagerNotFoundException e) {
+      LOG.error("Can't create stub manager " + sp.getManager().getClassName() + " for " + sp.getPath(), e);
+      return null;
     }
   }
 
@@ -144,11 +233,7 @@ public class StubReloadManager implements ApplicationComponent {
       if (!SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
       if (notChanged(stubPathList, sm)) continue;
 
-
-      //todo remove this code - for GWT only
-      if (!(sm instanceof BaseStubModelDescriptor)) continue;
-
-      //assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
+      assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
       ((BaseStubModelDescriptor) sm).markReload();
     }
   }
@@ -168,7 +253,7 @@ public class StubReloadManager implements ApplicationComponent {
     List<StubPath> newStubs = module.areJavaStubsEnabled() ? module.getAllStubPaths() : module.getStubPaths();
 
     //todo make time linear [due to stubs list size this is not very significant]
-    for (StubPath os : module.getLoadedStubPaths()) {
+    for (StubPath os : myLoadedStubPaths.get(module.getModuleId())) {
       for (StubPath ns : newStubs) {
         if (os.equals(ns)) {
           if (os.isFresh()) {
@@ -191,7 +276,6 @@ public class StubReloadManager implements ApplicationComponent {
     return true;
   }
 
-
   @NotNull
   public String getComponentName() {
     return "Stub Reload Manager";
@@ -203,5 +287,31 @@ public class StubReloadManager implements ApplicationComponent {
 
   public void disposeComponent() {
     myLoadedSolutions.clear();
+  }
+
+  private static class MyStubPaths extends HashMap<ModuleId, List<StubPath>> {
+    public List<StubPath> getAllStubPaths() {
+      List<StubPath> result = new ArrayList<StubPath>();
+      for (List<StubPath> lsp : values()) {
+        result.addAll(lsp);
+      }
+      return result;
+    }
+
+    public List<StubPath> get(Object key) {
+      List<StubPath> res = super.get(key);
+      if (res == null) return new ArrayList<StubPath>();
+      return res;
+    }
+
+    public void add(AbstractModule m, StubPath sp) {
+      List<StubPath> oldList = get(m.getModuleId());
+      if (oldList == null) {
+        oldList = new ArrayList<StubPath>();
+      }
+
+      oldList.add(sp);
+      put(m.getModuleId(), oldList);
+    }
   }
 }
