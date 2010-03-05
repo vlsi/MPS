@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="1">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="Visible" conceptFQName="jetbrains.mps.baseLanguage.structure.Visible" featureKind="CONCEPT" />
@@ -20,6 +21,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" nodeId="5680397130376129217" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="name" featureKind="PROPERTY" />
@@ -35,6 +37,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" nodeId="5680397130376446158" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="type" featureKind="CHILD" />
@@ -1747,6 +1750,9 @@
       <property name="value:0" value="try {...} finally" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="6870006035999006533">
+      <link role="intfc:0" targetNodeId="1199653749349:3" resolveInfo="IStatementListContainer" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1154032098014">
     <property name="name:0" value="AbstractLoopStatement" />
@@ -1947,6 +1953,9 @@
       <property name="sourceCardinality:0" value="1..n" />
       <property name="role:0" value="catchClause" />
       <link role="target:0" targetNodeId="1164903280175:3" resolveInfo="CatchClause" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="6870006035999006532">
+      <link role="intfc:0" targetNodeId="1199653749349:3" resolveInfo="IStatementListContainer" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1164903280175">

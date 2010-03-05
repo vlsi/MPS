@@ -9,13 +9,40 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class TryCatchStatement extends Statement {
+public class TryCatchStatement extends Statement implements IStatementListContainer {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.TryCatchStatement";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BODY = "body";
   public static final String CATCH_CLAUSE = "catchClause";
 
   public TryCatchStatement(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(TryCatchStatement.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(TryCatchStatement.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(TryCatchStatement.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(TryCatchStatement.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(TryCatchStatement.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(TryCatchStatement.VIRTUAL_PACKAGE, value);
   }
 
   public StatementList getBody() {
