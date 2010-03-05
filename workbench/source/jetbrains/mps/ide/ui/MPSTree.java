@@ -761,7 +761,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
         Font newFont = tree.getFont().deriveFont(treeNode.getFontStyle());
         myMainTextLabel.setFont(newFont);
-        myAdditionalTextLabel.setFont(newFont);
+        myAdditionalTextLabel.setFont(tree.getFont());        
 
         if (!selected) {
           myMainTextLabel.setForeground(treeNode.getColor());

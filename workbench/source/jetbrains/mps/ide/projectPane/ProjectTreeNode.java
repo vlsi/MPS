@@ -16,11 +16,14 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.action.ActionUtils;
+
+import java.awt.Font;
 
 class ProjectTreeNode extends MPSTreeNode {
   private MPSProject myProject;
@@ -37,7 +40,14 @@ class ProjectTreeNode extends MPSTreeNode {
 
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
+    Project ideaProject = myProject.getComponent(Project.class);
+    setText(ideaProject.getName());
+    setFontStyle(Font.BOLD);
     setErrorState(myProject.getErrors() != null ? ErrorState.ERROR : ErrorState.NONE);
+    if (ideaProject.getBaseDir() != null) {
+      //noinspection ConstantConditions
+      setAdditionalText(ideaProject .getBaseDir().getPresentableUrl());
+    }
     setTooltipText(myProject.getErrors());
   }
 
