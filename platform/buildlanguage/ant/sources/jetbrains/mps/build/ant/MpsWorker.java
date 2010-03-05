@@ -22,6 +22,7 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.util.PathUtil;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -291,16 +292,21 @@ public abstract class MpsWorker {
       }
     }
     for (SModelDescriptor modelDescriptor : models) {
-      if (SModelStereotype.isUserModel(modelDescriptor)) {
+      if (includeModel(modelDescriptor)) {
         modelDescriptors.add(modelDescriptor);
       }
     }
   }
 
+  private boolean includeModel(SModelDescriptor modelDescriptor) {
+    return SModelStereotype.isUserModel(modelDescriptor) &&
+      !(ModelGenerationStatusManager.isDoNotGenerate(modelDescriptor));
+  }
+
   protected void extractModels(Collection<SModelDescriptor> modelsList, IModule m) {
     List<SModelDescriptor> ownedModels = m.getOwnModelDescriptors();
     for (SModelDescriptor d : ownedModels) {
-      if (SModelStereotype.isUserModel(d)) {
+      if (includeModel(d)) {
         modelsList.add(d);
       }
     }
