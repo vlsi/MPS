@@ -53,15 +53,11 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   public void reload() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        loadNewStubSolutions();
-        markOldStubs();
-        SModelRepository.getInstance().refreshModels();
-        updateStubs();
-        markNewStubs();
-      }
-    });
+    loadNewStubSolutions();
+    markOldStubs();
+    SModelRepository.getInstance().refreshModels();
+    updateStubs();
+    markNewStubs();
   }
 
   private boolean needsFullReload(BaseStubModelDescriptor model) {
