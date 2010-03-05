@@ -12,15 +12,13 @@ import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
-import com.intellij.util.xmlb.annotations.Tag;
+import jetbrains.mps.debug.integration.runconfigs.ui.RemoteSettingsEditor;
 import jetbrains.mps.debug.runtime.DebugConnectionSettings;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
-import javax.swing.JLabel;
 
 public class RemoteConfiguration extends BaseRunConfig {
   private final DebugConnectionSettings mySettings = new DebugConnectionSettings();
@@ -35,12 +33,12 @@ public class RemoteConfiguration extends BaseRunConfig {
       private RemoteSettingsEditor myRemoteSettingsEditor;
       @Override
       protected void resetEditorFrom(RemoteConfiguration s) {
-        myRemoteSettingsEditor.reset(s);
+        myRemoteSettingsEditor.reset(mySettings);
       }
 
       @Override
       protected void applyEditorTo(RemoteConfiguration s) throws ConfigurationException {
-        myRemoteSettingsEditor.apply(s);
+        myRemoteSettingsEditor.apply(mySettings);
       }
 
       @NotNull

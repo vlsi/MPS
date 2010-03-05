@@ -1,18 +1,17 @@
-package jetbrains.mps.debug.integration.runconfigs;
+package jetbrains.mps.debug.integration.runconfigs.ui;
 
 import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
 import jetbrains.mps.debug.runtime.DebugConnectionSettings;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JFormattedTextField;
-import javax.swing.JFormattedTextField.AbstractFormatter;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.DefaultFormatter;
-import java.awt.FlowLayout;
 import java.awt.GridBagLayout;
-import java.awt.event.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.ParseException;
@@ -65,16 +64,14 @@ public class RemoteSettingsEditor extends JPanel {
     return "-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=" + myPort;
   }
 
-  public void reset(RemoteConfiguration remoteConfiguration) {
-    DebugConnectionSettings settings = remoteConfiguration.getSettings();
+  public void reset(DebugConnectionSettings settings) {
     myHost = settings.getHostName();
     myPort = settings.getPort();
     myCommandLine = formClientCommandLine();
     updateUiFromFields();
   }
 
-  public void apply(RemoteConfiguration remoteConfiguration) {
-    DebugConnectionSettings settings = remoteConfiguration.getSettings();
+  public void apply(DebugConnectionSettings settings) {
     settings.setHostName(myHost);
     settings.setPort(myPort);
   }
