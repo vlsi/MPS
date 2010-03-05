@@ -99,6 +99,10 @@ public class DebugVMEventsProcessor {
     return myBreakpointManager;
   }
 
+  public String getConncetionString() {
+    return myVMCreator.getConnectionSettings().getPresentation();
+  }
+
   private class DebuggerEventThread implements Runnable {
     DebuggerEventThread() {
     }

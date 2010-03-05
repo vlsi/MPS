@@ -1,6 +1,7 @@
 package jetbrains.mps.debug.runtime;
 
 import com.intellij.execution.process.ProcessHandler;
+import com.intellij.execution.process.ProcessOutputTypes;
 import com.sun.jdi.*;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.logging.Logger;
@@ -181,6 +182,7 @@ public class DebugSession {
     @Override
     public void processAttached(@NotNull DebugVMEventsProcessor process) {
       myExecutionState = ExecutionState.Running;
+      myProcessHandler.notifyTextAvailable("Connected to the target VM, " + process.getConncetionString() + "\n", ProcessOutputTypes.SYSTEM);
     }
 
     @Override
@@ -188,6 +190,7 @@ public class DebugSession {
       myExecutionState = ExecutionState.Stopped;
       setState(getUiState(), new UiState(null));
       fireSessionResumed(DebugSession.this); // TODO hack
+      myProcessHandler.notifyTextAvailable("Disconnected from the target VM, " + process.getConncetionString() + "\n", ProcessOutputTypes.SYSTEM);
     }
   }
 

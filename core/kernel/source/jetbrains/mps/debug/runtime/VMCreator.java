@@ -336,6 +336,10 @@ public class VMCreator {
     return myDebuggerSession;
   }
 
+  public DebugConnectionSettings getConnectionSettings() {
+    return myConnectionSettings;
+  }
+
   private class RunsAfterProcessStarted extends ProcessAdapter {
     private Runnable myRunnable;
     private boolean alreadyRun = false;

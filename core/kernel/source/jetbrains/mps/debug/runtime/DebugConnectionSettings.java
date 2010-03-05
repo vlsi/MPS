@@ -66,4 +66,8 @@ public class DebugConnectionSettings { //just a record
       'n'
     )) + ",address=" + myHostName + ":" + myPort;
   }
+
+  public String getPresentation() {
+    return "transport: " + (myUseSockets ? "\'socket\'" : "\'shared memory\'") + ", address: " + myHostName + ":" + myPort;
+  }
 }
