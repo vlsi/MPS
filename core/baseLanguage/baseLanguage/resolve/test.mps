@@ -645,6 +645,21 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8799372466893610998">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="8799372466893610999">
+            <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8799372466893611000">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement:3" id="8799372466893611001">
+                <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8799372466893611002" />
+                <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="8799372466893611003">
+                  <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8799372466893611004">
+                    <node role="type:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="8799372466893611005" />
+                  </node>
+                  <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8799372466893611006" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="3793054284049050881">

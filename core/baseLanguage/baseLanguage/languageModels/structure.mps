@@ -1750,8 +1750,8 @@
       <property name="value:0" value="try {...} finally" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" />
     </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="6870006035999006533">
-      <link role="intfc:0" targetNodeId="1199653749349:3" resolveInfo="IStatementListContainer" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5720597156431189522">
+      <link role="intfc:0" targetNodeId="1237545921771:3" resolveInfo="IContainsStatementList" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1154032098014">
@@ -1954,8 +1954,8 @@
       <property name="role:0" value="catchClause" />
       <link role="target:0" targetNodeId="1164903280175:3" resolveInfo="CatchClause" />
     </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="6870006035999006532">
-      <link role="intfc:0" targetNodeId="1199653749349:3" resolveInfo="IStatementListContainer" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5720597156431189521">
+      <link role="intfc:0" targetNodeId="1237545921771:3" resolveInfo="IContainsStatementList" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1164903280175">
