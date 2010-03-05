@@ -11,6 +11,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.openapi.util.WriteExternalException;
+import com.intellij.util.xmlb.XmlSerializer;
+import com.intellij.util.xmlb.annotations.Tag;
 import jetbrains.mps.debug.runtime.DebugConnectionSettings;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunConfig;
 import org.jdom.Element;
@@ -56,6 +58,14 @@ public class RemoteConfiguration extends BaseRunConfig {
 
   public DebugConnectionSettings getSettings() {
     return mySettings;
+  }
+
+  public void writeExternal(Element e) throws WriteExternalException {
+    e.addContent(XmlSerializer.serialize(this.mySettings));
+  }
+
+  public void readExternal(Element e) throws InvalidDataException {
+    XmlSerializer.deserializeInto(this.mySettings, ((Element) e.getChildren().get(0)));
   }
 
   @Override
