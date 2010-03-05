@@ -122,7 +122,7 @@ public class LeftEditorHighlighter extends JComponent {
     editorComponent.addRebuildListener(new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
         assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter$RebuildListener should be called in eventDispatchThread";
-        removeAllIconRenderers(IconRendererType.BOOKMARK);
+        removeAllIconRenderers(BookmarkIconRenderer.TYPE);
         BookmarkManager bookmarkManager = getBookmarkManager();
         if (bookmarkManager != null) {
           bookmarkManager.removeBookmarkListener(myListener);
@@ -596,6 +596,7 @@ public class LeftEditorHighlighter extends JComponent {
   }
 
   private static class BookmarkIconRenderer implements EditorMessageIconRenderer {
+    private static final IconRendererType TYPE = new IconRendererType(3);
     private SNode myNode;
     private int myNumber;
 
@@ -631,7 +632,7 @@ public class LeftEditorHighlighter extends JComponent {
 
     @Override
     public IconRendererType getType() {
-      return IconRendererType.BOOKMARK;
+      return TYPE;
     }
 
     @Override

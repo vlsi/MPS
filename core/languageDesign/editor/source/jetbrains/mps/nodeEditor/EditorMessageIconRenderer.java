@@ -29,14 +29,11 @@ public interface EditorMessageIconRenderer {
 
   AnAction getClickAction();
 
-  enum IconRendererType {
-    OVERRIDEN_METHOD(1),
-    BOOKMARK(2),
-    BREAKPOINT(3);
+  public class IconRendererType {
 
     private final int myWeight;
 
-    private IconRendererType(int weight) {
+    public IconRendererType(int weight) {
       myWeight = weight;
     }
 
