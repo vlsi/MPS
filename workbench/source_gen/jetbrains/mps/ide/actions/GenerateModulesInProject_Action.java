@@ -10,14 +10,14 @@ import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
-public class GenerateModule_Action extends GeneratedAction {
+public class GenerateModulesInProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GenerateModule_Action.class);
+  protected static Log log = LogFactory.getLog(GenerateModulesInProject_Action.class);
 
   private AnAction action;
 
-  public GenerateModule_Action(AnAction action_par) {
-    super("Generate Module", "", ICON);
+  public GenerateModulesInProject_Action(AnAction action_par) {
+    super("Generate Modules in Project", "", ICON);
     this.action = action_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
@@ -26,15 +26,15 @@ public class GenerateModule_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "ctrl F9";
+    return "";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      GenerateModule_Action.this.action.update(event);
+      GenerateModulesInProject_Action.this.action.update(event);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GenerateModule", t);
+        log.error("User's action doUpdate method failed. Action:" + "GenerateModulesInProject", t);
       }
       this.disable(event.getPresentation());
     }
@@ -50,10 +50,10 @@ public class GenerateModule_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      GenerateModule_Action.this.action.actionPerformed(event);
+      GenerateModulesInProject_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GenerateModule", t);
+        log.error("User's action execute method failed. Action:" + "GenerateModulesInProject", t);
       }
     }
   }
@@ -61,7 +61,7 @@ public class GenerateModule_Action extends GeneratedAction {
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder(500);
-    res.append(GenerateModule_Action.class.getName());
+    res.append(GenerateModulesInProject_Action.class.getName());
     res.append("#");
     res.append(action_State((AnAction) this.action));
     res.append("!");
