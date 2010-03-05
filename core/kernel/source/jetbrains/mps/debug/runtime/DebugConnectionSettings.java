@@ -54,11 +54,17 @@ public class DebugConnectionSettings { //just a record
     mySuspend = suspend;
   }
 
+  public String getApplicationCommandLine(){
+    return getCommandLine(true);
+  }
+
   public String getCommandLine(boolean application) {
     boolean serverMode = myServerMode;
     if (application) serverMode = !serverMode;
     // TODO use socket
-    return "-Xrunjdwp:transport=dt_socket,server=" + ((serverMode ?
+    return "-Xrunjdwp:transport=" +
+      (myUseSockets ? "dt_socket" : "dt_shmem") +
+      ",server=" + ((serverMode ?
       'y' :
       'n'
     )) + ",suspend=" + ((mySuspend ?
