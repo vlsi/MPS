@@ -32,6 +32,10 @@ public class BooleanType_Behavior {
     return new BooleanType_Behavior.QuotationClass_1wwrx3_a0a0d().createNode();
   }
 
+  public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return "Z";
+  }
+
   public static SNode call_createDefaultTypeExpression_9011026350741579292(SNode thisNode) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BooleanType"), "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741579292);
   }

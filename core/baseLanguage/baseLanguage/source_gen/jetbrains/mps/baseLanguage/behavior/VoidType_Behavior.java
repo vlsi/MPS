@@ -20,6 +20,10 @@ public class VoidType_Behavior {
     return new VoidType_Behavior.QuotationClass_s71av5_a0a0b().createNode();
   }
 
+  public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return "V";
+  }
+
   public static class QuotationClass_s71av5_a0a0b {
     public QuotationClass_s71av5_a0a0b() {
     }

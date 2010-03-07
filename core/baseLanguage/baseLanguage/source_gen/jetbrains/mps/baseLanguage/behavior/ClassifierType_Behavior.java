@@ -153,6 +153,12 @@ public class ClassifierType_Behavior {
     return classifierType;
   }
 
+  public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
+    String preparedFQName = INamedConcept_Behavior.call_getFqName_1213877404258(classifier).replace('.', '/');
+    return "L" + preparedFQName + ";";
+  }
+
   public static SNode call_createDefaultTypeExpression_9011026350741578236(SNode thisNode) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741578236);
   }

@@ -119,6 +119,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724547" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797640259">
+      <property name="name" value="jniSignature" />
+      <link role="overriddenMethod" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797640262">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797640265">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797640267">
+            <property name="value:3" value="J" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797640263" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797640264" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877208339">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877208340" />
     </node>
@@ -1551,6 +1564,19 @@
         <link role="concept:16" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724869" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797640250">
+      <property name="name" value="jniSignature" />
+      <link role="overriddenMethod" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797640253">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797640256">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797640258">
+            <property name="value:3" value="I" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797640254" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797640255" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877270663">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877270664" />
@@ -3362,6 +3388,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724518" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797640268">
+      <property name="name" value="jniSignature" />
+      <link role="overriddenMethod" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797640271">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797640274">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797640276">
+            <property name="value:3" value="S" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797640272" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797640273" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877308692">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877308693" />
     </node>
@@ -4171,6 +4210,70 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5744862332972792515" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797640299">
+      <property name="name" value="jniSignature" />
+      <link role="overriddenMethod" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797640302">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8847328628797656379">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8847328628797656380">
+            <property name="name:3" value="classifier" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8847328628797656381">
+              <link role="concept:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656384">
+              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8847328628797656383" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8847328628797656388">
+                <link role="link:16" targetNodeId="1.1107535924139:3" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8847328628797656405">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8847328628797656406">
+            <property name="name:3" value="preparedFQName" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8847328628797656407">
+              <link role="classifier:3" targetNodeId="2.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656408">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656409">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8847328628797656410">
+                  <link role="variableDeclaration:3" targetNodeId="8847328628797656380" resolveInfo="classifier" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8847328628797656411">
+                  <link role="baseMethodDeclaration:16" targetNodeId="20.1213877404258" resolveInfo="getFqName" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8847328628797656412">
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~String.replace(char,char):java.lang.String" resolveInfo="replace" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.CharConstant:3" id="8847328628797656413">
+                  <property name="charConstant:3" value="." />
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.CharConstant:3" id="8847328628797656414">
+                  <property name="charConstant:3" value="/" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797640307">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8847328628797656416">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797656419">
+              <property name="value:3" value=";" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8847328628797640310">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797640309">
+                <property name="value:3" value="L" />
+              </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8847328628797656415">
+                <link role="variableDeclaration:3" targetNodeId="8847328628797656406" resolveInfo="preparedFQName" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797640305" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797640306" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877316004">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877316005" />
     </node>
@@ -4214,6 +4317,19 @@
         <link role="concept:16" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155723863" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797640222">
+      <property name="name" value="jniSignature" />
+      <link role="overriddenMethod" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797640225">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797640228">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797640230">
+            <property name="value:3" value="C" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797640226" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797640227" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877322519">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877322520" />
@@ -4726,6 +4842,19 @@
         <link role="concept:16" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797640204">
+      <property name="name" value="jniSignature" />
+      <link role="overriddenMethod" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797640207">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797640210">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797640212">
+            <property name="value:3" value="Z" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797640208" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797640209" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877329516">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877329517" />
     </node>
@@ -5143,6 +5272,17 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3550117081777940688">
             <link role="variableDeclaration:3" targetNodeId="3550117081777940683" resolveInfo="node" />
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797633411">
+      <property name="name" value="jniSignature" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797633412" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797640171" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797633414">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797640172">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="8847328628797640174" />
         </node>
       </node>
     </node>
@@ -7437,6 +7577,123 @@
         <link role="concept:16" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797656446">
+      <property name="name" value="jniSignature" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797656447" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797656459" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797656449">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8847328628797656465">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8847328628797656466">
+            <property name="name:3" value="sb" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8847328628797656467">
+              <link role="classifier:3" targetNodeId="2.~StringBuilder" resolveInfo="StringBuilder" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8847328628797656469">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8847328628797656470">
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.&lt;init&gt;()" resolveInfo="StringBuilder" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8847328628797656472">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656474">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8847328628797656473">
+              <link role="variableDeclaration:3" targetNodeId="8847328628797656466" resolveInfo="sb" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8847328628797656478">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797656479">
+                <property name="value:3" value="(" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="8847328628797656512">
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797656513">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8847328628797656540">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656542">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8847328628797656541">
+                  <link role="variableDeclaration:3" targetNodeId="8847328628797656466" resolveInfo="sb" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8847328628797656546">
+                  <link role="baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656554">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656548">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8847328628797656547">
+                        <link role="variableDeclaration:3" targetNodeId="8847328628797656516" resolveInfo="p" />
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8847328628797656553">
+                        <link role="link:16" targetNodeId="1.5680397130376446158:3" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8847328628797656558">
+                      <link role="baseMethodDeclaration:16" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656530">
+            <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8847328628797656525" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="8847328628797656536">
+              <link role="link:16" targetNodeId="1.1068580123134:3" />
+            </node>
+          </node>
+          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8847328628797656516">
+            <property name="name:3" value="p" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8847328628797656520">
+              <link role="concept:16" targetNodeId="1.1068498886292:3" resolveInfo="ParameterDeclaration" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8847328628797656480">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656481">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8847328628797656482">
+              <link role="variableDeclaration:3" targetNodeId="8847328628797656466" resolveInfo="sb" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8847328628797656483">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797656484">
+                <property name="value:3" value=")" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8847328628797656493">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656495">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8847328628797656494">
+              <link role="variableDeclaration:3" targetNodeId="8847328628797656466" resolveInfo="sb" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8847328628797656499">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolveInfo="append" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656506">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656501">
+                  <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8847328628797656500" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8847328628797656505">
+                    <link role="link:16" targetNodeId="1.1068580123133:3" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8847328628797656510">
+                  <link role="baseMethodDeclaration:16" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797656460">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797656487">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8847328628797656486">
+              <link role="variableDeclaration:3" targetNodeId="8847328628797656466" resolveInfo="sb" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8847328628797656491">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~StringBuilder.toString():java.lang.String" resolveInfo="toString" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877351133">
     <link role="concept" targetNodeId="1.1070462154015:3" resolveInfo="StaticFieldDeclaration" />
@@ -7930,6 +8187,32 @@
         <link role="concept:16" targetNodeId="1.1145552809883:3" resolveInfo="AbstractCreator" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724166" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797640181">
+      <property name="name" value="jniSignature" />
+      <link role="overriddenMethod" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797640184">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797640187">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8847328628797640190">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797640199">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8847328628797640194">
+                <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8847328628797640193" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8847328628797640198">
+                  <link role="link:16" targetNodeId="1.1070534760952:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8847328628797640203">
+                <link role="baseMethodDeclaration:16" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+              </node>
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797640189">
+              <property name="value:3" value="[" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797640185" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797640186" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877352368">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877352369" />
@@ -10734,6 +11017,19 @@
         <link role="concept:16" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724984" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797640213">
+      <property name="name" value="jniSignature" />
+      <link role="overriddenMethod" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797640216">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797640219">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797640221">
+            <property name="value:3" value="B" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797640217" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797640218" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877420741">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877420742" />
@@ -14762,6 +15058,19 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724167" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797640231">
+      <property name="name" value="jniSignature" />
+      <link role="overriddenMethod" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797640234">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797640237">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797640239">
+            <property name="value:3" value="D" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797640235" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797640236" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877518826">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877518827" />
     </node>
@@ -15735,6 +16044,19 @@
         <link role="concept:16" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724164" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797640240">
+      <property name="name" value="jniSignature" />
+      <link role="overriddenMethod" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797640243">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797640246">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797640248">
+            <property name="value:3" value="F" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797640244" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797640245" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877529139">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877529140" />
@@ -20685,6 +21007,19 @@
         <link role="concept:16" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2102329369853775255" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8847328628797640277">
+      <property name="name" value="jniSignature" />
+      <link role="overriddenMethod" targetNodeId="8847328628797633411" resolveInfo="jniSignature" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8847328628797640280">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8847328628797640283">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8847328628797640285">
+            <property name="value:3" value="V" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8847328628797640281" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8847328628797640282" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="2102329369853775248">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2102329369853775249" />

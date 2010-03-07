@@ -22,6 +22,8 @@ import com.sun.jdi.request.*;
 import jetbrains.mps.debug.runtime.DebugManagerComponent.AllDebugProcessesAction;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
+import jetbrains.mps.debug.runtime.requests.Requestor;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

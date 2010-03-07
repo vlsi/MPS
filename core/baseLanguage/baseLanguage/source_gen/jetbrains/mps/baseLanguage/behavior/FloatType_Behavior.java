@@ -24,6 +24,10 @@ public class FloatType_Behavior {
     return new FloatType_Behavior.QuotationClass_ruijct_a0a0c().createNode();
   }
 
+  public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return "F";
+  }
+
   public static class QuotationClass_ruijct_a0a0b {
     public QuotationClass_ruijct_a0a0b() {
     }

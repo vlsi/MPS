@@ -24,6 +24,10 @@ public class IntegerType_Behavior {
     return new IntegerType_Behavior.QuotationClass_wfno30_a0a0c().createNode();
   }
 
+  public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return "I";
+  }
+
   public static class QuotationClass_wfno30_a0a0b {
     public QuotationClass_wfno30_a0a0b() {
     }

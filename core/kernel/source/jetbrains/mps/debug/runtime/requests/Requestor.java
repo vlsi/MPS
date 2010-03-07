@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debug.runtime.requests;
 
 /**
  * Created by IntelliJ IDEA.

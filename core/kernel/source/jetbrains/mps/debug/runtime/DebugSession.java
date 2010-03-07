@@ -402,7 +402,7 @@ public class DebugSession {
     }
 
     @Nullable
-    public Value getThisObject() {
+    public ObjectReference getThisObject() {
       if (myStackFrame != null) {
         return myStackFrame.thisObject();
       }

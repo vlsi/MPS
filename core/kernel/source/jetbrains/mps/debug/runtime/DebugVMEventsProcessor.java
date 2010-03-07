@@ -26,6 +26,7 @@ import com.sun.jdi.request.StepRequest;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
+import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 

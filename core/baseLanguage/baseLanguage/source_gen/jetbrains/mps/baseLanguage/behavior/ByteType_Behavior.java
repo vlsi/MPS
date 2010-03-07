@@ -24,6 +24,10 @@ public class ByteType_Behavior {
     return new ByteType_Behavior.QuotationClass_1npzgn_a0a0c().createNode();
   }
 
+  public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return "B";
+  }
+
   public static class QuotationClass_1npzgn_a0a0b {
     public QuotationClass_1npzgn_a0a0b() {
     }

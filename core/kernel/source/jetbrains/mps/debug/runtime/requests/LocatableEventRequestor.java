@@ -1,6 +1,7 @@
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debug.runtime.requests;
 
 import com.sun.jdi.event.LocatableEvent;
+import jetbrains.mps.debug.runtime.SuspendContextCommand;
 
 /**
  * Created by IntelliJ IDEA.

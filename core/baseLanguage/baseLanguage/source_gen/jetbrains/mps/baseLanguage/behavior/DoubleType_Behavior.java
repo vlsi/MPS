@@ -24,6 +24,10 @@ public class DoubleType_Behavior {
     return new DoubleType_Behavior.QuotationClass_w3fqur_a0a0c().createNode();
   }
 
+  public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return "D";
+  }
+
   public static class QuotationClass_w3fqur_a0a0b {
     public QuotationClass_w3fqur_a0a0b() {
     }

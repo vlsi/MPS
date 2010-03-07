@@ -24,6 +24,10 @@ public class LongType_Behavior {
     return new LongType_Behavior.QuotationClass_1ld2dp_a0a0c().createNode();
   }
 
+  public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return "J";
+  }
+
   public static class QuotationClass_1ld2dp_a0a0b {
     public QuotationClass_1ld2dp_a0a0b() {
     }

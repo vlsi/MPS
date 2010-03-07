@@ -25,6 +25,8 @@ import jetbrains.mps.debug.DebugInfo;
 import jetbrains.mps.debug.PositionInfo;
 import jetbrains.mps.debug.StacktraceUtil;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
+import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;

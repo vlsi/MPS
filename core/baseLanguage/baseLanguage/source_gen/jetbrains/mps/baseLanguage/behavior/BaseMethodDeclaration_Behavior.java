@@ -25,6 +25,7 @@ public class BaseMethodDeclaration_Behavior {
   private static Class[] PARAMETERS_1234359555698 = {SNode.class};
   private static Class[] PARAMETERS_5358895268254685434 = {SNode.class};
   private static Class[] PARAMETERS_1232982539764 = {SNode.class};
+  private static Class[] PARAMETERS_8847328628797656446 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -189,6 +190,17 @@ public class BaseMethodDeclaration_Behavior {
     return SLinkOperations.getTarget(thisNode, "returnType", true);
   }
 
+  public static String virtual_jniSignature_8847328628797656446(SNode thisNode) {
+    StringBuilder sb = new StringBuilder();
+    sb.append("(");
+    for (SNode p : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+      sb.append(Type_Behavior.call_jniSignature_8847328628797633411(SLinkOperations.getTarget(p, "type", true)));
+    }
+    sb.append(")");
+    sb.append(Type_Behavior.call_jniSignature_8847328628797633411(SLinkOperations.getTarget(thisNode, "returnType", true)));
+    return sb.toString();
+  }
+
   public static boolean call_isDataFlowChecked_1227714048980(SNode thisNode) {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isDataFlowChecked_1227714048980", PARAMETERS_1227714048980);
   }
@@ -209,6 +221,10 @@ public class BaseMethodDeclaration_Behavior {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isAbstract_1232982539764", PARAMETERS_1232982539764);
   }
 
+  public static String call_jniSignature_8847328628797656446(SNode thisNode) {
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_jniSignature_8847328628797656446", PARAMETERS_8847328628797656446);
+  }
+
   public static boolean callSuper_isDataFlowChecked_1227714048980(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_isDataFlowChecked_1227714048980", PARAMETERS_1227714048980);
   }
@@ -227,5 +243,9 @@ public class BaseMethodDeclaration_Behavior {
 
   public static boolean callSuper_isAbstract_1232982539764(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_isAbstract_1232982539764", PARAMETERS_1232982539764);
+  }
+
+  public static String callSuper_jniSignature_8847328628797656446(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_jniSignature_8847328628797656446", PARAMETERS_8847328628797656446);
   }
 }

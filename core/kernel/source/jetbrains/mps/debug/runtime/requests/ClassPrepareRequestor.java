@@ -1,6 +1,7 @@
-package jetbrains.mps.debug.runtime;
+package jetbrains.mps.debug.runtime.requests;
 
 import com.sun.jdi.ReferenceType;
+import jetbrains.mps.debug.runtime.DebugVMEventsProcessor;
 
 /**
  * Created by IntelliJ IDEA.

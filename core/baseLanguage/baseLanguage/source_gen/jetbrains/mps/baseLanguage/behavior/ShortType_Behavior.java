@@ -24,6 +24,10 @@ public class ShortType_Behavior {
     return new ShortType_Behavior.QuotationClass_gsl4dp_a0a0c().createNode();
   }
 
+  public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return "S";
+  }
+
   public static class QuotationClass_gsl4dp_a0a0b {
     public QuotationClass_gsl4dp_a0a0b() {
     }

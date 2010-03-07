@@ -5,6 +5,7 @@ import com.sun.jdi.Location;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.request.StepRequest;
+import jetbrains.mps.debug.runtime.requests.Requestor;
 import jetbrains.mps.logging.Logger;
 
 // in idea similar thing is called RequestHint

@@ -43,4 +43,8 @@ public class ArrayType_Behavior {
     SLinkOperations.setTarget(arrayCreator, "componentType", SNodeOperations.copyNode(type), true);
     return arrayCreator;
   }
+
+  public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return "[" + Type_Behavior.call_jniSignature_8847328628797633411(SLinkOperations.getTarget(thisNode, "componentType", true));
+  }
 }

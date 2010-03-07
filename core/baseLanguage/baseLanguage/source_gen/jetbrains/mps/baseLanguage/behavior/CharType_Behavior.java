@@ -24,6 +24,10 @@ public class CharType_Behavior {
     return new CharType_Behavior.QuotationClass_6iasjk_a0a0c().createNode();
   }
 
+  public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
+    return "C";
+  }
+
   public static class QuotationClass_6iasjk_a0a0b {
     public QuotationClass_6iasjk_a0a0b() {
     }
