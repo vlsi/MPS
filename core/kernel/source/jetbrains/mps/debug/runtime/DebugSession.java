@@ -23,7 +23,7 @@ public class DebugSession {
 
   private ExecutionState myExecutionState = ExecutionState.WaitingAttach;
   private ProcessHandler myProcessHandler;
-  private IGoodFramesProvider myProvider;
+  private IDebuggableFramesSelector myDebuggableFramesSelector;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor) {
     myEventsProcessor = eventsProcessor;
@@ -147,13 +147,13 @@ public class DebugSession {
     }
   }
 
-  public void setHighLevelFunctionsProvider(IGoodFramesProvider dumbHighLevelFunctionsProvider) {
-    myProvider = dumbHighLevelFunctionsProvider;
+  public void setDebuggableFramesSelector(IDebuggableFramesSelector debuggableFramesSelector) {
+    myDebuggableFramesSelector = debuggableFramesSelector;
   }
 
   @NotNull
-  public IGoodFramesProvider getProvider() {
-    return myProvider;
+  public IDebuggableFramesSelector getDebuggableFramesSelector() {
+    return myDebuggableFramesSelector;
   }
 
   public enum ExecutionState {
@@ -263,7 +263,7 @@ public class DebugSession {
       StackFrame frame = null;
       try {
         if (myThread.frameCount() > 0) {
-          frame = myProvider.findDeepestGoodFrame(myThread.frames());
+          frame = myDebuggableFramesSelector.findDeepestDebuggableFrame(myThread.frames());
         } else {
           frame = null;
         }
@@ -298,7 +298,7 @@ public class DebugSession {
 
     @Nullable
     private UiState resumed(SuspendContext context) {
-      //TODO if some other context is resumed it does not mean that those changes does not concern us. We still want to display correct threads state.
+      //TODO if some other context is resumed it does not mean that those changes do not concern us. We still want to display correct threads state.
       if (context != myContext) return null;
 
       SuspendContext newContext = null;
