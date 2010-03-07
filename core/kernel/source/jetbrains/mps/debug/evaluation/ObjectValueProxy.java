@@ -3,7 +3,6 @@ package jetbrains.mps.debug.evaluation;
 import com.sun.jdi.*;
 import jetbrains.mps.logging.Logger;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,11 +14,11 @@ import java.util.List;
  */
 public class ObjectValueProxy extends ValueProxy {
   private static Logger LOG = Logger.getLogger(ObjectValueProxy.class);
-  private ReferenceType myReferenceType;
+  private ClassType myReferenceType;
 
   public ObjectValueProxy(ObjectReference v, ThreadReference threadReference) {
     super(v, threadReference);
-    myReferenceType = v.referenceType();
+    myReferenceType = (ClassType) v.referenceType();
   }
 
   public ObjectReference getObjectValue() {
@@ -34,26 +33,31 @@ public class ObjectValueProxy extends ValueProxy {
   }
 
   public ValueProxy invokeMethod(String name, String jniSignature, Object... args) {
-    ObjectReference value = getObjectValue();
-    List<Method> methods = myReferenceType.methodsByName(name, jniSignature);
-    if (methods.isEmpty()) {
+    ClassType classType = (ClassType) myReferenceType;
+    int options = 0;
+    return invoke(name, jniSignature, classType, options, args);
+  }
+
+  public ValueProxy invokeSuperMethod(String name, String jniSignature, Object... args) {
+    ClassType classType = myReferenceType;
+    ClassType superclass = classType.superclass();
+    if (superclass == null) {
+      LOG.error("can't invoke super method: class has no superclasses");
+    }
+    int options = ObjectReference.INVOKE_NONVIRTUAL;
+    return invoke(name, jniSignature, superclass, options, args);
+  }
+
+  private ValueProxy invoke(String name, String jniSignature, ClassType classType, int options, Object[] args) {
+    Method method = classType.concreteMethodByName(name, jniSignature);
+    if (method == null) {
       LOG.error("method not found");
       return null;
     }
-    List<Value> argValues = new ArrayList<Value>();
-    for (Object arg : args) {
-      Value v;
-      if (arg instanceof ValueProxy) {
-        v = ((ValueProxy)arg).getJDIValue();
-      } else {
-        v = MirrorUtil.getValue(arg, myThreadReference.virtualMachine());
-      }
-      argValues.add(v);
-    }
+    List<Value> argValues = MirrorUtil.getValues(myThreadReference, args);
     Value result;
     try {
-      //todo explore whether methods.size() can be > 1
-      result = value.invokeMethod(myThreadReference, methods.get(0), argValues, 0);
+      result = getObjectValue().invokeMethod(myThreadReference, method, argValues, options);
     } catch (Throwable t) {
       LOG.error("method invocation failed", t);
       return null;

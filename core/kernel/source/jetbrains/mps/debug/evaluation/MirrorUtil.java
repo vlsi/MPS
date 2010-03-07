@@ -2,6 +2,9 @@ package jetbrains.mps.debug.evaluation;
 
 import com.sun.jdi.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * User: User
@@ -42,5 +45,19 @@ public class MirrorUtil {
     } else {
       throw new UnsupportedOperationException();
     }
+  }
+
+  public static List<Value> getValues(ThreadReference threadReference, Object... args) {
+    List<Value> argValues = new ArrayList<Value>();
+    for (Object arg : args) {
+      Value v;
+      if (arg instanceof ValueProxy) {
+        v = ((ValueProxy)arg).getJDIValue();
+      } else {
+        v = MirrorUtil.getValue(arg, threadReference.virtualMachine());
+      }
+      argValues.add(v);
+    }
+    return argValues;
   }
 }
