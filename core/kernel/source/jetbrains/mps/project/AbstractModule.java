@@ -733,29 +733,7 @@ public abstract class AbstractModule implements IModule {
     return changed;
   }
 
-  @Override
-  public List<SNodeDescriptor> getStubsRootNodeDescriptors() {
-    List<SNodeDescriptor> result = new ArrayList<SNodeDescriptor>();
-
-    for (SModelRoot root : getSModelRoots()) {
-      IModelRootManager manager = root.getManager();
-      if (manager instanceof BaseStubModelRootManager) {
-        result.addAll(((BaseStubModelRootManager) manager).getRootNodeDescriptors(new StubLocation(root.getPath(), root.getPrefix(), this)));
-      }
-    }
-
-    for (StubPath path : StubReloadManager.getInstance().getLoadedStubPathsFor(this)) {
-      IModelRootManager m = path.getModelRootManager();
-      if (m instanceof BaseStubModelRootManager) {
-        result.addAll(((BaseStubModelRootManager) m).getRootNodeDescriptors(new StubLocation(path.getPath(), "", this)));
-      }
-    }
-
-    return result;
-  }
-
   //todo[CP] remove this method when got rid of classpaths
-
   protected List<StubModelsEntry> getStubModelEntries() {
     List<ClassPathEntry> cp = getModuleDescriptor().getClassPaths();
     List<StubModelsEntry> sm = getModuleDescriptor().getStubModelEntries();
@@ -764,7 +742,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo[CP] remove this method when got rid of classpaths
-
   protected List<StubModelsEntry> toStubModelEntries(List<ClassPathEntry> cp, List<StubModelsEntry> sm) {
     ArrayList<StubModelsEntry> result = new ArrayList<StubModelsEntry>();
 
@@ -789,7 +766,6 @@ public abstract class AbstractModule implements IModule {
 
   //todo check this code. Wy not to do it where we add jars?
   //todo[CP] rewrite when classpaths are removed
-
   protected void updatePackagedDescriptorClasspath() {
     if (!isPackaged()) return;
 

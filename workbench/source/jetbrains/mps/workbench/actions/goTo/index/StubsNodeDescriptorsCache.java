@@ -2,15 +2,16 @@ package jetbrains.mps.workbench.actions.goTo.index;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.reloading.StubReloadManager;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.stubs.BaseStubModelRootManager;
-import jetbrains.mps.stubs.StubLocation;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class StubsNodeDescriptorsCache implements ApplicationComponent {
 
@@ -53,7 +54,7 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
 
   public List<SNodeDescriptor> getSNodeDescritpors(IModule m) {
     if (!myCache.containsKey(m)) {
-      List<SNodeDescriptor> result = m.getStubsRootNodeDescriptors();
+      List<SNodeDescriptor> result = StubReloadManager.getInstance().getRootNodeDescriptors(((AbstractModule) m));
       myCache.put(m, result);
     }
     return Collections.unmodifiableList(myCache.get(m));

@@ -20,71 +20,197 @@ import jetbrains.mps.stubs.BaseLibStubDescriptor;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.stubs.BaseStubModelRootManager;
 import jetbrains.mps.stubs.StubLocation;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class StubReloadManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(StubReloadManager.class);
 
   //todo dispose old solutions
   private List<String> myLoadedSolutions = new ArrayList<String>();
-  private MyStubPaths myLoadedStubPaths = new MyStubPaths();
-  private boolean myFirstReload = true;
+  private MyStubPaths myAllStubPaths = new MyStubPaths();
   private MPSModuleRepository myRepos;
-
-  public static StubReloadManager getInstance() {
-    return ApplicationManager.getApplication().getComponent(StubReloadManager.class);
-  }
+  private List<StubPath> myNotChagedStubPaths;
 
   public StubReloadManager(MPSModuleRepository repos) {
     myRepos = repos;
-  }
-
-  public List<StubPath> getLoadedStubPathsFor(AbstractModule m) {
-    return myLoadedStubPaths.get(m.getModuleId());
   }
 
   public void reload() {
     loadNewStubSolutions();
 
     markOldStubs();
-    SModelRepository.getInstance().refreshModels();
 
-    for (AbstractModule m: getAllModules()){
-      disposeAllStubManagers();
-      releaseOldStubs(((AbstractModule) m));
-    }
+    SModelRepository.getInstance().refreshModels();
+    disposeAllStubManagers();
+
+    releaseOldStubs();
 
     CleanupManager.getInstance().cleanup();
     MPSModuleRepository.getInstance().invalidateCaches();
 
-    for (IModule m : getAllModules()) {
-      loadNewStubs(((AbstractModule) m));
-    }
+    loadNewStubs();
 
     markNewStubs();
   }
 
-  private List<AbstractModule> getAllModules() {
-    List<AbstractModule> modules = new ArrayList<AbstractModule>();
-    for (IModule m : myRepos.getAllModules()) {
-      if (!(m instanceof AbstractModule)) continue;
-      modules.add(((AbstractModule) m));
+  public List<SNodeDescriptor> getRootNodeDescriptors(AbstractModule module) {
+    List<SNodeDescriptor> result = new ArrayList<SNodeDescriptor>();
+
+    for (StubPath path : myAllStubPaths.get(module.getModuleId())) {
+      BaseStubModelRootManager m = path.getModelRootManager();
+      StubLocation location = new StubLocation(path.getPath(), "", module);
+      result.addAll(m.getRootNodeDescriptors(location));
     }
-    return modules;
+
+    return result;
   }
 
+  //---------stub models reloading----------
+
   public boolean needsUpdate(BaseStubModelDescriptor descriptor, StubLocation location) {
-    return needsFullReload(descriptor);
+    return needsFullReload(descriptor) /*|| isNewPath(descriptor, location.getPath())*/;
   }
 
   private boolean needsFullReload(BaseStubModelDescriptor model) {
     return model.isNeedsReloading();
   }
+
+  //-------------
+/*
+  private void markOldStubs() {
+    Set<StubPath> newStubs = new HashSet<StubPath>();
+    for (AbstractModule module : getAllModules()) {
+      List<StubPath> moduleStubs = module.areJavaStubsEnabled() ? module.getAllStubPaths() : module.getStubPaths();
+      newStubs.addAll(moduleStubs);
+    }
+
+    myNotChagedStubPaths = computeNotChangedStubPaths(myAllStubPaths.getAllStubPaths(), newStubs);
+
+    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
+      if (!SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
+
+      BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) sm;
+      if (modelPathsNotChanged(baseDescriptor, myNotChagedStubPaths)) continue;
+
+      baseDescriptor.markReload();
+    }
+  }
+*/
+
+  private void markOldStubs() {
+    for (AbstractModule m : getAllModules()) {
+      List<StubPath> stubPathList = computeNotChangedStubPaths(m);
+      for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(m)) {
+        if (!SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
+        if (notChanged(stubPathList, sm)) continue;
+
+        assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
+        ((BaseStubModelDescriptor) sm).markReload();
+      }
+    }
+  }
+
+  private List<StubPath> computeNotChangedStubPaths(AbstractModule module) {
+    /*
+      We have to update stub path in the following cases:
+      * a new path which didn't existed
+      * an old path which does not exist any more
+      * timestamp for this path has changed (stubs change)
+      * model root manager for the path has changed (manager change leading to stubs change)
+    */
+
+    //we do not touch models whose loaded status, files and manager were not changed
+    List<StubPath> notChangedStubPaths = new ArrayList<StubPath>();
+
+    List<StubPath> newStubs = module.areJavaStubsEnabled() ? module.getAllStubPaths() : module.getStubPaths();
+
+    //todo make time linear [due to stubs list size this is not very significant]
+    for (StubPath os : myAllStubPaths.get(module.getModuleId())) {
+      for (StubPath ns : newStubs) {
+        if (os.equals(ns)) {
+          if (os.isFresh()) {
+            notChangedStubPaths.add(ns);
+          }
+        }
+      }
+    }
+    return notChangedStubPaths;
+  }
+
+  private boolean notChanged(List<StubPath> notChangedStubPaths, SModelDescriptor sm) {
+    if (!(sm instanceof BaseStubModelDescriptor)) return false;
+    BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) sm;
+
+    for (StubPath s : baseDescriptor.getPaths()) {
+      if (!notChangedStubPaths.contains(s)) return false;
+    }
+
+    return true;
+  }
+
+  //--------------
+
+  private void markNewStubs() {
+    for (BaseStubModelDescriptor m : getAllStubModels()) {
+      ((BaseStubModelDescriptor) m).unmarkReload();
+    }
+  }
+
+  private void disposeAllStubManagers() {
+    for (StubPath sp : myAllStubPaths.getAllStubPaths()) {
+      BaseStubModelRootManager mrm = sp.getModelRootManager();
+      if (mrm != null) {
+        mrm.dispose();
+        sp.setModelRootManager(null);
+      }
+    }
+
+    myAllStubPaths.clear();
+  }
+
+  private void releaseOldStubs() {
+    for (AbstractModule m : getAllModules()) {
+      for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(m)) {
+        if (!(sm instanceof BaseStubModelDescriptor)) continue;
+        if (!StubReloadManager.getInstance().needsFullReload(((BaseStubModelDescriptor) sm))) continue;
+
+        if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
+          SModelRepository.getInstance().removeModelDescriptor(sm);
+        } else {
+          SModelRepository.getInstance().unRegisterModelDescriptor(sm, m);
+        }
+      }
+    }
+  }
+
+  private void loadNewStubs() {
+    for (AbstractModule m : getAllModules()) {
+      List<StubPath> stubModels = m.areJavaStubsEnabled() ? m.getAllStubPaths() : m.getStubPaths();
+
+      for (StubPath sp : stubModels) {
+        BaseStubModelRootManager manager = createStubManager(m, sp);
+        sp.setModelRootManager(manager);
+
+        if (manager == null) continue;
+
+        //todo can be removed before 1.2. this try-block is to help to migrate to BaseStubModelDescriptor on sources
+        try {
+          manager.updateModels(sp.getPath(), "", m);
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+
+        myAllStubPaths.add(m, sp);
+      }
+    }
+  }
+
+  //---------stub solutions reloading----------
 
   private void loadNewStubSolutions() {
     for (BaseLibStubDescriptor d : createLibDescrs()) {
@@ -136,59 +262,7 @@ public class StubReloadManager implements ApplicationComponent {
     return result;
   }
 
-  private void markNewStubs() {
-    List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptors();
-    for (SModelDescriptor m : new ArrayList<SModelDescriptor>(models)) {
-      if (!(m instanceof BaseStubModelDescriptor)) continue;
-      ((BaseStubModelDescriptor) m).unmarkReload();
-    }
-  }
-
-  private void disposeAllStubManagers() {
-    for (StubPath sp : myLoadedStubPaths.getAllStubPaths()) {
-      BaseStubModelRootManager mrm = sp.getModelRootManager();
-      if (mrm != null) {
-        mrm.dispose();
-        sp.setModelRootManager(null);
-      }
-    }
-
-    myLoadedStubPaths.clear();
-  }
-
-
-  private void releaseOldStubs(AbstractModule m) {
-    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(m)) {
-      if (!(sm instanceof BaseStubModelDescriptor)) continue;
-      if (!StubReloadManager.getInstance().needsFullReload((BaseStubModelDescriptor) sm)) continue;
-
-      if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
-        SModelRepository.getInstance().removeModelDescriptor(sm);
-      } else {
-        SModelRepository.getInstance().unRegisterModelDescriptor(sm, m);
-      }
-    }
-  }
-
-  private void loadNewStubs(AbstractModule m) {
-    List<StubPath> stubModels = m.areJavaStubsEnabled() ? m.getAllStubPaths() : m.getStubPaths();
-
-    for (StubPath sp : stubModels) {
-      BaseStubModelRootManager manager = createStubManager(m, sp);
-      sp.setModelRootManager(manager);
-
-      if (manager == null) continue;
-
-      //todo can be removed before 1.2. this try-block is to help to migrate to BaseStubModelDescriptor on sources
-      try {
-        manager.updateModels(sp.getPath(), "", m);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-
-      myLoadedStubPaths.add(m, sp);
-    }
-  }
+  //---------util----------
 
   @Nullable
   private BaseStubModelRootManager createStubManager(AbstractModule m, StubPath sp) {
@@ -213,35 +287,7 @@ public class StubReloadManager implements ApplicationComponent {
     }
   }
 
-
-  private void markOldStubs() {
-    if (myFirstReload) {
-      myFirstReload = false;
-      List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptors();
-      for (SModelDescriptor m : new ArrayList<SModelDescriptor>(models)) {
-        if (!(m instanceof BaseStubModelDescriptor)) continue;
-        ((BaseStubModelDescriptor) m).markReload();
-      }
-    } else {
-      for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-        //todo get rid of casting
-        markOldStubModels((AbstractModule) m);
-      }
-    }
-  }
-
-  private void markOldStubModels(AbstractModule module) {
-    List<StubPath> stubPathList = computeNotChangedStubPaths(module);
-    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(module)) {
-      if (!SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
-      if (notChanged(stubPathList, sm)) continue;
-
-      assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
-      ((BaseStubModelDescriptor) sm).markReload();
-    }
-  }
-
-  private List<StubPath> computeNotChangedStubPaths(AbstractModule module) {
+  private List<StubPath> computeNotChangedStubPaths(Collection<StubPath> oldStubs, Collection<StubPath> newStubs) {
     /*
       We have to update stub path in the following cases:
       * a new path which didn't existed
@@ -253,10 +299,8 @@ public class StubReloadManager implements ApplicationComponent {
     //we do not touch models whose loaded status, files and manager were not changed
     List<StubPath> notChangedStubPaths = new ArrayList<StubPath>();
 
-    List<StubPath> newStubs = module.areJavaStubsEnabled() ? module.getAllStubPaths() : module.getStubPaths();
-
     //todo make time linear [due to stubs list size this is not very significant]
-    for (StubPath os : myLoadedStubPaths.get(module.getModuleId())) {
+    for (StubPath os : oldStubs) {
       for (StubPath ns : newStubs) {
         if (os.equals(ns)) {
           if (os.isFresh()) {
@@ -268,15 +312,51 @@ public class StubReloadManager implements ApplicationComponent {
     return notChangedStubPaths;
   }
 
-  private boolean notChanged(List<StubPath> notChangedStubPaths, SModelDescriptor sm) {
-    if (!(sm instanceof BaseStubModelDescriptor)) return false;
-    BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) sm;
-
-    for (StubPath s : baseDescriptor.getPaths()) {
+  private boolean modelPathsNotChanged(BaseStubModelDescriptor sm, List<StubPath> notChangedStubPaths) {
+    for (StubPath s : sm.getPaths()) {
       if (!notChangedStubPaths.contains(s)) return false;
     }
 
     return true;
+  }
+
+  private boolean isNewPath(BaseStubModelDescriptor descriptor, String path) {
+    for (StubPath sp : myNotChagedStubPaths) {
+      String oldManagerClass = descriptor.getModelRootManager().getClass().getName();
+      String newManagerClass = sp.getManager().getClassName();
+      boolean managersEqual = EqualUtil.equals(oldManagerClass, newManagerClass);
+
+      if (managersEqual && isUnder(path, sp.getPath())) return false;
+    }
+    return true;
+  }
+
+  private boolean isUnder(String path, String mainPath) {
+    return path.startsWith(mainPath);
+  }
+
+  private List<AbstractModule> getAllModules() {
+    List<AbstractModule> modules = new ArrayList<AbstractModule>();
+    for (IModule m : myRepos.getAllModules()) {
+      if (!(m instanceof AbstractModule)) continue;
+      modules.add(((AbstractModule) m));
+    }
+    return modules;
+  }
+
+  private List<BaseStubModelDescriptor> getAllStubModels() {
+    List<BaseStubModelDescriptor> result = new ArrayList<BaseStubModelDescriptor>();
+    for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
+      if (!(d instanceof BaseStubModelDescriptor)) continue;
+      result.add(((BaseStubModelDescriptor) d));
+    }
+    return result;
+  }
+
+  //---------component stuff----------
+
+  public static StubReloadManager getInstance() {
+    return ApplicationManager.getApplication().getComponent(StubReloadManager.class);
   }
 
   @NotNull
@@ -293,8 +373,8 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private static class MyStubPaths extends HashMap<ModuleId, List<StubPath>> {
-    public List<StubPath> getAllStubPaths() {
-      List<StubPath> result = new ArrayList<StubPath>();
+    public Set<StubPath> getAllStubPaths() {
+      Set<StubPath> result = new HashSet<StubPath>();
       for (List<StubPath> lsp : values()) {
         result.addAll(lsp);
       }

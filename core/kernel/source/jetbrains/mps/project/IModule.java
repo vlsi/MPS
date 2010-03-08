@@ -143,6 +143,4 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   boolean isStubPathExcluded(String path);
 
   boolean setStubPathExcluded(String path, boolean b);
-
-  List<SNodeDescriptor> getStubsRootNodeDescriptors();
 }
