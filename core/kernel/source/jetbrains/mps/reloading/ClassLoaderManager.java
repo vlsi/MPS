@@ -119,6 +119,8 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   public void reloadAll(@NotNull ProgressIndicator indicator) {
+    LOG.assertCanRead();
+
     indicator.pushState();
     try {
       indicator.setIndeterminate(true);
