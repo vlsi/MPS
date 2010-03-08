@@ -6,6 +6,7 @@ import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Classifier;
 import java.util.Iterator;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
@@ -21,6 +22,7 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String CONFIG_TYPE = "configType";
+  public static final String STATE_TYPE_PARAMETER = "stateTypeParameter";
   public static final String EDITOR = "editor";
   public static final String ICON_BLOCK = "iconBlock";
   public static final String CHECK_BLOCK = "checkBlock";
@@ -85,6 +87,14 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
 
   public void setConfigType(RunConfigurationTypeDeclaration node) {
     super.setReferent(RunConfigurationDeclaration.CONFIG_TYPE, node);
+  }
+
+  public Classifier getStateTypeParameter() {
+    return (Classifier) this.getReferent(Classifier.class, RunConfigurationDeclaration.STATE_TYPE_PARAMETER);
+  }
+
+  public void setStateTypeParameter(Classifier node) {
+    super.setReferent(RunConfigurationDeclaration.STATE_TYPE_PARAMETER, node);
   }
 
   public ConfigurationEditorDeclaration getEditor() {

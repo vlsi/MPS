@@ -2676,6 +2676,12 @@
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="7035278950562850663:23" resolveInfo="ConfigurationTypeDeclaration" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8591610611835621641">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="stateTypeParameter" />
+      <property name="sourceCardinality:0" value="0..1" />
+      <link role="target:0" targetNodeId="2.1107461130800:3" resolveInfo="Classifier" />
+    </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="678887849223472622">
       <property name="name:0" value="iconPath" />
       <link role="dataType:0" targetNodeId="6.1082983041843:0" resolveInfo="string" />
