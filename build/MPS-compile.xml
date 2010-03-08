@@ -1458,8 +1458,8 @@
   </target>
   <target name="compile.cycle.jetbrains.mps.debug_c" depends="compile.cycle.jetbrains.mps.baseLanguage.dates.runtime_b">
     <property name="classes.dump" value="${jetbrains.mps.debug.classes}.tmp" />
-    <mkdir dir="core/kernel/debug/jetbrains.mps.debug/source_gen" />
-    <mkdir dir="core/kernel/debug/jetbrains.mps.debug/test_gen" />
+    <mkdir dir="core/kernel/debug/debugProject/source_gen" />
+    <mkdir dir="core/kernel/debug/debugProject/test_gen" />
     <mkdir dir="${classes.dump}" />
     <mkdir dir="${jetbrains.mps.debug.classes}" />
     <javac classpathref="cycle.jetbrains.mps.debug_c.classpaths" destdir="${classes.dump}">
