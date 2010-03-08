@@ -13,7 +13,7 @@ import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 import javax.swing.SwingUtilities;
 import org.apache.commons.lang.ObjectUtils;
-import jetbrains.mps.debug.StacktraceUtil;
+import jetbrains.mps.debug.info.StacktraceUtil;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Disposer;
 

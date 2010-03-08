@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.debug.StacktraceUtil;
+import jetbrains.mps.debug.info.StacktraceUtil;
 import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.tools.CloseAction;

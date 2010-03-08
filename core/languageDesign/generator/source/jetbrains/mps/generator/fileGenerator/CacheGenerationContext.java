@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.fileGenerator;
 
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
-import jetbrains.mps.debug.DebugInfo;
+import jetbrains.mps.debug.info.DebugInfo;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;

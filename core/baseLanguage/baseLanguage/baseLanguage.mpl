@@ -23,10 +23,6 @@
       <mapping-priorities />
     </generator>
   </generators>
-    <stubSolutions>
-        <stubSolution moduleName="JDK" moduleId="6354ebe7-c22a-4a0f-ac54-50b52ab9b065"/>
-        <stubSolution moduleName="MPS.Classpath" moduleId="37a3367b-1fb2-44d8-aa6b-18075e74e003"/>
-    </stubSolutions>
   <classPath>
     <entry path="${language_descriptor}/classes" include="false" />
     <entry path="${mps_home}/lib/asm/asm.jar" include="false" />
@@ -34,6 +30,10 @@
   <languageRuntimeClassPath>
     <entry path="${mps_home}/lib/commons-lang/commons-lang-2.1.jar" />
   </languageRuntimeClassPath>
+  <stubSolutions>
+    <stubSolution moduleName="JDK" moduleId="6354ebe7-c22a-4a0f-ac54-50b52ab9b065" />
+    <stubSolution moduleName="MPS.Classpath" moduleId="37a3367b-1fb2-44d8-aa6b-18075e74e003" />
+  </stubSolutions>
   <sourcePath />
   <dependencies>
     <dependency reexport="true">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
@@ -42,7 +42,7 @@
     <dependency reexport="false">f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)</dependency>
     <dependency reexport="false">a247e09e-2435-45ba-b8d2-07e93feba96a(jetbrains.mps.baseLanguage.tuples)</dependency>
     <dependency reexport="false">2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)</dependency>
-    <dependency reexport="false">88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5(jetbrains.mps.debug)</dependency>
+    <dependency reexport="false">88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5(jetbrains.mps.debug.info)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
     <dependency reexport="false">aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</dependency>
     <dependency reexport="false">af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)</dependency>
