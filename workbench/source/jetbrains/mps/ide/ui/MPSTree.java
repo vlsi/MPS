@@ -486,11 +486,15 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     };
 
     Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    if (project != null && DumbService.getInstance(project).isDumb()) {
-      DumbService.getInstance(project).smartInvokeLater(r);
-    }
+
+    //this should be done before the runnable will be run, or you can get "updating..." status after update is finished
+    boolean dumb = project != null && DumbService.getInstance(project).isDumb();
 
     r.run();
+
+    if (dumb) {
+      DumbService.getInstance(project).smartInvokeLater(r);
+    }
   }
 
   public void clear() {
