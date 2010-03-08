@@ -149,57 +149,53 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   private void updateClassPath() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
+    synchronized (myLock) {
+      if (myRuntimeEnvironment == null) {
+        myRuntimeEnvironment = createRuntimeEnvironment(LibraryManager.getInstance());
+      }
+
+      Set<ModuleReference> added = new HashSet<ModuleReference>();
+      for (IModule m : myRepository.getAllModules()) {
+        boolean containsBundle;
         synchronized (myLock) {
-          if (myRuntimeEnvironment == null) {
-            myRuntimeEnvironment = createRuntimeEnvironment(LibraryManager.getInstance());
-          }
+          containsBundle = myRuntimeEnvironment.get(m.getModuleReference()) != null;
+        }
 
-          Set<ModuleReference> added = new HashSet<ModuleReference>();
-          for (IModule m : myRepository.getAllModules()) {
-            boolean containsBundle;
-            synchronized (myLock) {
-              containsBundle = myRuntimeEnvironment.get(m.getModuleReference()) != null;
-            }
-
-            if (!containsBundle) {
-              addModule(m.getModuleReference());
-              added.add(m.getModuleReference());
-            }
-          }
-
-          for (IModule m : myRepository.getAllModules()) {
-            RBundle<ModuleReference> b = myRuntimeEnvironment.get(m.getModuleReference());
-            assert b != null : "There is no budle for module " + m.getModuleFqName();
-            b.clearDependencies();
-            for (IModule dep : m.getDesignTimeDependOnModules()) {
-              b.addDependency(dep.getModuleReference());
-            }
-          }
-
-          for (ModuleReference addedBundle : added) {
-            RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(addedBundle);
-            assert bundle != null : "Can't find " + addedBundle.getModuleFqName();
-            myRuntimeEnvironment.init(bundle);
-          }
-
-          List<RBundle> toRemove = new ArrayList<RBundle>();
-          for (RBundle<ModuleReference> b : myRuntimeEnvironment.getBundles()) {
-            if (myRepository.getModule(b.getId()) == null) {
-              toRemove.add(b);
-            }
-          }
-          myRuntimeEnvironment.unload(toRemove.toArray(new RBundle[toRemove.size()]));
-
-          myRuntimeEnvironment.reloadAll();
-
-          for (IModule m : myRepository.getAllModules()) {
-            m.updateClassPath();
-          }
+        if (!containsBundle) {
+          addModule(m.getModuleReference());
+          added.add(m.getModuleReference());
         }
       }
-    });
+
+      for (IModule m : myRepository.getAllModules()) {
+        RBundle<ModuleReference> b = myRuntimeEnvironment.get(m.getModuleReference());
+        assert b != null : "There is no budle for module " + m.getModuleFqName();
+        b.clearDependencies();
+        for (IModule dep : m.getDesignTimeDependOnModules()) {
+          b.addDependency(dep.getModuleReference());
+        }
+      }
+
+      for (ModuleReference addedBundle : added) {
+        RBundle<ModuleReference> bundle = myRuntimeEnvironment.get(addedBundle);
+        assert bundle != null : "Can't find " + addedBundle.getModuleFqName();
+        myRuntimeEnvironment.init(bundle);
+      }
+
+      List<RBundle> toRemove = new ArrayList<RBundle>();
+      for (RBundle<ModuleReference> b : myRuntimeEnvironment.getBundles()) {
+        if (myRepository.getModule(b.getId()) == null) {
+          toRemove.add(b);
+        }
+      }
+      myRuntimeEnvironment.unload(toRemove.toArray(new RBundle[toRemove.size()]));
+
+      myRuntimeEnvironment.reloadAll();
+
+      for (IModule m : myRepository.getAllModules()) {
+        m.updateClassPath();
+      }
+    }
   }
 
   private RuntimeEnvironmentExt createRuntimeEnvironment(LibraryManager libraryManager) {
