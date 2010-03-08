@@ -42,20 +42,20 @@ public class StubReloadManager implements ApplicationComponent {
 
   public void reload() {
     loadNewStubSolutions();
+    disposeAllStubManagers();
 
+    //reload
     markOldStubs();
 
     SModelRepository.getInstance().refreshModels();
-    disposeAllStubManagers();
-
     releaseOldStubs();
-
-    CleanupManager.getInstance().cleanup();
-    MPSModuleRepository.getInstance().invalidateCaches();
-
     loadNewStubs();
 
     markNewStubs();
+
+    //cleanup
+    CleanupManager.getInstance().cleanup();
+    MPSModuleRepository.getInstance().invalidateCaches();
   }
 
   public List<SNodeDescriptor> getRootNodeDescriptors(AbstractModule module) {
