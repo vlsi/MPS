@@ -16,14 +16,13 @@
 package jetbrains.mps.ide.icons;
 
 import com.intellij.openapi.util.Computable;
-import com.intellij.ui.RowIcon;
+import com.intellij.openapi.util.IconLoader;
 import com.intellij.ui.LayeredIcon;
+import com.intellij.ui.RowIcon;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.behavior.ConceptDeclaration_Behavior;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -128,7 +127,18 @@ public class IconManager {
           result.setIcon(BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(node), 1);
         }
         SModel model = node.getModel();
-        return (!model.isDisposed() && model.isNotEditable())? new LayeredIcon(result, com.intellij.util.Icons.LOCKED_ICON) : result;
+        if (!model.isDisposed() && model.isNotEditable()) {
+          return new LayeredIcon(result, com.intellij.util.Icons.LOCKED_ICON);
+        }
+        if (BaseConcept_Behavior.call_isRunnable_7941158526576616752(node)) {
+          LayeredIcon layeredIcon = new LayeredIcon(2);
+          layeredIcon.setIcon(result, 0);
+          Icon run = IconLoader.getIcon("/general/run.png");
+          int horizontalShift = mainIcon.getIconWidth() - run.getIconWidth();
+          layeredIcon.setIcon(run, 1, horizontalShift, -1);
+          return layeredIcon;
+        }
+        return result;
       }
     });
   }

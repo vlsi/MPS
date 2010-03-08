@@ -8480,6 +8480,26 @@
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="1213877355811" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724363" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7941158526576616766">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="isRunnable" />
+      <link role="overriddenMethod" targetNodeId="20.7941158526576616752" resolveInfo="isRunnable" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7941158526576616767" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7941158526576616768">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7941158526576617158">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5394250374101086099">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5394250374101086096">
+              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5394250374101086097" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="5394250374101086098">
+                <link role="baseMethodDeclaration:16" targetNodeId="1213877355884" resolveInfo="getMainMethod" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="5394250374101086103" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="7941158526576616769" />
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877355812">
       <property name="name" value="isDescendant" />
       <property name="isPrivate" value="false" />

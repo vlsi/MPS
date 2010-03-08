@@ -64,6 +64,19 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7941158526576616752">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="isRunnable" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7941158526576616753" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="7941158526576616758" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7941158526576616755">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7941158526576616759">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7941158526576616760">
+            <property name="value:3" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877396640">
       <property name="isVirtual" value="true" />
       <property name="name" value="getPresentation" />

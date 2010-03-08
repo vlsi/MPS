@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class ClassConcept_Behavior {
+  private static Class[] PARAMETERS_7941158526576616766 = {SNode.class};
   private static Class[] PARAMETERS_1240936569950 = {SNode.class};
 
   public static void init(SNode thisNode) {
@@ -39,6 +40,10 @@ public class ClassConcept_Behavior {
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "constructor", true)));
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticInnerClassifiers", true)));
     return members;
+  }
+
+  public static boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
+    return (ClassConcept_Behavior.call_getMainMethod_1213877355884(thisNode) != null);
   }
 
   public static boolean call_isDescendant_1213877355812(SNode thisNode, SNode classToCompare) {
@@ -115,7 +120,7 @@ public class ClassConcept_Behavior {
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "superclass", true) != null ?
       SLinkOperations.getTarget(thisNode, "superclass", true) :
-      new ClassConcept_Behavior.QuotationClass_xjj00_a0a0a7().createNode()
+      new ClassConcept_Behavior.QuotationClass_xjj00_a0a0a8().createNode()
     );
   }
 
@@ -126,8 +131,16 @@ public class ClassConcept_Behavior {
     return baseMethodDeclarations;
   }
 
+  public static boolean call_isRunnable_7941158526576616766(SNode thisNode) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_isRunnable_7941158526576616752", PARAMETERS_7941158526576616766);
+  }
+
   public static SNode call_getSuperclass_1240936569950(SNode thisNode) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
+  }
+
+  public static boolean callSuper_isRunnable_7941158526576616766(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_isRunnable_7941158526576616752", PARAMETERS_7941158526576616766);
   }
 
   public static SNode callSuper_getSuperclass_1240936569950(SNode thisNode, String callerConceptFqName) {
@@ -151,8 +164,8 @@ public class ClassConcept_Behavior {
     return SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
   }
 
-  public static class QuotationClass_xjj00_a0a0a7 {
-    public QuotationClass_xjj00_a0a0a7() {
+  public static class QuotationClass_xjj00_a0a0a8 {
+    public QuotationClass_xjj00_a0a0a8() {
     }
 
     public SNode createNode() {
