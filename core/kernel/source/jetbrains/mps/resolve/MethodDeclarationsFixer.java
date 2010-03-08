@@ -70,6 +70,10 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     if (DISABLED) {
       return new HashSet<EditorMessage>();
     }
+    // disable for transient models
+    if (rootNode.getModel().getModelDescriptor().isTransient()) {
+      return new HashSet<EditorMessage>(0);
+    }
 
     final Map<SNode, SNode> reResolvedTargets = new HashMap<SNode, SNode>();
 
