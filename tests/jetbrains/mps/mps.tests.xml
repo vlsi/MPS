@@ -98,6 +98,7 @@
 
             <!-- Applications tests -->
             <project file="${mps.home}/core/kernel/kernelSolution/kernel.mpr"/>
+            <project file="${mps.home}/core/kernel/debug/debugProject/debugProject.mpr"/>
             <project file="${mps.home}/core/kernel/testMake/testMake.mpr"/>
             <project file="${mps.home}/core/languageDesign/mps-lite/mps-lite.mpr"/>
             <project file="${mps.home}/platform/quickQueryLanguage/quickQueryLanguage.mpr"/>

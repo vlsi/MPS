@@ -24,7 +24,9 @@
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="info" moduleRef="jetbrains.mps.debug.info" />
+    </genConfs>
   </component>
   <component name="ProjectModuleManager">
     <modules />
@@ -46,6 +48,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
 </project>
 

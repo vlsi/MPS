@@ -4723,7 +4723,7 @@
               <link role="variableDeclaration:3" targetNodeId="4494976841093543965" resolveInfo="ctx" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2521107925296530259">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~CacheGenerationContext.getDebugInfo():jetbrains.mps.debug.DebugInfo" resolveInfo="getDebugInfo" />
+              <link role="baseMethodDeclaration:3" targetNodeId="6.~CacheGenerationContext.getDebugInfo():jetbrains.mps.debug.info.DebugInfo" resolveInfo="getDebugInfo" />
             </node>
           </node>
         </node>
