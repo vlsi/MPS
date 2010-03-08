@@ -14,7 +14,6 @@
     </jvmargs>
 
     <jvmargs id="mps.args.bigpermgen">
-        <arg value="-d32"/>
         <arg value="-Xss1024k"/>
         <arg value="-Xmx1000m"/>
         <arg value="-XX:MaxPermSize=128m"/>
