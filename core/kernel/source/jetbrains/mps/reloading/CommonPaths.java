@@ -107,6 +107,11 @@ public class CommonPaths {
       result.add(kernelClassPath);
     }
 
+    IClassPathItem debugClassPath = getMPSDebugClassPath();
+    if (debugClassPath != null) {
+      result.add(debugClassPath);
+    }
+
     IClassPathItem supportClassPath = getMPSSupportClassPath();
     if (supportClassPath != null) {
       result.add(supportClassPath);
@@ -260,6 +265,16 @@ public class CommonPaths {
   private static IClassPathItem getMPSKernelClassPath() {
     String supportClasses = PathManager.getHomePath() + File.separator + "core"
       + File.separator + "kernel" + File.separator + "classes";
+    if (new File(supportClasses).exists()) {
+      return new FileClassPathItem(supportClasses);
+    }
+
+    return null;
+  }
+
+  private static IClassPathItem getMPSDebugClassPath() {
+    String supportClasses = PathManager.getHomePath() + File.separator + "core"
+      + File.separator + "kernel" + File.separator + "debug" + File.separator + "classes";
     if (new File(supportClasses).exists()) {
       return new FileClassPathItem(supportClasses);
     }
