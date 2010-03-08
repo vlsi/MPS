@@ -27,11 +27,6 @@ public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
     myStubPaths.add(sp);
   }
 
-  public void refresh() {
-    if (!myNeedsReloading) return;
-    super.refresh();
-  }
-
   public List<StubPath> getPaths() {
     return myStubPaths == null ? new ArrayList<StubPath>() : myStubPaths;
   }

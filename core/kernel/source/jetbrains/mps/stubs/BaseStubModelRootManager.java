@@ -122,14 +122,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   @Nullable
   public final SModel refresh(@NotNull SModelDescriptor modelDescriptor) {
-    SModel smodel = modelDescriptor.getSModel();
-    if (smodel == null) return null;
-
-    long timestamp = timestamp(modelDescriptor);
-    long modelTimestamp = ourTimestamps.get(smodel.getSModelReference());
-    if (modelTimestamp != timestamp) return null;
-
-    return smodel;
+    boolean needsReloading = ((BaseStubModelDescriptor) modelDescriptor).isNeedsReloading();
+    return needsReloading ? null : modelDescriptor.getSModel();
   }
 
   public final void dispose() {
