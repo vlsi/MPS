@@ -30,31 +30,22 @@
   <nodeInfo nodeId="1172668363428" fileName="SkipTakePage_Test.java" startLine="189" startPosition="0" endLine="246" endPosition="0" />
   <nodeInfo nodeId="1172667126985" fileName="SkipTakePage_Test.java" startLine="12" startPosition="49" endLine="72" endPosition="0" />
   <nodeInfo nodeId="1172667364856" fileName="SkipTakePage_Test.java" startLine="72" startPosition="0" endLine="132" endPosition="0" />
-  <varInfo nodeId="1172667312552" fileName="SkipTakePage_Test.java" startLine="64" startPosition="44" endLine="64" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667334292" fileName="SkipTakePage_Test.java" startLine="65" startPosition="44" endLine="65" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667253500" fileName="SkipTakePage_Test.java" startLine="67" startPosition="4" endLine="67" endPosition="5" varName="s" />
-  <varInfo nodeId="1172667255206" fileName="SkipTakePage_Test.java" startLine="67" startPosition="30" endLine="67" endPosition="31" varName="s" />
-  <varInfo nodeId="1172667394087" fileName="SkipTakePage_Test.java" startLine="67" startPosition="38" endLine="67" endPosition="39" varName="i" />
-  <varInfo nodeId="1172667286796" fileName="SkipTakePage_Test.java" startLine="68" startPosition="44" endLine="68" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667324440" fileName="SkipTakePage_Test.java" startLine="69" startPosition="44" endLine="69" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667346647" fileName="SkipTakePage_Test.java" startLine="70" startPosition="44" endLine="70" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667380468" fileName="SkipTakePage_Test.java" startLine="124" startPosition="44" endLine="124" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667380474" fileName="SkipTakePage_Test.java" startLine="125" startPosition="44" endLine="125" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667380479" fileName="SkipTakePage_Test.java" startLine="126" startPosition="4" endLine="126" endPosition="5" varName="s" />
-  <varInfo nodeId="1172667380481" fileName="SkipTakePage_Test.java" startLine="126" startPosition="30" endLine="126" endPosition="31" varName="s" />
-  <varInfo nodeId="1172667380487" fileName="SkipTakePage_Test.java" startLine="127" startPosition="44" endLine="127" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667380493" fileName="SkipTakePage_Test.java" startLine="128" startPosition="44" endLine="128" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667437662" fileName="SkipTakePage_Test.java" startLine="129" startPosition="44" endLine="129" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667380498" fileName="SkipTakePage_Test.java" startLine="130" startPosition="44" endLine="130" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667497762" fileName="SkipTakePage_Test.java" startLine="184" startPosition="4" endLine="184" endPosition="5" varName="s" />
-  <varInfo nodeId="1172667498889" fileName="SkipTakePage_Test.java" startLine="184" startPosition="30" endLine="184" endPosition="31" varName="s" />
-  <varInfo nodeId="1172667528668" fileName="SkipTakePage_Test.java" startLine="185" startPosition="44" endLine="185" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667538428" fileName="SkipTakePage_Test.java" startLine="186" startPosition="44" endLine="186" endPosition="45" varName="s" />
-  <varInfo nodeId="1172667544185" fileName="SkipTakePage_Test.java" startLine="187" startPosition="44" endLine="187" endPosition="45" varName="s" />
-  <varInfo nodeId="1172668380774" fileName="SkipTakePage_Test.java" startLine="241" startPosition="4" endLine="241" endPosition="5" varName="s" />
-  <varInfo nodeId="1172668386221" fileName="SkipTakePage_Test.java" startLine="241" startPosition="30" endLine="241" endPosition="31" varName="s" />
-  <varInfo nodeId="1172668380785" fileName="SkipTakePage_Test.java" startLine="242" startPosition="44" endLine="242" endPosition="45" varName="s" />
-  <varInfo nodeId="1172668380791" fileName="SkipTakePage_Test.java" startLine="243" startPosition="44" endLine="243" endPosition="45" varName="s" />
-  <varInfo nodeId="1172668380796" fileName="SkipTakePage_Test.java" startLine="244" startPosition="44" endLine="244" endPosition="45" varName="s" />
+  <scopeInfo nodeId="1172667481221" fileName="SkipTakePage_Test.java" startLine="133" startPosition="48" endLine="187" endPosition="58">
+    <varInfo nodeId="7001216437968936946" varName="s" />
+  </scopeInfo>
+  <scopeInfo nodeId="1172668380748" fileName="SkipTakePage_Test.java" startLine="190" startPosition="44" endLine="244" endPosition="58">
+    <varInfo nodeId="7001216437968937034" varName="s" />
+  </scopeInfo>
+  <scopeInfo nodeId="1172667126986" fileName="SkipTakePage_Test.java" startLine="13" startPosition="45" endLine="70" endPosition="67">
+    <varInfo nodeId="7001216437968936737" varName="s" />
+    <varInfo nodeId="7001216437968936808" varName="i" />
+  </scopeInfo>
+  <scopeInfo nodeId="1172667364857" fileName="SkipTakePage_Test.java" startLine="73" startPosition="45" endLine="130" endPosition="66">
+    <varInfo nodeId="7001216437968936841" varName="s" />
+  </scopeInfo>
+  <scopeInfo nodeId="1172667481220" fileName="SkipTakePage_Test.java" startLine="132" startPosition="0" endLine="189" endPosition="0" />
+  <scopeInfo nodeId="1172668363428" fileName="SkipTakePage_Test.java" startLine="189" startPosition="0" endLine="246" endPosition="0" />
+  <scopeInfo nodeId="1172667126985" fileName="SkipTakePage_Test.java" startLine="12" startPosition="49" endLine="72" endPosition="0" />
+  <scopeInfo nodeId="1172667364856" fileName="SkipTakePage_Test.java" startLine="72" startPosition="0" endLine="132" endPosition="0" />
 </debugInfo>
 

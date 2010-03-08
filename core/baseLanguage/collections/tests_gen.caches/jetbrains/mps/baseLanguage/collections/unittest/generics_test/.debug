@@ -23,11 +23,31 @@
   <nodeInfo nodeId="1172029195858" fileName="Generics1_Test.java" startLine="16" startPosition="0" endLine="25" endPosition="0" />
   <nodeInfo nodeId="1170878998354" fileName="MySequence.java" startLine="11" startPosition="33" endLine="76" endPosition="7" />
   <nodeInfo nodeId="1170878984788" fileName="MySequence.java" startLine="10" startPosition="33" endLine="78" endPosition="0" />
-  <varInfo nodeId="1172029188745" fileName="Generics1_Test.java" startLine="12" startPosition="46" endLine="12" endPosition="51" varName="bools" />
-  <varInfo nodeId="1172029269303" fileName="Generics1_Test.java" startLine="13" startPosition="24" endLine="13" endPosition="28" varName="bool" />
-  <varInfo nodeId="1172029203873" fileName="Generics1_Test.java" startLine="20" startPosition="43" endLine="20" endPosition="47" varName="ints" />
-  <varInfo nodeId="1172029280997" fileName="Generics1_Test.java" startLine="21" startPosition="26" endLine="21" endPosition="31" varName="count" />
-  <varInfo nodeId="1172029284779" fileName="Generics1_Test.java" startLine="21" startPosition="33" endLine="21" endPosition="34" varName="i" />
-  <varInfo nodeId="1238145924548" fileName="Generics1_Test.java" startLine="22" startPosition="6" endLine="22" endPosition="11" varName="count" />
+  <scopeInfo nodeId="1170879915005" fileName="BooleanSequence.java" startLine="9" startPosition="33" endLine="9" endPosition="33" />
+  <scopeInfo nodeId="1172029188746" fileName="Generics1_Test.java" startLine="12" startPosition="61" endLine="13" endPosition="45" />
+  <scopeInfo nodeId="1170879062054" fileName="MySequence.java" startLine="79" startPosition="27" endLine="80" endPosition="16" />
+  <scopeInfo nodeId="1170879915003" fileName="BooleanSequence.java" startLine="8" startPosition="0" endLine="10" endPosition="3" />
+  <scopeInfo nodeId="1170879946357" fileName="BooleanSequence.java" startLine="13" startPosition="27" endLine="15" endPosition="18" />
+  <scopeInfo nodeId="1172029203874" fileName="Generics1_Test.java" startLine="20" startPosition="57" endLine="22" endPosition="14" />
+  <scopeInfo nodeId="1172029188742" fileName="Generics1_Test.java" startLine="11" startPosition="50" endLine="14" endPosition="5">
+    <varInfo nodeId="7001216437968918924" varName="bool" />
+  </scopeInfo>
+  <scopeInfo nodeId="1172029180837" fileName="Generics1_Test.java" startLine="10" startPosition="45" endLine="14" endPosition="5">
+    <varInfo nodeId="7001216437968918919" varName="bools" />
+  </scopeInfo>
+  <scopeInfo nodeId="1172029203870" fileName="Generics1_Test.java" startLine="19" startPosition="18" endLine="23" endPosition="5">
+    <varInfo nodeId="7001216437968918945" varName="i" />
+  </scopeInfo>
+  <scopeInfo nodeId="1170879062052" fileName="MySequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+  <scopeInfo nodeId="1170879903126" fileName="BooleanSequence.java" startLine="12" startPosition="33" endLine="17" endPosition="16" />
+  <scopeInfo nodeId="1172029195859" fileName="Generics1_Test.java" startLine="17" startPosition="45" endLine="23" endPosition="5">
+    <varInfo nodeId="7001216437968918941" varName="count" />
+    <varInfo nodeId="7001216437968918936" varName="ints" />
+  </scopeInfo>
+  <scopeInfo nodeId="1172029180836" fileName="Generics1_Test.java" startLine="9" startPosition="46" endLine="16" endPosition="0" />
+  <scopeInfo nodeId="1170879903124" fileName="BooleanSequence.java" startLine="11" startPosition="0" endLine="19" endPosition="0" />
+  <scopeInfo nodeId="1172029195858" fileName="Generics1_Test.java" startLine="16" startPosition="0" endLine="25" endPosition="0" />
+  <scopeInfo nodeId="1170878984790" fileName="MySequence.java" startLine="11" startPosition="33" endLine="76" endPosition="7" />
+  <scopeInfo nodeId="1170878984788" fileName="MySequence.java" startLine="10" startPosition="33" endLine="78" endPosition="0" />
 </debugInfo>
 

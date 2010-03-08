@@ -10243,6 +10243,13 @@
         <property name="value:3" value="wrapping_local_variable" />
       </node>
     </node>
+    <node role="enumConstant:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration:3" id="7001216437968760555">
+      <property name="name:3" value="REMOVE_THIS" />
+      <link role="baseMethodDeclaration:3" targetNodeId="1240908386455" resolveInfo="Flags" />
+      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7001216437968764116">
+        <property name="value:3" value="remove_this" />
+      </node>
+    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1240908386454" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1240908386455">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1240908386456" />

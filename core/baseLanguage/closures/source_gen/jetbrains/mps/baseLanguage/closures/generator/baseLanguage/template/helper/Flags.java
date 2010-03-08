@@ -10,7 +10,8 @@ public enum Flags {
   PRODUCES_VALUE("produces_value"),
   TERMINATE("terminate"),
   INVOKE_FUNCTION_OPERATION("invoke_function_operation"),
-  WRAPPING_LOCAL_VARIABLE("wrapping_local_variable");
+  WRAPPING_LOCAL_VARIABLE("wrapping_local_variable"),
+  REMOVE_THIS("remove_this");
 
   private String name;
 

@@ -102,63 +102,106 @@
   <nodeInfo nodeId="1571838961923394382" fileName="Mapping_Test1.java" startLine="162" startPosition="50" endLine="237" endPosition="5" />
   <nodeInfo nodeId="1571838961922998533" fileName="Mapping_Test1.java" startLine="161" startPosition="0" endLine="239" endPosition="0" />
   <nodeInfo nodeId="1571838961922998411" fileName="Mapping_Test1.java" startLine="18" startPosition="45" endLine="161" endPosition="0" />
-  <varInfo nodeId="1170287082152" fileName="ForEach_loop_Test1.java" startLine="19" startPosition="43" endLine="19" endPosition="47" varName="list" />
-  <varInfo nodeId="1170287095335" fileName="ForEach_loop_Test1.java" startLine="20" startPosition="6" endLine="20" endPosition="9" varName="sum" />
-  <varInfo nodeId="1170287095338" fileName="ForEach_loop_Test1.java" startLine="20" startPosition="12" endLine="20" endPosition="15" varName="sum" />
-  <varInfo nodeId="1170287099577" fileName="ForEach_loop_Test1.java" startLine="20" startPosition="18" endLine="20" endPosition="19" varName="i" />
-  <varInfo nodeId="1170283459019" fileName="ForEach_Test1.java" startLine="21" startPosition="26" endLine="21" endPosition="30" varName="list" />
-  <varInfo nodeId="1170287105901" fileName="ForEach_loop_Test1.java" startLine="22" startPosition="28" endLine="22" endPosition="31" varName="sum" />
-  <varInfo nodeId="1224596679289" fileName="ForEach_Test1.java" startLine="23" startPosition="32" endLine="23" endPosition="33" varName="i" />
-  <varInfo nodeId="1571838961923334370" fileName="Where_Select_Test1.java" startLine="73" startPosition="53" endLine="73" endPosition="57" varName="nums" />
-  <varInfo nodeId="1571838961923334381" fileName="Where_Select_Test1.java" startLine="75" startPosition="15" endLine="75" endPosition="16" varName="n" />
-  <varInfo nodeId="1571838961922998449" fileName="Mapping_Test1.java" startLine="75" startPosition="53" endLine="75" endPosition="57" varName="nums" />
-  <varInfo nodeId="1170287183439" fileName="ForEach_loop_Test1.java" startLine="77" startPosition="43" endLine="77" endPosition="46" varName="seq" />
-  <varInfo nodeId="1170287183443" fileName="ForEach_loop_Test1.java" startLine="78" startPosition="6" endLine="78" endPosition="9" varName="sum" />
-  <varInfo nodeId="1170287183446" fileName="ForEach_loop_Test1.java" startLine="78" startPosition="12" endLine="78" endPosition="15" varName="sum" />
-  <varInfo nodeId="1170287183445" fileName="ForEach_loop_Test1.java" startLine="78" startPosition="18" endLine="78" endPosition="19" varName="i" />
-  <varInfo nodeId="1571838961923334392" fileName="Where_Select_Test1.java" startLine="80" startPosition="24" endLine="80" endPosition="25" varName="n" />
-  <varInfo nodeId="1170287183450" fileName="ForEach_loop_Test1.java" startLine="80" startPosition="28" endLine="80" endPosition="31" varName="sum" />
-  <varInfo nodeId="1170287421820" fileName="ForEach_Test1.java" startLine="81" startPosition="26" endLine="81" endPosition="29" varName="seq" />
-  <varInfo nodeId="1224596679374" fileName="ForEach_Test1.java" startLine="83" startPosition="32" endLine="83" endPosition="33" varName="i" />
-  <varInfo nodeId="1571838961923334404" fileName="Where_Select_Test1.java" startLine="85" startPosition="42" endLine="85" endPosition="49" varName="strings" />
-  <varInfo nodeId="1571838961923334410" fileName="Where_Select_Test1.java" startLine="86" startPosition="33" endLine="86" endPosition="44" varName="expectedNum" />
-  <varInfo nodeId="1571838961923334414" fileName="Where_Select_Test1.java" startLine="87" startPosition="26" endLine="87" endPosition="34" varName="expected" />
-  <varInfo nodeId="1571838961923334415" fileName="Where_Select_Test1.java" startLine="87" startPosition="36" endLine="87" endPosition="37" varName="s" />
-  <varInfo nodeId="1571838961923334418" fileName="Where_Select_Test1.java" startLine="88" startPosition="6" endLine="88" endPosition="17" varName="expectedNum" />
-  <varInfo nodeId="1571838961923334421" fileName="Where_Select_Test1.java" startLine="88" startPosition="20" endLine="88" endPosition="31" varName="expectedNum" />
-  <varInfo nodeId="1571838961922998457" fileName="Mapping_Test1.java" startLine="91" startPosition="26" endLine="91" endPosition="27" varName="n" />
-  <varInfo nodeId="1205784919455" fileName="ForEach_Test1.java" startLine="92" startPosition="26" endLine="92" endPosition="30" varName="zseq" />
-  <varInfo nodeId="1224596679280" fileName="ForEach_Test1.java" startLine="94" startPosition="32" endLine="94" endPosition="33" varName="s" />
-  <varInfo nodeId="1571838961923334451" fileName="Where_Select_Test1.java" startLine="96" startPosition="55" endLine="96" endPosition="59" varName="nums" />
-  <varInfo nodeId="1571838961923334448" fileName="Where_Select_Test1.java" startLine="98" startPosition="15" endLine="98" endPosition="16" varName="n" />
-  <varInfo nodeId="1571838961922998468" fileName="Mapping_Test1.java" startLine="98" startPosition="26" endLine="98" endPosition="27" varName="n" />
-  <varInfo nodeId="1571838961923334466" fileName="Where_Select_Test1.java" startLine="101" startPosition="53" endLine="101" endPosition="61" varName="evenNums" />
-  <varInfo nodeId="1571838961923334465" fileName="Where_Select_Test1.java" startLine="103" startPosition="20" endLine="103" endPosition="22" varName="it" />
-  <varInfo nodeId="1571838961923334471" fileName="Where_Select_Test1.java" startLine="106" startPosition="49" endLine="106" endPosition="56" varName="strings" />
-  <varInfo nodeId="1571838961923334492" fileName="Where_Select_Test1.java" startLine="113" startPosition="53" endLine="113" endPosition="57" varName="list" />
-  <varInfo nodeId="1571838961922998473" fileName="Mapping_Test1.java" startLine="117" startPosition="42" endLine="117" endPosition="43" varName="n" />
-  <varInfo nodeId="1571838961923334505" fileName="Where_Select_Test1.java" startLine="118" startPosition="46" endLine="118" endPosition="51" varName="empty" />
-  <varInfo nodeId="1571838961922998479" fileName="Mapping_Test1.java" startLine="121" startPosition="43" endLine="121" endPosition="44" varName="n" />
-  <varInfo nodeId="1571838961923391153" fileName="Where_Select_Test1.java" startLine="121" startPosition="53" endLine="121" endPosition="57" varName="list" />
-  <varInfo nodeId="1571838961923391180" fileName="Where_Select_Test1.java" startLine="126" startPosition="49" endLine="126" endPosition="54" varName="empty" />
-  <varInfo nodeId="1571838961923391190" fileName="Where_Select_Test1.java" startLine="127" startPosition="47" endLine="127" endPosition="52" varName="empty" />
-  <varInfo nodeId="1571838961923391205" fileName="Where_Select_Test1.java" startLine="129" startPosition="17" endLine="129" endPosition="19" varName="it" />
-  <varInfo nodeId="1571838961922998495" fileName="Mapping_Test1.java" startLine="151" startPosition="42" endLine="151" endPosition="49" varName="strings" />
-  <varInfo nodeId="1571838961922998501" fileName="Mapping_Test1.java" startLine="152" startPosition="33" endLine="152" endPosition="44" varName="resultCount" />
-  <varInfo nodeId="1571838961922998507" fileName="Mapping_Test1.java" startLine="153" startPosition="10" endLine="153" endPosition="21" varName="resultCount" />
-  <varInfo nodeId="1571838961922998512" fileName="Mapping_Test1.java" startLine="154" startPosition="8" endLine="154" endPosition="16" varName="expected" />
-  <varInfo nodeId="1571838961922998520" fileName="Mapping_Test1.java" startLine="154" startPosition="30" endLine="154" endPosition="41" varName="resultCount" />
-  <varInfo nodeId="1571838961922998524" fileName="Mapping_Test1.java" startLine="156" startPosition="26" endLine="156" endPosition="34" varName="expected" />
-  <varInfo nodeId="1571838961922998525" fileName="Mapping_Test1.java" startLine="156" startPosition="36" endLine="156" endPosition="37" varName="s" />
-  <varInfo nodeId="1571838961922998528" fileName="Mapping_Test1.java" startLine="157" startPosition="6" endLine="157" endPosition="17" varName="resultCount" />
-  <varInfo nodeId="1571838961922998550" fileName="Mapping_Test1.java" startLine="165" startPosition="52" endLine="165" endPosition="59" varName="strings" />
-  <varInfo nodeId="1571838961922998565" fileName="Mapping_Test1.java" startLine="198" startPosition="51" endLine="198" endPosition="59" varName="strings2" />
-  <varInfo nodeId="1571838961923394405" fileName="Mapping_Test1.java" startLine="201" startPosition="52" endLine="201" endPosition="59" varName="strings" />
-  <varInfo nodeId="1571838961923394420" fileName="Mapping_Test1.java" startLine="234" startPosition="51" endLine="234" endPosition="59" varName="strings2" />
-  <varInfo nodeId="1571838961923394566" fileName="Mapping_Test1.java" startLine="235" startPosition="46" endLine="235" endPosition="54" varName="strings2" />
-  <varInfo nodeId="1571838961923394576" fileName="Mapping_Test1.java" startLine="236" startPosition="46" endLine="236" endPosition="54" varName="strings2" />
-  <varInfo nodeId="1571838961922998590" fileName="Mapping_Test1.java" startLine="242" startPosition="48" endLine="242" endPosition="50" varName="s1" />
-  <varInfo nodeId="1571838961922998589" fileName="Mapping_Test1.java" startLine="259" startPosition="33" endLine="259" endPosition="35" varName="it" />
-  <varInfo nodeId="1571838961922998595" fileName="Mapping_Test1.java" startLine="275" startPosition="49" endLine="275" endPosition="51" varName="s2" />
+  <scopeInfo nodeId="1170287076667" fileName="ForEach_loop_Test1.java" startLine="19" startPosition="51" endLine="20" endPosition="20" />
+  <scopeInfo nodeId="1224596675582" fileName="ForEach_Test1.java" startLine="22" startPosition="36" endLine="23" endPosition="34" />
+  <scopeInfo nodeId="1571838961923334375" fileName="Where_Select_Test1.java" startLine="74" startPosition="40" endLine="75" endPosition="26" />
+  <scopeInfo nodeId="1170287183440" fileName="ForEach_loop_Test1.java" startLine="77" startPosition="50" endLine="78" endPosition="20" />
+  <scopeInfo nodeId="1224596675614" fileName="ForEach_Test1.java" startLine="82" startPosition="36" endLine="83" endPosition="34" />
+  <scopeInfo nodeId="1224596675548" fileName="ForEach_Test1.java" startLine="93" startPosition="35" endLine="94" endPosition="43" />
+  <scopeInfo nodeId="1571838961923334444" fileName="Where_Select_Test1.java" startLine="97" startPosition="40" endLine="98" endPosition="26" />
+  <scopeInfo nodeId="1571838961923334461" fileName="Where_Select_Test1.java" startLine="102" startPosition="40" endLine="103" endPosition="23" />
+  <scopeInfo nodeId="1571838961923334497" fileName="Where_Select_Test1.java" startLine="114" startPosition="41" endLine="115" endPosition="31" />
+  <scopeInfo nodeId="1571838961923391158" fileName="Where_Select_Test1.java" startLine="122" startPosition="41" endLine="123" endPosition="31" />
+  <scopeInfo nodeId="1571838961923391197" fileName="Where_Select_Test1.java" startLine="128" startPosition="42" endLine="129" endPosition="28" />
+  <scopeInfo nodeId="1571838961922998509" fileName="Mapping_Test1.java" startLine="153" startPosition="33" endLine="154" endPosition="54" />
+  <scopeInfo nodeId="1571838961923334386" fileName="Where_Select_Test1.java" startLine="78" startPosition="39" endLine="80" endPosition="26" />
+  <scopeInfo nodeId="1170287076664" fileName="ForEach_loop_Test1.java" startLine="18" startPosition="16" endLine="21" endPosition="5">
+    <varInfo nodeId="7001216437968919327" varName="i" />
+  </scopeInfo>
+  <scopeInfo nodeId="1170287183437" fileName="ForEach_loop_Test1.java" startLine="76" startPosition="16" endLine="79" endPosition="5">
+    <varInfo nodeId="7001216437968919379" varName="i" />
+  </scopeInfo>
+  <scopeInfo nodeId="1571838961923334405" fileName="Where_Select_Test1.java" startLine="85" startPosition="53" endLine="88" endPosition="36">
+    <varInfo nodeId="7001216437968922767" varName="expected" />
+  </scopeInfo>
+  <scopeInfo nodeId="1571838961923334402" fileName="Where_Select_Test1.java" startLine="84" startPosition="24" endLine="89" endPosition="5">
+    <varInfo nodeId="7001216437968922763" varName="s" />
+  </scopeInfo>
+  <scopeInfo nodeId="1170287058581" fileName="ForEach_loop_Test1.java" startLine="16" startPosition="24" endLine="22" endPosition="33">
+    <varInfo nodeId="1170287058595" varName="sum" />
+    <varInfo nodeId="1170287058583" varName="list" />
+  </scopeInfo>
+  <scopeInfo nodeId="1571838961922998496" fileName="Mapping_Test1.java" startLine="151" startPosition="53" endLine="157" endPosition="20">
+    <varInfo nodeId="7001216437968921721" varName="expected" />
+  </scopeInfo>
+  <scopeInfo nodeId="1170283334850" fileName="ForEach_Test1.java" startLine="18" startPosition="24" endLine="26" endPosition="39">
+    <varInfo nodeId="7001216437968923140" varName="sum" />
+    <varInfo nodeId="1170283344336" varName="list" />
+  </scopeInfo>
+  <scopeInfo nodeId="1205784857536" fileName="ForEach_Test1.java" startLine="89" startPosition="27" endLine="97" endPosition="38">
+    <varInfo nodeId="1205784879916" varName="zseq" />
+    <varInfo nodeId="7001216437968923309" varName="sum" />
+  </scopeInfo>
+  <scopeInfo nodeId="1571838961923364297" fileName="Where_Select_Test1.java" startLine="110" startPosition="38" endLine="118" endPosition="64">
+    <varInfo nodeId="7001216437968922901" varName="empty" />
+    <varInfo nodeId="7001216437968922890" varName="list" />
+  </scopeInfo>
+  <scopeInfo nodeId="1571838961922998493" fileName="Mapping_Test1.java" startLine="150" startPosition="24" endLine="158" endPosition="5">
+    <varInfo nodeId="7001216437968921717" varName="s" />
+  </scopeInfo>
+  <scopeInfo nodeId="1170287058579" fileName="ForEach_loop_Test1.java" startLine="15" startPosition="50" endLine="24" endPosition="0" />
+  <scopeInfo nodeId="1170283334848" fileName="ForEach_Test1.java" startLine="17" startPosition="45" endLine="28" endPosition="0" />
+  <scopeInfo nodeId="1205784857533" fileName="ForEach_Test1.java" startLine="88" startPosition="0" endLine="99" endPosition="0" />
+  <scopeInfo nodeId="1571838961923391135" fileName="Where_Select_Test1.java" startLine="119" startPosition="12" endLine="131" endPosition="10">
+    <varInfo nodeId="7001216437968922972" varName="empty" />
+    <varInfo nodeId="7001216437968922961" varName="list" />
+  </scopeInfo>
+  <scopeInfo nodeId="1571838961923334428" fileName="Where_Select_Test1.java" startLine="93" startPosition="42" endLine="106" endPosition="67">
+    <varInfo nodeId="7001216437968922796" varName="evenNums" />
+    <varInfo nodeId="7001216437968922791" varName="nums" />
+    <varInfo nodeId="7001216437968922819" varName="strings" />
+  </scopeInfo>
+  <scopeInfo nodeId="1571838961923334426" fileName="Where_Select_Test1.java" startLine="92" startPosition="0" endLine="108" endPosition="0" />
+  <scopeInfo nodeId="1571838961923334475" fileName="Where_Select_Test1.java" startLine="109" startPosition="42" endLine="132" endPosition="5" />
+  <scopeInfo nodeId="1571838961923334473" fileName="Where_Select_Test1.java" startLine="108" startPosition="0" endLine="134" endPosition="0" />
+  <scopeInfo nodeId="1571838961923394383" fileName="Mapping_Test1.java" startLine="163" startPosition="38" endLine="198" endPosition="70">
+    <varInfo nodeId="7001216437968921770" varName="strings2" />
+    <varInfo nodeId="7001216437968921761" varName="strings" />
+  </scopeInfo>
+  <scopeInfo nodeId="1571838961922998569" fileName="Mapping_Test1.java" startLine="240" startPosition="45" endLine="275" endPosition="62">
+    <varInfo nodeId="7001216437968922216" varName="s2" />
+    <varInfo nodeId="7001216437968922211" varName="s1" />
+  </scopeInfo>
+  <scopeInfo nodeId="1571838961923394388" fileName="Mapping_Test1.java" startLine="199" startPosition="12" endLine="236" endPosition="64">
+    <varInfo nodeId="7001216437968921992" varName="strings2" />
+    <varInfo nodeId="7001216437968921983" varName="strings" />
+  </scopeInfo>
+  <scopeInfo nodeId="1571838961922998567" fileName="Mapping_Test1.java" startLine="239" startPosition="0" endLine="277" endPosition="0" />
+  <scopeInfo nodeId="1170287183420" fileName="ForEach_loop_Test1.java" startLine="25" startPosition="24" endLine="80" endPosition="33">
+    <varInfo nodeId="1170287183422" varName="seq" />
+    <varInfo nodeId="1170287183434" varName="sum" />
+  </scopeInfo>
+  <scopeInfo nodeId="1170287404139" fileName="ForEach_Test1.java" startLine="29" startPosition="24" endLine="86" endPosition="39">
+    <varInfo nodeId="1170287415017" varName="seq" />
+    <varInfo nodeId="7001216437968923276" varName="sum" />
+  </scopeInfo>
+  <scopeInfo nodeId="1170287183418" fileName="ForEach_loop_Test1.java" startLine="24" startPosition="0" endLine="82" endPosition="0" />
+  <scopeInfo nodeId="1170287404137" fileName="ForEach_Test1.java" startLine="28" startPosition="0" endLine="88" endPosition="0" />
+  <scopeInfo nodeId="1571838961923334336" fileName="Where_Select_Test1.java" startLine="19" startPosition="42" endLine="90" endPosition="40">
+    <varInfo nodeId="7001216437968923068" varName="count" />
+    <varInfo nodeId="7001216437968922647" varName="nums" />
+    <varInfo nodeId="7001216437968922712" varName="strings" />
+    <varInfo nodeId="7001216437968922759" varName="expectedNum" />
+  </scopeInfo>
+  <scopeInfo nodeId="1571838961923334334" fileName="Where_Select_Test1.java" startLine="18" startPosition="50" endLine="92" endPosition="0" />
+  <scopeInfo nodeId="1571838961922998535" fileName="Mapping_Test1.java" startLine="162" startPosition="50" endLine="237" endPosition="5" />
+  <scopeInfo nodeId="1571838961922998533" fileName="Mapping_Test1.java" startLine="161" startPosition="0" endLine="239" endPosition="0" />
+  <scopeInfo nodeId="1571838961922998413" fileName="Mapping_Test1.java" startLine="19" startPosition="42" endLine="159" endPosition="40">
+    <varInfo nodeId="7001216437968922424" varName="count" />
+    <varInfo nodeId="7001216437968921713" varName="resultCount" />
+    <varInfo nodeId="7001216437968921493" varName="nums" />
+    <varInfo nodeId="7001216437968921565" varName="strings" />
+  </scopeInfo>
+  <scopeInfo nodeId="1571838961922998411" fileName="Mapping_Test1.java" startLine="18" startPosition="45" endLine="161" endPosition="0" />
 </debugInfo>
 
