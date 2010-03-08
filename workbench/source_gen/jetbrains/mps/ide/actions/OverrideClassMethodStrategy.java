@@ -82,6 +82,7 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
     JPanel optPanel = new JPanel();
     optPanel.setLayout(new BoxLayout(optPanel, BoxLayout.Y_AXIS));
     optPanel.add(this.getReturnCheckBox());
+    optPanel.add(this.getRemoveAttributes());
     optPanel.add(this.myCheckBox);
     return optPanel;
   }

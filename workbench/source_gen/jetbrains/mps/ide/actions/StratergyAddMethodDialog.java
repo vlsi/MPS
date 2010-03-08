@@ -46,23 +46,6 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     this.mySortByNameAction = new StratergyAddMethodDialog.SortByNameAction(this.myProject);
   }
 
-  private void removeAttributes(SNode node) {
-    if (SNodeOperations.isAttribute(node)) {
-      SNodeOperations.deleteNode(node);
-    } else {
-      for (SNode child : SNodeOperations.getChildren(node)) {
-        this.removeAttributes(child);
-      }
-    }
-  }
-
-  private SNode getNodeWithoutAttributes(SNode methodNode) {
-    for (SNode child : SNodeOperations.getChildren(methodNode)) {
-      this.removeAttributes(child);
-    }
-    return methodNode;
-  }
-
   private void setVariableNames(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       SNode variable = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
@@ -118,7 +101,7 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     List<StratergyAddMethodDialog.ContainerStrategy.MethodAddition> addedMethods = this.myContainerStrategy.doAddMethods(methods);
     for (StratergyAddMethodDialog.ContainerStrategy.MethodAddition added : addedMethods) {
       BaseMethodDeclaration addedMethodAdapter = added.getResult();
-      SNode addedMethod = this.getNodeWithoutAttributes(addedMethodAdapter.getNode());
+      SNode addedMethod = addedMethodAdapter.getNode();
       SModel sourceModel = added.getSource().getNode().getModel();
       if (SModelStereotype.isStubModelStereotype(sourceModel.getStereotype())) {
         this.setVariableNames(addedMethod);

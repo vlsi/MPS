@@ -9,6 +9,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.BoxLayout;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -42,7 +44,11 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
   }
 
   public JComponent createAdditionalOptionsComponent() {
-    return this.getReturnCheckBox();
+    JPanel optPanel = new JPanel();
+    optPanel.setLayout(new BoxLayout(optPanel, BoxLayout.Y_AXIS));
+    optPanel.add(this.getReturnCheckBox());
+    optPanel.add(this.getRemoveAttributes());
+    return optPanel;
   }
 
   public static class QuotationClass_3gioqg_a0a0a0a0b0a {

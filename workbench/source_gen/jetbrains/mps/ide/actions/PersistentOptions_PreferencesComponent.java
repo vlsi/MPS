@@ -51,6 +51,7 @@ public class PersistentOptions_PreferencesComponent extends BaseProjectPrefsComp
     public boolean addReturnsOnImplement = false;
     public boolean sortAlphabetically = false;
     public boolean addOverrideAnnotation = true;
+    public boolean removeAttributes = true;
 
     public MyState() {
     }
