@@ -23,6 +23,7 @@ import jetbrains.mps.debug.integration.runconfigs.RemoteDebugProcessHandler;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
+import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -103,7 +104,6 @@ public class VMCreator {
   }
 
   private void fixStopBugUnderLinux(final ProcessHandler processHandler, final DebugSession session) {
-// TODO uncomment when implementing remote connections
     if (!(processHandler instanceof RemoteDebugProcessHandler)) {
       // add listener only to non-remote process handler:
       // on Unix systems destroying process does not cause VMDeathEvent to be generated,
@@ -121,6 +121,7 @@ public class VMCreator {
 //            if (!DebuggerManagerThread.isManagerThread()) {
 //              session.getEventsProcessor().waitFor(10000);
 //            }
+          // TODO we do not have waitFor(int) method
         }
       });
     }

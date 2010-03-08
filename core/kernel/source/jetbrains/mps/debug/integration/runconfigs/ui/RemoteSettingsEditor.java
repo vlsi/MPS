@@ -1,7 +1,7 @@
 package jetbrains.mps.debug.integration.runconfigs.ui;
 
 import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
-import jetbrains.mps.debug.runtime.DebugConnectionSettings;
+import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JFormattedTextField;
