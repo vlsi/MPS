@@ -7,8 +7,6 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/core/baseLanguage/checkDot/languages/checkedDots/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -71,6 +69,7 @@
     <orderEntry type="library" exported="" name="YJP" level="project" />
     <orderEntry type="library" exported="" name="jfcUnit" level="project" />
     <orderEntry type="library" name="jakarta regexp" level="project" />
+    <orderEntry type="module" module-name="debug" exported="" />
   </component>
   <component name="copyright">
     <Base>

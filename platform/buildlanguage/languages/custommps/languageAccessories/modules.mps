@@ -125,10 +125,6 @@
       <property name="id" value="d44dab97-aaac-44cb-9745-8a14db674c03" />
       <property name="name" value="jetbrains.mps.baseLanguage.tuples.runtime" />
     </node>
-    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="701559220729405159">
-      <property name="id" value="88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5" />
-      <property name="name" value="jetbrains.mps.debug" />
-    </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="4062013737453609732">
     <property name="name:7" value="core.languageDesign" />
@@ -391,6 +387,10 @@
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4062013737453621625">
       <property name="id" value="2d3c70e9-aab2-4870-8d8d-6036800e4103" />
       <property name="name" value="jetbrains.mps.kernel" />
+    </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="8625435145953827603">
+      <property name="id" value="88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5" />
+      <property name="name" value="jetbrains.mps.debug" />
     </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="6748863620932397034">

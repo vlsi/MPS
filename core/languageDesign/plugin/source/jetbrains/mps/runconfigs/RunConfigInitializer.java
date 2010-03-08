@@ -16,14 +16,11 @@
 package jetbrains.mps.runconfigs;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.extensions.ExtensionPoint;
-import com.intellij.openapi.project.Project;
 import com.intellij.execution.*;
 import com.intellij.execution.executors.DefaultRunExecutor;
 import com.intellij.execution.executors.DefaultDebugExecutor;
-import com.intellij.execution.impl.ExecutionManagerImpl;
 import com.intellij.execution.runners.ProgramRunner;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.runconfigs.runner.MPSProgramRunner;

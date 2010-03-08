@@ -17,16 +17,9 @@ package jetbrains.mps.runconfigs.runner;
 
 import com.intellij.execution.runners.DefaultProgramRunner;
 import com.intellij.execution.configurations.RunProfile;
-import com.intellij.execution.configurations.RunConfiguration;
-import com.intellij.execution.Executor;
 import com.intellij.execution.executors.DefaultRunExecutor;
-import com.intellij.openapi.options.SettingsEditor;
-import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.debug.integration.runconfigs.RemoteConfiguration;
 import org.jetbrains.annotations.NotNull;
-
-import javax.swing.JComponent;
-import javax.swing.JLabel;
 
 public class MPSProgramRunner extends DefaultProgramRunner {
   @NotNull

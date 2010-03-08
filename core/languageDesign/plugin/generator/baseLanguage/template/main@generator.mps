@@ -13013,7 +13013,7 @@
               <link role="classifier:3" targetNodeId="88.~DebugInfoManager" resolveInfo="DebugInfoManager" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5124230653299830231">
-              <link role="baseMethodDeclaration:3" targetNodeId="88.~DebugInfoManager.getInstance():jetbrains.mps.debug.DebugInfoManager" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration:3" targetNodeId="88.~DebugInfoManager.getInstance():debug.DebugInfoManager" resolveInfo="getInstance" />
               <link role="classConcept:3" targetNodeId="88.~DebugInfoManager" resolveInfo="DebugInfoManager" />
             </node>
           </node>
@@ -13178,7 +13178,7 @@
               <link role="classifier:3" targetNodeId="88.~DebugInfoManager" resolveInfo="DebugInfoManager" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1229033840771641139">
-              <link role="baseMethodDeclaration:3" targetNodeId="88.~DebugInfoManager.getInstance():jetbrains.mps.debug.DebugInfoManager" resolveInfo="getInstance" />
+              <link role="baseMethodDeclaration:3" targetNodeId="88.~DebugInfoManager.getInstance():debug.DebugInfoManager" resolveInfo="getInstance" />
               <link role="classConcept:3" targetNodeId="88.~DebugInfoManager" resolveInfo="DebugInfoManager" />
             </node>
           </node>

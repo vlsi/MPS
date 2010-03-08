@@ -312,8 +312,6 @@
               <list size="0" />
             </value>
           </option>
-          <option name="ADD_EJB_TO_ENTRIES" value="true" />
-          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
           <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnusedParameters" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -790,6 +788,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/languageDesign/dataFlow/runtime/dataFlow-runtime.iml" filepath="$PROJECT_DIR$/core/languageDesign/dataFlow/runtime/dataFlow-runtime.iml" group="core/languageDesign/dataFlow" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/dates/dates.iml" filepath="$PROJECT_DIR$/core/baseLanguage/dates/dates.iml" group="core/baseLanguage/dates" />
       <module fileurl="file://$PROJECT_DIR$/core/baseLanguage/dates/runtime/dates-runtime.iml" filepath="$PROJECT_DIR$/core/baseLanguage/dates/runtime/dates-runtime.iml" group="core/baseLanguage/dates" />
+      <module fileurl="file://$PROJECT_DIR$/core/kernel/debug/debug.iml" filepath="$PROJECT_DIR$/core/kernel/debug/debug.iml" group="core/kernel" />
       <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/languages/dependency/dependency.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/languages/dependency/dependency.iml" group="platform/build" />
       <module fileurl="file://$PROJECT_DIR$/platform/buildlanguage/languages/distrib/distrib.iml" filepath="$PROJECT_DIR$/platform/buildlanguage/languages/distrib/distrib.iml" group="platform/build" />
       <module fileurl="file://$PROJECT_DIR$/samples/dslbook_example/dslbook_example.iml" filepath="$PROJECT_DIR$/samples/dslbook_example/dslbook_example.iml" group="samples" />
@@ -856,6 +855,34 @@
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="emma" />
+      <extension name="snapshooter" />
+      <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
+      <option name="VM_PARAMETERS" value="-client -ea -Xmx1500m -Xss1024k -XX:PermSize=92m -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError  -Dcom.sun.management.jmxremote -Dapple.laf.useScreenMenuBar=true -Dcom.apple.mrj.application.apple.menu.about.name=&quot;JetBrains MPS&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="nosplash" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="MPS" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="4454" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Profile ">
+        <option name="myExternalizedOptions" value="&#13;&#10;additional-options=&#13;&#10;snapshots-dir=&#13;&#10;" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Profile " />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="false" name="TestDebug" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" runner="emma" />
       <extension name="snapshooter" />
@@ -949,34 +976,6 @@
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="emma" />
-      <extension name="snapshooter" />
-      <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
-      <option name="VM_PARAMETERS" value="-client -ea -Xmx1500m -Xss1024k -XX:PermSize=92m -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError  -Dcom.sun.management.jmxremote -Dapple.laf.useScreenMenuBar=true -Dcom.apple.mrj.application.apple.menu.about.name=&quot;JetBrains MPS&quot;" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="MPS" />
-      <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="4454" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;additional-options=&#13;&#10;snapshots-dir=&#13;&#10;" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Profile " />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
