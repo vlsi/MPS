@@ -40,6 +40,7 @@
     <orderEntry type="module" module-name="baseLanguageInternal" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="Tuples-runtime" />
+    <orderEntry type="module" module-name="debug" />
   </component>
 </module>
 
