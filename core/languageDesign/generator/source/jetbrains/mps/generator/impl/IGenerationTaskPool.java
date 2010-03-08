@@ -3,8 +3,8 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 
+import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * Evgeny Gryaznov, Mar 4, 2010
@@ -20,10 +20,10 @@ public interface IGenerationTaskPool {
   void waitForCompletion() throws GenerationCanceledException, GenerationFailureException;
 
   public static class SimpleGenerationTaskPool implements IGenerationTaskPool {
-    private Queue<GenerationTask> queue = new LinkedList<GenerationTask>();
+    private Deque<GenerationTask> queue = new LinkedList<GenerationTask>();
 
     public void addTask(GenerationTask r) {
-      queue.add(r);
+      queue.addFirst(r);
     }
 
     public void waitForCompletion() throws GenerationCanceledException, GenerationFailureException {
