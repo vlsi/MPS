@@ -226,17 +226,4 @@ class DefaultFindUsagesManager extends FindUsagesManager {
 
   private static void invalidateCaches() {
   }
-
-  public static void registerStructureModel(SModelDescriptor descriptor) {
-    descriptor.addWeakModelListener(new SModelAdapter() {
-      public void modelChanged(SModel model) {
-        invalidateCaches();
-      }
-
-      public void modelChangedDramatically(SModel model) {
-        invalidateCaches();
-      }
-    });
-  }
-
 }

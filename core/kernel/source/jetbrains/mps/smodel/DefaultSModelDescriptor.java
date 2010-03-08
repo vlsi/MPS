@@ -121,7 +121,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public void reloadFromDisk() {
-    ModelAccess.instance().checkWriteAccess();
+    ModelAccess.assertLegalWrite();
     if (isInitialized()) {
       mySModel.fireBeforeModelReloaded();
 
@@ -150,7 +150,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
           oldModel.dispose();
         }
       });
-
     }
   }
 
@@ -176,7 +175,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return file.lastModified();
   }
 
-  public SModel getSModel() {
+  public synchronized SModel getSModel() {
     if (mySModel == null) {
       mySModel = loadModel();
       doPostLoadStuff();
@@ -415,6 +414,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public void save() {
+    ModelAccess.assertLegalWrite();
+
     if (mySModel == null) return;
 
     if (!ApplicationManager.getApplication().isDispatchThread()) {
@@ -487,6 +488,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public void refresh() {
+    ModelAccess.assertLegalWrite();
+
     if (!isInitialized()) return;
 
     addListenersFromSModel();
@@ -508,7 +511,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public void replaceModel(SModel newModel) {
-    ModelAccess.instance().checkWriteAccess();
+    ModelAccess.assertLegalWrite();
+    
     if (newModel == mySModel) return;
     if (isInitialized()) {
       if (myFastNodeFinder != null) {
@@ -528,6 +532,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public void dispose() {
+    ModelAccess.assertLegalWrite();
     clearListeners();
 
     UnregisteredNodes.instance().clear(getSModelReference());
@@ -538,7 +543,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public Set<SReference> findUsages(Set<SNode> nodes) {
-    if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<SReference>();
+    if (!myModelRootManager.isFindUsagesSupported()) return Collections.emptySet();
 
     Set<String> strings = new HashSet<String>();
     for (SNode node : nodes) {
@@ -547,7 +552,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       }
     }
 
-    if (!myModelRootManager.containsSomeString(this, strings)) return new HashSet<SReference>();
+    if (!myModelRootManager.containsSomeString(this, strings)) return Collections.emptySet();
     getSModel();
     Set<SReference> result = new HashSet<SReference>();
     if (mySModel != null) {
@@ -559,7 +564,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public Set<SReference> findUsages(SNode node) {
-    return findUsages(CollectionUtil.set(node));
+    return findUsages(Collections.singleton(node));
   }
 
   public boolean hasUsages(Set<SModelReference> models) {
@@ -584,16 +589,14 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return false;
   }
 
-  private String quoteSpecialXMLCharacters(String s) {
+  private static String quoteSpecialXMLCharacters(String s) {
     return s.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
   }
 
   public boolean hasImportedModel(SModelDescriptor modelDescriptor) {
     if (!myModelRootManager.isFindUsagesSupported()) return false;
-    Set<String> strings = new HashSet<String>();
-    if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
-      strings.add(modelDescriptor.toString());
-    }
+    Set<String> strings = (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel))
+      ? Collections.singleton(modelDescriptor.toString()) : Collections.<String>emptySet();
     if (!myModelRootManager.containsSomeString(this, strings)) return false;
     getSModel();
     if (mySModel != null) {
@@ -604,10 +607,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   public boolean hasLanguage(Language language) {
     if (!myModelRootManager.isFindUsagesSupported()) return false;
-    Set<String> strings = new HashSet<String>();
-    if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
-      strings.add(language.getNamespace());
-    }
+    Set<String> strings = (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel))
+      ? Collections.singleton(language.getNamespace()) : Collections.<String>emptySet();
     if (!myModelRootManager.containsSomeString(this, strings)) return false;
     getSModel();
     if (mySModel != null) {
@@ -685,7 +686,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope) {
-    if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<SNode>();
+    if (!myModelRootManager.isFindUsagesSupported()) return Collections.emptySet();
     getSModel();
     Set<SNode> result = new HashSet<SNode>();
     if (mySModel != null) {
@@ -697,7 +698,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public Set<SNode> findExactInstances(AbstractConceptDeclaration concept, IScope scope) {
-    if (!myModelRootManager.isFindUsagesSupported()) return new HashSet<SNode>();
+    if (!myModelRootManager.isFindUsagesSupported()) return Collections.emptySet();
     getSModel();
     Set<SNode> result = new HashSet<SNode>();
     if (mySModel != null) {
@@ -751,7 +752,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return myTransient;
   }
 
-  private Map<String, String> getMetaData_internal() {
+  private synchronized Map<String, String> getMetaData_internal() {
     if (myMetadataLoaded) {
       return myMetadata;
     }
@@ -768,6 +769,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public void setAttribute(String key, String value) {
+    ModelAccess.assertLegalWrite();
+
     if (getMetaData_internal() == null) {
       throw new UnsupportedOperationException();
     }
@@ -832,7 +835,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   @Override
-  public void updateDiskTimestamp() {
+  protected void updateDiskTimestamp() {
     myDiskTimestamp = myModelFile.lastModified();
   }
 }

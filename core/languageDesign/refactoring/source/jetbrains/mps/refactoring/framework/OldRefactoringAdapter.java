@@ -56,12 +56,7 @@ public class OldRefactoringAdapter implements IRefactoring {
 
   public void refactor(final RefactoringContext refactoringContext) {
     myOldRefactoring.doRefactor(refactoringContext);
-
-    myNodesToOpen = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
-      public List<SNode> compute() {
-        return myOldRefactoring.getNodesToOpen(refactoringContext);
-      }
-    });
+    myNodesToOpen = myOldRefactoring.getNodesToOpen(refactoringContext);
   }
 
   public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext) {

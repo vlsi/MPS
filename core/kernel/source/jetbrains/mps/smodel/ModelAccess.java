@@ -287,7 +287,13 @@ public class ModelAccess {
     }
   }
 
-  static void assertLegalRead(SNode node) {
+  static final void assertLegalWrite() {
+    if (!instance().canWrite()) {
+      throw new IllegalModelAccessError("You can write model only inside write actions");
+    }
+  }
+
+  static final void assertLegalRead(SNode node) {
     if (node.isDisposed()) {
       if (!ourErroredModels.contains(node.getModelName_internal())) {
         ourErroredModels.add(node.getModelName_internal());

@@ -54,6 +54,7 @@ public interface SModelDescriptor {
 
   boolean isInitialized();
 
+  @Deprecated
   void addWeakModelListener(SModelListener listener);
 
   void addModelListener(SModelListener listener);

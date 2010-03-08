@@ -185,6 +185,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public void rename(SModelFqName newModelFqName, boolean changeFile) {
+    ModelAccess.assertLegalWrite();
+
     SModelFqName oldFqName = getSModelFqName();
     SModel model = getSModel();
     model.fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
@@ -198,6 +200,8 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public void changeModelFile(IFile newModelFile) {
+    ModelAccess.assertLegalWrite();
+
     IFile oldFile = myModelFile;
     if (oldFile.getAbsolutePath().equals(newModelFile.getAbsolutePath())) {
       return;

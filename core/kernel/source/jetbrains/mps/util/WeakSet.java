@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util;
 
+import com.sun.istack.internal.NotNull;
+
 import java.util.AbstractSet;
 import java.util.Collection;
 import java.util.Iterator;
@@ -36,12 +38,10 @@ public class WeakSet<T> extends AbstractSet<T> {
     myWeakHashMap = new WeakHashMap<T, Object>();
   }
 
-  public WeakSet(Collection<? extends T> collection) {
-    this();
-    if (collection != null) {
-      for (T t : collection) {
-        add(t);
-      }
+  public WeakSet(@NotNull Collection<? extends T> collection) {
+    this(collection.size());
+    for (T t : collection) {
+      add(t);
     }
   }
 

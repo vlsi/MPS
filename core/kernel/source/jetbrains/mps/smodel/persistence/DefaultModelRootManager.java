@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
@@ -39,10 +38,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -328,7 +324,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   public Map<String, String> loadMetadata(@NotNull SModelDescriptor modelDescriptor) {
     IFile metadataFile = getMetadataFile(modelDescriptor.getModelFile());
     if (!metadataFile.exists()) {
-      return new HashMap<String, String>();
+      return Collections.emptyMap();
     }
     return DefaultMetadataPersistence.load(metadataFile);
   }

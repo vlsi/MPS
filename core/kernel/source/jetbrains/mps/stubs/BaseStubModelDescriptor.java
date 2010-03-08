@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.vfs.IFile;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
@@ -28,7 +29,7 @@ public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
   }
 
   public List<StubPath> getPaths() {
-    return myStubPaths == null ? new ArrayList<StubPath>() : myStubPaths;
+    return myStubPaths == null ? Collections.<StubPath>emptyList() : myStubPaths;
   }
 
   public boolean isNeedsReloading() {
