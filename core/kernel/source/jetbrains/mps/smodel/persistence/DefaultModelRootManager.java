@@ -324,7 +324,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   public Map<String, String> loadMetadata(@NotNull SModelDescriptor modelDescriptor) {
     IFile metadataFile = getMetadataFile(modelDescriptor.getModelFile());
     if (!metadataFile.exists()) {
-      return Collections.emptyMap();
+      return new HashMap<String, String>();
     }
     return DefaultMetadataPersistence.load(metadataFile);
   }
