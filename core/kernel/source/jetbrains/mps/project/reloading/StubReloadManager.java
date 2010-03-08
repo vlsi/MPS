@@ -157,7 +157,9 @@ public class StubReloadManager implements ApplicationComponent {
 
   private void markNewStubs() {
     for (BaseStubModelDescriptor m : getAllStubModels()) {
-      ((BaseStubModelDescriptor) m).unmarkReload();
+      if (m.isInitialized()){
+        m.unmarkReload();
+      }
     }
   }
 

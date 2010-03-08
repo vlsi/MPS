@@ -39,7 +39,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   private Set<SModelDescriptor> myDescriptorsWithListener = new HashSet<SModelDescriptor>();
   private SModelAdapter myInitializationListener = new SModelAdapter() {
     public void modelInitialized(SModelDescriptor sm) {
-      updateModelInLoadingState(sm, sm.getSModel(), true);
+      updateModelInLoadingState(sm, sm.getSModel());
       sm.removeModelListener(this);
       myDescriptorsWithListener.remove(sm);
     }
@@ -90,7 +90,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
           myDescriptorsWithListener.add(descriptor);
         }
       } else {
-        updateModelInLoadingState(descriptor, descriptor.getSModel(), false);
+        updateModelInLoadingState(descriptor, descriptor.getSModel());
       }
     }
   }
@@ -112,8 +112,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       model.addLanguage(l);
     }
 
-    updateModelInLoadingState(modelDescriptor, model, true);
-
     return model;
   }
 
@@ -133,9 +131,9 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
   }
 
-  private void updateModelInLoadingState(SModelDescriptor descriptor, SModel model, boolean forceUpdate) {
-    if (!forceUpdate) {
-      if (!StubReloadManager.getInstance().needsUpdate((BaseStubModelDescriptor) descriptor, myLocation)) return;
+  private void updateModelInLoadingState(SModelDescriptor descriptor, SModel model) {
+    if (!StubReloadManager.getInstance().needsUpdate((BaseStubModelDescriptor) descriptor, myLocation)){
+      return;
     }
 
     boolean wasLoading = model.isLoading();
