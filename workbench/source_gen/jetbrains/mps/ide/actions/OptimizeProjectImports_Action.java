@@ -15,6 +15,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.dialogs.ScrollingMessageDialog;
 
 public class OptimizeProjectImports_Action extends GeneratedAction {
@@ -73,6 +75,7 @@ public class OptimizeProjectImports_Action extends GeneratedAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           report.value = new OptimizeImportsHelper(OptimizeProjectImports_Action.this.context).optimizeProjectImports(OptimizeProjectImports_Action.this.project);
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         }
       });
       new ScrollingMessageDialog(OptimizeProjectImports_Action.this.frame, report.value).showDialog();

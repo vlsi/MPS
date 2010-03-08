@@ -13,8 +13,6 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -64,21 +62,17 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      for (final IModule module : ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules())) {
-        final Wrappers._T<String> report = new Wrappers._T<String>("");
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            OptimizeImportsHelper helper = new OptimizeImportsHelper(OptimizeImportsInGlobalScope_Action.this.context);
-            if (module instanceof Solution) {
-              report.value = helper.optimizeSolutionImports(((Solution) module));
-            } else if (module instanceof Language) {
-              report.value = helper.optimizeLanguageImports(((Language) module));
-            }
-            module.save();
-            SModelRepository.getInstance().saveAll();
-          }
-        });
-        System.out.println(report.value);
+      for (IModule module : ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules())) {
+        String report = "";
+        OptimizeImportsHelper helper = new OptimizeImportsHelper(OptimizeImportsInGlobalScope_Action.this.context);
+        if (module instanceof Solution) {
+          report = helper.optimizeSolutionImports(((Solution) module));
+        } else if (module instanceof Language) {
+          report = helper.optimizeLanguageImports(((Language) module));
+        }
+        module.save();
+        SModelRepository.getInstance().saveAll();
+        System.out.println(report);
       }
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     } catch (Throwable t) {

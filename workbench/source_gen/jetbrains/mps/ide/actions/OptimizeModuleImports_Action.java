@@ -82,9 +82,9 @@ public class OptimizeModuleImports_Action extends GeneratedAction {
           } else if (OptimizeModuleImports_Action.this.module instanceof Language) {
             report.value = helper.optimizeLanguageImports(((Language) OptimizeModuleImports_Action.this.module));
           }
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
         }
       });
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
       new ScrollingMessageDialog(OptimizeModuleImports_Action.this.frame, report.value).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
