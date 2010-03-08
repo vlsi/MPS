@@ -75,7 +75,9 @@ public class GenerationController {
     myProgress = progress;
     myLogger = new GeneratorLoggerAdapter(messages, !settings.isShowErrorsOnly());
     mySaveTransientModels = saveTransientModels;
+  }
 
+  private void initMaps() {
     IModule current = null;
     ArrayList<SModelDescriptor> currentList = null;
     for (Pair<SModelDescriptor, IOperationContext> inputModel : myInputModels) {
@@ -97,7 +99,7 @@ public class GenerationController {
 
     myGenerationHandler.startGeneration(myLogger);
     ITaskProgressHelper progressHelper = new TaskProgressHelper(myProgress, totalJob, startJobTime);
-
+    initMaps();
     try {
       boolean generationOK = true;
       for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {

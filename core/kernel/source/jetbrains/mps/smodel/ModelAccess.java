@@ -23,28 +23,29 @@ import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.ide.ThreadUtils;
 
 import javax.swing.SwingUtilities;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import java.util.Set;
 
 /**
  * We access IDEA locking mechanism here in order to prevent different way of acquiring locks
  * We always first acquire IDEA's lock and only then acquire MPS's lock
  */
 public class ModelAccess {
+
   private static final ModelAccess ourInstance = new ModelAccess();
-  private static Set<String> ourErroredModels = new java.util.HashSet<String>();
+  private static Set<String> ourErroredModels = new HashSet<String>();
 
   private ReentrantReadWriteLock myReadWriteLock = new ReentrantReadWriteLock();
   private EDTExecutor myEDTExecutor = new EDTExecutor();
   private Set<Thread> myIndexingThreads = new ConcurrentHashSet<Thread>();
 
+  private ModelAccess() {
+  }
 
   public static ModelAccess instance() {
     return ourInstance;
-  }
-
-  private ModelAccess() {
   }
 
   private boolean allowSharedRead() {
@@ -64,24 +65,48 @@ public class ModelAccess {
   }
 
   public void runReadAction(final Runnable r) {
-    runReadAction(new Computable<Object>() {
-      public Object compute() {
-        r.run();
-        return null;
+    if (canRead()) {
+      r.run();
+      return;
+    }
+    ApplicationManager.getApplication().runReadAction(new Runnable() {
+      public void run() {
+        getReadLock().lock();
+        try {
+          r.run();
+        } finally {
+          getReadLock().unlock();
+        }
       }
     });
   }
 
   public void runWriteAction(final Runnable r) {
-    runWriteAction(new Computable<Object>() {
-      public Object compute() {
-        r.run();
-        return null;
+    if (canWrite()) {
+      r.run();
+      return;
+    }
+    Runnable runnable = new Runnable() {
+      public void run() {
+        getWriteLock().lock();
+        try {
+          r.run();
+        } finally {
+          getWriteLock().unlock();
+        }
       }
-    });
+    };
+    if (ThreadUtils.isEventDispatchThread()) {
+      ApplicationManager.getApplication().runWriteAction(runnable);
+    } else {
+      ApplicationManager.getApplication().runReadAction(runnable);
+    }
   }
 
   public <T> T runReadAction(final Computable<T> c) {
+    if (canRead()) {
+      return c.compute();
+    }
     return ApplicationManager.getApplication().runReadAction(new Computable<T>() {
       public T compute() {
         getReadLock().lock();
@@ -95,6 +120,9 @@ public class ModelAccess {
   }
 
   public <T> T runWriteAction(final Computable<T> c) {
+    if (canWrite()) {
+      return c.compute();
+    }
     Computable<T> computable = new Computable<T>() {
       public T compute() {
         getWriteLock().lock();
@@ -141,18 +169,17 @@ public class ModelAccess {
     });
   }
 
-  public boolean tryWrite(final Runnable r) {
-    return ApplicationManager.getApplication().runWriteAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        if (getWriteLock().tryLock()) {
+  public <T> T tryRead(final Computable<T> c) {
+    return ApplicationManager.getApplication().runReadAction(new Computable<T>() {
+      public T compute() {
+        if (getReadLock().tryLock()) {
           try {
-            r.run();
+            return c.compute();
           } finally {
-            getWriteLock().unlock();
+            getReadLock().unlock();
           }
-          return true;
         } else {
-          return false;
+          return null;
         }
       }
     });
@@ -187,33 +214,9 @@ public class ModelAccess {
     return res[0];
   }
 
-  public <T> T tryRead(Computable<T> c) {
-    if (getReadLock().tryLock()) {
-      try {
-        return c.compute();
-      } finally {
-        getReadLock().unlock();
-      }
-    } else {
-      return null;
-    }
-  }
-
-  public <T> T tryWrite(Computable<T> c) {
-    if (getWriteLock().tryLock()) {
-      try {
-        return c.compute();
-      } finally {
-        getWriteLock().unlock();
-      }
-    } else {
-      return null;
-    }
-  }
-
   public boolean canRead() {
     if (allowSharedRead()) {
-      return true; //todo find a way to check read access
+      return myReadWriteLock.getReadHoldCount() != 0 || canWrite();
     } else {
       return canWrite();
     }
@@ -258,12 +261,11 @@ public class ModelAccess {
   }
 
   public void runWriteActionInCommand(final Runnable r, String name, UndoConfirmationPolicy policy) {
-    runWriteActionInCommand(new Computable<Object>() {
-      public Object compute() {
-        r.run();
-        return null;
+    CommandProcessor.getInstance().executeCommand(null, new Runnable() {
+      public void run() {
+        runWriteAction(r);
       }
-    }, name, policy);
+    }, name, null, policy);
   }
 
   public void runWriteActionInCommandAsync(final Runnable r) {

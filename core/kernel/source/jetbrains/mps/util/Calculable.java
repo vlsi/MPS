@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.util;
 
+/**
+ * Use com.intellij.openapi.util.Computable
+ */
 @Deprecated
 public interface Calculable<T> {
   T calculate();
