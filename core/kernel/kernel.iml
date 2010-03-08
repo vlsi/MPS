@@ -10,8 +10,6 @@
       <sourceFolder url="file://$MODULE_DIR$/testMake/solutions/jetbrains.mps.makeTest/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testMake/solutions/jetbrains.mps.testModels/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/debug/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/debug/debugProject/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
