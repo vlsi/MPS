@@ -3,7 +3,6 @@ package jetbrains.mps.build.ant.brokenRefs;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -11,25 +10,23 @@ import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.TestMain;
-import jetbrains.mps.util.FileUtil;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.MemoryMXBean;
+import java.lang.management.MemoryUsage;
 import java.util.List;
-import java.util.Map;
-import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.io.File;
-
-import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.project.ProjectManager;
 
 public class TestBrokenReferencesWorker extends MpsWorker {
   private final IBuildServerMessageFormat myBuildServerMessageFormat = TestBrokenReferencesWorker.getBuildServerMessageFormat();
+  private long usedHeap;
+  private long usedNonHeap;
 
   public TestBrokenReferencesWorker(WhatToDo whatToDo, SystemOutLogger systemOutLogger) {
     super(whatToDo, systemOutLogger);
+    MemoryMXBean mmbean = ManagementFactory.getMemoryMXBean();
+    this.usedHeap = mmbean.getHeapMemoryUsage().getUsed();
+    this.usedNonHeap = mmbean.getNonHeapMemoryUsage().getUsed();
   }
 
   public static void main(String[] args) {
@@ -109,5 +106,8 @@ public class TestBrokenReferencesWorker extends MpsWorker {
   }
 
   protected void showStatistic() {
+    MemoryMXBean mmbean = ManagementFactory.getMemoryMXBean();
+    output("Used heap: "+(mmbean.getHeapMemoryUsage().getUsed()-usedHeap));
+    output("Used non-heap: "+(mmbean.getNonHeapMemoryUsage().getUsed()-usedNonHeap));
   }
 }
