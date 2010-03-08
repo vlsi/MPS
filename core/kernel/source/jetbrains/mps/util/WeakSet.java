@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.util;
 
-import com.sun.istack.internal.NotNull;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.AbstractSet;
 import java.util.Collection;
