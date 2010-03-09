@@ -28,7 +28,7 @@ import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.project.BaseBindedDialog;
-import jetbrains.mps.workbench.dialogs.project.components.parts.BoundListPanel;
+import jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel;
 import org.jdesktop.observablecollections.ObservableCollections;
 import org.jdesktop.observablecollections.ObservableList;
 
