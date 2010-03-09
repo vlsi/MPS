@@ -184,7 +184,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5553449326502549575">
     <property name="name:0" value="AbstractModelCreator" />
     <property name="package:0" value="AbstractCreator" />
-    <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
+    <link role="extends:0" targetNodeId="4v.1029302639053433191:0" resolveInfo="DefaultClassifier" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5553449326502549576">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="modelDescriptorsBlock" />
@@ -208,12 +208,6 @@
       <property name="role:0" value="rootDescriptorsBlock" />
       <property name="sourceCardinality:0" value="0..1" />
       <link role="target:0" targetNodeId="368569065472982602" resolveInfo="RootNodeDescriptorsBlock" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5553449326502549580">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="methodDeclaration" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="4v.1205769003971:0" resolveInfo="DefaultClassifierMethodDeclaration" />
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5553449326502549581">
       <link role="intfc:0" targetNodeId="4v.1205751982837:0" resolveInfo="IClassifier" />

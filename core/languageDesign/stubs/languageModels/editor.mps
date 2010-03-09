@@ -39,6 +39,7 @@
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="444366895203545215">
     <property name="package:32" value="Stubs" />
     <link role="conceptDeclaration:32" targetNodeId="1.3671542447677113727" resolveInfo="StubsCreatorDeclaration" />
@@ -72,8 +73,12 @@
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5516999836374918948" />
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="5516999836374918950">
-          <link role="relationDeclaration:32" targetNodeId="1.5553449326502549580" />
+          <link role="relationDeclaration:32" targetNodeId="3v.1029302639053435660:0" />
           <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="5516999836374918951" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="664395348088054533">
+          <link role="relationDeclaration:32" targetNodeId="3v.1029302639053435661:0" />
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="664395348088054534" />
         </node>
       </node>
     </node>
@@ -212,7 +217,7 @@
       </node>
     </node>
   </node>
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
+  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5516999836374121345">
     <property name="package:32" value="Stubs" />
     <link role="conceptDeclaration:32" targetNodeId="1.5516999836374121342" resolveInfo="StubsCreatorType" />
@@ -220,7 +225,7 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="5516999836374121349" />
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5516999836374121350">
         <property name="text:32" value="stubCreator" />
-        <link role="styleClass:32" targetNodeId="3v.1186415544875" resolveInfo="KeyWord" />
+        <link role="styleClass:32" targetNodeId="4v.1186415544875" resolveInfo="KeyWord" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem:32" id="5516999836374599651">
           <property name="value:32" value="0.0" />
         </node>
@@ -284,8 +289,12 @@
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5553449326502622481" />
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="5553449326502622482">
-          <link role="relationDeclaration:32" targetNodeId="1.5553449326502549580" />
+          <link role="relationDeclaration:32" targetNodeId="3v.1029302639053435660:0" />
           <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="5553449326502622483" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="664395348088054531">
+          <link role="relationDeclaration:32" targetNodeId="3v.1029302639053435661:0" />
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="664395348088054532" />
         </node>
       </node>
     </node>

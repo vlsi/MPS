@@ -159,6 +159,25 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3798212845297797388">
     <property name="name:3" value="StubsModelRootManager" />
     <property name="package:3" value="Stubs" />
+    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="664395348088055278">
+      <property name="name:3" value="field" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="664395348088055279" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="664395348088057439" />
+      <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro:2" id="664395348088057441">
+        <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="664395348088057442">
+          <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="664395348088057443">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="664395348088057444">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="664395348088057446">
+                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="664395348088057445" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="664395348088057450">
+                  <link role="link:16" targetNodeId="3v.1029302639053435660:0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3798212845297797389" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3798212845297797390">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3798212845297797391" />
@@ -494,8 +513,8 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5516999836374945741">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5516999836374945742">
                 <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="5516999836374945743" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="5516999836374945748">
-                  <link role="link:16" targetNodeId="1.5553449326502549580" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="664395348088055277">
+                  <link role="link:16" targetNodeId="3v.1029302639053435661:0" />
                 </node>
               </node>
             </node>

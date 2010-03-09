@@ -577,7 +577,7 @@
         </node>
       </node>
     </node>
-    <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="5516999836375009819">
+    <node role="method" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="5516999836375009819">
       <property name="name:0" value="createClassPathItem" />
       <node role="visibility:0" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="5516999836375009820" />
       <node role="returnType:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5516999836375009821">
@@ -606,7 +606,7 @@
         </node>
       </node>
     </node>
-    <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="8818697550806799585">
+    <node role="method" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="8818697550806799585">
       <property name="name:0" value="iterateClasspath" />
       <node role="parameter:0" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8818697550806799741">
         <property name="name:3" value="item" />

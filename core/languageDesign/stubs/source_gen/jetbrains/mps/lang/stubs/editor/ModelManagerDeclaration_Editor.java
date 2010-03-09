@@ -94,6 +94,7 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_asco8r_g1b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_asco8r_h1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_asco8r_i1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_asco8r_j1b0(editorContext, node));
     return editorCell;
   }
 
@@ -149,9 +150,17 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_asco8r_i1b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ModelManagerDeclaration_Editor.methodDeclarationListHandler_asco8r_i1b0(node, "methodDeclaration", editorContext);
+    AbstractCellListHandler handler = new ModelManagerDeclaration_Editor.fieldListHandler_asco8r_i1b0(node, "field", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_methodDeclaration");
+    editorCell.setCellId("refNodeList_field");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_asco8r_j1b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ModelManagerDeclaration_Editor.methodListHandler_asco8r_j1b0(node, "method", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
+    editorCell.setCellId("refNodeList_method");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
@@ -255,8 +264,50 @@ public class ModelManagerDeclaration_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  private static class methodDeclarationListHandler_asco8r_i1b0 extends RefNodeListHandler {
-    public methodDeclarationListHandler_asco8r_i1b0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class fieldListHandler_asco8r_i1b0 extends RefNodeListHandler {
+    public fieldListHandler_asco8r_i1b0(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if (elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+
+    public EditorCell createSeparatorCell(EditorContext editorContext) {
+      return super.createSeparatorCell(editorContext);
+    }
+  }
+
+  private static class methodListHandler_asco8r_j1b0 extends RefNodeListHandler {
+    public methodListHandler_asco8r_j1b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

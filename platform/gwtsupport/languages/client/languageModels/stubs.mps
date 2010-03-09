@@ -988,7 +988,7 @@
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration" id="5420647633057830600">
     <property name="name" value="GWTModuleStubs" />
-    <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="6487379123666154166">
+    <node role="method" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="6487379123666154166">
       <property name="name:0" value="collectDescriptors" />
       <node role="parameter:0" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6487379123666154171">
         <property name="name:3" value="mrm" />
@@ -1295,7 +1295,7 @@
       </node>
       <node role="visibility:0" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="6487379123666154169" />
     </node>
-    <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="6487379123666154332">
+    <node role="method" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="6487379123666154332">
       <property name="name:0" value="smodelRefWithId" />
       <node role="parameter:0" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6487379123666157408">
         <property name="name:3" value="pkg" />
@@ -1373,7 +1373,7 @@
       </node>
       <node role="visibility:0" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="6487379123666154338" />
     </node>
-    <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="6487379123666157441">
+    <node role="method" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="6487379123666157441">
       <property name="name:0" value="smodelRefWithFqName" />
       <node role="returnType:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6487379123666157449">
         <link role="classifier:3" targetNodeId="4.~SModelReference" resolveInfo="SModelReference" />
@@ -1409,7 +1409,7 @@
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6487379123666157451" />
       </node>
     </node>
-    <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="6487379123666460832">
+    <node role="method" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="6487379123666460832">
       <property name="name:0" value="javaStubRef" />
       <node role="parameter:0" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6487379123666460833">
         <property name="name:3" value="pkg" />

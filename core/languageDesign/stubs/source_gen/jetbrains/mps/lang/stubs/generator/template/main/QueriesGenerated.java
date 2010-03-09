@@ -87,12 +87,16 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "rootsBlock", true), "body", true);
   }
 
+  public static Iterable sourceNodesQuery_664395348088057442(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "field", true);
+  }
+
   public static Iterable sourceNodesQuery_562112407431544948(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "settings", true), "importedLanguage", true);
   }
 
   public static Iterable sourceNodesQuery_5516999836374945739(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "methodDeclaration", true);
+    return SLinkOperations.getTargets(_context.getNode(), "method", true);
   }
 
   public static Iterable sourceNodesQuery_4009335194403290554(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
