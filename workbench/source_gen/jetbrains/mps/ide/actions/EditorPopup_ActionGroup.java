@@ -31,6 +31,7 @@ public class EditorPopup_ActionGroup extends GeneratedActionGroup {
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowNodeInInspector_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", "jetbrains.mps.ide");
+      EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowImplementations_Action", "jetbrains.mps.ide");
       EditorPopup_ActionGroup.this.addAnchor(EditorPopup_ActionGroup.LABEL_ID_structure);
       EditorPopup_ActionGroup.this.addSeparator();
       EditorPopup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToConceptDeclaration_Action", "jetbrains.mps.ide");

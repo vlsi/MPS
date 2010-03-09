@@ -28,7 +28,7 @@ public class ShowImplementationComponent extends JPanel {
 
   public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
     this.myNodes = nodes;
-    this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, SNodeOperations.copyNode(nodes.get(0)));
+    this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, SNodeOperations.copyNode(nodes.get(0)), false);
     for (SNode node : this.myNodes) {
       String item = node.getPresentation();
       this.myItemToNode.put(item, node);
