@@ -293,6 +293,12 @@ public class ModelAccess {
     }
   }
 
+  public static void assertLegalRead() {
+    if (!instance().canRead()) {
+      throw new IllegalModelAccessError("You can read model only inside read actions");
+    }
+  }
+
   static final void assertLegalRead(SNode node) {
     if (node.isDisposed()) {
       if (!ourErroredModels.contains(node.getModelName_internal())) {
@@ -307,5 +313,4 @@ public class ModelAccess {
       throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }
-
 }

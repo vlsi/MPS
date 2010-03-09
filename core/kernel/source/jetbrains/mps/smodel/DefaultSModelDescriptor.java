@@ -52,6 +52,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private Map<String, String> myMetadata;
   private boolean myMetadataLoaded;
 
+  private final Object myLoadingLock = new Object();
+
   //it should be possible to add listeners from any thread so we use lock here
   //access to other fields is synchronized with ModelAccess
   private final Object myListenersLock = new Object();
@@ -175,13 +177,26 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return file.lastModified();
   }
 
-  public synchronized SModel getSModel() {
-    if (mySModel == null) {
-      mySModel = loadModel();
-      doPostLoadStuff();
-      mySModel.fireModelInitialized();
+  public SModel getSModel() {
+    ModelAccess.assertLegalRead();
+
+    SModel result;
+    boolean fireInitialized = false;
+
+    synchronized (myLoadingLock) {
+      if (mySModel == null) {
+        result = loadModel();
+        doPostLoadStuff();
+        fireInitialized = true;
+        mySModel = result;
+      } else {
+        result = mySModel;
+      }
     }
-    return mySModel;
+    if(fireInitialized) {
+      result.fireModelInitialized();
+    }
+    return result;
   }
 
   private void doPostLoadStuff() {
