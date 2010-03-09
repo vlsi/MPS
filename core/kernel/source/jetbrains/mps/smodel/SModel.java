@@ -40,8 +40,6 @@ import java.util.*;
  * Created Sep 16, 2003
  */
 public class SModel implements Iterable<SNode> {
-  public static final String TMP_MODEL = "tmpModel";
-
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
   //it should be possible to add listeners from any thread so we use lock here
@@ -69,7 +67,6 @@ public class SModel implements Iterable<SNode> {
 
   private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
 
-  private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private RefactoringHistory myRefactoringHistory = new RefactoringHistory();
   private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
@@ -78,10 +75,6 @@ public class SModel implements Iterable<SNode> {
 
   public SModel(@NotNull SModelReference modelReference) {
     myReference = modelReference;
-  }
-
-  public SModel() {
-    this(SModelReference.fromString("test.model"));
   }
 
   public void setPersistenceVersion(int persistenceVersion) {
@@ -649,7 +642,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addLanguage(@NotNull Language language) {
-    addLanguage_internal(language);
+    addLanguage_internal(language.getModuleReference());
     addAspectModelsVersions(language);
   }
 
@@ -670,6 +663,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addAspectModelsVersions(@NotNull Language language, boolean firstVersion) {
+    ModelChange.assertLegalChange(this);
+
     if (myVersionedLanguages.contains(language.getModuleReference())) {
       return;
     }
@@ -689,11 +684,9 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  public void addLanguage_internal(@NotNull Language language) {
-    addLanguage_internal(language.getModuleReference());
-  }
-
   public void addLanguage_internal(@NotNull ModuleReference ref) {
+    ModelChange.assertLegalChange(this);
+
     if (hasLanguage(ref)) {
       return;
     }
@@ -709,6 +702,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void deleteLanguage(@NotNull ModuleReference ref) {
+    ModelChange.assertLegalChange(this);
+
     myLanguages.remove(ref);
     myVersionedLanguages.remove(ref);
     fireLanguageRemovedEvent(ref);
@@ -731,6 +726,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addDevKit(@NotNull ModuleReference ref) {
+    ModelChange.assertLegalChange(this);
+
     if (!myDevKits.contains(ref)) {
       myDevKits.add(ref);
       fireDevKitAddedEvent(ref);
@@ -738,6 +735,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void deleteDevKit(@NotNull ModuleReference ref) {
+    ModelChange.assertLegalChange(this);
+
     myDevKits.remove(ref);
     fireDevKitRemovedEvent(ref);
   }
@@ -844,6 +843,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   void addImportElement(@NotNull SModelReference modelReference, boolean firstVersion) {
+    ModelChange.assertLegalChange(this);
+
     ImportElement importElement = getImportElement(modelReference);
     if (importElement != null) return;
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
@@ -858,12 +859,16 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addImportElement(@NotNull SModelReference modelReference, int referenceId, int usedVersion) {
+    ModelChange.assertLegalChange(this);
+
     ImportElement importElement = new ImportElement(modelReference, referenceId, usedVersion);
     myImports.add(importElement);
     fireImportAddedEvent(modelReference);
   }
 
   public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
+    ModelChange.assertLegalChange(this);
+
     ImportElement importElement = new ImportElement(modelReference, -1, usedVersion);
     myAdditionalModelsVersions.add(importElement);
   }
@@ -894,6 +899,8 @@ public class SModel implements Iterable<SNode> {
 
 
   public void deleteImportedModel(@NotNull SModelReference modelReference) {
+    ModelChange.assertLegalChange(this);
+
     ImportElement importElement = getImportElement(modelReference);
     if (importElement != null) {
       myImports.remove(importElement);
@@ -902,6 +909,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void deleteImportedModel(@NotNull SModel model) {
+    ModelChange.assertLegalChange(this);
+
     ImportElement importElement = getImportElement(model.getSModelReference());
     if (importElement != null) {
       myImports.remove(importElement);
@@ -1091,6 +1100,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void clear() {
+    ModelChange.assertLegalChange(this);
+
     List<SNode> roots = new ArrayList<SNode>(myRoots);
     for (SNode root : roots) {
       root.delete();
@@ -1098,6 +1109,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void dispose() {
+    ModelChange.assertLegalChange(this);
+
     fireBeforeModelDisposed();
     clearAdapters();
     clearUserObjects();
@@ -1149,6 +1162,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void validateLanguagesAndImports(boolean respectModulesScopes, boolean firstVersion) {
+    ModelChange.assertLegalChange(this);
+    
     GlobalScope scope = GlobalScope.getInstance();
     Set<ModuleReference> usedLanguages = new HashSet<ModuleReference>(getLanguageRefs(scope));
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
@@ -1212,22 +1227,6 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  @UseCarefully
-  public void changeImportedModelUID(SModelReference oldImportedModelReference, SModelReference newImportedModelReference) {
-    for (ImportElement importElement : myImports) {
-      if (importElement.getModelReference().equals(oldImportedModelReference)) {
-        importElement.myModelDescriptor = newImportedModelReference;
-      }
-    }
-    for (SNode node : getAllNodesWithIds()) {
-      for (SReference reference : node.getReferences()) {
-        if (oldImportedModelReference.equals(reference.getTargetSModelReference())) {
-          reference.setTargetSModelReference(newImportedModelReference);
-        }
-      }
-    }
-  }
-
   public void changeModelReference(SModelReference newModelReference) {
     SModelReference oldReference = myReference;
     myReference = newModelReference;
@@ -1241,6 +1240,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void addEngagedOnGenerationLanguage(ModuleReference ref) {
+    ModelChange.assertLegalChange(this);
+
     if (!myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.add(ref);
       // don't send event but mark model as changed
@@ -1251,6 +1252,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void removeEngagedOnGenerationLanguage(ModuleReference ref) {
+    ModelChange.assertLegalChange(this);
+
     if (myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.remove(ref);
       // don't send event but mark model as changed
@@ -1279,7 +1282,9 @@ public class SModel implements Iterable<SNode> {
     return importElement.getUsedVersion();
   }
 
-  /*package*/ void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
+  void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
+    ModelChange.assertLegalChange(this);
+    
     ImportElement importElement = getImportElement(sModelReference);
     if (importElement != null) {
       importElement.myUsedVersion = currentVersion;
@@ -1303,6 +1308,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void refreshRefactoringHistory() {
+    ModelChange.assertLegalChange(this);
+
     try {
       Element e = myRefactoringHistory.toElement();
       myRefactoringHistory = new RefactoringHistory();
@@ -1313,6 +1320,8 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void setRefactoringHistory(RefactoringHistory refactoringHistory) {
+    ModelChange.assertLegalChange(this);
+
     myRefactoringHistory = refactoringHistory;
   }
 
@@ -1374,24 +1383,6 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  @Nullable
-  public Object getUserObject(@NotNull Object key) {
-    return myUserObjects.get(key);
-  }
-
-  public void putUserObject(@NotNull Object key,
-                            @Nullable Object value) {
-    myUserObjects.put(key, value);
-  }
-
-  public void removeUserObject(@NotNull Object key) {
-    myUserObjects.remove(key);
-  }
-
-  public void removeAllUserObjects() {
-    myUserObjects.clear();
-  }
-
   @NotNull
   public List<SNode> allNodes() {
     SModel model = this;
@@ -1430,7 +1421,7 @@ public class SModel implements Iterable<SNode> {
     return BaseAdapter.toAdapters(allNodes(new IsInstanceCondition(SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance()))));
   }
 
-  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls, Condition<E> condition) {
+  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls, Condition<? super E> condition) {
     List<E> result = allAdapters(cls);
     Iterator<E> it = result.iterator();
     while (it.hasNext()) {
@@ -1478,20 +1469,14 @@ public class SModel implements Iterable<SNode> {
     for (Language language : languages) {
       SModelDescriptor structureModelDescriptor = language.getStructureModelDescriptor();
       SModel structureModel = structureModelDescriptor.getSModel();
-      list.addAll(structureModel.allAdapters(ConceptDeclaration.class, new Condition<ConceptDeclaration>() {
-        public boolean met(ConceptDeclaration node) {
-          return new Condition<ConceptDeclaration>() {
-            public boolean met(final ConceptDeclaration object) {
-              return condition.met(object);
-            }
-          }.met(node);
-        }
-      }));
+      list.addAll(structureModel.allAdapters(ConceptDeclaration.class, condition));
     }
     return list;
   }
 
   public boolean updateSModelReferences() {
+    ModelChange.assertLegalChange(this);
+
     boolean changed = false;
     for (SNode node : getAllNodesWithIds()) {
       for (SReference reference : node.getReferences()) {
@@ -1526,12 +1511,9 @@ public class SModel implements Iterable<SNode> {
     return changed;
   }
 
-  private boolean changed(SModelReference ref1, SModelReference ref2) {
-    return !EqualUtil.equals(ref1.getSModelId(), ref2.getSModelId()) ||
-      !EqualUtil.equals(ref1.getSModelFqName(), ref2.getSModelFqName());
-  }
-
   public boolean updateModuleReferences() {
+    ModelChange.assertLegalChange(this);
+
     boolean changed = false;
 
     if (updateRefs(myDevKits)) {

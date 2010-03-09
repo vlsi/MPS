@@ -70,22 +70,27 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       return new StubModel(modelDescriptor.getSModelReference());
     }
 
-    boolean needToSave = false;
-    if (model.getSModelReference().getSModelId() == null) {
-      model.changeModelReference(modelDescriptor.getSModelReference());
-      needToSave = true;
-    }
+    try {
+      model.setLoading(true);
+      boolean needToSave = false;
+      if (model.getSModelReference().getSModelId() == null) {
+        model.changeModelReference(modelDescriptor.getSModelReference());
+        needToSave = true;
+      }
 
-    if (model.updateSModelReferences()) {
-      needToSave = true;
-    }
+      if (model.updateSModelReferences()) {
+        needToSave = true;
+      }
 
-    if (model.updateModuleReferences()) {
-      needToSave = true;
-    }
+      if (model.updateModuleReferences()) {
+        needToSave = true;
+      }
 
-    if (needToSave && !modelDescriptor.getModelFile().isReadOnly()) {
-      ModelPersistence.saveModel(model, modelDescriptor.getModelFile(), false);
+      if (needToSave && !modelDescriptor.getModelFile().isReadOnly()) {
+        ModelPersistence.saveModel(model, modelDescriptor.getModelFile(), false);
+      }
+    } finally {
+      model.setLoading(false);
     }
 
     LOG.assertLog(model.getSModelReference().equals(modelDescriptor.getSModelReference()),

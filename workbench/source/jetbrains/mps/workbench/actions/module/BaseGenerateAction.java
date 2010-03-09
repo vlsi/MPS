@@ -141,7 +141,7 @@ public abstract class BaseGenerateAction extends BaseAction {
   private List<SModelDescriptor> getModelsToGenerate(final IModule module) {
     GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
       public GenParameters compute() {
-        SModel tmp = new SModel();
+        SModel tmp = new SModel(SModelReference.fromString("test.model"));
         tmp.setLoading(true);
 
 

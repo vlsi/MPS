@@ -191,16 +191,21 @@ public class ModelPersistence {
       return handleNullReaderForPersistence(" file " + file.getPath());
     }
     SModel model = reader.readModel(document, modelName, modelStereotype);
-    if (needsUpgradeCondition.met(modelPersistenceVersion)) {
-      model = upgradeModelPersistence(model, modelPersistenceVersion, toVersion); //sets persistence version
-      document = saveModel(model, false);
-      try {
-        JDOMUtil.writeDocument(document, file);
-      } catch (IOException e) {
-        LOG.error("error while saving model after persistence upgrade " + model.getSModelReference(), e);
+    try {
+      model.setLoading(true);
+      if (needsUpgradeCondition.met(modelPersistenceVersion)) {
+          model = upgradeModelPersistence(model, modelPersistenceVersion, toVersion); //sets persistence version
+          document = saveModel(model, false);
+          try {
+            JDOMUtil.writeDocument(document, file);
+          } catch (IOException e) {
+            LOG.error("error while saving model after persistence upgrade " + model.getSModelReference(), e);
+          }
+      } else {
+        model.setPersistenceVersion(modelPersistenceVersion);
       }
-    } else {
-      model.setPersistenceVersion(modelPersistenceVersion);
+    } finally {
+      model.setLoading(false);
     }
     return model;
   }

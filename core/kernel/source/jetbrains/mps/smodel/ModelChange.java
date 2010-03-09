@@ -42,6 +42,12 @@ class ModelChange {
     }
   }
 
+  static void assertLegalChange(SModel model) {
+    if (!model.isLoading() && !ModelAccess.instance().canWrite()) {
+      throw new IllegalModelChangeError("You can change model only inside write actions");
+    }
+  }
+
   static boolean needRegisterUndo(SModel model) {
     return !(model.isLoading()) && isInsideUndoableCommand();
   }

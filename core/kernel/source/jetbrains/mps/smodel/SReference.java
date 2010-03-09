@@ -115,7 +115,6 @@ public abstract class SReference {
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
     if (SModelStereotype.isStubModelStereotype(getSourceNode().getModel().getStereotype())) return;
-    if (getSourceNode().getModel().getUserObject(SModel.TMP_MODEL) != null) return;
 
     if (ourErrorReportedRefs.contains(this)) return;
     ourErrorReportedRefs.add(this);
