@@ -21,6 +21,7 @@ import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.SwingUtilities;
 import java.util.HashSet;
@@ -33,6 +34,8 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * We always first acquire IDEA's lock and only then acquire MPS's lock
  */
 public class ModelAccess {
+
+  private static final Logger LOG = Logger.getLogger(ModelAccess.class);
 
   private static final ModelAccess ourInstance = new ModelAccess();
   private static Set<String> ourErroredModels = new HashSet<String>();
@@ -295,7 +298,8 @@ public class ModelAccess {
 
   public static void assertLegalRead() {
     if (!instance().canRead()) {
-      throw new IllegalModelAccessError("You can read model only inside read actions");
+      LOG.error(new IllegalModelAccessError("You can read model only inside read actions"));
+      // TODO throw
     }
   }
 
