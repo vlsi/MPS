@@ -43,6 +43,9 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1620955434532218412">
     <property name="name:2" value="main" />
+    <node role="preMappingScript:2" type="jetbrains.mps.lang.generator.structure.MappingScriptReference:2" id="1304595503654934199">
+      <link role="mappingScript:2" targetNodeId="1304595503654398416" resolveInfo="setUnprocessedAnnotations" />
+    </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1620955434532446081">
       <link role="applicableConcept:2" targetNodeId="1.6036237525966316030" resolveInfo="EvaluatorsSuperMethodCall" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1620955434532446083">
