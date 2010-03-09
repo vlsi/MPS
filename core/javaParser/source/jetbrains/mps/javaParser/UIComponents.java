@@ -99,7 +99,7 @@ public class UIComponents {
     private JPanel createBoundListPanel(String caption,
                                         List list,
                                         DefaultListCellRenderer renderer) {
-      BoundListPanel result = new BoundListPanel(this, caption, list, null);
+      BoundListPanel result = new BoundListPanel(this, caption, list);
       result.setCellRenderer(renderer);
       result.init();
       return result;
