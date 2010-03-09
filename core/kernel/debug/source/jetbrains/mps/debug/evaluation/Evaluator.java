@@ -41,5 +41,9 @@ public abstract class Evaluator {
     return myThisObject;
   }
 
+  protected ThreadReference getThreadReference() {
+    return myUiState.getThread();
+  }
+
   public abstract ValueProxy evaluate();
 }
