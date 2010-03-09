@@ -34,8 +34,6 @@ import java.util.*;
 public abstract class BaseStubModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(BaseStubModelRootManager.class);
 
-  private static Map<SModelReference, Long> ourTimestamps = new HashMap<SModelReference, Long>();
-
   private Set<SModelDescriptor> myDescriptorsWithListener = new HashSet<SModelDescriptor>();
   private SModelAdapter myInitializationListener = new SModelAdapter() {
     public void modelInitialized(SModelDescriptor sm) {
@@ -77,7 +75,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
         descriptor = (BaseStubModelDescriptor) oldDescr;
       }
 
-      BaseSModelDescriptor baseDescriptor = (BaseSModelDescriptor) descriptor;
+      BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) descriptor;
 
       //todo this is a hack - comparing classes by names
       if (baseDescriptor.getModelRootManager().getClass().getName().equals(this.getClass().getName())) {
@@ -98,7 +96,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   @NotNull
   public final SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = new SModel(modelDescriptor.getSModelReference());
-    ourTimestamps.put(model.getSModelReference(), timestamp(modelDescriptor));
 
     Set<Language> languages = new HashSet<Language>();
 

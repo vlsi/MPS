@@ -43,4 +43,13 @@ public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
   public void unmarkReload() {
     myNeedsReloading = false;
   }
+
+  //todo hide this method DO NOT USE THIS. THIS IS FOR INCREMENTAL RELOADING PURPOSES ONLY
+  public void setModelRootManager(IModelRootManager modelRootManager) {
+    myModelRootManager = modelRootManager;
+  }
+
+  public IModelRootManager getModelRootManager() {
+    return myModelRootManager;
+  }
 }
