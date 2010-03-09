@@ -65,6 +65,17 @@ public class ConstructorDeclaration_Behavior {
     return result.toString();
   }
 
+  public static String virtual_jniSignature_8847328628797656446(SNode thisNode) {
+    StringBuilder sb = new StringBuilder();
+    sb.append("(");
+    for (SNode p : SLinkOperations.getTargets(thisNode, "parameter", true)) {
+      sb.append(Type_Behavior.call_jniSignature_8847328628797633411(SLinkOperations.getTarget(p, "type", true)));
+    }
+    sb.append(")");
+    sb.append("V");
+    return sb.toString();
+  }
+
   public static Icon call_getAdditionalIcon_8884554759541375762(SNode thisNode) {
     return (Icon) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541375762);
   }
