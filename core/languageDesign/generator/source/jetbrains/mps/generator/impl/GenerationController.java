@@ -94,12 +94,12 @@ public class GenerationController {
 
   public boolean generate() {
     clearMessageVew();
-    long totalJob = estimateGenerationTime();
     long startJobTime = System.currentTimeMillis();
 
     myGenerationHandler.startGeneration(myLogger);
-    ITaskProgressHelper progressHelper = new TaskProgressHelper(myProgress, totalJob, startJobTime);
     initMaps();
+    long totalJob = estimateGenerationTime();
+    ITaskProgressHelper progressHelper = new TaskProgressHelper(myProgress, totalJob, startJobTime);
     try {
       boolean generationOK = true;
       for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
