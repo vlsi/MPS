@@ -13,34 +13,50 @@ public class First {
     String sNotNull = new String();
     String sNull = null;
     System.out.println(check_7907427828436741042(sNotNull));
+    System.out.println(check_5227621747122194240(check_5227621747122071247(sNotNull)));
     System.out.println(check_7907427828436741049(sNull));
     List<Object> l = ListSequence.fromList(new ArrayList<Object>());
     ListSequence.fromList(l).addElement(null);
     ListSequence.fromList(l).addElement(2);
+    ListSequence.fromList(l).addElement("qwert");
     ListSequence.fromList(l).addElement("abc");
-
+    ListSequence.fromList(l).addElement(null);
     System.out.println(ListSequence.fromList(l).where(new IWhereFilter<Object>() {
       public boolean accept(Object it) {
-        return check_4953097935075481870(it) != null;
+        return check_5227621747122454360(it) != null;
       }
     }));
   }
 
-  public static Object check_7907427828436741042(String p) {
+  public static Boolean check_7907427828436741042(String p) {
     if (null == p) {
       return null;
     }
     return p.isEmpty();
   }
 
-  public static Object check_7907427828436741049(String p) {
+  public static Boolean check_5227621747122194240(String p) {
+    if (null == p) {
+      return null;
+    }
+    return p.isEmpty();
+  }
+
+  public static String check_5227621747122071247(String p) {
+    if (null == p) {
+      return null;
+    }
+    return p.replace("aa", "bb");
+  }
+
+  public static Character check_7907427828436741049(String p) {
     if (null == p) {
       return null;
     }
     return p.charAt(1);
   }
 
-  public static Object check_4953097935075481870(Object p) {
+  public static String check_5227621747122454360(Object p) {
     if (null == p) {
       return null;
     }

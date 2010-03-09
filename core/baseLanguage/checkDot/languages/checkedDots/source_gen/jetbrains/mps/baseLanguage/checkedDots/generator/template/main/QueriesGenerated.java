@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_4549711462050029098(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -16,6 +17,11 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_4549711462050028768(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operation", true);
+  }
+
+  public static SNode sourceNodeQuery_5227621747122194587(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "operation", true));
+    return TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
   }
 
   public static SNode sourceNodeQuery_7907427828436736378(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

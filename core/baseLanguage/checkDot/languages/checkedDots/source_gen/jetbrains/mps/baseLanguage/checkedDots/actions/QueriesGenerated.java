@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
 public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_4079382982702692314(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -51,7 +52,32 @@ public class QueriesGenerated {
         }
 
         public String getMatchingText(String pattern) {
-          return ":?";
+          return ":checked dot:";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IOperation_7404423900570111860(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDot");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode dot = IOperation_Behavior.call_getDotExpression_1224687669172(_context.getSourceNode());
+          SNode checkedDot = SNodeOperations.replaceWithNewChild(dot, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDot");
+          SLinkOperations.setTarget(checkedDot, "operand", SLinkOperations.getTarget(dot, "operand", true), true);
+          SLinkOperations.setTarget(checkedDot, "operation", SLinkOperations.getTarget(dot, "operation", true), true);
+          return checkedDot;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "?";
         }
 
         public String getVisibleMatchingText(String pattern) {
