@@ -185,13 +185,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
     synchronized (myLoadingLock) {
       if (mySModel == null) {
-        result = loadModel();
+        mySModel = loadModel();
         doPostLoadStuff();
         fireInitialized = true;
-        mySModel = result;
-      } else {
-        result = mySModel;
       }
+      result = mySModel;
     }
     if(fireInitialized) {
       result.fireModelInitialized();

@@ -32,7 +32,7 @@ class GenerationSettingsPreferencesPage {
   private JCheckBox myShowErrorsOnlyCheckBox = new JCheckBox("Log errors only (no info and warnings)");
   private JCheckBox myCheckModelsBeforeGenerationCheckBox = new JCheckBox("Check models for errors before generation");
   private JCheckBox myStrictMode = new JCheckBox("Strict mode");
-  private JCheckBox myUseNewGenerator = new JCheckBox("Use new generator (per-root)");
+  private JCheckBox myUseNewGenerator = new JCheckBox("Generate in parallel");
   private GenerationSettings myGenerationSettings;
 
   public GenerationSettingsPreferencesPage(GenerationSettings settings) {
