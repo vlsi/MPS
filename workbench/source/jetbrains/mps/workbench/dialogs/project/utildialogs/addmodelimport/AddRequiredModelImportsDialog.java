@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.properties.StandardComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IOperationContext;
@@ -24,7 +25,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
-import jetbrains.mps.workbench.dialogs.project.components.StandardComponents;
 
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
