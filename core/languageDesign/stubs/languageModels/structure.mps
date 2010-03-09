@@ -263,7 +263,7 @@
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="8529737993487825737" resolveInfo="GetRootsBlock" />
     </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8529737993487825734">
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="7076427504342075466">
       <property name="name:0" value="moduleName" />
       <link role="dataType:0" targetNodeId="3v.1082983041843:0" resolveInfo="string" />
     </node>

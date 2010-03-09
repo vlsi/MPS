@@ -13,6 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new LanguageRef_languageFqName_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LibraryStubDescriptor_moduleName_PropertyConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

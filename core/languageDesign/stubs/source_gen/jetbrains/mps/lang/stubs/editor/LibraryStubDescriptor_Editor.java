@@ -16,11 +16,21 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.project.structure.modules.StubSolution;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -91,13 +101,16 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_y9570a_a0b1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_y9570a_b0b1a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_y9570a_c0b1a(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_y9570a_a0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_y9570a_a0b1a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createConstant_y9570a_a0a1b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_y9570a_b0a1b0(editorContext, node));
     return editorCell;
@@ -111,19 +124,7 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_y9570a_a1a1b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_y9570a_b1a1b0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_y9570a_c0b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_y9570a_c0b1a");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.SELECTABLE, false);
-    }
-    editorCell.addEditorCell(this.createConstant_y9570a_a2a1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_y9570a_b2a1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_y9570a_b1a1b0(editorContext, node));
     return editorCell;
   }
 
@@ -143,22 +144,15 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_y9570a_a0a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "lib module name: ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module:");
     editorCell.setCellId("Constant_y9570a_a0a1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_y9570a_a1a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "lib module id:");
-    editorCell.setCellId("Constant_y9570a_a1a1b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_y9570a_a2a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "creator:");
-    editorCell.setCellId("Constant_y9570a_a2a1b0");
+    editorCell.setCellId("Constant_y9570a_a1a1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -209,24 +203,7 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_moduleName");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_y9570a_b1a1b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("moduleId");
-    provider.setNoTargetText("<no moduleId>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_moduleId");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LibraryStubDescriptor_Editor.LibraryStubDescriptor_generic_cellMenu_a0b0a1b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -254,12 +231,12 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_y9570a_b2a1b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_y9570a_b1a1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("creator");
     provider.setNoTargetText("<no creator>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LibraryStubDescriptor_Editor._Inline_y9570a_a1c0b1a());
+    provider.setAuxiliaryCellProvider(new LibraryStubDescriptor_Editor._Inline_y9570a_a1b0b1a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -280,8 +257,8 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     return BlockCells.useBraces();
   }
 
-  public static class _Inline_y9570a_a1c0b1a extends InlineCellProvider {
-    public _Inline_y9570a_a1c0b1a() {
+  public static class _Inline_y9570a_a1b0b1a extends InlineCellProvider {
+    public _Inline_y9570a_a1b0b1a() {
       super();
     }
 
@@ -290,10 +267,10 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_y9570a_a0b2a1b0(editorContext, node);
+      return this.createProperty_y9570a_a0b1a1b0(editorContext, node);
     }
 
-    private EditorCell createProperty_y9570a_a0b2a1b0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_y9570a_a0b1a1b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -310,6 +287,37 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
       } else
       return editorCell;
+    }
+  }
+
+  public static class LibraryStubDescriptor_generic_cellMenu_a0b0a1b0 extends AbstractCellMenuPart_Generic_Group {
+    public LibraryStubDescriptor_generic_cellMenu_a0b0a1b0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      SModelDescriptor currentModel = SNodeOperations.getModel(node).getModelDescriptor();
+      Language currentLanguage = Language.getLanguageForLanguageAspect(currentModel);
+      return currentLanguage.getLanguageDescriptor().getStubSolutions();
+    }
+
+    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      this.handleAction_impl((StubSolution) parameterObject, node, model, scope, operationContext);
+    }
+
+    public void handleAction_impl(StubSolution parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SPropertyOperations.set(node, "moduleId", parameterObject.getId().toString());
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((StubSolution) parameterObject);
+    }
+
+    public String getMatchingText_internal(StubSolution parameterObject) {
+      return parameterObject.getName();
     }
   }
 }

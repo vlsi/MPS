@@ -661,7 +661,7 @@
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2974122604715183910">
                       <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2974122604715183909" />
                       <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="2974122604715183914">
-                        <link role="property:16" targetNodeId="1.8529737993487825734" resolveInfo="moduleName" />
+                        <link role="property:16" targetNodeId="1.7076427504342075466" resolveInfo="moduleName" />
                       </node>
                     </node>
                   </node>

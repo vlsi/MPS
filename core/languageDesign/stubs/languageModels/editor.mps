@@ -33,10 +33,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="444366895203545215">
     <property name="package:32" value="Stubs" />
@@ -328,24 +329,113 @@
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="8529737993487833502" />
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8529737993487833490">
           <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid:32" id="8529737993487833500" />
-          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8529737993487833484">
-            <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8529737993487833486" />
-            <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8529737993487833487">
-              <property name="text:32" value="lib module name: " />
-            </node>
-            <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8529737993487833489">
-              <link role="relationDeclaration:32" targetNodeId="1.8529737993487825734" resolveInfo="moduleName" />
-            </node>
-          </node>
           <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8529737993487833493">
             <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="8529737993487833494">
               <property name="flag:32" value="false" />
             </node>
             <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8529737993487833497">
-              <property name="text:32" value="lib module id:" />
+              <property name="text:32" value="module:" />
             </node>
             <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8529737993487833499">
-              <link role="relationDeclaration:32" targetNodeId="1.8529737993487825735" resolveInfo="moduleId" />
+              <link role="relationDeclaration:32" targetNodeId="1.7076427504342075466" resolveInfo="moduleName" />
+              <node role="menuDescriptor:32" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor:32" id="7076427504342074841">
+                <node role="cellMenuPart:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group:32" id="7076427504342074842">
+                  <property name="presentation:32" value="custom" />
+                  <node role="parametersFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query:32" id="7076427504342074843">
+                    <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7076427504342074844">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2295084792488052846">
+                        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2295084792488052847">
+                          <property name="name:3" value="currentModel" />
+                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2295084792488052848">
+                            <link role="classifier:3" targetNodeId="2.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+                          </node>
+                          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2295084792488052849">
+                            <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="2295084792488052850">
+                              <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2295084792488052851">
+                                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode:32" id="2295084792488052852" />
+                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="2295084792488052853" />
+                              </node>
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2295084792488052854">
+                              <link role="baseMethodDeclaration:3" targetNodeId="2.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2295084792488052875">
+                        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2295084792488052876">
+                          <property name="name:3" value="currentLanguage" />
+                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2295084792488052877">
+                            <link role="classifier:3" targetNodeId="2.~Language" resolveInfo="Language" />
+                          </node>
+                          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2295084792488052878">
+                            <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getLanguageForLanguageAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.Language" resolveInfo="getLanguageForLanguageAspect" />
+                            <link role="classConcept:3" targetNodeId="2.~Language" resolveInfo="Language" />
+                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2295084792488052879">
+                              <link role="variableDeclaration:3" targetNodeId="2295084792488052847" resolveInfo="currentModel" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2295084792488055970">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2295084792488055972">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2295084792488055973">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2295084792488055974">
+                              <link role="variableDeclaration:3" targetNodeId="2295084792488052876" resolveInfo="currentLanguage" />
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2295084792488055975">
+                              <link role="baseMethodDeclaration:3" targetNodeId="2.~Language.getLanguageDescriptor():jetbrains.mps.project.structure.modules.LanguageDescriptor" resolveInfo="getLanguageDescriptor" />
+                            </node>
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2295084792488055976">
+                            <link role="baseMethodDeclaration:3" targetNodeId="4.~LanguageDescriptor.getStubSolutions():java.util.List" resolveInfo="getStubSolutions" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="handlerFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler:32" id="7076427504342074871">
+                    <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7076427504342074872">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7076427504342074873">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="7076427504342074874">
+                          <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2295084792488055991">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2295084792488055986">
+                              <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject:32" id="7076427504342074875" />
+                              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2295084792488055990">
+                                <link role="baseMethodDeclaration:3" targetNodeId="4.~StubSolution.getId():jetbrains.mps.project.ModuleId" resolveInfo="getId" />
+                              </node>
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2295084792488055995">
+                              <link role="baseMethodDeclaration:3" targetNodeId="3.~ModuleId.toString():java.lang.String" resolveInfo="toString" />
+                            </node>
+                          </node>
+                          <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7076427504342074876">
+                            <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode:32" id="7076427504342074877" />
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="2295084792488055985">
+                              <link role="property:16" targetNodeId="1.8529737993487825735" resolveInfo="moduleId" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="parameterObjectType:32" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2295084792488055959">
+                    <link role="classifier:3" targetNodeId="4.~StubSolution" resolveInfo="StubSolution" />
+                  </node>
+                  <node role="matchingTextFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText:32" id="7076427504342074880">
+                    <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7076427504342074881">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2295084792488055978">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2295084792488055980">
+                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject:32" id="2295084792488055979" />
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2295084792488055984">
+                            <link role="baseMethodDeclaration:3" targetNodeId="4.~StubSolution.getName():java.lang.String" resolveInfo="getName" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
             <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8529737993487833496" />
           </node>
