@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ThisClassifierExpresson" conceptFQName="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpresson" featureKind="CONCEPT" />
@@ -178,6 +179,26 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1217433449854">
       <property name="value:0" value="super classifier" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473914776:0" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1029302639053433191">
+    <property name="name:0" value="DefaultClassifier" />
+    <property name="package:0" value="Base" />
+    <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1029302639053433192">
+      <link role="intfc:0" targetNodeId="1205751982837:0" resolveInfo="IClassifier" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1029302639053435660">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="field" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="1213999088275:0" resolveInfo="DefaultClassifierFieldDeclaration" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1029302639053435661">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="method" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="1205769003971:0" resolveInfo="DefaultClassifierMethodDeclaration" />
     </node>
   </node>
 </model>
