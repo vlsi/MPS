@@ -43,6 +43,7 @@ public class StubReloadManager implements ApplicationComponent {
   public void reload() {
     loadNewStubSolutions();
     disposeAllStubManagers();
+    refreshModelManagers();
 
     //reload
     markOldStubs();
@@ -101,6 +102,12 @@ public class StubReloadManager implements ApplicationComponent {
     }
   }
 */
+
+  private void refreshModelManagers() {
+    for (BaseStubModelDescriptor md:getAllStubModels()){
+      md.setModelRootManager(null);
+    }
+  }
 
   private void markOldStubs() {
     for (AbstractModule m : getAllModules()) {
@@ -324,7 +331,7 @@ public class StubReloadManager implements ApplicationComponent {
 
   private boolean isNewPath(BaseStubModelDescriptor descriptor, String path) {
     for (StubPath sp : myNotChagedStubPaths) {
-      String oldManagerClass = descriptor.getModelRootManager().getClass().getName();
+      String oldManagerClass = descriptor.getManagerClass();
       String newManagerClass = sp.getManager().getClassName();
       boolean managersEqual = EqualUtil.equals(oldManagerClass, newManagerClass);
 

@@ -21,7 +21,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
-import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -29,7 +28,9 @@ import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class BaseStubModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(BaseStubModelRootManager.class);
@@ -62,7 +63,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       LOG.error(t);
     }
 
-    for (BaseSModelDescriptor descriptor : models) {
+    for (BaseStubModelDescriptor descriptor : models) {
       SModelDescriptor oldDescr = repository.getModelDescriptor(descriptor.getSModelReference());
       if (oldDescr == null) {
         repository.registerModelDescriptor(descriptor, module);
@@ -75,13 +76,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
         descriptor = (BaseStubModelDescriptor) oldDescr;
       }
 
-      BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) descriptor;
-
-      //todo this is a hack - comparing classes by names
-      if (baseDescriptor.getModelRootManager().getClass().getName().equals(this.getClass().getName())) {
-        baseDescriptor.setModelRootManager(this);
-      }
-
+      descriptor.setModelRootManager(this);
       if (!descriptor.isInitialized()) {
         if (!myDescriptorsWithListener.contains(descriptor)) {
           descriptor.addModelListener(myInitializationListener);
@@ -94,6 +89,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   }
 
   @NotNull
+  //todo rename to createModel, loading in update() will be more homogenous
   public final SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = new SModel(modelDescriptor.getSModelReference());
 

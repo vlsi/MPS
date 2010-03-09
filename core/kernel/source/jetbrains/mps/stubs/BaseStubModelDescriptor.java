@@ -13,9 +13,11 @@ import java.util.List;
 public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
   private List<StubPath> myStubPaths;
   private boolean myNeedsReloading = true;
+  private String myManagerClass;
 
   public BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
     super(manager, modelFile, modelReference);
+    updateManagerId();
   }
 
   public void addStubPath(StubPath sp) {
@@ -47,9 +49,15 @@ public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
   //todo hide this method DO NOT USE THIS. THIS IS FOR INCREMENTAL RELOADING PURPOSES ONLY
   public void setModelRootManager(IModelRootManager modelRootManager) {
     myModelRootManager = modelRootManager;
+    updateManagerId();
   }
 
-  public IModelRootManager getModelRootManager() {
-    return myModelRootManager;
+  public String getManagerClass() {
+    return myManagerClass;
+  }
+
+  private void updateManagerId() {
+    if (myModelRootManager == null) return;
+    myManagerClass = myModelRootManager.getClass().getName();
   }
 }
