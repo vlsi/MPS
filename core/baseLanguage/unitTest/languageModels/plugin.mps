@@ -60,7 +60,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <maxImportIndex value="114" />
+  <maxImportIndex value="115" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
@@ -107,19 +107,16 @@
   <import index="84" modelUID="f:java_stub#com.intellij.openapi.progress.util(com.intellij.openapi.progress.util@java_stub)" version="-1" />
   <import index="86" modelUID="f:java_stub#com.intellij.openapi.application(com.intellij.openapi.application@java_stub)" version="-1" />
   <import index="91" modelUID="f:java_stub#com.intellij.openapi.keymap(com.intellij.openapi.keymap@java_stub)" version="-1" />
-  <import index="93" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.info)" version="-1" />
   <import index="95" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.runconfigs(jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)" version="-1" />
   <import index="96" modelUID="f:java_stub#com.intellij.openapi(com.intellij.openapi@java_stub)" version="-1" />
-  <import index="98" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.components.parts(jetbrains.mps.workbench.dialogs.project.components.parts@java_stub)" version="-1" />
   <import index="106" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.components.parts.actions(jetbrains.mps.workbench.dialogs.project.components.parts.actions@java_stub)" version="-1" />
   <import index="107" modelUID="r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)" version="-1" />
-  <import index="108" modelUID="f:java_stub#com.intellij.execution.testframework.ui(com.intellij.execution.testframework.ui@java_stub)" version="-1" />
-  <import index="109" modelUID="f:java_stub#com.intellij.ide.util.treeView(com.intellij.ide.util.treeView@java_stub)" version="-1" />
   <import index="110" modelUID="f:java_stub#com.intellij.util(com.intellij.util@java_stub)" version="-1" />
   <import index="111" modelUID="f:java_stub#org.junit(org.junit@java_stub)" version="-1" />
   <import index="112" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <import index="113" modelUID="f:java_stub#jetbrains.mps.findUsages(jetbrains.mps.findUsages@java_stub)" version="-1" />
   <import index="114" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
+  <import index="115" modelUID="f:java_stub#jetbrains.mps.debug.info(jetbrains.mps.debug.info@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1208270545572">
     <property name="name:3" value="UnitTestViewComponent" />
     <property name="package:3" value="tool.view" />
@@ -1877,7 +1874,7 @@
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="497539554675290509">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="497539554675290508" />
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="497539554675290513">
-              <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="497539554675290515">
                 <link role="enumConstantDeclaration:3" targetNodeId="1208285769681:0" resolveInfo="IN_PROGRESS" />
                 <link role="enumClass:3" targetNodeId="1208285711556:0" resolveInfo="TestState" />
@@ -6394,8 +6391,8 @@
               <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1208781508798">
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4558549435474305175">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4558549435474305178">
-                    <link role="classConcept:3" targetNodeId="93.4494976841093370953" resolveInfo="StacktraceUtil" />
-                    <link role="baseMethodDeclaration:3" targetNodeId="93.4494976841093370958" resolveInfo="appendStacktraceToConsole" />
+                    <link role="classConcept:3" targetNodeId="115.~StacktraceUtil" resolveInfo="StacktraceUtil" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="115.~StacktraceUtil.appendStacktraceToConsole(com.intellij.execution.impl.ConsoleViewImpl,java.lang.String,com.intellij.execution.ui.ConsoleViewContentType):void" resolveInfo="appendStacktraceToConsole" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4558549435474305180">
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="4558549435474305181">
                         <link role="fieldDeclaration:3" targetNodeId="1213183072332:0" resolveInfo="consoleView" />
