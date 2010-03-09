@@ -14,7 +14,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.reloading.StubReloadManager;
+import jetbrains.mps.stubs.StubReloadManager;
 
 public class ReloadStubs_Action extends GeneratedAction {
   private static final Icon ICON = null;

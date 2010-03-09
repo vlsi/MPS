@@ -1,4 +1,4 @@
-package jetbrains.mps.project.reloading;
+package jetbrains.mps.stubs;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;

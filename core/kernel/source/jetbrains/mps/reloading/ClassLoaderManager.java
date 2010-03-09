@@ -22,7 +22,7 @@ import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.reloading.StubReloadManager;
+import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;

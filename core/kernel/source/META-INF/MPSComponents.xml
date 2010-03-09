@@ -125,7 +125,7 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.project.reloading.StubReloadManager</implementation-class>
+            <implementation-class>jetbrains.mps.stubs.StubReloadManager</implementation-class>
         </component>
 
         <component>

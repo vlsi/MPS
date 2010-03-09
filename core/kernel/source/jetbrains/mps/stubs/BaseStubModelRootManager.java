@@ -21,7 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
-import jetbrains.mps.project.reloading.StubReloadManager;
+import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -132,9 +132,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   }
 
   private void updateModelInLoadingState(SModelDescriptor descriptor, SModel model) {
-    if (!StubReloadManager.getInstance().needsUpdate((BaseStubModelDescriptor) descriptor, myLocation)){
-      return;
-    }
+    if (!StubReloadManager.getInstance().needsUpdate((BaseStubModelDescriptor) descriptor, myLocation)) return;
 
     boolean wasLoading = model.isLoading();
     model.setLoading(true);

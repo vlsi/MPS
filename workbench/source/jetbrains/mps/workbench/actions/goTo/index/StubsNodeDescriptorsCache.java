@@ -4,7 +4,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.reloading.StubReloadManager;
+import jetbrains.mps.stubs.StubReloadManager;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
