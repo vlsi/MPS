@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ExtensionMethodDeclaration_Actions {
@@ -26,7 +27,9 @@ public class ExtensionMethodDeclaration_Actions {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.addNewChild(node, "throwsItem", "jetbrains.mps.baseLanguage.structure.Type");
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() == 0) {
+        SLinkOperations.addNewChild(node, "throwsItem", "jetbrains.mps.baseLanguage.structure.Type");
+      }
     }
   }
 }

@@ -72,9 +72,8 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
     }
-    ExtensionMethodDeclaration_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.addEditorCell(this.createConstant_1i2int_a7a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1i2int_b7a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_1i2int_b7a(editorContext, node));
     return editorCell;
   }
 
@@ -86,7 +85,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createConstant_1i2int_a8a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_1i2int_b8a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1i2int_b8a(editorContext, node));
     return editorCell;
   }
 
@@ -114,7 +113,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1i2int_a7a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "throws");
     editorCell.setCellId("Constant_1i2int_a7a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
@@ -122,8 +121,9 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1i2int_a8a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "throws");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_1i2int_a8a");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -171,8 +171,8 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_1i2int_b8a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ExtensionMethodDeclaration_Editor.throwsItemListHandler_1i2int_b8a(node, "throwsItem", editorContext);
+  private EditorCell createRefNodeList_1i2int_b7a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new ExtensionMethodDeclaration_Editor.throwsItemListHandler_1i2int_b7a(node, "throwsItem", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_throwsItem");
     editorCell.setRole(handler.getElementRole());
@@ -240,7 +240,7 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1i2int_b7a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1i2int_b8a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("extendedType");
     provider.setNoTargetText("<no extendedType>");
@@ -291,11 +291,11 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_1i2int_a7a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", false, false) != null);
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
   }
 
   private static boolean renderingCondition_1i2int_a8a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).count() > 0;
+    return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", false, false) != null);
   }
 
   private static class parameterListHandler_1i2int_f0 extends RefNodeListHandler {
@@ -362,8 +362,8 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class throwsItemListHandler_1i2int_b8a extends RefNodeListHandler {
-    public throwsItemListHandler_1i2int_b8a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class throwsItemListHandler_1i2int_b7a extends RefNodeListHandler {
+    public throwsItemListHandler_1i2int_b7a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
