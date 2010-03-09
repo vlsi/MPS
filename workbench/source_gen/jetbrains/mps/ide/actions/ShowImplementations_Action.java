@@ -17,9 +17,13 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.project.GlobalScope;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.components.ShowImplementationComponent;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
@@ -95,14 +99,24 @@ public class ShowImplementations_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      List<SNode> nodes = new ArrayList<SNode>();
+      final List<SNode> nodes = new ArrayList<SNode>();
       ListSequence.fromList(nodes).addElement(ShowImplementations_Action.this.node);
-      ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(ShowImplementations_Action.this.node)), IClassifiersSearchScope.CLASSIFFIER);
-      ListSequence.fromList(nodes).addSequence(ListSequence.fromList(scope.getNodes()));
-      String title = "Definition of " + ShowImplementations_Action.this.node.getPresentation();
-      ShowImplementationComponent component = new ShowImplementationComponent(nodes, ShowImplementations_Action.this.context);
-      JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPrefferedFocusableComponent()).setProject(ShowImplementations_Action.this.project).setMovable(true).setResizable(true).setTitle(title).createPopup();
-      popup.show(new RelativePoint(ShowImplementations_Action.this.cell.getEditor(), new Point(ShowImplementations_Action.this.cell.getX(), ShowImplementations_Action.this.cell.getY())));
+      SearchResults<SNode> searchResults = new DerivedClasses_Finder().find(new SearchQuery(ShowImplementations_Action.this.node, GlobalScope.getInstance()), new EmptyProgressIndicator());
+      for (SearchResult<SNode> searchResult : searchResults.getSearchResults()) {
+        SNode searchNode = searchResult.getObject();
+        if ((searchNode != null)) {
+          ListSequence.fromList(nodes).addElement(searchNode);
+        }
+      }
+      ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
+        public void run() {
+          String title = "Definition of " + ShowImplementations_Action.this.node.getPresentation();
+          ShowImplementationComponent component = new ShowImplementationComponent(nodes, ShowImplementations_Action.this.context);
+          JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPrefferedFocusableComponent()).setProject(ShowImplementations_Action.this.project).setMovable(true).setResizable(true).setTitle(title).createPopup();
+          popup.show(new RelativePoint(ShowImplementations_Action.this.cell.getEditor(), new Point(ShowImplementations_Action.this.cell.getX(), ShowImplementations_Action.this.cell.getY())));
+          component.getPrefferedFocusableComponent().setRequestFocusEnabled(true);
+        }
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowImplementations", t);

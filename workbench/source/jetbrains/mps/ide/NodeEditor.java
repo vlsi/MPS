@@ -99,6 +99,10 @@ public class NodeEditor implements IEditor {
     return Collections.singletonList(getEditedNode());
   }
 
+  public void setBackground(Color color) {
+    myEditorComponent.setBackground(color);
+  }
+
   public void selectNode(SNode node) {
     myEditorComponent.selectNode(node);
   }

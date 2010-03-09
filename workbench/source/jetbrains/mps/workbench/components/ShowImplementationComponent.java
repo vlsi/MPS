@@ -2,6 +2,7 @@ package jetbrains.mps.workbench.components;
 
 
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
@@ -10,10 +11,7 @@ import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
+import java.awt.*;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,10 +23,12 @@ public class ShowImplementationComponent extends JPanel {
   private EmbeddableEditor myEditor;
   private List<SNode> myNodes;
   private Map<String, SNode> myItemToNode = new LinkedHashMap<String, SNode>();
+  private JComponent myEditorPanel;
 
   public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
     this.myNodes = nodes;
     this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, SNodeOperations.copyNode(nodes.get(0)), false);
+    this.myEditor.setBackground(new Color(255, 255, 215));
     for (SNode node : this.myNodes) {
       String item = node.getPresentation();
       this.myItemToNode.put(item, node);
@@ -51,14 +51,17 @@ public class ShowImplementationComponent extends JPanel {
     SNode selectedNode = myItemToNode.get(selectedItem);
     IModule module = selectedNode.getModel().getModelDescriptor().getModule();
     myLocationLabel.setText(module.getModuleFqName());
+    myLocationLabel.setIcon(IconManager.getIconFor(module));
     int index = myNodes.indexOf(selectedNode) + 1;
     myCountLanel.setText(index + " of " + myNodes.size());
-    updateUI();
+    myEditor.setNode(myNodes.get(index));
+    myEditorPanel.repaint();
   }
 
   private void init() {
     this.setLayout(new BorderLayout());
-    this.add(this.myEditor.getComponenet(), BorderLayout.CENTER);
+    myEditorPanel = myEditor.getComponenet();
+    this.add(myEditorPanel, BorderLayout.CENTER);
     JPanel northPanel = new JPanel(new BorderLayout());
     this.add(northPanel, BorderLayout.PAGE_START);
     JPanel toolbarPanel = new JPanel(new FlowLayout());

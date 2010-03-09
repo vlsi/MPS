@@ -13,6 +13,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import javax.swing.JComponent;
+import java.awt.Color;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.Set;
@@ -73,6 +74,14 @@ public class EmbeddableEditor {
 
   public JComponent getComponenet() {
     return this.myPanel;
+  }
+
+  public void setBackground(Color color) {
+    IEditor editor = this.myFileNodeEditor.getNodeEditor();
+    if (editor instanceof NodeEditor) {
+      NodeEditor nodeEditor = (NodeEditor) editor;
+      nodeEditor.setBackground(color);
+    }
   }
 
   public void mark(List<EditorMessage> messages) {
