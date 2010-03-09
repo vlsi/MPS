@@ -24,12 +24,11 @@ public class ShowImplementationComponent extends JPanel {
   private List<SNode> myNodes;
   private Map<String, SNode> myItemToNode = new LinkedHashMap<String, SNode>();
   private JComponent myEditorPanel;
-  private int mySelectedIndex = 0;
+  private int mySelectedIndex = -1;
 
   public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
     this.myNodes = nodes;
     this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, SNodeOperations.copyNode(nodes.get(0)), false);
-    this.myEditor.setBackground(new Color(255, 255, 215));
     for (SNode node : this.myNodes) {
       String item = node.getPresentation();
       this.myItemToNode.put(item, node);
@@ -57,7 +56,9 @@ public class ShowImplementationComponent extends JPanel {
     myLocationLabel.setIcon(IconManager.getIconFor(module));
     myCountLanel.setText((index + 1) + " of " + myNodes.size());
     myEditor.setNode(SNodeOperations.copyNode(myNodes.get(index)));
-    myEditorPanel.updateUI();
+    myEditor.setBackground(new Color(255, 255, 215));
+    mySelectedIndex = index;
+    myEditorPanel.repaint();
   }
 
   private void init() {
