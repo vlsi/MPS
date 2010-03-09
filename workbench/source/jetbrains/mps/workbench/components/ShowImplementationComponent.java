@@ -24,6 +24,7 @@ public class ShowImplementationComponent extends JPanel {
   private List<SNode> myNodes;
   private Map<String, SNode> myItemToNode = new LinkedHashMap<String, SNode>();
   private JComponent myEditorPanel;
+  private int mySelectedIndex = 0;
 
   public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
     this.myNodes = nodes;
@@ -49,13 +50,14 @@ public class ShowImplementationComponent extends JPanel {
   private void updateControls() {
     String selectedItem = (String) myNodeChooser.getSelectedItem();
     SNode selectedNode = myItemToNode.get(selectedItem);
+    int index = myNodes.indexOf(selectedNode);
+    if (mySelectedIndex == index) return;
     IModule module = selectedNode.getModel().getModelDescriptor().getModule();
     myLocationLabel.setText(module.getModuleFqName());
     myLocationLabel.setIcon(IconManager.getIconFor(module));
-    int index = myNodes.indexOf(selectedNode) + 1;
-    myCountLanel.setText(index + " of " + myNodes.size());
-    myEditor.setNode(myNodes.get(index));
-    myEditorPanel.repaint();
+    myCountLanel.setText((index + 1) + " of " + myNodes.size());
+    myEditor.setNode(SNodeOperations.copyNode(myNodes.get(index)));
+    myEditorPanel.updateUI();
   }
 
   private void init() {
