@@ -31,6 +31,7 @@ import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.IndexableFileSet;
 import jetbrains.mps.make.StartupModuleMaker;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
 import java.util.Set;
 import java.util.Collections;
@@ -76,6 +77,8 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
   }
 
   public boolean isInSet(VirtualFile file) {
+    if (!file.isInLocalFileSystem()) return false;
+
     Set<VirtualFile> files = ModelAccess.instance().runReadAction(new Computable<Set<VirtualFile>>() {
       public Set<VirtualFile> compute() {
         return CacheUtil.getIndexableRoots();
