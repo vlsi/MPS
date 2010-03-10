@@ -139,21 +139,17 @@ public class NodeEditor implements IEditor {
     myEditorComponent.requestFocus();
   }
 
-  public MPSEditorState saveState(@NotNull final FileEditorStateLevel level) {
-    final MyFileEditorState result = new MyFileEditorState();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        if (getEditorContext() != null && !getEditorContext().getModel().isDisposed()) {
-          boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
-          result.myMemento = getEditorContext().createMemento(full);
-          NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
-          if (editorComponent != null) {
-            EditorComponent inspector = editorComponent.getInspector();
-            result.myInspectorMemento = inspector.getEditorContext().createMemento(full);
-          }
-        }
+  public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
+    MyFileEditorState result = new MyFileEditorState();
+    if (getEditorContext() != null && !getEditorContext().getModel().isDisposed()) {
+      boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
+      result.myMemento = getEditorContext().createMemento(full);
+      NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
+      if (editorComponent != null) {
+        EditorComponent inspector = editorComponent.getInspector();
+        result.myInspectorMemento = inspector.getEditorContext().createMemento(full);
       }
-    });
+    }
     return result;
   }
 

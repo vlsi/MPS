@@ -132,9 +132,13 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
   }
 
   @NotNull
-  public FileEditorState getState(@NotNull FileEditorStateLevel level) {
-    MPSEditorStateWrapper state = new MPSEditorStateWrapper();
-    state.setEditorState(myNodeEditor.saveState(level));
+  public FileEditorState getState(@NotNull final FileEditorStateLevel level) {
+    final MPSEditorStateWrapper state = new MPSEditorStateWrapper();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        state.setEditorState(myNodeEditor.saveState(level));
+      }
+    });
     state.setLevel(level);
     return state;
   }
