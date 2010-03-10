@@ -358,5 +358,42 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5431167396203858786">
+    <link role="concept:8" targetNodeId="10.1973189701690850247:0" resolveInfo="ExtensionStaticFieldReference" />
+    <node role="defaultScope:8" type="jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope:8" id="5431167396203858787">
+      <node role="searchScopeFactory:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory:8" id="5431167396203858788">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5431167396203858789">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5431167396203858790">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5431167396203858791">
+              <property name="name:3" value="container" />
+              <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="5431167396203858792">
+                <link role="concept:16" targetNodeId="10.8022092943110829337:0" resolveInfo="BaseExtensionMethodContainer" />
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5431167396203858795">
+                <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode:8" id="6908312113689582766" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="5431167396203858799">
+                  <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="5431167396203858800">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="5431167396203858803">
+                      <link role="conceptDeclaration:16" targetNodeId="10.8022092943110829337:0" resolveInfo="BaseExtensionMethodContainer" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5431167396204018669">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5431167396204018670">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5431167396204018671">
+                <link role="variableDeclaration:3" targetNodeId="5431167396203858791" resolveInfo="container" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="5431167396204018672">
+                <link role="link:16" targetNodeId="10.1973189701690661983:0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

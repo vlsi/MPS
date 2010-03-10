@@ -17,13 +17,14 @@ public class First {
     System.out.println(check_7907427828436741049(sNull));
     List<Object> l = ListSequence.fromList(new ArrayList<Object>());
     ListSequence.fromList(l).addElement(null);
-    ListSequence.fromList(l).addElement(2);
+    ListSequence.fromList(l).addElement(1);
+    ListSequence.fromList(l).addElement(3);
     ListSequence.fromList(l).addElement("qwert");
     ListSequence.fromList(l).addElement("abc");
     ListSequence.fromList(l).addElement(null);
     System.out.println(ListSequence.fromList(l).where(new IWhereFilter<Object>() {
       public boolean accept(Object it) {
-        return check_5227621747122454360(it) != null;
+        return check_1713017043372893920(it) != null;
       }
     }));
   }
@@ -56,7 +57,7 @@ public class First {
     return p.charAt(1);
   }
 
-  public static String check_5227621747122454360(Object p) {
+  public static String check_1713017043372893920(Object p) {
     if (null == p) {
       return null;
     }

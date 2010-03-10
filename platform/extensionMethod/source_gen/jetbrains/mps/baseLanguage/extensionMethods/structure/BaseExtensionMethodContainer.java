@@ -19,6 +19,7 @@ public class BaseExtensionMethodContainer extends GenericDeclaration implements 
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String VISIBILITY = "visibility";
   public static final String METHODS = "methods";
+  public static final String STATIC_FIELDS = "staticFields";
 
   public BaseExtensionMethodContainer(SNode node) {
     super(node);
@@ -74,6 +75,26 @@ public class BaseExtensionMethodContainer extends GenericDeclaration implements 
 
   public void insertMethods(ExtensionMethodDeclaration prev, ExtensionMethodDeclaration node) {
     this.insertChild(prev, BaseExtensionMethodContainer.METHODS, node);
+  }
+
+  public int getStaticFieldsesCount() {
+    return this.getChildCount(BaseExtensionMethodContainer.STATIC_FIELDS);
+  }
+
+  public Iterator<ExtensionStaticFieldDeclaration> staticFieldses() {
+    return this.children(ExtensionStaticFieldDeclaration.class, BaseExtensionMethodContainer.STATIC_FIELDS);
+  }
+
+  public List<ExtensionStaticFieldDeclaration> getStaticFieldses() {
+    return this.getChildren(ExtensionStaticFieldDeclaration.class, BaseExtensionMethodContainer.STATIC_FIELDS);
+  }
+
+  public void addStaticFields(ExtensionStaticFieldDeclaration node) {
+    this.addChild(BaseExtensionMethodContainer.STATIC_FIELDS, node);
+  }
+
+  public void insertStaticFields(ExtensionStaticFieldDeclaration prev, ExtensionStaticFieldDeclaration node) {
+    this.insertChild(prev, BaseExtensionMethodContainer.STATIC_FIELDS, node);
   }
 
   public static BaseExtensionMethodContainer newInstance(SModel sm, boolean init) {

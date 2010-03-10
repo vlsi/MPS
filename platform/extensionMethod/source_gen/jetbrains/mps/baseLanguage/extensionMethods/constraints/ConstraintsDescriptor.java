@@ -13,6 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new ExtensionMethodCall_extension_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ExtensionStaticFieldReference_DefaultSearchScope());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

@@ -3640,5 +3640,21 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1082537205636061902">
+    <property name="name:0" value="OverrideOperatorsContainer" />
+    <property name="package:0" value="overrideOperators" />
+    <link role="extends:0" targetNodeId="4.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1082537205636061904">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="1..n" />
+      <property name="role:0" value="operators" />
+      <link role="target:0" targetNodeId="1082537205636061905:3" resolveInfo="OverrideOperator" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1082537205636061905">
+    <property name="package:0" value="overrideOperators" />
+    <property name="name:0" value="OverrideOperator" />
+    <link role="extends:0" targetNodeId="4.1133920641626:0" resolveInfo="BaseConcept" />
+  </node>
 </model>
 

@@ -16426,5 +16426,22 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1082537205636061906">
+    <property name="package:32" value="overrideOperators" />
+    <link role="conceptDeclaration:32" targetNodeId="17.1082537205636061902:3" resolveInfo="OverrideOperatorsContainer" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1082537205636070816">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="1082537205636070822">
+        <link role="relationDeclaration:32" targetNodeId="17.1082537205636061904:3" />
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1082537205636070823" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1082537205636070825">
+          <property name="flag:32" value="true" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem:32" id="1082537205636070826">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1082537205636070818" />
+    </node>
+  </node>
 </model>
 

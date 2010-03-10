@@ -84,5 +84,26 @@
       </node>
     </node>
   </node>
+  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1713017043373861885">
+    <link role="concept" targetNodeId="2v.1973189701691027447:0" resolveInfo="ExtensionStaticFieldDeclaration" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1713017043373861888">
+      <property name="name" value="isInitializable" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="4v.1213877517488" resolveInfo="isInitializable" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1713017043373861889">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1713017043373861890">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1713017043373861891">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1713017043373861892" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1713017043373861893" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1713017043373861886">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1713017043373861887" />
+    </node>
+  </node>
 </model>
 

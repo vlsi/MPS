@@ -128,6 +128,30 @@
       <property name="sourceCardinality:0" value="0..n" />
       <link role="target:0" targetNodeId="1550313277222152185:0" resolveInfo="ExtensionMethodDeclaration" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1973189701690661983">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="staticFields" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="1973189701691027447:0" resolveInfo="ExtensionStaticFieldDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1973189701690850247">
+    <property name="name:0" value="ExtensionStaticFieldReference" />
+    <link role="extends:0" targetNodeId="6.1068498886296:3" resolveInfo="VariableReference" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1713017043371814013">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="staticFieldDeclaration" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1973189701691027447:0" resolveInfo="ExtensionStaticFieldDeclaration" />
+      <link role="specializedLink:0" targetNodeId="6.1068581517664:3" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1713017043371814014">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1146528679895:3" resolveInfo="lvalue" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1973189701691027447">
+    <property name="name:0" value="ExtensionStaticFieldDeclaration" />
+    <link role="extends:0" targetNodeId="6.1068431474542:3" resolveInfo="VariableDeclaration" />
   </node>
 </model>
 
