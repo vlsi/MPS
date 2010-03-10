@@ -17,9 +17,11 @@ package jetbrains.mps.ide;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
@@ -137,17 +139,21 @@ public class NodeEditor implements IEditor {
     myEditorComponent.requestFocus();
   }
 
-  public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
-    MyFileEditorState result = new MyFileEditorState();
-    if (getEditorContext() != null && !getEditorContext().getModel().isDisposed()) {
-      boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
-      result.myMemento = getEditorContext().createMemento(full);
-      NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
-      if (editorComponent != null) {
-        EditorComponent inspector = editorComponent.getInspector();
-        result.myInspectorMemento = inspector.getEditorContext().createMemento(full);
+  public MPSEditorState saveState(@NotNull final FileEditorStateLevel level) {
+    final MyFileEditorState result = new MyFileEditorState();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        if (getEditorContext() != null && !getEditorContext().getModel().isDisposed()) {
+          boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
+          result.myMemento = getEditorContext().createMemento(full);
+          NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();
+          if (editorComponent != null) {
+            EditorComponent inspector = editorComponent.getInspector();
+            result.myInspectorMemento = inspector.getEditorContext().createMemento(full);
+          }
+        }
       }
-    }
+    });
     return result;
   }
 
