@@ -5,6 +5,7 @@
   </models>
   <classPath>
     <entry path="${mps_home}/lib/beansbinding/beansbinding-1.2.1.jar" include="false" />
+    <entry path="${mps_home}/core/languageDesign/stubs/classes" include="false" />
   </classPath>
   <sourcePath />
   <dependencies>
@@ -24,6 +25,7 @@
     <dependency reexport="false">3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)</dependency>
     <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
     <dependency reexport="false">b83431fe-5c8f-40bc-8a36-65e25f4dd253(jetbrains.mps.lang.textGen)</dependency>
+    <dependency reexport="false">ef703a71-a5a3-42af-b53c-ddced816ad5c(jetbrains.mps.lang.stubs)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
