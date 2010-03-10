@@ -41,7 +41,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           indicator[0] = new EmptyProgressIndicator();
         }
         indicator[0].pushState();
-        ModelAccess.instance().runReadAction(new Runnable() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
               ModuleMaker maker = new ModuleMaker();
