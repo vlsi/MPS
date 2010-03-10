@@ -73,18 +73,6 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="186788241848729168">
     <property name="name:3" value="ABC" />
-    <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="8881995820265343407">
-      <property name="name:3" value="seleAA" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="8881995820265586340" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8881995820265343409" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8881995820265343410">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8881995820265586341">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8881995820265586343">
-            <property name="value:3" value="1" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="186788241848729169" />
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3585982959253821838">
       <property name="nonStatic:3" value="true" />
@@ -304,8 +292,8 @@
                     </node>
                   </node>
                 </node>
-                <node role="inner:1" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="8881995820265445766">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8881995820265343407" resolveInfo="seleAA" />
+                <node role="inner:1" type="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression:1" id="1688926966297646164">
+                  <link role="baseMethodDeclaration:1" targetNodeId="8881995820265178946" resolveInfo="seleXI" />
                 </node>
               </node>
             </node>
@@ -661,11 +649,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="3793054284049050881">
-      <property name="name:3" value="abc" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3793054284049050882" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3793054284049061555" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8733626498296887182">

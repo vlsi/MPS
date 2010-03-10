@@ -150,6 +150,21 @@
           </node>
           <node role="block:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4663972844383587459" />
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="627838806960542950">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="627838806960542951">
+            <property name="name:3" value="m" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SModelType:16" id="627838806960542952" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="627838806960542954" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="627838806960542956">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="627838806960542958">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="627838806960542957">
+              <link role="variableDeclaration:3" targetNodeId="627838806960542951" resolveInfo="m" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation:16" id="627838806960542962" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3293010995237625809" />
