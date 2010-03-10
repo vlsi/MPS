@@ -229,15 +229,16 @@ class AddOperation extends VcsOperation {
         changeProvider.getChanges(scope, new EmptyChangelistBuilder() {
           @Override
           public void processChangeInList(Change change, @Nullable ChangeList changeList, VcsKey vcsKey) {
-            processChange(change);
+            processChange(change, vcsKey);
           }
 
           @Override
           public void processChangeInList(Change change, String changeListName, VcsKey vcsKey) {
-            processChange(change);
+            processChange(change, vcsKey);
           }
 
-          public void processChange(Change change) {
+          @Override
+          public void processChange(Change change, VcsKey vcsKey) {
             if (change.getFileStatus().equals(FileStatus.DELETED)) {
               ContentRevision contentRevision = change.getBeforeRevision();
               if (contentRevision != null) {

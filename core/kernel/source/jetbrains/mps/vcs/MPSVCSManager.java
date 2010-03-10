@@ -164,7 +164,7 @@ public class MPSVCSManager implements ProjectComponent {
       return false;
     }
 
-    final MyEmptyChangelistBuilder builder = new MyEmptyChangelistBuilder(vfile);
+    final MyChangelistBuilder builder = new MyChangelistBuilder(vfile);
     try {
       changeProvider.getChanges(scope, builder, new EmptyProgressIndicator(), new StubChangeListManagerGate());
     } catch (VcsException e) {
@@ -342,11 +342,11 @@ public class MPSVCSManager implements ProjectComponent {
     }
   }
 
-  private static class MyEmptyChangelistBuilder extends EmptyChangelistBuilder {
+  private static class MyChangelistBuilder extends EmptyChangelistBuilder {
     private final VirtualFile myVirtualFile;
     private boolean myIsMergedWithConflict;
 
-    public MyEmptyChangelistBuilder(VirtualFile vfile) {
+    public MyChangelistBuilder(VirtualFile vfile) {
       myVirtualFile = vfile;
     }
 
