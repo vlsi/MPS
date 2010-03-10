@@ -2,6 +2,7 @@ package jetbrains.mps.debug.integration.runconfigs.ui;
 
 import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
+import jetbrains.mps.debug.runtime.settings.RemoteConnectionSettings;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JFormattedTextField;
@@ -60,8 +61,7 @@ public class RemoteSettingsEditor extends JPanel {
   }
 
   private String formClientCommandLine() {
-    // TODO bad
-    return "-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=" + myPort;
+    return RemoteConnectionSettings.getClientCommandLine(true, myPort);
   }
 
   public void reset(DebugConnectionSettings settings) {

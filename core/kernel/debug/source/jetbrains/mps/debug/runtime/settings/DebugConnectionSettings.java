@@ -20,6 +20,30 @@ public abstract class DebugConnectionSettings { //not just a record
     mySharedMemoryAddress = sharedMemoryAddress;
   }
 
+  protected static String getCommandLine(boolean serverMode, boolean useSockets, boolean suspend, String address) {
+    return "-Xrunjdwp:transport=" +
+      (useSockets ? "dt_socket" : "dt_shmem") +
+      ",server=" + ((serverMode ?
+      'y' :
+      'n'
+    )) + ",suspend=" + ((suspend ?
+      'y' :
+      'n'
+    )) + ",address=" + address;
+  }
+
+  protected static String getCommandLine(boolean serverMode, boolean useSockets, boolean suspend, String host, int port, String sharedMemoryAddress) {
+    return getCommandLine(serverMode, useSockets, suspend, getAddress(useSockets, host, port, sharedMemoryAddress));
+  }
+
+  private static String getAddress(boolean useSockets, String host, int port, String address) {
+    if (useSockets) {
+      return host + ":" + port;
+    } else {
+      return address;
+    }
+  }
+
   public abstract boolean isServerMode();
 
   public abstract boolean isSuspend();
@@ -56,30 +80,18 @@ public abstract class DebugConnectionSettings { //not just a record
     mySharedMemoryAddress = sharedMemoryAddress;
   }
 
-  public String getApplicationCommandLine(){
+  public String getApplicationCommandLine() {
     return getCommandLine(true);
   }
 
   public String getCommandLine(boolean application) {
     boolean serverMode = isServerMode();
     if (application) serverMode = !serverMode;
-    return "-Xrunjdwp:transport=" +
-      (myUseSockets ? "dt_socket" : "dt_shmem") +
-      ",server=" + ((serverMode ?
-      'y' :
-      'n'
-    )) + ",suspend=" + ((isSuspend() ?
-      'y' :
-      'n'
-    )) + ",address=" + getAddress();
+    return getCommandLine(serverMode, myUseSockets, isSuspend(), myHostName, myPort, mySharedMemoryAddress);
   }
 
   public String getAddress() {
-    if (myUseSockets) {
-      return myHostName + ":" + myPort;
-    } else {
-      return mySharedMemoryAddress;
-    }
+    return getAddress(myUseSockets, myHostName, myPort, mySharedMemoryAddress);
   }
 
   public String getPresentation() {
