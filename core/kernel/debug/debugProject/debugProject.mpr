@@ -29,6 +29,7 @@
     </projectLanguages>
     <projectDevkits />
     <genConfs>
+      <genConfModule name="evaluation" moduleRef="jetbrains.mps.debug.evaluation" />
       <genConfModule name="info" moduleRef="jetbrains.mps.debug.info" />
     </genConfs>
   </component>
