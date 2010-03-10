@@ -41,7 +41,7 @@ public class JUnitConfigFromClasses extends BaseConfigCreator<List> implements C
       return;
     }
 
-    JUnitConfigFromClasses.this.setSourceElement(new MPSPsiElement<List>(parameter));
+    JUnitConfigFromClasses.this.setSourceElement(new MPSPsiElement(parameter));
 
     boolean isCompileInMPS = SNodeOperations.getModel(Sequence.fromIterable(parameter).first()).getModelDescriptor().getModule().isCompileInMPS();
     List<String> nodeNames = ListSequence.fromList(new ArrayList<String>());

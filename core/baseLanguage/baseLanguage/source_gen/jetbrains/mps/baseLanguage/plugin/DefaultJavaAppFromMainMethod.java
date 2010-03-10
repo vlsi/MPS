@@ -30,7 +30,7 @@ public class DefaultJavaAppFromMainMethod extends BaseConfigCreator<SNode> imple
     }
 
     SNode classifier = SNodeOperations.getAncestor(parameter, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    DefaultJavaAppFromMainMethod.this.setSourceElement(new MPSPsiElement<SNode>(classifier));
+    DefaultJavaAppFromMainMethod.this.setSourceElement(new MPSPsiElement(classifier));
 
     String nodeId = classifier.getId();
     String modelId = SNodeOperations.getModel(classifier).getModelDescriptor().getSModelReference().toString();

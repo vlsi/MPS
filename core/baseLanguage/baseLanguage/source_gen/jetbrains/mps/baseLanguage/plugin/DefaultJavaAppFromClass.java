@@ -31,7 +31,7 @@ public class DefaultJavaAppFromClass extends BaseConfigCreator<SNode> implements
       return;
     }
 
-    DefaultJavaAppFromClass.this.setSourceElement(new MPSPsiElement<SNode>(parameter));
+    DefaultJavaAppFromClass.this.setSourceElement(new MPSPsiElement(parameter));
     String nodeId = parameter.getId();
     String modelId = SNodeOperations.getModel(parameter).getModelDescriptor().getSModelReference().toString();
 

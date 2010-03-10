@@ -29,7 +29,7 @@ public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements C
   }
 
   private void createConfig(final List<SNode> parameter) {
-    JUnitConfigFromMethods.this.setSourceElement(new MPSPsiElement<List>(parameter));
+    JUnitConfigFromMethods.this.setSourceElement(new MPSPsiElement(parameter));
 
     List<String> methodNames = ListSequence.fromList(new ArrayList<String>());
     List<String> nodeNames = ListSequence.fromList(new ArrayList<String>());

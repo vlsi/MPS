@@ -27,7 +27,7 @@ public class JUnitConfigFromProject extends BaseConfigCreator<MPSProject> implem
       return;
     }
 
-    JUnitConfigFromProject.this.setSourceElement(new MPSPsiElement<MPSProject>(parameter));
+    JUnitConfigFromProject.this.setSourceElement(new MPSPsiElement(parameter));
 
     final String name = parameter.getComponent(Project.class).getName();
     {
