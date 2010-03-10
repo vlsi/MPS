@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNodePointer;
@@ -63,9 +64,13 @@ public class DefaultCellInfo implements CellInfo {
          myNodePointer.hashCode() + (myCellId == null?0:myCellId.hashCode()) + myCellNumber;
   }
 
-  public EditorCell findCell(EditorComponent editorComponent) {
+  public EditorCell findCell(final EditorComponent editorComponent) {
     if (myCellId != null) {
-      return editorComponent.findCellWithId(myNodePointer.getNode(), myCellId);
+      return ModelAccess.instance().runReadAction(new Computable<EditorCell>(){
+        public EditorCell compute() {
+          return editorComponent.findCellWithId(myNodePointer.getNode(), myCellId);
+        }
+      });
     } else if (myParentInfo != null) {
       EditorCell_Collection parent = (EditorCell_Collection) myParentInfo.findCell(editorComponent);
       if (parent == null) {
