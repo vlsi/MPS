@@ -77,9 +77,9 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.actions.RefactoringPanel;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
@@ -419,19 +419,22 @@ public class StandardComponents {
     return panel;
   }
 
-  private static JComponent createRefactoringItemComponent(SModelDescriptor modelDescriptor, final IOperationContext context) {
-    final SModel model = modelDescriptor.getSModel();
-    if (model == null) {
-      return null;
-    }
-    if (model.getRefactoringHistory().getRefactoringContexts().isEmpty()) {
-      return null;
-    }
+  private static JComponent createRefactoringItemComponent(final SModelDescriptor modelDescriptor, final IOperationContext context) {
     RefactoringPanel refactoringPanel = ModelAccess.instance().runReadAction(new Computable<RefactoringPanel>() {
       public RefactoringPanel compute() {
+        final SModel model = modelDescriptor.getSModel();
+        if (model == null) {
+          return null;
+        }
+        if (model.getRefactoringHistory().getRefactoringContexts().isEmpty()) {
+          return null;
+        }
         return new RefactoringPanel(model, RefactoringUtil.getAllRefactoringNodes(), context);
       }
     });
+    if (refactoringPanel == null) {
+      return null;
+    }
     return refactoringPanel.getComponent();
   }
 
