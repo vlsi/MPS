@@ -332,11 +332,21 @@
               <node role="leftExpression:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link:8" id="2763618064981525325" />
             </node>
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="2763618064981525331">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2763618064981525315">
-                <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept:8" id="2763618064981525314" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation:16" id="2763618064981525319">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="2763618064981525321">
-                    <link role="conceptDeclaration:16" targetNodeId="2v.1146644602865:3" resolveInfo="PublicVisibility" />
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="3097384118512781772">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3097384118512781776">
+                  <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept:8" id="3097384118512781775" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation:16" id="3097384118512781780">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="3097384118512781782">
+                      <link role="conceptDeclaration:16" targetNodeId="2v.1146644623116:3" resolveInfo="PrivateVisibility" />
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2763618064981525315">
+                  <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept:8" id="2763618064981525314" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation:16" id="2763618064981525319">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="2763618064981525321">
+                      <link role="conceptDeclaration:16" targetNodeId="2v.1146644602865:3" resolveInfo="PublicVisibility" />
+                    </node>
                   </node>
                 </node>
               </node>

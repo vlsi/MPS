@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ExtensionMethodDeclaration_Constraints {
   public static boolean canBeAParent(final IOperationContext operationContext, final CanBeAParentContext _context) {
-    if (!(SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) && _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "visibility")) {
+    if (!(SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.baseLanguage.structure.PublicVisibility") || SConceptOperations.isSubConceptOf(_context.getChildConcept(), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "visibility")) {
       return false;
     }
     return true;
