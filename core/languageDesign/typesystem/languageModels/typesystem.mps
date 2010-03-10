@@ -1814,51 +1814,6 @@
             </node>
           </node>
         </node>
-        <node role="elsifClauses:3" type="jetbrains.mps.baseLanguage.structure.ElsifClause:3" id="1239014822005">
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239014826076">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239014824915">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1239014824414">
-                <link role="applicableNode:3" targetNodeId="1205768004587" resolveInfo="nodeToCheck" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="1239014825747" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1239014826846">
-              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1239014830317">
-                <link role="conceptDeclaration:16" targetNodeId="1.1221225538487:3" resolveInfo="WhenConcreteStatement_internal" />
-              </node>
-            </node>
-          </node>
-          <node role="statementList:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1239014822007">
-            <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1239014830911">
-              <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1239014830912">
-                <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1239014830913">
-                  <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1239014830914">
-                    <link role="applicableNode:3" targetNodeId="1205768004587" resolveInfo="nodeToCheck" />
-                  </node>
-                </node>
-              </node>
-              <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1239014830915">
-                <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1239014830916">
-                  <property name="skipDependencyOnCurrent:3" value="true" />
-                  <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239014830917">
-                    <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1239014830918">
-                      <link role="concept:16" targetNodeId="1.1221225538487:3" resolveInfo="WhenConcreteStatement_internal" />
-                      <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239014830919">
-                        <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1239014830920">
-                          <link role="applicableNode:3" targetNodeId="1205768004587" resolveInfo="nodeToCheck" />
-                        </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="1239014830921" />
-                      </node>
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1239014836798">
-                      <link role="link:16" targetNodeId="1.1221225619831:3" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1205768004587">

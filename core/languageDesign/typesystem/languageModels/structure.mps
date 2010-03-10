@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AbstractCheckingRule" conceptFQName="jetbrains.mps.bootstrap.helgins.structure.AbstractCheckingRule" featureKind="CONCEPT" />
@@ -367,6 +368,7 @@
     <refactoringContext modelVersion="1">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="HelginsIntention" conceptFQName="jetbrains.mps.lang.typesystem.structure.HelginsIntention" featureKind="CONCEPT" />
@@ -377,6 +379,7 @@
     <refactoringContext modelVersion="2">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="HelginsQuickFix" conceptFQName="jetbrains.mps.lang.typesystem.structure.HelginsQuickFix" featureKind="CONCEPT" />
@@ -387,6 +390,7 @@
     <refactoringContext modelVersion="3">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="HelginsIntentionArgument" conceptFQName="jetbrains.mps.lang.typesystem.structure.HelginsIntentionArgument" featureKind="CONCEPT" />
@@ -1444,114 +1448,6 @@
       <link role="target:0" targetNodeId="1212573344738:3" resolveInfo="ChildTypeRestriction" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1215686999346">
-    <property name="name:0" value="TypeOfExpression_internal" />
-    <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1215687039958">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="term" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1215687031113">
-      <property name="name:0" value="skipDependencyOnCurrent" />
-      <link role="dataType:0" targetNodeId="1.1082983657063:0" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1215687068337">
-      <property name="name:0" value="modelId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1215687062242">
-      <property name="name:0" value="nodeId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1215687043897">
-      <property name="value:0" value="typeof_internal" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1227868543242">
-      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1215689617507">
-    <property name="name:0" value="AbstractEquationStatement_internal" />
-    <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1215689671056">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="leftExpression" />
-      <link role="target:0" targetNodeId="1185788561607:3" resolveInfo="TypeClause" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1215689671057">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="rightExpression" />
-      <link role="target:0" targetNodeId="1185788561607:3" resolveInfo="TypeClause" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1215689671058">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="nodeToCheck" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1215689671059">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="errorString" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1216204558370">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="helginsIntention" />
-      <link role="target:0" targetNodeId="1210784285454:3" resolveInfo="HelginsIntention" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="792701744776129732">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="afterEquations" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="6773347515165533831:3" resolveInfo="NodeInfo" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="792701744776129733">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="beforeEquations" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="6773347515165533831:3" resolveInfo="NodeInfo" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7342618720439823027">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="afterGroups" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="6773347515165533831:3" resolveInfo="NodeInfo" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7342618720439823028">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="beforeGroups" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="6773347515165533831:3" resolveInfo="NodeInfo" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1215689656618">
-      <property name="name:0" value="checkOnly" />
-      <link role="dataType:0" targetNodeId="1.1082983657063:0" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1215689685983">
-      <property name="name:0" value="nodeId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1215689689546">
-      <property name="name:0" value="modelId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1215689731418">
-      <property name="name:0" value="symbol" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="7342618720439823029">
-      <property name="name:0" value="inequationGroup" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1215689874440">
-      <property name="name:0" value="inequationPriority" />
-      <link role="dataType:0" targetNodeId="1212056179025:3" resolveInfo="InequationPriority" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1216383170661">
     <property name="name:0" value="TypesystemQuickFix" />
     <property name="rootable:0" value="true" />
@@ -1669,90 +1565,6 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1220359433988">
       <property name="value:0" value="addDependency" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1221225538487">
-    <property name="name:0" value="WhenConcreteStatement_internal" />
-    <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1221225753305">
-      <property name="name:0" value="modelId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1221225753306">
-      <property name="name:0" value="nodeId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1227279868398">
-      <property name="name:0" value="isShallow" />
-      <link role="dataType:0" targetNodeId="1.1082983657063:0" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1233571459078">
-      <property name="name:0" value="skipsError" />
-      <link role="dataType:0" targetNodeId="1.1082983657063:0" resolveInfo="boolean" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1221225619829">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="body" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="2.1068580123136:3" resolveInfo="StatementList" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1221225619831">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="argument" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1221225619832">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="argumentRepresentator" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="1205762105978:3" resolveInfo="WhenConcreteVariableDeclaration" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1221225725391">
-      <property name="value:0" value="when concrete (internal)" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="2386296566107191250">
-      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1222948723278">
-    <property name="name:0" value="ReportErrorStatement_internal" />
-    <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1222948974814">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="errorString" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1222948974815">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="nodeToReport" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1222948974816">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="helginsIntention" />
-      <link role="target:0" targetNodeId="1210784285454:3" resolveInfo="HelginsIntention" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1227104618952">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="messageTarget" />
-      <link role="target:0" targetNodeId="1227096479619:3" resolveInfo="MessageTarget" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4447441075424595172">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="foreignMessageSource" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1222948753920">
-      <property name="name:0" value="modelId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1222948753921">
-      <property name="name:0" value="nodeId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1223034518471">
@@ -1882,51 +1694,6 @@
     <link role="source:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <link role="target:0" targetNodeId="1223381117053:3" resolveInfo="Processed" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1223995273390">
-    <property name="name:0" value="AssertStatement_internal" />
-    <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1223995779374">
-      <property name="name:0" value="modelId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1223995779375">
-      <property name="name:0" value="nodeId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1223995331830">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="condition" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1223995386457">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="errorString" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1223995386458">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="nodeToReport" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1223995386459">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="helginsIntention" />
-      <link role="target:0" targetNodeId="1210784285454:3" resolveInfo="HelginsIntention" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1227104635133">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="messageTarget" />
-      <link role="target:0" targetNodeId="1227096479619:3" resolveInfo="MessageTarget" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4447441075424595174">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="foreignMessageSource" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1224760201579">
     <property name="name:0" value="InfoStatement" />
     <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
@@ -1942,84 +1709,6 @@
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1227096870575">
       <link role="intfc:0" targetNodeId="1227096774658:3" resolveInfo="MessageStatement" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225968571991">
-    <property name="name:0" value="WarningStatement_internal" />
-    <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1225968642860">
-      <property name="name:0" value="modelId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1225968627315">
-      <property name="name:0" value="nodeId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1225968625359">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="warningText" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1225968625360">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="nodeToReport" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1225968625361">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="helginsIntention" />
-      <link role="target:0" targetNodeId="1210784285454:3" resolveInfo="HelginsIntention" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1227104644040">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="messageTarget" />
-      <link role="target:0" targetNodeId="1227096479619:3" resolveInfo="MessageTarget" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4447441075424595170">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="foreignMessageSource" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225971039738">
-    <property name="name:0" value="InfoStatement_internal" />
-    <link role="extends:0" targetNodeId="2.1068580123157:3" resolveInfo="Statement" />
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1225971261248">
-      <property name="name:0" value="modelId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1225971265421">
-      <property name="name:0" value="nodeId" />
-      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1225971258464">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="infoText" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1225971258465">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="nodeToReport" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1225971258466">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="helginsIntention" />
-      <link role="target:0" targetNodeId="1210784285454:3" resolveInfo="HelginsIntention" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1227104609964">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="messageTarget" />
-      <link role="target:0" targetNodeId="1227096479619:3" resolveInfo="MessageTarget" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4447441075424595168">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="foreignMessageSource" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1227096479619">
@@ -2833,6 +2522,23 @@
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
       <node role="target:0" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7884032992241804525" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2990591960991114251">
+    <property name="name:0" value="OriginalNodeId" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="2990591960991114264">
+      <property name="name:0" value="nodeId" />
+      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="2990591960991114295">
+      <property name="name:0" value="modelId" />
+      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration:0" id="2990591960991114326">
+    <property name="role:0" value="originalNodeIdAnnotation" />
+    <link role="source:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <link role="target:0" targetNodeId="2990591960991114251:3" resolveInfo="OriginalNodeId" />
   </node>
 </model>
 
