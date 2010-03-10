@@ -443,7 +443,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1223996377283(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
-    return SPropertyOperations.getString(SLinkOperations.getTarget(quickFix, AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true), "modelId") + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
+    SNode id = SLinkOperations.getTarget(quickFix, AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true);
+    String smodelId;
+    if (id != null) {
+      smodelId = SPropertyOperations.getString(id, "modelId");
+    } else {
+      smodelId = SNodeOperations.getModel(quickFix).getLongName();
+    }
+    return smodelId + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
 
   public static Object propertyMacro_GetPropertyValue_1223996377308(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -485,7 +492,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1210838058221(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
-    return SPropertyOperations.getString(SLinkOperations.getTarget(quickFix, AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true), "modelId") + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
+    SNode id = SLinkOperations.getTarget(quickFix, AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true);
+    String smodelId;
+    if (id != null) {
+      smodelId = SPropertyOperations.getString(id, "modelId");
+    } else {
+      smodelId = SNodeOperations.getModel(quickFix).getLongName();
+    }
+    return smodelId + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
 
   public static Object propertyMacro_GetPropertyValue_1216130094392(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -705,7 +719,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1210840022621(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
-    return SPropertyOperations.getString(SLinkOperations.getTarget(quickFix, AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true), "modelId") + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
+    SNode id = SLinkOperations.getTarget(quickFix, AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true);
+    String smodelId;
+    if (id != null) {
+      smodelId = SPropertyOperations.getString(id, "modelId");
+    } else {
+      smodelId = SNodeOperations.getModel(quickFix).getLongName();
+    }
+    return smodelId + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
 
   public static Object propertyMacro_GetPropertyValue_7488229814397846045(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -795,7 +816,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1216206633084(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
-    return SNodeOperations.getModel(quickFix).getLongName() + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
+    SNode id = SLinkOperations.getTarget(quickFix, AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true);
+    String smodelId;
+    if (id != null) {
+      smodelId = SPropertyOperations.getString(id, "modelId");
+    } else {
+      smodelId = SNodeOperations.getModel(quickFix).getLongName();
+    }
+    return smodelId + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
 
   public static Object propertyMacro_GetPropertyValue_1216206633109(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -950,7 +978,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1224761479286(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode quickFix = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true), "quickFix", false);
-    return SPropertyOperations.getString(SLinkOperations.getTarget(quickFix, AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true), "modelId") + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
+    SNode id = SLinkOperations.getTarget(quickFix, AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), true);
+    String smodelId;
+    if (id != null) {
+      smodelId = SPropertyOperations.getString(id, "modelId");
+    } else {
+      smodelId = SNodeOperations.getModel(quickFix).getLongName();
+    }
+    return smodelId + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
 
   public static Object propertyMacro_GetPropertyValue_7488229814397846059(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -2749,7 +2784,11 @@ parametersLoop:
     ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement")));
     ListSequence.fromList(nodesToProcess).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression")));
     for (SNode node : nodesToProcess) {
-      String modelId = _context.getOriginalInputModel().toString();
+      SModel originalModel = _context.getOriginalInputModel();
+      String modelId = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix") ?
+        originalModel.getLongName() :
+        originalModel.toString()
+      );
       String nodeId = _context.getOriginalCopiedInputNode(node).getId();
       SNode annotation = SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("originalNodeIdAnnotation"), "jetbrains.mps.lang.typesystem.structure.OriginalNodeId");
       SPropertyOperations.set(annotation, "nodeId", nodeId);
