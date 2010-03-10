@@ -16,6 +16,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import com.intellij.openapi.util.Computable;
 
 public class GenerateMPSBuildAction_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -37,7 +38,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor) != null;
+    return GenerateMPSBuildAction_Action.this.getMPSLayout() != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -75,7 +76,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       // calculate output path 
-      final SNode layout = GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor);
+      final SNode layout = GenerateMPSBuildAction_Action.this.getMPSLayout();
       final Wrappers._T<SNode> configuration = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -86,5 +87,13 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GenerateMPSBuildAction", t);
     }
+  }
+
+  private SNode getMPSLayout() {
+    return ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      public SNode compute() {
+        return GenerateTextFromBuild.getLayout(GenerateMPSBuildAction_Action.this.modelDescriptor);
+      }
+    });
   }
 }
