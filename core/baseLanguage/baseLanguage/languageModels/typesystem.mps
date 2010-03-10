@@ -21728,6 +21728,9 @@
                           <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8101436443850399683">
                             <link role="applicableNode:3" targetNodeId="8620077627875160476" resolveInfo="bmd" />
                           </node>
+                          <node role="messageTarget:3" type="jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget:3" id="5449562650807682805">
+                            <link role="propertyDeclaration:3" targetNodeId="25.1169194664001:0" resolveInfo="name" />
+                          </node>
                         </node>
                       </node>
                       <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="8101436443850399684">

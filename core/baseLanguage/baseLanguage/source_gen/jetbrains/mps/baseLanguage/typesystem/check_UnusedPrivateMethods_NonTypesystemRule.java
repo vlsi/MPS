@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.typesystem.inference.PropertyErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 
 public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -51,6 +52,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
                   {
                     BaseIntentionProvider intentionProvider = null;
                     IErrorTarget errorTarget = new NodeErrorTarget();
+                    errorTarget = new PropertyErrorTarget("name");
                     IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(matchedNode_sl9v9q_a0a0, "Private method " + matchedNode_sl9v9q_a0a0 + " is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8101436443850399677", intentionProvider, errorTarget);
                   }
                 }
