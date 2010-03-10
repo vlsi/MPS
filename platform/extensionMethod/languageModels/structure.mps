@@ -145,9 +145,6 @@
       <link role="target:0" targetNodeId="1973189701691027447:0" resolveInfo="ExtensionStaticFieldDeclaration" />
       <link role="specializedLink:0" targetNodeId="6.1068581517664:3" />
     </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1713017043371814014">
-      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1146528679895:3" resolveInfo="lvalue" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1973189701691027447">
     <property name="name:0" value="ExtensionStaticFieldDeclaration" />

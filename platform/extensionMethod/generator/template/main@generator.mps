@@ -355,6 +355,7 @@
     <property name="package:3" value="topLevel" />
     <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="5431167396203534382">
       <property name="name:3" value="a" />
+      <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="5431167396203534383" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="5431167396203535949">
         <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="5431167396203536095">
