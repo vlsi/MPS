@@ -1803,10 +1803,6 @@ public class QueriesGenerated {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1215520023194(final IOperationContext operationContext, final IfMacroContext _context) {
-    return true;
-  }
-
   public static boolean ifMacro_Condition_1201609469756(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference");
   }
@@ -2241,6 +2237,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1215520871184(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_4146464629738104945(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperations.copyNode(_context.getNode());
   }
 
   public static SNode sourceNodeQuery_412500033819411522(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

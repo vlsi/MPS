@@ -33,7 +33,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
           {
-            GeneratedMatchingPattern pattern_n8ubly_a0a0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_1s2zdh_a0a0a0a0a1a1(SLinkOperations.getTarget(supertype, "classifier", false));
+            GeneratedMatchingPattern pattern_n8ubly_a0a0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_1s2zdh_a0a0a0a0a0(SLinkOperations.getTarget(supertype, "classifier", false));
             SNode coercedNode_n8ubly_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(t), pattern_n8ubly_a0a0, typeCheckingContext);
             if (coercedNode_n8ubly_a0a0 != null) {
               {
@@ -114,13 +114,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     {
       final SNode t = subtype;
       {
-        GeneratedMatchingPattern pattern_n8ubly_a0a0_0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_1s2zdh_a0a0a0a0a1a1(SLinkOperations.getTarget(supertype, "classifier", false));
-        SNode coercedNode_n8ubly_a0a0_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_n8ubly_a0a0_0);
-        if (coercedNode_n8ubly_a0a0_0 != null) {
+        GeneratedMatchingPattern pattern_a0a0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_1s2zdh_a0a0a0a0a1a1(SLinkOperations.getTarget(supertype, "classifier", false));
+        SNode coercedNode_a0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_a0a0);
+        if (coercedNode_a0a0 != null) {
           {
             SNode typeParam;
             SNode myParam;
-            Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_n8ubly_a0a0_0, "parameter", true)).iterator();
+            Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_a0a0, "parameter", true)).iterator();
             Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
             while (true) {
               if (!(typeParam_iterator.hasNext())) {

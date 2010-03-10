@@ -12526,13 +12526,14 @@
           </node>
         </node>
       </node>
-      <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="1215520023193">
+      <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="4146464629738104944">
         <link role="mappingLabel:2" targetNodeId="1215479299583" resolveInfo="mainMethodForRule" />
-        <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition:2" id="1215520023194">
-          <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1215520023195">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1215520030165">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1215520030166">
-                <property name="value:3" value="true" />
+        <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="4146464629738104945">
+          <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4146464629738104946">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4146464629738109097">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4146464629738109099">
+                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4146464629738109098" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation:16" id="4146464629738109103" />
               </node>
             </node>
           </node>
