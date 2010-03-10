@@ -392,6 +392,10 @@
       <property name="id" value="88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5" />
       <property name="name" value="jetbrains.mps.debug" />
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="59229739795782417">
+      <property name="id" value="7da4580f-9d75-4603-8162-51a896d78375" />
+      <property name="name" value="jetbrains.mps.debug.evaluation" />
+    </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="6748863620932397034">
     <property name="name:7" value="platform.core" />

@@ -628,13 +628,21 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.debug_e5a">
-    <mkdir dir="core/kernel/debug/debugProject/source_gen.caches" />
-    <mkdir dir="core/kernel/debug/debugProject/test_gen.caches" />
+    <mkdir dir="core/kernel/debug/debugProject/solutions/info/source_gen.caches" />
+    <mkdir dir="core/kernel/debug/debugProject/solutions/info/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="core/kernel/debug/debugProject/jetbrains.mps.debug.info.msd" prefix="module" />
-      <zipfileset dir="core/kernel/debug/debugProject/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="core/kernel/debug/debugProject/test_gen.caches" prefix="test_gen.caches" />
-      <zipfileset dir="core/kernel/debug/debugProject" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="core/kernel/debug/debugProject/solutions/info/jetbrains.mps.debug.info.msd" prefix="module" />
+      <zipfileset dir="core/kernel/debug/debugProject/solutions/info/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/kernel/debug/debugProject/solutions/info/test_gen.caches" prefix="test_gen.caches" />
+      <zipfileset dir="core/kernel/debug/debugProject/solutions/info" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.debug.evaluation_f5a">
+    <mkdir dir="core/kernel/debug/debugProject/languages/evaluation/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/core/jetbrains.mps.debug.evaluation.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/kernel/debug/debugProject/languages/evaluation/evaluation.mpl" prefix="module" />
+      <zipfileset dir="core/kernel/debug/debugProject/languages/evaluation/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/kernel/debug/debugProject/languages/evaluation" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguage.builders_a0g0">
