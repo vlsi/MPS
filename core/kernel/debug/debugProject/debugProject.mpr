@@ -38,6 +38,17 @@
   </component>
   <component name="ProjectRootManager" version="2" />
   <component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="Remote" type="Remote" factoryName="Remote">
+      <RemoteConnectionSettings>
+        <option name="hostName" value="localhost" />
+        <option name="port" value="5005" />
+        <option name="sharedMemoryAddress" value="" />
+        <option name="useSockets" value="true" />
+      </RemoteConnectionSettings>
+      <RunnerSettings RunnerId="Default Debug Runner" />
+      <ConfigurationWrapper RunnerId="Default Debug Runner" />
+      <method />
+    </configuration>
     <configuration default="false" name="Collections" type="JavaApplication" factoryName="Java Application">
       <MyState>
         <option name="nodeId" value="4495133539197110684" />
