@@ -93,16 +93,23 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   public final SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = new SModel(modelDescriptor.getSModelReference());
 
-    Set<Language> languages = new HashSet<Language>();
-
+    model.setLoading(true);
     try {
-      languages = getLanguagesToImport();
+      Set<Language> languages = new HashSet<Language>();
+
+      try {
+        languages = getLanguagesToImport();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+
+      for (Language l : languages) {
+        model.addLanguage(l);
+      }
     } catch (Throwable t) {
       LOG.error(t);
-    }
-
-    for (Language l : languages) {
-      model.addLanguage(l);
+    } finally {
+      model.setLoading(false);
     }
 
     return model;
