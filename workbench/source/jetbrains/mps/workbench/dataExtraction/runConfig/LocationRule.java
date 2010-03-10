@@ -22,10 +22,7 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFrame;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSLocation;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -48,20 +45,11 @@ public class LocationRule implements GetDataRule {
     SNode node = (SNode) dataProvider.getData(MPSDataKeys.NODE.getName());
     if (node != null) return new MPSLocation(project, node);
     SModelDescriptor model = (SModelDescriptor) dataProvider.getData(MPSDataKeys.MODEL.getName());
-    if (model != null) return new MPSLocation(project, extractModel(model));
+    if (model != null) return new MPSLocation(project, model.getSModelReference());
     IModule module = (IModule) dataProvider.getData(MPSDataKeys.MODULE.getName());
     if (module != null) return new MPSLocation(project, module);
     MPSProject mpsProject = (MPSProject) dataProvider.getData(MPSDataKeys.MPS_PROJECT.getName());
     if (mpsProject != null) return new MPSLocation(project, mpsProject);
     return null;
-  }
-
-  private SModel extractModel(final SModelDescriptor descriptor) {
-    return ModelAccess.instance().runReadAction(new Computable<SModel>() {
-      @Override
-      public SModel compute() {
-        return descriptor.getSModel();
-      }
-    });
   }
 }

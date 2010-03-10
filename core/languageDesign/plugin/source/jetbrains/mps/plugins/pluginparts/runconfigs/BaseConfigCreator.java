@@ -26,6 +26,8 @@ import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.openapi.util.Computable;
 import com.intellij.psi.PsiElement;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 
 public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer {
@@ -33,7 +35,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
   private ConfigurationContext myContext;
 
   public BaseConfigCreator(ConfigurationType configurationType) {
-    super(configurationType != null? configurationType : UnknownConfigurationType.INSTANCE);
+    super(configurationType != null ? configurationType : UnknownConfigurationType.INSTANCE);
   }
 
   public void setSourceElement(PsiElement sourceElement) {
@@ -52,12 +54,15 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
     myContext = context;
     if (!(location instanceof MPSLocation)) return null;
     MPSLocation mpsLocation = (MPSLocation) location;
-    final MPSPsiElement nodePsiElement = mpsLocation.getPsiElement();
-    if (!isApplicable(nodePsiElement.getMPSItem())) return null;
+    final MPSPsiElement psiElement = mpsLocation.getPsiElement();
 
     RunConfiguration config = ModelAccess.instance().runReadAction(new Computable<RunConfiguration>() {
       public RunConfiguration compute() {
-        return doCreateConfiguration((T) nodePsiElement.getMPSItem());
+        Object mpsItem = psiElement.getMPSItem();
+        if (mpsItem == null) return null;
+        if (!isApplicable(mpsItem)) return null;
+
+        return doCreateConfiguration((T) psiElement.getMPSItem());
       }
     });
 
