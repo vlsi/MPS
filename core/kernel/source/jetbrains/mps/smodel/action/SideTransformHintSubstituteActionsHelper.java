@@ -158,7 +158,8 @@ public class SideTransformHintSubstituteActionsHelper {
                                SideTransformTag tag,
                                AbstractConceptDeclaration sourceConcept) {
     // same tag?
-    if (actionsBuilder.getTransformTag() != tag) {
+    SideTransformTag actionTag = actionsBuilder.getTransformTag();
+    if (actionTag != SideTransformTag.default_ && actionTag != tag) {
       return false;
     }
 
