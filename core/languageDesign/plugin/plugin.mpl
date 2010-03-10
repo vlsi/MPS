@@ -124,6 +124,7 @@
     <dependency reexport="false">13bb5d8e-e640-4722-80ed-259ec90709b3(jetbrains.mps.xmlQuery.runtime)</dependency>
   </runtime>
   <extendedLanguages>
+    <extendedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</extendedLanguage>
     <extendedLanguage>443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)</extendedLanguage>
     <extendedLanguage>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</extendedLanguage>
   </extendedLanguages>
