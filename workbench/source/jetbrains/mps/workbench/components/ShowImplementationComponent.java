@@ -48,17 +48,21 @@ public class ShowImplementationComponent extends JPanel {
 
   private void updateControls() {
     String selectedItem = (String) myNodeChooser.getSelectedItem();
-    SNode selectedNode = myItemToNode.get(selectedItem);
-    int index = myNodes.indexOf(selectedNode);
+    final SNode selectedNode = myItemToNode.get(selectedItem);
+    final int index = myNodes.indexOf(selectedNode);
     if (mySelectedIndex == index) return;
-    IModule module = selectedNode.getModel().getModelDescriptor().getModule();
-    myLocationLabel.setText(module.getModuleFqName());
-    myLocationLabel.setIcon(IconManager.getIconFor(module));
-    myCountLanel.setText((index + 1) + " of " + myNodes.size());
-    myEditor.setNode(SNodeOperations.copyNode(myNodes.get(index)));
-    myEditor.setBackground(new Color(255, 255, 215));
-    mySelectedIndex = index;
-    myEditorPanel.repaint();
+    ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
+      public void run() {
+        IModule module = selectedNode.getModel().getModelDescriptor().getModule();
+        myLocationLabel.setText(module.getModuleFqName());
+        myLocationLabel.setIcon(IconManager.getIconFor(module));
+        myCountLanel.setText((index + 1) + " of " + myNodes.size());
+        myEditor.setNode(SNodeOperations.copyNode(myNodes.get(index)));
+        myEditor.setBackground(new Color(255, 255, 215));
+        mySelectedIndex = index;
+        myEditorPanel.repaint();
+      }
+    });
   }
 
   private void init() {
@@ -73,7 +77,7 @@ public class ShowImplementationComponent extends JPanel {
     this.myNodeChooser.setRenderer(new DefaultListCellRenderer() {
       @Override
       public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
           public void run() {
             updateControls();
           }
