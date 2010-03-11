@@ -4609,7 +4609,7 @@
                 <link role="variableDeclaration:3" targetNodeId="1199633278615" resolveInfo="exceptionJavaType" />
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1199633278636">
-                <link role="baseMethodDeclaration:16" targetNodeId="29.1213877355812" resolveInfo="isDescendant" />
+                <link role="baseMethodDeclaration:16" targetNodeId="29.7165541881557222913" resolveInfo="isDescendant" />
                 <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1199633278637">
                   <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1199633278638">
                     <link role="concept:16" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />

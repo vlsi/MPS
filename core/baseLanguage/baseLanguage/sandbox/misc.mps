@@ -168,6 +168,9 @@
       </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3293010995237625809" />
+    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2229346413539813742">
+      <link role="classifier:3" targetNodeId="150.~Exception" resolveInfo="Exception" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3293010995237625814">
     <property name="name:3" value="B" />

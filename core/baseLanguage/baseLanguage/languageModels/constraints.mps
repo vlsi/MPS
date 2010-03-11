@@ -989,7 +989,7 @@
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5363084893386827832">
             <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="5363084893386827831" />
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="5363084893386827836">
-              <link role="baseMethodDeclaration:16" targetNodeId="50.1213877355812" resolveInfo="isDescendant" />
+              <link role="baseMethodDeclaration:16" targetNodeId="50.7165541881557222913" resolveInfo="isDescendant" />
               <node role="actualArgument:16" type="jetbrains.mps.lang.smodel.structure.NodeRefExpression:16" id="5363084893386870380">
                 <link role="referentNode:16" targetNodeId="13.~Throwable" resolveInfo="Throwable" />
               </node>

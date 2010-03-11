@@ -248,7 +248,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1239475791683">
-                    <link role="baseMethodDeclaration:16" targetNodeId="9.1213877355812" resolveInfo="isDescendant" />
+                    <link role="baseMethodDeclaration:16" targetNodeId="9.7165541881557222913" resolveInfo="isDescendant" />
                     <node role="actualArgument:16" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1239475791684">
                       <link role="concept:16" targetNodeId="4.1068390468198:3" resolveInfo="ClassConcept" />
                       <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239475791685">
@@ -545,7 +545,7 @@
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1737294499102102617">
-                  <link role="baseMethodDeclaration:16" targetNodeId="9.1213877355812" resolveInfo="isDescendant" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="9.7165541881557222913" resolveInfo="isDescendant" />
                   <node role="actualArgument:16" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1737294499102102618">
                     <link role="concept:16" targetNodeId="4.1068390468198:3" resolveInfo="ClassConcept" />
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1737294499102102619">
@@ -700,7 +700,7 @@
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1737294499102102685">
-                  <link role="baseMethodDeclaration:16" targetNodeId="9.1213877355812" resolveInfo="isDescendant" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="9.7165541881557222913" resolveInfo="isDescendant" />
                   <node role="actualArgument:16" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1737294499102102686">
                     <link role="concept:16" targetNodeId="4.1068390468198:3" resolveInfo="ClassConcept" />
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1737294499102102687">
@@ -778,7 +778,7 @@
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1737294499102102719">
-                  <link role="baseMethodDeclaration:16" targetNodeId="9.1213877355812" resolveInfo="isDescendant" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="9.7165541881557222913" resolveInfo="isDescendant" />
                   <node role="actualArgument:16" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1737294499102102720">
                     <link role="concept:16" targetNodeId="4.1068390468198:3" resolveInfo="ClassConcept" />
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1737294499102102721">
@@ -856,7 +856,7 @@
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1737294499102102753">
-                  <link role="baseMethodDeclaration:16" targetNodeId="9.1213877355812" resolveInfo="isDescendant" />
+                  <link role="baseMethodDeclaration:16" targetNodeId="9.7165541881557222913" resolveInfo="isDescendant" />
                   <node role="actualArgument:16" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1737294499102102754">
                     <link role="concept:16" targetNodeId="4.1068390468198:3" resolveInfo="ClassConcept" />
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1737294499102102755">
@@ -978,7 +978,7 @@
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1240143495291">
-                <link role="baseMethodDeclaration:16" targetNodeId="9.1213877355812" resolveInfo="isDescendant" />
+                <link role="baseMethodDeclaration:16" targetNodeId="9.7165541881557222913" resolveInfo="isDescendant" />
                 <node role="actualArgument:16" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1240143495292">
                   <link role="concept:16" targetNodeId="4.1068390468198:3" resolveInfo="ClassConcept" />
                   <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240143495293">
@@ -1082,7 +1082,7 @@
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1240143495336">
-                <link role="baseMethodDeclaration:16" targetNodeId="9.1238269307226" resolveInfo="isDescendant" />
+                <link role="baseMethodDeclaration:16" targetNodeId="9.7165541881557222913" resolveInfo="isDescendant" />
                 <node role="actualArgument:16" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1240143495337">
                   <link role="concept:16" targetNodeId="4.1107796713796:3" resolveInfo="Interface" />
                   <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240143495338">
