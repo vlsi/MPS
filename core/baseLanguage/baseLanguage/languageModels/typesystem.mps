@@ -20436,7 +20436,7 @@
                   <link role="applicableNode:3" targetNodeId="498633765599292977" resolveInfo="staticFieldDeclaration" />
                 </node>
                 <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="498633765599992975">
-                  <property name="value:3" value="Inner classes cannot have static methods" />
+                  <property name="value:3" value="Inner classes cannot have static fields" />
                 </node>
                 <node role="helginsIntention:3" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention:3" id="498633765599992978">
                   <link role="quickFix:3" targetNodeId="498633765599987429" resolveInfo="MakeStaticFieldNotStatic" />
