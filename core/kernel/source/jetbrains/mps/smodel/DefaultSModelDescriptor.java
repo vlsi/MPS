@@ -33,7 +33,6 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vcs.VcsHelper;
@@ -57,9 +56,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   //it should be possible to add listeners from any thread so we use lock here
   //access to other fields is synchronized with ModelAccess
   private final Object myListenersLock = new Object();
+  private final Object myUpdatersLock = new Object();
+
   private Set<SModelListener> myWeakModelListeners = new WeakSet<SModelListener>();
   private Set<SModelListener> myModelListeners = new HashSet<SModelListener>(0);
   private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
+  private Set<ModelUpdater> myUpdaters = new HashSet<ModelUpdater>();
 
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange;
@@ -147,7 +149,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       mySModel.fireModelReloaded();
 
       ModelAccess.instance().runReadInEDT(new Runnable() {
-
         public void run() {
           oldModel.dispose();
         }
@@ -178,7 +179,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public SModel getSModel() {
-   // ModelAccess.assertLegalRead();
+    // ModelAccess.assertLegalRead();
 
     SModel result;
     boolean fireInitialized = false;
@@ -186,15 +187,38 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     synchronized (myLoadingLock) {
       if (mySModel == null) {
         mySModel = loadModel();
+        updateAfterCreation();
         doPostLoadStuff();
         fireInitialized = true;
       }
       result = mySModel;
     }
-    if(fireInitialized) {
+    if (fireInitialized) {
       result.fireModelInitialized();
     }
     return result;
+  }
+
+  //must be called only under loading lock
+  private void updateAfterCreation() {
+    synchronized (myUpdatersLock) {
+      Set<ModelUpdater> updCopy = new HashSet<ModelUpdater>(myUpdaters);
+      for (ModelUpdater updater : updCopy) {
+        updater.updateModel(this);
+      }
+    }
+  }
+
+  public void addModelUpdater(ModelUpdater updater) {
+    synchronized (myUpdatersLock) {
+      myUpdaters.add(updater);
+    }
+  }
+
+  public void removeModelUpdater(ModelUpdater updater) {
+    synchronized (myUpdatersLock) {
+      myUpdaters.remove(updater);
+    }
   }
 
   private void doPostLoadStuff() {
@@ -206,7 +230,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     myDiskTimestamp = fileTimestamp();
     addListenersToSModel();
   }
-
 
   private void updateModelWithRefactorings() {
     assert mySModel != null;
@@ -525,7 +548,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   public void replaceModel(SModel newModel) {
     ModelAccess.assertLegalWrite();
-    
+
     if (newModel == mySModel) return;
     if (isInitialized()) {
       if (myFastNodeFinder != null) {
@@ -735,7 +758,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   @Override
   public void disposeFastNodeFinder() {
-    if(myFastNodeFinder != null) {
+    if (myFastNodeFinder != null) {
       myFastNodeFinder.dispose();
       myFastNodeFinder = null;
     }
