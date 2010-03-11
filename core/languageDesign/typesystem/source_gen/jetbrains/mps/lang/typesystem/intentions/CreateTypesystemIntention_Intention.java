@@ -77,21 +77,29 @@ public class CreateTypesystemIntention_Intention extends BaseIntention implement
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_1;
-        quotedNode1_4.setProperty("name", "fix_");
+        SNode quotedNode1_5 = quotedNode_1;
+        quotedNode1_5.setProperty("name", "fix_");
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5 = quotedNode_2;
+          SNode quotedNode1_6 = quotedNode_2;
           {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-            SNode quotedNode1_6 = quotedNode_3;
-            quotedNode_2.addChild("body", quotedNode1_6);
+            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+            SNode quotedNode1_7 = quotedNode_4;
+            quotedNode_2.addChild("body", quotedNode1_7);
           }
-          quotedNode_1.addChild("executeBlock", quotedNode1_5);
+          quotedNode_1.addChild("executeBlock", quotedNode1_6);
         }
-        result = quotedNode1_4;
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_8 = quotedNode_3;
+          quotedNode1_8.setProperty("modelId", "jetbrains.mps.lang.typesystem.intentions");
+          quotedNode1_8.setProperty("nodeId", "3302086321380616758");
+          quotedNode_1.addChild("originalNodeIdAnnotation$attribute", quotedNode1_8);
+        }
+        result = quotedNode1_5;
       }
       return result;
     }
