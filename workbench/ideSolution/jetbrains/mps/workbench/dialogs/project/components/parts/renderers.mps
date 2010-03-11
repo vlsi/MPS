@@ -1495,8 +1495,8 @@
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499493076">
               <link role="variableDeclaration:3" targetNodeId="1560298786499493045" resolveInfo="list" />
             </node>
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1560298786499493077">
-              <link role="variableDeclaration:3" targetNodeId="1560298786499493057" resolveInfo="manager" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6848311924529879215">
+              <link role="variableDeclaration:3" targetNodeId="1560298786499493063" resolveInfo="representation" />
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499493078">
               <link role="variableDeclaration:3" targetNodeId="1560298786499493049" resolveInfo="index" />

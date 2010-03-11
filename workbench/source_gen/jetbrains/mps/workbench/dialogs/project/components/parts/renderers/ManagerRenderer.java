@@ -18,6 +18,6 @@ public class ManagerRenderer extends DefaultListCellRenderer {
       "" :
       NameUtil.shortNameFromLongName(manager.getClassName())
     );
-    return super.getListCellRendererComponent(list, manager, index, isSelected, cellHasFocus);
+    return super.getListCellRendererComponent(list, representation, index, isSelected, cellHasFocus);
   }
 }
