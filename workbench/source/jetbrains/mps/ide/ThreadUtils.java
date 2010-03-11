@@ -49,4 +49,10 @@ public class ThreadUtils {
   public static boolean isEventDispatchThread() {
     return SwingUtilities.isEventDispatchThread();
   }
+
+  public static void assertLogIsEDT() {
+    if (!isEventDispatchThread()) {
+      LOG.errorWithTrace("must be called from EDT");
+    }
+  }
 }

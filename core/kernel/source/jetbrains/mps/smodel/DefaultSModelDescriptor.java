@@ -178,7 +178,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public SModel getSModel() {
-    ModelAccess.assertLegalRead();
+   // ModelAccess.assertLegalRead();
 
     SModel result;
     boolean fireInitialized = false;
