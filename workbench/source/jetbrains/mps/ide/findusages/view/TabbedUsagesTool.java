@@ -15,24 +15,23 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
-import jetbrains.mps.workbench.tools.BaseProjectTool;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.ContentManagerAdapter;
+import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.ide.findusages.INavigateableTool;
 import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.ToolWindowAnchor;
-import com.intellij.ui.content.ContentManagerAdapter;
-import com.intellij.ui.content.ContentManagerEvent;
-import com.intellij.ui.content.ContentManager;
-import com.intellij.ui.content.Content;
+import jetbrains.mps.workbench.tools.BaseProjectTool;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.SwingUtilities;
-
-import org.jetbrains.annotations.Nullable;
 
 public abstract class TabbedUsagesTool extends BaseProjectTool implements INavigateableTool {
   private static final Logger LOG = Logger.getLogger(UsagesViewTool.class);
@@ -103,14 +102,12 @@ public abstract class TabbedUsagesTool extends BaseProjectTool implements INavig
   }
 
   protected void closeLastUnpinnedTab(int index) {
-    if (index != -1) {
-      ContentManager contentManager = getContentManager();
-      Content content = contentManager.getContent(index);
-      assert content != null;
-      if (!content.isPinned()) {
-        contentManager.removeContent(content, true);
-      }
-    }
+    if (index == -1) return;
+    ContentManager contentManager = getContentManager();
+    Content content = contentManager.getContent(index);
+    assert content != null;
+    if (content.isPinned()) return;
+    contentManager.removeContent(content, true);
   }
 
   protected abstract UsagesView getUsagesView(int index);
