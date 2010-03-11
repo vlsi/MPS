@@ -306,17 +306,15 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
         BoundTablePanel result_wf5hwp_a0a0a11 = new BoundTablePanel(owner, caption, props.getModelList());
-        Validator result_wf5hwp_a0a0a0a11 = new ModelValidator(owner.getModuleScope());
-        result_wf5hwp_a0a0a11.setObjectValidator(result_wf5hwp_a0a0a0a11);
-        boolean result_wf5hwp_a1a0a0a11 = true;
-        result_wf5hwp_a0a0a11.setDiffRow(result_wf5hwp_a1a0a0a11);
+        boolean result_wf5hwp_a0a0a0a11 = true;
+        result_wf5hwp_a0a0a11.setDiffRow(result_wf5hwp_a0a0a0a11);
 
-        ColumnDescriptor result_wf5hwp_a3a0a0a11 = new BooleanDescriptor(ImportProperties.ImportDescriptor.IS_IMPORTED, "Import", 100);
+        ColumnDescriptor result_wf5hwp_a2a0a0a11 = new BooleanDescriptor(ImportProperties.ImportDescriptor.IS_IMPORTED, "Import", 100);
+        result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a2a0a0a11);
+        ColumnDescriptor result_wf5hwp_a3a0a0a11 = new ModelDescriptor(ImportProperties.ModelImportDescriptor.MODEL, "Model", -1);
         result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a3a0a0a11);
-        ColumnDescriptor result_wf5hwp_a4a0a0a11 = new ModelDescriptor(ImportProperties.ModelImportDescriptor.MODEL, "Model", -1);
+        ColumnDescriptor result_wf5hwp_a4a0a0a11 = new ModuleImportDescriptor(props, true, ImportProperties.ImportDescriptor.MODULE, "Module", -1);
         result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a4a0a0a11);
-        ColumnDescriptor result_wf5hwp_a5a0a0a11 = new ModuleImportDescriptor(props, true, ImportProperties.ImportDescriptor.MODULE, "Module", -1);
-        result_wf5hwp_a0a0a11.addColumn(result_wf5hwp_a5a0a0a11);
         result_wf5hwp_a0a0a11.init();
         return result_wf5hwp_a0a0a11;
       }
@@ -327,17 +325,15 @@ public class StandardComponents {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
         BoundTablePanel result_wf5hwp_a0a0a21 = new BoundTablePanel(owner, caption, props.getLanguagesList());
-        Validator result_wf5hwp_a0a0a0a21 = new ModuleValidator();
-        result_wf5hwp_a0a0a21.setObjectValidator(result_wf5hwp_a0a0a0a21);
-        boolean result_wf5hwp_a1a0a0a21 = true;
-        result_wf5hwp_a0a0a21.setDiffRow(result_wf5hwp_a1a0a0a21);
+        boolean result_wf5hwp_a0a0a0a21 = true;
+        result_wf5hwp_a0a0a21.setDiffRow(result_wf5hwp_a0a0a0a21);
 
-        ColumnDescriptor result_wf5hwp_a3a0a0a21 = new BooleanDescriptor(ImportProperties.ImportDescriptor.IS_IMPORTED, "Import", 100);
+        ColumnDescriptor result_wf5hwp_a2a0a0a21 = new BooleanDescriptor(ImportProperties.ImportDescriptor.IS_IMPORTED, "Import", 100);
+        result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a2a0a0a21);
+        ColumnDescriptor result_wf5hwp_a3a0a0a21 = new ModuleDescriptor(ImportProperties.LanguageImportDescriptor.LANGUAGE, "Language", -1);
         result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a3a0a0a21);
-        ColumnDescriptor result_wf5hwp_a4a0a0a21 = new ModuleDescriptor(ImportProperties.LanguageImportDescriptor.LANGUAGE, "Language", -1);
+        ColumnDescriptor result_wf5hwp_a4a0a0a21 = new ModuleImportDescriptor(props, false, ImportProperties.ImportDescriptor.MODULE, "Devkit", -1);
         result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a4a0a0a21);
-        ColumnDescriptor result_wf5hwp_a5a0a0a21 = new ModuleImportDescriptor(props, false, ImportProperties.ImportDescriptor.MODULE, "Devkit", -1);
-        result_wf5hwp_a0a0a21.addColumn(result_wf5hwp_a5a0a0a21);
         result_wf5hwp_a0a0a21.init();
         return result_wf5hwp_a0a0a21;
       }

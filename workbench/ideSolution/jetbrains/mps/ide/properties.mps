@@ -1694,25 +1694,6 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7355563316698764249">
             <node role="creator:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderCreator:0" id="7355563316698764250">
               <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7355563316698764251">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement:0" id="7355563316698764252">
-                  <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7355563316698764253" />
-                  <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder:0" id="7355563316698764254">
-                    <link role="declaration:0" targetNodeId="1671234487373853469" resolveInfo="validator" />
-                    <node role="value:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7355563316698764255">
-                      <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7355563316698764256">
-                        <link role="baseMethodDeclaration:3" targetNodeId="56.1560298786499498203" resolveInfo="ModelValidator" />
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7355563316698764257">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7355563316698764258">
-                            <link role="variableDeclaration:3" targetNodeId="1809539929827638181" resolveInfo="owner" />
-                          </node>
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7355563316698764259">
-                            <link role="baseMethodDeclaration:3" targetNodeId="23.~IBindedDialog.getModuleScope():jetbrains.mps.smodel.IScope" resolveInfo="getModuleScope" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement:0" id="7355563316698764260">
                   <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7355563316698764261" />
                   <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder:0" id="7355563316698764262">
@@ -1859,17 +1840,6 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7355563316698764305">
             <node role="creator:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderCreator:0" id="7355563316698764306">
               <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7355563316698764307">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement:0" id="7355563316698764308">
-                  <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7355563316698764309" />
-                  <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder:0" id="7355563316698764310">
-                    <link role="declaration:0" targetNodeId="1671234487373853469" resolveInfo="validator" />
-                    <node role="value:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7355563316698764311">
-                      <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7355563316698764312">
-                        <link role="baseMethodDeclaration:3" targetNodeId="56.1560298786499495261" resolveInfo="ModuleValidator" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement:0" id="7355563316698764313">
                   <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7355563316698764314" />
                   <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder:0" id="7355563316698764315">
