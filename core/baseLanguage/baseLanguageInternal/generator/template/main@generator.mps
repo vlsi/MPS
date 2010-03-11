@@ -719,16 +719,14 @@
           </node>
         </node>
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8881995820265483051">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="8733626498296662811">
-            <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="8733626498296662848">
-              <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="8733626498296662849">
-                <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8733626498296662850">
-                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8733626498296662851">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8733626498296662855">
-                      <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="8733626498296662852" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8733626498296662932">
-                        <link role="link:16" targetNodeId="2v.1068580123135:3" />
-                      </node>
+          <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="4662313646679725669">
+            <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="4662313646679725670">
+              <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4662313646679725671">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4662313646679726334">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4662313646679726338">
+                    <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4662313646679726335" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4662313646679726344">
+                      <link role="link:16" targetNodeId="2v.1068580123135:3" />
                     </node>
                   </node>
                 </node>
