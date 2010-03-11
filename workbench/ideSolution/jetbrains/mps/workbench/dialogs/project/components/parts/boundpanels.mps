@@ -3314,6 +3314,32 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7042549651420193839">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7042549651420193840">
+            <property name="name:3" value="mulSelection" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="7042549651420193841" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="7042549651420193850">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7042549651420193854">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="7042549651420193855">
+                  <link role="fieldDeclaration:3" targetNodeId="1560298786499497648" resolveInfo="myMultipleChooser" />
+                </node>
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7042549651420193856" />
+              </node>
+              <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7042549651420193857">
+                <property name="value:3" value="false" />
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="7042549651420193846">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7042549651420193849" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7042549651420193843">
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="7042549651420193844">
+                    <link role="fieldDeclaration:3" targetNodeId="1560298786499497648" resolveInfo="myMultipleChooser" />
+                  </node>
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7042549651420193845" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1560298786499497948">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497949">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497950">
@@ -3325,11 +3351,8 @@
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499497953">
               <link role="baseMethodDeclaration:3" targetNodeId="1.~JTable.setSelectionMode(int):void" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="1560298786499497954">
-                <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497955">
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497956">
-                    <link role="fieldDeclaration:3" targetNodeId="1560298786499497648" resolveInfo="myMultipleChooser" />
-                  </node>
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497957" />
+                <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7042549651420193859">
+                  <link role="variableDeclaration:3" targetNodeId="7042549651420193840" resolveInfo="mulSelection" />
                 </node>
                 <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1560298786499497958">
                   <link role="classifier:3" targetNodeId="1.~ListSelectionModel" />

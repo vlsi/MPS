@@ -110,7 +110,11 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
       }
       i++;
     }
-    this.myTable.setSelectionMode((this.myMultipleChooser ?
+    boolean mulSelection = (this.myMultipleChooser != null ?
+      this.myMultipleChooser :
+      false
+    );
+    this.myTable.setSelectionMode((mulSelection ?
       ListSelectionModel.MULTIPLE_INTERVAL_SELECTION :
       ListSelectionModel.SINGLE_INTERVAL_SELECTION
     ));
