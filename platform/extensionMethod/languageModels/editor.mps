@@ -536,6 +536,11 @@
         <link role="styleClass:32" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
         <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1713017043371093261">
           <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1713017043371093262">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="7098890584302557818">
+              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="7098890584302557819">
+                <property name="text:3" value="unnecessary condition, unnecessary and confusing modifiers in editor" />
+              </node>
+            </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1713017043371093263">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1713017043371093264">
                 <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="1713017043371093265" />
@@ -561,6 +566,11 @@
         <property name="vertical:32" value="false" />
         <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="1713017043371093270">
           <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1713017043371093271">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="7098890584302557815">
+              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="7098890584302557816">
+                <property name="text:3" value="unnecessary condition: constant must always have initializer" />
+              </node>
+            </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1713017043371093272">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1713017043371093273">
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1713017043371093274">

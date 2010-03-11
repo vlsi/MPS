@@ -179,10 +179,12 @@ public class ExtensionStaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_ipnr5b_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    // unnecessary condition, unnecessary and confusing modifiers in editor 
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
   private static boolean renderingCondition_ipnr5b_a5a(SNode node, EditorContext editorContext, IScope scope) {
+    // unnecessary condition: constant must always have initializer 
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 
