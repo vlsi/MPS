@@ -37,8 +37,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   private Set<DefaultSModelDescriptor> myDescriptorsWithListener = new HashSet<DefaultSModelDescriptor>();
   private ModelUpdater myInitializationListener = new ModelUpdater() {
-    public void updateModel(DefaultSModelDescriptor sm) {
-      updateModelInLoadingState(sm, sm.getSModel());
+    public void updateModel(DefaultSModelDescriptor sm, SModel model) {
+      updateModelInLoadingState(sm, model);
       sm.removeModelUpdater(this);
       myDescriptorsWithListener.remove(sm);
     }

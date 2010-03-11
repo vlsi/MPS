@@ -187,7 +187,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     synchronized (myLoadingLock) {
       if (mySModel == null) {
         mySModel = loadModel();
-        updateAfterCreation();
+        updateAfterCreation(mySModel);
         doPostLoadStuff();
         fireInitialized = true;
       }
@@ -200,11 +200,11 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   //must be called only under loading lock
-  private void updateAfterCreation() {
+  private void updateAfterCreation(SModel model) {
     synchronized (myUpdatersLock) {
       Set<ModelUpdater> updCopy = new HashSet<ModelUpdater>(myUpdaters);
       for (ModelUpdater updater : updCopy) {
-        updater.updateModel(this);
+        updater.updateModel(this, model);
       }
     }
   }
