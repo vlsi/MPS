@@ -55,10 +55,11 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.Modu
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
-import java.awt.BorderLayout;
+import java.awt.Component;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.MappingRuleCreator;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.PriorityRuleDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.RuleTypeDescriptor;
+import java.awt.BorderLayout;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -212,10 +213,11 @@ public class StandardComponents {
         BoundTablePanel result_wf5hwp_a0a0a6 = new BoundTablePanel(owner, caption, list);
         Computable result_wf5hwp_a0a0a0a6 = new DependencyChooser(owner);
         result_wf5hwp_a0a0a6.setMultipleChooser(result_wf5hwp_a0a0a0a6);
-        ColumnDescriptor result_wf5hwp_a1a0a0a6 = new DepDescriptor(owner, Dependency.MODULEREF, "Module", -1);
-        result_wf5hwp_a0a0a6.addColumn(result_wf5hwp_a1a0a0a6);
-        ColumnDescriptor result_wf5hwp_a2a0a0a6 = new BooleanDescriptor(Dependency.REEXPORT, "Reexport", 100);
+
+        ColumnDescriptor result_wf5hwp_a2a0a0a6 = new DepDescriptor(owner, Dependency.MODULEREF, "Module", -1);
         result_wf5hwp_a0a0a6.addColumn(result_wf5hwp_a2a0a0a6);
+        ColumnDescriptor result_wf5hwp_a3a0a0a6 = new BooleanDescriptor(Dependency.REEXPORT, "Reexport", 100);
+        result_wf5hwp_a0a0a6.addColumn(result_wf5hwp_a3a0a0a6);
         result_wf5hwp_a0a0a6.init();
         return result_wf5hwp_a0a0a6;
       }
@@ -341,25 +343,27 @@ public class StandardComponents {
   }
 
   public static JPanel createMappingConfigsPanel(final IBindedDialog owner, final String caption, final List<MappingPriorityRule> list, final Generator generator, final List<ModuleReference> depGenerators) {
-    JPanel mainPanel = new JPanel(new BorderLayout());
-    mainPanel.add(new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
+    Component tablePanel = new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
-        BoundTablePanel result_wf5hwp_a0a0a1a31 = new BoundTablePanel(owner, caption, list);
-        Computable result_wf5hwp_a0a0a0a1a31 = new MappingRuleCreator();
-        result_wf5hwp_a0a0a1a31.setChooser(result_wf5hwp_a0a0a0a1a31);
-        boolean result_wf5hwp_a1a0a0a1a31 = true;
-        result_wf5hwp_a0a0a1a31.setDiffRow(result_wf5hwp_a1a0a0a1a31);
+        BoundTablePanel result_wf5hwp_a0a0a0n = new BoundTablePanel(owner, caption, list);
+        Computable result_wf5hwp_a0a0a0a0n = new MappingRuleCreator();
+        result_wf5hwp_a0a0a0n.setChooser(result_wf5hwp_a0a0a0a0n);
+        boolean result_wf5hwp_a1a0a0a0n = true;
+        result_wf5hwp_a0a0a0n.setDiffRow(result_wf5hwp_a1a0a0a0n);
 
-        ColumnDescriptor result_wf5hwp_a3a0a0a1a31 = new PriorityRuleDescriptor(generator, depGenerators, true, MappingPriorityRule.LEFT, "Operand", -1);
-        result_wf5hwp_a0a0a1a31.addColumn(result_wf5hwp_a3a0a0a1a31);
-        ColumnDescriptor result_wf5hwp_a4a0a0a1a31 = new RuleTypeDescriptor(MappingPriorityRule.TYPE, "Type", 50);
-        result_wf5hwp_a0a0a1a31.addColumn(result_wf5hwp_a4a0a0a1a31);
-        ColumnDescriptor result_wf5hwp_a5a0a0a1a31 = new PriorityRuleDescriptor(generator, depGenerators, false, MappingPriorityRule.RIGHT, "Operand", -1);
-        result_wf5hwp_a0a0a1a31.addColumn(result_wf5hwp_a5a0a0a1a31);
-        result_wf5hwp_a0a0a1a31.init();
-        return result_wf5hwp_a0a0a1a31;
+        ColumnDescriptor result_wf5hwp_a3a0a0a0n = new PriorityRuleDescriptor(generator, depGenerators, true, MappingPriorityRule.LEFT, "Operand", -1);
+        result_wf5hwp_a0a0a0n.addColumn(result_wf5hwp_a3a0a0a0n);
+        ColumnDescriptor result_wf5hwp_a4a0a0a0n = new RuleTypeDescriptor(MappingPriorityRule.TYPE, "Type", 50);
+        result_wf5hwp_a0a0a0n.addColumn(result_wf5hwp_a4a0a0a0n);
+        ColumnDescriptor result_wf5hwp_a5a0a0a0n = new PriorityRuleDescriptor(generator, depGenerators, false, MappingPriorityRule.RIGHT, "Operand", -1);
+        result_wf5hwp_a0a0a0n.addColumn(result_wf5hwp_a5a0a0a0n);
+        result_wf5hwp_a0a0a0n.init();
+        return result_wf5hwp_a0a0a0n;
       }
-    }.invoke(), BorderLayout.CENTER);
+    }.invoke();
+
+    JPanel mainPanel = new JPanel(new BorderLayout());
+    mainPanel.add(tablePanel, BorderLayout.CENTER);
     mainPanel.add(StandardComponents.createLegendPanel(), BorderLayout.SOUTH);
     return mainPanel;
   }
@@ -522,9 +526,12 @@ public class StandardComponents {
         properties.testConfigsChanged();
       }
     };
+
     BoundListPanel result = new BoundListPanel(owner, caption, list);
     result.setCellRenderer(new TestConfigListCellRenderer());
-    result.setChooseActions(add, remove, edit);
+    result.setAddAction(add);
+    result.setRemoveAction(remove);
+    result.setEditAction(edit);
     result.init();
     return result;
   }
