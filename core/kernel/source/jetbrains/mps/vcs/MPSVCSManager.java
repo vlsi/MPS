@@ -261,11 +261,11 @@ public class MPSVCSManager implements ProjectComponent {
     }
 
     public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-      myAddOperationScheduler.removeProcessingBan();
-      myRemoveOperationScheduler.removeProcessingBan();
     }
 
     public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+      myAddOperationScheduler.removeProcessingBan();
+      myRemoveOperationScheduler.removeProcessingBan();
     }
   }
 
