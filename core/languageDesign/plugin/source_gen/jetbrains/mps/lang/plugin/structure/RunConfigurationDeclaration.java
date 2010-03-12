@@ -114,19 +114,19 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
     super.setChild(RunConfigurationDeclaration.ICON_BLOCK, node);
   }
 
-  public CheckConfigurationBlock getCheckBlock() {
-    return (CheckConfigurationBlock) this.getChild(CheckConfigurationBlock.class, RunConfigurationDeclaration.CHECK_BLOCK);
+  public AbstractCheckConfigBlock getCheckBlock() {
+    return (AbstractCheckConfigBlock) this.getChild(AbstractCheckConfigBlock.class, RunConfigurationDeclaration.CHECK_BLOCK);
   }
 
-  public void setCheckBlock(CheckConfigurationBlock node) {
+  public void setCheckBlock(AbstractCheckConfigBlock node) {
     super.setChild(RunConfigurationDeclaration.CHECK_BLOCK, node);
   }
 
-  public ExecuteConfigBlock getExecuteBlock() {
-    return (ExecuteConfigBlock) this.getChild(ExecuteConfigBlock.class, RunConfigurationDeclaration.EXECUTE_BLOCK);
+  public AbstractExcecuteConfigBlock getExecuteBlock() {
+    return (AbstractExcecuteConfigBlock) this.getChild(AbstractExcecuteConfigBlock.class, RunConfigurationDeclaration.EXECUTE_BLOCK);
   }
 
-  public void setExecuteBlock(ExecuteConfigBlock node) {
+  public void setExecuteBlock(AbstractExcecuteConfigBlock node) {
     super.setChild(RunConfigurationDeclaration.EXECUTE_BLOCK, node);
   }
 
