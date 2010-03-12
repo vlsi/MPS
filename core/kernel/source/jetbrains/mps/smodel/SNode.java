@@ -1535,7 +1535,12 @@ public final class SNode {
     return myConceptFqName;
   }
 
+  @Deprecated
   public SConceptReference getConceptRefernece() {
+    return getConceptReference(); 
+  }
+
+  public SConceptReference getConceptReference() {
     return new SConceptReference(getConceptFqName());
   }
 
