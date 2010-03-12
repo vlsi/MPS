@@ -709,11 +709,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     List<VirtualFile> toMerge = new ArrayList<VirtualFile>();
     List<VirtualFile> alreadyResolved = new ArrayList<VirtualFile>();
     for (VirtualFile f : files) {
-      // TODO FIXME this is a hack for Git, because Git plugin says that conflicting files are just modified,
-      AbstractVcs vcs = ApplicationLevelVcsManager.instance().getVcsForFile(f);
-      boolean isGit = vcs != null && "Git".equals(vcs.getDisplayName());
-      // hack ends
-      if (!doStatusRecheck || ApplicationLevelVcsManager.instance().isInConflict(VFileSystem.toIFile(f), true) || isGit) {
+      if (!doStatusRecheck || ApplicationLevelVcsManager.instance().isInConflict(VFileSystem.toIFile(f), true)) {
         toMerge.add(f);
       } else {
         alreadyResolved.add(f);
