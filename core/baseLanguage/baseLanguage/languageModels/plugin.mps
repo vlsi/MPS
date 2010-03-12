@@ -4767,7 +4767,7 @@
     <property name="iconPath:23" value="${language_descriptor}/icons/javaRunConfig.png" />
     <link role="configType:23" targetNodeId="4434783588132660334" resolveInfo="BLApp" />
     <link role="stateTypeParameter:23" targetNodeId="171.~BaseRunProfileState" resolveInfo="BaseRunProfileState" />
-    <node role="executionParameter:23" type="jetbrains.mps.lang.plugin.structure.RunConfigParameterDeclaration:23" id="2928927484562353218">
+    <node role="executionParameter:23" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="2928927484562353218">
       <property name="name:23" value="mpsProject" />
       <link role="key:23" targetNodeId="54.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
     </node>
