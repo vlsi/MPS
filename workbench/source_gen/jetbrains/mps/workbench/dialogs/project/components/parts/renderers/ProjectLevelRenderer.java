@@ -25,10 +25,6 @@ public class ProjectLevelRenderer extends DefaultListCellRenderer {
     return this.myModuleScope;
   }
 
-  public boolean isBrokenValue(Object value) {
-    return false;
-  }
-
   public String getItemLabel(Object value) {
     return value.toString();
   }
