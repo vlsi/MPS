@@ -30,10 +30,10 @@ import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
-import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
@@ -130,14 +130,14 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     return new RunProfileState() {
       @Nullable
       public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
-        Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
-        final ConsoleViewImpl consoleView = StacktraceUtil.createConsoleView(project);
+        final ConsoleViewImpl consoleView = StacktraceUtil.createConsoleView(MPSDataKeys.PROJECT.getData(environment.getDataContext()));
         JComponent consoleComponent = null;
         Runnable consoleDispose = null;
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
+        final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
+        IOperationContext operationContext = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
         {
-          final MPSProject mpsproject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
           final List<SNode> all = new ArrayList<SNode>();
           final List<SNode> tests = new ArrayList<SNode>();
           final List<SNode> methods = new ArrayList<SNode>();
@@ -167,7 +167,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
                   ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(DefaultJUnit_Configuration.this.getStateObject().module)));
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.PROJECT) {
-                  for (IModule projectModule : mpsproject.getModules()) {
+                  for (IModule projectModule : mpsProject.getModules()) {
                     ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(projectModule)));
                   }
                 }
@@ -182,14 +182,13 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             DefaultJUnit_Configuration.this.getStateObject().myParams = new ConfigRunParameters(DefaultJUnit_Configuration.this.getStateObject().compileInMPS);
           }
           if (DefaultJUnit_Configuration.this.getStateObject().myParams.getMake()) {
-            RunUtil.makeBeforeRun(mpsproject, all);
+            RunUtil.makeBeforeRun(mpsProject, all);
           }
 
-          IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
           TestStatisticsModel statisticsModel = new TestStatisticsModel();
           TestRunState runState = new TestRunState(tests, methods, statisticsModel);
           TestRunListener runListener = new TestRunListener(runState);
-          final UnitTestViewComponent runComponent = new UnitTestViewComponent(mpsproject, context, consoleView, runState, statisticsModel);
+          final UnitTestViewComponent runComponent = new UnitTestViewComponent(mpsProject, operationContext, consoleView, runState, statisticsModel);
 
           final Wrappers._T<UnitTestRunner> testRunner = new Wrappers._T<UnitTestRunner>(null);
           try {
