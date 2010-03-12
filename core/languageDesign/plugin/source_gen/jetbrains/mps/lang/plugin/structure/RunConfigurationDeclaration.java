@@ -154,19 +154,19 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
     return this.getChildCount(RunConfigurationDeclaration.EXECUTION_PARAMETER);
   }
 
-  public Iterator<RunConfigParameterDeclaration> executionParameters() {
-    return this.children(RunConfigParameterDeclaration.class, RunConfigurationDeclaration.EXECUTION_PARAMETER);
+  public Iterator<RunConfigExecutionParameterDeclaration> executionParameters() {
+    return this.children(RunConfigExecutionParameterDeclaration.class, RunConfigurationDeclaration.EXECUTION_PARAMETER);
   }
 
-  public List<RunConfigParameterDeclaration> getExecutionParameters() {
-    return this.getChildren(RunConfigParameterDeclaration.class, RunConfigurationDeclaration.EXECUTION_PARAMETER);
+  public List<RunConfigExecutionParameterDeclaration> getExecutionParameters() {
+    return this.getChildren(RunConfigExecutionParameterDeclaration.class, RunConfigurationDeclaration.EXECUTION_PARAMETER);
   }
 
-  public void addExecutionParameter(RunConfigParameterDeclaration node) {
+  public void addExecutionParameter(RunConfigExecutionParameterDeclaration node) {
     this.addChild(RunConfigurationDeclaration.EXECUTION_PARAMETER, node);
   }
 
-  public void insertExecutionParameter(RunConfigParameterDeclaration prev, RunConfigParameterDeclaration node) {
+  public void insertExecutionParameter(RunConfigExecutionParameterDeclaration prev, RunConfigExecutionParameterDeclaration node) {
     this.insertChild(prev, RunConfigurationDeclaration.EXECUTION_PARAMETER, node);
   }
 

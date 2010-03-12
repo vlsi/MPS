@@ -3965,7 +3965,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8179323502814630510">
     <property name="package:0" value="RunConfigs" />
-    <property name="name:0" value="RunConfigParameterDeclaration" />
+    <property name="name:0" value="RunConfigExecutionParameterDeclaration" />
     <link role="extends:0" targetNodeId="1217252042208:23" resolveInfo="ActionDataParameterDeclaration" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8179323502815740710">
       <link role="conceptLinkDeclaration:0" targetNodeId="14.1205921683134:0" resolveInfo="operationConcept" />

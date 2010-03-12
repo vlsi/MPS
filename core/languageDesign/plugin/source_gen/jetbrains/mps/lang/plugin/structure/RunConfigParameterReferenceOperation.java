@@ -53,11 +53,11 @@ public class RunConfigParameterReferenceOperation extends BaseConcept implements
     super.setReferent(RunConfigParameterReferenceOperation.MEMBER, node);
   }
 
-  public RunConfigParameterDeclaration getRunConfigParameter() {
-    return this.ensureAdapter(RunConfigParameterDeclaration.class, "member", this.getMember());
+  public RunConfigExecutionParameterDeclaration getRunConfigParameter() {
+    return this.ensureAdapter(RunConfigExecutionParameterDeclaration.class, "member", this.getMember());
   }
 
-  public void setRunConfigParameter(RunConfigParameterDeclaration node) {
+  public void setRunConfigParameter(RunConfigExecutionParameterDeclaration node) {
     this.setMember(node);
   }
 
