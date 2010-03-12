@@ -384,7 +384,8 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     final Message selectedMessage = (Message) myList.getSelectedValue();
     if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
 
-    ModelAccess.instance().runReadAction(new Runnable() {
+    /* temp hack: write action instead of read, TODO remove lock, hintObject should be SNodePointer */
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         NavigationManager.getInstance().navigateTo(getMPSProject(), selectedMessage.getHintObject(), true, true);
       }

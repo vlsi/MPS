@@ -185,7 +185,9 @@ public class MPSEditorOpener implements ProjectComponent {
   private IEditor openNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select, final boolean openBaseNode) {
     final Project ideaProject = context.getComponent(Project.class);
     ideaProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
-    return ModelAccess.instance().runReadAction(new Computable<IEditor>() {
+    /* TODO use SNodePointer instead of SNode */
+    /* temp hack: runWriteAction instead of read, TODO move sync into doOpenNode */
+    return ModelAccess.instance().runWriteAction(new Computable<IEditor>() {
       public IEditor compute() {
         return doOpenNode(node, context, focus, select, openBaseNode);
       }
