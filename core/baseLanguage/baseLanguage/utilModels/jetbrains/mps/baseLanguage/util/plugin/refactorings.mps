@@ -16570,7 +16570,7 @@
                     <link role="variableDeclaration:3" targetNodeId="8492459591399169309" resolveInfo="contextModel" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8492459591399169348">
-                    <property name="value:3" value="Chouse class" />
+                    <property name="value:3" value="Choose class" />
                   </node>
                 </node>
               </node>
@@ -16673,7 +16673,7 @@
                     <link role="variableDeclaration:3" targetNodeId="8492459591399169361" resolveInfo="contextModel" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8492459591399169392">
-                    <property name="value:3" value="Chouse class" />
+                    <property name="value:3" value="Choose class" />
                   </node>
                 </node>
               </node>
