@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class GoToConceptDeclaration_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\structure.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/core/languageDesign/structure/icons/structure.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(GoToConceptDeclaration_Action.class);
 
   private SNode node;
@@ -69,7 +69,7 @@ public class GoToConceptDeclaration_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode concept = SNodeOperations.getConceptDeclaration(GoToConceptDeclaration_Action.this.node);
-      GoToConceptDeclaration_Action.this.context.getComponent(MPSEditorOpener.class).openNode(concept);
+      GoToConceptDeclaration_Action.this.context.getComponent(MPSEditorOpener.class).editNode(concept, GoToConceptDeclaration_Action.this.context);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToConceptDeclaration", t);
