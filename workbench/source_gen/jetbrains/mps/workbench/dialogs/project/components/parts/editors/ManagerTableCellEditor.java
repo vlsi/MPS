@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.stubs.behavior.AbstractModelCreator_Behavior;
 import java.awt.Component;
 import javax.swing.JTable;
+import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.ArrayList;
@@ -62,6 +63,12 @@ public class ManagerTableCellEditor extends AbstractTableCellEditor {
   }
 
   public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+    this.myManager = ((ModelRootManager) value);
+    String representation = (this.myManager == null ?
+      "" :
+      NameUtil.shortNameFromLongName(this.myManager.getClassName())
+    );
+    this.myLabel.setText(representation);
     return this.myLabel;
   }
 

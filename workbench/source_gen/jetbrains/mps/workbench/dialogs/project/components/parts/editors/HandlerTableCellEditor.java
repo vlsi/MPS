@@ -45,6 +45,7 @@ public class HandlerTableCellEditor extends AbstractTableCellEditor {
   }
 
   public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+    this.myClass.setText(((String) value));
     return this.myMainComponent;
   }
 
