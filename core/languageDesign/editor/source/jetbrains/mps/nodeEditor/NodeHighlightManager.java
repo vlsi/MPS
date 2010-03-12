@@ -312,6 +312,18 @@ public class NodeHighlightManager implements EditorMessageOwner {
     return result;
   }
 
+  public List<EditorMessage> getMessagesFor(SNode node, EditorMessageOwner owner) {
+    List<EditorMessage> result = new ArrayList<EditorMessage>();
+    synchronized (myMessagesLock) {
+      for (EditorMessage message : myMessagesToNodes.getBySecond(node)) {
+        if (message.getOwner() == owner) {
+          result.add(message);
+        }
+      }
+    }
+    return result;
+  }
+
   public void dispose() {
     ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
   }

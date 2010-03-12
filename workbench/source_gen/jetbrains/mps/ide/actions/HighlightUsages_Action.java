@@ -20,6 +20,7 @@ import java.util.Set;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class HighlightUsages_Action extends GeneratedAction {
@@ -80,13 +81,14 @@ public class HighlightUsages_Action extends GeneratedAction {
           EditorMessageOwner messageOwner = HighlightUsages_Action.this.editorComponent.getHighlightMessagesOwner();
           SNode node = HighlightUsages_Action.this.editorCell.getSNodeWRTReference();
           Set<SReference> usages = HighlightUsages_Action.this.model.findUsages(node);
-          boolean highlight = highlightManager.getMessageFor(HighlightUsages_Action.this.editorCell.getSNode()) == null;
+          boolean highlight = highlightManager.getMessagesFor(node, messageOwner).isEmpty();
           if (usages.size() > 0 && SNodeOperations.getContainingRoot(node) == HighlightUsages_Action.this.editorComponent.getRootCell().getSNode().getContainingRoot()) {
             if (highlight) {
               highlightManager.mark(node, HighlightConstants.NODE_COLOR, "source node", messageOwner);
             } else {
-              EditorMessage message = highlightManager.getMessageFor(node);
-              highlightManager.unmark(message, false);
+              for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(node, messageOwner))) {
+                highlightManager.unmark(message, false);
+              }
             }
           }
           for (SReference ref : SetSequence.fromSet(usages)) {
@@ -94,8 +96,9 @@ public class HighlightUsages_Action extends GeneratedAction {
               if (highlight) {
                 highlightManager.mark(ref.getSourceNode(), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
               } else {
-                EditorMessage message = highlightManager.getMessageFor(ref.getSourceNode());
-                highlightManager.unmark(message, false);
+                for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(node, messageOwner))) {
+                  highlightManager.unmark(message, false);
+                }
               }
             }
           }
