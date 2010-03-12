@@ -90,13 +90,14 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties;
+import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.TestConfigListCellRenderer;
 import javax.swing.JList;
+import jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.dialogs.project.properties.project.TestConfigurationDialog;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListEditAction;
-import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.TestConfigListCellRenderer;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser;
@@ -487,53 +488,60 @@ public class StandardComponents {
   }
 
   public static JPanel createTestConfigsPanel(final IBindedDialog owner, final String caption, final List<BaseTestConfiguration> list, final ProjectProperties properties) {
-    final JList myList = new JList();
-    final ListAddAction add = new ListAddAction(myList) {
-      protected int doAdd(AnActionEvent e) {
-        TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getMPSProject(), null);
-        dialog.showDialog();
-        BaseTestConfiguration config = dialog.getResult();
-        if (config == null) {
-          return -1;
-        }
-        properties.testConfigsChanged();
-        list.add(config);
-        return list.indexOf(config);
-      }
-    };
-    final ListRemoveAction remove = new ListRemoveAction(myList) {
-      protected void doRemove(AnActionEvent e) {
-        for (Object value : myList.getSelectedValues()) {
-          properties.testConfigsChanged();
-          list.remove((BaseTestConfiguration) value);
-        }
-      }
-    };
-    final ListEditAction edit = new ListEditAction(myList) {
-      public void doEdit() {
-        Object value = myList.getSelectedValue();
-        if (value == null) {
-          return;
-        }
-        TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getMPSProject(), (BaseTestConfiguration) value);
-        dialog.showDialog();
-        BaseTestConfiguration config = dialog.getResult();
-        if (config == null) {
-          return;
-        }
-        properties.getTestConfigurations().remove((BaseTestConfiguration) value);
-        properties.getTestConfigurations().add(config);
-        properties.testConfigsChanged();
-      }
-    };
 
-    BoundListPanel result = new BoundListPanel(owner, caption, list);
-    result.setCellRenderer(new TestConfigListCellRenderer());
-    result.setAddAction(add);
-    result.setRemoveAction(remove);
-    result.setEditAction(edit);
-    result.init();
-    return result;
+    return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
+      public BoundListPanel invoke() {
+        BoundListPanel result_wf5hwp_a0a1a12 = new BoundListPanel(owner, caption, list);
+        DefaultListCellRenderer result_wf5hwp_a0a0a1a12 = new TestConfigListCellRenderer();
+        result_wf5hwp_a0a1a12.setCellRenderer(result_wf5hwp_a0a0a1a12);
+
+        final JList jlist = result_wf5hwp_a0a1a12.getList();
+        BaseValidatedAction result_wf5hwp_a3a0a1a12 = new ListAddAction(jlist) {
+          protected int doAdd(AnActionEvent e) {
+            TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getMPSProject(), null);
+            dialog.showDialog();
+            BaseTestConfiguration config = dialog.getResult();
+            if (config == null) {
+              return -1;
+            }
+            properties.testConfigsChanged();
+            list.add(config);
+            return list.indexOf(config);
+          }
+        };
+        result_wf5hwp_a0a1a12.setAddAction(result_wf5hwp_a3a0a1a12);
+        BaseValidatedAction result_wf5hwp_a4a0a1a12 = new ListRemoveAction(jlist) {
+          protected void doRemove(AnActionEvent e) {
+            for (Object value : jlist.getSelectedValues()) {
+              properties.testConfigsChanged();
+              list.remove((BaseTestConfiguration) value);
+            }
+          }
+        };
+        result_wf5hwp_a0a1a12.setRemoveAction(result_wf5hwp_a4a0a1a12);
+        BaseValidatedAction result_wf5hwp_a5a0a1a12 = new ListEditAction(jlist) {
+          public void doEdit() {
+            Object value = jlist.getSelectedValue();
+            if (value == null) {
+              return;
+            }
+            TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getMPSProject(), (BaseTestConfiguration) value);
+            dialog.showDialog();
+            BaseTestConfiguration config = dialog.getResult();
+            if (config == null) {
+              return;
+            }
+            properties.getTestConfigurations().remove((BaseTestConfiguration) value);
+            properties.getTestConfigurations().add(config);
+            properties.testConfigsChanged();
+          }
+        };
+        result_wf5hwp_a0a1a12.setEditAction(result_wf5hwp_a5a0a1a12);
+
+        result_wf5hwp_a0a1a12.init();
+        return result_wf5hwp_a0a1a12;
+      }
+    }.invoke();
   }
 
   public static JPanel createProjectSolutionsPanel(final IBindedDialog owner, final String caption, final List<Path> list) {

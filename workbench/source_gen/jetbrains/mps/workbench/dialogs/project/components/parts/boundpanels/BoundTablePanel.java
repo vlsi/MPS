@@ -46,6 +46,10 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
     this.myDiffRow = isDiffRow;
   }
 
+  public JTable getTable() {
+    return this.myTable;
+  }
+
   protected BaseValidatedAction createAddAction(final Computable<List<T>> chooser) {
     return new BoundTablePanel.MyTableAddAction(chooser);
   }

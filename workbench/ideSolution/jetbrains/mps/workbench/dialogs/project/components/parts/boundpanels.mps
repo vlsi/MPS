@@ -2287,6 +2287,23 @@
         </node>
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3416087927885097961">
+      <property name="name:3" value="getList" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3416087927885097962">
+        <link role="classifier:3" targetNodeId="1.~JList" resolveInfo="JList" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3416087927885097963" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3416087927885097964">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3416087927885097965">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3416087927885097966">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="3416087927885097967" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="3416087927885097968">
+              <link role="fieldDeclaration:3" targetNodeId="1560298786499492471" resolveInfo="myUIList" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1560298786499497595">
     <property name="name:3" value="BoundTablePanel" />
@@ -2775,6 +2792,23 @@
             </node>
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499497691">
               <link role="variableDeclaration:3" targetNodeId="1560298786499497683" resolveInfo="isDiffRow" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3416087927885099050">
+      <property name="name:3" value="getTable" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3416087927885099051">
+        <link role="classifier:3" targetNodeId="1.~JTable" resolveInfo="JTable" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3416087927885099052" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3416087927885099053">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3416087927885099054">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3416087927885099055">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="3416087927885099056" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="3416087927885099057">
+              <link role="fieldDeclaration:3" targetNodeId="1560298786499497635" resolveInfo="myTable" />
             </node>
           </node>
         </node>

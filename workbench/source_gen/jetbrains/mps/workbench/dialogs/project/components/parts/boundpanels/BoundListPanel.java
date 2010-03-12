@@ -39,6 +39,10 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
     return new BoundListPanel.MyListRemoveAction();
   }
 
+  public JList getList() {
+    return this.myUIList;
+  }
+
   private class MyListAddAction extends ListAddAction {
     private Computable<List<T>> myChooser;
 
