@@ -27,7 +27,7 @@ public class GeneratorMappings {
   public GeneratorMappings() {
   }
 
-  public void addOutputNodeByTemplateNode(SNode templateNode, SNode outputNode) {
+  synchronized void addOutputNodeByTemplateNode(SNode templateNode, SNode outputNode) {
     if(myTemplateNodeToOutputNodeMap.containsKey(templateNode)) {
       myTemplateNodeToOutputNodeMap.put(templateNode, null);
       return;
@@ -35,7 +35,7 @@ public class GeneratorMappings {
     myTemplateNodeToOutputNodeMap.put(templateNode, outputNode);
   }
 
-  void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
+  synchronized void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
     if (mappingName == null) return;
     Pair key = new Pair(mappingName, inputNode);
     Object o = myMappingNameAndInputNodeToOutputNodeMap.get(key);
@@ -51,7 +51,7 @@ public class GeneratorMappings {
     }
   }
 
-  void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
+  synchronized void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
     // todo: can be several copied output nodes for one input node
     if (!myCopiedOutputNodeForInputNode.containsKey(inputNode)) {
       myCopiedOutputNodeForInputNode.put(inputNode, outputNode);
@@ -60,14 +60,14 @@ public class GeneratorMappings {
     }
   }
 
-  void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
+  synchronized void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
     // todo: generator should repotr error on attempt to obtain not unique output-node
     myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
   }
 
-  void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
+  synchronized void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
     // todo: generator should report error on attempt to obtain not unique output-node

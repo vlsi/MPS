@@ -28,6 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -42,7 +43,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
   }
 
   public List<AbstractConceptDeclaration> getConcepts() {
-    if (myTopConcept == null) return new ArrayList(1);
+    if (myTopConcept == null) return Collections.emptyList();
     return new ArrayList(ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConcepts());
   }
 
@@ -56,7 +57,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
   }
 
   public List<PropertyDeclaration> getPropertyDeclarations() {
-    if (myTopConcept == null) return new ArrayList(1);
+    if (myTopConcept == null) return Collections.emptyList();
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<PropertyDeclaration>>() {
       public List<PropertyDeclaration> compute() {
         return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getPropertyDeclarations();
@@ -83,7 +84,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
   }
 
   public List<LinkDeclaration> getLinkDeclarationsExcludingOverridden() {
-    if (myTopConcept == null) return new ArrayList<LinkDeclaration>(1);
+    if (myTopConcept == null) return Collections.emptyList();
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<LinkDeclaration>>() {
       public List<LinkDeclaration> compute() {
         return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationsExcludingOverridden();
@@ -103,7 +104,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
-    if (myTopConcept == null) return new ArrayList<SNode>(1);
+    if (myTopConcept == null) return Collections.emptyList();
     List<SNode> result = new ArrayList<SNode>();
     // filter by condition
     for (INodeAdapter node : getConcepts()) {

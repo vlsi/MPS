@@ -101,7 +101,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     revalidateAllReferences();
     ttrace.pop();
     checkMonitorCanceled();
-    return isChanged();
+    return myChanged;
   }
 
   protected List<SNode> applyReductions(boolean isPrimary) throws GenerationCanceledException, GenerationFailureException {
@@ -228,14 +228,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         showErrorMessage(null, null, createRootRule.getNode(), "'create root' rule has no template");
       } else {
         myGenerationTracer.pushRule(createRootRule.getNode());
-        boolean wasChanged = isChanged();
         try {
           createRootNodeFromTemplate(
             GeneratorUtil.getMappingName(createRootRule, null),
             BaseAdapter.fromAdapter(templateNode), null);
         } catch (DismissTopMappingRuleException e) {
           // it's ok, just continue
-          setChanged(wasChanged);
         } finally {
           myGenerationTracer.closeRule(createRootRule.getNode());
         }
@@ -261,9 +259,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (myExecutor.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode())) {
         myGenerationTracer.pushInputNode(inputNode);
         myGenerationTracer.pushRule(rule.getNode());
-        boolean wasChanged = isChanged();
         try {
-          setChanged(true);
           SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
           if (templateNode != null) {
             createRootNodeFromTemplate(GeneratorUtil.getMappingName(rule, null), templateNode, inputNode);
@@ -275,7 +271,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           }
         } catch (DismissTopMappingRuleException e) {
           // it's ok, just continue
-          setChanged(wasChanged);
         } finally {
           myGenerationTracer.closeInputNode(inputNode);
         }
@@ -291,6 +286,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode);
         myOutputModel.addRoot(outputNode);
+        setChanged(true);
       }
     } catch (TemplateProcessingFailureException e) {
       showErrorMessage(inputNode, templateNode, "couldn't create root node");
@@ -355,7 +351,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           }
         }
 
-        parent.replaceChild(clonedOutputNode, outputNodes);
+        synchronized (this) {
+          parent.replaceChild(clonedOutputNode, outputNodes);
+          setChanged(true);
+        }
         return;
       }
     }
@@ -363,7 +362,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // no reduction rule found - keep the cloned node in output model and proceed with its children.
     myGenerationTracer.pushCopyOperation();
     for (SNode childInputNode : inputNode.getChildren()) {
-      SNode childOutputNode = findOutputNodeById(childInputNode.getSNodeId());
+      SNode childOutputNode;
+      synchronized (this) {
+        childOutputNode = findOutputNodeById(childInputNode.getSNodeId());
+      }
       applyReductionRules(childInputNode, childOutputNode);
     }
     myGenerationTracer.pushOutputNode(clonedOutputNode);
@@ -375,12 +377,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   @Nullable
   List<SNode> tryToReduce(SNode inputNode, String mappingName) throws GenerationFailureException, GenerationCanceledException {
     boolean needStopReductionBlocking = false;
-    boolean wasChanged = isChanged();
     Reduction_MappingRule reductionRule = null;
     try {
       reductionRule = myRuleManager.getRuleFinder().findReductionRule(inputNode, this);
       if (reductionRule != null) {
-        setChanged(true);
         needStopReductionBlocking = startReductionBlockingForInput(inputNode);
 
         List<SNode> outputNodes = applyReductionRule(inputNode, reductionRule);
@@ -402,7 +402,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
-      setChanged(wasChanged);
       if (ex.isLoggingNeeded()) {
         String messageText = "-- dismissed reduction rule: " + reductionRule.getDebugText();
         if (ex.isInfo()) {
@@ -523,10 +522,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public boolean isStrict() {
     return myIsStrict;
-  }
-
-  private boolean isChanged() {
-    return myChanged;
   }
 
   void setChanged(boolean b) {

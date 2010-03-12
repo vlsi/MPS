@@ -143,12 +143,12 @@ public class NodeReadAccessCasterInEditor {
   }
 
   public static <T> T runReadTransparentAction(final Computable<T> c) {
-    final Object[] result = new Object[1];
-    runReadTransparentAction(new Runnable() {
-      public void run() {
-        result[0] = c.compute();
-      }
-    });
-    return (T) result[0];
+    boolean wereBlocked = ourEventsBlocked;
+    ourEventsBlocked = true;
+    try {
+      return c.compute();
+    } finally {
+      ourEventsBlocked = wereBlocked;
+    }
   }
 }

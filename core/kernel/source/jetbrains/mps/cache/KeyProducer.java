@@ -38,7 +38,7 @@ public class KeyProducer {
 
     public boolean equals(Object o) {
       if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
+      if (false == o instanceof Key) return false;
       Key key = (Key) o;
       return myProducerHashCode == key.myProducerHashCode &&
         myInnerKey.equals(key.myInnerKey);

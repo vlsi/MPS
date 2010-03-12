@@ -96,7 +96,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
     }
   };
 
-  final static AtomicLong tasksInQueue = new AtomicLong();
+  final AtomicLong tasksInQueue = new AtomicLong();
   final Object objectLock = new Object();
 
   @Override
