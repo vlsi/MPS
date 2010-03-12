@@ -5246,19 +5246,6 @@
           </node>
         </node>
       </node>
-      <node role="property:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty:0" id="8175648731696672912">
-        <property name="name:0" value="disableActions" />
-        <node role="type:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8175648731696672925" />
-        <node role="set:0" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8175648731696684010">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8175648731696684012">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent:0" id="8175648731696684011" />
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8175648731696684016">
-              <link role="baseMethodDeclaration:3" targetNodeId="50.8175648731696672670" resolveInfo="setActionsDisabled" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue:0" id="8175648731696684017" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="property:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty:0" id="8175648731696684018">
         <property name="name:0" value="addAction" />
         <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8175648731696684031">

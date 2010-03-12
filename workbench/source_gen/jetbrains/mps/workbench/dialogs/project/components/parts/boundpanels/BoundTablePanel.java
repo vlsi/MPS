@@ -8,8 +8,8 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.Colu
 import java.util.ArrayList;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction;
+import com.intellij.openapi.util.Computable;
 import javax.swing.JComponent;
 import jetbrains.mps.workbench.dialogs.project.components.parts.diffrowtable.DiffRowTable;
 import org.jdesktop.swingbinding.JTableBinding;
@@ -33,7 +33,6 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
   private JTable myTable;
   private boolean myDiffRow;
   private List<ColumnDescriptor> myColumns = new ArrayList<ColumnDescriptor>();
-  private Boolean myMultipleChooser = null;
 
   public BoundTablePanel(IBindedDialog owner, String caption, @NotNull List<T> ts) {
     super(owner, caption, ts);
@@ -47,27 +46,11 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
     this.myDiffRow = isDiffRow;
   }
 
-  public void setChooser(Computable<T> chooser) {
-    this.myMultipleChooser = false;
-    super.setChooser(chooser);
-  }
-
-  public void setMultipleChooser(Computable<List<T>> chooser) {
-    this.myMultipleChooser = true;
-    super.setMultipleChooser(chooser);
-  }
-
   protected BaseValidatedAction createAddAction(final Computable<List<T>> chooser) {
-    if (this.myMultipleChooser == null) {
-      return null;
-    }
     return new BoundTablePanel.MyTableAddAction(chooser);
   }
 
   protected BaseValidatedAction createRemoveAction() {
-    if (this.myMultipleChooser == null) {
-      return null;
-    }
     return new BoundTablePanel.MyTableRemoveAction(this.myTable);
   }
 
@@ -110,11 +93,7 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
       }
       i++;
     }
-    boolean mulSelection = (this.myMultipleChooser != null ?
-      this.myMultipleChooser :
-      false
-    );
-    this.myTable.setSelectionMode((mulSelection ?
+    this.myTable.setSelectionMode((this.multipleChooserSet() ?
       ListSelectionModel.MULTIPLE_INTERVAL_SELECTION :
       ListSelectionModel.SINGLE_INTERVAL_SELECTION
     ));

@@ -38,10 +38,10 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
   protected TransferHandler myTransferHandler;
   private Validator myObjectValidator = null;
   private Computable<List<T>> myChooser;
+  private Boolean myMultipleChooser = null;
   private BaseValidatedAction myAddAction;
   private BaseValidatedAction myRemoveAction;
   private BaseValidatedAction myEditAction;
-  private boolean myActionsDisabled = false;
   private ValidateableBoundPanel.MyValidator myValidator = new ValidateableBoundPanel.MyValidator();
   private boolean myInitialized = false;
 
@@ -66,13 +66,9 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     this.myEditAction = action;
   }
 
-  public void setActionsDisabled(boolean disabled) {
-    this.assertNotInitialized();
-    this.myActionsDisabled = disabled;
-  }
-
   public void setChooser(final Computable<T> chooser) {
     this.assertNotInitialized();
+    this.myMultipleChooser = false;
     this.myChooser = new Computable<List<T>>() {
       public List<T> compute() {
         return Collections.singletonList(chooser.compute());
@@ -82,6 +78,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
 
   public void setMultipleChooser(Computable<List<T>> chooser) {
     this.assertNotInitialized();
+    this.myMultipleChooser = true;
     this.myChooser = chooser;
   }
 
@@ -128,8 +125,12 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     this.myValidator.run();
   }
 
+  protected boolean multipleChooserSet() {
+    return this.myMultipleChooser == Boolean.TRUE;
+  }
+
   private JComponent createActionsComponent() {
-    if (!(this.myActionsDisabled)) {
+    if (this.myMultipleChooser != null) {
       if (this.myAddAction == null) {
         this.myAddAction = ValidateableBoundPanel.this.createAddAction(this.myChooser);
       }
