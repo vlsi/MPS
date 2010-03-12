@@ -65,7 +65,12 @@ public class EditorUtil {
         if (result == null) return;
 
         String selectedPath = FileUtil.getCanonicalPath(result.toFile());
-        final String pathToShow = macros.shrinkPath(selectedPath, finalModule.getDescriptorFile());
+        final String pathToShow;
+        if (finalModule != null) {
+          pathToShow = macros.shrinkPath(selectedPath, finalModule.getDescriptorFile());
+        } else {
+          pathToShow = selectedPath;
+        }
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
