@@ -568,8 +568,8 @@
                       <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="926857988255646353">
                         <link role="applicableNode:3" targetNodeId="926857988255560018" resolveInfo="letRef" />
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5249919352014827096">
-                        <link role="link:16" targetNodeId="1.5249919352014732020:1" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="3100399657864839971">
+                        <link role="link:16" targetNodeId="1.8981808925914862844:1" />
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="464844656889912493" />
@@ -909,8 +909,8 @@
               <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6997567109318694530">
                 <link role="applicableNode:3" targetNodeId="6997567109318694518" resolveInfo="abstractionVarRef" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8981808925914846013">
-                <link role="link:16" targetNodeId="1.5249919352014732020:1" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="3100399657864839949">
+                <link role="link:16" targetNodeId="1.8981808925914862845:1" />
               </node>
             </node>
           </node>
@@ -925,36 +925,6 @@
       </node>
     </node>
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="6997567109318694518">
-      <property name="name:3" value="abstractionVarRef" />
-      <link role="concept:3" targetNodeId="1.4022026349915821199:1" resolveInfo="AbstractionVarRef" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="5249919352014779753">
-    <property name="name:3" value="typeof_AbstractionVarRef" />
-    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5249919352014779754">
-      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="5249919352014779760">
-        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5249919352014779764">
-          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="5249919352014779765">
-            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5142899583592541822">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5249919352014779767">
-                <link role="applicableNode:3" targetNodeId="5249919352014779755" resolveInfo="abstractionVarRef" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5142899583592541826">
-                <link role="link:16" targetNodeId="1.5249919352014732020:1" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5249919352014779763">
-          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="5249919352014779757">
-            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5249919352014779759">
-              <link role="applicableNode:3" targetNodeId="5249919352014779755" resolveInfo="abstractionVarRef" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="5249919352014779755">
       <property name="name:3" value="abstractionVarRef" />
       <link role="concept:3" targetNodeId="1.4022026349915821199:1" resolveInfo="AbstractionVarRef" />
     </node>
