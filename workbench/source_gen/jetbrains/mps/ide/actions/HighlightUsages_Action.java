@@ -96,7 +96,7 @@ public class HighlightUsages_Action extends GeneratedAction {
               if (highlight) {
                 highlightManager.mark(ref.getSourceNode(), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
               } else {
-                for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(node, messageOwner))) {
+                for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(ref.getSourceNode(), messageOwner))) {
                   highlightManager.unmark(message, false);
                 }
               }
