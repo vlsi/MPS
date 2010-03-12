@@ -2433,14 +2433,6 @@
       <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499497602">
         <link role="classifier:3" targetNodeId="11.1560298786499495342" resolveInfo="TableRemoveAction" />
       </node>
-      <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1560298786499497603">
-        <property name="isFinal:3" value="true" />
-        <property name="name:3" value="myTable" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499497604">
-          <link role="classifier:3" targetNodeId="1.~JTable" />
-        </node>
-        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1560298786499497605" />
-      </node>
       <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1560298786499497606">
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1560298786499497607" />
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1560298786499497608">
@@ -2454,19 +2446,6 @@
             <link role="baseMethodDeclaration:3" targetNodeId="11.1560298786499495348" resolveInfo="TableRemoveAction" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499497966">
               <link role="variableDeclaration:3" targetNodeId="1560298786499497608" resolveInfo="table" />
-            </node>
-          </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1560298786499497967">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1560298786499497968">
-              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499497969">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499497970">
-                  <link role="fieldDeclaration:3" targetNodeId="1560298786499497603" resolveInfo="myTable" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1560298786499497971" />
-              </node>
-              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499497972">
-                <link role="variableDeclaration:3" targetNodeId="1560298786499497608" resolveInfo="table" />
-              </node>
             </node>
           </node>
         </node>

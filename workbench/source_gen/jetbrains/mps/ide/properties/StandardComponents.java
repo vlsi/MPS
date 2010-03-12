@@ -47,6 +47,7 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.editors.HandlerT
 import javax.swing.JComponent;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubSolutionChooser;
+import javax.swing.JOptionPane;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.StubRootChooser;
 import jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.ImportProperties;
@@ -275,11 +276,19 @@ public class StandardComponents {
         result_wf5hwp_a0a0a9.setChooser(result_wf5hwp_a0a0a0a9);
         boolean result_wf5hwp_a1a0a0a9 = false;
         result_wf5hwp_a0a0a9.setDiffRow(result_wf5hwp_a1a0a0a9);
+        Condition result_wf5hwp_a2a0a0a9 = new Condition<StubSolution>() {
+          public boolean met(StubSolution ss) {
+            String message = "You are going to delete stub solution " + ss.getName() + ". It can't be restored later with the same id. Are you sure?";
+            int result = JOptionPane.showConfirmDialog(owner.getMainComponent(), message, "Delete Stub Solution", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            return result == JOptionPane.YES_OPTION;
+          }
+        };
+        result_wf5hwp_a0a0a9.setCanRemoveCondition(result_wf5hwp_a2a0a0a9);
 
-        ColumnDescriptor result_wf5hwp_a3a0a0a9 = new EditableStringDescriptor(StubSolution.NAME, "Name", -1);
-        result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a3a0a0a9);
-        ColumnDescriptor result_wf5hwp_a4a0a0a9 = new VoidColumnDescriptor(StubSolution.ID, "Module ID", 300);
+        ColumnDescriptor result_wf5hwp_a4a0a0a9 = new EditableStringDescriptor(StubSolution.NAME, "Name", -1);
         result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a4a0a0a9);
+        ColumnDescriptor result_wf5hwp_a5a0a0a9 = new VoidColumnDescriptor(StubSolution.ID, "Module ID", 300);
+        result_wf5hwp_a0a0a9.addColumn(result_wf5hwp_a5a0a0a9);
         result_wf5hwp_a0a0a9.init();
         return result_wf5hwp_a0a0a9;
       }
@@ -488,15 +497,14 @@ public class StandardComponents {
   }
 
   public static JPanel createTestConfigsPanel(final IBindedDialog owner, final String caption, final List<BaseTestConfiguration> list, final ProjectProperties properties) {
-
     return new _FunctionTypes._return_P0_E0<BoundListPanel>() {
       public BoundListPanel invoke() {
-        BoundListPanel result_wf5hwp_a0a1a12 = new BoundListPanel(owner, caption, list);
-        DefaultListCellRenderer result_wf5hwp_a0a0a1a12 = new TestConfigListCellRenderer();
-        result_wf5hwp_a0a1a12.setCellRenderer(result_wf5hwp_a0a0a1a12);
+        BoundListPanel result_wf5hwp_a0a0a12 = new BoundListPanel(owner, caption, list);
+        DefaultListCellRenderer result_wf5hwp_a0a0a0a12 = new TestConfigListCellRenderer();
+        result_wf5hwp_a0a0a12.setCellRenderer(result_wf5hwp_a0a0a0a12);
 
-        final JList jlist = result_wf5hwp_a0a1a12.getList();
-        BaseValidatedAction result_wf5hwp_a3a0a1a12 = new ListAddAction(jlist) {
+        final JList jlist = result_wf5hwp_a0a0a12.getList();
+        BaseValidatedAction result_wf5hwp_a3a0a0a12 = new ListAddAction(jlist) {
           protected int doAdd(AnActionEvent e) {
             TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getMPSProject(), null);
             dialog.showDialog();
@@ -509,8 +517,8 @@ public class StandardComponents {
             return list.indexOf(config);
           }
         };
-        result_wf5hwp_a0a1a12.setAddAction(result_wf5hwp_a3a0a1a12);
-        BaseValidatedAction result_wf5hwp_a4a0a1a12 = new ListRemoveAction(jlist) {
+        result_wf5hwp_a0a0a12.setAddAction(result_wf5hwp_a3a0a0a12);
+        BaseValidatedAction result_wf5hwp_a4a0a0a12 = new ListRemoveAction(jlist) {
           protected void doRemove(AnActionEvent e) {
             for (Object value : jlist.getSelectedValues()) {
               properties.testConfigsChanged();
@@ -518,8 +526,8 @@ public class StandardComponents {
             }
           }
         };
-        result_wf5hwp_a0a1a12.setRemoveAction(result_wf5hwp_a4a0a1a12);
-        BaseValidatedAction result_wf5hwp_a5a0a1a12 = new ListEditAction(jlist) {
+        result_wf5hwp_a0a0a12.setRemoveAction(result_wf5hwp_a4a0a0a12);
+        BaseValidatedAction result_wf5hwp_a5a0a0a12 = new ListEditAction(jlist) {
           public void doEdit() {
             Object value = jlist.getSelectedValue();
             if (value == null) {
@@ -536,10 +544,10 @@ public class StandardComponents {
             properties.testConfigsChanged();
           }
         };
-        result_wf5hwp_a0a1a12.setEditAction(result_wf5hwp_a5a0a1a12);
+        result_wf5hwp_a0a0a12.setEditAction(result_wf5hwp_a5a0a0a12);
 
-        result_wf5hwp_a0a1a12.init();
-        return result_wf5hwp_a0a1a12;
+        result_wf5hwp_a0a0a12.init();
+        return result_wf5hwp_a0a0a12;
       }
     }.invoke();
   }

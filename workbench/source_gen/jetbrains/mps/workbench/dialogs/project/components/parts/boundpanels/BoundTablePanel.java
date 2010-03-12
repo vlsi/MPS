@@ -109,11 +109,8 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
   }
 
   private class MyTableRemoveAction extends TableRemoveAction {
-    private final JTable myTable;
-
     public MyTableRemoveAction(JTable table) {
       super(table);
-      this.myTable = table;
     }
 
     protected void doRemove(AnActionEvent e) {
