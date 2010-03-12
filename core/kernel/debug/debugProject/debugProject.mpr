@@ -101,6 +101,8 @@
           </ConfigRunParameters>
         </option>
       </MyState>
+      <RunnerSettings RunnerId="Default Debug Runner" />
+      <ConfigurationWrapper RunnerId="Default Debug Runner" />
       <method />
     </configuration>
   </component>
