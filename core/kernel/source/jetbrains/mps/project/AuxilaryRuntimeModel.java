@@ -39,7 +39,7 @@ public class AuxilaryRuntimeModel implements ModelOwner {
     return ApplicationManager.getApplication().getComponent(AuxilaryRuntimeModel.class);
   }
 
-  private SModelDescriptor getDescriptor_internal() {
+  private synchronized SModelDescriptor getDescriptor_internal() {
     SModelDescriptor modelDescriptor = (SModelRepository.getInstance().getModelDescriptor(MY_MODEL_REFERENCE));
     if (modelDescriptor == null) {
       modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, MY_MODEL_REFERENCE) {

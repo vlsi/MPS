@@ -134,11 +134,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       final SModel oldModel = mySModel;
       mySModel = loadModel();
 
-      if (myFastNodeFinder != null) {
-        myFastNodeFinder.dispose();
-        myFastNodeFinder = null;
-      }
-
+      disposeFastNodeFinder();
       updateLastChange();
 
       doPostLoadStuff();
@@ -551,11 +547,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
     if (newModel == mySModel) return;
     if (isInitialized()) {
-      if (myFastNodeFinder != null) {
-        myFastNodeFinder.dispose();
-        myFastNodeFinder = null;
-      }
-
+      disposeFastNodeFinder();
       addListenersFromSModel();
 
       mySModel.dispose();
@@ -745,7 +737,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return result;
   }
 
-  public FastNodeFinder getFastNodeFinder() {
+  public synchronized FastNodeFinder getFastNodeFinder() {
     if (myFastNodeFinder == null) {
       myFastNodeFinder = createFastNodeFinder();
     }
@@ -757,8 +749,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   @Override
-  public void disposeFastNodeFinder() {
-    if (myFastNodeFinder != null) {
+  public synchronized void disposeFastNodeFinder() {
+    if(myFastNodeFinder != null) {
       myFastNodeFinder.dispose();
       myFastNodeFinder = null;
     }
