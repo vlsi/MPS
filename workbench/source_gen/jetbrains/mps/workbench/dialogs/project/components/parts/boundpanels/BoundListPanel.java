@@ -13,7 +13,6 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
-import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectLevelRenderer;
 import com.intellij.openapi.ui.Messages;
 
 public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
@@ -37,6 +36,10 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
 
   protected BaseValidatedAction createRemoveAction() {
     return new BoundListPanel.MyListRemoveAction();
+  }
+
+  protected int[] getSelectedIndices() {
+    return this.myUIList.getSelectedIndices();
   }
 
   public JList getList() {
@@ -75,24 +78,7 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
     }
 
     protected void doRemove(AnActionEvent e) {
-      StringBuilder errorMessage = new StringBuilder();
-      for (Object value : BoundListPanel.this.myUIList.getSelectedValues()) {
-        if (BoundListPanel.this.myCanRemoveCondition.met((T) value)) {
-          BoundListPanel.this.myList.remove((T) value);
-        } else {
-          if (errorMessage.length() != 0) {
-            errorMessage.append("<br>");
-          }
-          errorMessage.append("<b>");
-          if (BoundListPanel.this.myCellRenderer instanceof ProjectLevelRenderer) {
-            ProjectLevelRenderer levelRenderer = (ProjectLevelRenderer) BoundListPanel.this.myCellRenderer;
-            errorMessage.append(levelRenderer.getItemLabel(value));
-          } else {
-            errorMessage.append(value);
-          }
-          errorMessage.append("</b>");
-        }
-      }
+      String errorMessage = BoundListPanel.this.removeSelectedWithCheck();
       if (errorMessage.length() != 0) {
         Messages.showWarningDialog("<html>Can't remove " + errorMessage + ".</html>", "Error Removing Element");
       }

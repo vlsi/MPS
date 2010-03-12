@@ -26,7 +26,7 @@ import java.util.EventObject;
 import javax.swing.ListSelectionModel;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.TableRemoveAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import java.util.Arrays;
+import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.TableAddAction;
 
 public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
@@ -56,6 +56,10 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
 
   protected BaseValidatedAction createRemoveAction() {
     return new BoundTablePanel.MyTableRemoveAction(this.myTable);
+  }
+
+  protected int[] getSelectedIndices() {
+    return this.myTable.getSelectedRows();
   }
 
   protected JComponent initUIComponentAndBinding() {
@@ -113,10 +117,9 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
     }
 
     protected void doRemove(AnActionEvent e) {
-      int[] indices = this.myTable.getSelectedRows();
-      Arrays.sort(indices);
-      for (int i = indices.length - 1; i >= 0; i--) {
-        BoundTablePanel.this.myList.remove(indices[i]);
+      String errorMessage = BoundTablePanel.this.removeSelectedWithCheck();
+      if (errorMessage.length() != 0) {
+        Messages.showWarningDialog("<html>Can't remove " + errorMessage + ".</html>", "Error Removing Element");
       }
     }
   }

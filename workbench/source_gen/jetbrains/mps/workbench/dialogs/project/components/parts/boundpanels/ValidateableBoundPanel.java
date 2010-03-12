@@ -18,6 +18,8 @@ import java.awt.BorderLayout;
 import javax.swing.JComponent;
 import jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport;
 import javax.swing.JScrollPane;
+import java.util.Arrays;
+import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ProjectLevelRenderer;
 import com.intellij.openapi.actionSystem.AnAction;
 import java.util.ArrayList;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -129,6 +131,33 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     return this.myMultipleChooser == Boolean.TRUE;
   }
 
+  protected String removeSelectedWithCheck() {
+    StringBuilder errorMessage = new StringBuilder();
+
+    int[] indices = this.getSelectedIndices();
+    Arrays.sort(indices);
+
+    for (int i = indices.length - 1; i >= 0; i--) {
+      T value = (T) this.myList.get(i);
+      if (!(this.myCanRemoveCondition.met(value))) {
+        if (errorMessage.length() != 0) {
+          errorMessage.append("<br>");
+        }
+        errorMessage.append("<b>");
+        if (this.myCellRenderer instanceof ProjectLevelRenderer) {
+          ProjectLevelRenderer levelRenderer = (ProjectLevelRenderer) this.myCellRenderer;
+          errorMessage.append(levelRenderer.getItemLabel(value));
+        } else {
+          errorMessage.append(value);
+        }
+        errorMessage.append("</b>");
+        continue;
+      }
+      this.myList.remove(indices[i]);
+    }
+    return errorMessage.toString();
+  }
+
   private JComponent createActionsComponent() {
     if (this.myMultipleChooser != null) {
       if (this.myAddAction == null) {
@@ -169,6 +198,8 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
   protected abstract BaseValidatedAction createRemoveAction();
 
   protected abstract JComponent initUIComponentAndBinding();
+
+  protected abstract int[] getSelectedIndices();
 
   private class MyValidator implements Runnable {
     private MyValidator() {
