@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.generator.impl;
 
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -282,4 +284,30 @@ public class GeneratorUtil {
       }
     }
   }
+
+  public static <T> T runReadInWrite(final GenerationComputable<T> c) throws GenerationCanceledException, GenerationFailureException {
+    try {
+      return ModelAccess.instance().runReadInWriteAction(new Computable<T>() {
+        @Override
+        public T compute() {
+          try {
+            return c.compute();
+          } catch (GenerationFailureException e) {
+            throw new RuntimeException(e);
+          } catch (GenerationCanceledException e) {
+            throw new RuntimeException(e);
+          }
+        }
+      });
+    } catch (RuntimeException th) {
+      Throwable inner = th.getCause();
+      if (inner instanceof GenerationFailureException) {
+        throw (GenerationFailureException) inner;
+      } else if (inner instanceof GenerationCanceledException) {
+        throw (GenerationCanceledException) inner;
+      }
+      throw th;
+    }
+  }
+
 }

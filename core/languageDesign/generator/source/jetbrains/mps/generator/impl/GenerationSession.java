@@ -282,13 +282,22 @@ public class GenerationSession {
     return currentOutputModel;
   }
 
-  private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, boolean isPrimary,
+  private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
                              RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
-    TemplateGenerator tg =
+    final TemplateGenerator tg =
       myIsStrict && myParallelGeneration && !mySessionContext.getGenerationTracer().isTracing() && ParallelTemplateGenerator.PARALLELING_ENABLED
         ? new ParallelTemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myIsStrict, ttrace)
         : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myIsStrict, ttrace);
-    return tg.apply(isPrimary);
+    if(tg instanceof ParallelTemplateGenerator) {
+      return GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
+        @Override
+        public Boolean compute() throws GenerationCanceledException, GenerationFailureException {
+          return tg.apply(isPrimary);
+        }
+      });
+    } else {
+      return tg.apply(isPrimary);
+    }
   }
 
   private SModel preProcessModel(RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {

@@ -44,19 +44,22 @@ public class ModelAccess {
   private EDTExecutor myEDTExecutor = new EDTExecutor();
   private Set<Thread> myIndexingThreads = new ConcurrentHashSet<Thread>();
 
+  /* support of temporary downgrading write lock to shared read lock */
+  private ReentrantReadWriteLock mySharedReadInWriteLock = new ReentrantReadWriteLock();
+  private volatile boolean mySharedReadInWriteMode = false;
+
+  private boolean allowSharedRead;
+
   private ModelAccess() {
+    allowSharedRead = isSharedReadMode();
   }
 
   public static ModelAccess instance() {
     return ourInstance;
   }
 
-  private boolean allowSharedRead() {
-    return false;
-  }
-
   private Lock getReadLock() {
-    if (allowSharedRead()) {
+    if (allowSharedRead) {
       return myReadWriteLock.readLock();
     } else {
       return myReadWriteLock.writeLock();
@@ -67,9 +70,33 @@ public class ModelAccess {
     return myReadWriteLock.writeLock();
   }
 
+  public <T> T runReadInWriteAction(final Computable<T> c) {
+    assertLegalWrite();
+
+    mySharedReadInWriteLock.writeLock().lock();
+    mySharedReadInWriteMode = true;
+    mySharedReadInWriteLock.writeLock().unlock();
+    try {
+      return c.compute();
+    } finally {
+      mySharedReadInWriteLock.writeLock().lock();
+      mySharedReadInWriteMode = false;
+      mySharedReadInWriteLock.writeLock().unlock();
+    }
+  }
+
   public void runReadAction(final Runnable r) {
     if (canRead()) {
       r.run();
+      return;
+    }
+    if(mySharedReadInWriteMode) {
+      try {
+        mySharedReadInWriteLock.readLock().lock();
+        r.run();
+      } finally {
+        mySharedReadInWriteLock.readLock().unlock();
+      }
       return;
     }
     ApplicationManager.getApplication().runReadAction(new Runnable() {
@@ -109,6 +136,14 @@ public class ModelAccess {
   public <T> T runReadAction(final Computable<T> c) {
     if (canRead()) {
       return c.compute();
+    }
+    if(mySharedReadInWriteMode) {
+      try {
+        mySharedReadInWriteLock.readLock().lock();
+        return c.compute();
+      } finally {
+        mySharedReadInWriteLock.readLock().unlock();
+      }
     }
     return ApplicationManager.getApplication().runReadAction(new Computable<T>() {
       public T compute() {
@@ -218,14 +253,19 @@ public class ModelAccess {
   }
 
   public boolean canRead() {
-    if (allowSharedRead()) {
-      return myReadWriteLock.getReadHoldCount() != 0 || canWrite();
-    } else {
-      return canWrite();
+    if (allowSharedRead) {
+      if(myReadWriteLock.getReadHoldCount() != 0) {
+        return true;
+      }
     }
+    return myReadWriteLock.isWriteLockedByCurrentThread() ||
+      (mySharedReadInWriteMode && mySharedReadInWriteLock.getReadHoldCount() != 0);
   }
 
   public boolean canWrite() {
+    if(mySharedReadInWriteMode) {
+      return false;
+    }
     return myReadWriteLock.isWriteLockedByCurrentThread();
   }
 
@@ -316,5 +356,9 @@ public class ModelAccess {
     if (!modelAccess.canRead() && !modelAccess.myIndexingThreads.contains(Thread.currentThread())) {
       throw new IllegalModelAccessError("You can read model only inside read actions");
     }
+  }
+
+  private static boolean isSharedReadMode() {
+    return "true".equals(System.getProperty("mps.sharedread"));
   }
 }
