@@ -31,9 +31,8 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner;
@@ -116,6 +115,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
         Runnable consoleDispose = null;
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
+        MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
         {
           if (DefaultJavaApplication_Configuration.this.getStateObject().modelId == null || DefaultJavaApplication_Configuration.this.getStateObject().nodeId == null) {
             throw new ExecutionException("Class node is not defined");
@@ -129,9 +129,6 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           if (node.value == null) {
             throw new ExecutionException("Class node does not exist");
           }
-
-          Project ideaProject = MPSDataKeys.PROJECT.getData(environment.getDataContext());
-          MPSProject mpsProject = ideaProject.getComponent(MPSProjectHolder.class).getMPSProject();
 
           if (DefaultJavaApplication_Configuration.this.getStateObject().parameters == null) {
             DefaultJavaApplication_Configuration.this.getStateObject().parameters = new ConfigRunParameters();
