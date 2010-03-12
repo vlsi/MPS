@@ -38,6 +38,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 import java.security.SecureRandom;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * User: Sergey Dmitriev
@@ -56,7 +57,7 @@ public final class SNode {
 
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
 
-  private static long ourCounter;
+  private static AtomicLong ourCounter = new AtomicLong();
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
 
@@ -91,7 +92,7 @@ public final class SNode {
   }
 
   static void resetIdCounter() {
-    ourCounter = Math.abs(new SecureRandom().nextLong());
+    ourCounter.set(Math.abs(new SecureRandom().nextLong()));
   }
 
   public static void setNodeMemeberAccessModifier(NodeMemberAccessModifier modifier) {
@@ -1396,7 +1397,7 @@ public final class SNode {
   }
 
   public static SNodeId generateUniqueId() {
-    long id = Math.abs(ourCounter++);
+    long id = Math.abs(ourCounter.incrementAndGet());
     return new SNodeId.Regular(id);
   }
 
