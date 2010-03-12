@@ -28,6 +28,7 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   public static final String CHECK_BLOCK = "checkBlock";
   public static final String EXECUTE_BLOCK = "executeBlock";
   public static final String PROPERTY = "property";
+  public static final String EXECUTION_PARAMETER = "executionParameter";
 
   public RunConfigurationDeclaration(SNode node) {
     super(node);
@@ -147,6 +148,26 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
 
   public void insertProperty(PersistentPropertyDeclaration prev, PersistentPropertyDeclaration node) {
     this.insertChild(prev, RunConfigurationDeclaration.PROPERTY, node);
+  }
+
+  public int getExecutionParametersCount() {
+    return this.getChildCount(RunConfigurationDeclaration.EXECUTION_PARAMETER);
+  }
+
+  public Iterator<RunConfigParameterDeclaration> executionParameters() {
+    return this.children(RunConfigParameterDeclaration.class, RunConfigurationDeclaration.EXECUTION_PARAMETER);
+  }
+
+  public List<RunConfigParameterDeclaration> getExecutionParameters() {
+    return this.getChildren(RunConfigParameterDeclaration.class, RunConfigurationDeclaration.EXECUTION_PARAMETER);
+  }
+
+  public void addExecutionParameter(RunConfigParameterDeclaration node) {
+    this.addChild(RunConfigurationDeclaration.EXECUTION_PARAMETER, node);
+  }
+
+  public void insertExecutionParameter(RunConfigParameterDeclaration prev, RunConfigParameterDeclaration node) {
+    this.insertChild(prev, RunConfigurationDeclaration.EXECUTION_PARAMETER, node);
   }
 
   public static RunConfigurationDeclaration newInstance(SModel sm, boolean init) {

@@ -2718,6 +2718,12 @@
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="678887849223472884:23" resolveInfo="ExecuteConfigBlock" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8179323502814846487">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="executionParameter" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="8179323502814630510:23" resolveInfo="RunConfigParameterDeclaration" />
+    </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="678887849223564240">
       <link role="intfc:0" targetNodeId="6.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
@@ -3955,6 +3961,29 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="936299881288561856">
       <property name="value:0" value="scopeNode" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8179323502814630510">
+    <property name="package:0" value="RunConfigs" />
+    <property name="name:0" value="RunConfigParameterDeclaration" />
+    <link role="extends:0" targetNodeId="1217252042208:23" resolveInfo="ActionDataParameterDeclaration" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8179323502815740710">
+      <link role="conceptLinkDeclaration:0" targetNodeId="14.1205921683134:0" resolveInfo="operationConcept" />
+      <link role="target:0" targetNodeId="8179323502814656936:23" resolveInfo="RunConfigParameterReferenceOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8179323502814656936">
+    <property name="package:0" value="RunConfigs" />
+    <property name="name:0" value="RunConfigParameterReferenceOperation" />
+    <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8179323502814656938">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="runConfigParameter" />
+      <link role="specializedLink:0" targetNodeId="14.1205756909548:0" />
+      <link role="target:0" targetNodeId="8179323502814630510:23" resolveInfo="RunConfigParameterDeclaration" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8179323502814656937">
+      <link role="intfc:0" targetNodeId="14.1205756064662:0" resolveInfo="IMemberOperation" />
     </node>
   </node>
 </model>

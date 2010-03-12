@@ -3050,5 +3050,34 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7559322914920403626" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="8179323502814694237">
+    <property name="package" value="RunConfigs" />
+    <link role="concept" targetNodeId="1.8179323502814630510:23" resolveInfo="RunConfigParameterDeclaration" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8179323502814694240">
+      <property name="name" value="canBeReferent" />
+      <link role="overriddenMethod" targetNodeId="17.8179323502814657526" resolveInfo="canBeReferent" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8179323502814694243">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8179323502814704001">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="8179323502814704004">
+            <node role="rightExpression:3" type="jetbrains.mps.lang.smodel.structure.NodeRefExpression:16" id="8179323502814704007">
+              <link role="referentNode:16" targetNodeId="1.8179323502814630510:23" resolveInfo="RunConfigParameterDeclaration" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8179323502814704003">
+              <link role="variableDeclaration:3" targetNodeId="8179323502814694244" resolveInfo="referentConcept" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8179323502814694244">
+        <property name="name:3" value="referentConcept" />
+        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SConceptType:16" id="8179323502814694245" />
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8179323502814694246" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8179323502814694247" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="8179323502814694238">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8179323502814694239" />
+    </node>
+  </node>
 </model>
 

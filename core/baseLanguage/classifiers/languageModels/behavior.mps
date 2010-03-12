@@ -325,6 +325,23 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724001" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8179323502814657526">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="canBeReferent" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8179323502814657527" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8179323502814657535" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8179323502814657529">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8179323502814694223">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="8179323502814694225">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8179323502814694221">
+        <property name="name:3" value="referentConcept" />
+        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SConceptType:16" id="8179323502814694222" />
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877353026">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877353027" />
     </node>

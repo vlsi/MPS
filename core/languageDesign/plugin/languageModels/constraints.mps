@@ -1008,5 +1008,32 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8179323502814656939">
+    <property name="package:8" value="RunConfigs" />
+    <link role="concept:8" targetNodeId="7.8179323502814656936:23" resolveInfo="RunConfigParameterReferenceOperation" />
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="8179323502814656940">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8179323502814656941">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8179323502814657499">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8179323502814657510">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8179323502814657501">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="8179323502814657500" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="8179323502814657505">
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="8179323502814657506">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8179323502814657509">
+                    <link role="conceptDeclaration:16" targetNodeId="7.678887849223472884:23" resolveInfo="ExecuteConfigBlock" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="8179323502814657514" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8179323502814694236">
+    <property name="package:8" value="RunConfigs" />
+    <link role="concept:8" targetNodeId="7.8179323502814630510:23" resolveInfo="RunConfigParameterDeclaration" />
+  </node>
 </model>
 

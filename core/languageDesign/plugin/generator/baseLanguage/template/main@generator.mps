@@ -12765,7 +12765,7 @@
       <link role="applicableConcept:2" targetNodeId="1.6547237850567458268:23" resolveInfo="BaseToolDeclaration" />
     </node>
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5508914264443135729">
-      <link role="classifier:3" targetNodeId="5508914264442964685" resolveInfo="BaseGeneratedTool" />
+      <link role="classifier:3" targetNodeId="2.~Object" resolveInfo="Object" />
       <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="5508914264443135731">
         <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="5508914264443135732">
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5508914264443135733">
