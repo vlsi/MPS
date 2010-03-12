@@ -78,6 +78,7 @@ public class PerformanceTracer implements IPerformanceTracer {
   @Override
   public String report(String ...separate) {
     if(top == 0) {
+      myStack[0].task.tasks.addAll(myStack[0].children.values());
       myStack[0].task.merge(new HashSet<String>(Arrays.asList(separate)));
       StringBuilder sb = new StringBuilder();
       sb.append("[");

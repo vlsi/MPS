@@ -116,11 +116,13 @@ public abstract class SReference {
     //in class path
     if (SModelStereotype.isStubModelStereotype(getSourceNode().getModel().getStereotype())) return;
 
-    if (ourErrorReportedRefs.contains(this)) return;
-    ourErrorReportedRefs.add(this);
+    synchronized (ourErrorReportedRefs) {
+      if (ourErrorReportedRefs.contains(this)) return;
+      ourErrorReportedRefs.add(this);
 
-    Logger log = Logger.getLogger(this.getClass());
-    log.error("\ncouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
-    if (message != null) log.error(message);
+      Logger log = Logger.getLogger(this.getClass());
+      log.error("\ncouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
+      if (message != null) log.error(message);
+    }
   }
 }

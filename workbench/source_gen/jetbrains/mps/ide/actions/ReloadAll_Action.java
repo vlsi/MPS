@@ -63,7 +63,7 @@ public class ReloadAll_Action extends GeneratedAction {
       ProgressManager.getInstance().run(new Task.Modal(ReloadAll_Action.this.project, "Reloading Classes", false) {
         public void run(@NotNull final ProgressIndicator indicator) {
           indicator.setIndeterminate(true);
-          ModelAccess.instance().runReadAction(new Runnable() {
+          ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
               ClassLoaderManager.getInstance().reloadAll(indicator);
             }
