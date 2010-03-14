@@ -514,12 +514,14 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   protected void onAdd() {
+    super.onAdd();
     if (getSModelDescriptor() != null) {
       addListeners();
     }
   }
 
   protected void onRemove() {
+    super.onRemove();
     if (getSModelDescriptor() != null) {
       removeListeners();
     }

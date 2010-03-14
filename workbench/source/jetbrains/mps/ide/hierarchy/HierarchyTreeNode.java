@@ -67,6 +67,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
   }
 
   protected void onRemove() {
+    super.onRemove();
     SNode node = myNodePointer.getNode();
     if (node != null && !node.isRegistered()) {
       SModel sModel = node.getModel();

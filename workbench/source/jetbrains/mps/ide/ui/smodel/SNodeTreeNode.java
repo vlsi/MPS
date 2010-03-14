@@ -83,6 +83,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   protected void onRemove() {
+    super.onRemove();
     if (getSModelModelTreeNode() != null) {
       getSModelModelTreeNode().getDependencyRecorder().remove(this);
     }
