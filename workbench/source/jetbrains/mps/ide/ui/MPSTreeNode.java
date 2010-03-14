@@ -40,6 +40,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -358,9 +359,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     if (myTreeMessages == null) {
       myTreeMessages = new ArrayList<TreeMessage>(1);
     }
-    for (TreeMessage message : messages) {
-      myTreeMessages.add(message);
-    }
+    myTreeMessages.addAll(Arrays.asList(messages));
     if (updatePresentation) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
