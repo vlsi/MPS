@@ -31,6 +31,8 @@ public class CachesManager implements ApplicationComponent {
   private ClassLoaderManager myClassLoaderManager;
   private SModelRepository mySModelRepository;
 
+  private Object myLock = new Object();
+
   private Map<Object, AbstractCache> myCaches = new HashMap<Object, AbstractCache>();
   private Map<AbstractCache, ModelEventRouter> myModelEventRouters = new HashMap<AbstractCache, ModelEventRouter>();
   private Map<Object, List<SModelDescriptor>> myDependsOnModels = new HashMap<Object, List<SModelDescriptor>>();
@@ -44,11 +46,10 @@ public class CachesManager implements ApplicationComponent {
     mySModelRepository = repo;
   }
 
-
   public void initComponent() {
     mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
-        List keysToRemove = new ArrayList();
+        List<Object> keysToRemove = new ArrayList<Object>();
         SModelReference reference = modelDescriptor.getSModelReference();
         for (Object key : myDependsOnModels.keySet()) {
           List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
@@ -79,25 +80,14 @@ public class CachesManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-
   }
 
-  public void putCache(Object key, AbstractCache cache, SModelDescriptor dependsOnModel) {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-    models.add(dependsOnModel);
-    putCache(key, cache, models);
-  }
-
-  public void putCache(Object key, AbstractCache cache, Set<SModelDescriptor> dependsOnModels) {
-    putCache(key, cache, new ArrayList<SModelDescriptor>(dependsOnModels));
-  }
-
-  public void putCache(Object key, AbstractCache cache, List<SModelDescriptor> dependsOnModels) {
+  private void putCache(Object key, AbstractCache cache, List<SModelDescriptor> dependsOnModels) {
     if (myCaches.containsKey(key)) {
       throw new RuntimeException("can't put another cache by key " + key);
     }
     myCaches.put(key, cache);
-    myDependsOnModels.put(key, new ArrayList<SModelDescriptor>(dependsOnModels));
+    myDependsOnModels.put(key, dependsOnModels);
     ModelEventRouter eventRouter = new ModelEventRouter(cache);
     myModelEventRouters.put(cache, eventRouter);
 
@@ -107,31 +97,46 @@ public class CachesManager implements ApplicationComponent {
     cache.cacheAttached();
   }
 
-  public AbstractCache getCache(Object key) {
-    return myCaches.get(key);
+  public <T> AbstractCache getCache(Object key, T element, CacheCreator<T> creator) {
+    synchronized (myLock) {
+      AbstractCache result = myCaches.get(key);
+      if(result != null || element == null || creator == null) {
+        return result;
+      }
+      result = creator.create(key, element);
+      putCache(key, result, new ArrayList<SModelDescriptor>(result.getDependsOnModels(element)));
+      return result;
+    }
   }
 
   public void removeCache(Object key) {
-    if (!myCaches.containsKey(key)) {
-      return;
-    }
-    AbstractCache cache = myCaches.remove(key);
-    ModelEventRouter eventRouter = myModelEventRouters.remove(cache);
-    List<SModelDescriptor> dependsOnModels = myDependsOnModels.remove(key);
-    for (SModelDescriptor dependsOnModel : dependsOnModels) {
-      dependsOnModel.removeModelListener(eventRouter);
-    }
+    synchronized (myLock) {
+      if (!myCaches.containsKey(key)) {
+        return;
+      }
+      AbstractCache cache = myCaches.remove(key);
+      ModelEventRouter eventRouter = myModelEventRouters.remove(cache);
+      List<SModelDescriptor> dependsOnModels = myDependsOnModels.remove(key);
+      for (SModelDescriptor dependsOnModel : dependsOnModels) {
+        dependsOnModel.removeModelListener(eventRouter);
+      }
 
-    cache.cacheRemoved();
+      cache.cacheRemoved();
+    }
   }
 
   private void removeAllCaches() {
-    List keys = new ArrayList(myCaches.keySet());
-    for (Object key : keys) {
-      removeCache(key);
+    synchronized (myLock) {
+      List keys = new ArrayList(myCaches.keySet());
+      for (Object key : keys) {
+        removeCache(key);
+      }
     }
   }
 
+  public interface CacheCreator<T> {
+    AbstractCache create(Object key, T element);
+  }
 
   private static class ModelEventRouter extends SModelAdapter {
     private AbstractCache myCache;

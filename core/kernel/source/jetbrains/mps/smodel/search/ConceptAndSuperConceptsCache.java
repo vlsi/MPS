@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.CachesManager;
+import jetbrains.mps.cache.CachesManager.CacheCreator;
 import jetbrains.mps.cache.DataSet;
 import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.lang.structure.structure.*;
@@ -29,26 +30,29 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 
 import java.util.*;
 
-/*package*/ class ConceptAndSuperConceptsCache extends AbstractCache {
+/**
+ *  Should be thread safe. 
+ */
+class ConceptAndSuperConceptsCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
 
   public static ConceptAndSuperConceptsCache getInstance(AbstractConceptDeclaration topConcept) {
     SNode node = topConcept.getNode();
     Object key = keyProducer.createKey(node);
-    CachesManager cachesManager = CachesManager.getInstance();
-    ConceptAndSuperConceptsCache cache;
-    synchronized (cachesManager) {
-      cache = (ConceptAndSuperConceptsCache) cachesManager.getCache(key);
-      if (cache == null) {
-        cache = new ConceptAndSuperConceptsCache(key, topConcept);
-        Set<SModelDescriptor> dependsOnModel = new HashSet<SModelDescriptor>();
-        for (AbstractConceptDeclaration concept : cache.getConcepts()) {
-          dependsOnModel.add(concept.getModel().getModelDescriptor());
-        }
-        CachesManager.getInstance().putCache(key, cache, dependsOnModel);
+    return (ConceptAndSuperConceptsCache) CachesManager.getInstance().getCache(key, topConcept, new CacheCreator<AbstractConceptDeclaration>() {
+      public AbstractCache create(Object key, AbstractConceptDeclaration element) {
+        return new ConceptAndSuperConceptsCache(key, element);
       }
+    });
+  }
+
+  @Override
+  public Set<SModelDescriptor> getDependsOnModels(Object element) {
+    Set<SModelDescriptor> dependsOnModel = new HashSet<SModelDescriptor>();
+    for (AbstractConceptDeclaration concept : getConcepts()) {
+      dependsOnModel.add(concept.getModel().getModelDescriptor());
     }
-    return cache;
+    return dependsOnModel;
   }
 
   //-----------------------
@@ -61,60 +65,38 @@ import java.util.*;
   }
 
   public List<AbstractConceptDeclaration> getConcepts() {
-    if (!containsDataSet(ConceptsDataSet.ID)) {
-      addDataSet(new ConceptsDataSet(myTopConcept, this));
-    }
-    ConceptsDataSet dataSet = (ConceptsDataSet) getDataSet(ConceptsDataSet.ID);
+    ConceptsDataSet dataSet = (ConceptsDataSet) getDataSet(ConceptsDataSet.ID, CONCEPTS_CACHE_CREATOR);
     return dataSet.getConcepts();
 
   }
 
   public PropertyDeclaration getPropertyDeclarationByName(String name) {
-    if (!containsDataSet(PropertyDeclarationsDataSet.ID)) {
-      addDataSet(new PropertyDeclarationsDataSet(this));
-    }
-    PropertyDeclarationsDataSet dataSet = (PropertyDeclarationsDataSet) getDataSet(PropertyDeclarationsDataSet.ID);
+    PropertyDeclarationsDataSet dataSet = (PropertyDeclarationsDataSet) getDataSet(PropertyDeclarationsDataSet.ID, PROPDECL_CACHE_CREATOR);
     return dataSet.getPropertyDeclarationByName(name);
   }
 
   public List<PropertyDeclaration> getPropertyDeclarations() {
-    if (!containsDataSet(PropertyDeclarationsDataSet.ID)) {
-      addDataSet(new PropertyDeclarationsDataSet(this));
-    }
-    PropertyDeclarationsDataSet dataSet = (PropertyDeclarationsDataSet) getDataSet(PropertyDeclarationsDataSet.ID);
+    PropertyDeclarationsDataSet dataSet = (PropertyDeclarationsDataSet) getDataSet(PropertyDeclarationsDataSet.ID, PROPDECL_CACHE_CREATOR);
     return dataSet.getPropertyDeclarations();
   }
 
   public LinkDeclaration getLinkDeclarationByRole(String role) {
-    if (!containsDataSet(LinkDeclarationsDataSet.ID)) {
-      addDataSet(new LinkDeclarationsDataSet(this));
-    }
-    LinkDeclarationsDataSet dataSet = (LinkDeclarationsDataSet) getDataSet(LinkDeclarationsDataSet.ID);
+    LinkDeclarationsDataSet dataSet = (LinkDeclarationsDataSet) getDataSet(LinkDeclarationsDataSet.ID, LINKDECL_CACHE_CREATOR);
     return dataSet.getLinkDeclarationByRole(role);
   }
 
   public LinkDeclaration getMostSpecificLinkDeclarationByRole(String role) {
-    if (!containsDataSet(LinkDeclarationsDataSet.ID)) {
-      addDataSet(new LinkDeclarationsDataSet(this));
-    }
-    LinkDeclarationsDataSet dataSet = (LinkDeclarationsDataSet) getDataSet(LinkDeclarationsDataSet.ID);
+    LinkDeclarationsDataSet dataSet = (LinkDeclarationsDataSet) getDataSet(LinkDeclarationsDataSet.ID, LINKDECL_CACHE_CREATOR);
     return dataSet.getMostSpecificLinkDeclarationByRole(role);
   }
 
   public List<LinkDeclaration> getLinkDeclarationsExcludingOverridden() {
-    if (!containsDataSet(LinkDeclarationsDataSet.ID)) {
-      addDataSet(new LinkDeclarationsDataSet(this));
-    }
-    LinkDeclarationsDataSet dataSet = (LinkDeclarationsDataSet) getDataSet(LinkDeclarationsDataSet.ID);
+    LinkDeclarationsDataSet dataSet = (LinkDeclarationsDataSet) getDataSet(LinkDeclarationsDataSet.ID, LINKDECL_CACHE_CREATOR);
     return dataSet.getLinkDeclarationsExcludingOverridden();
   }
 
-
   public ConceptProperty getConceptPropertyByName(String name) {
-    if (!containsDataSet(ConceptPropertiesDataSet.ID)) {
-      addDataSet(new ConceptPropertiesDataSet(this));
-    }
-    ConceptPropertiesDataSet dataSet = (ConceptPropertiesDataSet) getDataSet(ConceptPropertiesDataSet.ID);
+    ConceptPropertiesDataSet dataSet = (ConceptPropertiesDataSet) getDataSet(ConceptPropertiesDataSet.ID, CONCEPTPROPS_CACHE_CREATOR);
     return dataSet.getConceptPropertyByName(name);
   }
 
@@ -164,15 +146,21 @@ import java.util.*;
 
   // DATA SETS
 
+  private static final DataSetCreator<ConceptAndSuperConceptsCache> CONCEPTS_CACHE_CREATOR = new DataSetCreator<ConceptAndSuperConceptsCache>() {
+    public DataSet create(ConceptAndSuperConceptsCache ownerCache) {
+      return new ConceptsDataSet(ownerCache);
+    }
+  };
+
   private static class ConceptsDataSet extends DataSet {
     public static final String ID = "CONCEPTS_DATASET";
     private AbstractConceptDeclaration myTopConcept;
     private List<AbstractConceptDeclaration> myConcepts;
     private Set<SNode> myDependsOnNodes;
 
-    public ConceptsDataSet(AbstractConceptDeclaration topConcept, AbstractCache ownerCache) {
+    public ConceptsDataSet(ConceptAndSuperConceptsCache ownerCache) {
       super(ID, ownerCache, DefaultNodeChangedProcessing.DROP_OWNER_CACHE);
-      myTopConcept = topConcept;
+      myTopConcept = ownerCache.myTopConcept;
     }
 
     public List<AbstractConceptDeclaration> getConcepts() {
@@ -235,6 +223,13 @@ import java.util.*;
     }
 
   } // private static class ConceptsDataSet
+
+  private static final DataSetCreator<ConceptAndSuperConceptsCache> PROPDECL_CACHE_CREATOR = new DataSetCreator<ConceptAndSuperConceptsCache>() {
+    @Override
+    public DataSet create(ConceptAndSuperConceptsCache ownerCache) {
+      return new PropertyDeclarationsDataSet(ownerCache);
+    }
+  };
 
   private static class PropertyDeclarationsDataSet extends DataSet {
     public static final String ID = "PROPERTY_DECLARATIONS_DATASET";
@@ -322,6 +317,13 @@ import java.util.*;
     }
   } // private static class PropertyDeclarationsDataSet
 
+
+  private static final DataSetCreator<ConceptAndSuperConceptsCache> LINKDECL_CACHE_CREATOR = new DataSetCreator<ConceptAndSuperConceptsCache>() {
+    @Override
+    public DataSet create(ConceptAndSuperConceptsCache ownerCache) {
+      return new LinkDeclarationsDataSet(ownerCache);
+    }
+  };
 
   private static class LinkDeclarationsDataSet extends DataSet {
     public static final String ID = "LINK_DECLARATIONS_DATASET";
@@ -444,6 +446,13 @@ import java.util.*;
     }
   } // private static class LinkDeclarationsDataSet
 
+
+  private static final DataSetCreator<ConceptAndSuperConceptsCache> CONCEPTPROPS_CACHE_CREATOR = new DataSetCreator<ConceptAndSuperConceptsCache>() {
+    @Override
+    public DataSet create(ConceptAndSuperConceptsCache ownerCache) {
+      return new ConceptPropertiesDataSet(ownerCache);
+    }
+  };
 
   private static class ConceptPropertiesDataSet extends DataSet {
     public static final String ID = "CONCEPT_PROPERTIES_DATASET";

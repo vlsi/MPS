@@ -28,9 +28,11 @@ import java.util.*;
  */
 public abstract class AbstractCache extends SModelAdapter {
   private static final Logger LOG = Logger.getLogger(AbstractCache.class);
-  private Object myKey;
-  private Map<String, DataSet> myDataSets = new HashMap<String, DataSet>();
-  private Set<String> myInitializingDataSetKeys = new HashSet<String>();
+
+  private final Object myKey;
+  private final Map<String, DataSet> myDataSets = new HashMap<String, DataSet>();
+
+  private final Set<String> myInitializingDataSetKeys = new HashSet<String>();
 
   protected AbstractCache(Object key) {
     myKey = key;
@@ -40,18 +42,22 @@ public abstract class AbstractCache extends SModelAdapter {
     return myKey;
   }
 
-  public void cacheAttached() {
+  protected void cacheAttached() {
   }
 
-  public void cacheRemoved() {
-    myDataSets.clear();
+  protected void cacheRemoved() {
+    synchronized (myDataSets) {
+      myDataSets.clear();
+    }
   }
 
   public boolean isAttached() {
-    return CachesManager.getInstance().getCache(myKey) == this;
+    return CachesManager.getInstance().getCache(myKey, null, null) == this;
   }
 
-  public void addDataSet(DataSet dataSet) {
+  public abstract Set<SModelDescriptor> getDependsOnModels(Object element);
+
+  private void addDataSet(DataSet dataSet) {
     String dataSetId = dataSet.getId();
     if (myDataSets.containsKey(dataSetId)) {
       throw new RuntimeException("couldn't put another data set by key " + dataSetId);
@@ -67,19 +73,27 @@ public abstract class AbstractCache extends SModelAdapter {
   }
 
   public void removeDataSet(DataSet dataSet) {
-    myDataSets.remove(dataSet.getId());
+    synchronized (myDataSets) {
+      myDataSets.remove(dataSet.getId());
+    }
   }
 
-  public boolean containsDataSet(String dataSetId) {
-    return myDataSets.containsKey(dataSetId);
-  }
-
-  public DataSet getDataSet(String dataSetId) {
-    return myDataSets.get(dataSetId);
+  protected DataSet getDataSet(String dataSetId, DataSetCreator creator) {
+    synchronized (myDataSets) {
+      DataSet result = myDataSets.get(dataSetId);
+      if(result != null || creator == null) {
+        return result;
+      }
+      result = creator.create(this);
+      addDataSet(result);
+      return result;
+    }
   }
 
   public List<DataSet> getDataSets() {
-    return new ArrayList<DataSet>(myDataSets.values());
+    synchronized (myDataSets) {
+      return new ArrayList<DataSet>(myDataSets.values());
+    }
   }
 
   // model listener
@@ -130,5 +144,9 @@ public abstract class AbstractCache extends SModelAdapter {
   }
 
   public void referenceRemoved(SModelReferenceEvent event) {
+  }
+
+  public interface DataSetCreator<T extends AbstractCache> {
+    DataSet create(T ownerCache);
   }
 }
