@@ -15,4 +15,8 @@ public class DefaultJUnit_Factory extends ConfigurationFactory {
   public RunConfiguration createTemplateConfiguration(Project p) {
     return new DefaultJUnit_Configuration(p, this, "TemplateName");
   }
+
+  public String getName() {
+    return "JUnit";
+  }
 }
