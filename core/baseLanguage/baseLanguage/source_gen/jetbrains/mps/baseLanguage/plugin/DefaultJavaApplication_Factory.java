@@ -15,4 +15,8 @@ public class DefaultJavaApplication_Factory extends ConfigurationFactory {
   public RunConfiguration createTemplateConfiguration(Project p) {
     return new DefaultJavaApplication_Configuration(p, this, "TemplateName");
   }
+
+  public String getName() {
+    return "Java Application";
+  }
 }
