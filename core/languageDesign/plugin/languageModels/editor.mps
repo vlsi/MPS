@@ -3415,6 +3415,7 @@
             <property name="text:32" value="state type:" />
           </node>
           <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="8591610611835793663">
+            <property name="noTargetText:32" value="RunProfileState" />
             <link role="relationDeclaration:32" targetNodeId="1.8591610611835621641:23" />
             <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="8591610611835793664">
               <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8591610611835793666">
