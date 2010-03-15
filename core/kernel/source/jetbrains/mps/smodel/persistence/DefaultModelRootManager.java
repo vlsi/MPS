@@ -284,6 +284,11 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     SModelRepository modelRepository = SModelRepository.getInstance();
     SModelDescriptor modelDescriptor = modelRepository.getModelDescriptor(modelReference);
     if (modelDescriptor != null) {
+      IFile newFile = FileSystem.getFile(fileName);
+      if (!newFile.equals(modelDescriptor.getModelFile())) {
+        // file might be not the same if user, for example, moved model file using external file manager
+        ((BaseSModelDescriptor)modelDescriptor).changeModelFile(newFile);
+      }
       modelRepository.addOwnerForDescriptor(modelDescriptor, owner);
       return modelDescriptor;
     } else {

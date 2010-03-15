@@ -182,7 +182,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         try {
-          ModelAccess.instance().runWriteAction(new Runnable() {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               for (Conflictable conflictable : merged) {
                 conflictable.reloadFromDisk();
