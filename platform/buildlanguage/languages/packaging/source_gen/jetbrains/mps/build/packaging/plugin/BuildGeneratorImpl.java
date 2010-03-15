@@ -86,7 +86,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
             ProgressManager.getInstance().run(new Task.Modal(BuildGeneratorImpl.this.myProject, "Reloading Classes", false) {
               public void run(@NotNull ProgressIndicator progressIndicator) {
                 progressIndicator.setIndeterminate(true);
-                progressIndicator.setText("Realoding Classes... Please Wait");
+                progressIndicator.setText("Reloading Classes... Please Wait");
                 ModelAccess.instance().runWriteAction(new Runnable() {
                   public void run() {
                     project.update();
