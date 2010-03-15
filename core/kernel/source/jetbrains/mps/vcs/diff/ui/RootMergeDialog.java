@@ -155,7 +155,7 @@ public class RootMergeDialog extends BaseDialog implements EditorMessageOwner {
       conflict.setError(true);
     }
 
-    myChange1EditorComponent = addEditor(myContext, change1Node[0], "Mine Changes");
+    myChange1EditorComponent = addEditor(myContext, change1Node[0], "My Changes");
     myResultEditorComponent = addEditor(myContext, resultNode[0], "Merge Result");
     myChange2EditorComponent = addEditor(myContext, change2Node[0], "Repository Changes");
 
