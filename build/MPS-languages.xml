@@ -274,6 +274,16 @@
       <zipfileset dir="core/baseLanguage/tuples/runtime/classes_gen" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.baseLanguage.runConfigurations_w1f0">
+    <mkdir dir="core/baseLanguage/runConfigurations/classes" />
+    <mkdir dir="core/baseLanguage/runConfigurations/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.runConfigurations.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/baseLanguage/runConfigurations/runConfigurations.mpl" prefix="module" />
+      <zipfileset dir="core/baseLanguage/runConfigurations/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/baseLanguage/runConfigurations" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/baseLanguage/runConfigurations/classes" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.lang.actions_a2f0">
     <mkdir dir="core/languageDesign/actions/classes" />
     <mkdir dir="core/languageDesign/actions/source_gen.caches" />
