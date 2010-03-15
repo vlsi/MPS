@@ -60,7 +60,7 @@
     <node role="contentNode:2" type="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression:1" id="4549711462050007279">
       <node role="method:1" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4549711462050007280">
         <property name="name:3" value="check" />
-        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4549711462050007282" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="2511109317220558504" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4549711462050007283">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7907427828436706653">
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7907427828436706654">
