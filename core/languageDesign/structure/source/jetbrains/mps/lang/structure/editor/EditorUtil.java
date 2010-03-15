@@ -15,21 +15,24 @@
  */
 package jetbrains.mps.lang.structure.editor;
 
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.Macros;
-import jetbrains.mps.vfs.FileSystemFile;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.misc.hash.LinkedHashSet;
+import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.IFile;
 
 import javax.swing.*;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.util.Collections;
 import java.util.Set;
 
 
@@ -73,10 +76,10 @@ public class EditorUtil {
         }
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-              public void run() {
-                sourceNode.setProperty(propertyName, pathToShow);
-              }
-            });
+          public void run() {
+            sourceNode.setProperty(propertyName, pathToShow);
+          }
+        });
       }
     });
     return button;
@@ -100,13 +103,13 @@ public class EditorUtil {
     if (modelLang != null) {
       module = modelLang;
     } else {
-      Set<Solution> ownerSet = SModelRepository.getInstance().getOwners(modelDescriptor, Solution.class);
+      Set<IModule> ownerSet = new LinkedHashSet<IModule>();
+      ownerSet.addAll(SModelRepository.getInstance().getOwners(modelDescriptor, Solution.class));
+      ownerSet.addAll(SModelRepository.getInstance().getOwners(modelDescriptor, Generator.class));
       if (!(ownerSet.isEmpty())) {
         module = ownerSet.iterator().next();
       }
     }
     return module;
   }
-
-
 }
