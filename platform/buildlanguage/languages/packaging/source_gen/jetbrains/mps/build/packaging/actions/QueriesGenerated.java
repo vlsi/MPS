@@ -138,7 +138,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            List<String> allMacroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", true, false), SConceptPropertyOperations.getBoolean(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.IPath"), "canStartFromBasedir"));
+            List<String> allMacroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.IMacroHolder", true, false), SConceptPropertyOperations.getBoolean(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.build.packaging.structure.IPath"), "canStartFromBasedir"));
             ListSequence.fromList(allMacroNames).addElement(no_macro);
             return allMacroNames;
           }

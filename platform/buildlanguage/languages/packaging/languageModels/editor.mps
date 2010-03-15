@@ -2025,6 +2025,20 @@
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="701559220729218139">
           <link role="relationDeclaration:32" targetNodeId="2.1169194664001:0" resolveInfo="name" />
         </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7323449223785759046">
+          <property name="text:32" value="used in" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="7323449223785759048">
+          <property name="emptyNoTargetText:32" value="true" />
+          <property name="noTargetText:32" value="everywhere" />
+          <link role="relationDeclaration:32" targetNodeId="1.7323449223785753314:7" />
+          <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="7323449223785759049">
+            <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="7323449223785759051">
+              <property name="readOnly:32" value="true" />
+              <link role="relationDeclaration:32" targetNodeId="2.1169194664001:0" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="701559220729218135" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="701559220729218136">
           <property name="flag:32" value="false" />

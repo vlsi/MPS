@@ -11,13 +11,15 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Block extends BaseConcept implements INamedConcept {
+public class Block extends BaseConcept implements INamedConcept, IMacroHolder {
   public static final String concept = "jetbrains.mps.build.packaging.structure.Block";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String LAYOUT = "layout";
   public static final String ENTRY = "entry";
+  public static final String MACRO = "macro";
 
   public Block(SNode node) {
     super(node);
@@ -55,6 +57,14 @@ public class Block extends BaseConcept implements INamedConcept {
     this.setProperty(Block.VIRTUAL_PACKAGE, value);
   }
 
+  public MPSLayout getLayout() {
+    return (MPSLayout) this.getReferent(MPSLayout.class, Block.LAYOUT);
+  }
+
+  public void setLayout(MPSLayout node) {
+    super.setReferent(Block.LAYOUT, node);
+  }
+
   public int getEntriesCount() {
     return this.getChildCount(Block.ENTRY);
   }
@@ -73,6 +83,26 @@ public class Block extends BaseConcept implements INamedConcept {
 
   public void insertEntry(AbstractProjectComponent prev, AbstractProjectComponent node) {
     this.insertChild(prev, Block.ENTRY, node);
+  }
+
+  public int getMacrosCount() {
+    return this.getChildCount(Block.MACRO);
+  }
+
+  public Iterator<Macro> macros() {
+    return this.children(Macro.class, Block.MACRO);
+  }
+
+  public List<Macro> getMacros() {
+    return this.getChildren(Macro.class, Block.MACRO);
+  }
+
+  public void addMacro(Macro node) {
+    this.addChild(Block.MACRO, node);
+  }
+
+  public void insertMacro(Macro prev, Macro node) {
+    this.insertChild(prev, Block.MACRO, node);
   }
 
   public static Block newInstance(SModel sm, boolean init) {
