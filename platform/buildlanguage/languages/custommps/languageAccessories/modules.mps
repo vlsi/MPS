@@ -125,6 +125,10 @@
       <property name="id" value="d44dab97-aaac-44cb-9745-8a14db674c03" />
       <property name="name" value="jetbrains.mps.baseLanguage.tuples.runtime" />
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="6629582826329544369">
+      <property name="id" value="82c32a3b-4a54-4fc1-b551-7ff9f198d7c1" />
+      <property name="name" value="jetbrains.mps.baseLanguage.runConfigurations" />
+    </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="4062013737453609732">
     <property name="name:7" value="core.languageDesign" />
