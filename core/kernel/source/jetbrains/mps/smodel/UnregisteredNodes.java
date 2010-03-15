@@ -28,8 +28,8 @@ import jetbrains.mps.util.PairMap;
   private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
   private static UnregisteredNodes myInstance;
 
-  private PairMap<SModelReference, SNodeId, SNode> myMap = new PairMap<SModelReference, SNodeId, SNode>();
-
+  private final PairMap<SModelReference, SNodeId, SNode> myMap = new PairMap<SModelReference, SNodeId, SNode>();
+  private final Object myLock = new Object();
 
   public static UnregisteredNodes instance() {
     if (myInstance == null) {
@@ -47,7 +47,9 @@ import jetbrains.mps.util.PairMap;
   }
 
   void clear() {
-    myMap.clear();
+    synchronized (myLock) {
+      myMap.clear();
+    }
   }
 
   void put(SNode node) {
@@ -61,7 +63,9 @@ import jetbrains.mps.util.PairMap;
   }
 
   SNode get(SModelReference modelReference, SNodeId nodeId) {
-    return myMap.get(modelReference, nodeId);
+    synchronized (myLock) {
+      return myMap.get(modelReference, nodeId);
+    }
   }
 
   void nodeIdChanged(SNode node, SNodeId oldNodeId) {
@@ -80,14 +84,22 @@ import jetbrains.mps.util.PairMap;
   }
 
   private void add(SModelReference reference, SNodeId id, SNode node) {
-    if (myMap.contains(reference, id)) {
+    boolean showError = false;
+    synchronized (myLock) {
+      if (myMap.contains(reference, id)) {
+        showError = true;
+      }
+      myMap.put(reference, id, node);
+    }
+    if(showError) {
       LOG.error("attempt to put another node with same key: " + reference + "#" + id);
     }
-    myMap.put(reference, id, node);
   }
 
   private void remove(SModelReference reference, SNodeId id) {
-    myMap.remove(reference, id);
+    synchronized (myLock) {
+      myMap.remove(reference, id);
+    }
   }
 
   /**
@@ -95,8 +107,8 @@ import jetbrains.mps.util.PairMap;
    * Do not remove it
    */
   void clear(SModelReference reference) {
-    myMap.clear(reference);
+    synchronized (myLock) {
+      myMap.clear(reference);
+    }
   }
-
-
 }
