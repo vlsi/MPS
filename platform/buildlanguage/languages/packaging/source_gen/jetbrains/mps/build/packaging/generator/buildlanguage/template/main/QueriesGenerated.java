@@ -33,6 +33,7 @@ import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.build.packaging.behavior.IVariableHolder_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -625,7 +626,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1219157474820(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode layout = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false);
-    return (layout == null) || !(ListSequence.fromList(SLinkOperations.getTargets(layout, "builtInVariable", true)).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false)));
+    return (layout == null) || (!(ListSequence.fromList(SLinkOperations.getTargets(layout, "builtInVariable", true)).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false))) && ListSequence.fromList(IVariableHolder_Behavior.call_getAllVariable_1234864693585(layout)).contains(SLinkOperations.getTarget(_context.getNode(), "variable", false)));
   }
 
   public static boolean ifMacro_Condition_1220026604203(final IOperationContext operationContext, final IfMacroContext _context) {

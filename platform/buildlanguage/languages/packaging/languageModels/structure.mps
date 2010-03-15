@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="3">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AbstractProjectComponent" conceptFQName="jetbrains.mps.build.packagingLanguage.structure.AbstractProjectComponent" featureKind="CONCEPT" />
@@ -139,6 +140,7 @@
     <refactoringContext modelVersion="4">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="path" conceptFQName="jetbrains.mps.build.packaging.structure.Path" featureKind="CHILD" />
@@ -149,6 +151,7 @@
     <refactoringContext modelVersion="5">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="path" conceptFQName="jetbrains.mps.build.packaging.structure.CompositePathComponent" featureKind="CHILD" />
@@ -159,6 +162,7 @@
     <refactoringContext modelVersion="6">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AbstractProjectComponent" conceptFQName="jetbrains.mps.build.packaging.structure.AbstractProjectComponent" featureKind="CONCEPT" />
@@ -297,6 +301,7 @@
     <refactoringContext modelVersion="7">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AbstractProjectComponent" conceptFQName="jetbrains.mps.build.packagingstate.structure.AbstractProjectComponent" featureKind="CONCEPT" />
@@ -796,6 +801,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1205335290326">
     <property name="name:0" value="Variable" />
     <property name="package:0" value="variables" />
+    <property name="rootable:0" value="true" />
     <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1205335300842">
       <link role="intfc:0" targetNodeId="3.1169194658468:0" resolveInfo="INamedConcept" />

@@ -1152,26 +1152,6 @@
     <node role="configuration:7" type="jetbrains.mps.build.packaging.structure.Configuration:7" id="1230221082459">
       <property name="name:7" value="default" />
     </node>
-    <node role="builtInVariable:7" type="jetbrains.mps.build.packaging.structure.Variable:7" id="1230221082460">
-      <property name="name:7" value="/" />
-      <property name="antName:7" value="file.separator" />
-    </node>
-    <node role="builtInVariable:7" type="jetbrains.mps.build.packaging.structure.Variable:7" id="1230221082461">
-      <property name="name:7" value=":" />
-      <property name="antName:7" value="path.separator" />
-    </node>
-    <node role="builtInVariable:7" type="jetbrains.mps.build.packaging.structure.Variable:7" id="1230221082462">
-      <property name="name:7" value="\n" />
-      <property name="antName:7" value="line.separator" />
-    </node>
-    <node role="builtInVariable:7" type="jetbrains.mps.build.packaging.structure.Variable:7" id="1230221082463">
-      <property name="name:7" value="date" />
-      <property name="antName:7" value="DSTAMP" />
-    </node>
-    <node role="builtInVariable:7" type="jetbrains.mps.build.packaging.structure.Variable:7" id="1230221082464">
-      <property name="name:7" value="basedir" />
-      <property name="antName:7" value="basedir" />
-    </node>
     <node role="baseDirectory:7" type="jetbrains.mps.build.packaging.structure.BaseDirPath:7" id="1230221082465">
       <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="1230221082466">
         <property name="name:7" value="mps_home" />
