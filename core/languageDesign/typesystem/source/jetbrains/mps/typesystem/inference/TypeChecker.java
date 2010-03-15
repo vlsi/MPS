@@ -250,7 +250,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   @Nullable
-  public SNode getTypeOf(SNode node) {
+  public synchronized SNode getTypeOf(SNode node) {
     if (node == null) return null;
     if (myTypesReadListener != null) {
       myTypesReadListener.nodeTypeAccessed(node);

@@ -54,7 +54,7 @@ public class SubtypingManager {
     return isSubtype(subtype, superType, isWeak);
   }
 
-  public boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
+  public synchronized boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
     if (subtype == supertype) return true;
     if (subtype == null || supertype == null) return false;
 
@@ -81,7 +81,7 @@ public class SubtypingManager {
   /**
    * may produce side effects, such as creating new type equations
    */
-  public boolean isSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
+  public synchronized boolean isSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
 
     IWrapper subRepresentator = subtype;
     IWrapper superRepresentator = supertype;
@@ -289,7 +289,7 @@ public class SubtypingManager {
     return result;
   }
 
-  private void collectImmediateSupertypes_internal(final SNode term, boolean isWeak, StructuralNodeSet result, EquationManager equationManager, String supertypeConceptFQName) {
+  private synchronized void collectImmediateSupertypes_internal(final SNode term, boolean isWeak, StructuralNodeSet result, EquationManager equationManager, String supertypeConceptFQName) {
     if (term == null) {
       return;
     }
