@@ -185,6 +185,8 @@ public class SModelRepository implements ApplicationComponent {
     SModelReference modelReference = modelDescriptor.getSModelReference();
     SModelDescriptor registeredModel = getModelDescriptor(modelReference);
 
+    // TODO remove recursion
+
     LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
       "Another model \"" + modelReference + "\" is already registered!");
 

@@ -229,6 +229,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  @Deprecated
   public void addWeakSModelListener(@NotNull SModelListener listener) {
     synchronized (myListenersLock) {
       myWeakListeners.add(listener);

@@ -384,6 +384,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return myLastChange;
   }
 
+  @Deprecated
   public void addWeakModelListener(SModelListener listener) {
     synchronized (myListenersLock) {
       if (isInitialized()) {
