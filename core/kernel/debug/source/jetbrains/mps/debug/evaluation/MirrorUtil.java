@@ -13,7 +13,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class MirrorUtil {
-  public static Value getValue(Object value, VirtualMachine vm) {
+  public static Value getJDIValueFromRaw(Object value, VirtualMachine vm) {
     if (value instanceof Integer) {
       return vm.mirrorOf(((Integer) value).intValue());
     } else if (value instanceof Byte) {
@@ -37,6 +37,40 @@ public class MirrorUtil {
     }
   }
 
+  public static Object getJavaValue(Value jdiValue) {
+    if (jdiValue instanceof StringReference) {
+      return ((StringReference)jdiValue).value();
+    }
+    if (jdiValue instanceof PrimitiveValue) {
+      PrimitiveValue primitiveValue = (PrimitiveValue) jdiValue;
+      if (primitiveValue instanceof BooleanValue) {
+        return primitiveValue.booleanValue();
+      }
+      if (primitiveValue instanceof ShortValue) {
+        return primitiveValue.shortValue();
+      }
+      if (primitiveValue instanceof ByteValue) {
+        return primitiveValue.byteValue();
+      }
+      if (primitiveValue instanceof CharValue) {
+        return primitiveValue.charValue();
+      }
+      if (primitiveValue instanceof DoubleValue) {
+        return primitiveValue.doubleValue();
+      }
+      if (primitiveValue instanceof FloatValue) {
+        return primitiveValue.floatValue();
+      }
+      if (primitiveValue instanceof IntegerValue) {
+        return primitiveValue.intValue();
+      }
+      if (primitiveValue instanceof LongValue) {
+        return primitiveValue.longValue();
+      }
+    }
+    throw new UnsupportedOperationException();
+  }
+
   public static ValueProxy getValueProxy(Value v, ThreadReference threadReference) {
     if (v instanceof ObjectReference) {
       return new ObjectValueProxy((ObjectReference) v, threadReference);
@@ -54,7 +88,7 @@ public class MirrorUtil {
       if (arg instanceof ValueProxy) {
         v = ((ValueProxy)arg).getJDIValue();
       } else {
-        v = MirrorUtil.getValue(arg, threadReference.virtualMachine());
+        v = MirrorUtil.getJDIValueFromRaw(arg, threadReference.virtualMachine());
       }
       argValues.add(v);
     }

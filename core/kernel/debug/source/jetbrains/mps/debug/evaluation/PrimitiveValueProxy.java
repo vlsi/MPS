@@ -19,4 +19,8 @@ public class PrimitiveValueProxy extends ValueProxy {
   public PrimitiveValue getPrimitiveValue() {
     return (PrimitiveValue) myValue;
   }
+
+  public Object getJavaValue() {
+    return MirrorUtil.getJavaValue(myValue);
+  }
 }

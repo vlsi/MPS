@@ -14,6 +14,7 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -67,7 +68,7 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static SNode sourceNodeQuery_1620955434532451443(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1707366700950546819(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
 
@@ -79,7 +80,7 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
-  public static SNode sourceNodeQuery_5147977527584436871(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1707366700950546807(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
 
@@ -95,6 +96,26 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "actualArgument", true);
   }
 
+  public static void mapSrcMacro_post_mapper_1707366700950549907(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    GenUtil.postProcess(_context.getNode(), _context.getOutputNode());
+  }
+
+  public static void mapSrcMacro_post_mapper_1707366700950549913(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    GenUtil.postProcess(_context.getNode(), _context.getOutputNode());
+  }
+
+  public static void mapSrcMacro_post_mapper_1707366700950546836(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    GenUtil.postProcess(_context.getNode(), _context.getOutputNode());
+  }
+
+  public static void mapSrcMacro_post_mapper_1707366700950549919(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    GenUtil.postProcess(_context.getNode(), _context.getOutputNode());
+  }
+
+  public static void mapSrcMacro_post_mapper_1707366700950549901(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    GenUtil.postProcess(_context.getNode(), _context.getOutputNode());
+  }
+
   public static void mappingScript_CodeBlock_1304595503654398417(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode evaluatorConcept : SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept")) {
       SNode expr = SLinkOperations.getTarget(evaluatorConcept, "evaluatedExpression", true);
@@ -106,6 +127,17 @@ public class QueriesGenerated {
       }
       for (SNode fieldRef : SNodeOperations.getDescendants(expr, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{})) {
         SLinkOperations.setNewChild(fieldRef, AttributesRolesUtil.childRoleFromAttributeRole("unprocessedAnnotations"), "jetbrains.mps.debug.evaluation.structure.UnprocessedAnnotation");
+      }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_1707366700950473984(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for (SNode node : SModelOperations.getNodes(_context.getModel(), null)) {
+      if (GenUtil.needsCallGetValue(node)) {
+        SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("needsCallGetValue"), "jetbrains.mps.debug.evaluation.structure.NeedsCallGetValue");
+      }
+      if (GenUtil.needsCallToString(node)) {
+        SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("needsCallToString"), "jetbrains.mps.debug.evaluation.structure.NeedsCallToString");
       }
     }
   }

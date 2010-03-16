@@ -9,7 +9,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <maxImportIndex value="0" />
+  <maxImportIndex value="1" />
+  <import index="1" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.debug.evaluation.structure.EvaluatorConcept" id="6036237525966596606">
     <node role="evaluatedExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5147977527584463723">
@@ -40,10 +41,15 @@
               </node>
             </node>
           </node>
-          <node role="rightExpression:3" type="jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall" id="6036237525966820241">
-            <link role="baseMethodDeclaration" targetNodeId="6036237525966667276" resolveInfo="get" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1620955434532134777">
-              <property name="value:3" value="2" />
+          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1707366700950654766">
+            <node role="operand:3" type="jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall" id="6036237525966820241">
+              <link role="baseMethodDeclaration" targetNodeId="6036237525966667276" resolveInfo="get" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1620955434532134777">
+                <property name="value:3" value="2" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1707366700950654770">
+              <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.hashCode():int" resolveInfo="hashCode" />
             </node>
           </node>
         </node>

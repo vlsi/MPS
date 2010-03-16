@@ -23,4 +23,8 @@ public class ValueProxy {
   public Value getJDIValue() {
     return myValue;
   }
+
+  public Object getJavaValue() {
+    throw new UnsupportedOperationException();
+  }
 }
