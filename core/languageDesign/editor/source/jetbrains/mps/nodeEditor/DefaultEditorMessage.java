@@ -136,12 +136,15 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
+    Color color = getColor();
+    paintWithColor(g, cell, color);
+  }
+
+  protected void paintWithColor(Graphics g, EditorCell cell, Color color) {
     int x = cell.getX();
     int y = cell.getY();
     int width = cell.getWidth();
     int height = cell.getHeight();
-
-    Color color = getColor();
     g.setColor(color);
     g.drawRect(x, y, width - 1, height - 1);
     color = new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha() / 5);
