@@ -7767,13 +7767,8 @@
                 </node>
               </node>
               <node role="referenceAntiquotation$link_attribute$classifier:3" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="2925336694746296806">
-                <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2925336694746296916">
-                  <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2925336694746296917">
-                    <link role="applicableNode:3" targetNodeId="1194623838238" resolveInfo="anonymousClass" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2925336694746296918">
-                    <link role="link:16" targetNodeId="1.1170346070688:3" />
-                  </node>
+                <node role="expression:0" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2925336694746296917">
+                  <link role="applicableNode:3" targetNodeId="1194623838238" resolveInfo="anonymousClass" />
                 </node>
               </node>
             </node>

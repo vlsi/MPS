@@ -33,7 +33,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
   }
 
   public void applyRule(final SNode anonymousClass, final TypeCheckingContext typeCheckingContext) {
-    SNode constructedType = new typeof_AnonymousClass_InferenceRule.QuotationClass_fj2vg7_a0a0a0().createNode(SLinkOperations.getTargets(anonymousClass, "typeParameter", true), SLinkOperations.getTarget(anonymousClass, "classifier", false), typeCheckingContext);
+    SNode constructedType = new typeof_AnonymousClass_InferenceRule.QuotationClass_fj2vg7_a0a0a0().createNode(SLinkOperations.getTargets(anonymousClass, "typeParameter", true), anonymousClass, typeCheckingContext);
     {
       SNode _nodeToCheck_1029348928467 = anonymousClass;
       BaseIntentionProvider intentionProvider = null;
