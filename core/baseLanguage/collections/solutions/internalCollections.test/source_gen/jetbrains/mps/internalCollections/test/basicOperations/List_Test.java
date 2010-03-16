@@ -20,6 +20,8 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 
 public class List_Test extends Util_Test {
   public void test_listCreator() throws Exception {
@@ -351,6 +353,11 @@ __switch__:
     List<String> hs = ListSequence.fromListAndArray(new ArrayList<String>(), null);
     Assert.assertSame(1, ListSequence.fromList(hs).count());
     Assert.assertTrue(ListSequence.fromList(hs).contains(null));
+  }
+
+  public void test_mps8045() throws Exception {
+    Assert.assertNotNull(Collections.synchronizedList(ListSequence.fromList(new ArrayList())));
+    Assert.assertNotNull(Collections.synchronizedSet(SetSequence.fromSet(new HashSet())));
   }
 
   public List<Foo> mps5684helper() {

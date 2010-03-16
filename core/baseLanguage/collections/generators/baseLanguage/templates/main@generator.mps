@@ -14138,7 +14138,7 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1279588871815121496">
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1279588871815121497">
                       <link role="classConcept:3" targetNodeId="12.~CopyUtil" resolveInfo="CopyUtil" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="12.~CopyUtil.copy(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="copy" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="12.~CopyUtil.copy(jetbrains.mps.smodel.BaseAdapter):jetbrains.mps.smodel.BaseAdapter" resolveInfo="copy" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1279588871815121498">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1279588871815121499">
                           <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1279588871815121500" />

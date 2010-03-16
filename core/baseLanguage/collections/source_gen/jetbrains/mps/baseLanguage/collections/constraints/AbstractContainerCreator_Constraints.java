@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class AbstractContainerCreator_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
@@ -38,7 +39,11 @@ public class AbstractContainerCreator_Constraints {
         public boolean accept(SNode trg) {
           return SConceptOperations.isSuperConceptOf(SNodeOperations.getConceptDeclaration(dtype), NameUtil.nodeFQName(trg));
         }
-      });
+      }) || (SNodeOperations.isInstanceOf(dtype, "jetbrains.mps.baseLanguage.structure.ClassifierType") && Sequence.fromIterable(avlbFor).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode trg) {
+          return TypeChecker.getInstance().getSubtypingManager().isSubtype(SConceptOperations.createNewNode(NameUtil.nodeFQName(trg), dtype), dtype);
+        }
+      }));
     }
     return true;
   }

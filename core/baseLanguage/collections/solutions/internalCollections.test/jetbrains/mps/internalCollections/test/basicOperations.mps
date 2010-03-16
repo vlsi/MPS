@@ -6193,6 +6193,31 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1652739669898781266">
+        <property name="methodName" value="mps8045" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1652739669898781267" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1652739669898781268" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1652739669898781269">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull" id="2490518255521642172">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2490518255521642176">
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~Collections.synchronizedList(java.util.List):java.util.List" resolveInfo="synchronizedList" />
+              <link role="classConcept:3" targetNodeId="3.~Collections" resolveInfo="Collections" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2490518255521642178">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="2490518255521642182" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull" id="2490518255521642159">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2490518255521642161">
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~Collections.synchronizedSet(java.util.Set):java.util.Set" resolveInfo="synchronizedSet" />
+              <link role="classConcept:3" targetNodeId="3.~Collections" resolveInfo="Collections" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2490518255521642162">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator:7" id="2490518255521642163" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1205949265850">
       <link role="classifier:3" targetNodeId="1.1204129267857" resolveInfo="Util_Test" />
