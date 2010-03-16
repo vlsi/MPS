@@ -56,6 +56,10 @@ public abstract class OverloadedOperationsTypesProvider implements IOverloadedOp
     return true;
   }
 
+  public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+    return isApplicable(subtypingManager, leftOperandType, rightOperandType);
+  }
+
   public int compareTo(IOverloadedOpsTypesProvider o) {
     if (o instanceof OverloadedOperationsTypesProvider) {
       OverloadedOperationsTypesProvider o2 = (OverloadedOperationsTypesProvider) o;

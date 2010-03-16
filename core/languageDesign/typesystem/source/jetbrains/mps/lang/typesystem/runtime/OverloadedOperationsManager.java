@@ -52,7 +52,7 @@ public class OverloadedOperationsManager {
     SubtypingManager subtypingManager = myTypeChecker.getSubtypingManager();
     List<IOverloadedOpsTypesProvider> filteredProviders = new ArrayList<IOverloadedOpsTypesProvider>();
     for (IOverloadedOpsTypesProvider provider : operationsTypesProviderSet) {
-      if (provider.isApplicable(subtypingManager, leftOperandType, rightOperandType)) {
+      if (provider.isApplicable(subtypingManager, operation, leftOperandType, rightOperandType)) {
         filteredProviders.add(provider);
       }
     }

@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SNode;
 
 public interface IOverloadedOpsTypesProvider extends IApplicableToConcept, Comparable<IOverloadedOpsTypesProvider> {
   boolean isApplicable(SubtypingManager subtypingManager, SNode leftOperandType, SNode rightOperandType);
+  boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType);
 
   SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType);
 }

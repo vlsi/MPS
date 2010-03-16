@@ -43,6 +43,10 @@ public abstract class OverloadedOpsProvider_OneTypeSpecified implements IOverloa
     return true;
   }
 
+  public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
+    return isApplicable(subtypingManager, leftOperandType, rightOperandType);
+  }
+
   public int compareTo(IOverloadedOpsTypesProvider o) {
     if (o instanceof OverloadedOpsProvider_OneTypeSpecified) {
       OverloadedOpsProvider_OneTypeSpecified o2 = (OverloadedOpsProvider_OneTypeSpecified) o;
