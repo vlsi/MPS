@@ -1584,7 +1584,7 @@
                                                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6979612000521479945">
                                                               <link role="baseMethodDeclaration:3" targetNodeId="14.~ProgressIndicator.setText(java.lang.String):void" resolveInfo="setText" />
                                                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6979612000521479946">
-                                                                <property name="value:3" value="Realoding Classes... Please Wait" />
+                                                                <property name="value:3" value="Reloading Classes... Please Wait" />
                                                               </node>
                                                             </node>
                                                           </node>
