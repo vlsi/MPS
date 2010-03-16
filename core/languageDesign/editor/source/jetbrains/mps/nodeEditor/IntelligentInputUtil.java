@@ -205,6 +205,8 @@ public class IntelligentInputUtil {
     EditorCellAction rtAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
 
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
+    // For: http://youtrack.jetbrains.net/issue/MPS-7757
+    assert typeCheckingContext != null : cellForNewNode.getSNode() == null ? "cellForNewNode.getSNode() == null" : "cellForNewNode.getSNode().isDisposed(): " + cellForNewNode.getSNode().isDisposed();
     typeCheckingContext.setInEditorQueriesMode();
     boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.RIGHT, tail);
     typeCheckingContext.resetIsInEditorQueriesMode();
