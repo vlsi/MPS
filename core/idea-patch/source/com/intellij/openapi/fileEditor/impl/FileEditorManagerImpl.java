@@ -98,6 +98,7 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
   private final Project myProject;
 
   // MPS Patch: field added to prevent focus transferred into editor
+  @Patch
   private boolean myDoNotTransferFocus = true;
 
   private final MergingUpdateQueue myQueue = new MergingUpdateQueue("FileEditorManagerUpdateQueue", 50, true, null);
@@ -470,8 +471,9 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
    * @param entry   map between FileEditorProvider and FileEditorState. If this parameter
    * @param current
    */
+  @Patch
   @NotNull
-  Pair<FileEditor[], FileEditorProvider[]> openFileImpl3(final EditorWindow window,
+  Pair<FileEditor[], FileEditorProvider[]>openFileImpl3(final EditorWindow window,
                                                          @NotNull final VirtualFile file,
                                                          final boolean focusEditor,
                                                          final HistoryEntry entry,
