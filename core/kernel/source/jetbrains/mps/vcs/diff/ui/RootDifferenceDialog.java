@@ -116,7 +116,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     final SNode[] oldNode = new SNode[1];
     final SNode[] newNode = new SNode[1];
 
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ModelAccess.instance().runReadAction(new Runnable() {
 
       public void run() {
         oldNode[0] = myOldModel.getNodeById(node.getSNodeId());
