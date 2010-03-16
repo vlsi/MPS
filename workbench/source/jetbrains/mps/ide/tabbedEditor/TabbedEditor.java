@@ -21,7 +21,9 @@ import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.sun.corba.se.spi.orbutil.fsm.FSM;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.MPSEditorState;
 import jetbrains.mps.ide.tabbedEditor.tabs.BaseMultitabbedTab;
@@ -142,6 +144,7 @@ public class TabbedEditor implements IEditor {
         }
       }
     }
+    FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
     manager.updateFilePresentation(virtualFile);
   }
 
