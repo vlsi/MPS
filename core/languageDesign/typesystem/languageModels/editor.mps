@@ -3620,6 +3620,12 @@
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1239880443054" />
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="6136676636349926799">
+        <property name="text:32" value="is applicable:" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="6136676636349926801">
+        <link role="relationDeclaration:32" targetNodeId="1.6136676636349909553:3" />
+      </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1236083765409">
         <property name="text:32" value="operation type:" />
       </node>
@@ -4006,6 +4012,12 @@
           <property name="flag:32" value="false" />
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="8124453027370845398" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8861433211214798029">
+        <property name="text:32" value="is applicable:" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="8861433211214798031">
+        <link role="relationDeclaration:32" targetNodeId="1.6136676636349909553:3" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8124453027370845407">
         <property name="text:32" value="operation type:" />

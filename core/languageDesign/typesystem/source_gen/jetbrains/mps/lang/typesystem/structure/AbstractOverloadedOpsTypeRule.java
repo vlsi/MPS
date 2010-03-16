@@ -14,6 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 public class AbstractOverloadedOpsTypeRule extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule";
   public static final String FUNCTION = "function";
+  public static final String IS_APPLICABLE = "isApplicable";
   public static final String OPERATION_CONCEPT = "operationConcept";
 
   public AbstractOverloadedOpsTypeRule(SNode node) {
@@ -26,6 +27,14 @@ public class AbstractOverloadedOpsTypeRule extends BaseConcept {
 
   public void setFunction(OverloadedOperatorTypeFunction node) {
     super.setChild(AbstractOverloadedOpsTypeRule.FUNCTION, node);
+  }
+
+  public OverloadedOpIsApplicableFunction getIsApplicable() {
+    return (OverloadedOpIsApplicableFunction) this.getChild(OverloadedOpIsApplicableFunction.class, AbstractOverloadedOpsTypeRule.IS_APPLICABLE);
+  }
+
+  public void setIsApplicable(OverloadedOpIsApplicableFunction node) {
+    super.setChild(AbstractOverloadedOpsTypeRule.IS_APPLICABLE, node);
   }
 
   public int getOperationConceptsCount() {

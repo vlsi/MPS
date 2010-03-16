@@ -42,6 +42,8 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xc5f9o_d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_xc5f9o_e0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_xc5f9o_f0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_xc5f9o_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_xc5f9o_h0(editorContext, node));
     return editorCell;
   }
 
@@ -180,15 +182,22 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_xc5f9o_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation type:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is applicable:");
     editorCell.setCellId("Constant_xc5f9o_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_xc5f9o_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-----------------------------------------------");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation type:");
     editorCell.setCellId("Constant_xc5f9o_f0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_xc5f9o_h0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-----------------------------------------------");
+    editorCell.setCellId("Constant_xc5f9o_h0");
     BaseLanguageStyle_StyleSheet.getComment(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -313,6 +322,23 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNode_xc5f9o_e0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("isApplicable");
+    provider.setNoTargetText("<no isApplicable>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_xc5f9o_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("function");
     provider.setNoTargetText("<no function>");
