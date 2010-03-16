@@ -14360,10 +14360,7 @@
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="113917032267548932">
             <link role="variableDeclaration:3" targetNodeId="113917032267548925" resolveInfo="node" />
           </node>
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="113917032267578708">
-            <link role="classifier:3" targetNodeId="17.~Color" resolveInfo="Color" />
-            <link role="variableDeclaration:3" targetNodeId="17.~Color.cyan" resolveInfo="cyan" />
-          </node>
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3092834638367473645" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="113917032267578709" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="113917032267578710">
             <link role="variableDeclaration:3" targetNodeId="113917032267548927" resolveInfo="ovner" />
@@ -14420,9 +14417,7 @@
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="113917032267578743">
       <property name="name:3" value="getTooltipText" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="113917032267578744" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="113917032267578745">
-        <link role="classifier:3" targetNodeId="9.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="5456917830965920341" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="113917032267578746">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="113917032267578747">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="113917032267578748">
@@ -14503,6 +14498,47 @@
             <link role="variableDeclaration:3" targetNodeId="113917032267578766" resolveInfo="bigCell" />
           </node>
         </node>
+      </node>
+    </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="2717722618346311701">
+      <property name="name:3" value="isValid" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2717722618346311702" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="2717722618346311703" />
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="2717722618346311704">
+        <property name="name:3" value="component" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2717722618346311705">
+          <link role="classifier:3" targetNodeId="35.~EditorComponent" resolveInfo="EditorComponent" />
+        </node>
+      </node>
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2717722618346311706">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="3092834638367237086">
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="3092834638367237120">
+            <property name="text:3" value="Returning" />
+          </node>
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart:3" id="3092834638367237121">
+            <node role="commentedStatement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3092834638367237123">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3092834638367237124">
+                <property name="value:3" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="3092834638367237109">
+            <property name="text:3" value="to hide these messages from" />
+          </node>
+          <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart:3" id="3092834638367237114">
+            <node role="commentedStatement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3092834638367237116">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AbstractClassifierReference:3" id="3092834638367237117">
+                <link role="classifier:3" targetNodeId="35.~MessagesGutter" resolveInfo="MessagesGutter" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3092834638367237111">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2717722618346362624" />
+        </node>
+      </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="2717722618346311707">
+        <link role="annotation:3" targetNodeId="9.~Override" />
       </node>
     </node>
   </node>

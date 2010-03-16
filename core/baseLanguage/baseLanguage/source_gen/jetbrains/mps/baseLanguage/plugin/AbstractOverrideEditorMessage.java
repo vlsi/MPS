@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
-import java.awt.Color;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -19,7 +18,7 @@ public abstract class AbstractOverrideEditorMessage extends DefaultEditorMessage
   private String myTooltip;
 
   public AbstractOverrideEditorMessage(SNode node, EditorMessageOwner ovner, String tooltip) {
-    super(node, Color.cyan, "", ovner);
+    super(node, null, "", ovner);
     this.myTooltip = tooltip;
   }
 
@@ -40,5 +39,11 @@ public abstract class AbstractOverrideEditorMessage extends DefaultEditorMessage
       return bigCell.findChild(CellFinders.byClass(EditorCell_Label.class, true));
     }
     return bigCell;
+  }
+
+  @Override
+  public boolean isValid(EditorComponent component) {
+    // Returning <node> to hide these messages from <node> 
+    return false;
   }
 }
