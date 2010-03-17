@@ -10,9 +10,14 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.NameUtil;
 
 public class NodeAttributeAccessQualifier_annotationLink_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public NodeAttributeAccessQualifier_annotationLink_ReferentConstraint() {
@@ -29,9 +34,14 @@ public class NodeAttributeAccessQualifier_annotationLink_ReferentConstraint exte
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode ald = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration");
     List<SNode> annotationLinks = SConceptOperations.findConceptInstances(ald, operationContext.getScope());
+    SNode operation = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.AttributeAccessOperation");
+    final Wrappers._T<SNode> leftConcept = new Wrappers._T<SNode>(SNodeOperation_Behavior.getLeftNodeConcept_1213877508847(SNodeOperations.cast(SNodeOperations.getParent(operation), "jetbrains.mps.baseLanguage.structure.DotExpression")));
+    if (leftConcept.value == null) {
+      leftConcept.value = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
+    }
     List<SNode> nodeAttrLinks = ListSequence.fromList(annotationLinks).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, "stereotype", "node", "node");
+        return SPropertyOperations.hasValue(it, "stereotype", "node", "node") && SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(it, "source", false), NameUtil.nodeFQName(leftConcept.value));
       }
     }).toListSequence();
     return nodeAttrLinks;
