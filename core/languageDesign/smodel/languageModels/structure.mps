@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="2">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="parameter" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" featureKind="CHILD" />
@@ -15,6 +16,7 @@
     <refactoringContext modelVersion="3">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AbstractOperationParameter" conceptFQName="jetbrains.mps.bootstrap.smodelLanguage.structure.AbstractOperationParameter" featureKind="CONCEPT" />
@@ -449,6 +451,7 @@
     <refactoringContext modelVersion="4">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="parameter" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation" featureKind="CHILD" />
@@ -459,6 +462,7 @@
     <refactoringContext modelVersion="5">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="parameter" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation" featureKind="CHILD" />
@@ -469,6 +473,7 @@
     <refactoringContext modelVersion="6">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="parameter" conceptFQName="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation" featureKind="CHILD" />
@@ -479,6 +484,7 @@
     <refactoringContext modelVersion="7">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="parameter" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" featureKind="CHILD" />
@@ -489,6 +495,7 @@
     <refactoringContext modelVersion="8">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="parameter" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" featureKind="CHILD" />
@@ -499,6 +506,7 @@
     <refactoringContext modelVersion="9">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameLink" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="conceptMethodDeclaration" conceptFQName="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" featureKind="REFERENCE" />
@@ -578,6 +586,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441160167" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="BaseExecuteCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.BaseExecuteCommandStatement" featureKind="CONCEPT" />
@@ -661,6 +670,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441216717" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="CommandClosureLiteral" conceptFQName="jetbrains.mps.lang.smodel.structure.CommandClosureLiteral" featureKind="CONCEPT" />
@@ -680,6 +690,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441257565" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ExecuteCommandInEDTStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteCommandInEDTStatement" featureKind="CONCEPT" />
@@ -735,6 +746,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441285520" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ExecuteCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteCommandStatement" featureKind="CONCEPT" />
@@ -754,6 +766,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441312938" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ExecuteEDTCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteEDTCommandStatement" featureKind="CONCEPT" />
@@ -809,6 +822,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441341972" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ExecuteLightweightCommandStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteLightweightCommandStatement" featureKind="CONCEPT" />
@@ -864,6 +878,7 @@
           <value modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" nodeId="1225441380936" />
         </entry>
       </moveMap>
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="ExecuteWriteActionStatement" conceptFQName="jetbrains.mps.lang.smodel.structure.ExecuteWriteActionStatement" featureKind="CONCEPT" />
@@ -1305,6 +1320,9 @@
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1140133669692">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1138763241883:16" resolveInfo="applicable_to_node" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="5299096511375816355">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1138763325919:16" resolveInfo="applicableToLink" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1140137987495">
