@@ -13,7 +13,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new OverloadedBinaryOperator_operator_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new OverloadedBinaryOperator2_operator_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

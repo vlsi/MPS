@@ -21,7 +21,7 @@ public class typeof_LeftOperand_InferenceRule extends AbstractInferenceRule_Runt
       SNode _nodeToCheck_1029348928467 = leftOperand;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:c493b9a9-0f39-4efb-93f7-8ac7c0a1036c(jetbrains.mps.baseLanguage.overloadedOperators.typesystem)", "6677452554239169677", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:c493b9a9-0f39-4efb-93f7-8ac7c0a1036c(jetbrains.mps.baseLanguage.overloadedOperators.typesystem)", "6677452554239169674", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.getAncestor(leftOperand, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", false, false), "leftType", true), "r:c493b9a9-0f39-4efb-93f7-8ac7c0a1036c(jetbrains.mps.baseLanguage.overloadedOperators.typesystem)", "6677452554239169682", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:c493b9a9-0f39-4efb-93f7-8ac7c0a1036c(jetbrains.mps.baseLanguage.overloadedOperators.typesystem)", "6677452554239169674", true), (SNode) SLinkOperations.getTarget(SNodeOperations.getAncestor(leftOperand, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", false, false), "leftType", true), _info_12389875345);
     }
   }
 

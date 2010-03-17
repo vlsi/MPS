@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.overloadedOperators.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 
 public class OverloadedBinaryOperator_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +14,9 @@ public class OverloadedBinaryOperator_Behavior {
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "returnType", true);
+  }
+
+  public static String call_getFunctionName_6677452554240637506(SNode thisNode) {
+    return "apply_" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "operator", false), "name") + "_" + NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "leftType", true))) + "_" + NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "rightType", true)));
   }
 }
