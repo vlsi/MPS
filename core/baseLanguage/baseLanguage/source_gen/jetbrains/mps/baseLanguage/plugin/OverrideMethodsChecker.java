@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Iterator;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.ArrayList;
@@ -93,7 +93,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
           "Implements"
         ));
         tooltip.append(" method in '");
-        tooltip.append(BaseConcept_Behavior.call_getPresentation_1213877396640(overridenClassifier));
+        tooltip.append(INamedConcept_Behavior.call_getFqName_1213877404258(overridenClassifier));
         tooltip.append("'");
         if (it.hasNext()) {
           tooltip.append(BR);
@@ -246,7 +246,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       for (Iterator<SNode> it = ListSequence.fromList(MapSequence.fromMap(overridenMethodsToOverridingClassifiersMap).get(overridenMethod)).iterator(); it.hasNext();) {
         SNode overridingClassifier = it.next();
         tooltip.append(TOOLTIP_INDENT);
-        tooltip.append(BaseConcept_Behavior.call_getPresentation_1213877396640(overridingClassifier));
+        tooltip.append(INamedConcept_Behavior.call_getFqName_1213877404258(overridingClassifier));
         if (++messageCounter >= MAX_MESSAGE_NUMBER && it.hasNext()) {
           tooltip.append(TOOLTIP_INDENT);
           tooltip.append("...");

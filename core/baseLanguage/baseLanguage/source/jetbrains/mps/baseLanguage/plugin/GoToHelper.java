@@ -24,6 +24,7 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -103,7 +104,13 @@ public class GoToHelper {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
           BaseMethodDeclaration methodAdapter = (BaseMethodDeclaration) element.getNode().getAdapter();
-          return methodAdapter.getParent(INamedConcept.class, false).getName();
+          INamedConcept parentNamedElement = methodAdapter.getParent(INamedConcept.class, false);
+          if (parentNamedElement instanceof BaseConcept) {
+            // TODO: another way to show reasonable container text here is to pass proper NodeListCellRenderer
+            // implementation from GoToOverridingMethod_Action
+            return ((BaseConcept) parentNamedElement).getVirtualPackage() + "." + parentNamedElement.getName();
+          }
+          return parentNamedElement.getName();
         }
       });
     }

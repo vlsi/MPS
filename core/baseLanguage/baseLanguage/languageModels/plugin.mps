@@ -11113,8 +11113,8 @@
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5249197957043259630">
                           <link role="variableDeclaration:3" targetNodeId="5249197957043259430" resolveInfo="overridenClassifier" />
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="5249197957043259570">
-                          <link role="baseMethodDeclaration:16" targetNodeId="48.1213877396640" resolveInfo="getPresentation" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="7813015447600452812">
+                          <link role="baseMethodDeclaration:16" targetNodeId="48.1213877404258" resolveInfo="getFqName" />
                         </node>
                       </node>
                     </node>
@@ -12497,8 +12497,8 @@
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1922058634759503608">
                           <link role="variableDeclaration:3" targetNodeId="1922058634759503556" resolveInfo="overridingClassifier" />
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="6268328477151477097">
-                          <link role="baseMethodDeclaration:16" targetNodeId="48.1213877396640" resolveInfo="getPresentation" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="7813015447600452791">
+                          <link role="baseMethodDeclaration:16" targetNodeId="48.1213877404258" resolveInfo="getFqName" />
                         </node>
                       </node>
                     </node>
