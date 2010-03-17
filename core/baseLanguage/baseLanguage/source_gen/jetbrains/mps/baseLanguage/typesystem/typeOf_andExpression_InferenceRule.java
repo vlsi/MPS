@@ -52,7 +52,7 @@ public class typeOf_andExpression_InferenceRule extends AbstractInferenceRule_Ru
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_6zik0b_a0a1a0 {

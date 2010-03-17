@@ -145,7 +145,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_3xwkcy_a0a0a0a2a1a1a0a5a0 {

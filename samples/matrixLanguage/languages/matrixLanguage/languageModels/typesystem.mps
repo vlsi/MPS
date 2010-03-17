@@ -198,6 +198,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1210004306103">
     <property name="name:3" value="typeof_MatrixMulExpression" />
+    <property name="overrides:3" value="true" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1210004306104">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement:3" id="1210004689795">
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1210004689796">
@@ -503,6 +504,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1210150085816">
     <property name="name:3" value="typeof_MatrixAddExpression" />
+    <property name="overrides:3" value="true" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1210150085817">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration:3" id="1215411668136">
         <property name="name:3" value="V" />
@@ -590,6 +592,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1210152017320">
     <property name="name:3" value="typeof_MatrixDivExpression" />
+    <property name="overrides:3" value="true" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1210152017321">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration:3" id="1210172745581">
         <property name="name:3" value="v" />
@@ -655,6 +658,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1210152122098">
     <property name="name:3" value="typeof_MatrixSubExpression" />
+    <property name="overrides:3" value="true" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1210152122099">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration:3" id="1210172571501">
         <property name="name:3" value="v" />

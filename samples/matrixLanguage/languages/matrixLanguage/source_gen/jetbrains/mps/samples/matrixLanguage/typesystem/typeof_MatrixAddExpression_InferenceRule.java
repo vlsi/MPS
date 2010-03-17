@@ -59,7 +59,7 @@ public class typeof_MatrixAddExpression_InferenceRule extends AbstractInferenceR
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_u8mvbk_a0a2a0 {

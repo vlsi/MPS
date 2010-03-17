@@ -2714,6 +2714,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1236083447582">
     <property name="name:3" value="typeof_operationConcept_parameter" />
+    <property name="overrides:3" value="true" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236083447583">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1236083449667">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1236083449668">
@@ -2751,8 +2752,8 @@
                           <link role="link:16" targetNodeId="1.8124453027370845341:3" />
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8124453027370845345">
-                        <link role="link:16" targetNodeId="1.1174642800329:3" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="20865837589549429">
+                        <link role="link:16" targetNodeId="5.1154546997487:16" />
                       </node>
                     </node>
                   </node>

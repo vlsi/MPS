@@ -47,7 +47,7 @@ public class typeof_InIntervalExpression_InferenceRule extends AbstractInference
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_ajlbhv_a0a1a0 {

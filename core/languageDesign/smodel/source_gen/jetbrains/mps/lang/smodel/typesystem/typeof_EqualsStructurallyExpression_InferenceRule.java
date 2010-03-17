@@ -51,7 +51,7 @@ public class typeof_EqualsStructurallyExpression_InferenceRule extends AbstractI
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_xxjesy_a0a0a0 {

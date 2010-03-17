@@ -46,6 +46,6 @@ public class typeof_MatrixSubExpression_InferenceRule extends AbstractInferenceR
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

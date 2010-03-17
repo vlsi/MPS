@@ -51,7 +51,7 @@ public class typeOf_OrExpression_InferenceRule extends AbstractInferenceRule_Run
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_7pa5ov_a0a0a0 {

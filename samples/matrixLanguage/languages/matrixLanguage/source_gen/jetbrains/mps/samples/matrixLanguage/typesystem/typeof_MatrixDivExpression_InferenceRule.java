@@ -51,7 +51,7 @@ public class typeof_MatrixDivExpression_InferenceRule extends AbstractInferenceR
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_ubl348_a0a3a0 {

@@ -36,7 +36,7 @@ public class typeof_NPENotEqualsExpression_InferenceRule extends AbstractInferen
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_qzfwgl_a0a0a0 {

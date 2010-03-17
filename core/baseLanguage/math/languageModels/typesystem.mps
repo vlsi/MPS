@@ -73,6 +73,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1235747425225">
     <property name="name:3" value="typeof_InIntervalExpression" />
     <property name="package:3" value="interval" />
+    <property name="overrides:3" value="true" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235747425226">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration:3" id="1235747425227">
         <property name="name:3" value="elementType" />
@@ -133,6 +134,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1235747425249">
     <property name="name:3" value="typeof_IntervalContainsExpression" />
     <property name="package:3" value="interval" />
+    <property name="overrides:3" value="true" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235747425250">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration:3" id="1235747425251">
         <property name="name:3" value="elementType" />
@@ -6874,6 +6876,7 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1238943151392">
     <property name="name:3" value="typeof_BinaryOperationMathContext" />
     <property name="package:3" value="mathcontext" />
+    <property name="overrides:3" value="true" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238943151393">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1238947038712">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1238947038713">

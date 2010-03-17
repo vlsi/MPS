@@ -120,7 +120,7 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_s4fcwx_a0a0a2a0a1a0a0a0 {

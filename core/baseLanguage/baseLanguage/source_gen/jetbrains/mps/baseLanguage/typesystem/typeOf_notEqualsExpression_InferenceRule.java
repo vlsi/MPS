@@ -43,7 +43,7 @@ public class typeOf_notEqualsExpression_InferenceRule extends AbstractInferenceR
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_aye861_a0a1a0 {

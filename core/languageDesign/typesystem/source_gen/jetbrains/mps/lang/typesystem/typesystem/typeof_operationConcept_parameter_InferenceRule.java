@@ -41,7 +41,7 @@ public class typeof_operationConcept_parameter_InferenceRule extends AbstractInf
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_v9qm53_a0a0a1a0 {
