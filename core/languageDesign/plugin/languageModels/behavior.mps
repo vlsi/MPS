@@ -3263,6 +3263,35 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8179323502814694246" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8179323502814694247" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4593153787954614900">
+      <property name="name" value="canOperationBeChild" />
+      <link role="overriddenMethod" targetNodeId="17.4593153787954614840" resolveInfo="canOperationBeChild" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4593153787954614903">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4593153787954614908">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4593153787954614921">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4593153787954614911">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4593153787954614910">
+                <link role="variableDeclaration:3" targetNodeId="4593153787954614904" resolveInfo="parentNode" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="4593153787954614915">
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="4593153787954614916">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4593153787954614920">
+                    <link role="conceptDeclaration:16" targetNodeId="1.8376523923662591983:23" resolveInfo="IExecuteConfigBlock" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="4593153787954614925" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4593153787954614904">
+        <property name="name:3" value="parentNode" />
+        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4593153787954614905" />
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="4593153787954614906" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4593153787954614907" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="8179323502814694238">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8179323502814694239" />
     </node>

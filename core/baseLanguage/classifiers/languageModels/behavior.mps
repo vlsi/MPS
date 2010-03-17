@@ -342,6 +342,23 @@
         <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SConceptType:16" id="8179323502814694222" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4593153787954614840">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="canOperationBeChild" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4593153787954614841" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="4593153787954614849" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4593153787954614843">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4593153787954614852">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4593153787954614854">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="4593153787954614850">
+        <property name="name:3" value="parentNode" />
+        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4593153787954614897" />
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877353026">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877353027" />
     </node>
@@ -747,6 +764,7 @@
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877528020">
       <property name="name" value="getMembers" />
       <property name="isPrivate" value="false" />
+      <property name="isVirtual" value="true" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="1213877528021">
         <link role="elementConcept:16" targetNodeId="1.1205752032448:0" resolveInfo="IMember" />
       </node>

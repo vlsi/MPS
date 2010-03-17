@@ -18,6 +18,7 @@ public class IClassifier_Behavior {
   private static Class[] PARAMETERS_1213877527970 = {SNode.class};
   private static Class[] PARAMETERS_1217433657148 = {SNode.class};
   private static Class[] PARAMETERS_1213877527988 = {SNode.class};
+  private static Class[] PARAMETERS_1213877528020 = {SNode.class ,SNode.class};
   private static Class[] PARAMETERS_1213877528124 = {SNode.class};
 
   public static void init(SNode thisNode) {
@@ -43,7 +44,7 @@ public class IClassifier_Behavior {
     return result;
   }
 
-  public static List<SNode> call_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
+  public static List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode member : IClassifier_Behavior.call_getMembers_1213877528124(thisNode)) {
       if (IMember_Behavior.call_getVisiblity_1213877352965(member) == null && SNodeOperations.getModel(member) == SNodeOperations.getModel(contextNode)) {
@@ -108,6 +109,10 @@ public class IClassifier_Behavior {
     return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_getParts_1213877527988", PARAMETERS_1213877527988);
   }
 
+  public static List<SNode> call_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_getMembers_1213877528020", PARAMETERS_1213877528020, contextNode);
+  }
+
   public static List<SNode> call_getMembers_1213877528124(SNode thisNode) {
     return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), "virtual_getMembers_1213877528124", PARAMETERS_1213877528124);
   }
@@ -122,6 +127,10 @@ public class IClassifier_Behavior {
 
   public static List<SNode> callSuper_getParts_1213877527988(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), callerConceptFqName, "virtual_getParts_1213877527988", PARAMETERS_1213877527988);
+  }
+
+  public static List<SNode> callSuper_getMembers_1213877528020(SNode thisNode, String callerConceptFqName, SNode contextNode) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"), callerConceptFqName, "virtual_getMembers_1213877528020", PARAMETERS_1213877528020, contextNode);
   }
 
   public static List<SNode> callSuper_getMembers_1213877528124(SNode thisNode, String callerConceptFqName) {

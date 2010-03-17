@@ -1019,8 +1019,8 @@
               <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="8179323502814657500" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="8179323502814657505">
                 <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="8179323502814657506">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8179323502814657509">
-                    <link role="conceptDeclaration:16" targetNodeId="7.678887849223472884:23" resolveInfo="ExecuteConfigBlock" />
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4818608858618100279">
+                    <link role="conceptDeclaration:16" targetNodeId="7.8376523923662591983:23" resolveInfo="IExecuteConfigBlock" />
                   </node>
                 </node>
               </node>
