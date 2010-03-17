@@ -16,7 +16,10 @@
 package jetbrains.mps.ide.tabbedEditor.tabs;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowManager;
+import jetbrains.mps.changesmanager.NodeFileStatusListener;
+import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
@@ -30,6 +33,7 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.EqualUtil;
 
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
@@ -47,6 +51,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
   private SNodePointer myLoadableNode;
   private Class<? extends BaseAdapter> myClass = BaseConcept.class;
   private TabbedEditor myTabbedEditor;
+  private MyNodeFileStatusListener myNodeFileStatusListener = new MyNodeFileStatusListener();
 
   protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
     myTabbedEditor = tabbedEditor;
@@ -176,6 +181,8 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
       if (!loadableNode.getModel().hasModelListener(myListener)) {
         loadableNode.getModel().addWeakSModelListener(myListener);
       }
+      RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+      statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
       return true;
     }
 
@@ -235,6 +242,21 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
       if (!myClass.isInstance(referentNode)) return;
       if (getLoadableNode() != null && tryToLoadNode() == null) {
         reinit();
+      }
+    }
+  }
+
+  private class MyNodeFileStatusListener implements NodeFileStatusListener {
+    @Override
+    public void fileStatusChanged(final SNode node) {
+      SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+        @Override
+        public SNodePointer compute() {
+          return new SNodePointer(node);
+        }
+      });
+      if (EqualUtil.equals(myLoadableNode, nodePointer)) {
+        myTabbedEditor.updateTabColor(BaseSingletabbedTab.this);
       }
     }
   }

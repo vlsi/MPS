@@ -18,20 +18,16 @@ package jetbrains.mps.ide.tabbedEditor.tabs;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vcs.FileStatus;
-import com.intellij.openapi.vcs.FileStatusListener;
-import com.intellij.openapi.vcs.FileStatusManager;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.changesmanager.ChangesManager;
-import jetbrains.mps.changesmanager.ChangesManagerFileStatusProvider;
+import jetbrains.mps.changesmanager.NodeFileStatusListener;
+import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
@@ -51,8 +47,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -93,7 +87,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   private TabbedEditor myTabbedEditor;
   private int myCurrentIndex = 0;
   private ListPopup myListPopup;
-  private MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
+  private MyNodeFileStatusListener myNodeFileStatusListener = new MyNodeFileStatusListener();
 
   protected BaseMultitabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
     myTabbedEditor = tabbedEditor;
@@ -112,6 +106,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       myTabbedEditor.getTabbedPane().remove(this);
       myTabbedEditor.getTabbedPane().initTab(this);
     }
+    myTabbedEditor.updateTabColor(this);
   }
 
   private int getIndexOfTabFor(SNodePointer pointer) {
@@ -256,7 +251,8 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     } catch (IndexOutOfBoundsException ignored) {
     }
 
-    getFileStatusManager().addFileStatusListener(myFileStatusListener);
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+    statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
 
     for (Pair<SNode, IOperationContext> loadableNodeAndContext : loadableNodes) {
       addInnerTab(loadableNodeAndContext.o1, loadableNodeAndContext.o2);
@@ -282,10 +278,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     }
 
     return true;
-  }
-
-  private FileStatusManager getFileStatusManager() {
-    return FileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
   }
 
   private void addInnerTabChecked(SNode loadableNode, IOperationContext operationContext) {
@@ -314,8 +306,8 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   }
 
   private void updateTabColor(int tabIndex) {
-    MPSNodeVirtualFile nodeVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myEditors.get(tabIndex).getEditedNode());
-    FileStatus fileStatus = getFileStatusManager().getStatus(nodeVirtualFile);
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+    FileStatus fileStatus = statusManager.getStatus(myEditors.get(tabIndex).getEditedNode());
     if (fileStatus == null) {
       fileStatus = FileStatus.NOT_CHANGED;
     }
@@ -324,6 +316,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       color = Color.BLACK;
     }
     myInnerTabbedPane.setForegroundAt(tabIndex, color);
+    myTabbedEditor.updateTabColor(this);
   }
 
   public List<EditorComponent> getEditorComponents() {
@@ -492,29 +485,19 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     }
   }
 
-  private class MyFileStatusListener implements FileStatusListener {
+  private class MyNodeFileStatusListener implements NodeFileStatusListener {
     @Override
-    public void fileStatusesChanged() {
-      for (int i = 0; i < myEditors.size(); i++) {
-        updateTabColor(i);
-      }
-    }
-
-    @Override
-    public void fileStatusChanged(@NotNull VirtualFile file) {
-      if (file instanceof MPSNodeVirtualFile) {
-        final SNode root = ((MPSNodeVirtualFile) file).getNode();
-        SNodePointer rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-          @Override
-          public SNodePointer compute() {
-            return new SNodePointer(root);
-          }
-        });
-        if (myLoadableNodes.contains(rootPointer)) {
-          int index = getIndexOfTabFor(rootPointer);
-          assert index >= 0 : "tab for node not found";
-          updateTabColor(index);
+    public void fileStatusChanged(final SNode node) {
+      SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+        @Override
+        public SNodePointer compute() {
+          return new SNodePointer(node);
         }
+      });
+      if (myLoadableNodes.contains(nodePointer)) {
+        int index = getIndexOfTabFor(nodePointer);
+        assert index >= 0 : "tab for node not found";
+        updateTabColor(index);
       }
     }
   }

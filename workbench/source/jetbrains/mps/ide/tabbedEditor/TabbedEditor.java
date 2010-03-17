@@ -21,6 +21,7 @@ import com.intellij.openapi.fileEditor.FileEditorStateLevel;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.sun.corba.se.spi.orbutil.fsm.FSM;
@@ -39,6 +40,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -146,6 +148,10 @@ public class TabbedEditor implements IEditor {
     }
     FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
     manager.updateFilePresentation(virtualFile);
+  }
+
+  public void updateTabColor(ILazyTab tab) {
+    myTabbedPane.updateTabColor(tab);
   }
 
   @NotNull

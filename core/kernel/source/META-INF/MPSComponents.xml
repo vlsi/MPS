@@ -628,6 +628,11 @@
             <implementation-class>jetbrains.mps.changesmanager.EditorChangesHighlighter</implementation-class>
             <skipForDefaultProject />
         </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.changesmanager.RootNodeFileStatusManager</implementation-class>
+            <skipForDefaultProject />
+        </component>
     </project-components>
 
 

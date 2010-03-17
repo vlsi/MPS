@@ -17,6 +17,8 @@ package jetbrains.mps.ide.tabbedEditor;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.fileEditor.FileEditor;
+import com.intellij.openapi.vcs.FileStatus;
+import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.nodeEditor.CellSelectionListener;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.InspectorTool;
@@ -84,12 +86,40 @@ public class LazyTabbedPane extends JPanel {
     myTabbedPane.setSelectedIndex(index);
   }
 
-  private void updateTabColor(ILazyTab tab) {
+  public void updateTabColor(ILazyTab tab) {
     int index = myLazyTabs.indexOf(tab);
     if (tab.getComponent() == null) {
       myTabbedPane.setForegroundAt(index, Color.GRAY);
     } else {
-      myTabbedPane.setForegroundAt(index, Color.BLACK);
+      RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+      boolean hasNotChanged = false;
+      boolean hasModified = false;
+      boolean hasAdded = false;
+      for (EditorComponent editorComponent : tab.getEditorComponents()) {
+        SNode node = editorComponent.getEditedNode();
+        if (node == null) {
+          continue;
+        }
+        FileStatus status = statusManager.getStatus(node);
+        if (status == FileStatus.ADDED) {
+          hasAdded = true;
+        } else if (status == FileStatus.MODIFIED) {
+          hasModified = true;
+        } else {
+          hasNotChanged = true;
+        }
+      }
+      FileStatus status = FileStatus.NOT_CHANGED;
+      if (hasModified) {
+        status = FileStatus.MODIFIED;
+      } else if (hasAdded) {
+        if (hasNotChanged) {
+          status = FileStatus.MODIFIED;
+        } else {
+          status = FileStatus.ADDED;
+        }
+      }
+      myTabbedPane.setForegroundAt(index, status.getColor());
     }
   }
 
