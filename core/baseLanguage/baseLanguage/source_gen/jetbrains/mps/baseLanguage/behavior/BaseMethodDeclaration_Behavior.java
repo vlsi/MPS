@@ -160,10 +160,10 @@ public class BaseMethodDeclaration_Behavior {
       return false;
     }
     if (SNodeOperations.isInstanceOf(checked, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      SNode thisMethod = SNodeOperations.cast(checked, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SNode enclosingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      SNode thisMethod = SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      SNode enclosingClassifier = SNodeOperations.getAncestor(checked, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       SNode patternMethod = ResolveUtil.processMethodToImplement(enclosingClassifier, thisMethod);
-      return BaseMethodDeclaration_Behavior.call_hasSameParameters_855369272314187138(thisNode, patternMethod);
+      return BaseMethodDeclaration_Behavior.call_hasSameParameters_855369272314187138(patternMethod, checked);
     } else {
       return BaseMethodDeclaration_Behavior.call_hasSameParameters_855369272314187138(thisNode, checked);
     }

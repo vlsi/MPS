@@ -12,6 +12,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -111,7 +112,16 @@ outer:
     Set<SNode> initialClassifierTypes = SetSequence.fromSet(new HashSet<SNode>());
     if (SNodeOperations.isInstanceOf(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode classConcept = SNodeOperations.cast(enclosingClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-      SNode superclass = SLinkOperations.getTarget(classConcept, "superclass", true);
+      SNode superclass;
+      if (SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        superclass = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+        SLinkOperations.setTarget(superclass, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(classConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), false);
+        for (SNode type : SLinkOperations.getTargets(SNodeOperations.cast(classConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "typeParameter", true)) {
+          ListSequence.fromList(SLinkOperations.getTargets(superclass, "parameter", true)).addElement(SNodeOperations.copyNode(type));
+        }
+      } else {
+        superclass = SLinkOperations.getTarget(classConcept, "superclass", true);
+      }
       if ((superclass != null)) {
         SetSequence.fromSet(initialClassifierTypes).addElement(superclass);
       }
