@@ -236,7 +236,7 @@ public class SNodeOperations {
 
 
   private static void _populateListOfDescendants(List<SNode> list, SNode node, Condition<SNode> condition, Condition<SNode> stopCondition) {
-    for (SNode child : node.getChildrenArray()) {
+    for (SNode child : node.getChildrenIterable()) {
       if (condition.met(child)) {
         list.add(child);
       }

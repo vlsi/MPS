@@ -50,7 +50,7 @@ public class CloneUtil {
       outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
       outputNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
     }
-    for (SReference reference : inputNode.getReferencesArray()) {
+    for (SReference reference : inputNode.getReferencesIterable()) {
       SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
       if (targetModelReference == null) {
         LOG.warning("broken reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
@@ -77,7 +77,7 @@ public class CloneUtil {
       }
     }
 
-    for (SNode child : inputNode.getChildren()) {
+    for (SNode child : inputNode.getChildrenIterable()) {
       String role = child.getRole_();
       assert role != null;
       outputNode.addChild(role, clone(child, outputModel, originalInput));
