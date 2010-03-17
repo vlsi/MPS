@@ -4,15 +4,25 @@ package jetbrains.mps.lang.behavior.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SuperNodeExpression extends Expression {
   public static final String concept = "jetbrains.mps.lang.behavior.structure.SuperNodeExpression";
+  public static final String SUPER_CONCEPT = "superConcept";
 
   public SuperNodeExpression(SNode node) {
     super(node);
+  }
+
+  public AbstractConceptDeclaration getSuperConcept() {
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, SuperNodeExpression.SUPER_CONCEPT);
+  }
+
+  public void setSuperConcept(AbstractConceptDeclaration node) {
+    super.setReferent(SuperNodeExpression.SUPER_CONCEPT, node);
   }
 
   public static SuperNodeExpression newInstance(SModel sm, boolean init) {

@@ -149,6 +149,11 @@
     <property name="package:0" value="Behavior" />
     <property name="name:0" value="SuperNodeExpression" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5299096511375896640">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="superConcept" />
+      <link role="target:0" targetNodeId="3.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1225194628441">
       <property name="value:0" value="super" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
