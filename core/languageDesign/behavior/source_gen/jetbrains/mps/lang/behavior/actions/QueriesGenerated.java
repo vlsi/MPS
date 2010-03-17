@@ -5,9 +5,10 @@ package jetbrains.mps.lang.behavior.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -20,10 +21,17 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
+import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1238617792565(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration","jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration"}, true, false) != null;
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SuperNodeExpression_7448026190102456641(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "superConcept", false) == null);
   }
 
   public static void nodeFactory_NodeSetup_ConceptMethodDeclaration_1238617792579(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -67,6 +75,35 @@ public class QueriesGenerated {
           }
         }
       }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_SuperNodeExpression_7448026190102456640(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode result = SuperNodeExpression_Behavior.call_getSuperConcept_7448026190102457310(_context.getSourceNode());
+          if (result == null) {
+            result = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
+          }
+          return SLinkOperations.setTarget(_context.getSourceNode(), "superConcept", result, false);
+        }
+
+        public String getMatchingText(String pattern) {
+          return "<";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "add qualifier for super expression";
+        }
+      });
     }
     return result;
   }

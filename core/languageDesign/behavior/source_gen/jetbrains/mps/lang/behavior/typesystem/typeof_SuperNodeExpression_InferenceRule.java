@@ -6,9 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,25 +20,12 @@ public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceR
   }
 
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext) {
-    SNode result;
-    if ((SLinkOperations.getTarget(nodeToCheck, "superConcept", false) != null)) {
-      result = SLinkOperations.getTarget(nodeToCheck, "superConcept", false);
-    } else {
-      SNode behaviour = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
-      SNode concept = SLinkOperations.getTarget(behaviour, "concept", false);
-      if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-        SNode cd = ((SNode) concept);
-        result = SLinkOperations.getTarget(cd, "extends", false);
-      } else {
-        SNode icd = ((SNode) concept);
-        result = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(icd, "extends", true)).first(), "intfc", false);
-      }
-    }
+    SNode superConcept = SuperNodeExpression_Behavior.call_getSuperConcept_7448026190102457310(nodeToCheck);
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195239813", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195239815", true), (SNode) new typeof_SuperNodeExpression_InferenceRule.QuotationClass_ts3rwu_a0a2a0().createNode(result, typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195239815", true), (SNode) new typeof_SuperNodeExpression_InferenceRule.QuotationClass_ts3rwu_a0a1a0().createNode(superConcept, typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -56,8 +41,8 @@ public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceR
     return false;
   }
 
-  public static class QuotationClass_ts3rwu_a0a2a0 {
-    public QuotationClass_ts3rwu_a0a2a0() {
+  public static class QuotationClass_ts3rwu_a0a1a0 {
+    public QuotationClass_ts3rwu_a0a1a0() {
     }
 
     public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
