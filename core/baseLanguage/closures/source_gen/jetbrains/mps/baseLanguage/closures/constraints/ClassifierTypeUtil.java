@@ -53,7 +53,16 @@ public class ClassifierTypeUtil {
       }
       return res;
     }
-    return coerceToClassifierType(purified);
+    SNode coerced = coerceToClassifierType(purified);
+    if (SNodeOperations.isInstanceOf(coerced, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+      SNode classifierType = SNodeOperations.cast(coerced, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierType, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        classifierType = SNodeOperations.copyNode(classifierType);
+        SLinkOperations.setTarget(classifierType, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(classifierType, "classifier", false), "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), false);
+        return classifierType;
+      }
+    }
+    return coerced;
   }
 
   private static SNode coerceToClassifierType(SNode type) {
