@@ -152,6 +152,11 @@ public class TabbedEditor implements IEditor {
 
   public void updateTabColor(ILazyTab tab) {
     myTabbedPane.updateTabColor(tab);
+    Project project = myOperationContext.getProject();
+    FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
+    VirtualFile virtualFile = manager.getCurrentFile();
+    FileStatusManager.getInstance(project).fileStatusChanged(virtualFile);
+    manager.updateFilePresentation(virtualFile);
   }
 
   @NotNull
