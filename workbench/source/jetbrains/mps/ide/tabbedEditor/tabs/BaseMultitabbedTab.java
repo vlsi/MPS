@@ -494,14 +494,19 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   private class MyNodeFileStatusListener implements NodeFileStatusListener {
     @Override
     public void fileStatusChanged(final SNode node) {
-      SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+      final SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
         @Override
         public SNodePointer compute() {
           return new SNodePointer(node);
         }
       });
       if (myLoadableNodes.contains(nodePointer)) {
-        int index = getIndexOfTabFor(nodePointer);
+        int index = ModelAccess.instance().runReadAction(new Computable<Integer>() {
+          @Override
+          public Integer compute() {
+            return getIndexOfTabFor(nodePointer);
+          }
+        });
         assert index >= 0 : "tab for node not found";
         updateTabColor(index);
       }
