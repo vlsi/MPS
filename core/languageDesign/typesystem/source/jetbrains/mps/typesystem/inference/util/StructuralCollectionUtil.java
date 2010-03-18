@@ -17,6 +17,8 @@ package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.misc.ObjectCache;
 
 import java.util.Set;
@@ -27,7 +29,7 @@ public class StructuralCollectionUtil {
   private static final ObjectCache<SNode, Integer> ourHashCodeCash = new ObjectCache<SNode, Integer>(5000);
 
 
-  public static int hashCode(SNode node) {
+  public static int hashCode(final SNode node) {
     Integer result = ourHashCodeCash.tryKey(node);
     if (result != null) {
       return result;
@@ -36,6 +38,12 @@ public class StructuralCollectionUtil {
     toString(sb, node, node);
     result = sb.toString().hashCode();
     ourHashCodeCash.cacheObject(node, result);
+    node.getModel().addModelListener(new SModelAdapter() {
+      @Override
+      public void beforeModelDisposed(SModel sm) {
+        ourHashCodeCash.remove(node);
+      }
+    });
     return result;
   }
 
