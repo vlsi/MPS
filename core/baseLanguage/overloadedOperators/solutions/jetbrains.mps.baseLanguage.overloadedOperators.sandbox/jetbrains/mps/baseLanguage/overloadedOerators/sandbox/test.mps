@@ -254,7 +254,7 @@
               <link role="variableDeclaration:3" targetNodeId="4226637275972870395" resolveInfo="a" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="162210779026732183">
-              <link role="baseMethodDeclaration:3" targetNodeId="4226637275972869678" resolveInfo="print" />
+              <link role="baseMethodDeclaration:3" targetNodeId="6517886960437939916" resolveInfo="print" />
             </node>
           </node>
         </node>
@@ -264,7 +264,7 @@
               <link role="variableDeclaration:3" targetNodeId="4226637275972873358" resolveInfo="b" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="162210779026732191">
-              <link role="baseMethodDeclaration:3" targetNodeId="4226637275972869678" resolveInfo="print" />
+              <link role="baseMethodDeclaration:3" targetNodeId="6517886960437939916" resolveInfo="print" />
             </node>
           </node>
         </node>
