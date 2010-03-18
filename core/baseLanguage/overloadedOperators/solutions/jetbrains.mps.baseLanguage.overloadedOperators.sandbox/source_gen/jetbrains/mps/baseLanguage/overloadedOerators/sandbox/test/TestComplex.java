@@ -12,11 +12,12 @@ public class TestComplex {
     Complex2 b = new Complex2();
     a.set(1, -4);
     b.set(2, 1);
-    Complex c = ComplexOperators.apply_PlusExpression_Complex2_Complex2(a, b);
-    Complex d = ComplexOperators.apply_MulExpression_Complex_Complex(a, b);
+    Complex2 c = ComplexOperators.apply_PlusExpression_Complex2_Complex2(a, b);
+    Complex d = ComplexOperators.apply_PlusExpression_Complex2_Complex2(c, b);
     a.print();
     b.print();
     c.print();
     d.print();
+    c.equals("d");
   }
 }

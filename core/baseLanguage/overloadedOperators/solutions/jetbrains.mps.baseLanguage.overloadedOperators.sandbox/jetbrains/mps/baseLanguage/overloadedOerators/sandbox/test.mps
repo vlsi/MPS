@@ -219,8 +219,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="162210779026732155">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="162210779026732156">
             <property name="name:3" value="c" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="162210779026732157">
-              <link role="classifier:3" targetNodeId="4226637275972869608" resolveInfo="Complex" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3855395826139545512">
+              <link role="classifier:3" targetNodeId="6517886960437939909" resolveInfo="Complex2" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="162210779026732160">
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="162210779026732163">
@@ -238,12 +238,12 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="162210779026732169">
               <link role="classifier:3" targetNodeId="4226637275972869608" resolveInfo="Complex" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.MulExpression:3" id="162210779026732172">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="162210779026732175">
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3855395826139545507">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3855395826139545510">
                 <link role="variableDeclaration:3" targetNodeId="4226637275972873358" resolveInfo="b" />
               </node>
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="162210779026732171">
-                <link role="variableDeclaration:3" targetNodeId="4226637275972870395" resolveInfo="a" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3855395826139545504">
+                <link role="variableDeclaration:3" targetNodeId="162210779026732156" resolveInfo="c" />
               </node>
             </node>
           </node>
@@ -274,7 +274,7 @@
               <link role="variableDeclaration:3" targetNodeId="162210779026732156" resolveInfo="c" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="162210779026732199">
-              <link role="baseMethodDeclaration:3" targetNodeId="4226637275972869678" resolveInfo="print" />
+              <link role="baseMethodDeclaration:3" targetNodeId="6517886960437939916" resolveInfo="print" />
             </node>
           </node>
         </node>

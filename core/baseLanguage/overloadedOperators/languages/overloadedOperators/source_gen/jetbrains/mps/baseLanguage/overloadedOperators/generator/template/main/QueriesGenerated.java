@@ -7,7 +7,6 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.overloadedOperators.generator.template.util.BinaryOperationUtil;
@@ -16,13 +15,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_3100399657864717070(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(_context.getNode()), _context.getScope(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(_context.getOriginalInputModel(), _context.getScope(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "operators", true);
       }
@@ -38,7 +38,17 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object referenceMacro_GetReferent_2944909771789537986(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_3524394717035465437(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(_context.getNode()), _context.getScope(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "operators", true);
+      }
+    });
+    SNode op = BinaryOperationUtil.getNearestOverloaded(_context.getNode(), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), Sequence.fromIterable(operators).toListSequence());
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(SNodeOperations.getParent(op), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3524394717035465440(final IOperationContext operationContext, final PropertyMacroContext _context) {
     Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(_context.getNode()), _context.getScope(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return SLinkOperations.getTargets(it, "operators", true);
@@ -46,16 +56,6 @@ public class QueriesGenerated {
     });
     SNode op = BinaryOperationUtil.getNearestOverloaded(_context.getNode(), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), Sequence.fromIterable(operators).toListSequence());
     return OverloadedBinaryOperator_Behavior.call_getFunctionName_6677452554240637506(op);
-  }
-
-  public static Object referenceMacro_GetReferent_2944909771789538040(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(_context.getNode()), _context.getScope(), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode it) {
-        return SLinkOperations.getTargets(it, "operators", true);
-      }
-    });
-    SNode op = BinaryOperationUtil.getNearestOverloaded(_context.getNode(), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true)), TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true)), Sequence.fromIterable(operators).toListSequence());
-    return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(op), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"), "name");
   }
 
   public static SNode sourceNodeQuery_6677452554240291133(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -74,11 +74,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "rightType", true);
   }
 
-  public static SNode sourceNodeQuery_2944909771789516634(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_3524394717035465527(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
 
-  public static SNode sourceNodeQuery_2944909771789516638(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_3524394717035465536(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
 
