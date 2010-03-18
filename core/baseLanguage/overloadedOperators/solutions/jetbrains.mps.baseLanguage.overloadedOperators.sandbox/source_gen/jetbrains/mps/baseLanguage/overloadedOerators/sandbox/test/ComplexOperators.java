@@ -18,4 +18,16 @@ public class ComplexOperators {
     res.set(left.getRe() * right.getRe() - left.getIm() * right.getIm(), left.getRe() * right.getIm() + left.getIm() * right.getRe());
     return res;
   }
+
+  public static Complex2 apply_PlusExpression_Complex_Complex2(Complex left, Complex2 right) {
+    Complex2 res = new Complex2();
+    res.set(left.getRe() + right.getRe(), left.getIm() + right.getIm());
+    return res;
+  }
+
+  public static Complex2 apply_PlusExpression_Complex2_Complex2(Complex2 left, Complex2 right) {
+    Complex2 res = new Complex2();
+    res.set(left.getRe() + right.getRe(), left.getIm() + right.getIm());
+    return res;
+  }
 }

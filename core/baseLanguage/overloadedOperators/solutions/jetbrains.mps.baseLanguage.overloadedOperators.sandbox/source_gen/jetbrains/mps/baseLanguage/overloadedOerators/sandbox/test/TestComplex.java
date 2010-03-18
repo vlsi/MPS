@@ -8,11 +8,11 @@ public class TestComplex {
   }
 
   public static void main(String[] args) {
-    Complex a = new Complex();
-    Complex b = new Complex();
+    Complex2 a = new Complex2();
+    Complex2 b = new Complex2();
     a.set(1, -4);
     b.set(2, 1);
-    Complex c = ComplexOperators.apply_PlusExpression_Complex_Complex(a, b);
+    Complex c = ComplexOperators.apply_PlusExpression_Complex2_Complex2(a, b);
     Complex d = ComplexOperators.apply_MulExpression_Complex_Complex(a, b);
     a.print();
     b.print();

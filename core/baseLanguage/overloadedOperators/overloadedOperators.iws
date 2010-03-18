@@ -43,57 +43,74 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="1ddc9a75-61e9-4173-9304-244b04c7ec1c" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\MPS\platform\extensionMethod\solutions\jetbrains.mps.baseLanguage.extensionMethods.sandbox\source_gen.caches\sandbox\.hash.bw4h09qyfstz9yu1pvdjrsp1c7mxiba" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/smodel/source_gen.caches/jetbrains/mps/lang/smodel/typesystem/.hash.-9s92g4nvihftyi0np5v2uru0apajoaa" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/plugin/.debug" />
+      <change type="DELETED" beforePath="C:\MPS\platform\extensionMethod\solutions\jetbrains.mps.baseLanguage.extensionMethods.sandbox\source_gen.caches\sandbox\.hash.bw4h09qyfstz9yu1pvdjrsp1c7mxiba" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/TestComplex.java" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/TestComplex.java" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/typesystem/.hash.ebmxxylchw66enk3fzpigbkarbh9sqz" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen.caches/sandbox/.debug" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen.caches/sandbox/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen.caches/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/.hash.-e3fqbe6muszwn3tu5xhb9vw4a9ftkup" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/ComplexOperators.java" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/ComplexOperators.java" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/jetbrains.mps.baseLanguage.extensionMethods.sandbox.msd" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/jetbrains.mps.baseLanguage.extensionMethods.sandbox.msd" />
       <change type="DELETED" beforePath="C:\MPS\samples\lambda\solutions\jetbrains.mps.samples.lambdaCalculus.sandbox\source_gen.caches\sandboxModel\.hash.-bx1dc5mssooumbhg8ggtjm31u6t71pp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen.caches/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/.debug" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen.caches/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/typesystem/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/typesystem/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen/jetbrains/mps/baseLanguage/checkedDots/sandbox/First.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen/jetbrains/mps/baseLanguage/checkedDots/sandbox/First.java" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen/sandbox/various.java" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen.caches/sandboxModel/.dependencies" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen.caches/sandboxModel/.dependencies" />
-      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen/sandboxModel/simple.java" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen/sandboxModel/partialApplication.java" />
-      <change type="DELETED" beforePath="C:\MPS\platform\extensionMethod\solutions\jetbrains.mps.baseLanguage.extensionMethods.sandbox\source_gen\sandbox\StringExtensionMethods.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen/sandboxModel/simple.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOperators" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\core\baseLanguage\baseLanguage\source_gen.caches\jetbrains\mps\baseLanguage\typesystem\.hash.-8aw86ev02xd4awu7f9f7ep26fb79iuc" afterPath="" />
       <change type="DELETED" beforePath="C:\MPS\samples\lambda\solutions\jetbrains.mps.samples.lambdaCalculus.sandbox\source_gen\sandboxModel\sim.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\MPS\platform\extensionMethod\solutions\jetbrains.mps.baseLanguage.extensionMethods.sandbox\source_gen\sandbox\StringExtensionMethods.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen/sandbox/Test.java" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen/sandbox/Test.java" />
+      <change type="DELETED" beforePath="C:\MPS\core\languageDesign\smodel\source_gen.caches\jetbrains\mps\lang\smodel\typesystem\.hash.-an0dek1utloiqfrdta61e5lwiem5arw" afterPath="" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/typesystem/.dependencies" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/typesystem/.dependencies" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen.caches/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/.dependencies" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen.caches/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/.dependencies" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2.java" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/sandbox.mps" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/sandbox.mps" />
+      <change type="DELETED" beforePath="C:\MPS\core\baseLanguage\overloadedOperators\solutions\jetbrains.mps.baseLanguage.overloadedOperators.sandbox\source_gen.caches\jetbrains\mps\baseLanguage\overloadedOerators\sandbox\test\.hash.-cwakl6vbe834re7tptc0plquxbr36nb" afterPath="" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen.caches/sandboxModel/.debug" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen.caches/sandboxModel/.debug" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen.caches/jetbrains/mps/baseLanguage/checkedDots/sandbox/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen.caches/jetbrains/mps/baseLanguage/checkedDots/sandbox/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/languageDesign/smodel/source_gen.caches/jetbrains/mps/lang/smodel/typesystem/.debug" afterPath="$APPLICATION_HOME_DIR$/core/languageDesign/smodel/source_gen.caches/jetbrains/mps/lang/smodel/typesystem/.debug" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen.caches/jetbrains/mps/baseLanguage/checkedDots/sandbox/.hash.-1oqkw91zfy4bx7u89jl9hghlz0hrywb" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen.caches/jetbrains/mps/baseLanguage/checkedDots/sandbox/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen.caches/jetbrains/mps/baseLanguage/checkedDots/sandbox/.debug" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen.caches/sandboxModel/.hash.9n5nhusnbe2zsm12n3x4xesgqz4mu8s" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen.caches/sandbox/.dependencies" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen.caches/sandbox/.dependencies" />
       <change type="DELETED" beforePath="C:\MPS\platform\extensionMethod\solutions\jetbrains.mps.baseLanguage.extensionMethods.sandbox\source_gen\sandbox\Abc.java" afterPath="" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/languages/lambdaCalculus/source_gen.caches/jetbrains/mps/samples/lambdaCalculus/typesystem/.hash.-3wqo1tugxur8fbnjsrcxc6g3n4pkuhe" />
+      <change type="DELETED" beforePath="C:\MPS\core\languageDesign\smodel\source_gen.caches\jetbrains\mps\lang\smodel\typesystem\.hash.9ha3l52wh1y26rfdxr7236egqcco9og" afterPath="" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/sandboxModel.mps" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/sandboxModel.mps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test.mps" afterPath="$PROJECT_DIR$/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test.mps" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen/sandbox/IntExt.java" />
-      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen.caches/sandbox/.hash.4co0fhy5ssc8smupqr91qobc30phfj6" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/sandbox/testOverrideOperators.mps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overloadedOperators.iws" afterPath="$PROJECT_DIR$/overloadedOperators.iws" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen.caches/sandbox/.hash.4co0fhy5ssc8smupqr91qobc30phfj6" />
       <change type="DELETED" beforePath="C:\MPS\core\baseLanguage\checkDot\languages\checkedDots\sandbox\source_gen.caches\jetbrains\mps\baseLanguage\checkedDots\sandbox\.hash.35y9gj7u2q9nszrc6y9rre9o2775cx0" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overloadedOperators.iws" afterPath="$PROJECT_DIR$/overloadedOperators.iws" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen/sandbox/Str.java" />
     </list>
     <list id="37a0e37f-05b8-4708-bdec-af8a03df232d" name="Failed commit: Default (2)" comment="">
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/scripts/BaseLanguageMigration_MigrationScript.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/scripts/BaseLanguageMigration_MigrationScript.java" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/textGen/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/textGen/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/test/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/test/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/textGen/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/textGen/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/strings/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/strings/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/stubs/javastub/classpath/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/stubs/javastub/classpath/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/scripts/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/scripts/.debug" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/findUsages/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/findUsages/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/conceptFunctionDefaults/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/conceptFunctionDefaults/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/findUsages/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/findUsages/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/dataFlow/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/dataFlow/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/refactorings/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/refactorings/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/main/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/main/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/actions/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/actions/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/closures/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/closures/.debug" />
-      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/util/plugin/run/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/util/plugin/run/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/closures/util/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/closures/util/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/util/plugin/run/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/util/plugin/run/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/stubs/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/stubs/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/stubs/javastub/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/stubs/javastub/.debug" />
       <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/stubs/javastub/asm/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/stubs/javastub/asm/.debug" />
     </list>
-    <ignored path=".idea/workspace.xml" />
     <ignored path="overloadedOperators.iws" />
+    <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,22 +195,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Complex" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test/Complex">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestComplex" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TestComplex" pinned="false" current="false" current-in-tab="false">
         <entry file="mps://jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test/TestComplex">
-          <provider selected="true" editor-type-id="MPSFileEditor">
-            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ComplexOperators" pinned="false" current="false" current-in-tab="false">
-        <entry file="mps://jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test/ComplexOperators">
           <provider selected="true" editor-type-id="MPSFileEditor">
             <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
@@ -218,6 +221,34 @@
                 <tab index="0" />
               </inner_tabs>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator/main">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Complex" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test/Complex">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Complex2" pinned="false" current="true" current-in-tab="true">
+        <entry file="mps://jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test/Complex2">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComplexOperators" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test/ComplexOperators">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
           </provider>
         </entry>
       </file>
@@ -437,6 +468,22 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="VCSRoots">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VCS Roots" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <selection />
+        </subPane>
+      </pane>
+      <pane id="Favorites">
+        <subPane>
+          <selection />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -486,6 +533,96 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overloadedOperators" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overloadedOperators" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typesystem" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overloadedOperators" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typesystem" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typeOf_VarRef" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -891,17 +1028,6 @@
           </selection>
         </subPane>
       </pane>
-      <pane id="VCSRoots">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="VCS Roots" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <selection />
-        </subPane>
-      </pane>
       <pane id="FileSystem">
         <subPane>
           <PATH>
@@ -910,11 +1036,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
-          <selection />
-        </subPane>
-      </pane>
-      <pane id="Favorites">
-        <subPane>
           <selection />
         </subPane>
       </pane>
@@ -967,8 +1088,8 @@
       <window_info id="Run Packaging Language Build Script" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Supertypes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295562" sideWeight="0.48225603" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Model Repository Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Replacement" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Module Repository Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -982,9 +1103,9 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32572877" sideWeight="0.6638338" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Classpath Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295562" sideWeight="0.4977492" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="MPS Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295562" sideWeight="0.58238274" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="MPS Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295562" sideWeight="0.53992397" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Concept Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295562" sideWeight="0.41318125" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3295562" sideWeight="0.45564005" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295562" sideWeight="0.4977492" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1082,19 +1203,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator/main">
-      <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
-      </provider>
-    </entry>
     <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator/OverloadedOperatorCall">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.generator.template.util/BinaryOperationUtil">
+    <entry file="mps://jetbrains.mps.baseLanguage.structure/VariableReference">
       <provider selected="true" editor-type-id="MPSFileEditor">
-        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.structure/BinaryOperation">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="1" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
       </provider>
     </entry>
     <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.structure/LeftOperand">
@@ -1162,7 +1313,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test/ComplexOperators">
+    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator/main">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.generator.template.util/BinaryOperationUtil">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
@@ -1173,6 +1329,16 @@
       </provider>
     </entry>
     <entry file="mps://jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test/TestComplex">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test/ComplexOperators">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test/Complex2">
       <provider selected="true" editor-type-id="MPSFileEditor">
         <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
       </provider>
