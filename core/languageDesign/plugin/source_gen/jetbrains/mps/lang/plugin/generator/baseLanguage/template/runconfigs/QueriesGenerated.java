@@ -31,6 +31,9 @@ import jetbrains.mps.lang.plugin.behavior.ActionParameter_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.generator.template.MappingScriptContext;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -364,6 +367,14 @@ public class QueriesGenerated {
     return (BaseCreatorTarget_Behavior.call_getParameter_7559322914920378168(SLinkOperations.getTarget(_context.getNode(), "target", true)) != null);
   }
 
+  public static boolean ifMacro_Condition_5507923377626961792(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "executeParameterQuery", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_5507923377626961813(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "executeActions", true) != null);
+  }
+
   public static SNode sourceNodeQuery_8294332872984074416(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "iconBlock", true);
   }
@@ -476,6 +487,26 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
+  public static SNode sourceNodeQuery_5507923377626961770(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeParameterQuery", true), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_5507923377626961782(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeParameterQuery", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_5507923377626961804(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeActions", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_5507923377626961832(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeConsole", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_5507923377627113020(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeProcess", true), "body", true);
+  }
+
   public static Iterable sourceNodesQuery_7840798570674946693(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(_context.getNode()), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -506,6 +537,21 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_9068086904326285565(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "property", true);
+  }
+
+  public static void mappingScript_CodeBlock_1403054519076822739(final IOperationContext operationContext, final MappingScriptContext _context) {
+    Iterable<SNode> executeBlocks = ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), null)).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SNodeOperations.getDescendants(it, "jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock", false, new String[]{});
+      }
+    });
+    for (SNode block : Sequence.fromIterable(executeBlocks)) {
+      if ((SLinkOperations.getTarget(block, "executeParameterQuery", true) != null) || (SLinkOperations.getTarget(SLinkOperations.getTarget(block, "executeParameterQuery", true), "parameterType", true) != null)) {
+        for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(block, "jetbrains.mps.lang.plugin.structure.Parameter_FunctionParameter", false, new String[]{}))) {
+          SLinkOperations.setTarget(parameter, "userSpecifiedParameterType", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(block, "executeParameterQuery", true), "parameterType", true)), true);
+        }
+      }
+    }
   }
 
   public static class QuotationClass_x583g4_a0a0a0a0db {

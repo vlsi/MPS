@@ -4045,20 +4045,14 @@
       <property name="value:0" value="put execute actions" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3256691185935764583">
-      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1216468774225:3" resolveInfo="showName" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076037">
     <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <property name="name:0" value="ExecuteConsole" />
-    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <link role="extends:0" targetNodeId="3636700473138833152:23" resolveInfo="ParametrizedExecuteConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3256691185935764579">
       <property name="value:0" value="create console" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3256691185935764585">
-      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1216468774225:3" resolveInfo="showName" />
     </node>
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="7187575959584992520">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
@@ -4068,13 +4062,10 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076038">
     <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <property name="name:0" value="ExecuteProcess" />
-    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <link role="extends:0" targetNodeId="3636700473138833152:23" resolveInfo="ParametrizedExecuteConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3256691185935764587">
       <property name="value:0" value="create process" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3256691185935764589">
-      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1216468774225:3" resolveInfo="showName" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076053">
@@ -4109,13 +4100,43 @@
       <property name="value:0" value="parameter query" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="7187575959585005276">
-      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1216468774225:3" resolveInfo="showName" />
-    </node>
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="444169778577603284">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="1110842925895076053:23" resolveInfo="Console_FunctionParameter" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="453992125914151040">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
+    <property name="name:0" value="Parameter_FunctionParameter" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="453992125914151041">
+      <property name="value:0" value="parameter" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3193296763328061945">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3193296763328061947">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1199886518837:3" resolveInfo="dontUseParameterObject" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1403054519076820626">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="userSpecifiedParameterType" />
+      <property name="sourceCardinality:0" value="0..1" />
+      <link role="target:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3636700473138833152">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
+    <property name="name:0" value="ParametrizedExecuteConceptFunction" />
+    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3636700473138833155">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473854053:0" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="3636700473138841144">
+    <property name="package:0" value="RunConfigs.Configuration.Execute" />
+    <property name="name:0" value="IEnchancedRunConfiguration" />
   </node>
 </model>
 
