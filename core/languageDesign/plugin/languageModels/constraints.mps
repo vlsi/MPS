@@ -1035,5 +1035,23 @@
     <property name="package:8" value="RunConfigs" />
     <link role="concept:8" targetNodeId="7.8179323502814630510:23" resolveInfo="RunConfigParameterDeclaration" />
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="444169778578071400">
+    <property name="package:8" value="RunConfigs.Configuration.Execute.Parametrized" />
+    <link role="concept:8" targetNodeId="7.7187575959585005270:23" resolveInfo="ExecuteParameterQuery" />
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="444169778578071401">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="444169778578071402">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="444169778578071403">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="444169778578071406">
+            <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="444169778578071405" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="444169778578071410">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="444169778578071412">
+                <link role="conceptDeclaration:16" targetNodeId="7.1110842925895076025:23" resolveInfo="ParametrizedExecuteBlock" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

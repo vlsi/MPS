@@ -493,7 +493,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="34" />
+  <maxImportIndex value="35" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -508,6 +508,7 @@
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="32" modelUID="f:java_stub#com.intellij.execution(com.intellij.execution@java_stub)" version="-1" />
   <import index="33" modelUID="f:java_stub#com.intellij.execution.runners(com.intellij.execution.runners@java_stub)" version="-1" />
+  <import index="35" modelUID="f:java_stub#com.intellij.execution.impl(com.intellij.execution.impl@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1203071646776">
     <property name="name:0" value="ActionDeclaration" />
     <property name="rootable:0" value="true" />
@@ -4000,6 +4001,121 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="8376523923662591983">
     <property name="package:0" value="RunConfigs.Configuration.Execute" />
     <property name="name:0" value="IExecuteConfigBlock" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076025">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
+    <property name="name:0" value="ParametrizedExecuteBlock" />
+    <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7187575959583995554">
+      <property name="value:0" value="parametrized execute" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7187575959585005277">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="executeParameterQuery" />
+      <link role="target:0" targetNodeId="7187575959585005270:23" resolveInfo="ExecuteParameterQuery" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3256691185935786643">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="executeActions" />
+      <property name="sourceCardinality:0" value="0..1" />
+      <link role="target:0" targetNodeId="1110842925895076036:23" resolveInfo="ExecuteActions" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3256691185935786644">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="executeConsole" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1110842925895076037:23" resolveInfo="ExecuteConsole" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3256691185935786645">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="executeProcess" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1110842925895076038:23" resolveInfo="ExecuteProcess" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1110842925895076026">
+      <link role="intfc:0" targetNodeId="8376523923662591983:23" resolveInfo="IExecuteConfigBlock" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076036">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
+    <property name="name:0" value="ExecuteActions" />
+    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3256691185935764580">
+      <property name="value:0" value="put execute actions" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3256691185935764583">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1216468774225:3" resolveInfo="showName" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076037">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
+    <property name="name:0" value="ExecuteConsole" />
+    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3256691185935764579">
+      <property name="value:0" value="create console" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3256691185935764585">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1216468774225:3" resolveInfo="showName" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="7187575959584992520">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="1110842925895076053:23" resolveInfo="Console_FunctionParameter" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076038">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
+    <property name="name:0" value="ExecuteProcess" />
+    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3256691185935764587">
+      <property name="value:0" value="create process" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3256691185935764589">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1216468774225:3" resolveInfo="showName" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076053">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
+    <property name="name:0" value="Console_FunctionParameter" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1110842925895076054">
+      <property name="value:0" value="console" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1110842925895076056">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="3256691185935719193">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3256691185935764577">
+        <link role="classifier:3" targetNodeId="35.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7187575959585005270">
+    <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
+    <property name="name:0" value="ExecuteParameterQuery" />
+    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="444169778577244677">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="parameterType" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7187575959585005273">
+      <property name="value:0" value="parameter query" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="7187575959585005276">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1216468774225:3" resolveInfo="showName" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="444169778577603284">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="1110842925895076053:23" resolveInfo="Console_FunctionParameter" />
+    </node>
   </node>
 </model>
 

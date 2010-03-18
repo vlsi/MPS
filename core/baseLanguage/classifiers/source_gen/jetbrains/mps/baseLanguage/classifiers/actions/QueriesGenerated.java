@@ -18,9 +18,9 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
@@ -65,14 +65,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            List<SNode> nodes = IClassifier_Behavior.call_getMembers_1213877528020(contextClassifier, _context.getParentNode());
-            List<SNode> result = new ArrayList<SNode>();
-            for (SNode node : nodes) {
-              if (IMember_Behavior.call_canOperationBeChild_4593153787954614840(node, _context.getParentNode())) {
-                ListSequence.fromList(result).addElement(node);
-              }
-            }
-            return result;
+            return IClassifier_Behavior.call_getMembers_1213877528020(contextClassifier, _context.getParentNode());
           }
         };
         Iterable<SNode> queryResult = (Iterable) calc.calculate();
