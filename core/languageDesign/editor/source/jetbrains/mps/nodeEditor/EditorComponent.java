@@ -20,12 +20,12 @@ import com.intellij.ide.CutProvider;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.wm.IdeFrame;
+import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.wm.ex.StatusBarEx;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.SystemInfo;
@@ -35,9 +35,9 @@ import jetbrains.mps.ide.actions.EditorPopup_ActionGroup;
 import jetbrains.mps.ide.actions.GoByCurrentReference_Action;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.ui.MPSErrorDialog;
+import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
-import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorRuleUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
@@ -2021,13 +2021,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public Dimension getPreferredSize() {
-    JViewport viewport = myScrollPane.getViewport();
-    Rectangle viewRect = viewport.getViewRect();
     if (myRootCell == null) {
+      JViewport viewport = myScrollPane.getViewport();
+      Rectangle viewRect = viewport.getViewRect();
       return new Dimension(viewRect.width, viewRect.height);
     }
-    return new Dimension(Math.max(viewRect.width, myRootCell.getWidth() + myShiftX + 10),
-      Math.max(viewRect.height, myRootCell.getHeight() + myShiftY + 10));
+    return new Dimension(myRootCell.getWidth() + myShiftX + 10, myRootCell.getHeight() + myShiftY + 10);
   }
 
   public Dimension getPreferredScrollableViewportSize() {
@@ -2047,11 +2046,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public boolean getScrollableTracksViewportWidth() {
-    return false;
+    return myScrollPane.getViewport().getWidth() > getPreferredSize().width;
   }
 
   public boolean getScrollableTracksViewportHeight() {
-    return false;
+    return myScrollPane.getViewport().getHeight() > getPreferredSize().height;
   }
 
   public EditorCell getDeepestSelectedCell() {
