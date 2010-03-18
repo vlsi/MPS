@@ -82,11 +82,14 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.plaf.ScrollBarUI;
+import javax.swing.plaf.basic.BasicScrollBarUI;
 import java.awt.*;
 import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.lang.ref.WeakReference;
+import java.lang.reflect.Field;
 import java.util.*;
 import java.util.List;
 
@@ -162,6 +165,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @NotNull
   private JScrollPane myScrollPane;
+  @NotNull
+  private MyScrollBar myVerticalScrollBar;
   @NotNull
   private JComponent myContainer;
   protected EditorCell myRootCell;
@@ -254,7 +259,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     setDoubleBuffered(true);
     myScrollPane = new JScrollPane();
     myScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+    myScrollPane.setVerticalScrollBar(myVerticalScrollBar = new MyScrollBar(Adjustable.VERTICAL));
     myScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    myScrollPane.setHorizontalScrollBar(new MyScrollBar(Adjustable.HORIZONTAL));
     myScrollPane.setViewportView(this);
     myScrollPane.getViewport().addChangeListener(new ChangeListener() {
 
@@ -549,6 +556,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public JViewport getViewport() {
     return myScrollPane.getViewport();
+  }
+
+  @NotNull
+  MyScrollBar getVerticalScrollBar() {
+    return myVerticalScrollBar;
   }
 
   public SNode getSelectedNode() {
@@ -3111,6 +3123,85 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     public boolean isPasteEnabled(DataContext dataContext) {
       return true;
+    }
+  }
+
+  /**
+   * This is a copy of com.intellij.openapi.editor.impl.EditorImpl.MyScrollBar class
+   */
+  class MyScrollBar extends JScrollBar {
+    @NonNls private static final String DECR_BUTTON_FIELD = "decrButton";
+    @NonNls private static final String INCR_BUTTON_FIELD = "incrButton";
+    @NonNls private static final String APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS = "apple.laf.AquaScrollBarUI";
+
+    MyScrollBar(int orientation) {
+      super(orientation);
+      setFocusable(false);
+      putClientProperty("JScrollBar.fastWheelScrolling", Boolean.TRUE); // fast scrolling for JDK 6
+    }
+    /**
+     * This is helper method. It returns height of the top (descrease) scrollbar
+     * button. Please note, that it's possible to return real height only if scrollbar
+     * is instance of BasicScrollBarUI. Otherwise it returns fake (but good enough :) )
+     * value.
+     */
+    int getDecScrollButtonHeight() {
+      ScrollBarUI barUI = getUI();
+      Insets insets = getInsets();
+      if (barUI instanceof BasicScrollBarUI) {
+        try {
+          Field decrButtonField = BasicScrollBarUI.class.getDeclaredField(DECR_BUTTON_FIELD);
+          decrButtonField.setAccessible(true);
+          JButton decrButtonValue = (JButton)decrButtonField.get(barUI);
+          assert decrButtonValue != null;
+          return insets.top + decrButtonValue.getHeight();
+        }
+        catch (Exception exc) {
+          throw new IllegalStateException(exc.getMessage());
+        }
+      }
+      else {
+        return insets.top + 15;
+      }
+    }
+
+    /**
+     * This is helper method. It returns height of the bottom (increase) scrollbar
+     * button. Please note, that it's possible to return real height only if scrollbar
+     * is instance of BasicScrollBarUI. Otherwise it returns fake (but good enough :) )
+     * value.
+     */
+    int getIncScrollButtonHeight() {
+      ScrollBarUI barUI = getUI();
+      Insets insets = getInsets();
+      if (barUI instanceof BasicScrollBarUI) {
+        try {
+          Field incrButtonField = BasicScrollBarUI.class.getDeclaredField(INCR_BUTTON_FIELD);
+          incrButtonField.setAccessible(true);
+          JButton incrButtonValue = (JButton)incrButtonField.get(barUI);
+          assert incrButtonValue != null;
+          return insets.bottom + incrButtonValue.getHeight();
+        }
+        catch (Exception exc) {
+          throw new IllegalStateException(exc.getMessage());
+        }
+      }
+      else if (APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS.equals(barUI.getClass().getName())) {
+        return insets.bottom + 30;
+      }
+      else {
+        return insets.bottom + 15;
+      }
+    }
+
+    public int getUnitIncrement(int direction) {
+      Rectangle vr = myScrollPane.getViewport().getViewRect();
+      return getScrollableUnitIncrement(vr, getOrientation(), direction);
+    }
+
+    public int getBlockIncrement(int direction) {
+      Rectangle vr = myScrollPane.getViewport().getViewRect();
+      return getScrollableBlockIncrement(vr, getOrientation(), direction);
     }
   }
 }

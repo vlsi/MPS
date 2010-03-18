@@ -17,12 +17,10 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
+import jetbrains.mps.nodeEditor.EditorComponent.MyScrollBar;
 import jetbrains.mps.nodeEditor.icons.Icons;
 
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JToolTip;
-import javax.swing.ToolTipManager;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -217,12 +215,25 @@ public class MessagesGutter extends JPanel {
       return messageY;
     }
 
+    private int getMessagesAreaShift() {
+      MyScrollBar scrollBar = myEditorComponent.getVerticalScrollBar();
+      return scrollBar.isVisible() ? Math.max(0, scrollBar.getDecScrollButtonHeight() - getBounds().y) : 0;
+    }
+
+    private int getMessagesAreaHeight() {
+      MyScrollBar scrollBar = myEditorComponent.getVerticalScrollBar();
+      if (!scrollBar.isVisible()) {
+        return getHeight();
+      }
+      return scrollBar.getHeight() - scrollBar.getIncScrollButtonHeight() - scrollBar.getDecScrollButtonHeight();
+    }
+
     private int getMessageHeight(EditorMessage msg) {
-      return (int) (Math.max(2.0d, msg.getHeight(myEditorComponent) * (((double) getHeight()) / ((double) myEditorComponent.getHeight()))));
+      return (int) (Math.max(2.0d, msg.getHeight(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight()))));
     }
 
     private int getMessageStart(EditorMessage msg) {
-      return (int) (msg.getStart(myEditorComponent) * (((double) getHeight()) / ((double) myEditorComponent.getHeight())));
+      return getMessagesAreaShift() + (int) (msg.getStart(myEditorComponent) * (((double) getMessagesAreaHeight()) / ((double) myEditorComponent.getHeight())));
     }
 
     public String getToolTipText(MouseEvent event) {
