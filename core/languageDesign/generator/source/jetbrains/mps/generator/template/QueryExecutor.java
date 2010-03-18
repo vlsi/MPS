@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.util.IPerformanceTracer;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.*;
@@ -19,7 +20,7 @@ import java.util.List;
 public class QueryExecutor implements IQueryExecutor {
 
   private static final Logger LOG = Logger.getLogger(QueryExecutor.class);
-  
+
   private ITemplateGenerator generator;
 
   public QueryExecutor(ITemplateGenerator generator) {
@@ -187,7 +188,7 @@ public class QueryExecutor implements IQueryExecutor {
       postMapperFunction = ((MapSrcListMacro) adapter).getPostMapperFunction();
     }
     // post-proc function is optional
-    if(postMapperFunction == null) return;
+    if (postMapperFunction == null) return;
 
     String methodName = TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(postMapperFunction.getNode());
     try {
@@ -348,5 +349,145 @@ public class QueryExecutor implements IQueryExecutor {
       LOG.error(t, refMacro.getNode());
     }
     return null;
+  }
+
+  public static class TraceableQueryExecutor extends QueryExecutor {
+
+    private final IPerformanceTracer tracer;
+
+    public TraceableQueryExecutor(ITemplateGenerator generator, IPerformanceTracer tracer) {
+      super(generator);
+      this.tracer = tracer;
+    }
+
+    @Override
+    public boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
+      try {
+        tracer.push("check condition", true);
+        return super.checkCondition(condition, required, inputNode, ruleNode);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException {
+      try {
+        tracer.push("check condition: create root", true);
+        return super.checkCondition(createRootRule);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode) throws GenerationFailureException {
+      try {
+        tracer.push("check condition: drop root", true);
+        return super.checkCondition(condition, inputRootNode, ruleNode);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro) throws GenerationFailureException {
+      try {
+        tracer.push("check if condition", true);
+        return super.checkConditionForIfMacro(inputNode, ifMacro);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException {
+      try {
+        tracer.push("mapping script", true);
+        super.executeMappingScript(mappingScript, model);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode) throws GenerationFailureException {
+      try {
+        tracer.push("map-src node macro", true);
+        return super.executeMapSrcNodeMacro(inputNode, mapSrcNodeOrListMacro, parentOutputNode);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode) throws GenerationFailureException {
+      try {
+        tracer.push("map-src postproc", true);
+        super.executeMapSrcNodeMacro_PostProc(inputNode, mapSrcNodeOrListMacro, outputNode);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode) throws GenerationFailureException {
+      try {
+        tracer.push("property macro", true);
+        super.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query) {
+      try {
+        tracer.push("evaluate source node", true);
+        return super.evaluateSourceNodeQuery(inputNode, macroNode, query);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query) {
+      try {
+        tracer.push("evaluate source nodes", true);
+        return super.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public SNode getContextNodeForTemplateFragment(SNode inputNode, SNode templateFragmentNode, SNode mainContextNode) {
+      try {
+        tracer.push("context for template fragment", true);
+        return super.getContextNodeForTemplateFragment(inputNode, templateFragmentNode, mainContextNode);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule) {
+      try {
+        tracer.push("context for weaving", true);
+        return super.getContextNodeForWeavingingRule(inputNode, rule);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro) {
+      try {
+        tracer.push("referent target", true);
+        return super.getReferentTarget(node, outputNode, refMacro);
+      } finally {
+        tracer.pop();
+      }
+    }
   }
 }
