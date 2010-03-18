@@ -1064,16 +1064,21 @@ public class SModel implements Iterable<SNode> {
 
   @Nullable
   public SNode getNodeById(SNodeId nodeId) {
-    SNode node = myIdToNodeMap.get(nodeId);
-    if (node != null) return node;
+    checkNotDisposed();
+    if(myDisposed) return null;
     return myIdToNodeMap.get(nodeId);
   }
 
   public Set<SNodeId> getNodeIds() {
+    checkNotDisposed();
+    if(myDisposed) return Collections.emptySet();
     return new HashSet<SNodeId>(myIdToNodeMap.keySet());
   }
 
   void putNodeId(@NotNull SNodeId id, @NotNull SNode node) {
+    checkNotDisposed();
+    if(myDisposed) return;
+    
     if (myRegistrationsForbidden) {
       LOG.error("Registration in model " + getSModelReference() + " is temporarely forbidden");
     }
@@ -1087,13 +1092,16 @@ public class SModel implements Iterable<SNode> {
   }
 
   void removeNodeId(@NotNull SNodeId id) {
+    checkNotDisposed();
+    if(myDisposed) return;
     myIdToNodeMap.remove(id);
   }
 
   @NotNull
   public Collection<SNode> getAllNodesWithIds() {
-    Collection<SNode> nodes = myIdToNodeMap.values();
-    return Collections.unmodifiableCollection(nodes);
+    checkNotDisposed();
+    if(myDisposed) return Collections.emptySet();
+    return Collections.unmodifiableCollection(myIdToNodeMap.values());
   }
 
   public boolean isNotEditable() {
@@ -1114,10 +1122,9 @@ public class SModel implements Iterable<SNode> {
 
   public void dispose() {
     ModelChange.assertLegalChange(this);
+    if(myDisposed) return;
 
     fireBeforeModelDisposed();
-    clearAdapters();
-    clearUserObjects();
     myDisposed = true;
     synchronized (myListenersLock) {
       myCommandListeners.clear();
@@ -1127,7 +1134,7 @@ public class SModel implements Iterable<SNode> {
     for (SNode sn : myIdToNodeMap.values()) {
       sn.dispose();
     }
-    myIdToNodeMap.clear();
+    myIdToNodeMap = null;
     myRoots.clear();
   }
 
@@ -1211,6 +1218,9 @@ public class SModel implements Iterable<SNode> {
   }
 
   public SNode getNodeByCondition(Condition<SNode> c) {
+    checkNotDisposed();
+    if(myDisposed) return null;
+
     for (SNode node : myIdToNodeMap.values()) {
       if (c.met(node)) {
         return node;
@@ -1576,6 +1586,12 @@ public class SModel implements Iterable<SNode> {
       } else if (sm != md.getSModel()) {
         System.out.println("Found a leak! : " + sm.getSModelReference());
       }
+    }
+  }
+
+  public void checkNotDisposed() {
+    if(myDisposed) {
+      LOG.error(new IllegalModelAccessError("accessing disposed model"));
     }
   }
 }

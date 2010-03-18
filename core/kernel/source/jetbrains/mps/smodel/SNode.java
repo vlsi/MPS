@@ -1128,13 +1128,14 @@ public final class SNode {
     }
   }
 
-  /* package */ void dispose() {
+  void dispose() {
 //    myModel = null;
 //    myRegisteredInModelFlag = false;
 //    myChildren = null;
 //    myReferences = null;
 //    myProperties = null;
-//    myUserObjects = null;
+    myAdapter = null;
+    myUserObjects = null;
     myDisposed = true;
   }
 
