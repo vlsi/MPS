@@ -89,7 +89,7 @@ public class TransientModelNodeFinder implements FastNodeFinder {
     String conceptFqName = root.getConceptFqName();
     List<SNode> set = myNodes.get(conceptFqName);
     if (set == null) {
-      set = new LinkedList<SNode>();
+      set = new ArrayList<SNode>();
       myNodes.put(conceptFqName, set);
     }
     set.add(root);
