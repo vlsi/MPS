@@ -53,14 +53,18 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     return ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
       public MPSNodeVirtualFile compute() {
         SNodePointer nodePointer = new SNodePointer(node);
-        if (myVirtualFiles.containsKey(nodePointer)) {
-          return myVirtualFiles.get(nodePointer);
-        }
-        MPSNodeVirtualFile vf = new MPSNodeVirtualFile(node);
-        myVirtualFiles.put(nodePointer, vf);
-        return vf;
+        return getFileFor(nodePointer);
       }
     });
+  }
+
+  public MPSNodeVirtualFile getFileFor(@NotNull final SNodePointer nodePointer) {
+    if (myVirtualFiles.containsKey(nodePointer)) {
+      return myVirtualFiles.get(nodePointer);
+    }
+    MPSNodeVirtualFile vf = new MPSNodeVirtualFile(nodePointer);
+    myVirtualFiles.put(nodePointer, vf);
+    return vf;
   }
 
   @NonNls

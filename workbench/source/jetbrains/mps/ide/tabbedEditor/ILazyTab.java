@@ -21,6 +21,8 @@ import javax.swing.JComponent;
 import java.util.List;
 import java.awt.event.MouseEvent;
 
+import com.intellij.openapi.vfs.VirtualFile;
+
 public interface ILazyTab {
   String getTitle();
 
@@ -45,4 +47,6 @@ public interface ILazyTab {
   int getCurrentTab();
 
   void selectTab(int index);
+
+  VirtualFile getBaseNodeVirtualFile();
 }

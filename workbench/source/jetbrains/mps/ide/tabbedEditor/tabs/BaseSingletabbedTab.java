@@ -18,6 +18,7 @@ package jetbrains.mps.ide.tabbedEditor.tabs;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.changesmanager.NodeFileStatusListener;
 import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.ide.IdeMain;
@@ -34,6 +35,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
@@ -246,6 +248,11 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     }
   }
 
+  @Override
+  public VirtualFile getBaseNodeVirtualFile() {
+    return MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
+  }
+
   private class MyNodeFileStatusListener implements NodeFileStatusListener {
     @Override
     public void fileStatusChanged(final SNode node) {
@@ -256,7 +263,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
         }
       });
       if (EqualUtil.equals(myLoadableNode, nodePointer)) {
-        myTabbedEditor.updateTabColor(BaseSingletabbedTab.this);
+        myTabbedEditor.updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
       }
     }
   }

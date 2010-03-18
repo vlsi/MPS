@@ -47,6 +47,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -106,7 +108,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       myTabbedEditor.getTabbedPane().remove(this);
       myTabbedEditor.getTabbedPane().initTab(this);
     }
-    myTabbedEditor.updateTabColor(this);
+    myTabbedEditor.updateTabColor(this, getBaseNodeVirtualFile());
   }
 
   private int getIndexOfTabFor(SNodePointer pointer) {
@@ -316,7 +318,11 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       color = Color.BLACK;
     }
     myInnerTabbedPane.setForegroundAt(tabIndex, color);
-    myTabbedEditor.updateTabColor(this);
+    myTabbedEditor.updateTabColor(this, getBaseNodeVirtualFile());
+  }
+
+  public MPSNodeVirtualFile getBaseNodeVirtualFile() {
+    return MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
   }
 
   public List<EditorComponent> getEditorComponents() {

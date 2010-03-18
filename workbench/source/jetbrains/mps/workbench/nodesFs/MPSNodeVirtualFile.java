@@ -37,27 +37,23 @@ public class MPSNodeVirtualFile extends DeprecatedVirtualFile {
   private long myTimeStamp;
 
   MPSNodeVirtualFile(@NotNull SNode node) {
-    myNode = new SNodePointer(node);
-    SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+    this(new SNodePointer(node));
+  }
+
+  MPSNodeVirtualFile(@NotNull SNodePointer nodePointer) {
+    myNode = nodePointer;
+    SModelDescriptor modelDescriptor = nodePointer.getModel();
     if (modelDescriptor != null) {
       myTimeStamp = modelDescriptor.lastChangeTime();
     }
-    updateFields(node);
+    updateFields();
   }
 
   void updateFields() {
-    final SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
-      public SNode compute() {
-        return myNode.getNode();
-      }
-    });
-    if (node == null) return;
-    updateFields(node);
-  }
-
-  private void updateFields(final SNode node) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        SNode node = myNode.getNode();
+        if (node == null) return;
         myName = "" + node.getPresentation();
         myPath = node.getModel().getSModelFqName() + "/" + myName;
       }
