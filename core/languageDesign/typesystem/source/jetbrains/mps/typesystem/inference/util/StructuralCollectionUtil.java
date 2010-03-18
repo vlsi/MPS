@@ -19,41 +19,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.misc.ObjectCache;
-import jetbrains.mps.util.misc.ObjectCache.DeletedPairsListener;
 
-import java.util.*;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class StructuralCollectionUtil {
 
   private static final ObjectCache<SNode, Integer> ourHashCodeCash = new ObjectCache<SNode, Integer>(5000);
-  private static final Map<SModel, Set<SNode>> ourModelsToNodes = new HashMap<SModel, Set<SNode>>();
-  private static final SModelListener ourModelListener = new SModelAdapter() {
-    @Override
-    public void beforeModelDisposed(SModel model) {
-      Set<SNode> nodeSet = ourModelsToNodes.get(model);
-      for (SNode node : new HashSet<SNode>(nodeSet)) {
-        ourHashCodeCash.remove(node);
-      }
-    }
-  };
 
-  static {
-    ourHashCodeCash.addDeletedPairsListener(new DeletedPairsListener() {
-      @Override
-      public void objectRemoved(Object key, Object value) {
-        SNode node = (SNode) key;
-        SModel model = node.getModel();
-        Set<SNode> nodeSet = ourModelsToNodes.get(model);
-        nodeSet.remove(node);
-        if (nodeSet.isEmpty()) {
-          ourModelsToNodes.remove(model);
-          model.removeModelListener(ourModelListener);
-        }
-      }
-    });
-  }
 
   public static int hashCode(final SNode node) {
     Integer result = ourHashCodeCash.tryKey(node);
@@ -64,16 +38,12 @@ public class StructuralCollectionUtil {
     toString(sb, node, node);
     result = sb.toString().hashCode();
     ourHashCodeCash.cacheObject(node, result);
-
-    SModel model = node.getModel();
-    Set<SNode> nodeSet = ourModelsToNodes.get(model);
-    if (nodeSet == null) {
-      nodeSet = new HashSet<SNode>();
-      ourModelsToNodes.put(model, nodeSet);
-      model.addModelListener(ourModelListener);
-    }
-    nodeSet.add(node);
-
+    node.getModel().addModelListener(new SModelAdapter() {
+      @Override
+      public void beforeModelDisposed(SModel sm) {
+        ourHashCodeCash.remove(node);
+      }
+    });
     return result;
   }
 
