@@ -47,8 +47,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -299,6 +299,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myEditors.add(component);
     myInnerTabbedPane.add(getTabTextForNode(loadableNode), jComponent);
     updateTabColor(myEditors.size() - 1); //why it should be called here?
+    myInnerTabbedPane.setIconAt(myEditors.size() - 1, IconManager.getIconFor(loadableNode));
     ToolWindowManager.getInstance(operationContext.getProject()).getFocusManager().requestFocus(component, false);
     SModel sModel = loadableNode.getModel();
     if (!sModel.hasModelListener(myListener)) {
