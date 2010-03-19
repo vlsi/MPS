@@ -45,8 +45,6 @@ public class ImportOldConfigsPanel extends JDialog {
   private JPanel myRootPanel;
   private File myLastSelection = null;
   private JButton myOkButton;
-  private JLabel mySuggestLabel;
-  private JLabel myHomeLabel;
 
   public ImportOldConfigsPanel(final Frame owner) {
     super(owner, true);
@@ -70,9 +68,7 @@ public class ImportOldConfigsPanel extends JDialog {
 
     final ApplicationNamesInfo namesInfo = ApplicationNamesInfo.getInstance();
     final String productName = namesInfo.getProductName().equals("IDEA") ? namesInfo.getFullProductName() : namesInfo.getProductName();
-    mySuggestLabel.setText(ApplicationBundle.message("label.you.can.import", productName));
     myRbDoNotImport.setText(ApplicationBundle.message("radio.do.not.import", productName));
-    myHomeLabel.setText(ApplicationBundle.message("editbox.installation.home", productName));
 
     myRbImport.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
