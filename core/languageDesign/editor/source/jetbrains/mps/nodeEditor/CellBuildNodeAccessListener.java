@@ -75,17 +75,13 @@ public class CellBuildNodeAccessListener implements INodesReadListener {
   }
 
   public void propertyDirtyReadAccess(SNode node, String propertyName) {
-    NodeReadAccessCasterInEditor.switchOffFiringPropertyReadAccessedEvent();
     myDirtilyReadAccessedProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
-    NodeReadAccessCasterInEditor.switchOnFiringPropertyReadAccessedEvent();
     //refactored here from calling after unique usage
     nodeUnclassifiedReadAccess(node);
   }
 
   public void propertyCleanReadAccess(SNode node, String propertyName) {
-    NodeReadAccessCasterInEditor.switchOffFiringPropertyReadAccessedEvent();
     myCleanlyReadAccessedProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
-    NodeReadAccessCasterInEditor.switchOnFiringPropertyReadAccessedEvent();
   }
 
   public void nodeUnclassifiedReadAccess(SNode node) {
@@ -101,9 +97,7 @@ public class CellBuildNodeAccessListener implements INodesReadListener {
   }
 
   public void propertyExistenceAccess(SNode node, String propertyName) {
-    NodeReadAccessCasterInEditor.switchOffFiringPropertyReadAccessedEvent();
     myExistenceReadAccessProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
-    NodeReadAccessCasterInEditor.switchOnFiringPropertyReadAccessedEvent();
     //refactored here from from calling after unique usage
     nodeUnclassifiedReadAccess(node);
   }

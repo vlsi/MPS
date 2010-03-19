@@ -15,140 +15,215 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodePointer;
 
-import java.util.Set;
 import java.util.Stack;
 
-import com.intellij.openapi.util.Computable;
-
 public class NodeReadAccessCasterInEditor {
-  private static Stack<CellBuildNodeAccessListener> ourReadAccessListenerStack = new Stack<CellBuildNodeAccessListener>();
-  private static CellBuildNodeAccessListener ourReadAccessListener;
-  private static PropertyAccessor ourPropertyAccessor;
-
-  private static boolean ourCanFirePropertyReadAccessedEvent = true;
-  private static boolean ourEventsBlocked = false;
+  private static ThreadLocal<ListenersContainer> myListenersContainer = new ThreadLocal<ListenersContainer>();
 
   public static void setCellBuildNodeReadAccessListener(CellBuildNodeAccessListener listener) {
-    if (ourReadAccessListener != null) {
-      ourReadAccessListenerStack.push(ourReadAccessListener);
-    }
-    ourReadAccessListener = listener;
+    getListenersContainer().addListener(listener);
   }
 
   public static void removeCellBuildNodeAccessListener() {
-    if (ourReadAccessListenerStack.isEmpty()) {
-      ourReadAccessListener = null;
-    } else {
-      Set<SNode> nodesWhichChildCellDependsOn = ourReadAccessListener.getNodesToDependOn();
-      Set<SNodePointer> refTargetsWhichCellDependsOn = ourReadAccessListener.getRefTargetsToDependOn();
-      ourReadAccessListener = ourReadAccessListenerStack.pop();
-      ourReadAccessListener.addNodesToDependOn(nodesWhichChildCellDependsOn);
-      ourReadAccessListener.addRefTargetsToDependOn(refTargetsWhichCellDependsOn);
+    ListenersContainer listenersContainer = myListenersContainer.get();
+    assert listenersContainer != null : "Removing not existing listener";
+    listenersContainer.removeListener();
+    if (listenersContainer.canBeDisposed()) {
+      myListenersContainer.set(null);
     }
   }
 
   public static String runEditorCellPropertyAccessAction(PropertyAccessor accessor) {
-    ourPropertyAccessor = accessor;
-    String propertyName = accessor.getPropertyName();
-    SNode node = accessor.getNode();
-    try {
-      if (node == null) return null;
-      return node.getProperty(propertyName);
-    } finally {
-      ourPropertyAccessor = null;
-    }
+    EditorCellPropertyAccessAction propertyAccessAction = new EditorCellPropertyAccessAction(accessor);
+    ListenersContainer listenersContainer = myListenersContainer.get();
+    return listenersContainer != null ? listenersContainer.runEditorCellPropertyAccessAction(propertyAccessAction) : propertyAccessAction.getPropertyValue();
   }
 
   public static void fireNodeReadAccessed(SNode node) {
-    if (ourEventsBlocked) return;
-    if (!node.isRegistered()) return;
-    if (node.isModelLoading()) return;
-    if (ourReadAccessListener != null) ourReadAccessListener.nodeUnclassifiedReadAccess(node);
-  }
-
-  @Hack
-  static void switchOffFiringPropertyReadAccessedEvent() {
-    ourCanFirePropertyReadAccessedEvent = false;
-  }
-
-  @Hack
-  static void switchOnFiringPropertyReadAccessedEvent() {
-    ourCanFirePropertyReadAccessedEvent = true;
+    ListenersContainer listenersContainer = myListenersContainer.get();
+    if (listenersContainer != null) {
+      listenersContainer.fireNodeReadAccessed(node);
+    }
   }
 
   public static void firePropertyReadAccessed(SNode node, String propertyName, boolean propertyExistenceCheck) {
-    if (ourEventsBlocked) return;
-    if (!node.isRegistered()) return;
-    if (node.isModelLoading()) return;
-    if (!ourCanFirePropertyReadAccessedEvent) return;
-    if (ourPropertyAccessor != null) {
-      if (ourReadAccessListener != null) {
-        switchOffFiringPropertyReadAccessedEvent();
-        ourReadAccessListener.propertyCleanReadAccess(node, propertyName);
-        switchOnFiringPropertyReadAccessedEvent();
-      }
-      return;
-    }
-
-    if (propertyExistenceCheck && ourReadAccessListener != null) {
-      ourReadAccessListener.propertyExistenceAccess(node, propertyName);
-    } else if (ourReadAccessListener != null) {
-      ourReadAccessListener.propertyDirtyReadAccess(node, propertyName);
+    ListenersContainer listenersContainer = myListenersContainer.get();
+    if (listenersContainer != null) {
+      listenersContainer.firePropertyReadAccessed(node, propertyName, propertyExistenceCheck);
     }
   }
 
-
   public static void fireReferenceTargetReadAccessed(SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
-    if (ourEventsBlocked) return;
-    if (!sourceNode.isRegistered()) return;
-    if (sourceNode.isModelLoading()) return;
-    if (ourReadAccessListener != null) {
-      ourReadAccessListener.addRefTargetToDependOn(new SNodePointer(targetModelReference, targetNodeId));
+    ListenersContainer listenersContainer = myListenersContainer.get();
+    if (listenersContainer != null) {
+      listenersContainer.fireReferenceTargetReadAccessed(sourceNode, targetModelReference, targetNodeId);
     }
   }
 
   public static CellBuildNodeAccessListener getReadAccessListener() {
-    return ourReadAccessListener;
+    ListenersContainer listenersContainer = myListenersContainer.get();
+    return listenersContainer == null ? null : listenersContainer.getActiveListener();
   }
 
   public static boolean areEventsBlocked() {
-    return ourEventsBlocked;
+    ListenersContainer listenersContainer = myListenersContainer.get();
+    return listenersContainer != null && listenersContainer.areEventsBlocked();
   }
 
   public static void setEventsBlocked(boolean blocked) {
-    ourEventsBlocked = blocked;
+    ListenersContainer listenersCotainer = getListenersContainer();
+    listenersCotainer.setEventsBlocked(blocked);
+    if (listenersCotainer.canBeDisposed()) {
+      myListenersContainer.set(null);
+    }
   }
 
   public static void blockEvents() {
-    ourEventsBlocked = true;
+    setEventsBlocked(true);
   }
 
   public static void unblockEvents() {
-    ourEventsBlocked = false;
+    setEventsBlocked(false);
   }
 
   public static void runReadTransparentAction(Runnable r) {
-    boolean wereBlocked = ourEventsBlocked;
-    ourEventsBlocked = true;
+    boolean wereBlocked = areEventsBlocked();
+    setEventsBlocked(true);
     try {
       r.run();
     } finally {
-      ourEventsBlocked = wereBlocked;
+      setEventsBlocked(wereBlocked);
     }
   }
 
   public static <T> T runReadTransparentAction(final Computable<T> c) {
-    boolean wereBlocked = ourEventsBlocked;
-    ourEventsBlocked = true;
+    boolean wereBlocked = areEventsBlocked();
+    setEventsBlocked(true);
     try {
       return c.compute();
     } finally {
-      ourEventsBlocked = wereBlocked;
+      setEventsBlocked(wereBlocked);
+    }
+  }
+
+  private static ListenersContainer getListenersContainer() {
+    ListenersContainer listeners = myListenersContainer.get();
+    if (listeners == null) {
+      listeners = new ListenersContainer();
+      myListenersContainer.set(listeners);
+    }
+    return listeners;
+  }
+
+  static class EditorCellPropertyAccessAction {
+    private PropertyAccessor myPropertyAccessor;
+
+    EditorCellPropertyAccessAction(PropertyAccessor accessor) {
+      myPropertyAccessor = accessor;
+    }
+
+    public PropertyAccessor getPropertyAccessor() {
+      return myPropertyAccessor;
+    }
+
+    public String getPropertyValue() {
+      String propertyName = myPropertyAccessor.getPropertyName();
+      SNode node = myPropertyAccessor.getNode();
+      if (node == null) {
+        return null;
+      }
+      return node.getProperty(propertyName);
+    }
+  }
+
+  static class ListenersContainer {
+    private Stack<CellBuildNodeAccessListener> myListenersStack = new Stack<CellBuildNodeAccessListener>();
+    private boolean myEventsBlocked;
+    private PropertyAccessor myPropertyAccessor;
+    private boolean myPropertyReadEventsSuppressed;
+
+    public void addListener(CellBuildNodeAccessListener listener) {
+      assert listener != null : "Trying to add null as a listener";
+      myListenersStack.push(listener);
+    }
+
+    public void removeListener() {
+      assert !myListenersStack.isEmpty() : "Trying to remove listener from an empty Listeners stack";
+      CellBuildNodeAccessListener listener = myListenersStack.pop();
+      if (!myListenersStack.isEmpty()) {
+        myListenersStack.peek().addNodesToDependOn(listener.getNodesToDependOn());
+        myListenersStack.peek().addRefTargetsToDependOn(listener.getRefTargetsToDependOn());
+      }
+    }
+
+    public boolean canBeDisposed() {
+      return !myEventsBlocked && myListenersStack.isEmpty();
+    }
+
+    public CellBuildNodeAccessListener getActiveListener() {
+      return myListenersStack.isEmpty() ? null : myListenersStack.peek();
+    }
+
+    public boolean areEventsBlocked() {
+      return myEventsBlocked;
+    }
+
+    public void setEventsBlocked(boolean eventsBlocked) {
+      myEventsBlocked = eventsBlocked;
+    }
+
+    public String runEditorCellPropertyAccessAction(EditorCellPropertyAccessAction propertyAccessAction) {
+      myPropertyAccessor = propertyAccessAction.getPropertyAccessor();
+      try {
+        return propertyAccessAction.getPropertyValue();
+      } finally {
+        myPropertyAccessor = null;
+      }
+    }
+
+    public void fireNodeReadAccessed(SNode node) {
+      if (myEventsBlocked || skipNotification(node)) {
+        return;
+      }
+      myListenersStack.peek().nodeUnclassifiedReadAccess(node);
+    }
+
+    public void firePropertyReadAccessed(SNode node, String propertyName, boolean propertyExistenceCheck) {
+      if (myEventsBlocked || myPropertyReadEventsSuppressed || skipNotification(node)) {
+        return;
+      }
+
+      CellBuildNodeAccessListener listener = myListenersStack.peek();
+      myPropertyReadEventsSuppressed = true;
+      try {
+        if (myPropertyAccessor != null) {
+          listener.propertyCleanReadAccess(node, propertyName);
+        } else if (propertyExistenceCheck) {
+          listener.propertyExistenceAccess(node, propertyName);
+        } else {
+          listener.propertyDirtyReadAccess(node, propertyName);
+        }
+      } finally {
+        myPropertyReadEventsSuppressed = false;
+      }
+    }
+
+    public void fireReferenceTargetReadAccessed(SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
+      if (myEventsBlocked || skipNotification(sourceNode)) {
+        return;
+      }
+      myListenersStack.peek().addRefTargetToDependOn(new SNodePointer(targetModelReference, targetNodeId));
+    }
+
+    private boolean skipNotification(SNode node) {
+      return myListenersStack.isEmpty() || !node.isRegistered() || node.isModelLoading();
     }
   }
 }
