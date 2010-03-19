@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ForStatement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -33,10 +34,14 @@ public class ForStatement_TextGen extends SNodeTextGen {
     if ((SLinkOperations.getTarget(node, "condition", true) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "condition", true), this.getSNode());
     }
-    this.append(";");
-    for (SNode iteration : SLinkOperations.getTargets(node, "iteration", true)) {
-      this.append(" ");
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), iteration, this.getSNode());
+    this.append("; ");
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "iteration", true)).isNotEmpty()) {
+      for (SNode item : SLinkOperations.getTargets(node, "iteration", true)) {
+        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
+        if (item != ListSequence.fromList(SLinkOperations.getTargets(node, "iteration", true)).last()) {
+          this.append(", ");
+        }
+      }
     }
     this.append(") {");
     this.increaseDepth();
