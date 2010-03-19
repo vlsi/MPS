@@ -108,7 +108,9 @@ public class GenerationSession {
         if (myLogger.needsInfo()) {
           myLogger.info("executing step " + (myMajorStep + 1));
         }
+        //ttrace.push("step " + (myMajorStep + 1), false);
         currOutput = executeMajorStep(currInputModel);
+        //ttrace.pop();
         if (currOutput == null || myLogger.getErrorCount() > 0) {
           break;
         }
@@ -316,11 +318,13 @@ public class GenerationSession {
         }
       }
       if (needToCloneInputMode) {
+        ttrace.push("model clone", false);
         SModel currentInputModel_clone = createTransientModel();
         if (myLogger.needsInfo()) {
           myLogger.info("clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
         }
         CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
+        ttrace.pop();
 
         if (!myDiscardTransients) { // tracing
           mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, preMappingScripts);
@@ -390,6 +394,7 @@ public class GenerationSession {
   private void recycleWasteModel(SModel model) {
     SModelDescriptor md = model.getModelDescriptor();
     if (md != null && md.isTransient()) {
+      ttrace.push("recycling", false);
       if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
         if (myLogger.needsInfo()) {
           myLogger.info("remove spent model '" + model.getSModelFqName() + "'");
@@ -397,6 +402,7 @@ public class GenerationSession {
         SModelRepository.getInstance().removeModelDescriptor(md);
       }
       md.disposeFastNodeFinder();
+      ttrace.pop();
     }
   }
 

@@ -19,6 +19,7 @@ import java.util.List;
 public class ParallelTemplateGenerator extends TemplateGenerator {
 
   public static /*final*/ boolean PARALLELING_ENABLED = true;
+  public static /*final*/ boolean USE_PARALLEL_POOL = false;
 
   private IGenerationTaskPool myPool;
 
@@ -26,8 +27,9 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
                                    IGeneratorLogger logger, RuleManager ruleManager,
                                    SModel inputModel, SModel outputModel, boolean isStrict, IPerformanceTracer performance) {
     super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, isStrict, performance);
-    myPool = new SimpleGenerationTaskPool(); 
-        //new GenerationTaskPool(progressMonitor);
+    myPool = USE_PARALLEL_POOL
+        ? new GenerationTaskPool(progressMonitor)
+        : new SimpleGenerationTaskPool();
   }
 
   @Override
