@@ -4,18 +4,19 @@ package jetbrains.mps.baseLanguage.search;
 
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.IMethodCall;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
@@ -23,13 +24,18 @@ import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   private final SNode myContextNode;
   private final ClassifierAndSuperClassifiersScope myClassifierScope;
-  private ClassifierType myClassifierType;
+  private SNode myClassifierType;
 
+  @Deprecated
   public ClassifierVisibleMembersScope(@Nullable ClassifierType classifierType, @Nullable SNode contextNode, int constraint) {
+    this(SNodeOperations.cast(check_3573019447813743493(classifierType), "jetbrains.mps.baseLanguage.structure.ClassifierType"), contextNode, constraint);
+  }
+
+  public ClassifierVisibleMembersScope(@Nullable SNode classifierType, @Nullable SNode contextNode, int constraint) {
     this.myClassifierType = classifierType;
     this.myContextNode = contextNode;
     this.myClassifierScope = new ClassifierAndSuperClassifiersScope((classifierType != null ?
-      classifierType.getClassifier() :
+      ((Classifier) SNodeOperations.getAdapter(SLinkOperations.getTarget(classifierType, "classifier", false))) :
       null
     ), constraint);
   }
@@ -64,17 +70,24 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, AbstractConceptDeclaration targetConcept) {
     if (this.myClassifierType != null) {
       if (SModelUtil_new.isAssignableConcept(targetConcept, StaticMethodDeclaration.concept)) {
-        Classifier classifier = this.myClassifierType.getClassifier();
-        if (classifier instanceof ClassConcept && referenceNode.getAdapter() instanceof IMethodCall) {
-          return new StaticMethodReferenceInfoResolver(this.myClassifierScope, (ClassConcept) classifier, ((IMethodCall) referenceNode.getAdapter()).getActualArguments());
+        SNode classifier = SLinkOperations.getTarget(this.myClassifierType, "classifier", false);
+        if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SNodeOperations.isInstanceOf(referenceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+          return new StaticMethodReferenceInfoResolver(this.myClassifierScope, (ClassConcept) ((Classifier) SNodeOperations.getAdapter(classifier)), ((IMethodCall) referenceNode.getAdapter()).getActualArguments());
         }
       } else
       if (SModelUtil_new.isAssignableConcept(targetConcept, InstanceMethodDeclaration.concept)) {
         if (referenceNode.getAdapter() instanceof IMethodCall) {
-          return new InstanceMethodReferenceInfoResolver(this.myClassifierScope, this.myClassifierType, ((IMethodCall) referenceNode.getAdapter()).getActualArguments());
+          return new InstanceMethodReferenceInfoResolver(this.myClassifierScope, ((ClassifierType) SNodeOperations.getAdapter(this.myClassifierType)), ((IMethodCall) referenceNode.getAdapter()).getActualArguments());
         }
       }
     }
     return this.myClassifierScope.getReferenceInfoResolver(referenceNode, targetConcept);
+  }
+
+  private static SNode check_3573019447813743493(ClassifierType p) {
+    if (null == p) {
+      return null;
+    }
+    return p.getNode();
   }
 }
