@@ -34,7 +34,7 @@ public class ForStatement_TextGen extends SNodeTextGen {
     if ((SLinkOperations.getTarget(node, "condition", true) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "condition", true), this.getSNode());
     }
-    this.append("; ");
+    this.append(";");
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "iteration", true)).isNotEmpty()) {
       for (SNode item : SLinkOperations.getTargets(node, "iteration", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());

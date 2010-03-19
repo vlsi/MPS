@@ -8484,7 +8484,7 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="1237558391826">
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart:11" id="1237558393281">
-            <property name="value:11" value="; " />
+            <property name="value:11" value=";" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="3573019447813095749">
