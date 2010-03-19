@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.structure.ClassifierMember;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -37,19 +37,24 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> result = new ArrayList<SNode>();
-    for (ClassifierMember member : this.getClassifierMembers()) {
-      if (condition.met(member.getNode())) {
-        result.add(member.getNode());
+    for (SNode member : this.getClassifierMembers()) {
+      if (condition.met(member)) {
+        result.add(member);
       }
     }
     return result;
   }
 
-  private List<ClassifierMember> getClassifierMembers() {
-    List<ClassifierMember> members = this.myClassifierScope.getAdapters(ClassifierMember.class);
-    List<ClassifierMember> result = new ArrayList<ClassifierMember>();
-    for (ClassifierMember member : members) {
-      if (VisibilityUtil.isVisible(this.myContextNode, (SNode) member.getNode())) {
+  private List<SNode> getClassifierMembers() {
+    List<SNode> members = this.myClassifierScope.getNodes(new Condition<SNode>() {
+      public boolean met(SNode node) {
+        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
+      }
+    });
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode memberNode : members) {
+      SNode member = SNodeOperations.cast(memberNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
+      if (VisibilityUtil.isVisible(this.myContextNode, member)) {
         result.add(member);
       }
     }
