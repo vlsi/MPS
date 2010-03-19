@@ -11,7 +11,6 @@ import java.util.List;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.structure.ClassifierMember;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -50,7 +49,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     List<ClassifierMember> members = this.myClassifierScope.getAdapters(ClassifierMember.class);
     List<ClassifierMember> result = new ArrayList<ClassifierMember>();
     for (ClassifierMember member : members) {
-      if (VisibilityUtil.isVisible(BaseAdapter.fromNode(this.myContextNode), member)) {
+      if (VisibilityUtil.isVisible(this.myContextNode, (SNode) member.getNode())) {
         result.add(member);
       }
     }
