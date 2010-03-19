@@ -52,6 +52,7 @@ public class StructuralCollectionUtil {
           nodeSet.remove(node);
         } else {
           LOG.warning("node set is null");
+          LOG.warning("thread is " + Thread.currentThread().getName());
         }
         if (nodeSet == null || nodeSet.isEmpty()) {
           ourModelsToNodes.remove(model);
