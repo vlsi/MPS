@@ -37,7 +37,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   protected static volatile long ourStructuralState = 0;
 
   protected SModelReference myModelReference;
-  protected Map<String, Object> myUserObjects = new HashMap<String, Object>();
+  protected Map<String, Object> myUserObjects;
   protected IFile myModelFile;
   protected IModelRootManager myModelRootManager;
 
@@ -112,14 +112,18 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public Object getUserObject(String key) {
-    return myUserObjects.get(key);
+    return myUserObjects == null ? null : myUserObjects.get(key);
   }
 
   public void putUserObject(String key, Object value) {
+    if(myUserObjects == null) {
+      myUserObjects = new HashMap<String, Object>();
+    }
     myUserObjects.put(key, value);
   }
 
   public void removeUserObject(String key) {
+    if(myUserObjects == null) return;
     myUserObjects.remove(key);
   }
 
