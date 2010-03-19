@@ -45,11 +45,11 @@ public class ModelImportChange extends Change {
   public String toString() {
     String format;
     if (myIsDeleted) {
-      format = "delete imported model %s (%s)";
+      format = "delete imported model %s";
     } else {
-      format = "add imported model %s (%s)";
+      format = "add imported model %s";
     }
-    return String.format(format, mySModelReference.getLongName(), mySModelReference.getSModelId().toString());
+    return String.format(format, mySModelReference.toString());
   }
 
   @Override
