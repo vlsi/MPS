@@ -29,6 +29,17 @@ import java.util.*;
 public class StructuralCollectionUtil {
   private static final Logger LOG = Logger.getLogger(StructuralCollectionUtil.class);
 
+  //temp; diagnostics
+  private static final Set<String> ourThreadNames = new HashSet<String>();
+  private static String getThreadNames() {
+    StringBuilder sb = new StringBuilder();
+    for (String t : ourThreadNames) {
+      sb.append(t);
+      sb.append("; ");
+    }
+    return sb.toString();
+  }
+
   private static final ObjectCache<SNode, Integer> ourHashCodeCash = new ObjectCache<SNode, Integer>(5000);
   private static final Map<SModel, Set<SNode>> ourModelsToNodes = new HashMap<SModel, Set<SNode>>();
   private static final SModelListener ourModelListener = new SModelAdapter() {
@@ -48,12 +59,23 @@ public class StructuralCollectionUtil {
         SNode node = (SNode) key;
         SModel model = node.getModel();
         Set<SNode> nodeSet = ourModelsToNodes.get(model);
+
+        //temp
+        String threadName = Thread.currentThread().getName();
+
         if (nodeSet != null) {
           nodeSet.remove(node);
         } else {
           LOG.warning("node set is null");
-          LOG.warning("thread is " + Thread.currentThread().getName());
+          LOG.warning("thread is " + threadName);
+
+          //temp
+          LOG.warning("other threads were " + getThreadNames());
         }
+
+        //temp
+        ourThreadNames.add(threadName);
+
         if (nodeSet == null || nodeSet.isEmpty()) {
           ourModelsToNodes.remove(model);
           model.removeModelListener(ourModelListener);
