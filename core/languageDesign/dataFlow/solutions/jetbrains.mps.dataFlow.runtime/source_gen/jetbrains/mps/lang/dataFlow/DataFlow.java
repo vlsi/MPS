@@ -9,8 +9,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.baseLanguage.structure.Statement;
 import jetbrains.mps.baseLanguage.structure.StatementList;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 
@@ -42,8 +41,7 @@ public class DataFlow {
               unreachableNodes.add((SNode) i.getSource());
             }
           } else {
-            INodeAdapter adapter = BaseAdapter.fromNode(unreachableNode);
-            unreachableNodes.add(adapter.getParent(Statement.class).getNode());
+            unreachableNodes.add(SNodeOperations.getAncestor(unreachableNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
           }
         }
       }
