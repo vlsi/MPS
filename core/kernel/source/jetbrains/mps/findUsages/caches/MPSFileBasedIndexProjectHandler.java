@@ -15,26 +15,27 @@
  */
 package jetbrains.mps.findUsages.caches;
 
-import com.intellij.ide.startup.StartupManagerEx;
 import com.intellij.ide.caches.CacheUpdater;
+import com.intellij.ide.startup.StartupManagerEx;
 import com.intellij.openapi.components.AbstractProjectComponent;
-import com.intellij.openapi.project.*;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.project.DumbServiceImpl;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.roots.ContentIterator;
-import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.IndexableFileSet;
 import jetbrains.mps.make.StartupModuleMaker;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
-import java.util.Set;
 import java.util.Collections;
+import java.util.Set;
 
 
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
