@@ -232,8 +232,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myInnerTabbedPane = new JTabbedPane();
     myInnerTabbedPane.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
-        //should be called when component is fully initialized, so myInnerTabbedPane.add
-        //should be called after editors are filled etc.
         myTabbedEditor.onSelectInnerTab();
       }
     });
@@ -298,7 +296,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     JComponent jComponent = component.getExternalComponent();
     myEditors.add(component);
     myInnerTabbedPane.add(getTabTextForNode(loadableNode), jComponent);
-    updateTabColor(myEditors.size() - 1); //why it should be called here?
     myInnerTabbedPane.setIconAt(myEditors.size() - 1, IconManager.getIconFor(loadableNode));
     ToolWindowManager.getInstance(operationContext.getProject()).getFocusManager().requestFocus(component, false);
     SModel sModel = loadableNode.getModel();
