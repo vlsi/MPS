@@ -51,16 +51,8 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
     return ApplicationManager.getApplication().getComponent(TypesystemPreferencesComponent.class);
   }
 
-  public boolean isUsesDebugHighlighting() {
-    return myState.isUsesDebugHighlighting();
-  }
-
   public boolean isGenerationOptimizationEnabled() {
     return /*false && */myState.isGenerationOptimizationEnabled();
-  }
-
-  public int getHelginsTimeoutSeconds() {
-    return myState.getHelginsTimeout();
   }
 
   public boolean isCoersionSimpleCached() {
@@ -120,9 +112,7 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
   }
 
   private class MyPreferencesPage {
-    private JCheckBox myHighlightingCheckBox = new JCheckBox("Use debug highlighting");
     private JCheckBox myGeneratorOptimizationCheckBox = new JCheckBox("Use optimization for generation");
-    private JTextField myHelginsTimeoutField = new JTextField();
 
     private JCheckBox myCacheSubtypingCheckBox = new JCheckBox("cache for subtyping enabled (advanced)");
     private JCheckBox myCacheCoerceSimpleCheckBox = new JCheckBox("cache for coersion enabled (advanced)");
@@ -132,24 +122,7 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
 
     public MyPreferencesPage() {
       JPanel panel = new JPanel(new GridLayout(0, 1));
-      panel.add(myHighlightingCheckBox);
       panel.add(myGeneratorOptimizationCheckBox);
-
-      JPanel timeoutPanel = new JPanel(new GridBagLayout());
-      GridBagConstraints constraints = new GridBagConstraints();
-      constraints.gridy = 0;
-      constraints.gridx = 0;
-      constraints.weightx = 0;
-      timeoutPanel.add(new JLabel("typechecker timeout"), constraints);
-      constraints.gridx = 1;
-      constraints.weightx = 0.3;
-      constraints.fill = GridBagConstraints.HORIZONTAL;
-      timeoutPanel.add(myHelginsTimeoutField, constraints);
-      constraints.gridx = 2;
-      constraints.weightx = 0.7;
-      timeoutPanel.add(new JPanel(), constraints);
-      panel.add(timeoutPanel);
-
       panel.add(myCacheSubtypingCheckBox);
       panel.add(myCacheCoerceSimpleCheckBox);
       panel.add(myCacheCoercePatternsCheckBox);
@@ -167,29 +140,12 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
       return null;
     }
 
-    public boolean validate() {
-      try {
-        Integer.parseInt(myHelginsTimeoutField.getText());
-        return true;
-      } catch (NumberFormatException ex) {
-        return false;
-      }
-    }
 
     public void commit() {
-      boolean selectedHighlighting = myHighlightingCheckBox.isSelected();
-      boolean changedHighlighting = (myState.isUsesDebugHighlighting() != selectedHighlighting);
-      if (changedHighlighting) {
-        myState.setUsesDebugHighlighting(selectedHighlighting);
-      }
       boolean selectedOptimization = myGeneratorOptimizationCheckBox.isSelected();
       boolean changedOptimization = (myState.isGenerationOptimizationEnabled() != selectedOptimization);
       if (changedOptimization) {
         myState.setGenerationOptimizationEnabled(selectedOptimization);
-      }
-      int timeout = Integer.parseInt(myHelginsTimeoutField.getText());
-      if (timeout != myState.getHelginsTimeout()) {
-        myState.setHelginsTimeout(timeout);
       }
       myState.setSubtypingCached(myCacheSubtypingCheckBox.isSelected());
       myState.setCoersionSimpleCached(myCacheCoerceSimpleCheckBox.isSelected());
@@ -201,23 +157,19 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
     }
 
     public void reset() {
-      myHighlightingCheckBox.setSelected(myState.isUsesDebugHighlighting());
       myGeneratorOptimizationCheckBox.setSelected(myState.isGenerationOptimizationEnabled());
-      myHelginsTimeoutField.setText(myState.getHelginsTimeout() + "");
       myCacheSubtypingCheckBox.setSelected(myState.isSubtypingCached());
       myCacheCoerceSimpleCheckBox.setSelected(myState.isCoersionSimpleCached());
       myCacheCoercePatternsCheckBox.setSelected(myState.isCoersionPatternCached());
     }
 
     public boolean isModified() {
-      boolean sameHighlighting = myHighlightingCheckBox.isSelected() == myState.isUsesDebugHighlighting();
       boolean sameGenOptimization = myGeneratorOptimizationCheckBox.isSelected() == myState.isGenerationOptimizationEnabled();
-      boolean sameTimeout = myHelginsTimeoutField.getText().equals(myState.getHelginsTimeout() + "");
       boolean sameCacheSubtyping = myCacheSubtypingCheckBox.isSelected() == myState.isSubtypingCached();
       boolean sameCacheCoerceSimple = myCacheCoerceSimpleCheckBox.isSelected() == myState.isCoersionSimpleCached();
       boolean sameCacheCoercePatterns = myCacheCoercePatternsCheckBox.isSelected() == myState.isCoersionPatternCached();
 
-      return  !(sameHighlighting&&sameGenOptimization&&sameTimeout&&sameCacheSubtyping&&sameCacheCoerceSimple&&sameCacheCoercePatterns);
+      return  !(sameGenOptimization&&sameCacheSubtyping&&sameCacheCoerceSimple&&sameCacheCoercePatterns);
     }
   }
 
