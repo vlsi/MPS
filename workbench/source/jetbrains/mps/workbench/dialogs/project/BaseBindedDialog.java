@@ -131,7 +131,7 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
     return true;
   }
 
-  public enum ConstraintsType {
+  protected enum ConstraintsType {
     LABEL {
       public GridBagConstraints create(int x, int y) {
         GridBagConstraints c = LIST.create(x, y);

@@ -60,9 +60,9 @@ public abstract class BaseTabbedBindedDialog extends BaseBindedDialog {
     myComponents.put(tabName, tab);
   }
 
-  public void addTab(DialogTab tab) {
+  protected void addTab(DialogTab tab) {
     for (ComponentDescriptor d : tab.getComponents()) {
-      addComponent(tab.getName(), d.getComponent(), d.getConstraints());
+      addComponent(tab.getName(), d.getComponent(), d.getConstraintsType());
     }
   }
 
@@ -74,8 +74,8 @@ public abstract class BaseTabbedBindedDialog extends BaseBindedDialog {
       myName = name;
     }
 
-    public void addComponent(ComponentDescriptor d) {
-      myComponents.add(d);
+    public void addComponent(JComponent comp, ConstraintsType c) {
+      myComponents.add(new ComponentDescriptor(comp, c));
     }
 
     public String getName() {
@@ -87,24 +87,17 @@ public abstract class BaseTabbedBindedDialog extends BaseBindedDialog {
     }
   }
 
-  public static class ComponentDescriptor {
-    private JComponent myComponent;
-    private ConstraintsType myConstraints;
+  private static class ComponentDescriptor extends Pair<JComponent, ConstraintsType> {
+    public ComponentDescriptor(JComponent first, ConstraintsType second) {
+      super(first, second);
+    }
 
     public JComponent getComponent() {
-      return myComponent;
+      return first;
     }
 
-    public void setComponent(JComponent component) {
-      myComponent = component;
-    }
-
-    public ConstraintsType getConstraints() {
-      return myConstraints;
-    }
-
-    public void setConstraints(ConstraintsType constraints) {
-      myConstraints = constraints;
+    public ConstraintsType getConstraintsType() {
+      return second;
     }
   }
 }
