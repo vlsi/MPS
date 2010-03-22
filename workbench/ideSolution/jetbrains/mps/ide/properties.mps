@@ -457,6 +457,15 @@
           </node>
         </node>
       </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1747818952411861749">
+        <property name="name:3" value="condition" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1747818952411863794">
+          <link role="classifier:3" targetNodeId="24.~Condition" resolveInfo="Condition" />
+          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1747818952411863796">
+            <link role="classifier:3" targetNodeId="17.~ModuleReference" resolveInfo="ModuleReference" />
+          </node>
+        </node>
+      </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4060390951635973075">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7355563316698763894">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7355563316698763895">
@@ -514,6 +523,15 @@
                     </node>
                   </node>
                 </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement:0" id="1747818952411863798">
+                  <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1747818952411863799" />
+                  <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder:0" id="1747818952411863800">
+                    <link role="declaration:0" targetNodeId="1671234487373853434" resolveInfo="canRemoveCondition" />
+                    <node role="value:0" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1747818952411863802">
+                      <link role="variableDeclaration:3" targetNodeId="1747818952411861749" resolveInfo="condition" />
+                    </node>
+                  </node>
+                </node>
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7355563316698763920">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7355563316698763921">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.builders.structure.ResultExpression:0" id="7355563316698763922" />
@@ -536,6 +554,53 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1747818952411874067">
+      <property name="name:3" value="createLanguagesPanel" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1747818952411874068" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1747818952411874069">
+        <link role="classifier:3" targetNodeId="10.~JPanel" resolveInfo="JPanel" />
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1747818952411874070">
+        <property name="name:3" value="owner" />
+        <property name="isFinal:3" value="true" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1747818952411874071">
+          <link role="classifier:3" targetNodeId="23.~IBindedDialog" resolveInfo="IBindedDialog" />
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1747818952411874072">
+        <property name="name:3" value="caption" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1747818952411874073">
+          <link role="classifier:3" targetNodeId="3.~String" resolveInfo="String" />
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1747818952411874074">
+        <property name="name:3" value="list" />
+        <property name="isFinal:3" value="true" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1747818952411874075">
+          <link role="classifier:3" targetNodeId="12.~List" resolveInfo="List" />
+          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1747818952411874076">
+            <link role="classifier:3" targetNodeId="17.~ModuleReference" resolveInfo="ModuleReference" />
+          </node>
+        </node>
+      </node>
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1747818952411874080">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1747818952411874119">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="1747818952411874120">
+            <link role="baseMethodDeclaration:3" targetNodeId="4060390951635973065" resolveInfo="createLanguagesPanel" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1747818952411874121">
+              <link role="variableDeclaration:3" targetNodeId="1747818952411874070" resolveInfo="owner" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1747818952411874123">
+              <link role="variableDeclaration:3" targetNodeId="1747818952411874072" resolveInfo="caption" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1747818952411874125">
+              <link role="variableDeclaration:3" targetNodeId="1747818952411874074" resolveInfo="list" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1747818952411874127" />
           </node>
         </node>
       </node>
