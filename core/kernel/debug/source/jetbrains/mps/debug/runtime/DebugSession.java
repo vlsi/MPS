@@ -3,12 +3,15 @@ package jetbrains.mps.debug.runtime;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.sun.jdi.*;
+import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -70,6 +73,14 @@ public class DebugSession {
 
   public void stepOut() {
     step(StepType.Out);
+  }
+
+  public void showEvaluationDialog(IOperationContext operationContext) {
+    DebugSession.UiState state = getUiState();
+    if (state.isPausedOnBreakpoint()) {
+      EvaluationDialog evaluationDialog = new EvaluationDialog(operationContext, state);
+      evaluationDialog.showDialog();
+    }
   }
 
   private void step(StepType type) {

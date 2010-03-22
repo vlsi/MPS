@@ -28,7 +28,7 @@ public class StepOver_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return " F8";
+    return "none F8";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

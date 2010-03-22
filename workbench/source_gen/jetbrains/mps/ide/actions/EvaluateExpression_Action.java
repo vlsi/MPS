@@ -9,26 +9,28 @@ import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.debug.runtime.DebugSession;
 import jetbrains.mps.workbench.MPSDataKeys;
 
-public class StepInto_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/debug/stepInto.png", "jetbrains.mps.ide"), true);
-  protected static Log log = LogFactory.getLog(StepInto_Action.class);
+public class EvaluateExpression_Action extends GeneratedAction {
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/compile.png", "jetbrains.mps.ide"), true);
+  protected static Log log = LogFactory.getLog(EvaluateExpression_Action.class);
 
   private Project project;
+  private IOperationContext operationContext;
 
-  public StepInto_Action() {
-    super("Step Into", "", ICON);
+  public EvaluateExpression_Action() {
+    super("EvaluateExpression", "", ICON);
     this.setIsAlwaysVisible(true);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull
   public String getKeyStroke() {
-    return "none F7";
+    return "alt F8";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -39,7 +41,7 @@ public class StepInto_Action extends GeneratedAction {
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "StepInto", t);
+        log.error("User's action doUpdate method failed. Action:" + "EvaluateExpression", t);
       }
       this.disable(event.getPresentation());
     }
@@ -54,15 +56,19 @@ public class StepInto_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
+    this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+    if (this.operationContext == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      DebugActionsUtil.getDebugSession(event).stepInto();
+      DebugActionsUtil.getDebugSession(event).showEvaluationDialog(EvaluateExpression_Action.this.operationContext);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "StepInto", t);
+        log.error("User's action execute method failed. Action:" + "EvaluateExpression", t);
       }
     }
   }

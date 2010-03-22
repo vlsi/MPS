@@ -1604,8 +1604,8 @@ public final class SNode {
   }
 
   public Language getNodeLanguage() {
-    AbstractConceptDeclaration concept = getConceptDeclarationAdapter();
-    return SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+    SNode concept = getConceptDeclarationNode();
+    return SModelUtil.getDeclaringLanguage(concept, GlobalScope.getInstance());
   }
 
   public String getConceptFqName() {
@@ -1675,9 +1675,16 @@ public final class SNode {
     return SModelUtil_new.isAssignableConcept(myConceptFqName, conceptFqName);
   }
 
+  @Deprecated
   public AbstractConceptDeclaration getConceptDeclarationAdapter() {
     String conceptFQName = getConceptFqName();
     AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
+    return concept;
+  }
+
+  public SNode getConceptDeclarationNode() {
+    String conceptFQName = getConceptFqName();
+    SNode concept = SModelUtil.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
     return concept;
   }
 
