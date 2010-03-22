@@ -138,7 +138,7 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     Arrays.sort(indices);
 
     for (int i = indices.length - 1; i >= 0; i--) {
-      T value = (T) this.myList.get(i);
+      T value = (T) this.myList.get(indices[i]);
       if (!(this.myCanRemoveCondition.met(value))) {
         if (errorMessage.length() != 0) {
           errorMessage.append("<br>");
