@@ -110,19 +110,19 @@ public class CachesManager implements ApplicationComponent {
   }
 
   public void removeCache(Object key) {
+    AbstractCache cache;
     synchronized (myLock) {
       if (!myCaches.containsKey(key)) {
         return;
       }
-      AbstractCache cache = myCaches.remove(key);
+      cache = myCaches.remove(key);
       ModelEventRouter eventRouter = myModelEventRouters.remove(cache);
       List<SModelDescriptor> dependsOnModels = myDependsOnModels.remove(key);
       for (SModelDescriptor dependsOnModel : dependsOnModels) {
         dependsOnModel.removeModelListener(eventRouter);
       }
-
-      cache.cacheRemoved();
     }
+    cache.cacheRemoved();
   }
 
   private void removeAllCaches() {
