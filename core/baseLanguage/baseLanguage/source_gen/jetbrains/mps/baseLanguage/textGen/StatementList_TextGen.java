@@ -16,7 +16,7 @@ public class StatementList_TextGen extends SNodeTextGen {
     int size = ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).count();
     SNode methodLike = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
     SNode lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(methodLike);
-    for (int i = 0; i < size;i++) {
+    for (int i = 0; i < size; i++) {
       SNode statement = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).toListSequence()).getElement(i);
       if (statement == lastStatement && (LastStatementUtil.canMakeReturnStatement(statement))) {
         SNode expressionStatement = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
