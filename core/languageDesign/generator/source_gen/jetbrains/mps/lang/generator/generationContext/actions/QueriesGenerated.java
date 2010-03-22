@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_IOperation_1216861714162(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType");
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType");
   }
 
   public static void nodeFactory_NodeSetup_GenerationContextOp_GetOutputByLabel_1216861604198(final IOperationContext operationContext, final NodeSetupContext _context) {
