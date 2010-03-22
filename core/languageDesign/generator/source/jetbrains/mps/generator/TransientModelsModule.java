@@ -170,9 +170,13 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
       public boolean isReadOnly() {
         return false;
       }
+
+      @Override
+      public boolean isTransient() {
+        return true;
+      }
     };
 
-    result.setTransient(true);
     SModelRepository.getInstance().registerModelDescriptor(result, this);
     return result;
   }

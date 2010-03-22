@@ -66,7 +66,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange;
   private FastNodeFinder myFastNodeFinder;
-  private boolean myTransient;
 
   private long myDiskTimestamp = -1;
   private boolean myIsTestRefactoringMode = false;
@@ -778,7 +777,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public boolean isTransient() {
-    return myTransient;
+    return false;
   }
 
   private synchronized Map<String, String> getMetaData_internal() {
@@ -847,10 +846,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   public void setNameVersion(int newNameVersion) {
     setAttribute(VERSION, "" + newNameVersion);
-  }
-
-  public void setTransient(boolean b) {
-    myTransient = b;
   }
 
   /*package*/ void changeSModelUID(SModelReference newModelReference) {
