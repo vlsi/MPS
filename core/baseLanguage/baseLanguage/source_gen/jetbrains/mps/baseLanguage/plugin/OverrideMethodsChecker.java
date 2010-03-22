@@ -40,8 +40,8 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
 public class OverrideMethodsChecker extends EditorCheckerAdapter {
   private static final int MAX_MESSAGE_NUMBER = 5;
-  private static final String BR = "<br>";
-  private static final String TOOLTIP_INDENT = BR + "&nbsp;&nbsp;&nbsp;&nbsp;";
+  private static final String LF = "\n";
+  private static final String TOOLTIP_INDENT = LF + "    ";
 
   private boolean myIndexWasNotReady;
 
@@ -78,7 +78,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     Map<SNode, List<Tuples._2<SNode, SNode>>> overridingToOverridenMethodsMap = MapSequence.fromMap(new HashMap<SNode, List<Tuples._2<SNode, SNode>>>());
     this.collectOverridingMethodsInClassifierHierarchy(container, methods, overridingToOverridenMethodsMap, SetSequence.fromSet(new HashSet<SNode>()));
     for (SNode overridingMethod : SetSequence.fromSet(MapSequence.fromMap(overridingToOverridenMethodsMap).keySet())) {
-      StringBuffer tooltip = new StringBuffer("<html><body>");
+      StringBuffer tooltip = new StringBuffer();
       int messageCounter = 0;
       boolean overrides = SPropertyOperations.getBoolean(overridingMethod, "isAbstract") || ListSequence.fromList(MapSequence.fromMap(overridingToOverridenMethodsMap).get(overridingMethod)).where(new IWhereFilter<Tuples._2<SNode, SNode>>() {
         public boolean accept(Tuples._2<SNode, SNode> it) {
@@ -87,7 +87,6 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       }).isNotEmpty();
       for (Iterator<Tuples._2<SNode, SNode>> it = ListSequence.fromList(MapSequence.fromMap(overridingToOverridenMethodsMap).get(overridingMethod)).iterator(); it.hasNext();) {
         SNode overridenClassifier = it.next()._1();
-        // <node> 
         tooltip.append((overrides ?
           "Overrides" :
           "Implements"
@@ -96,14 +95,13 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
         tooltip.append(INamedConcept_Behavior.call_getFqName_1213877404258(overridenClassifier));
         tooltip.append("'");
         if (it.hasNext()) {
-          tooltip.append(BR);
+          tooltip.append(LF);
           if (++messageCounter >= MAX_MESSAGE_NUMBER) {
             tooltip.append("...");
             break;
           }
         }
       }
-      tooltip.append("</body></html>");
       SetSequence.fromSet(messages).addElement(new OverridingMethodEditorMessage(overridingMethod, this, tooltip.toString(), overrides));
     }
   }
@@ -236,7 +234,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     }
     for (SNode overridenMethod : SetSequence.fromSet(MapSequence.fromMap(overridenMethodsToOverridingClassifiersMap).keySet())) {
       boolean overriden = !(SPropertyOperations.getBoolean(overridenMethod, "isAbstract"));
-      StringBuffer tooltip = new StringBuffer("<html><body>Is ");
+      StringBuffer tooltip = new StringBuffer("Is ");
       tooltip.append((overriden ?
         "overriden" :
         "implemented"
@@ -253,7 +251,6 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
           break;
         }
       }
-      tooltip.append("</body></html>");
       SetSequence.fromSet(messages).addElement(new OverridenMethodEditorMessage(overridenMethod, this, tooltip.toString(), overriden));
     }
   }

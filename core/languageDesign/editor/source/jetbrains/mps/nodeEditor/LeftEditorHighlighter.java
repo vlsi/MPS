@@ -25,6 +25,7 @@ import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.UIUtil;
 import gnu.trove.TIntObjectHashMap;
 import gnu.trove.TIntObjectProcedure;
+import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer.IconRendererType;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
@@ -45,7 +46,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
-import javax.swing.ToolTipManager;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.MouseAdapter;
@@ -118,7 +118,7 @@ public class LeftEditorHighlighter extends JComponent {
         }
       }
     });
-    ToolTipManager.sharedInstance().registerComponent(this);
+    MPSToolTipManager.getInstance().registerComponent(this);
     editorComponent.addRebuildListener(new RebuildListener() {
       public void editorRebuilt(EditorComponent editor) {
         assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter$RebuildListener should be called in eventDispatchThread";
@@ -175,7 +175,7 @@ public class LeftEditorHighlighter extends JComponent {
     if (bookmarkManager != null) {
       bookmarkManager.removeBookmarkListener(myListener);
     }
-    ToolTipManager.sharedInstance().unregisterComponent(this);
+    MPSToolTipManager.getInstance().unregisterComponent(this);
   }
 
   @Override
