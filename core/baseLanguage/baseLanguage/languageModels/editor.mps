@@ -8173,6 +8173,9 @@
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237473827639">
           <property name="flag:32" value="true" />
         </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem:32" id="9037647964202059262">
+          <link role="parametersInformation:32" targetNodeId="4755152624708725521" resolveInfo="BaseMethodParameterInformationQuery" />
+        </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237474584861" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1208707027636">

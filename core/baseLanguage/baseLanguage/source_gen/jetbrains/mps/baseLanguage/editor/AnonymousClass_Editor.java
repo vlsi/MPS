@@ -79,6 +79,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
     }
     editorCell.addEditorCell(this.createRefCell_msf9u8_a0a(editorContext, node));
     if (renderingCondition_msf9u8_a1a0(node, editorContext, editorContext.getOperationContext().getScope())) {
