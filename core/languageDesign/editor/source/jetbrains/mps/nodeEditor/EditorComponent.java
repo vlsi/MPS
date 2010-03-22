@@ -3111,7 +3111,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public boolean isPastePossible(DataContext dataContext) {
       return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          if (getEditorContext() == null) return false;
+          if (isDisposed() || getEditedNode() == null || getEditorContext() == null) return false;
           if (getSelectedCell() == null) return false;
           if (getEditorContext().getModel().isNotEditable()) {
             return false;
