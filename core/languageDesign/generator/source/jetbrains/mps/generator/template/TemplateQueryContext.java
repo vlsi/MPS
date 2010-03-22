@@ -58,7 +58,6 @@ public class TemplateQueryContext {
     return myTemplateNode;
   }
 
-  @Deprecated
   public SNode getOutputNode() {
     return null; //used in ref macros
   }
