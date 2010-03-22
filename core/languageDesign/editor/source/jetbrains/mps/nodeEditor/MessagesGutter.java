@@ -36,6 +36,7 @@ public class MessagesGutter extends JPanel {
   private Map<EditorMessage, EditorMessageOwner> myOwners = new HashMap<EditorMessage, EditorMessageOwner>();
   private boolean myStatusIsDirty = false;
   private Set<EditorMessage> myMessagesToRemove = new HashSet<EditorMessage>();
+  private MyMessagesGutter myMessagesGutter;
 
   public MessagesGutter(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -43,7 +44,7 @@ public class MessagesGutter extends JPanel {
     setLayout(new BorderLayout());
 
     add(myErrosLabel, BorderLayout.NORTH);
-    add(new MyMessagesGutter(), BorderLayout.CENTER);
+    add(myMessagesGutter = new MyMessagesGutter(), BorderLayout.CENTER);
     /*NodeTypesComponentsRepository.getInstance().addTypesComponentListener(new TypesComponentRepositoryListener() {
       public void typesComponentRemoved(NodeTypesComponent component) {
         removeMessages(component);
@@ -136,9 +137,13 @@ public class MessagesGutter extends JPanel {
     return removedAnything;
   }
 
+  public void dispose() {
+    myMessagesGutter.dispose();
+  }
+
   private class MyMessagesGutter extends JPanel {
     public MyMessagesGutter() {
-      MPSToolTipManager.getInstance().registerComponent(this);
+      MPSToolTipManager.getInstance().registerComponentRightAligned(this);
 
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
@@ -264,7 +269,7 @@ public class MessagesGutter extends JPanel {
         EditorMessage msg = messages.get(messages.size() - 1);
         int pos = getMessagePosition(msg);
 
-        return new Point(event.getX(), pos - 30);
+        return new Point(event.getX(), pos);
       }
       return null;
     }
@@ -281,6 +286,10 @@ public class MessagesGutter extends JPanel {
       }
       removeLater(messagesToRemove);
       return result;
+    }
+
+    public void dispose() {
+      MPSToolTipManager.getInstance().unregisterComponentRightAligned(this);
     }
   }
 

@@ -19,9 +19,10 @@ public class MPSToolTipManager implements ApplicationComponent {
   private MouseAdapter myMouseListener = new MouseAdapter() {
     @Override
     public void mouseMoved(MouseEvent p0) {
-      MPSToolTipManager.this.mouseMoved(p0);
+      MPSToolTipManager.this.mouseMoved(p0, false);
     }
   };
+  private MouseAdapter myRightAlignedMouseListener;
   private ToolTip myToolTip;
 
   public MPSToolTipManager() {
@@ -44,7 +45,34 @@ public class MPSToolTipManager implements ApplicationComponent {
     component.addMouseMotionListener(this.myMouseListener);
   }
 
-  private void mouseMoved(MouseEvent event) {
+  public void unregisterComponent(Component component) {
+    component.removeMouseListener(this.myMouseListener);
+    component.removeMouseMotionListener(this.myMouseListener);
+  }
+
+  public void registerComponentRightAligned(Component component) {
+    component.addMouseListener(this.getRightAlignedMouseListener());
+    component.addMouseMotionListener(this.getRightAlignedMouseListener());
+  }
+
+  public void unregisterComponentRightAligned(Component component) {
+    component.removeMouseListener(this.getRightAlignedMouseListener());
+    component.removeMouseMotionListener(this.getRightAlignedMouseListener());
+  }
+
+  private MouseAdapter getRightAlignedMouseListener() {
+    if (this.myRightAlignedMouseListener == null) {
+      this.myRightAlignedMouseListener = new MouseAdapter() {
+        @Override
+        public void mouseMoved(MouseEvent event) {
+          MPSToolTipManager.this.mouseMoved(event, true);
+        }
+      };
+    }
+    return this.myRightAlignedMouseListener;
+  }
+
+  private void mouseMoved(MouseEvent event, boolean rightAlined) {
     JComponent component = (JComponent) event.getComponent();
     Point point = component.getToolTipLocation(event);
     if (point == null) {
@@ -52,13 +80,13 @@ public class MPSToolTipManager implements ApplicationComponent {
     }
     String text = component.getToolTipText(event);
     if (text != null && text.length() > 0) {
-      this.showToolTip(text, component, point);
+      this.showToolTip(text, component, point, rightAlined);
     } else {
       this.hideToolTip();
     }
   }
 
-  public Frame getContainingFrame(Component component) {
+  private Frame getContainingFrame(Component component) {
     while (component.getParent() != null) {
       component = component.getParent();
     }
@@ -66,19 +94,27 @@ public class MPSToolTipManager implements ApplicationComponent {
   }
 
   public void showToolTip(ToolTipData data, JComponent component, Point point) {
+    this.showToolTip(data, component, point, false);
+  }
+
+  private void showToolTip(ToolTipData data, JComponent component, Point point, boolean rightAligned) {
     if (this.myToolTip != null) {
       if (ObjectUtils.equals(this.myToolTip.getText(), data.getText())) {
         return;
       }
       this.hideToolTip();
     }
-    this.myToolTip = new ToolTip();
+    this.myToolTip = new ToolTip(rightAligned);
     Frame frame = this.getContainingFrame(component);
     SwingUtilities.convertPointToScreen(point, component);
     this.myToolTip.show(frame, point, data);
   }
 
   public void showToolTip(String text, JComponent component, Point point) {
+    this.showToolTip(text, component, point, false);
+  }
+
+  private void showToolTip(String text, JComponent component, Point point, boolean rightAligned) {
     if (this.myToolTip != null) {
       if (ObjectUtils.equals(this.myToolTip.getText(), text)) {
         return;
@@ -88,7 +124,7 @@ public class MPSToolTipManager implements ApplicationComponent {
     if (text == null) {
       return;
     }
-    this.myToolTip = new ToolTip();
+    this.myToolTip = new ToolTip(rightAligned);
     Frame frame = this.getContainingFrame(component);
     SwingUtilities.convertPointToScreen(point, component);
     this.myToolTip.show(frame, point, new ToolTipData(text));

@@ -10,7 +10,7 @@ public class ToolTipData {
   private String myText;
   private Component myComponent;
 
-  public ToolTipData(String text) {
+  /*package*/ ToolTipData(String text) {
     this.myText = text;
   }
 
@@ -18,11 +18,11 @@ public class ToolTipData {
     this.myComponent = component;
   }
 
-  public String getText() {
+  /*package*/ String getText() {
     return this.myText;
   }
 
-  public Component getComponent() {
+  /*package*/ Component getComponent() {
     if (this.myComponent != null) {
       return this.myComponent;
     } else {

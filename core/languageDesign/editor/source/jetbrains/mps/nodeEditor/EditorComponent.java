@@ -1042,6 +1042,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     myEventsCollector.dispose();
     myLeftHighlighter.dispose();
+    myMessagesGutter.dispose();
 
     setEditorContext(null);
 

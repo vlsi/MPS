@@ -23,34 +23,39 @@ import jetbrains.mps.util.WindowsUtil;
 
 public class ToolTip {
   public static final Color BACKGROUND_COLOR = new Color(253, 254, 226);
-  private static final int X_OFFSET = 5;
-  private static final int Y_OFFSET = 5;
+  private static final int X_OFFSET = 13;
+  private static final int Y_OFFSET = 3;
 
   private ToolTip.MyDialog myDialog;
   private ToolTipData myHintInformation;
+  private boolean myRigthAligned;
 
-  public ToolTip() {
+  /*package*/ ToolTip(boolean rightAligned) {
+    this.myRigthAligned = rightAligned;
   }
 
-  public void show(Frame owner, Point location, ToolTipData hintInformation) {
+  /*package*/ void show(Frame owner, Point location, ToolTipData hintInformation) {
     this.myHintInformation = hintInformation;
-    location = new Point(location.x + X_OFFSET, location.y + Y_OFFSET);
-    this.myDialog = new ToolTip.MyDialog(owner, location, hintInformation);
+    location = new Point(location.x + ((this.myRigthAligned ?
+      -X_OFFSET :
+      X_OFFSET
+    )), location.y + Y_OFFSET);
+    this.myDialog = new ToolTip.MyDialog(owner, location, this.myRigthAligned, hintInformation);
     this.myDialog.setVisible(true);
   }
 
-  public void hide() {
+  /*package*/ void hide() {
     if (this.myDialog != null) {
       this.myDialog.dispose();
       this.myDialog = null;
     }
   }
 
-  public String getText() {
+  /*package*/ String getText() {
     return this.myHintInformation.getText();
   }
 
-  public static class MyDialog extends Window {
+  /*package*/ static class MyDialog extends Window {
     private Component myPrevFocusOwner;
     private FocusListener myOwnerFocusListener = new FocusAdapter() {
       @Override
@@ -72,7 +77,7 @@ public class ToolTip {
       }
     };
 
-    public MyDialog(Frame owner, Point location, ToolTipData toolTipData) {
+    /*package*/ MyDialog(Frame owner, Point location, boolean rightAligned, ToolTipData toolTipData) {
       super(owner);
       this.myPrevFocusOwner = owner.getFocusOwner();
 
@@ -83,20 +88,21 @@ public class ToolTip {
       this.add(scrollPane);
 
       this.pack();
-      this.setLocation(location);
-
+      if (rightAligned) {
+        location.x = Math.max(0, location.x - this.getWidth());
+      }
       Rectangle rect = WindowsUtil.findDeviceBoundsAt(location);
-      if (rect.x + rect.width < this.getX() + this.getWidth()) {
-        this.setLocation(rect.x + rect.width - this.getWidth(), this.getY());
+      if (rect.x + rect.width < location.x + this.getWidth()) {
+        location.x = Math.max(0, rect.x + rect.width - this.getWidth());
       }
-      if (rect.y + rect.height < this.getY() + this.getHeight()) {
-        this.setLocation(this.getX(), rect.y + rect.height - this.getHeight());
+      if (rect.y + rect.height < location.y + this.getHeight()) {
+        location.y = Math.max(0, rect.y + rect.height - this.getHeight());
       }
-
+      this.setLocation(location);
       this.addListeners();
     }
 
-    public void addListeners() {
+    private void addListeners() {
       if (this.myPrevFocusOwner != null) {
         this.myPrevFocusOwner.addFocusListener(this.myOwnerFocusListener);
         this.myPrevFocusOwner.addMouseListener(this.myOwnerMouseListener);
