@@ -1271,8 +1271,13 @@
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7648136371139264833">
                       <link role="baseMethodDeclaration:3" targetNodeId="8.~List.get(int):java.lang.Object" resolveInfo="get" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7648136371139264834">
-                        <link role="variableDeclaration:3" targetNodeId="7648136371139264602" resolveInfo="i" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression:3" id="8390011025201944047">
+                        <node role="index:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8390011025201944071">
+                          <link role="variableDeclaration:3" targetNodeId="7648136371139264602" resolveInfo="i" />
+                        </node>
+                        <node role="array:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8390011025201944028">
+                          <link role="variableDeclaration:3" targetNodeId="7648136371139264592" resolveInfo="indices" />
+                        </node>
                       </node>
                     </node>
                   </node>
