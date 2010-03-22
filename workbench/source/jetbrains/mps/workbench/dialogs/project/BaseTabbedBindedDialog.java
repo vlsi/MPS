@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.workbench.dialogs.project;
 
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
-import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.HeadlessException;
 import java.util.ArrayList;
@@ -58,5 +58,46 @@ public abstract class BaseTabbedBindedDialog extends BaseBindedDialog {
     if (tab == null) tab = new JPanel(new GridBagLayout());
     tab.add(comp, c.create(tab.getComponentCount()));
     myComponents.put(tabName, tab);
+  }
+
+  protected void addTab(DialogTab tab) {
+    for (ComponentDescriptor d : tab.getComponents()) {
+      addComponent(tab.getName(), d.getComponent(), d.getConstraintsType());
+    }
+  }
+
+  public static class DialogTab {
+    private String myName;
+    private List<ComponentDescriptor> myComponents = new ArrayList<ComponentDescriptor>();
+
+    public DialogTab(String name) {
+      myName = name;
+    }
+
+    public void addComponent(JComponent comp, ConstraintsType c) {
+      myComponents.add(new ComponentDescriptor(comp, c));
+    }
+
+    public String getName() {
+      return myName;
+    }
+
+    public List<ComponentDescriptor> getComponents() {
+      return myComponents;
+    }
+  }
+
+  private static class ComponentDescriptor extends Pair<JComponent, ConstraintsType> {
+    public ComponentDescriptor(JComponent first, ConstraintsType second) {
+      super(first, second);
+    }
+
+    public JComponent getComponent() {
+      return first;
+    }
+
+    public ConstraintsType getConstraintsType() {
+      return second;
+    }
   }
 }

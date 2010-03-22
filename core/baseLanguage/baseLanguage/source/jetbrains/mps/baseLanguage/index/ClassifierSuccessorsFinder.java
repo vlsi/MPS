@@ -65,8 +65,7 @@ public class ClassifierSuccessorsFinder {
     ModifiedsuccessorFinder modifiedSuccessorFinder = new ModifiedsuccessorFinder(modifiedClasses, modifiedInterfaces, result, superClassifiers);
     SearchScope searchScope = new SearchScope(notModifiedModelFiles);
 
-    for (int i = 0; i < superClassifiers.size(); i++) {
-      SNode superClassifier = superClassifiers.get(i);
+    for (SNode superClassifier : superClassifiers) {
       FileBasedIndex.getInstance().processValues(ClassifierSuccessorsIndexer.NAME, new SNodeId(superClassifier), null, valueProcessor, searchScope);
       modifiedSuccessorFinder.process(superClassifier);
     }
