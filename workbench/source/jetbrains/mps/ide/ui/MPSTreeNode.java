@@ -20,8 +20,8 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.util.Computable;
-import com.intellij.ui.RowIcon;
 import jetbrains.mps.ide.SystemInfo;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.treeMessages.TreeMessage;
 import jetbrains.mps.ide.ui.treeMessages.TreeMessageOwner;
@@ -342,9 +342,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
     myTreeMessages.add(message);
     if (updatePresentation) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        @Override
         public void run() {
-          updatePresentation();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              updatePresentation();
+            }
+          });
         }
       });
     }
@@ -361,9 +366,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
     myTreeMessages.addAll(Arrays.asList(messages));
     if (updatePresentation) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        @Override
         public void run() {
-          updatePresentation();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              updatePresentation();
+            }
+          });
         }
       });
     }
@@ -378,9 +388,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
       myTreeMessages.remove(message);
     }
     if (updatePresentation) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        @Override
         public void run() {
-          updatePresentation();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              updatePresentation();
+            }
+          });
         }
       });
     }
@@ -395,9 +410,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
       }
     }
     if (updatePresentation) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        @Override
         public void run() {
-          updatePresentation();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              updatePresentation();
+            }
+          });
         }
       });
     }
