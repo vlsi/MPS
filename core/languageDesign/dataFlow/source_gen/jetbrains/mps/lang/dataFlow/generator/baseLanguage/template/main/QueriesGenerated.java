@@ -33,7 +33,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1206456619706(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "dataFlowBuilderConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "dataFlowBuilderConstructor");
   }
 
   public static SNode sourceNodeQuery_1206456672226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

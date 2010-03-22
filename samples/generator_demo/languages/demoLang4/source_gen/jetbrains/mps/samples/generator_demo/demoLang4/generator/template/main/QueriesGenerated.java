@@ -67,7 +67,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1228680490546(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "factory_method");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "factory_method");
   }
 
   public static boolean ifMacro_Condition_1228678752765(final IOperationContext operationContext, final IfMacroContext _context) {

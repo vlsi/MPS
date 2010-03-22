@@ -25,8 +25,6 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import java.util.List;
 
 public class ReferenceMacroContext extends TemplateQueryContext {
-  private static boolean HEURISTICS_ON = false;
-
   private SNode myOutputNode;
   private SNode myMacro;
 
@@ -59,15 +57,5 @@ public class ReferenceMacroContext extends TemplateQueryContext {
       }
     }
     return null;
-  }
-
-  public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNode inputNode, SNode outputNode, String label) {
-    if (inputNode == null) return null;
-    if (HEURISTICS_ON) {
-      return getGenerator().findOutputNodeByInputNodeAndOutputNodeAndMappingName(inputNode, outputNode, label);
-    } else {
-      //output node ignored
-      return super.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(inputNode, outputNode, label);
-    }
   }
 }

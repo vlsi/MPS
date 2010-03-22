@@ -39,11 +39,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1029302639053561728(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "member", false), _context.getOutputNode(), "map_ClassifierField");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "member", false), "map_ClassifierField");
   }
 
   public static Object referenceMacro_GetReferent_1029302639053561758(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "member", false), _context.getOutputNode(), "map_ClassifierMethod");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "member", false), "map_ClassifierMethod");
   }
 
   public static SNode sourceNodeQuery_1205839150885(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

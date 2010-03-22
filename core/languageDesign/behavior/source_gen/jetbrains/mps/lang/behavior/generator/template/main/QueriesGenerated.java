@@ -113,7 +113,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1225195370545(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "parameters");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameters");
   }
 
   public static Object referenceMacro_GetReferent_1241075574811(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -121,7 +121,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1225195370612(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "parameters");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameters");
   }
 
   public static Object referenceMacro_GetReferent_1225195370713(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -136,7 +136,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1225195370749(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "parameters");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameters");
   }
 
   public static Object referenceMacro_GetReferent_1241075591554(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -144,7 +144,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1225195370817(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "parameters");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameters");
   }
 
   public static boolean ifMacro_Condition_1225195370286(final IOperationContext operationContext, final IfMacroContext _context) {

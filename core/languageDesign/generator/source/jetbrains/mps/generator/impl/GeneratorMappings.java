@@ -97,35 +97,6 @@ public class GeneratorMappings {
     return (SNode) o;
   }
 
-  public SNode findOutputNodeByInputNodeAndOutputNodeAndMappingName(SNode inputNode, SNode outputNode, String mappingLabel, IGeneratorLogger logger) {
-    Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
-    if (o instanceof List) {
-      List<SNode> list = (List<SNode>) o;
-      logger.warning(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingLabel + "' and input " + inputNode.getDebugText());
-      for (int i = 0; i < list.size(); i++) {
-        logger.describeWarning(list.get(i), "output [" + i + "] : " + list.get(i).getDebugText());
-      }
-      //heuristics
-      List<SNode> ancestors = outputNode.getAncestors(true);
-      SNode[] candidates = new SNode[ancestors.size()];
-      for (int i = 0; i < list.size(); i++) {
-        SNode candidate = list.get(i);
-        for (SNode ancestor : candidate.getAncestors(true)) {
-          if (ancestors.contains(ancestor)) {
-            candidates[ancestors.indexOf(ancestor)] = candidate;
-            break;
-          }
-        }
-      }
-      for (SNode candidate : candidates) {
-        if (candidate != null) return candidate;
-      }
-      return list.get(0);
-    }
-
-    return (SNode) o;
-  }
-
   public List<SNode> findAllOutputNodesByInputNodeAndMappingName(SNode inputNode, String mappingLabel) {
     Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
     if (o instanceof List) return ((List<SNode>) o);

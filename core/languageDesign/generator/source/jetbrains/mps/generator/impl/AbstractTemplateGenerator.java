@@ -168,11 +168,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   @Override
-  public SNode findOutputNodeByInputNodeAndOutputNodeAndMappingName(SNode inputNode, SNode outputNode, String mappingName) {
-    return myMappings.findOutputNodeByInputNodeAndOutputNodeAndMappingName(inputNode, outputNode, mappingName, myLogger);
-  }
-
-  @Override
   public List<SNode> findAllOutputNodesByInputNodeAndMappingName(SNode inputNode, String mappingName) {
     return myMappings.findAllOutputNodesByInputNodeAndMappingName(inputNode, mappingName);
   }

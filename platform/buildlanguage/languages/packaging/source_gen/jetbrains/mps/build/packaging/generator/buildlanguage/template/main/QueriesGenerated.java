@@ -330,67 +330,67 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840479911(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240841047944(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840294750(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840306379(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840752594(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), _context.getOutputNode(), "LayoutToPropertyNode");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(Configuration_Behavior.call_getLayout_1213877261819(_context.getNode()), "LayoutToPropertyNode");
   }
 
   public static Object referenceMacro_GetReferent_1240840735467(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840773419(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840783973(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840750954(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840759868(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1204022248333(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "LanguageTargets");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "LanguageTargets");
   }
 
   public static Object referenceMacro_GetReferent_1240840687220(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840829512(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840823386(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840703152(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840717719(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1230233294691(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -398,43 +398,43 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240840629555(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840665834(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840670841(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1234280254374(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "ReplaceTargets");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ReplaceTargets");
   }
 
   public static Object referenceMacro_GetReferent_7857794759871909129(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "cycle", false), _context.getOutputNode(), "ModuleCycleToCycle");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "cycle", false), "ModuleCycleToCycle");
   }
 
   public static Object referenceMacro_GetReferent_1220024346881(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "macro", false), _context.getOutputNode(), "MacroToMacro");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "macro", false), "MacroToMacro");
   }
 
   public static Object referenceMacro_GetReferent_1220024353687(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "macro", false), _context.getOutputNode(), "MacroToMacro");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "macro", false), "MacroToMacro");
   }
 
   public static Object referenceMacro_GetReferent_1220024351671(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "macro", false), _context.getOutputNode(), "MacroToMacro");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "macro", false), "MacroToMacro");
   }
 
   public static Object referenceMacro_GetReferent_1220032480105(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "macro", false), _context.getOutputNode(), "MacroToMacro");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "macro", false), "MacroToMacro");
   }
 
   public static Object referenceMacro_GetReferent_1219156437486(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "variable", false), _context.getOutputNode(), "VariableToPropertyDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "VariableToPropertyDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1220026621744(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -479,15 +479,15 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1230221653582(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget((_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "configuration", false), _context.getOutputNode(), "ConfigurationToProject")), "default", true), "targetDeclaration", false);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget((_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "configuration", false), "ConfigurationToProject")), "default", true), "targetDeclaration", false);
   }
 
   public static Object referenceMacro_GetReferent_1240840845369(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_1240840856055(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), _context.getOutputNode(), "LayoutToPropertyNode"), "declaration", true)).first();
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.MPSLayout", false, false), "LayoutToPropertyNode"), "declaration", true)).first();
   }
 
   public static Object referenceMacro_GetReferent_8148924375507507648(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -856,7 +856,7 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1234271391130(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "ConfigurationToProject");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToProject");
   }
 
   public static void mappingScript_CodeBlock_1217435006860(final IOperationContext operationContext, final MappingScriptContext _context) {

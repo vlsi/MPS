@@ -57,10 +57,11 @@ public class TemplateQueryContext {
   public SNode getTemplateNode() {
     return myTemplateNode;
   }
-  
-   public SNode getOutputNode() {
-     return null; //used in ref macros
-   }
+
+  @Deprecated
+  public SNode getOutputNode() {
+    return null; //used in ref macros
+  }
 
   public SModel getInputModel() {
     return myGenerator.getInputModel();
@@ -112,6 +113,7 @@ public class TemplateQueryContext {
     return myGenerator.findOutputNodeByInputNodeAndMappingName(inputNode, label);
   }
 
+  @Deprecated
   public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNode inputNode, SNode outputNode, String label) {
     if (inputNode == null) return null;
     return getOutputNodeByInputNodeAndMappingLabel(inputNode, label); //output node ignored

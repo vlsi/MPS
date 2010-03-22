@@ -37,31 +37,31 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1241364765715(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "field", false), _context.getOutputNode(), "LocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "field", false), "LocalVar");
   }
 
   public static Object referenceMacro_GetReferent_1241364570156(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "InputFieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InputFieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1241364536782(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "LocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "LocalVar");
   }
 
   public static Object referenceMacro_GetReferent_1241364661296(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "OutputFieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "OutputFieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1241364206882(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "InputFieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InputFieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1241364264163(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "InputFieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InputFieldDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1241364275728(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "OutputFieldDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "OutputFieldDeclaration");
   }
 
   public static SNode sourceNodeQuery_1241369673715(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

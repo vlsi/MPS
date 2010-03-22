@@ -15,7 +15,7 @@ public class ContextUtil {
   }
 
   public static SNode getContextForConstant(TemplateQueryContext genContext, SNode node, boolean topmost) {
-    SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(node, genContext.getOutputNode(), "exprUsage");
+    SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(node, "exprUsage");
     if ((usage != null)) {
       if (topmost) {
         return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
@@ -36,7 +36,7 @@ public class ContextUtil {
   }
 
   public static SNode getContextForMethod(TemplateQueryContext genContext, SNode node, boolean topmost) {
-    SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(node, "inner", true), genContext.getOutputNode(), "methUsageExpr");
+    SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, "inner", true), "methUsageExpr");
     if ((usage != null)) {
       if (topmost) {
         return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
@@ -57,7 +57,7 @@ public class ContextUtil {
   }
 
   public static SNode getContextForInnerClass(TemplateQueryContext genContext, SNode node, boolean topmost) {
-    SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(node, "inner", true), genContext.getOutputNode(), "classUsageExpr");
+    SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, "inner", true), "classUsageExpr");
     if ((usage != null)) {
       if (topmost) {
         return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();

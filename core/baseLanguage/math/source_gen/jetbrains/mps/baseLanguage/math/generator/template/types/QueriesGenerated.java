@@ -613,7 +613,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_3417571330831702206(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "index", false), _context.getOutputNode(), "MatrixIndex");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "index", false), "MatrixIndex");
   }
 
   public static boolean ifMacro_Condition_4253775830168107357(final IOperationContext operationContext, final IfMacroContext _context) {

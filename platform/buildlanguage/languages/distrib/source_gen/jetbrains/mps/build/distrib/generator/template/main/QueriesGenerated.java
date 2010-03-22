@@ -521,39 +521,39 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1230564502576(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "SystemSpecificConfigToTargetDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1240246843004(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "SystemSpecificConfigToTargetDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1230650270986(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "NullToMPSHomePropertyDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_4331351068295137109(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "NullToMPSHomePropertyDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1230577930415(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "VariableToExternalPropertyDeclarationWin");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "VariableToExternalPropertyDeclarationWin");
   }
 
   public static Object referenceMacro_GetReferent_1234519151154(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "VariableToExternalPropertyDeclarationMac");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "VariableToExternalPropertyDeclarationMac");
   }
 
   public static Object referenceMacro_GetReferent_1237301624593(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode macDecl = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "variable", false), _context.getOutputNode(), "VariableToExternalPropertyDeclarationMac");
+    SNode macDecl = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "VariableToExternalPropertyDeclarationMac");
     if (macDecl != null) {
       return macDecl;
     }
-    SNode winDecl = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "variable", false), _context.getOutputNode(), "VariableToExternalPropertyDeclarationWin");
+    SNode winDecl = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "VariableToExternalPropertyDeclarationWin");
     if (winDecl != null) {
       return winDecl;
     }
-    SNode unixDecl = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "variable", false), _context.getOutputNode(), "VariableToExternalPropertyDeclarationUnix");
+    SNode unixDecl = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "VariableToExternalPropertyDeclarationUnix");
     if (unixDecl != null) {
       return unixDecl;
     }

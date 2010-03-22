@@ -252,15 +252,15 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7110754463748604065(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "componentCreator_old");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "componentCreator_old");
   }
 
   public static Object referenceMacro_GetReferent_7110754463748604216(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "conditionConstructor_old");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "conditionConstructor_old");
   }
 
   public static Object referenceMacro_GetReferent_7110754463748604269(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "initialValue_old");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "initialValue_old");
   }
 
   public static Object referenceMacro_GetReferent_1200935757745(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -269,7 +269,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7573235936722758704(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "target", true), _context.getOutputNode(), "refactoringTargetConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "target", true), "refactoringTargetConstructor");
   }
 
   public static Object referenceMacro_GetReferent_7573235936722758662(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -284,7 +284,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_8041810900052414627(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false), _context.getOutputNode(), "refactoringClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false), "refactoringClass");
   }
 
   public static Object referenceMacro_GetReferent_7786266509745404941(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -296,11 +296,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_3644668945280073911(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser", false, false), _context.getOutputNode(), "settingsClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser", false, false), "settingsClass");
   }
 
   public static Object referenceMacro_GetReferent_4413749148913757642(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "settingsConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "settingsConstructor");
   }
 
   public static Object referenceMacro_GetReferent_3644668945280030643(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -312,27 +312,27 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5934994956486126386(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "customChooserConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "customChooserConstructor");
   }
 
   public static Object referenceMacro_GetReferent_5934994956486083401(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", false, false), _context.getOutputNode(), "customChooserClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", false, false), "customChooserClass");
   }
 
   public static Object referenceMacro_GetReferent_5934994956486316708(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", false, false), _context.getOutputNode(), "customChooserClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", false, false), "customChooserClass");
   }
 
   public static Object referenceMacro_GetReferent_5934994956487138577(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", false, false), _context.getOutputNode(), "customChooserClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", false, false), "customChooserClass");
   }
 
   public static Object referenceMacro_GetReferent_4312073247720715335(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "chooser", true), "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser"), _context.getOutputNode(), "settingsConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "chooser", true), "jetbrains.mps.lang.refactoring.structure.MPSParameterChooser"), "settingsConstructor");
   }
 
   public static Object referenceMacro_GetReferent_4312073247720514254(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false), _context.getOutputNode(), "refactoringClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false), "refactoringClass");
   }
 
   public static boolean ifMacro_Condition_1199462382860(final IOperationContext operationContext, final IfMacroContext _context) {

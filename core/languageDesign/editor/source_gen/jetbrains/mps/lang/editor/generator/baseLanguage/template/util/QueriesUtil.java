@@ -31,18 +31,18 @@ public class QueriesUtil {
 
   public static SNode getGeneratedClassByContainingRoot(SNode inputNode, TemplateQueryContext genctx) {
     SNode containingRoot = SNodeOperations.getContainingRoot(inputNode);
-    return genctx.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(containingRoot, genctx.getOutputNode(), "generatedClass");
+    return genctx.getOutputNodeByInputNodeAndMappingLabel(containingRoot, "generatedClass");
   }
 
   public static SNode getGeneratedClassByCellContainer(SNode inputCellModel, TemplateQueryContext genctx) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(inputCellModel), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList")) {
       if (SNodeOperations.hasRole(inputCellModel, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", "emptyCellModel")) {
-        return genctx.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getParent(inputCellModel), genctx.getOutputNode(), "nodeListHandler");
+        return genctx.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(inputCellModel), "nodeListHandler");
       }
     }
     // otherwise get 'generatedClass' by enclosing 'editor component' 
     SNode ancestor = SNodeOperations.getAncestor(inputCellModel, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false);
-    return genctx.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(ancestor, genctx.getOutputNode(), "generatedClass");
+    return genctx.getOutputNodeByInputNodeAndMappingLabel(ancestor, "generatedClass");
   }
 
   public static SNode getGeneratedClassByAncestor(SNode inputNode, final TemplateQueryContext genctx) {
@@ -85,7 +85,7 @@ __switch__:
                       this.__CP__ = 2;
                       break;
                     case 2:
-                      this._5_output = genctx.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(it, genctx.getOutputNode(), "generatedClass");
+                      this._5_output = genctx.getOutputNodeByInputNodeAndMappingLabel(it, "generatedClass");
                       this.__CP__ = 6;
                       break;
                     case 7:

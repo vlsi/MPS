@@ -1085,7 +1085,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1216995176870(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode trg = FunctionTypeUtil.getAdaptableTarget(_context, _context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     if ((trg != null)) {
-      SNode cc = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(trg, _context.getOutputNode(), "classifierType_adapter");
+      SNode cc = _context.getOutputNodeByInputNodeAndMappingLabel(trg, "classifierType_adapter");
       List<SNode> cds = SLinkOperations.getTargets(cc, "constructor", true);
       return ListSequence.fromList(cds).getElement(0);
     }
@@ -1598,17 +1598,17 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_5008999823682208395(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode adaptable = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.Classifier");
     Map<SNode, SNode> theMap = (Map<SNode, SNode>) Values.THE_MAP.get(_context, adaptable);
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(MapSequence.fromMap(theMap).get(_context.getNode()), _context.getOutputNode(), "adaptable_target_tvd");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(MapSequence.fromMap(theMap).get(_context.getNode()), "adaptable_target_tvd");
   }
 
   public static Object referenceMacro_GetReferent_5008999823682209925(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode adaptable = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.Classifier");
     Map<SNode, SNode> theMap = (Map<SNode, SNode>) Values.THE_MAP.get(_context, adaptable);
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(MapSequence.fromMap(theMap).get(_context.getNode()), _context.getOutputNode(), "adaptable_target_tvd");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(MapSequence.fromMap(theMap).get(_context.getNode()), "adaptable_target_tvd");
   }
 
   public static Object referenceMacro_GetReferent_608109309169759725(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "yieldAll_for"), "variable", true);
+    return SLinkOperations.getTarget(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "yieldAll_for"), "variable", true);
   }
 
   public static Object referenceMacro_GetReferent_7001216437968760495(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -3795,14 +3795,14 @@ public class QueriesGenerated {
 
   public static SNode mapSrcMacro_mapper_1207147150424(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     SNode oldDecl = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
-    SNode newDecl = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(oldDecl, _context.getOutputNode(), "wrapped_localVar");
+    SNode newDecl = _context.getOutputNodeByInputNodeAndMappingLabel(oldDecl, "wrapped_localVar");
     SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(lvr, "variableDeclaration", newDecl, false);
     return lvr;
   }
 
   public static SNode mapSrcMacro_mapper_1219934508839(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode lvds = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), _context.getOutputNode(), "woven_LVDS");
+    SNode lvds = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "woven_LVDS");
     SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(lvr, "variableDeclaration", SLinkOperations.getTarget(lvds, "localVariableDeclaration", true), false);
     return lvr;
@@ -3844,43 +3844,43 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201023865086(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), _context.getOutputNode(), "closure_switch");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "closure_switch");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201359280410(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), _context.getOutputNode(), "closure_switch");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "closure_switch");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1228828839352(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), _context.getOutputNode(), "closure_switch");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "closure_switch");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201288191966(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), _context.getOutputNode(), "closure_switch");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "closure_switch");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201389219923(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), _context.getOutputNode(), "closure_switch");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "closure_switch");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201292996398(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), _context.getOutputNode(), "closure_switch");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "closure_switch");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201293019491(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), _context.getOutputNode(), "closure_switch");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "closure_switch");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201026203690(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), _context.getOutputNode(), "closure_switch");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "closure_switch");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201193348813(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), _context.getOutputNode(), "closure_switch");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "closure_switch");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1201018804729(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), _context.getOutputNode(), "closure_yieldIt");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false), "closure_yieldIt");
   }
 
   public static void mappingScript_CodeBlock_1201011417446(final IOperationContext operationContext, final MappingScriptContext _context) {

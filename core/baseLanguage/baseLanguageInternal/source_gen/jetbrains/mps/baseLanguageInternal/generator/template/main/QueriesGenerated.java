@@ -54,15 +54,15 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1238251743299(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "ExtractToField");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ExtractToField");
   }
 
   public static Object referenceMacro_GetReferent_8881995820265485461(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), _context.getOutputNode(), "ExtractedMeth");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "ExtractedMeth");
   }
 
   public static Object referenceMacro_GetReferent_5822086619725756473(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), _context.getOutputNode(), "ExtractedCtor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "ExtractedCtor");
   }
 
   public static boolean ifMacro_Condition_5042204713575387814(final IOperationContext operationContext, final IfMacroContext _context) {

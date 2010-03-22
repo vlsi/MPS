@@ -145,11 +145,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7840798570674946672(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "map_FactoryConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_FactoryConstructor");
   }
 
   public static Object referenceMacro_GetReferent_7840798570674952471(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "map_ConfigConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ConfigConstructor");
   }
 
   public static Object referenceMacro_GetReferent_4351631783611294090(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -182,27 +182,27 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_8294332872984122924(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference"), "member", false), _context.getOutputNode(), "map_PersistentProperty");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference"), "member", false), "map_PersistentProperty");
   }
 
   public static Object referenceMacro_GetReferent_8294332872984607864(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.cast(ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(_context.getNode()), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration"), _context.getOutputNode(), "map_ConfigClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(_context.getNode()), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration"), "map_ConfigClass");
   }
 
   public static Object referenceMacro_GetReferent_6707043251018967862(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration", false, false), _context.getOutputNode(), "map_SettingsEditor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration", false, false), "map_SettingsEditor");
   }
 
   public static Object referenceMacro_GetReferent_7382861867148540640(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference"), "member", false), _context.getOutputNode(), "map_PersistentProperty");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.plugin.structure.PersistentPropertyReference"), "member", false), "map_PersistentProperty");
   }
 
   public static Object referenceMacro_GetReferent_7974234327424529467(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), _context.getOutputNode(), "map_ConfigClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), "map_ConfigClass");
   }
 
   public static Object referenceMacro_GetReferent_122179271028795198(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "rcType", false), _context.getOutputNode(), "map_ConfigTypeClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "rcType", false), "map_ConfigTypeClass");
   }
 
   public static Object referenceMacro_GetReferent_5528847031674334455(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -222,55 +222,55 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_122179271028796582(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), "configType", false), _context.getOutputNode(), "map_ConfigTypeClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), "configType", false), "map_ConfigTypeClass");
   }
 
   public static Object referenceMacro_GetReferent_122179271028796598(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), "configType", false), _context.getOutputNode(), "map_ConfigTypeClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), "configType", false), "map_ConfigTypeClass");
   }
 
   public static Object referenceMacro_GetReferent_3841737596911888281(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), _context.getOutputNode(), "map_ConfigClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), "map_ConfigClass");
   }
 
   public static Object referenceMacro_GetReferent_5447563960349298714(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode oldCreatorClass = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator", false, false), _context.getOutputNode(), "map_OldConfigCreatorClass");
+    SNode oldCreatorClass = _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator", false, false), "map_OldConfigCreatorClass");
     if ((oldCreatorClass != null)) {
       return oldCreatorClass;
     }
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator", false, false), _context.getOutputNode(), "map_ConfigCreatorClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator", false, false), "map_ConfigCreatorClass");
   }
 
   public static Object referenceMacro_GetReferent_3841737596911890435(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), _context.getOutputNode(), "map_ConfigClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), "map_ConfigClass");
   }
 
   public static Object referenceMacro_GetReferent_3841737596913165717(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), _context.getOutputNode(), "map_ConfigConstructor");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "runConfig", false), "map_ConfigConstructor");
   }
 
   public static Object referenceMacro_GetReferent_9068086904326285594(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "property", false), _context.getOutputNode(), "map_PersistentProperty");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "property", false), "map_PersistentProperty");
   }
 
   public static Object referenceMacro_GetReferent_5447563960349298683(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode oldCreatorClass = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator", false, false), _context.getOutputNode(), "map_OldConfigCreatorClass");
+    SNode oldCreatorClass = _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator", false, false), "map_OldConfigCreatorClass");
     if ((oldCreatorClass != null)) {
       return oldCreatorClass;
     }
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator", false, false), _context.getOutputNode(), "map_ConfigCreatorClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator", false, false), "map_ConfigCreatorClass");
   }
 
   public static Object referenceMacro_GetReferent_9068086904326281899(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode oldCreatorClass = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator", false, false), _context.getOutputNode(), "map_OldConfigCreatorClass");
+    SNode oldCreatorClass = _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.RunConfigCreator", false, false), "map_OldConfigCreatorClass");
     if ((oldCreatorClass != null)) {
       return oldCreatorClass;
     }
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator", false, false), _context.getOutputNode(), "map_ConfigCreatorClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator", false, false), "map_ConfigCreatorClass");
   }
 
   public static Object referenceMacro_GetReferent_446387597135526744(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "rcType", false), _context.getOutputNode(), "map_ConfigTypeClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "rcType", false), "map_ConfigTypeClass");
   }
 
   public static Object referenceMacro_GetReferent_446387597135526757(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -307,7 +307,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_6614054495165257580(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation"), "member", false), _context.getOutputNode(), "map_RunConfigurationExecutionParameter"), "localVariableDeclaration", true);
+    return SLinkOperations.getTarget(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation"), "member", false), "map_RunConfigurationExecutionParameter"), "localVariableDeclaration", true);
   }
 
   public static boolean ifMacro_Condition_7840798570674908544(final IOperationContext operationContext, final IfMacroContext _context) {

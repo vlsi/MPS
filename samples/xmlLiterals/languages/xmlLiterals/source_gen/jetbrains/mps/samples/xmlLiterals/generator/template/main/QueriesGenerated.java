@@ -53,11 +53,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_6836059379245881863(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "element", true), _context.getOutputNode(), "contentToVariable");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "element", true), "contentToVariable");
   }
 
   public static Object referenceMacro_GetReferent_6512904248380125038(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "contentToVariable");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "contentToVariable");
   }
 
   public static boolean ifMacro_Condition_7417816926334662357(final IOperationContext operationContext, final IfMacroContext _context) {

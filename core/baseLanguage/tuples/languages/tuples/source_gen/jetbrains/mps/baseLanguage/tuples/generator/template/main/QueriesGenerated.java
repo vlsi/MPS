@@ -360,7 +360,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1241018417726(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode output = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "classifier", false), _context.getOutputNode(), "namedTupleDecl2class");
+    SNode output = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "namedTupleDecl2class");
     if ((output != null)) {
       return output;
     }
@@ -368,7 +368,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_8911874220955537772(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode output = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "tupleDeclaration", false), _context.getOutputNode(), "namedTupleDecl2class");
+    SNode output = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "tupleDeclaration", false), "namedTupleDecl2class");
     if ((output != null)) {
       return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(output, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
     }
@@ -388,7 +388,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1241018440884(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode output = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), "classifier", false), _context.getOutputNode(), "namedTupleDecl2class");
+    SNode output = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), "classifier", false), "namedTupleDecl2class");
     if ((output != null)) {
       return output;
     }

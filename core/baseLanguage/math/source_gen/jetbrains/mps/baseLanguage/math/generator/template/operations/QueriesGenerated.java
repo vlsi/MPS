@@ -61,43 +61,43 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1237125777321(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), _context.getOutputNode(), "TmpLocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), "TmpLocalVar");
   }
 
   public static Object referenceMacro_GetReferent_1237112085618(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), _context.getOutputNode(), "TmpLocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), "TmpLocalVar");
   }
 
   public static Object referenceMacro_GetReferent_1237112162700(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), _context.getOutputNode(), "TmpLocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), "TmpLocalVar");
   }
 
   public static Object referenceMacro_GetReferent_1237113243060(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "ForeachVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ForeachVar");
   }
 
   public static Object referenceMacro_GetReferent_1237113245188(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "LocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "LocalVar");
   }
 
   public static Object referenceMacro_GetReferent_1237113438439(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "ResultVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ResultVar");
   }
 
   public static Object referenceMacro_GetReferent_1237117141434(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "InvokedExpression");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InvokedExpression");
   }
 
   public static Object referenceMacro_GetReferent_1237117144781(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "InvokedExpression");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InvokedExpression");
   }
 
   public static Object referenceMacro_GetReferent_1237117195572(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "InvokedExpression");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InvokedExpression");
   }
 
   public static Object referenceMacro_GetReferent_1237117198279(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "InvokedExpression");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InvokedExpression");
   }
 
   public static boolean ifMacro_Condition_1237117033967(final IOperationContext operationContext, final IfMacroContext _context) {

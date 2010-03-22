@@ -100,27 +100,27 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1203607249398(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode contextComponent = DialogUtil.getContextComponent(_context.getNode());
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(contextComponent, _context.getOutputNode(), "dialogAttribute");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(contextComponent, "dialogAttribute");
   }
 
   public static Object referenceMacro_GetReferent_1203607703422(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode contextComponent = DialogUtil.getContextComponent(_context.getNode());
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(contextComponent, _context.getOutputNode(), "dialogAttribute");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(contextComponent, "dialogAttribute");
   }
 
   public static Object referenceMacro_GetReferent_1203610749607(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode contextComponent = DialogUtil.getContextComponent(_context.getNode());
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(contextComponent, _context.getOutputNode(), "dialogAttribute");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(contextComponent, "dialogAttribute");
   }
 
   public static Object referenceMacro_GetReferent_3734045384532546771(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode contextComponent = DialogUtil.getContextComponent(_context.getNode());
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(contextComponent, _context.getOutputNode(), "dialogAttribute");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(contextComponent, "dialogAttribute");
   }
 
   public static Object referenceMacro_GetReferent_3734045384532546828(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode contextComponent = DialogUtil.getContextComponent(_context.getNode());
-    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(contextComponent, _context.getOutputNode(), "dialogAttribute");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(contextComponent, "dialogAttribute");
   }
 
   public static boolean ifMacro_Condition_1203596721114(final IOperationContext operationContext, final IfMacroContext _context) {
