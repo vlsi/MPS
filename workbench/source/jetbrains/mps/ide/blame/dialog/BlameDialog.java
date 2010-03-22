@@ -243,7 +243,7 @@ public class BlameDialog extends BaseDialog {
       return;
     }
     Element responseXML = document.getRootElement();
-    String issueId = responseXML.getChildText(ID);
+    String issueId = responseXML.getAttribute(ID).getValue();
 
     BrowserUtil.launchBrowser(Command.ISSUE_URL + issueId);
   }
