@@ -23,6 +23,7 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   public static final String ROOT_MAPPING_RULE = "rootMappingRule";
   public static final String WEAVING_MAPPING_RULE = "weavingMappingRule";
   public static final String REDUCTION_MAPPING_RULE = "reductionMappingRule";
+  public static final String PATTERN_REDUCTION_RULE = "patternReductionRule";
   public static final String CREATE_ROOT_RULE = "createRootRule";
   public static final String DROP_ROOT_RULE = "dropRootRule";
   public static final String PRE_MAPPING_SCRIPT = "preMappingScript";
@@ -131,6 +132,26 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
 
   public void insertReductionMappingRule(Reduction_MappingRule prev, Reduction_MappingRule node) {
     this.insertChild(prev, MappingConfiguration.REDUCTION_MAPPING_RULE, node);
+  }
+
+  public int getPatternReductionRulesCount() {
+    return this.getChildCount(MappingConfiguration.PATTERN_REDUCTION_RULE);
+  }
+
+  public Iterator<PatternReduction_MappingRule> patternReductionRules() {
+    return this.children(PatternReduction_MappingRule.class, MappingConfiguration.PATTERN_REDUCTION_RULE);
+  }
+
+  public List<PatternReduction_MappingRule> getPatternReductionRules() {
+    return this.getChildren(PatternReduction_MappingRule.class, MappingConfiguration.PATTERN_REDUCTION_RULE);
+  }
+
+  public void addPatternReductionRule(PatternReduction_MappingRule node) {
+    this.addChild(MappingConfiguration.PATTERN_REDUCTION_RULE, node);
+  }
+
+  public void insertPatternReductionRule(PatternReduction_MappingRule prev, PatternReduction_MappingRule node) {
+    this.insertChild(prev, MappingConfiguration.PATTERN_REDUCTION_RULE, node);
   }
 
   public int getCreateRootRulesCount() {

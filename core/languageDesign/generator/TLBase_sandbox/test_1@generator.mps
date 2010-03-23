@@ -8,6 +8,8 @@
   <language namespace="d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
+  <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
@@ -246,6 +248,20 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1205943037834">
     <property name="name:2" value="test_MappingConfig" />
+    <node role="patternReductionRule:2" type="jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule:2" id="1805153994417305560">
+      <link role="labelDeclaration:2" targetNodeId="1805153994417305563" resolveInfo="DotToDot" />
+      <node role="pattern:2" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="1805153994417305561">
+        <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1805153994417313685">
+          <node role="operand:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1805153994417313690">
+            <node role="quotedNode:0" type="jetbrains.mps.lang.core.structure.BaseConcept:0" id="1805153994417313691">
+              <node role="_attr_$attribute:0" type="jetbrains.mps.lang.pattern.structure.WildcardPattern:0" id="1805153994417313692" />
+            </node>
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation:16" id="1805153994417335024" />
+        </node>
+      </node>
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence:2" id="1805153994417307231" />
+    </node>
     <node role="createRootRule:2" type="jetbrains.mps.lang.generator.structure.CreateRootRule:2" id="1207695260344">
       <link role="templateNode:2" targetNodeId="1200521311211" resolveInfo="Test_rootTemplate" />
       <link role="label:2" targetNodeId="1207694400016" resolveInfo="bbb" />
@@ -275,7 +291,7 @@
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216757666719">
               <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="1216863958715" />
               <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel:0" id="1216863958634">
-                <link role="label:0" targetNodeId="1207695310518" resolveInfo="ccc" />
+                <link role="label:0" targetNodeId="1207694002149" resolveInfo="aaa" />
               </node>
             </node>
           </node>
@@ -325,7 +341,7 @@
       <link role="targetConcept:2" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1205943042570">
-      <link role="applicableConcept:2" targetNodeId="1.1145552809883:3" resolveInfo="AbstractCreator" />
+      <link role="applicableConcept:2" targetNodeId="1.1144230876926:3" resolveInfo="AbstractForStatement" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1205943050596">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1205943065254">
           <property name="name:3" value="aaa" />
@@ -419,7 +435,7 @@
             <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1216147977358">
               <property name="name:3" value="aaa" />
               <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1216147977359" />
-              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1216147981424" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.LongType:3" id="1805153994417335027" />
             </node>
           </node>
         </node>
@@ -431,6 +447,10 @@
     </node>
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="1227320375385">
       <property name="name:2" value="123" />
+    </node>
+    <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="1805153994417305563">
+      <property name="name:2" value="DotToDot" />
+      <link role="sourceConcept:2" targetNodeId="1.1197027756228:3" resolveInfo="DotExpression" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1211366813561">

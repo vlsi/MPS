@@ -7,6 +7,8 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import java.util.Iterator;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +21,7 @@ public class TemplateDeclaration extends BaseConcept implements INamedConcept, I
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String APPLICABLE_CONCEPT = "applicableConcept";
   public static final String CONTENT_NODE = "contentNode";
+  public static final String PARAMETER = "parameter";
 
   public TemplateDeclaration(SNode node) {
     super(node);
@@ -70,6 +73,26 @@ public class TemplateDeclaration extends BaseConcept implements INamedConcept, I
 
   public void setContentNode(BaseConcept node) {
     super.setChild(TemplateDeclaration.CONTENT_NODE, node);
+  }
+
+  public int getParametersCount() {
+    return this.getChildCount(TemplateDeclaration.PARAMETER);
+  }
+
+  public Iterator<TemplateParameterDeclaration> parameters() {
+    return this.children(TemplateParameterDeclaration.class, TemplateDeclaration.PARAMETER);
+  }
+
+  public List<TemplateParameterDeclaration> getParameters() {
+    return this.getChildren(TemplateParameterDeclaration.class, TemplateDeclaration.PARAMETER);
+  }
+
+  public void addParameter(TemplateParameterDeclaration node) {
+    this.addChild(TemplateDeclaration.PARAMETER, node);
+  }
+
+  public void insertParameter(TemplateParameterDeclaration prev, TemplateParameterDeclaration node) {
+    this.insertChild(prev, TemplateDeclaration.PARAMETER, node);
   }
 
   public static TemplateDeclaration newInstance(SModel sm, boolean init) {

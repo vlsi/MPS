@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="2">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AbandonInput_RuleConsequence" conceptFQName="jetbrains.mps.transformation.TLBase.structure.AbandonInput_RuleConsequence" featureKind="CONCEPT" />
@@ -257,6 +258,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
@@ -279,12 +281,16 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="12" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
+  <maxImportIndex value="13" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" version="0" />
+  <import index="13" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1087833241328">
     <property name="name:0" value="PropertyMacro" />
     <property name="package:0" value="macro" />
@@ -352,6 +358,12 @@
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="2.1133920641626:0" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1805153994415891175">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="parameter" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="1805153994415891174:2" resolveInfo="TemplateParameterDeclaration" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1107223377516">
       <property name="value:0" value="template declaration" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2.1137473891462:0" />
@@ -392,6 +404,12 @@
       <property name="role:0" value="reductionMappingRule" />
       <property name="sourceCardinality:0" value="0..n" />
       <link role="target:0" targetNodeId="1167327847730:2" resolveInfo="Reduction_MappingRule" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1805153994416813171">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="patternReductionRule" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="1805153994416516020:2" resolveInfo="PatternReduction_MappingRule" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1167088157977">
       <property name="metaClass:0" value="aggregation" />
@@ -1550,6 +1568,56 @@
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="3265704088513289864">
       <property name="name:0" value="comment" />
       <link role="dataType:0" targetNodeId="2.1082983041843:0" resolveInfo="string" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1805153994415891174">
+    <property name="package:0" value="template" />
+    <property name="name:0" value="TemplateParameterDeclaration" />
+    <link role="extends:0" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1805153994415893199">
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="type" />
+      <property name="metaClass:0" value="aggregation" />
+      <link role="target:0" targetNodeId="6.1068431790189:3" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1805153994415891176">
+      <property name="value:0" value="parameter" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1805153994415915561">
+      <link role="intfc:0" targetNodeId="6.1212170275853:3" resolveInfo="IValidIdentifier" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1805153994416516020">
+    <property name="package:0" value="rule" />
+    <property name="name:0" value="PatternReduction_MappingRule" />
+    <link role="extends:0" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1805153994416516026">
+      <property name="role:0" value="labelDeclaration" />
+      <property name="sourceCardinality:0" value="0..1" />
+      <link role="target:0" targetNodeId="1200911316486:2" resolveInfo="MappingLabelDeclaration" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1805153994416516025">
+      <property name="value:0" value="pattern reduce" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1805153994416556314">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="pattern" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="13.1136720037777:0" resolveInfo="PatternExpression" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1805153994416516024">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="ruleConsequence" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1168559098955:2" resolveInfo="RuleConsequence" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1805153994416516021">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="conditionFunction" />
+      <property name="sourceCardinality:0" value="0..1" />
+      <link role="target:0" targetNodeId="1167168920554:2" resolveInfo="BaseMappingRule_Condition" />
     </node>
   </node>
 </model>

@@ -51,6 +51,8 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_g6pxeq_o0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_g6pxeq_p0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g6pxeq_q0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_g6pxeq_r0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_g6pxeq_s0(editorContext, node));
     return editorCell;
   }
 
@@ -283,6 +285,30 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_g6pxeq_s0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_g6pxeq_s0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_g6pxeq_a81a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_g6pxeq_b81a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_g6pxeq_b81a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_g6pxeq_b81a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createIndentCell_g6pxeq_a1s0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_g6pxeq_b1s0(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_g6pxeq_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping configuration");
     editorCell.setCellId("Constant_g6pxeq_a0a0");
@@ -360,7 +386,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_g6pxeq_a6a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping rules:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root mapping rules:");
     editorCell.setCellId("Constant_g6pxeq_a6a");
     {
       Style style = editorCell.getStyle();
@@ -435,7 +461,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_g6pxeq_a21a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abandon roots:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pattern rules:");
     editorCell.setCellId("Constant_g6pxeq_a21a");
     {
       Style style = editorCell.getStyle();
@@ -460,7 +486,7 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_g6pxeq_a41a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pre-processing scripts:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abandon roots:");
     editorCell.setCellId("Constant_g6pxeq_a41a");
     {
       Style style = editorCell.getStyle();
@@ -485,8 +511,33 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_g6pxeq_a61a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "post-processing scripts:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "pre-processing scripts:");
     editorCell.setCellId("Constant_g6pxeq_a61a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+      style.set(StyleAttributes.UNDERLINED, true);
+      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_g6pxeq_r0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_g6pxeq_r0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_g6pxeq_a81a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "post-processing scripts:");
+    editorCell.setCellId("Constant_g6pxeq_a81a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -557,7 +608,19 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNodeList_g6pxeq_b1m0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new MappingConfiguration_Editor.dropRootRuleListHandler_g6pxeq_b1m0(node, "dropRootRule", editorContext);
+    AbstractCellListHandler handler = new MappingConfiguration_Editor.patternReductionRuleListHandler_g6pxeq_b1m0(node, "patternReductionRule", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
+    editorCell.setCellId("refNodeList_patternReductionRule");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_g6pxeq_b1o0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new MappingConfiguration_Editor.dropRootRuleListHandler_g6pxeq_b1o0(node, "dropRootRule", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_dropRootRule");
     {
@@ -569,8 +632,8 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_g6pxeq_b1o0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new MappingConfiguration_Editor.preMappingScriptListHandler_g6pxeq_b1o0(node, "preMappingScript", editorContext);
+  private EditorCell createRefNodeList_g6pxeq_b1q0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new MappingConfiguration_Editor.preMappingScriptListHandler_g6pxeq_b1q0(node, "preMappingScript", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_preMappingScript");
     {
@@ -582,8 +645,8 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_g6pxeq_b1q0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new MappingConfiguration_Editor.postMappingScriptListHandler_g6pxeq_b1q0(node, "postMappingScript", editorContext);
+  private EditorCell createRefNodeList_g6pxeq_b1s0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new MappingConfiguration_Editor.postMappingScriptListHandler_g6pxeq_b1s0(node, "postMappingScript", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_postMappingScript");
     {
@@ -631,6 +694,11 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createIndentCell_g6pxeq_a1q0(EditorContext editorContext, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    return result;
+  }
+
+  private EditorCell createIndentCell_g6pxeq_a1s0(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
   }
@@ -881,8 +949,8 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class dropRootRuleListHandler_g6pxeq_b1m0 extends RefNodeListHandler {
-    public dropRootRuleListHandler_g6pxeq_b1m0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class patternReductionRuleListHandler_g6pxeq_b1m0 extends RefNodeListHandler {
+    public patternReductionRuleListHandler_g6pxeq_b1m0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -923,8 +991,8 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class preMappingScriptListHandler_g6pxeq_b1o0 extends RefNodeListHandler {
-    public preMappingScriptListHandler_g6pxeq_b1o0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dropRootRuleListHandler_g6pxeq_b1o0 extends RefNodeListHandler {
+    public dropRootRuleListHandler_g6pxeq_b1o0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -965,8 +1033,50 @@ public class MappingConfiguration_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class postMappingScriptListHandler_g6pxeq_b1q0 extends RefNodeListHandler {
-    public postMappingScriptListHandler_g6pxeq_b1q0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class preMappingScriptListHandler_g6pxeq_b1q0 extends RefNodeListHandler {
+    public preMappingScriptListHandler_g6pxeq_b1q0(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext editorContext) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext editorContext) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(editorContext);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if (elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
+        }
+      }
+    }
+
+    public EditorCell createSeparatorCell(EditorContext editorContext) {
+      return super.createSeparatorCell(editorContext);
+    }
+  }
+
+  private static class postMappingScriptListHandler_g6pxeq_b1s0 extends RefNodeListHandler {
+    public postMappingScriptListHandler_g6pxeq_b1s0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
