@@ -15,10 +15,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -58,16 +55,17 @@ public class ClassifierSuccessorsFinder {
     }
 
     List<SNode> result = new ArrayList();
-    List<SNode> superClassifiers = new ArrayList();
-    superClassifiers.add(classifier);
+    Queue<SNode> classifiersQueue = new LinkedList();
+    classifiersQueue.add(classifier);
 
-    ValueProcessor valueProcessor = new ValueProcessor(result, superClassifiers);
-    ModifiedsuccessorFinder modifiedSuccessorFinder = new ModifiedsuccessorFinder(modifiedClasses, modifiedInterfaces, result, superClassifiers);
+    ValueProcessor valueProcessor = new ValueProcessor(result, classifiersQueue);
+    ModifiedsuccessorFinder modifiedSuccessorFinder = new ModifiedsuccessorFinder(modifiedClasses, modifiedInterfaces, result, classifiersQueue);
     SearchScope searchScope = new SearchScope(notModifiedModelFiles);
 
-    for (SNode superClassifier : superClassifiers) {
-      FileBasedIndex.getInstance().processValues(ClassifierSuccessorsIndexer.NAME, new SNodeId(superClassifier), null, valueProcessor, searchScope);
-      modifiedSuccessorFinder.process(superClassifier);
+    SNode nextClassifier;
+    while ((nextClassifier = classifiersQueue.poll()) != null) {
+      FileBasedIndex.getInstance().processValues(ClassifierSuccessorsIndexer.NAME, new SNodeId(nextClassifier), null, valueProcessor, searchScope);
+      modifiedSuccessorFinder.process(nextClassifier);
     }
     return result;
   }
@@ -75,17 +73,17 @@ public class ClassifierSuccessorsFinder {
   private static class ModifiedsuccessorFinder {
     private List<ClassConcept> myModifiedClasses;
     private List<Interface> myModifiedInterfaces;
-    private List<SNode> mySuperClassifiers;
+    private Queue<SNode> myClassifiersQueue;
     private List<SNode> myResult;
     private Set<SNode> myProcessedNodes = new HashSet();
     private Map<Classifier, List<Classifier>> mySuccessorsMap = new HashMap();
     private boolean myInterfacesMapped;
     private boolean myClassesMapped;
 
-    ModifiedsuccessorFinder(List<ClassConcept> modifiedClasses, List<Interface> modifiedInterfaces, List<SNode> result, List<SNode> superClassifiers) {
+    ModifiedsuccessorFinder(List<ClassConcept> modifiedClasses, List<Interface> modifiedInterfaces, List<SNode> result, Queue<SNode> classifiersQueue) {
       myModifiedClasses = modifiedClasses;
       myModifiedInterfaces = modifiedInterfaces;
-      mySuperClassifiers = superClassifiers;
+      myClassifiersQueue = classifiersQueue;
       myResult = result;
     }
 
@@ -95,6 +93,8 @@ public class ClassifierSuccessorsFinder {
       }
       myProcessedNodes.add(superClassifier);
       BaseAdapter adapter = superClassifier.getAdapter();
+
+      // lazy initialization of mySuccessorsMap
       if (adapter instanceof Interface) {
         mapInterfaces();
       } else if (adapter instanceof ClassConcept) {
@@ -103,12 +103,13 @@ public class ClassifierSuccessorsFinder {
       } else {
         return;
       }
+      
       List<Classifier> successors = mySuccessorsMap.get((Classifier) adapter);
       if (successors != null) {
         for (Classifier successor : successors) {
           SNode node = successor.getNode();
           myResult.add(node);
-          mySuperClassifiers.add(node);
+          myClassifiersQueue.add(node);
         }
       }
     }
@@ -161,12 +162,12 @@ public class ClassifierSuccessorsFinder {
   private static class ValueProcessor implements com.intellij.util.indexing.FileBasedIndex.ValueProcessor<List<SNodeId>> {
 
     private List<SNode> myResult;
-    private List<SNode> mySuperClassifiers;
+    private Queue<SNode> myClassifiersQueue;
     private Set<SNodeId> myProcessedNodes = new HashSet();
 
-    ValueProcessor(List<SNode> result, List<SNode> superClassifiers) {
+    ValueProcessor(List<SNode> result, Queue<SNode> classifiersQueue) {
       myResult = result;
-      mySuperClassifiers = superClassifiers;
+      myClassifiersQueue = classifiersQueue;
     }
 
     @Override
@@ -179,7 +180,7 @@ public class ClassifierSuccessorsFinder {
         SNode node = snodeId.getNode();
         if (node != null) {
           myResult.add(node);
-          mySuperClassifiers.add(node);
+          myClassifiersQueue.add(node);
         }
       }
       return true;
