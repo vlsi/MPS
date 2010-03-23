@@ -15,6 +15,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new PatternVariableDeclaration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new LinkPatternVariableDeclaration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PropertyPatternVariableDeclaration_name_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new PatternVariableDeclaration_shortDescription_PropertyConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

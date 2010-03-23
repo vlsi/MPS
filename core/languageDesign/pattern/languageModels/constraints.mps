@@ -54,6 +54,18 @@
         </node>
       </node>
     </node>
+    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="7514052574629298315">
+      <link role="applicableProperty:8" targetNodeId="2.1156234966388:0" resolveInfo="shortDescription" />
+      <node role="propertyGetter:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter:8" id="7514052574629298316">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7514052574629298317">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7514052574629298919">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7514052574629298920">
+              <property name="value:3" value="pattern variable" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104859325">
     <link role="concept:8" targetNodeId="1.1137418540378:0" resolveInfo="LinkPatternVariableDeclaration" />
