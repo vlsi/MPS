@@ -23,6 +23,7 @@
       <solutionPath path="${project}/solutions/info/jetbrains.mps.debug.info.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.debug.evaluation.sandbox/jetbrains.mps.debug.evaluation.sandbox.msd" folder="" />
       <solutionPath path="${project}/solutions/jetbrains.mps.debug.run.sandbox/jetbrains.mps.debug.run.sandbox.msd" folder="" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${project}/languages/evaluation/evaluation.mpl" folder="" />

@@ -7,6 +7,7 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/debugProject/languages/evaluation/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/debugProject/solutions/info/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/debugProject/solutions/jetbrains.mps.debug.evaluation.ui/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/debugProject/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/classes" />
