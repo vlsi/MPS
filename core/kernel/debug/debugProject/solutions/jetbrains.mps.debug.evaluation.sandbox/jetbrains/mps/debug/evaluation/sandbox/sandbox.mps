@@ -13,51 +13,10 @@
   <import index="1" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.debug.evaluation.structure.EvaluatorConcept" id="6036237525966596606">
-    <node role="evaluatedExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5147977527584463723">
-      <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5147977527584463727">
-        <node role="operand:3" type="jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression" id="5147977527584463726" />
-        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5147977527584463731">
-          <link role="fieldDeclaration:3" targetNodeId="5147977527584460761" resolveInfo="foo" />
-        </node>
-      </node>
-      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1304595503654776859">
-        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6036237525966820238">
-          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6036237525966670265">
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6036237525966667266">
-              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6036237525966596608">
-                <property name="value:3" value="2" />
-              </node>
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6036237525966824203">
-                <property name="value:3" value="" />
-              </node>
-            </node>
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6036237525966820233">
-              <node role="operand:3" type="jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression" id="6036237525966820231" />
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6036237525966820237">
-                <link role="baseMethodDeclaration:3" targetNodeId="6036237525966670253" resolveInfo="get" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6036237525966824201">
-                  <property name="value:3" value="0" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1707366700950654766">
-            <node role="operand:3" type="jetbrains.mps.debug.evaluation.structure.EvaluatorsSuperMethodCall" id="6036237525966820241">
-              <link role="baseMethodDeclaration" targetNodeId="6036237525966667276" resolveInfo="get" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1620955434532134777">
-                <property name="value:3" value="2" />
-              </node>
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1707366700950654770">
-              <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.hashCode():int" resolveInfo="hashCode" />
-            </node>
-          </node>
-        </node>
-        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1304595503654776862">
-          <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1304595503654781122">
-            <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.&lt;init&gt;()" resolveInfo="Object" />
-          </node>
-        </node>
+    <node role="evaluatedExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2714803958285229380">
+      <node role="operand:3" type="jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression" id="2714803958285229379" />
+      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2714803958285229384">
+        <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.getClass():java.lang.Class" resolveInfo="getClass" />
       </node>
     </node>
     <node role="thisType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1620955434532134776">

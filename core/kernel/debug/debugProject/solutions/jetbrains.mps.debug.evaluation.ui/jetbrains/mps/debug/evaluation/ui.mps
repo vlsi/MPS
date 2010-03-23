@@ -1465,6 +1465,39 @@
                 </node>
               </node>
             </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2714803958285745911">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2714803958285745913">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2714803958285745912">
+                  <link role="variableDeclaration:3" targetNodeId="5849716370568348557" resolveInfo="classpaths" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2714803958285745917">
+                  <link role="baseMethodDeclaration:3" targetNodeId="11.~Set.add(java.lang.Object):boolean" resolveInfo="add" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2714803958285745918">
+                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2714803958285754236">
+                      <link role="baseMethodDeclaration:3" targetNodeId="20.~JarFileClassPathItem.&lt;init&gt;(java.lang.String)" resolveInfo="JarFileClassPathItem" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2714803958285782282">
+                        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2714803958285782285">
+                          <property name="value:3" value="tools.jar" />
+                        </node>
+                        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="2714803958285782277">
+                          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2714803958285782275">
+                            <link role="baseMethodDeclaration:3" targetNodeId="29.~PathManager.getHomePath():java.lang.String" resolveInfo="getHomePath" />
+                            <link role="classConcept:3" targetNodeId="29.~PathManager" resolveInfo="PathManager" />
+                          </node>
+                          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2714803958285783709">
+                            <link role="baseMethodDeclaration:3" targetNodeId="29.~NameUtil.pathFromNamespace(java.lang.String):java.lang.String" resolveInfo="pathFromNamespace" />
+                            <link role="classConcept:3" targetNodeId="29.~NameUtil" resolveInfo="NameUtil" />
+                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2714803958285783711">
+                              <property name="value:3" value=".lib.tools." />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5849716370568348581">
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5849716370568348582">
                 <property name="name:3" value="generationResult" />

@@ -71,6 +71,11 @@ public class MirrorUtil {
     throw new UnsupportedOperationException();
   }
 
+  public static ValueProxy getValueProxyFromJavaValue(Object javaValue, ThreadReference threadReference) {
+    Value v = getJDIValueFromRaw(javaValue, threadReference.virtualMachine());
+    return getValueProxy(v, threadReference);
+  }
+
   public static ValueProxy getValueProxy(Value v, ThreadReference threadReference) {
     if (v instanceof ObjectReference) {
       return new ObjectValueProxy((ObjectReference) v, threadReference);

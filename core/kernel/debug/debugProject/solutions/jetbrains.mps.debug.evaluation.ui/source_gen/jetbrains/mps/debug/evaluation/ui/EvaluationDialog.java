@@ -37,6 +37,9 @@ import com.sun.jdi.ObjectReference;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.JarFileClassPathItem;
+import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
 import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.ValueProxy;
@@ -153,6 +156,7 @@ public class EvaluationDialog extends BaseDialog {
         IClassPathItem item = language.getClassPathItem();
         classpaths.add(item);
       }
+      classpaths.add(new JarFileClassPathItem(PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.tools.") + "tools.jar"));
       final GenerationResult generationResult = this.myEditor.generate(classpaths);
       String fqName = generationResult.getModelDescriptor().getLongName() + ".EvaluatorInstance";
       ClassLoader loader = generationResult.getLoader(this.myUiState.getClass().getClassLoader());

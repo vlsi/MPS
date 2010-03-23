@@ -14,6 +14,7 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -60,7 +61,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", false), "name");
   }
 
-  public static SNode sourceNodeQuery_1620955434532226517(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2714803958284765457(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "evaluatedExpression", true);
   }
 
@@ -94,6 +95,14 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1304595503654233227(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "actualArgument", true);
+  }
+
+  public static SNode mapSrcMacro_mapper_2714803958284922156(final IOperationContext operationContext, final MapSrcMacroContext _context) {
+    return _context.getNode();
+  }
+
+  public static void mapSrcMacro_post_mapper_2714803958284767722(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
+    GenUtil.postProcessResult(_context.getNode(), _context.getOutputNode());
   }
 
   public static void mapSrcMacro_post_mapper_1707366700950549907(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
