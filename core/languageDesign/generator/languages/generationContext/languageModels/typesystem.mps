@@ -613,5 +613,35 @@
       <link role="concept:3" targetNodeId="1.1217960314443:0" resolveInfo="GenerationContextOp_ShowMessageBase" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="4589968773278182924">
+    <property name="name:3" value="typeof_GenerationContextOp_PatternRef" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4589968773278182925">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="4589968773278182927">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4589968773278182928">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="4589968773278182929">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4589968773278182930">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4589968773278185093">
+                <link role="applicableNode:3" targetNodeId="4589968773278182926" resolveInfo="generationContextOp_PatternRef" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4589968773278185094">
+                <link role="link:16" targetNodeId="1.4589968773278063829:0" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4589968773278182933">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="4589968773278182934">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4589968773278185092">
+              <link role="applicableNode:3" targetNodeId="4589968773278182926" resolveInfo="generationContextOp_PatternRef" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="4589968773278182926">
+      <property name="name:3" value="generationContextOp_PatternRef" />
+      <link role="concept:3" targetNodeId="1.4589968773278056990:0" resolveInfo="GenerationContextOp_PatternRef" />
+    </node>
+  </node>
 </model>
 
