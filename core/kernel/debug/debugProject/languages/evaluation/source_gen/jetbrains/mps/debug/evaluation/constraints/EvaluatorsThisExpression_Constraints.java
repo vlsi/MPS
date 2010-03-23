@@ -9,6 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class EvaluatorsThisExpression_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", false, false), "thisType", true) != null);
+    return (SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.debug.evaluation.structure.EvaluatorConcept", true, false), "thisType", true) != null);
   }
 }

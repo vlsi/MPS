@@ -5,7 +5,14 @@ package jetbrains.mps.debug.run.sandbox;
 import jetbrains.mps.smodel.SNode;
 
 public class Main {
+  private int myI;
+
   public Main() {
+  }
+
+  public void foo() {
+    this.myI = 5;
+    System.err.println("done");
   }
 
   public static void main(String[] args) {
@@ -21,6 +28,7 @@ public class Main {
     for (int i = 0; i < 2; i++) {
       doSomething();
     }
+    new Main().foo();
     SNode n = null;
     System.err.println("" + n);
     doSomething();

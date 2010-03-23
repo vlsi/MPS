@@ -28,10 +28,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import javax.swing.JScrollPane;
 import javax.swing.JComponent;
+import com.sun.jdi.ObjectReference;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
 import jetbrains.mps.debug.evaluation.Evaluator;
@@ -40,6 +44,8 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.debug.integration.ui.nodes.CalculatedValueTreeNode;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class EvaluationDialog extends BaseDialog {
   private static final Logger LOG = Logger.getLogger(EvaluationDialog.class);
@@ -92,6 +98,12 @@ public class EvaluationDialog extends BaseDialog {
         Language evalLang = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.debug.evaluation");
         EvaluationDialog.this.myLanguages.add(evalLang);
         SLinkOperations.setNewChild(evaluatorConcept, "evaluatedExpression", "jetbrains.mps.baseLanguage.structure.NullLiteral");
+        try {
+          SNode thisType = EvaluationDialog.this.createThisClassifierType();
+          SLinkOperations.setTarget(evaluatorConcept, "thisType", thisType, true);
+        } catch (AbsentInformationException ex) {
+          LOG.error(ex);
+        }
         for (SNode varSNode : EvaluationDialog.this.myNodesToVarsMap.keySet()) {
           SNode varNode = varSNode;
           SNode highLevelVariable = SLinkOperations.addNewChild(evaluatorConcept, "variables", "jetbrains.mps.debug.evaluation.structure.HighLevelVariable");
@@ -112,6 +124,25 @@ public class EvaluationDialog extends BaseDialog {
 
   protected JComponent getMainComponent() {
     return this.myPanel;
+  }
+
+  public SNode createThisClassifierType() throws AbsentInformationException {
+    ObjectReference thisObject = this.myUiState.getThisObject();
+    if (thisObject == null) {
+      return null;
+    }
+    Location location = this.myUiState.getStackFrame().location();
+    SNode node = StacktraceUtil.getNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
+    if (node == null) {
+      return null;
+    }
+    SNode classConcept = ClassConcept_Behavior.getContextClass_8008512149545173402(node);
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SLinkOperations.setTarget(result, "classifier", classConcept, false);
+    for (SNode typeVariableDeclaration : SLinkOperations.getTargets(classConcept, "typeVariableDeclaration", true)) {
+      ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(new EvaluationDialog.QuotationClass_3tf46a_a0a0a0i0b().createNode(typeVariableDeclaration));
+    }
+    return result;
   }
 
   @BaseDialog.Button(position = 0, name = "Evaluate", mnemonic = 'E', defaultButton = true)
@@ -163,6 +194,24 @@ public class EvaluationDialog extends BaseDialog {
       this.setRootVisible(false);
       this.setShowsRootHandles(true);
       return rootTreeNode;
+    }
+  }
+
+  public static class QuotationClass_3tf46a_a0a0a0i0b {
+    public QuotationClass_3tf46a_a0a0a0i0b() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
     }
   }
 }

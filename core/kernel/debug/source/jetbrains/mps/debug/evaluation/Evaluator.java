@@ -18,7 +18,9 @@ public abstract class Evaluator {
   public Evaluator(UiState uiState) {
     myUiState = uiState;
     ObjectReference objectReference = uiState.getThisObject();
-    myThisObject = new ObjectValueProxy(objectReference, uiState.getThread());
+    if (objectReference != null) {
+      myThisObject = new ObjectValueProxy(objectReference, uiState.getThread());
+    }
   }
 
   protected ValueProxy getValue(String varName) throws EvaluationException {
