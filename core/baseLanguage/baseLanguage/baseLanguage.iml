@@ -11,7 +11,6 @@
       <sourceFolder url="file://$MODULE_DIR$/solutions/testLogger/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/testBugs/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
