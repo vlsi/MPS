@@ -1528,21 +1528,6 @@
     </node>
     <node role="updateModelBlock" type="jetbrains.mps.lang.stubs.structure.UpdateModelBlock" id="5420647633057830603">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5420647633057830604">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6487379123666157559">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6487379123666157560">
-            <property name="name:3" value="model" />
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="6487379123666157561">
-              <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SModelType:16" id="6487379123666157562" />
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6487379123666157563">
-                <node role="operand:3" type="jetbrains.mps.lang.stubs.structure.ModelInfo_ConceptFunctionParameter" id="6487379123666157608" />
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6487379123666157565">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelInfo.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
-                </node>
-              </node>
-            </node>
-            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SModelType:16" id="6487379123666157566" />
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6487379123666157567">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6487379123666157568">
             <property name="name:3" value="pkg" />
@@ -1551,12 +1536,7 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6487379123666157570">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6487379123666157571">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6487379123666157572">
-                  <node role="operand:3" type="jetbrains.mps.lang.stubs.structure.ModelInfo_ConceptFunctionParameter" id="6487379123666157609" />
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6487379123666157574">
-                    <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelInfo.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
-                  </node>
-                </node>
+                <node role="operand:3" type="jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter" id="6487379123666157609" />
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6487379123666157575">
                   <link role="baseMethodDeclaration:3" targetNodeId="4.~SModel.getSModelFqName():jetbrains.mps.smodel.SModelFqName" resolveInfo="getSModelFqName" />
                 </node>
@@ -1677,9 +1657,7 @@
                   </node>
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2599484343483452348">
                     <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="2599484343483452349">
-                      <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2599484343483452350">
-                        <link role="variableDeclaration:3" targetNodeId="6487379123666157560" resolveInfo="model" />
-                      </node>
+                      <node role="leftExpression:16" type="jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter" id="2335368530299307568" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2599484343483452351">
                       <link role="baseMethodDeclaration:3" targetNodeId="4.~SModel.getNodeById(jetbrains.mps.smodel.SNodeId):jetbrains.mps.smodel.SNode" resolveInfo="getNodeById" />
@@ -1750,9 +1728,7 @@
                 </node>
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4141964284680493319">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4141964284680493321">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4141964284680493320">
-                      <link role="variableDeclaration:3" targetNodeId="6487379123666157560" resolveInfo="model" />
-                    </node>
+                    <node role="operand:3" type="jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter" id="2335368530299307577" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation:16" id="4141964284680493325">
                       <node role="nodeArgument:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4141964284680493327">
                         <link role="variableDeclaration:3" targetNodeId="6487379123666157593" resolveInfo="mod" />

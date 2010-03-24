@@ -151,16 +151,14 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="368569065472988634">
     <property name="package:0" value="AbstractCreator.Methods.UpdateModel" />
-    <property name="name:0" value="ModelInfo_ConceptFunctionParameter" />
+    <property name="name:0" value="Model_ConceptFunctionParameter" />
     <link role="extends:0" targetNodeId="2v.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="368569065472988637">
       <link role="conceptLinkDeclaration:0" targetNodeId="2v.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
-      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3798212845297795123">
-        <link role="classifier:3" targetNodeId="2.~ModelInfo" resolveInfo="ModelInfo" />
-      </node>
+      <node role="target:0" type="jetbrains.mps.lang.smodel.structure.SModelType:16" id="2335368530299307525" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="368569065472988635">
-      <property name="value:0" value="modelInfo" />
+      <property name="value:0" value="model" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>

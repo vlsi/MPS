@@ -378,10 +378,10 @@
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3798212845297904654">
-        <property name="name:3" value="modelInfo" />
+        <property name="name:3" value="model" />
         <property name="isFinal:3" value="true" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3798212845297904655">
-          <link role="classifier:3" targetNodeId="5.~ModelInfo" resolveInfo="ModelInfo" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6923517681523666856">
+          <link role="classifier:3" targetNodeId="7.~SModel" resolveInfo="SModel" />
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3798212845297904656">

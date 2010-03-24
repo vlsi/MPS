@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.stubs.StubLocation;
-import jetbrains.mps.stubs.ModelInfo;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.stubs.javastub.ASMModelLoader;
 import jetbrains.mps.smodel.SModelReference;
@@ -54,13 +54,13 @@ public class JavaStubs extends BaseStubModelRootManager {
     return result;
   }
 
-  protected void updateModel(final StubLocation location, final ModelInfo modelInfo) {
+  protected void updateModel(final StubLocation location, final SModel model) {
     final JavaStubs localThis = JavaStubs.this;
     IClassPathItem cpItem = JavaStubs.this.createClassPathItem(location);
     if (cpItem == null) {
       return;
     }
-    new ASMModelLoader(cpItem, modelInfo.getModelDescriptor(), modelInfo.getModel()) {
+    new ASMModelLoader(cpItem, model) {
       public SModelReference getModelReferenceFor(String packageName) {
         return StubHelper.uidForPackageInStubs(packageName);
       }

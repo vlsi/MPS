@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.stubs.StubLocation;
-import jetbrains.mps.stubs.ModelInfo;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -59,9 +58,8 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
     return result;
   }
 
-  protected void updateModel(final StubLocation location, final ModelInfo modelInfo) {
-    SModel model = (SModel) modelInfo.getModel();
-    String pkg = modelInfo.getModel().getSModelFqName().getLongName();
+  protected void updateModel(final StubLocation location, final SModel model) {
+    String pkg = model.getSModelFqName().getLongName();
     PathItem pi = new GWTModulePathItem(location.getPath());
     List<Tuples._3<String, String, SNode>> modlst = ListSequence.fromList(new ArrayList<Tuples._3<String, String, SNode>>());
     SNode sample = SConceptOperations.createNewNode("jetbrains.mps.gwt.client.structure.GWTModule", null);

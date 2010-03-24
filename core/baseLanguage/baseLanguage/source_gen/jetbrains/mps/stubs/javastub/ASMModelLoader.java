@@ -4,7 +4,6 @@ package jetbrains.mps.stubs.javastub;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Set;
@@ -93,18 +92,16 @@ public abstract class ASMModelLoader {
   private static final Logger LOG = Logger.getLogger(ASMModelLoader.class);
 
   private IClassPathItem myCpItem;
-  private SModelDescriptor myModelDescriptor;
   private SModel myModel;
 
-  public ASMModelLoader(IClassPathItem classPathItem, SModelDescriptor modelDescriptor, SModel model) {
+  public ASMModelLoader(IClassPathItem classPathItem, SModel model) {
     this.myCpItem = classPathItem;
-    this.myModelDescriptor = modelDescriptor;
     this.myModel = model;
   }
 
   public void updateModel() {
     try {
-      SModelReference reference = this.myModelDescriptor.getSModelReference();
+      SModelReference reference = this.myModel.getSModelReference();
       String pack = reference.getLongName();
       final Set<String> classes = this.getAvailableClasses(pack);
       for (String name : classes) {

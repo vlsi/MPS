@@ -555,18 +555,7 @@
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5516999836374731598">
                     <link role="variableDeclaration:3" targetNodeId="5516999836375057049" resolveInfo="cpItem" />
                   </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5516999836374121171">
-                    <node role="operand:3" type="jetbrains.mps.lang.stubs.structure.ModelInfo_ConceptFunctionParameter" id="5516999836374121339" />
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5516999836374121173">
-                      <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelInfo.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
-                    </node>
-                  </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5516999836374121174">
-                    <node role="operand:3" type="jetbrains.mps.lang.stubs.structure.ModelInfo_ConceptFunctionParameter" id="5516999836374121340" />
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5516999836374121176">
-                      <link role="baseMethodDeclaration:3" targetNodeId="3.~ModelInfo.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
-                    </node>
-                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter" id="5516999836374121340" />
                 </node>
               </node>
             </node>
