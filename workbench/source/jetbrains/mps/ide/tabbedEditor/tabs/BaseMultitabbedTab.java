@@ -65,8 +65,8 @@ import java.util.*;
 
 public abstract class BaseMultitabbedTab implements ILazyTab {
   private Set<SNodePointer> myLoadableNodes = new HashSet<SNodePointer>();
-  public SModelListener myListener = new MySModelAdapter();
-  private SModelRepositoryListener myWeakRepositoryListener = new SModelRepositoryAdapter() {
+  public SModelListener myModelListener = new MySModelAdapter();
+  private SModelRepositoryListener myRepositoryListener = new SModelRepositoryAdapter() {
     public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
       for (SNode node : getLoadableNodes()) {
         if (node == null) continue;
@@ -95,7 +95,9 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myTabbedEditor = tabbedEditor;
     myBaseNode = new SNodePointer(baseNode);
     myClass = adapterClass;
-    SModelRepository.getInstance().addWeakModelRepositoryListener(myWeakRepositoryListener);
+    SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
+    RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).
+        addNodeFileStatusListener(myNodeFileStatusListener);
   }
 
   private void closeTab(SNodePointer nodePointer, int index) {
@@ -108,6 +110,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       myTabbedEditor.getTabbedPane().remove(this);
       myTabbedEditor.getTabbedPane().initTab(this);
     }
+    // TODO remove model listener
     myTabbedEditor.updateTabColor(this, getBaseNodeVirtualFile());
   }
 
@@ -251,9 +254,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     } catch (IndexOutOfBoundsException ignored) {
     }
 
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
-    statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
-
     for (Pair<SNode, IOperationContext> loadableNodeAndContext : loadableNodes) {
       addInnerTab(loadableNodeAndContext.o1, loadableNodeAndContext.o2);
     }
@@ -288,6 +288,14 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     }
   }
 
+  @Override
+  public void dispose() {
+    RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).
+        removeNodeFileStatusListener(myNodeFileStatusListener);
+    SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
+    // TODO remove model listeners
+ }
+
   private JComponent addInnerTab(SNode loadableNode, IOperationContext operationContext) {
     EditorComponent component = new NodeEditorComponent(operationContext);
     component.editNode(loadableNode, operationContext);
@@ -299,8 +307,8 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myInnerTabbedPane.setIconAt(myEditors.size() - 1, IconManager.getIconFor(loadableNode));
     ToolWindowManager.getInstance(operationContext.getProject()).getFocusManager().requestFocus(component, false);
     SModel sModel = loadableNode.getModel();
-    if (!sModel.hasModelListener(myListener)) {
-      sModel.addWeakSModelListener(myListener);
+    if (!sModel.hasModelListener(myModelListener)) {
+      sModel.addWeakSModelListener(myModelListener);
     }
     return jComponent;
   }
@@ -400,12 +408,9 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   }
 
   public void selectTab(int index) {
-    try {
-      myCurrentIndex = index;
-      if (myInnerTabbedPane != null) {
-        myInnerTabbedPane.setSelectedIndex(myCurrentIndex);
-      }
-    } catch (IndexOutOfBoundsException e) {
+    myCurrentIndex = index;
+    if (myInnerTabbedPane != null && index >= -1 && index < myInnerTabbedPane.getTabCount()) {
+      myInnerTabbedPane.setSelectedIndex(myCurrentIndex);
     }
   }
 

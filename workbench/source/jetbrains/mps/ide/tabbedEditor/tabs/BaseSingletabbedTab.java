@@ -46,7 +46,7 @@ import java.util.List;
 public abstract class BaseSingletabbedTab implements ILazyTab {
   private static final Logger LOG = Logger.getLogger(BaseSingletabbedTab.class);
 
-  private SModelRepositoryAdapter myWeakSModelRepositoryListener;
+  private SModelRepositoryListener myRepositoryListener;
   private SModelListener myListener = new MySModelAdapter();
   private EditorComponent myComponent;
   private SNodePointer myBaseNode;
@@ -66,7 +66,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     if (nodeModelDescriptor != null) {
       nodeModelDescriptor.addWeakModelListener(myListener);
     } else {
-      myWeakSModelRepositoryListener = new SModelRepositoryAdapter() {
+      myRepositoryListener = new SModelRepositoryAdapter() {
         public void modelAdded(SModelDescriptor modelDescriptor) {
           if (ProjectModels.isProjectModel(modelDescriptor.getSModelReference())) {
             return;
@@ -88,7 +88,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
           }
         }
       };
-      SModelRepository.getInstance().addWeakModelRepositoryListener(myWeakSModelRepositoryListener);
+      SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
     }
   }
 
@@ -183,8 +183,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
       if (!loadableNode.getModel().hasModelListener(myListener)) {
         loadableNode.getModel().addWeakSModelListener(myListener);
       }
-      RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
-      statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
+      RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).addNodeFileStatusListener(myNodeFileStatusListener);
       return true;
     }
 
@@ -207,6 +206,15 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
         node.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
       }
     });
+  }
+
+  @Override
+  public void dispose() {
+    RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).removeNodeFileStatusListener(myNodeFileStatusListener);
+    if (myRepositoryListener != null) {
+      SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
+    }
+    // TODO remove model listener(s)
   }
 
   private class MySModelAdapter extends SModelAdapter {

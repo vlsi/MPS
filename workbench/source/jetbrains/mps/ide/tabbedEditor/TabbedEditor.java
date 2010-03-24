@@ -256,6 +256,7 @@ public class TabbedEditor implements IEditor {
   }
 
   public void dispose() {
+    getTabbedPane().dispose();
     for (EditorComponent c : getEditors()) {
       c.dispose();
     }

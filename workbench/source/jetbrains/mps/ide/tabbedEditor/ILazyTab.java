@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.tabbedEditor;
 
+import com.intellij.openapi.Disposable;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 import javax.swing.JComponent;
@@ -23,7 +24,7 @@ import java.awt.event.MouseEvent;
 
 import com.intellij.openapi.vfs.VirtualFile;
 
-public interface ILazyTab {
+public interface ILazyTab extends Disposable {
   String getTitle();
 
   String getNullText();
