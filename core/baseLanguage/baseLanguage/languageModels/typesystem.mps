@@ -12,6 +12,7 @@
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
+  <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -23098,6 +23099,33 @@
       </node>
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="6654001062452862412">
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6654001062452862413">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1592896280557388068">
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1592896280557388069">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="1592896280557388099" />
+            </node>
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="1592896280557388083">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1592896280557388094">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1592896280557388097" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1592896280557388089">
+                  <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1592896280557388087">
+                    <link role="concept:16" targetNodeId="25.1169194658468:0" resolveInfo="INamedConcept" />
+                    <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1592896280557388086">
+                      <link role="variableDeclaration:3" targetNodeId="6654001062452862416" resolveInfo="var" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1592896280557388093">
+                    <link role="property:16" targetNodeId="25.1169194664001:0" resolveInfo="name" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1592896280557388073">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1592896280557388072">
+                  <link role="variableDeclaration:3" targetNodeId="6654001062452862416" resolveInfo="var" />
+                </node>
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1592896280557388076" />
+              </node>
+            </node>
+          </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6654001062452862442">
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6654001062452862443">
               <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WarningStatement:3" id="6654001062452862484">
@@ -23143,7 +23171,7 @@
                       <link role="variableDeclaration:3" targetNodeId="6654001062452862416" resolveInfo="var" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6654001062452862463">
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1592896280557252322">
                     <link role="property:16" targetNodeId="25.1169194664001:0" resolveInfo="name" />
                   </node>
                 </node>

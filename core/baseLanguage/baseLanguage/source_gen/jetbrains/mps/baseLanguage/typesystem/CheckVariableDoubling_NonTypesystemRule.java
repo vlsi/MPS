@@ -36,6 +36,9 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
     List<SNode> vars = new LocalVariablesScope(SNodeOperations.getParent(localVariableDeclaration)).getNodes();
     vars.addAll(params);
     for (SNode var : vars) {
+      if (var == null || SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") == null) {
+        continue;
+      }
       if (SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name").equals(SPropertyOperations.getString(localVariableDeclaration, "name")) && !(var == localVariableDeclaration)) {
         {
           BaseIntentionProvider intentionProvider = null;
