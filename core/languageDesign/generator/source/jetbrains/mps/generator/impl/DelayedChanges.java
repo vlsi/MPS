@@ -101,13 +101,21 @@ public class DelayedChanges {
 
           // check new child
           SNode parent = myChildToReplace.getParent();
-          String childRole = parent.getRoleOf(myChildToReplace);
-          if (!GeneratorUtil.checkChild(parent, childRole, child)) {
-            myLogger.describeWarning(myInputNode, "was input: " + myInputNode.getDebugText());
-            myLogger.describeWarning(myMapSrcMacro, "was template: " + myMapSrcMacro.getDebugText());
-          }
+          if (parent == null) {
+            // root?
+            if (myChildToReplace.isRoot()) {
+              myChildToReplace.getModel().addRoot(child);
+              myChildToReplace.getModel().removeRoot(myChildToReplace);
+            }            
+          }else {
+            String childRole = parent.getRoleOf(myChildToReplace);
+            if (!GeneratorUtil.checkChild(parent, childRole, child)) {
+              myLogger.describeWarning(myInputNode, "was input: " + myInputNode.getDebugText());
+              myLogger.describeWarning(myMapSrcMacro, "was template: " + myMapSrcMacro.getDebugText());
+            }
 
-          parent.replaceChild(myChildToReplace, child);
+            parent.replaceChild(myChildToReplace, child);
+          }
           myGenerator.getGeneratorSessionContext().getGenerationTracer().replaceOutputNode(myChildToReplace, child);
 
           // post-processing
