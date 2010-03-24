@@ -28,10 +28,15 @@ import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.plaf.beg.BegMenuItemUI;
 import com.intellij.util.ui.EmptyIcon;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import org.jetbrains.annotations.NonNls;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.Icon;
+import javax.swing.JMenuItem;
+import javax.swing.SwingUtilities;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -44,7 +49,10 @@ public class ActionMenuItem extends JMenuItem {
   private static final Icon ourCheckedIcon = IconLoader.getIcon("/actions/check.png");
   private static final Icon ourUncheckedIcon = new EmptyIcon(18, 18);
 
+  //patch
   private final AnAction myAction;
+  private final String myActionId;
+
   private final Presentation myPresentation;
   private final String myPlace;
   private DataContext myContext;
@@ -53,7 +61,14 @@ public class ActionMenuItem extends JMenuItem {
   private boolean myEnableMnemonics;
 
   public ActionMenuItem(AnAction action, Presentation presentation, String place, DataContext context, final boolean enableMnemonics, boolean prepareNow) {
-    myAction = action;
+    //patch
+    if (action instanceof GeneratedAction) {
+      myActionId = ActionManager.getInstance().getId(action);
+      myAction = null;
+    } else {
+      myAction = action;
+      myActionId = null;
+    }
     myPresentation = presentation;
     myPlace = place;
     myContext = context;
@@ -67,6 +82,12 @@ public class ActionMenuItem extends JMenuItem {
     } else {
       setText("loading...");
     }
+  }
+
+  //patch
+  private AnAction getMyAction() {
+    if (myAction != null) return myAction;
+    return ActionManager.getInstance().getAction(myActionId);
   }
 
   public void prepare() {
@@ -140,13 +161,14 @@ public class ActionMenuItem extends JMenuItem {
     }
 
     updateIcon();
-    String id = ActionManager.getInstance().getId(myAction);
+    //patch
+    String id = ActionManager.getInstance().getId(getMyAction());
     if (id != null) {
       Shortcut[] shortcuts = KeymapManager.getInstance().getActiveKeymap().getShortcuts(id);
       setAcceleratorFromShortcuts(shortcuts);
-    }
-    else {
-      final ShortcutSet shortcutSet = myAction.getShortcutSet();
+    } else {
+      //patch
+      final ShortcutSet shortcutSet = getMyAction().getShortcutSet();
       if (shortcutSet != null) {
         setAcceleratorFromShortcuts(shortcutSet.getShortcuts());
       }
@@ -156,7 +178,7 @@ public class ActionMenuItem extends JMenuItem {
   private void setAcceleratorFromShortcuts(final Shortcut[] shortcuts) {
     for (Shortcut shortcut : shortcuts) {
       if (shortcut instanceof KeyboardShortcut) {
-        setAccelerator(((KeyboardShortcut)shortcut).getFirstKeyStroke());
+        setAccelerator(((KeyboardShortcut) shortcut).getFirstKeyStroke());
         break;
       }
     }
@@ -165,8 +187,7 @@ public class ActionMenuItem extends JMenuItem {
   public void updateUI() {
     if (UIUtil.isStandardMenuLAF()) {
       super.updateUI();
-    }
-    else {
+    } else {
       setUI(BegMenuItemUI.createUI(this));
     }
   }
@@ -180,7 +201,8 @@ public class ActionMenuItem extends JMenuItem {
   }
 
   public String getFirstShortcutText() {
-    return KeymapUtil.getFirstKeyboardShortcutText(myAction);
+    //patch
+    return KeymapUtil.getFirstKeyboardShortcutText(getMyAction());
   }
 
   public void updateContext(DataContext context) {
@@ -197,8 +219,7 @@ public class ActionMenuItem extends JMenuItem {
     private boolean isInTree(final Component component) {
       if (component instanceof Window) {
         return component.isShowing();
-      }
-      else {
+      } else {
         Window windowAncestor = SwingUtilities.getWindowAncestor(component);
         return windowAncestor != null && windowAncestor.isShowing();
       }
@@ -208,39 +229,36 @@ public class ActionMenuItem extends JMenuItem {
       AnActionEvent event = new AnActionEvent(
         new MouseEvent(ActionMenuItem.this, MouseEvent.MOUSE_PRESSED, 0, e.getModifiers(), getWidth() / 2, getHeight() / 2, 1, false),
         myContext, myPlace, myPresentation, ActionManager.getInstance(), e.getModifiers());
-      if (ActionUtil.lastUpdateAndCheckDumb(myAction, event, false)) {
+      if (ActionUtil.lastUpdateAndCheckDumb(getMyAction(), event, false)) {
         ActionManagerEx actionManager = ActionManagerEx.getInstanceEx();
-        actionManager.fireBeforeActionPerformed(myAction, myContext, event);
+        actionManager.fireBeforeActionPerformed(getMyAction(), myContext, event);
         Component component = PlatformDataKeys.CONTEXT_COMPONENT.getData(event.getDataContext());
         if (component != null && !isInTree(component)) {
           return;
         }
-        myAction.actionPerformed(event);
-        actionManager.queueActionPerformedEvent(myAction, myContext, event);
+        getMyAction().actionPerformed(event);
+        actionManager.queueActionPerformedEvent(getMyAction(), myContext, event);
       }
     }
   }
 
   private void updateIcon() {
-    if (myAction instanceof Toggleable && myPresentation.getIcon() == null) {
-      myAction.update(myEvent);
+    if (getMyAction() instanceof Toggleable && myPresentation.getIcon() == null) {
+      getMyAction().update(myEvent);
       if (Boolean.TRUE.equals(myEvent.getPresentation().getClientProperty(Toggleable.SELECTED_PROPERTY))) {
         setIcon(ourCheckedIcon);
         setDisabledIcon(IconLoader.getDisabledIcon(ourCheckedIcon));
-      }
-      else {
+      } else {
         setIcon(ourUncheckedIcon);
         setDisabledIcon(IconLoader.getDisabledIcon(ourUncheckedIcon));
       }
-    }
-    else {
+    } else {
       if (!SystemInfo.isMac || UISettings.getInstance().SHOW_ICONS_IN_MENUS) {
         Icon icon = myPresentation.getIcon();
         setIcon(icon);
         if (myPresentation.getDisabledIcon() != null) {
           setDisabledIcon(myPresentation.getDisabledIcon());
-        }
-        else {
+        } else {
           setDisabledIcon(IconLoader.getDisabledIcon(icon));
         }
       }
@@ -248,7 +266,8 @@ public class ActionMenuItem extends JMenuItem {
   }
 
   private final class MenuItemSynchronizer implements PropertyChangeListener, Disposable {
-    @NonNls private static final String SELECTED = "selected";
+    @NonNls
+    private static final String SELECTED = "selected";
 
     private final Set<String> mySynchronized = new HashSet<String>();
 
@@ -273,28 +292,21 @@ public class ActionMenuItem extends JMenuItem {
           final boolean visible = myPresentation.isVisible();
           if (!visible && SystemInfo.isMacSystemMenu && myPlace == ActionPlaces.MAIN_MENU) {
             setEnabled(false);
-          }
-          else {
+          } else {
             setVisible(visible);
           }
-        }
-        else if (Presentation.PROP_ENABLED.equals(name)) {
+        } else if (Presentation.PROP_ENABLED.equals(name)) {
           setEnabled(myPresentation.isEnabled());
           updateIcon();
-        }
-        else if (Presentation.PROP_MNEMONIC_KEY.equals(name)) {
+        } else if (Presentation.PROP_MNEMONIC_KEY.equals(name)) {
           setMnemonic(myPresentation.getMnemonic());
-        }
-        else if (Presentation.PROP_MNEMONIC_INDEX.equals(name)) {
+        } else if (Presentation.PROP_MNEMONIC_INDEX.equals(name)) {
           setDisplayedMnemonicIndex(myPresentation.getDisplayedMnemonicIndex());
-        }
-        else if (Presentation.PROP_TEXT.equals(name)) {
+        } else if (Presentation.PROP_TEXT.equals(name)) {
           setText(myPresentation.getText());
-        }
-        else if (Presentation.PROP_ICON.equals(name) || Presentation.PROP_DISABLED_ICON.equals(name)) {
+        } else if (Presentation.PROP_ICON.equals(name) || Presentation.PROP_DISABLED_ICON.equals(name)) {
           updateIcon();
-        }
-        else if (SELECTED.equals(name)) {
+        } else if (SELECTED.equals(name)) {
           updateIcon();
         }
       }
