@@ -12,12 +12,14 @@ public class GenerationResult {
   private InMemoryJavaGenerationHandler myHandler;
   private IOperationContext myContext;
   private SModelDescriptor myDescriptor;
+  private boolean mySuccesful = true;
 
-  /*package*/ GenerationResult(SNode node, IOperationContext context, SModelDescriptor modelDescriptor, InMemoryJavaGenerationHandler handler) {
+  /*package*/ GenerationResult(SNode node, IOperationContext context, SModelDescriptor modelDescriptor, InMemoryJavaGenerationHandler handler, boolean succesful) {
     this.myContext = context;
     this.myNode = node;
     this.myDescriptor = modelDescriptor;
     this.myHandler = handler;
+    this.mySuccesful = succesful;
   }
 
   /*package*/ GenerationResult(SNode node, IOperationContext context) {
@@ -35,6 +37,10 @@ public class GenerationResult {
 
   public SModelDescriptor getModelDescriptor() {
     return this.myDescriptor;
+  }
+
+  public boolean isSuccessful() {
+    return this.mySuccesful;
   }
 
   public ClassLoader getLoader(ClassLoader parentLoader) {

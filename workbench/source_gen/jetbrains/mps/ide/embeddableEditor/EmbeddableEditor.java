@@ -120,8 +120,8 @@ public class EmbeddableEditor {
         return false;
       }
     };
-    manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myModel), this.myContext, handler, false);
-    return new GenerationResult(this.myNode, this.myContext, this.myModel, handler);
+    boolean successful = manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myModel), this.myContext, handler, false);
+    return new GenerationResult(this.myNode, this.myContext, this.myModel, handler, successful);
   }
 
   public void addLanguageStructureModel(final Language language) {

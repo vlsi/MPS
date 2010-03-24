@@ -160,13 +160,17 @@ public class EvaluationDialog extends BaseDialog {
       }
       classpaths.add(new JarFileClassPathItem(PathManager.getHomePath() + NameUtil.pathFromNamespace(".lib.tools.") + "tools.jar"));
       final GenerationResult generationResult = this.myEditor.generate(classpaths);
-      String fqName = generationResult.getModelDescriptor().getLongName() + ".EvaluatorInstance";
-      ClassLoader loader = generationResult.getLoader(this.myUiState.getClass().getClassLoader());
-      Class<?> aClass = Class.forName(fqName, true, loader);
-      Evaluator evaluator = (Evaluator) aClass.getConstructor(DebugSession.UiState.class).newInstance(this.myUiState);
-      ValueProxy resultProxy = evaluator.evaluate();
-      this.myUiState = this.myDebugSession.refresh();
-      this.myTree.setResultProxy(resultProxy);
+      if (generationResult.isSuccessful()) {
+        String fqName = generationResult.getModelDescriptor().getLongName() + ".EvaluatorInstance";
+        ClassLoader loader = generationResult.getLoader(this.myUiState.getClass().getClassLoader());
+        Class<?> aClass = Class.forName(fqName, true, loader);
+        Evaluator evaluator = (Evaluator) aClass.getConstructor(DebugSession.UiState.class).newInstance(this.myUiState);
+        ValueProxy resultProxy = evaluator.evaluate();
+        this.myUiState = this.myDebugSession.refresh();
+        this.myTree.setResultProxy(resultProxy);
+      } else {
+        this.myTree.setUnsuccessful();
+      }
       this.myTree.rebuildNow();
     } catch (Throwable t) {
       t.printStackTrace();
@@ -182,6 +186,7 @@ public class EvaluationDialog extends BaseDialog {
 
   private static class MyTree extends MPSTree {
     private ValueProxy myValueProxy;
+    private boolean myIsSuccessful = true;
 
     public MyTree() {
       super();
@@ -190,13 +195,23 @@ public class EvaluationDialog extends BaseDialog {
 
     public void setResultProxy(ValueProxy valueProxy) {
       this.myValueProxy = valueProxy;
+      this.myIsSuccessful = true;
+    }
+
+    public void setUnsuccessful() {
+      this.myIsSuccessful = false;
+      this.myValueProxy = null;
     }
 
     @Override
     protected MPSTreeNode rebuild() {
       MPSTreeNode rootTreeNode = new TextTreeNode("Evaluation Result");
-      if (this.myValueProxy != null) {
+      if (this.myValueProxy != null && this.myIsSuccessful) {
         rootTreeNode.add(new CalculatedValueTreeNode(this.myValueProxy.getJDIValue()));
+      }
+      if (!(this.myIsSuccessful)) {
+        rootTreeNode.add(new TextTreeNode("bad code"));
+        // todo set error icon 
       }
       this.setRootVisible(false);
       this.setShowsRootHandles(true);
