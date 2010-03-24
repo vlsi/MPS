@@ -2,22 +2,53 @@ package jetbrains.mps.stubs;
 
 import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.ModelUpdater;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.vfs.IFile;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
   private List<StubPath> myStubPaths;
   private boolean myNeedsReloading = true;
   private String myManagerClass;
 
+  private final Object myUpdatersLock = new Object();
+  private Set<ModelUpdater> myUpdaters = new HashSet<ModelUpdater>();
+
   public BaseStubModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
     super(manager, modelFile, modelReference);
     updateManagerId();
+  }
+
+  protected SModel loadModel() {
+    SModel model = super.loadModel();
+    updateAfterLoad(model);
+    return model;
+  }
+
+  //must be called only under loading lock
+  private void updateAfterLoad(SModel model) {
+    synchronized (myUpdatersLock) {
+      Set<ModelUpdater> updCopy = new HashSet<ModelUpdater>(myUpdaters);
+      for (ModelUpdater updater : updCopy) {
+        updater.updateModel(this, model);
+      }
+    }
+  }
+
+  public void addModelUpdater(ModelUpdater updater) {
+    synchronized (myUpdatersLock) {
+      myUpdaters.add(updater);
+    }
+  }
+
+  public void removeModelUpdater(ModelUpdater updater) {
+    synchronized (myUpdatersLock) {
+      myUpdaters.remove(updater);
+    }
   }
 
   public void addStubPath(StubPath sp) {

@@ -39,7 +39,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   private ModelUpdater myInitializationListener = new ModelUpdater() {
     public void updateModel(DefaultSModelDescriptor sm, SModel model) {
       updateModelInLoadingState(sm, model);
-      sm.removeModelUpdater(this);
+      ((BaseStubModelDescriptor)sm).removeModelUpdater(this);
       myDescriptorsWithListener.remove(sm);
     }
   };
@@ -127,7 +127,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   public final void dispose() {
     for (DefaultSModelDescriptor sm : myDescriptorsWithListener) {
-      sm.removeModelUpdater(myInitializationListener);
+      ((BaseStubModelDescriptor) sm).removeModelUpdater(myInitializationListener);
     }
   }
 

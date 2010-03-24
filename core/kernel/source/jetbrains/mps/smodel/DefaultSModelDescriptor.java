@@ -56,12 +56,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   //it should be possible to add listeners from any thread so we use lock here
   //access to other fields is synchronized with ModelAccess
   private final Object myListenersLock = new Object();
-  private final Object myUpdatersLock = new Object();
-
   private Set<SModelListener> myWeakModelListeners = new WeakSet<SModelListener>();
   private Set<SModelListener> myModelListeners = new HashSet<SModelListener>(0);
   private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
-  private Set<ModelUpdater> myUpdaters = new HashSet<ModelUpdater>();
 
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange;
@@ -93,9 +90,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   protected SModel loadModel() {
-    SModel model = myModelRootManager.loadModel(this);
-    updateAfterLoad(model);
-    return model;
+    return myModelRootManager.loadModel(this);
   }
 
   public void reloadFromDiskSafe() {
@@ -191,28 +186,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       result.fireModelInitialized();
     }
     return result;
-  }
-
-  //must be called only under loading lock
-  private void updateAfterLoad(SModel model) {
-    synchronized (myUpdatersLock) {
-      Set<ModelUpdater> updCopy = new HashSet<ModelUpdater>(myUpdaters);
-      for (ModelUpdater updater : updCopy) {
-        updater.updateModel(this, model);
-      }
-    }
-  }
-
-  public void addModelUpdater(ModelUpdater updater) {
-    synchronized (myUpdatersLock) {
-      myUpdaters.add(updater);
-    }
-  }
-
-  public void removeModelUpdater(ModelUpdater updater) {
-    synchronized (myUpdatersLock) {
-      myUpdaters.remove(updater);
-    }
   }
 
   private void doPostLoadStuff() {
