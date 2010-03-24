@@ -14,6 +14,9 @@ import java.util.List;
  */
 public class MirrorUtil {
   public static Value getJDIValueFromRaw(Object value, VirtualMachine vm) {
+    if (value == null) {
+      return null;
+    }
     if (value instanceof Integer) {
       return vm.mirrorOf(((Integer) value).intValue());
     } else if (value instanceof Byte) {
@@ -77,6 +80,9 @@ public class MirrorUtil {
   }
 
   public static ValueProxy getValueProxy(Value v, ThreadReference threadReference) {
+    if (v == null) {
+      return new NullValueProxy(threadReference);
+    }
     if (v instanceof ObjectReference) {
       return new ObjectValueProxy((ObjectReference) v, threadReference);
     } else if (v instanceof PrimitiveValue) {
