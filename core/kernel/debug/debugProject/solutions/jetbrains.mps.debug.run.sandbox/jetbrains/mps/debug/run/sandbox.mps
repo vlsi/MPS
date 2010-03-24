@@ -23,7 +23,7 @@
     <property name="name:3" value="Main" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="4210312560528450747">
       <property name="name:3" value="myI" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4210312560528450748" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="593670222062213380" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="4210312560528450751" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4210312560528450743">

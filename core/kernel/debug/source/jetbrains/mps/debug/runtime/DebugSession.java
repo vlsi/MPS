@@ -78,7 +78,7 @@ public class DebugSession {
   public void showEvaluationDialog(IOperationContext operationContext) {
     DebugSession.UiState state = getUiState();
     if (state.isPausedOnBreakpoint()) {
-      EvaluationDialog evaluationDialog = new EvaluationDialog(operationContext, state);
+      EvaluationDialog evaluationDialog = new EvaluationDialog(operationContext, state, this);
       evaluationDialog.showDialog();
     }
   }
@@ -106,6 +106,13 @@ public class DebugSession {
   private void pause(SuspendContext suspendContext) {
     DebugSession.UiState state = getUiState();
     setState(state, state.paused(suspendContext));
+  }
+
+  public UiState refresh() {
+    DebugSession.UiState state = getUiState();
+    DebugSession.UiState newState = state.paused(state.getContext());
+    setState(state, newState);
+    return newState;
   }
 
   private void resume(SuspendContext suspendContext) {

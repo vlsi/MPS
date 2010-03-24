@@ -61,12 +61,14 @@ public class EvaluationDialog extends BaseDialog {
   private Set<Language> myLanguages = new HashSet<Language>();
   private SNode myNode;
   private DebugSession.UiState myUiState;
+  private DebugSession myDebugSession;
   private Map<SNode, List<LocalVariable>> myNodesToVarsMap = new HashMap<SNode, List<LocalVariable>>();
 
-  public EvaluationDialog(final IOperationContext context, DebugSession.UiState uiState) {
+  public EvaluationDialog(final IOperationContext context, DebugSession.UiState uiState, DebugSession debugSession) {
     super(context.getMainFrame(), "Evaluate");
     this.myContext = context;
     this.myUiState = uiState;
+    this.myDebugSession = debugSession;
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
     StackFrame stackFrame = uiState.getStackFrame();
@@ -163,6 +165,7 @@ public class EvaluationDialog extends BaseDialog {
       Class<?> aClass = Class.forName(fqName, true, loader);
       Evaluator evaluator = (Evaluator) aClass.getConstructor(DebugSession.UiState.class).newInstance(this.myUiState);
       ValueProxy resultProxy = evaluator.evaluate();
+      this.myUiState = this.myDebugSession.refresh();
       this.myTree.setResultProxy(resultProxy);
       this.myTree.rebuildNow();
     } catch (Throwable t) {
