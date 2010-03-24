@@ -27,24 +27,30 @@ import java.util.*;
 public class DefaultFastNodeFinder implements FastNodeFinder {
   private final Object myLock = new Object();
 
+  private SModel myModel;
   private SModelDescriptor myModelDescriptor;
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
 
   private Map<String, Set<SNode>> myNodes = new HashMap<String, Set<SNode>>();
 
-  public DefaultFastNodeFinder(SModelDescriptor modelDescriptor) {
-    myModelDescriptor = modelDescriptor;
+  public DefaultFastNodeFinder(SModel model) {
+    myModel = model;
+    myModelDescriptor = model.getModelDescriptor();
     myModelDescriptor.addModelListener(myListener);
   }
 
   @Override
   public void dispose() {
+    synchronized (myLock) {
+      myInitialized = false;
+      myNodes.clear();
+    }
     myModelDescriptor.removeModelListener(myListener);
   }
 
   private void initCache() {
-    for (SNode root : myModelDescriptor.getSModel().getRoots()) {
+    for (SNode root : myModel.getRoots()) {
       addToCache(root);
     }
     myInitialized = true;
@@ -176,6 +182,13 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
         myNodes.clear();
       }
     }
+
+    @Override
+    public void beforeModelDisposed(SModel sm) {
+      synchronized (myLock) {
+        myInitialized = false;
+        myNodes.clear();
+      }
+    }
   }
 }
-

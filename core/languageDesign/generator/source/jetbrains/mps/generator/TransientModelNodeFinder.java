@@ -2,10 +2,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.util.FlattenIterable;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
@@ -16,13 +13,13 @@ import java.util.*;
 public class TransientModelNodeFinder implements FastNodeFinder {
   private final Object myLock = new Object();
 
-  private SModelDescriptor myModelDescriptor;
+  private SModel myModel;
   private boolean myInitialized;
 
   private Map<String, List<SNode>> myNodes = new HashMap<String, List<SNode>>();
 
-  public TransientModelNodeFinder(SModelDescriptor modelDescriptor) {
-    myModelDescriptor = modelDescriptor;
+  public TransientModelNodeFinder(SModel model) {
+    myModel = model;
   }
 
   @Override
@@ -30,7 +27,7 @@ public class TransientModelNodeFinder implements FastNodeFinder {
   }
 
   private void initCache() {
-    for (SNode root : myModelDescriptor.getSModel().getRoots()) {
+    for (SNode root : myModel.getRoots()) {
       addToCache(root);
     }
     myInitialized = true;

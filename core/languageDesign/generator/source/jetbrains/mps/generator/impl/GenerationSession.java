@@ -241,7 +241,7 @@ public class GenerationSession {
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
       currentInputModel.setLoading(false);
-      currentInputModel.getModelDescriptor().disposeFastNodeFinder();
+      currentInputModel.disposeFastNodeFinder();
       tracer.startTracing(currentInputModel, transientModel);
       if (!applyRules(currentInputModel, transientModel, false, ruleManager)) {
         // nothing has been generated
@@ -401,7 +401,7 @@ public class GenerationSession {
         }
         SModelRepository.getInstance().removeModelDescriptor(md);
       }
-      md.disposeFastNodeFinder();
+      model.disposeFastNodeFinder();
       ttrace.pop();
     }
   }

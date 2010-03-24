@@ -100,10 +100,6 @@ public interface SModelDescriptor {
 
   boolean hasLanguage(Language language);
 
-  FastNodeFinder getFastNodeFinder();
-
-  void disposeFastNodeFinder();
-
   long timestamp();
 
   long fileTimestamp();

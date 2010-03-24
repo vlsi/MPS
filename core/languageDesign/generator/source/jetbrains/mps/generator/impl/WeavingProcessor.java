@@ -26,7 +26,7 @@ public class WeavingProcessor {
   public WeavingProcessor(TemplateGenerator generator) {
     myGenerator = generator;
     myGenerationTracer = myGenerator.getGenerationTracer();
-    myFastNodeFinder = myGenerator.getInputModel().getModelDescriptor().getFastNodeFinder();
+    myFastNodeFinder = myGenerator.getInputModel().getFastNodeFinder();
   }
 
   private void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template,

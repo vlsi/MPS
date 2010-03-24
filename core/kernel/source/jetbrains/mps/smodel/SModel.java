@@ -58,6 +58,8 @@ public class SModel implements Iterable<SNode> {
   private boolean myDisposed;
   private boolean myLoading;
 
+  private FastNodeFinder myFastNodeFinder;
+
   private int myMaxImportIndex;
   private List<ModuleReference> myLanguages = new ArrayList<ModuleReference>();
   private List<ModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<ModuleReference>();
@@ -1134,6 +1136,7 @@ public class SModel implements Iterable<SNode> {
     for (SNode sn : myIdToNodeMap.values()) {
       sn.dispose();
     }
+    disposeFastNodeFinder();
     myIdToNodeMap = null;
     myRoots.clear();
   }
@@ -1412,7 +1415,7 @@ public class SModel implements Iterable<SNode> {
   public List<SNode> allNodes(Condition<SNode> condition) {
     if (condition instanceof IsInstanceCondition) {
       IsInstanceCondition c = (IsInstanceCondition) condition;
-      return getModelDescriptor().getFastNodeFinder().getNodes(c.getConceptFqName(), true);
+      return getFastNodeFinder().getNodes(c.getConceptFqName(), true);
     }
 
     List<SNode> resultNodes = new ArrayList<SNode>();
@@ -1567,6 +1570,25 @@ public class SModel implements Iterable<SNode> {
     return !EqualUtil.equals(ref1.getModuleFqName(), ref2.getModuleFqName()) ||
       !EqualUtil.equals(ref1.getModuleId(), ref2.getModuleId());
   }
+
+  public synchronized FastNodeFinder getFastNodeFinder() {
+    if (myFastNodeFinder == null) {
+      myFastNodeFinder = createFastNodeFinder();
+    }
+    return myFastNodeFinder;
+  }
+
+  protected FastNodeFinder createFastNodeFinder() {
+    return new DefaultFastNodeFinder(this);
+  }
+
+  public synchronized void disposeFastNodeFinder() {
+    if(myFastNodeFinder != null) {
+      myFastNodeFinder.dispose();
+      myFastNodeFinder = null;
+    }
+  }
+
 
   private static WeakSet<SModel> ourActiveModels = new WeakSet<SModel>();
 

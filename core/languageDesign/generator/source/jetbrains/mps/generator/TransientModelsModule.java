@@ -157,14 +157,13 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   public SModelDescriptor createTransientModel(String name, String stereotype) {
     SModelFqName fqName = new SModelFqName(name, stereotype);
     DefaultSModelDescriptor result = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelReference(fqName, SModelId.generate())) {
-
-      @Override
-      protected FastNodeFinder createFastNodeFinder() {
-        return new TransientModelNodeFinder(this);
-      }
-
       protected SModel loadModel() {
-        return new SModel(getSModelReference());
+        return new SModel(getSModelReference()) {
+          @Override
+          protected FastNodeFinder createFastNodeFinder() {
+            return new TransientModelNodeFinder(this);
+          }
+        };
       }
 
       public boolean isReadOnly() {

@@ -65,7 +65,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange;
-  private FastNodeFinder myFastNodeFinder;
 
   private long myDiskTimestamp = -1;
   private boolean myIsTestRefactoringMode = false;
@@ -135,7 +134,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       final SModel oldModel = mySModel;
       mySModel = loadModel();
 
-      disposeFastNodeFinder();
       updateLastChange();
 
       doPostLoadStuff();
@@ -548,9 +546,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
     if (newModel == mySModel) return;
     if (isInitialized()) {
-      disposeFastNodeFinder();
       addListenersFromSModel();
-
       mySModel.dispose();
     }
     mySModel = newModel;
@@ -736,25 +732,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       }
     }
     return result;
-  }
-
-  public synchronized FastNodeFinder getFastNodeFinder() {
-    if (myFastNodeFinder == null) {
-      myFastNodeFinder = createFastNodeFinder();
-    }
-    return myFastNodeFinder;
-  }
-
-  protected FastNodeFinder createFastNodeFinder() {
-    return new DefaultFastNodeFinder(this);
-  }
-
-  @Override
-  public synchronized void disposeFastNodeFinder() {
-    if(myFastNodeFinder != null) {
-      myFastNodeFinder.dispose();
-      myFastNodeFinder = null;
-    }
   }
 
   private void addInstances(SNode current, AbstractConceptDeclaration concept, Set<SNode> result, IScope scope) {
