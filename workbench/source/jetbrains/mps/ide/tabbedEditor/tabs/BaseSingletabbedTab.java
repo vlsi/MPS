@@ -17,8 +17,8 @@ package jetbrains.mps.ide.tabbedEditor.tabs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.changesmanager.NodeFileStatusListener;
 import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.ide.IdeMain;
@@ -40,6 +40,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -47,7 +48,10 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
   private static final Logger LOG = Logger.getLogger(BaseSingletabbedTab.class);
 
   private SModelRepositoryListener myRepositoryListener;
-  private SModelListener myListener = new MySModelAdapter();
+
+  private SModelListener myModelListener = new MySModelAdapter();
+  private List<SModelDescriptor> myModelsWithListeners = new ArrayList<SModelDescriptor>();
+
   private EditorComponent myComponent;
   private SNodePointer myBaseNode;
   private SNodePointer myLoadableNode;
@@ -64,7 +68,8 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
   public void addListener(final Condition<SModelDescriptor> listenCondition) {
     final SModelDescriptor nodeModelDescriptor = getBaseNode().getModel().getModelDescriptor();
     if (nodeModelDescriptor != null) {
-      nodeModelDescriptor.addWeakModelListener(myListener);
+      nodeModelDescriptor.addModelListener(myModelListener);
+      myModelsWithListeners.add(nodeModelDescriptor);
     } else {
       myRepositoryListener = new MySModelRepositoryAdapter(listenCondition);
       SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
@@ -159,9 +164,13 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
       myComponent = new NodeEditorComponent(operationContext);
       myComponent.editNode(loadableNode, operationContext);
       myLoadableNode = new SNodePointer(loadableNode);
-      if (!loadableNode.getModel().hasModelListener(myListener)) {
-        loadableNode.getModel().addWeakSModelListener(myListener);
+
+      SModelDescriptor descriptor = loadableNode.getModel().getModelDescriptor();
+      if (!myModelsWithListeners.contains(descriptor)) {
+        descriptor.addModelListener(myModelListener);
+        myModelsWithListeners.add(descriptor);
       }
+
       RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).addNodeFileStatusListener(myNodeFileStatusListener);
       return true;
     }
@@ -187,64 +196,61 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     });
   }
 
-  @Override
   public void dispose() {
     RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).removeNodeFileStatusListener(myNodeFileStatusListener);
     if (myRepositoryListener != null) {
       SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
     }
-    // TODO remove model listener(s)
+    for (SModelDescriptor d : myModelsWithListeners) {
+      d.removeModelListener(myModelListener);
+    }
+    myModelsWithListeners.clear();
   }
 
   private class MySModelAdapter extends SModelAdapter {
-    @Override
     public void rootRemoved(SModelRootEvent event) {
       if (myBaseNode.getNode() == null) return;
       if (myBaseNode.getNode() == event.getRoot()) return;
-
-      if (getLoadableNode() == event.getRoot()) {
-        reinit();
-      }
+      if (getLoadableNode() != event.getRoot()) return;
+      
+      reinit();
     }
 
-    @Override
     public void rootAdded(SModelRootEvent event) {
-      if (getLoadableNode() == null && tryToLoadNode() != null) {
-        reinit();
-      }
+      if (!newNode()) return;
+      reinit();
     }
 
-    @Override
     public void referenceAdded(SModelReferenceEvent event) {
       SReference reference = event.getReference();
       INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
       if (!myClass.isInstance(referentNode)) return;
-      if (getLoadableNode() == null && tryToLoadNode() != null) {
-        reinit();
-      }
+      if (!newNode()) return;
+
+      reinit();
     }
 
-    @Override
     public void referenceRemoved(SModelReferenceEvent event) {
       SReference reference = event.getReference();
       INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
       if (!myClass.isInstance(referentNode)) return;
-      if (getLoadableNode() != null && tryToLoadNode() == null) {
-        reinit();
-      }
+      if (!newNode()) return;
+
+      reinit();
+    }
+
+    private boolean newNode() {
+      return getLoadableNode() == null && tryToLoadNode() != null;
     }
   }
 
-  @Override
   public VirtualFile getBaseNodeVirtualFile() {
     return MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
   }
 
   private class MyNodeFileStatusListener implements NodeFileStatusListener {
-    @Override
     public void fileStatusChanged(final SNode node) {
       SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-        @Override
         public SNodePointer compute() {
           return new SNodePointer(node);
         }
@@ -263,13 +269,12 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     }
 
     public void modelAdded(SModelDescriptor modelDescriptor) {
-      if (ProjectModels.isProjectModel(modelDescriptor.getSModelReference())) {
-        return;
-      }
-      if (myListenCondition.met(modelDescriptor)) {
-        modelDescriptor.addWeakModelListener(myListener);
-        SModelRepository.getInstance().removeModelRepositoryListener(this);
-      }
+      if (ProjectModels.isProjectModel(modelDescriptor.getSModelReference())) return;
+      if (!myListenCondition.met(modelDescriptor)) return;
+
+      modelDescriptor.addModelListener(myModelListener);
+      myModelsWithListeners.add(modelDescriptor);
+      SModelRepository.getInstance().removeModelRepositoryListener(this);
     }
 
     public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
@@ -278,9 +283,9 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
       SModel model = node.getModel();
       if (model == null) return;
       SModelDescriptor md = model.getModelDescriptor();
-      if (modelDescriptor.equals(md)) {
-        reinit();
-      }
+      if (!modelDescriptor.equals(md)) return;
+
+      reinit();
     }
   }
 }
