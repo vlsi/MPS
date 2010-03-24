@@ -28,7 +28,7 @@ public class StepInto_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "none F7";
+    return " F7";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
