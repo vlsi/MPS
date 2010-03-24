@@ -24,7 +24,7 @@ import java.awt.event.MouseEvent;
 
 import com.intellij.openapi.vfs.VirtualFile;
 
-public interface ILazyTab extends Disposable {
+public interface ILazyTab {
   String getTitle();
 
   String getNullText();
@@ -50,4 +50,6 @@ public interface ILazyTab extends Disposable {
   void selectTab(int index);
 
   VirtualFile getBaseNodeVirtualFile();
+
+  void dispose();
 }
