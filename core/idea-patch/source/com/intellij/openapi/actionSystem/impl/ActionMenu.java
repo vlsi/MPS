@@ -16,33 +16,33 @@
 package com.intellij.openapi.actionSystem.impl;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.wm.StatusBar;
 import com.intellij.openapi.wm.impl.IdeFrameImpl;
 import com.intellij.ui.plaf.beg.IdeaMenuUI;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.util.annotation.Patch;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 import javax.swing.plaf.MenuItemUI;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Component;
+import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 public final class ActionMenu extends JMenu {
   private final String myPlace;
   private DataContext myContext;
+
   private final ActionGroup myGroup;
+  //patch
+  private final String myGroupId;
+
   private final PresentationFactory myPresentationFactory;
   private final Presentation myPresentation;
   /**
@@ -61,7 +61,14 @@ public final class ActionMenu extends JMenu {
   public ActionMenu(DataContext context, String place, ActionGroup group, PresentationFactory presentationFactory, final boolean enableMnemonics) {
     myContext = context;
     myPlace = place;
-    myGroup = group;
+    //patch
+    if (group instanceof GeneratedActionGroup) {
+      myGroupId = ActionManager.getInstance().getId(group);
+      myGroup = null;
+    } else {
+      myGroup = group;
+      myGroupId = null;
+    }
     myPresentationFactory = presentationFactory;
     myPresentation = myPresentationFactory.getPresentation(group);
     myMnemonicEnabled = enableMnemonics;
@@ -69,49 +76,46 @@ public final class ActionMenu extends JMenu {
     init();
 
     // addNotify won't be called for menus in MacOS system menu
-    if (SystemInfo.isMacSystemMenu) {
-      //this is a patch - without it, actions are not reloaded
-      this.addMenuListener(new MenuListener() {
-        public void menuSelected(MenuEvent e) {
-          installSynchronizer();
-        }
+    //patch
+    //without it, actions are not reloaded
+    this.addMenuListener(new MenuListener() {
+      public void menuSelected(MenuEvent e) {
+        installSynchronizer();
+      }
 
-        public void menuDeselected(MenuEvent e) {
-          removeSynchronizer();
-        }
+      public void menuDeselected(MenuEvent e) {
+        removeSynchronizer();
+      }
 
-        public void menuCanceled(MenuEvent e) {
-        }
-      });
+      public void menuCanceled(MenuEvent e) {
+      }
+    });
+  }
 
-    }
+  //patch
+
+  private ActionGroup getGroup() {
+    if (myGroup != null) return myGroup;
+    return ((ActionGroup) ActionManager.getInstance().getAction(myGroupId));
   }
 
   public void updateContext(DataContext context) {
     myContext = context;
   }
 
-  public void addNotify() {
-    super.addNotify();
-    installSynchronizer();
-  }
-
   private void installSynchronizer() {
     if (myMenuItemSynchronizer == null) {
       myMenuItemSynchronizer = new MenuItemSynchronizer();
-      myGroup.addPropertyChangeListener(myMenuItemSynchronizer);
+      //patch
+      getGroup().addPropertyChangeListener(myMenuItemSynchronizer);
       myPresentation.addPropertyChangeListener(myMenuItemSynchronizer);
     }
   }
 
-  public void removeNotify() {
-    removeSynchronizer();
-    super.removeNotify();
-  }
-
   private void removeSynchronizer() {
     if (myMenuItemSynchronizer != null) {
-      myGroup.removePropertyChangeListener(myMenuItemSynchronizer);
+      //patch
+      getGroup().removePropertyChangeListener(myMenuItemSynchronizer);
       myPresentation.removePropertyChangeListener(myMenuItemSynchronizer);
       myMenuItemSynchronizer = null;
     }
@@ -119,13 +123,12 @@ public final class ActionMenu extends JMenu {
 
   public void updateUI() {
     JPopupMenu popupMenu = getPopupMenu();
-    if (popupMenu != null) {                         
+    if (popupMenu != null) {
       popupMenu.updateUI();
     }
     if (UIUtil.isStandardMenuLAF()) {
-      setUI((MenuItemUI)UIManager.getUI(this));
-    }
-    else {
+      setUI((MenuItemUI) UIManager.getUI(this));
+    } else {
       setUI(IdeaMenuUI.createUI(this));
       setFont(UIUtil.getMenuFont());
     }
@@ -174,8 +177,7 @@ public final class ActionMenu extends JMenu {
     setIcon(icon);
     if (presentation.getDisabledIcon() != null) {
       setDisabledIcon(presentation.getDisabledIcon());
-    }
-    else {
+    } else {
       setDisabledIcon(IconLoader.getDisabledIcon(icon));
     }
   }
@@ -186,14 +188,13 @@ public final class ActionMenu extends JMenu {
   }
 
   public static void showDescriptionInStatusBar(boolean isIncluded, Component component, String description) {
-    IdeFrameImpl frame = component instanceof IdeFrameImpl ? (IdeFrameImpl)component :
-                         (IdeFrameImpl)SwingUtilities.getAncestorOfClass(IdeFrameImpl.class, component);
+    IdeFrameImpl frame = component instanceof IdeFrameImpl ? (IdeFrameImpl) component :
+      (IdeFrameImpl) SwingUtilities.getAncestorOfClass(IdeFrameImpl.class, component);
     if (frame != null) {
       StatusBar statusBar = frame.getStatusBar();
       if (isIncluded) {
         statusBar.setInfo(description);
-      }
-      else {
+      } else {
         statusBar.setInfo(null);
       }
     }
@@ -221,10 +222,9 @@ public final class ActionMenu extends JMenu {
     if (SystemInfo.isMacSystemMenu && myPlace == ActionPlaces.MAIN_MENU) {
       for (Component menuComponent : getMenuComponents()) {
         if (menuComponent instanceof ActionMenu) {
-          ((ActionMenu)menuComponent).clearItems();
-        }
-        else if (menuComponent instanceof ActionMenuItem) {
-          ((ActionMenuItem)menuComponent).setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F24, 0));
+          ((ActionMenu) menuComponent).clearItems();
+        } else if (menuComponent instanceof ActionMenuItem) {
+          ((ActionMenuItem) menuComponent).setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F24, 0));
         }
       }
     }
@@ -235,7 +235,8 @@ public final class ActionMenu extends JMenu {
 
   private void fillMenu() {
     DataContext context = myContext != null ? myContext : DataManager.getInstance().getDataContext();
-    Utils.fillMenu(myGroup, this, myMnemonicEnabled, myPresentationFactory, context, myPlace, true);
+    //patch
+    Utils.fillMenu(getGroup(), this, myMnemonicEnabled, myPresentationFactory, context, myPlace, true);
   }
 
   private class MenuItemSynchronizer implements PropertyChangeListener {
@@ -246,20 +247,15 @@ public final class ActionMenu extends JMenu {
         if (SystemInfo.isMacSystemMenu && myPlace == ActionPlaces.MAIN_MENU) {
           validateTree();
         }
-      }
-      else if (Presentation.PROP_ENABLED.equals(name)) {
+      } else if (Presentation.PROP_ENABLED.equals(name)) {
         setEnabled(myPresentation.isEnabled());
-      }
-      else if (Presentation.PROP_MNEMONIC_KEY.equals(name)) {
+      } else if (Presentation.PROP_MNEMONIC_KEY.equals(name)) {
         setMnemonic(myPresentation.getMnemonic());
-      }
-      else if (Presentation.PROP_MNEMONIC_INDEX.equals(name)) {
+      } else if (Presentation.PROP_MNEMONIC_INDEX.equals(name)) {
         setDisplayedMnemonicIndex(myPresentation.getDisplayedMnemonicIndex());
-      }
-      else if (Presentation.PROP_TEXT.equals(name)) {
+      } else if (Presentation.PROP_TEXT.equals(name)) {
         setText(myPresentation.getText());
-      }
-      else if (Presentation.PROP_ICON.equals(name) || Presentation.PROP_DISABLED_ICON.equals(name)) {
+      } else if (Presentation.PROP_ICON.equals(name) || Presentation.PROP_DISABLED_ICON.equals(name)) {
         updateIcon();
       }
     }
