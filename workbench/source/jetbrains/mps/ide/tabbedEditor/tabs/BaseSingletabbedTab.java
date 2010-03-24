@@ -66,28 +66,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     if (nodeModelDescriptor != null) {
       nodeModelDescriptor.addWeakModelListener(myListener);
     } else {
-      myRepositoryListener = new SModelRepositoryAdapter() {
-        public void modelAdded(SModelDescriptor modelDescriptor) {
-          if (ProjectModels.isProjectModel(modelDescriptor.getSModelReference())) {
-            return;
-          }
-          if (listenCondition.met(modelDescriptor)) {
-            modelDescriptor.addWeakModelListener(myListener);
-            SModelRepository.getInstance().removeModelRepositoryListener(this);
-          }
-        }
-
-        public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
-          SNode node = getLoadableNode();
-          if (node == null) return;
-          SModel model = node.getModel();
-          if (model == null) return;
-          SModelDescriptor md = model.getModelDescriptor();
-          if (modelDescriptor.equals(md)) {
-            reinit();
-          }
-        }
-      };
+      myRepositoryListener = new MySModelRepositoryAdapter(listenCondition);
       SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
     }
   }
@@ -212,7 +191,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
   public void dispose() {
     RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).removeNodeFileStatusListener(myNodeFileStatusListener);
     if (myRepositoryListener != null) {
-      SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
+      SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
     }
     // TODO remove model listener(s)
   }
@@ -272,6 +251,35 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
       });
       if (EqualUtil.equals(myLoadableNode, nodePointer)) {
         myTabbedEditor.updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
+      }
+    }
+  }
+
+  private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
+    private final Condition<SModelDescriptor> myListenCondition;
+
+    public MySModelRepositoryAdapter(Condition<SModelDescriptor> listenCondition) {
+      myListenCondition = listenCondition;
+    }
+
+    public void modelAdded(SModelDescriptor modelDescriptor) {
+      if (ProjectModels.isProjectModel(modelDescriptor.getSModelReference())) {
+        return;
+      }
+      if (myListenCondition.met(modelDescriptor)) {
+        modelDescriptor.addWeakModelListener(myListener);
+        SModelRepository.getInstance().removeModelRepositoryListener(this);
+      }
+    }
+
+    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+      SNode node = getLoadableNode();
+      if (node == null) return;
+      SModel model = node.getModel();
+      if (model == null) return;
+      SModelDescriptor md = model.getModelDescriptor();
+      if (modelDescriptor.equals(md)) {
+        reinit();
       }
     }
   }
