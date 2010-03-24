@@ -13,10 +13,15 @@
   <import index="1" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.debug.evaluation.structure.EvaluatorConcept" id="6036237525966596606">
-    <node role="evaluatedExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2714803958285229380">
-      <node role="operand:3" type="jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression" id="2714803958285229379" />
-      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2714803958285229384">
-        <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.getClass():java.lang.Class" resolveInfo="getClass" />
+    <node role="evaluatedExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="148290935931352225">
+      <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="148290935931352228">
+        <property name="value:3" value="hello" />
+      </node>
+      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2714803958285229380">
+        <node role="operand:3" type="jetbrains.mps.debug.evaluation.structure.EvaluatorsThisExpression" id="2714803958285229379" />
+        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2714803958285229384">
+          <link role="baseMethodDeclaration:3" targetNodeId="2v.~Object.getClass():java.lang.Class" resolveInfo="getClass" />
+        </node>
       </node>
     </node>
     <node role="thisType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1620955434532134776">
