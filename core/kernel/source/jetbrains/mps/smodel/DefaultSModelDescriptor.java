@@ -94,7 +94,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   protected SModel loadModel() {
-    return myModelRootManager.loadModel(this);
+    SModel model = myModelRootManager.loadModel(this);
+    updateAfterLoad(model);
+    return model;
   }
 
   public void reloadFromDiskSafe() {
@@ -182,7 +184,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     synchronized (myLoadingLock) {
       if (mySModel == null) {
         mySModel = loadModel();
-        updateAfterCreation(mySModel);
         doPostLoadStuff();
         fireInitialized = true;
       }
@@ -195,7 +196,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   //must be called only under loading lock
-  private void updateAfterCreation(SModel model) {
+  private void updateAfterLoad(SModel model) {
     synchronized (myUpdatersLock) {
       Set<ModelUpdater> updCopy = new HashSet<ModelUpdater>(myUpdaters);
       for (ModelUpdater updater : updCopy) {
