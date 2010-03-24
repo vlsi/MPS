@@ -4045,7 +4045,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076036">
     <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
-    <property name="name:0" value="ExecuteActions" />
+    <property name="name:0" value="ParametrizedExecuteActions" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3256691185935764580">
       <property name="value:0" value="put execute actions" />
@@ -4054,7 +4054,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076037">
     <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
-    <property name="name:0" value="ExecuteConsole" />
+    <property name="name:0" value="ParametrizedExecuteConsole" />
     <link role="extends:0" targetNodeId="3636700473138833152:23" resolveInfo="ParametrizedExecuteConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3256691185935764579">
       <property name="value:0" value="create console" />
@@ -4067,7 +4067,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1110842925895076038">
     <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
-    <property name="name:0" value="ExecuteProcess" />
+    <property name="name:0" value="ParametrizedExecuteProcess" />
     <link role="extends:0" targetNodeId="3636700473138833152:23" resolveInfo="ParametrizedExecuteConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3256691185935764587">
       <property name="value:0" value="create process" />

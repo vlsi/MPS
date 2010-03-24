@@ -54,27 +54,27 @@ public class ParametrizedExecuteBlock extends BaseConcept implements IExecuteCon
     super.setChild(ParametrizedExecuteBlock.EXECUTE_PARAMETER_QUERY, node);
   }
 
-  public ExecuteActions getExecuteActions() {
-    return (ExecuteActions) this.getChild(ExecuteActions.class, ParametrizedExecuteBlock.EXECUTE_ACTIONS);
+  public ParametrizedExecuteActions getExecuteActions() {
+    return (ParametrizedExecuteActions) this.getChild(ParametrizedExecuteActions.class, ParametrizedExecuteBlock.EXECUTE_ACTIONS);
   }
 
-  public void setExecuteActions(ExecuteActions node) {
+  public void setExecuteActions(ParametrizedExecuteActions node) {
     super.setChild(ParametrizedExecuteBlock.EXECUTE_ACTIONS, node);
   }
 
-  public ExecuteConsole getExecuteConsole() {
-    return (ExecuteConsole) this.getChild(ExecuteConsole.class, ParametrizedExecuteBlock.EXECUTE_CONSOLE);
+  public ParametrizedExecuteConsole getExecuteConsole() {
+    return (ParametrizedExecuteConsole) this.getChild(ParametrizedExecuteConsole.class, ParametrizedExecuteBlock.EXECUTE_CONSOLE);
   }
 
-  public void setExecuteConsole(ExecuteConsole node) {
+  public void setExecuteConsole(ParametrizedExecuteConsole node) {
     super.setChild(ParametrizedExecuteBlock.EXECUTE_CONSOLE, node);
   }
 
-  public ExecuteProcess getExecuteProcess() {
-    return (ExecuteProcess) this.getChild(ExecuteProcess.class, ParametrizedExecuteBlock.EXECUTE_PROCESS);
+  public ParametrizedExecuteProcess getExecuteProcess() {
+    return (ParametrizedExecuteProcess) this.getChild(ParametrizedExecuteProcess.class, ParametrizedExecuteBlock.EXECUTE_PROCESS);
   }
 
-  public void setExecuteProcess(ExecuteProcess node) {
+  public void setExecuteProcess(ParametrizedExecuteProcess node) {
     super.setChild(ParametrizedExecuteBlock.EXECUTE_PROCESS, node);
   }
 
