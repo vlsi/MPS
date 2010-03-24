@@ -21,17 +21,17 @@ public class typeof_TemplateDeclarationReference_InferenceRule extends AbstractI
   public typeof_TemplateDeclarationReference_InferenceRule() {
   }
 
-  public void applyRule(final SNode templateReference, final TypeCheckingContext typeCheckingContext) {
-    SNode rule = SNodeOperations.getAncestor(templateReference, "jetbrains.mps.lang.generator.structure.BaseMappingRule", false, false);
+  public void applyRule(final SNode templateDeclRef, final TypeCheckingContext typeCheckingContext) {
+    SNode rule = SNodeOperations.getAncestor(templateDeclRef, "jetbrains.mps.lang.generator.structure.BaseMappingRule", false, false);
     if (rule != null) {
-      SNode templateApplicableConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(templateReference, "template", false), "applicableConcept", false);
+      SNode templateApplicableConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(templateDeclRef, "template", false), "applicableConcept", false);
       SNode ruleApplicableConcept = SLinkOperations.getTarget(rule, "applicableConcept", false);
       if (ruleApplicableConcept != null && templateApplicableConcept != null) {
         if (!(SConceptOperations.isSubConceptOf(ruleApplicableConcept, NameUtil.nodeFQName(templateApplicableConcept)))) {
           {
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(templateReference, "template is not applicable to the rule concept '" + SPropertyOperations.getString(ruleApplicableConcept, "name") + "'", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1183153489205", intentionProvider, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(templateDeclRef, "template is not applicable to the rule concept '" + SPropertyOperations.getString(ruleApplicableConcept, "name") + "'", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1722980698497666436", intentionProvider, errorTarget);
           }
         }
       }

@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -23,6 +24,13 @@ public class TemplateDeclarationReference_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_krqspc_a");
     editorCell.addEditorCell(this.createRefCell_krqspc_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_krqspc_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_krqspc_b0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ITemplateCall_actualArguments(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 

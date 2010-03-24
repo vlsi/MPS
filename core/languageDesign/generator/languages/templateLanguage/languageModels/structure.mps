@@ -1063,10 +1063,8 @@
     <property name="name:0" value="TemplateDeclarationReference" />
     <property name="package:0" value="rule.consequence" />
     <link role="extends:0" targetNodeId="1168559098955:2" resolveInfo="RuleConsequence" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1168559393589">
-      <property name="role:0" value="template" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="1092059087312:2" resolveInfo="TemplateDeclaration" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1722980698497626404">
+      <link role="intfc:0" targetNodeId="1722980698497626400:2" resolveInfo="ITemplateCall" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168559512253">
@@ -1618,6 +1616,24 @@
       <property name="role:0" value="conditionFunction" />
       <property name="sourceCardinality:0" value="0..1" />
       <link role="target:0" targetNodeId="1167168920554:2" resolveInfo="BaseMappingRule_Condition" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1722980698497626400">
+    <property name="package:0" value="rule.consequence" />
+    <property name="name:0" value="ITemplateCall" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1722980698497626483">
+      <property name="role:0" value="template" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1092059087312:2" resolveInfo="TemplateDeclaration" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1722980698497626405">
+      <property name="sourceCardinality:0" value="0..n" />
+      <property name="role:0" value="actualArgument" />
+      <property name="metaClass:0" value="aggregation" />
+      <link role="target:0" targetNodeId="6.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="extends:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1722980698497626401">
+      <link role="intfc:0" targetNodeId="6.1201183863028:3" resolveInfo="TypeDerivable" />
     </node>
   </node>
 </model>
