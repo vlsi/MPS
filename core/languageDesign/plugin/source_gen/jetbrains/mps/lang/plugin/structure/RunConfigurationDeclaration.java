@@ -29,6 +29,7 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   public static final String EXECUTE_BLOCK = "executeBlock";
   public static final String PROPERTY = "property";
   public static final String EXECUTION_PARAMETER = "executionParameter";
+  public static final String METHOD_DECLARATION = "methodDeclaration";
 
   public RunConfigurationDeclaration(SNode node) {
     super(node);
@@ -168,6 +169,26 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
 
   public void insertExecutionParameter(RunConfigExecutionParameterDeclaration prev, RunConfigExecutionParameterDeclaration node) {
     this.insertChild(prev, RunConfigurationDeclaration.EXECUTION_PARAMETER, node);
+  }
+
+  public int getMethodDeclarationsCount() {
+    return this.getChildCount(RunConfigurationDeclaration.METHOD_DECLARATION);
+  }
+
+  public Iterator<RunConfigurationMethodDeclaration> methodDeclarations() {
+    return this.children(RunConfigurationMethodDeclaration.class, RunConfigurationDeclaration.METHOD_DECLARATION);
+  }
+
+  public List<RunConfigurationMethodDeclaration> getMethodDeclarations() {
+    return this.getChildren(RunConfigurationMethodDeclaration.class, RunConfigurationDeclaration.METHOD_DECLARATION);
+  }
+
+  public void addMethodDeclaration(RunConfigurationMethodDeclaration node) {
+    this.addChild(RunConfigurationDeclaration.METHOD_DECLARATION, node);
+  }
+
+  public void insertMethodDeclaration(RunConfigurationMethodDeclaration prev, RunConfigurationMethodDeclaration node) {
+    this.insertChild(prev, RunConfigurationDeclaration.METHOD_DECLARATION, node);
   }
 
   public static RunConfigurationDeclaration newInstance(SModel sm, boolean init) {

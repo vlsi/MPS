@@ -5843,6 +5843,15 @@
         <property name="noTargetText:32" value="execute block" />
         <link role="relationDeclaration:32" targetNodeId="1.678887849223472885:23" />
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5334136372059563175" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="5334136372059563177">
+        <link role="relationDeclaration:32" targetNodeId="1.5334136372059561350:23" />
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="5334136372059563178" />
+        <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5334136372059563179">
+          <property name="text:32" value="&lt;additional methods&gt;" />
+          <link role="styleClass:32" targetNodeId="17.1198594875276" resolveInfo="Comment" />
+        </node>
+      </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="6629582826328966219" />
     </node>
   </node>

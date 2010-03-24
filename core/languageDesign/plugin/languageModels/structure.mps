@@ -2725,6 +2725,12 @@
       <property name="sourceCardinality:0" value="0..n" />
       <link role="target:0" targetNodeId="8179323502814630510:23" resolveInfo="RunConfigParameterDeclaration" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5334136372059561350">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="methodDeclaration" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="3018238135942601771:23" resolveInfo="RunConfigurationMethodDeclaration" />
+    </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="678887849223564240">
       <link role="intfc:0" targetNodeId="6.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
@@ -4137,6 +4143,11 @@
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="3636700473138841144">
     <property name="package:0" value="RunConfigs.Configuration.Execute" />
     <property name="name:0" value="IEnchancedRunConfiguration" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3018238135942601771">
+    <property name="package:0" value="RunConfigs" />
+    <property name="name:0" value="RunConfigurationMethodDeclaration" />
+    <link role="extends:0" targetNodeId="14.1205769003971:0" resolveInfo="DefaultClassifierMethodDeclaration" />
   </node>
 </model>
 
