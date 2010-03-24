@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import javax.swing.JScrollPane;
@@ -14,9 +14,12 @@ import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.awt.Dialog;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import java.util.ArrayList;
 import java.util.Collections;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -28,7 +31,7 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 public abstract class BaseChooseNodeDialog extends BaseDialog {
   private IOperationContext myContext;
   private SModelDescriptor myContextModel;
-  private List<SModelDescriptor> myVisibleModels = new ArrayList<SModelDescriptor>();
+  private Set<SModelDescriptor> myVisibleModels = new HashSet<SModelDescriptor>();
   private MPSTree myTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
       return BaseChooseNodeDialog.this.buildRootNode();
@@ -55,6 +58,12 @@ public abstract class BaseChooseNodeDialog extends BaseDialog {
 
   private void init() {
     this.myVisibleModels.add(this.myContextModel);
+    AbstractModule module = ((AbstractModule) this.myContextModel.getModule());
+    System.out.println("finding models:");
+    for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
+      System.out.println("found; " + modelDescriptor);
+      this.myVisibleModels.add(modelDescriptor);
+    }
     for (SModelReference sm : this.myContextModel.getSModel().getImportedModelUIDs()) {
       if (this.myContext.getScope().getModelDescriptor(sm) != null) {
         this.myVisibleModels.add(this.myContext.getScope().getModelDescriptor(sm));
@@ -71,8 +80,10 @@ public abstract class BaseChooseNodeDialog extends BaseDialog {
 
   private MPSTreeNode buildRootNode() {
     TextTreeNode root = new TextTreeNode("Root");
-    Collections.sort(this.myVisibleModels, new ToStringComparator());
-    for (SModelDescriptor sm : this.myVisibleModels) {
+    ArrayList<SModelDescriptor> list = new ArrayList<SModelDescriptor>();
+    list.addAll(this.myVisibleModels);
+    Collections.sort(list, new ToStringComparator());
+    for (SModelDescriptor sm : list) {
       if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
         continue;
       }
