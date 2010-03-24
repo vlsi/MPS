@@ -64,23 +64,11 @@ import java.awt.event.MouseEvent;
 import java.util.*;
 
 public abstract class BaseMultitabbedTab implements ILazyTab {
+  private SModelRepositoryListener myRepositoryListener = new MySModelRepositoryAdapter();
+  private SModelListener myModelListener = new MySModelAdapter();
+  private List<SModelDescriptor> myModelsWithListeners = new ArrayList<SModelDescriptor>();
+
   private Set<SNodePointer> myLoadableNodes = new HashSet<SNodePointer>();
-  public SModelListener myModelListener = new MySModelAdapter();
-  private SModelRepositoryListener myRepositoryListener = new SModelRepositoryAdapter() {
-    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
-      for (SNode node : getLoadableNodes()) {
-        if (node == null) continue;
-        SModel model = node.getModel();
-        if (model == null) continue;
-        SModelDescriptor md = model.getModelDescriptor();
-        if (modelDescriptor.equals(md)) {
-          SNodePointer nodePointer = new SNodePointer(node);
-          int index = getIndexOfTabFor(nodePointer);
-          closeTab(nodePointer, index);
-        }
-      }
-    }
-  };
   private SNodePointer myBaseNode;
   private JTabbedPane myInnerTabbedPane;
   private JPanel myComponent;
@@ -97,7 +85,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myClass = adapterClass;
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
     RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).
-        addNodeFileStatusListener(myNodeFileStatusListener);
+      addNodeFileStatusListener(myNodeFileStatusListener);
   }
 
   private void closeTab(SNodePointer nodePointer, int index) {
@@ -291,10 +279,13 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   @Override
   public void dispose() {
     RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).
-        removeNodeFileStatusListener(myNodeFileStatusListener);
+      removeNodeFileStatusListener(myNodeFileStatusListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
-    // TODO remove model listeners
- }
+    for (SModelDescriptor d : myModelsWithListeners) {
+      d.removeModelListener(myModelListener);
+    }
+    myModelsWithListeners.clear();
+  }
 
   private JComponent addInnerTab(SNode loadableNode, IOperationContext operationContext) {
     EditorComponent component = new NodeEditorComponent(operationContext);
@@ -306,11 +297,15 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myInnerTabbedPane.add(getTabTextForNode(loadableNode), jComponent);
     myInnerTabbedPane.setIconAt(myEditors.size() - 1, IconManager.getIconFor(loadableNode));
     ToolWindowManager.getInstance(operationContext.getProject()).getFocusManager().requestFocus(component, false);
-    SModel sModel = loadableNode.getModel();
-    if (!sModel.hasModelListener(myModelListener)) {
-      sModel.addWeakSModelListener(myModelListener);
-    }
+    SModelDescriptor d = loadableNode.getModel().getModelDescriptor();
+    addModelToListen(d);
     return jComponent;
+  }
+
+  public void addModelToListen(SModelDescriptor model) {
+    if (myModelsWithListeners.contains(model)) return;
+    myModelsWithListeners.add(model);
+    model.addModelListener(myModelListener);
   }
 
   private void updateTabColor(int tabIndex) {
@@ -378,7 +373,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     final Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
     SNode[] availableConcepts = getAvailableConceptArray();
     if (availableConcepts.length <= 1) {
-      SNode concept = (availableConcepts.length == 0)? null : availableConcepts[0];
+      SNode concept = (availableConcepts.length == 0) ? null : availableConcepts[0];
       if (!askCreate()) return;
       createLoadableNodeChecked(nodeAndContext, concept);
       setPackageAfterCreationChecked(nodeAndContext);
@@ -398,7 +393,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   public void create() {
     Component component = myTabbedEditor.getTabbedPane();
     int x = component.getWidth() / 2;
-    int y = component. getHeight() / 2;
+    int y = component.getHeight() / 2;
     createAnyone(new RelativePoint(component, new Point(x, y)));
   }
 
@@ -512,6 +507,22 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
         });
         assert index >= 0 : "tab for node not found";
         updateTabColor(index);
+      }
+    }
+  }
+
+  private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
+    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+      for (SNode node : getLoadableNodes()) {
+        if (node == null) continue;
+        SModel model = node.getModel();
+        if (model == null) continue;
+        SModelDescriptor md = model.getModelDescriptor();
+        if (!modelDescriptor.equals(md)) continue;
+
+        SNodePointer nodePointer = new SNodePointer(node);
+        int index = getIndexOfTabFor(nodePointer);
+        closeTab(nodePointer, index);
       }
     }
   }
