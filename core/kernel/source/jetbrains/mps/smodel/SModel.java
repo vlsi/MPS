@@ -46,7 +46,6 @@ public class SModel implements Iterable<SNode> {
   //access to other fields is synchronized with ModelAccess
   private final Object myListenersLock = new Object();
 
-  private Set<SModelListener> myWeakListeners = new WeakSet<SModelListener>(0);
   private Set<SModelListener> myListeners = new LinkedHashSet<SModelListener>(0);
   private Set<SModelCommandListener> myCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
 
@@ -231,35 +230,67 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  @Deprecated
-  public void addWeakSModelListener(@NotNull SModelListener listener) {
+  @NotNull
+  private List<SModelListener> copyListeners() {
     synchronized (myListenersLock) {
-      myWeakListeners.add(listener);
+      return new ArrayList<SModelListener>(myListeners);
     }
   }
 
-  public void addModelListener(@NotNull SModelListener listener) {
+  void addModelListener(@NotNull SModelListener listener) {
     synchronized (myListenersLock) {
       myListeners.add(listener);
     }
   }
 
-  public boolean hasModelListener(@NotNull SModelListener listener) {
+  boolean hasModelListener(@NotNull SModelListener listener) {
     synchronized (myListenersLock) {
-      return myWeakListeners.contains(listener) || myListeners.contains(listener);
+      return myListeners.contains(listener);
     }
   }
 
-  public boolean hasModelCommandListener(@NotNull SModelCommandListener listener) {
+  void removeModelListener(@NotNull SModelListener listener) {
+    synchronized (myListenersLock) {
+      myListeners.remove(listener);
+    }
+  }
+
+  @NotNull
+  private List<SModelCommandListener> copyCommandListeners() {
+    synchronized (myListenersLock) {
+      return new ArrayList<SModelCommandListener>(myCommandListeners);
+    }
+  }
+
+  void addModelCommandListener(@NotNull SModelCommandListener listener) {
+    synchronized (myListenersLock) {
+      myCommandListeners.add(listener);
+    }
+  }
+
+  boolean hasModelCommandListener(@NotNull SModelCommandListener listener) {
     synchronized (myListenersLock) {
       return myCommandListeners.contains(listener);
     }
   }
 
-  public void removeModelListener(@NotNull SModelListener listener) {
+  void removeModelCommandListener(@NotNull SModelCommandListener listener) {
     synchronized (myListenersLock) {
-      myWeakListeners.remove(listener);
-      myListeners.remove(listener);
+      myCommandListeners.remove(listener);
+    }
+  }
+
+  @NotNull
+  List<SModelListener> getModelListeners() {
+    synchronized (myListenersLock) {
+      return new ArrayList<SModelListener>(myListeners);
+    }
+  }
+
+  @NotNull
+  List<SModelCommandListener> getCommandListeners() {
+    synchronized (myListenersLock) {
+      return new ArrayList<SModelCommandListener>(myCommandListeners);
     }
   }
 
@@ -572,65 +603,6 @@ public class SModel implements Iterable<SNode> {
       } catch (Throwable t) {
         LOG.error(t);
       }
-    }
-  }
-
-  @NotNull
-  private List<SModelListener> copyListeners() {
-    synchronized (myListenersLock) {
-      List<SModelListener> result = new ArrayList<SModelListener>(myListeners);
-      for (SModelListener l : myWeakListeners) {
-        if (l == null) continue;
-        result.add(l);
-      }
-      return result;
-    }
-  }
-
-  @NotNull
-  private List<SModelCommandListener> copyCommandListeners() {
-    synchronized (myListenersLock) {
-      return new ArrayList<SModelCommandListener>(myCommandListeners);
-    }
-  }
-
-  public void addModelCommandListener(@NotNull SModelCommandListener listener) {
-    synchronized (myListenersLock) {
-      myCommandListeners.add(listener);
-    }
-  }
-
-  public void removeModelCommandListener(@NotNull SModelCommandListener listener) {
-    synchronized (myListenersLock) {
-      myCommandListeners.remove(listener);
-    }
-  }
-
-  @NotNull
-  List<SModelListener> getModelListeners() {
-    synchronized (myListenersLock) {
-      return new ArrayList<SModelListener>(myListeners);
-    }
-  }
-
-  @NotNull
-  List<SModelListener> getWeakModelListeners() {
-    synchronized (myListenersLock) {
-      List<SModelListener> result = new ArrayList<SModelListener>(myWeakListeners.size());
-
-      for (SModelListener l : myWeakListeners) {
-        if (l == null) continue;
-        result.add(l);
-      }
-
-      return result;
-    }
-  }
-
-  @NotNull
-  List<SModelCommandListener> getCommandListeners() {
-    synchronized (myListenersLock) {
-      return new ArrayList<SModelCommandListener>(myCommandListeners);
     }
   }
 
@@ -1131,7 +1103,6 @@ public class SModel implements Iterable<SNode> {
     synchronized (myListenersLock) {
       myCommandListeners.clear();
       myListeners.clear();
-      myWeakListeners.clear();
     }
     for (SNode sn : myIdToNodeMap.values()) {
       sn.dispose();
