@@ -68,7 +68,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
       if (oldDescr == null) {
         repository.registerModelDescriptor(descriptor, module);
 
-        //todo how can this happen?
         if (repository.getOwners(descriptor).size() > 1) {
           LOG.warning("Loading the same stub package twice : " + descriptor.getLongName() + " from " + repository.getOwners(descriptor));
         }
@@ -89,7 +88,6 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   }
 
   @NotNull
-  //todo rename to createModel, loading in update() will be more homogenous
   public final SModel loadModel(@NotNull SModelDescriptor modelDescriptor) {
     SModel model = new SModel(modelDescriptor.getSModelReference());
 
