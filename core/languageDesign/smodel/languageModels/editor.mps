@@ -1966,6 +1966,7 @@
         <link role="relationDeclaration:32" targetNodeId="1.1182511038750:16" />
         <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="1182511109972">
           <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1182511125130">
+            <property name="readOnly:32" value="true" />
             <link role="relationDeclaration:32" targetNodeId="2.1169194664001:0" />
             <link role="styleClass:32" targetNodeId="10.1203541385314" resolveInfo="concept_reference" />
           </node>
