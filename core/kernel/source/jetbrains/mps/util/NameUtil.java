@@ -179,8 +179,21 @@ public class NameUtil {
   public static String decapitalize(String s) {
     if (s == null || s.length() == 0 || s.charAt(0) == Character.toLowerCase(s.charAt(0))) {
       return s;
+    } else
+    if (s.length() == 1 || Character.isLowerCase(s.charAt(1))) {
+      return "" + Character.toLowerCase(s.charAt(0)) + s.substring(1);
+    } else {
+      StringBuilder result = new StringBuilder(s.length());
+      int i = 0;
+      while ( i < s.length() && !(i + 1 < s.length() && Character.isLowerCase(s.charAt(i + 1))) ) {
+        result.append(Character.toLowerCase(s.charAt(i)));
+        i++;
+      }
+      if (i < s.length()) {
+        result.append(s.substring(i));
+      }
+      return result.toString();
     }
-    return "" + Character.toLowerCase(s.charAt(0)) + s.substring(1);
   }
 
   public static String multiWordDecapitalize(String s) {
