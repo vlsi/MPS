@@ -1,0 +1,2674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <option name="myBookmarkInfos">
+      <array>
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+      </array>
+    </option>
+  </component>
+  <component name="BookmarksTool">
+    <option name="myTreeState">
+      <TreeState>
+        <option name="expansion">
+          <list>
+            <option value="/" />
+          </list>
+        </option>
+      </TreeState>
+    </option>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="e282606b-9dae-45c7-af90-88dbb487c1a3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/plugin/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languageModels/actions.mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/structure/Elements.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/typesystem" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/constraints" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/actions/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/constructors.iml" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen/sandbox/various.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/typesystem/TypesystemDescriptor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/behavior/.debug" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen/sandboxModel/partialApplication.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/constraints/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/structure/CustomConstructorUsage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generator/template/main@generator.mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$" />
+      <change type="DELETED" beforePath="C:\MPS\samples\lambda\solutions\jetbrains.mps.samples.lambdaCalculus.sandbox\source_gen\sandboxModel\sim.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languageModels/constraints.mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/generator" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/actions/.hash.-99jqkmot4tsoqi8vkbeg4q4m3m1x1tw" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/generator" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/editor" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/solutions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/editor/CustomConstructorContainer_Editor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/constraints/.hash.3rgtl6qfv1rb5ao2v3u3nkd0q7qzmnp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/editor/.dependencies" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen.caches/sandbox/.dependencies" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen.caches/sandbox/.dependencies" />
+      <change type="DELETED" beforePath="C:\MPS\core\baseLanguage\baseLanguage\source_gen.caches\jetbrains\mps\stubs\javastub\.hash.5ape5413v19yc80oflzhih4z7of96jl" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/languages/lambdaCalculus/source_gen.caches/jetbrains/mps/samples/lambdaCalculus/typesystem/.hash.-3wqo1tugxur8fbnjsrcxc6g3n4pkuhe" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test.mps" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test.mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/typesystem/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/structure/CustomConstructorContainer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/constraints/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languageModels/editor.mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/behavior/.hash.3ke1c48jygdubieg4nf1xzyccplzmwb" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/stubs/javastub/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/stubs/javastub/.debug" />
+      <change type="DELETED" beforePath="C:\MPS\core\baseLanguage\baseLanguage\source_gen.caches\jetbrains\mps\baseLanguage\behavior\.hash.-5nqt6p592qz9xqf9otm3ohbuvwxs4c2" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/behavior" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/TestComplex.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/TestComplex.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen.caches/sandbox/.debug" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen.caches/sandbox/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/generator/template" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/behavior.mps" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/languageModels/behavior.mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/typesystem/typeof_Element_InferenceRule.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/editor" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/editor/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/constraints/.dependencies" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/generator/template" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/generator/template/main/QueriesGenerated.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen/sandbox/Test.java" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen/sandbox/Test.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/typesystem/typeof_CustomConstructor_InferenceRule.java" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/behavior/.hash.-a0xyxwzrohsh0zgzxjmgtk33fp6vr53" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/editor/CustomConstructorUsage_Editor.java" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen.caches/jetbrains/mps/baseLanguage/checkedDots/sandbox/.hash.-1oqkw91zfy4bx7u89jl9hghlz0hrywb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/sandboxModel.mps" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/sandboxModel.mps" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/MPS.ipr" afterPath="$APPLICATION_HOME_DIR$/MPS.ipr" />
+      <change type="DELETED" beforePath="C:\MPS\core\baseLanguage\checkDot\languages\checkedDots\sandbox\source_gen.caches\jetbrains\mps\baseLanguage\checkedDots\sandbox\.hash.35y9gj7u2q9nszrc6y9rre9o2775cx0" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen/sandbox/Str.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/constraints" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/constraints/.hash.-5vysl42pgig78jzjfald4ad7jqwjces" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/behavior/.dependencies" />
+      <change type="DELETED" beforePath="C:\MPS\platform\extensionMethod\solutions\jetbrains.mps.baseLanguage.extensionMethods.sandbox\source_gen.caches\sandbox\.hash.bw4h09qyfstz9yu1pvdjrsp1c7mxiba" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/editor/.hash.9jv978ofmlpgsc2xbw7dpzrzo5z8zlm" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/structure/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/structure/.hash.-egbdleurg75t2cqsh02aqyrm9av0or0" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/typesystem" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/actions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/editor" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen/jetbrains/mps/baseLanguage/checkedDots/sandbox/First.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen/jetbrains/mps/baseLanguage/checkedDots/sandbox/First.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/editor/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/editor/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/structure" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/editor/CustomConstructor_Editor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languageModels/structure.mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/typesystem/.hash.4dzm623xlihig9d1gte8ph2tlczqkua" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/actions" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/typesystem" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/structure/CustomConstructor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/constraints/.dependencies" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/editor/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/generator/template/main/.dependencies" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen.caches/sandboxModel/.debug" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen.caches/sandboxModel/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/structure/.hash.-ci4msd5u2icyogbbtoot82okkatkmym" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/structure/.dependencies" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/structure/.dependencies" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/constructors.iws" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/behavior/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/behavior/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languageModels" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/typesystem/.dependencies" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/typesystem/.hash.1f76xio11fole2yjx89ksjry7lucywq" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/typesystem/.dependencies" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/editor/.dependencies" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languageModels/typesystem.mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/generator/template/main" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/structure/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/behavior/CustomConstructor_Behavior.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/generator/template/main/.hash.1omw7o35se1er5cnaio3mogjigmo4b7" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/structure/Constructors_Language.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/actions/QueriesGenerated.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/jetbrains.mps.baseLanguage.extensionMethods.sandbox.msd" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/jetbrains.mps.baseLanguage.extensionMethods.sandbox.msd" />
+      <change type="DELETED" beforePath="C:\MPS\samples\lambda\solutions\jetbrains.mps.samples.lambdaCalculus.sandbox\source_gen.caches\sandboxModel\.hash.-bx1dc5mssooumbhg8ggtjm31u6t71pp" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/languageModels/behavior.mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen.caches/sandboxModel/.dependencies" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen.caches/sandboxModel/.dependencies" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/actions/.dependencies" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen/sandboxModel/simple.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/typesystem/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core/baseLanguage/constructors/editor/.hash.40t0oxtr8jak9fxzv00d8tqtiet602l" />
+      <change type="DELETED" beforePath="C:\MPS\core\baseLanguage\baseLanguage\source_gen.caches\jetbrains\mps\baseLanguage\editor\.hash.-c132kiuf9kexka9697sqilg48u7yqlw" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/generator/template/main/.debug" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/generator/template/main" />
+      <change type="DELETED" beforePath="C:\MPS\platform\extensionMethod\solutions\jetbrains.mps.baseLanguage.extensionMethods.sandbox\source_gen\sandbox\StringExtensionMethods.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/generator" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/constructors.mpr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/structure" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/sandbox.mps" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/sandbox.mps" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/behavior" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen.caches/jetbrains/mps/baseLanguage/checkedDots/sandbox/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/checkDot/languages/checkedDots/sandbox/source_gen.caches/jetbrains/mps/baseLanguage/checkedDots/sandbox/.debug" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen.caches/sandboxModel/.hash.9n5nhusnbe2zsm12n3x4xesgqz4mu8s" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/baseLanguage/constructors/structure" />
+      <change type="DELETED" beforePath="C:\MPS\platform\extensionMethod\solutions\jetbrains.mps.baseLanguage.extensionMethods.sandbox\source_gen\sandbox\Abc.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen/sandbox/IntExt.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/source_gen.caches/jetbrains/mps/core" />
+      <change type="NEW" beforePath="" afterPath="$APPLICATION_HOME_DIR$/platform/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen.caches/sandbox/.hash.4co0fhy5ssc8smupqr91qobc30phfj6" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/overloadedOperators/solutions/jetbrains.mps.baseLanguage.overloadedOperators.sandbox/source_gen/jetbrains/mps/baseLanguage/overloadedOerators/sandbox/test/Complex2.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/overloadedOperators/overloadedOperators.iws" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/overloadedOperators/overloadedOperators.iws" />
+    </list>
+    <list id="d079e343-22a3-4613-927d-4c6b685594b9" name="Failed commit: Default" comment="" />
+    <list id="541709ae-ed91-46e4-bcd0-a03f1319d100" name="Failed commit: Default (2)" comment="">
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/scripts/BaseLanguageMigration_MigrationScript.java" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen/jetbrains/mps/baseLanguage/scripts/BaseLanguageMigration_MigrationScript.java" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/test/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/test/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/strings/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/strings/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/stubs/javastub/classpath/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/stubs/javastub/classpath/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/scripts/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/scripts/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/findUsages/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/findUsages/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/conceptFunctionDefaults/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/conceptFunctionDefaults/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/dataFlow/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/dataFlow/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/refactorings/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/refactorings/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/main/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/main/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/actions/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/actions/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/closures/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/closures/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/util/plugin/run/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/util/plugin/run/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/closures/util/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/baseLanguage/generator/java/closures/util/.debug" />
+      <change type="MODIFICATION" beforePath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/stubs/javastub/asm/.debug" afterPath="$APPLICATION_HOME_DIR$/core/baseLanguage/baseLanguage/source_gen.caches/jetbrains/mps/stubs/javastub/asm/.debug" />
+    </list>
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="constructors.iws" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+    <option name="REVERSE_PATCH" value="false" />
+  </component>
+  <component name="DefaultSearchOptionsComponent">
+    <option class_name="jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions">
+      <finders>
+        <finder class_name="jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder" />
+        <finder class_name="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
+      </finders>
+    </option>
+    <option class_name="jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions">
+      <flags show_one_result="true" new_tab="false" />
+    </option>
+    <option class_name="jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions">
+      <scope_type scope_type="global_scope" module="&lt;default&gt;" model="&lt;default&gt;" />
+    </option>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="CustomConstructorUsage_Substitute" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.constructors.actions/CustomConstructorUsage_Substitute">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomConstructor" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.constructors.structure/CustomConstructor">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="3">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OverloadedOperatorContainer" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.structure/OverloadedOperatorContainer">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="10">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="1" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.constructors.generator.template.main@generator/main">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator/main">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListConstructors" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.core.baseLanguage.constructors.sandbox.test/ListConstructors">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.core.baseLanguage.constructors.sandbox.test/Test">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomConstructorContainer" pinned="false" current="true" current-in-tab="true">
+        <entry file="mps://jetbrains.mps.baseLanguage.constructors.structure/CustomConstructorContainer">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="10">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomConstructorUsage" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.constructors.structure/CustomConstructorUsage">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Elements" pinned="false" current="false" current-in-tab="false">
+        <entry file="mps://jetbrains.mps.baseLanguage.constructors.structure/Elements">
+          <provider selected="true" editor-type-id="MPSFileEditor">
+            <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
+              <inner_tabs>
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+                <tab index="0" />
+              </inner_tabs>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="MessagesViewTool">
+    <option name="autoscrollToSource" value="true" />
+    <option name="info" value="true" />
+    <option name="warnings" value="true" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
+  <component name="ProjectPluginManager">
+    <option name="pluginsState">
+      <option name="jetbrains.mps.baseLanguage.collections.plugin.Collections_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.baseLanguage.collections.trove.plugin.Trove_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.baseLanguage.dates.plugin.Dates_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.baseLanguage.plugin.BaseLanguage_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.baseLanguage.unitTest.plugin.UnitTest_ProjectPlugin">
+        <value>
+          <PluginState>
+            <option name="myComponentsState">
+              <list>
+                <ComponentState>
+                  <option name="first" value="jetbrains.mps.baseLanguage.unitTest.plugin.JUnitTestActionOptions_PreferencesComponent" />
+                  <params>
+                    <option name="isHidePassed" value="false" />
+                    <option name="isSelectFirstFailed" value="false" />
+                    <option name="isTrackRunning" value="false" />
+                  </params>
+                </ComponentState>
+              </list>
+            </option>
+          </PluginState>
+        </value>
+      </option>
+      <option name="jetbrains.mps.build.custommps.plugin.Custommps_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.build.generictasks.plugin.Generictasks_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.build.packaging.plugin.Packaging_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.buildlanguage.plugin.Buildlanguage_ProjectPlugin">
+        <value>
+          <PluginState>
+            <option name="myComponentsState">
+              <list>
+                <ComponentState>
+                  <option name="first" value="jetbrains.mps.buildlanguage.plugin.AntRunnerPreferences_PreferencesComponent" />
+                  <params>
+                    <option name="data">
+                      <map />
+                    </option>
+                  </params>
+                </ComponentState>
+              </list>
+            </option>
+          </PluginState>
+        </value>
+      </option>
+      <option name="jetbrains.mps.calculator.plugin.Calculator_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ide.actions.Ide_ProjectPlugin">
+        <value>
+          <PluginState>
+            <option name="myComponentsState">
+              <list>
+                <ComponentState>
+                  <option name="first" value="jetbrains.mps.ide.actions.PersistentOptions_PreferencesComponent" />
+                  <params>
+                    <option name="addReturnsOnImplement" value="false" />
+                    <option name="sortAlphabetically" value="false" />
+                    <option name="addOverrideAnnotation" value="true" />
+                    <option name="removeAttributes" value="true" />
+                  </params>
+                </ComponentState>
+              </list>
+            </option>
+          </PluginState>
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.behavior.plugin.Behavior_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.core.plugin.Core_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.dataFlow.plugin.DataFlow_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.editor.plugin.Editor_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.quotation.plugin.Quotation_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.refactoring.plugin.Refactoring_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.script.plugin.Script_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.smodel.plugin.Smodel_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.structure.plugin.Structure_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.test.plugin.Test_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.typesystem.plugin.Typesystem_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.quickQueryLanguage.plugin.QuickQueryLanguage_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.uiLanguage.plugin.UiLanguage_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.wizards.plugin.Wizards_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ypath.plugin.Ypath_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+    </option>
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="VCSRoots">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VCS Roots" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <selection />
+        </subPane>
+      </pane>
+      <pane id="FileSystem">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <selection />
+        </subPane>
+      </pane>
+      <pane id="Favorites">
+        <subPane>
+          <selection />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overloadedOperators" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overloadedOperators" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generator/" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overloadedOperators" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generator/" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.baseLanguage.overloadedOperators.generator.template" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overloadedOperators" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generator/" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.baseLanguage.overloadedOperators.generator.template" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main@generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overloadedOperators" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typesystem" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overloadedOperators" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behavior" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overloadedOperators" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constraints" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="overloadedOperators" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editor" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extensionMethods" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules Pool" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Languages" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mps" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baseLanguage" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extensionMethods" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.baseLanguage.constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.baseLanguage.constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generator/" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.baseLanguage.constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generator/" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.baseLanguage.constructors.generator.template" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main@generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.baseLanguage.constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="typesystem" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.baseLanguage.constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behavior" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.baseLanguage.constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.baseLanguage.constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="structure" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constructors" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.core.baseLanguage.constructors.sandbox" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jetbrains.mps.core.baseLanguage.constructors.sandbox" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <selection>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="constructors" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="jetbrains.mps.baseLanguage.constructors" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="generator/" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="jetbrains.mps.baseLanguage.constructors.generator.template" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="main@generator" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="CustomCunstructorContainerImpl" />
+                <option name="myItemType" value="" />
+              </PATH_ELEMENT>
+            </PATH>
+          </selection>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="RunManager">
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="UPDATE_RUN_STATUS" value="false" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <configuration useDefault="true">C:\Users\Ilya.Lintsbakh\AppData\Roaming\Subversion</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\MPS" />
+          <option name="myCopyRoot" value="C:\MPS" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="1186" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Usages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32889733" sideWeight="0.49741936" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Packaging Language Build Script" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Supertypes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Model Repository Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Migration" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Replacement" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Module Repository Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Model Checker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Custom MPS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Generation Tracer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33142856" sideWeight="0.5189753" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Module Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28126985" sideWeight="0.66413665" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Classpath Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="RefactoringView" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922202" sideWeight="0.4926984" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="MPS Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4743833" sideWeight="0.3295238" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Concept Structure" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspector" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4743833" sideWeight="0.6660317" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Node Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Typechecker State" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Analyze Stacktrace" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run Build Language Project" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Class Hierarchy" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cell Explorer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="UsagesViewTool">
+    <version id="0.9997" />
+    <tabs>
+      <tab>
+        <usage_view>
+          <buttons rerun="true" regenerate="true" close="true" />
+          <result_provider class_name="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode">
+            <children>
+              <jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode>
+                <children />
+                <generated_finder class_name="jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder" />
+              </jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode>
+              <jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode>
+                <children />
+                <generated_finder class_name="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
+              </jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode>
+            </children>
+          </result_provider>
+          <query>
+            <scope scope_type="global_scope" />
+            <holder holder_class="jetbrains.mps.ide.findusages.model.holders.NodeHolder">
+              <node>
+                <node model="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" id="7288041816793071802" />
+              </node>
+            </holder>
+          </query>
+          <tree_wrapper>
+            <node_representator />
+            <view_options>
+              <options category_option="false" module_option="false" model_option="false" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
+            </view_options>
+            <contents>
+              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.MainNodeData" caption="" info="" excluded="false" expanded="true" isresult="false" results_section="false">
+                <role name="main root" />
+              </data>
+              <children>
+                <child>
+                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.SearchedNodesNodeData" caption="Searched nodes" info="" excluded="false" expanded="true" isresult="false" results_section="false">
+                    <role name="searched nodes" />
+                  </data>
+                  <children>
+                    <child>
+                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" caption="&lt;b&gt;Searched nodes&lt;/b&gt;" info="" excluded="false" expanded="true" isresult="false" results_section="false" category="Searched nodes" category_kind="Category">
+                        <role name="category:Category" />
+                      </data>
+                      <children>
+                        <child>
+                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" caption="jetbrains.mps.baseLanguage.builders" info="" excluded="false" expanded="true" isresult="false" results_section="false" module_ref="132aa4d8-a3f7-441c-a7eb-3fce23492c6a(jetbrains.mps.baseLanguage.builders)">
+                            <role name="module" />
+                          </data>
+                          <children>
+                            <child>
+                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" caption="jetbrains.mps.baseLanguage.builders.structure" info="" excluded="false" expanded="false" isresult="false" results_section="false">
+                                <role name="model" />
+                                <model uid="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" />
+                              </data>
+                              <children>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="SimpleBuilder" info="" excluded="false" expanded="false" isresult="true" results_section="false">
+                                    <role name="target" />
+                                    <node>
+                                      <node model="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" id="7288041816793071802" />
+                                    </node>
+                                  </data>
+                                  <children />
+                                </child>
+                              </children>
+                            </child>
+                          </children>
+                        </child>
+                      </children>
+                    </child>
+                  </children>
+                </child>
+                <child>
+                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ResultsNodeData" caption="results" info="" excluded="false" expanded="true" isresult="false" results_section="false">
+                    <role name="results" />
+                  </data>
+                  <children>
+                    <child>
+                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" caption="&lt;b&gt;Concept Instances&lt;/b&gt;" info="" excluded="false" expanded="true" isresult="false" results_section="true" category="Concept Instances" category_kind="Category">
+                        <role name="category:Category" />
+                      </data>
+                      <children>
+                        <child>
+                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" caption="jetbrains.mps.baseLanguage.builders.sandbox" info="" excluded="false" expanded="true" isresult="false" results_section="true" module_ref="e170edd4-3360-43e6-be1d-de6f3c3d7c55(jetbrains.mps.baseLanguage.builders.sandbox)">
+                            <role name="module" />
+                          </data>
+                          <children>
+                            <child>
+                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" caption="jetbrains.jetpad.builders.sandbox2" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                <role name="model" />
+                                <model uid="r:44c1e24e-ae03-4621-8280-952d17b58d73(jetbrains.jetpad.builders.sandbox2)" />
+                              </data>
+                              <children>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="ABC" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:44c1e24e-ae03-4621-8280-952d17b58d73(jetbrains.jetpad.builders.sandbox2)" id="4737519895010426712" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="ABC()" info="role: &lt;i&gt;constructor&lt;/i&gt;; in: &lt;i&gt;ABC&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:44c1e24e-ae03-4621-8280-952d17b58d73(jetbrains.jetpad.builders.sandbox2)" id="4737519895010426714" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="root" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:44c1e24e-ae03-4621-8280-952d17b58d73(jetbrains.jetpad.builders.sandbox2)" id="4737519895010426723" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                  </children>
+                                </child>
+                              </children>
+                            </child>
+                            <child>
+                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" caption="jetbrains.jetpad.builders.sandbox" info="" excluded="false" expanded="true" isresult="false" results_section="true">
+                                <role name="model" />
+                                <model uid="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" />
+                              </data>
+                              <children>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="Abc" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="7057666463730252450" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="aaa():void" info="role: &lt;i&gt;method&lt;/i&gt;; in: &lt;i&gt;Abc&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="3816167865390667312" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="root" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="3816167865390946762" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="c1" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="3816167865390946765" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="c2" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="3816167865390946768" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="c2" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="5199967550912605224" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="c3" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="6211769134875336889" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="c2" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="6211769134875336880" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="c1" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="5199967550912605228" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="c1" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="8009360033695538783" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                  </children>
+                                </child>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="As" info="" excluded="false" expanded="true" isresult="false" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="8009360033695026859" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="As()" info="role: &lt;i&gt;constructor&lt;/i&gt;; in: &lt;i&gt;As&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="8009360033695026861" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="root" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;as builder&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="8009360033695056273" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="c1" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="8009360033695056276" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="c3" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="6211769134875336877" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="ccc" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="7782956297805984816" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="c2" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="6185317612116086068" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="c3" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="7782956297805984819" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="c2" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:49eba21e-740e-4a19-9958-32f14a0e86d2(jetbrains.jetpad.builders.sandbox)" id="5199967550912605246" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                  </children>
+                                </child>
+                              </children>
+                            </child>
+                          </children>
+                        </child>
+                        <child>
+                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" caption="jetbrains.mps.kernel" info="" excluded="false" expanded="true" isresult="false" results_section="true" module_ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)">
+                            <role name="module" />
+                          </data>
+                          <children>
+                            <child>
+                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" caption="jetbrains.mps.project.persistence" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                <role name="model" />
+                                <model uid="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" />
+                              </data>
+                              <children>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="DevkitDescriptorPersistence" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883030151" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="loadDevKitDescriptor(IFile):DevkitDescriptor" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;DevkitDescriptorPersistence&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883030152" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="descriptor" info="role: &lt;i&gt;localVariableDeclaration&lt;/i&gt;; in: &lt;i&gt;&amp;lt;type&amp;gt; &amp;lt;var&amp;gt;;&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                            <role name="root to target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883030173" />
+                                            </node>
+                                          </data>
+                                          <children>
+                                            <child>
+                                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="devkitDescriptor" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                                <role name="target" />
+                                                <node>
+                                                  <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883030300" />
+                                                </node>
+                                              </data>
+                                              <children />
+                                            </child>
+                                            <child>
+                                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="classPath" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                                <role name="target" />
+                                                <node>
+                                                  <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883030292" />
+                                                </node>
+                                              </data>
+                                              <children />
+                                            </child>
+                                          </children>
+                                        </child>
+                                      </children>
+                                    </child>
+                                  </children>
+                                </child>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="GeneratorDescriptorPersistence" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883030499" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="loadGeneratorDescriptor(xml&amp;lt;MPS generator:[generatorType]&amp;gt;,IFile,Macros):GeneratorDescriptor" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;GeneratorDescriptorPersistence&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883030500" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="descriptor" info="role: &lt;i&gt;localVariableDeclaration&lt;/i&gt;; in: &lt;i&gt;&amp;lt;type&amp;gt; &amp;lt;var&amp;gt;;&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                            <role name="root to target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="1772246947774055939" />
+                                            </node>
+                                          </data>
+                                          <children>
+                                            <child>
+                                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="generatorDescriptor" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                                <role name="target" />
+                                                <node>
+                                                  <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="1772246947774056133" />
+                                                </node>
+                                              </data>
+                                              <children />
+                                            </child>
+                                            <child>
+                                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="mappingPriorityRule" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                                <role name="target" />
+                                                <node>
+                                                  <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="1772246947774056132" />
+                                                </node>
+                                              </data>
+                                              <children />
+                                            </child>
+                                          </children>
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="loadGeneratorMappingConfigRef(xml&amp;lt;MPS generator:[priorityMappingType]&amp;gt;,string,boolean):MappingConfig_AbstractRef" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;GeneratorDescriptorPersistence&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883030948" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="mappingConfig_ExternalRef" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883030999" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="mappingConfig_ExternalRef" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883031052" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="mappingConfig_ExternalRef" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883031094" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="mappingConfig_ExternalRef" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883031159" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                  </children>
+                                </child>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="LanguageDescriptorPersistence" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883031167" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="loadLanguageDescriptor(IFile):LanguageDescriptor" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;LanguageDescriptorPersistence&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883031168" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="languageDescriptor" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883031464" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="classPath" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883031399" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="runtimeClassPath" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="2874712155533611572" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="stubModelsEntry" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="5813837646596423544" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="stubsManager" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="5813837646596423611" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="stubSolution" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="5553093862837398187" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                  </children>
+                                </child>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="ModuleDescriptorPersistence" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883031742" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="loadDependencies(ModuleDescriptor,xml&amp;lt;MPS module:[moduleType]&amp;gt;):void" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;ModuleDescriptorPersistence&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883031743" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="moduleDescriptor" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;as builder&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883031749" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="loadDependenciesList(xml&amp;lt;MPS module:[dependenciesContainer]&amp;gt;):list&amp;lt;Dependency&amp;gt;" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;ModuleDescriptorPersistence&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883031985" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="dependency" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="2709156219364672085" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="loadModelRoot(xml&amp;lt;MPS module:[modelRootType]&amp;gt;,IFile,Macros):ModelRoot" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;ModuleDescriptorPersistence&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883032063" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="modelRoot" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883032115" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="manager" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="5690219435161890626" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="loadModelEntry(xml&amp;lt;MPS module:[stubModelEntry]&amp;gt;,IFile,Macros):StubModelsEntry" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;ModuleDescriptorPersistence&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="702807520180545390" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="stubModelsEntry" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="702807520180568255" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="stubsManager" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="9015822011646769849" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                  </children>
+                                </child>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="SolutionDescriptorPersistence" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883032842" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="loadSolutionDescriptor(IFile):SolutionDescriptor" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;SolutionDescriptorPersistence&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883032843" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="solutionDescriptor" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883033031" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="classPath" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderStatement&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.project.persistence)" id="842994667883032990" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                  </children>
+                                </child>
+                              </children>
+                            </child>
+                          </children>
+                        </child>
+                        <child>
+                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" caption="jetbrains.mps.ide" info="" excluded="false" expanded="true" isresult="false" results_section="true" module_ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)">
+                            <role name="module" />
+                          </data>
+                          <children>
+                            <child>
+                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" caption="jetbrains.mps.ide.properties" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                <role name="model" />
+                                <model uid="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" />
+                              </data>
+                              <children>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="StandardComponents" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="4060390951635972879" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createModelsPanel(IBindedDialog,String,List&amp;lt;SModelReference&amp;gt;,Condition&amp;lt;SModelReference&amp;gt;):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="4060390951635972979" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="ListPanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698763889" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createLanguagesPanel(IBindedDialog,String,List&amp;lt;ModuleReference&amp;gt;,Condition&amp;lt;ModuleReference&amp;gt;):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="4060390951635973065" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="ListPanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698763924" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createSolutionsPanel(IBindedDialog,String,List&amp;lt;ModuleReference&amp;gt;):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="4060390951635973125" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="ListPanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698763773" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createDevKitsPanel(IBindedDialog,String,List&amp;lt;ModuleReference&amp;gt;):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="4060390951635973173" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="ListPanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698763959" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createGeneratorsPanel(IBindedDialog,String,List&amp;lt;ModuleReference&amp;gt;):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="4060390951635973221" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="ListPanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698763994" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createSourcePathsPanel(IBindedDialog,String,List&amp;lt;String&amp;gt;):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="4060390951635973269" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="ListPanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698764018" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createDepsPanel(IBindedDialog,String,List&amp;lt;Dependency&amp;gt;):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="1809539929827629313" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="TablePanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698764055" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createClassPathsPanel(IBindedDialog,String,List&amp;lt;ClassPathEntry&amp;gt;):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="1809539929827629369" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="TablePanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698764092" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createModelRootsPanel(IBindedDialog,String,List&amp;lt;ModelRoot&amp;gt;):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="1809539929827629486" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="TablePanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698764156" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createStubSolutionsPanel(IBindedDialog,String,List&amp;lt;StubSolution&amp;gt;):JComponent" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="1809539929827629569" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="TablePanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698764197" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createStubRootsPanel(IBindedDialog,String,List&amp;lt;StubModelsEntry&amp;gt;):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="1809539929827629623" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="TablePanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698764243" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createModelsImportsPanel(IBindedDialog,String,ImportProperties):JComponent" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="1809539929827638178" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="TablePanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698764297" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createLanguagesImportsPanel(IBindedDialog,String,ImportProperties):JComponent" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="1809539929827638251" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="TablePanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698764350" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createMappingConfigsPanel(IBindedDialog,String,List&amp;lt;MappingPriorityRule&amp;gt;,Generator,List&amp;lt;ModuleReference&amp;gt;):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="1809539929827638321" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="tablePanel" info="role: &lt;i&gt;localVariableDeclaration&lt;/i&gt;; in: &lt;i&gt;&amp;lt;type&amp;gt; &amp;lt;var&amp;gt;;&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                            <role name="root to target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="8175648731696670211" />
+                                            </node>
+                                          </data>
+                                          <children>
+                                            <child>
+                                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="TablePanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                                <role name="target" />
+                                                <node>
+                                                  <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="8175648731696670262" />
+                                                </node>
+                                              </data>
+                                              <children />
+                                            </child>
+                                          </children>
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createTestConfigsPanel(IBindedDialog,String,List&amp;lt;BaseTestConfiguration&amp;gt;,ProjectProperties):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="4060390951635974468" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="ListPanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="3416087927885130132" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="createProjectModulesPathsList(IBindedDialog,String,List&amp;lt;Path&amp;gt;,String):JPanel" info="role: &lt;i&gt;staticMethod&lt;/i&gt;; in: &lt;i&gt;StandardComponents&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="4060390951635974723" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="ListPanel" info="role: &lt;i&gt;builder&lt;/i&gt;; in: &lt;i&gt;BuilderCreator&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" id="7355563316698764484" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                      </children>
+                                    </child>
+                                  </children>
+                                </child>
+                              </children>
+                            </child>
+                          </children>
+                        </child>
+                      </children>
+                    </child>
+                    <child>
+                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" caption="&lt;b&gt;Node Usages&lt;/b&gt;" info="" excluded="false" expanded="true" isresult="false" results_section="true" category="Node Usages" category_kind="Category">
+                        <role name="category:Category" />
+                      </data>
+                      <children>
+                        <child>
+                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" caption="jetbrains.mps.baseLanguage.builders" info="" excluded="false" expanded="true" isresult="false" results_section="true" module_ref="132aa4d8-a3f7-441c-a7eb-3fce23492c6a(jetbrains.mps.baseLanguage.builders)">
+                            <role name="module" />
+                          </data>
+                          <children>
+                            <child>
+                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" caption="jetbrains.mps.baseLanguage.builders.constraints" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                <role name="model" />
+                                <model uid="r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)" />
+                              </data>
+                              <children>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="SimpleBuilderPropertyBuilder_Constraints" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)" id="5389689214217448670" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="SimpleBuilder" info="role: &lt;i&gt;conceptArgument&lt;/i&gt;; in: &lt;i&gt;isInstanceOf&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                        <role name="target" />
+                                        <node>
+                                          <node model="r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)" id="5389689214217476137" />
+                                        </node>
+                                      </data>
+                                      <children />
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption=":" info="role: &lt;i&gt;operand&lt;/i&gt;; in: &lt;i&gt;DotExpression&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                        <role name="target" />
+                                        <node>
+                                          <node model="r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)" id="5389689214217481132" />
+                                        </node>
+                                      </data>
+                                      <children />
+                                    </child>
+                                  </children>
+                                </child>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="SimpleBuilder_Constraints" info="" excluded="false" expanded="false" isresult="true" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)" id="7288041816793179319" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="SimpleBuilder" info="role: &lt;i&gt;conceptArgument&lt;/i&gt;; in: &lt;i&gt;isInstanceOf&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                        <role name="target" />
+                                        <node>
+                                          <node model="r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)" id="8969040284892333249" />
+                                        </node>
+                                      </data>
+                                      <children />
+                                    </child>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption=":" info="role: &lt;i&gt;operand&lt;/i&gt;; in: &lt;i&gt;DotExpression&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                        <role name="target" />
+                                        <node>
+                                          <node model="r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)" id="8969040284892333285" />
+                                        </node>
+                                      </data>
+                                      <children />
+                                    </child>
+                                  </children>
+                                </child>
+                              </children>
+                            </child>
+                            <child>
+                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" caption="jetbrains.mps.baseLanguage.builders.behavior" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                <role name="model" />
+                                <model uid="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)" />
+                              </data>
+                              <children>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="SimpleBuilder_Behavior" info="" excluded="false" expanded="false" isresult="true" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)" id="7288041816793071804" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="getAttachStatement(node&amp;lt;Builder&amp;gt;,node&amp;lt;Expression&amp;gt;,node&amp;lt;Expression&amp;gt;):node&amp;lt;Statement&amp;gt;" info="role: &lt;i&gt;method&lt;/i&gt;; in: &lt;i&gt;SimpleBuilder_Behavior&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                        <role name="root to target" />
+                                        <node>
+                                          <node model="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)" id="7288041816793075493" />
+                                        </node>
+                                      </data>
+                                      <children>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="SimpleBuilder" info="role: &lt;i&gt;conceptArgument&lt;/i&gt;; in: &lt;i&gt;isInstanceOf&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                            <role name="target" />
+                                            <node>
+                                              <node model="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)" id="4797501453850479342" />
+                                            </node>
+                                          </data>
+                                          <children />
+                                        </child>
+                                        <child>
+                                          <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="simpleBuilder" info="role: &lt;i&gt;localVariableDeclaration&lt;/i&gt;; in: &lt;i&gt;&amp;lt;type&amp;gt; &amp;lt;var&amp;gt;;&lt;/i&gt;" excluded="false" expanded="false" isresult="false" results_section="true">
+                                            <role name="root to target" />
+                                            <node>
+                                              <node model="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)" id="4797501453850479349" />
+                                            </node>
+                                          </data>
+                                          <children>
+                                            <child>
+                                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="node&amp;lt;SimpleBuilder&amp;gt;" info="role: &lt;i&gt;type&lt;/i&gt;; in: &lt;i&gt;simpleBuilder&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                                <role name="target" />
+                                                <node>
+                                                  <node model="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)" id="4797501453850479350" />
+                                                </node>
+                                              </data>
+                                              <children />
+                                            </child>
+                                            <child>
+                                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption=":" info="role: &lt;i&gt;initializer&lt;/i&gt;; in: &lt;i&gt;simpleBuilder&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                                <role name="target" />
+                                                <node>
+                                                  <node model="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)" id="4797501453850479351" />
+                                                </node>
+                                              </data>
+                                              <children />
+                                            </child>
+                                          </children>
+                                        </child>
+                                      </children>
+                                    </child>
+                                  </children>
+                                </child>
+                              </children>
+                            </child>
+                            <child>
+                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" caption="jetbrains.mps.baseLanguage.builders.editor" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                <role name="model" />
+                                <model uid="r:4b2fc856-1e6f-49a5-825e-2904bdab655c(jetbrains.mps.baseLanguage.builders.editor)" />
+                              </data>
+                              <children>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="SimpleBuilder_Editor" info="" excluded="false" expanded="false" isresult="true" results_section="true">
+                                    <role name="target" />
+                                    <node>
+                                      <node model="r:4b2fc856-1e6f-49a5-825e-2904bdab655c(jetbrains.mps.baseLanguage.builders.editor)" id="7288041816793071807" />
+                                    </node>
+                                  </data>
+                                  <children />
+                                </child>
+                              </children>
+                            </child>
+                            <child>
+                              <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" caption="jetbrains.mps.baseLanguage.builders.typesystem" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                <role name="model" />
+                                <model uid="r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)" />
+                              </data>
+                              <children>
+                                <child>
+                                  <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="typeof_SimpleBuilder" info="" excluded="false" expanded="false" isresult="false" results_section="true">
+                                    <role name="root" />
+                                    <node>
+                                      <node model="r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)" id="4315270135340734341" />
+                                    </node>
+                                  </data>
+                                  <children>
+                                    <child>
+                                      <data data_class="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" caption="builder" info="role: &lt;i&gt;applicableNode&lt;/i&gt;; in: &lt;i&gt;typeof_SimpleBuilder&lt;/i&gt;" excluded="false" expanded="false" isresult="true" results_section="true">
+                                        <role name="target" />
+                                        <node>
+                                          <node model="r:35ef73a5-9726-4c66-9d79-f51c95cc08d6(jetbrains.mps.baseLanguage.builders.typesystem)" id="4315270135340734343" />
+                                        </node>
+                                      </data>
+                                      <children />
+                                    </child>
+                                  </children>
+                                </child>
+                              </children>
+                            </child>
+                          </children>
+                        </child>
+                      </children>
+                    </child>
+                  </children>
+                </child>
+              </children>
+            </contents>
+          </tree_wrapper>
+        </usage_view>
+        <usage_view_options />
+      </tab>
+    </tabs>
+    <default_view_options>
+      <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
+    </default_view_options>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="true" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="mps://jetbrains.mps.baseLanguage.extensionMethods.actions/ThisExtensionMethodSubstitute">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.builders.actions/wrappers">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.constructors.typesystem/typeof_CustomConstructor">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_gen/jetbrains/mps/baseLanguage/constructors/structure/CustomConstructor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="25" selection-start="1634" selection-end="1634" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.structure/OverloadedBinaryOperator">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="1">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.constructors.actions/CustomConstructorUsage_Substitute">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.constructors.structure/CustomConstructorUsage">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="0">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.constructors.generator.template.main@generator/CustomCunstructorContainerImpl">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.structure/OverloadedOperatorContainer">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="10">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="1" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator/main">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.constructors.generator.template.main@generator/main">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.core.baseLanguage.constructors.sandbox.test/ListConstructors">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.core.baseLanguage.constructors.sandbox.test/Test">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.NodeEditor$MyFileEditorState" />
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.constructors.structure/Elements">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="4">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.constructors.structure/CustomConstructor">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="3">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+    <entry file="mps://jetbrains.mps.baseLanguage.constructors.structure/CustomConstructorContainer">
+      <provider selected="true" editor-type-id="MPSFileEditor">
+        <state class="jetbrains.mps.ide.tabbedEditor.TabbedEditor$MyFileEditorState" tab="10">
+          <inner_tabs>
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+            <tab index="0" />
+          </inner_tabs>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
