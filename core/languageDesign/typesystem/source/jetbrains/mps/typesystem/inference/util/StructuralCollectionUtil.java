@@ -26,17 +26,6 @@ import java.util.*;
 public class StructuralCollectionUtil {
   private static final Logger LOG = Logger.getLogger(StructuralCollectionUtil.class);
 
-  //temp; diagnostics
-  private static final Set<String> ourThreadNames = new HashSet<String>();
-  private static String getThreadNames() {
-    StringBuilder sb = new StringBuilder();
-    for (String t : ourThreadNames) {
-      sb.append(t);
-      sb.append("; ");
-    }
-    return sb.toString();
-  }
-
   private static final ObjectCache<SNode, Integer> ourHashCodeCash = new ObjectCache<SNode, Integer>(5000);
   private static final Map<SModel, Set<SNode>> ourModelsToNodes = new HashMap<SModel, Set<SNode>>();
   private static final SModelListener ourModelListener = new SModelAdapter() {
@@ -56,45 +45,39 @@ public class StructuralCollectionUtil {
         SNode node = (SNode) key;
         SModel model = node.getModel();
         Set<SNode> nodeSet = ourModelsToNodes.get(model);
+        removeNodeFromSet(node, model, nodeSet);
+      }
+    });
 
-        //temp
-        String threadName = Thread.currentThread().getName();
-
-        if (nodeSet != null) {
-          nodeSet.remove(node);
-        } else {
-          LOG.warning("node set is null");
-          LOG.warning("thread is " + threadName);
-
-          //temp
-          LOG.warning("other threads were " + getThreadNames());
-        }
-
-        //temp
-        ourThreadNames.add(threadName);
-
-        if (nodeSet == null || nodeSet.isEmpty()) {
-          ourModelsToNodes.remove(model);
-          SModelDescriptor modelDescriptor = model.getModelDescriptor();
-          if (modelDescriptor != null) {
-            modelDescriptor.removeModelListener(ourModelListener);
-          }
+    ModelChangedCaster.getInstance().addListener(new NodeModelChangedListener() {
+      @Override
+      public void modelChanged(SNode node, SModel oldModel) {
+        SModel newModel = node.getModel();
+        Set<SNode> oldNodeSet = ourModelsToNodes.get(oldModel);
+        if (oldNodeSet != null && oldNodeSet.contains(node)) {
+          removeNodeFromSet(node, oldModel, oldNodeSet);
+          addNodeToSet(node, newModel);
         }
       }
     });
   }
 
-  public static int hashCode(final SNode node) {
-    Integer result = ourHashCodeCash.tryKey(node);
-    if (result != null) {
-      return result;
+  private static void removeNodeFromSet(SNode node, SModel model, Set<SNode> nodeSet) {
+    if (nodeSet == null) {
+      System.err.println("");
+      return;
     }
-    StringBuilder sb = new StringBuilder();    
-    toString(sb, node, node);
-    result = sb.toString().hashCode();
-    ourHashCodeCash.cacheObject(node, result);
+    nodeSet.remove(node);
+    if (nodeSet.isEmpty()) {
+      ourModelsToNodes.remove(model);
+      SModelDescriptor modelDescriptor = model.getModelDescriptor();
+      if (modelDescriptor != null) {
+        modelDescriptor.removeModelListener(ourModelListener);
+      }
+    }
+  }
 
-    SModel model = node.getModel();
+  private static void addNodeToSet(SNode node, SModel model) {
     Set<SNode> nodeSet = ourModelsToNodes.get(model);
     if (nodeSet == null) {
       nodeSet = new HashSet<SNode>();
@@ -102,6 +85,20 @@ public class StructuralCollectionUtil {
       model.getModelDescriptor().addModelListener(ourModelListener);
     }
     nodeSet.add(node);
+  }
+
+  public static int hashCode(final SNode node) {
+    Integer result = ourHashCodeCash.tryKey(node);
+    if (result != null) {
+      return result;
+    }
+    StringBuilder sb = new StringBuilder();
+    toString(sb, node, node);
+    result = sb.toString().hashCode();
+    ourHashCodeCash.cacheObject(node, result);
+
+    SModel model = node.getModel();
+    addNodeToSet(node, model);
 
     return result;
   }
@@ -119,10 +116,10 @@ public class StructuralCollectionUtil {
     }
 
     for (SReference ref : node.getReferences()) {
-        SNode target = ref.getTargetNode();
-        if (target != null && !target.isDescendantOf(root, true)) {
-          result.append(target.getSNodeId());
-        }
+      SNode target = ref.getTargetNode();
+      if (target != null && !target.isDescendantOf(root, true)) {
+        result.append(target.getSNodeId());
+      }
     }
 
     result.append(")");

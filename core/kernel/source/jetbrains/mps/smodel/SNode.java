@@ -120,6 +120,7 @@ public final class SNode {
     SModel wasModel = myModel;
     myModel = newModel;
     UnregisteredNodes.instance().nodeModelChanged(this, wasModel);
+    ModelChangedCaster.getInstance().fireModelChanged(this, wasModel);
 
     for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       child.changeModel(newModel);
@@ -1112,8 +1113,12 @@ public final class SNode {
     }
 
     myRegisteredInModelFlag = true;
+    SModel wasModel = myModel;
     myModel = model;
     myModel.putNodeId(getSNodeId(), this);
+    if (wasModel != model) {
+      ModelChangedCaster.getInstance().fireModelChanged(this, wasModel);
+    }
     for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       child.registerInModel(model);
     }
