@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -70,7 +70,10 @@ public class PatternReduction_MappingRule_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.DRAW_BRACKETS, true);
+      style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.gray);
     }
+    editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_o2w2pr_a0a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_o2w2pr_b0a(editorContext, node));
     return editorCell;

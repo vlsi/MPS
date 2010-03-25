@@ -6162,7 +6162,13 @@
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1805153994416878895">
           <property name="flag:32" value="false" />
         </node>
-        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="1805153994416878896" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem:32" id="8421689336188407191">
+          <property name="flag:32" value="true" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem:32" id="8421689336188611462">
+          <property name="color:32" value="gray" />
+        </node>
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid:32" id="8421689336188407192" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1805153994416878897">
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1805153994416878898">
@@ -6229,7 +6235,7 @@
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
   <node type="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration:32" id="1722980698497626434">
-    <property name="package:32" value="rule.consequence" />
+    <property name="package:32" value="rule.argument" />
     <property name="name:32" value="ITemplateCall_actualArguments" />
     <link role="conceptDeclaration:32" targetNodeId="1.1722980698497626400:2" resolveInfo="ITemplateCall" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1722980698497626436">
@@ -6336,6 +6342,17 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4035562641222635168">
+    <property name="package:32" value="rule.argument" />
+    <link role="conceptDeclaration:32" targetNodeId="1.4035562641222585520:2" resolveInfo="TemplateArgumentQueryExpression" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4035562641222637865">
+      <property name="usesBraces:32" value="true" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4035562641222637868">
+        <link role="relationDeclaration:32" targetNodeId="1.4035562641222618754:2" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="4035562641222637869" />
     </node>
   </node>
 </model>

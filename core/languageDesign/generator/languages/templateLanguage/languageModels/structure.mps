@@ -1619,7 +1619,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1722980698497626400">
-    <property name="package:0" value="rule.consequence" />
+    <property name="package:0" value="rule.argument" />
     <property name="name:0" value="ITemplateCall" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1722980698497626483">
       <property name="role:0" value="template" />
@@ -1634,6 +1634,38 @@
     </node>
     <node role="extends:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1722980698497626401">
       <link role="intfc:0" targetNodeId="6.1201183863028:3" resolveInfo="TypeDerivable" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4035562641222585520">
+    <property name="package:0" value="rule.argument" />
+    <property name="name:0" value="TemplateArgumentQueryExpression" />
+    <link role="extends:0" targetNodeId="6.1068431790191:3" resolveInfo="Expression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8421689336188820114">
+      <property name="value:0" value="query" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4035562641222618754">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="query" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="4035562641222622437:2" resolveInfo="TemplateArgumentQuery" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4035562641222622437">
+    <property name="package:0" value="rule.argument" />
+    <property name="name:0" value="TemplateArgumentQuery" />
+    <link role="extends:0" targetNodeId="1216768419888:2" resolveInfo="TemplateQueryBase" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8421689336187651546">
+      <link role="conceptLinkDeclaration:0" targetNodeId="6.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="1167169188348:2" resolveInfo="TemplateFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8421689336187651547">
+      <link role="conceptLinkDeclaration:0" targetNodeId="6.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="12.1216860049635:0" resolveInfo="TemplateFunctionParameter_generationContext" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8421689336187654036">
+      <link role="conceptLinkDeclaration:0" targetNodeId="6.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="8.1161622753914:0" resolveInfo="ConceptFunctionParameter_operationContext" />
     </node>
   </node>
 </model>

@@ -252,17 +252,29 @@
     <node role="patternReductionRule:2" type="jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule:2" id="1805153994417305560">
       <link role="labelDeclaration:2" targetNodeId="1805153994417305563" resolveInfo="DotToDot" />
       <node role="pattern:2" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="1805153994417305561">
-        <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1805153994417313685">
-          <node role="operand:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1805153994417313690">
-            <node role="quotedNode:0" type="jetbrains.mps.lang.core.structure.BaseConcept:0" id="1805153994417313691">
-              <node role="_attr_$attribute:0" type="jetbrains.mps.lang.pattern.structure.WildcardPattern:0" id="1805153994417313692" />
+        <node role="patternNode:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7514052574630251602">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="7514052574630251603">
+            <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.WildcardPattern:0" id="7514052574630255987" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.IOperation:3" id="7514052574630251604">
+            <node role="_attr_$attribute:3" type="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration:0" id="7514052574630251605">
+              <property name="varName:0" value="x" />
             </node>
           </node>
-          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation:16" id="1805153994417335024" />
         </node>
       </node>
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="4589968773278029738">
         <link role="template:2" targetNodeId="4589968773278022354" resolveInfo="reduce_with_name" />
+        <node role="actualArgument:2" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8421689336188820109">
+          <property name="value:3" value="aaa" />
+        </node>
+        <node role="actualArgument:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8421689336188820104">
+          <property name="value:3" value="1" />
+        </node>
+        <node role="actualArgument:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8421689336188820106">
+          <property name="value:3" value="1" />
+        </node>
+        <node role="actualArgument:2" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="8421689336188820110" />
       </node>
     </node>
     <node role="patternReductionRule:2" type="jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule:2" id="4589968773278335907">
@@ -685,6 +697,8 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4035562641223128668" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4035562641223128669" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1223900676839">
           <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1223900676840">
             <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1223900737630">
@@ -838,6 +852,16 @@
     <node role="parameter:2" type="jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration:2" id="4589968773278022356">
       <property name="name:2" value="name" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4589968773278029694" />
+    </node>
+    <node role="parameter:2" type="jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration:2" id="4035562641222845664">
+      <property name="name:2" value="node" />
+      <node role="type:2" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4035562641222847321">
+        <link role="concept:16" targetNodeId="1.1145552809883:3" resolveInfo="AbstractCreator" />
+      </node>
+    </node>
+    <node role="parameter:2" type="jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration:2" id="4035562641222847322">
+      <property name="name:2" value="int" />
+      <node role="type:2" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="4035562641222847324" />
     </node>
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="4589968773278029695">
       <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4589968773278029696">
