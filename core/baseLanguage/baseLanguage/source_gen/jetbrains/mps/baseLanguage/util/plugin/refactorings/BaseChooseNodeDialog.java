@@ -14,8 +14,8 @@ import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.awt.Dialog;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelReference;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -58,10 +58,7 @@ public abstract class BaseChooseNodeDialog extends BaseDialog {
 
   private void init() {
     this.myVisibleModels.add(this.myContextModel);
-    AbstractModule module = ((AbstractModule) this.myContextModel.getModule());
-    System.out.println("finding models:");
-    for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
-      System.out.println("found; " + modelDescriptor);
+    for (SModelDescriptor modelDescriptor : ListSequence.fromList(((AbstractModule) this.myContextModel.getModule()).getOwnModelDescriptors())) {
       this.myVisibleModels.add(modelDescriptor);
     }
     for (SModelReference sm : this.myContextModel.getSModel().getImportedModelUIDs()) {
