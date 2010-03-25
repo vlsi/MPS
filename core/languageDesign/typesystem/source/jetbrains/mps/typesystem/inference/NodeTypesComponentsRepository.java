@@ -114,8 +114,9 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
           typeCheckingContext = new TypeCheckingContext(root, myTypeChecker);
           myNodesToContexts.put(typeCheckingContext.getNode(), typeCheckingContext);
           SModel sModel = root.getModel();
-          if (!sModel.hasModelListener(myModelListener)) {
-            sModel.addWeakSModelListener(myModelListener);
+          SModelDescriptor descriptor = sModel.getModelDescriptor();
+          if (descriptor != null && !descriptor.hasModelListener(myModelListener)) {
+            descriptor.addModelListener(myModelListener);
           }
           return typeCheckingContext;
         }

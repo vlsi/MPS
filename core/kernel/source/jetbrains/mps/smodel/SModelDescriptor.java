@@ -119,6 +119,8 @@ public interface SModelDescriptor {
 
   boolean hasSModelCommandListener(SModelCommandListener listener);
 
+  boolean hasModelListener(SModelListener listener);
+
   boolean isTransient();
 
   String getAttribute(String key);

@@ -366,6 +366,16 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     }
   }
 
+  public boolean hasModelListener(SModelListener listener) {
+    synchronized (myListenersLock) {
+      if (isInitialized()) {
+        return mySModel.hasModelListener(listener);
+      } else {
+        return myModelListeners.contains(listener);
+      }
+    }
+  }
+
   public void addModelListener(SModelListener listener) {
     synchronized (myListenersLock) {
       if (isInitialized()) {
