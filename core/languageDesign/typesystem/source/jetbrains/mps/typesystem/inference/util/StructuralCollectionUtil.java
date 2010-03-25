@@ -64,7 +64,7 @@ public class StructuralCollectionUtil {
 
   private static void removeNodeFromSet(SNode node, SModel model, Set<SNode> nodeSet) {
     if (nodeSet == null) {
-      System.err.println("");
+      LOG.warning("node set is null");
       return;
     }
     nodeSet.remove(node);
