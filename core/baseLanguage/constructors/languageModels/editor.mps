@@ -69,6 +69,15 @@
           <property name="flag:32" value="true" />
         </node>
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="606143069299308269">
+        <property name="text:32" value="short description:" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="606143069299308270">
+        <link role="relationDeclaration:32" targetNodeId="1.1592896280557742968:1" resolveInfo="description" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="606143069299308271">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3041831561921935511">
         <property name="text:32" value="element type:" />
       </node>
@@ -103,7 +112,7 @@
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="6820702584719569343">
-        <property name="text:32" value="left:" />
+        <property name="text:32" value="left parenthesis:" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="6820702584719569351">
         <link role="relationDeclaration:32" targetNodeId="1.6820702584719416500:1" resolveInfo="leftParenthesis" />
@@ -112,19 +121,13 @@
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="6820702584720079745">
-        <property name="text:32" value="right:" />
+        <property name="text:32" value="right parenthesis:" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="6820702584720079746">
         <link role="relationDeclaration:32" targetNodeId="1.6820702584719416503:1" resolveInfo="rightParenthesis" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1592896280557742970">
           <property name="flag:32" value="true" />
         </node>
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1592896280557744782">
-        <property name="text:32" value="short description:" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1592896280557744784">
-        <link role="relationDeclaration:32" targetNodeId="1.1592896280557742968:1" resolveInfo="short description" />
       </node>
     </node>
   </node>

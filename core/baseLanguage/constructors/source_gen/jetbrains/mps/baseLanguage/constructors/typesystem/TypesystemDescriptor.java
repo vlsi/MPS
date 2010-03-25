@@ -12,7 +12,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_Element_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_CustomConstructorUsage_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_Elements_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
   }
