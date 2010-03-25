@@ -50,7 +50,6 @@ public class SModelRepository implements ApplicationComponent {
 
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
-  private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
 
   private SModelListener myModelsListener = new ModelChangeListener();
 
@@ -99,28 +98,15 @@ public class SModelRepository implements ApplicationComponent {
     }
   }
 
-  @Deprecated
-  public void addWeakModelRepositoryListener(@NotNull SModelRepositoryListener l) {
-    synchronized (myListenersLock) {
-      myWeakSModelRepositoryListeners.add(l);
-    }
-  }
-
   public void removeModelRepositoryListener(@NotNull SModelRepositoryListener l) {
     synchronized (myListenersLock) {
       mySModelRepositoryListeners.remove(l);
-      myWeakSModelRepositoryListeners.remove(l);
     }
   }
 
   private List<SModelRepositoryListener> listeners() {
     synchronized (myListenersLock) {
-      List<SModelRepositoryListener> result = new ArrayList<SModelRepositoryListener>(mySModelRepositoryListeners);
-      for (SModelRepositoryListener l : myWeakSModelRepositoryListeners) {
-        if (l == null) continue;
-        result.add(l);
-      }
-      return result;
+      return new ArrayList<SModelRepositoryListener>(mySModelRepositoryListeners);
     }
   }
 
