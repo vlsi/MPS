@@ -13,6 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new GenerationContextOp_PatternRef_patternVarDecl_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new GenerationContextOp_ParameterRef_parameter_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

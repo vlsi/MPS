@@ -380,5 +380,23 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5190093307972736267">
+    <link role="conceptDeclaration:32" targetNodeId="1.5190093307972723402:0" resolveInfo="GenerationContextOp_ParameterRef" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="5190093307972736269">
+      <link role="relationDeclaration:32" targetNodeId="1.5190093307972736266:0" />
+      <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="5190093307972736270">
+        <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="5190093307972736272">
+          <property name="readOnly:32" value="true" />
+          <link role="relationDeclaration:32" targetNodeId="3.1169194664001:0" resolveInfo="name" />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="5190093307972736273">
+            <property name="style:32" value="BOLD" />
+          </node>
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="5190093307972736274">
+            <property name="color:32" value="DARK_GREEN" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

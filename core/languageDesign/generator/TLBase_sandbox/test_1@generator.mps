@@ -913,8 +913,19 @@
                 <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="4589968773278056986">
                   <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4589968773278056987">
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4589968773278056988">
-                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4589968773278056989">
-                        <property name="value:3" value="" />
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5190093307973220379">
+                        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5190093307973220372">
+                          <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="5190093307973220371" />
+                          <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef:0" id="5190093307973220377">
+                            <link role="parameter:0" targetNodeId="4589968773278022356" resolveInfo="name" />
+                          </node>
+                        </node>
+                        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5190093307973220383">
+                          <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="5190093307973220382" />
+                          <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef:0" id="5190093307973220387">
+                            <link role="parameter:0" targetNodeId="4035562641222847322" resolveInfo="int" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
