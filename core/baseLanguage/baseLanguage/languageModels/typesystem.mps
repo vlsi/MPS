@@ -23128,27 +23128,27 @@
           </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6654001062452862442">
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6654001062452862443">
-              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.WarningStatement:3" id="6654001062452862484">
-                <node role="warningText:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6654001062452862503">
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6654001062452862506">
+              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="4164094338984214928">
+                <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4164094338984214957">
+                  <link role="applicableNode:3" targetNodeId="6654001062452788424" resolveInfo="localVariableDeclaration" />
+                </node>
+                <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="4164094338984214931">
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4164094338984214932">
                     <property name="value:3" value=" is already defined in the scope" />
                   </node>
-                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6654001062452862488">
-                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6654001062452862487">
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="4164094338984214933">
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4164094338984214934">
                       <property name="value:3" value="Variable " />
                     </node>
-                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6654001062452862491">
-                      <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6654001062452862492">
+                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4164094338984214935">
+                      <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4164094338984214936">
                         <link role="applicableNode:3" targetNodeId="6654001062452788424" resolveInfo="localVariableDeclaration" />
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6654001062452862493">
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4164094338984214937">
                         <link role="property:16" targetNodeId="25.1169194664001:0" resolveInfo="name" />
                       </node>
                     </node>
                   </node>
-                </node>
-                <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6654001062452862507">
-                  <link role="applicableNode:3" targetNodeId="6654001062452788424" resolveInfo="localVariableDeclaration" />
                 </node>
               </node>
             </node>
