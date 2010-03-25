@@ -16,10 +16,6 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.stubs.BaseLibStubDescriptor;
-import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import jetbrains.mps.stubs.BaseStubModelRootManager;
-import jetbrains.mps.stubs.StubLocation;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -84,7 +80,7 @@ public class StubReloadManager implements ApplicationComponent {
   //-------------
 /*
   private void markOldStubs() {
-    Set<StubPath> newStubs = new HashSet<StubPath>();
+    List<StubPath> newStubs = new ArrayList<StubPath>();
     for (AbstractModule module : getAllModules()) {
       List<StubPath> moduleStubs = module.areJavaStubsEnabled() ? module.getAllStubPaths() : module.getStubPaths();
       newStubs.addAll(moduleStubs);
@@ -104,7 +100,7 @@ public class StubReloadManager implements ApplicationComponent {
 */
 
   private void refreshModelManagers() {
-    for (BaseStubModelDescriptor md:getAllStubModels()){
+    for (BaseStubModelDescriptor md : getAllStubModels()) {
       md.setModelRootManager(null);
     }
   }
@@ -123,30 +119,8 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private List<StubPath> computeNotChangedStubPaths(AbstractModule module) {
-    /*
-      We have to update stub path in the following cases:
-      * a new path which didn't existed
-      * an old path which does not exist any more
-      * timestamp for this path has changed (stubs change)
-      * model root manager for the path has changed (manager change leading to stubs change)
-    */
-
-    //we do not touch models whose loaded status, files and manager were not changed
-    List<StubPath> notChangedStubPaths = new ArrayList<StubPath>();
-
     List<StubPath> newStubs = module.areJavaStubsEnabled() ? module.getAllStubPaths() : module.getStubPaths();
-
-    //todo make time linear [due to stubs list size this is not very significant]
-    for (StubPath os : myAllStubPaths.get(module.getModuleId())) {
-      for (StubPath ns : newStubs) {
-        if (os.equals(ns)) {
-          if (os.isFresh()) {
-            notChangedStubPaths.add(ns);
-          }
-        }
-      }
-    }
-    return notChangedStubPaths;
+    return computeNotChangedStubPaths(myAllStubPaths.get(module.getModuleId()), newStubs);
   }
 
   private boolean notChanged(List<StubPath> notChangedStubPaths, SModelDescriptor sm) {
@@ -164,7 +138,7 @@ public class StubReloadManager implements ApplicationComponent {
 
   private void markNewStubs() {
     for (BaseStubModelDescriptor m : getAllStubModels()) {
-      if (m.isInitialized()){
+      if (m.isInitialized()) {
         m.unmarkReload();
       }
     }
@@ -311,7 +285,7 @@ public class StubReloadManager implements ApplicationComponent {
     //todo make time linear [due to stubs list size this is not very significant]
     for (StubPath os : oldStubs) {
       for (StubPath ns : newStubs) {
-        if (os.equals(ns)) {
+        if (equalStubPaths(os, ns)) {
           if (os.isFresh()) {
             notChangedStubPaths.add(ns);
           }
@@ -319,6 +293,18 @@ public class StubReloadManager implements ApplicationComponent {
       }
     }
     return notChangedStubPaths;
+  }
+
+  private boolean equalStubPaths(StubPath os, StubPath ns) {
+    if (os == ns) return true;
+    if (ns == null || os.getClass() != ns.getClass()) return false;
+
+    StubPath stubPath = (StubPath) ns;
+
+    boolean pathsEqual = EqualUtil.equals(stubPath.getPath(), os.getPath());
+    boolean managersEqual = EqualUtil.equals(stubPath.getManager(), os.getManager());
+    boolean equalSP = pathsEqual && managersEqual;
+    return equalSP;
   }
 
   private boolean modelPathsNotChanged(BaseStubModelDescriptor sm, List<StubPath> notChangedStubPaths) {
@@ -382,8 +368,8 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private static class MyStubPaths extends HashMap<ModuleId, List<StubPath>> {
-    public Set<StubPath> getAllStubPaths() {
-      Set<StubPath> result = new HashSet<StubPath>();
+    public List<StubPath> getAllStubPaths() {
+      List<StubPath> result = new ArrayList<StubPath>();
       for (List<StubPath> lsp : values()) {
         result.addAll(lsp);
       }

@@ -29,7 +29,6 @@ public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
     return model;
   }
 
-  //must be called only under loading lock
   private void updateAfterLoad(SModel model) {
     synchronized (myUpdatersLock) {
       Set<ModelUpdater> updCopy = new HashSet<ModelUpdater>(myUpdaters);

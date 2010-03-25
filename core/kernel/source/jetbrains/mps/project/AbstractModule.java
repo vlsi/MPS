@@ -894,24 +894,6 @@ public abstract class AbstractModule implements IModule {
       myManagerTimestamp = 0L;
     }
 
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-
-      StubPath stubPath = (StubPath) o;
-
-      boolean pathsEqual = EqualUtil.equals(stubPath.getPath(), this.getPath());
-      boolean managersEqual = EqualUtil.equals(stubPath.getManager(), this.getManager());
-      boolean equalSP = pathsEqual && managersEqual;
-      return equalSP;
-    }
-
-    public int hashCode() {
-      int result = myPath != null ? myPath.hashCode() : 0;
-      result = 31 * result + (myManager != null ? myManager.hashCode() : 0);
-      return result;
-    }
-
     @Override
     public String toString() {
       return myPath + "{" + myManager + '}';
