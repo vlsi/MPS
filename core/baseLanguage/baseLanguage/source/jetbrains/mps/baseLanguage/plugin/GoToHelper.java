@@ -45,6 +45,12 @@ public class GoToHelper {
     showMenu(point, project, title, nodes, renderer);
   }
 
+  public static void showOverridenMethodsMenu(List<SNode> nodes, RelativePoint point, Project project) {
+    String title = "Choose overriden method to navigate to";
+    MethodCellRenderer renderer = new MethodCellRenderer();
+    showMenu(point, project, title, nodes, renderer);
+  }
+
   public static void showInheritedClassesMenu(List<SNode> nodes, RelativePoint point, Project project) {
     String title = "Choose inherited class to navigate to";
     ClassCellRenderer renderer = new ClassCellRenderer();

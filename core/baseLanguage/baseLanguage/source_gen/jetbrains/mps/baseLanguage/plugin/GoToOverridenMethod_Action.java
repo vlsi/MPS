@@ -6,28 +6,36 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import java.util.Set;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import javax.swing.SwingUtilities;
+import com.intellij.ui.awt.RelativePoint;
+import java.awt.event.MouseEvent;
+import java.awt.Rectangle;
+import java.awt.Point;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import java.util.List;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.HashSet;
 
 public class GoToOverridenMethod_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(GoToOverridenMethod_Action.class);
 
   private SNode selectedNode;
+  private EditorComponent editorComponent;
+  private EditorContext editorContext;
   private IOperationContext operationContext;
+  private Project project;
 
   public GoToOverridenMethod_Action() {
     super("Go to Overriden Method", "", ICON);
@@ -41,7 +49,7 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return (GoToOverridenMethod_Action.this.getInstanceMethodDeclaration() != null) && (GoToOverridenMethod_Action.this.getClassifier() != null) && GoToOverridenMethod_Action.this.getOverridenMethod() != null;
+    return (GoToOverridenMethod_Action.this.getInstanceMethodDeclaration() != null) && (GoToOverridenMethod_Action.this.getClassifier() != null) && !(GoToOverridenMethod_Action.this.getOverridenMethod().isEmpty());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -70,8 +78,20 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
     if (this.selectedNode == null) {
       return false;
     }
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
+      return false;
+    }
+    this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
+    if (this.editorContext == null) {
+      return false;
+    }
     this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (this.operationContext == null) {
+      return false;
+    }
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
       return false;
     }
     return true;
@@ -79,11 +99,26 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      // should be executed as write action since <node> requires it now 
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SNode overridenMethod = GoToOverridenMethod_Action.this.getOverridenMethod();
-          GoToOverridenMethod_Action.this.operationContext.getComponent(MPSEditorOpener.class).editNode(overridenMethod, GoToOverridenMethod_Action.this.operationContext);
+          final Set<Tuples._2<SNode, SNode>> overridenMethods = GoToOverridenMethod_Action.this.getOverridenMethod();
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              RelativePoint relativePoint;
+              if (event.getInputEvent() instanceof MouseEvent) {
+                relativePoint = new RelativePoint((MouseEvent) event.getInputEvent());
+              } else {
+                Rectangle cellBounds = GoToOverridenMethod_Action.this.editorContext.getSelectedCell().getBounds();
+                Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
+                relativePoint = new RelativePoint(GoToOverridenMethod_Action.this.editorComponent, point);
+              }
+              GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods).select(new ISelector<Tuples._2<SNode, SNode>, SNode>() {
+                public SNode select(Tuples._2<SNode, SNode> it) {
+                  return it._0();
+                }
+              }).toListSequence(), relativePoint, GoToOverridenMethod_Action.this.project);
+            }
+          });
         }
       });
     } catch (Throwable t) {
@@ -99,11 +134,13 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
     return SNodeOperations.getAncestor(GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
   }
 
-  private SNode getOverridenMethod() {
+  private Set<Tuples._2<SNode, SNode>> getOverridenMethod() {
     SNode method = GoToOverridenMethod_Action.this.getInstanceMethodDeclaration();
     SNode classifier = GoToOverridenMethod_Action.this.getClassifier();
-    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.INSTANCE_METHOD);
-    List<BaseMethodDeclaration> overridenMethods = scope.getOverriddenMethods(((InstanceMethodDeclaration) SNodeOperations.getAdapter(method)));
-    return SNodeOperations.cast(BaseAdapter.fromAdapter(ListSequence.fromList(overridenMethods).first()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    Set<Tuples._2<SNode, SNode>> overridenMethods = new OverridingMethodsFinder(classifier, Sequence.<SNode>singleton(method)).getOverridenMethods(method);
+    return (overridenMethods == null ?
+      SetSequence.fromSet(new HashSet<Tuples._2<SNode, SNode>>()) :
+      overridenMethods
+    );
   }
 }

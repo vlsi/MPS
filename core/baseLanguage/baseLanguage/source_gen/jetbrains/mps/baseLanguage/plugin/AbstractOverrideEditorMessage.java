@@ -13,6 +13,7 @@ import java.awt.Cursor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.EditorMessage;
 
 public abstract class AbstractOverrideEditorMessage extends DefaultEditorMessage implements EditorMessageIconRenderer {
   private String myTooltip;
@@ -39,6 +40,15 @@ public abstract class AbstractOverrideEditorMessage extends DefaultEditorMessage
       return bigCell.findChild(CellFinders.byClass(EditorCell_Label.class, true));
     }
     return bigCell;
+  }
+
+  @Override
+  public boolean sameAs(EditorMessage message) {
+    if (message instanceof AbstractOverrideEditorMessage) {
+      AbstractOverrideEditorMessage other = (AbstractOverrideEditorMessage) message;
+      return super.sameAs(other) && other.getType() == this.getType() && other.getTooltipText().equals(this.getTooltipText());
+    }
+    return false;
   }
 
   @Override
