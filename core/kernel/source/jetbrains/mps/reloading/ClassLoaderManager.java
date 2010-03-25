@@ -305,6 +305,11 @@ public class ClassLoaderManager implements ApplicationComponent {
             myExcludedPackages.add(modelDescriptor.getLongName());
           }
         }
+
+        for (SModelDescriptor model:l.getUtilModels()){
+          myExcludedPackages.add(model.getLongName());
+        }
+
         for (Generator generator : l.getGenerators()) {
           for (SModelDescriptor templateModel : generator.getOwnModelDescriptors()) {
             if (isNotStubModel(templateModel)) {
