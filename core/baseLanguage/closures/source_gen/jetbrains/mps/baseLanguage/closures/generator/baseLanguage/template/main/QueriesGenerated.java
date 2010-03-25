@@ -46,6 +46,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.PrepStatementUtil;
+import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.WrappersUtils;
 import java.util.Set;
 import java.util.HashSet;
@@ -3903,7 +3904,7 @@ public class QueriesGenerated {
       for (SNode pdecl : pdecls) {
         if (idx < ListSequence.fromList(args).count()) {
           SNode arg = ListSequence.fromList(args).getElement(idx);
-          FunctionTypeUtil.prepAdaptations(_context, SLinkOperations.getTarget(pdecl, "type", true), arg);
+          FunctionTypeUtil.prepAdaptations(_context, TypeDerivable_Behavior.call_deriveType_1213877435747(bmc, arg), arg);
         }
         idx++;
       }
@@ -4035,7 +4036,7 @@ public class QueriesGenerated {
       for (SNode pdecl : pdecls) {
         if (idx < ListSequence.fromList(args).count()) {
           SNode arg = ListSequence.fromList(args).getElement(idx);
-          FunctionTypeUtil.prepAdaptations(_context, SLinkOperations.getTarget(pdecl, "type", true), arg);
+          FunctionTypeUtil.prepAdaptations(_context, TypeDerivable_Behavior.call_deriveType_1213877435747(cc, arg), arg);
         }
         idx++;
       }

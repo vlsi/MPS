@@ -41,7 +41,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <maxImportIndex value="26" />
+  <maxImportIndex value="27" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -57,6 +57,7 @@
   <import index="24" modelUID="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" version="-1" />
   <import index="25" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="26" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
+  <import index="27" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1199623542211">
     <property name="name:2" value="main" />
     <node role="preMappingScript:2" type="jetbrains.mps.lang.generator.structure.MappingScriptReference:2" id="1203007568996">
@@ -12210,12 +12211,15 @@
                         <link role="baseMethodDeclaration:3" targetNodeId="13.1215469939172" resolveInfo="prepAdaptations" />
                         <link role="classConcept:3" targetNodeId="13.1201646588418" resolveInfo="FunctionTypeUtil" />
                         <node role="actualArgument:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="1227741029792" />
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1215470764573">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1215470764574">
-                            <link role="variableDeclaration:3" targetNodeId="1201686987885" resolveInfo="pdecl" />
+                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2619154382621406646">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2619154382621406645">
+                            <link role="variableDeclaration:3" targetNodeId="1201686945051" resolveInfo="bmc" />
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1215470764575">
-                            <link role="link:16" targetNodeId="3.5680397130376446158:3" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="2619154382621429270">
+                            <link role="baseMethodDeclaration:16" targetNodeId="27.1213877435747" resolveInfo="deriveType" />
+                            <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2619154382621429271">
+                              <link role="variableDeclaration:3" targetNodeId="1201693549025" resolveInfo="arg" />
+                            </node>
                           </node>
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1215470775713">
@@ -15997,12 +16001,15 @@
                         <link role="baseMethodDeclaration:3" targetNodeId="13.1215469939172" resolveInfo="prepAdaptations" />
                         <link role="classConcept:3" targetNodeId="13.1201646588418" resolveInfo="FunctionTypeUtil" />
                         <node role="actualArgument:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="1227741035090" />
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1219747408193">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1219747408194">
-                            <link role="variableDeclaration:3" targetNodeId="1219747408210" resolveInfo="pdecl" />
+                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2619154382621180109">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2619154382621180108">
+                            <link role="variableDeclaration:3" targetNodeId="1219747408213" resolveInfo="cc" />
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1219747408195">
-                            <link role="link:16" targetNodeId="3.5680397130376446158:3" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="2619154382621208894">
+                            <link role="baseMethodDeclaration:16" targetNodeId="27.1213877435747" resolveInfo="deriveType" />
+                            <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2619154382621208895">
+                              <link role="variableDeclaration:3" targetNodeId="1219747408185" resolveInfo="arg" />
+                            </node>
                           </node>
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1219747408196">
