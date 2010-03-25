@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.util.misc.ObjectCache;
 import jetbrains.mps.util.misc.ObjectCache.DeletedPairsListener;
@@ -78,7 +75,10 @@ public class StructuralCollectionUtil {
 
         if (nodeSet == null || nodeSet.isEmpty()) {
           ourModelsToNodes.remove(model);
-          model.removeModelListener(ourModelListener);
+          SModelDescriptor modelDescriptor = model.getModelDescriptor();
+          if (modelDescriptor != null) {
+            modelDescriptor.removeModelListener(ourModelListener);
+          }
         }
       }
     });
@@ -99,7 +99,7 @@ public class StructuralCollectionUtil {
     if (nodeSet == null) {
       nodeSet = new HashSet<SNode>();
       ourModelsToNodes.put(model, nodeSet);
-      model.addModelListener(ourModelListener);
+      model.getModelDescriptor().addModelListener(ourModelListener);
     }
     nodeSet.add(node);
 
