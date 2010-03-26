@@ -47,7 +47,11 @@ public class ConstructorDeclaration_Behavior {
 
   public static String call_getPresentationInContext_983626226385657373(SNode thisNode, SNode context) {
     StringBuilder result = new StringBuilder();
-    result.append(Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ClassConcept"), context));
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      result.append(Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ClassConcept"), context));
+    } else {
+      result.append(".ctor");
+    }
     result.append("(");
     boolean first = true;
     for (SNode parm : SLinkOperations.getTargets(thisNode, "parameter", true)) {

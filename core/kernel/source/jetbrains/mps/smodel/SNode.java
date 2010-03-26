@@ -1477,7 +1477,7 @@ public final class SNode {
  As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
  */
       return "" + BaseConcept_Behavior.call_getPresentation_1213877396640(this);
-    } catch (Throwable t) {
+    } catch (RuntimeException t) {
       LOG.error(t);
       return "[can't calculate presentation : " + t.getMessage() + "]";
     }
@@ -1493,7 +1493,7 @@ public final class SNode {
       if (s == null) {
         s = getPresentation();
       }
-    } catch (Throwable t) {
+    } catch (RuntimeException t) {
       LOG.error(t, this);
     }
     if (s == null) {
