@@ -17,10 +17,7 @@ package jetbrains.mps.vcs.ui;
 
 import com.intellij.openapi.ui.VerticalFlowLayout;
 
-import javax.swing.JCheckBox;
-import javax.swing.JPanel;
-import javax.swing.GroupLayout;
-import javax.swing.ButtonGroup;
+import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -81,7 +78,7 @@ public class VcsSettingsPanel extends JPanel {
   private static abstract class EnumPanel extends JPanel {
     private final String[] myTitles;
     private final String[] myValues;
-    private final JCheckBox[] myCheckBoxes;
+    private final JRadioButton[] myRadioButtons;
 
     public EnumPanel(String[] values, String[] titles, @Nullable String panelTitle) {
       super(new VerticalFlowLayout(true, false));
@@ -94,13 +91,13 @@ public class VcsSettingsPanel extends JPanel {
 
       assert myValues.length == myTitles.length;
 
-      myCheckBoxes = new JCheckBox[myValues.length];
+      myRadioButtons = new JRadioButton[myValues.length];
 
       ButtonGroup group = new ButtonGroup();
       for (int i = 0; i < myValues.length; i++) {
-        myCheckBoxes[i] = new JCheckBox(myTitles[i], myValues[i].equals(getSettingsValue()));
-        group.add(myCheckBoxes[i]);
-        add(myCheckBoxes[i]);
+        myRadioButtons[i] = new JRadioButton(myTitles[i], myValues[i].equals(getSettingsValue()));
+        group.add(myRadioButtons[i]);
+        add(myRadioButtons[i]);
       }
     }
 
@@ -109,8 +106,8 @@ public class VcsSettingsPanel extends JPanel {
     public abstract void setSettingsValue(String value);
 
     public void apply() {
-      for (int i = 0; i < myCheckBoxes.length; i++) {
-        if (myCheckBoxes[i].isSelected()) {
+      for (int i = 0; i < myRadioButtons.length; i++) {
+        if (myRadioButtons[i].isSelected()) {
           setSettingsValue(myValues[i]);
           break;
         }
@@ -119,17 +116,17 @@ public class VcsSettingsPanel extends JPanel {
 
     public void reset() {
       String value = getSettingsValue();
-      for (int i = 0; i < myCheckBoxes.length; i++) {
+      for (int i = 0; i < myRadioButtons.length; i++) {
         if (myValues[i].equals(value)) {
-          myCheckBoxes[i].setSelected(true);
+          myRadioButtons[i].setSelected(true);
           break;
         }
       }
     }
 
     public boolean isModified() {
-      for (int i = 0; i < myCheckBoxes.length; i++) {
-        if (myCheckBoxes[i].isSelected()) {
+      for (int i = 0; i < myRadioButtons.length; i++) {
+        if (myRadioButtons[i].isSelected()) {
           return !getSettingsValue().equals(myValues[i]);
         }
       }
