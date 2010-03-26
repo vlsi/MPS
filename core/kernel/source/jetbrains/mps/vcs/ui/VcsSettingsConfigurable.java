@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nls;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 
-public class VcsSettingsConfigurable implements Configurable, SearchableConfigurable {
+public class VcsSettingsConfigurable implements SearchableConfigurable {
   private VcsSettingsPanel mySettingsPanel;
   private final VcsIdeSettings mySettings;
 
@@ -61,6 +61,8 @@ public class VcsSettingsConfigurable implements Configurable, SearchableConfigur
     if (mySettingsPanel != null) {
       mySettingsPanel.apply();
     }
+    // TODO switch changes manager on/off if needed
+    System.out.println("Current setting for isChangesManagerEnabled(): " + mySettings.isChangesManagerEnabled());
   }
 
   public void reset() {

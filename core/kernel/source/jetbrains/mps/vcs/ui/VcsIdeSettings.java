@@ -16,19 +16,12 @@
 package jetbrains.mps.vcs.ui;
 
 public class VcsIdeSettings {
-  private boolean myTextModeEnabled = false;
   private String myDiscoverVcsRoots = VcsRootsDiscoveryPolicy.ADD.name();
+  private boolean myTextModeEnabled = false;
+  private boolean myChangesManagerEnabled = true;
 
-  public boolean getTextModeEnabled() {
+  public boolean isTextModeEnabled() {
     return myTextModeEnabled;
-  }
-
-  public void setTextModeEnabled(boolean textModeEnabled) {
-    myTextModeEnabled = textModeEnabled;
-  }
-
-  public boolean getNotifyWhenChangedOutsideAreMade() {
-    return VcsRootsDiscoveryPolicy.valueOf(myDiscoverVcsRoots).equals(VcsRootsDiscoveryPolicy.NOTIFY);
   }
 
   public void setNotifyWhenChangedOutsideAreMade(boolean notifyWhenChangedOutsideAreMade) {
@@ -65,6 +58,22 @@ public class VcsIdeSettings {
 
   public void setDiscoverVcsRoots(VcsRootsDiscoveryPolicy discoverVcsRoots) {
     myDiscoverVcsRoots = discoverVcsRoots.name();
+  }
+
+  public void setTextModeEnabled(boolean textModeEnabled) {
+    myTextModeEnabled = textModeEnabled;
+  }
+
+  public boolean getNotifyWhenChangedOutsideAreMade() {
+    return VcsRootsDiscoveryPolicy.valueOf(myDiscoverVcsRoots).equals(VcsRootsDiscoveryPolicy.NOTIFY);
+  }
+
+  public boolean isChangesManagerEnabled() {
+    return myChangesManagerEnabled;
+  }
+
+  public void setChangesManagerEnabled(boolean changesManagerEnabled) {
+    myChangesManagerEnabled = changesManagerEnabled;
   }
 
   public static enum VcsRootsDiscoveryPolicy {

@@ -20,7 +20,6 @@ import com.intellij.openapi.ui.VerticalFlowLayout;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 
 import jetbrains.mps.vcs.ui.VcsIdeSettings.VcsRootsDiscoveryPolicy;
 import org.jetbrains.annotations.Nullable;
@@ -29,49 +28,59 @@ public class VcsSettingsPanel extends JPanel {
   private final VcsIdeSettings mySettings;
   private final JCheckBox myTextModeDifferenceCheckBox;
   private final EnumPanel myVcsRootsPanel;
+  private final JCheckBox myChangesManagerEnabledCheckBox;
 
-  public VcsSettingsPanel(final VcsIdeSettings settings) {
+  public VcsSettingsPanel(VcsIdeSettings settings) {
     super(new VerticalFlowLayout(true, false));
     mySettings = settings;
 
     myVcsRootsPanel = new EnumPanel(new String[]{VcsRootsDiscoveryPolicy.ADD.name(),
       VcsRootsDiscoveryPolicy.NOTIFY.name(),
       VcsRootsDiscoveryPolicy.DO_NOTING.name()},
-      new String[]{"Add to project vcs directory mappings",
+      new String[]{"Add directory mappings to project VCS",
         "Show notification",
         "Do nothing"},
-      "When new vcs roots discovered") {
+      "When new VCS roots are discovered") {
       @Override
       public String getSettingsValue() {
-        return settings.getDiscoverVcsRoots();
+        return mySettings.getDiscoverVcsRoots();
       }
 
       @Override
       public void setSettingsValue(String value) {
-        settings.setDiscoverVcsRoots(value);
+        mySettings.setDiscoverVcsRoots(value);
       }
     };
 
     JPanel diffPanel = new JPanel(new BorderLayout());
     diffPanel.setBorder(new TitledBorder("Differences view"));
-    myTextModeDifferenceCheckBox = new JCheckBox("Use text diff for models", mySettings.getTextModeEnabled());
+    myTextModeDifferenceCheckBox = new JCheckBox("Use text diff for models", mySettings.isTextModeEnabled());
     diffPanel.add(myTextModeDifferenceCheckBox);
+
+    JPanel changesManagerPanel = new JPanel(new BorderLayout());
+    changesManagerPanel.setBorder(new TitledBorder("Changes highlighting"));
+    myChangesManagerEnabledCheckBox = new JCheckBox("Enable changes highlighting");
+    changesManagerPanel.add(myChangesManagerEnabledCheckBox);
 
     add(myVcsRootsPanel);
     add(diffPanel);
+    add(changesManagerPanel);
   }
 
   public boolean isModified() {
-    return (myTextModeDifferenceCheckBox.isSelected() != mySettings.getTextModeEnabled()) || myVcsRootsPanel.isModified();
+    return (myTextModeDifferenceCheckBox.isSelected() != mySettings.isTextModeEnabled()) || myVcsRootsPanel.isModified() ||
+      (myChangesManagerEnabledCheckBox.isSelected() != mySettings.isChangesManagerEnabled());
   }
 
   public void reset() {
-    myTextModeDifferenceCheckBox.setSelected(mySettings.getTextModeEnabled());
+    myTextModeDifferenceCheckBox.setSelected(mySettings.isTextModeEnabled());
+    myChangesManagerEnabledCheckBox.setSelected(mySettings.isChangesManagerEnabled());
     myVcsRootsPanel.reset();
   }
 
   public void apply() {
     mySettings.setTextModeEnabled(myTextModeDifferenceCheckBox.isSelected());
+    mySettings.setChangesManagerEnabled(myChangesManagerEnabledCheckBox.isSelected());
     myVcsRootsPanel.apply();
   }
 

@@ -82,7 +82,7 @@ public class ModelMergeTool implements DiffTool {
   }
 
   public boolean canShow(DiffRequest request) {
-    if (ApplicationLevelVcsManager.instance().getSettings().getTextModeEnabled()) return false;
+    if (ApplicationLevelVcsManager.instance().getSettings().isTextModeEnabled()) return false;
     return (request instanceof ModelMergeRequest);
   }
 }
