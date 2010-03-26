@@ -33,6 +33,7 @@ import javax.swing.border.EmptyBorder;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import javax.swing.JOptionPane;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -255,20 +256,23 @@ public class ExtractMethodDialog extends BaseDialog {
     if (!(this.myCanRefactor)) {
       JOptionPane.showMessageDialog(this, "Can't refactor. See errors.", "Can't perform refactoring", JOptionPane.ERROR_MESSAGE);
     } else {
+      final Wrappers._T<SNode> staticTarget = new Wrappers._T<SNode>();
+      final Wrappers._T<SModel> refactoringModel = new Wrappers._T<SModel>();
       if (this.myParameters.getAnalyzer().getExtractMethodReafactoringProcessor().getClass() == AbstractExtractMethodRefactoringProcessor.class) {
         final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            model.value = SNodeOperations.getModel(ListSequence.fromList(ExtractMethodDialog.this.myParameters.getNodesToRefactor()).first()).getModelDescriptor();
+            refactoringModel.value = SNodeOperations.getModel(ListSequence.fromList(ExtractMethodDialog.this.myParameters.getNodesToRefactor()).first());
+            model.value = refactoringModel.value.getModelDescriptor();
           }
         });
-        final SNode staticTarget = BLDialogs.showStaticContainerChooser(this.myContext.getOperationContext(), model.value);
-        if (staticTarget == null) {
+        staticTarget.value = BLDialogs.showStaticContainerChooser(this.myContext.getOperationContext(), model.value);
+        if (staticTarget.value == null) {
           return;
         }
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            ExtractMethodDialog.this.myRefactoring.setStaticContainer(staticTarget);
+            ExtractMethodDialog.this.myRefactoring.setStaticContainer(staticTarget.value);
           }
         });
       }
@@ -276,6 +280,7 @@ public class ExtractMethodDialog extends BaseDialog {
         public void run() {
           SNode result = ExtractMethodDialog.this.myRefactoring.doRefactor();
           ExtractMethodDialog.this.myContext.select(result);
+          refactoringModel.value.addImportedModel(SNodeOperations.getModel(staticTarget.value).getSModelReference());
         }
       });
     }
