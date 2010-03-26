@@ -70,6 +70,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -1649,7 +1650,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final DataContext dataContext = DataManager.getInstance().getDataContext(this);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        GoByCurrentReference_Action action = new GoByCurrentReference_Action();
+        AnAction action = ActionFactory.getInstance().acquireRegisteredAction(GoByCurrentReference_Action.class.getName(), "jetbrains.mps.ide");
         AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, dataContext);
         ActionUtils.updateAndPerformAction(action, event);
       }
@@ -2303,6 +2304,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   // last caret X
+
   boolean hasLastCaretX() {
     return myHasLastCaretX;
   }
@@ -2419,7 +2421,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  /*package*/ Stack<CellInfo> getSelectedStackForMemento() {
+  /*package*/
+
+  Stack<CellInfo> getSelectedStackForMemento() {
     Stack<CellInfo> result = new Stack<CellInfo>();
     for (EditorCell cell : mySelectedStack) {
       if (cell != null) result.push(cell.getCellInfo());
@@ -2487,7 +2491,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myCellSwapInProgress;
   }
 
-  /*package*/ CellInfo getRecentlySelectedCellInfo() {
+  /*package*/
+
+  CellInfo getRecentlySelectedCellInfo() {
     return myRecentlySelectedCellInfo;
   }
 
@@ -3130,15 +3136,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    * This is a copy of com.intellij.openapi.editor.impl.EditorImpl.MyScrollBar class
    */
   class MyScrollBar extends JScrollBar {
-    @NonNls private static final String DECR_BUTTON_FIELD = "decrButton";
-    @NonNls private static final String INCR_BUTTON_FIELD = "incrButton";
-    @NonNls private static final String APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS = "apple.laf.AquaScrollBarUI";
+    @NonNls
+    private static final String DECR_BUTTON_FIELD = "decrButton";
+    @NonNls
+    private static final String INCR_BUTTON_FIELD = "incrButton";
+    @NonNls
+    private static final String APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS = "apple.laf.AquaScrollBarUI";
 
     MyScrollBar(int orientation) {
       super(orientation);
       setFocusable(false);
       putClientProperty("JScrollBar.fastWheelScrolling", Boolean.TRUE); // fast scrolling for JDK 6
     }
+
     /**
      * This is helper method. It returns height of the top (descrease) scrollbar
      * button. Please note, that it's possible to return real height only if scrollbar
@@ -3152,15 +3162,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         try {
           Field decrButtonField = BasicScrollBarUI.class.getDeclaredField(DECR_BUTTON_FIELD);
           decrButtonField.setAccessible(true);
-          JButton decrButtonValue = (JButton)decrButtonField.get(barUI);
+          JButton decrButtonValue = (JButton) decrButtonField.get(barUI);
           assert decrButtonValue != null;
           return insets.top + decrButtonValue.getHeight();
         }
         catch (Exception exc) {
           throw new IllegalStateException(exc.getMessage());
         }
-      }
-      else {
+      } else {
         return insets.top + 15;
       }
     }
@@ -3178,18 +3187,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         try {
           Field incrButtonField = BasicScrollBarUI.class.getDeclaredField(INCR_BUTTON_FIELD);
           incrButtonField.setAccessible(true);
-          JButton incrButtonValue = (JButton)incrButtonField.get(barUI);
+          JButton incrButtonValue = (JButton) incrButtonField.get(barUI);
           assert incrButtonValue != null;
           return insets.bottom + incrButtonValue.getHeight();
         }
         catch (Exception exc) {
           throw new IllegalStateException(exc.getMessage());
         }
-      }
-      else if (APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS.equals(barUI.getClass().getName())) {
+      } else if (APPLE_LAF_AQUA_SCROLL_BAR_UI_CLASS.equals(barUI.getClass().getName())) {
         return insets.bottom + 30;
-      }
-      else {
+      } else {
         return insets.bottom + 15;
       }
     }
