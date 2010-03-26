@@ -64,8 +64,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
   }
 
   protected void output(CharSequence s) {
-    System.out.append(s);
-    System.out.append("\n");
+    System.out.println(s);
   }
 
   private StringBuffer checkModel(SModelDescriptor sm) {

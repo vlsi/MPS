@@ -42,7 +42,7 @@ public class BrokenReferencesTestTest extends TestCase {
     whatToDo.addModelFile(new File(destdir.getAbsolutePath()  + File.separator + "Broken.sandbox" + File.separator + "broken" + File.separator + "model.mps"));
     whatToDo.addLibrary(solutionName, destdir, false);
     whatToDo.updateLogLevel(4); // debug log level
-    final boolean[] brokenReferenceFound = new boolean[1];
+    final boolean[] brokenReferenceFound = new boolean[] { false };
     TestBrokenReferencesWorker worker = new TestBrokenReferencesWorker(whatToDo, new SystemOutLogger()) {
       @Override
       protected void output(CharSequence text) {
@@ -50,15 +50,12 @@ public class BrokenReferencesTestTest extends TestCase {
         if (teamCityMessageFormat.isBuildServerMessage(text) && teamCityMessageFormat.isTestFailMessage(text)) {
           brokenReferenceFound[0] = true;
         }
-        System.out.append(teamCityMessageFormat.escapeBuildMessage(new StringBuffer(text)));
       }
     };
     worker.work();
 
     FileUtil.delete(destdir);
 
-    if (brokenReferenceFound[0]) return;
-
-    fail("Did not find any broken references in solution.");
+    assertTrue("Did not find any broken references in solution.", brokenReferenceFound[0]);
   }
 }
