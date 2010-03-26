@@ -281,7 +281,11 @@ public class ClassLoaderManager implements ApplicationComponent {
         if (bootstrapLanguages.contains(language)) {
           continue;
         }
-        String fqName_language = LanguageAspect.STRUCTURE.get(language).getSModel().getSModelReference().getLongName() + "." +
+        SModelDescriptor descriptor = LanguageAspect.STRUCTURE.get(language);
+        if (descriptor == null) {
+          continue;
+        }
+        String fqName_language = descriptor.getLongName() + "." +
           NameUtil.capitalize(NameUtil.shortNameFromLongName(language.getNamespace())) + "_Language";
         try {
           Class.forName(fqName_language);
