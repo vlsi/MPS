@@ -35,6 +35,6 @@ public class OverridenMethodEditorMessage extends AbstractOverrideEditorMessage 
   }
 
   public AnAction getClickAction() {
-    return ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage#action#jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action#jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder+jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder!");
+    return ActionManager.getInstance().getAction("jetbrains.mps.baseLanguage#action#jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action#jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder!");
   }
 }

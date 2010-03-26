@@ -6843,10 +6843,7 @@
           <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="6198841441434523462">
             <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6198841441434523464" />
             <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6198841441434523466">
-              <property name="value:3" value="jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder" />
-            </node>
-            <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6198841441434523467">
-              <property name="value:3" value="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder" />
+              <property name="value:3" value="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder" />
             </node>
           </node>
         </node>
@@ -12686,7 +12683,7 @@
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1999927664659089473">
               <link role="baseMethodDeclaration:3" targetNodeId="68.~ActionManager.getAction(java.lang.String):com.intellij.openapi.actionSystem.AnAction" resolveInfo="getAction" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1999927664659089474">
-                <property name="value:3" value="jetbrains.mps.baseLanguage#action#jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action#jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder+jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder!" />
+                <property name="value:3" value="jetbrains.mps.baseLanguage#action#jetbrains.mps.baseLanguage.plugin.GoToOverridingMethod_Action#jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder!" />
               </node>
             </node>
           </node>

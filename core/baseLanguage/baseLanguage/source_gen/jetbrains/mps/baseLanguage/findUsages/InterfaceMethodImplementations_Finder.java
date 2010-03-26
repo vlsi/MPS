@@ -39,7 +39,6 @@ public class InterfaceMethodImplementations_Finder extends GeneratedFinder {
     List<SNode> implementorsAndAncestorsList = new ArrayList<SNode>();
     for (SNode implementor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder", SNodeOperations.getParent(node), scope, indicator))) {
       ListSequence.fromList(implementorsAndAncestorsList).addElement(implementor);
-      ListSequence.fromList(implementorsAndAncestorsList).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder", implementor, scope, indicator)));
     }
     for (SNode classNode : ListSequence.fromList(implementorsAndAncestorsList).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
