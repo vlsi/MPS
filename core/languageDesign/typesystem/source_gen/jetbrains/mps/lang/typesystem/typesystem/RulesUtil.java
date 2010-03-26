@@ -34,6 +34,19 @@ public class RulesUtil {
     return false;
   }
 
+  public static boolean withinTypeManagingItem(SNode node) {
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", false, false) != null)) {
+      return true;
+    }
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.SubtypingRule", false, false) != null)) {
+      return true;
+    }
+    if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.ComparisonRule", false, false) != null)) {
+      return true;
+    }
+    return false;
+  }
+
   public static boolean withinCheckingItem(SNode node) {
     if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", true, false) != null)) {
       return true;
@@ -43,7 +56,7 @@ public class RulesUtil {
     }
     List<SNode> annotations = SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true, false), "annotation", true);
     for (SNode annotation : annotations) {
-      if (SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new RulesUtil.QuotationClass_yxkngc_a0a0a0a3a1().createNode(), "classifier", false) || SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new RulesUtil.QuotationClass_yxkngc_a0a0a0a3a1_0().createNode(), "classifier", false)) {
+      if (SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new RulesUtil.QuotationClass_yxkngc_a0a0a0a3a2().createNode(), "classifier", false) || SLinkOperations.getTarget(annotation, "annotation", false) == SLinkOperations.getTarget(new RulesUtil.QuotationClass_yxkngc_a0a0a0a3a2_0().createNode(), "classifier", false)) {
         return true;
       }
     }
@@ -68,8 +81,8 @@ public class RulesUtil {
     }
   }
 
-  public static class QuotationClass_yxkngc_a0a0a0a3a1 {
-    public QuotationClass_yxkngc_a0a0a0a3a1() {
+  public static class QuotationClass_yxkngc_a0a0a0a3a2 {
+    public QuotationClass_yxkngc_a0a0a0a3a2() {
     }
 
     public SNode createNode() {
@@ -86,8 +99,8 @@ public class RulesUtil {
     }
   }
 
-  public static class QuotationClass_yxkngc_a0a0a0a3a1_0 {
-    public QuotationClass_yxkngc_a0a0a0a3a1_0() {
+  public static class QuotationClass_yxkngc_a0a0a0a3a2_0 {
+    public QuotationClass_yxkngc_a0a0a0a3a2_0() {
     }
 
     public SNode createNode() {

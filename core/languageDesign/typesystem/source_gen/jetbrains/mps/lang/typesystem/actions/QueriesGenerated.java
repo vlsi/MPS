@@ -31,7 +31,7 @@ import jetbrains.mps.util.NameUtil;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1201878705329(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return !(RulesUtil.withinInferenceItem(_context.getParentNode()));
+    return !(RulesUtil.withinInferenceItem(_context.getParentNode())) && !(RulesUtil.withinTypeManagingItem(_context.getParentNode()));
   }
 
   public static void nodeFactory_NodeSetup_AbstractEquationStatement_1174664649251(final IOperationContext operationContext, final NodeSetupContext _context) {

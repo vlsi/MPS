@@ -22,6 +22,11 @@ public class check_NodeTypeOperation_NonTypesystemRule extends AbstractNonTypesy
       IErrorTarget errorTarget = new NodeErrorTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node_TypeOperation, "don't use typeOperation within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "6359146168314207369", intentionProvider, errorTarget);
     }
+    if (!(!(RulesUtil.withinTypeManagingItem(node_TypeOperation)))) {
+      BaseIntentionProvider intentionProvider = null;
+      IErrorTarget errorTarget = new NodeErrorTarget();
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node_TypeOperation, "don't use typeOperation within such rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1135966777630207247", intentionProvider, errorTarget);
+    }
   }
 
   public String getApplicableConceptFQName() {

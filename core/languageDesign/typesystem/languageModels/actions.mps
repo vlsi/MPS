@@ -577,11 +577,20 @@
       <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction:23" id="1201878705329">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1201878705330">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1201878706268">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1201879497053">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1201879497054">
-                <link role="baseMethodDeclaration:3" targetNodeId="6.1196177509288" resolveInfo="withinInferenceItem" />
-                <link role="classConcept:3" targetNodeId="6.1186407270695" resolveInfo="RulesUtil" />
-                <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="1201879497055" />
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1135966777630207255">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1135966777630207315">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1135966777630207318">
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.1135966777630205022" resolveInfo="withinTypeManagingItem" />
+                  <link role="classConcept:3" targetNodeId="6.1186407270695" resolveInfo="RulesUtil" />
+                  <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="1135966777630207319" />
+                </node>
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1201879497053">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1201879497054">
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.1196177509288" resolveInfo="withinInferenceItem" />
+                  <link role="classConcept:3" targetNodeId="6.1186407270695" resolveInfo="RulesUtil" />
+                  <node role="actualArgument:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="1201879497055" />
+                </node>
               </node>
             </node>
           </node>
