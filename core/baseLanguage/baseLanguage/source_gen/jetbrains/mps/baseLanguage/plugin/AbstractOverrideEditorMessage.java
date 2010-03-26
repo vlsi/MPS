@@ -4,23 +4,31 @@ package jetbrains.mps.baseLanguage.plugin;
 
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
+import jetbrains.mps.nodeEditor.cells.CellFinder;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.util.Condition;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Cursor;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.CellFinders;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorMessage;
 
 public abstract class AbstractOverrideEditorMessage extends DefaultEditorMessage implements EditorMessageIconRenderer {
   private String myTooltip;
+  private CellFinder<EditorCell> myReturnTypeCellFinder;
 
   public AbstractOverrideEditorMessage(SNode node, EditorMessageOwner ovner, String tooltip) {
     super(node, null, "", ovner);
     this.myTooltip = tooltip;
+    final SNode returnTypeNode = SLinkOperations.getTarget(node, "returnType", true);
+    this.myReturnTypeCellFinder = CellFinders.byCondition(new Condition<EditorCell>() {
+      public boolean met(EditorCell cell) {
+        return cell.getSNode() == returnTypeNode;
+      }
+    }, true);
   }
 
   @Override
@@ -36,10 +44,11 @@ public abstract class AbstractOverrideEditorMessage extends DefaultEditorMessage
   }
 
   public EditorCell getAnchorCell(EditorCell bigCell) {
-    if (bigCell instanceof EditorCell_Collection) {
-      return bigCell.findChild(CellFinders.byClass(EditorCell_Label.class, true));
-    }
-    return bigCell;
+    EditorCell returnTypeCell = bigCell.findChild(this.myReturnTypeCellFinder);
+    return (returnTypeCell != null ?
+      returnTypeCell :
+      bigCell
+    );
   }
 
   @Override
@@ -55,5 +64,9 @@ public abstract class AbstractOverrideEditorMessage extends DefaultEditorMessage
   public boolean isValid(EditorComponent component) {
     // Returning <node> to hide these messages from <node> 
     return false;
+  }
+
+  private SNode getInstanceMethodDeclaration() {
+    return (SNode) this.getNode();
   }
 }

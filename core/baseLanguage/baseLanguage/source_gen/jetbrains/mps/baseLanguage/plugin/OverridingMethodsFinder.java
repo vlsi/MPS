@@ -131,7 +131,7 @@ public class OverridingMethodsFinder {
     return !(SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
   }
 
-  private static <K, V> Set<V> safeGet(Map<K, Set<V>> map, K key) {
+  public static <K, V> Set<V> safeGet(Map<K, Set<V>> map, K key) {
     if (MapSequence.fromMap(map).get(key) == null) {
       MapSequence.fromMap(map).put(key, SetSequence.fromSet(new LinkedHashSet<V>()));
     }

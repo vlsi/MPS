@@ -13,9 +13,13 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.SwingUtilities;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.event.MouseEvent;
@@ -49,7 +53,7 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return (GoToOverridenMethod_Action.this.getInstanceMethodDeclaration() != null) && (GoToOverridenMethod_Action.this.getClassifier() != null) && !(GoToOverridenMethod_Action.this.getOverridenMethod().isEmpty());
+    return (GoToOverridenMethod_Action.this.getInstanceMethodDeclaration() != null) && (GoToOverridenMethod_Action.this.getClassifier() != null);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -99,26 +103,31 @@ public class GoToOverridenMethod_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          final Set<Tuples._2<SNode, SNode>> overridenMethods = GoToOverridenMethod_Action.this.getOverridenMethod();
-          SwingUtilities.invokeLater(new Runnable() {
+      final Wrappers._T<Set<Tuples._2<SNode, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNode, SNode>>>();
+      ProgressManager.getInstance().run(new Task.Modal(GoToOverridenMethod_Action.this.project, "Searchig...", true) {
+        public void run(@NotNull ProgressIndicator p0) {
+          ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              RelativePoint relativePoint;
-              if (event.getInputEvent() instanceof MouseEvent) {
-                relativePoint = new RelativePoint((MouseEvent) event.getInputEvent());
-              } else {
-                Rectangle cellBounds = GoToOverridenMethod_Action.this.editorContext.getSelectedCell().getBounds();
-                Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
-                relativePoint = new RelativePoint(GoToOverridenMethod_Action.this.editorComponent, point);
-              }
-              GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods).select(new ISelector<Tuples._2<SNode, SNode>, SNode>() {
-                public SNode select(Tuples._2<SNode, SNode> it) {
-                  return it._0();
-                }
-              }).toListSequence(), relativePoint, GoToOverridenMethod_Action.this.project);
+              overridenMethods.value = GoToOverridenMethod_Action.this.getOverridenMethod();
             }
           });
+        }
+      });
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          RelativePoint relativePoint;
+          if (event.getInputEvent() instanceof MouseEvent) {
+            relativePoint = new RelativePoint((MouseEvent) event.getInputEvent());
+          } else {
+            Rectangle cellBounds = GoToOverridenMethod_Action.this.editorContext.getSelectedCell().getBounds();
+            Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
+            relativePoint = new RelativePoint(GoToOverridenMethod_Action.this.editorComponent, point);
+          }
+          GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNode, SNode>, SNode>() {
+            public SNode select(Tuples._2<SNode, SNode> it) {
+              return it._0();
+            }
+          }).toListSequence(), relativePoint, GoToOverridenMethod_Action.this.project);
         }
       });
     } catch (Throwable t) {
