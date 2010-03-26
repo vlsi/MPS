@@ -11,12 +11,12 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
-  public static boolean baseMappingRule_Condition_1209150502311(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceExpressionToStatement", "none");
-  }
-
   public static boolean baseMappingRule_Condition_1209150617830(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList"), "useInTest", "reduceExpressionToStatement", "none");
+  }
+
+  public static boolean baseMappingRule_Condition_1209150502311(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceExpressionToStatement", "none");
   }
 
   public static SNode sourceNodeQuery_1209150187921(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

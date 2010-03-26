@@ -24,8 +24,11 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "option", "option_1", "option_default");
   }
 
-  public static boolean baseMappingRule_Condition_1202243113773(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "test1", "none");
+  public static boolean baseMappingRule_Condition_1202780919451(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    if (!(SPropertyOperations.hasValue(SNodeOperations.as(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), "useInTest", "test1", "none"))) {
+      return false;
+    }
+    return !(SPropertyOperations.hasValue(_context.getNode(), "option", "drop_it", "option_default"));
   }
 
   public static boolean baseMappingRule_Condition_1202780894871(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -35,11 +38,8 @@ public class QueriesGenerated {
     return SPropertyOperations.hasValue(_context.getNode(), "option", "drop_it", "option_default");
   }
 
-  public static boolean baseMappingRule_Condition_1202780919451(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (!(SPropertyOperations.hasValue(SNodeOperations.as(SNodeOperations.getAncestor(_context.getNode(), null, false, true), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), "useInTest", "test1", "none"))) {
-      return false;
-    }
-    return !(SPropertyOperations.hasValue(_context.getNode(), "option", "drop_it", "option_default"));
+  public static boolean baseMappingRule_Condition_1202243113773(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "test1", "none");
   }
 
   public static Object propertyMacro_GetPropertyValue_1195598330258(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -12,12 +12,12 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 
 public class QueriesGenerated {
-  public static boolean baseMappingRule_Condition_3893401255414129777(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceOneToMany", "none");
-  }
-
   public static boolean baseMappingRule_Condition_3893401255414132234(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), "useInTest", "reduceOneToMany", "none");
+  }
+
+  public static boolean baseMappingRule_Condition_3893401255414129777(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceOneToMany", "none");
   }
 
   public static Iterable sourceNodesQuery_3893401255414086894(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
