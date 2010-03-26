@@ -228,6 +228,10 @@ public class MPSVCSManager implements ProjectComponent {
     myRemoveOperationScheduler.removeProcessingBan();
   }
 
+  public List<VirtualFile> getUnversionedFilesFromChangeListManager() {
+    return ChangeListManagerImpl.getInstanceImpl(myProject).getUnversionedFiles(); 
+  }
+
   private class ModelSavedListener extends SModelAdapter {
     @Override
     public void modelSaved(SModelDescriptor sm) {
