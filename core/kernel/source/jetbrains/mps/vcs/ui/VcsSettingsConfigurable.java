@@ -61,8 +61,6 @@ public class VcsSettingsConfigurable implements SearchableConfigurable {
     if (mySettingsPanel != null) {
       mySettingsPanel.apply();
     }
-    // TODO switch changes manager on/off if needed
-    System.out.println("Current setting for isChangesManagerEnabled(): " + mySettings.isChangesManagerEnabled());
   }
 
   public void reset() {
