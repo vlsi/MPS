@@ -23,6 +23,7 @@ import com.intellij.openapi.wm.StatusBar;
 import com.intellij.openapi.wm.impl.IdeFrameImpl;
 import com.intellij.ui.plaf.beg.IdeaMenuUI;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.util.annotation.Patch;
 
@@ -36,6 +37,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 public final class ActionMenu extends JMenu {
+  private static final Logger LOG = Logger.getLogger(ActionMenuItem.class);
   private final String myPlace;
   private DataContext myContext;
 
@@ -64,6 +66,7 @@ public final class ActionMenu extends JMenu {
     //patch
     if (group instanceof GeneratedActionGroup) {
       myGroupId = ActionManager.getInstance().getId(group);
+      LOG.assertLog(myGroupId != null);
       myGroup = null;
     } else {
       myGroup = group;

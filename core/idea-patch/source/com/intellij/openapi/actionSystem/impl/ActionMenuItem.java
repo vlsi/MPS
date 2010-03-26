@@ -28,6 +28,7 @@ import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.plaf.beg.BegMenuItemUI;
 import com.intellij.util.ui.EmptyIcon;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import org.jetbrains.annotations.NonNls;
 
@@ -46,6 +47,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ActionMenuItem extends JMenuItem {
+  private static final Logger LOG = Logger.getLogger(ActionMenuItem.class);
   private static final Icon ourCheckedIcon = IconLoader.getIcon("/actions/check.png");
   private static final Icon ourUncheckedIcon = new EmptyIcon(18, 18);
 
@@ -64,6 +66,7 @@ public class ActionMenuItem extends JMenuItem {
     //patch
     if (action instanceof GeneratedAction) {
       myActionId = ActionManager.getInstance().getId(action);
+      LOG.assertLog(myActionId != null);
       myAction = null;
     } else {
       myAction = action;
