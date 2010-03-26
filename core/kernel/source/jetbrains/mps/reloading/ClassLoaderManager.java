@@ -267,11 +267,28 @@ public class ClassLoaderManager implements ApplicationComponent {
 
     @Override
     public RuntimeEnvironment reload(RBundle<ModuleReference>... rBundles) {
+      assertOnlyBootstrapLanguagesAreInClasspath();
       RuntimeEnvironment result = super.reload(rBundles);
       if (result instanceof RuntimeEnvironmentExt) {
         ((RuntimeEnvironmentExt) result).reloadExcludedPackages();
       }
       return result;
+    }
+
+    private void assertOnlyBootstrapLanguagesAreInClasspath() {
+      Set<Language> bootstrapLanguages = myLibraryManager.getBootstrapModules(Language.class);
+      for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
+        if (bootstrapLanguages.contains(language)) {
+          continue;
+        }
+        String fqName_language = LanguageAspect.STRUCTURE.get(language).getSModel().getSModelReference().getLongName() + "." +
+          NameUtil.capitalize(NameUtil.shortNameFromLongName(language.getNamespace())) + "_Language";
+        try {
+          Class.forName(fqName_language);
+          LOG.error("Non-bootstrap language class is available in application classpath: " + fqName_language);
+        } catch (ClassNotFoundException e) {
+        }
+      }
     }
 
     private boolean isNotStubModel(SModelDescriptor modelDescriptor) {
