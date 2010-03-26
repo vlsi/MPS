@@ -13,6 +13,9 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -194,6 +197,16 @@ public class QueriesGenerated {
 
   public static void mappingScript_CodeBlock_1199965771120(final IOperationContext operationContext, final MappingScriptContext _context) {
     List<SNode> nodes = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode");
+    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef")).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return IOperation_Behavior.call_getDotExpression_1224687669172(it);
+      }
+    }));
+    ListSequence.fromList(nodes).addSequence(ListSequence.fromList(SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef")).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return IOperation_Behavior.call_getDotExpression_1224687669172(it);
+      }
+    }));
     for (SNode node : nodes) {
       SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
       SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.structure.Type"), true);
@@ -270,6 +283,19 @@ public class QueriesGenerated {
         }
         SPropertyOperations.set(op, "labelName_intern", SPropertyOperations.getString(label, "name"));
         SLinkOperations.setTarget(op, "label", null, false);
+      }
+    }
+    {
+      // references in 'get prev input by label' 
+      List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef");
+      for (SNode op : ops) {
+        SNode param = SLinkOperations.getTarget(op, "parameter", false);
+        if (param == null) {
+          _context.showErrorMessage(op, "reference on parameter is broken");
+          continue;
+        }
+        SPropertyOperations.set(op, "name_intern", SPropertyOperations.getString(param, "name"));
+        SLinkOperations.setTarget(op, "parameter", null, false);
       }
     }
   }

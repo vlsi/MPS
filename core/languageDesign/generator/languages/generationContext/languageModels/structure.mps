@@ -590,6 +590,10 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4589968773278056990">
     <property name="name:0" value="GenerationContextOp_PatternRef" />
     <link role="extends:0" targetNodeId="1216860049619:0" resolveInfo="GenerationContextOp_Base" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8224086392574645375">
+      <property name="name:0" value="name_intern" />
+      <link role="dataType:0" targetNodeId="4.1082983041843:0" resolveInfo="string" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4589968773278063829">
       <property name="metaClass:0" value="reference" />
       <property name="role:0" value="patternVarDecl" />
@@ -600,6 +604,10 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5190093307972723402">
     <property name="name:0" value="GenerationContextOp_ParameterRef" />
     <link role="extends:0" targetNodeId="1216860049619:0" resolveInfo="GenerationContextOp_Base" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8224086392574645374">
+      <property name="name:0" value="name_intern" />
+      <link role="dataType:0" targetNodeId="4.1082983041843:0" resolveInfo="string" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5190093307972736266">
       <property name="metaClass:0" value="reference" />
       <property name="role:0" value="parameter" />

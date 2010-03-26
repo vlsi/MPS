@@ -10,10 +10,19 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenerationContextOp_ParameterRef extends GenerationContextOp_Base {
   public static final String concept = "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef";
+  public static final String NAME_INTERN = "name_intern";
   public static final String PARAMETER = "parameter";
 
   public GenerationContextOp_ParameterRef(SNode node) {
     super(node);
+  }
+
+  public String getName_intern() {
+    return this.getProperty(GenerationContextOp_ParameterRef.NAME_INTERN);
+  }
+
+  public void setName_intern(String value) {
+    this.setProperty(GenerationContextOp_ParameterRef.NAME_INTERN, value);
   }
 
   public TemplateParameterDeclaration getParameter() {

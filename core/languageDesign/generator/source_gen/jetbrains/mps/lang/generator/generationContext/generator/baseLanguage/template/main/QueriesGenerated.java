@@ -14,6 +14,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1216862267898(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -77,11 +78,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_212805959602503334(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "name");
+    return SPropertyOperations.getString(_context.getNode(), "name_intern");
   }
 
   public static Object propertyMacro_GetPropertyValue_212805959602503363(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "name");
+    return SPropertyOperations.getString(_context.getNode(), "name_intern");
   }
 
   public static Object referenceMacro_GetReferent_1216862267882(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -182,8 +183,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
   }
 
-  public static SNode sourceNodeQuery_212805959602527732(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "parameter", false), "type", true));
+  public static SNode sourceNodeQuery_8224086392574896900(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SNodeOperations.getParent(IOperation_Behavior.call_getDotExpression_1224687669172(_context.getNode()))));
   }
 
   public static SNode sourceNodeQuery_212805959602503351(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -191,7 +192,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_212805959602524707(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false)));
+    return SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SNodeOperations.getParent(IOperation_Behavior.call_getDotExpression_1224687669172(_context.getNode()))));
   }
 
   public static SNode sourceNodeQuery_1217369738546(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

@@ -10,10 +10,19 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenerationContextOp_PatternRef extends GenerationContextOp_Base {
   public static final String concept = "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef";
+  public static final String NAME_INTERN = "name_intern";
   public static final String PATTERN_VAR_DECL = "patternVarDecl";
 
   public GenerationContextOp_PatternRef(SNode node) {
     super(node);
+  }
+
+  public String getName_intern() {
+    return this.getProperty(GenerationContextOp_PatternRef.NAME_INTERN);
+  }
+
+  public void setName_intern(String value) {
+    this.setProperty(GenerationContextOp_PatternRef.NAME_INTERN, value);
   }
 
   public PatternVariableDeclaration getPatternVarDecl() {
