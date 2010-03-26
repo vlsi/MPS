@@ -6,7 +6,6 @@ import javax.swing.JCheckBox;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -35,7 +34,7 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
   public OverrideClassMethodStrategy() {
     final MPSProject project = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
     try {
-      this.myOptions = project.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(PersistentOptions_PreferencesComponent.class);
+      this.myOptions = project.getPluginManager().getPrefsComponent(PersistentOptions_PreferencesComponent.class);
     } catch (NullPointerException e) {
     }
     this.myCheckBox = new JCheckBox("Add @Override annotation");

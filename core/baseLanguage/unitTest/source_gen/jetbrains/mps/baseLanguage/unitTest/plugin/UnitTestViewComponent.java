@@ -63,7 +63,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     JPanel rightPanel = new JPanel(new BorderLayout());
     rightPanel.setBorder(null);
     JTabbedPane resultTabs = new JTabbedPane();
-    this.treeComponent = new TestTree(this.testState, context, this);
+    this.treeComponent = new TestTree(this.project, this.testState, context, this);
     resultTabs.addTab("Output", this.getIcon("testOutput.png"), this.createOutputComponent(this.project, console));
     resultTabs.addTab("Statistics", this.getIcon("testStatistics.png"), this.createStatisticsComponent(statisticsModel));
     JComponent leftPanel = this.createTreeComponent();
@@ -74,7 +74,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     this.setLayout(new BorderLayout());
     JComponent stackTraceActions = this.createActionsToolbar(console);
     stackTraceActions.setMaximumSize(new Dimension(rightPanel.getWidth(), stackTraceActions.getMaximumSize().height));
-    this.actionToolComponent = new TestToolbarPanel(this.treeComponent, this.testNavigator);
+    this.actionToolComponent = new TestToolbarPanel(this.project, this.treeComponent, this.testNavigator);
     this.progressLineComponent = new ProgressLine(this.testState);
     this.progressLineComponent.setMinimumSize(new Dimension(0, this.progressLineComponent.getMinimumSize().height));
     this.treeComponent.addTreeSelectionListener(new TestTreeSelectionListener(this.treeComponent, statisticsModel, this.outputComponent));

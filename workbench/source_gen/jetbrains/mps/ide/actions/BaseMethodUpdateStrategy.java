@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
-import jetbrains.mps.MPSProjectHolder;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -42,7 +41,7 @@ public abstract class BaseMethodUpdateStrategy implements StratergyAddMethodDial
 
   public PersistentOptions_PreferencesComponent getPrefsComponent() {
     MPSProject p = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
-    return p.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(PersistentOptions_PreferencesComponent.class);
+    return p.getPluginManager().getPrefsComponent(PersistentOptions_PreferencesComponent.class);
   }
 
   public JCheckBox getReturnCheckBox() {

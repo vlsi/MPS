@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.Disposable;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.util.Disposer;
 import java.util.List;
 import java.util.Arrays;
@@ -21,9 +22,6 @@ import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
-import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.ide.DataManager;
-import jetbrains.mps.MPSProjectHolder;
 
 public class TestTree extends MPSTree implements TestView, Disposable {
   private IOperationContext operationContext;
@@ -31,9 +29,11 @@ public class TestTree extends MPSTree implements TestView, Disposable {
   private boolean isAllTree = true;
   private TestRunState state;
   private TestTreeIconAnimator animator;
+  private MPSProject myProject;
 
-  public TestTree(TestRunState state, IOperationContext context, Disposable disposable) {
+  public TestTree(MPSProject project, TestRunState state, IOperationContext context, Disposable disposable) {
     Disposer.register(disposable, this);
+    this.myProject = project;
     this.state = state;
     this.operationContext = context;
     this.map = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
@@ -259,7 +259,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
   }
 
   public JUnitTestActionOptions_PreferencesComponent getPreferences() {
-    return MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()).getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(JUnitTestActionOptions_PreferencesComponent.class);
+    return this.myProject.getPluginManager().getPrefsComponent(JUnitTestActionOptions_PreferencesComponent.class);
   }
 
   public static boolean isFailed(MPSTreeNode node) {

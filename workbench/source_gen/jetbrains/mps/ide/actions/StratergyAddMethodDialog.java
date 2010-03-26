@@ -178,11 +178,11 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     }
 
     public boolean isSelected() {
-      return this.myProject.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(PersistentOptions_PreferencesComponent.class).getStateObject().sortAlphabetically;
+      return this.myProject.getPluginManager().getPrefsComponent(PersistentOptions_PreferencesComponent.class).getStateObject().sortAlphabetically;
     }
 
     public void setSelected(boolean state) {
-      this.myProject.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(PersistentOptions_PreferencesComponent.class).getStateObject().sortAlphabetically = state;
+      this.myProject.getPluginManager().getPrefsComponent(PersistentOptions_PreferencesComponent.class).getStateObject().sortAlphabetically = state;
     }
   }
 }
