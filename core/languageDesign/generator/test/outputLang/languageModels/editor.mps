@@ -125,5 +125,18 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="1239884218373" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4146564171992368518">
+    <link role="conceptDeclaration:32" targetNodeId="1.4146564171992368516" resolveInfo="CustomRoot" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4146564171992368520">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4146564171992368523">
+        <property name="text:32" value="My custom root" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4146564171992368527" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4146564171992368525">
+        <link role="relationDeclaration:32" targetNodeId="1.4146564171992368517" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="4146564171992368522" />
+    </node>
+  </node>
 </model>
 

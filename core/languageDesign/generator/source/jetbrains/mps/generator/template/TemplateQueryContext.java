@@ -167,6 +167,10 @@ public class TemplateQueryContext {
     return myGenerator.getGeneratorSessionContext().getTransientObject(key);
   }
 
+  public Object getVariable(String name) {
+    return null;
+  }
+
   public Object putStepObject(Object key, Object o) {
     myGenerator.getGeneratorSessionContext().putStepObject(key, o);
     return o;

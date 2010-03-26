@@ -5,6 +5,7 @@ package jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.temp
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
   public static SNode sourceNodeQuery_1209604320455(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -13,5 +14,17 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1209662301920(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return _context.getNode();
+  }
+
+  public static SNode sourceNodeQuery_4146564171992412788(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "statement", true);
+  }
+
+  public static SNode sourceNodeQuery_4146564171992617089(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ((SNode) _context.getVariable("left"));
+  }
+
+  public static SNode sourceNodeQuery_4146564171992617085(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return ((SNode) _context.getVariable("right"));
   }
 }
