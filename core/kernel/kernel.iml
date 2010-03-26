@@ -20,11 +20,11 @@
     <orderEntry type="module" module-name="mps-lite" />
     <orderEntry type="module" module-name="dates" />
     <orderEntry type="library" name="tools" level="project" />
-    <orderEntry type="module" module-name="xmlQuery" />
     <orderEntry type="module" module-name="baseLanguage" />
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
+    <orderEntry type="module" module-name="xmlQuery-runtime" />
   </component>
 </module>
 
