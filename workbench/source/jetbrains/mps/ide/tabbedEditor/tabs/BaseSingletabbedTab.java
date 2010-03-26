@@ -171,7 +171,10 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
         myModelsWithListeners.add(descriptor);
       }
 
-      RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).addNodeFileStatusListener(myNodeFileStatusListener);
+      RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+      if (statusManager != null) {
+        statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
+      }
       return true;
     }
 
@@ -197,7 +200,10 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
   }
 
   public void dispose() {
-    RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).removeNodeFileStatusListener(myNodeFileStatusListener);
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+    if (statusManager != null) {
+      statusManager.removeNodeFileStatusListener(myNodeFileStatusListener);
+    }
     if (myRepositoryListener != null) {
       SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
     }

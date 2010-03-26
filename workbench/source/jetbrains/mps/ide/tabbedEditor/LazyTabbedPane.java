@@ -93,34 +93,38 @@ public class LazyTabbedPane extends JPanel implements Disposable {
       myTabbedPane.setForegroundAt(index, Color.GRAY);
     } else {
       RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
-      boolean hasNotChanged = false;
-      boolean hasModified = false;
-      boolean hasAdded = false;
-      for (EditorComponent editorComponent : tab.getEditorComponents()) {
-        SNode node = editorComponent.getEditedNode();
-        if (node == null) {
-          continue;
+      if (statusManager == null) {
+        myTabbedPane.setForegroundAt(index, Color.BLACK);
+      } else {
+        boolean hasNotChanged = false;
+        boolean hasModified = false;
+        boolean hasAdded = false;
+        for (EditorComponent editorComponent : tab.getEditorComponents()) {
+          SNode node = editorComponent.getEditedNode();
+          if (node == null) {
+            continue;
+          }
+          FileStatus status = statusManager.getStatus(node);
+          if (status == FileStatus.ADDED) {
+            hasAdded = true;
+          } else if (status == FileStatus.MODIFIED) {
+            hasModified = true;
+          } else {
+            hasNotChanged = true;
+          }
         }
-        FileStatus status = statusManager.getStatus(node);
-        if (status == FileStatus.ADDED) {
-          hasAdded = true;
-        } else if (status == FileStatus.MODIFIED) {
-          hasModified = true;
-        } else {
-          hasNotChanged = true;
-        }
-      }
-      FileStatus status = FileStatus.NOT_CHANGED;
-      if (hasModified) {
-        status = FileStatus.MODIFIED;
-      } else if (hasAdded) {
-        if (hasNotChanged) {
+        FileStatus status = FileStatus.NOT_CHANGED;
+        if (hasModified) {
           status = FileStatus.MODIFIED;
-        } else {
-          status = FileStatus.ADDED;
+        } else if (hasAdded) {
+          if (hasNotChanged) {
+            status = FileStatus.MODIFIED;
+          } else {
+            status = FileStatus.ADDED;
+          }
         }
+        myTabbedPane.setForegroundAt(index, status.getColor());
       }
-      myTabbedPane.setForegroundAt(index, status.getColor());
     }
   }
 

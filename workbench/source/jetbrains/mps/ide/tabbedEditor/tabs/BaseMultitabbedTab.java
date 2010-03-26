@@ -84,8 +84,10 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myBaseNode = new SNodePointer(baseNode);
     myClass = adapterClass;
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
-    RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).
-      addNodeFileStatusListener(myNodeFileStatusListener);
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+    if (statusManager != null) {
+      statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
+    }
   }
 
   private void closeTab(SNodePointer nodePointer, int index) {
@@ -278,8 +280,10 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
   @Override
   public void dispose() {
-    RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject()).
-      removeNodeFileStatusListener(myNodeFileStatusListener);
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+    if (statusManager != null) {
+      statusManager.removeNodeFileStatusListener(myNodeFileStatusListener);
+    }
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
     for (SModelDescriptor d : myModelsWithListeners) {
       d.removeModelListener(myModelListener);
@@ -310,6 +314,9 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
   private void updateTabColor(int tabIndex) {
     RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+    if (statusManager == null) {
+      return;
+    }
     FileStatus fileStatus = statusManager.getStatus(myEditors.get(tabIndex).getEditedNode());
     if (fileStatus == null) {
       fileStatus = FileStatus.NOT_CHANGED;
