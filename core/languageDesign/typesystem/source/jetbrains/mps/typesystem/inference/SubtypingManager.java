@@ -35,7 +35,7 @@ import com.intellij.openapi.util.Computable;
 public class SubtypingManager {
   private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
 
-  private TypeChecker myTypeChecker;
+  private final TypeChecker myTypeChecker;
 
   public SubtypingManager(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
@@ -54,7 +54,7 @@ public class SubtypingManager {
     return isSubtype(subtype, superType, isWeak);
   }
 
-  public synchronized boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
+  public boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
     if (subtype == supertype) return true;
     if (subtype == null || supertype == null) return false;
 
@@ -81,7 +81,7 @@ public class SubtypingManager {
   /**
    * may produce side effects, such as creating new type equations
    */
-  public synchronized boolean isSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
+  public boolean isSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
 
     IWrapper subRepresentator = subtype;
     IWrapper superRepresentator = supertype;
@@ -289,7 +289,7 @@ public class SubtypingManager {
     return result;
   }
 
-  private synchronized void collectImmediateSupertypes_internal(final SNode term, boolean isWeak, StructuralNodeSet result, EquationManager equationManager, String supertypeConceptFQName) {
+  private void collectImmediateSupertypes_internal(final SNode term, boolean isWeak, StructuralNodeSet result, EquationManager equationManager, String supertypeConceptFQName) {
     if (term == null) {
       return;
     }
@@ -646,7 +646,7 @@ System.out.println("alltypes = " + allTypes);*/
     return null;
   }
 
-  public synchronized Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
+  public Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
     Set<SNode> residualNodes = new HashSet<SNode>(nodes);
     while (residualNodes.size() > 1) {
       List<SNode> nodesToIterate = new ArrayList<SNode>(residualNodes);

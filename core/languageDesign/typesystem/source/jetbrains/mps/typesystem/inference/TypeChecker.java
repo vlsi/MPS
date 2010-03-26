@@ -27,6 +27,7 @@ import jetbrains.mps.typesystem.debug.SlicerImpl;
 import jetbrains.mps.typesystem.debug.NullSlicer;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -45,11 +46,14 @@ public class TypeChecker implements ApplicationComponent {
   private static final SModelFqName TYPES_MODEL_UID = new SModelFqName(TYPES_MODEL_NAME, RUNTIME_TYPES);
   private static final ModelOwner RUNTIME_TYPES_MODEL_OWNER = new ModelOwner() {};
 
-  private SubtypingManager mySubtypingManager;
+  public final Object TYPECHECKING_LOCK = new Object();
+  public final Object LISTENERS_LOCK = new Object();
+
+  private final SubtypingManager mySubtypingManager;
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
 
-  private TypesReadListener myTypesReadListener = null;
+  private List<TypesReadListener> myTypesReadListeners = new ArrayList<TypesReadListener>();
 
   private SubtypingCache mySubtypingCache = null;
   private SubtypingCache myGlobalSubtypingCache = null;
@@ -124,6 +128,7 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void enableTypesComputingForCompletion() {
+    //todo add assertion that it is in synchronized with below (e.g. in write action)
     myComputedTypesForCompletion = new HashMap<SNode, SNode>();
     if (mySubtypingCache == null) {
       mySubtypingCache = new SubtypingCache();
@@ -131,9 +136,24 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void clearTypesComputedForCompletion() {
+    //todo add assertion that it is in synchronized with above (e.g. in write action)
     myComputedTypesForCompletion = null;
     if (!isGenerationMode()) {
       mySubtypingCache = null;
+    }
+  }
+
+  /* package */ Pair<SNode, Boolean> getTypeComputedForCompletion(SNode node) {
+    if (myComputedTypesForCompletion != null && myComputedTypesForCompletion.containsKey(node)) {
+      return new Pair<SNode, Boolean>(myComputedTypesForCompletion.get(node), true);
+    } else {
+      return new Pair<SNode, Boolean>(null, false);
+    }
+  }
+
+  /* package */ void putTypeComputedForCompletion(SNode node, SNode type) {
+    if (myComputedTypesForCompletion != null) {
+      myComputedTypesForCompletion.put(node, type);
     }
   }
 
@@ -156,59 +176,15 @@ public class TypeChecker implements ApplicationComponent {
     return null;
   }
 
-  public boolean isCheckedRoot(SNode node) {
-    return isCheckedRoot(node, true);
-  }
-
-  public boolean isCheckedRoot(SNode node, boolean considerNonTypesystemRules) {
-    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(node);
-    if (context == null) {
-      return false;
-    }
-    NodeTypesComponent baseNodeTypesComponent = context.getBaseNodeTypesComponent();
-    return baseNodeTypesComponent.isChecked(considerNonTypesystemRules);
-  }
-
   public void checkRoot(SNode node) {
-    checkRoot(node, false, null);
-  }
-
-  public ISlicer debugRoot(final SNode node) {
-    if (node == null) return new NullSlicer();
-    assert node.isRoot();
-    ISlicer slicer = new SlicerImpl(NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node));
-    checkRoot(node, true, slicer);
-    return slicer;
+    checkRoot(node, false);
   }
 
   public void checkRoot(final SNode node, final boolean refreshTypes) {
-    checkRoot(node, refreshTypes, null);
-  }
-
-  private void checkRoot(final SNode node, final boolean refreshTypes, final ISlicer slicer) {
     if (node == null) return;
     assert node.isRoot();
-    NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node);
-    if (slicer != null) {
-      component.setSlicer(slicer);
-    }
-    component.computeTypes(refreshTypes);
-    component.setChecked();
-  }
-
-  private SNode getTypeOf_generationMode(final SNode node) {
-    if (node == null || node.isDisposed()) return null;
-    SNode containingRoot = node.getContainingRoot();
-    if (containingRoot == null) return null;
-    NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
-      getNodeTypesComponent(node.getContainingRoot());
-    if (!isCheckedRoot(containingRoot, false) || component == null) {
-      final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
-      SNode computedType = component1.computeTypesForNodeDuringGeneration(node);
-      return computedType;
-    }
-    SNode resultType = getTypeDontCheck(node);
-    return resultType;
+    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
+    context.checkRoot(refreshTypes);
   }
 
   public InequationSystem getInequationsForHole(SNode hole, boolean holeIsAType) {
@@ -223,22 +199,6 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
-  private SNode getTypeOf_resolveMode(final SNode node) {
-    if (node == null) return null;
-    SNode containingRoot = node.getContainingRoot();
-    if (containingRoot == null) return null;
-    if (myComputedTypesForCompletion != null && myComputedTypesForCompletion.containsKey(node)) {
-      return myComputedTypesForCompletion.get(node);
-    }
-    TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(node.getContainingRoot());
-    typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(containingRoot);
-    SNode resultType = typeCheckingContext.computeTypeForResolve(node);
-    if (myComputedTypesForCompletion != null) {
-      myComputedTypesForCompletion.put(node, resultType);
-    }
-    return resultType;
-  }
-
   public SNode getInferredTypeOf(final SNode node) {
     if (node == null) return null;
     SNode containingRoot = node.getContainingRoot();
@@ -250,26 +210,11 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   @Nullable
-  public synchronized SNode getTypeOf(SNode node) {
+  public SNode getTypeOf(final SNode node) {
     if (node == null) return null;
-    if (myTypesReadListener != null) {
-      myTypesReadListener.nodeTypeAccessed(node);
-    }
-    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
-    if (context != null && context.isInEditorQueries()) {
-      return getTypeOf_resolveMode(node);
-    } else if (myIsGeneration && TypesystemPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
-      return getTypeOf_generationMode(node);
-    } else {
-      return getTypeOf_normalMode(node);
-    }
-  }
-
-  @Nullable
-  private SNode getTypeOf_normalMode(SNode node) {
-    if (node == null) return null;
-    if (!checkIfNotChecked(node, false)) return null;
-    return getTypeDontCheck(node);
+    fireNodeTypeAccessed(node);
+    final TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
+    return context.getTypeOf(node, this);
   }
 
   public boolean checkIfNotChecked(SNode node) {
@@ -279,18 +224,9 @@ public class TypeChecker implements ApplicationComponent {
   public boolean checkIfNotChecked(SNode node, boolean useNonTypesystemRules) {
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return false;
-    NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
-      getNodeTypesComponent(node.getContainingRoot());
-    if (!isCheckedRoot(containingRoot, useNonTypesystemRules) || component == null) {
-      component = NodeTypesComponentsRepository.getInstance().
-        createNodeTypesComponent(node.getContainingRoot());
-      checkRoot(containingRoot);
-
-      if (useNonTypesystemRules) {
-        component.applyNonTypesystemRulesToRoot(null);
-      }
-    }
-    return true;
+    TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().
+      createTypeCheckingContext(containingRoot);
+    return context.checkIfNotChecked(node, useNonTypesystemRules);
   }
 
   @Nullable
@@ -366,27 +302,53 @@ public class TypeChecker implements ApplicationComponent {
     return myIsGeneration;
   }
 
-  public void setTypesReadListener(TypesReadListener typesReadListener) {
-    myTypesReadListener = typesReadListener;
-  }
-
-  public void removeTypesReadListener() {
-    myTypesReadListener = null;
-  }
-
-  public void removeTypeRecalculatedListener(TypeRecalculatedListener typeRecalculatedListener) {
-    myTypeRecalculatedListeners.remove(typeRecalculatedListener);
-  }
-
-  public void addTypeRecalculatedListener(TypeRecalculatedListener typeRecalculatedListener) {
-    if (!myTypeRecalculatedListeners.contains(typeRecalculatedListener)) {
-      myTypeRecalculatedListeners.add(typeRecalculatedListener);
+  private List<TypesReadListener> copyTypesReadListeners() {
+    synchronized (LISTENERS_LOCK) {
+      return new ArrayList<TypesReadListener>(myTypesReadListeners);
     }
   }
 
-  public void fireTypeWillBeRecalculatedForTerm(SNode term) {
-    for (TypeRecalculatedListener typeRecalculatedListener : myTypeRecalculatedListeners) {
+  private List<TypeRecalculatedListener> copyTypeRecalculatedListeners() {
+    synchronized (LISTENERS_LOCK) {
+      return new ArrayList<TypeRecalculatedListener>(myTypeRecalculatedListeners);
+    }
+  }
+
+  public void addTypesReadListener(TypesReadListener typesReadListener) {
+    synchronized (LISTENERS_LOCK) {
+      myTypesReadListeners.add(typesReadListener);
+    }
+  }
+
+  public void removeTypesReadListener(TypesReadListener typesReadListener) {
+    synchronized (LISTENERS_LOCK) {
+      myTypesReadListeners.remove(typesReadListener);
+    }
+  }
+
+  public void removeTypeRecalculatedListener(TypeRecalculatedListener typeRecalculatedListener) {
+    synchronized (LISTENERS_LOCK) {
+      myTypeRecalculatedListeners.remove(typeRecalculatedListener);
+    }
+  }
+
+  public void addTypeRecalculatedListener(TypeRecalculatedListener typeRecalculatedListener) {
+    synchronized (LISTENERS_LOCK) {
+      if (!myTypeRecalculatedListeners.contains(typeRecalculatedListener)) {
+        myTypeRecalculatedListeners.add(typeRecalculatedListener);
+      }
+    }
+  }
+
+  /* package */ void fireTypeWillBeRecalculatedForTerm(SNode term) {
+    for (TypeRecalculatedListener typeRecalculatedListener : copyTypeRecalculatedListeners()) {
       typeRecalculatedListener.typeWillBeRecalculatedForTerm(term);
+    }
+  }
+
+  private void fireNodeTypeAccessed(SNode term) {
+    for (TypesReadListener typesReadListener : copyTypesReadListeners()) {
+      typesReadListener.nodeTypeAccessed(term);
     }
   }
 }

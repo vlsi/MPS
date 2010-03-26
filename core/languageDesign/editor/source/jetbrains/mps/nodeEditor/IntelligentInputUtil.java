@@ -75,7 +75,7 @@ public class IntelligentInputUtil {
 
       info.getMatchingActions(pattern, true).get(0).substitute(editorContext, pattern);
     } else if (pattern.length() > 0 && (canCompleteSmallPatternImmediately(info, smallPattern, tail) ||
-                canCompleteSmallPatternImmediately(info, trimLeft(smallPattern), tail))) {
+      canCompleteSmallPatternImmediately(info, trimLeft(smallPattern), tail))) {
 
       if (!canCompleteSmallPatternImmediately(info, smallPattern, tail)) {
         smallPattern = trimLeft(smallPattern);
@@ -111,8 +111,8 @@ public class IntelligentInputUtil {
         }
       }
     } else if (info.getMatchingActions(pattern, false).isEmpty() &&
-                info.getMatchingActions(trimLeft(pattern), false).isEmpty() &&
-                nextCell != null && nextCell.isErrorState() && nextCell instanceof EditorCell_Label && ((EditorCell_Label) nextCell).isEditable()) {
+      info.getMatchingActions(trimLeft(pattern), false).isEmpty() &&
+      nextCell != null && nextCell.isErrorState() && nextCell instanceof EditorCell_Label && ((EditorCell_Label) nextCell).isEditable()) {
 
       cell.getSNode().removeRightTransformHint();
 
@@ -132,7 +132,7 @@ public class IntelligentInputUtil {
   private static boolean processCellAtEnd(EditorCell_Label cell, final EditorContext editorContext, String smallPattern, final String tail) {
     NodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
-        substituteInfo = new NullSubstituteInfo();
+      substituteInfo = new NullSubstituteInfo();
     }
 
     EditorCell cellForNewNode;
@@ -201,15 +201,20 @@ public class IntelligentInputUtil {
     }
   }
 
-  private static boolean applyRigthTransform(EditorContext editorContext, String smallPattern, String tail, EditorCell cellForNewNode, SNode newNode) {
+  private static boolean applyRigthTransform(EditorContext editorContext, String smallPattern, final String tail, final EditorCell cellForNewNode, SNode newNode) {
     EditorCellAction rtAction = cellForNewNode.findChild(CellFinders.LAST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.RIGHT_TRANSFORM);
 
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
     // For: http://youtrack.jetbrains.net/issue/MPS-7757
     assert typeCheckingContext != null : cellForNewNode.getSNode() == null ? "cellForNewNode.getSNode() == null" : "cellForNewNode.getSNode().isDisposed(): " + cellForNewNode.getSNode().isDisposed();
-    typeCheckingContext.setInEditorQueriesMode();
-    boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.RIGHT, tail);
-    typeCheckingContext.resetIsInEditorQueriesMode();
+
+    boolean hasSideActions = typeCheckingContext.runTypeCheckingActionInEditorQueries(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return hasSideActions(cellForNewNode, CellSide.RIGHT, tail);
+      }
+    });
+
     if (rtAction == null || !hasSideActions) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
       putTextInErrorChild(cellInfo, smallPattern + tail, editorContext);
@@ -227,12 +232,15 @@ public class IntelligentInputUtil {
     EditorCell rtHintCell = prepareSTCell(editorContext, newCellForNewNode, tail);
 
     if (rtHintCell != null) {
-      NodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
+      final NodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
       assert rtSubstituteInfo != null;
-      //TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext();
-      typeCheckingContext.setInEditorQueriesMode();
-      List<INodeSubstituteAction> rtMatchingActions = rtSubstituteInfo.getMatchingActions(tail, true);
-      typeCheckingContext.resetIsInEditorQueriesMode();
+      List<INodeSubstituteAction> rtMatchingActions =
+        typeCheckingContext.runTypeCheckingActionInEditorQueries(new Computable<List<INodeSubstituteAction>>(){
+          @Override
+          public List<INodeSubstituteAction> compute() {
+            return rtSubstituteInfo.getMatchingActions(tail, true);
+          }
+        });
 
       if (!canCompleteSmallPatternImmediately(rtSubstituteInfo, tail, "")) { //don't execute non-unique action on RT hint cell
         editorContext.flushEvents();
@@ -298,7 +306,7 @@ public class IntelligentInputUtil {
     SNode newNode;
 
     if (cell.isValidText(smallPattern) && !"".equals(smallPattern)
-        && info.hasExactlyNActions(head + smallPattern, false, 0)) {
+      && info.hasExactlyNActions(head + smallPattern, false, 0)) {
       newNode = cell.getSNode();
       cellForNewNode = cell;
       return applyLeftTransform(editorContext, head, smallPattern, cellForNewNode, newNode, true);
@@ -321,12 +329,16 @@ public class IntelligentInputUtil {
 
   }
 
-  private static boolean applyLeftTransform(EditorContext editorContext, String head, String smallPattern, EditorCell cellForNewNode, SNode newNode, boolean sourceCellRemains) {
+  private static boolean applyLeftTransform(EditorContext editorContext, final String head, String smallPattern, final EditorCell cellForNewNode, SNode newNode, boolean sourceCellRemains) {
     EditorCellAction ltAction = cellForNewNode.findChild(CellFinders.FIRST_SELECTABLE_LEAF, true).getApplicableCellAction(CellActionType.LEFT_TRANSFORM);
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(cellForNewNode.getSNode());
-    typeCheckingContext.setInEditorQueriesMode();
-    boolean hasSideActions = hasSideActions(cellForNewNode, CellSide.LEFT, head);
-    typeCheckingContext.resetIsInEditorQueriesMode();
+    boolean hasSideActions = typeCheckingContext.runTypeCheckingActionInEditorQueries(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return hasSideActions(cellForNewNode, CellSide.LEFT, head);
+      }
+    });
+
     if (ltAction == null || !hasSideActions) {
       CellInfo cellInfo = cellForNewNode.getCellInfo();
       if (!sourceCellRemains) {

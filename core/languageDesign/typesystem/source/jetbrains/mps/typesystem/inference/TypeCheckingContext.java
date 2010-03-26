@@ -25,17 +25,22 @@ import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.typesystem.debug.ISlicer;
 import jetbrains.mps.typesystem.debug.SliceInfo;
+import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
+import jetbrains.mps.util.Pair;
 
-import java.util.Map;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
+
+import com.intellij.openapi.util.Computable;
+import org.jetbrains.annotations.Nullable;
 
 public class TypeCheckingContext {
   private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
 
-  private NodeTypesComponent myNodeTypesComponent;
+  private final NodeTypesComponent myNodeTypesComponent;
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
+
+  public final Object TYPECHECKING_LOCK = new Object();
 
   private Stack<Boolean> myIsInEditorQueriesStack = new Stack<Boolean>();
   private Stack<NodeTypesComponent> myTemporaryComponentsStack = new Stack<NodeTypesComponent>();
@@ -45,6 +50,7 @@ public class TypeCheckingContext {
   public TypeCheckingContext(SNode rootNode, TypeChecker typeChecker) {
     if (rootNode == null) {
       LOG.error("root node in type checking context is null");
+      myNodeTypesComponent = null;
       return;
     }
     myNodeTypesComponent = new NodeTypesComponent(rootNode, typeChecker, this);
@@ -359,7 +365,7 @@ public class TypeCheckingContext {
   }
 
   //new eqs
-   public void createEquation(SNode node1,
+  public void createEquation(SNode node1,
                              SNode node2,
                              EquationInfo equationInfo) {
     getCurrentSlicer().beforeUserEquationAdded(node1, node2, equationInfo);
@@ -394,7 +400,7 @@ public class TypeCheckingContext {
   public void createEquation(IWrapper wrapper1,
                              IWrapper wrapper2,
                              EquationInfo equationInfo
-                             ) {
+  ) {
     getCurrentSlicer().beforeUserEquationAdded(wrapper1.getNode(), wrapper2.getNode(), equationInfo);
     getNodeTypesComponent().getEquationManager().addEquation(
       wrapper1,
@@ -568,6 +574,48 @@ public class TypeCheckingContext {
     myTemporaryComponentsStack.pop();
   }
 
+  public void setOperationContext(IOperationContext context) {
+    myOperationContext = context;
+  }
+
+  public IOperationContext getOperationContext() {
+    return myOperationContext;
+  }
+
+  public void runTypeCheckingAction(Runnable r) {
+    synchronized (TYPECHECKING_LOCK) {
+      r.run();
+    }
+  }
+
+  public <T> T runTypeCheckingAction(Computable<T> c) {
+    synchronized (TYPECHECKING_LOCK) {
+      return c.compute();
+    }
+  }
+
+  public void runTypeCheckingActionInEditorQueries(Runnable r) {
+    synchronized (TYPECHECKING_LOCK) {
+      try {
+        setInEditorQueriesMode();
+        r.run();
+      } finally {
+        resetIsInEditorQueriesMode();
+      }
+    }
+  }
+
+  public <T> T runTypeCheckingActionInEditorQueries(Computable<T> c) {
+    synchronized (TYPECHECKING_LOCK) {
+      try {
+        setInEditorQueriesMode();
+        return c.compute();
+      } finally {
+        resetIsInEditorQueriesMode();
+      }
+    }
+  }
+
   public SNode computeTypeForResolve(SNode node) {
     if (myNodesToComputeDuringResolve.contains(node)) {
       // LOG.error("the same node is checked more than once on a stack. StackOverFlow is inevitable");
@@ -587,22 +635,93 @@ public class TypeCheckingContext {
   }
 
   public SNode computeTypeInferenceMode(SNode node) {
-    final NodeTypesComponent temporaryComponent;
-    temporaryComponent = this.createTemporaryTypesComponent();
-    try {
-      return temporaryComponent.computeTypesForNodeInferenceMode(node);
-    } finally {
-      temporaryComponent.dispose(); //in order to prevent memory leaks.
-      this.popTemporaryTypesComponent();
+    synchronized (TYPECHECKING_LOCK) {
+      final NodeTypesComponent temporaryComponent;
+      temporaryComponent = this.createTemporaryTypesComponent();
+      try {
+        return temporaryComponent.computeTypesForNodeInferenceMode(node);
+      } finally {
+        temporaryComponent.dispose(); //in order to prevent memory leaks.
+        this.popTemporaryTypesComponent();
+      }
     }
   }
 
-  public void setOperationContext(IOperationContext context) {
-    myOperationContext = context;
+  public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
+    if (node == null) return null;
+    synchronized (TYPECHECKING_LOCK) {
+      if (this.isInEditorQueries()) {
+        return getTypeOf_resolveMode(node, typeChecker);
+      } else if (typeChecker.isGenerationMode()
+        && TypesystemPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
+        return getTypeOf_generationMode(node);
+      } else {
+        return getTypeOf_normalMode(node);
+      }
+    }
   }
 
-  public IOperationContext getOperationContext() {
-    return myOperationContext;
+  @Nullable
+  private SNode getTypeOf_normalMode(SNode node) {
+    if (!checkIfNotChecked(node, false)) return null;
+    return getTypeDontCheck(node);
+  }
+
+  private SNode getTypeOf_generationMode(final SNode node) {
+    SNode computedType = myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
+    return computedType;
+  }
+
+  private SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
+    Pair<SNode, Boolean> pair = typeChecker.getTypeComputedForCompletion(node);
+    if (pair.o2) {
+      return pair.o1;
+    }
+    SNode resultType = computeTypeForResolve(node);
+    typeChecker.putTypeComputedForCompletion(node, resultType);
+    return resultType;
+  }
+
+  public boolean checkIfNotChecked(SNode node, boolean useNonTypesystemRules) {
+    synchronized (TYPECHECKING_LOCK) {
+      if (!isCheckedRoot(useNonTypesystemRules)) {
+        checkRoot();
+        if (useNonTypesystemRules) {
+          myNodeTypesComponent.applyNonTypesystemRulesToRoot(null);
+        }
+      }
+      return true;
+    }
+  }
+
+  public void checkRoot() {
+    checkRoot(false);
+  }
+
+  public void checkRoot(final boolean refreshTypes) {
+    synchronized (TYPECHECKING_LOCK) {
+      myNodeTypesComponent.computeTypes(refreshTypes);
+      myNodeTypesComponent.setChecked();
+    }
+  }
+
+  public Set<Pair<SNode,List<IErrorReporter>>> checkRootAndGetErrors(boolean refreshTypes) {
+    synchronized (TYPECHECKING_LOCK) {
+      checkRoot(refreshTypes);
+      Set<Pair<SNode,List<IErrorReporter>>> errors =
+        new HashSet<Pair<SNode, List<IErrorReporter>>>(myNodeTypesComponent.getNodesWithErrors());
+      return errors;
+    }
+  }
+
+  public boolean isCheckedRoot(boolean considerNonTypesystemRules) {
+    return myNodeTypesComponent.isChecked(considerNonTypesystemRules);
+  }
+
+  public SNode getTypeDontCheck(SNode node) {
+    synchronized (TYPECHECKING_LOCK) {
+      return myNodeTypesComponent.getType(node);
+    }
   }
 
   public static class NodeInfo {

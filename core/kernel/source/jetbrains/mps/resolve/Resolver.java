@@ -41,6 +41,8 @@ import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
+import com.intellij.openapi.util.Computable;
+
 public class Resolver {
 
   private static final Logger LOG = Logger.getLogger(Resolver.class);
@@ -86,12 +88,12 @@ public class Resolver {
     return resolve1(reference, operationContext, new ArrayList<ResolveResult>(), true);
   }
 
-  public static boolean resolve1(final SReference reference, final IOperationContext operationContext, List<ResolveResult> results, boolean forceResolve) {
+  public static boolean resolve1(final SReference reference, final IOperationContext operationContext, final List<ResolveResult> results, final boolean forceResolve) {
     // search scope
-    SNode referenceNode = reference.getSourceNode();
+    final SNode referenceNode = reference.getSourceNode();
     if (referenceNode == null) return false;
-    ConceptDeclaration referenceNodeConcept = (ConceptDeclaration) referenceNode.getConceptDeclarationAdapter();
-    LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, reference.getRole());
+    final ConceptDeclaration referenceNodeConcept = (ConceptDeclaration) referenceNode.getConceptDeclarationAdapter();
+    final LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(referenceNodeConcept, reference.getRole());
     if (linkDeclaration == null) {
       return false;
     }
@@ -99,38 +101,38 @@ public class Resolver {
 
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(referenceNode);
     if (typeCheckingContext == null) return false;
-    typeCheckingContext.setInEditorQueriesMode();
-    try {
-      SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
-        referenceNode, referenceNodeConcept, linkDeclaration, operationContext);
-      if (status.isError()) {
-        LOG.error("Couldn't create referent search scope : " + status.getMessage());
+    return typeCheckingContext.runTypeCheckingActionInEditorQueries(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+          SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
+          referenceNode, referenceNodeConcept, linkDeclaration, operationContext);
+        if (status.isError()) {
+          LOG.error("Couldn't create referent search scope : " + status.getMessage());
+          return false;
+        }
+        ISearchScope searchScope = status.getSearchScope();
+
+        List<SNode> nodes = searchScope.getNodes(new IsInstanceCondition(referentConcept));
+
+        Condition<SNode> nameMatchesCondition = new Condition<SNode>() {
+          public boolean met(SNode object) {
+            String resolveInfo = reference.getResolveInfo();
+            return resolveInfo != null && resolveInfo.equals(object.getName());
+          }
+        };
+        List<SNode> filtered = CollectionUtil.filter(nodes, nameMatchesCondition);
+        if (!filtered.isEmpty()) {
+          ResolveResult resolveResult = new ResolveResult(referenceNode, filtered.get(0), reference.getRole(), null);
+          results.add(resolveResult);
+          if (forceResolve) {
+            resolveResult.setTarget();
+          }
+          return true;
+        }
+
         return false;
       }
-      ISearchScope searchScope = status.getSearchScope();
-
-      List<SNode> nodes = searchScope.getNodes(new IsInstanceCondition(referentConcept));
-
-      Condition<SNode> nameMatchesCondition = new Condition<SNode>() {
-        public boolean met(SNode object) {
-          String resolveInfo = reference.getResolveInfo();
-          return resolveInfo != null && resolveInfo.equals(object.getName());
-        }
-      };
-      List<SNode> filtered = CollectionUtil.filter(nodes, nameMatchesCondition);
-      if (!filtered.isEmpty()) {
-        ResolveResult resolveResult = new ResolveResult(referenceNode, filtered.get(0), reference.getRole(), null);
-        results.add(resolveResult);
-        if (forceResolve) {
-          resolveResult.setTarget();
-        }
-        return true;
-      }
-
-      return false;
-    } finally {
-      typeCheckingContext.resetIsInEditorQueriesMode();
-    }
+    });
   }
 
   public static List<INodeSubstituteAction> createResolveActions(SReference reference, IOperationContext operationContext, EditorContext editorContext) {

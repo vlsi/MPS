@@ -30,29 +30,21 @@ public class RuntimeSupport {
   }
 
   public SNode coerce_(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
-    synchronized (myTypeChecker) {
-      return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, isWeak, null);
-    }
+    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, isWeak, null);
   }
 
   public SNode coerce_(SNode subtype, IMatchingPattern pattern) {
-    synchronized (myTypeChecker) {
-      return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, null);
-    }
+    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, null);
   }
 
   public SNode coerce_(SNode subtype, IMatchingPattern pattern, boolean isWeak, TypeCheckingContext typeCheckingContext) {
-    synchronized (myTypeChecker) {
-      EquationManager equationManager = typeCheckingContext == null ? null : typeCheckingContext.getEquationManager();
-      return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, isWeak, equationManager);
-    }
+    EquationManager equationManager = typeCheckingContext == null ? null : typeCheckingContext.getEquationManager();
+    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, isWeak, equationManager);
   }
 
   public SNode coerce_(SNode subtype, IMatchingPattern pattern, TypeCheckingContext typeCheckingContext) {
-    synchronized (myTypeChecker) {
-      EquationManager equationManager = typeCheckingContext == null ? null : typeCheckingContext.getEquationManager();
-      return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, equationManager);
-    }
+    EquationManager equationManager = typeCheckingContext == null ? null : typeCheckingContext.getEquationManager();
+    return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, equationManager);
   }
 
 }

@@ -784,7 +784,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
           }
           myNodesReadListener.clear();
           NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
-          TypeChecker.getInstance().setTypesReadListener(typesReadListener);
+          TypeChecker.getInstance().addTypesReadListener(typesReadListener);
           LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
           myNonTypesystemRuleAndNodeBeingChecked = new Pair<SNode, NonTypesystemRule_Runtime>(node, rule);
         }
@@ -794,7 +794,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
           myNonTypesystemRuleAndNodeBeingChecked = null;
           if (isIncrementalMode()) {
             LanguageHierarchyCache.getInstance().removeReadAccessListener();
-            TypeChecker.getInstance().removeTypesReadListener();
+            TypeChecker.getInstance().removeTypesReadListener(typesReadListener);
             NodeReadEventsCaster.removeNodesReadListener();
           }
         }

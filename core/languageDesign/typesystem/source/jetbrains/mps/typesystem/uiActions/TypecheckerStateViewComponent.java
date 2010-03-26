@@ -155,14 +155,7 @@ public class TypecheckerStateViewComponent extends JPanel {
   }
 
   public void debugRoot(final SNode currentRoot) {
-    myCurrentSlice = new ArrayList<EquationLogItem>();
-    myNodeToSliceWith = null;
-    mySlicer = ModelAccess.instance().runReadAction(new Computable<ISlicer>() {
-      public ISlicer compute() {
-        return TypeChecker.getInstance().debugRoot(currentRoot);
-      }
-    });
-    rebuild();
+    
   }
 
   public void sliceWithNode(SNode node) {

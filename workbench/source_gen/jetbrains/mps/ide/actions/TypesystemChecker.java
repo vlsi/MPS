@@ -31,7 +31,7 @@ public class TypesystemChecker extends SpecificChecker {
       if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for typesystem rules..."))) {
         break;
       }
-      tc.checkRoot(rootNode);
+      tc.checkRoot(rootNode);                //todo refactor
       TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(rootNode);
       NodeTypesComponent nodeTypesComponent = typeCheckingContext.getBaseNodeTypesComponent();
       for (Pair<SNode, List<IErrorReporter>> nodeErrorReporters : SetSequence.fromSet(nodeTypesComponent.getNodesWithErrors())) {
