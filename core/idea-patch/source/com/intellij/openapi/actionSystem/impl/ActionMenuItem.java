@@ -66,8 +66,12 @@ public class ActionMenuItem extends JMenuItem {
     //patch
     if (action instanceof GeneratedAction) {
       myActionId = ActionManager.getInstance().getId(action);
-      LOG.assertLog(myActionId != null);
-      myAction = null;
+      if (myActionId == null) {
+        LOG.warning("Using ancestor of GeneratedAction in menu without action id. This can be a memleak. Class: " + action.getClass().getName());
+        myAction = action;
+      } else {
+        myAction = null;
+      }
     } else {
       myAction = action;
       myActionId = null;
@@ -88,6 +92,7 @@ public class ActionMenuItem extends JMenuItem {
   }
 
   //patch
+
   private AnAction getMyAction() {
     if (myAction != null) return myAction;
     return ActionManager.getInstance().getAction(myActionId);

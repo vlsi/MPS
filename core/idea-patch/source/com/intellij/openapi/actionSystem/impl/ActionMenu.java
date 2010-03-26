@@ -66,8 +66,12 @@ public final class ActionMenu extends JMenu {
     //patch
     if (group instanceof GeneratedActionGroup) {
       myGroupId = ActionManager.getInstance().getId(group);
-      LOG.assertLog(myGroupId != null);
-      myGroup = null;
+      if (myGroupId==null){
+        LOG.warning("Using ancestor of GeneratedActionGroup in menu without action id. This can be a memleak. Class: " + group.getClass().getName());
+        myGroup = group;
+      } else{
+        myGroup = null;
+      }
     } else {
       myGroup = group;
       myGroupId = null;
