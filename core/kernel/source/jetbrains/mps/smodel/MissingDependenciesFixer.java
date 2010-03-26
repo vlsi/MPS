@@ -42,28 +42,28 @@ public class MissingDependenciesFixer {
     final boolean[] wereChanges = new boolean[]{false};
 
     final ModuleDescriptor[] md = new ModuleDescriptor[1];
-
+    final List<IModule> newImports = new ArrayList<IModule>();
+    
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         module[0] = myModelDescriptor.getModule();
         assert module[0] != null;
         moduleScope[0] = module[0].getScope();
         md[0] = module[0].getModuleDescriptor();
-      }
-    });
 
-    final List<IModule> newImports = new ArrayList<IModule>();
-    for (SModelReference modelImport : myModelDescriptor.getSModel().getImportedModelUIDs()) {
-      if (moduleScope[0].getModelDescriptor(modelImport) == null) {
-        SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(modelImport);
-        if (sm != null) {
-          IModule anotherModule = chooseModule(sm, new ArrayList<IModule>(sm.getModules()));
-          if (anotherModule != null && anotherModule != module[0]) {
-            newImports.add(anotherModule);
+        for (SModelReference modelImport : myModelDescriptor.getSModel().getImportedModelUIDs()) {
+          if (moduleScope[0].getModelDescriptor(modelImport) == null) {
+            SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(modelImport);
+            if (sm != null) {
+              IModule anotherModule = chooseModule(sm, new ArrayList<IModule>(sm.getModules()));
+              if (anotherModule != null && anotherModule != module[0]) {
+                newImports.add(anotherModule);
+              }
+            }
           }
         }
       }
-    }
+    });
 
     wereChanges[0] = !newImports.isEmpty();
 
