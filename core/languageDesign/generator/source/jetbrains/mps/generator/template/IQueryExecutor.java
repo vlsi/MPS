@@ -29,6 +29,8 @@ public interface IQueryExecutor {
   void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode) throws GenerationFailureException;
 
   SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query);
+  
+  Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query);
 
   List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query);
 

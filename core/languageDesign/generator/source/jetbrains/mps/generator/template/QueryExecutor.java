@@ -246,6 +246,25 @@ public class QueryExecutor implements IQueryExecutor {
     }
   }
 
+  @Override
+  public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query) {
+    String methodName = TemplateFunctionMethodName.templateArgumentQuery(query.getNode());
+    try {
+      return QueryMethodGenerated.invoke(
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new TemplateQueryContext(inputNode, query.getNode().getParent(), generator),
+        query.getModel());
+    } catch (NoSuchMethodException e) {
+      generator.showWarningMessage(query.getNode().getParent(), "couldn't find nodes query '" + methodName + "' : evaluate to null");
+      return null;
+    } catch (Exception e) {
+      generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
+      LOG.error(e);
+      return null;
+    }
+  }
+
   /**
    * used to evaluate 'sourceNodesQuery' in macros and in rules
    */

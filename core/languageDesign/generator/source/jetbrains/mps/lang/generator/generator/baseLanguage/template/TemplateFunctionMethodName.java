@@ -73,4 +73,8 @@ public class TemplateFunctionMethodName {
   public static String mappingScript_CodeBlock(SNode function) {
     return "mappingScript_CodeBlock_" + function.getId();
   }
+
+  public static String templateArgumentQuery(SNode function) {
+    return "templateArgumentQuery_" + function.getId();
+  }
 }
