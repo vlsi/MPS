@@ -7299,6 +7299,30 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="3996657882077376343">
+          <node role="part:11" type="jetbrains.mps.lang.textGen.structure.OperationCall:11" id="3996657882077376344">
+            <link role="function:11" targetNodeId="1234891360396" resolveInfo="typeDeclarations" />
+            <node role="parameter:11" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="3996657882077376345" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3996657882077376346">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3996657882077376347">
+            <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="3996657882077376348">
+              <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart:11" id="3996657882077376349">
+                <property name="value:11" value=" " />
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3996657882077376350">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3996657882077376351">
+              <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="3996657882077376352" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="3996657882077376353">
+                <link role="link:16" targetNodeId="1.1109279881614:3" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="3996657882077376354" />
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.AssertStatement:3" id="1237559513786">
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1237559516930">
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1237559517964" />
