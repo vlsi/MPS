@@ -24,13 +24,14 @@ public class TestToolbarPanel extends JPanel {
   private TestTree tree;
   private FailedTestOccurenceNavigator navigator;
   private MPSProject project;
-  private JUnitTestActionOptions_PreferencesComponent preferences = this.getPreferences();
+  private JUnitTestActionOptions_PreferencesComponent preferences;
 
   public TestToolbarPanel(MPSProject project, TestTree tree, FailedTestOccurenceNavigator navigator) {
     super(new BorderLayout());
     this.project = project;
     this.tree = tree;
     this.navigator = navigator;
+    this.preferences = this.getPreferences();
     this.setLayout(new BorderLayout());
     this.init();
   }
