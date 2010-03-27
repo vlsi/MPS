@@ -26,6 +26,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.intentions.*;
+import jetbrains.mps.intentions.IntentionsManager.QueryDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.ModelAccess;
@@ -321,7 +322,8 @@ public class IntentionsSupport {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(BaseIntention.class, node, editorContext,true, terminated));
+      QueryDescriptor query = new QueryDescriptor(BaseIntention.class, true, false);
+      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext, terminated));
     }
     return result;
   }

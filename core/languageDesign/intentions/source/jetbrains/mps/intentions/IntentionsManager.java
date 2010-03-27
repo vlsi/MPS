@@ -75,14 +75,16 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public boolean hasAvailableIntentions(SNode node, EditorContext editorContext, boolean instantiate, @Nullable Computable<Boolean> terminated) {
-    return !getAvailableIntentions(BaseIntention.class, node, editorContext, instantiate, terminated).isEmpty();
+    QueryDescriptor query = new QueryDescriptor(BaseIntention.class, instantiate, false);
+    return !getAvailableIntentions(query, node, editorContext, terminated).isEmpty();
   }
 
   public Set<Pair<Intention, SNode>> getEnabledAvailableIntentionsNoInst(SNode node, EditorContext context, @Nullable Computable<Boolean> terminated, Class<? extends Intention> intentionClass) {
     Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
     Set<Intention> disabled = getDisabledIntentions();
 
-    for (Pair<Intention, SNode> ip : getAvailableIntentions(intentionClass,node, context,false, terminated)) {
+    QueryDescriptor query = new QueryDescriptor(intentionClass, false, false);
+    for (Pair<Intention, SNode> ip : getAvailableIntentions(query, node, context, terminated)) {
       if (!disabled.contains(ip.first) ) {
         result.add(ip);
       }
@@ -90,20 +92,20 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return result;
   }
 
-  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final Class<? extends Intention> intentionClass, final SNode node, final EditorContext context, final boolean instantiate, @Nullable final Computable<Boolean> terminated) {
+  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context, @Nullable final Computable<Boolean> terminated) {
     Computable<Set<Pair<Intention, SNode>>> computable = new Computable<Set<Pair<Intention, SNode>>>() {
       public Set<Pair<Intention, SNode>> compute() {
         Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
-        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, instantiate, terminated)) {
-          if (intentionClass.isAssignableFrom(intention.getClass())) {
+        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, query.isInstantiate(), terminated)) {
+          if (query.getIntentionClass().isAssignableFrom(intention.getClass())) {
             result.add(new Pair<Intention, SNode>(intention, node));
           }
         }
         SNode parent = node.getParent();
         while (parent != null) {
-          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, instantiate, terminated)) {
-            if (intentionClass.isAssignableFrom(intention.getClass())) {
+          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, query.isInstantiate(), terminated)) {
+            if (query.getIntentionClass().isAssignableFrom(intention.getClass())) {
               result.add(new Pair<Intention, SNode>(intention, parent));
             }
           }
@@ -357,6 +359,32 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
     intentions.add((Intention) intention);
     myIntentions.put(intention.getConcept(), intentions);
+  }
+
+  //-------------queryDescriptor-----------------
+
+  public static class QueryDescriptor{
+    private Class<? extends Intention> myIntentionClass;
+    private boolean myInstantiate;
+    private boolean myEnabledOnly;
+
+    public QueryDescriptor(Class<? extends Intention> intentionClass, boolean instantiate, boolean enabledOnly) {
+      myIntentionClass = intentionClass;
+      myInstantiate = instantiate;
+      myEnabledOnly = enabledOnly;
+    }
+
+    public Class<? extends Intention> getIntentionClass() {
+      return myIntentionClass;
+    }
+
+    public boolean isInstantiate() {
+      return myInstantiate;
+    }
+
+    public boolean isEnabledOnly() {
+      return myEnabledOnly;
+    }
   }
 
   //-------------component methods-----------------
