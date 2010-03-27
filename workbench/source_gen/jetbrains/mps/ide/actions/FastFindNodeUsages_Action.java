@@ -24,7 +24,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FastFindNodeUsages_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/usages.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/find.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(FastFindNodeUsages_Action.class);
 
   private IOperationContext context;

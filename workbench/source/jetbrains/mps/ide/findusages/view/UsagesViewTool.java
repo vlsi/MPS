@@ -77,7 +77,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   //----CONSTRUCT STUFF----
 
   public UsagesViewTool(Project project) {
-    super(project, "Usages", 3, jetbrains.mps.ide.projectPane.Icons.USAGES_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Usages", 3, jetbrains.mps.ide.projectPane.Icons.FIND_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   protected UsagesView getUsagesView(int index) {

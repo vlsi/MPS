@@ -22,7 +22,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFi
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindModelUsages_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/usages.png", "jetbrains.mps.lang.core"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/find.png", "jetbrains.mps.lang.core"), true);
   private static Logger LOG = Logger.getLogger(FindModelUsages_Action.class);
 
   private IScope scope;

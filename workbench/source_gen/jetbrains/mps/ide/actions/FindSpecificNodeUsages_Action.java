@@ -30,7 +30,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsCompo
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindSpecificNodeUsages_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/usages.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/find.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(FindSpecificNodeUsages_Action.class);
 
   private MPSProject project;

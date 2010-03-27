@@ -40,7 +40,7 @@
     <property name="name:23" value="FindModelUsages" />
     <property name="caption:23" value="Find Usages" />
     <property name="executeInNewThread:23" value="true" />
-    <property name="iconPath:23" value="${language_descriptor}/icons/usages.png" />
+    <property name="iconPath:23" value="${language_descriptor}/icons/find.png" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="1209308509192">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1209308509193">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1212510263877">
@@ -254,7 +254,7 @@
     <property name="caption:23" value="Find Usages" />
     <property name="outsideCommandExecution:23" value="false" />
     <property name="executeInNewThread:23" value="true" />
-    <property name="iconPath:23" value="${language_descriptor}/icons/usages.png" />
+    <property name="iconPath:23" value="${language_descriptor}/icons/find.png" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="1209824745372">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1209824745373">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1212508818624">
@@ -707,7 +707,7 @@
     <property name="caption:23" value="Find Concepts Usages" />
     <property name="outsideCommandExecution:23" value="false" />
     <property name="executeInNewThread:23" value="true" />
-    <property name="iconPath:23" value="${language_descriptor}/icons/usages.png" />
+    <property name="iconPath:23" value="${language_descriptor}/icons/find.png" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="1225978220760">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225978220761">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1225978220762">
