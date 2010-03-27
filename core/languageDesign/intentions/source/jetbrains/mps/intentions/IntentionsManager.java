@@ -103,7 +103,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
   }
 
-  public List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean inChild, boolean instantiateParameterized, @Nullable Computable<Boolean> terminated) {
+  public List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean inChild, boolean instantiateParameterized, Computable<Boolean> terminated) {
     assert node != null : "node == null - inconsistent editor state";
     List<Intention> intentions;
     if (!instantiateParameterized) {
@@ -111,7 +111,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     } else {
       intentions = new ArrayList<Intention>();
       for (Intention intention : getIntentionsFor(node, context.getScope(), terminated)) {
-        if (terminated != null && terminated.compute()) return new ArrayList<Intention>();
+        if (terminated.compute()) return new ArrayList<Intention>();
         if (intention.isParameterized()) {
           Method method = null;
           try {
@@ -172,7 +172,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return result;
   }
 
-  private List<Intention> getIntentionsFor(SNode node, IScope scope, @Nullable Computable<Boolean> terminated) {
+  public boolean intentionIsDisabled(Intention intention) {
+    return getDisabledIntentions().contains(intention);
+  }
+
+  private List<Intention> getIntentionsFor(SNode node, IScope scope, Computable<Boolean> terminated) {
     String conceptFqName = node.getConceptFqName();
     Set<Language> visibleLanguages = new HashSet<Language>(node.getModel().getLanguages(scope));
     List<Intention> result = new ArrayList<Intention>();
@@ -180,7 +184,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       Set<Intention> intentions = myIntentions.get(ancestor);
       if (intentions == null) continue;
       for (Intention intention : intentions) {
-        if (terminated != null && terminated.compute()) return new ArrayList<Intention>();
+        if (terminated.compute()) return new ArrayList<Intention>();
         Language language = getIntentionLanguage(intention);
         if (language != null && !visibleLanguages.contains(language)) continue;
         result.add(intention);
@@ -189,11 +193,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return result;
   }
 
-  public boolean intentionIsDisabled(Intention intention) {
-    return getDisabledIntentions().contains(intention);
-  }
-
-  protected Set<Intention> getDisabledIntentions() {
+  private Set<Intention> getDisabledIntentions() {
     if (!myCachesAreValid) {
       myDisabledIntentionsCache.clear();
       for (Set<Intention> conceptIntentions : myIntentions.values()) {
@@ -208,7 +208,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return myDisabledIntentionsCache;
   }
 
-  protected void invalidateCaches() {
+  private void invalidateCaches() {
     myCachesAreValid = false;
     myDisabledIntentionsCache.clear();
   }
