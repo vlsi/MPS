@@ -23,9 +23,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
-import jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior;
 import jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_Behavior;
-import jetbrains.mps.lang.intentions.structure.IntentionDeclaration;
 import jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration;
 import jetbrains.mps.lang.script.plugin.migrationtool.MigrationScriptUtil;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
@@ -38,7 +36,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.project.ModuleContext;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -77,44 +74,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     myClassLoaderManager = manager;
   }
 
-  public void initComponent() {
-    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
-      @Override
-      public void onReload() {
-        dispose();
-        load();
-      }
-    });
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "MPS Intention Manager";
-  }
-
-  public void disposeComponent() {
-  }
-
-  private Set<Pair<Intention, SNode>> getAvailableIntentions_delete(final SNode node, @NotNull final EditorContext context, @Nullable final Computable<Boolean> terminated) {
-    return ModelAccess.instance().runReadAction(new Computable<Set<Pair<Intention, SNode>>>() {
-      public Set<Pair<Intention, SNode>> compute() {
-        Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
-
-        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, false, terminated)) {
-          result.add(new Pair<Intention, SNode>(intention, node));
-        }
-        SNode parent = node.getParent();
-        while (parent != null) {
-          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, false, terminated)) {
-            result.add(new Pair<Intention, SNode>(intention, parent));
-          }
-          parent = parent.getParent();
-        }
-
-        return result;
-      }
-    });
+  public boolean hasAvailableIntentions(SNode node, EditorContext editorContext, @Nullable Computable<Boolean> terminated) {
+    return !getAvailableIntentions_delete(node, editorContext, terminated).isEmpty();
   }
 
   public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context, @Nullable final Computable<Boolean> terminated, final Class<? extends Intention> intentionClass) {
@@ -148,8 +109,25 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
   }
 
-  public boolean hasAvailableIntentions(SNode node, EditorContext editorContext, @Nullable Computable<Boolean> terminated) {
-    return !getAvailableIntentions_delete(node, editorContext, terminated).isEmpty();
+  private Set<Pair<Intention, SNode>> getAvailableIntentions_delete(final SNode node, @NotNull final EditorContext context, @Nullable final Computable<Boolean> terminated) {
+    return ModelAccess.instance().runReadAction(new Computable<Set<Pair<Intention, SNode>>>() {
+      public Set<Pair<Intention, SNode>> compute() {
+        Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
+
+        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, false, terminated)) {
+          result.add(new Pair<Intention, SNode>(intention, node));
+        }
+        SNode parent = node.getParent();
+        while (parent != null) {
+          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, false, terminated)) {
+            result.add(new Pair<Intention, SNode>(intention, parent));
+          }
+          parent = parent.getParent();
+        }
+
+        return result;
+      }
+    });
   }
 
   private List<Intention> getIntentionsFor(SNode node, IScope scope, @Nullable Computable<Boolean> terminated) {
@@ -169,7 +147,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return result;
   }
 
-  public List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean onlyAvailableInChildren, boolean instantiateParameterized, @Nullable Computable<Boolean> terminated) {
+  public List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean inChild, boolean instantiateParameterized, @Nullable Computable<Boolean> terminated) {
     assert node != null : "node == null - inconsistent editor state";
     List<Intention> intentions;
     if (!instantiateParameterized) {
@@ -207,7 +185,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     for (final Intention intention : intentions) {
       try {
         boolean isApplicable = false;
-        if (!onlyAvailableInChildren || intention.isAvailableInChildNodes()) {
+        if (!inChild || intention.isAvailableInChildNodes()) {
           isApplicable = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
             public Boolean compute() {
               return intention.isApplicable(node, context);
@@ -228,7 +206,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       if (intentionProvider != null) {
         Intention intention = intentionProvider.getIntention();
         if (intention != null) {
-          if (!onlyAvailableInChildren || intention.isAvailableInChildNodes()) {
+          if (!inChild || intention.isAvailableInChildNodes()) {
             result.add(intention);
           }
         }
@@ -243,17 +221,15 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     Set<Intention> disabled = getDisabledIntentions();
 
     for (Pair<Intention, SNode> ip : getAvailableIntentions_delete(node, context, terminated)) {
-      if (!disabled.contains(ip.first) && intentionClass.isAssignableFrom(ip.first.getClass())) {  //todo code style: add spaces between operands and operation sign
+      if (!disabled.contains(ip.first) && intentionClass.isAssignableFrom(ip.first.getClass())) {  
         result.add(ip);
       }
     }
     return result;
   }
 
-  public Set<Pair<Intention, SNode>> getDisabledAvailableIntentions(SNode node, EditorContext context, @Nullable Computable<Boolean> terminated) {
-    Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>(getAvailableIntentions_delete(node, context, terminated));
-    result.retainAll(getDisabledIntentions());
-    return result;
+  public boolean intentionIsDisabled(Intention intention) {
+    return getDisabledIntentions().contains(intention);
   }
 
   protected Set<Intention> getDisabledIntentions() {
@@ -276,9 +252,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     myDisabledIntentionsCache.clear();
   }
 
-  public boolean intentionIsDisabled(Intention intention) {
-    return getDisabledIntentions().contains(intention);
-  }
+  //-------------disabled state control-----------------
 
   public void invertIntentionState(Intention intention) {
     setIntentionState(intention, !intentionIsDisabled(intention));
@@ -302,9 +276,22 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     myDisabledIntentionsCache.remove(intention);
   }
 
+  //-------------node info by intention-----------------
+
   public Language getIntentionLanguage(Intention intention) {
     return myIntentionsLanguages.get(intention.getClass());
   }
+
+  @Nullable
+  public SNode getNodeByIntention(Intention intention) {
+    SNode sNode = myNodesByIntentions.get(intention);
+    if (sNode == null) {
+      return intention.getNodeByIntention();
+    }
+    return sNode;
+  }
+
+  //-------------reloading-----------------
 
   public void dispose() {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -391,13 +378,26 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     myIntentions.put(intention.getConcept(), intentions);
   }
 
-  @Nullable
-  public SNode getNodeByIntention(Intention intention) {
-    SNode sNode = myNodesByIntentions.get(intention);
-    if (sNode == null) {
-      return intention.getNodeByIntention();
-    }
-    return sNode;
+  //-------------component methods-----------------
+
+  public void initComponent() {
+    myClassLoaderManager.addReloadHandler(new ReloadAdapter() {
+      @Override
+      public void onReload() {
+        dispose();
+        load();
+      }
+    });
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "MPS Intention Manager";
+  }
+
+  public void disposeComponent() {
+
   }
 
   public MyState getState() {
