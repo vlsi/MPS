@@ -74,60 +74,53 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     myClassLoaderManager = manager;
   }
 
-  public boolean hasAvailableIntentionsNoInstantiation(SNode node, EditorContext editorContext, @Nullable Computable<Boolean> terminated) {
-    return !getAvailableIntentionsNoInstantiation(node, editorContext, terminated).isEmpty();
+  public boolean hasAvailableIntentions(SNode node, EditorContext editorContext, boolean instantiate, @Nullable Computable<Boolean> terminated) {
+    return !getAvailableIntentions(BaseIntention.class, node, editorContext, instantiate, terminated).isEmpty();
   }
 
-  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context, @Nullable final Computable<Boolean> terminated, final Class<? extends Intention> intentionClass) {
-    try {
-      TypeChecker.getInstance().enableGlobalSubtypingCache();
-      Set<Pair<Intention, SNode>> intentions = ModelAccess.instance().runReadAction(new Computable<Set<Pair<Intention, SNode>>>() {
-        public Set<Pair<Intention, SNode>> compute() {
-          Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
+  public Set<Pair<Intention, SNode>> getEnabledAvailableIntentionsNoInst(SNode node, EditorContext context, @Nullable Computable<Boolean> terminated, Class<? extends Intention> intentionClass) {
+    Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
+    Set<Intention> disabled = getDisabledIntentions();
 
-          for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, true, terminated)) {
-            if (intentionClass.isAssignableFrom(intention.getClass())) {
-              result.add(new Pair<Intention, SNode>(intention, node));
-            }
-          }
-          SNode parent = node.getParent();
-          while (parent != null) {
-            for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, true, terminated)) {
-              if (intentionClass.isAssignableFrom(intention.getClass())) {
-                result.add(new Pair<Intention, SNode>(intention, parent));
-              }
-            }
-            parent = parent.getParent();
-          }
-
-          return result;
-        }
-      });
-      return intentions;
-    } finally {
-      TypeChecker.getInstance().clearGlobalSubtypingCache();
+    for (Pair<Intention, SNode> ip : getAvailableIntentions(intentionClass,node, context,false, terminated)) {
+      if (!disabled.contains(ip.first) ) {
+        result.add(ip);
+      }
     }
+    return result;
   }
 
-  private Set<Pair<Intention, SNode>> getAvailableIntentionsNoInstantiation(final SNode node, @NotNull final EditorContext context, @Nullable final Computable<Boolean> terminated) {
-    return ModelAccess.instance().runReadAction(new Computable<Set<Pair<Intention, SNode>>>() {
+  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final Class<? extends Intention> intentionClass, final SNode node, final EditorContext context, final boolean instantiate, @Nullable final Computable<Boolean> terminated) {
+    Computable<Set<Pair<Intention, SNode>>> computable = new Computable<Set<Pair<Intention, SNode>>>() {
       public Set<Pair<Intention, SNode>> compute() {
         Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
-        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, false, terminated)) {
-          result.add(new Pair<Intention, SNode>(intention, node));
+        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, instantiate, terminated)) {
+          if (intentionClass.isAssignableFrom(intention.getClass())) {
+            result.add(new Pair<Intention, SNode>(intention, node));
+          }
         }
         SNode parent = node.getParent();
         while (parent != null) {
-          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, false, terminated)) {
-            result.add(new Pair<Intention, SNode>(intention, parent));
+          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, instantiate, terminated)) {
+            if (intentionClass.isAssignableFrom(intention.getClass())) {
+              result.add(new Pair<Intention, SNode>(intention, parent));
+            }
           }
           parent = parent.getParent();
         }
 
         return result;
       }
-    });
+    };
+
+    try {
+      TypeChecker.getInstance().enableGlobalSubtypingCache();
+      Set<Pair<Intention, SNode>> intentions = ModelAccess.instance().runReadAction(computable);
+      return intentions;
+    } finally {
+      TypeChecker.getInstance().clearGlobalSubtypingCache();
+    }
   }
 
   private List<Intention> getIntentionsFor(SNode node, IScope scope, @Nullable Computable<Boolean> terminated) {
@@ -213,18 +206,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       }
     }
 
-    return result;
-  }
-
-  public Set<Pair<Intention, SNode>> getEnabledAvailableIntentionsNoInstantiation(SNode node, EditorContext context, @Nullable Computable<Boolean> terminated, Class<? extends Intention> intentionClass) {
-    Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
-    Set<Intention> disabled = getDisabledIntentions();
-
-    for (Pair<Intention, SNode> ip : getAvailableIntentionsNoInstantiation(node, context, terminated)) {
-      if (!disabled.contains(ip.first) && intentionClass.isAssignableFrom(ip.first.getClass())) {  
-        result.add(ip);
-      }
-    }
     return result;
   }
 

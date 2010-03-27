@@ -313,7 +313,7 @@ public class IntentionsSupport {
   private boolean hasIntentions(@Nullable Computable<Boolean> terminated) {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
-    return IntentionsManager.getInstance().hasAvailableIntentionsNoInstantiation(node, editorContext, terminated);
+    return IntentionsManager.getInstance().hasAvailableIntentions(node, editorContext,false, terminated);
   }
 
   private Set<Pair<Intention, SNode>> getAvailableIntentions(@Nullable Computable<Boolean> terminated) {
@@ -321,7 +321,7 @@ public class IntentionsSupport {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, editorContext, terminated, BaseIntention.class));
+      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(BaseIntention.class, node, editorContext,true, terminated));
     }
     return result;
   }
@@ -331,7 +331,7 @@ public class IntentionsSupport {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentionsNoInstantiation(node, editorContext, terminated, BaseIntention.class));
+      result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentionsNoInst(node, editorContext, terminated, BaseIntention.class));
     }
     return result;
   }
