@@ -332,6 +332,22 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
   }
 
+  private void treeMessagesChanged(boolean updatePresentation) {
+    if (updatePresentation) {
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        @Override
+        public void run() {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              updatePresentation();
+              updateNodePresentationInTree();
+            }
+          });
+        }
+      });
+    }
+  }
+
   public void addTreeMessage(TreeMessage message) {
     addTreeMessage(message, true);
   }
@@ -341,18 +357,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
       myTreeMessages = new ArrayList<TreeMessage>(1);
     }
     myTreeMessages.add(message);
-    if (updatePresentation) {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              updatePresentation();
-            }
-          });
-        }
-      });
-    }
+    treeMessagesChanged(updatePresentation);
   }
 
   public void addTreeMessages(TreeMessage... messages) {
@@ -365,18 +370,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
       myTreeMessages = new ArrayList<TreeMessage>(1);
     }
     myTreeMessages.addAll(Arrays.asList(messages));
-    if (updatePresentation) {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              updatePresentation();
-            }
-          });
-        }
-      });
-    }
+    treeMessagesChanged(updatePresentation);
   }
 
    public void removeTreeMessage(TreeMessage message) {
@@ -387,18 +381,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     if (myTreeMessages != null) {
       myTreeMessages.remove(message);
     }
-    if (updatePresentation) {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              updatePresentation();
-            }
-          });
-        }
-      });
-    }
+    treeMessagesChanged(updatePresentation);
   }
 
   public void removeTreeMessages(TreeMessageOwner owner, boolean updatePresentation) {
@@ -409,18 +392,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
         myTreeMessages.remove(message);
       }
     }
-    if (updatePresentation) {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              updatePresentation();
-            }
-          });
-        }
-      });
-    }
+    treeMessagesChanged(updatePresentation);
   }
 
   protected void doUpdatePresentation() {
