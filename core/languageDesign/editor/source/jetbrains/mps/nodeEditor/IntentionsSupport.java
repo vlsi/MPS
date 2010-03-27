@@ -239,8 +239,10 @@ public class IntentionsSupport {
       public int compare(Pair<Intention, SNode> o1, Pair<Intention, SNode> o2) {
         Intention intention1 = o1.getFirst();
         Intention intention2 = o2.getFirst();
-        if (isDisabledIntention(intention1) && !(isDisabledIntention(intention2))) return 1;
-        if (!isDisabledIntention(intention1) && isDisabledIntention(intention2)) return -1;
+        boolean disabled1 = IntentionsManager.getInstance().intentionIsDisabled(intention1);
+        boolean disabled2 = IntentionsManager.getInstance().intentionIsDisabled(intention2);
+        if (disabled1 && !disabled2) return 1;
+        if (!disabled1 && disabled2) return -1;
         SNode node1 = o1.getSecond();
         SNode node2 = o2.getSecond();
         EditorContext context = myEditor.getEditorContext();
@@ -338,10 +340,6 @@ public class IntentionsSupport {
       result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
     }
     return result;
-  }
-
-  private boolean isDisabledIntention(Intention intention) {
-    return IntentionsManager.getInstance().intentionIsDisabled(intention);
   }
 
   public boolean isLightBulbVisible() {

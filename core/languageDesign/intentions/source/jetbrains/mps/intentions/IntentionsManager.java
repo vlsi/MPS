@@ -79,14 +79,14 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       public Set<Pair<Intention, SNode>> compute() {
         Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
-        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, query.isInstantiate(), query.getTerminated())) {
+        for (Intention intention : getAvailableIntentionsForExactNode(query,node, context, false)) {
           result.add(new Pair<Intention, SNode>(intention, node));
         }
 
         if (!query.isCurrentNodeOnly()){
           SNode parent = node.getParent();
           while (parent != null) {
-            for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, query.isInstantiate(), query.getTerminated())) {
+            for (Intention intention : getAvailableIntentionsForExactNode(query,parent, context, true)) {
               result.add(new Pair<Intention, SNode>(intention, parent));
             }
             parent = parent.getParent();
@@ -106,15 +106,19 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
   }
 
-  private List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean inChild, boolean instantiateParameterized, Computable<Boolean> terminated) {
+  public boolean intentionIsDisabled(Intention intention) {
+    return getDisabledIntentions().contains(intention);
+  }
+
+  private List<Intention> getAvailableIntentionsForExactNode(QueryDescriptor query, final SNode node, @NotNull final EditorContext context, boolean inChild) {
     assert node != null : "node == null - inconsistent editor state";
     List<Intention> intentions;
-    if (!instantiateParameterized) {
-      intentions = getIntentionsFor(node, context.getScope(), terminated);
+    if (!query.isInstantiate()) {
+      intentions = getIntentionsFor(node, context.getScope(), query.getTerminated());
     } else {
       intentions = new ArrayList<Intention>();
-      for (Intention intention : getIntentionsFor(node, context.getScope(), terminated)) {
-        if (terminated.compute()) return new ArrayList<Intention>();
+      for (Intention intention : getIntentionsFor(node, context.getScope(), query.getTerminated())) {
+        if (query.getTerminated().compute()) return new ArrayList<Intention>();
         if (intention.isParameterized()) {
           Method method = null;
           try {
@@ -173,10 +177,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
 
     return result;
-  }
-
-  public boolean intentionIsDisabled(Intention intention) {
-    return getDisabledIntentions().contains(intention);
   }
 
   private List<Intention> getIntentionsFor(SNode node, IScope scope, Computable<Boolean> terminated) {
