@@ -31,6 +31,10 @@ import com.intellij.openapi.actionSystem.AnAction;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
+import com.intellij.execution.executors.DefaultDebugExecutor;
+import jetbrains.mps.debug.DebuggerKeys;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
@@ -47,7 +51,6 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 
 public class DefaultJUnit_Configuration extends BaseRunConfig {
   @Tag(value = "state")
@@ -134,45 +137,57 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
         final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
         final IOperationContext operationContext = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
         {
-          // calculate parameter 
-          final UnitTestExecutionController parameter = new _FunctionTypes._return_P0_E0<UnitTestExecutionController>() {
-            public UnitTestExecutionController invoke() {
-              List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject);
-
-              if (DefaultJUnit_Configuration.this.getStateObject().myJavaRunParameters.getMake()) {
-                RunUtil.makeBeforeRun(mpsProject, stuffToTest);
-              }
-
-              return new UnitTestExecutionController(stuffToTest, DefaultJUnit_Configuration.this.getStateObject().myJavaRunParameters);
+          final ConfigRunParameters javaRunParameters = DefaultJUnit_Configuration.this.getStateObject().myJavaRunParameters.copy();
+          // add debug arguments if runned under debug 
+          if (executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID)) {
+            String args = this.getUserData(DebuggerKeys.CONNECTION_SETTINGS);
+            String oldVmParams = javaRunParameters.getVMParameters();
+            if (StringUtils.isNotEmpty(oldVmParams)) {
+              oldVmParams += " ";
             }
-          }.invoke();
+            javaRunParameters.setVMParameters(oldVmParams + args);
+          }
+          {
+            // calculate parameter 
+            final UnitTestExecutionController parameter = new _FunctionTypes._return_P0_E0<UnitTestExecutionController>() {
+              public UnitTestExecutionController invoke() {
+                List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject);
 
-          // set actions 
-
-          // create console component 
-          final Tuples._2<JComponent, Runnable> executeConsoleTmp = MultiTuple.<JComponent, Runnable>empty2().assign((Tuples._2<JComponent, Runnable>) new _FunctionTypes._return_P0_E0<Tuples._2<JComponent, Runnable>>() {
-            public Tuples._2<JComponent, Runnable> invoke() {
-              final UnitTestViewComponent runComponent = new UnitTestViewComponent(mpsProject, operationContext, consoleView, parameter);
-              return MultiTuple.<JComponent,Runnable>from((JComponent) runComponent, new Runnable() {
-                public void run() {
-                  runComponent.dispose();
+                if (javaRunParameters.getMake()) {
+                  RunUtil.makeBeforeRun(mpsProject, stuffToTest);
                 }
-              });
-            }
-          }.invoke());
-          consoleComponent = executeConsoleTmp._0();
-          consoleDispose = new Runnable() {
-            public void run() {
-              executeConsoleTmp._1().run();
-            }
-          };
 
-          // create process handler 
-          handler = (ProcessHandler) new _FunctionTypes._return_P0_E0<ProcessHandler>() {
-            public ProcessHandler invoke() {
-              return parameter.execute();
-            }
-          }.invoke();
+                return new UnitTestExecutionController(stuffToTest, javaRunParameters);
+              }
+            }.invoke();
+
+            // set actions 
+
+            // create console component 
+            final Tuples._2<JComponent, Runnable> executeConsoleTmp = MultiTuple.<JComponent, Runnable>empty2().assign((Tuples._2<JComponent, Runnable>) new _FunctionTypes._return_P0_E0<Tuples._2<JComponent, Runnable>>() {
+              public Tuples._2<JComponent, Runnable> invoke() {
+                final UnitTestViewComponent runComponent = new UnitTestViewComponent(mpsProject, operationContext, consoleView, parameter);
+                return MultiTuple.<JComponent,Runnable>from((JComponent) runComponent, new Runnable() {
+                  public void run() {
+                    runComponent.dispose();
+                  }
+                });
+              }
+            }.invoke());
+            consoleComponent = executeConsoleTmp._0();
+            consoleDispose = new Runnable() {
+              public void run() {
+                executeConsoleTmp._1().run();
+              }
+            };
+
+            // create process handler 
+            handler = (ProcessHandler) new _FunctionTypes._return_P0_E0<ProcessHandler>() {
+              public ProcessHandler invoke() {
+                return parameter.execute();
+              }
+            }.invoke();
+          }
         }
         final JComponent finalConsoleComponent = consoleComponent;
         final Runnable finalConsoleDispose = consoleDispose;

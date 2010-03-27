@@ -12,6 +12,7 @@ import junit.framework.TestSuite;
 import junit.framework.TestResult;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import org.junit.Ignore;
 import java.io.PrintStream;
 
 public class TestRunner extends BaseTestRunner {
@@ -41,7 +42,8 @@ public class TestRunner extends BaseTestRunner {
         try {
           Method method = test.getClass().getMethod(test.getName());
           boolean isAbstractClass = Modifier.isAbstract(method.getDeclaringClass().getModifiers());
-          if (isAbstractClass) {
+          boolean isIgnored = method.getAnnotation(Ignore.class) != null;
+          if (isAbstractClass || isIgnored) {
             return;
           }
         } catch (NoSuchMethodException e) {

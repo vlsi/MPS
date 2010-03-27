@@ -2412,6 +2412,44 @@
         </node>
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6391309690622365899">
+      <property name="name:3" value="copy" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6391309690622365901" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6391309690622365902">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement:3" id="6391309690622370747">
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6391309690622370748">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6391309690622370754">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="6391309690622370762">
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6391309690622371059">
+                  <link role="classifier:3" targetNodeId="8492459591399148682" resolveInfo="ConfigRunParameters" />
+                </node>
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6391309690622370757">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="6391309690622370756" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6391309690622370761">
+                    <link role="baseMethodDeclaration:3" targetNodeId="8492459591399148839" resolveInfo="clone" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="6391309690622370749">
+            <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6391309690622370750">
+              <property name="name:3" value="ignored" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6391309690622370753">
+                <link role="classifier:3" targetNodeId="2v.~CloneNotSupportedException" resolveInfo="CloneNotSupportedException" />
+              </node>
+            </node>
+            <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6391309690622370752" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6391309690622371064">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6391309690622371065" />
+        </node>
+      </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6391309690622370745">
+        <link role="classifier:3" targetNodeId="8492459591399148682" resolveInfo="ConfigRunParameters" />
+      </node>
+    </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399148839">
       <property name="name:3" value="clone" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8492459591399148840">

@@ -21,6 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class TestRunUtil {
   public TestRunUtil() {
@@ -168,24 +169,22 @@ public class TestRunUtil {
     return ListSequence.fromList(getModuleTests(module)).isNotEmpty();
   }
 
-  public static List<SNode> excludeIgnored(List<SNode> methods) {
-    List<SNode> result = new ArrayList<SNode>();
-    for (SNode method : methods) {
-      if (!(SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod"))) {
-        ListSequence.fromList(result).addElement(method);
-        continue;
-      }
-      boolean isIgnored = false;
-      for (SNode annotation : SLinkOperations.getTargets(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod"), "annotation", true)) {
-        if (SLinkOperations.getTarget(annotation, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#org.junit(org.junit@java_stub)", "~Ignore"))) {
-          isIgnored = true;
-          break;
+  public static boolean isIgnored(SNode method) {
+    if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod")) {
+      return (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SLinkOperations.getTarget(it, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#org.junit(org.junit@java_stub)", "~Ignore"));
         }
-      }
-      if (!(isIgnored)) {
-        ListSequence.fromList(result).addElement(method);
-      }
+      }) != null);
     }
-    return result;
+    return false;
+  }
+
+  public static List<SNode> excludeIgnored(List<SNode> methods) {
+    return ListSequence.fromList(methods).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(isIgnored(it));
+      }
+    }).toListSequence();
   }
 }
