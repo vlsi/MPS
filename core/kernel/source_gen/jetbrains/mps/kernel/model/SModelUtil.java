@@ -16,10 +16,10 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -61,6 +61,13 @@ public class SModelUtil {
             MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).clear();
             MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();
           }
+        }
+      }
+
+      public void beforeModelReloaded(SModelDescriptor descriptor) {
+        if (Language.getModelAspect(descriptor) == LanguageAspect.STRUCTURE) {
+          MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).clear();
+          MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();
         }
       }
 
