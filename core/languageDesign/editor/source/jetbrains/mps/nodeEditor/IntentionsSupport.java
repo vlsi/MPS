@@ -232,7 +232,7 @@ public class IntentionsSupport {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
     groupItems.addAll(getAvailableIntentions(null));
-    if(groupItems.isEmpty()){
+    if (groupItems.isEmpty()) {
       return null;
     }
     Collections.sort(groupItems, new Comparator<Pair<Intention, SNode>>() {
@@ -314,7 +314,8 @@ public class IntentionsSupport {
   private boolean hasIntentions(@Nullable Computable<Boolean> terminated) {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
-    return IntentionsManager.getInstance().hasAvailableIntentions(node, editorContext,false, terminated);
+    QueryDescriptor query = new QueryDescriptor(BaseIntention.class, false, false);
+    return !IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext, terminated).isEmpty();
   }
 
   private Set<Pair<Intention, SNode>> getAvailableIntentions(@Nullable Computable<Boolean> terminated) {
@@ -333,7 +334,8 @@ public class IntentionsSupport {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentionsNoInst(node, editorContext, terminated, BaseIntention.class));
+      QueryDescriptor query = new QueryDescriptor(BaseIntention.class, false, true);
+      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext, terminated));
     }
     return result;
   }

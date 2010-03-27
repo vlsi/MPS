@@ -74,24 +74,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     myClassLoaderManager = manager;
   }
 
-  public boolean hasAvailableIntentions(SNode node, EditorContext editorContext, boolean instantiate, @Nullable Computable<Boolean> terminated) {
-    QueryDescriptor query = new QueryDescriptor(BaseIntention.class, instantiate, false);
-    return !getAvailableIntentions(query, node, editorContext, terminated).isEmpty();
-  }
-
-  public Set<Pair<Intention, SNode>> getEnabledAvailableIntentionsNoInst(SNode node, EditorContext context, @Nullable Computable<Boolean> terminated, Class<? extends Intention> intentionClass) {
-    Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
-    Set<Intention> disabled = getDisabledIntentions();
-
-    QueryDescriptor query = new QueryDescriptor(intentionClass, false, false);
-    for (Pair<Intention, SNode> ip : getAvailableIntentions(query, node, context, terminated)) {
-      if (!disabled.contains(ip.first)) {
-        result.add(ip);
-      }
-    }
-    return result;
-  }
-
   public Collection<Pair<Intention, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context, @Nullable final Computable<Boolean> terminated) {
     Computable<Set<Pair<Intention, SNode>>> computable = new Computable<Set<Pair<Intention, SNode>>>() {
       public Set<Pair<Intention, SNode>> compute() {
@@ -108,15 +90,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
           parent = parent.getParent();
         }
 
-        if (query.getIntentionClass() != null) {
-          for (Pair<Intention, SNode> p : new ArrayList<Pair<Intention, SNode>>(result)) {
-            if (!query.getIntentionClass().isAssignableFrom(p.getFirst().getClass())) {
-              result.remove(p);
-            }
-          }
-        }
-
-        return result;
+        return query.filter(result);
       }
     };
 
@@ -378,16 +352,27 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       myEnabledOnly = enabledOnly;
     }
 
-    public Class<? extends Intention> getIntentionClass() {
-      return myIntentionClass;
-    }
-
     public boolean isInstantiate() {
       return myInstantiate;
     }
 
-    public boolean isEnabledOnly() {
-      return myEnabledOnly;
+    public Set<Pair<Intention, SNode>> filter(Set<Pair<Intention, SNode>> intentions) {
+      Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
+
+      for (Pair<Intention, SNode> p : intentions) {
+        if (myIntentionClass == null || myIntentionClass.isAssignableFrom(p.getFirst().getClass())) {
+          result.add(p);
+        }
+      }
+
+      Set<Intention> disabled = IntentionsManager.getInstance().getDisabledIntentions();
+      for (Pair<Intention, SNode> ip : intentions) {
+        if (!(myEnabledOnly && disabled.contains(ip.first))) {
+          result.add(ip);
+        }
+      }
+
+      return result;
     }
   }
 
