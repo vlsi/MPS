@@ -6,11 +6,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class TestTreeRootMouseListener extends MouseAdapter {
-  private TestStatisticsModel statisticsModel;
+  private StatisticsTableModel statisticsModel;
   private TestOutputComponent outputComponent;
   private TestTree treeComponent;
 
-  public TestTreeRootMouseListener(TestTree tree, TestStatisticsModel statistics, TestOutputComponent outputComponent) {
+  public TestTreeRootMouseListener(TestTree tree, StatisticsTableModel statistics, TestOutputComponent outputComponent) {
     this.statisticsModel = statistics;
     this.outputComponent = outputComponent;
     this.treeComponent = tree;

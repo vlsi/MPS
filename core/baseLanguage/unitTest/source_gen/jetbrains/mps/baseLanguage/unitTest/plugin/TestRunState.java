@@ -13,16 +13,18 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.util.Key;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class TestRunState {
   private static final Object lock = new Object();
 
-  @Deprecated
-  private TestStatisticsModel statisticsModel;
   private List<String> testMethods = ListSequence.fromList(new ArrayList<String>());
   private Map<SNode, List<SNode>> map = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float) 0.75, false));
   private String curClass;
@@ -37,16 +39,35 @@ public class TestRunState {
   private boolean isTerminated;
   private String availableText = null;
   private Key key = null;
+  private final List<TestStateListener> listeners = ListSequence.fromList(new ArrayList<TestStateListener>());
 
-  public TestRunState(List<SNode> testCases, List<SNode> testMethods, TestStatisticsModel statisticsModel) {
-    this.statisticsModel = statisticsModel;
+  public TestRunState(List<SNode> testCases, List<SNode> testMethods, StatisticsTableModel statisticsModel) {
     this.initTestState(testCases, testMethods);
+  }
+
+  public TestRunState(List<SNode> tests) {
+    this.initTestState(ListSequence.fromList(tests).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
+      }
+    }).toListSequence(), ListSequence.fromList(tests).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
+      }
+    }).toListSequence());
   }
 
   private void initTestState(final List<SNode> testCases, final List<SNode> testMethods) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        TestRunState.this.statisticsModel.setTests(TestRunState.this.map);
         TestRunState.this.addTestCases(testCases);
         TestRunState.this.addTestMethods(testMethods);
         for (SNode testCase : MapSequence.fromMap(TestRunState.this.map).keySet()) {
@@ -65,9 +86,7 @@ public class TestRunState {
     for (SNode testCase : ListSequence.fromList(testCases)) {
       List<SNode> testMethods = new ArrayList<SNode>();
       MapSequence.fromMap(this.map).put(testCase, testMethods);
-      for (SNode testMethod : ListSequence.fromList(TestRunUtil.excludeIgnored(ITestCase_Behavior.call_getTestMethods_2148145109766218395(testCase)))) {
-        ListSequence.fromList(testMethods).addElement(testMethod);
-      }
+      ListSequence.fromList(testMethods).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(testCase)));
     }
   }
 
@@ -101,7 +120,52 @@ public class TestRunState {
     SetSequence.fromSet(this.viewList).addElement(testView);
   }
 
-  public void startTest(String className, String methodName) {
+  public void startTest(final TestEvent event) {
+    ListSequence.fromList(this.listeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTestStart(event);
+      }
+    });
+    this.startTest(event.getTestCaseName(), event.getTestMethodName());
+  }
+
+  public void endTest(final TestEvent event) {
+    ListSequence.fromList(this.listeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTestEnd(event);
+      }
+    });
+    this.endTest();
+  }
+
+  public void testError(final TestEvent event) {
+    ListSequence.fromList(this.listeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTestError(event);
+      }
+    });
+    this.defectTest();
+  }
+
+  public void testFailure(final TestEvent event) {
+    ListSequence.fromList(this.listeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTestFailure(event);
+      }
+    });
+    this.defectTest();
+  }
+
+  public void looseTest(final String className, final String testName) {
+    ListSequence.fromList(this.listeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onLooseTest(className, testName);
+      }
+    });
+    this.looseTestInternal(className, testName);
+  }
+
+  private void startTest(String className, String methodName) {
     if (className.equals(this.curClass) && methodName.equals(this.curMethod)) {
       return;
     }
@@ -112,7 +176,7 @@ public class TestRunState {
     }
   }
 
-  public void endTest() {
+  private void endTest() {
     synchronized (lock) {
       this.completedTests++;
       this.updateView();
@@ -121,14 +185,14 @@ public class TestRunState {
     }
   }
 
-  public void defectTest() {
+  private void defectTest() {
     synchronized (lock) {
       this.defectTests++;
       this.updateView();
     }
   }
 
-  public void loseTest(String test, String method) {
+  private void looseTestInternal(String test, String method) {
     synchronized (lock) {
       this.loseTest = test;
       this.loseMethod = method;
@@ -223,17 +287,15 @@ public class TestRunState {
     return this.key;
   }
 
+  public void addListener(TestStateListener listener) {
+    ListSequence.fromList(this.listeners).addElement(listener);
+  }
+
+  public void removeListener(TestStateListener listener) {
+    ListSequence.fromList(this.listeners).removeElement(listener);
+  }
+
   public Map<SNode, List<SNode>> getTestsMap() {
     return this.map;
-  }
-
-  @Deprecated
-  public TestMethodRow getTestMethodRow(String className, String methodName) {
-    return this.statisticsModel.getRow(className, methodName);
-  }
-
-  @Deprecated
-  public void updateTestMethodRow(TestMethodRow row) {
-    this.statisticsModel.updateRow(row);
   }
 }

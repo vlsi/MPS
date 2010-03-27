@@ -13,8 +13,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements Cloneable {
   private RunConfiguration myConfig;
@@ -41,7 +41,6 @@ public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements C
       ListSequence.fromList(nodeNames).addElement(INamedConcept_Behavior.call_getFqName_1213877404258(ITestMethod_Behavior.call_getTestCase_1216134500045(method)));
     }
 
-    boolean isCompileInMPS = SNodeOperations.getModel(Sequence.fromIterable(parameter).first()).getModelDescriptor().getModule().isCompileInMPS();
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromMethods.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig") {
@@ -54,7 +53,6 @@ public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements C
       _config.getStateObject().type = JUnitRunTypes.METHOD;
       _config.getStateObject().methods = new ClonableList<String>(methodNames);
       _config.getStateObject().nodes = new ClonableList<String>(nodeNames);
-      _config.getStateObject().compileInMPS = isCompileInMPS;
       JUnitConfigFromMethods.this.myConfig = _config;
     }
   }

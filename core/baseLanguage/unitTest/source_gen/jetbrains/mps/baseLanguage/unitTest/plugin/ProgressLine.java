@@ -11,7 +11,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import com.intellij.execution.process.ProcessOutputTypes;
 import javax.swing.SwingUtilities;
-import com.intellij.execution.process.ProcessHandler;
+import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.openapi.application.ApplicationManager;
@@ -81,8 +81,8 @@ public class ProgressLine extends JPanel implements TestView {
     this.stateLabel.setText(sb + "  " + testName);
   }
 
-  public void start(final ProcessHandler processHandler) {
-    processHandler.addProcessListener(new ProcessAdapter() {
+  public ProcessListener getProcessListener() {
+    return new ProcessAdapter() {
       @Override
       public void processTerminated(ProcessEvent p0) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -95,6 +95,6 @@ public class ProgressLine extends JPanel implements TestView {
           }
         });
       }
-    });
+    };
   }
 }

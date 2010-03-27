@@ -40,7 +40,6 @@ public class JUnitConfigFromProject extends BaseConfigCreator<MPSProject> implem
       };
       _config.setName(name);
       _config.getStateObject().type = JUnitRunTypes.PROJECT;
-      _config.getStateObject().compileInMPS = false;
       JUnitConfigFromProject.this.myConfig = _config;
     }
   }

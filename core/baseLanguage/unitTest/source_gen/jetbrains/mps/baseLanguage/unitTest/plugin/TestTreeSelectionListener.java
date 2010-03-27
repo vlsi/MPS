@@ -9,10 +9,10 @@ import javax.swing.tree.TreePath;
 
 public class TestTreeSelectionListener implements TreeSelectionListener {
   private TreeSelectionModel treeSelectionModel;
-  private TestStatisticsModel statisticsModel;
+  private StatisticsTableModel statisticsModel;
   private TestOutputComponent outputComponent;
 
-  public TestTreeSelectionListener(TestTree tree, TestStatisticsModel statistics, TestOutputComponent outputComponent) {
+  public TestTreeSelectionListener(TestTree tree, StatisticsTableModel statistics, TestOutputComponent outputComponent) {
     this.treeSelectionModel = tree.getSelectionModel();
     this.statisticsModel = statistics;
     this.outputComponent = outputComponent;

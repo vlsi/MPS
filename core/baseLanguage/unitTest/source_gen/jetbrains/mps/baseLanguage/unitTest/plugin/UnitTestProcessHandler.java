@@ -13,11 +13,11 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 
 public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
-  private TestRunListener listener;
+  private final TestEventsDispatcher myDispatcher;
 
-  public UnitTestProcessHandler(TestRunListener listener, Process process, String params) {
+  public UnitTestProcessHandler(TestEventsDispatcher dispartcher, Process process, String params) {
     super(process, params, Charset.defaultCharset());
-    this.listener = listener;
+    this.myDispatcher = dispartcher;
 
     this.addProcessListener(new ProcessAdapter() {
       private StringBuffer buffer = new StringBuffer();
@@ -45,7 +45,7 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
 
       public void onTextAvailable(ProcessEvent event, Key k) {
         if (this.isTerminatedEvent()) {
-          UnitTestProcessHandler.this.listener.onProcessTerminated(event.getText());
+          UnitTestProcessHandler.this.myDispatcher.onProcessTerminated(event.getText());
         }
         boolean error = ProcessOutputTypes.STDERR.equals(k);
         boolean system = ProcessOutputTypes.SYSTEM.equals(k);
@@ -59,9 +59,9 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
         String textTrimmed = StringUtils.trim(text);
         TestEvent testEvent = TestEvent.parse(textTrimmed);
         if (testEvent != null) {
-          UnitTestProcessHandler.this.listener.onTestEvent(testEvent);
+          UnitTestProcessHandler.this.myDispatcher.onTestEvent(testEvent);
         } else {
-          UnitTestProcessHandler.this.listener.onSimpleTextAvailable(text, k);
+          UnitTestProcessHandler.this.myDispatcher.onSimpleTextAvailable(text, k);
         }
       }
     });

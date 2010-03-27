@@ -29,7 +29,7 @@ import javax.swing.Icon;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.ide.icons.IconManager;
-import com.intellij.execution.process.ProcessHandler;
+import com.intellij.execution.process.ProcessListener;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -52,19 +52,21 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private FailedTestOccurenceNavigator testNavigator;
   private List<_FunctionTypes._void_P0_E0> listeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
-  public UnitTestViewComponent(MPSProject project, IOperationContext context, ConsoleViewImpl console, TestRunState runState, TestStatisticsModel statisticsModel) {
+  public UnitTestViewComponent(MPSProject project, IOperationContext context, ConsoleViewImpl console, UnitTestExecutionController model) {
     this.project = project;
-    this.testState = runState;
-    this.initComponent(console, context, statisticsModel);
+    this.testState = model.getState();
+    this.initComponent(console, context);
+    this.addCloseListener(model.getCloseListener());
   }
 
-  private void initComponent(ConsoleViewImpl console, IOperationContext context, TestStatisticsModel statisticsModel) {
+  private void initComponent(ConsoleViewImpl console, IOperationContext context) {
     // Create test results pane 
     JPanel rightPanel = new JPanel(new BorderLayout());
     rightPanel.setBorder(null);
     JTabbedPane resultTabs = new JTabbedPane();
     this.treeComponent = new TestTree(this.project, this.testState, context, this);
     resultTabs.addTab("Output", this.getIcon("testOutput.png"), this.createOutputComponent(this.project, console));
+    StatisticsTableModel statisticsModel = new StatisticsTableModel(this.testState);
     resultTabs.addTab("Statistics", this.getIcon("testStatistics.png"), this.createStatisticsComponent(statisticsModel));
     JComponent leftPanel = this.createTreeComponent();
     Splitter splitter = new Splitter(false);
@@ -112,7 +114,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     return this.outputComponent.getComponent();
   }
 
-  private JComponent createStatisticsComponent(TestStatisticsModel testStatisticsModel) {
+  private JComponent createStatisticsComponent(StatisticsTableModel testStatisticsModel) {
     JTable statisticsTable = new JTable(testStatisticsModel);
     statisticsTable.setDefaultRenderer(TestStatisticsRow.class, new StatisticsRowRenderer());
     JPanel tablePanel = new JPanel(new GridLayout(1, 1));
@@ -126,8 +128,8 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     return IconManager.loadIcon(pathToIcon, true);
   }
 
-  public void start(ProcessHandler processHandler) {
-    this.progressLineComponent.start(processHandler);
+  public ProcessListener getProcessListener() {
+    return this.progressLineComponent.getProcessListener();
   }
 
   public void dispose() {

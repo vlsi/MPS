@@ -6,7 +6,6 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import jetbrains.mps.uiLanguage.runtime.JbRadioButton;
 import javax.swing.JTextField;
-import jetbrains.mps.baseLanguage.plugin.JavaConfigOptions;
 import jetbrains.mps.project.MPSProject;
 import javax.swing.ButtonGroup;
 import jetbrains.mps.smodel.SModel;
@@ -17,19 +16,19 @@ import org.jdesktop.beansbinding.AutoBinding;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.uiLanguage.runtime.events.Events;
-import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.ide.DataManager;
+import com.intellij.openapi.wm.IdeFocusManager;
+import com.intellij.openapi.project.Project;
 import java.awt.GridBagLayout;
 import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.TitledBorder;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.ide.DataManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitConfigEditor extends JPanel {
@@ -44,7 +43,7 @@ public class JUnitConfigEditor extends JPanel {
   private JPanel myMainPanel_c0;
   private JPanel myProjectPanel_d2a;
   private JLabel myComponent_c3c0;
-  private JTextField myComponent_d3c0;
+  private JTextField myProjectName_d3c0;
   private JPanel myModulePanel_e2a;
   private JLabel myComponent_c4c0;
   private ModuleChooserComponent myModuleName_d4c0;
@@ -53,8 +52,8 @@ public class JUnitConfigEditor extends JPanel {
   private ModelChooserComponent myModelName_d5c0;
   private ListPanel myTestCases_d0;
   private ListPanel myTestMethods_e0;
-  private JavaConfigOptions myJavaOptions_f0;
   private MPSProject myProject;
+  private String myProjectName;
   private ButtonGroup myGroup;
   private SModel myModel;
   private IModule myModule;
@@ -72,18 +71,24 @@ public class JUnitConfigEditor extends JPanel {
   public JUnitConfigEditor() {
     this.myThis = this;
     JUnitConfigEditor component = this;
-    myThis.setProject(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()));
     myThis.setGroup(new ButtonGroup());
     myThis.setNodes(new ArrayList<SNode>());
     myThis.setMethods(new ArrayList<SNode>());
+    IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
+      public void run() {
+        myThis.setProject(myThis.findProjectFromContext());
+        myThis.setProjectName(myThis.getProject().getComponent(Project.class).getName());
+        if (myThis.myProjectName_d3c0 != null) {
+          myThis.myProjectName_d3c0.setText(myThis.getProjectName());
+        }
+      }
+    });
     component.setLayout(new GridBagLayout());
     component.add(this.createComponent_b0(), LayoutUtil.createFieldConstraints(0));
     component.add(this.createComponent_c0(), LayoutUtil.createPanelConstraints(1));
     component.add(this.createComponent_d0(), LayoutUtil.createPanelConstraints(1));
     component.add(this.createComponent_e0(), LayoutUtil.createPanelConstraints(1));
-    component.add(this.createComponent_f0(), LayoutUtil.createPanelConstraints(2));
     this.myEvents.initialize();
-    myThis.myJavaOptions_f0.setMakeBeforeRun(true);
     myThis.myTestCases_d0.init(myThis.getNodes(), false);
     myThis.myTestMethods_e0.init(myThis.getMethods(), true);
   }
@@ -227,8 +232,8 @@ public class JUnitConfigEditor extends JPanel {
 
   private JTextField createComponent_d3c0() {
     JTextField component = new JTextField();
-    this.myComponent_d3c0 = component;
-    component.setText(myThis.getProject().getComponent(Project.class).getName());
+    this.myProjectName_d3c0 = component;
+    component.setText(myThis.getProjectName());
     component.setEditable(false);
     return component;
   }
@@ -311,14 +316,12 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JavaConfigOptions createComponent_f0() {
-    JavaConfigOptions component = new JavaConfigOptions();
-    this.myJavaOptions_f0 = component;
-    return component;
-  }
-
   public MPSProject getProject() {
     return this.myProject;
+  }
+
+  public String getProjectName() {
+    return this.myProjectName;
   }
 
   public ButtonGroup getGroup() {
@@ -345,6 +348,12 @@ public class JUnitConfigEditor extends JPanel {
     MPSProject oldValue = this.myProject;
     this.myProject = newValue;
     this.firePropertyChange("project", oldValue, newValue);
+  }
+
+  public void setProjectName(String newValue) {
+    String oldValue = this.myProjectName;
+    this.myProjectName = newValue;
+    this.firePropertyChange("projectName", oldValue, newValue);
   }
 
   public void setGroup(ButtonGroup newValue) {
@@ -375,6 +384,10 @@ public class JUnitConfigEditor extends JPanel {
     List<SNode> oldValue = this.myMethods;
     this.myMethods = newValue;
     this.firePropertyChange("methods", oldValue, newValue);
+  }
+
+  private MPSProject findProjectFromContext() {
+    return MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
   }
 
   private void setModuleValue(final String moduleName) {
@@ -449,7 +462,6 @@ public class JUnitConfigEditor extends JPanel {
         );
         if (myThis.getModule() != null) {
           config.getStateObject().module = myThis.getModule().getModuleFqName();
-          config.getStateObject().compileInMPS = myThis.getModule().isCompileInMPS();
         } else {
           config.getStateObject().module = null;
         }
@@ -459,10 +471,6 @@ public class JUnitConfigEditor extends JPanel {
         }
       }
     });
-    if (config.getStateObject().myParams == null) {
-      config.getStateObject().myParams = new ConfigRunParameters();
-    }
-    myThis.myJavaOptions_f0.apply(config.getStateObject().myParams);
   }
 
   public void reset(final DefaultJUnit_Configuration config) {
@@ -533,13 +541,11 @@ public class JUnitConfigEditor extends JPanel {
       myThis.myModuleName_d4c0.setText(config.getStateObject().module);
     }
     myThis.onSelect();
-    myThis.myJavaOptions_f0.reset(config.getStateObject().myParams);
   }
 
   public void dispose() {
     myThis.myModelName_d5c0.dispose();
     myThis.myModuleName_d4c0.dispose();
-    myThis.myJavaOptions_f0.dispose();
   }
 
   public void onSelect() {

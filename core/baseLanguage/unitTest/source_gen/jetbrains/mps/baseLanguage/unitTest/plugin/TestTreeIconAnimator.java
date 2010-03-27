@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import com.intellij.execution.testframework.TestsUIUtil;
 import com.intellij.util.Alarm;
 import com.intellij.openapi.util.Disposer;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.ModelAccess;
 
 public class TestTreeIconAnimator implements Disposable, Runnable {
@@ -65,7 +66,10 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
     this.cancelAlarm();
   }
 
-  private void updateTreeNode(final BaseTestTreeNode node) {
+  private void updateTreeNode(@Nullable final BaseTestTreeNode node) {
+    if (node == null) {
+      return;
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         node.updatePresentation();

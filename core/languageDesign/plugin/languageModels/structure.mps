@@ -4106,10 +4106,6 @@
       <property name="value:0" value="parameter query" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
-    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="444169778577603284">
-      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target:0" targetNodeId="1110842925895076053:23" resolveInfo="Console_FunctionParameter" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="453992125914151040">
     <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />

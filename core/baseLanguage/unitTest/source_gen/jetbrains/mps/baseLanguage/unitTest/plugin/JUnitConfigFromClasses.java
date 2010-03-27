@@ -11,11 +11,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class JUnitConfigFromClasses extends BaseConfigCreator<List> implements Cloneable {
   private RunConfiguration myConfig;
@@ -43,7 +43,6 @@ public class JUnitConfigFromClasses extends BaseConfigCreator<List> implements C
 
     JUnitConfigFromClasses.this.setSourceElement(new MPSPsiElement(parameter));
 
-    boolean isCompileInMPS = SNodeOperations.getModel(Sequence.fromIterable(parameter).first()).getModelDescriptor().getModule().isCompileInMPS();
     List<String> nodeNames = ListSequence.fromList(new ArrayList<String>());
     for (SNode testCase : parameter) {
       ListSequence.fromList(nodeNames).addElement(INamedConcept_Behavior.call_getFqName_1213877404258(testCase));
@@ -60,7 +59,6 @@ public class JUnitConfigFromClasses extends BaseConfigCreator<List> implements C
       _config.setName(SPropertyOperations.getString(SNodeOperations.cast(Sequence.fromIterable(parameter).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...");
       _config.getStateObject().type = JUnitRunTypes.NODE;
       _config.getStateObject().nodes = new ClonableList<String>();
-      _config.getStateObject().compileInMPS = isCompileInMPS;
       JUnitConfigFromClasses.this.myConfig = _config;
     }
   }

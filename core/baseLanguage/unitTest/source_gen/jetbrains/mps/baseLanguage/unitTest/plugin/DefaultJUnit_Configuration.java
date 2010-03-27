@@ -14,12 +14,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
-import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
 import com.intellij.execution.runners.ExecutionEnvironment;
 import com.intellij.execution.ExecutionException;
+import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
@@ -31,9 +31,11 @@ import com.intellij.openapi.actionSystem.AnAction;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
@@ -44,6 +46,8 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 
 public class DefaultJUnit_Configuration extends BaseRunConfig {
   @Tag(value = "state")
@@ -66,8 +70,12 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
   public void checkConfiguration() throws RuntimeConfigurationException {
     StringBuilder error = new StringBuilder();
     {
-      final Wrappers._T<String> errorReport = new Wrappers._T<String>(null);
+      String paramsReport = DefaultJUnit_Configuration.this.getStateObject().myJavaRunParameters.getErrorReport();
+      if (paramsReport != null) {
+        error.append(paramsReport).append("\n");
+      }
       if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
+        final Wrappers._T<String> errorReport = new Wrappers._T<String>(null);
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
@@ -95,30 +103,18 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 errorReport.value = "module is not valid";
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.PROJECT) {
-              MPSProject mpsproject = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
-              if (!(TestRunUtil.containsTest(mpsproject))) {
-                errorReport.value = "project is not contains tests";
+              MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
+              if (mpsProject != null) {
+                if (!(TestRunUtil.containsTest(mpsProject))) {
+                  errorReport.value = "project does not contain tests";
+                }
               }
             }
           }
         });
-        if (DefaultJUnit_Configuration.this.getStateObject().type != JUnitRunTypes.PROJECT) {
-          if (!(DefaultJUnit_Configuration.this.getStateObject().compileInMPS) && DefaultJUnit_Configuration.this.getStateObject().myParams != null && DefaultJUnit_Configuration.this.getStateObject().myParams.getMake()) {
-            errorReport.value = "can't make";
-          }
+        if (errorReport.value != null) {
+          error.append(errorReport.value).append("\n");
         }
-      }
-
-      if (DefaultJUnit_Configuration.this.getStateObject().myParams == null) {
-        DefaultJUnit_Configuration.this.getStateObject().myParams = new ConfigRunParameters(DefaultJUnit_Configuration.this.getStateObject().compileInMPS);
-      }
-      String paramsReport = DefaultJUnit_Configuration.this.getStateObject().myParams.getErrorReport();
-      if (paramsReport != null) {
-        errorReport.value = paramsReport;
-      }
-
-      if (errorReport.value != null) {
-        error.append(errorReport.value).append("\n");
       }
     }
     if (error.length() != 0) {
@@ -127,7 +123,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
   }
 
   public RunProfileState getState(@NotNull final Executor executor, @NotNull final ExecutionEnvironment environment) throws ExecutionException {
-    return new RunProfileState() {
+    return new BaseRunProfileState() {
       @Nullable
       public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
         final ConsoleViewImpl consoleView = StacktraceUtil.createConsoleView(MPSDataKeys.PROJECT.getData(environment.getDataContext()));
@@ -136,91 +132,47 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
         final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
-        IOperationContext operationContext = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
+        final IOperationContext operationContext = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
         {
-          final List<SNode> all = new ArrayList<SNode>();
-          final List<SNode> tests = new ArrayList<SNode>();
-          final List<SNode> methods = new ArrayList<SNode>();
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
-                if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
-                  if (DefaultJUnit_Configuration.this.getStateObject().node != null) {
-                    ListSequence.fromList(methods).addElement(TestRunUtil.getTestMethod(DefaultJUnit_Configuration.this.getStateObject().node, DefaultJUnit_Configuration.this.getStateObject().method));
-                  }
-                  if (DefaultJUnit_Configuration.this.getStateObject().nodes != null) {
-                    for (int i = 0; i < DefaultJUnit_Configuration.this.getStateObject().nodes.size(); i++) {
-                      ListSequence.fromList(methods).addElement(TestRunUtil.getTestMethod(DefaultJUnit_Configuration.this.getStateObject().nodes.get(i), DefaultJUnit_Configuration.this.getStateObject().methods.get(i)));
-                    }
-                  }
-                } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
-                  if (DefaultJUnit_Configuration.this.getStateObject().node != null) {
-                    ListSequence.fromList(tests).addElement(TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().node));
-                  }
-                  if (DefaultJUnit_Configuration.this.getStateObject().nodes != null) {
-                    for (int i = 0; i < DefaultJUnit_Configuration.this.getStateObject().nodes.size(); i++) {
-                      ListSequence.fromList(tests).addElement(TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().nodes.get(i)));
-                    }
-                  }
-                } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
-                  ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModelTests(TestRunUtil.getModel(DefaultJUnit_Configuration.this.getStateObject().model))));
-                } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
-                  ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(DefaultJUnit_Configuration.this.getStateObject().module)));
-                } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.PROJECT) {
-                  for (IModule projectModule : mpsProject.getModules()) {
-                    ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(projectModule)));
-                  }
-                }
-                ListSequence.fromList(all).addSequence(ListSequence.fromList(tests));
-                ListSequence.fromList(all).addSequence(ListSequence.fromList(TestRunUtil.excludeIgnored(methods)));
+          // calculate parameter 
+          final UnitTestExecutionController parameter = new _FunctionTypes._return_P0_E0<UnitTestExecutionController>() {
+            public UnitTestExecutionController invoke() {
+              List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject);
+
+              if (DefaultJUnit_Configuration.this.getStateObject().myJavaRunParameters.getMake()) {
+                RunUtil.makeBeforeRun(mpsProject, stuffToTest);
               }
+
+              return new UnitTestExecutionController(stuffToTest, DefaultJUnit_Configuration.this.getStateObject().myJavaRunParameters);
             }
-          });
+          }.invoke();
 
+          // set actions 
 
-          if (DefaultJUnit_Configuration.this.getStateObject().myParams == null) {
-            DefaultJUnit_Configuration.this.getStateObject().myParams = new ConfigRunParameters(DefaultJUnit_Configuration.this.getStateObject().compileInMPS);
-          }
-          if (DefaultJUnit_Configuration.this.getStateObject().myParams.getMake()) {
-            RunUtil.makeBeforeRun(mpsProject, all);
-          }
-
-          TestStatisticsModel statisticsModel = new TestStatisticsModel();
-          TestRunState runState = new TestRunState(tests, methods, statisticsModel);
-          TestRunListener runListener = new TestRunListener(runState);
-          final UnitTestViewComponent runComponent = new UnitTestViewComponent(mpsProject, operationContext, consoleView, runState, statisticsModel);
-
-          final Wrappers._T<UnitTestRunner> testRunner = new Wrappers._T<UnitTestRunner>(null);
-          try {
-            testRunner.value = new UnitTestRunner(runComponent);
-          } catch (NullPointerException npe) {
-            npe.printStackTrace();
-          }
-
-          testRunner.value.setConfigParameters(DefaultJUnit_Configuration.this.getStateObject().myParams);
-          if (DefaultJUnit_Configuration.this.getStateObject().myParams != null && DefaultJUnit_Configuration.this.getStateObject().myParams.getUseAlternativeJRE()) {
-            testRunner.value.setJavaHomePath(DefaultJUnit_Configuration.this.getStateObject().myParams.getAlternativeJRE());
-          }
-
-          consoleComponent = runComponent;
+          // create console component 
+          final Tuples._2<JComponent, Runnable> executeConsoleTmp = MultiTuple.<JComponent, Runnable>empty2().assign((Tuples._2<JComponent, Runnable>) new _FunctionTypes._return_P0_E0<Tuples._2<JComponent, Runnable>>() {
+            public Tuples._2<JComponent, Runnable> invoke() {
+              final UnitTestViewComponent runComponent = new UnitTestViewComponent(mpsProject, operationContext, consoleView, parameter);
+              return MultiTuple.<JComponent,Runnable>from((JComponent) runComponent, new Runnable() {
+                public void run() {
+                  runComponent.dispose();
+                }
+              });
+            }
+          }.invoke());
+          consoleComponent = executeConsoleTmp._0();
           consoleDispose = new Runnable() {
             public void run() {
-              runComponent.dispose();
+              executeConsoleTmp._1().run();
             }
           };
 
-          final Wrappers._T<Process> process = new Wrappers._T<Process>();
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              process.value = testRunner.value.run(all);
+          // create process handler 
+          handler = (ProcessHandler) new _FunctionTypes._return_P0_E0<ProcessHandler>() {
+            public ProcessHandler invoke() {
+              return parameter.execute();
             }
-          });
-
-          if (process.value != null) {
-            UnitTestProcessHandler processHandler = new UnitTestProcessHandler(runListener, process.value, testRunner.value.getCommandString());
-            runComponent.start(processHandler);
-            handler = processHandler;
-          }
+          }.invoke();
         }
         final JComponent finalConsoleComponent = consoleComponent;
         final Runnable finalConsoleDispose = consoleDispose;
@@ -290,55 +242,95 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     return this.myState;
   }
 
+  private List<SNode> collectWhatToTest(final MPSProject mpsProject) {
+    final List<SNode> all = new ArrayList<SNode>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
+          if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
+            if (DefaultJUnit_Configuration.this.getStateObject().node != null) {
+              ListSequence.fromList(all).addElement(TestRunUtil.getTestMethod(DefaultJUnit_Configuration.this.getStateObject().node, DefaultJUnit_Configuration.this.getStateObject().method));
+            }
+            if (DefaultJUnit_Configuration.this.getStateObject().nodes != null) {
+              for (int i = 0; i < DefaultJUnit_Configuration.this.getStateObject().nodes.size(); i++) {
+                ListSequence.fromList(all).addElement(TestRunUtil.getTestMethod(DefaultJUnit_Configuration.this.getStateObject().nodes.get(i), DefaultJUnit_Configuration.this.getStateObject().methods.get(i)));
+              }
+            }
+          } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
+            if (DefaultJUnit_Configuration.this.getStateObject().node != null) {
+              ListSequence.fromList(all).addElement(TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().node));
+            }
+            if (DefaultJUnit_Configuration.this.getStateObject().nodes != null) {
+              for (int i = 0; i < DefaultJUnit_Configuration.this.getStateObject().nodes.size(); i++) {
+                ListSequence.fromList(all).addElement(TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().nodes.get(i)));
+              }
+            }
+          } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
+            ListSequence.fromList(all).addSequence(ListSequence.fromList(TestRunUtil.getModelTests(TestRunUtil.getModel(DefaultJUnit_Configuration.this.getStateObject().model))));
+          } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
+            ListSequence.fromList(all).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(DefaultJUnit_Configuration.this.getStateObject().module)));
+          } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.PROJECT) {
+            for (IModule projectModule : mpsProject.getModules()) {
+              ListSequence.fromList(all).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(projectModule)));
+            }
+          }
+        }
+      }
+    });
+    return all;
+  }
+
   private static class MySettingsEditor extends SettingsEditor<DefaultJUnit_Configuration> {
-    private JUnitConfigEditor myComponent = null;
+    private DefaultJUnit_Editor myComponent = null;
 
     public MySettingsEditor() {
     }
 
     protected void resetEditorFrom(DefaultJUnit_Configuration c) {
       MySettingsEditor.this.myComponent.reset(c);
+      MySettingsEditor.this.myComponent.getUsersComponent().reset(c);
     }
 
     protected void applyEditorTo(DefaultJUnit_Configuration c) {
       MySettingsEditor.this.myComponent.apply(c);
+      MySettingsEditor.this.myComponent.getUsersComponent().apply(c);
     }
 
     @NotNull
     protected JComponent createEditor() {
-      this.myComponent = new JUnitConfigEditor();
+      this.myComponent = new DefaultJUnit_Editor();
       return this.myComponent;
     }
 
     protected void disposeEditor() {
       MySettingsEditor.this.myComponent.dispose();
+      MySettingsEditor.this.myComponent.getUsersComponent().dispose();
     }
   }
 
   public static class MyState implements Cloneable {
+    public ConfigRunParameters myJavaRunParameters = new ConfigRunParameters();
     public String node;
     public ClonableList<String> nodes = new ClonableList<String>();
     public String model;
     public String module;
     public String method;
     public ClonableList<String> methods = new ClonableList<String>();
-    public boolean compileInMPS;
     public JUnitRunTypes type;
-    public ConfigRunParameters myParams;
 
     public MyState() {
     }
 
     public Object clone() throws CloneNotSupportedException {
       DefaultJUnit_Configuration.MyState object = (DefaultJUnit_Configuration.MyState) super.clone();
+      if (this.myJavaRunParameters != null) {
+        object.myJavaRunParameters = (ConfigRunParameters) this.myJavaRunParameters.clone();
+      }
       if (this.nodes != null) {
         object.nodes = (ClonableList) this.nodes.clone();
       }
       if (this.methods != null) {
         object.methods = (ClonableList) this.methods.clone();
-      }
-      if (this.myParams != null) {
-        object.myParams = (ConfigRunParameters) this.myParams.clone();
       }
       return object;
     }
