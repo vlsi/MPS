@@ -16,10 +16,10 @@ import java.util.HashMap;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import java.util.ArrayList;
+import jetbrains.mps.intentions.IntentionsManager;
 import java.util.Collection;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -121,7 +121,10 @@ public class BaseEditorTestBody extends BaseTestBody {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             editor.selectNode(node);
-            Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(new IntentionsManager.QueryDescriptor(null, true, false, null, true), node, editor.getEditorContext());
+            IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
+            query.setInstantiate(true);
+            query.setCurrentNodeOnly(true);
+            Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, node, editor.getEditorContext());
             for (Pair<Intention, SNode> intention : Sequence.fromIterable(intentions)) {
               if (intention.first.getClass().getCanonicalName().equals(name)) {
                 intention.first.execute(intention.second, editor.getEditorContext());

@@ -3602,6 +3602,45 @@
                                 </node>
                               </node>
                             </node>
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="821424413675325736">
+                              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="821424413675325737">
+                                <property name="name:3" value="query" />
+                                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="821424413675325738">
+                                  <link role="classifier:3" targetNodeId="33.~IntentionsManager$QueryDescriptor" resolveInfo="IntentionsManager.QueryDescriptor" />
+                                </node>
+                                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="821424413675325739">
+                                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="821424413675325740">
+                                    <link role="baseMethodDeclaration:3" targetNodeId="33.~IntentionsManager$QueryDescriptor.&lt;init&gt;()" resolveInfo="IntentionsManager.QueryDescriptor" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="821424413675338828">
+                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="821424413675338830">
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="821424413675338829">
+                                  <link role="variableDeclaration:3" targetNodeId="821424413675325737" resolveInfo="query" />
+                                </node>
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="821424413675338834">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="33.~IntentionsManager$QueryDescriptor.setInstantiate(boolean):void" resolveInfo="setInstantiate" />
+                                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="821424413675338835">
+                                    <property name="value:3" value="true" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="821424413675338837">
+                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="821424413675338839">
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="821424413675338838">
+                                  <link role="variableDeclaration:3" targetNodeId="821424413675325737" resolveInfo="query" />
+                                </node>
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="821424413675338843">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="33.~IntentionsManager$QueryDescriptor.setCurrentNodeOnly(boolean):void" resolveInfo="setCurrentNodeOnly" />
+                                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="821424413675338844">
+                                    <property name="value:3" value="true" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="821424413675025817">
                               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="821424413675025818">
                                 <property name="name:3" value="intentions" />
@@ -3624,21 +3663,8 @@
                                   </node>
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="821424413675025825">
                                     <link role="baseMethodDeclaration:3" targetNodeId="33.~IntentionsManager.getAvailableIntentions(jetbrains.mps.intentions.IntentionsManager$QueryDescriptor,jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext):java.util.Collection" resolveInfo="getAvailableIntentions" />
-                                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="821424413675025826">
-                                      <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="821424413675025827">
-                                        <link role="baseMethodDeclaration:3" targetNodeId="33.~IntentionsManager$QueryDescriptor.&lt;init&gt;(java.lang.Class,boolean,boolean,com.intellij.openapi.util.Computable,boolean)" resolveInfo="IntentionsManager.QueryDescriptor" />
-                                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="821424413675025828" />
-                                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="821424413675025829">
-                                          <property name="value:3" value="true" />
-                                        </node>
-                                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="821424413675025830">
-                                          <property name="value:3" value="false" />
-                                        </node>
-                                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="821424413675025831" />
-                                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="821424413675025832">
-                                          <property name="value:3" value="true" />
-                                        </node>
-                                      </node>
+                                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="821424413675325746">
+                                      <link role="variableDeclaration:3" targetNodeId="821424413675325737" resolveInfo="query" />
                                     </node>
                                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="821424413675025833">
                                       <link role="variableDeclaration:3" targetNodeId="1225991152924" resolveInfo="node" />

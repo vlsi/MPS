@@ -115,7 +115,7 @@ public class IntentionsSupport {
   private void checkAndShowMenu() {
     if (isInconsistentEditor()) return;
     if (myEditor.getSelectedNode().getModel().isNotEditable()) return;
-    if (!hasIntentions(null)) return;
+    if (!hasIntentions()) return;
 
     showIntentionsMenu();
   }
@@ -231,7 +231,7 @@ public class IntentionsSupport {
   private BaseGroup getIntentionGroup() {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    groupItems.addAll(getAvailableIntentions(null));
+    groupItems.addAll(getAvailableIntentions());
     if (groupItems.isEmpty()) {
       return null;
     }
@@ -313,19 +313,24 @@ public class IntentionsSupport {
     showLightBulbComponent(typeToShow.getIcon());
   }
 
-  private boolean hasIntentions(@Nullable Computable<Boolean> terminated) {
+  private boolean hasIntentions() {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
-    QueryDescriptor query = new QueryDescriptor(BaseIntention.class, false, false, terminated, false);
+
+    QueryDescriptor query = new QueryDescriptor();
+    query.setIntentionClass(BaseIntention.class);
+
     return !IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext).isEmpty();
   }
 
-  private Set<Pair<Intention, SNode>> getAvailableIntentions(@Nullable Computable<Boolean> terminated) {
+  private Set<Pair<Intention, SNode>> getAvailableIntentions() {
     final Set<Pair<Intention, SNode>> result = new LinkedHashSet<Pair<Intention, SNode>>();
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      QueryDescriptor query = new QueryDescriptor(BaseIntention.class, true, false, terminated, false);
+      QueryDescriptor query = new QueryDescriptor();
+      query.setIntentionClass(BaseIntention.class);
+      query.setInstantiate(true);
       result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
     }
     return result;
@@ -336,7 +341,9 @@ public class IntentionsSupport {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      QueryDescriptor query = new QueryDescriptor(BaseIntention.class, false, true, terminated, false);
+      QueryDescriptor query = new QueryDescriptor();
+      query.setIntentionClass(BaseIntention.class);
+      query.setEnabledOnly(true);
       result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
     }
     return result;

@@ -27,9 +27,9 @@ import java.util.List;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.intentions.Intention;
 import java.util.ArrayList;
-import java.util.Collection;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.SurroundWithIntention;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -117,7 +117,11 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
   private BaseGroup getIntentionGroup() {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(new IntentionsManager.QueryDescriptor(SurroundWithIntention.class, true, false, null, false), SurroundWithIntentions_Action.this.selectedNode, SurroundWithIntentions_Action.this.editorContext);
+    IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
+    query.setIntentionClass(SurroundWithIntention.class);
+    query.setInstantiate(true);
+    query.setCurrentNodeOnly(true);
+    Collection<Pair<Intention, SNode>> intentions = IntentionsManager.getInstance().getAvailableIntentions(query, SurroundWithIntentions_Action.this.selectedNode, SurroundWithIntentions_Action.this.editorContext);
     groupItems.addAll(intentions);
     if (groupItems.isEmpty()) {
       return null;

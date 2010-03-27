@@ -79,14 +79,14 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       public Set<Pair<Intention, SNode>> compute() {
         Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
-        for (Intention intention : getAvailableIntentionsForExactNode(query,node, context, false)) {
+        for (Intention intention : getAvailableIntentionsForExactNode(query, node, context, false)) {
           result.add(new Pair<Intention, SNode>(intention, node));
         }
 
-        if (!query.isCurrentNodeOnly()){
+        if (!query.isCurrentNodeOnly()) {
           SNode parent = node.getParent();
           while (parent != null) {
-            for (Intention intention : getAvailableIntentionsForExactNode(query,parent, context, true)) {
+            for (Intention intention : getAvailableIntentionsForExactNode(query, parent, context, true)) {
               result.add(new Pair<Intention, SNode>(intention, parent));
             }
             parent = parent.getParent();
@@ -345,11 +345,15 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   //-------------queryDescriptor-----------------
 
   public static class QueryDescriptor {
-    private Class<? extends Intention> myIntentionClass;
-    private boolean myInstantiate;
-    private boolean myEnabledOnly;
-    private boolean myCurrentNodeOnly;
-    private Computable<Boolean> myTerminated;
+    private Class<? extends Intention> myIntentionClass = null;
+    private boolean myInstantiate = false;
+    private boolean myEnabledOnly = false;
+    private boolean myCurrentNodeOnly = false;
+    private Computable<Boolean> myTerminated = new Computable<Boolean>() {
+      public Boolean compute() {
+        return false;
+      }
+    };
 
     public QueryDescriptor(Class<? extends Intention> intentionClass, boolean instantiate, boolean enabledOnly, Computable<Boolean> terminated, boolean currentNodeOnly) {
       myIntentionClass = intentionClass;
@@ -357,15 +361,33 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       myEnabledOnly = enabledOnly;
       myCurrentNodeOnly = currentNodeOnly;
 
-      if (terminated!=null){
+      if (terminated != null) {
         myTerminated = terminated;
-      }else{
-        myTerminated = new Computable<Boolean>() {
-          public Boolean compute() {
-            return false;
-          }
-        };
       }
+    }
+
+    public QueryDescriptor() {
+
+    }
+
+    public void setIntentionClass(Class<? extends Intention> intentionClass) {
+      myIntentionClass = intentionClass;
+    }
+
+    public void setInstantiate(boolean instantiate) {
+      myInstantiate = instantiate;
+    }
+
+    public void setEnabledOnly(boolean enabledOnly) {
+      myEnabledOnly = enabledOnly;
+    }
+
+    public void setCurrentNodeOnly(boolean currentNodeOnly) {
+      myCurrentNodeOnly = currentNodeOnly;
+    }
+
+    public void setTerminated(Computable<Boolean> terminated) {
+      myTerminated = terminated;
     }
 
     public boolean isInstantiate() {

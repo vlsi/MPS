@@ -117,7 +117,10 @@ public class GenerationIntentions_Action extends GeneratedAction {
   private BaseGroup getIntentionGroup() {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(new IntentionsManager.QueryDescriptor(GenerateIntention.class, true, false, null, false), GenerationIntentions_Action.this.selectedNode, GenerationIntentions_Action.this.editorContext));
+    IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
+    query.setIntentionClass(GenerateIntention.class);
+    query.setInstantiate(true);
+    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, GenerationIntentions_Action.this.selectedNode, GenerationIntentions_Action.this.editorContext));
     if (groupItems.isEmpty()) {
       return null;
     }
