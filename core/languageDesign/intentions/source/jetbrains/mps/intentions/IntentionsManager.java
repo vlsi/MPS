@@ -85,7 +85,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
     QueryDescriptor query = new QueryDescriptor(intentionClass, false, false);
     for (Pair<Intention, SNode> ip : getAvailableIntentions(query, node, context, terminated)) {
-      if (!disabled.contains(ip.first) ) {
+      if (!disabled.contains(ip.first)) {
         result.add(ip);
       }
     }
@@ -98,18 +98,22 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
         for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, query.isInstantiate(), terminated)) {
-          if (query.getIntentionClass().isAssignableFrom(intention.getClass())) {
-            result.add(new Pair<Intention, SNode>(intention, node));
-          }
+          result.add(new Pair<Intention, SNode>(intention, node));
         }
         SNode parent = node.getParent();
         while (parent != null) {
           for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, query.isInstantiate(), terminated)) {
-            if (query.getIntentionClass().isAssignableFrom(intention.getClass())) {
-              result.add(new Pair<Intention, SNode>(intention, parent));
-            }
+            result.add(new Pair<Intention, SNode>(intention, parent));
           }
           parent = parent.getParent();
+        }
+
+        if (query.getIntentionClass() != null) {
+          for (Pair<Intention, SNode> p : new ArrayList<Pair<Intention, SNode>>(result)) {
+            if (!query.getIntentionClass().isAssignableFrom(p.getFirst().getClass())) {
+              result.remove(p);
+            }
+          }
         }
 
         return result;
@@ -363,7 +367,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   //-------------queryDescriptor-----------------
 
-  public static class QueryDescriptor{
+  public static class QueryDescriptor {
     private Class<? extends Intention> myIntentionClass;
     private boolean myInstantiate;
     private boolean myEnabledOnly;
