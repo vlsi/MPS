@@ -24,6 +24,7 @@ import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vcs.FileStatus;
+import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.changesmanager.NodeFileStatusListener;
@@ -363,15 +364,20 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   }
 
   private void createLoadableNodeChecked(final Pair<SNode, IOperationContext>[] nodeAndContext, final SNode concept) {
-    if (isOutsideCommandExecution()) {
-      nodeAndContext[0] = createLoadableNode(true, concept);
-    } else {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
+    IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
+      @Override
+      public void run() {
+        if (isOutsideCommandExecution()) {
           nodeAndContext[0] = createLoadableNode(true, concept);
+        } else {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              nodeAndContext[0] = createLoadableNode(true, concept);
+            }
+          });
         }
-      });
-    }
+      }
+    });
   }
 
   private void createAnyone(final RelativePoint relativePoint) {
