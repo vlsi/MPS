@@ -314,8 +314,8 @@ public class IntentionsSupport {
   private boolean hasIntentions(@Nullable Computable<Boolean> terminated) {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
-    QueryDescriptor query = new QueryDescriptor(BaseIntention.class, false, false);
-    return !IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext, terminated).isEmpty();
+    QueryDescriptor query = new QueryDescriptor(BaseIntention.class, false, false, terminated);
+    return !IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext).isEmpty();
   }
 
   private Set<Pair<Intention, SNode>> getAvailableIntentions(@Nullable Computable<Boolean> terminated) {
@@ -323,8 +323,8 @@ public class IntentionsSupport {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      QueryDescriptor query = new QueryDescriptor(BaseIntention.class, true, false);
-      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext, terminated));
+      QueryDescriptor query = new QueryDescriptor(BaseIntention.class, true, false, terminated);
+      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
     }
     return result;
   }
@@ -334,8 +334,8 @@ public class IntentionsSupport {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      QueryDescriptor query = new QueryDescriptor(BaseIntention.class, false, true);
-      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext, terminated));
+      QueryDescriptor query = new QueryDescriptor(BaseIntention.class, false, true, terminated);
+      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
     }
     return result;
   }

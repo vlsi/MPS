@@ -74,17 +74,17 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     myClassLoaderManager = manager;
   }
 
-  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context, @Nullable final Computable<Boolean> terminated) {
+  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context) {
     Computable<Set<Pair<Intention, SNode>>> computable = new Computable<Set<Pair<Intention, SNode>>>() {
       public Set<Pair<Intention, SNode>> compute() {
         Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
-        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, query.isInstantiate(), terminated)) {
+        for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, query.isInstantiate(), query.getTerminated())) {
           result.add(new Pair<Intention, SNode>(intention, node));
         }
         SNode parent = node.getParent();
         while (parent != null) {
-          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, query.isInstantiate(), terminated)) {
+          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, query.isInstantiate(), query.getTerminated())) {
             result.add(new Pair<Intention, SNode>(intention, parent));
           }
           parent = parent.getParent();
@@ -101,23 +101,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     } finally {
       TypeChecker.getInstance().clearGlobalSubtypingCache();
     }
-  }
-
-  private List<Intention> getIntentionsFor(SNode node, IScope scope, @Nullable Computable<Boolean> terminated) {
-    String conceptFqName = node.getConceptFqName();
-    Set<Language> visibleLanguages = new HashSet<Language>(node.getModel().getLanguages(scope));
-    List<Intention> result = new ArrayList<Intention>();
-    for (String ancestor : LanguageHierarchyCache.getInstance().getAncestorsNames(conceptFqName)) {
-      Set<Intention> intentions = myIntentions.get(ancestor);
-      if (intentions == null) continue;
-      for (Intention intention : intentions) {
-        if (terminated != null && terminated.compute()) return new ArrayList<Intention>();
-        Language language = getIntentionLanguage(intention);
-        if (language != null && !visibleLanguages.contains(language)) continue;
-        result.add(intention);
-      }
-    }
-    return result;
   }
 
   public List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean inChild, boolean instantiateParameterized, @Nullable Computable<Boolean> terminated) {
@@ -186,6 +169,23 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       }
     }
 
+    return result;
+  }
+
+  private List<Intention> getIntentionsFor(SNode node, IScope scope, @Nullable Computable<Boolean> terminated) {
+    String conceptFqName = node.getConceptFqName();
+    Set<Language> visibleLanguages = new HashSet<Language>(node.getModel().getLanguages(scope));
+    List<Intention> result = new ArrayList<Intention>();
+    for (String ancestor : LanguageHierarchyCache.getInstance().getAncestorsNames(conceptFqName)) {
+      Set<Intention> intentions = myIntentions.get(ancestor);
+      if (intentions == null) continue;
+      for (Intention intention : intentions) {
+        if (terminated != null && terminated.compute()) return new ArrayList<Intention>();
+        Language language = getIntentionLanguage(intention);
+        if (language != null && !visibleLanguages.contains(language)) continue;
+        result.add(intention);
+      }
+    }
     return result;
   }
 
@@ -345,15 +345,30 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     private Class<? extends Intention> myIntentionClass;
     private boolean myInstantiate;
     private boolean myEnabledOnly;
+    private Computable<Boolean> myTerminated;
 
-    public QueryDescriptor(Class<? extends Intention> intentionClass, boolean instantiate, boolean enabledOnly) {
+    public QueryDescriptor(Class<? extends Intention> intentionClass, boolean instantiate, boolean enabledOnly,Computable<Boolean> terminated) {
       myIntentionClass = intentionClass;
       myInstantiate = instantiate;
       myEnabledOnly = enabledOnly;
+
+      if (terminated!=null){
+        myTerminated = terminated;
+      }else{
+        myTerminated = new Computable<Boolean>() {
+          public Boolean compute() {
+            return false;
+          }
+        };
+      }
     }
 
     public boolean isInstantiate() {
       return myInstantiate;
+    }
+
+    public Computable<Boolean> getTerminated() {
+      return myTerminated;
     }
 
     public Set<Pair<Intention, SNode>> filter(Set<Pair<Intention, SNode>> intentions) {
