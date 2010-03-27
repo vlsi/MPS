@@ -7,8 +7,8 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -48,6 +48,9 @@ public class MakeMethodFinal_Intention extends BaseIntention implements Intentio
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+      return false;
+    }
     SNode contextNode = editorContext.getSelectedNode();
     if (contextNode == null) {
       return true;
