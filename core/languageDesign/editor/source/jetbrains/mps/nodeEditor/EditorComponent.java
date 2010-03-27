@@ -931,7 +931,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         SNode node = getSelectedNode();
         EditorContext editorContext = getEditorContext();
         if (node != null && editorContext != null) {
-          QueryDescriptor query = new QueryDescriptor(BaseIntention.class, true, false,null);
+          QueryDescriptor query = new QueryDescriptor(BaseIntention.class, true, false,null, false);
           result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
         }
       }

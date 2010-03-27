@@ -314,7 +314,7 @@ public class IntentionsSupport {
   private boolean hasIntentions(@Nullable Computable<Boolean> terminated) {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
-    QueryDescriptor query = new QueryDescriptor(BaseIntention.class, false, false, terminated);
+    QueryDescriptor query = new QueryDescriptor(BaseIntention.class, false, false, terminated, false);
     return !IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext).isEmpty();
   }
 
@@ -323,7 +323,7 @@ public class IntentionsSupport {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      QueryDescriptor query = new QueryDescriptor(BaseIntention.class, true, false, terminated);
+      QueryDescriptor query = new QueryDescriptor(BaseIntention.class, true, false, terminated, false);
       result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
     }
     return result;
@@ -334,7 +334,7 @@ public class IntentionsSupport {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      QueryDescriptor query = new QueryDescriptor(BaseIntention.class, false, true, terminated);
+      QueryDescriptor query = new QueryDescriptor(BaseIntention.class, false, true, terminated, false);
       result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
     }
     return result;

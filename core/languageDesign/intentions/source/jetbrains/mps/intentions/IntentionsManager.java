@@ -82,12 +82,15 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         for (Intention intention : getAvailableIntentionsForExactNode(node, context, false, query.isInstantiate(), query.getTerminated())) {
           result.add(new Pair<Intention, SNode>(intention, node));
         }
-        SNode parent = node.getParent();
-        while (parent != null) {
-          for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, query.isInstantiate(), query.getTerminated())) {
-            result.add(new Pair<Intention, SNode>(intention, parent));
+
+        if (!query.isCurrentNodeOnly()){
+          SNode parent = node.getParent();
+          while (parent != null) {
+            for (Intention intention : getAvailableIntentionsForExactNode(parent, context, true, query.isInstantiate(), query.getTerminated())) {
+              result.add(new Pair<Intention, SNode>(intention, parent));
+            }
+            parent = parent.getParent();
           }
-          parent = parent.getParent();
         }
 
         return query.filter(result);
@@ -103,7 +106,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     }
   }
 
-  public List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean inChild, boolean instantiateParameterized, Computable<Boolean> terminated) {
+  private List<Intention> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean inChild, boolean instantiateParameterized, Computable<Boolean> terminated) {
     assert node != null : "node == null - inconsistent editor state";
     List<Intention> intentions;
     if (!instantiateParameterized) {
@@ -345,12 +348,14 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     private Class<? extends Intention> myIntentionClass;
     private boolean myInstantiate;
     private boolean myEnabledOnly;
+    private boolean myCurrentNodeOnly;
     private Computable<Boolean> myTerminated;
 
-    public QueryDescriptor(Class<? extends Intention> intentionClass, boolean instantiate, boolean enabledOnly,Computable<Boolean> terminated) {
+    public QueryDescriptor(Class<? extends Intention> intentionClass, boolean instantiate, boolean enabledOnly, Computable<Boolean> terminated, boolean currentNodeOnly) {
       myIntentionClass = intentionClass;
       myInstantiate = instantiate;
       myEnabledOnly = enabledOnly;
+      myCurrentNodeOnly = currentNodeOnly;
 
       if (terminated!=null){
         myTerminated = terminated;
@@ -365,6 +370,10 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
     public boolean isInstantiate() {
       return myInstantiate;
+    }
+
+    public boolean isCurrentNodeOnly() {
+      return myCurrentNodeOnly;
     }
 
     public Computable<Boolean> getTerminated() {

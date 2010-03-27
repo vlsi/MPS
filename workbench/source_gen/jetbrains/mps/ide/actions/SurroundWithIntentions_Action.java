@@ -118,7 +118,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
   private BaseGroup getIntentionGroup() {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(new QueryDescriptor(SurroundWithIntention.class, true, false, null), SurroundWithIntentions_Action.this.selectedNode, SurroundWithIntentions_Action.this.editorContext));
+    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(new QueryDescriptor(SurroundWithIntention.class, true, false, null, false), SurroundWithIntentions_Action.this.selectedNode, SurroundWithIntentions_Action.this.editorContext));
     if (groupItems.isEmpty()) {
       return null;
     }
