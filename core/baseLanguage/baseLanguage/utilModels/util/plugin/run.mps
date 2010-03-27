@@ -85,7 +85,7 @@
     <property name="package:3" value="Output" />
     <property name="abstractClass:3" value="true" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399146900">
-      <property name="name:3" value="is" />
+      <property name="name:3" value="myIs" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399146901" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8492459591399146902">
         <link role="classifier:3" targetNodeId="3.~InputStream" resolveInfo="InputStream" />
@@ -233,7 +233,7 @@
     <property name="name:3" value="BaseRunner" />
     <property name="abstractClass:3" value="true" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399147273">
-      <property name="name:3" value="javaHome" />
+      <property name="name:3" value="myJavaHome" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399147274" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8492459591399147275" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8492459591399147276">
@@ -1357,7 +1357,7 @@
     <property name="package:3" value="Runner" />
     <property name="name:3" value="ClassRunner" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399148209">
-      <property name="name:3" value="processBuilder" />
+      <property name="name:3" value="myProcessBuilder" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399148210" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8492459591399148211">
         <link role="classifier:3" targetNodeId="2v.~ProcessBuilder" resolveInfo="ProcessBuilder" />
@@ -2468,27 +2468,27 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399148846">
-      <property name="name:3" value="vmParam" />
+      <property name="name:3" value="myVmParam" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399148847" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8492459591399148848" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399148849">
-      <property name="name:3" value="programParam" />
+      <property name="name:3" value="myProgramParam" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399148850" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8492459591399148851" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399148852">
-      <property name="name:3" value="workingDir" />
+      <property name="name:3" value="myWorkingDir" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399148853" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8492459591399148854" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399148855">
-      <property name="name:3" value="alternativeJRE" />
+      <property name="name:3" value="myAlternativeJRE" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399148856" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8492459591399148857" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399148858">
-      <property name="name:3" value="useAlternativeJRE" />
+      <property name="name:3" value="myUseAlternativeJRE" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399148859" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8492459591399148860" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="8492459591399148861">
@@ -2496,7 +2496,7 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="8492459591399148862">
-      <property name="name:3" value="make" />
+      <property name="name:3" value="myMake" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8492459591399148863" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8492459591399148864" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="8492459591399148865">

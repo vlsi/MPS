@@ -7,14 +7,14 @@ import java.util.Scanner;
 import jetbrains.mps.logging.Logger;
 
 public abstract class BaseOutputReader extends Thread {
-  private InputStream is;
+  private InputStream myIs;
 
   public BaseOutputReader(InputStream is) {
-    this.is = is;
+    this.myIs = is;
   }
 
   public void run() {
-    Scanner s = new Scanner(this.is);
+    Scanner s = new Scanner(this.myIs);
     try {
       while (!(this.isInterrupted()) && s.hasNextLine()) {
         this.addMessage(s.nextLine());
