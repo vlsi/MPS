@@ -110,7 +110,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return getDisabledIntentions().contains(intention);
   }
 
-  private List<Intention> getAvailableIntentionsForExactNode(QueryDescriptor query, final SNode node, @NotNull final EditorContext context, boolean inChild) {
+  private List<Intention> getAvailableIntentionsForExactNode(QueryDescriptor query, final SNode node, @NotNull final EditorContext context, boolean childOnly) {
     assert node != null : "node == null - inconsistent editor state";
     List<Intention> intentions;
     if (!query.isInstantiate()) {
@@ -148,7 +148,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     for (final Intention intention : intentions) {
       try {
         boolean isApplicable = false;
-        if (!inChild || intention.isAvailableInChildNodes()) {
+        if (!childOnly || intention.isAvailableInChildNodes()) {
           isApplicable = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
             public Boolean compute() {
               return intention.isApplicable(node, context);
@@ -169,7 +169,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       if (intentionProvider != null) {
         Intention intention = intentionProvider.getIntention();
         if (intention != null) {
-          if (!inChild || intention.isAvailableInChildNodes()) {
+          if (!childOnly || intention.isAvailableInChildNodes()) {
             result.add(intention);
           }
         }
