@@ -21,19 +21,14 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
-import jetbrains.mps.ide.projectPane.SortUtil;
-import jetbrains.mps.ide.projectPane.LogicalViewTree;
+import jetbrains.mps.ide.projectPane.*;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeUpdater;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.AndCondition;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -44,8 +39,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.tree.DefaultTreeModel;
-import java.awt.Color;
-import java.awt.Font;
 import java.util.*;
 
 public class SModelTreeNode extends MPSTreeNodeEx {
@@ -533,12 +526,18 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myEventsCollector = new MyEventsCollector();
     myEventsCollector.add(myModelDescriptor);
     getSModelDescriptor().addModelListener(mySimpleModelListener);
-    ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myStatusListener);
+
+    if (!SModelStereotype.isStubModelStereotype(myModelDescriptor.getStereotype())) {
+      ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myStatusListener);
+    }
   }
 
   private void removeListeners() {
     getSModelDescriptor().removeModelListener(mySimpleModelListener);
-    ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
+
+    if (!SModelStereotype.isStubModelStereotype(myModelDescriptor.getStereotype())) {
+      ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
+    }
 
     if (myEventsCollector == null) return;
     myEventsCollector.remove(myModelDescriptor);
