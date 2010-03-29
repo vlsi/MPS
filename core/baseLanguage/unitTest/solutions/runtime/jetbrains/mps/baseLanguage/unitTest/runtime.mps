@@ -412,7 +412,19 @@
                               <link role="classifier:3" targetNodeId="3.~NoSuchMethodException" resolveInfo="NoSuchMethodException" />
                             </node>
                           </node>
-                          <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3467804703473062672" />
+                          <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3467804703473062672">
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6834618373714049371">
+                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6834618373714049373">
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6834618373714049372">
+                                  <link role="variableDeclaration:3" targetNodeId="3467804703473062670" resolveInfo="e" />
+                                </node>
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6834618373714049377">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="3.~Throwable.printStackTrace():void" resolveInfo="printStackTrace" />
+                                </node>
+                              </node>
+                            </node>
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6834618373714049379" />
+                          </node>
                         </node>
                       </node>
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3467804703472964786">

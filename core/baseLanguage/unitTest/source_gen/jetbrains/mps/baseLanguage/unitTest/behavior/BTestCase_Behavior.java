@@ -8,8 +8,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
@@ -27,7 +28,15 @@ public class BTestCase_Behavior {
 
   public static List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
     SNode node = thisNode;
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true);
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode method) {
+        return (ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode annotation) {
+            return SLinkOperations.getTarget(annotation, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#org.junit(org.junit@java_stub)", "~Ignore"));
+          }
+        }) == null);
+      }
+    }).toListSequence();
   }
 
   public static String virtual_getClassName_1216136193905(SNode thisNode) {

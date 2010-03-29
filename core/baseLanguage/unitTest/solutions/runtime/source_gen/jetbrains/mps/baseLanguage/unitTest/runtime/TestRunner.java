@@ -47,6 +47,8 @@ public class TestRunner extends BaseTestRunner {
             return;
           }
         } catch (NoSuchMethodException e) {
+          e.printStackTrace();
+          return;
         }
         super.run(test);
       }
