@@ -9,11 +9,6 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.NameUtil;
 
 public abstract class BaseSingleTab extends BaseSingletabbedTab {
@@ -22,16 +17,6 @@ public abstract class BaseSingleTab extends BaseSingletabbedTab {
     this.addListener(new Condition<SModelDescriptor>() {
       public boolean met(SModelDescriptor modelDescriptor) {
         return EqualUtil.equals(modelDescriptor.getSModel().getSModelId(), baseNode.getModel().getSModelId());
-      }
-    });
-  }
-
-  public void addSingletabbedListener(final LanguageAspect aspect) {
-    AbstractConceptDeclaration concept = (AbstractConceptDeclaration) BaseAdapter.fromNode(this.getBaseNode());
-    final Language language = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
-    this.addListener(new Condition<SModelDescriptor>() {
-      public boolean met(SModelDescriptor modelDescriptor) {
-        return Language.getLanguageFor(modelDescriptor) == language && Language.getModelAspect(modelDescriptor) == aspect;
       }
     });
   }
