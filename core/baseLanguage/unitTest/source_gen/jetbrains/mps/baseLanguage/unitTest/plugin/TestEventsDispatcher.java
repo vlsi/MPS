@@ -21,6 +21,7 @@ public class TestEventsDispatcher {
         String lostClassName = lostTest.substring(0, lostTest.lastIndexOf("."));
         this.myState.looseTest(lostClassName, lostMethodName);
       }
+      this.myState.terminate();
     } else if (message.contains("1")) {
       this.myState.terminate();
     }

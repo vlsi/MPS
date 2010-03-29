@@ -9,11 +9,11 @@ import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
@@ -50,6 +50,7 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.project.IModule;
 
 public class DefaultJUnit_Configuration extends BaseRunConfig {
@@ -79,6 +80,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
       }
       if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
         final Wrappers._T<String> errorReport = new Wrappers._T<String>(null);
+        final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
@@ -106,7 +108,6 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 errorReport.value = "module is not valid";
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.PROJECT) {
-              MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
               if (mpsProject != null) {
                 if (!(TestRunUtil.containsTest(mpsProject))) {
                   errorReport.value = "project does not contain tests";
@@ -115,6 +116,9 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             }
           }
         });
+        if (DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject).isEmpty()) {
+          errorReport.value = "could not find tests to run";
+        }
         if (errorReport.value != null) {
           error.append(errorReport.value).append("\n");
         }
@@ -273,11 +277,17 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             }
           } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
             if (DefaultJUnit_Configuration.this.getStateObject().node != null) {
-              ListSequence.fromList(all).addElement(TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().node));
+              SNode testNode = TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().node);
+              if (ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(testNode)).isNotEmpty()) {
+                ListSequence.fromList(all).addElement(testNode);
+              }
             }
             if (DefaultJUnit_Configuration.this.getStateObject().nodes != null) {
               for (int i = 0; i < DefaultJUnit_Configuration.this.getStateObject().nodes.size(); i++) {
-                ListSequence.fromList(all).addElement(TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().nodes.get(i)));
+                SNode testNode = TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().nodes.get(i));
+                if (ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(testNode)).isNotEmpty()) {
+                  ListSequence.fromList(all).addElement(testNode);
+                }
               }
             }
           } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
@@ -285,8 +295,10 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
             ListSequence.fromList(all).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(DefaultJUnit_Configuration.this.getStateObject().module)));
           } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.PROJECT) {
-            for (IModule projectModule : mpsProject.getModules()) {
-              ListSequence.fromList(all).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(projectModule)));
+            if (mpsProject != null) {
+              for (IModule projectModule : mpsProject.getModules()) {
+                ListSequence.fromList(all).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(projectModule)));
+              }
             }
           }
         }
