@@ -74,6 +74,8 @@ public class Icons {
   public static final Icon OPENED_FOLDER_GOTHIC = new ImageIcon(Icons.class.getResource("other/openedFolder_gothic.png"));
   public static final Icon CLOSED_FOLDER_GOTHIC = new ImageIcon(Icons.class.getResource("other/closedFolder_gothic.png"));
 
+  public static final Icon MODIFIED_ICON = new ImageIcon(Icons.class.getResource("nodes/modified.png"));
+
   @Deprecated
   public static final Icon USAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/usages.png"));
   public static final Icon CELL_EXPLORER_ICON = new ImageIcon(Icons.class.getResource("nodes/cellExplorer.png"));

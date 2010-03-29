@@ -18,6 +18,7 @@ package jetbrains.mps.ide.ui.smodel;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
+import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.icons.IconManager;
@@ -38,6 +39,7 @@ import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.Icon;
 import javax.swing.tree.DefaultTreeModel;
 import java.util.*;
 
@@ -119,19 +121,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   protected void doUpdatePresentation() {
     SModelDescriptor sm = getSModelDescriptor();
-    if (sm != null && sm.isInitialized() && SModelRepository.getInstance().isChanged(sm)) {
-      //setFontStyle(getFontStyle() | Font.BOLD);
-      //setColor(new Color(0x00, 0x00, 0x90));
-    } else {
-      //setFontStyle(getFontStyle() | ~(Font.BOLD));
-      //setColor(Color.BLACK);
-    }
 
+    Icon icon = Icons.MODEL_ICON;
     if (getSModelDescriptor() != null) {
-      setIcon(IconManager.getIconFor(getSModelDescriptor()));
-    } else {
-      setIcon(Icons.MODEL_ICON);
+      icon = IconManager.getIconFor(getSModelDescriptor());
     }
+    if (sm != null && sm.isInitialized() && SModelRepository.getInstance().isChanged(sm)) {
+      icon = new LayeredIcon(icon, Icons.MODIFIED_ICON);
+    }
+    setIcon(icon);
 
     GenerationStatus generationStatus = getGenerationStatus();
     setAdditionalText(generationStatus.getMessage());
