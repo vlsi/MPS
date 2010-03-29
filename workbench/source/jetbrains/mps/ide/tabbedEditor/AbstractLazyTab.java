@@ -16,6 +16,7 @@
 
 package jetbrains.mps.ide.tabbedEditor;
 
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -23,16 +24,26 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
 public abstract class AbstractLazyTab implements ILazyTab {
   private SNodePointer myBaseNode;
+  private TabbedEditor myTabbedEditor;
 
-  public AbstractLazyTab(SNode baseNode) {
+  public AbstractLazyTab(TabbedEditor tabbedEditor,SNode baseNode) {
+    myTabbedEditor = tabbedEditor;
     myBaseNode = new SNodePointer(baseNode);
   }
 
+  public TabbedEditor getTabbedEditor() {
+    return myTabbedEditor;
+  }
+  
   public SNode getBaseNode() {
     return myBaseNode.getNode();
   }
 
   public MPSNodeVirtualFile getBaseNodeVirtualFile() {
     return MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
+  }
+
+  protected IOperationContext getOperationContext() {
+    return getTabbedEditor().getOperationContext();
   }
 }

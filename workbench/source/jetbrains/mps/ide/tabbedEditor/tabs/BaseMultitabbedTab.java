@@ -75,17 +75,15 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
   private JPanel myComponent;
   private List<EditorComponent> myEditors = new ArrayList<EditorComponent>();
   private Class<? extends BaseAdapter> myClass;
-  private TabbedEditor myTabbedEditor;
   private int myCurrentIndex = 0;
   private ListPopup myListPopup;
   private MyNodeFileStatusListener myNodeFileStatusListener = new MyNodeFileStatusListener();
 
   protected BaseMultitabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-    super(baseNode);
-    myTabbedEditor = tabbedEditor;
+    super(tabbedEditor,baseNode);
     myClass = adapterClass;
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getOperationContext().getProject());
     if (statusManager != null) {
       statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
     }
@@ -98,11 +96,11 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
     if (myLoadableNodes.size() == 0) {
       myComponent = null;
       myCurrentIndex = 0;
-      myTabbedEditor.getTabbedPane().remove(this);
-      myTabbedEditor.getTabbedPane().initTab(this);
+      getTabbedEditor().getTabbedPane().remove(this);
+      getTabbedEditor().getTabbedPane().initTab(this);
     }
     // TODO remove model listener
-    myTabbedEditor.updateTabColor(this, getBaseNodeVirtualFile());
+    getTabbedEditor().updateTabColor(this, getBaseNodeVirtualFile());
   }
 
   private int getIndexOfTabFor(SNodePointer pointer) {
@@ -132,10 +130,6 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
       result.add(sNodePointer.getNode());
     }
     return result;
-  }
-
-  public TabbedEditor getTabbedEditor() {
-    return myTabbedEditor;
   }
 
   public JComponent getComponent() {
@@ -202,7 +196,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
             Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
             createLoadableNodeChecked(nodeAndContext, selectedValue);
             setPackageAfterCreationChecked(nodeAndContext);
-            LazyTabbedPane tabbedPane = myTabbedEditor.getTabbedPane();
+            LazyTabbedPane tabbedPane = getTabbedEditor().getTabbedPane();
             tabbedPane.initTab(BaseMultitabbedTab.this);
             selectTab(myLoadableNodes.size() - 1);
             return FINAL_CHOICE;
@@ -222,7 +216,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
     myInnerTabbedPane = new JTabbedPane();
     myInnerTabbedPane.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
-        myTabbedEditor.onSelectInnerTab();
+        getTabbedEditor().onSelectInnerTab();
       }
     });
     myInnerTabbedPane.addMouseListener(new MouseAdapter() {
@@ -277,7 +271,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
 
   @Override
   public void dispose() {
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getOperationContext().getProject());
     if (statusManager != null) {
       statusManager.removeNodeFileStatusListener(myNodeFileStatusListener);
     }
@@ -310,7 +304,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
   }
 
   private void updateTabColor(int tabIndex) {
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getOperationContext().getProject());
     if (statusManager == null) {
       return;
     }
@@ -323,7 +317,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
       color = Color.BLACK;
     }
     myInnerTabbedPane.setForegroundAt(tabIndex, color);
-    myTabbedEditor.updateTabColor(this, getBaseNodeVirtualFile());
+    getTabbedEditor().updateTabColor(this, getBaseNodeVirtualFile());
   }
 
   public List<EditorComponent> getEditorComponents() {
@@ -396,7 +390,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
   }
 
   public void create() {
-    Component component = myTabbedEditor.getTabbedPane();
+    Component component = getTabbedEditor().getTabbedPane();
     int x = component.getWidth() / 2;
     int y = component.getHeight() / 2;
     createAnyone(new RelativePoint(component, new Point(x, y)));

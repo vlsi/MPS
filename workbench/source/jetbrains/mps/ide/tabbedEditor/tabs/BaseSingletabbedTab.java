@@ -56,12 +56,10 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab{
   private EditorComponent myComponent;
   private SNodePointer myLoadableNode;
   private Class<? extends BaseAdapter> myClass = BaseConcept.class;
-  private TabbedEditor myTabbedEditor;
   private MyNodeFileStatusListener myNodeFileStatusListener = new MyNodeFileStatusListener();
 
   protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-    super(baseNode);
-    myTabbedEditor = tabbedEditor;
+    super(tabbedEditor,baseNode);
     myClass = adapterClass;
   }
 
@@ -77,12 +75,12 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab{
   }
 
   private void reinit() {
-    myTabbedEditor.getTabbedPane().remove(this);
+    getTabbedEditor().getTabbedPane().remove(this);
     myComponent = null;
     myLoadableNode = null;
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        myTabbedEditor.getTabbedPane().initTab(BaseSingletabbedTab.this);
+        getTabbedEditor().getTabbedPane().initTab(BaseSingletabbedTab.this);
       }
     });
   }
@@ -116,7 +114,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab{
 
       if (myComponent != null) {
         if (IdeMain.getTestMode() != IdeMain.TestMode.CORE_TEST) {
-          Project project = myTabbedEditor.getOperationContext().getProject();
+          Project project = getOperationContext().getProject();
           ToolWindowManager.getInstance(project).getFocusManager().requestFocus(myComponent, false);
         }
       }
@@ -139,14 +137,6 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab{
     return myComponent;
   }
 
-  public TabbedEditor getTabbedEditor() {
-    return myTabbedEditor;
-  }
-
-  protected IOperationContext getOperationContext() {
-    return myTabbedEditor.getOperationContext();
-  }
-
   private boolean tryToInitComponent() {
     SNode loadableNode = null;
     try {
@@ -156,9 +146,8 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab{
     }
 
     if (loadableNode != null) {
-      IOperationContext operationContext = getOperationContext();
-      myComponent = new NodeEditorComponent(operationContext);
-      myComponent.editNode(loadableNode, operationContext);
+      myComponent = new NodeEditorComponent(getOperationContext());
+      myComponent.editNode(loadableNode, getOperationContext());
       myLoadableNode = new SNodePointer(loadableNode);
 
       SModelDescriptor descriptor = loadableNode.getModel().getModelDescriptor();
@@ -167,7 +156,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab{
         myModelsWithListeners.add(descriptor);
       }
 
-      RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+      RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabbedEditor().getOperationContext().getProject());
       if (statusManager != null) {
         statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
       }
@@ -196,7 +185,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab{
   }
 
   public void dispose() {
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabbedEditor().getOperationContext().getProject());
     if (statusManager != null) {
       statusManager.removeNodeFileStatusListener(myNodeFileStatusListener);
     }
@@ -217,7 +206,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab{
         }
       });
       if (EqualUtil.equals(myLoadableNode, nodePointer)) {
-        myTabbedEditor.updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
+        getTabbedEditor().updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
       }
     }
   }
