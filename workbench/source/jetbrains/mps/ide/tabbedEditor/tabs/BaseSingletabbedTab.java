@@ -24,13 +24,11 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
@@ -38,7 +36,6 @@ import jetbrains.mps.util.EqualUtil;
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -58,10 +55,6 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
 
   protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode) {
     super(tabbedEditor, baseNode);
-  }
-
-  protected SModelListener createModelListener() {
-    return new MySModelAdapter();
   }
 
   private void reinit() {
@@ -194,7 +187,11 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
     }
   }
 
-  private class MySModelAdapter extends SModelAdapter {
+  protected SModelListener createModelListener() {
+    return new AddRemoveNodeListener();
+  }
+
+  private class AddRemoveNodeListener extends SModelAdapter {
     public void rootRemoved(SModelRootEvent event) {
       if (getBaseNode() == null) return;
       if (getBaseNode() == event.getRoot()) return;

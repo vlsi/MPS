@@ -32,7 +32,6 @@ import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
-import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.LazyTabbedPane;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -42,15 +41,12 @@ import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseGroup;
-import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -270,10 +266,6 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
     }
   }
 
-  protected SModelListener createModelListener() {
-    return new MySModelAdapter();
-  }
-
   @Override
   public void dispose() {
     RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getOperationContext().getProject());
@@ -347,7 +339,6 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
 
   private void createLoadableNodeChecked(final Pair<SNode, IOperationContext>[] nodeAndContext, final SNode concept) {
     IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
-      @Override
       public void run() {
         if (isOutsideCommandExecution()) {
           nodeAndContext[0] = createLoadableNode(true, concept);
@@ -404,7 +395,13 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
     }
   }
 
-  private class MySModelAdapter extends SModelAdapter {
+  //------------model listening
+
+  protected SModelListener createModelListener() {
+    return new AddRemoveNodeListener();
+  }
+
+  private class AddRemoveNodeListener extends SModelAdapter {
     public void rootRemoved(SModelRootEvent event) {
       if (getBaseNode() == null) return;
       if (getBaseNode() == event.getRoot()) return;
@@ -442,6 +439,24 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
     }
   }
 
+  private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
+    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+      for (SNode node : getLoadableNodes()) {
+        if (node == null) continue;
+        SModel model = node.getModel();
+        if (model == null) continue;
+        SModelDescriptor md = model.getModelDescriptor();
+        if (!modelDescriptor.equals(md)) continue;
+
+        SNodePointer nodePointer = new SNodePointer(node);
+        int index = getIndexOfTabFor(nodePointer);
+        closeTab(nodePointer, index);
+      }
+    }
+  }
+
+  //------------
+
   private class MyNodeFileStatusListener implements NodeFileStatusListener {
     public void fileStatusChanged(final SNode node) {
       final SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
@@ -457,22 +472,6 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
         });
         assert index >= 0 : "tab for node not found";
         updateTabColor(index);
-      }
-    }
-  }
-
-  private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
-    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
-      for (SNode node : getLoadableNodes()) {
-        if (node == null) continue;
-        SModel model = node.getModel();
-        if (model == null) continue;
-        SModelDescriptor md = model.getModelDescriptor();
-        if (!modelDescriptor.equals(md)) continue;
-
-        SNodePointer nodePointer = new SNodePointer(node);
-        int index = getIndexOfTabFor(nodePointer);
-        closeTab(nodePointer, index);
       }
     }
   }
