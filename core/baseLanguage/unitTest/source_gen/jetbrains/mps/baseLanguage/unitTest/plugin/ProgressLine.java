@@ -67,7 +67,7 @@ public class ProgressLine extends JPanel implements TestView {
   private void updateLabel(int defected, int total, int complited, String testName) {
     StringBuilder sb = new StringBuilder();
     if (this.state.isTerminated()) {
-      sb.append(" Terminated: " + (complited + 1) + " of " + total + " ");
+      sb.append(" Terminated: " + complited + " of " + total + " ");
       testName = "";
     } else if (total == complited || testName == null) {
       sb.append(" Done: " + complited + " of " + total + " ");
@@ -76,7 +76,7 @@ public class ProgressLine extends JPanel implements TestView {
     if (defected > 0) {
       sb.append(" Failed: " + defected);
     } else if (sb.length() == 0) {
-      sb.append(" Running: " + (complited + 1) + " of " + total);
+      sb.append(" Running: " + complited + " of " + total);
     }
     this.stateLabel.setText(sb + "  " + testName);
   }

@@ -16619,15 +16619,8 @@
                           <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="892466083792930598">
                             <property name="value:3" value=" Terminated: " />
                           </node>
-                          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="3248231264319121494">
-                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3248231264319121497">
-                              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3248231264319121500">
-                                <property name="value:3" value="1" />
-                              </node>
-                              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3248231264319121495">
-                                <link role="variableDeclaration:3" targetNodeId="892466083792588596:0" resolveInfo="complited" />
-                              </node>
-                            </node>
+                          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3248231264319121495">
+                            <link role="variableDeclaration:3" targetNodeId="892466083792588596:0" resolveInfo="complited" />
                           </node>
                         </node>
                         <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="892466083792930600">
@@ -16788,15 +16781,8 @@
                           <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1717728468090419160">
                             <property name="value:3" value=" Running: " />
                           </node>
-                          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="3248231264319121469">
-                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3248231264319121472">
-                              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3248231264319121476">
-                                <property name="value:3" value="1" />
-                              </node>
-                              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3248231264319121470">
-                                <link role="variableDeclaration:3" targetNodeId="892466083792588596:0" resolveInfo="complited" />
-                              </node>
-                            </node>
+                          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3248231264319121470">
+                            <link role="variableDeclaration:3" targetNodeId="892466083792588596:0" resolveInfo="complited" />
                           </node>
                         </node>
                         <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1717728468090419164">
