@@ -298,5 +298,18 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(op, "parameter", null, false);
       }
     }
+    {
+      // references in 'get prev input by label' 
+      List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef");
+      for (SNode op : ops) {
+        SNode patternVar = SLinkOperations.getTarget(op, "patternVarDecl", false);
+        if (patternVar == null) {
+          _context.showErrorMessage(op, "reference on pattern variable is broken");
+          continue;
+        }
+        SPropertyOperations.set(op, "name_intern", SPropertyOperations.getString(patternVar, "name"));
+        SLinkOperations.setTarget(op, "patternVarDecl", null, false);
+      }
+    }
   }
 }
