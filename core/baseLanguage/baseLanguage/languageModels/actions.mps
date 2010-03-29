@@ -13736,8 +13736,8 @@
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="4246727699194878013" />
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="4246727699194878018">
-                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4246727699194878020">
-                  <link role="conceptDeclaration:16" targetNodeId="1.1068580123157:3" resolveInfo="Statement" />
+                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="6049560618113398432">
+                  <link role="conceptDeclaration:16" targetNodeId="1.1068580123155:3" resolveInfo="ExpressionStatement" />
                 </node>
               </node>
             </node>

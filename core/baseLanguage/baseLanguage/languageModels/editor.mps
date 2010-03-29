@@ -16067,8 +16067,8 @@
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="7812779912049128796" />
               </node>
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="7812779912049128797">
-                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7812779912049128798">
-                  <link role="conceptDeclaration:16" targetNodeId="17.1068580123157:3" resolveInfo="Statement" />
+                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="6049560618113398431">
+                  <link role="conceptDeclaration:16" targetNodeId="17.1068580123155:3" resolveInfo="ExpressionStatement" />
                 </node>
               </node>
             </node>

@@ -383,7 +383,7 @@ __switch__:
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractClassifierReference_4246727699194878004(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.Statement");
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
   }
 
   public static void nodeFactory_NodeSetup_ClassConcept_1213605907037(final IOperationContext operationContext, final NodeSetupContext _context) {
