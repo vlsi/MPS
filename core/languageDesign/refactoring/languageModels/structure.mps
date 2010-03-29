@@ -1157,6 +1157,9 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="478744034994717597">
       <link role="intfc:0" targetNodeId="478744034994716100:1" resolveInfo="RefactoringArgumentReference" />
     </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="122362144754621607">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1146528679895:3" resolveInfo="lvalue" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5497648299878741970">
     <property name="name:0" value="InitClause" />
