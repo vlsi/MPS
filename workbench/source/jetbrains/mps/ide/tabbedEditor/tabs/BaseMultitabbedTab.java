@@ -148,18 +148,12 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
     return node.getName();
   }
 
-  private SNode[] getAvailableConceptArray() {
-    final List<SNode> nodeList = new ArrayList<SNode>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        nodeList.addAll(getAvailableConcepts(getBaseNode()));
+  private List<SNode> getAvailableConceptArray() {
+    return ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
+      public List<SNode> compute() {
+        return getAvailableConcepts(getBaseNode());
       }
     });
-    final SNode[] concepts = new SNode[nodeList.size()];
-    for (int i = 0; i < nodeList.size(); i++) {
-      concepts[i] = nodeList.get(i);
-    }
-    return concepts;
   }
 
   private void showConceptList(final RelativePoint relativePoint) {
@@ -243,7 +237,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
       final JButton button = new JButton();
       AbstractAction action = new AbstractAction("Create new") {
         public void actionPerformed(final ActionEvent e) {
-          if (getAvailableConceptArray().length == 0) {
+          if (getAvailableConceptArray().size() == 0) {
             createLoadableNode(true, null);
           } else {
             showConceptList(new RelativePoint(button, new Point(0, button.getHeight())));
@@ -357,9 +351,9 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
     if (!canCreate()) return;
 
     final Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
-    SNode[] availableConcepts = getAvailableConceptArray();
-    if (availableConcepts.length <= 1) {
-      SNode concept = (availableConcepts.length == 0) ? null : availableConcepts[0];
+    List<SNode> availableConcepts = getAvailableConceptArray();
+    if (availableConcepts.size() <= 1) {
+      SNode concept = (availableConcepts.size() == 0) ? null : availableConcepts.get(0);
       if (!askCreate()) return;
       createLoadableNodeChecked(nodeAndContext, concept);
       setPackageAfterCreationChecked(nodeAndContext);
