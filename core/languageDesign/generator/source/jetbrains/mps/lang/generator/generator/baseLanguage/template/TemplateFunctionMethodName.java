@@ -77,4 +77,8 @@ public class TemplateFunctionMethodName {
   public static String templateArgumentQuery(SNode function) {
     return "templateArgumentQuery_" + function.getId();
   }
+
+  public static String pattern_MatchMethod(SNode pattern) {
+    return "pattern_MatchMethod" + pattern.getId();
+  }
 }
