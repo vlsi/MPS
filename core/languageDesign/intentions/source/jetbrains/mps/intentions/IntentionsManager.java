@@ -405,16 +405,12 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     public Set<Pair<Intention, SNode>> filter(Set<Pair<Intention, SNode>> intentions) {
       Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
 
+      Set<Intention> disabled = IntentionsManager.getInstance().getDisabledIntentions();
       for (Pair<Intention, SNode> p : intentions) {
         if (myIntentionClass == null || myIntentionClass.isAssignableFrom(p.getFirst().getClass())) {
-          result.add(p);
-        }
-      }
-
-      Set<Intention> disabled = IntentionsManager.getInstance().getDisabledIntentions();
-      for (Pair<Intention, SNode> ip : intentions) {
-        if (!(myEnabledOnly && disabled.contains(ip.first))) {
-          result.add(ip);
+          if (!(myEnabledOnly && disabled.contains(p.first))) {
+            result.add(p);
+          }
         }
       }
 
