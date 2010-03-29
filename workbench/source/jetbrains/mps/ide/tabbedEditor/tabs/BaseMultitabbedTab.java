@@ -390,6 +390,17 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
 
   //------------model listening
 
+  protected boolean checkNodeStateChanged() {
+    List<SNodePointer> newNodes = new ArrayList<SNodePointer>();
+    for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
+      SNodePointer nodePointer = new SNodePointer(p.o1);
+      newNodes.add(nodePointer);
+    }
+
+    if (myLoadableNodes.size()!=newNodes.size()) return true;
+    return !myLoadableNodes.containsAll(newNodes);
+  }
+
   protected SModelListener createModelListener() {
     return new AddRemoveNodeListener();
   }

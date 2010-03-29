@@ -19,7 +19,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.changesmanager.NodeFileStatusListener;
-import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
@@ -47,7 +46,8 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
   private EditorComponent myComponent;
   private SNodePointer myLoadableNode;
 
-  @Deprecated //for compatibility
+  @Deprecated
+  //for compatibility
   protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
     this(tabbedEditor, baseNode);
   }
@@ -176,6 +176,12 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
       myRepositoryListener = new MySModelRepositoryAdapter(listenCondition);
       SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
     }
+  }
+
+  protected boolean checkNodeStateChanged() {
+    SNode newNode = tryToLoadNode();
+    assert newNode != null;
+    return EqualUtil.equals(myLoadableNode, new SNodePointer(newNode));
   }
 
   protected SModelListener createModelListener() {

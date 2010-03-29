@@ -86,4 +86,5 @@ public abstract class AbstractLazyTab implements ILazyTab {
 
   protected abstract SModelListener createModelListener();
   protected abstract NodeFileStatusListener createFileStatusListener();
+  protected abstract boolean checkNodeStateChanged();
 }
