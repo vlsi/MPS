@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1167762379110(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -328,7 +329,7 @@ public class QueriesGenerated {
           _context.showErrorMessage(op, "reference on pattern variable is broken");
           continue;
         }
-        SPropertyOperations.set(op, "name_intern", SPropertyOperations.getString(patternVar, "name"));
+        SPropertyOperations.set(op, "name_intern", PatternVarsUtil.getFieldName(SLinkOperations.getTarget(op, "patternVarDecl", false)));
         SLinkOperations.setTarget(op, "patternVarDecl", null, false);
       }
     }

@@ -6,8 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class QueriesGenerated {
@@ -31,7 +31,7 @@ public class QueriesGenerated {
     return ((SNode) _context.getVariable("right"));
   }
 
-  public static Object pattern_MatchMethod4146564171992608884(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static GeneratedMatchingPattern pattern_MatchMethod4146564171992608884(final IOperationContext operationContext, final TemplateQueryContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a5();
     if (pattern.match(_context.getNode())) {
       return pattern;

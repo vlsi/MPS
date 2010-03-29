@@ -171,6 +171,10 @@ public class TemplateQueryContext {
     return null;
   }
 
+  public Object getPatternVariable(String name) {
+    return null;
+  }
+
   public Object putStepObject(Object key, Object o) {
     myGenerator.getGeneratorSessionContext().putStepObject(key, o);
     return o;

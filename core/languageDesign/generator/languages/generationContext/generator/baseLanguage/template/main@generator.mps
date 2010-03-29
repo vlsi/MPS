@@ -1022,7 +1022,7 @@
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="212805959602503360">
-                <link role="baseMethodDeclaration:3" targetNodeId="4.~TemplateQueryContext.getVariable(java.lang.String):java.lang.Object" resolveInfo="getVariable" />
+                <link role="baseMethodDeclaration:3" targetNodeId="4.~TemplateQueryContext.getPatternVariable(java.lang.String):java.lang.Object" resolveInfo="getPatternVariable" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="212805959602503361">
                   <property name="value:3" value="" />
                   <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="212805959602503362">
