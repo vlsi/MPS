@@ -17175,7 +17175,7 @@
       <link role="classifier:3" targetNodeId="7.~JPanel" resolveInfo="JPanel" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="2542933092629949833">
-      <property name="name:3" value="progressBar" />
+      <property name="name:3" value="myProgressBar" />
       <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="2542933092629949834" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2542933092629950402">
@@ -17189,7 +17189,7 @@
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="2542933092629950406">
       <property name="isFinal:3" value="true" />
-      <property name="name:3" value="stateLabel" />
+      <property name="name:3" value="myStateLabel" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="2542933092629950407" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2542933092629950412">
         <link role="classifier:3" targetNodeId="7.~JLabel" resolveInfo="JLabel" />
@@ -17204,7 +17204,7 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="2542933092629950557">
-      <property name="name:3" value="testsBuilt" />
+      <property name="name:3" value="myTestsBuilt" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="2542933092629950558" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="2542933092629950560" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2542933092629950562">
@@ -17212,7 +17212,7 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1717728468090418714">
-      <property name="name:3" value="state" />
+      <property name="name:3" value="myState" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1717728468090418715" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1717728468090418718">
         <link role="classifier:3" targetNodeId="1717728468090344607:0" resolveInfo="JUnitTestState" />
