@@ -213,12 +213,29 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     myModelsWithListeners.clear();
   }
 
+  public VirtualFile getBaseNodeVirtualFile() {
+    return MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
+  }
+
+  private class MyNodeFileStatusListener implements NodeFileStatusListener {
+    public void fileStatusChanged(final SNode node) {
+      SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+        public SNodePointer compute() {
+          return new SNodePointer(node);
+        }
+      });
+      if (EqualUtil.equals(myLoadableNode, nodePointer)) {
+        myTabbedEditor.updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
+      }
+    }
+  }
+
   private class MySModelAdapter extends SModelAdapter {
     public void rootRemoved(SModelRootEvent event) {
       if (myBaseNode.getNode() == null) return;
       if (myBaseNode.getNode() == event.getRoot()) return;
       if (getLoadableNode() != event.getRoot()) return;
-      
+
       reinit();
     }
 
@@ -247,23 +264,6 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
 
     private boolean newNode() {
       return getLoadableNode() == null && tryToLoadNode() != null;
-    }
-  }
-
-  public VirtualFile getBaseNodeVirtualFile() {
-    return MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
-  }
-
-  private class MyNodeFileStatusListener implements NodeFileStatusListener {
-    public void fileStatusChanged(final SNode node) {
-      SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-        public SNodePointer compute() {
-          return new SNodePointer(node);
-        }
-      });
-      if (EqualUtil.equals(myLoadableNode, nodePointer)) {
-        myTabbedEditor.updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
-      }
     }
   }
 

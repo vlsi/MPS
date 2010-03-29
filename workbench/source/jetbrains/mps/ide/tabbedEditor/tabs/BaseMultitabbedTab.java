@@ -423,7 +423,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   }
 
   private class MySModelAdapter extends SModelAdapter {
-    @Override
     public void rootRemoved(SModelRootEvent event) {
       if (myBaseNode.getNode() == null) return;
       if (myBaseNode.getNode() == event.getRoot()) return;
@@ -435,7 +434,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       }
     }
 
-    @Override
     public void rootAdded(SModelRootEvent event) {
       SNode root = event.getRoot();
       if (!getLoadableNodes().contains(root)) {
@@ -452,7 +450,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       }
     }
 
-    @Override
     public void referenceAdded(SModelReferenceEvent event) {
       SReference reference = event.getReference();
       INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
@@ -471,7 +468,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       }
     }
 
-    @Override
     public void referenceRemoved(SModelReferenceEvent event) {
       SReference reference = event.getReference();
       INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
@@ -491,7 +487,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       }
     }
 
-    @Override
     public void propertyChanged(SModelPropertyEvent event) {
       SNodePointer pointer = new SNodePointer(event.getNode());
       if (event.getPropertyName().equals(INamedConcept.NAME) && myLoadableNodes.contains(pointer)) {
@@ -503,7 +498,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   }
 
   private class MyNodeFileStatusListener implements NodeFileStatusListener {
-    @Override
     public void fileStatusChanged(final SNode node) {
       final SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
         @Override
