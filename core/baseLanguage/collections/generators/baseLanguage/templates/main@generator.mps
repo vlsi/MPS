@@ -13922,6 +13922,72 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="2261417478149594879">
+      <property name="applyToConceptInheritors:2" value="true" />
+      <link role="applicableConcept:2" targetNodeId="8.1240247536947:7" resolveInfo="TreeSetCreator" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="2261417478149594880">
+        <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2261417478149594881">
+          <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2261417478149594882">
+            <link role="baseMethodDeclaration:3" targetNodeId="1.~TreeSet.&lt;init&gt;(java.util.Comparator)" resolveInfo="TreeSet" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="2261417478149629085">
+              <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="2261417478149629132">
+                <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="2261417478149629133">
+                  <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2261417478149629134">
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2261417478149629154">
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2261417478149629156">
+                        <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2261417478149629155" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2261417478149629160">
+                          <link role="link:16" targetNodeId="8.2261417478148778174:7" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="2261417478149594883">
+              <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="2261417478149594884">
+                <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="2261417478149594885">
+                  <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2261417478149594886">
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2261417478149594887">
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2261417478149594888">
+                        <link role="classConcept:3" targetNodeId="2v.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="2v.1201536134312:2" resolveInfo="getTypeCoercedToClassifierType" />
+                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2261417478149594889">
+                          <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="2261417478149594890">
+                            <property name="asCast:16" value="true" />
+                            <link role="concept:16" targetNodeId="8.1237721394592:7" resolveInfo="AbstractContainerCreator" />
+                            <node role="leftExpression:16" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2261417478149594891" />
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2261417478149594892">
+                            <link role="link:16" targetNodeId="8.1237721435807:7" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="2261417478149598601">
+        <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2261417478149598602">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2261417478149599204">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2261417478149620542">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2261417478149599206">
+                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2261417478149599205" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2261417478149620541">
+                  <link role="link:16" targetNodeId="8.2261417478148778174:7" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="2261417478149621835" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="3444116434173277296">
       <property name="applyToConceptInheritors:2" value="true" />
       <link role="applicableConcept:2" targetNodeId="8.1240247536947:7" resolveInfo="TreeSetCreator" />

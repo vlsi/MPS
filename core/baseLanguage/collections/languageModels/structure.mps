@@ -2424,6 +2424,11 @@
     <property name="package:0" value="set" />
     <property name="name:0" value="TreeSetCreator" />
     <link role="extends:0" targetNodeId="1226516258405:7" resolveInfo="HashSetCreator" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2261417478148778174">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="comparator" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1240247577250">
       <property name="value:0" value="treeset" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />

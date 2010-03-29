@@ -2954,5 +2954,46 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="2261417478148778157">
+    <link role="conceptDeclaration:32" targetNodeId="1.1240247536947:7" resolveInfo="TreeSetCreator" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="2261417478148778160">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="2261417478148778163">
+        <link role="editorComponent:32" targetNodeId="5308719025594828602" resolveInfo="AbstractContainerCreator_Component" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="2261417478148778165">
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="2261417478148778166">
+          <property name="flag:32" value="false" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2261417478148778169">
+          <property name="text:32" value="(" />
+          <link role="styleClass:32" targetNodeId="15.1234958090348" resolveInfo="LeftParenAfterName" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="2261417478148778176">
+          <link role="relationDeclaration:32" targetNodeId="1.2261417478148778174:7" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2261417478148778171">
+          <property name="text:32" value=")" />
+          <link role="styleClass:32" targetNodeId="15.1215088010675" resolveInfo="RightParen" />
+        </node>
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="2261417478148778168" />
+        <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="2261417478148778172">
+          <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2261417478148778173">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2261417478148782495">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2261417478148803833">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2261417478148782497">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="2261417478148782496" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2261417478148803832">
+                    <link role="link:16" targetNodeId="1.2261417478148778174:7" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="2261417478148805126" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="2261417478148778162" />
+    </node>
+  </node>
 </model>
 

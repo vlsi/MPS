@@ -8,15 +8,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractContainerCreator_Behavior {
   private static Class[] PARAMETERS_1237722437229 = {SNode.class};
+  private static Class[] PARAMETERS_2261417478150191157 = {SNode.class};
 
   public static void init(SNode thisNode) {
+  }
+
+  public static boolean virtual_canHaveParameter_2261417478150191157(SNode thisNode) {
+    return true;
   }
 
   public static SNode call_createType_1237722437229(SNode thisNode) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "virtual_createType_1237722437229", PARAMETERS_1237722437229);
   }
 
+  public static boolean call_canHaveParameter_2261417478150191157(SNode thisNode) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191157);
+  }
+
   public static SNode callSuper_createType_1237722437229(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1237722437229);
+  }
+
+  public static boolean callSuper_canHaveParameter_2261417478150191157(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191157);
   }
 }

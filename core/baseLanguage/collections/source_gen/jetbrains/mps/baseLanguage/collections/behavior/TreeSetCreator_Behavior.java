@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -13,11 +15,25 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class TreeSetCreator_Behavior {
+  private static Class[] PARAMETERS_2261417478150191164 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
   public static SNode virtual_createType_1237722437229(SNode thisNode) {
     return new TreeSetCreator_Behavior.QuotationClass_529210_a0a0b().createNode(SLinkOperations.getTarget(thisNode, "elementType", true));
+  }
+
+  public static boolean virtual_canHaveParameter_2261417478150191157(SNode thisNode) {
+    return AbstractContainerCreator_Behavior.callSuper_canHaveParameter_2261417478150191157(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator") && (SLinkOperations.getTarget(thisNode, "comparator", true) == null);
+  }
+
+  public static boolean call_canHaveParameter_2261417478150191164(SNode thisNode) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164);
+  }
+
+  public static boolean callSuper_canHaveParameter_2261417478150191164(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164);
   }
 
   public static class QuotationClass_529210_a0a0b {

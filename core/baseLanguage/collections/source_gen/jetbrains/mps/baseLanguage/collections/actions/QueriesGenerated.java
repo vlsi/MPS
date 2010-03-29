@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerCreator_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
@@ -28,6 +29,11 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1178286539824(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -65,7 +71,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1237731265768(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return ((SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) || !(SConceptPropertyOperations.getBoolean(_context.getSourceNode(), "hasInitSize"))) && ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "initValue", true)).count() == 0 && (SLinkOperations.getTarget(_context.getSourceNode(), "copyFrom", true) == null);
+    return AbstractContainerCreator_Behavior.call_canHaveParameter_2261417478150191157(_context.getSourceNode()) && ((SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) || !(SConceptPropertyOperations.getBoolean(_context.getSourceNode(), "hasInitSize"))) && ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "initValue", true)).count() == 0 && (SLinkOperations.getTarget(_context.getSourceNode(), "copyFrom", true) == null);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_HashMapCreator_1240226454998(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -94,6 +100,10 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SequenceType_569424390635550565(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true) == null);
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_TreeSetCreator_2261417478150134799(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) && (SLinkOperations.getTarget(_context.getSourceNode(), "copyFrom", true) == null) && (SLinkOperations.getTarget(_context.getSourceNode(), "comparator", true) == null);
   }
 
   public static void nodeFactory_NodeSetup_SelectOperation_1225118817882(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -703,5 +713,95 @@ public class QueriesGenerated {
       });
     }
     return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_TreeSetCreator_2261417478150134798(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          return SLinkOperations.setTarget(_context.getSourceNode(), "comparator", new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0fc().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getSourceNode(), "elementType", true))), true);
+        }
+
+        public String getMatchingText(String pattern) {
+          return "(";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "specity comparator";
+        }
+      });
+    }
+    return result;
+  }
+
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0fc {
+    public QuotationClass_x583g4_a0a0a0a0a0a0b0a0b0fc() {
+    }
+
+    public SNode createNode(Object parameter_13, Object parameter_14) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_8 = quotedNode_2;
+          quotedNode1_8.setProperty("name", "a");
+          {
+            quotedNode_5 = (SNode) parameter_13;
+            SNode quotedNode1_9;
+            if (_parameterValues_129834374.contains(quotedNode_5)) {
+              quotedNode1_9 = CopyUtil.copy(quotedNode_5);
+            } else {
+              _parameterValues_129834374.add(quotedNode_5);
+              quotedNode1_9 = quotedNode_5;
+            }
+            if (quotedNode1_9 != null) {
+              quotedNode_2.addChild("type", HUtil.copyIfNecessary(quotedNode1_9));
+            }
+          }
+          quotedNode_1.addChild("parameter", quotedNode1_8);
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_10 = quotedNode_3;
+          quotedNode1_10.setProperty("name", "b");
+          {
+            quotedNode_6 = (SNode) parameter_14;
+            SNode quotedNode1_11;
+            if (_parameterValues_129834374.contains(quotedNode_6)) {
+              quotedNode1_11 = CopyUtil.copy(quotedNode_6);
+            } else {
+              _parameterValues_129834374.add(quotedNode_6);
+              quotedNode1_11 = quotedNode_6;
+            }
+            if (quotedNode1_11 != null) {
+              quotedNode_3.addChild("type", HUtil.copyIfNecessary(quotedNode1_11));
+            }
+          }
+          quotedNode_1.addChild("parameter", quotedNode1_10);
+        }
+        {
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_12 = quotedNode_4;
+          quotedNode_1.addChild("body", quotedNode1_12);
+        }
+        result = quotedNode1_7;
+      }
+      return result;
+    }
   }
 }

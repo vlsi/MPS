@@ -8,6 +8,8 @@ import jetbrains.mps.internal.collections.runtime.SortedSetSequence;
 import java.util.TreeSet;
 import junit.framework.Assert;
 import java.util.Arrays;
+import java.util.Comparator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class SortedSet_Test extends Util_Test {
   public void test_order() throws Exception {
@@ -39,5 +41,15 @@ public class SortedSet_Test extends Util_Test {
     SortedSet<String> set = SortedSetSequence.fromSetWithValues(new TreeSet<String>(), this.inputABCDEF());
     this.assertIterableEquals(Arrays.asList("C", "D"), SortedSetSequence.fromSet(set).subSet("C", "E"));
     this.assertIterableEquals(Arrays.asList("C", "D", "E"), SortedSetSequence.fromSet(set).subSet("C", "E\0"));
+  }
+
+  public void test_comparator() throws Exception {
+    SortedSet<String> sset = SortedSetSequence.fromSet(new TreeSet<String>(new Comparator<String>() {
+      public int compare(String a, String b) {
+        return -String.CASE_INSENSITIVE_ORDER.compare(a, b);
+      }
+    }));
+    SortedSetSequence.fromSet(sset).addSequence(Sequence.fromIterable(Sequence.fromArray(new String[]{"b","d","c","a"})));
+    this.assertIterableEquals(Sequence.fromArray(new String[]{"d","c","b","a"}), sset);
   }
 }
