@@ -190,14 +190,9 @@
                 </node>
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="504431509334724423">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="504431509334724424">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="504431509334724425">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="504431509334724426" />
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="504431509334724427">
-                        <link role="baseMethodDeclaration:3" targetNodeId="1.~BaseMultitabbedTab.getTabbedEditor():jetbrains.mps.ide.tabbedEditor.TabbedEditor" />
-                      </node>
-                    </node>
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="504431509334724426" />
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="504431509334724428">
-                      <link role="baseMethodDeclaration:3" targetNodeId="3.~TabbedEditor.getOperationContext():jetbrains.mps.smodel.IOperationContext" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="3.~AbstractLazyTab.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="504431509334724429">
@@ -388,14 +383,9 @@
                 <link role="variableDeclaration:3" targetNodeId="504431509334724471" resolveInfo="node" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="504431509334724502">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="504431509334724503">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="504431509334724504" />
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="504431509334724505">
-                    <link role="baseMethodDeclaration:3" targetNodeId="1.~BaseMultitabbedTab.getTabbedEditor():jetbrains.mps.ide.tabbedEditor.TabbedEditor" />
-                  </node>
-                </node>
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="504431509334724504" />
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="504431509334724506">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.~TabbedEditor.getOperationContext():jetbrains.mps.smodel.IOperationContext" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.~AbstractLazyTab.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
                 </node>
               </node>
             </node>

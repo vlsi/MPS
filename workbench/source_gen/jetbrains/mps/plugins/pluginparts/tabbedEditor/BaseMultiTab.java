@@ -37,7 +37,7 @@ public abstract class BaseMultiTab extends BaseMultitabbedTab {
       if (node == null) {
         continue;
       }
-      MPSProject project = this.getTabbedEditor().getOperationContext().getMPSProject();
+      MPSProject project = this.getOperationContext().getMPSProject();
       IModule module = node.getModel().getModelDescriptor().getModule();
       IOperationContext context = new ModuleContext(module, project);
       res.add(new Pair<SNode, IOperationContext>(node, context));
@@ -51,7 +51,7 @@ public abstract class BaseMultiTab extends BaseMultitabbedTab {
       JOptionPane.showMessageDialog(this.getComponent(), "Node creation finished with errors.", "Error", JOptionPane.ERROR_MESSAGE);
       return null;
     }
-    return new Pair<SNode, IOperationContext>(node, this.getTabbedEditor().getOperationContext());
+    return new Pair<SNode, IOperationContext>(node, this.getOperationContext());
   }
 
   public boolean askCreate() {
