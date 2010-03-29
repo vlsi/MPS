@@ -37,11 +37,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 
 public class ListPanel extends JPanel {
-  private JList list;
-  private List<SNode> values = new ArrayList<SNode>();
-  private List<SNode> candidates;
-  private boolean isTestMethods;
-  private ActionListener listener;
+  private JList myList;
+  private List<SNode> myValues = new ArrayList<SNode>();
+  private List<SNode> myCandidates;
+  private boolean myIsTestMethods;
+  private ActionListener myListener;
 
   public ListPanel() {
   }
@@ -68,7 +68,7 @@ public class ListPanel extends JPanel {
         nodesList.value = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
       }
     });
-    if (this.isTestMethods) {
+    if (this.myIsTestMethods) {
       final List<SNode> methodsList = new ArrayList<SNode>();
       for (final SNode testCase : nodesList.value) {
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -77,75 +77,75 @@ public class ListPanel extends JPanel {
           }
         });
       }
-      this.candidates = methodsList;
+      this.myCandidates = methodsList;
     } else {
-      this.candidates = nodesList.value;
+      this.myCandidates = nodesList.value;
     }
   }
 
   public void addItem(SNode item) {
-    ListSequence.fromList(this.values).addElement(item);
-    this.list.updateUI();
+    ListSequence.fromList(this.myValues).addElement(item);
+    this.myList.updateUI();
   }
 
   public void addActionListener(ActionListener listener) {
-    this.listener = listener;
+    this.myListener = listener;
   }
 
   public Object getItems() {
-    return this.values;
+    return this.myValues;
   }
 
   public void clear() {
-    ListSequence.fromList(this.values).removeSequence(ListSequence.fromList(this.values));
-    this.list.updateUI();
+    ListSequence.fromList(this.myValues).removeSequence(ListSequence.fromList(this.myValues));
+    this.myList.updateUI();
   }
 
   public void init(List<SNode> nodes, final boolean isTestMethods) {
-    this.isTestMethods = isTestMethods;
+    this.myIsTestMethods = isTestMethods;
     this.setLayout(new BorderLayout());
-    this.values = nodes;
-    this.list = new JList(new AbstractListModel() {
+    this.myValues = nodes;
+    this.myList = new JList(new AbstractListModel() {
       public Object getElementAt(int p0) {
-        return ListPanel.this.getPresentation(ListSequence.fromList(ListPanel.this.values).getElement(p0));
+        return ListPanel.this.getPresentation(ListSequence.fromList(ListPanel.this.myValues).getElement(p0));
       }
 
       public int getSize() {
-        return ListSequence.fromList(ListPanel.this.values).count();
+        return ListSequence.fromList(ListPanel.this.myValues).count();
       }
     });
-    AnAction add = new ListAddAction(this.list) {
+    AnAction add = new ListAddAction(this.myList) {
       protected int doAdd(AnActionEvent p0) {
-        if (ListPanel.this.candidates == null) {
+        if (ListPanel.this.myCandidates == null) {
           ListPanel.this.collectCandidates();
         }
-        ListSequence.fromList(ListPanel.this.candidates).removeSequence(ListSequence.fromList(ListPanel.this.values));
-        final SNode resultNode = (SNode) CommonChoosers.showDialogNodeChooser(ListPanel.this, ListPanel.this.candidates);
+        ListSequence.fromList(ListPanel.this.myCandidates).removeSequence(ListSequence.fromList(ListPanel.this.myValues));
+        final SNode resultNode = (SNode) CommonChoosers.showDialogNodeChooser(ListPanel.this, ListPanel.this.myCandidates);
         if (resultNode == null) {
           return -1;
         }
-        ListSequence.fromList(ListPanel.this.values).addElement(resultNode);
-        if (ListPanel.this.listener != null) {
-          ListPanel.this.listener.actionPerformed(null);
+        ListSequence.fromList(ListPanel.this.myValues).addElement(resultNode);
+        if (ListPanel.this.myListener != null) {
+          ListPanel.this.myListener.actionPerformed(null);
         }
-        ListPanel.this.list.updateUI();
-        return ListSequence.fromList(ListPanel.this.values).indexOf(resultNode);
+        ListPanel.this.myList.updateUI();
+        return ListSequence.fromList(ListPanel.this.myValues).indexOf(resultNode);
       }
     };
-    AnAction remove = new ListRemoveAction(this.list) {
+    AnAction remove = new ListRemoveAction(this.myList) {
       protected void doRemove(AnActionEvent p0) {
-        for (Object value : ListPanel.this.list.getSelectedValues()) {
-          for (SNode node : ListPanel.this.values) {
+        for (Object value : ListPanel.this.myList.getSelectedValues()) {
+          for (SNode node : ListPanel.this.myValues) {
             if (ListPanel.this.getPresentation(node).equals(value)) {
-              ListSequence.fromList(ListPanel.this.values).removeElement(node);
+              ListSequence.fromList(ListPanel.this.myValues).removeElement(node);
               break;
             }
           }
         }
-        if (ListPanel.this.listener != null) {
-          ListPanel.this.listener.actionPerformed(null);
+        if (ListPanel.this.myListener != null) {
+          ListPanel.this.myListener.actionPerformed(null);
         }
-        ListPanel.this.list.updateUI();
+        ListPanel.this.myList.updateUI();
       }
     };
 
@@ -155,14 +155,14 @@ public class ListPanel extends JPanel {
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
     this.add(toolbar.getComponent(), BorderLayout.WEST);
 
-    JScrollPane comp = new JScrollPane(this.list);
+    JScrollPane comp = new JScrollPane(this.myList);
     comp.doLayout();
     this.add(comp, BorderLayout.CENTER);
 
-    this.add(new JLabel((this.isTestMethods ?
+    this.add(new JLabel((this.myIsTestMethods ?
       "Methods" :
       "Classes"
     )), BorderLayout.PAGE_START);
-    this.list.updateUI();
+    this.myList.updateUI();
   }
 }

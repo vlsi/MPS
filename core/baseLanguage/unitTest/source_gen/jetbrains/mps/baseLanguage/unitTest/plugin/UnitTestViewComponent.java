@@ -43,18 +43,18 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSLocation;
 
 public class UnitTestViewComponent extends JPanel implements Disposable {
-  private TestRunState testState;
-  private TestOutputComponent outputComponent;
-  private TestTree treeComponent;
-  private ProgressLine progressLineComponent;
-  private TestToolbarPanel actionToolComponent;
-  private MPSProject project;
-  private FailedTestOccurenceNavigator testNavigator;
-  private List<_FunctionTypes._void_P0_E0> listeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
+  private final TestRunState myTestState;
+  private TestOutputComponent myOutputComponent;
+  private TestTree myTreeComponent;
+  private ProgressLine myProgressLineComponent;
+  private TestToolbarPanel myActionToolComponent;
+  private final MPSProject myProject;
+  private FailedTestOccurenceNavigator myTestNavigator;
+  private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
   public UnitTestViewComponent(MPSProject project, IOperationContext context, ConsoleViewImpl console, UnitTestExecutionController model) {
-    this.project = project;
-    this.testState = model.getState();
+    this.myProject = project;
+    this.myTestState = model.getState();
     this.initComponent(console, context);
     this.addCloseListener(model.getCloseListener());
   }
@@ -64,9 +64,9 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     JPanel rightPanel = new JPanel(new BorderLayout());
     rightPanel.setBorder(null);
     JTabbedPane resultTabs = new JTabbedPane();
-    this.treeComponent = new TestTree(this.project, this.testState, context, this);
-    resultTabs.addTab("Output", this.getIcon("testOutput.png"), this.createOutputComponent(this.project, console));
-    StatisticsTableModel statisticsModel = new StatisticsTableModel(this.testState);
+    this.myTreeComponent = new TestTree(this.myProject, this.myTestState, context, this);
+    resultTabs.addTab("Output", this.getIcon("testOutput.png"), this.createOutputComponent(this.myProject, console));
+    StatisticsTableModel statisticsModel = new StatisticsTableModel(this.myTestState);
     resultTabs.addTab("Statistics", this.getIcon("testStatistics.png"), this.createStatisticsComponent(statisticsModel));
     JComponent leftPanel = this.createTreeComponent();
     Splitter splitter = new Splitter(false);
@@ -76,22 +76,22 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     this.setLayout(new BorderLayout());
     JComponent stackTraceActions = this.createActionsToolbar(console);
     stackTraceActions.setMaximumSize(new Dimension(rightPanel.getWidth(), stackTraceActions.getMaximumSize().height));
-    this.actionToolComponent = new TestToolbarPanel(this.project, this.treeComponent, this.testNavigator);
-    this.progressLineComponent = new ProgressLine(this.testState);
-    this.progressLineComponent.setMinimumSize(new Dimension(0, this.progressLineComponent.getMinimumSize().height));
-    this.treeComponent.addTreeSelectionListener(new TestTreeSelectionListener(this.treeComponent, statisticsModel, this.outputComponent));
-    this.treeComponent.addMouseListener(new TestTreeRootMouseListener(this.treeComponent, statisticsModel, this.outputComponent));
+    this.myActionToolComponent = new TestToolbarPanel(this.myProject, this.myTreeComponent, this.myTestNavigator);
+    this.myProgressLineComponent = new ProgressLine(this.myTestState);
+    this.myProgressLineComponent.setMinimumSize(new Dimension(0, this.myProgressLineComponent.getMinimumSize().height));
+    this.myTreeComponent.addTreeSelectionListener(new TestTreeSelectionListener(this.myTreeComponent, statisticsModel, this.myOutputComponent));
+    this.myTreeComponent.addMouseListener(new TestTreeRootMouseListener(this.myTreeComponent, statisticsModel, this.myOutputComponent));
 
 
-    leftPanel.add(this.actionToolComponent, BorderLayout.NORTH);
+    leftPanel.add(this.myActionToolComponent, BorderLayout.NORTH);
     rightPanel.add(stackTraceActions, BorderLayout.LINE_START);
-    rightPanel.add(this.progressLineComponent, BorderLayout.NORTH);
+    rightPanel.add(this.myProgressLineComponent, BorderLayout.NORTH);
     rightPanel.add(resultTabs, BorderLayout.CENTER);
     this.add(splitter, BorderLayout.CENTER);
 
-    this.testState.addView(this.treeComponent);
-    this.testState.addView(this.progressLineComponent);
-    this.testState.addView(this.outputComponent);
+    this.myTestState.addView(this.myTreeComponent);
+    this.myTestState.addView(this.myProgressLineComponent);
+    this.myTestState.addView(this.myOutputComponent);
   }
 
   public JComponent createActionsToolbar(ConsoleView console) {
@@ -103,15 +103,15 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
   private JComponent createTreeComponent() {
     UnitTestViewComponent.MyTreePanel treePanel = new UnitTestViewComponent.MyTreePanel(new BorderLayout());
-    JScrollPane scrollPane = new JScrollPane(this.treeComponent);
+    JScrollPane scrollPane = new JScrollPane(this.myTreeComponent);
     treePanel.add(scrollPane, BorderLayout.CENTER);
-    this.testNavigator = new FailedTestOccurenceNavigator(this.treeComponent);
+    this.myTestNavigator = new FailedTestOccurenceNavigator(this.myTreeComponent);
     return treePanel;
   }
 
   private JComponent createOutputComponent(MPSProject project, ConsoleViewImpl console) {
-    this.outputComponent = new TestOutputComponent(project.getComponent(Project.class), this, console, this.testState);
-    return this.outputComponent.getComponent();
+    this.myOutputComponent = new TestOutputComponent(project.getComponent(Project.class), this, console, this.myTestState);
+    return this.myOutputComponent.getComponent();
   }
 
   private JComponent createStatisticsComponent(StatisticsTableModel testStatisticsModel) {
@@ -129,21 +129,21 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   }
 
   public ProcessListener getProcessListener() {
-    return this.progressLineComponent.getProcessListener();
+    return this.myProgressLineComponent.getProcessListener();
   }
 
   public void dispose() {
-    this.outputComponent.dispose();
-    this.treeComponent.dispose();
+    this.myOutputComponent.dispose();
+    this.myTreeComponent.dispose();
     this.invokeCloseListeners();
   }
 
   public void addCloseListener(_FunctionTypes._void_P0_E0 listener) {
-    ListSequence.fromList(this.listeners).addElement(listener);
+    ListSequence.fromList(this.myListeners).addElement(listener);
   }
 
   public void invokeCloseListeners() {
-    for (_FunctionTypes._void_P0_E0 listener : ListSequence.fromList(this.listeners)) {
+    for (_FunctionTypes._void_P0_E0 listener : ListSequence.fromList(this.myListeners)) {
       listener.invoke();
     }
   }
@@ -166,8 +166,8 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     @Nullable
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(Location.LOCATION)) {
-        Project project = UnitTestViewComponent.this.project.getComponent(Project.class);
-        MPSTreeNode currentNode = UnitTestViewComponent.this.treeComponent.getCurrentNode();
+        Project project = UnitTestViewComponent.this.myProject.getComponent(Project.class);
+        MPSTreeNode currentNode = UnitTestViewComponent.this.myTreeComponent.getCurrentNode();
         return new MPSLocation(project, currentNode.getUserObject());
       }
       return null;

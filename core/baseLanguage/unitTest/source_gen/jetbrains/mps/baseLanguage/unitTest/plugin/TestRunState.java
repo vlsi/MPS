@@ -25,21 +25,21 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class TestRunState {
   private static final Object lock = new Object();
 
-  private List<String> testMethods = ListSequence.fromList(new ArrayList<String>());
-  private Map<SNode, List<SNode>> map = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float) 0.75, false));
-  private String curClass;
-  private String curMethod;
-  private String curToken;
-  private String loseTest;
-  private String loseMethod;
-  private int totalTests = 0;
-  private int completedTests = 0;
-  private int defectTests = 0;
-  private Set<TestView> viewList = SetSequence.fromSet(new HashSet<TestView>());
-  private boolean isTerminated;
-  private String availableText = null;
-  private Key key = null;
-  private final List<TestStateListener> listeners = ListSequence.fromList(new ArrayList<TestStateListener>());
+  private final List<String> myTestMethods = ListSequence.fromList(new ArrayList<String>());
+  private Map<SNode, List<SNode>> myTestToMethodsMap = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float) 0.75, false));
+  private final Set<TestView> myViewsList = SetSequence.fromSet(new HashSet<TestView>());
+  private final List<TestStateListener> myListeners = ListSequence.fromList(new ArrayList<TestStateListener>());
+  private String myCurrentClass;
+  private String myCurrentMethod;
+  private String myCurrentToken;
+  private String myLostTest;
+  private String myLostMethod;
+  private int myTotalTests = 0;
+  private int myCompletedTests = 0;
+  private int myDefectTests = 0;
+  private boolean myIsTerminated;
+  private String myAvailableText = null;
+  private Key myKey = null;
 
   public TestRunState(List<SNode> testCases, List<SNode> testMethods, StatisticsTableModel statisticsModel) {
     this.initTestState(testCases, testMethods);
@@ -70,14 +70,14 @@ public class TestRunState {
       public void run() {
         TestRunState.this.addTestCases(testCases);
         TestRunState.this.addTestMethods(testMethods);
-        for (SNode testCase : MapSequence.fromMap(TestRunState.this.map).keySet()) {
-          for (SNode testMethod : MapSequence.fromMap(TestRunState.this.map).get(testCase)) {
-            ListSequence.fromList(TestRunState.this.testMethods).addElement(ITestCase_Behavior.call_getClassName_1216136193905(testCase) + '.' + ITestMethod_Behavior.call_getTestName_1216136419751(testMethod));
+        for (SNode testCase : MapSequence.fromMap(TestRunState.this.myTestToMethodsMap).keySet()) {
+          for (SNode testMethod : MapSequence.fromMap(TestRunState.this.myTestToMethodsMap).get(testCase)) {
+            ListSequence.fromList(TestRunState.this.myTestMethods).addElement(ITestCase_Behavior.call_getClassName_1216136193905(testCase) + '.' + ITestMethod_Behavior.call_getTestName_1216136419751(testMethod));
           }
         }
       }
     });
-    this.totalTests = ListSequence.fromList(this.testMethods).count();
+    this.myTotalTests = ListSequence.fromList(this.myTestMethods).count();
 
     this.initView();
   }
@@ -85,7 +85,7 @@ public class TestRunState {
   private void addTestCases(List<SNode> testCases) {
     for (SNode testCase : ListSequence.fromList(testCases)) {
       List<SNode> testMethods = new ArrayList<SNode>();
-      MapSequence.fromMap(this.map).put(testCase, testMethods);
+      MapSequence.fromMap(this.myTestToMethodsMap).put(testCase, testMethods);
       ListSequence.fromList(testMethods).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(testCase)));
     }
   }
@@ -93,10 +93,10 @@ public class TestRunState {
   private void addTestMethods(List<SNode> testMethods) {
     for (SNode testMethod : ListSequence.fromList(testMethods)) {
       SNode testCase = ITestMethod_Behavior.call_getTestCase_1216134500045(testMethod);
-      List<SNode> curTestMethods = MapSequence.fromMap(this.map).get(testCase);
+      List<SNode> curTestMethods = MapSequence.fromMap(this.myTestToMethodsMap).get(testCase);
       if (curTestMethods == null) {
         curTestMethods = new ArrayList<SNode>();
-        MapSequence.fromMap(this.map).put(testCase, curTestMethods);
+        MapSequence.fromMap(this.myTestToMethodsMap).put(testCase, curTestMethods);
       }
       if (!(ListSequence.fromList(curTestMethods).contains(testMethod))) {
         ListSequence.fromList(curTestMethods).addElement(testMethod);
@@ -105,23 +105,23 @@ public class TestRunState {
   }
 
   private void updateView() {
-    for (TestView view : this.viewList) {
+    for (TestView view : this.myViewsList) {
       view.update();
     }
   }
 
   private void initView() {
-    for (TestView view : this.viewList) {
+    for (TestView view : this.myViewsList) {
       view.init();
     }
   }
 
   public void addView(TestView testView) {
-    SetSequence.fromSet(this.viewList).addElement(testView);
+    SetSequence.fromSet(this.myViewsList).addElement(testView);
   }
 
   public void startTest(final TestEvent event) {
-    ListSequence.fromList(this.listeners).visitAll(new IVisitor<TestStateListener>() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestStart(event);
       }
@@ -130,7 +130,7 @@ public class TestRunState {
   }
 
   public void endTest(final TestEvent event) {
-    ListSequence.fromList(this.listeners).visitAll(new IVisitor<TestStateListener>() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestEnd(event);
       }
@@ -139,7 +139,7 @@ public class TestRunState {
   }
 
   public void testError(final TestEvent event) {
-    ListSequence.fromList(this.listeners).visitAll(new IVisitor<TestStateListener>() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestError(event);
       }
@@ -148,7 +148,7 @@ public class TestRunState {
   }
 
   public void testFailure(final TestEvent event) {
-    ListSequence.fromList(this.listeners).visitAll(new IVisitor<TestStateListener>() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestFailure(event);
       }
@@ -157,7 +157,7 @@ public class TestRunState {
   }
 
   public void looseTest(final String className, final String testName) {
-    ListSequence.fromList(this.listeners).visitAll(new IVisitor<TestStateListener>() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onLooseTest(className, testName);
       }
@@ -166,58 +166,58 @@ public class TestRunState {
   }
 
   private void startTest(String className, String methodName) {
-    if (className.equals(this.curClass) && methodName.equals(this.curMethod)) {
+    if (className.equals(this.myCurrentClass) && methodName.equals(this.myCurrentMethod)) {
       return;
     }
     synchronized (lock) {
-      this.curClass = className;
-      this.curMethod = methodName;
+      this.myCurrentClass = className;
+      this.myCurrentMethod = methodName;
       this.updateView();
     }
   }
 
   private void endTest() {
     synchronized (lock) {
-      this.completedTests++;
+      this.myCompletedTests++;
       this.updateView();
-      this.curClass = null;
-      this.curMethod = null;
+      this.myCurrentClass = null;
+      this.myCurrentMethod = null;
     }
   }
 
   private void defectTest() {
     synchronized (lock) {
-      this.defectTests++;
+      this.myDefectTests++;
       this.updateView();
     }
   }
 
   private void looseTestInternal(String test, String method) {
     synchronized (lock) {
-      this.loseTest = test;
-      this.loseMethod = method;
-      this.defectTests++;
-      this.completedTests++;
+      this.myLostTest = test;
+      this.myLostMethod = method;
+      this.myDefectTests++;
+      this.myCompletedTests++;
       this.updateView();
-      this.loseTest = null;
-      this.loseMethod = null;
+      this.myLostTest = null;
+      this.myLostMethod = null;
     }
   }
 
   public void terminate() {
     synchronized (lock) {
-      this.isTerminated = true;
+      this.myIsTerminated = true;
       this.updateView();
     }
   }
 
   public void outputText(String text, Key key) {
     synchronized (lock) {
-      this.availableText = text;
-      this.key = key;
+      this.myAvailableText = text;
+      this.myKey = key;
       this.updateView();
-      this.availableText = null;
-      this.key = null;
+      this.myAvailableText = null;
+      this.myKey = null;
     }
   }
 
@@ -227,75 +227,75 @@ public class TestRunState {
       String testClassName = event.getTestCaseName();
       String testMethodName = event.getTestMethodName();
       String key = testClassName + '.' + testMethodName;
-      synchronized (this.testMethods) {
-        if (ListSequence.fromList(this.testMethods).contains(key)) {
-          ListSequence.fromList(this.testMethods).removeElement(key);
+      synchronized (this.myTestMethods) {
+        if (ListSequence.fromList(this.myTestMethods).contains(key)) {
+          ListSequence.fromList(this.myTestMethods).removeElement(key);
         }
       }
     }
   }
 
   public List<String> getUnusedMethods() {
-    return this.testMethods;
+    return this.myTestMethods;
   }
 
   public int getTotalTests() {
-    return this.totalTests;
+    return this.myTotalTests;
   }
 
   public int getDefectTests() {
-    return this.defectTests;
+    return this.myDefectTests;
   }
 
   public int getCompletedTests() {
-    return this.completedTests;
+    return this.myCompletedTests;
   }
 
   public String getCurrentClass() {
-    return this.curClass;
+    return this.myCurrentClass;
   }
 
   public String getCurrentMethod() {
-    return this.curMethod;
+    return this.myCurrentMethod;
   }
 
   public void setToken(String token) {
-    this.curToken = token;
+    this.myCurrentToken = token;
   }
 
   public String getToken() {
-    return this.curToken;
+    return this.myCurrentToken;
   }
 
   public String getLoseMethod() {
-    return this.loseMethod;
+    return this.myLostMethod;
   }
 
   public String getLoseClass() {
-    return this.loseTest;
+    return this.myLostTest;
   }
 
   public boolean isTerminated() {
-    return this.isTerminated;
+    return this.myIsTerminated;
   }
 
   public String getAvailableText() {
-    return this.availableText;
+    return this.myAvailableText;
   }
 
   public Key getKey() {
-    return this.key;
+    return this.myKey;
   }
 
   public void addListener(TestStateListener listener) {
-    ListSequence.fromList(this.listeners).addElement(listener);
+    ListSequence.fromList(this.myListeners).addElement(listener);
   }
 
   public void removeListener(TestStateListener listener) {
-    ListSequence.fromList(this.listeners).removeElement(listener);
+    ListSequence.fromList(this.myListeners).removeElement(listener);
   }
 
   public Map<SNode, List<SNode>> getTestsMap() {
-    return this.map;
+    return this.myTestToMethodsMap;
   }
 }

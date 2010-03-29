@@ -3485,8 +3485,8 @@
               <node role="componentType:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5507923377626958200">
                 <link role="classifier:3" targetNodeId="29.~JComponent" resolveInfo="JComponent" />
               </node>
-              <node role="componentType:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5507923377626958201">
-                <link role="classifier:3" targetNodeId="3.~Runnable" resolveInfo="Runnable" />
+              <node role="componentType:2" type="jetbrains.mps.baseLanguage.closures.structure.FunctionType:3" id="5076369874036956092">
+                <node role="resultType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5076369874036956093" />
               </node>
             </node>
           </node>

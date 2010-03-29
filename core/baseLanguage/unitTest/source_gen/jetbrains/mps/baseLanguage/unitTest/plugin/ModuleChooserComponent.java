@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ModuleChooserComponent extends BaseChooserComponent {
-  private List<IModule> checkedModules = ListSequence.fromList(new ArrayList<IModule>());
+  private final List<IModule> myCheckedModules = ListSequence.fromList(new ArrayList<IModule>());
 
   public ModuleChooserComponent() {
     super();
@@ -31,7 +31,7 @@ public class ModuleChooserComponent extends BaseChooserComponent {
       public void actionPerformed(ActionEvent p0) {
         ModuleChooserComponent.this.collectModules();
         StringBuilder result = new StringBuilder();
-        IModule module = CommonChoosers.showDialogModuleChooser(ModuleChooserComponent.this, "", ModuleChooserComponent.this.checkedModules, Collections.EMPTY_LIST);
+        IModule module = CommonChoosers.showDialogModuleChooser(ModuleChooserComponent.this, "", ModuleChooserComponent.this.myCheckedModules, Collections.EMPTY_LIST);
         if (module != null) {
           result.append(module.getModuleFqName());
           ModuleChooserComponent.this.setText(result.toString());
@@ -41,7 +41,7 @@ public class ModuleChooserComponent extends BaseChooserComponent {
   }
 
   private void collectModules() {
-    ListSequence.fromList(this.checkedModules).clear();
+    ListSequence.fromList(this.myCheckedModules).clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
@@ -49,10 +49,10 @@ public class ModuleChooserComponent extends BaseChooserComponent {
           SModel model = SNodeOperations.getModel(node);
           SModelDescriptor md = model.getModelDescriptor();
           IModule module = md.getModule();
-          if (ListSequence.fromList(ModuleChooserComponent.this.checkedModules).contains(module)) {
+          if (ListSequence.fromList(ModuleChooserComponent.this.myCheckedModules).contains(module)) {
             continue;
           }
-          ListSequence.fromList(ModuleChooserComponent.this.checkedModules).addElement(module);
+          ListSequence.fromList(ModuleChooserComponent.this.myCheckedModules).addElement(module);
         }
       }
     });

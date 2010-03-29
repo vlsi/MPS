@@ -19,18 +19,18 @@ public enum TestState {
   PAUSED("testPaused.png"),
   TERMINATED("testTerminated.png");
 
-  private Icon icon;
+  private final Icon myIcon;
 
   TestState(String iconName) {
     Language language = Language.getLanguageFor(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")).getModelDescriptor());
     String pathToIcon = Macros.languageDescriptor().expandPath(Macros.LANGUAGE_DESCRIPTOR + "\\icons\\states\\" + iconName, language.getDescriptorFile());
-    this.icon = IconManager.loadIcon(pathToIcon, true);
+    this.myIcon = IconManager.loadIcon(pathToIcon, true);
   }
 
   public Icon getIcon() {
     if (this.equals(TestState.IN_PROGRESS)) {
       return TestTreeIconAnimator.getCurrentFrame();
     }
-    return this.icon;
+    return this.myIcon;
   }
 }

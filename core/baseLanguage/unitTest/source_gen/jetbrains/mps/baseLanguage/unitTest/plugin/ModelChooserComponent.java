@@ -22,7 +22,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.smodel.SModel;
 
 public class ModelChooserComponent extends BaseChooserComponent {
-  private List<SModelDescriptor> checkedModels = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+  private final List<SModelDescriptor> myCheckedModels = ListSequence.fromList(new ArrayList<SModelDescriptor>());
 
   public ModelChooserComponent() {
     super();
@@ -30,7 +30,7 @@ public class ModelChooserComponent extends BaseChooserComponent {
       public void actionPerformed(ActionEvent p0) {
         ModelChooserComponent.this.collectModels();
         StringBuilder result = new StringBuilder();
-        SModelDescriptor modelDescriptor = CommonChoosers.showDialogModelChooser(ModelChooserComponent.this, ModelChooserComponent.this.checkedModels, Collections.EMPTY_LIST);
+        SModelDescriptor modelDescriptor = CommonChoosers.showDialogModelChooser(ModelChooserComponent.this, ModelChooserComponent.this.myCheckedModels, Collections.EMPTY_LIST);
         if (modelDescriptor != null) {
           result.append(modelDescriptor.getLongName());
           ModelChooserComponent.this.setText(result.toString());
@@ -40,17 +40,17 @@ public class ModelChooserComponent extends BaseChooserComponent {
   }
 
   private void collectModels() {
-    ListSequence.fromList(this.checkedModels).clear();
+    ListSequence.fromList(this.myCheckedModels).clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))), GlobalScope.getInstance(), new FindUsagesManager.ProgressAdapter(new EmptyProgressIndicator()), false));
         for (SNode node : nodes) {
           SModel model = SNodeOperations.getModel(node);
           SModelDescriptor md = model.getModelDescriptor();
-          if (ListSequence.fromList(ModelChooserComponent.this.checkedModels).contains(md)) {
+          if (ListSequence.fromList(ModelChooserComponent.this.myCheckedModels).contains(md)) {
             continue;
           }
-          ListSequence.fromList(ModelChooserComponent.this.checkedModels).addElement(md);
+          ListSequence.fromList(ModelChooserComponent.this.myCheckedModels).addElement(md);
         }
       }
     });
