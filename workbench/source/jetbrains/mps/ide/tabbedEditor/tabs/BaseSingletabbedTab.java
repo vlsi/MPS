@@ -22,6 +22,7 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.changesmanager.NodeFileStatusListener;
 import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -44,7 +45,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class BaseSingletabbedTab implements ILazyTab {
+public abstract class BaseSingletabbedTab extends AbstractLazyTab{
   private static final Logger LOG = Logger.getLogger(BaseSingletabbedTab.class);
 
   private SModelRepositoryListener myRepositoryListener;
@@ -53,15 +54,14 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
   private List<SModelDescriptor> myModelsWithListeners = new ArrayList<SModelDescriptor>();
 
   private EditorComponent myComponent;
-  private SNodePointer myBaseNode;
   private SNodePointer myLoadableNode;
   private Class<? extends BaseAdapter> myClass = BaseConcept.class;
   private TabbedEditor myTabbedEditor;
   private MyNodeFileStatusListener myNodeFileStatusListener = new MyNodeFileStatusListener();
 
   protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
+    super(baseNode);
     myTabbedEditor = tabbedEditor;
-    myBaseNode = new SNodePointer(baseNode);
     myClass = adapterClass;
   }
 
@@ -96,10 +96,6 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
   }
 
   public final void selectTab(int index) {
-  }
-
-  public SNode getBaseNode() {
-    return myBaseNode.getNode();
   }
 
   protected SNode getLoadableNode() {
@@ -213,10 +209,6 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     myModelsWithListeners.clear();
   }
 
-  public VirtualFile getBaseNodeVirtualFile() {
-    return MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
-  }
-
   private class MyNodeFileStatusListener implements NodeFileStatusListener {
     public void fileStatusChanged(final SNode node) {
       SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
@@ -232,8 +224,8 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
 
   private class MySModelAdapter extends SModelAdapter {
     public void rootRemoved(SModelRootEvent event) {
-      if (myBaseNode.getNode() == null) return;
-      if (myBaseNode.getNode() == event.getRoot()) return;
+      if (getBaseNode() == null) return;
+      if (getBaseNode() == event.getRoot()) return;
       if (getLoadableNode() != event.getRoot()) return;
 
       reinit();

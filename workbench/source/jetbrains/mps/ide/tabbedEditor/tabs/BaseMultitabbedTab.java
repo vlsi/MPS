@@ -31,6 +31,7 @@ import jetbrains.mps.changesmanager.NodeFileStatusListener;
 import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.LazyTabbedPane;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
@@ -64,13 +65,12 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.*;
 
-public abstract class BaseMultitabbedTab implements ILazyTab {
+public abstract class BaseMultitabbedTab extends AbstractLazyTab{
   private SModelRepositoryListener myRepositoryListener = new MySModelRepositoryAdapter();
   private SModelListener myModelListener = new MySModelAdapter();
   private List<SModelDescriptor> myModelsWithListeners = new ArrayList<SModelDescriptor>();
 
   private Set<SNodePointer> myLoadableNodes = new HashSet<SNodePointer>();
-  private SNodePointer myBaseNode;
   private JTabbedPane myInnerTabbedPane;
   private JPanel myComponent;
   private List<EditorComponent> myEditors = new ArrayList<EditorComponent>();
@@ -81,8 +81,8 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   private MyNodeFileStatusListener myNodeFileStatusListener = new MyNodeFileStatusListener();
 
   protected BaseMultitabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
+    super(baseNode);
     myTabbedEditor = tabbedEditor;
-    myBaseNode = new SNodePointer(baseNode);
     myClass = adapterClass;
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
     RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
@@ -132,10 +132,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       result.add(sNodePointer.getNode());
     }
     return result;
-  }
-
-  public SNode getBaseNode() {
-    return myBaseNode.getNode();
   }
 
   public TabbedEditor getTabbedEditor() {
@@ -330,10 +326,6 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myTabbedEditor.updateTabColor(this, getBaseNodeVirtualFile());
   }
 
-  public MPSNodeVirtualFile getBaseNodeVirtualFile() {
-    return MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
-  }
-
   public List<EditorComponent> getEditorComponents() {
     return new ArrayList<EditorComponent>(myEditors);
   }
@@ -424,8 +416,8 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
   private class MySModelAdapter extends SModelAdapter {
     public void rootRemoved(SModelRootEvent event) {
-      if (myBaseNode.getNode() == null) return;
-      if (myBaseNode.getNode() == event.getRoot()) return;
+      if (getBaseNode() == null) return;
+      if (getBaseNode() == event.getRoot()) return;
 
       if (getLoadableNodes().contains(event.getRoot())) {
         SNodePointer nodePointer = new SNodePointer(event.getRoot());
