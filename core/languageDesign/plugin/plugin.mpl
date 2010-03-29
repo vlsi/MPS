@@ -9,6 +9,7 @@
     <model modelUID="f:java_stub#jetbrains.mps.plugin(jetbrains.mps.plugin@java_stub)" />
     <model modelUID="f:java_stub#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" />
     <model modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
+    <model modelUID="r:b955964c-0fc4-409f-99d6-efa65acee108(jetbrains.mps.plugins.pluginparts.tabbedEditor)" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.lang.plugin#1203080439937" uuid="1d6e05d7-9de9-40a7-9dad-7b8444280942">

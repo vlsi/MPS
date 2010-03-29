@@ -56,7 +56,6 @@
   <import index="14" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="16" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
-  <import index="19" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.tabbedEditor(jetbrains.mps.plugins.pluginparts.tabbedEditor@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.plugins(jetbrains.mps.plugins@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.tool(jetbrains.mps.plugins.pluginparts.tool@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -88,9 +87,7 @@
   <import index="71" modelUID="f:java_stub#jetbrains.mps.plugins.projectplugins(jetbrains.mps.plugins.projectplugins@java_stub)" version="-1" />
   <import index="75" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="76" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.prefs(jetbrains.mps.plugins.pluginparts.prefs@java_stub)" version="-1" />
-  <import index="77" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <import index="78" modelUID="f:java_stub#com.intellij.openapi.options(com.intellij.openapi.options@java_stub)" version="-1" />
-  <import index="79" modelUID="f:java_stub#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
   <import index="80" modelUID="f:java_stub#com.intellij.util.xmlb.annotations(com.intellij.util.xmlb.annotations@java_stub)" version="-1" />
   <import index="81" modelUID="f:java_stub#com.intellij.util.xmlb(com.intellij.util.xmlb@java_stub)" version="-1" />
   <import index="82" modelUID="f:java_stub#org.jdom(org.jdom@java_stub)" version="-1" />
@@ -100,9 +97,7 @@
   <import index="87" modelUID="f:java_stub#jetbrains.mps.checkedName(jetbrains.mps.checkedName@java_stub)" version="-1" />
   <import index="88" modelUID="f:java_stub#jetbrains.mps.debug(jetbrains.mps.debug@java_stub)" version="-1" />
   <import index="89" modelUID="f:java_stub#jetbrains.mps.generator.impl(jetbrains.mps.generator.impl@java_stub)" version="-1" />
-  <import index="90" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <import index="91" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="92" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.info)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1203080454777">
     <property name="package:2" value="Plugin" />
     <property name="name:2" value="ProjectPlugin" />
@@ -2856,6 +2851,7 @@
       <link role="classifier:3" targetNodeId="70.~GeneratedActionGroup" resolveInfo="GeneratedActionGroup" />
     </node>
   </node>
+  <visible index="2" modelUID="r:b955964c-0fc4-409f-99d6-efa65acee108(jetbrains.mps.plugins.pluginparts.tabbedEditor)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1203866724605">
     <property name="name:3" value="GeneratedTabbedEditor" />
     <property name="package:3" value="EditorTabs" />
@@ -2891,8 +2887,8 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1204043445562" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1204044988770">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="1204051459085">
-          <link role="constructorDeclaration:3" targetNodeId="19.~BaseTabbedEditor.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.smodel.SNode)" resolveInfo="BaseTabbedEditor" />
-          <link role="baseMethodDeclaration:3" targetNodeId="19.~BaseTabbedEditor.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.smodel.SNode)" resolveInfo="BaseTabbedEditor" />
+          <link role="baseMethodDeclaration:3" targetNodeId="2v.504431509334724674" resolveInfo="BaseTabbedEditor" />
+          <link role="constructorDeclaration:3" targetNodeId="2v.504431509334724674" resolveInfo="BaseTabbedEditor" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1204051462430">
             <link role="variableDeclaration:3" targetNodeId="1204045054085" resolveInfo="operationContext" />
           </node>
@@ -3021,8 +3017,8 @@
     <node role="rootTemplateAnnotation$attribute:3" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1203866724656">
       <link role="applicableConcept:2" targetNodeId="1.1203866019489:23" resolveInfo="TabbedEditorDeclaration" />
     </node>
-    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1203866798166">
-      <link role="classifier:3" targetNodeId="19.~BaseTabbedEditor" resolveInfo="BaseTabbedEditor" />
+    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2208978668190299367">
+      <link role="classifier:3" targetNodeId="2v.504431509334724671" resolveInfo="BaseTabbedEditor" />
     </node>
     <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1204043037408">
       <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1204043037409">
@@ -4095,8 +4091,8 @@
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1204048557258" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1204048557259">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="1204300233683">
-            <link role="constructorDeclaration:3" targetNodeId="19.~BaseMultiTab.&lt;init&gt;(jetbrains.mps.ide.tabbedEditor.TabbedEditor,jetbrains.mps.smodel.SNode,java.lang.Class)" resolveInfo="BaseMultiTab" />
-            <link role="baseMethodDeclaration:3" targetNodeId="19.~BaseMultiTab.&lt;init&gt;(jetbrains.mps.ide.tabbedEditor.TabbedEditor,jetbrains.mps.smodel.SNode,java.lang.Class)" resolveInfo="BaseMultiTab" />
+            <link role="baseMethodDeclaration:3" targetNodeId="2v.504431509334724298" resolveInfo="BaseMultiTab" />
+            <link role="constructorDeclaration:3" targetNodeId="2v.504431509334724298" resolveInfo="BaseMultiTab" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1204300239921">
               <link role="variableDeclaration:3" targetNodeId="1204298170650" resolveInfo="tabbedEditor" />
             </node>
@@ -4708,8 +4704,8 @@
           </node>
         </node>
       </node>
-      <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1204296012420">
-        <link role="classifier:3" targetNodeId="19.~BaseMultiTab" resolveInfo="BaseMultiTab" />
+      <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2208978668190298359">
+        <link role="classifier:3" targetNodeId="2v.504431509334724271" resolveInfo="BaseMultiTab" />
       </node>
     </node>
   </node>
@@ -4723,16 +4719,15 @@
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1204048573090" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1204048573091" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1204048573092">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="1204728095934">
-            <link role="constructorDeclaration:3" targetNodeId="19.~BaseSingleTab.&lt;init&gt;(jetbrains.mps.ide.tabbedEditor.TabbedEditor,jetbrains.mps.smodel.SNode,java.lang.Class)" resolveInfo="BaseSingleTab" />
-            <link role="baseMethodDeclaration:3" targetNodeId="19.~BaseSingleTab.&lt;init&gt;(jetbrains.mps.ide.tabbedEditor.TabbedEditor,jetbrains.mps.smodel.SNode,java.lang.Class)" resolveInfo="BaseSingleTab" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1204728100638">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="2208978668190495553">
+            <link role="baseMethodDeclaration:3" targetNodeId="2v.504431509334724687" resolveInfo="BaseSingleTab" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2208978668190495554">
               <link role="variableDeclaration:3" targetNodeId="1204300072499" resolveInfo="tabbedEditor" />
             </node>
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1204728100639">
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2208978668190495555">
               <link role="variableDeclaration:3" targetNodeId="1204300072501" resolveInfo="baseNode" />
             </node>
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1204728100640">
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2208978668190495556">
               <link role="variableDeclaration:3" targetNodeId="1204300072503" resolveInfo="adapterClass" />
             </node>
           </node>
@@ -4741,7 +4736,7 @@
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="929556153838364275">
                 <link role="baseMethodDeclaration:3" targetNodeId="929556153838362620" resolveInfo="init" />
               </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="929556153838364276" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="2208978668190298361" />
             </node>
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="929556153838364278">
               <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition:2" id="929556153838364279">
@@ -5113,8 +5108,8 @@
           </node>
         </node>
       </node>
-      <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1204296020640">
-        <link role="classifier:3" targetNodeId="19.~BaseSingleTab" resolveInfo="BaseSingleTab" />
+      <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2208978668190298360">
+        <link role="classifier:3" targetNodeId="2v.504431509334724684" resolveInfo="BaseSingleTab" />
       </node>
     </node>
   </node>
@@ -11807,7 +11802,7 @@
     <property name="name:2" value="reduce_SingletabbedEditorTabType" />
     <link role="applicableConcept:2" targetNodeId="1.144706109457474501:23" resolveInfo="SingletabbedEditorTabType" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="144706109457489880">
-      <link role="classifier:3" targetNodeId="19.~BaseSingleTab" resolveInfo="BaseSingleTab" />
+      <link role="classifier:3" targetNodeId="2v.504431509334724684" resolveInfo="BaseSingleTab" />
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="144706109457489881" />
     </node>
   </node>
@@ -11815,7 +11810,7 @@
     <property name="name:2" value="reduce_MultitabbedEditorTabType" />
     <link role="applicableConcept:2" targetNodeId="1.144706109457489882:23" resolveInfo="MultitabbedEditorTabType" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="144706109457489904">
-      <link role="classifier:3" targetNodeId="19.~BaseMultiTab" resolveInfo="BaseMultiTab" />
+      <link role="classifier:3" targetNodeId="2v.504431509334724271" resolveInfo="BaseMultiTab" />
       <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="144706109457489905" />
     </node>
   </node>
@@ -13280,8 +13275,8 @@
     <link role="applicableConcept:2" targetNodeId="1.5703381818026462228:23" resolveInfo="AskStatement" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5158570261712548797">
       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5158570261712548799">
-        <link role="baseMethodDeclaration:3" targetNodeId="19.~TabHelper.ask(java.lang.String,java.lang.String):boolean" resolveInfo="ask" />
-        <link role="classConcept:3" targetNodeId="19.~TabHelper" resolveInfo="TabHelper" />
+        <link role="classConcept:3" targetNodeId="2v.504431509334724637" resolveInfo="TabHelper" />
+        <link role="baseMethodDeclaration:3" targetNodeId="2v.504431509334724642" resolveInfo="ask" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5158570261712548802">
           <property name="value:3" value="msg" />
           <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="5158570261712548830">
