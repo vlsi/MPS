@@ -4069,6 +4069,10 @@
     <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
     <property name="name:0" value="ParametrizedExecuteProcess" />
     <link role="extends:0" targetNodeId="3636700473138833152:23" resolveInfo="ParametrizedExecuteConceptFunction" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3607966867310349606">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="1110842925895076053:23" resolveInfo="Console_FunctionParameter" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3256691185935764587">
       <property name="value:0" value="create process" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
