@@ -46,7 +46,7 @@ public class Typeof_SingletabbedEditorTabType_SubtypingRule extends SubtypingRul
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.tabbedEditor(jetbrains.mps.plugins.pluginparts.tabbedEditor@java_stub)"), SNodeId.fromString("~BaseSingleTab")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:b955964c-0fc4-409f-99d6-efa65acee108(jetbrains.mps.plugins.pluginparts.tabbedEditor)"), SNodeId.fromString("504431509334724684")));
         result = quotedNode1_2;
       }
       return result;
@@ -59,7 +59,7 @@ public class Typeof_SingletabbedEditorTabType_SubtypingRule extends SubtypingRul
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.tabbedEditor(jetbrains.mps.plugins.pluginparts.tabbedEditor@java_stub)"), SNodeId.fromString("~BaseSingleTab")));
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("r:b955964c-0fc4-409f-99d6-efa65acee108(jetbrains.mps.plugins.pluginparts.tabbedEditor)"), SNodeId.fromString("504431509334724684")));
         result = quotedNode1_2;
       }
       return result;

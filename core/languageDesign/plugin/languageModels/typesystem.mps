@@ -51,12 +51,9 @@
   <import index="32" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="33" modelUID="f:java_stub#jetbrains.mps.checkedName(jetbrains.mps.checkedName@java_stub)" version="-1" />
   <import index="34" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="35" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.tabbedEditor(jetbrains.mps.plugins.pluginparts.tabbedEditor@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="39" modelUID="f:java_stub#com.intellij.execution.impl(com.intellij.execution.impl@java_stub)" version="-1" />
   <import index="41" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
-  <import index="42" modelUID="f:java_stub#com.intellij.execution.runners(com.intellij.execution.runners@java_stub)" version="-1" />
-  <import index="43" modelUID="f:java_stub#com.intellij.execution(com.intellij.execution@java_stub)" version="-1" />
   <import index="44" modelUID="f:java_stub#com.intellij.execution.configurations(com.intellij.execution.configurations@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1204039255253">
     <property name="name:3" value="typeof_ConceptFunctionParameter_node" />
@@ -1725,14 +1722,15 @@
       <link role="concept:3" targetNodeId="4.1628770029971140539:23" resolveInfo="PropertyRefType" />
     </node>
   </node>
+  <visible index="2" modelUID="r:b955964c-0fc4-409f-99d6-efa65acee108(jetbrains.mps.plugins.pluginparts.tabbedEditor)" />
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="144706109457490158">
     <property name="package:3" value="EditorTab" />
     <property name="name:3" value="Typeof_SingletabbedEditorTabType" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="144706109457490159">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="144706109457490160">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="144706109457490161">
-          <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="144706109457490162">
-            <link role="classifier:3" targetNodeId="35.~BaseSingleTab" resolveInfo="BaseSingleTab" />
+          <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7988267296495007648">
+            <link role="classifier:3" targetNodeId="2v.504431509334724684" resolveInfo="BaseSingleTab" />
           </node>
         </node>
       </node>
@@ -1748,8 +1746,8 @@
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="144706109457490165">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="144706109457490167">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="144706109457490168">
-          <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="144706109457490169">
-            <link role="classifier:3" targetNodeId="35.~BaseMultiTab" resolveInfo="BaseMultiTab" />
+          <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7988267296495007649">
+            <link role="classifier:3" targetNodeId="2v.504431509334724271" resolveInfo="BaseMultiTab" />
           </node>
         </node>
       </node>
@@ -2062,7 +2060,7 @@
       <link role="concept:3" targetNodeId="4.3856910426407529502:23" resolveInfo="BaseCreatorTarget" />
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="3856910426407530558">
     <property name="name:3" value="typeof_SNodeCreatorTarget" />
     <property name="package:3" value="RunConfigs.Create.Creator.Target" />
@@ -2071,7 +2069,7 @@
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3856910426407530569">
           <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="3856910426407530570">
             <node role="quotedNode:0" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3856910426407530572">
-              <link role="concept:16" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
+              <link role="concept:16" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
               <node role="referenceAntiquotation$link_attribute$concept:16" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="3856910426407530575">
                 <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3856910426407530578">
                   <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3856910426407530577">
@@ -2171,7 +2169,7 @@
       <link role="concept:3" targetNodeId="4.5818192529492099570:23" resolveInfo="CloseTabOperation" />
     </node>
   </node>
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
+  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="485694842828666112">
     <property name="name:3" value="typeof_SmartDisposeClosureParameterDeclaration" />
     <property name="package:3" value="Tool.Operations" />
@@ -2203,7 +2201,7 @@
             </node>
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="485694842828666129">
               <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="485694842828666130">
-                <link role="conceptDeclaration:16" targetNodeId="3v.1199569711397:3" resolveInfo="ClosureLiteral" />
+                <link role="conceptDeclaration:16" targetNodeId="4v.1199569711397:3" resolveInfo="ClosureLiteral" />
               </node>
             </node>
           </node>
@@ -2527,7 +2525,7 @@
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5857416866788541981">
           <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="5857416866788541982">
             <node role="quotedNode:0" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="5857416866788541984">
-              <link role="concept:16" targetNodeId="2v.1169194658468:0" resolveInfo="INamedConcept" />
+              <link role="concept:16" targetNodeId="3v.1169194658468:0" resolveInfo="INamedConcept" />
             </node>
           </node>
         </node>
