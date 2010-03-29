@@ -3441,7 +3441,7 @@
       </node>
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.AssertStatement:3" id="1135966777630207247">
         <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1135966777630207248">
-          <property name="value:3" value="don't use typeOperation within suchchake rules" />
+          <property name="value:3" value="don't use typeOperation within such rules" />
         </node>
         <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1135966777630207249">
           <link role="applicableNode:3" targetNodeId="6359146168314207375" resolveInfo="node_TypeOperation" />
