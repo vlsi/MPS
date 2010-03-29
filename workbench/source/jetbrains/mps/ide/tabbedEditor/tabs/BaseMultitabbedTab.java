@@ -148,18 +148,14 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
     return node.getName();
   }
 
-  private List<SNode> getAvailableConceptArray() {
-    return ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
-      public List<SNode> compute() {
-        return getAvailableConcepts(getBaseNode());
-      }
-    });
+  private List<SNode> getAvailableConcepts() {
+    return getAvailableConcepts(getBaseNode());
   }
 
   private void showConceptList(final RelativePoint relativePoint) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myListPopup = JBPopupFactory.getInstance().createListPopup(new BaseListPopupStep<SNode>("Choose concept", getAvailableConceptArray()) {
+        myListPopup = JBPopupFactory.getInstance().createListPopup(new BaseListPopupStep<SNode>("Choose concept", getAvailableConcepts()) {
           public Icon getIconFor(final SNode concept) {
             final Icon[] result = new Icon[1];
             ModelAccess.instance().runReadAction(new Runnable() {
@@ -237,7 +233,12 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
       final JButton button = new JButton();
       AbstractAction action = new AbstractAction("Create new") {
         public void actionPerformed(final ActionEvent e) {
-          if (getAvailableConceptArray().size() == 0) {
+          List<SNode> concepts = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
+            public List<SNode> compute() {
+              return getAvailableConcepts();
+            }
+          });
+          if (concepts.size() == 0) {
             createLoadableNode(true, null);
           } else {
             showConceptList(new RelativePoint(button, new Point(0, button.getHeight())));
@@ -351,7 +352,11 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
     if (!canCreate()) return;
 
     final Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
-    List<SNode> availableConcepts = getAvailableConceptArray();
+    List<SNode> availableConcepts = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
+      public List<SNode> compute() {
+        return getAvailableConcepts();
+      }
+    });
     if (availableConcepts.size() <= 1) {
       SNode concept = (availableConcepts.size() == 0) ? null : availableConcepts.get(0);
       if (!askCreate()) return;
