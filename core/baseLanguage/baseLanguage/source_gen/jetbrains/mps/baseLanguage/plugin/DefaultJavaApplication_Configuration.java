@@ -165,6 +165,9 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
         final JComponent finalConsoleComponent = consoleComponent;
         final Runnable finalConsoleDispose = consoleDispose;
         final ProcessHandler finalHandler = handler;
+        if (finalHandler == null) {
+          return null;
+        }
         return new ExecutionResult() {
           public ExecutionConsole getExecutionConsole() {
             return new ExecutionConsole() {
