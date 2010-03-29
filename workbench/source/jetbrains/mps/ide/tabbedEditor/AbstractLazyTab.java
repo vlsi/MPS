@@ -16,6 +16,8 @@
 
 package jetbrains.mps.ide.tabbedEditor;
 
+import jetbrains.mps.changesmanager.NodeFileStatusListener;
+import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -34,10 +36,17 @@ public abstract class AbstractLazyTab implements ILazyTab {
   private SModelListener myModelListener = createModelListener();
   private List<SModelDescriptor> myModelsWithListeners = new ArrayList<SModelDescriptor>();
 
+  private NodeFileStatusListener myNodeFileStatusListener = createFileStatusListener();
+
 
   public AbstractLazyTab(TabbedEditor tabbedEditor,SNode baseNode) {
     myTabbedEditor = tabbedEditor;
     myBaseNode = new SNodePointer(baseNode);
+
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabbedEditor().getOperationContext().getProject());
+    if (statusManager != null) {
+      statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
+    }    
   }
 
   public TabbedEditor getTabbedEditor() {
@@ -56,6 +65,7 @@ public abstract class AbstractLazyTab implements ILazyTab {
     return getTabbedEditor().getOperationContext();
   }
 
+  //todo make protected
   public void addModelToListen(SModelDescriptor model) {
     if (myModelsWithListeners.contains(model)) return;
     myModelsWithListeners.add(model);
@@ -63,6 +73,11 @@ public abstract class AbstractLazyTab implements ILazyTab {
   }
 
   public void dispose() {
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabbedEditor().getOperationContext().getProject());
+    if (statusManager != null) {
+      statusManager.removeNodeFileStatusListener(myNodeFileStatusListener);
+    }
+    
     for (SModelDescriptor d : myModelsWithListeners) {
       d.removeModelListener(myModelListener);
     }
@@ -70,4 +85,5 @@ public abstract class AbstractLazyTab implements ILazyTab {
   }
 
   protected abstract SModelListener createModelListener();
+  protected abstract NodeFileStatusListener createFileStatusListener();
 }

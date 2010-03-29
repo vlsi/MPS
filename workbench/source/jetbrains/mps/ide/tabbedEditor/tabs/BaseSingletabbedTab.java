@@ -46,7 +46,6 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
 
   private EditorComponent myComponent;
   private SNodePointer myLoadableNode;
-  private MyNodeFileStatusListener myNodeFileStatusListener = new MyNodeFileStatusListener();
 
   @Deprecated //for compatibility
   protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
@@ -136,10 +135,6 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
       SModelDescriptor descriptor = loadableNode.getModel().getModelDescriptor();
       addModelToListen(descriptor);
 
-      RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabbedEditor().getOperationContext().getProject());
-      if (statusManager != null) {
-        statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
-      }
       return true;
     }
 
@@ -165,10 +160,6 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
   }
 
   public void dispose() {
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabbedEditor().getOperationContext().getProject());
-    if (statusManager != null) {
-      statusManager.removeNodeFileStatusListener(myNodeFileStatusListener);
-    }
     if (myRepositoryListener != null) {
       SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
     }
@@ -238,6 +229,10 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
   }
 
   //------------
+
+  protected NodeFileStatusListener createFileStatusListener() {
+    return new MyNodeFileStatusListener();
+  }
 
   private class MyNodeFileStatusListener implements NodeFileStatusListener {
     public void fileStatusChanged(final SNode node) {

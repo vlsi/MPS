@@ -59,9 +59,12 @@ import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-public abstract class BaseMultitabbedTab extends AbstractLazyTab{
+public abstract class BaseMultitabbedTab extends AbstractLazyTab {
   private SModelRepositoryListener myRepositoryListener = new MySModelRepositoryAdapter();
 
   private Set<SNodePointer> myLoadableNodes = new HashSet<SNodePointer>();
@@ -70,20 +73,16 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
   private List<EditorComponent> myEditors = new ArrayList<EditorComponent>();
   private int myCurrentIndex = 0;
   private ListPopup myListPopup;
-  private MyNodeFileStatusListener myNodeFileStatusListener = new MyNodeFileStatusListener();
 
-  @Deprecated //for compatibility
+  @Deprecated
+  //for compatibility
   protected BaseMultitabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-    this(tabbedEditor,baseNode);
+    this(tabbedEditor, baseNode);
   }
 
   protected BaseMultitabbedTab(TabbedEditor tabbedEditor, SNode baseNode) {
-    super(tabbedEditor,baseNode);
+    super(tabbedEditor, baseNode);
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getOperationContext().getProject());
-    if (statusManager != null) {
-      statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
-    }
   }
 
   private void closeTab(SNodePointer nodePointer, int index) {
@@ -261,12 +260,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
     }
   }
 
-  @Override
   public void dispose() {
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getOperationContext().getProject());
-    if (statusManager != null) {
-      statusManager.removeNodeFileStatusListener(myNodeFileStatusListener);
-    }
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
     super.dispose();
   }
@@ -455,6 +449,10 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
   }
 
   //------------
+
+  protected NodeFileStatusListener createFileStatusListener() {
+    return new MyNodeFileStatusListener();
+  }
 
   private class MyNodeFileStatusListener implements NodeFileStatusListener {
     public void fileStatusChanged(final SNode node) {
