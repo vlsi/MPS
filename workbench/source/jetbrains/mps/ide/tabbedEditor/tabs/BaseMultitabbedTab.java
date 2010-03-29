@@ -67,8 +67,6 @@ import java.util.*;
 
 public abstract class BaseMultitabbedTab extends AbstractLazyTab{
   private SModelRepositoryListener myRepositoryListener = new MySModelRepositoryAdapter();
-  private SModelListener myModelListener = new MySModelAdapter();
-  private List<SModelDescriptor> myModelsWithListeners = new ArrayList<SModelDescriptor>();
 
   private Set<SNodePointer> myLoadableNodes = new HashSet<SNodePointer>();
   private JTabbedPane myInnerTabbedPane;
@@ -272,6 +270,10 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
     }
   }
 
+  protected SModelListener createModelListener() {
+    return new MySModelAdapter();
+  }
+
   @Override
   public void dispose() {
     RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getOperationContext().getProject());
@@ -279,10 +281,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
       statusManager.removeNodeFileStatusListener(myNodeFileStatusListener);
     }
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
-    for (SModelDescriptor d : myModelsWithListeners) {
-      d.removeModelListener(myModelListener);
-    }
-    myModelsWithListeners.clear();
+    super.dispose();
   }
 
   private JComponent addInnerTab(SNode loadableNode, IOperationContext operationContext) {
@@ -298,12 +297,6 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
     SModelDescriptor d = loadableNode.getModel().getModelDescriptor();
     addModelToListen(d);
     return jComponent;
-  }
-
-  public void addModelToListen(SModelDescriptor model) {
-    if (myModelsWithListeners.contains(model)) return;
-    myModelsWithListeners.add(model);
-    model.addModelListener(myModelListener);
   }
 
   private void updateTabColor(int tabIndex) {

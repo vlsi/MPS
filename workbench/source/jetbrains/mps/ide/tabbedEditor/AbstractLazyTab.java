@@ -17,14 +17,23 @@
 package jetbrains.mps.ide.tabbedEditor;
 
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractLazyTab implements ILazyTab {
   private SNodePointer myBaseNode;
   private TabbedEditor myTabbedEditor;
+
+  private SModelListener myModelListener = createModelListener();
+  private List<SModelDescriptor> myModelsWithListeners = new ArrayList<SModelDescriptor>();
+
 
   public AbstractLazyTab(TabbedEditor tabbedEditor,SNode baseNode) {
     myTabbedEditor = tabbedEditor;
@@ -46,4 +55,19 @@ public abstract class AbstractLazyTab implements ILazyTab {
   protected IOperationContext getOperationContext() {
     return getTabbedEditor().getOperationContext();
   }
+
+  public void addModelToListen(SModelDescriptor model) {
+    if (myModelsWithListeners.contains(model)) return;
+    myModelsWithListeners.add(model);
+    model.addModelListener(myModelListener);
+  }
+
+  public void dispose() {
+    for (SModelDescriptor d : myModelsWithListeners) {
+      d.removeModelListener(myModelListener);
+    }
+    myModelsWithListeners.clear();
+  }
+
+  protected abstract SModelListener createModelListener();
 }

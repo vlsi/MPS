@@ -47,9 +47,6 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
 
   private SModelRepositoryListener myRepositoryListener;
 
-  private SModelListener myModelListener = new MySModelAdapter();
-  private List<SModelDescriptor> myModelsWithListeners = new ArrayList<SModelDescriptor>();
-
   private EditorComponent myComponent;
   private SNodePointer myLoadableNode;
   private MyNodeFileStatusListener myNodeFileStatusListener = new MyNodeFileStatusListener();
@@ -61,6 +58,10 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
 
   protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode) {
     super(tabbedEditor, baseNode);
+  }
+
+  protected SModelListener createModelListener() {
+    return new MySModelAdapter();
   }
 
   private void reinit() {
@@ -140,10 +141,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
       myLoadableNode = new SNodePointer(loadableNode);
 
       SModelDescriptor descriptor = loadableNode.getModel().getModelDescriptor();
-      if (!myModelsWithListeners.contains(descriptor)) {
-        descriptor.addModelListener(myModelListener);
-        myModelsWithListeners.add(descriptor);
-      }
+      addModelToListen(descriptor);
 
       RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabbedEditor().getOperationContext().getProject());
       if (statusManager != null) {
@@ -181,10 +179,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
     if (myRepositoryListener != null) {
       SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
     }
-    for (SModelDescriptor d : myModelsWithListeners) {
-      d.removeModelListener(myModelListener);
-    }
-    myModelsWithListeners.clear();
+    super.dispose();
   }
 
   //------------model listening
@@ -192,8 +187,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
   public void addListener(final Condition<SModelDescriptor> listenCondition) {
     final SModelDescriptor nodeModelDescriptor = getBaseNode().getModel().getModelDescriptor();
     if (nodeModelDescriptor != null) {
-      nodeModelDescriptor.addModelListener(myModelListener);
-      myModelsWithListeners.add(nodeModelDescriptor);
+      addModelToListen(nodeModelDescriptor);
     } else {
       myRepositoryListener = new MySModelRepositoryAdapter(listenCondition);
       SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
@@ -230,8 +224,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
       if (ProjectModels.isProjectModel(modelDescriptor.getSModelReference())) return;
       if (!myListenCondition.met(modelDescriptor)) return;
 
-      modelDescriptor.addModelListener(myModelListener);
-      myModelsWithListeners.add(modelDescriptor);
+      addModelToListen(modelDescriptor);
       SModelRepository.getInstance().removeModelRepositoryListener(this);
     }
 
