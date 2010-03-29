@@ -74,14 +74,17 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
   private JTabbedPane myInnerTabbedPane;
   private JPanel myComponent;
   private List<EditorComponent> myEditors = new ArrayList<EditorComponent>();
-  private Class<? extends BaseAdapter> myClass;
   private int myCurrentIndex = 0;
   private ListPopup myListPopup;
   private MyNodeFileStatusListener myNodeFileStatusListener = new MyNodeFileStatusListener();
 
+  @Deprecated //for compatibility
   protected BaseMultitabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
+    this(tabbedEditor,baseNode);
+  }
+
+  protected BaseMultitabbedTab(TabbedEditor tabbedEditor, SNode baseNode) {
     super(tabbedEditor,baseNode);
-    myClass = adapterClass;
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
     RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getOperationContext().getProject());
     if (statusManager != null) {
@@ -433,43 +436,6 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab{
         if (context != null) {
           addInnerTabChecked(event.getRoot(), context);
         }
-      }
-    }
-
-    public void referenceAdded(SModelReferenceEvent event) {
-      SReference reference = event.getReference();
-      INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
-      if (!myClass.isInstance(referentNode)) return;
-
-      Map<SNode, IOperationContext> nodesMap = new HashMap<SNode, IOperationContext>();
-      for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
-        nodesMap.put(p.o1, p.o2);
-      }
-
-      List<SNode> nodes = new ArrayList<SNode>(nodesMap.keySet());
-      nodes.removeAll(getLoadableNodes());
-      if (nodes.size() > 0) {
-        SNode node = nodes.get(0);
-        addInnerTabChecked(node, nodesMap.get(node));
-      }
-    }
-
-    public void referenceRemoved(SModelReferenceEvent event) {
-      SReference reference = event.getReference();
-      INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
-      if (!myClass.isInstance(referentNode)) return;
-
-      Map<SNode, IOperationContext> nodesMap = new HashMap<SNode, IOperationContext>();
-      for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
-        nodesMap.put(p.o1, p.o2);
-      }
-
-      List<SNode> nodes = getLoadableNodes();
-      nodes.removeAll(nodesMap.keySet());
-
-      if (nodes.size() > 0) {
-        SNodePointer nodePointer = new SNodePointer(nodes.get(0));
-        closeTab(nodePointer, getIndexOfTabFor(nodePointer));
       }
     }
 

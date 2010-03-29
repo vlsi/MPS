@@ -174,7 +174,6 @@ public class TabbedEditor implements IEditor {
     return myTabbedPane;
   }
 
-
   public void addCellSelectionListener(@NotNull CellSelectionListener listener) {
     for (EditorComponent c : getEditors()) {
       c.addCellSelectionListener(listener);

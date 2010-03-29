@@ -17,13 +17,11 @@ package jetbrains.mps.ide.tabbedEditor.tabs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.changesmanager.NodeFileStatusListener;
 import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
-import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -36,7 +34,6 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
@@ -45,7 +42,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public abstract class BaseSingletabbedTab extends AbstractLazyTab{
+public abstract class BaseSingletabbedTab extends AbstractLazyTab {
   private static final Logger LOG = Logger.getLogger(BaseSingletabbedTab.class);
 
   private SModelRepositoryListener myRepositoryListener;
@@ -55,23 +52,15 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab{
 
   private EditorComponent myComponent;
   private SNodePointer myLoadableNode;
-  private Class<? extends BaseAdapter> myClass = BaseConcept.class;
   private MyNodeFileStatusListener myNodeFileStatusListener = new MyNodeFileStatusListener();
 
+  @Deprecated //for compatibility
   protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-    super(tabbedEditor,baseNode);
-    myClass = adapterClass;
+    this(tabbedEditor, baseNode);
   }
 
-  public void addListener(final Condition<SModelDescriptor> listenCondition) {
-    final SModelDescriptor nodeModelDescriptor = getBaseNode().getModel().getModelDescriptor();
-    if (nodeModelDescriptor != null) {
-      nodeModelDescriptor.addModelListener(myModelListener);
-      myModelsWithListeners.add(nodeModelDescriptor);
-    } else {
-      myRepositoryListener = new MySModelRepositoryAdapter(listenCondition);
-      SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
-    }
+  protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode) {
+    super(tabbedEditor, baseNode);
   }
 
   private void reinit() {
@@ -198,16 +187,16 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab{
     myModelsWithListeners.clear();
   }
 
-  private class MyNodeFileStatusListener implements NodeFileStatusListener {
-    public void fileStatusChanged(final SNode node) {
-      SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-        public SNodePointer compute() {
-          return new SNodePointer(node);
-        }
-      });
-      if (EqualUtil.equals(myLoadableNode, nodePointer)) {
-        getTabbedEditor().updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
-      }
+  //------------model listening
+
+  public void addListener(final Condition<SModelDescriptor> listenCondition) {
+    final SModelDescriptor nodeModelDescriptor = getBaseNode().getModel().getModelDescriptor();
+    if (nodeModelDescriptor != null) {
+      nodeModelDescriptor.addModelListener(myModelListener);
+      myModelsWithListeners.add(nodeModelDescriptor);
+    } else {
+      myRepositoryListener = new MySModelRepositoryAdapter(listenCondition);
+      SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
     }
   }
 
@@ -222,24 +211,6 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab{
 
     public void rootAdded(SModelRootEvent event) {
       if (!newNode()) return;
-      reinit();
-    }
-
-    public void referenceAdded(SModelReferenceEvent event) {
-      SReference reference = event.getReference();
-      INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
-      if (!myClass.isInstance(referentNode)) return;
-      if (!newNode()) return;
-
-      reinit();
-    }
-
-    public void referenceRemoved(SModelReferenceEvent event) {
-      SReference reference = event.getReference();
-      INodeAdapter referentNode = reference.getSourceNode().getContainingRoot().getAdapter();
-      if (!myClass.isInstance(referentNode)) return;
-      if (!newNode()) return;
-
       reinit();
     }
 
@@ -273,6 +244,21 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab{
       if (!modelDescriptor.equals(md)) return;
 
       reinit();
+    }
+  }
+
+  //------------
+
+  private class MyNodeFileStatusListener implements NodeFileStatusListener {
+    public void fileStatusChanged(final SNode node) {
+      SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+        public SNodePointer compute() {
+          return new SNodePointer(node);
+        }
+      });
+      if (EqualUtil.equals(myLoadableNode, nodePointer)) {
+        getTabbedEditor().updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
+      }
     }
   }
 }
