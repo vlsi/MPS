@@ -153,17 +153,29 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
               }
             };
 
+            final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
             // create process handler 
-            handler = (ProcessHandler) new _FunctionTypes._return_P0_E0<ProcessHandler>() {
-              public ProcessHandler invoke() {
-                return parameter.execute();
+            handler = (ProcessHandler) new _FunctionTypes._return_P0_E0<Object>() {
+              public Object invoke() {
+                try {
+                  return parameter.execute();
+                } catch (ExecutionException e) {
+                  ex.value = e;
+                  return null;
+                }
               }
             }.invoke();
+            if (ex.value != null) {
+              throw ex.value;
+            }
           }
         }
         final JComponent finalConsoleComponent = consoleComponent;
         final Runnable finalConsoleDispose = consoleDispose;
         final ProcessHandler finalHandler = handler;
+        if (finalHandler == null) {
+          return null;
+        }
         return new ExecutionResult() {
           public ExecutionConsole getExecutionConsole() {
             return new ExecutionConsole() {

@@ -26,6 +26,7 @@ import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
@@ -92,7 +93,7 @@ public class VMCreator {
           myExecutionResult.getProcessHandler().addProcessListener(processListener);
         }
         myProcessListeners.clear();
-        ProcessHandler processHandler = myExecutionResult.getProcessHandler();
+        @NotNull ProcessHandler processHandler = myExecutionResult.getProcessHandler();
         myDebuggerSession.setProcessHandler(processHandler);
         fixStopBugUnderLinux(processHandler, myDebuggerSession);
       }
