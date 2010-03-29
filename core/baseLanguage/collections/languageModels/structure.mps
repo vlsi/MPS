@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="2">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AbstractListOperation" conceptFQName="jetbrains.mps.baseLanguage.ext.collections.lang.structure.AbstractListOperation" featureKind="CONCEPT" />
@@ -315,6 +316,7 @@
     <refactoringContext modelVersion="3">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AddSetElementOperaration" conceptFQName="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperaration" featureKind="CONCEPT" />
@@ -325,6 +327,7 @@
     <refactoringContext modelVersion="4">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="RemoveAllSetElements" conceptFQName="jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElements" featureKind="CONCEPT" />
@@ -335,6 +338,7 @@
     <refactoringContext modelVersion="5">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="SortOperationNew" conceptFQName="jetbrains.mps.baseLanguage.collections.structure.SortOperationNew" featureKind="CONCEPT" />
@@ -345,6 +349,7 @@
     <refactoringContext modelVersion="6">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="SelectOperationNew" conceptFQName="jetbrains.mps.baseLanguage.collections.structure.SelectOperationNew" featureKind="CONCEPT" />
@@ -355,6 +360,7 @@
     <refactoringContext modelVersion="7">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="WhereOperationNew" conceptFQName="jetbrains.mps.baseLanguage.collections.structure.WhereOperationNew" featureKind="CONCEPT" />
@@ -1741,6 +1747,10 @@
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3358009230509381715">
       <link role="conceptLinkDeclaration:0" targetNodeId="3358009230509381714:7" resolveInfo="availableFor" />
       <link role="target:0" targetNodeId="1151688443754:7" resolveInfo="ListType" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="2458725063871404904">
+      <link role="conceptLinkDeclaration:0" targetNodeId="3358009230509381714:7" resolveInfo="availableFor" />
+      <link role="target:0" targetNodeId="3358009230509553641:7" resolveInfo="LinkedListType" />
     </node>
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3358009230509516566">
       <link role="conceptLinkDeclaration:0" targetNodeId="3358009230509381714:7" resolveInfo="availableFor" />

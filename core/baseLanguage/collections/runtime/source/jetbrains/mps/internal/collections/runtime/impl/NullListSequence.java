@@ -163,7 +163,7 @@ public class NullListSequence<T> extends NullCollectionSequence<T> implements IL
         return (T[]) EMPTY_ARRAY;
     }
 
-    private static class EmptyListIterator<U> implements ListIterator<U> {
+    protected static class EmptyListIterator<U> implements ListIterator<U> {
 
         public void add(U e) {
         }

@@ -15,6 +15,7 @@ import java.io.ObjectOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
+import jetbrains.mps.internal.collections.runtime.LinkedListSequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
@@ -22,6 +23,7 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import java.util.Deque;
 
 public class List_Test extends Util_Test {
   public void test_listCreator() throws Exception {
@@ -225,7 +227,7 @@ public class List_Test extends Util_Test {
   public void test__toString() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     Assert.assertEquals("[1, 2, 3, 4, 5]", String.valueOf(test));
-    List<List<Integer>> test2 = ListSequence.fromListAndArray(new ArrayList<List<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 1), ListSequence.fromListAndArray(new LinkedList<Integer>(), 2));
+    List<List<Integer>> test2 = ListSequence.fromListAndArray(new ArrayList<List<Integer>>(), ListSequence.fromListAndArray(new ArrayList<Integer>(), 1), LinkedListSequence.fromListAndArray(new LinkedList<Integer>(), 2));
     Assert.assertEquals("[[1], [2]]", String.valueOf(test2));
   }
 
@@ -358,6 +360,11 @@ __switch__:
   public void test_mps8045() throws Exception {
     Assert.assertNotNull(Collections.synchronizedList(ListSequence.fromList(new ArrayList())));
     Assert.assertNotNull(Collections.synchronizedSet(SetSequence.fromSet(new HashSet())));
+  }
+
+  public void test_linkedlist() throws Exception {
+    Deque<Integer> ll = LinkedListSequence.fromLinkedList(new LinkedList<Integer>());
+    Assert.assertTrue(LinkedListSequence.fromLinkedList(ll).isEmpty());
   }
 
   public List<Foo> mps5684helper() {

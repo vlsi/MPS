@@ -6218,6 +6218,34 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="2458725063871404114">
+        <property name="methodName" value="linkedlist" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2458725063871404115" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2458725063871404116" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2458725063871404117">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2458725063871404118">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2458725063871404119">
+              <property name="name:3" value="ll" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.LinkedListType:7" id="2458725063871404120">
+                <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="2458725063871404122" />
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2458725063871404124">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator:7" id="2458725063871404125">
+                  <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="2458725063871404126" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" id="2458725063871516453">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2458725063871516456">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2458725063871516455">
+                <link role="variableDeclaration:3" targetNodeId="2458725063871404119" resolveInfo="ll" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation:7" id="2458725063871516460" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1205949265850">
       <link role="classifier:3" targetNodeId="1.1204129267857" resolveInfo="Util_Test" />
