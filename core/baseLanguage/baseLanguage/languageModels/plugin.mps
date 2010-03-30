@@ -2298,7 +2298,7 @@
                                   </node>
                                   <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5033107305426578153">
                                     <link role="classConcept:3" targetNodeId="82.~FindUtils" resolveInfo="FindUtils" />
-                                    <link role="baseMethodDeclaration:3" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.model.IResultProvider):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
+                                    <link role="baseMethodDeclaration:3" targetNodeId="82.~FindUtils.getSearchResults(com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.findusages.model.SearchQuery,jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.SearchResults" resolveInfo="getSearchResults" />
                                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5033107305426578154">
                                       <link role="variableDeclaration:3" targetNodeId="1225455494785" resolveInfo="indiactor" />
                                     </node>
@@ -2307,7 +2307,7 @@
                                     </node>
                                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5033107305426578161">
                                       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5033107305426578162">
-                                        <link role="baseMethodDeclaration:3" targetNodeId="83.~AllMethodUsages_Finder.&lt;init&gt;()" resolveInfo="AllMethodUsages_Finder" />
+                                        <link role="baseMethodDeclaration:3" targetNodeId="83.~ExactMethodUsages_Finder.&lt;init&gt;()" resolveInfo="ExactMethodUsages_Finder" />
                                       </node>
                                     </node>
                                   </node>

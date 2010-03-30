@@ -24,6 +24,7 @@
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntry type="module" module-name="dataFlow-runtime" />
     <orderEntry type="module" module-name="dataFlow" />
+    <orderEntry type="module" module-name="pattern" />
   </component>
 </module>
 
