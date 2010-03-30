@@ -73,16 +73,19 @@ public class BlameDialog extends BaseDialog {
 
   private boolean myIsCancelled = true;
   private Response myResult;
+  private Project myProject;
 
   private List<Throwable> myEx = new ArrayList<Throwable>();
 
-  public BlameDialog(Dialog dialog) {
+  public BlameDialog(Project project, Dialog dialog) {
     super(dialog, CAPTION);
+    myProject = project;
     init();
   }
 
-  public BlameDialog(Frame mainFrame) {
+  public BlameDialog(Project project, Frame mainFrame) {
     super(mainFrame, CAPTION);
+    myProject = project;
     init();
   }
 
@@ -114,8 +117,7 @@ public class BlameDialog extends BaseDialog {
 
     myTestLoginButton.setAction(new AbstractAction("Test Login") {
       public void actionPerformed(ActionEvent e) {
-        Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-        Poster poster = new Poster(project);
+        Poster poster = new Poster(myProject);
         Query query = createQuery();
 
         Response response = poster.test(query);
@@ -208,8 +210,7 @@ public class BlameDialog extends BaseDialog {
       description.append(ex2str(ex)).append("\n\n");
     }
 
-    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    Poster poster = new Poster(project);
+    Poster poster = new Poster(myProject);
     Query query = createQuery();
     query.setIssue(title);
     query.setDescription(description.toString());

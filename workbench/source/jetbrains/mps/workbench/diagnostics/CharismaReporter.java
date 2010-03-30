@@ -15,21 +15,21 @@
  */
 package jetbrains.mps.workbench.diagnostics;
 
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.diagnostic.ErrorReportSubmitter;
 import com.intellij.openapi.diagnostic.IdeaLoggingEvent;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo;
 import com.intellij.openapi.diagnostic.SubmittedReportInfo.SubmissionStatus;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import java.awt.Component;
 
 public class CharismaReporter extends ErrorReportSubmitter {
-  private static final Logger LOG = Logger.getLogger(CharismaReporter.class);
-
   public String getReportActionText() {
     return "Report To JetBrains MPS Tracker";
   }
@@ -41,7 +41,8 @@ public class CharismaReporter extends ErrorReportSubmitter {
       return new SubmittedReportInfo(null, null, SubmissionStatus.FAILED);
     }
 
-    BlameDialog blameDialog = BlameDialogComponent.getInstance().createDialog(parentComponent);
+    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    BlameDialog blameDialog = BlameDialogComponent.getInstance().createDialog(project, parentComponent);
     blameDialog.addEx(events[0].getThrowable());
     blameDialog.setIssueTitle(events[0].getMessage());
 

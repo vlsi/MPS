@@ -23,9 +23,9 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.WindowManager;
-import com.intellij.ui.content.MessageView;
-import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.MessageView;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
@@ -40,11 +40,11 @@ import jetbrains.mps.ide.messages.MessagesViewTool.MyState;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.EqualUtil;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -330,7 +330,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       }
       if (containsError) {
         group.addSeparator();
-        group.add(new BaseAction(messages.length > 1? "Submit as One Issue" : "Submit to Issue Tracker") {
+        group.add(new BaseAction(messages.length > 1 ? "Submit as One Issue" : "Submit to Issue Tracker") {
           {
             setExecuteOutsideCommand(true);
           }
@@ -357,7 +357,8 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   private void submitToTracker(Object[] msgs) {
-    BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(WindowManager.getInstance().getFrame(getProject()));
+    JFrame frame = WindowManager.getInstance().getFrame(getProject());
+    BlameDialog dialog = BlameDialogComponent.getInstance().createDialog(getProject(), frame);
     StringBuilder issueTitle = new StringBuilder();
     for (Object msg : msgs) {
       if (!(msg instanceof Message)) continue;

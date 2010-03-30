@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.blame.dialog.BlameDialog.MyState;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -61,14 +62,14 @@ public class BlameDialogComponent implements ApplicationComponent, PersistentSta
     myDialogState = state;
   }
 
-  public BlameDialog createDialog(Component component) {
+  public BlameDialog createDialog(Project project, Component component) {
     component = SwingUtilities.getRoot(component);
 
     BlameDialog result;
     if (component instanceof Dialog) {
-      result = new BlameDialog((Dialog) component);
+      result = new BlameDialog(project, (Dialog) component);
     } else if (component instanceof Frame) {
-      result = new BlameDialog((Frame) component);
+      result = new BlameDialog(project, (Frame) component);
     } else {
       throw new IllegalArgumentException("Can't show on " + component);
     }
