@@ -178,6 +178,18 @@ public class LeftEditorHighlighter extends JComponent {
     MPSToolTipManager.getInstance().unregisterComponent(this);
   }
 
+  public void addFoldingAreaPainter(AbstractFoldingAreaPainter painter) {
+    myFoldingAreaPainters.add(painter);
+    relayout(true);
+    repaint();
+  }
+
+  public void removeFoldingAreaPainter(AbstractFoldingAreaPainter painter) {
+    myFoldingAreaPainters.add(painter);
+    relayout(true);
+    repaint();
+  }
+
   @Override
   public void paint(Graphics g) {
     paintBackgroundAndFoldingLine(g);
