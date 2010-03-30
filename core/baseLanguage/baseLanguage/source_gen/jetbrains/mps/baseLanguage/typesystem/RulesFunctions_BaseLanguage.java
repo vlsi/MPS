@@ -30,9 +30,10 @@ import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -516,68 +517,101 @@ __switch__:
 
   @CheckingMethod
   /*package*/ static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode) {
-    for (SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a31_0().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a31().createNode(typeCheckingContext))) {
-        SetSequence.fromSet(throwables).removeElement(livingThrowable);
+    List<SNode> throwTypes = ListSequence.fromListWithValues(new ArrayList<SNode>(), throwables);
+    ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
+      public boolean accept(SNode tt) {
+        return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a0b0n_0().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a0b0n().createNode(typeCheckingContext));
       }
-    }
-    if (SetSequence.fromSet(throwables).isEmpty()) {
+    });
+    if (ListSequence.fromList(throwTypes).isEmpty()) {
       return;
     }
-    List<SNode> statementLists = SNodeOperations.getAncestors(mainNode, "jetbrains.mps.baseLanguage.structure.StatementList", false);
-    for (SNode statementList : statementLists) {
-      SNode parent = SNodeOperations.getParent(statementList);
-      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryStatement") && SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TryStatement"), "body", true) == statementList) {
-        SNode tryStatement = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TryStatement");
-        for (SNode catchClause : SLinkOperations.getTargets(tryStatement, "catchClause", true)) {
-          SNode throwableType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
-          for (SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
-              SetSequence.fromSet(throwables).removeElement(livingThrowable);
-            }
-          }
-        }
-      }
-      if (SetSequence.fromSet(throwables).isEmpty()) {
+    List<SNode> ancSLs = SNodeOperations.getAncestors(mainNode, "jetbrains.mps.baseLanguage.structure.StatementList", false);
+    boolean use_quickfix = false;
+with_anc:
+    for (SNode anc : SNodeOperations.getAncestorsWhereConceptInList(mainNode, new String[]{"jetbrains.mps.baseLanguage.structure.TryStatement","jetbrains.mps.baseLanguage.structure.TryCatchStatement","jetbrains.mps.baseLanguage.structure.IStatementListContainer"}, false)) {
+      if (ListSequence.fromList(throwTypes).isEmpty()) {
         return;
       }
-      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement") && SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), "body", true) == statementList) {
-        SNode tryCatchStatement = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
-        for (SNode catchClause : SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)) {
-          SNode throwableType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
-          for (SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
-              SetSequence.fromSet(throwables).removeElement(livingThrowable);
-            }
-          }
-        }
-      }
-      if (SetSequence.fromSet(throwables).isEmpty()) {
-        return;
-      }
-      if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "body", true) == statementList) {
-        SNode baseMethodDeclaration = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-        for (SNode throwableType : SLinkOperations.getTargets(baseMethodDeclaration, "throwsItem", true)) {
-          for (SNode livingThrowable : SetSequence.fromSetWithValues(new HashSet<SNode>(), throwables)) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(livingThrowable, throwableType)) {
-              SetSequence.fromSet(throwables).removeElement(livingThrowable);
-            }
-          }
-        }
-        if (!(SetSequence.fromSet(throwables).isEmpty())) {
-          String errorString = "uncaught exceptions:";
-          for (SNode exc : throwables) {
-            errorString = errorString + " " + exc;
-          }
+      do {
+        SNode matchedNode_5ahx9e_b0f0n = anc;
+        {
+          boolean matches_5ahx9e_a1a5a31 = false;
           {
-            BaseIntentionProvider intentionProvider = null;
-            intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.AddExceptionToMethodSignature_QuickFix", false);
-            intentionProvider.putArgument("throwableType", SetSequence.fromSet(throwables).first());
-            IErrorTarget errorTarget = new NodeErrorTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1210182111558", intentionProvider, errorTarget);
+            SNode matchingNode_5ahx9e_a1a5a31 = anc;
+            if (matchingNode_5ahx9e_a1a5a31 != null) {
+              matches_5ahx9e_a1a5a31 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_a1a5a31.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryStatement");
+            }
+          }
+          if (matches_5ahx9e_a1a5a31) {
+            if (ListSequence.fromList(ancSLs).contains(SLinkOperations.getTarget(matchedNode_5ahx9e_b0f0n, "body", true))) {
+              for (final SNode cc : SLinkOperations.getTargets(matchedNode_5ahx9e_b0f0n, "catchClause", true)) {
+                ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode tt) {
+                    return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, SLinkOperations.getTarget(SLinkOperations.getTarget(cc, "throwable", true), "type", true));
+                  }
+                });
+              }
+            }
+            break;
           }
         }
+        {
+          boolean matches_5ahx9e_b1a5a31 = false;
+          {
+            SNode matchingNode_5ahx9e_b1a5a31 = anc;
+            if (matchingNode_5ahx9e_b1a5a31 != null) {
+              matches_5ahx9e_b1a5a31 = SModelUtil_new.isAssignableConcept(matchingNode_5ahx9e_b1a5a31.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
+            }
+          }
+          if (matches_5ahx9e_b1a5a31) {
+            if (ListSequence.fromList(ancSLs).contains(SLinkOperations.getTarget(matchedNode_5ahx9e_b0f0n, "body", true))) {
+              for (final SNode cc : SLinkOperations.getTargets(matchedNode_5ahx9e_b0f0n, "catchClause", true)) {
+                ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode tt) {
+                    return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, SLinkOperations.getTarget(SLinkOperations.getTarget(cc, "throwable", true), "type", true));
+                  }
+                });
+              }
+            }
+            break;
+          }
+        }
+        if (ListSequence.fromList(ancSLs).contains(SLinkOperations.getTarget(SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "body", true))) {
+          for (final SNode thr : SLinkOperations.getTargets(SNodeOperations.cast(anc, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "throwsItem", true)) {
+            ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
+              public boolean accept(SNode tt) {
+                return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, thr);
+              }
+            });
+          }
+          use_quickfix = true;
+        }
+        break with_anc;
+      } while(false);
+      if (ListSequence.fromList(throwTypes).isEmpty()) {
         return;
+      }
+    }
+    if (!(ListSequence.fromList(throwTypes).isEmpty())) {
+      String errorString = "uncaught exceptions:";
+      for (SNode exc : throwTypes) {
+        errorString = errorString + " " + exc;
+      }
+      if (use_quickfix) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          intentionProvider = new BaseIntentionProvider("jetbrains.mps.baseLanguage.typesystem.AddExceptionToMethodSignature_QuickFix", false);
+          intentionProvider.putArgument("throwableType", SetSequence.fromSet(throwables).first());
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4460871289557453850", intentionProvider, errorTarget);
+        }
+      } else {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(mainNode, errorString, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4460871289557914789", intentionProvider, errorTarget);
+        }
       }
     }
   }
@@ -708,7 +742,7 @@ __switch__:
         {
           List<SNode> nodes = (List<SNode>) parameter_4;
           for (SNode child : nodes) {
-            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
         result = quotedNode1_3;
@@ -768,8 +802,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_5ahx9e_a1a0a0a0a31 {
-    public QuotationClass_5ahx9e_a1a0a0a0a31() {
+  public static class QuotationClass_5ahx9e_a1a0a0a0a0b0n {
+    public QuotationClass_5ahx9e_a1a0a0a0a0b0n() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -799,8 +833,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_5ahx9e_a1a0a0a0a31_0 {
-    public QuotationClass_5ahx9e_a1a0a0a0a31_0() {
+  public static class QuotationClass_5ahx9e_a1a0a0a0a0b0n_0 {
+    public QuotationClass_5ahx9e_a1a0a0a0a0b0n_0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
