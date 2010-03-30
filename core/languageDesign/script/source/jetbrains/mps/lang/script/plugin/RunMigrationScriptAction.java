@@ -47,7 +47,7 @@ public class RunMigrationScriptAction extends BaseAction {
   }
 
   protected void doExecute(AnActionEvent e) {
-    IScope migrationScope = AbstractMigrationScriptHelper.createMigrationScope(myModels, myModules,myApplyToSelection);
+    IScope migrationScope = AbstractMigrationScriptHelper.createMigrationScope(myModels, myModules, myApplyToSelection);
     if (migrationScope.getModelDescriptors().isEmpty()) {
       return;
     }
@@ -60,13 +60,13 @@ public class RunMigrationScriptAction extends BaseAction {
   protected boolean collectActionData(AnActionEvent e) {
     if (!super.collectActionData(e)) return false;
 
-    myContext = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
+    myContext = e.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (myContext == null) return false;
-    myProject = MPSDataKeys.PROJECT.getData(e.getDataContext());
+    myProject = e.getData(MPSDataKeys.PROJECT);
     if (myProject == null) return false;
-    myModels = MPSDataKeys.MODELS.getData(e.getDataContext());
+    myModels = e.getData(MPSDataKeys.MODELS);
     if (myModels == null) myModels = new ArrayList<SModelDescriptor>();
-    myModules = MPSDataKeys.MODULES.getData(e.getDataContext());
+    myModules = e.getData(MPSDataKeys.MODULES);
     if (myModules == null) myModules = new ArrayList<IModule>();
 
     return true;

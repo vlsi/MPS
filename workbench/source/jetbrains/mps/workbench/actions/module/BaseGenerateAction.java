@@ -66,7 +66,6 @@ public abstract class BaseGenerateAction extends BaseAction {
       }
     }
     enable(e.getPresentation());
-    TreeNode treeNode = MPSDataKeys.LOGICAL_VIEW_NODE.getData(e.getDataContext());
     String obj = getObject();
     String newText = (myRegenerate ? "Regenerate" : "Generate") + " " + obj;
     e.getPresentation().setText(newText);
@@ -74,8 +73,8 @@ public abstract class BaseGenerateAction extends BaseAction {
 
   protected boolean collectActionData(AnActionEvent e) {
     if (!super.collectActionData(e)) return false;
-    myProject = MPSDataKeys.MPS_PROJECT.getData(e.getDataContext());
-    myOperationContext = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
+    myProject = e.getData(MPSDataKeys.MPS_PROJECT);
+    myOperationContext = e.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (myOperationContext == null) return false;
     myModules = getModuleToGenerate(e);
     if (myModules.isEmpty()) return false;

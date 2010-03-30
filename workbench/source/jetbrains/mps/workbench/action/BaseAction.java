@@ -90,7 +90,7 @@ public abstract class BaseAction extends AnAction implements DumbAware {
   public final void update(final AnActionEvent e) {
     super.update(e);
 
-    ActionPlace place = MPSDataKeys.PLACE.getData(DataManager.getInstance().getDataContext());
+    ActionPlace place = e.getData(MPSDataKeys.PLACE);
 
     if (e.getInputEvent() instanceof KeyEvent) {
       if (!getPlaces().contains(null)) {
