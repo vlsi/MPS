@@ -78,7 +78,7 @@ public abstract class BaseGenerateAction extends BaseAction {
     if (myOperationContext == null) return false;
     myModules = getModuleToGenerate(e);
     if (myModules.isEmpty()) return false;
-    myFrame = MPSDataKeys.FRAME.getData(e.getDataContext());
+    myFrame = e.getData(MPSDataKeys.FRAME);
     if (myFrame == null) return false;
     return true;
   }

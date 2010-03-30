@@ -7703,41 +7703,17 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7944204678106356061">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7944204678106356062">
-            <property name="name:3" value="frame" />
-            <property name="isFinal:3" value="true" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7944204678106356063">
-              <link role="classifier:3" targetNodeId="17.~Frame" resolveInfo="Frame" />
-            </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7944204678106356064">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7944204678106356065">
-                <link role="classifier:3" targetNodeId="54.~MPSDataKeys" resolveInfo="MPSDataKeys" />
-                <link role="variableDeclaration:3" targetNodeId="54.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7944204678106356066">
-                <link role="baseMethodDeclaration:3" targetNodeId="68.~DataKey.getData(com.intellij.openapi.actionSystem.DataContext):java.lang.Object" resolveInfo="getData" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7944204678106356067">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7944204678106356068">
-                    <link role="classConcept:3" targetNodeId="110.~DataManager" resolveInfo="DataManager" />
-                    <link role="baseMethodDeclaration:3" targetNodeId="110.~DataManager.getInstance():com.intellij.ide.DataManager" resolveInfo="getInstance" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7944204678106356069">
-                    <link role="baseMethodDeclaration:3" targetNodeId="110.~DataManager.getDataContext():com.intellij.openapi.actionSystem.DataContext" resolveInfo="getDataContext" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6049742529940666507">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6049742529940666508">
             <property name="name:3" value="snode" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6049742529940666509">
               <link role="classConcept:3" targetNodeId="109.~CommonChoosers" resolveInfo="CommonChoosers" />
               <link role="baseMethodDeclaration:3" targetNodeId="109.~CommonChoosers.showDialogNodeChooser(java.awt.Component,java.util.List):jetbrains.mps.smodel.SNode" resolveInfo="showDialogNodeChooser" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6049742529940666510">
-                <link role="variableDeclaration:3" targetNodeId="7944204678106356062" resolveInfo="frame" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4393431345216935253">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="4393431345216935254" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="4393431345216935255">
+                  <link role="member:23" targetNodeId="4393431345216924409" resolveInfo="frame" />
+                </node>
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7944204678106354231">
                 <link role="variableDeclaration:3" targetNodeId="7944204678106356086" resolveInfo="members" />
@@ -7798,6 +7774,10 @@
     <node role="keystroke:23" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="6049742529940611650">
       <property name="modifiers:23" value="ctrl" />
       <property name="keycode:23" value="VK_F12" />
+    </node>
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="4393431345216924409">
+      <property name="name:23" value="frame" />
+      <link role="key:23" targetNodeId="54.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
     </node>
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="6049742529940666532">
       <property name="name:23" value="context" />
