@@ -635,8 +635,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
       }
 
       final Wrappers._T<SNode> mapping = new Wrappers._T<SNode>();
-      IOperationContext context;
-      context = MPSDataKeys.OPERATION_CONTEXT.getData(DataManager.getInstance().getDataContext());
+      IOperationContext context = Generator_Tab.this.getCurrentEditorComponent().getOperationContext();
       if (ListSequence.fromList(mappings).count() > 1) {
         MappingDialog configurationDialog = new MappingDialog(language.value, context);
         configurationDialog.showDialog();

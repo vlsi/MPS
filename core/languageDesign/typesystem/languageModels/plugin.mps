@@ -2141,20 +2141,6 @@
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.UpdateGroupBlock:23" id="4290387479601539559">
       <node role="updateFunction:23" type="jetbrains.mps.lang.plugin.structure.UpdateGroupFunction:23" id="4290387479601539560">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4290387479601539561">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4290387479601539586">
-            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4290387479601539587">
-              <property name="name:3" value="context" />
-              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4290387479601539588">
-                <link role="classifier:3" targetNodeId="43.~DataContext" resolveInfo="DataContext" />
-              </node>
-              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4290387479601539589">
-                <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent:23" id="4290387479601539590" />
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4290387479601539591">
-                  <link role="baseMethodDeclaration:3" targetNodeId="43.~AnActionEvent.getDataContext():com.intellij.openapi.actionSystem.DataContext" resolveInfo="getDataContext" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4290387479601539594">
             <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4290387479601539595">
               <property name="name:3" value="node" />
@@ -2162,16 +2148,14 @@
                 <link role="classifier:3" targetNodeId="8.~SNode" resolveInfo="SNode" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4290387479601539597">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4290387479601539598">
-                  <link role="classifier:3" targetNodeId="34.~MPSDataKeys" resolveInfo="MPSDataKeys" />
-                  <link role="variableDeclaration:3" targetNodeId="34.~MPSDataKeys.NODE" resolveInfo="NODE" />
-                </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4290387479601539599">
-                  <link role="baseMethodDeclaration:3" targetNodeId="43.~DataKey.getData(com.intellij.openapi.actionSystem.DataContext):java.lang.Object" resolveInfo="getData" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4290387479601539600">
-                    <link role="variableDeclaration:3" targetNodeId="4290387479601539587" resolveInfo="context" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="43.~AnActionEvent.getData(com.intellij.openapi.actionSystem.DataKey):java.lang.Object" resolveInfo="getData" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="4393431345216365099">
+                    <link role="classifier:3" targetNodeId="34.~MPSDataKeys" resolveInfo="MPSDataKeys" />
+                    <link role="variableDeclaration:3" targetNodeId="34.~MPSDataKeys.NODE" resolveInfo="NODE" />
                   </node>
                 </node>
+                <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent:23" id="4393431345216365081" />
               </node>
             </node>
           </node>

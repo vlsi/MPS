@@ -43,11 +43,11 @@ public class GenerateFavorites_ActionGroup extends GeneratedActionGroup {
   public void doUpdate(AnActionEvent event) {
     try {
       GenerateFavorites_ActionGroup.this.removeAll();
-      Project project = MPSDataKeys.PROJECT.getData(event.getDataContext());
+      Project project = event.getData(MPSDataKeys.PROJECT);
       if (!(FavoritesUtil.isActiveFavorites(project))) {
         return;
       }
-      TreeNode treeNode = MPSDataKeys.LOGICAL_VIEW_NODE.getData(event.getDataContext());
+      TreeNode treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
       if (treeNode instanceof SNodeTreeNode) {
         GenerateFavorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFilesFromModel_Action", "jetbrains.mps.ide", new GenerateFilesFromModelsAction());
         GenerateFavorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateTextFromModel_Action", "jetbrains.mps.ide", new GenerateTextFromModelsAction());

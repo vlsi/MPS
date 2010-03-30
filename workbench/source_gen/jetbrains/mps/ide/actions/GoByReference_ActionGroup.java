@@ -14,8 +14,6 @@ import java.util.HashSet;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.ide.DataManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
@@ -46,10 +44,9 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
   public void doUpdate(AnActionEvent event) {
     try {
       GoByReference_ActionGroup.this.removeAll();
-      DataContext dc = DataManager.getInstance().getDataContext();
-      final MPSProject project = MPSDataKeys.MPS_PROJECT.getData(dc);
-      final IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(dc);
-      SNode node = MPSDataKeys.NODE.getData(dc);
+      final MPSProject project = event.getData(MPSDataKeys.MPS_PROJECT);
+      final IOperationContext context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+      SNode node = event.getData(MPSDataKeys.NODE);
       if (node == null || context == null) {
         GoByReference_ActionGroup.this.disable(event.getPresentation());
         return;

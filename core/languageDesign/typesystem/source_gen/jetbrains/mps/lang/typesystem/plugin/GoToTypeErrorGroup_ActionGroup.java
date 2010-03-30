@@ -14,7 +14,6 @@ import java.util.HashSet;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -41,8 +40,7 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
 
   public void doUpdate(AnActionEvent event) {
     try {
-      DataContext context = event.getDataContext();
-      SNode node = MPSDataKeys.NODE.getData(context);
+      SNode node = event.getData(MPSDataKeys.NODE);
       if (node == null) {
         GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
         return;

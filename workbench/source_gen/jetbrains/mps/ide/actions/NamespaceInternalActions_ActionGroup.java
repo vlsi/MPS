@@ -14,8 +14,6 @@ import java.util.HashSet;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.ide.DataManager;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
@@ -43,8 +41,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
   public void doUpdate(AnActionEvent event) {
     try {
       NamespaceInternalActions_ActionGroup.this.removeAll();
-      DataContext dataContext = DataManager.getInstance().getDataContext();
-      List<TreeNode> selectedNodes = MPSDataKeys.LOGICAL_VIEW_NODES.getData(dataContext);
+      List<TreeNode> selectedNodes = event.getData(MPSDataKeys.LOGICAL_VIEW_NODES);
       if (selectedNodes == null) {
         return;
       }

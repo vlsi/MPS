@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.workbench.actions.model;
 
+import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
@@ -170,10 +172,10 @@ public class CreateRootNodeGroup extends BaseGroup {
       }
 
       protected boolean collectActionData(AnActionEvent e) {
-        if (!super.collectActionData(e)) return false;
+        if (! super.collectActionData(e)) return false;
         myProject = MPSDataKeys.PROJECT.getData(e.getDataContext());
         myScope = MPSDataKeys.SCOPE.getData(e.getDataContext());
-        if (myScope == null) return false;
+        if (myScope==null) return false;
         return true;
       }
 
