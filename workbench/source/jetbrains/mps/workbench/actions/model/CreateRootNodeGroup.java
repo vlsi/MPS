@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.workbench.actions.model;
 
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
@@ -62,15 +60,17 @@ public class CreateRootNodeGroup extends BaseGroup {
   public void doUpdate(AnActionEvent event) {
     removeAll();
 
-    SModelDescriptor modelDescriptor = MPSDataKeys.CONTEXT_MODEL.getData(event.getDataContext());
+    SModelDescriptor modelDescriptor = event.getData(MPSDataKeys.CONTEXT_MODEL);
     if (modelDescriptor == null) {
       setEnabledState(event.getPresentation(), false);
       return;
     }
 
-    IScope scope = MPSDataKeys.SCOPE.getData(event.getDataContext());
-    IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(event.getDataContext());
-    Integer selectedItemsCount = MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE.getData(event.getDataContext());
+    IScope scope = event.getData(MPSDataKeys.SCOPE);
+    IOperationContext context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+    Integer selectedItemsCount = event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE);
+    TreeNode treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
+
     boolean isStubModel = SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
     boolean singleItemSelected = selectedItemsCount != null && selectedItemsCount == 1;
     if (scope == null || context == null || isStubModel || !singleItemSelected) {
@@ -80,8 +80,6 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     setEnabledState(event.getPresentation(), true);
 
-    DataContext dataContext = DataManager.getInstance().getDataContext();
-    TreeNode treeNode = MPSDataKeys.LOGICAL_VIEW_NODE.getData(dataContext);
     if (!(treeNode instanceof PackageNode)) {
       myPackage = null;
     } else {
@@ -164,14 +162,27 @@ public class CreateRootNodeGroup extends BaseGroup {
         setExecuteOutsideCommand(true);
       }
 
+      private Project myProject;
+      private IScope myScope;
+
+      protected void doUpdate(AnActionEvent e) {
+        super.doUpdate(e);
+      }
+
+      protected boolean collectActionData(AnActionEvent e) {
+        if (!super.collectActionData(e)) return false;
+        myProject = MPSDataKeys.PROJECT.getData(e.getDataContext());
+        myScope = MPSDataKeys.SCOPE.getData(e.getDataContext());
+        if (myScope == null) return false;
+        return true;
+      }
+
       protected void doExecute(AnActionEvent e) {
-        Project p = MPSDataKeys.PROJECT.getData(e.getDataContext());
-        final IScope scope = MPSDataKeys.SCOPE.getData(e.getDataContext());
-        ProjectPane pane = ProjectPane.getInstance(p);
+        ProjectPane pane = ProjectPane.getInstance(myProject);
 
         SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
           public SNode compute() {
-            SNode result = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), scope);
+            SNode result = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), myScope);
             result.setProperty(SModelTreeNode.PACK, myPackage);
             modelDescriptor.getSModel().addRoot(result);
             return result;

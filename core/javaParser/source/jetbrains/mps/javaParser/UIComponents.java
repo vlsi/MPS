@@ -103,7 +103,7 @@ public class UIComponents {
       result.setCellRenderer(renderer);
       result.init();
       return result;
-    }
+    }                                        
 
     @Override
     public DialogDimensions getDefaultDimensionSettings() {
