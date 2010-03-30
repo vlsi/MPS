@@ -16,6 +16,7 @@
 package jetbrains.mps.findUsages;
 
 import com.intellij.ide.DataManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.module.Module;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
@@ -285,6 +286,8 @@ class FastFindUsagesManager extends FindUsagesManager {
   }
 
   private Set<VirtualFile> getCandidates(final Set<VirtualFile> scopeFiles, final String nodeId) {
+    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+
     final Set<VirtualFile> candidates = new HashSet<VirtualFile>();
     FileBasedIndex.getInstance().processValues(IdIndex.NAME, new IdIndexEntry(nodeId, true), null,
       new FileBasedIndex.ValueProcessor<Integer>() {
@@ -292,7 +295,7 @@ class FastFindUsagesManager extends FindUsagesManager {
           candidates.add(file);
           return true;
         }
-      }, new GlobalSearchScope(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext())) {
+      }, new GlobalSearchScope(project) {
         public boolean contains(VirtualFile file) {
           return scopeFiles.contains(file);
         }
