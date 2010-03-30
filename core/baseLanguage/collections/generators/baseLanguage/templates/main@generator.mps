@@ -47,11 +47,8 @@
   <import index="1" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="4" modelUID="f:java_stub#jetbrains.mps.baseLanguage.collections.internal.query(jetbrains.mps.baseLanguage.collections.internal.query@java_stub)" version="-1" />
-  <import index="5" modelUID="f:java_stub#jetbrains.mps.baseLanguage.collections.internal(jetbrains.mps.baseLanguage.collections.internal@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
-  <import index="9" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="14" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
@@ -59,9 +56,7 @@
   <import index="19" modelUID="r:00000000-0000-4000-0000-011c89590330(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util)" version="-1" />
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="30" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime.impl(jetbrains.mps.internal.collections.runtime.impl@java_stub)" version="-1" />
-  <import index="31" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="32" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime.backports(jetbrains.mps.internal.collections.runtime.backports@java_stub)" version="-1" />
-  <import index="33" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1201792021422">
     <property name="name:2" value="internal" />
@@ -3378,12 +3373,7 @@
           <link role="baseMethodDeclaration:3" targetNodeId="13.~IterableUtils.join(java.lang.Iterable,java.lang.String):java.lang.String" resolveInfo="join" />
           <link role="classConcept:3" targetNodeId="13.~IterableUtils" resolveInfo="IterableUtils" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1240689833913">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1240689833914">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1240689833915" />
-              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1240689833916">
-                <link role="classifier:3" targetNodeId="5.~ISequence" resolveInfo="ISequence" />
-              </node>
-            </node>
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.Expression:3" id="1240689833915" />
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.SwitchMacro:2" id="1240689833917">
               <link role="templateSwitch:2" targetNodeId="1203340411125" resolveInfo="switch_sequence_operation_toSequence" />
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1240689833918">
