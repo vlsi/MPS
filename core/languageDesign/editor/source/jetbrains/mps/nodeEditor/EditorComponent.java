@@ -2871,6 +2871,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
       rebuildEditorContent();
     }
+
+    @Override
+    public void beforeModelDisposed(SModel sm) {
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          rebuildEditorContent();
+        }
+      });
+    }
   }
 
   private class MyEventsCollector extends EventsCollector {
