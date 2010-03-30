@@ -11,6 +11,8 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.GlobalScope;
 import javax.swing.SwingUtilities;
+import java.awt.Frame;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
 import jetbrains.mps.ide.actions.AddConceptMethodStrategy;
 import jetbrains.mps.ide.actions.MethodsToImplementStrategy;
@@ -54,7 +56,9 @@ public class ImplementMethods_Intention extends BaseIntention implements Intenti
   public void execute(final SNode node, final EditorContext editorContext) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        new StratergyAddMethodDialog(editorContext, editorContext.getOperationContext().getMainFrame(), new AddConceptMethodStrategy(node), new MethodsToImplementStrategy(), new ImplementMethodStrategy()).showDialog();
+        Frame frame = editorContext.getOperationContext().getMainFrame();
+        MPSProject project = editorContext.getOperationContext().getMPSProject();
+        new StratergyAddMethodDialog(editorContext, frame, new AddConceptMethodStrategy(node), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
       }
     });
   }

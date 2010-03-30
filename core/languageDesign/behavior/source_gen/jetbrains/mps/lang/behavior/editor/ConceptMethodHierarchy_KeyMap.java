@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.SwingUtilities;
+import java.awt.Frame;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
 import jetbrains.mps.ide.actions.AddConceptMethodStrategy;
 import jetbrains.mps.ide.actions.MethodsToOverrideStrategy;
@@ -65,7 +67,9 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          new StratergyAddMethodDialog(editorContext, editorContext.getOperationContext().getMainFrame(), new AddConceptMethodStrategy(node), new MethodsToOverrideStrategy(), new OverrideConceptMethodStrategy()).showDialog();
+          Frame frame = editorContext.getOperationContext().getMainFrame();
+          MPSProject project = editorContext.getOperationContext().getMPSProject();
+          new StratergyAddMethodDialog(editorContext, frame, new AddConceptMethodStrategy(node), new MethodsToOverrideStrategy(), new OverrideConceptMethodStrategy(project)).showDialog();
         }
       });
     }
@@ -112,7 +116,9 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          new StratergyAddMethodDialog(editorContext, editorContext.getOperationContext().getMainFrame(), new AddConceptMethodStrategy(node), new MethodsToImplementStrategy(), new ImplementMethodStrategy()).showDialog();
+          Frame frame = editorContext.getOperationContext().getMainFrame();
+          MPSProject project = editorContext.getOperationContext().getMPSProject();
+          new StratergyAddMethodDialog(editorContext, frame, new AddConceptMethodStrategy(node), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
         }
       });
     }
