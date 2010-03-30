@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.SwingUtilities;
@@ -35,6 +36,7 @@ class EDTExecutor {
 
   private Queue<Runnable> myToExecuteRead = new LinkedList<Runnable>();
   private Queue<Runnable> myToExecuteCommand = new LinkedList<Runnable>();
+  private Queue<Runnable> myToExecuteWrite = new LinkedList<Runnable>();
 
   public EDTExecutor() {
     myExecutor = new Executor();
@@ -56,11 +58,17 @@ class EDTExecutor {
     }
   }
 
+  public void invokeWriteInEDT(Runnable r) {
+    synchronized (myLock) {
+      myToExecuteWrite.add(r);
+    }
+  }
+
   public void flushEventQueue() {
     while (true) {
       try {
         synchronized (myLock) {
-          if (myToExecuteRead.isEmpty() && myToExecuteCommand.isEmpty()) {
+          if (myToExecuteRead.isEmpty() && myToExecuteCommand.isEmpty() && myToExecuteWrite.isEmpty()) {
             return;
           }
         }
@@ -69,6 +77,10 @@ class EDTExecutor {
         e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
       }
     }
+  }
+
+  public boolean isInEDT() {
+    return ApplicationManager.getApplication().isDispatchThread();
   }
 
   private class Executor extends Thread {
@@ -101,12 +113,20 @@ class EDTExecutor {
       }
     }
 
+    private Runnable getToExecuteWrite() {
+      synchronized (myLock) {
+        return myToExecuteWrite.isEmpty() ? null : myToExecuteWrite.remove();
+      }
+    }
+
     private void process() {
       boolean readEmpty;
       boolean commandEmpty;
+      boolean writeEmpty;
       synchronized (myLock) {
         readEmpty = myToExecuteRead.isEmpty();
         commandEmpty = myToExecuteCommand.isEmpty();
+        writeEmpty = myToExecuteWrite.isEmpty();
       }
 
       Runnable r = null;
@@ -115,6 +135,8 @@ class EDTExecutor {
         r = new ReadRunnable();
       } else if (!commandEmpty) {
         r = new CommandRunnable();
+      } else if (!writeEmpty) {
+        r = new WriteRunnable();
       }
 
       if (r != null) {
@@ -146,6 +168,24 @@ class EDTExecutor {
             while (true) {
               if (System.currentTimeMillis() - start > MAX_TIME) break;
               Runnable command = getToExecuteCommand();
+              if (command == null) break;
+              command.run();
+            }
+          }
+        });
+      }
+    }
+
+    private class WriteRunnable implements Runnable {
+      @Override
+      public void run() {
+        ModelAccess.instance().tryWrite(new Runnable() {
+          @Override
+          public void run() {
+            long start = System.currentTimeMillis();
+            while (true) {
+              if (System.currentTimeMillis() - start > MAX_TIME) break;
+              Runnable command = getToExecuteWrite();
               if (command == null) break;
               command.run();
             }

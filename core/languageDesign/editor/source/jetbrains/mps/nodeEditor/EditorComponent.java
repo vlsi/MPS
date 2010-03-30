@@ -2862,26 +2862,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private class MySimpleModelListener extends SModelAdapter {
     public void modelReloaded(final SModelDescriptor sm) {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          if (myNode != null) {
-            if (myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
-              SNodeId oldId = myNode.getSNodeId();
-              myNode = sm.getSModel().getNodeById(oldId);
-            }
-          }
-          rebuildEditorContent();
+      assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
+      if (myNode != null) {
+        if (myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
+          SNodeId oldId = myNode.getSNodeId();
+          myNode = sm.getSModel().getNodeById(oldId);
         }
-      });
-    }
-
-    @Override
-    public void beforeModelDisposed(SModel sm) {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          rebuildEditorContent();
-        }
-      });
+      }
+      rebuildEditorContent();
     }
   }
 

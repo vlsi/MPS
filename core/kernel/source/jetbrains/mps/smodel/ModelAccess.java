@@ -190,6 +190,14 @@ public class ModelAccess {
     myEDTExecutor.invokeCommandInEDT(r);
   }
 
+  public void runWriteInEDT(Runnable r) {
+    myEDTExecutor.invokeWriteInEDT(r);
+  }
+
+  public boolean isInEDT() {
+    return myEDTExecutor.isInEDT();
+  }
+
   public boolean tryRead(final Runnable r) {
     return ApplicationManager.getApplication().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
@@ -219,6 +227,23 @@ public class ModelAccess {
         } else {
           return null;
         }
+      }
+    });
+  }
+
+  public boolean tryWrite(final Runnable r) {
+    return ApplicationManager.getApplication().runWriteAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        if (getWriteLock().tryLock()) {
+          try {
+            r.run();
+          } finally {
+            getWriteLock().unlock();
+          }
+          return true;
+        }
+        return false;
       }
     });
   }

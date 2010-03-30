@@ -118,30 +118,40 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     }
   }
 
+  /**
+   * This method should be called either in EDT, inside WriteAction or in any other thread
+   */
   public void reloadFromDisk() {
-    ModelAccess.assertLegalWrite();
-    if (isInitialized()) {
-      mySModel.fireBeforeModelReloaded();
+    if (!isInitialized()) {
+      return;
+    }
+    final SModel newModel = loadModel();
+    Runnable runnable = new Runnable() {
+      @Override
+      public void run() {
+        mySModel.fireBeforeModelReloaded();
 
-      addListenersFromSModel();
+        addListenersFromSModel();
 
-      final SModel oldModel = mySModel;
-      mySModel = loadModel();
+        SModel oldModel = mySModel;
+        mySModel = newModel;
 
-      updateLastChange();
+        updateLastChange();
 
-      doPostLoadStuff();
+        doPostLoadStuff();
 
-      SModelRepository.getInstance().markChanged(this, false);
-      MPSModuleRepository.getInstance().invalidateCaches();
+        SModelRepository.getInstance().markChanged(DefaultSModelDescriptor.this, false);
+        MPSModuleRepository.getInstance().invalidateCaches();
 
-      mySModel.fireModelReloaded();
-
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          oldModel.dispose();
-        }
-      });
+        mySModel.fireModelReloaded();
+        oldModel.dispose();
+      }
+    };
+    if (ModelAccess.instance().isInEDT()) {
+      ModelAccess.assertLegalWrite();
+      runnable.run();
+    } else {
+      ModelAccess.instance().runWriteInEDT(runnable);
     }
   }
 
