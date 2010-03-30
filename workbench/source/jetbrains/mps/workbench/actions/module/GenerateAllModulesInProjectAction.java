@@ -32,7 +32,7 @@ public class GenerateAllModulesInProjectAction extends BaseGenerateAction {
 
   @Override
   Set<IModule> getModuleToGenerate(AnActionEvent e) {
-    MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(e.getDataContext());
+    MPSProject mpsProject = e.getData(MPSDataKeys.MPS_PROJECT);
     assert mpsProject != null;
     return new HashSet(mpsProject.getModules());
   }

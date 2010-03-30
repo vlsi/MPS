@@ -33,11 +33,11 @@ public class GenerateAllModelsInModuleAction extends BaseGenerateAction {
   @Override
   Set<IModule> getModuleToGenerate(AnActionEvent e) {
     Set<IModule> result;
-    List<IModule> moduleList = MPSDataKeys.MODULES.getData(e.getDataContext());
+    List<IModule> moduleList = e.getData(MPSDataKeys.MODULES);
     if (moduleList == null) moduleList = new ArrayList<IModule>();
     result = new HashSet(moduleList);
     if (result.isEmpty()) {
-      IModule contextModule = MPSDataKeys.CONTEXT_MODULE.getData(e.getDataContext());
+      IModule contextModule = e.getData(MPSDataKeys.CONTEXT_MODULE);
       if (contextModule != null) {
         result.add(contextModule);
       }
