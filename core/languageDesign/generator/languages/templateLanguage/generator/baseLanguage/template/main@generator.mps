@@ -2411,10 +2411,10 @@
           <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1434091819680828190">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1434091819680828191">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1434091819680828192">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="304293736224454071">
-                  <link role="baseMethodDeclaration:3" targetNodeId="6.~TemplateFunctionMethodName.pattern_MatchMethod(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="pattern_MatchMethod" />
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2566359480548830880">
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~TemplateFunctionMethodName.patternRule_Condition(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="patternRule_Condition" />
                   <link role="classConcept:3" targetNodeId="6.~TemplateFunctionMethodName" resolveInfo="TemplateFunctionMethodName" />
-                  <node role="actualArgument:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="304293736224454072" />
+                  <node role="actualArgument:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2566359480548830881" />
                 </node>
               </node>
             </node>
