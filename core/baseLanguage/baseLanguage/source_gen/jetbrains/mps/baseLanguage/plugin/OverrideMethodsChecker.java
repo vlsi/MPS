@@ -46,13 +46,13 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
   public OverrideMethodsChecker() {
   }
 
-  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationConcets, List<SModelEvent> events, boolean wasCheckedOnce) {
+  public Set<EditorMessage> createMessages(SNode rootNode, IOperationContext operationContext, List<SModelEvent> events, boolean wasCheckedOnce) {
     Iterable<SNode> classifiers = ListSequence.fromList(SNodeOperations.getDescendants(rootNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Interface");
       }
     });
-    this.myIndexWasNotReady = !(ClassifierSuccessorsFinder.isIndexReady());
+    this.myIndexWasNotReady = !(ClassifierSuccessorsFinder.isIndexReady(operationContext.getProject()));
     if (Sequence.fromIterable(classifiers).isEmpty() || this.myIndexWasNotReady) {
       return Collections.emptySet();
     }

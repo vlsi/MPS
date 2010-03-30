@@ -10490,7 +10490,7 @@
         <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="5002400195358049308" />
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="5002400195358006652">
-        <property name="name:3" value="operationConcets" />
+        <property name="name:3" value="operationContext" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5002400195358006653">
           <link role="classifier:3" targetNodeId="5.~IOperationContext" resolveInfo="IOperationContext" />
         </node>
@@ -10571,8 +10571,16 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="64535904967758489">
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="64535904967758499">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="64535904967758497">
-                <link role="baseMethodDeclaration:3" targetNodeId="162.~ClassifierSuccessorsFinder.isIndexReady():boolean" resolveInfo="isIndexReady" />
                 <link role="classConcept:3" targetNodeId="162.~ClassifierSuccessorsFinder" resolveInfo="ClassifierSuccessorsFinder" />
+                <link role="baseMethodDeclaration:3" targetNodeId="162.~ClassifierSuccessorsFinder.isIndexReady(com.intellij.openapi.project.Project):boolean" resolveInfo="isIndexReady" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8901510029844751985">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8901510029844751531">
+                    <link role="variableDeclaration:3" targetNodeId="5002400195358006652" resolveInfo="operationConcets" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8901510029844751990">
+                    <link role="baseMethodDeclaration:3" targetNodeId="5.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
+                  </node>
+                </node>
               </node>
             </node>
             <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="64535904967688142">

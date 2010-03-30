@@ -23,11 +23,7 @@ import java.util.*;
  */
 public class ClassifierSuccessorsFinder {
 
-  public static boolean isIndexReady() {
-    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    if (project == null) {
-      return false;
-    }
+  public static boolean isIndexReady(Project project) {
     return !DumbService.getInstance(project).isDumb();
   }
 
