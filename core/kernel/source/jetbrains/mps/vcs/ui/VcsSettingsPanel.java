@@ -59,7 +59,7 @@ public class VcsSettingsPanel extends JPanel {
 
     JPanel changesManagerPanel = new JPanel(new BorderLayout());
     changesManagerPanel.setBorder(new TitledBorder("Changes highlighting"));
-    myChangesManagerEnabledCheckBox = new JCheckBox("Enable changes highlighting");
+    myChangesManagerEnabledCheckBox = new JCheckBox("Enable changes highlighting (requires MPS restart)");
     changesManagerPanel.add(myChangesManagerEnabledCheckBox);
 
     add(myVcsRootsPanel);
