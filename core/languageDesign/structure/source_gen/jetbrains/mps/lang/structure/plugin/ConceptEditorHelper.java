@@ -21,7 +21,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseMultiTab;
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseSingleTab;
+import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import java.util.Map;
@@ -32,7 +33,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.HashMap;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseSingleTab;
+import jetbrains.mps.util.Condition;
 
 public class ConceptEditorHelper {
   public static IScope getScope(ILazyTab tab) {
@@ -80,18 +81,45 @@ public class ConceptEditorHelper {
   }
 
   public static void addMultitabbedListener(final BaseMultiTab tab, final LanguageAspect aspect) {
+    final Language language = ConceptEditorHelper.getLanguageForTab(tab);
+    tab.addNodeAdditionListener(new ConceptEditorHelper.ModelCondition(language, aspect), new ConceptEditorHelper.MultitabbedListener(tab));
+  }
+
+  public static void addSingletabbedListener(final BaseSingleTab tab, final LanguageAspect aspect) {
+    final Language language = ConceptEditorHelper.getLanguageForTab(tab);
+    tab.addNodeAdditionListener(new ConceptEditorHelper.ModelCondition(language, aspect), new ConceptEditorHelper.SingletabbedListener(tab));
+  }
+
+  private static Language getLanguageForTab(final AbstractLazyTab tab) {
     SNode node = ((SNode) tab.getBaseNode());
-    final Language language = SModelUtil.getDeclaringLanguage(node, GlobalScope.getInstance());
-    if (language == null) {
-      return;
+    return SModelUtil.getDeclaringLanguage(node, GlobalScope.getInstance());
+  }
+
+  public static class MultitabbedListener extends SModelAdapter {
+    private BaseMultiTab tab;
+
+    public MultitabbedListener(BaseMultiTab tab) {
+      this.tab = tab;
     }
 
-    tab.addNodeAdditionListener(new Condition<SModelDescriptor>() {
-      public boolean met(SModelDescriptor modelDescriptor) {
-        return Language.getLanguageFor(modelDescriptor) == language && Language.getModelAspect(modelDescriptor) == aspect;
+    public void referenceAdded(SModelReferenceEvent event) {
+      SNode root = event.getReference().getSourceNode().getContainingRoot();
+      if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
+        return;
       }
-    }, new SModelAdapter() {
-      public void referenceAdded(SModelReferenceEvent event) {
+
+      Map<SNode, IOperationContext> nodesMap = this.createNodesMap();
+
+      List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), MapSequence.fromMap(nodesMap).keySet());
+      ListSequence.fromList(nodes).removeSequence(ListSequence.fromList(this.tab.getLoadableNodes()));
+      if (ListSequence.fromList(nodes).isNotEmpty()) {
+        SNode n = ListSequence.fromList(nodes).getElement(0);
+        this.tab.addInnerTabChecked(n, MapSequence.fromMap(nodesMap).get(n));
+      }
+    }
+
+    public void referenceRemoved(SModelReferenceEvent event) {
+      /*
         SNode root = event.getReference().getSourceNode().getContainingRoot();
         if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
           return;
@@ -99,95 +127,88 @@ public class ConceptEditorHelper {
 
         Map<SNode, IOperationContext> nodesMap = this.createNodesMap();
 
-        List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), MapSequence.fromMap(nodesMap).keySet());
-        ListSequence.fromList(nodes).removeSequence(ListSequence.fromList(tab.getLoadableNodes()));
+        List<SNode> nodes = this.tab.getLoadableNodes();
+        ListSequence.fromList(nodes).removeSequence(SetSequence.fromSet(MapSequence.fromMap(nodesMap).keySet()));
         if (ListSequence.fromList(nodes).isNotEmpty()) {
-          SNode n = ListSequence.fromList(nodes).getElement(0);
-          tab.addInnerTabChecked(n, MapSequence.fromMap(nodesMap).get(n));
+          SNodePointer n = new SNodePointer(ListSequence.fromList(nodes).getElement(0));
+          this.tab.closeTab(n, this.tab.getIndexOfTabFor(n));
         }
+      */
+    }
+
+    private Map<SNode, IOperationContext> createNodesMap() {
+      Map<SNode, IOperationContext> nodesMap = MapSequence.fromMap(new HashMap<SNode, IOperationContext>());
+      for (Pair<SNode, IOperationContext> pair : ListSequence.fromList(this.tab.tryToLoadNodes())) {
+        MapSequence.fromMap(nodesMap).put(pair.o1, pair.o2);
+      }
+      return nodesMap;
+    }
+
+    public void rootAdded(SModelRootEvent event) {
+      SNode root = event.getRoot();
+      if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
+        return;
+      }
+      if (this.tab.getLoadableNodes().contains(root)) {
+        return;
       }
 
-      public void referenceRemoved(SModelReferenceEvent event) {
-        /*
-          SNode root = event.getReference().getSourceNode().getContainingRoot();
-          if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
-            return;
-          }
-
-          Map<SNode, IOperationContext> nodesMap = this.createNodesMap();
-
-          List<SNode> nodes = tab.getLoadableNodes();
-          ListSequence.fromList(nodes).removeSequence(SetSequence.fromSet(MapSequence.fromMap(nodesMap).keySet()));
-          if (ListSequence.fromList(nodes).isNotEmpty()) {
-            SNodePointer n = new SNodePointer(ListSequence.fromList(nodes).getElement(0));
-            tab.closeTab(n, tab.getIndexOfTabFor(n));
-          }
-        */
+      IOperationContext context = null;
+      for (Pair<SNode, IOperationContext> pair : ListSequence.fromList(this.tab.tryToLoadNodes())) {
+        if (pair.o1 == root) {
+          context = pair.o2;
+          break;
+        }
       }
-
-      private Map<SNode, IOperationContext> createNodesMap() {
-        Map<SNode, IOperationContext> nodesMap = MapSequence.fromMap(new HashMap<SNode, IOperationContext>());
-        for (Pair<SNode, IOperationContext> pair : ListSequence.fromList(tab.tryToLoadNodes())) {
-          MapSequence.fromMap(nodesMap).put(pair.o1, pair.o2);
-        }
-        return nodesMap;
+      if (context == null) {
+        return;
       }
-
-      public void rootAdded(SModelRootEvent event) {
-        SNode root = event.getRoot();
-        if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
-          return;
-        }
-        if (tab.getLoadableNodes().contains(root)) {
-          return;
-        }
-
-        IOperationContext context = null;
-        for (Pair<SNode, IOperationContext> pair : ListSequence.fromList(tab.tryToLoadNodes())) {
-          if (pair.o1 == root) {
-            context = pair.o2;
-            break;
-          }
-        }
-        if (context == null) {
-          return;
-        }
-        tab.addInnerTabChecked(root, context);
-      }
-    });
+      this.tab.addInnerTabChecked(root, context);
+    }
   }
 
-  public static void addSingletabbedListener(final BaseSingleTab tab, final LanguageAspect aspect) {
-    SNode node = ((SNode) tab.getBaseNode());
-    final Language language = SModelUtil.getDeclaringLanguage(node, GlobalScope.getInstance());
+  public static class SingletabbedListener extends SModelAdapter {
+    private BaseSingleTab tab;
 
-    tab.addNodeAdditionListener(new Condition<SModelDescriptor>() {
-      public boolean met(SModelDescriptor modelDescriptor) {
-        return Language.getLanguageFor(modelDescriptor) == language && Language.getModelAspect(modelDescriptor) == aspect;
+    public SingletabbedListener(BaseSingleTab tab) {
+      this.tab = tab;
+    }
+
+    public void referenceAdded(SModelReferenceEvent event) {
+      this.reinitIfNeeded(event.getReference().getSourceNode().getContainingRoot());
+    }
+
+    public void referenceRemoved(SModelReferenceEvent event) {
+      this.reinitIfNeeded(event.getReference().getSourceNode().getContainingRoot());
+    }
+
+    public void rootAdded(SModelRootEvent event) {
+      this.reinitIfNeeded(event.getRoot());
+    }
+
+    private void reinitIfNeeded(SNode root) {
+      if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
+        return;
       }
-    }, new SModelAdapter() {
-      public void referenceAdded(SModelReferenceEvent event) {
-        this.reinitIfNeeded(event.getReference().getSourceNode().getContainingRoot());
+      if (!(this.tab.newNode())) {
+        return;
       }
 
-      public void referenceRemoved(SModelReferenceEvent event) {
-        this.reinitIfNeeded(event.getReference().getSourceNode().getContainingRoot());
-      }
+      this.tab.reinit();
+    }
+  }
 
-      public void rootAdded(SModelRootEvent event) {
-        this.reinitIfNeeded(event.getRoot());
-      }
+  public static class ModelCondition implements Condition<SModelDescriptor> {
+    private Language myLanguage;
+    private LanguageAspect myAspect;
 
-      private void reinitIfNeeded(SNode root) {
-        if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
-          return;
-        }
-        if (!(tab.newNode())) {
-          return;
-        }
+    public ModelCondition(Language language, LanguageAspect aspect) {
+      this.myLanguage = language;
+      this.myAspect = aspect;
+    }
 
-        tab.reinit();
-      }
-    });
+    public boolean met(SModelDescriptor modelDescriptor) {
+      return Language.getLanguageFor(modelDescriptor) == this.myLanguage && Language.getModelAspect(modelDescriptor) == this.myAspect;
+    }
   }
 }
