@@ -39,8 +39,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3041831561922044926">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3041831561922044927">
             <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3041831561922044928" />
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="3041831561922149730">
-              <link role="link:16" targetNodeId="1.526936149311734354:1" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="3330196687714068333">
+              <link role="link:16" targetNodeId="1.3330196687714050067:1" />
             </node>
           </node>
         </node>

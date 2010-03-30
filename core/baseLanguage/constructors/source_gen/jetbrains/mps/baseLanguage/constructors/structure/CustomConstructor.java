@@ -12,19 +12,35 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CustomConstructor extends ConceptFunction implements INamedConcept {
   public static final String concept = "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor";
+  public static final String DESCRIPTION = "description";
+  public static final String SEPARATOR = "separator";
   public static final String LEFT_PARENTHESIS = "leftParenthesis";
   public static final String RIGHT_PARENTHESIS = "rightParenthesis";
-  public static final String SEPARATOR = "separator";
-  public static final String DESCRIPTION = "description";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String ELEMENT_TYPE = "elementType";
   public static final String RETURN_TYPE = "returnType";
+  public static final String ARGUMENTS = "arguments";
 
   public CustomConstructor(SNode node) {
     super(node);
+  }
+
+  public String getDescription() {
+    return this.getProperty(CustomConstructor.DESCRIPTION);
+  }
+
+  public void setDescription(String value) {
+    this.setProperty(CustomConstructor.DESCRIPTION, value);
+  }
+
+  public String getSeparator() {
+    return this.getProperty(CustomConstructor.SEPARATOR);
+  }
+
+  public void setSeparator(String value) {
+    this.setProperty(CustomConstructor.SEPARATOR, value);
   }
 
   public String getLeftParenthesis() {
@@ -41,22 +57,6 @@ public class CustomConstructor extends ConceptFunction implements INamedConcept 
 
   public void setRightParenthesis(String value) {
     this.setProperty(CustomConstructor.RIGHT_PARENTHESIS, value);
-  }
-
-  public String getSeparator() {
-    return this.getProperty(CustomConstructor.SEPARATOR);
-  }
-
-  public void setSeparator(String value) {
-    this.setProperty(CustomConstructor.SEPARATOR, value);
-  }
-
-  public String getDescription() {
-    return this.getProperty(CustomConstructor.DESCRIPTION);
-  }
-
-  public void setDescription(String value) {
-    this.setProperty(CustomConstructor.DESCRIPTION, value);
   }
 
   public String getName() {
@@ -91,20 +91,20 @@ public class CustomConstructor extends ConceptFunction implements INamedConcept 
     this.setProperty(CustomConstructor.VIRTUAL_PACKAGE, value);
   }
 
-  public Type getElementType() {
-    return (Type) this.getChild(Type.class, CustomConstructor.ELEMENT_TYPE);
-  }
-
-  public void setElementType(Type node) {
-    super.setChild(CustomConstructor.ELEMENT_TYPE, node);
-  }
-
   public Type getReturnType() {
     return (Type) this.getChild(Type.class, CustomConstructor.RETURN_TYPE);
   }
 
   public void setReturnType(Type node) {
     super.setChild(CustomConstructor.RETURN_TYPE, node);
+  }
+
+  public ArgumentClause getArguments() {
+    return (ArgumentClause) this.getChild(ArgumentClause.class, CustomConstructor.ARGUMENTS);
+  }
+
+  public void setArguments(ArgumentClause node) {
+    super.setChild(CustomConstructor.ARGUMENTS, node);
   }
 
   public static CustomConstructor newInstance(SModel sm, boolean init) {

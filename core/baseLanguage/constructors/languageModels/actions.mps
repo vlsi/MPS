@@ -36,6 +36,7 @@
   <import index="1" modelUID="r:bd4b8fd9-079b-4b11-a733-9c0bea3600f2(jetbrains.mps.baseLanguage.constructors.structure)" version="1" />
   <import index="2" modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" version="0" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1592896280557588049">
     <property name="name:23" value="CustomConstructorUsage_Substitute" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1592896280557600187">
@@ -158,14 +159,14 @@
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1592896280557742922">
                     <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject:23" id="1592896280557742921" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1592896280557742926">
-                      <link role="property:16" targetNodeId="1.6820702584719416503:1" resolveInfo="rightParenthesis" />
+                      <link role="property:16" targetNodeId="1.3330196687714050065:1" resolveInfo="rightParenthesis" />
                     </node>
                   </node>
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1592896280557742914">
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1592896280557742909">
                       <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject:23" id="1592896280557742908" />
                       <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1592896280557742913">
-                        <link role="property:16" targetNodeId="1.6820702584719416500:1" resolveInfo="leftParenthesis" />
+                        <link role="property:16" targetNodeId="1.3330196687714050064:1" resolveInfo="leftParenthesis" />
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1592896280557742917">
@@ -181,8 +182,8 @@
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1592896280557744792">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1592896280557744794">
                   <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject:23" id="1592896280557744793" />
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1592896280557744798">
-                    <link role="property:16" targetNodeId="1.1592896280557742968:1" resolveInfo="short description" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="8670107124456188136">
+                    <link role="property:16" targetNodeId="3v.1156234966388:0" resolveInfo="shortDescription" />
                   </node>
                 </node>
               </node>

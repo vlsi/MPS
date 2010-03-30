@@ -54,7 +54,7 @@ public class QueriesGenerated {
               }
 
               public String getDescriptionText(String pattern) {
-                return SPropertyOperations.getString((item), "description");
+                return SPropertyOperations.getString((item), "shortDescription");
               }
             });
           }
