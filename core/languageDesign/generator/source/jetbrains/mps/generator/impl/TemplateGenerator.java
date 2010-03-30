@@ -377,7 +377,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   @Nullable
   List<SNode> tryToReduce(SNode inputNode, String mappingName) throws GenerationFailureException, GenerationCanceledException {
     boolean needStopReductionBlocking = false;
-    Reduction_MappingRule reductionRule = null;
+    ReductionRule reductionRule = null;
     try {
       reductionRule = myRuleManager.getRuleFinder().findReductionRule(inputNode, this);
       if (reductionRule != null) {
@@ -421,7 +421,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   @Nullable
-  private List<SNode> applyReductionRule(SNode inputNode, Reduction_MappingRule rule) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
+  private List<SNode> applyReductionRule(SNode inputNode, ReductionRule rule) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     myGenerationTracer.pushRule(rule.getNode());
     try {
       return applyReductionRule_internal(inputNode, rule);
@@ -433,11 +433,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   @Nullable
-  private List<SNode> applyReductionRule_internal(SNode inputNode, Reduction_MappingRule rule)
+  private List<SNode> applyReductionRule_internal(SNode inputNode, ReductionRule rule)
     throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
 
     String ruleMappingName = GeneratorUtil.getMappingName(rule, null);
-    RuleConsequence ruleConsequence = rule.getRuleConsequence();
+    RuleConsequence ruleConsequence = GeneratorUtil.getReductionConsequence(rule);
     if (ruleConsequence == null) {
       showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no rule consequence");
       return null;

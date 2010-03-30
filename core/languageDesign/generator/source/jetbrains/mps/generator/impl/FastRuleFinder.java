@@ -16,6 +16,9 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition;
+import jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule;
+import jetbrains.mps.lang.generator.structure.ReductionRule;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SNode;
@@ -31,10 +34,23 @@ import java.util.Map.Entry;
  */
 public class FastRuleFinder {
 
-  private Map<String, Reduction_MappingRule[]> myApplicableRules = new HashMap<String, Reduction_MappingRule[]>();
+  private Map<String, ReductionRule[]> myApplicableRules = new HashMap<String, ReductionRule[]>();
 
-  public FastRuleFinder(Iterable<Reduction_MappingRule> reductionRules) {
-    Map<String, List<Reduction_MappingRule>> applicableRules = new HashMap<String, List<Reduction_MappingRule>>();
+  public FastRuleFinder(Iterable<Reduction_MappingRule> reductionRules, Iterable<PatternReduction_MappingRule> patternRules) {
+    Map<String, List<ReductionRule>> applicableRules = new HashMap<String, List<ReductionRule>>();
+
+    for (PatternReduction_MappingRule rule : patternRules) {
+      String conceptFqName = rule.getPattern().getPatternNode().getConceptFQName();
+
+      // TODO turn on pattern rules
+//      List<ReductionRule> rules = applicableRules.get(conceptFqName);
+//      if (rules == null) {
+//        rules = new LinkedList<ReductionRule>();
+//        applicableRules.put(conceptFqName, rules);
+//      }
+//      rules.add(rule);
+    }
+
     for (Reduction_MappingRule rule : reductionRules) {
       Set<String> applicableTo = new LinkedHashSet<String>();
       String applicableConceptFqName = NameUtil.nodeFQName(rule.getApplicableConcept());
@@ -45,30 +61,30 @@ public class FastRuleFinder {
       }
 
       for (String conceptFqName : applicableTo) {
-        List<Reduction_MappingRule> rules = applicableRules.get(conceptFqName);
+        List<ReductionRule> rules = applicableRules.get(conceptFqName);
         if (rules == null) {
-          rules = new LinkedList<Reduction_MappingRule>();
+          rules = new LinkedList<ReductionRule>();
           applicableRules.put(conceptFqName, rules);
         }
         rules.add(rule);
       }
     }
 
-    for (Entry<String, List<Reduction_MappingRule>> entry : applicableRules.entrySet()) {
-      List<Reduction_MappingRule> rules = entry.getValue();
-      myApplicableRules.put(entry.getKey(), rules.toArray(new Reduction_MappingRule[rules.size()]));
+    for (Entry<String, List<ReductionRule>> entry : applicableRules.entrySet()) {
+      List<ReductionRule> rules = entry.getValue();
+      myApplicableRules.put(entry.getKey(), rules.toArray(new ReductionRule[rules.size()]));
     }
   }
 
-  public Reduction_MappingRule findReductionRule(SNode node, TemplateGenerator generator) throws GenerationFailureException {
-    Reduction_MappingRule[] allRules = myApplicableRules.get(node.getConceptFqName());
+  public ReductionRule findReductionRule(SNode node, TemplateGenerator generator) throws GenerationFailureException {
+    ReductionRule[] allRules = myApplicableRules.get(node.getConceptFqName());
     if (allRules == null) {
       return null;
     }
 
-    for (Reduction_MappingRule rule : allRules) {
+    for (ReductionRule rule : allRules) {
       if (!generator.getBlockedReductionsData().isReductionBlocked(node, rule)) {
-        if (generator.getExecutor().checkCondition(rule.getConditionFunction(), false, node, rule.getNode())) {
+        if (generator.getExecutor().checkCondition(GeneratorUtil.getReductionCondition(rule), false, node, rule.getNode())) {
           generator.getBlockedReductionsData().registerInputReduction(node, rule);
           return rule;
         }
@@ -83,7 +99,7 @@ public class FastRuleFinder {
     private Map<SNodeId, Object> myBlockedReductionData = new HashMap<SNodeId, Object>();
     private Set<SNodeId> myBlockedInput = new HashSet<SNodeId>();
 
-    public synchronized void registerInputReduction(SNode inputNode, Reduction_MappingRule rule) {
+    public synchronized void registerInputReduction(SNode inputNode, ReductionRule rule) {
       SNodeId nodeId = inputNode.getSNodeId();
       Object o = myInputReductionsData.get(nodeId);
       if (o == rule) return;
@@ -91,7 +107,7 @@ public class FastRuleFinder {
       if (o == null) {
         myInputReductionsData.put(nodeId, rule);
       } else if (o instanceof Reduction_MappingRule) {
-        List<Reduction_MappingRule> list = new ArrayList<Reduction_MappingRule>(2);
+        List<ReductionRule> list = new ArrayList<ReductionRule>(2);
         list.add((Reduction_MappingRule) o);
         list.add(rule);
         myInputReductionsData.put(nodeId, list);
@@ -100,7 +116,7 @@ public class FastRuleFinder {
       }
     }
 
-    public synchronized boolean isReductionBlocked(SNode node, Reduction_MappingRule rule) {
+    public synchronized boolean isReductionBlocked(SNode node, ReductionRule rule) {
       SNodeId nodeId = node.getSNodeId();
       boolean b = isReductionBlocked(nodeId, rule, myBlockedReductionData);
       if (!b) {
@@ -111,7 +127,7 @@ public class FastRuleFinder {
       return b;
     }
 
-    private boolean isReductionBlocked(SNodeId nodeId, Reduction_MappingRule rule, Map<SNodeId, Object> reductionBlockingData) {
+    private boolean isReductionBlocked(SNodeId nodeId, ReductionRule rule, Map<SNodeId, Object> reductionBlockingData) {
       Object o = reductionBlockingData.get(nodeId);
       if (o == null) return false;
       if (o == rule) return true;

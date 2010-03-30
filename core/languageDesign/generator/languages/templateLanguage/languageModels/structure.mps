@@ -850,6 +850,9 @@
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="1168559098955:2" resolveInfo="RuleConsequence" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3860274746541219070">
+      <link role="intfc:0" targetNodeId="3860274746541219069:2" resolveInfo="ReductionRule" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1167514355419">
     <property name="name:0" value="Root_MappingRule" />
@@ -1617,6 +1620,9 @@
       <property name="sourceCardinality:0" value="0..1" />
       <link role="target:0" targetNodeId="1167168920554:2" resolveInfo="BaseMappingRule_Condition" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3860274746541219071">
+      <link role="intfc:0" targetNodeId="3860274746541219069:2" resolveInfo="ReductionRule" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1722980698497626400">
     <property name="package:0" value="rule.argument" />
@@ -1678,6 +1684,10 @@
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="13.1136720037779:0" resolveInfo="PatternVariableDeclaration" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="3860274746541219069">
+    <property name="package:0" value="rule" />
+    <property name="name:0" value="ReductionRule" />
   </node>
 </model>
 

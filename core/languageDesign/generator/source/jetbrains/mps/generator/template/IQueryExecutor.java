@@ -2,6 +2,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.lang.generator.structure.*;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
@@ -13,6 +14,8 @@ import java.util.List;
 public interface IQueryExecutor {
 
   boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException;
+
+  GeneratedMatchingPattern checkIfApplicable(PatternReduction_MappingRule patternRule, SNode inputNode) throws GenerationFailureException;
 
   boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException;
 

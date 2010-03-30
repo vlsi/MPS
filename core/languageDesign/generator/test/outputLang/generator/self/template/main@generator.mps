@@ -35,8 +35,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="-1" />
+  <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
+  <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1209603916390">
     <property name="name:2" value="main" />
     <node role="patternReductionRule:2" type="jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule:2" id="4146564171992608883">
@@ -74,6 +76,31 @@
         </node>
         <node role="actualArgument:2" type="jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression:2" id="4146564171992617115">
           <link role="patternVarDecl:2" targetNodeId="4146564171992617051" resolveInfo="#right" />
+        </node>
+      </node>
+      <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="4112907264514778044">
+        <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4112907264514778045">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4112907264514779725">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4112907264514802358">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4112907264514779733">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4112907264514779727">
+                  <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="4112907264514779726" />
+                  <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef:0" id="4112907264514779731">
+                    <link role="patternVarDecl:0" targetNodeId="4146564171992617049" resolveInfo="#xx" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4112907264514802357">
+                  <link role="baseMethodDeclaration:16" targetNodeId="4.1213877396640" resolveInfo="getPresentation" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4112907264514802362">
+                <link role="baseMethodDeclaration:3" targetNodeId="2v.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4112907264514802363">
+                  <property name="value:3" value="i" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -153,13 +180,13 @@
       <link role="applicableConcept:2" targetNodeId="1.4146564171992368516" resolveInfo="CustomRoot" />
     </node>
   </node>
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="4146564171992617065">
     <property name="name:2" value="convertMult" />
     <node role="parameter:2" type="jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration:2" id="4146564171992617091">
       <property name="name:2" value="left" />
       <node role="type:2" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4146564171992617093">
-        <link role="concept:16" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
+        <link role="concept:16" targetNodeId="3v.1068431790191:3" resolveInfo="Expression" />
       </node>
     </node>
     <node role="parameter:2" type="jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration:2" id="4146564171992617094">

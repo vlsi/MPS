@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
@@ -32,9 +33,10 @@ public class TemplateQueryContext {
   public static final String ORIGINAL_INPUT_NODE = "originalInputNode"; 
   public static final String ORIGINAL_DEBUG_NODE = "originalDebugNode";
 
-  private SNode myInputNode;
-  private SNode myTemplateNode;
-  private ITemplateGenerator myGenerator;
+  private final SNode myInputNode;
+  private final SNode myTemplateNode;
+  private final ITemplateGenerator myGenerator;
+  private TemplateContext myContext;
 
   public TemplateQueryContext(SNode inputNode, SNode templateNode, ITemplateGenerator generator) {
     myInputNode = inputNode;
@@ -90,6 +92,10 @@ public class TemplateQueryContext {
     return myGenerator;
   }
 
+  public void setContext(TemplateContext context) {
+    myContext = context;
+  }
+  
   /**
    * 'scope' mapping
    */
@@ -168,11 +174,11 @@ public class TemplateQueryContext {
   }
 
   public Object getVariable(String name) {
-    return null;
+    return myContext == null ? null : myContext.getVariable(name);
   }
 
   public Object getPatternVariable(String name) {
-    return null;
+    return myContext == null ? null : myContext.getPatternVariable(name);
   }
 
   public Object putStepObject(Object key, Object o) {

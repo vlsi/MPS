@@ -195,6 +195,24 @@ public class GeneratorUtil {
     return null;
   }
 
+  static RuleConsequence getReductionConsequence(ReductionRule rule) {
+    if(rule instanceof Reduction_MappingRule) {
+      return ((Reduction_MappingRule)rule).getRuleConsequence();
+    } else if(rule instanceof PatternReduction_MappingRule) {
+      return ((PatternReduction_MappingRule)rule).getRuleConsequence();
+    }
+    return null;
+  }
+
+  static BaseMappingRule_Condition getReductionCondition(ReductionRule rule) {
+    if(rule instanceof Reduction_MappingRule) {
+      return ((Reduction_MappingRule) rule).getConditionFunction();
+    } else if(rule instanceof PatternReduction_MappingRule) {
+      return ((PatternReduction_MappingRule)rule).getConditionFunction();
+    }
+    return null;
+  }
+
   /**
    * @return message type or null if no message have been sent
    */

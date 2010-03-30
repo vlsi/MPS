@@ -5,6 +5,7 @@ import jetbrains.mps.generator.util.IPerformanceTracer;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.*;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
@@ -53,6 +54,25 @@ public class QueryExecutor implements IQueryExecutor {
       throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
     }
     return false;
+  }
+
+  public GeneratedMatchingPattern checkIfApplicable(PatternReduction_MappingRule patternRule, SNode inputNode) throws GenerationFailureException {
+    String methodName = TemplateFunctionMethodName.patternRule_Condition(patternRule.getNode());
+    try {
+      return (GeneratedMatchingPattern) QueryMethodGenerated.invoke(
+        methodName,
+        generator.getGeneratorSessionContext(),
+        new BaseMappingRuleContext(inputNode, patternRule.getNode(), generator),
+        patternRule.getNode().getModel(),
+        true);
+    } catch (ClassNotFoundException e) {
+      generator.showWarningMessage(BaseAdapter.fromAdapter(patternRule), "couldn't find condition method '" + methodName + "' : not applied");
+    } catch (NoSuchMethodException e) {
+      generator.showWarningMessage(BaseAdapter.fromAdapter(patternRule), "couldn't find condition method '" + methodName + "' : not applied");
+    } catch (Throwable t) {
+      throw new GenerationFailureException("error executing pattern/condition ", BaseAdapter.fromAdapter(patternRule), t);
+    }
+    return null;
   }
 
   @Override

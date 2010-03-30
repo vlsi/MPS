@@ -35,6 +35,7 @@ public class RuleManager {
   private FlattenIterable<Root_MappingRule> myRoot_MappingRules;
   private FlattenIterable<Weaving_MappingRule> myWeaving_MappingRules;
   private FlattenIterable<Reduction_MappingRule> myReduction_MappingRules;
+  private FlattenIterable<PatternReduction_MappingRule> myPatternReduction_MappingRules;
   private FlattenIterable<DropRootRule> myDropRootRules;
 
   private TemplateSwitchGraph myTemplateSwitchGraph;
@@ -52,7 +53,7 @@ public class RuleManager {
     myMappings = plan.getMappingConfigurations(step);
     myPlan = plan;
     initialize(myMappings);
-    myRuleFinder = new FastRuleFinder(myReduction_MappingRules);
+    myRuleFinder = new FastRuleFinder(myReduction_MappingRules, myPatternReduction_MappingRules);
   }
 
   private void initialize(List<MappingConfiguration> list) {
@@ -60,6 +61,7 @@ public class RuleManager {
     myRoot_MappingRules = new FlattenIterable(new ArrayList<List<Root_MappingRule>>(list.size()));
     myWeaving_MappingRules = new FlattenIterable(new ArrayList<List<Weaving_MappingRule>>(list.size()));
     myReduction_MappingRules = new FlattenIterable(new ArrayList<List<Reduction_MappingRule>>(list.size()));
+    myPatternReduction_MappingRules = new FlattenIterable(new ArrayList<List<PatternReduction_MappingRule>>(list.size()));
     myDropRootRules = new FlattenIterable(new ArrayList<List<DropRootRule>>(list.size()));
 
     for (MappingConfiguration mappingConfig : list) {
@@ -67,6 +69,7 @@ public class RuleManager {
       myRoot_MappingRules.add(mappingConfig.getRootMappingRules());
       myWeaving_MappingRules.add(mappingConfig.getWeavingMappingRules());
       myReduction_MappingRules.add(mappingConfig.getReductionMappingRules());
+      myPatternReduction_MappingRules.add(mappingConfig.getPatternReductionRules());
       myDropRootRules.add(mappingConfig.getDropRootRules());
     }
 
