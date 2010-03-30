@@ -115,20 +115,20 @@ public class GenericRefactoringAction extends BaseAction {
   }
 
   private Set<SNode> getNodes(AnActionEvent e, boolean oneEntity) {
-    SNode node = MPSDataKeys.NODE.getData(e.getDataContext());
-    List<SNode> nodes = MPSDataKeys.NODES.getData(e.getDataContext());
+    SNode node = e.getData(MPSDataKeys.NODE);
+    List<SNode> nodes = e.getData(MPSDataKeys.NODES);
     return getEntities(oneEntity, node, nodes);
   }
 
   private Set<SModelDescriptor> getModels(AnActionEvent e, boolean oneEntity) {
-    SModelDescriptor node = MPSDataKeys.CONTEXT_MODEL.getData(e.getDataContext());
-    List<SModelDescriptor> nodes = MPSDataKeys.MODELS.getData(e.getDataContext());
+    SModelDescriptor node = e.getData(MPSDataKeys.CONTEXT_MODEL);
+    List<SModelDescriptor> nodes = e.getData(MPSDataKeys.MODELS);
     return getEntities(oneEntity, node, nodes);
   }
 
   private Set<IModule> getModules(AnActionEvent e, boolean oneEntity) {
-    IModule node = MPSDataKeys.MODULE.getData(e.getDataContext());
-    List<IModule> nodes = MPSDataKeys.MODULES.getData(e.getDataContext());
+    IModule node = e.getData(MPSDataKeys.MODULE);
+    List<IModule> nodes = e.getData(MPSDataKeys.MODULES);
     return getEntities(oneEntity, node, nodes);
   }
 

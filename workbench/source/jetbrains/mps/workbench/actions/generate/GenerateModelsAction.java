@@ -79,7 +79,7 @@ public abstract class GenerateModelsAction extends BaseAction {
   @Override
   protected boolean collectActionData(AnActionEvent e) {
     if (!super.collectActionData(e)) return false;
-    MPSProject project = MPSDataKeys.MPS_PROJECT.getData(e.getDataContext());
+    MPSProject project = e.getData(MPSDataKeys.MPS_PROJECT);
     myGenManager = project.getComponentSafe(GeneratorManager.class);
     myModels = e.getData(MPSDataKeys.MODELS);
     if (myModels == null) myModels = new ArrayList<SModelDescriptor>();
@@ -90,7 +90,7 @@ public abstract class GenerateModelsAction extends BaseAction {
       }
     }
     if (myModels.isEmpty()) return false;
-    myContext = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
+    myContext = e.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (myContext == null) return false;
     return true;
   }
