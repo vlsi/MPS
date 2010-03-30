@@ -42,7 +42,7 @@ public class AddToFavoritesGroup_ActionGroup extends GeneratedActionGroup {
   public void doUpdate(AnActionEvent event) {
     try {
       AddToFavoritesGroup_ActionGroup.this.removeAll();
-      Project project = MPSDataKeys.PROJECT.getData(event.getDataContext());
+      Project project = event.getData(MPSDataKeys.PROJECT);
       if (project == null) {
         return;
       }

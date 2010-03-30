@@ -104,7 +104,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-        if (project==null || project.isDisposed()) return;
+        if (project == null || project.isDisposed()) return;
 
         final SearchResults[] searchResults = new SearchResults[1];
         final boolean[] isCancelled = new boolean[1];

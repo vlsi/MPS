@@ -11,8 +11,6 @@ import java.awt.CardLayout;
 import javax.swing.JRadioButton;
 import org.jetbrains.annotations.Nullable;
 import java.awt.HeadlessException;
-import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.ide.DataManager;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import java.awt.GridBagLayout;
@@ -28,6 +26,9 @@ import java.awt.BorderLayout;
 import javax.swing.border.Border;
 import javax.swing.BorderFactory;
 import javax.swing.border.CompoundBorder;
+import javax.swing.JFrame;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.WindowManager;
 import java.awt.Component;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -82,7 +83,7 @@ public class TestConfigurationDialog extends BaseDialog {
   private TestConfigurationDialog.NamePanel myNamePanel;
 
   public TestConfigurationDialog(MPSProject mpsProject, @Nullable BaseTestConfiguration config) throws HeadlessException {
-    super(MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext()), "Edit Test Configuration");
+    super(getFrame(mpsProject), "Edit Test Configuration");
     this.myProject = mpsProject;
     this.myConfig = config;
     this.initUI();
@@ -202,6 +203,11 @@ public class TestConfigurationDialog extends BaseDialog {
   public void buttonCancel() {
     this.myResult = null;
     this.dispose();
+  }
+
+  private static JFrame getFrame(MPSProject mpsProject) {
+    Project project = mpsProject.getComponent(Project.class);
+    return WindowManager.getInstance().getFrame(project);
   }
 
   private abstract class BasePanel extends JPanel {
