@@ -15,46 +15,37 @@
  */
 package jetbrains.mps.javaParser;
 
-import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
-import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
-import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
-import org.eclipse.jdt.internal.compiler.*;
-import org.eclipse.jdt.internal.compiler.Compiler;
-import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
-import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
-import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
-import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
-import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import org.eclipse.jdt.core.compiler.IProblem;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.*;
-import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.compiler.MPSNameEnvironment;
+import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.javaParser.UIComponents.MyDialog;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
-import jetbrains.mps.javaParser.UIComponents.MyDialog;
-import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.reloading.*;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vfs.MPSExtentions;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
+import org.eclipse.jdt.core.compiler.IProblem;
+import org.eclipse.jdt.internal.compiler.CompilationResult;
+import org.eclipse.jdt.internal.compiler.Compiler;
+import org.eclipse.jdt.internal.compiler.ICompilerRequestor;
+import org.eclipse.jdt.internal.compiler.IErrorHandlingPolicy;
+import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
+import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
+import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
+import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
+import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
+import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
+import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
 
 import javax.swing.JOptionPane;
+import java.io.File;
 import java.util.*;
-import java.io.*;
 
-import com.intellij.ide.DataManager;
-
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 08.09.2009
- * Time: 15:19:32
- * To change this template use File | Settings | File Templates.
- */
 public class JavaCompiler {
-
   private static final Logger LOG = Logger.getLogger(JavaCompiler.class);
 
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
@@ -68,13 +59,15 @@ public class JavaCompiler {
   private Set<String> myModelsToCreate = new HashSet<String>();
   private SModel myBaseModelToAddSource;
   private String myPrefix = null;
+  private IOperationContext myContext;
   boolean mySetOutputPath;
 
-  public JavaCompiler(IModule module, File sourceDir, boolean setOutputPath) {
-    this(module, sourceDir, setOutputPath, null);
+  public JavaCompiler(IOperationContext context, IModule module, File sourceDir, boolean setOutputPath) {
+    this(context, module, sourceDir, setOutputPath, null);
   }
 
-  public JavaCompiler(IModule module, File sourceDir, boolean setOutputPath, SModel model) {
+  public JavaCompiler(IOperationContext context, IModule module, File sourceDir, boolean setOutputPath, SModel model) {
+    myContext = context;
     myModule = module;
     mySourceDir = sourceDir;
     myBaseModelToAddSource = model;
@@ -267,11 +260,9 @@ public class JavaCompiler {
   }
 
   private void showMessageView() {
-    IOperationContext operationContext = MPSDataKeys.OPERATION_CONTEXT.getData(DataManager.getInstance().getDataContext());
-    MessagesViewTool messagesView = operationContext.getComponent(MessagesViewTool.class);
-    if (messagesView != null) {
-      messagesView.openToolLater(false);
-    }
+    MessagesViewTool messagesView = myContext.getComponent(MessagesViewTool.class);
+    if (messagesView == null) return;
+    messagesView.openToolLater(false);
   }
 
   private void recompile() {
@@ -306,7 +297,7 @@ public class JavaCompiler {
     if (!fqNames.isEmpty()) {
       int option = JOptionPane.showConfirmDialog(null, "Some imports in source code were not resolved.\nDo you want to specify classpaths for unresolved imports?");
       if (option == JOptionPane.YES_OPTION) {
-        MyDialog dialog = UIComponents.createClasspathsDialog(mySourceDir, new Vector<String>(fqNames));
+        MyDialog dialog = UIComponents.createClasspathsDialog(myContext, mySourceDir, new Vector<String>(fqNames));
         dialog.setVisible(true);
         List<IClassPathItem> list = dialog.getChosenClassPaths();
         if (!list.isEmpty()) {
@@ -316,7 +307,7 @@ public class JavaCompiler {
             if (classpath instanceof FileClassPathItem) {
               cpe.setPath(((FileClassPathItem) classpath).getClassPath());
             } else if (classpath instanceof JarFileClassPathItem) {
-              cpe.setPath(((JarFileClassPathItem)classpath).getFile().getAbsolutePath());
+              cpe.setPath(((JarFileClassPathItem) classpath).getFile().getAbsolutePath());
             } else {
               cpe = null;
             }

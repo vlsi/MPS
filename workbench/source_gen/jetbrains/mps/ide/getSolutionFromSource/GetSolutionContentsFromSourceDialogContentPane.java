@@ -19,6 +19,7 @@ import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import java.io.File;
 import jetbrains.mps.javaParser.JavaCompiler;
+import jetbrains.mps.project.ModuleContext;
 
 public class GetSolutionContentsFromSourceDialogContentPane extends JPanel {
   public GetSolutionContentsFromSourceDialogContentPane myThis;
@@ -176,7 +177,7 @@ public class GetSolutionContentsFromSourceDialogContentPane extends JPanel {
 
   /*package*/ void onOk() {
     File chosenFile = new File(myThis.getSourcePath());
-    JavaCompiler javaCompiler = new JavaCompiler(myThis.getSolution(), chosenFile, true);
+    JavaCompiler javaCompiler = new JavaCompiler(new ModuleContext(myThis.getSolution(), myThis.getProject()), myThis.getSolution(), chosenFile, true);
     javaCompiler.compile();
   }
 }

@@ -45,10 +45,8 @@ import java.util.*;
 public class UIComponents {
   private static final Logger LOG = Logger.getLogger(UIComponents.class);
 
-  public static MyDialog createClasspathsDialog(final File sourceDir, List<String> classFqNames) {
-    IOperationContext data = MPSDataKeys.OPERATION_CONTEXT.getData(DataManager.getInstance().getDataContext());
-    MyDialog dialog = new MyDialog(data, sourceDir, classFqNames);
-    return dialog;
+  public static MyDialog createClasspathsDialog(IOperationContext context,final File sourceDir, List<String> classFqNames) {
+    return new MyDialog(context, sourceDir, classFqNames);
   }
 
   public static class MyDialog extends BaseBindedDialog implements ClasspathObserver {

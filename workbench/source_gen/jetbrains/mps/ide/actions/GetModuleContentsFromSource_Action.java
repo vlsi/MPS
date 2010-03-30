@@ -6,8 +6,9 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.IModule;
 import java.awt.Frame;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -20,8 +21,9 @@ public class GetModuleContentsFromSource_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GetModuleContentsFromSource_Action.class);
 
-  private IModule module;
   private Frame frame;
+  private IOperationContext context;
+  private IModule module;
 
   public GetModuleContentsFromSource_Action() {
     super("Get Module Contents from Source", "", ICON);
@@ -49,12 +51,16 @@ public class GetModuleContentsFromSource_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
-    if (this.module == null) {
-      return false;
-    }
     this.frame = event.getData(MPSDataKeys.FRAME);
     if (this.frame == null) {
+      return false;
+    }
+    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+    if (this.context == null) {
+      return false;
+    }
+    this.module = event.getData(MPSDataKeys.MODULE);
+    if (this.module == null) {
       return false;
     }
     return true;
@@ -72,7 +78,7 @@ public class GetModuleContentsFromSource_Action extends GeneratedAction {
       });
       IFile result = treeFileChooser.showDialog(GetModuleContentsFromSource_Action.this.frame);
       if (result != null) {
-        JavaCompiler javaCompiler = new JavaCompiler(GetModuleContentsFromSource_Action.this.module, result.toFile(), true);
+        JavaCompiler javaCompiler = new JavaCompiler(GetModuleContentsFromSource_Action.this.context, GetModuleContentsFromSource_Action.this.module, result.toFile(), true);
         javaCompiler.compile();
       }
     } catch (Throwable t) {

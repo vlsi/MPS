@@ -151,7 +151,24 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6998207564469074349">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6998207564469074350">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~JavaCompiler.&lt;init&gt;(jetbrains.mps.project.IModule,java.io.File,boolean)" resolveInfo="JavaCompiler" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~JavaCompiler.&lt;init&gt;(jetbrains.mps.smodel.IOperationContext,jetbrains.mps.project.IModule,java.io.File,boolean)" resolveInfo="JavaCompiler" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4393431345216848700">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4393431345216850977">
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~ModuleContext.&lt;init&gt;(jetbrains.mps.project.IModule,jetbrains.mps.project.MPSProject)" resolveInfo="ModuleContext" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4393431345216850986">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="4393431345216850987" />
+                      <node role="operation:3" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation:1" id="4393431345216850988">
+                        <link role="member:1" targetNodeId="6998207564469066131" resolveInfo="solution" />
+                      </node>
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4393431345216850983">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="4393431345216850984" />
+                      <node role="operation:3" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation:1" id="4393431345216850985">
+                        <link role="member:1" targetNodeId="6998207564469066126" resolveInfo="project" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6998207564469074357">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6998207564469074358" />
                   <node role="operation:3" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation:1" id="6998207564469074359">

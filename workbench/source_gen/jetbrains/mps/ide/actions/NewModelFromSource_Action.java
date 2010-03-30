@@ -164,7 +164,7 @@ public class NewModelFromSource_Action extends GeneratedAction {
         }
         IFile resultFile = treeFileChooser.showDialog(NewModelFromSource_Action.this.frame);
         if (resultFile != null) {
-          JavaCompiler javaCompiler = new JavaCompiler(NewModelFromSource_Action.this.module, resultFile.toFile(), false, sModel);
+          JavaCompiler javaCompiler = new JavaCompiler(NewModelFromSource_Action.this.context, NewModelFromSource_Action.this.module, resultFile.toFile(), false, sModel);
           javaCompiler.compile();
         }
         SModelDescriptor modelDescriptor = result;

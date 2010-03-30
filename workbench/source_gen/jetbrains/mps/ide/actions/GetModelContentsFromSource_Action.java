@@ -6,8 +6,9 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.SModelDescriptor;
 import java.awt.Frame;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.IModule;
@@ -26,8 +27,9 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GetModelContentsFromSource_Action.class);
 
-  private SModelDescriptor model;
   private Frame frame;
+  private IOperationContext context;
+  private SModelDescriptor model;
 
   public GetModelContentsFromSource_Action() {
     super("Get Model Contents from Source", "", ICON);
@@ -67,12 +69,16 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.model = event.getData(MPSDataKeys.MODEL);
-    if (this.model == null) {
-      return false;
-    }
     this.frame = event.getData(MPSDataKeys.FRAME);
     if (this.frame == null) {
+      return false;
+    }
+    this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
+    if (this.context == null) {
+      return false;
+    }
+    this.model = event.getData(MPSDataKeys.MODEL);
+    if (this.model == null) {
       return false;
     }
     return true;
@@ -112,7 +118,7 @@ public class GetModelContentsFromSource_Action extends GeneratedAction {
       }
       IFile result = treeFileChooser.showDialog(GetModelContentsFromSource_Action.this.frame);
       if (result != null) {
-        JavaCompiler javaCompiler = new JavaCompiler(module, result.toFile(), false, sModel);
+        JavaCompiler javaCompiler = new JavaCompiler(GetModelContentsFromSource_Action.this.context, module, result.toFile(), false, sModel);
         javaCompiler.compile();
       }
     } catch (Throwable t) {
