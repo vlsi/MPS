@@ -16,13 +16,14 @@
 
 package jetbrains.mps.ide.tabbedEditor;
 
+import com.intellij.openapi.util.Pair;
+import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.changesmanager.NodeFileStatusListener;
 import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 
@@ -33,26 +34,43 @@ public abstract class AbstractLazyTab implements ILazyTab {
   private SNodePointer myBaseNode;
   private TabbedEditor myTabbedEditor;
 
-  private SModelListener myModelListener = createModelListener();
-  private List<SModelDescriptor> myModelsWithListeners = new ArrayList<SModelDescriptor>();
-
   private NodeFileStatusListener myNodeFileStatusListener = createFileStatusListener();
 
-
-  public AbstractLazyTab(TabbedEditor tabbedEditor,SNode baseNode) {
+  public AbstractLazyTab(TabbedEditor tabbedEditor, SNode baseNode) {
     myTabbedEditor = tabbedEditor;
     myBaseNode = new SNodePointer(baseNode);
+
+    SModelRepository.getInstance().addModelRepositoryListener(myModelAddedListener);
+    SModelRepository.getInstance().addModelRepositoryListener(myModelRemovedListener);
 
     RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabbedEditor().getOperationContext().getProject());
     if (statusManager != null) {
       statusManager.addNodeFileStatusListener(myNodeFileStatusListener);
-    }    
+    }
+  }
+
+  public void dispose() {
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabbedEditor().getOperationContext().getProject());
+    if (statusManager != null) {
+      statusManager.removeNodeFileStatusListener(myNodeFileStatusListener);
+    }
+
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelRemovedListener);
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelAddedListener);
+
+    for (SModelReference r : myImportantNodes.keySet()) {
+      SModelDescriptor d = SModelRepository.getInstance().getModelDescriptor(r);
+      d.removeModelListener(myRootRemovedListener);
+    }
+    myImportantNodes.clear();
+
+    myModelAdditionListeners.clear();
   }
 
   public TabbedEditor getTabbedEditor() {
     return myTabbedEditor;
   }
-  
+
   public SNode getBaseNode() {
     return myBaseNode.getNode();
   }
@@ -65,26 +83,88 @@ public abstract class AbstractLazyTab implements ILazyTab {
     return getTabbedEditor().getOperationContext();
   }
 
-  //todo make protected
-  public void addModelToListen(SModelDescriptor model) {
-    if (myModelsWithListeners.contains(model)) return;
-    myModelsWithListeners.add(model);
-    model.addModelListener(myModelListener);
-  }
-
-  public void dispose() {
-    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getTabbedEditor().getOperationContext().getProject());
-    if (statusManager != null) {
-      statusManager.removeNodeFileStatusListener(myNodeFileStatusListener);
-    }
-    
-    for (SModelDescriptor d : myModelsWithListeners) {
-      d.removeModelListener(myModelListener);
-    }
-    myModelsWithListeners.clear();
-  }
-
-  protected abstract SModelListener createModelListener();
   protected abstract NodeFileStatusListener createFileStatusListener();
-  protected abstract boolean checkNodeStateChanged();
+
+  protected abstract void onImportantRootRemoved(SNodePointer node);
+
+  ///-------------tab remove events----------------
+
+  private SModelRepositoryListener myModelRemovedListener = new ModelRemovedAdapter();
+  private SModelListener myRootRemovedListener = new RootRemovedAdapter();
+  private ImportantNodes myImportantNodes = new ImportantNodes();
+
+  public void aspectAdded(SNode node) {
+    SModelDescriptor descriptor = node.getModel().getModelDescriptor();
+    if (!myImportantNodes.containsKey(descriptor.getSModelReference())) {
+      descriptor.addModelListener(myRootRemovedListener);
+    }
+    myImportantNodes.add(new SNodePointer(node));
+  }
+
+  private class RootRemovedAdapter extends SModelAdapter {
+    public void rootRemoved(SModelRootEvent event) {
+      SNode root = event.getRoot();
+      SNodePointer nodePointer = new SNodePointer(root);
+      SModelReference modelRef = root.getModel().getSModelReference();
+
+      if (!myImportantNodes.get(modelRef).contains(nodePointer)) return;
+      onImportantRootRemoved(nodePointer);
+    }
+  }
+
+  private class ModelRemovedAdapter extends SModelRepositoryAdapter {
+    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+      SModelReference ref = modelDescriptor.getSModelReference();
+      if (!myImportantNodes.containsKey(ref)) return;
+
+      for (SNodePointer node : myImportantNodes.get(ref)) {
+        onImportantRootRemoved(node);
+      }
+      myImportantNodes.remove(ref);
+    }
+  }
+
+  ///-------------tab insert events----------------
+
+  private List<AdditionDescriptor> myAdditionDescriptors = new ArrayList<AdditionDescriptor>();
+  private SModelRepositoryListener myModelAddedListener = new ModelAddedListener();
+  private MultiMap<SModelReference, SModelListener> myModelAdditionListeners = new MultiMap<SModelReference, SModelListener>();
+
+  public void addNodeAdditionListener(Condition<SModelDescriptor> listenToModelCondition, SModelListener listener) {
+    myAdditionDescriptors.add(new AdditionDescriptor(listenToModelCondition, listener));
+    for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors()) {
+      if (listenToModelCondition.met(d)) {
+        listenModelForAdditions(d, listener);
+      }
+    }
+  }
+
+  private void listenModelForAdditions(SModelDescriptor descriptor, SModelListener listener) {
+    descriptor.addModelListener(listener);
+    myModelAdditionListeners.putValue(descriptor.getSModelReference(), listener);
+  }
+
+  private class ModelAddedListener extends SModelRepositoryAdapter {
+    public void modelAdded(SModelDescriptor modelDescriptor) {
+      for (AdditionDescriptor d : myAdditionDescriptors) {
+        if (d.first.met(modelDescriptor)) {
+          listenModelForAdditions(modelDescriptor, d.second);
+        }
+      }
+    }
+
+    public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
+      SModelReference modelRef = modelDescriptor.getSModelReference();
+      for (SModelListener listener : myModelAdditionListeners.get(modelRef)) {
+        modelDescriptor.removeModelListener(listener);
+      }
+      myModelAdditionListeners.remove(modelRef);
+    }
+  }
+
+  private class AdditionDescriptor extends Pair<Condition<SModelDescriptor>, SModelListener> {
+    public AdditionDescriptor(Condition<SModelDescriptor> first, SModelListener second) {
+      super(first, second);
+    }
+  }
 }

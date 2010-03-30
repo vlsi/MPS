@@ -26,10 +26,9 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 
 import javax.swing.JComponent;
@@ -41,22 +40,14 @@ import java.util.List;
 public abstract class BaseSingletabbedTab extends AbstractLazyTab {
   private static final Logger LOG = Logger.getLogger(BaseSingletabbedTab.class);
 
-  private SModelRepositoryListener myRepositoryListener;
-
   private EditorComponent myComponent;
   private SNodePointer myLoadableNode;
-
-  @Deprecated
-  //for compatibility
-  protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-    this(tabbedEditor, baseNode);
-  }
 
   protected BaseSingletabbedTab(TabbedEditor tabbedEditor, SNode baseNode) {
     super(tabbedEditor, baseNode);
   }
 
-  private void reinit() {
+  public void reinit() {
     getTabbedEditor().getTabbedPane().remove(this);
     myComponent = null;
     myLoadableNode = null;
@@ -65,6 +56,10 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
         getTabbedEditor().getTabbedPane().initTab(BaseSingletabbedTab.this);
       }
     });
+  }
+
+  public boolean newNode() {
+    return getLoadableNode() == null && tryToLoadNode() != null;
   }
 
   protected abstract SNode tryToLoadNode();
@@ -76,14 +71,12 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
   }
 
   public final void selectTab(int index) {
+
   }
 
   protected SNode getLoadableNode() {
-    SNode node = null;
-    if (myLoadableNode != null) {
-      node = myLoadableNode.getNode();
-    }
-    return node;
+    if (myLoadableNode == null) return null;
+    return myLoadableNode.getNode();
   }
 
   public JComponent getComponent() {
@@ -131,9 +124,7 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
       myComponent = new NodeEditorComponent(getOperationContext());
       myComponent.editNode(loadableNode, getOperationContext());
       myLoadableNode = new SNodePointer(loadableNode);
-
-      SModelDescriptor descriptor = loadableNode.getModel().getModelDescriptor();
-      addModelToListen(descriptor);
+      aspectAdded(loadableNode);
 
       return true;
     }
@@ -159,97 +150,29 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
     });
   }
 
-  public void dispose() {
-    if (myRepositoryListener != null) {
-      SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
-    }
-    super.dispose();
-  }
-
   //------------model listening
 
-  public void addListener(final Condition<SModelDescriptor> listenCondition) {
-    final SModelDescriptor nodeModelDescriptor = getBaseNode().getModel().getModelDescriptor();
-    if (nodeModelDescriptor != null) {
-      addModelToListen(nodeModelDescriptor);
-    } else {
-      myRepositoryListener = new MySModelRepositoryAdapter(listenCondition);
-      SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
-    }
-  }
+  protected void onImportantRootRemoved(SNodePointer node) {
+    if (getBaseNode() == null) return;
+    if (getBaseNode() == node.getNode()) return;
 
-  protected boolean checkNodeStateChanged() {
-    SNode newNode = tryToLoadNode();
-    assert newNode != null;
-    return EqualUtil.equals(myLoadableNode, new SNodePointer(newNode));
-  }
-
-  protected SModelListener createModelListener() {
-    return new AddRemoveNodeListener();
-  }
-
-  private class AddRemoveNodeListener extends SModelAdapter {
-    public void rootRemoved(SModelRootEvent event) {
-      if (getBaseNode() == null) return;
-      if (getBaseNode() == event.getRoot()) return;
-      if (getLoadableNode() != event.getRoot()) return;
-
-      reinit();
-    }
-
-    public void rootAdded(SModelRootEvent event) {
-      if (!newNode()) return;
-      reinit();
-    }
-
-    private boolean newNode() {
-      return getLoadableNode() == null && tryToLoadNode() != null;
-    }
-  }
-
-  private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
-    private final Condition<SModelDescriptor> myListenCondition;
-
-    public MySModelRepositoryAdapter(Condition<SModelDescriptor> listenCondition) {
-      myListenCondition = listenCondition;
-    }
-
-    public void modelAdded(SModelDescriptor modelDescriptor) {
-      if (ProjectModels.isProjectModel(modelDescriptor.getSModelReference())) return;
-      if (!myListenCondition.met(modelDescriptor)) return;
-
-      addModelToListen(modelDescriptor);
-      SModelRepository.getInstance().removeModelRepositoryListener(this);
-    }
-
-    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
-      SNode node = getLoadableNode();
-      if (node == null) return;
-      SModel model = node.getModel();
-      if (model == null) return;
-      SModelDescriptor md = model.getModelDescriptor();
-      if (!modelDescriptor.equals(md)) return;
-
-      reinit();
-    }
+    reinit();
   }
 
   //------------
 
   protected NodeFileStatusListener createFileStatusListener() {
-    return new MyNodeFileStatusListener();
-  }
-
-  private class MyNodeFileStatusListener implements NodeFileStatusListener {
-    public void fileStatusChanged(final SNode node) {
-      SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-        public SNodePointer compute() {
-          return new SNodePointer(node);
+    return new NodeFileStatusListener() {
+      public void fileStatusChanged(final SNode node) {
+        SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+          public SNodePointer compute() {
+            return new SNodePointer(node);
+          }
+        });
+        if (EqualUtil.equals(myLoadableNode, nodePointer)) {
+          getTabbedEditor().updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
         }
-      });
-      if (EqualUtil.equals(myLoadableNode, nodePointer)) {
-        getTabbedEditor().updateTabColor(BaseSingletabbedTab.this, getBaseNodeVirtualFile());
       }
-    }
+    };
   }
 }

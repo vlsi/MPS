@@ -39,9 +39,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -65,8 +63,6 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class BaseMultitabbedTab extends AbstractLazyTab {
-  private SModelRepositoryListener myRepositoryListener = new MySModelRepositoryAdapter();
-
   private Set<SNodePointer> myLoadableNodes = new HashSet<SNodePointer>();
   private JTabbedPane myInnerTabbedPane;
   private JPanel myComponent;
@@ -74,18 +70,22 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
   private int myCurrentIndex = 0;
   private ListPopup myListPopup;
 
-  @Deprecated
-  //for compatibility
-  protected BaseMultitabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-    this(tabbedEditor, baseNode);
-  }
+  private Set<SModelDescriptor> myModelsWithListeners = new HashSet<SModelDescriptor>();
+  private BaseMultitabbedTab.MyNameListener myNodeNameListener = new MyNameListener();
 
   protected BaseMultitabbedTab(TabbedEditor tabbedEditor, SNode baseNode) {
     super(tabbedEditor, baseNode);
-    SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
   }
 
-  private void closeTab(SNodePointer nodePointer, int index) {
+  public void addInnerTabChecked(SNode loadableNode, IOperationContext operationContext) {
+    if (getLoadableNodes().size() == 0) {
+      tryToInitComponent();
+    } else {
+      addInnerTab(loadableNode, operationContext);
+    }
+  }
+
+  public void closeTab(SNodePointer nodePointer, int index) {
     myInnerTabbedPane.remove(index);
     myEditors.remove(index);
     myLoadableNodes.remove(nodePointer);
@@ -99,7 +99,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     getTabbedEditor().updateTabColor(this, getBaseNodeVirtualFile());
   }
 
-  private int getIndexOfTabFor(SNodePointer pointer) {
+  public int getIndexOfTabFor(SNodePointer pointer) {
     for (EditorComponent editorComponent : myEditors) {
       if (editorComponent.getEditedNodePointer().equals(pointer)) {
         return myEditors.indexOf(editorComponent);
@@ -112,7 +112,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     return new ArrayList<SNode>();
   }
 
-  protected abstract List<Pair<SNode, IOperationContext>> tryToLoadNodes();
+  public abstract List<Pair<SNode, IOperationContext>> tryToLoadNodes();
 
   protected abstract Pair<SNode, IOperationContext> createLoadableNode(boolean ask, SNode concept);
 
@@ -120,7 +120,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     return false;
   }
 
-  protected List<SNode> getLoadableNodes() {
+  public List<SNode> getLoadableNodes() {
     List<SNode> result = new ArrayList<SNode>();
     for (SNodePointer sNodePointer : myLoadableNodes) {
       result.add(sNodePointer.getNode());
@@ -252,19 +252,6 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     return true;
   }
 
-  private void addInnerTabChecked(SNode loadableNode, IOperationContext operationContext) {
-    if (getLoadableNodes().size() == 0) {
-      tryToInitComponent();
-    } else {
-      addInnerTab(loadableNode, operationContext);
-    }
-  }
-
-  public void dispose() {
-    SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
-    super.dispose();
-  }
-
   private JComponent addInnerTab(SNode loadableNode, IOperationContext operationContext) {
     EditorComponent component = new NodeEditorComponent(operationContext);
     component.editNode(loadableNode, operationContext);
@@ -275,9 +262,24 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     myInnerTabbedPane.add(getTabTextForNode(loadableNode), jComponent);
     myInnerTabbedPane.setIconAt(myEditors.size() - 1, IconManager.getIconFor(loadableNode));
     ToolWindowManager.getInstance(operationContext.getProject()).getFocusManager().requestFocus(component, false);
-    SModelDescriptor d = loadableNode.getModel().getModelDescriptor();
-    addModelToListen(d);
+    aspectAdded(loadableNode);
+    addNameListener(loadableNode.getModel().getModelDescriptor());
+
     return jComponent;
+  }
+
+  private void addNameListener(SModelDescriptor modelDescriptor) {
+    if (myModelsWithListeners.contains(modelDescriptor)) return;
+    myModelsWithListeners.add(modelDescriptor);
+    modelDescriptor.addModelListener(myNodeNameListener);
+  }
+
+  public void dispose() {
+    for (SModelDescriptor d : myModelsWithListeners) {
+      d.removeModelListener(myNodeNameListener);
+    }
+    myModelsWithListeners.clear();
+    super.dispose();
   }
 
   private void updateTabColor(int tabIndex) {
@@ -390,49 +392,14 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
 
   //------------model listening
 
-  protected boolean checkNodeStateChanged() {
-    List<SNodePointer> newNodes = new ArrayList<SNodePointer>();
-    for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
-      SNodePointer nodePointer = new SNodePointer(p.o1);
-      newNodes.add(nodePointer);
-    }
+  protected void onImportantRootRemoved(SNodePointer node) {
+    if (getBaseNode() == null) return;
+    if (getBaseNode() == node.getNode()) return;
 
-    if (myLoadableNodes.size()!=newNodes.size()) return true;
-    return !myLoadableNodes.containsAll(newNodes);
+    closeTab(node, getIndexOfTabFor(node));
   }
 
-  protected SModelListener createModelListener() {
-    return new AddRemoveNodeListener();
-  }
-
-  private class AddRemoveNodeListener extends SModelAdapter {
-    public void rootRemoved(SModelRootEvent event) {
-      if (getBaseNode() == null) return;
-      if (getBaseNode() == event.getRoot()) return;
-
-      if (getLoadableNodes().contains(event.getRoot())) {
-        SNodePointer nodePointer = new SNodePointer(event.getRoot());
-        int index = getIndexOfTabFor(nodePointer);
-        closeTab(nodePointer, index);
-      }
-    }
-
-    public void rootAdded(SModelRootEvent event) {
-      SNode root = event.getRoot();
-      if (!getLoadableNodes().contains(root)) {
-        IOperationContext context = null;
-        for (Pair<SNode, IOperationContext> p : tryToLoadNodes()) {
-          if (p.o1 == root) {
-            context = p.o2;
-            break;
-          }
-        }
-        if (context != null) {
-          addInnerTabChecked(event.getRoot(), context);
-        }
-      }
-    }
-
+  private class MyNameListener extends SModelAdapter {
     public void propertyChanged(SModelPropertyEvent event) {
       SNodePointer pointer = new SNodePointer(event.getNode());
       if (event.getPropertyName().equals(INamedConcept.NAME) && myLoadableNodes.contains(pointer)) {
@@ -443,44 +410,26 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     }
   }
 
-  private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
-    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
-      for (SNode node : getLoadableNodes()) {
-        if (node == null) continue;
-        SModel model = node.getModel();
-        if (model == null) continue;
-        SModelDescriptor md = model.getModelDescriptor();
-        if (!modelDescriptor.equals(md)) continue;
-
-        SNodePointer nodePointer = new SNodePointer(node);
-        int index = getIndexOfTabFor(nodePointer);
-        closeTab(nodePointer, index);
-      }
-    }
-  }
-
   //------------
 
   protected NodeFileStatusListener createFileStatusListener() {
-    return new MyNodeFileStatusListener();
-  }
-
-  private class MyNodeFileStatusListener implements NodeFileStatusListener {
-    public void fileStatusChanged(final SNode node) {
-      final SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-        public SNodePointer compute() {
-          return new SNodePointer(node);
-        }
-      });
-      if (myLoadableNodes.contains(nodePointer)) {
-        int index = ModelAccess.instance().runReadAction(new Computable<Integer>() {
-          public Integer compute() {
-            return getIndexOfTabFor(nodePointer);
+    return new NodeFileStatusListener() {
+      public void fileStatusChanged(final SNode node) {
+        final SNodePointer nodePointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+          public SNodePointer compute() {
+            return new SNodePointer(node);
           }
         });
-        assert index >= 0 : "tab for node not found";
-        updateTabColor(index);
+        if (myLoadableNodes.contains(nodePointer)) {
+          int index = ModelAccess.instance().runReadAction(new Computable<Integer>() {
+            public Integer compute() {
+              return getIndexOfTabFor(nodePointer);
+            }
+          });
+          assert index >= 0 : "tab for node not found";
+          updateTabColor(index);
+        }
       }
-    }
+    };
   }
 }

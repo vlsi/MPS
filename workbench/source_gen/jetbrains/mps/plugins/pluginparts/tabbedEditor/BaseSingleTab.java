@@ -6,19 +6,16 @@ import jetbrains.mps.ide.tabbedEditor.tabs.BaseSingletabbedTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 
 public abstract class BaseSingleTab extends BaseSingletabbedTab {
+  @Deprecated
   public BaseSingleTab(TabbedEditor tabbedEditor, final SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-    super(tabbedEditor, baseNode, adapterClass);
-    this.addListener(new Condition<SModelDescriptor>() {
-      public boolean met(SModelDescriptor modelDescriptor) {
-        return EqualUtil.equals(modelDescriptor.getSModel().getSModelId(), baseNode.getModel().getSModelId());
-      }
-    });
+    this(tabbedEditor, baseNode);
+  }
+
+  public BaseSingleTab(TabbedEditor tabbedEditor, final SNode baseNode) {
+    super(tabbedEditor, baseNode);
   }
 
   public SNode tryToLoadNode() {
