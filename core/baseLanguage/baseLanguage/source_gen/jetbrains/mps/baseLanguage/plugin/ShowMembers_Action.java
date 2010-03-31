@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
+import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -15,8 +16,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
-import java.awt.Frame;
-import com.intellij.ide.DataManager;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
@@ -24,6 +23,7 @@ public class ShowMembers_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowMembers_Action.class);
 
+  private Frame frame;
   private IOperationContext context;
   private SNode node;
 
@@ -68,6 +68,10 @@ public class ShowMembers_Action extends GeneratedAction {
     if (this.node == null) {
       return false;
     }
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
+      return false;
+    }
     this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (this.context == null) {
       return false;
@@ -83,8 +87,7 @@ public class ShowMembers_Action extends GeneratedAction {
           members.value = IMemberContainer_Behavior.call_getMembers_1213877531970(SNodeOperations.getAncestor(ShowMembers_Action.this.node, "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false));
         }
       });
-      final Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
-      SNode snode = CommonChoosers.showDialogNodeChooser(frame, members.value);
+      SNode snode = CommonChoosers.showDialogNodeChooser(ShowMembers_Action.this.frame, members.value);
       if (snode == null) {
         return;
       }

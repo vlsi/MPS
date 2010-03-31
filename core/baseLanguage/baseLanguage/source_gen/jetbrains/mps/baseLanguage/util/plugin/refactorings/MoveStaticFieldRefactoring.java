@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
-public class MoveStaticFieldRefactoring extends AbstractMoveRefactoring {
+public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
   public MoveStaticFieldRefactoring(SNode moving, SNode destination) {
     super(moving, destination);
   }

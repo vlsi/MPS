@@ -6,13 +6,13 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveMethodRefactoring;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveStaticMethodRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import junit.framework.Assert;
+import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
-import junit.framework.Assert;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
 @MPSLaunch
 public class MoveMethodWithUssages_Test extends BaseTransformationTest {
@@ -29,9 +29,9 @@ public class MoveMethodWithUssages_Test extends BaseTransformationTest {
       this.addNodeById("1230053302662");
       this.addNodeById("1230053302673");
       this.addNodeById("1230053302677");
-      MoveMethodRefactoring ref = new MoveMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053302655"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), SNodeOperations.cast(this.getNodeById("1230053302663"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-      ref.setUssages(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053302669"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall")));
+      MoveStaticMethodRefactoring ref = new MoveStaticMethodRefactoring(SNodeOperations.cast(this.getNodeById("1230053302655"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), SNodeOperations.cast(this.getNodeById("1230053302663"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       ref.doRefactoring();
+      ref.replaceSingleUsage(SNodeOperations.cast(this.getNodeById("1230053302669"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053302654"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("1230053302663"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230053302674"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(this.getNodeById("1230053302678"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }

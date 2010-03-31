@@ -22,7 +22,6 @@ public class RefactoringAddition_ActionGroup extends GeneratedActionGroup {
       RefactoringAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.IntroduceVariable_Action", "jetbrains.mps.baseLanguage");
       RefactoringAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.IntroduceField_Action", "jetbrains.mps.baseLanguage");
       RefactoringAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.IntroduceConstant_Action", "jetbrains.mps.baseLanguage");
-      RefactoringAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.MoveStaticMethod_Action", "jetbrains.mps.baseLanguage");
       RefactoringAddition_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.RenameVariable_Action", "jetbrains.mps.baseLanguage");
     } catch (Throwable t) {
       LOG.error("User group error", t);
