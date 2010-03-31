@@ -24,6 +24,7 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
@@ -259,6 +260,7 @@ public class GeneratorUtil {
           if(patternRefExpr.getPatternVarDecl() == null) {
             generator.showErrorMessage(inputNode, consequence.getNode(), "cannot evaluate template argument #" + (i+1) + ": invalid pattern reference");
           } else {
+            // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
             value = context.getPatternVariable(PatternVarsUtil.getFieldName(patternRefExpr.getPatternVarDecl().getNode()));
           }
         } else if(expr instanceof TemplateArgumentQueryExpression) {
@@ -272,7 +274,7 @@ public class GeneratorUtil {
       }
       return new TemplateContext(null, vars);
     }
-    return null;
+    return context;
   }
 
   /**

@@ -1,12 +1,14 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.annotation.ImmutableObject;
 
 import java.util.Map;
 
 /**
  * Evgeny Gryaznov, Mar 26, 2010
  */
+@ImmutableObject
 public class TemplateContext {
 
   private GeneratedMatchingPattern pattern;
