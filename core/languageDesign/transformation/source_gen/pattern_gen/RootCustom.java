@@ -9,8 +9,18 @@ public class RootCustom {
 
   public void main() {
     {
+      int e = 5;
       int i = 1;
-      i *= i;
+      i *= 287;
+      e *= (i + 5);
+      i = e * i;
+
+      if (!(e != 10 || i != 43)) {
+        boolean res = true;
+        for (int qq = 0; qq < 10; qq++) {
+          res = !(!(res) || !((i - e > qq)));
+        }
+      }
     }
   }
 }
