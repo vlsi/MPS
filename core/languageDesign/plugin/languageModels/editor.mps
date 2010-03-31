@@ -5563,6 +5563,7 @@
         <property name="text:32" value="key:" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="1347772807198903272">
+        <property name="attractsFocus:32" value="2" />
         <link role="relationDeclaration:32" targetNodeId="1.1217252646389:23" />
         <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="1347772807198903273">
           <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1347772807198903274">
