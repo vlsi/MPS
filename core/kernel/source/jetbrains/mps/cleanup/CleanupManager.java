@@ -42,15 +42,7 @@ public class CleanupManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-    CommandProcessor.getInstance().addCommandListener(new CommandAdapter() {
-      public void beforeCommandFinished(CommandEvent event) {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            cleanup();
-          }
-        });
-      }
-    });
+
   }
 
   public void disposeComponent() {

@@ -307,7 +307,7 @@ public class ModelAccess {
   }
 
   public void executeCommand(Runnable r) {
-    CommandProcessor.getInstance().executeCommand(null, r, "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    CommandProcessor.getInstance().executeCommand(null, new CommandRunnable(r), "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
   public <T> T runWriteActionInCommand(final Computable<T> c) {
@@ -318,7 +318,7 @@ public class ModelAccess {
     final Object[] result = new Object[1];
     CommandProcessor.getInstance().executeCommand(null, new Runnable() {
       public void run() {
-        result[0] = runWriteAction(c);
+        result[0] = runWriteAction(new CommandComputable(c));
       }
     }, name, null, policy);
     return (T) result[0];
@@ -329,11 +329,7 @@ public class ModelAccess {
   }
 
   public void runWriteActionInCommand(final Runnable r, String name, UndoConfirmationPolicy policy) {
-    CommandProcessor.getInstance().executeCommand(null, new Runnable() {
-      public void run() {
-        runWriteAction(r);
-      }
-    }, name, null, policy);
+    CommandProcessor.getInstance().executeCommand(null, new CommandRunnable(r), name, null, policy);
   }
 
   public void runWriteActionInCommandAsync(final Runnable r) {
@@ -385,5 +381,41 @@ public class ModelAccess {
 
   private static boolean isSharedReadMode() {
     return "true".equals(System.getProperty("mps.sharedread"));
+  }
+
+  private void onCommandFinished(){
+    ImmatureReferences.getInstance().cleanup();
+    UnregisteredNodes.instance().clear();
+  }
+
+  private class CommandRunnable implements Runnable {
+    private final Runnable myRunnable;
+
+    public CommandRunnable(Runnable r) {
+      myRunnable = r;
+    }
+
+    public void run() {
+      runWriteAction(new Runnable() {
+        public void run() {
+          myRunnable.run();
+          onCommandFinished();
+        }
+      });
+    }
+  }
+
+  private class CommandComputable<T> implements Computable<T> {
+    private final Computable<T> myComputable;
+
+    public CommandComputable(Computable<T> c) {
+      myComputable = c;
+    }
+
+    public T compute() {
+      T result = myComputable.compute();
+      onCommandFinished();
+      return result;
+    }
   }
 }
