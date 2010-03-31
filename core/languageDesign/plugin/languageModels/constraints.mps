@@ -1034,6 +1034,25 @@
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="8179323502814694236">
     <property name="package:8" value="RunConfigs" />
     <link role="concept:8" targetNodeId="7.8179323502814630510:23" resolveInfo="RunConfigParameterDeclaration" />
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1620307373747132616">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1620307373747132617">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1620307373747133219">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1620307373747133230">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1620307373747133221">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="1620307373747133220" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1620307373747133225">
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1620307373747133226">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1620307373747133229">
+                    <link role="conceptDeclaration:16" targetNodeId="7.7035278950562851062:23" resolveInfo="RunConfigurationDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="1620307373747133234" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="444169778578071400">
     <property name="package:8" value="RunConfigs.Configuration.Execute.Parametrized" />
