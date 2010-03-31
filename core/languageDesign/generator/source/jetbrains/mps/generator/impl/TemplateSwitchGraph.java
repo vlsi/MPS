@@ -63,6 +63,9 @@ public class TemplateSwitchGraph {
 
   public List<TemplateSwitch> getSubgraphAsList(TemplateSwitch baseSwitch) {
     TemplateSwitchGraphNode bottomSwitchNode = myTemplateSwitchToGraphNodeMap.get(baseSwitch);
+    if (bottomSwitchNode == bottomSwitchNode.myModifiedSwitchNode) {
+      throw new RuntimeException("Template switch declaration " + baseSwitch + " extends itself."); //TODO some kind of normal diagnostic message
+    }
     while (bottomSwitchNode.myModifiedSwitchNode != null) {
       bottomSwitchNode = bottomSwitchNode.myModifiedSwitchNode;
     }
