@@ -119,55 +119,53 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             }
             javaRunParameters.setVMParameters(oldVmParams + args);
           }
-          {
-            // calculate parameter 
-            final UnitTestExecutionController parameter = new _FunctionTypes._return_P0_E0<UnitTestExecutionController>() {
-              public UnitTestExecutionController invoke() {
-                List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject);
+          // calculate parameter 
+          final UnitTestExecutionController parameter = new _FunctionTypes._return_P0_E0<UnitTestExecutionController>() {
+            public UnitTestExecutionController invoke() {
+              List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject);
 
-                if (javaRunParameters.getMake()) {
-                  RunUtil.makeBeforeRun(mpsProject, stuffToTest);
-                }
-
-                return new UnitTestExecutionController(stuffToTest, javaRunParameters);
+              if (javaRunParameters.getMake()) {
+                RunUtil.makeBeforeRun(mpsProject, stuffToTest);
               }
-            }.invoke();
 
-            // set actions 
-
-            // create console component 
-            final Tuples._2<JComponent, _FunctionTypes._void_P0_E0> component = MultiTuple.<JComponent, _FunctionTypes._void_P0_E0>empty2().assign((Tuples._2<JComponent, _FunctionTypes._void_P0_E0>) (new _FunctionTypes._return_P0_E0<Tuples._2<JComponent, _FunctionTypes._void_P0_E0>>() {
-              public Tuples._2<JComponent, _FunctionTypes._void_P0_E0> invoke() {
-                final UnitTestViewComponent runComponent = new UnitTestViewComponent(mpsProject, operationContext, consoleView, parameter);
-                return MultiTuple.<JComponent,_FunctionTypes._void_P0_E0>from((JComponent) runComponent, new _FunctionTypes._void_P0_E0() {
-                  public void invoke() {
-                    runComponent.dispose();
-                  }
-                });
-              }
-            }.invoke()));
-            consoleComponent = component._0();
-            consoleDispose = new Runnable() {
-              public void run() {
-                component._1().invoke();
-              }
-            };
-
-            final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
-            // create process handler 
-            handler = (ProcessHandler) new _FunctionTypes._return_P0_E0<Object>() {
-              public Object invoke() {
-                try {
-                  return parameter.execute();
-                } catch (ExecutionException e) {
-                  ex.value = e;
-                  return null;
-                }
-              }
-            }.invoke();
-            if (ex.value != null) {
-              throw ex.value;
+              return new UnitTestExecutionController(stuffToTest, javaRunParameters);
             }
+          }.invoke();
+
+          // set actions 
+
+          // create console component 
+          final Tuples._2<JComponent, _FunctionTypes._void_P0_E0> component = MultiTuple.<JComponent, _FunctionTypes._void_P0_E0>empty2().assign((Tuples._2<JComponent, _FunctionTypes._void_P0_E0>) (new _FunctionTypes._return_P0_E0<Tuples._2<JComponent, _FunctionTypes._void_P0_E0>>() {
+            public Tuples._2<JComponent, _FunctionTypes._void_P0_E0> invoke() {
+              final UnitTestViewComponent runComponent = new UnitTestViewComponent(mpsProject, operationContext, consoleView, parameter);
+              return MultiTuple.<JComponent,_FunctionTypes._void_P0_E0>from((JComponent) runComponent, new _FunctionTypes._void_P0_E0() {
+                public void invoke() {
+                  runComponent.dispose();
+                }
+              });
+            }
+          }.invoke()));
+          consoleComponent = component._0();
+          consoleDispose = new Runnable() {
+            public void run() {
+              component._1().invoke();
+            }
+          };
+
+          final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
+          // create process handler 
+          handler = (ProcessHandler) new _FunctionTypes._return_P0_E0<Object>() {
+            public Object invoke() {
+              try {
+                return parameter.execute();
+              } catch (ExecutionException e) {
+                ex.value = e;
+                return null;
+              }
+            }
+          }.invoke();
+          if (ex.value != null) {
+            throw ex.value;
           }
         }
         final JComponent finalConsoleComponent = consoleComponent;

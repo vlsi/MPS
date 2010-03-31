@@ -8,11 +8,38 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class JavaConfigurationRunParameters_FunctionParameter extends ConceptFunctionParameter {
+public class JavaConfigurationRunParameters_FunctionParameter extends ConceptFunctionParameter implements IJavaRunConfigurationParameter {
   public static final String concept = "jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public JavaConfigurationRunParameters_FunctionParameter(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(JavaConfigurationRunParameters_FunctionParameter.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(JavaConfigurationRunParameters_FunctionParameter.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(JavaConfigurationRunParameters_FunctionParameter.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(JavaConfigurationRunParameters_FunctionParameter.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(JavaConfigurationRunParameters_FunctionParameter.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(JavaConfigurationRunParameters_FunctionParameter.VIRTUAL_PACKAGE, value);
   }
 
   public static JavaConfigurationRunParameters_FunctionParameter newInstance(SModel sm, boolean init) {
