@@ -16,15 +16,12 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
-import java.util.Collection;
 import java.io.File;
 import jetbrains.mps.smodel.SModelRepository;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
 import org.jetbrains.annotations.NotNull;
 
@@ -70,23 +67,20 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
     MPSProject mpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     IOperationContext operationContext = mpsProject.createOperationContext();
 
-    List<SModelDescriptor> modelDescriptors = getModelDescriptorsByFiles(this.myPanel.getFiles());
-    return mpsProject.getPluginManager().getTool(ModelCheckerTool_Tool.class).checkModelsBeforeCommit(operationContext, modelDescriptors);
+    return mpsProject.getPluginManager().getTool(ModelCheckerTool_Tool.class).checkModelsBeforeCommit(operationContext, getModelDescriptorsByFiles(this.myPanel.getFiles()));
   }
 
-  public static List<SModelDescriptor> getModelDescriptorsByFiles(Collection<File> files) {
-    List<SModelDescriptor> allModelDescriptors = SModelRepository.getInstance().getModelDescriptors();
-    Set<File> filesSet = SetSequence.fromSetWithValues(new HashSet<File>(), files);
-    List<SModelDescriptor> filteredModelDescriptors = ListSequence.fromList(new ArrayList<SModelDescriptor>());
-    for (SModelDescriptor modelDescriptor : ListSequence.fromList(allModelDescriptors)) {
-      if (modelDescriptor.getModelFile() instanceof FileSystemFile) {
-        File file = ((FileSystemFile) modelDescriptor.getModelFile()).getFile();
-        if (SetSequence.fromSet(filesSet).contains(file)) {
-          ListSequence.fromList(filteredModelDescriptors).addElement(modelDescriptor);
-        }
+  public static List<SModelDescriptor> getModelDescriptorsByFiles(Iterable<File> files) {
+    final SModelRepository repository = SModelRepository.getInstance();
+    return Sequence.fromIterable(files).select(new ISelector<File, SModelDescriptor>() {
+      public SModelDescriptor select(File file) {
+        return repository.findModel(new FileSystemFile(file));
       }
-    }
-    return filteredModelDescriptors;
+    }).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor modelDescriptor) {
+        return modelDescriptor != null;
+      }
+    }).toListSequence();
   }
 
   public static class ModelCheckerCheckinHandlerFactory extends CheckinHandlerFactory {
