@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -30,6 +31,9 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 public class JarFileClassPathItem extends AbstractClassPathItem {
+  private static final Logger LOG = Logger.getLogger(JarFileClassPathItem.class);
+
+
   private static File transformFile(IFile f) throws IOException {
     if (f instanceof FileSystemFile) {
       return ((FileSystemFile) f).getFile();
@@ -91,16 +95,24 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   public byte[] getClass(String name) {
     ZipEntry entry = myEntries.get(name);
     if (entry == null) return null;
+    InputStream inp = null;
     try {
-      InputStream inp = myZipFile.getInputStream(entry);
+      inp = myZipFile.getInputStream(entry);
       byte[] result = new byte[(int) entry.getSize()];
 
       ReadUtil.read(result, inp);
 
-      inp.close();
       return result;
     } catch (IOException e) {
       return null;
+    } finally {
+      if (inp != null) {
+        try {
+          inp.close();
+        } catch (IOException e) {
+          LOG.error(e);
+        }
+      }
     }
   }
 
