@@ -22,9 +22,9 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
   public CheckVariableDoubling_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode localVariableDeclaration, final TypeCheckingContext typeCheckingContext) {
+  public void applyRule(final SNode iVariableDeclaration, final TypeCheckingContext typeCheckingContext) {
 
-    List<SNode> methods = SNodeOperations.getAncestors(localVariableDeclaration, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", true);
+    List<SNode> methods = SNodeOperations.getAncestors(iVariableDeclaration, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", true);
     List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode bmd : methods) {
       for (SNode child : SNodeOperations.getChildren(bmd)) {
@@ -33,24 +33,24 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
         }
       }
     }
-    List<SNode> vars = new LocalVariablesScope(SNodeOperations.getParent(localVariableDeclaration)).getNodes();
+    List<SNode> vars = new LocalVariablesScope(SNodeOperations.getParent(iVariableDeclaration)).getNodes();
     vars.addAll(params);
     for (SNode var : vars) {
       if (var == null || SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") == null) {
         continue;
       }
-      if (SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name").equals(SPropertyOperations.getString(localVariableDeclaration, "name")) && !(var == localVariableDeclaration)) {
+      if (SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name").equals(SPropertyOperations.getString(iVariableDeclaration, "name")) && !(var == iVariableDeclaration)) {
         {
           BaseIntentionProvider intentionProvider = null;
           IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(localVariableDeclaration, "Variable " + SPropertyOperations.getString(localVariableDeclaration, "name") + " is already defined in the scope", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4164094338984214928", intentionProvider, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(iVariableDeclaration, "Variable " + SPropertyOperations.getString(iVariableDeclaration, "name") + " is already defined in the scope", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4164094338984214928", intentionProvider, errorTarget);
         }
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
+    return "jetbrains.mps.baseLanguage.structure.IVariableDeclaration";
   }
 
   public boolean isApplicable(SNode argument) {

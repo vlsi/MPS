@@ -539,6 +539,9 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1223988934029">
       <link role="intfc:0" targetNodeId="1223985693348:3" resolveInfo="IVariableAssignment" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5432666129547687714">
+      <link role="intfc:0" targetNodeId="5432666129547687712:3" resolveInfo="IVariableDeclaration" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1068581242864">
     <property name="name:0" value="LocalVariableDeclarationStatement" />
@@ -3638,6 +3641,12 @@
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="6163353915142353701">
       <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="5432666129547687712">
+    <property name="name:0" value="IVariableDeclaration" />
+    <node role="extends:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5432666129547769344">
+      <link role="intfc:0" targetNodeId="4.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>

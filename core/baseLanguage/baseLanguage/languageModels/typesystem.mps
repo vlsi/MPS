@@ -23125,8 +23125,8 @@
       </node>
     </node>
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="6654001062452788424">
-      <property name="name:3" value="localVariableDeclaration" />
-      <link role="concept:3" targetNodeId="1.1068581242863:3" resolveInfo="LocalVariableDeclaration" />
+      <property name="name:3" value="iVariableDeclaration" />
+      <link role="concept:3" targetNodeId="1.5432666129547687712:3" resolveInfo="IVariableDeclaration" />
     </node>
   </node>
 </model>

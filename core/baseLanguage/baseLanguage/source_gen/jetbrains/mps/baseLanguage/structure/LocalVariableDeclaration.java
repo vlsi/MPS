@@ -8,12 +8,13 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LocalVariableDeclaration extends VariableDeclaration implements IResolveInfo, IVariableAssignment {
+public class LocalVariableDeclaration extends VariableDeclaration implements IResolveInfo, IVariableAssignment, IVariableDeclaration {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
   public static final String RESOLVE_INFO = "resolveInfo";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String NAME = "name";
 
   public LocalVariableDeclaration(SNode node) {
     super(node);
@@ -49,6 +50,14 @@ public class LocalVariableDeclaration extends VariableDeclaration implements IRe
 
   public void setVirtualPackage(String value) {
     this.setProperty(LocalVariableDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public String getName() {
+    return this.getProperty(LocalVariableDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(LocalVariableDeclaration.NAME, value);
   }
 
   public static LocalVariableDeclaration newInstance(SModel sm, boolean init) {
