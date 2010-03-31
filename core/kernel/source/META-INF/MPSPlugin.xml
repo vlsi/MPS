@@ -19,6 +19,7 @@
 
         <vcs.fileStatusProvider implementation="jetbrains.mps.changesmanager.ChangesManagerFileStatusProvider"/>
         <checkinHandlerFactory implementation="jetbrains.mps.vcs.OptimizeImportsCheckinHandlerFactory" />
+        <checkinHandlerFactory implementation="jetbrains.mps.ide.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory" />
 
         <applicationService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
                             serviceImplementation="com.intellij.codeStyle.DefaultCodeStyleFacade"/>

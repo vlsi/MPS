@@ -9,12 +9,10 @@ import jetbrains.mps.ide.findusages.INavigateableTool;
 import com.intellij.openapi.wm.ToolWindow;
 import jetbrains.mps.ide.findusages.INavigator;
 import javax.swing.JComponent;
-import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.MPSProjectHolder;
-import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -51,7 +49,6 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
       return (ModelCheckerViewer) component;
     }
   };
-  private CheckinHandlerFactory myCheckinHandlerFactory = new ModelCheckerCheckinHandler.MyHandlerFactory();
 
   public ModelCheckerTool_Tool(Project project) {
     super(project, "Model Checker", -1, IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/modelChecker.png", "jetbrains.mps.ide"), true), ToolWindowAnchor.BOTTOM, true);
@@ -68,12 +65,10 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   }
 
   protected void doRegister() {
-    ProjectLevelVcsManager.getInstance(ModelCheckerTool_Tool.this.myProject).registerCheckinHandlerFactory(ModelCheckerTool_Tool.this.myCheckinHandlerFactory);
     UsagesViewTracker.register(ModelCheckerTool_Tool.this.myNavigateableTool);
   }
 
   protected void doUnregister() {
-    ProjectLevelVcsManager.getInstance(ModelCheckerTool_Tool.this.myProject).unregisterCheckinHandlerFactory(ModelCheckerTool_Tool.this.myCheckinHandlerFactory);
     UsagesViewTracker.unregister(ModelCheckerTool_Tool.this.myNavigateableTool);
   }
 

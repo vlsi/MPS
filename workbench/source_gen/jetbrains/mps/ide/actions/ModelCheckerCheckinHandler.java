@@ -40,7 +40,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
   @Nullable
   @Override
   public RefreshableOnComponent getBeforeCheckinConfigurationPanel() {
-    final JCheckBox checkModelCheckBox = new JCheckBox("Perform check for modified models");
+    final JCheckBox checkModelCheckBox = new JCheckBox("Perform check for affected models");
     return new RefreshableOnComponent() {
       public JComponent getComponent() {
         JPanel panel = new JPanel(new GridLayout(1, 0));
@@ -89,8 +89,8 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
     return filteredModelDescriptors;
   }
 
-  public static class MyHandlerFactory extends CheckinHandlerFactory {
-    public MyHandlerFactory() {
+  public static class ModelCheckerCheckinHandlerFactory extends CheckinHandlerFactory {
+    public ModelCheckerCheckinHandlerFactory() {
     }
 
     @NotNull
