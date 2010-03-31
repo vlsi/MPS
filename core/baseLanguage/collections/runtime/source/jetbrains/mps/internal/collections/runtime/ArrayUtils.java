@@ -88,7 +88,15 @@ public class ArrayUtils {
             return Array.newInstance(componentType, length);  
         }
 
-	private static <T> Object createAndFillArray(Class<T> type, ISequence<? extends T> seq) {
+        public static Object newArrayInstance (Class<?> componentType, int... dims) {
+            return Array.newInstance(componentType, dims);  
+        }
+
+        public static <T> T[] asArray(T... ts) {
+          return ts;
+        }
+
+  private static <T> Object createAndFillArray(Class<T> type, ISequence<? extends T> seq) {
 		Object arr = Array.newInstance(type, seq.count());
 		int idx=0;
 		for (Object o : seq) {

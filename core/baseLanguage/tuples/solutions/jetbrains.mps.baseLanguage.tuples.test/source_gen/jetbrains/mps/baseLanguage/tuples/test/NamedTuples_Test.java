@@ -13,6 +13,7 @@ import jetbrains.mps.baseLanguage.tuples.shared.GlobalSharedPair;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
@@ -150,6 +151,17 @@ public class NamedTuples_Test extends TestCase {
     ListSequence.fromList(lot).addElement(new Pair<String, Long>("B", 2L));
     Assert.assertSame(2, ListSequence.fromList(lot).count());
     Assert.assertEquals("B", ListSequence.fromList(lot).getElement(1).first());
+  }
+
+  public void test_arrayOfTuples() throws Exception {
+    Pair<String, Long>[] arr1 = ArrayUtils.asArray(new Pair<String, Long>("A", 1L), new Pair<String, Long>("B", 2L));
+    Pair<String, Long>[] arr2 = (Pair<String, Long>[]) ArrayUtils.newArrayInstance(Pair.class, 2);
+    for (int idx = 0; idx < arr1.length; idx++) {
+      arr2[idx] = arr1[idx];
+    }
+    Assert.assertEquals(arr1[0], arr2[0]);
+    Assert.assertSame(1L, arr2[0].second());
+    Assert.assertEquals("B", arr2[1].first());
   }
 
   public void test_tupleDecl() throws Exception {

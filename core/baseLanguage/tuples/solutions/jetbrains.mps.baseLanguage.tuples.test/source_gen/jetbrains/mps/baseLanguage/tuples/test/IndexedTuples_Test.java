@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class IndexedTuples_Test extends TestCase {
@@ -98,6 +99,24 @@ public class IndexedTuples_Test extends TestCase {
     List<Tuples._2<Integer, String>> lot = ListSequence.fromListAndArray(new ArrayList<Tuples._2<Integer, String>>(), MultiTuple.<Integer,String>from(1, "A"), MultiTuple.<Integer,String>from(2, "B"), MultiTuple.<Integer,String>from(3, "C"));
     Assert.assertSame(3, ListSequence.fromList(lot).count());
     Assert.assertEquals("B", ListSequence.fromList(lot).getElement(1)._1());
+  }
+
+  public void test_arrayOfTuples() throws Exception {
+    Tuples._3<String, Integer, Boolean>[] arr1 = ArrayUtils.asArray(MultiTuple.<String,Integer,Boolean>from("foo", 1, false), MultiTuple.<String,Integer,Boolean>from("bar", 2, true), MultiTuple.<String,Integer,Boolean>from("baz", 3, false));
+    Assert.assertSame(3, arr1.length);
+    Assert.assertEquals("foo", arr1[0]._0());
+    Assert.assertTrue(arr1[1]._2());
+    Assert.assertEquals("baz", arr1[2]._0());
+    Assert.assertSame(3, arr1[2]._1());
+    Tuples._3<String, Integer, Boolean>[] arr2 = (Tuples._3<String, Integer, Boolean>[]) ArrayUtils.newArrayInstance(Tuples._3.class, 3);
+    Assert.assertSame(3, arr2.length);
+    for (int idx = 0; idx < arr1.length; idx++) {
+      arr2[idx] = arr1[idx];
+    }
+    Assert.assertEquals("bar", arr2[1]._0());
+    Assert.assertFalse(arr2[2]._2());
+    Assert.assertEquals("baz", arr2[2]._0());
+    Assert.assertSame(2, arr2[1]._1());
   }
 
   public void test_tupleDecl() throws Exception {
