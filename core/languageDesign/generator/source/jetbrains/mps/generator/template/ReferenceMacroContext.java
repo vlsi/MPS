@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -28,8 +29,8 @@ public class ReferenceMacroContext extends TemplateQueryContext {
   private SNode myOutputNode;
   private SNode myMacro;
 
-  public ReferenceMacroContext(SNode node, SNode outputNode, SNode macroNode, ITemplateGenerator generator) {
-    super(node, macroNode.getParent(), generator);
+  public ReferenceMacroContext(SNode node, SNode outputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
+    super(node, macroNode.getParent(), context, generator);
     myOutputNode = outputNode;
     myMacro = macroNode;
   }

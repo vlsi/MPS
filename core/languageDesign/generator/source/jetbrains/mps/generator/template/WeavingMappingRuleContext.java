@@ -21,7 +21,7 @@ public class WeavingMappingRuleContext extends TemplateQueryContext {
   private SNode myRule;
 
   public WeavingMappingRuleContext(SNode node, SNode ruleNode, ITemplateGenerator generator) {
-    super(node, null, generator);
+    super(node, null, null, generator);
     myRule = ruleNode;
   }
 

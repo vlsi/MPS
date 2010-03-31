@@ -21,7 +21,7 @@ public class DropRootRuleContext extends TemplateQueryContext {
   private SNode myRule;
 
   public DropRootRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
-    super(inputNode, null, generator);
+    super(inputNode, null, null, generator);
     myRule = ruleNode;
   }
 

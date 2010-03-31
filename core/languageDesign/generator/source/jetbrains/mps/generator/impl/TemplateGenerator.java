@@ -27,6 +27,7 @@ import jetbrains.mps.generator.util.IPerformanceTracer;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
@@ -282,7 +283,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
     try {
-      List<SNode> outputNodes = new TemplateProcessor(this).processTemplateNode(mappingName, templateNode, inputNode);
+      List<SNode> outputNodes = new TemplateProcessor(this, null).processTemplateNode(mappingName, templateNode, inputNode);
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode);
         myOutputModel.addRoot(outputNode);
@@ -378,12 +379,37 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   List<SNode> tryToReduce(SNode inputNode, String mappingName) throws GenerationFailureException, GenerationCanceledException {
     boolean needStopReductionBlocking = false;
     ReductionRule reductionRule = null;
+    GeneratedMatchingPattern pattern = null;
     try {
-      reductionRule = myRuleManager.getRuleFinder().findReductionRule(inputNode, this);
+      // find rule
+      ReductionRule[] conceptRules = myRuleManager.getRuleFinder().findReductionRules(inputNode);
+      if(conceptRules == null) {
+        return null;
+      }
+      for (ReductionRule rule : conceptRules) {
+        if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule)) {
+          if(rule instanceof Reduction_MappingRule) {
+            if (getExecutor().checkCondition(((Reduction_MappingRule) rule).getConditionFunction(), false, inputNode, rule.getNode())) {
+              getBlockedReductionsData().registerInputReduction(inputNode, rule);
+              reductionRule = rule;
+              break;
+            }
+          } else if(rule instanceof PatternReduction_MappingRule) {
+            pattern = getExecutor().checkIfApplicable((PatternReduction_MappingRule) rule, inputNode);
+            if(pattern != null) {
+              getBlockedReductionsData().registerInputReduction(inputNode, rule);
+              reductionRule = rule;
+              break;
+            }
+          }
+        }
+      }
+
+      // apply
       if (reductionRule != null) {
         needStopReductionBlocking = startReductionBlockingForInput(inputNode);
 
-        List<SNode> outputNodes = applyReductionRule(inputNode, reductionRule);
+        List<SNode> outputNodes = applyReductionRule(inputNode, reductionRule, pattern);
         if (outputNodes != null && outputNodes.size() == 1) {
           SNode reducedNode = outputNodes.get(0);
           // register copied node
@@ -421,10 +447,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   @Nullable
-  private List<SNode> applyReductionRule(SNode inputNode, ReductionRule rule) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
+  private List<SNode> applyReductionRule(SNode inputNode, ReductionRule rule, GeneratedMatchingPattern pattern) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     myGenerationTracer.pushRule(rule.getNode());
     try {
-      return applyReductionRule_internal(inputNode, rule);
+      return applyReductionRule_internal(inputNode, rule, pattern);
     } catch (AbandonRuleInputException e) {
       return Collections.emptyList();
     } finally {
@@ -433,7 +459,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   @Nullable
-  private List<SNode> applyReductionRule_internal(SNode inputNode, ReductionRule rule)
+  private List<SNode> applyReductionRule_internal(SNode inputNode, ReductionRule rule, GeneratedMatchingPattern pattern)
     throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
 
     String ruleMappingName = GeneratorUtil.getMappingName(rule, null);
@@ -442,6 +468,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no rule consequence");
       return null;
     }
+    TemplateContext conseqContext = GeneratorUtil.getTemplateContext(ruleConsequence, inputNode, pattern == null ? null : new TemplateContext(pattern, null), this);
 
     List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(ruleConsequence, inputNode, rule.getNode(), this);
     if (nodeAndMappingNamePairs == null) {
@@ -450,7 +477,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     List<SNode> result = new ArrayList<SNode>(nodeAndMappingNamePairs.size());
-    TemplateProcessor templateProcessor = new TemplateProcessor(this);
+    TemplateProcessor templateProcessor = new TemplateProcessor(this, conseqContext);
     for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;

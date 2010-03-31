@@ -15,14 +15,15 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.smodel.SNode;
 
-public class MapSrcMacroContext  extends TemplateQueryContext {
+public class MapSrcMacroContext extends TemplateQueryContext {
   private SNode myMacro;
   private SNode myParentOutputNode;
 
-  public MapSrcMacroContext(SNode node, SNode macroNode, SNode parentOutputNode, ITemplateGenerator generator) {
-    super(node, macroNode.getParent(), generator);
+  public MapSrcMacroContext(SNode node, SNode macroNode, SNode parentOutputNode, TemplateContext context, ITemplateGenerator generator) {
+    super(node, macroNode.getParent(), context, generator);
     myMacro = macroNode;
     myParentOutputNode = parentOutputNode;
   }

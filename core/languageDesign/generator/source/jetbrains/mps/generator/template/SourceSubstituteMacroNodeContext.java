@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.smodel.SNode;
 
 public class SourceSubstituteMacroNodeContext extends TemplateQueryContext{
   private SNode myMacro;
 
-  public SourceSubstituteMacroNodeContext(SNode inputNode, SNode macroNode, ITemplateGenerator generator) {
-    super(inputNode, macroNode.getParent(), generator);
+  public SourceSubstituteMacroNodeContext(SNode inputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
+    super(inputNode, macroNode.getParent(), context, generator);
     myMacro = macroNode;
   }
 

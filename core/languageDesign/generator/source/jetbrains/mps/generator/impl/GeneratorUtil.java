@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.IGeneratorLogger;
@@ -23,6 +24,7 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
+import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
@@ -31,10 +33,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 
 public class GeneratorUtil {
@@ -67,6 +66,11 @@ public class GeneratorUtil {
       }
     } else if (node instanceof NodeMacro) {
       MappingLabelDeclaration mappingLabel = ((NodeMacro) node).getMappingLabel();
+      if (mappingLabel != null) {
+        mappingName = mappingLabel.getName();
+      }
+    } else if (node instanceof PatternReduction_MappingRule) {
+      MappingLabelDeclaration mappingLabel = ((PatternReduction_MappingRule) node).getLabelDeclaration();
       if (mappingLabel != null) {
         mappingName = mappingLabel.getName();
       }
@@ -204,11 +208,69 @@ public class GeneratorUtil {
     return null;
   }
 
-  static BaseMappingRule_Condition getReductionCondition(ReductionRule rule) {
-    if(rule instanceof Reduction_MappingRule) {
-      return ((Reduction_MappingRule) rule).getConditionFunction();
-    } else if(rule instanceof PatternReduction_MappingRule) {
-      return ((PatternReduction_MappingRule)rule).getConditionFunction();
+  private static Expression[] getArguments(ITemplateCall templateCall) {
+    final List<Expression> args = templateCall.getActualArguments();
+    if(args == null || args.size() == 0) {
+      return null;
+    }
+    return args.toArray(new Expression[args.size()]);
+  }
+
+  private static TemplateParameterDeclaration[] getParameters(ITemplateCall templateCall) {
+    final TemplateDeclaration template = templateCall.getTemplate();
+    if(template == null) {
+      return null;
+    }
+    final List<TemplateParameterDeclaration> parameterDeclarations = template.getParameters();
+    if(parameterDeclarations == null || parameterDeclarations.size() == 0) {
+      return null;
+    }
+    return parameterDeclarations.toArray(new TemplateParameterDeclaration[parameterDeclarations.size()]);
+  }
+
+  static TemplateContext getTemplateContext(RuleConsequence consequence, SNode inputNode, TemplateContext context, ITemplateGenerator generator) {
+    if(consequence instanceof ITemplateCall) {
+      final Expression[] arguments = getArguments((ITemplateCall) consequence);
+      final TemplateParameterDeclaration[] parameters = getParameters((ITemplateCall) consequence);
+
+      if(arguments == null && parameters == null) {
+        return null;
+      }
+      if(arguments == null || parameters == null || arguments.length != parameters.length) {
+        generator.showErrorMessage(inputNode, consequence.getNode(), "number of arguments doesn't match template");
+        return null;
+      }
+
+      final Map<String,Object> vars = new HashMap<String, Object>(arguments.length);
+      for(int i = 0; i < arguments.length; i++) {
+        Expression expr = arguments[i];
+        String name = parameters[i].getName();
+        Object value = null;
+        if(expr instanceof BooleanConstant) {
+          value = ((BooleanConstant) expr).getValue();
+        } else if(expr instanceof IntegerConstant) {
+          value = ((IntegerConstant) expr).getValue();
+        } else if(expr instanceof StringLiteral) {
+          value = ((StringLiteral) expr).getValue();
+        } else if(expr instanceof NullLiteral) {
+          /* ok */
+        } else if(expr instanceof TemplateArgumentPatternVarRefExpression) {
+          TemplateArgumentPatternVarRefExpression patternRefExpr = (TemplateArgumentPatternVarRefExpression) expr;
+          if(patternRefExpr.getPatternVarDecl() == null) {
+            generator.showErrorMessage(inputNode, consequence.getNode(), "cannot evaluate template argument #" + (i+1) + ": invalid pattern reference");
+          } else {
+            value = context.getPatternVariable(PatternVarsUtil.getFieldName(patternRefExpr.getPatternVarDecl().getNode()));
+          }
+        } else if(expr instanceof TemplateArgumentQueryExpression) {
+          TemplateArgumentQuery query = ((TemplateArgumentQueryExpression) expr).getQuery();
+          value = generator.getExecutor().evaluateArgumentQuery(inputNode, query, context);
+        } else {
+          generator.showErrorMessage(inputNode, consequence.getNode(), "cannot evaluate template argument #" + (i+1));
+        }
+
+        vars.put(name, value);
+      }
+      return new TemplateContext(null, vars);
     }
     return null;
   }

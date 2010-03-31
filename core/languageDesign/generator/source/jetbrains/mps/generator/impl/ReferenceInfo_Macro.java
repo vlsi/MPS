@@ -30,9 +30,10 @@ import java.util.Map;
  * Date: Jan 25, 2007
  */
 public class ReferenceInfo_Macro extends ReferenceInfo {
-  private SNode myTemplateReferenceNode;
-  private ReferenceMacro myReferenceMacro;
-  private Map<String, SNode> myInputNodesByMappingName;
+  private final SNode myTemplateReferenceNode;
+  private final ReferenceMacro myReferenceMacro;
+  private final Map<String, SNode> myInputNodesByMappingName;
+  private final TemplateContext myContext;
 
   // results of 'expandReferenceMacro'
   private boolean myMacroProcessed;
@@ -40,11 +41,12 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private SNode myOutputTargetNode;
   private SModelReference myExternalTargetModelReference;
 
-  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, @Nullable SNode inputNode, Map<String, SNode> inputNodesByMappingName, SNode templateReferenceNode) {
+  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, @Nullable SNode inputNode, Map<String, SNode> inputNodesByMappingName, SNode templateReferenceNode, TemplateContext context) {
     super(outputSourceNode, getReferenceRole(macro), inputNode);
     myInputNodesByMappingName = inputNodesByMappingName;
     myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = macro;
+    myContext = context;
   }
 
   public SNode getInputTargetNode() {
@@ -103,7 +105,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private void expandReferenceMacro(ITemplateGenerator generator) {
     String linkRole = getReferenceRole();
 
-    Object result = generator.getExecutor().getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro);
+    Object result = generator.getExecutor().getReferentTarget(getInputNode(), getOutputSourceNode(), myReferenceMacro, myContext);
     if (result instanceof SNode) {
       myOutputTargetNode = (SNode) result;
     } else if (result != null) {

@@ -10,7 +10,7 @@ public class RootCustom {
   public void main() {
     {
       int i = 1;
-      i = i * i;
+      i *= i;
     }
   }
 }

@@ -23,7 +23,7 @@ public class MappingScriptContext extends TemplateQueryContext {
   private SModel myModel;
 
   public MappingScriptContext(SModel model, SNode mappingScript, ITemplateGenerator generator) {
-    super(null, null, generator);
+    super(null, null, null, generator);
     myScript = mappingScript;
     myModel = model;
   }

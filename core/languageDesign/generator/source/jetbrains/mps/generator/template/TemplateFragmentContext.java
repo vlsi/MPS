@@ -22,7 +22,7 @@ public class TemplateFragmentContext extends TemplateQueryContext {
   private SNode myFragmentNode;
 
   public TemplateFragmentContext(SNode node, SNode mainContextNode, SNode templateFragmentNode, ITemplateGenerator generator) {
-    super(node, templateFragmentNode.getParent(), generator);
+    super(node, templateFragmentNode.getParent(), null, generator);
     myMainContextNode = mainContextNode;
     myFragmentNode = templateFragmentNode;
   }

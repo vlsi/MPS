@@ -21,7 +21,7 @@ public class BaseMappingRuleContext extends TemplateQueryContext {
   private SNode myRule;
 
   public BaseMappingRuleContext(SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
-    super(inputNode, null, generator);
+    super(inputNode, null, null, generator);
     myRule = ruleNode;
   }
 

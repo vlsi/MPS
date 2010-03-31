@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.generator.util.IPerformanceTracer;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
@@ -57,13 +58,14 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   public GeneratedMatchingPattern checkIfApplicable(PatternReduction_MappingRule patternRule, SNode inputNode) throws GenerationFailureException {
-    String methodName = TemplateFunctionMethodName.patternRule_Condition(patternRule.getNode());
+    final SNode ruleNode = patternRule.getNode();
+    String methodName = TemplateFunctionMethodName.patternRule_Condition(ruleNode);
     try {
       return (GeneratedMatchingPattern) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new BaseMappingRuleContext(inputNode, patternRule.getNode(), generator),
-        patternRule.getNode().getModel(),
+        new BaseMappingRuleContext(inputNode, ruleNode, generator),
+        ruleNode.getModel(),
         true);
     } catch (ClassNotFoundException e) {
       generator.showWarningMessage(BaseAdapter.fromAdapter(patternRule), "couldn't find condition method '" + methodName + "' : not applied");
@@ -126,7 +128,7 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro) throws GenerationFailureException {
+  public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, TemplateContext context) throws GenerationFailureException {
     IfMacro_Condition function = ifMacro.getConditionFunction();
     if (function == null) {
       throw new GenerationFailureException("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null);
@@ -137,7 +139,7 @@ public class QueryExecutor implements IQueryExecutor {
       return (Boolean) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new IfMacroContext(inputNode, BaseAdapter.fromAdapter(ifMacro), generator),
+        new IfMacroContext(inputNode, BaseAdapter.fromAdapter(ifMacro), context, generator),
         ifMacro.getModel(),
         true);
     } catch (ClassNotFoundException e) {
@@ -177,7 +179,7 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode) throws GenerationFailureException {
+  public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, TemplateContext context) throws GenerationFailureException {
     INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
     MapSrcMacro_MapperFunction mapperFunction;
     if (adapter instanceof MapSrcNodeMacro) {
@@ -191,7 +193,7 @@ public class QueryExecutor implements IQueryExecutor {
       return (SNode) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new MapSrcMacroContext(inputNode, mapSrcNodeOrListMacro, parentOutputNode, generator),
+        new MapSrcMacroContext(inputNode, mapSrcNodeOrListMacro, parentOutputNode, context, generator),
         mapSrcNodeOrListMacro.getModel());
     } catch (Throwable t) {
       throw new GenerationFailureException("couldn't evaluate macro: mapping func failed", inputNode, null, mapSrcNodeOrListMacro, t);
@@ -199,7 +201,7 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode) throws GenerationFailureException {
+  public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, TemplateContext context) throws GenerationFailureException {
     INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
     MapSrcMacro_PostMapperFunction postMapperFunction;
     if (adapter instanceof MapSrcNodeMacro) {
@@ -215,7 +217,7 @@ public class QueryExecutor implements IQueryExecutor {
       QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new MapSrcMacroPostProcContext(inputNode, mapSrcNodeOrListMacro, outputNode, generator),
+        new MapSrcMacroPostProcContext(inputNode, mapSrcNodeOrListMacro, outputNode, context, generator),
         mapSrcNodeOrListMacro.getModel());
     } catch (Throwable t) {
       throw new GenerationFailureException("couldn't evaluate macro: post-processing failed", inputNode, null, mapSrcNodeOrListMacro, t);
@@ -223,7 +225,7 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode) throws GenerationFailureException {
+  public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, TemplateContext context) throws GenerationFailureException {
     String attributeRole = propertyMacro.getRole_();
     String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(attributeRole);
 
@@ -238,7 +240,7 @@ public class QueryExecutor implements IQueryExecutor {
       Object macroValue = QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new PropertyMacroContext(inputNode, templateValue, propertyMacro.getNode(), generator),
+        new PropertyMacroContext(inputNode, templateValue, propertyMacro.getNode(), context, generator),
         propertyMacro.getModel());
       String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
       outputNode.setProperty(propertyName, propertyValue);
@@ -248,13 +250,13 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query) {
+  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, TemplateContext context) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
     try {
       return (SNode) QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new SourceSubstituteMacroNodeContext(inputNode, macroNode, generator),
+        new SourceSubstituteMacroNodeContext(inputNode, macroNode, context, generator),
         query.getModel());
     } catch (NoSuchMethodException e) {
       generator.showWarningMessage(macroNode, "couldn't find nodes query '" + methodName + "' : evaluate to null");
@@ -267,13 +269,13 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query) {
+  public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query, TemplateContext context) {
     String methodName = TemplateFunctionMethodName.templateArgumentQuery(query.getNode());
     try {
       return QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new TemplateQueryContext(inputNode, query.getNode().getParent(), generator),
+        new TemplateQueryContext(inputNode, query.getNode().getParent(), context, generator),
         query.getModel());
     } catch (NoSuchMethodException e) {
       generator.showWarningMessage(query.getNode().getParent(), "couldn't find nodes query '" + methodName + "' : evaluate to null");
@@ -289,13 +291,13 @@ public class QueryExecutor implements IQueryExecutor {
    * used to evaluate 'sourceNodesQuery' in macros and in rules
    */
   @Override
-  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query) {
+  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, TemplateContext context) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
     try {
       Object result = QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new SourceSubstituteMacroNodesContext(inputNode, ruleNode, macroNode, generator),
+        new SourceSubstituteMacroNodesContext(inputNode, ruleNode, macroNode, context, generator),
         query.getModel());
 
       List<SNode> resultList;
@@ -368,7 +370,7 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro) {
+  public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
     ReferenceMacro_GetReferent function = refMacro.getReferentFunction();
     if (function == null) {
       generator.showErrorMessage(node, refMacro.getNode(), "couldn't evaluate reference macro: no function");
@@ -380,7 +382,7 @@ public class QueryExecutor implements IQueryExecutor {
       return QueryMethodGenerated.invoke(
         methodName,
         generator.getGeneratorSessionContext(),
-        new ReferenceMacroContext(node, outputNode, refMacro.getNode(), generator),
+        new ReferenceMacroContext(node, outputNode, refMacro.getNode(), context, generator),
         refMacro.getModel());
 
     } catch (Throwable t) {
@@ -430,10 +432,10 @@ public class QueryExecutor implements IQueryExecutor {
     }
 
     @Override
-    public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro) throws GenerationFailureException {
+    public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, TemplateContext context) throws GenerationFailureException {
       try {
         tracer.push("check if condition", true);
-        return super.checkConditionForIfMacro(inputNode, ifMacro);
+        return super.checkConditionForIfMacro(inputNode, ifMacro, context);
       } finally {
         tracer.pop();
       }
@@ -450,50 +452,50 @@ public class QueryExecutor implements IQueryExecutor {
     }
 
     @Override
-    public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode) throws GenerationFailureException {
+    public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, TemplateContext context) throws GenerationFailureException {
       try {
         tracer.push("map-src node macro", true);
-        return super.executeMapSrcNodeMacro(inputNode, mapSrcNodeOrListMacro, parentOutputNode);
+        return super.executeMapSrcNodeMacro(inputNode, mapSrcNodeOrListMacro, parentOutputNode, context);
       } finally {
         tracer.pop();
       }
     }
 
     @Override
-    public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode) throws GenerationFailureException {
+    public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, TemplateContext context) throws GenerationFailureException {
       try {
         tracer.push("map-src postproc", true);
-        super.executeMapSrcNodeMacro_PostProc(inputNode, mapSrcNodeOrListMacro, outputNode);
+        super.executeMapSrcNodeMacro_PostProc(inputNode, mapSrcNodeOrListMacro, outputNode, context);
       } finally {
         tracer.pop();
       }
     }
 
     @Override
-    public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode) throws GenerationFailureException {
+    public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, TemplateContext context) throws GenerationFailureException {
       try {
         tracer.push("property macro", true);
-        super.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode);
+        super.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
       } finally {
         tracer.pop();
       }
     }
 
     @Override
-    public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query) {
+    public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, TemplateContext context) {
       try {
         tracer.push("evaluate source node", true);
-        return super.evaluateSourceNodeQuery(inputNode, macroNode, query);
+        return super.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
       } finally {
         tracer.pop();
       }
     }
 
     @Override
-    public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query) {
+    public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, TemplateContext context) {
       try {
         tracer.push("evaluate source nodes", true);
-        return super.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query);
+        return super.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
       } finally {
         tracer.pop();
       }
@@ -520,10 +522,10 @@ public class QueryExecutor implements IQueryExecutor {
     }
 
     @Override
-    public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro) {
+    public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
       try {
         tracer.push("referent target", true);
-        return super.getReferentTarget(node, outputNode, refMacro);
+        return super.getReferentTarget(node, outputNode, refMacro, context);
       } finally {
         tracer.pop();
       }

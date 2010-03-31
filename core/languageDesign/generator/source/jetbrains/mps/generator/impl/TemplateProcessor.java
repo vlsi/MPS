@@ -36,12 +36,14 @@ public class TemplateProcessor {
   private final TemplateGenerator myGenerator;
   private final SModel myOutputModel;
   private final Map<String, SNode> myInputNodesByMappingName = new HashMap<String, SNode>();
+  private final TemplateContext myContext;
 
   private List<SNode> myInputHistory;
 
-  public TemplateProcessor(TemplateGenerator generator) {
+  public TemplateProcessor(TemplateGenerator generator, TemplateContext context) {
     myGenerator = generator;
     myOutputModel = myGenerator.getOutputModel();
+    myContext = context;
   }
 
   @NotNull
@@ -150,13 +152,14 @@ public class TemplateProcessor {
     List<INodeAdapter> templateChildNodes = new ArrayList<INodeAdapter>();
     for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
       if (templateChildNode instanceof PropertyMacro) {
-        myGenerator.getExecutor().expandPropertyMacro((PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
+        myGenerator.getExecutor().expandPropertyMacro((PropertyMacro) templateChildNode, inputNode, templateNode, outputNode, myContext);
       } else if (templateChildNode instanceof ReferenceMacro) {
         ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(
           outputNode, (ReferenceMacro) templateChildNode,
           inputNode,
           new HashMap<String, SNode>(myInputNodesByMappingName),
-          templateNode
+          templateNode,
+          myContext
         );
         PostponedReference postponedReference = new PostponedReference(
           refInfo,
@@ -246,7 +249,7 @@ public class TemplateProcessor {
     } else if (nodeMacro instanceof IfMacro) {
       // $IF$
       List<SNode> _outputNodes = null;
-      if (myGenerator.getExecutor().checkConditionForIfMacro(inputNode, (IfMacro) nodeMacro)) {
+      if (myGenerator.getExecutor().checkConditionForIfMacro(inputNode, (IfMacro) nodeMacro, myContext)) {
         _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, nodeMacrosToSkip + 1);
       } else {
         // alternative consequence
@@ -269,7 +272,7 @@ public class TemplateProcessor {
                 mappingName = nodeAndMappingNamePair.o2;
               }
 
-              List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(mappingName, altTemplateNode, inputNode);
+              List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(mappingName, altTemplateNode, inputNode, myContext);
               if (__outputNodes != null) {
                 if (_outputNodes == null) _outputNodes = new ArrayList<SNode>();
                 _outputNodes.addAll(__outputNodes);
@@ -308,7 +311,7 @@ public class TemplateProcessor {
             putInputNodeByMappingName(mappingName, newInputNode);
             myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(
               nodeMacro, childToReplaceLater, newInputNode,
-              new HashMap<String, SNode>(myInputNodesByMappingName));
+              new HashMap<String, SNode>(myInputNodesByMappingName), myContext);
           } else {
             List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1);
             if (_outputNodes != null) {
@@ -317,7 +320,7 @@ public class TemplateProcessor {
               for (SNode outputNode : _outputNodes) {
                 myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroPostProcChange(
                   nodeMacro, outputNode, newInputNode,
-                  new HashMap<String, SNode>(myInputNodesByMappingName));
+                  new HashMap<String, SNode>(myInputNodesByMappingName), myContext);
               }
             }
           }
@@ -372,7 +375,7 @@ public class TemplateProcessor {
             if (nodeAndMappingNamePair.o2 != null) {
               mappingName = nodeAndMappingNamePair.o2;
             }
-            List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateNodeForCase, newInputNode);
+            List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateNodeForCase, newInputNode, null);
             if (__outputNodes != null) {
               if (_outputNodes == null) _outputNodes = new ArrayList<SNode>();
               _outputNodes.addAll(__outputNodes);
@@ -429,7 +432,7 @@ public class TemplateProcessor {
         for (TemplateFragment fragment : fragments) {
           SNode templateForInclude = fragment.getParent().getNode();
           mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
-          List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newInputNode);
+          List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newInputNode, null /* FIXME add parameters */);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         }
       } finally {
@@ -464,7 +467,7 @@ public class TemplateProcessor {
   }
 
   private SNode getNewInputNode(NodeMacro nodeMacro, SNode inputNode) throws GenerationFailureException {
-    SNode node = InputQueryUtil.getNewInputNode(nodeMacro, inputNode, myGenerator);
+    SNode node = InputQueryUtil.getNewInputNode(nodeMacro, inputNode, myContext, myGenerator);
 //    if(myGenerator.isStrict() && node != null) {
 //      if(node.getModel() != myGenerator.getInputModel()) {
 //        myGenerator.showErrorMessage(nodeMacro.getNode(), "returned node should be from input model");
@@ -474,7 +477,7 @@ public class TemplateProcessor {
   }
 
   private List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode inputNode) throws GenerationFailureException {
-    List<SNode> nodes = InputQueryUtil.getNewInputNodes(nodeMacro, inputNode, myGenerator);
+    List<SNode> nodes = InputQueryUtil.getNewInputNodes(nodeMacro, inputNode, myContext, myGenerator);
 //    if(myGenerator.isStrict() && nodes != null) {
 //      for(SNode node : nodes) {
 //        if(node.getModel() != myGenerator.getInputModel()) {
@@ -569,12 +572,12 @@ public class TemplateProcessor {
   @Nullable
   private List<SNode> createOutputNodesForExternalTemplateNode(String mappingName,
                                                                SNode templateNode,
-                                                               SNode inputNode)
+                                                               SNode inputNode, TemplateContext context)
     throws
     DismissTopMappingRuleException,
     GenerationFailureException, GenerationCanceledException {
 
-    TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator);
+    TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator, context);
     Map<String, SNode> old = myGenerator.setPreviousInputNodesByMappingName(templateProcessor.myInputNodesByMappingName);
     try {
       return templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0);

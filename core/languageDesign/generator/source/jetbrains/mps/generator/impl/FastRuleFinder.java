@@ -42,13 +42,12 @@ public class FastRuleFinder {
     for (PatternReduction_MappingRule rule : patternRules) {
       String conceptFqName = rule.getPattern().getPatternNode().getConceptFQName();
 
-      // TODO turn on pattern rules
-//      List<ReductionRule> rules = applicableRules.get(conceptFqName);
-//      if (rules == null) {
-//        rules = new LinkedList<ReductionRule>();
-//        applicableRules.put(conceptFqName, rules);
-//      }
-//      rules.add(rule);
+      List<ReductionRule> rules = applicableRules.get(conceptFqName);
+      if (rules == null) {
+        rules = new LinkedList<ReductionRule>();
+        applicableRules.put(conceptFqName, rules);
+      }
+      rules.add(rule);
     }
 
     for (Reduction_MappingRule rule : reductionRules) {
@@ -76,21 +75,8 @@ public class FastRuleFinder {
     }
   }
 
-  public ReductionRule findReductionRule(SNode node, TemplateGenerator generator) throws GenerationFailureException {
-    ReductionRule[] allRules = myApplicableRules.get(node.getConceptFqName());
-    if (allRules == null) {
-      return null;
-    }
-
-    for (ReductionRule rule : allRules) {
-      if (!generator.getBlockedReductionsData().isReductionBlocked(node, rule)) {
-        if (generator.getExecutor().checkCondition(GeneratorUtil.getReductionCondition(rule), false, node, rule.getNode())) {
-          generator.getBlockedReductionsData().registerInputReduction(node, rule);
-          return rule;
-        }
-      }
-    }
-    return null;
+  public ReductionRule[] findReductionRules(SNode node) throws GenerationFailureException {
+    return myApplicableRules.get(node.getConceptFqName());
   }
 
   public static class BlockedReductionsData {

@@ -38,10 +38,11 @@ public class TemplateQueryContext {
   private final ITemplateGenerator myGenerator;
   private TemplateContext myContext;
 
-  public TemplateQueryContext(SNode inputNode, SNode templateNode, ITemplateGenerator generator) {
+  public TemplateQueryContext(SNode inputNode, SNode templateNode, TemplateContext context, ITemplateGenerator generator) {
     myInputNode = inputNode;
     myTemplateNode = templateNode;
     myGenerator = generator;
+    myContext = context;
   }
 
   /**
