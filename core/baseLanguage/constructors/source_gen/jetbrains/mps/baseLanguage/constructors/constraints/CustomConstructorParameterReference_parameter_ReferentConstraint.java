@@ -10,6 +10,9 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class CustomConstructorParameterReference_parameter_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public CustomConstructorParameterReference_parameter_ReferentConstraint() {
@@ -25,10 +28,14 @@ public class CustomConstructorParameterReference_parameter_ReferentConstraint ex
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode args = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor", false, false), "arguments", true);
-    if (!(SNodeOperations.isInstanceOf(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"))) {
-      return null;
-    } else {
+    if (SNodeOperations.isInstanceOf(args, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause")) {
+      List<SNode> result = new ArrayList<SNode>();
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"), "list", true));
+      return result;
+    } else if (SNodeOperations.isInstanceOf(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause")) {
       return SLinkOperations.getTargets(SNodeOperations.cast(args, "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"), "parameter", true);
+    } else {
+      return null;
     }
   }
 }

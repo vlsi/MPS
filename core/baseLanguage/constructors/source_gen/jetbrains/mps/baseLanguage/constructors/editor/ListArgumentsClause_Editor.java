@@ -27,7 +27,7 @@ public class ListArgumentsClause_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_ljswaq_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "List of");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "list of");
     editorCell.setCellId("Constant_ljswaq_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -35,8 +35,8 @@ public class ListArgumentsClause_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_ljswaq_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("elementType");
-    provider.setNoTargetText("<no elementType>");
+    provider.setRole("list");
+    provider.setNoTargetText("<no list>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

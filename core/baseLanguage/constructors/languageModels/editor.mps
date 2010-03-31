@@ -80,18 +80,12 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8670107124455598003">
         <link role="relationDeclaration:32" targetNodeId="1.3330196687714050064:1" resolveInfo="leftParenthesis" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="7738355964682998174">
-          <property name="flag:32" value="true" />
-        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="5379647004618201112">
         <link role="relationDeclaration:32" targetNodeId="1.5379647004618201111:1" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8670107124455598005">
         <link role="relationDeclaration:32" targetNodeId="1.3330196687714050065:1" resolveInfo="rightParenthesis" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="7738355964682998175">
-          <property name="flag:32" value="true" />
-        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8670107124455191229">
         <property name="text:32" value="-&gt;" />
@@ -782,10 +776,10 @@
     <link role="conceptDeclaration:32" targetNodeId="1.5379647004618176185:1" resolveInfo="ListArgumentsClause" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5379647004618201104">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5379647004618201107">
-        <property name="text:32" value="List of" />
+        <property name="text:32" value="list of" />
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="5379647004618201109">
-        <link role="relationDeclaration:32" targetNodeId="1.5379647004618201101:1" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4739047193854406833">
+        <link role="relationDeclaration:32" targetNodeId="1.4739047193854398652:1" />
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="5379647004618201106" />
     </node>
@@ -826,6 +820,18 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4739047193854406834">
+    <link role="conceptDeclaration:32" targetNodeId="1.4739047193854376699:1" resolveInfo="ListCustomParameter" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4739047193854406836">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4739047193854406839">
+        <link role="relationDeclaration:32" targetNodeId="1.5379647004618207272:1" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="4739047193854406841">
+        <link role="relationDeclaration:32" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="4739047193854406838" />
     </node>
   </node>
 </model>
