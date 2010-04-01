@@ -348,21 +348,8 @@
     </node>
     <node role="searchedNodesBlock:2" type="jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock:2" id="1206538095562">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1206538095563">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="1206538104269">
-          <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="1206538104270">
-            <property name="name:7" value="child" />
-          </node>
-          <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1206538104272">
-            <node role="statement:3" type="jetbrains.mps.lang.findUsages.structure.NodeStatement:2" id="1206538121968">
-              <node role="foundNode:2" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1206538122033">
-                <link role="variable:7" targetNodeId="1206538104270" resolveInfo="child" />
-              </node>
-            </node>
-          </node>
-          <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1206538205986">
-            <node role="operand:3" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node:2" id="1206538205987" />
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation:16" id="1206538205988" />
-          </node>
+        <node role="statement:3" type="jetbrains.mps.lang.findUsages.structure.NodeStatement:2" id="378834190312533771">
+          <node role="foundNode:2" type="jetbrains.mps.lang.findUsages.structure.ConceptFunctionParameter_node:2" id="378834190312533773" />
         </node>
       </node>
     </node>

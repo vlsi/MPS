@@ -47,9 +47,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   }
 
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
-    for (SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{}))) {
-      ListSequence.fromList(_results).addElement(child);
-    }
+    ListSequence.fromList(_results).addElement(node);
   }
 
   public String getNodeCategory(SNode node) {
