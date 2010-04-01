@@ -117,9 +117,6 @@
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="4739047193854376699:1" resolveInfo="ListCustomParameter" />
     </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="4739047193854091707">
-      <link role="intfc:0" targetNodeId="2v.1169194658468:0" resolveInfo="INamedConcept" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5379647004618176186">
     <property name="name:0" value="CustomArgumentClause" />

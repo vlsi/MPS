@@ -376,42 +376,6 @@
       <link role="concept:3" targetNodeId="1.6820702584719416486:1" resolveInfo="CustomConstructorUsage" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="4739047193853657643">
-    <property name="name:3" value="typeof_ListArgumentsClause" />
-    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4739047193853657644">
-      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="4739047193853657646">
-        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4739047193853657647">
-          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4739047193853657648">
-            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="4739047193853657649">
-              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.Type:3" id="4739047193853657650">
-                <node role="_attr_$attribute:3" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="4739047193853657651">
-                  <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4739047193853661215">
-                    <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4739047193853661214">
-                      <link role="applicableNode:3" targetNodeId="4739047193853657645" resolveInfo="listArgumentsClause" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4739047193853682550">
-                      <link role="link:16" targetNodeId="1.5379647004618201101:1" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4739047193853657653">
-          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="4739047193853657654">
-            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4739047193853658257">
-              <link role="applicableNode:3" targetNodeId="4739047193853657645" resolveInfo="listArgumentsClause" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="4739047193853657645">
-      <property name="name:3" value="listArgumentsClause" />
-      <link role="concept:3" targetNodeId="1.5379647004618176185:1" resolveInfo="ListArgumentsClause" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="4739047193854376701">
     <property name="name:3" value="typeof_ListCustomParameter" />
     <property name="overrides:3" value="true" />

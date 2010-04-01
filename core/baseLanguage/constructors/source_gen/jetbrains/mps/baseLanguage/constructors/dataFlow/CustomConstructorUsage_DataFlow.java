@@ -14,7 +14,6 @@ public class CustomConstructorUsage_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode el : SLinkOperations.getTargets(_context.getNode(), "element", true)) {
-      _context.getBuilder().emitRead(el);
       _context.getBuilder().build((SNode) el);
     }
   }
