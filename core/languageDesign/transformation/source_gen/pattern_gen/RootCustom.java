@@ -26,7 +26,8 @@ public class RootCustom {
         // myWork1true myWork1 
         int var12 = 175 * (1 + e);
       }
-
+      int e33 = 42;
+      int e32 = (22 + "myWork1".length());
     }
   }
 }
