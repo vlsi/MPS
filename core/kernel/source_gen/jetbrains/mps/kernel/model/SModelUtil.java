@@ -64,12 +64,12 @@ public class SModelUtil {
         }
       }
 
-      @Override
       public void modelReplaced(SModelDescriptor descriptor) {
-        if (Language.getModelAspect(descriptor) == LanguageAspect.STRUCTURE) {
-          MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).clear();
-          MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();
+        if (Language.getModelAspect(descriptor) != LanguageAspect.STRUCTURE) {
+          return;
         }
+        MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).clear();
+        MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();
       }
 
       public void propertyChanged(SModelPropertyEvent p0) {
