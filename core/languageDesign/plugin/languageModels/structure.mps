@@ -1466,15 +1466,16 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1209909558075">
-    <property name="package:0" value="Shared" />
+    <property name="package:0" value="DEPRECATED" />
     <property name="name:0" value="ProjectOperation" />
     <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1209909568520">
       <link role="intfc:0" targetNodeId="2.1197027803184:3" resolveInfo="IOperation" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3339131993542057600" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1209909878702">
-    <property name="package:0" value="Tool" />
+    <property name="package:0" value="DEPRECATED" />
     <property name="name:0" value="GetToolOperation" />
     <link role="extends:0" targetNodeId="1209909558075:23" resolveInfo="ProjectOperation" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1209909902559">
@@ -1699,7 +1700,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210184823336">
-    <property name="package:0" value="Preference" />
+    <property name="package:0" value="DEPRECATED" />
     <property name="name:0" value="GetPreferencesComponentOperation" />
     <link role="extends:0" targetNodeId="1209909558075:23" resolveInfo="ProjectOperation" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210184858209">
@@ -4148,6 +4149,42 @@
     <property name="package:0" value="RunConfigs" />
     <property name="name:0" value="RunConfigurationMethodDeclaration" />
     <link role="extends:0" targetNodeId="14.1205769003971:0" resolveInfo="DefaultClassifierMethodDeclaration" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3339131993542057764">
+    <property name="package:0" value="Preference" />
+    <property name="name:0" value="GetPreferencesComponentInProjectOperation" />
+    <link role="extends:0" targetNodeId="3339131993542057767:23" resolveInfo="BaseProjectOperation" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3339131993542057765">
+      <property name="role:0" value="componentDeclaration" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1210179134063:23" resolveInfo="PreferencesComponentDeclaration" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3339131993542057766">
+      <property name="value:0" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3339131993542057767">
+    <property name="package:0" value="Shared" />
+    <property name="name:0" value="BaseProjectOperation" />
+    <link role="extends:0" targetNodeId="6.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3339131993542057768">
+      <link role="intfc:0" targetNodeId="2.1197027803184:3" resolveInfo="IOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3339131993542058151">
+    <property name="package:0" value="Tool" />
+    <property name="name:0" value="GetToolInProjectOperation" />
+    <link role="extends:0" targetNodeId="3339131993542057767:23" resolveInfo="BaseProjectOperation" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3339131993542058152">
+      <property name="role:0" value="tool" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="6547237850567458268:23" resolveInfo="BaseToolDeclaration" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3339131993542058153">
+      <property name="value:0" value="tool&lt;&lt;{tool}&gt;&gt;" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
   </node>
 </model>
 
