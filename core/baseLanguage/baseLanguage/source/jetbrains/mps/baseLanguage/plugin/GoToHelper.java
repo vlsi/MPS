@@ -109,14 +109,7 @@ public class GoToHelper {
     protected String getContainerText(final NodeNavigationItem element, String name) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          BaseMethodDeclaration methodAdapter = (BaseMethodDeclaration) element.getNode().getAdapter();
-          INamedConcept parentNamedElement = methodAdapter.getParent(INamedConcept.class, false);
-          if (parentNamedElement instanceof BaseConcept) {
-            // TODO: another way to show reasonable container text here is to pass proper NodeListCellRenderer
-            // implementation from GoToOverridingMethod_Action
-            return ((BaseConcept) parentNamedElement).getVirtualPackage() + "." + parentNamedElement.getName();
-          }
-          return parentNamedElement.getName();
+          return element.getNode().getModel().getLongName();
         }
       });
     }
