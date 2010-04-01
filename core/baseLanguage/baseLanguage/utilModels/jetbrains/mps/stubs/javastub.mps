@@ -7744,21 +7744,16 @@
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="4370403881279717570">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4370403881279717571">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4370403881279717572">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4370403881279717573">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4370403881279717574">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4370403881279717575">
-                      <link role="variableDeclaration:3" targetNodeId="7241381882860005275" resolveInfo="sourceNode" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4370403881279717576">
-                      <link role="baseMethodDeclaration:3" targetNodeId="3.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
-                    </node>
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4370403881279717574">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4370403881279717575">
+                    <link role="variableDeclaration:3" targetNodeId="7241381882860005275" resolveInfo="sourceNode" />
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4370403881279717577">
-                    <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4370403881279717576">
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4370403881279717578">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.~SModelDescriptor.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4370403881279717579">
@@ -8008,11 +8003,11 @@
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4370403881279717373">
-                  <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.~SModel.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4370403881279717374">
-                <link role="baseMethodDeclaration:3" targetNodeId="11.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~SModelReference.equals(java.lang.Object):boolean" resolveInfo="equals" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4370403881279717375">
                   <link role="variableDeclaration:3" targetNodeId="4370403881279717207" resolveInfo="targetRef" />
                 </node>
