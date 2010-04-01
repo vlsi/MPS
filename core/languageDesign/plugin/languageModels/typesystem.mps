@@ -2873,5 +2873,44 @@
       <link role="concept:3" targetNodeId="4.453992125914151040:23" resolveInfo="Parameter_FunctionParameter" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="4923436771431072775">
+    <property name="name:3" value="check_CommandClosureLiteral" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4923436771431072776">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="4923436771431072969">
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4923436771431072970">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="4923436771431072981">
+            <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4923436771431072984">
+              <property name="value:3" value="not allowed here" />
+            </node>
+            <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4923436771431072985">
+              <link role="variableDeclaration:3" targetNodeId="4923436771431072971" resolveInfo="rs" />
+            </node>
+          </node>
+        </node>
+        <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4923436771431072971">
+          <property name="name:3" value="rs" />
+          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4923436771431072972">
+            <link role="concept:16" targetNodeId="6.1068581242878:3" resolveInfo="ReturnStatement" />
+          </node>
+        </node>
+        <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4923436771431072973">
+          <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4923436771431072974">
+            <link role="applicableNode:3" targetNodeId="4923436771431072777" resolveInfo="commandClosureLiteral" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation:16" id="4923436771431072975">
+            <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="4923436771431072976">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4923436771431072977">
+                <link role="conceptDeclaration:16" targetNodeId="6.1068581242878:3" resolveInfo="ReturnStatement" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="4923436771431072777">
+      <property name="name:3" value="commandClosureLiteral" />
+      <link role="concept:3" targetNodeId="4.1225441216717:23" resolveInfo="CommandClosureLiteral" />
+    </node>
+  </node>
 </model>
 
