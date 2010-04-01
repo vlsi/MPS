@@ -280,8 +280,19 @@
       </node>
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="2681305894288695079">
         <link role="template:2" targetNodeId="2681305894288695007" resolveInfo="processStatement" />
-        <node role="actualArgument:2" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2681305894288695080">
-          <property name="value:3" value="first" />
+        <node role="actualArgument:2" type="jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression:2" id="4816349095291000367">
+          <node role="query:2" type="jetbrains.mps.lang.generator.structure.TemplateArgumentQuery:2" id="4816349095291000368">
+            <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4816349095291000369">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4816349095291000370">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4816349095291000372">
+                  <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="4816349095291000371" />
+                  <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef:0" id="4816349095291000376">
+                    <link role="propertyPatternVar:0" targetNodeId="2681305894288686805" resolveInfo="$jobName" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="actualArgument:2" type="jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression:2" id="2681305894288695082">
           <link role="patternVarDecl:2" targetNodeId="2681305894288695006" resolveInfo="#myExpr" />
