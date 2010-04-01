@@ -421,13 +421,13 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public void dispose() {
-    super.dispose();
     UnregisteredNodes.instance().clear(getSModelReference());
 
     if (mySModel != null) {
       fireBeforeModelDisposed(mySModel);
       mySModel.dispose();
     }
+    super.dispose();
   }
 
   public Set<SReference> findUsages(Set<SNode> nodes) {
