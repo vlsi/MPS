@@ -182,13 +182,5 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
         myNodes.clear();
       }
     }
-
-    @Override
-    public void beforeModelDisposed(SModel sm) {
-      synchronized (myLock) {
-        myInitialized = false;
-        myNodes.clear();
-      }
-    }
   }
 }

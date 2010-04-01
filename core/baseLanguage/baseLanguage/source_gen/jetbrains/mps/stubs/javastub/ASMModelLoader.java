@@ -749,7 +749,7 @@ public abstract class ASMModelLoader {
 
   private void addClassifierReference(SNode sourceNode, String role, ASMClassType clsType) {
     SModelReference targetModelRef = this.getModelReferenceFor(NodeNameUtil.getNamespace(clsType.getName()));
-    if (!(sourceNode.getModel().getModelDescriptor().getSModelReference().equals(targetModelRef))) {
+    if (!(sourceNode.getModel().getSModelReference().equals(targetModelRef))) {
       SNodeId nodeId = ASMNodeId.createId(clsType.getName());
       SReference reference = SReference.create(role, sourceNode, targetModelRef, nodeId);
       sourceNode.addReference(reference);
@@ -768,7 +768,7 @@ public abstract class ASMModelLoader {
   private void addAnnotationMethodReference(SNode sourceNode, String role, ASMClassType annotationType, String method) {
 
     SModelReference targetRef = this.getModelReferenceFor(NodeNameUtil.getNamespace(annotationType.getName()));
-    if (!(sourceNode.getModel().getModelDescriptor().equals(targetRef))) {
+    if (!(sourceNode.getModel().getSModelReference().equals(targetRef))) {
       SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
       SReference reference = SReference.create(role, sourceNode, targetRef, nodeId);
       sourceNode.addReference(reference);

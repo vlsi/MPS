@@ -54,8 +54,22 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
         }
       }
     }
-    
-  };  
+
+    @Override
+    public void modelReplaced(SModelDescriptor md) {
+      SModelReference modelRef = md.getSModelReference();
+      synchronized (myLock) {
+        for (SNode node : new ArrayList<SNode>(myNodesToContexts.keySet())) {
+          if (modelRef == node.getModel().getSModelReference()) {
+            TypeCheckingContext typeCheckingContext = myNodesToContexts.remove(node);
+            if (typeCheckingContext != null) {
+              typeCheckingContext.dispose();
+            }
+          }
+        }
+      }
+    }
+  };
 
   public NodeTypesComponentsRepository(TypeChecker typeChecker, ClassLoaderManager manager) {
     myTypeChecker = typeChecker;

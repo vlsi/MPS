@@ -37,6 +37,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vcs.VcsHelper;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -52,12 +53,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   private boolean myMetadataLoaded;
 
   private final Object myLoadingLock = new Object();
-
-  //it should be possible to add listeners from any thread so we use lock here
-  //access to other fields is synchronized with ModelAccess
-  private final Object myListenersLock = new Object();
-  private Set<SModelListener> myModelListeners = new HashSet<SModelListener>(0);
-  private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
 
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange;
@@ -122,36 +117,33 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
    * This method should be called either in EDT, inside WriteAction or in any other thread
    */
   public void reloadFromDisk() {
+    ModelAccess.assertLegalWrite();
     if (!isInitialized()) {
       return;
     }
-    final SModel newModel = loadModel();
-    Runnable runnable = new Runnable() {
+    SModel newModel = loadModel();
+    final SModel oldModel = mySModel;
+    oldModel.setModelDescritor(null);
+    mySModel = newModel;
+    mySModel.setModelDescritor(this);
+
+    updateLastChange();
+
+    doPostLoadStuff();
+
+    SModelRepository.getInstance().markChanged(DefaultSModelDescriptor.this, false);
+    MPSModuleRepository.getInstance().invalidateCaches();
+    Runnable modelReplacer = new Runnable() {
       @Override
       public void run() {
-        mySModel.fireBeforeModelReloaded();
-
-        addListenersFromSModel();
-
-        SModel oldModel = mySModel;
-        mySModel = newModel;
-
-        updateLastChange();
-
-        doPostLoadStuff();
-
-        SModelRepository.getInstance().markChanged(DefaultSModelDescriptor.this, false);
-        MPSModuleRepository.getInstance().invalidateCaches();
-
-        mySModel.fireModelReloaded();
+        fireModelReplaced();
         oldModel.dispose();
       }
     };
     if (ModelAccess.instance().isInEDT()) {
-      ModelAccess.assertLegalWrite();
-      runnable.run();
+      modelReplacer.run();
     } else {
-      ModelAccess.instance().runWriteInEDT(runnable);
+      ModelAccess.instance().runReadInEDT(modelReplacer);
     }
   }
 
@@ -186,13 +178,14 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     synchronized (myLoadingLock) {
       if (mySModel == null) {
         mySModel = loadModel();
+        mySModel.setModelDescritor(this);
         doPostLoadStuff();
         fireInitialized = true;
       }
       result = mySModel;
     }
     if (fireInitialized) {
-      result.fireModelInitialized();
+      fireModelInitialized();
     }
     return result;
   }
@@ -204,7 +197,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     updateModelWithRefactorings();
 
     myDiskTimestamp = fileTimestamp();
-    addListenersToSModel();
   }
 
   private void updateModelWithRefactorings() {
@@ -310,107 +302,12 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return false;
   }
 
-  private void addListenersToSModel() {
-    if (mySModel == null) return;
-
-    synchronized (myListenersLock) {
-      for (SModelListener listener : myModelListeners) {
-        mySModel.addModelListener(listener);
-      }
-      myModelListeners.clear();
-
-      for (SModelCommandListener listener : myModelCommandListeners) {
-        mySModel.addModelCommandListener(listener);
-      }
-      myModelCommandListeners.clear();
-    }
-  }
-
-  private void addListenersFromSModel() {
-    if (mySModel == null) return;
-
-    synchronized (myListenersLock) {
-      if (!myModelListeners.isEmpty() || !myModelCommandListeners.isEmpty()) {
-        throw new IllegalStateException();
-      }
-
-      myModelListeners.addAll(mySModel.getModelListeners());
-      myModelCommandListeners.addAll(mySModel.getCommandListeners());
-    }
-  }
-
-  private void clearListeners() {
-    synchronized (myListenersLock) {
-      myModelListeners.clear();
-      myModelCommandListeners.clear();
-    }
-  }
-
   public long lastStructuralChange() {
     return myLastStructuralChange;
   }
 
   public long lastChangeTime() {
     return myLastChange;
-  }
-
-  public void addModelListener(SModelListener listener) {
-    synchronized (myListenersLock) {
-      if (isInitialized()) {
-        mySModel.addModelListener(listener);
-      } else {
-        myModelListeners.add(listener);
-      }
-    }
-  }
-
-  public boolean hasModelListener(SModelListener listener) {
-    synchronized (myListenersLock) {
-      if (isInitialized()) {
-        return mySModel.hasModelListener(listener);
-      } else {
-        return myModelListeners.contains(listener);
-      }
-    }
-  }
-  public void removeModelListener(SModelListener listener) {
-    synchronized (myListenersLock) {
-      if (isInitialized()) {
-        mySModel.removeModelListener(listener);
-      } else {
-        myModelListeners.remove(listener);
-      }
-    }
-  }
-
-  public boolean hasSModelCommandListener(SModelCommandListener listener) {
-    synchronized (myListenersLock) {
-      if (isInitialized()) {
-        return mySModel.hasModelCommandListener(listener);
-      } else {
-        return myModelCommandListeners.contains(listener);
-      }
-    }
-  }
-
-  public void addModelCommandListener(SModelCommandListener listener) {
-    synchronized (myListenersLock) {
-      if (isInitialized()) {
-        mySModel.addModelCommandListener(listener);
-      } else {
-        myModelCommandListeners.add(listener);
-      }
-    }
-  }
-
-  public void removeModelCommandListener(SModelCommandListener listener) {
-    synchronized (myListenersLock) {
-      if (isInitialized()) {
-        mySModel.removeModelCommandListener(listener);
-      } else {
-        myModelCommandListeners.remove(listener);
-      }
-    }
   }
 
   public void save() {
@@ -475,7 +372,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       MPSFileSynchronizer.getInstance().requestSync(modelFile);
     }
 
-    mySModel.fireModelSaved();
+    fireModelSaved();
   }
 
   public boolean needsReloading() {
@@ -491,47 +388,44 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     ModelAccess.assertLegalWrite();
 
     if (!isInitialized()) return;
-
-    addListenersFromSModel();
-
-    SModel oldModel = mySModel;
-    mySModel = myModelRootManager.refresh(this);
-
-    if (mySModel != oldModel) {
-      oldModel.dispose();
-    }
-
-    if (!isInitialized()) return;
-
-    if (mySModel != oldModel) {
-      addListenersToSModel();
-    } else {
-      clearListeners();
-    }
+    replaceModel(myModelRootManager.refresh(this));
   }
 
   public void replaceModel(SModel newModel) {
     ModelAccess.assertLegalWrite();
-
     if (newModel == mySModel) return;
+    final SModel oldSModel = mySModel;
     if (isInitialized()) {
-      addListenersFromSModel();
-      mySModel.dispose();
+      oldSModel.setModelDescritor(null);
     }
     mySModel = newModel;
     if (mySModel != null) {
-      addListenersToSModel();
+      mySModel.setModelDescritor(DefaultSModelDescriptor.this);
     }
-    SModelRepository.getInstance().markChanged(this, true);
+    SModelRepository.getInstance().markChanged(DefaultSModelDescriptor.this, true);
+    MPSModuleRepository.getInstance().invalidateCaches();
+    Runnable modelReplacedNotifier = new Runnable() {
+      @Override
+      public void run() {
+        fireModelReplaced();
+        if (oldSModel != null) {
+          oldSModel.dispose();
+        }
+      }
+    };
+    if (ModelAccess.instance().isInEDT()) {
+      modelReplacedNotifier.run();
+    } else {
+      ModelAccess.instance().runReadInEDT(modelReplacedNotifier);
+    }
   }
 
   public void dispose() {
-    ModelAccess.assertLegalWrite();
-    clearListeners();
-
+    super.dispose();
     UnregisteredNodes.instance().clear(getSModelReference());
 
     if (mySModel != null) {
+      fireBeforeModelDisposed(mySModel);
       mySModel.dispose();
     }
   }

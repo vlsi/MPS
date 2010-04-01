@@ -85,6 +85,11 @@ public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
     return myManagerClass;
   }
 
+  @Override
+  public boolean isInitialized() {
+    return super.isInitialized() && myModelRootManager != null;
+  }
+
   private void updateManagerId() {
     if (myModelRootManager == null) return;
     myManagerClass = myModelRootManager.getClass().getName();

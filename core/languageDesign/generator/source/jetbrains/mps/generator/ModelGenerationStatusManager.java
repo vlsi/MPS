@@ -71,7 +71,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   private final FileGenerationManager myFileGenerationManager;
   private final SModelAdapter mySmodelReloadListener = new SModelAdapter() {
     @Override
-    public void modelReloaded(SModelDescriptor sm) {
+    public void modelReplaced(SModelDescriptor sm) {
       ModelGenerationStatusManager.this.invalidateData(sm);
     }
   };

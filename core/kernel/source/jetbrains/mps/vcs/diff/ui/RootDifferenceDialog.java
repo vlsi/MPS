@@ -82,13 +82,6 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     myContainer.setResizeWeight(1.0);
     myNewModel = newModel;
     myOldModel = oldModel;
-    addWindowListener(new WindowAdapter() {
-      @Override
-      public void windowClosing(WindowEvent e) {
-        myNewEditorComponent.dispose();
-        myOldEditorComponent.dispose();
-      }
-    });
     myFocusTrackback = new FocusTrackback(this, parent, false);
     WindowAdapter focusListener = new WindowAdapter() {
       public void windowOpened(WindowEvent e) {
@@ -265,6 +258,8 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
   public void dispose() {
     myFocusTrackback.restoreFocus();
     myFocusWatcher.deinstall(myContainer);
+    myNewEditorComponent.dispose();
+    myOldEditorComponent.dispose();
     super.dispose();
   }
 }

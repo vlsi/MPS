@@ -36,6 +36,17 @@ public class StructuralCollectionUtil {
         ourHashCodeCash.remove(node);
       }
     }
+
+    @Override
+    public void modelReplaced(SModelDescriptor md) {
+      SModelReference reference = md.getSModelReference();
+      for (SModel model : ourModelsToNodes.keySet()) {
+        if (reference.equals(model.getSModelReference())) {
+          beforeModelDisposed(model);
+          return;
+        }
+      }
+    }
   };
 
   static {

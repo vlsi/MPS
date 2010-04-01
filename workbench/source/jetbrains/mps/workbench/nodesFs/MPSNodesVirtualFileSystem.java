@@ -229,7 +229,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     }
 
     @Override
-    public void modelReloaded(final SModelDescriptor sm) {
+    public void modelReplaced(final SModelDescriptor sm) {
       for (SNode root : sm.getSModel().getRoots()) {
         updateModificationStamp(root);
       }

@@ -19,8 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.event.SModelFileChangedEvent;
-import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
@@ -40,6 +39,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   protected Map<String, Object> myUserObjects;
   protected IFile myModelFile;
   protected IModelRootManager myModelRootManager;
+
+  //it should be possible to add listeners from any thread so we use lock here
+  //access to other fields is synchronized with ModelAccess
+  private final Object myListenersLock = new Object();
+  private Set<SModelListener> myModelListeners = new HashSet<SModelListener>(0);
+  private SModelListener[] myModelListenersCopy;
+  private Set<SModelCommandListener> myModelCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
+  private SModelCommandListener[] myModelCommandListenersCopy;
 
   public BaseSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelReference modelReference) {
     myModelReference = modelReference;
@@ -127,6 +134,13 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myUserObjects.remove(key);
   }
 
+  private void clearUserObjects() {
+    if (myUserObjects != null) {
+      myUserObjects.clear();
+      myUserObjects = null;
+    }
+  }
+
   public Set<IModule> getModules() {
     return SModelRepository.getInstance().getOwners(this, IModule.class);
   }
@@ -193,14 +207,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
     SModelFqName oldFqName = getSModelFqName();
     SModel model = getSModel();
-    model.fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
+    fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
 
     SModelReference newModelReference = new SModelReference(newModelFqName, myModelReference.getSModelId());
     model.changeModelReference(newModelReference);
     myModelRootManager.rename(this, newModelFqName, changeFile);
     myModelReference = newModelReference;
 
-    model.fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
+    fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
   }
 
   public void changeModelFile(IFile newModelFile) {
@@ -212,13 +226,183 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     }
 
     SModel model = getSModel();
-    model.fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+    fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
     myModelFile = newModelFile;
     updateDiskTimestamp();
-    model.fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
+    fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
   }
 
   protected void updateDiskTimestamp() {
 
   }
+
+  @Override
+  public void dispose() {
+    ModelAccess.assertLegalWrite();
+    clearListeners();
+    clearUserObjects();
+  }
+
+  public void addModelListener(@NotNull SModelListener listener) {
+    synchronized (myListenersLock) {
+      myModelListeners.add(listener);
+      myModelListenersCopy = null;
+    }
+  }
+
+  public boolean hasModelListener(@NotNull SModelListener listener) {
+    synchronized (myListenersLock) {
+      return myModelListeners.contains(listener);
+    }
+  }
+
+  public void removeModelListener(@NotNull SModelListener listener) {
+    synchronized (myListenersLock) {
+      myModelListeners.remove(listener);
+      myModelListenersCopy = null;
+    }
+  }
+
+  @NotNull
+  public SModelListener[] getModelListeners() {
+    synchronized (myListenersLock) {
+      if (myModelListenersCopy == null) {
+        myModelListenersCopy = myModelListeners.toArray(new SModelListener[myModelListeners.size()]);
+      }
+      return myModelListenersCopy;
+    }
+  }
+
+  public boolean hasModelCommandListener(@NotNull SModelCommandListener listener) {
+    synchronized (myListenersLock) {
+      return myModelCommandListeners.contains(listener);
+    }
+  }
+
+  public void addModelCommandListener(@NotNull SModelCommandListener listener) {
+    synchronized (myListenersLock) {
+      myModelCommandListeners.add(listener);
+      myModelCommandListenersCopy = null;
+    }
+  }
+
+  public void removeModelCommandListener(@NotNull SModelCommandListener listener) {
+    synchronized (myListenersLock) {
+      myModelCommandListeners.remove(listener);
+      myModelListenersCopy = null;
+    }
+  }
+
+  @NotNull
+  public SModelCommandListener[] getModelCommandListeners() {
+    synchronized (myListenersLock) {
+      if (myModelCommandListenersCopy == null) {
+        myModelCommandListenersCopy = myModelCommandListeners.toArray(new SModelCommandListener[myModelCommandListeners.size()]);
+      }
+      return myModelCommandListenersCopy;
+    }
+  }
+
+  private void clearListeners() {
+    synchronized (myListenersLock) {
+      myModelListeners.clear();
+      myModelCommandListeners.clear();
+    }
+  }
+
+  // Not SModel-specific listener notifications
+  void fireBeforeModelFileChanged(SModelFileChangedEvent event) {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.beforeModelFileChanged(event);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  void fireModelFileChanged(SModelFileChangedEvent event) {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.modelFileChanged(event);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  void fireBeforeModelRenamed(SModelRenamedEvent event) {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.beforeModelRenamed(event);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  void fireModelRenamed(SModelRenamedEvent event) {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.modelRenamed(event);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  void fireModelInitialized() {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.modelInitialized(this);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  void fireModelReplaced() {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.modelReplaced(this);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  void fireBeforeModelDisposed(SModel model) {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.beforeModelDisposed(model);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  void fireModelSaved() {
+    for (SModelListener sModelListener : getModelListeners()) {
+      try {
+        sModelListener.modelSaved(this);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  void fireSModelChangedInCommandEvent(@NotNull final List<SModelEvent> events) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (SModelCommandListener l : getModelCommandListeners()) {
+          try {
+            l.eventsHappenedInCommand(events);
+          } catch (Exception e) {
+            LOG.error(e);
+          }
+        }
+      }
+    });
+  }
+
 }

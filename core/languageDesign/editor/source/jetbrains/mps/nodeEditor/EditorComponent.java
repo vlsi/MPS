@@ -2861,7 +2861,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private class MySimpleModelListener extends SModelAdapter {
-    public void modelReloaded(final SModelDescriptor sm) {
+    @Override
+    public void modelReplaced(final SModelDescriptor sm) {
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
       if (myNode != null) {
         if (myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
@@ -2870,15 +2871,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
       rebuildEditorContent();
-    }
-
-    @Override
-    public void beforeModelDisposed(SModel sm) {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          rebuildEditorContent();
-        }
-      });
     }
   }
 

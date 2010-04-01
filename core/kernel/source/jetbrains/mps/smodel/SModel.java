@@ -42,13 +42,6 @@ import java.util.*;
 public class SModel implements Iterable<SNode> {
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
-  //it should be possible to add listeners from any thread so we use lock here
-  //access to other fields is synchronized with ModelAccess
-  private final Object myListenersLock = new Object();
-
-  private Set<SModelListener> myListeners = new LinkedHashSet<SModelListener>(0);
-  private Set<SModelCommandListener> myCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
-
   private List<ModuleReference> myVersionedLanguages = new ArrayList<ModuleReference>();
 
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
@@ -73,6 +66,8 @@ public class SModel implements Iterable<SNode> {
   private boolean myRegistrationsForbidden = false;
 
   private int myPersistenceVersion = -1;
+
+  private SModelDescriptor myModelDescriptor;
 
   public SModel(@NotNull SModelReference modelReference) {
     myReference = modelReference;
@@ -230,70 +225,6 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  @NotNull
-  private List<SModelListener> copyListeners() {
-    synchronized (myListenersLock) {
-      return new ArrayList<SModelListener>(myListeners);
-    }
-  }
-
-  void addModelListener(@NotNull SModelListener listener) {
-    synchronized (myListenersLock) {
-      myListeners.add(listener);
-    }
-  }
-
-  boolean hasModelListener(@NotNull SModelListener listener) {
-    synchronized (myListenersLock) {
-      return myListeners.contains(listener);
-    }
-  }
-
-  void removeModelListener(@NotNull SModelListener listener) {
-    synchronized (myListenersLock) {
-      myListeners.remove(listener);
-    }
-  }
-
-  @NotNull
-  private List<SModelCommandListener> copyCommandListeners() {
-    synchronized (myListenersLock) {
-      return new ArrayList<SModelCommandListener>(myCommandListeners);
-    }
-  }
-
-  void addModelCommandListener(@NotNull SModelCommandListener listener) {
-    synchronized (myListenersLock) {
-      myCommandListeners.add(listener);
-    }
-  }
-
-  boolean hasModelCommandListener(@NotNull SModelCommandListener listener) {
-    synchronized (myListenersLock) {
-      return myCommandListeners.contains(listener);
-    }
-  }
-
-  void removeModelCommandListener(@NotNull SModelCommandListener listener) {
-    synchronized (myListenersLock) {
-      myCommandListeners.remove(listener);
-    }
-  }
-
-  @NotNull
-  List<SModelListener> getModelListeners() {
-    synchronized (myListenersLock) {
-      return new ArrayList<SModelListener>(myListeners);
-    }
-  }
-
-  @NotNull
-  List<SModelCommandListener> getCommandListeners() {
-    synchronized (myListenersLock) {
-      return new ArrayList<SModelCommandListener>(myCommandListeners);
-    }
-  }
-
   public boolean setLoading(boolean loading) {
     boolean wasLoading = myLoading;
     myLoading = loading;
@@ -307,17 +238,26 @@ public class SModel implements Iterable<SNode> {
     return myLoading;
   }
 
-  public SModelDescriptor getModelDescriptor() {
-    return SModelRepository.getInstance().getModelDescriptor(this);
+  public synchronized SModelDescriptor getModelDescriptor() {
+    return myModelDescriptor;
+  }
+
+  public synchronized void setModelDescritor(SModelDescriptor modelDescriptor) {
+    myModelDescriptor = modelDescriptor;
   }
 
   private boolean canFireEvent() {
     return !myLoading;
   }
 
-  void fireDevKitAddedEvent(@NotNull ModuleReference ref) {
+  private SModelListener[] getModelListeners() {
+    SModelDescriptor modelDescriptor = getModelDescriptor();
+    return modelDescriptor != null ? modelDescriptor.getModelListeners() : new SModelListener[0];
+  }
+
+  private void fireDevKitAddedEvent(@NotNull ModuleReference ref) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.devkitAdded(new SModelDevKitEvent(this, ref));
       } catch (Throwable t) {
@@ -326,9 +266,9 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireDevKitRemovedEvent(@NotNull ModuleReference ref) {
+  private void fireDevKitRemovedEvent(@NotNull ModuleReference ref) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.devkitRemoved(new SModelDevKitEvent(this, ref));
       } catch (Throwable t) {
@@ -337,9 +277,9 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireLanguageAddedEvent(@NotNull ModuleReference ref) {
+  private void fireLanguageAddedEvent(@NotNull ModuleReference ref) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.languageAdded(new SModelLanguageEvent(this, ref));
       } catch (Throwable t) {
@@ -348,9 +288,9 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireLanguageRemovedEvent(@NotNull ModuleReference ref) {
+  private void fireLanguageRemovedEvent(@NotNull ModuleReference ref) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.languageRemoved(new SModelLanguageEvent(this, ref));
       } catch (Throwable t) {
@@ -359,9 +299,9 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireImportAddedEvent(@NotNull SModelReference modelReference) {
+  private void fireImportAddedEvent(@NotNull SModelReference modelReference) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.importAdded(new SModelImportEvent(this, modelReference));
       } catch (Throwable t) {
@@ -370,9 +310,9 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireImportRemovedEvent(@NotNull SModelReference modelReference) {
+  private void fireImportRemovedEvent(@NotNull SModelReference modelReference) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.importAdded(new SModelImportEvent(this, modelReference));
       } catch (Throwable t) {
@@ -381,9 +321,9 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireRootAddedEvent(@NotNull SNode root) {
+  private void fireRootAddedEvent(@NotNull SNode root) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.rootAdded(new SModelRootEvent(this, root, true));
       } catch (Throwable t) {
@@ -392,54 +332,11 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireRootRemovedEvent(@NotNull SNode root) {
+  private void fireRootRemovedEvent(@NotNull SNode root) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.rootRemoved(new SModelRootEvent(this, root, false));
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireModelInitialized() {
-    if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
-      try {
-        sModelListener.modelInitialized(getModelDescriptor());
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireModelReloaded() {
-    if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
-      try {
-        sModelListener.modelReloaded(getModelDescriptor());
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireBeforeModelReloaded() {
-    if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
-      try {
-        sModelListener.beforeModelReloaded(getModelDescriptor());
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireBeforeModelDisposed() {
-    for (SModelListener sModelListener : copyListeners()) {
-      try {
-        sModelListener.beforeModelDisposed(this);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -451,7 +348,7 @@ public class SModel implements Iterable<SNode> {
                                 @Nullable String oldValue,
                                 @Nullable String newValue) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.propertyChanged(new SModelPropertyEvent(this, property, node, oldValue, newValue));
       } catch (Throwable t) {
@@ -465,7 +362,7 @@ public class SModel implements Iterable<SNode> {
                            @NotNull SNode child,
                            SNode anchor) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
         sModelListener.childAdded(new SModelChildEvent(this, true, parent, role, childIndex, child));
@@ -480,7 +377,7 @@ public class SModel implements Iterable<SNode> {
                              @NotNull SNode child,
                              SNode anchor) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
         sModelListener.childRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
@@ -490,12 +387,12 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public void fireBeforeChildRemovedEvent(@NotNull SNode parent,
+  void fireBeforeChildRemovedEvent(@NotNull SNode parent,
                                           @NotNull String role,
                                           @NotNull SNode child,
                                           SNode anchor) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
         sModelListener.beforeChildRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
@@ -507,7 +404,7 @@ public class SModel implements Iterable<SNode> {
 
   void fireReferenceAddedEvent(@NotNull SReference reference) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.referenceAdded(new SModelReferenceEvent(this, reference, true));
       } catch (Throwable t) {
@@ -518,7 +415,7 @@ public class SModel implements Iterable<SNode> {
 
   void fireReferenceRemovedEvent(@NotNull SReference reference) {
     if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.referenceRemoved(new SModelReferenceEvent(this, reference, false));
       } catch (Throwable t) {
@@ -527,79 +424,10 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireLoadingStateChanged() {
-    for (SModelListener sModelListener : copyListeners()) {
+  private void fireLoadingStateChanged() {
+    for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.loadingStateChanged(getModelDescriptor(), isLoading());
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireSModelChangedInCommandEvent(@NotNull final List<SModelEvent> events) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        for (SModelCommandListener l : copyCommandListeners()) {
-          try {
-            l.eventsHappenedInCommand(events);
-          } catch (Exception e) {
-            LOG.error(e);
-          }
-        }
-      }
-    });
-  }
-
-  void fireModelSaved() {
-    if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
-      try {
-        sModelListener.modelSaved(getModelDescriptor());
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireBeforeModelRenamed(SModelRenamedEvent event) {
-    if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
-      try {
-        sModelListener.beforeModelRenamed(event);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireModelRenamed(SModelRenamedEvent event) {
-    if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
-      try {
-        sModelListener.modelRenamed(event);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireBeforeModelFileChanged(SModelFileChangedEvent event) {
-    if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
-      try {
-        sModelListener.beforeModelFileChanged(event);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireModelFileChanged(SModelFileChangedEvent event) {
-    if (!canFireEvent()) return;
-    for (SModelListener sModelListener : copyListeners()) {
-      try {
-        sModelListener.modelFileChanged(event);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -1081,8 +909,8 @@ public class SModel implements Iterable<SNode> {
   public boolean isNotEditable() {
     assert !isDisposed();
     SModelDescriptor modelDescriptor = getModelDescriptor();
-    assert modelDescriptor != null;
-    return modelDescriptor.isReadOnly();
+//    assert modelDescriptor != null;
+    return modelDescriptor == null || modelDescriptor.isReadOnly();
   }
 
   public void clear() {
@@ -1098,12 +926,7 @@ public class SModel implements Iterable<SNode> {
     ModelChange.assertLegalChange(this);
     if(myDisposed) return;
 
-    fireBeforeModelDisposed();
     myDisposed = true;
-    synchronized (myListenersLock) {
-      myCommandListeners.clear();
-      myListeners.clear();
-    }
     for (SNode sn : myIdToNodeMap.values()) {
       sn.dispose();
     }

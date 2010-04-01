@@ -53,7 +53,8 @@ public abstract class SimpleModelListener extends SModelAdapter {
     updateNodePresentation(false, false);
   }
 
-  public void modelReloaded(SModelDescriptor sm) {
+  @Override
+  public void modelReplaced(SModelDescriptor sm) {
     updateNodePresentation(true, true);
   }
 }

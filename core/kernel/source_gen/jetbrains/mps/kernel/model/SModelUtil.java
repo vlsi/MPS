@@ -64,7 +64,8 @@ public class SModelUtil {
         }
       }
 
-      public void beforeModelReloaded(SModelDescriptor descriptor) {
+      @Override
+      public void modelReplaced(SModelDescriptor descriptor) {
         if (Language.getModelAspect(descriptor) == LanguageAspect.STRUCTURE) {
           MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).clear();
           MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();

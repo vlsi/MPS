@@ -21,6 +21,7 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -54,13 +55,19 @@ public interface SModelDescriptor {
 
   boolean isInitialized();
 
-  void addModelListener(SModelListener listener);
+  void addModelListener(@NotNull SModelListener listener);
 
-  void removeModelListener(SModelListener listener);
+  void removeModelListener(@NotNull SModelListener listener);
 
-  void addModelCommandListener(SModelCommandListener listener);
+  @NotNull
+  SModelListener[] getModelListeners();
 
-  void removeModelCommandListener(SModelCommandListener listener);
+  void addModelCommandListener(@NotNull SModelCommandListener listener);
+
+  void removeModelCommandListener(@NotNull SModelCommandListener listener);
+
+  @NotNull
+  SModelCommandListener[] getModelCommandListeners();
 
   void save();
 
@@ -114,9 +121,9 @@ public interface SModelDescriptor {
 
   boolean isEmpty();
 
-  boolean hasSModelCommandListener(SModelCommandListener listener);
+  boolean hasModelCommandListener(@NotNull SModelCommandListener listener);
 
-  boolean hasModelListener(SModelListener listener);
+  boolean hasModelListener(@NotNull SModelListener listener);
 
   boolean isTransient();
 

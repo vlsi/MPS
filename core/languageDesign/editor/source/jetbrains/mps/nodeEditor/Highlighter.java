@@ -85,7 +85,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   };
   private SModelListener myModelReloadListener = new SModelAdapter() {
-    public void modelReloaded(SModelDescriptor sm) {
+    @Override
+    public void modelReplaced(SModelDescriptor sm) {
       for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
         SNode sNode = editorComponent.getEditedNode();
         if (sNode != null && sNode.getModel().getModelDescriptor() == sm) {

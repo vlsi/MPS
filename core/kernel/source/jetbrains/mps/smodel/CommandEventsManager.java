@@ -63,9 +63,9 @@ public class CommandEventsManager implements ApplicationComponent {
 
     for (SModelReference modelReference : eventsByModel.keySet()) {
       SModelDescriptor sm = mySModelRepository.getModelDescriptor(modelReference);
-      if (sm == null) continue;
+      if (!(sm instanceof BaseSModelDescriptor)) continue;
       List<SModelEvent> modelEvents = eventsByModel.get(modelReference);
-      sm.getSModel().fireSModelChangedInCommandEvent(Collections.unmodifiableList(modelEvents));
+      ((BaseSModelDescriptor) sm).fireSModelChangedInCommandEvent(Collections.unmodifiableList(modelEvents));
     }
   }
 }

@@ -47,7 +47,7 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
 
     myEventsManager.addGlobalModelListener(new SModelAdapter() {
       @Override
-      public void modelReloaded(SModelDescriptor sm) {
+      public void modelReplaced(SModelDescriptor sm) {
         for (SNode root : sm.getSModel().getRoots()) {
           final MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
           for (final Project p : myProjectManager.getOpenProjects()) {

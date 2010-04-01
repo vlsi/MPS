@@ -71,9 +71,21 @@ public interface SModelListener {
 
   void modelInitialized(SModelDescriptor sm);
 
-  void beforeModelReloaded(SModelDescriptor sm);
-
-  void modelReloaded(SModelDescriptor sm);
+  /**
+   * This method will be called by SModelDescriptor to notify clients that underlying
+   * SModel instance was replaced by another one (as a result of reloadFromDisk(),
+   * refresh() or replaceModel() methods execution).
+   * <p/>
+   * It is guaranteed that this method will be executed in event dispatch thread.
+   * <p/>
+   * Passed SModelDescriptor will keep new instance of SModel.
+   * <p/>
+   * Old instance of SModel will not be attached to any SModelDescriptor and will not
+   * be disposed till the end of notifications processing.
+   *
+   * @param md model descriptor with replaced SModel instance
+   */
+  void modelReplaced(SModelDescriptor md);
 
   void beforeModelDisposed(SModel sm);
 }
