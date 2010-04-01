@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.workbench.choose.string;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
 public abstract class BaseStringModel extends BaseMPSChooseModel<String> {
-  public BaseStringModel(MPSProject project) {
+  public BaseStringModel(Project project) {
     super(project, "");
   }
 

@@ -15,15 +15,14 @@
  */
 package jetbrains.mps.workbench.choose.modules;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.smodel.Generator;
 
 public abstract class BaseModuleModel extends BaseMPSChooseModel<IModule> {
-  //---------------------FIND STUFF------------------------
-
-  public BaseModuleModel(MPSProject project, String entityName) {
+  public BaseModuleModel(Project project, String entityName) {
     super(project, entityName);
   }
 

@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -24,7 +23,6 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(AddModelImportByRoot_Action.class);
 
   private Project project;
-  private MPSProject mpsProject;
   private IModule module;
   private SModelDescriptor model;
   private EditorComponent editorComponent;
@@ -67,10 +65,6 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
-      return false;
-    }
     this.module = event.getData(MPSDataKeys.MODULE);
     if (this.module == null) {
       return false;
@@ -96,7 +90,7 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
           initialText = ((EditorCell_Label) selectedCell).getRenderedText();
         }
       }
-      ImportHelper.addModelImportByRoot(AddModelImportByRoot_Action.this.project, AddModelImportByRoot_Action.this.mpsProject, AddModelImportByRoot_Action.this.module, AddModelImportByRoot_Action.this.model, initialText);
+      ImportHelper.addModelImportByRoot(AddModelImportByRoot_Action.this.project, AddModelImportByRoot_Action.this.module, AddModelImportByRoot_Action.this.model, initialText);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddModelImportByRoot", t);

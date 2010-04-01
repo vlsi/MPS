@@ -22,8 +22,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -33,7 +31,6 @@ import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,12 +45,11 @@ public class GoToRootNodeAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
-    final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
     ChooseByNamePopup popup;
 
     if (!myUseCache) {
-      BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject) {
+      BaseNodeModel baseNodeModel = new BaseNodeModel(project) {
         public SNode[] find(IScope scope) {
           final List<SNode> nodes = new ArrayList<SNode>();
           List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
@@ -69,7 +65,7 @@ public class GoToRootNodeAction extends BaseAction {
       };
       popup = ChooseByNamePopup.createPopup(project, baseNodeModel, new FakePsiContext());
     } else {
-      MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(mpsProject, new RootNodeNameIndex());
+      MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex());
       popup = ChooseByNamePopup.createPopup(project, chooseSNodeResult, new FakePsiContext());
     }
 

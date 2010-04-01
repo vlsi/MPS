@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import java.awt.Frame;
 import com.intellij.openapi.project.Project;
@@ -35,7 +34,6 @@ public class NewRuntimeModule_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewRuntimeModule_Action.class);
 
-  private MPSProject mpsProject;
   private IModule contextModule;
   private Frame frame;
   private Project project;
@@ -75,10 +73,6 @@ public class NewRuntimeModule_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
-      return false;
-    }
     this.contextModule = event.getData(MPSDataKeys.CONTEXT_MODULE);
     if (this.contextModule == null) {
       return false;
@@ -106,7 +100,7 @@ public class NewRuntimeModule_Action extends GeneratedAction {
           ListSequence.fromList(modules).addSequence(ListSequence.fromList(MPSModuleRepository.getInstance().getAllModules()));
         }
       });
-      BaseModuleModel baseSolutionModel = new BaseModuleModel(NewRuntimeModule_Action.this.mpsProject, "runtime module") {
+      BaseModuleModel baseSolutionModel = new BaseModuleModel(NewRuntimeModule_Action.this.project, "runtime module") {
         public IModule[] find(IScope p0) {
           return ListSequence.fromList(modules).toGenericArray(IModule.class);
         }

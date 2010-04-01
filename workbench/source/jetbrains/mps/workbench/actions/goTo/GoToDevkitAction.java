@@ -38,12 +38,11 @@ public class GoToDevkitAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
-    final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
     //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
-    BaseDevkitModel goToDevkitModel = new BaseDevkitModel(mpsProject) {
+    BaseDevkitModel goToDevkitModel = new BaseDevkitModel(project) {
       public NavigationItem doGetNavigationItem(final IModule module) {
         return new BaseModuleItem(module) {
           public void navigate(boolean requestFocus) {

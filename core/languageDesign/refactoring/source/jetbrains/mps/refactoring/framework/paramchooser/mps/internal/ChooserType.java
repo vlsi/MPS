@@ -19,6 +19,7 @@ import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
@@ -52,9 +53,9 @@ public abstract class ChooserType {
 
     public ChooseByNameModel createChooserModel(final IChooserSettings settings) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
-      final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
+      final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
-      return new BaseModelModel(mpsProject) {
+      return new BaseModelModel(project) {
         public NavigationItem doGetNavigationItem(SModelDescriptor model) {
           return new BaseModelItem(model) {
             public void navigate(boolean requestFocus) {
@@ -90,9 +91,9 @@ public abstract class ChooserType {
 
     public ChooseByNameModel createChooserModel(final IChooserSettings settings) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
-      final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
+      final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
-      return new BaseModuleModel(mpsProject, "module") {
+      return new BaseModuleModel(project, "module") {
         public NavigationItem doGetNavigationItem(IModule module) {
           return new BaseModuleItem(module) {
             public void navigate(boolean requestFocus) {

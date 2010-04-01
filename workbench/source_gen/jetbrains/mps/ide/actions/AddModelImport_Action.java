@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +19,6 @@ public class AddModelImport_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(AddModelImport_Action.class);
 
   private Project project;
-  private MPSProject mpsProject;
   private IModule module;
   private SModelDescriptor model;
 
@@ -62,10 +60,6 @@ public class AddModelImport_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
-      return false;
-    }
     this.module = event.getData(MPSDataKeys.MODULE);
     if (this.module == null) {
       return false;
@@ -79,7 +73,7 @@ public class AddModelImport_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ImportHelper.addModelImport(AddModelImport_Action.this.project, AddModelImport_Action.this.mpsProject, AddModelImport_Action.this.module, AddModelImport_Action.this.model);
+      ImportHelper.addModelImport(AddModelImport_Action.this.project, AddModelImport_Action.this.module, AddModelImport_Action.this.model);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddModelImport", t);

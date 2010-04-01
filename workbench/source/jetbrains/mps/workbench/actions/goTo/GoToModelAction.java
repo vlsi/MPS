@@ -44,12 +44,11 @@ public class GoToModelAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
-    final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
     FeatureUsageTracker.getInstance().triggerFeatureUsed("goto.model");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
-    BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
+    BaseModelModel goToModelModel = new BaseModelModel(project) {
       public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
         return new BaseModelItem(modelDescriptor) {
           public void navigate(boolean requestFocus) {

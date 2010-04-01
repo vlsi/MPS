@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.workbench.choose.models;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
 public abstract class BaseModelModel extends BaseMPSChooseModel<SModelDescriptor> {
-  public BaseModelModel(MPSProject project) {
+  public BaseModelModel(Project project) {
     super(project, "model");
   }
 

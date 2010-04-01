@@ -18,8 +18,10 @@ package jetbrains.mps.workbench.choose.base;
 import com.intellij.ide.util.NavigationItemListCellRenderer;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.SystemInfo;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
@@ -35,7 +37,7 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
-  private MPSProject myProject;
+  private Project myProject;
 
   private T[] myObjectsInProjectScope = null;
   private T[] myObjectsInGlobalScope = null;
@@ -45,14 +47,14 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   private String myEntityName = "";
 
-  protected BaseMPSChooseModel(MPSProject project, String entityName) {
+  protected BaseMPSChooseModel(Project project, String entityName) {
     myProject = project;
     myEntityName = entityName;
   }
 
   //---------------------FIND STUFF------------------------
 
-  protected MPSProject getProject() {
+  protected Project getProject() {
     return myProject;
   }
 
@@ -130,7 +132,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   }
 
   public T[] find(boolean checkboxState) {
-    return find(checkboxState ? GlobalScope.getInstance() : myProject.getScope());
+    return find(checkboxState ? GlobalScope.getInstance() : myProject.getComponent(MPSProjectHolder.class).getMPSProject().getScope());
   }
 
   public abstract String doGetFullName(Object element);

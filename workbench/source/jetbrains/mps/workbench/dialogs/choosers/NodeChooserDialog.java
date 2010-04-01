@@ -20,6 +20,7 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.project.MPSProject;
@@ -57,9 +58,9 @@ class NodeChooserDialog extends BaseDialog {
     myNodes.addAll(options);
 
     DataContext dataContext = DataManager.getInstance().getDataContext();
-    final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
+    final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
-    BaseNodeModel goToNodeModel = new BaseNodeModel(mpsProject) {
+    BaseNodeModel goToNodeModel = new BaseNodeModel(project) {
       public NavigationItem doGetNavigationItem(final SNode node) {
         return new BaseNodeItem(node) {
           public void navigate(boolean requestFocus) {

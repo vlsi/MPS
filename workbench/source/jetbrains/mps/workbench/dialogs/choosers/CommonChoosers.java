@@ -121,9 +121,8 @@ public class CommonChoosers {
   public static void showSimpleNodeChooser(final List<SNode> nodes, final ChooserCallback<SNode> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
-    final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
-    BaseNodeModel goToNodeModel = new BaseNodeModel(mpsProject) {
+    BaseNodeModel goToNodeModel = new BaseNodeModel(project) {
       public NavigationItem doGetNavigationItem(final SNode node) {
         return new BaseNodeItem(node) {
           public void navigate(boolean requestFocus) {
@@ -157,9 +156,8 @@ public class CommonChoosers {
   public static void showSimpleModelChooser(final List<SModelDescriptor> models, final ChooserCallback<SModelDescriptor> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
-    final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
-    BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
+    BaseModelModel goToModelModel = new BaseModelModel(project) {
       public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
         return new BaseModelItem(modelDescriptor) {
           public void navigate(boolean requestFocus) {
@@ -192,9 +190,8 @@ public class CommonChoosers {
   public static <T extends IModule> void showSimpleModuleChooser(final List<T> modules, final String entityString, final ChooserCallback<T> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
-    final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(dataContext);
 
-    BaseMPSChooseModel<T> goToModuleModel = new BaseMPSChooseModel<T>(mpsProject, entityString) {
+    BaseMPSChooseModel<T> goToModuleModel = new BaseMPSChooseModel<T>(project, entityString) {
       public String doGetFullName(Object element) {
         return ((BaseModuleItem) element).getModule().getModuleNamespace();
       }

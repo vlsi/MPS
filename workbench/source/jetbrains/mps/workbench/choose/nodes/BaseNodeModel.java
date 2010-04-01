@@ -16,17 +16,18 @@
 package jetbrains.mps.workbench.choose.nodes;
 
 import com.intellij.navigation.NavigationItem;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
-  public BaseNodeModel(MPSProject project) {
+  public BaseNodeModel(Project project) {
     this(project, "node");
   }
 
-  public BaseNodeModel(MPSProject project, String entityName) {
+  public BaseNodeModel(Project project, String entityName) {
     super(project, entityName);
   }
 
@@ -42,10 +43,10 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
 
   public NavigationItem doGetNavigationItem(SNode node) {
     return new BaseNodeItem(node) {
-      private MPSProject myProject = getProject();
+      private Project myProject = getProject();
 
       public void navigate(boolean requestFocus) {
-        myProject.getComponentSafe(MPSEditorOpener.class).openNode(getNode());
+        myProject.getComponent(MPSEditorOpener.class).openNode(getNode());
       }
     };
   }

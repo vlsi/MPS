@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.workbench.actions.imports;
 
-import com.intellij.ide.DataManager;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.wm.WindowManager;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.project.GlobalScope;
@@ -31,7 +31,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeElement;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
@@ -57,20 +56,16 @@ public class ImportHelper {
     myUseCache = useCache;
   }
 
-  public static void addModelImport(Project project, final MPSProject mpsProject, final IModule module, final SModelDescriptor model) {
+  public static void addModelImport(final Project project, final IModule module, final SModelDescriptor model) {
     FakePsiElement fakePsiContext = new FakePsiElement() {
       public PsiElement getParent() {
         return null;
       }
     };
 
-    BaseModelModel goToModelModel = new BaseModelModel(mpsProject) {
+    BaseModelModel goToModelModel = new BaseModelModel(project) {
       public NavigationItem doGetNavigationItem(final SModelDescriptor modelDescriptor) {
-        return new AddModelItem(model, modelDescriptor, module) {
-          public MPSProject getMPSProject() {
-            return mpsProject;
-          }
-        };
+        return new AddModelItem(project, model, modelDescriptor, module);
       }
 
       public SModelDescriptor[] find(IScope scope) {
@@ -105,14 +100,14 @@ public class ImportHelper {
     }, ModalityState.current(), true);
   }
 
-  public static void addLanguageImport(Project project, final MPSProject mpsProject, final IModule contextModule, final SModelDescriptor model) {
+  public static void addLanguageImport(Project project, final IModule contextModule, final SModelDescriptor model) {
     FakePsiElement fakePsiContext = new FakePsiElement() {
       public PsiElement getParent() {
         return null;
       }
     };
 
-    BaseLanguageModel goToLanguageModel = new BaseLanguageModel(mpsProject) {
+    BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
       public NavigationItem doGetNavigationItem(IModule module) {
         return new AddLanguageItem((Language) module, contextModule, model);
       }
@@ -162,7 +157,7 @@ public class ImportHelper {
     }
   }
 
-  public static void addModelImportByRoot(Project project, final MPSProject mpsProject, final IModule contextModule, final SModelDescriptor model,
+  public static void addModelImportByRoot(final Project project, final IModule contextModule, final SModelDescriptor model,
                                           String initialText) {
     FakePsiElement fakePsiContext = new FakePsiElement() {
       public PsiElement getParent() {
@@ -172,15 +167,11 @@ public class ImportHelper {
 
     BaseMPSChooseModel goToNodeModel;
     if (!myUseCache) {
-      goToNodeModel = new BaseNodeModel(mpsProject) {
+      goToNodeModel = new BaseNodeModel(project) {
         public NavigationItem doGetNavigationItem(SNode node) {
           return new BaseNodeItem(node) {
             public void navigate(boolean requestFocus) {
-              new AddModelItem(model, getNode().getModel().getModelDescriptor(), contextModule) {
-                public MPSProject getMPSProject() {
-                  return mpsProject;
-                }
-              }.navigate(requestFocus);
+              new AddModelItem(project, model, getNode().getModel().getModelDescriptor(), contextModule).navigate(requestFocus);
             }
           };
         }
@@ -213,19 +204,14 @@ public class ImportHelper {
         }
       };
     } else {
-      goToNodeModel = new MPSChooseSNodeDescriptor(mpsProject, new RootNodeNameIndex()) {
+      goToNodeModel = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex()) {
         public NavigationItem doGetNavigationItem(final SNodeDescriptor object) {
           return new RootNodeElement(object) {
             public void navigate(boolean requestFocus) {
               SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
               SModel modelDescriptor = descriptor.getSModel();
-              List<SNode> roots = myIndex.getNodesToIterate(modelDescriptor);
               SNode node = object.getNode(modelDescriptor);
-              new AddModelItem(model, node.getModel().getModelDescriptor(), contextModule) {
-                public MPSProject getMPSProject() {
-                  return mpsProject;
-                }
-              }.navigate(requestFocus);
+              new AddModelItem(project, model, node.getModel().getModelDescriptor(), contextModule).navigate(requestFocus);
             }
           };
         }
@@ -254,20 +240,20 @@ public class ImportHelper {
     }, ModalityState.current(), true);
   }
 
-  private abstract static class AddModelItem extends BaseModelItem {
+  private static class AddModelItem extends BaseModelItem {
+    private Project myProject;
     private SModelDescriptor myModel;
     private IModule myModule;
 
-    public AddModelItem(SModelDescriptor model, SModelDescriptor modelToAdd, IModule currentModule) {
+    public AddModelItem(Project project, SModelDescriptor model, SModelDescriptor modelToAdd, IModule currentModule) {
       super(modelToAdd);
+      myProject = project;
       myModel = model;
       myModule = currentModule;
     }
 
-    public abstract MPSProject getMPSProject();
-
     public Frame getFrame() {
-      return MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
+      return WindowManager.getInstance().getFrame(myProject);
     }
 
     public void navigate(boolean requestFocus) {

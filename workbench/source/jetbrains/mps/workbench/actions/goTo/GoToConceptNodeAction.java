@@ -22,8 +22,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
@@ -48,12 +46,11 @@ public class GoToConceptNodeAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
-    final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
     //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
-    BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject, "concept") {
+    BaseNodeModel baseNodeModel = new BaseNodeModel(project, "concept") {
       public SNode[] find(IScope scope) {
         final List<SNode> nodes = new ArrayList<SNode>();
         for (Language l : scope.getVisibleLanguages()) {
@@ -76,5 +73,4 @@ public class GoToConceptNodeAction extends BaseAction {
       }
     }, ModalityState.current(), true);
   }
-
 }

@@ -52,7 +52,7 @@ import java.util.*;
 public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor> {
   public BaseSNodeDescriptorIndex myIndex;
 
-  public MPSChooseSNodeDescriptor(MPSProject project, BaseSNodeDescriptorIndex index) {
+  public MPSChooseSNodeDescriptor(Project project, BaseSNodeDescriptorIndex index) {
     super(project, "node");
     myIndex = index;
   }
@@ -80,7 +80,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       VirtualFile vf = modelFile.toVirtualFile();
       int fileId = FileBasedIndex.getFileId(vf);
 
-      List<List<SNodeDescriptor>> descriptors = fileBasedIndex.getValues(indexName, fileId, GlobalSearchScope.fileScope(getIdeaProject(), vf));
+      List<List<SNodeDescriptor>> descriptors = fileBasedIndex.getValues(indexName, fileId, GlobalSearchScope.fileScope(getProject(), vf));
 
       if (!descriptors.isEmpty()) {
         boolean needToLoad = false;
@@ -116,10 +116,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     return keys.toArray(new SNodeDescriptor[keys.size()]);
   }
 
-  private Project getIdeaProject() {
-    return getProject().getComponent(Project.class);
-  }
-
   private void addJavaStubs(Set<SNodeDescriptor> result, IScope scope) {
     for (IModule m : scope.getVisibleModules()) {
       result.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescritpors(m));
@@ -128,7 +124,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
   public NavigationItem doGetNavigationItem(final SNodeDescriptor object) {
     return new RootNodeElement(object) {
-      private MPSProject myProject = getProject();
+      private Project myProject = getProject();
 
       public void navigate(boolean requestFocus) {
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -136,7 +132,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
             SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
             SModel model = descriptor.getSModel();
             SNode node = object.getNode(model);
-            myProject.getComponentSafe(MPSEditorOpener.class).openNode(node);
+            myProject.getComponent(MPSEditorOpener.class).openNode(node);
           }
         });
       }

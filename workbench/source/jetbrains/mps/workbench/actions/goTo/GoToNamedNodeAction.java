@@ -23,11 +23,8 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.DumbService;
-import com.intellij.openapi.project.DumbModeIndicator;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -38,7 +35,6 @@ import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,8 +55,6 @@ public class GoToNamedNodeAction extends BaseAction {
       return;
     }
 
-    final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
-
     ChooseByNamePopup popup;
 
     if (!myUseCache) {
@@ -70,7 +64,7 @@ public class GoToNamedNodeAction extends BaseAction {
         }
       };
 
-      BaseNodeModel baseNodeModel = new BaseNodeModel(mpsProject, "symbol") {
+      BaseNodeModel baseNodeModel = new BaseNodeModel(project, "symbol") {
         public SNode[] find(IScope scope) {
           final List<SNode> nodes = new ArrayList<SNode>();
           List<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
@@ -90,7 +84,7 @@ public class GoToNamedNodeAction extends BaseAction {
       };
       popup = ChooseByNamePopup.createPopup(project, baseNodeModel, fakePsiContext);
     } else {
-      MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(mpsProject, new NamedNodeIndex());
+      MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(project, new NamedNodeIndex());
       popup = ChooseByNamePopup.createPopup(project, chooseSNodeResult, new FakePsiContext());
     }
 
