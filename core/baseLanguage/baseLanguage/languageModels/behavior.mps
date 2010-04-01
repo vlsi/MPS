@@ -7149,36 +7149,30 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="855369272314187157">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="855369272314187158">
             <property name="name:3" value="searchedReturnType" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="855369272314187159" />
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="855369272314187160">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="855369272314187161">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="855369272314187162">
-                  <link role="variableDeclaration:3" targetNodeId="855369272314187245" resolveInfo="checked" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="855369272314187163">
-                  <link role="link:16" targetNodeId="1.1068580123133:3" />
-                </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="855369272314187161">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="855369272314187162">
+                <link role="variableDeclaration:3" targetNodeId="855369272314187245" resolveInfo="checked" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="855369272314187164">
-                <link role="baseMethodDeclaration:16" targetNodeId="1213877337313" resolveInfo="getErasureSignature" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="855369272314187163">
+                <link role="link:16" targetNodeId="1.1068580123133:3" />
               </node>
+            </node>
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7638980610830976717">
+              <link role="concept:16" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
             </node>
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="855369272314187165">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="855369272314187166">
             <property name="name:3" value="foundReturnType" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="855369272314187167" />
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="855369272314187168">
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="855369272314187169">
-                <link role="baseMethodDeclaration:16" targetNodeId="1213877337313" resolveInfo="getErasureSignature" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="855369272314187170">
+              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="855369272314187171" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="855369272314187172">
+                <link role="link:16" targetNodeId="1.1068580123133:3" />
               </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="855369272314187170">
-                <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="855369272314187171" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="855369272314187172">
-                  <link role="link:16" targetNodeId="1.1068580123133:3" />
-                </node>
-              </node>
+            </node>
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7638980610830976718">
+              <link role="concept:16" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
             </node>
           </node>
         </node>
@@ -7191,15 +7185,12 @@
             </node>
           </node>
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="855369272314187177">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="855369272314187178">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="855369272314187179">
-                <link role="variableDeclaration:3" targetNodeId="855369272314187166" resolveInfo="foundReturnType" />
+            <node role="expression:3" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression:3" id="7638980610830976712">
+              <node role="subtypeExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7638980610831016648">
+                <link role="variableDeclaration:3" targetNodeId="855369272314187158" resolveInfo="searchedReturnType" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="855369272314187180">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="855369272314187181">
-                  <link role="variableDeclaration:3" targetNodeId="855369272314187158" resolveInfo="searchedReturnType" />
-                </node>
+              <node role="supertypeExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7638980610831016649">
+                <link role="variableDeclaration:3" targetNodeId="855369272314187166" resolveInfo="foundReturnType" />
               </node>
             </node>
           </node>
