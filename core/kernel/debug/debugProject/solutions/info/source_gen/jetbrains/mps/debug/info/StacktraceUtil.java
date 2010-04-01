@@ -19,8 +19,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.Nullable;
@@ -58,7 +56,7 @@ public class StacktraceUtil {
 
     return new Filter.Result(start + parenIndex + 1 + offset, start + closingParenIndex + offset, new HyperlinkInfo() {
       public void navigate(Project p0) {
-        StacktraceUtil.showNode(nodeToShow);
+        StacktraceUtil.showNode(p0, nodeToShow);
       }
     });
   }
@@ -130,11 +128,10 @@ public class StacktraceUtil {
     return model.getLongName() + "." + positionInfo.getFileName();
   }
 
-  private static void showNode(SNode node) {
+  private static void showNode(Project p, SNode node) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
-    MPSProject project = MPSDataKeys.MPS_PROJECT.getData(dataContext);
-    ProjectOperationContext operationContext = new ProjectOperationContext(project);
-    MPSEditorOpener opener = operationContext.getComponent(MPSEditorOpener.class);
+    ProjectOperationContext operationContext = new ProjectOperationContext(p);
+    MPSEditorOpener opener = p.getComponent(MPSEditorOpener.class);
     opener.editNode(node, operationContext);
   }
 

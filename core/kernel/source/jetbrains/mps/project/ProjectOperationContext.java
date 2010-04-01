@@ -15,12 +15,18 @@
  */
 package jetbrains.mps.project;
 
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class ProjectOperationContext extends StandaloneMPSContext {
   private MPSProject myProject;
+
+  public ProjectOperationContext(Project project) {
+    myProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+  }
 
   public ProjectOperationContext(MPSProject project) {
     myProject = project;

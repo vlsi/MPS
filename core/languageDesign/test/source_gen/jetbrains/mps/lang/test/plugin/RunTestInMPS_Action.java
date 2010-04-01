@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,7 +27,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
 
   private SModel model;
   private SNode node;
-  private MPSProject project;
+  private Project project;
 
   public RunTestInMPS_Action() {
     super("Run Test in MPS Process", "", ICON);
@@ -77,7 +77,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
     if (this.node == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }

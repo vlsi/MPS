@@ -15,6 +15,8 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.impl.CloneUtil;
@@ -48,8 +50,8 @@ public class BaseTransformationTest extends TestCase {
     });
   }
 
-  public void setProject(MPSProject project) {
-    this.myProject = project;
+  public void setProject(Project project) {
+    this.myProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
   public void setModelDescriptor(SModelDescriptor modelDescriptor) {
