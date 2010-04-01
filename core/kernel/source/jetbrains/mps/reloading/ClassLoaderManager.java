@@ -301,23 +301,37 @@ public class ClassLoaderManager implements ApplicationComponent {
 
     private synchronized void reloadExcludedPackages() {
       myExcludedPackages = new HashSet();
-      for (Language language : myLibraryManager.getBootstrapModules(Language.class)) {
+      Set<Language> bootstrapLanguages = myLibraryManager.getBootstrapModules(Language.class);
+      /**
+       * Iterating through all known bundles because we need to exclude following non-bootstrap modules available in
+       * application classpath:
+       * - jetbrains.mps.baseLanguage.builders
+       * - jetbrains.mps.xml
+       * - jetbrains.mps.xmlSchema
+       */
+      for (RBundle<ModuleReference> bundle : getBundles()) {
+        IModule module = MPSModuleRepository.getInstance().getModule(bundle.getId());
+        if (!(module instanceof Language)) {
+          continue;
+        }
+        Language l = (Language) module;
+        boolean bootstrapModule = bootstrapLanguages.contains(l);
         for (LanguageAspect aspect : LanguageAspect.values()) {
-          if (aspect == LanguageAspect.STRUCTURE) {
+          if (bootstrapModule && aspect == LanguageAspect.STRUCTURE) {
             // Always loading STRUCTURE aspects of bootstrap modules using "boot" classloader (classloader of this class)
             continue;
           }
-          SModelDescriptor modelDescriptor = aspect.get(language);
+          SModelDescriptor modelDescriptor = aspect.get(l);
           if (modelDescriptor != null) {
             myExcludedPackages.add(modelDescriptor.getLongName());
           }
         }
 
-        for (SModelDescriptor model:language.getUtilModels()){
+        for (SModelDescriptor model:l.getUtilModels()){
           myExcludedPackages.add(model.getLongName());
         }
 
-        for (Generator generator : language.getGenerators()) {
+        for (Generator generator : l.getGenerators()) {
           for (SModelDescriptor templateModel : generator.getOwnModelDescriptors()) {
             if (isNotStubModel(templateModel)) {
               myExcludedPackages.add(templateModel.getLongName());
