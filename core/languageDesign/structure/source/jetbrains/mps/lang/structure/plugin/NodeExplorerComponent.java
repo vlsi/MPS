@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.structure.plugin;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.uiActions.PresentationManager;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -54,7 +55,7 @@ public class NodeExplorerComponent {
     return myScrollPane;
   }
 
-  public void showNode(SNode node, MPSProject project) {
+  public void showNode(SNode node, Project project) {
     myNode = node == null ? null : new SNodePointer(node);
     myTree.setOperationContext(new ProjectOperationContext(project));
     myTree.rebuildNow();

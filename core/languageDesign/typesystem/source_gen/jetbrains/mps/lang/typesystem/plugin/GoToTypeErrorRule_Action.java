@@ -6,7 +6,6 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -20,7 +19,6 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(GoToTypeErrorRule_Action.class);
 
   private IOperationContext operationContext;
-  private MPSProject project;
   private SNode node;
 
   public GoToTypeErrorRule_Action() {
@@ -58,10 +56,6 @@ public class GoToTypeErrorRule_Action extends GeneratedAction {
     }
     this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (this.operationContext == null) {
-      return false;
-    }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.project == null) {
       return false;
     }
     this.node = event.getData(MPSDataKeys.NODE);

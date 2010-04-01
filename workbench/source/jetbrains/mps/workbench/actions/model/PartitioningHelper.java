@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.model;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.plan.GenerationPartitioner;
@@ -37,7 +38,7 @@ import java.util.List;
 import java.util.Map;
 
 public class PartitioningHelper {
-  public static void showMappingPartitioning(MPSProject project, Frame frame, IScope scope, List<SModelDescriptor> models) {
+  public static void showMappingPartitioning(Project project, Frame frame, IScope scope, List<SModelDescriptor> models) {
     // no multiple input models
     SModel inputModel = models.get(0).getSModel();
 

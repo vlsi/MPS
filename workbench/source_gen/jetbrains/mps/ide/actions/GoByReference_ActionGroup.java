@@ -14,7 +14,7 @@ import java.util.HashSet;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -44,7 +44,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
   public void doUpdate(AnActionEvent event) {
     try {
       GoByReference_ActionGroup.this.removeAll();
-      final MPSProject project = event.getData(MPSDataKeys.MPS_PROJECT);
+      final Project project = event.getData(MPSDataKeys.PROJECT);
       final IOperationContext context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node == null || context == null) {
@@ -73,7 +73,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
               if (newTargetNode == null) {
                 return;
               }
-              project.getComponentSafe(MPSEditorOpener.class).editNode(newTargetNode, context);
+              project.getComponent(MPSEditorOpener.class).editNode(newTargetNode, context);
             }
           });
         } else {

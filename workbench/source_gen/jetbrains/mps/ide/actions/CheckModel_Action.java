@@ -10,11 +10,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class CheckModel_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/modelChecker.png", "jetbrains.mps.ide"), true);
@@ -22,7 +23,7 @@ public class CheckModel_Action extends GeneratedAction {
 
   private SModelDescriptor model;
   private List<SModelDescriptor> models;
-  private MPSProject mpsProject;
+  private Project project;
   private IOperationContext operationContext;
 
   public CheckModel_Action() {
@@ -66,8 +67,8 @@ public class CheckModel_Action extends GeneratedAction {
     if (this.models == null) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
       return false;
     }
     this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
@@ -80,9 +81,9 @@ public class CheckModel_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (CheckModel_Action.this.models.size() > 1) {
-        CheckModel_Action.this.mpsProject.getPluginManager().getTool(ModelCheckerTool_Tool.class).checkModels(CheckModel_Action.this.models, CheckModel_Action.this.operationContext, true);
+        CheckModel_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(CheckModel_Action.this.models, CheckModel_Action.this.operationContext, true);
       } else {
-        CheckModel_Action.this.mpsProject.getPluginManager().getTool(ModelCheckerTool_Tool.class).checkModel(CheckModel_Action.this.model, CheckModel_Action.this.operationContext, true);
+        CheckModel_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModel(CheckModel_Action.this.model, CheckModel_Action.this.operationContext, true);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

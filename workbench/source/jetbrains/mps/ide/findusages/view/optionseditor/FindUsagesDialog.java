@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
@@ -48,7 +49,7 @@ public class FindUsagesDialog extends BaseDialog {
   private boolean myIsCancelled = true;
   private JButton myOkButton;
 
-  public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final MPSProject project, Frame mainFrame) {
+  public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final Project project, Frame mainFrame) {
     super(mainFrame, "Find Usages");
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -125,9 +126,9 @@ public class FindUsagesDialog extends BaseDialog {
   }
 
   private class MyFindersEditor extends FindersEditor {
-    private MPSProject myProject;
+    private Project myProject;
 
-    public MyFindersEditor(FindUsagesOptions defaultOptions, SNode node, MPSProject project) {
+    public MyFindersEditor(FindUsagesOptions defaultOptions, SNode node, Project project) {
       super(defaultOptions.getOption(FindersOptions.class), node);
       myProject = project;
     }
@@ -136,7 +137,7 @@ public class FindUsagesDialog extends BaseDialog {
       SNode finderNode = finder.getNodeToNavigate();
       if (finderNode == null) return;
       FindUsagesDialog.this.onCancel();
-      myProject.getComponentSafe(MPSEditorOpener.class).openNode(finderNode);
+      myProject.getComponent(MPSEditorOpener.class).openNode(finderNode);
     }
   }
 }

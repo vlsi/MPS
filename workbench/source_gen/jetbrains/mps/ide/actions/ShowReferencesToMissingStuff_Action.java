@@ -6,7 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -23,7 +23,7 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowReferencesToMissingStuff_Action.class);
 
-  private MPSProject project;
+  private Project project;
   private IScope scope;
   private SModelDescriptor model;
 
@@ -61,7 +61,7 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }
@@ -89,6 +89,6 @@ public class ShowReferencesToMissingStuff_Action extends GeneratedAction {
   }
 
   private UsagesViewTool getTool() {
-    return ShowReferencesToMissingStuff_Action.this.project.getComponentSafe(UsagesViewTool.class);
+    return ShowReferencesToMissingStuff_Action.this.project.getComponent(UsagesViewTool.class);
   }
 }

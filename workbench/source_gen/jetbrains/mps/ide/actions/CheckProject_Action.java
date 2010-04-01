@@ -8,17 +8,18 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class CheckProject_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/modelChecker.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(CheckProject_Action.class);
 
-  private MPSProject mpsProject;
+  private Project project;
   private IOperationContext operationContext;
 
   public CheckProject_Action() {
@@ -48,8 +49,8 @@ public class CheckProject_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
       return false;
     }
     this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
@@ -61,7 +62,7 @@ public class CheckProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      CheckProject_Action.this.mpsProject.getPluginManager().getTool(ModelCheckerTool_Tool.class).checkProject(CheckProject_Action.this.mpsProject, CheckProject_Action.this.operationContext, true);
+      CheckProject_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkProject(CheckProject_Action.this.project, CheckProject_Action.this.operationContext, true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CheckProject", t);

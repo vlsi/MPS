@@ -48,14 +48,13 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     myModuleRef = moduleRef;
   }
 
-  public GenParameters getGenParams(MPSProject mpsProject, boolean fullRegeneration) throws IllegalGeneratorConfigurationException {
+  public GenParameters getGenParams(Project project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException {
     IModule module = MPSModuleRepository.getInstance().getModule(myModuleRef);
 
     if (module == null) {
       throw new IllegalGeneratorConfigurationException("Can't find module " + myModuleRef.getModuleFqName());
     }
 
-    Project project = mpsProject.getComponent(Project.class);
     if (module instanceof Solution) {
       Solution solution = (Solution) module;
 

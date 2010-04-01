@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.actions.module;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -32,15 +33,16 @@ import javax.swing.JOptionPane;
 public class DeleteModuleHelper {
   private static final Logger LOG = Logger.getLogger(DeleteModuleHelper.class);
 
-  public static void deleteModule(Project project, MPSProject mpsProject, IModule module, boolean safeDelete, boolean deleteFiles) {
+  public static void deleteModule(Project project, IModule module, boolean safeDelete, boolean deleteFiles) {
     if (safeDelete) {
-      safeDelete(project, mpsProject, module, deleteFiles);
+      safeDelete(project, module, deleteFiles);
     } else {
-      delete(project, mpsProject, module, deleteFiles);
+      delete(project,  module, deleteFiles);
     }
   }
 
-  private static void delete(Project project, MPSProject mpsProject, IModule module, boolean deleteFiles) {
+  private static void delete(Project project, IModule module, boolean deleteFiles) {
+    MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
     if (!mpsProject.isProjectModule(module) && !deleteFiles) {
       JOptionPane.showMessageDialog(WindowManager.getInstance().getFrame(project), "Non-project modules can only be deleted with files deletion enabled", "Can't delete module", JOptionPane.WARNING_MESSAGE);
     }
@@ -68,7 +70,7 @@ public class DeleteModuleHelper {
     }
   }
 
-  private static void safeDelete(Project project, MPSProject mpsProject, IModule module, boolean deleteFiles) {
+  private static void safeDelete(Project project, IModule module, boolean deleteFiles) {
     LOG.error("SAFE DELETE MODULE - NOT IMPLEMENTED", new Throwable());
   }
 

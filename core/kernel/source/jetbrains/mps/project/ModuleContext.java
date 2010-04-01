@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.project;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -33,6 +35,10 @@ public class ModuleContext extends StandaloneMPSContext {
   //we need to store module reference this way because generator are recreated on every reload
   //and if we store generator reference here it will be stale
   private ModuleReference myModuleReference;
+
+  public ModuleContext(@NotNull final IModule module, @NotNull final Project project) {
+    this(module, project.getComponent(MPSProjectHolder.class).getMPSProject());
+  }
 
   public ModuleContext(@NotNull final IModule module, @NotNull final MPSProject project) {
     ModelAccess.instance().runReadAction(new Runnable() {

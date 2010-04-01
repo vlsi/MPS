@@ -8,7 +8,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -33,7 +33,7 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/find.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(FindSpecificNodeUsages_Action.class);
 
-  private MPSProject project;
+  private Project project;
   private Frame frame;
   private IOperationContext context;
   private SModelDescriptor model;
@@ -83,7 +83,7 @@ public class FindSpecificNodeUsages_Action extends GeneratedAction {
     if (this.node == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }

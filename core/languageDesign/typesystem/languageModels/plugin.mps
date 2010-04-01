@@ -39,7 +39,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="44" />
+  <maxImportIndex value="45" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.typesystem.uiActions(jetbrains.mps.typesystem.uiActions@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
@@ -62,6 +62,7 @@
   <import index="42" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
   <import index="43" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="44" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
+  <import index="45" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1205244087094">
     <property name="name:23" value="TypesystemActions" />
     <property name="caption:23" value="Type System" />
@@ -273,10 +274,6 @@
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1217420647246">
       <property name="name:23" value="operationContext" />
       <link role="key:23" targetNodeId="34.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
-    </node>
-    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1217420647775">
-      <property name="name:23" value="project" />
-      <link role="key:23" targetNodeId="34.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
     </node>
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1217420649641">
       <property name="name:23" value="node" />
@@ -1253,10 +1250,6 @@
       <property name="name:23" value="operationContext" />
       <link role="key:23" targetNodeId="34.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
     </node>
-    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1217420648879">
-      <property name="name:23" value="project" />
-      <link role="key:23" targetNodeId="34.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
-    </node>
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration:23" id="1206184077195">
       <property name="name:23" value="node" />
       <node role="visibility:23" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1206184077196" />
@@ -1420,7 +1413,7 @@
     <property name="caption:23" value="Show Typechecker Debugger" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1228837001272">
       <property name="name:23" value="project" />
-      <link role="key:23" targetNodeId="34.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
+      <link role="key:23" targetNodeId="43.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="1228836959163">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1228836959164">
@@ -1434,7 +1427,7 @@
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1228837029606">
-                <link role="baseMethodDeclaration:3" targetNodeId="14.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <link role="baseMethodDeclaration:3" targetNodeId="45.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="1228837052745">
                   <link role="classifier:3" targetNodeId="2.~TypecheckerStateView" resolveInfo="TypecheckerStateView" />
                 </node>
@@ -1454,7 +1447,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1228846419607">
     <property name="package:23" value="Actions" />
     <property name="name:23" value="SliceWithNode" />
-    <property name="caption:23" value="Slice With Selected Node" />
+    <property name="caption:23" value="Slice with Selected Node" />
     <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="1228846419608">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1228846419609">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1228847408927">
@@ -1471,7 +1464,7 @@
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1228847408934">
-                <link role="baseMethodDeclaration:3" targetNodeId="14.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <link role="baseMethodDeclaration:3" targetNodeId="45.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="1228847408935">
                   <link role="classifier:3" targetNodeId="2.~TypecheckerStateView" resolveInfo="TypecheckerStateView" />
                 </node>
@@ -1538,7 +1531,7 @@
     </node>
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1228846534038">
       <property name="name:23" value="project" />
-      <link role="key:23" targetNodeId="34.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
+      <link role="key:23" targetNodeId="43.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1230214426481">

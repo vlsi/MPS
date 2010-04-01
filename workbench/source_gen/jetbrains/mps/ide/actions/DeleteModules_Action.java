@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
@@ -26,7 +25,6 @@ public class DeleteModules_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(DeleteModules_Action.class);
 
   private Project project;
-  private MPSProject mpsProject;
   private List<IModule> modules;
   private Integer selSize;
 
@@ -79,10 +77,6 @@ public class DeleteModules_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
-      return false;
-    }
     this.modules = event.getData(MPSDataKeys.MODULES);
     if (this.modules == null) {
       return false;
@@ -106,7 +100,7 @@ public class DeleteModules_Action extends GeneratedAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           for (IModule module : ListSequence.fromList(DeleteModules_Action.this.modules)) {
-            DeleteModuleHelper.deleteModule(DeleteModules_Action.this.project, DeleteModules_Action.this.mpsProject, module, dialog.isSafe(), dialog.isDeleteFiles());
+            DeleteModuleHelper.deleteModule(DeleteModules_Action.this.project, module, dialog.isSafe(), dialog.isDeleteFiles());
           }
         }
       });

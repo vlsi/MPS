@@ -6,7 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -24,7 +24,7 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GoToUsageInMappingConfig_Action.class);
 
-  private MPSProject project;
+  private Project project;
   private IModule module;
   private SNode node;
 
@@ -83,7 +83,7 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
     if (this.node == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }
@@ -97,7 +97,7 @@ public class GoToUsageInMappingConfig_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       MappingConfigFinder finder = new MappingConfigFinder(((Generator) GoToUsageInMappingConfig_Action.this.module), SNodeOperations.getContainingRoot(GoToUsageInMappingConfig_Action.this.node));
-      GoToUsageInMappingConfig_Action.this.project.getComponentSafe(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finder), new SearchQuery(null), false, false, false, "No usages found");
+      GoToUsageInMappingConfig_Action.this.project.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finder), new SearchQuery(null), false, false, false, "No usages found");
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToUsageInMappingConfig", t);

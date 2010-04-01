@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
@@ -34,7 +33,6 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
 
   private EditorCell cell;
   private IOperationContext operationContext;
-  private MPSProject project;
   private SNode node;
   private Frame frame;
 
@@ -78,10 +76,6 @@ public class ShowRulesWhichAffectNodeType_Action extends GeneratedAction {
     }
     this.operationContext = event.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (this.operationContext == null) {
-      return false;
-    }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.project == null) {
       return false;
     }
     this.frame = event.getData(MPSDataKeys.FRAME);

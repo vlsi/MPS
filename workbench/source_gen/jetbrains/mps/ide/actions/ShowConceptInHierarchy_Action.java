@@ -8,7 +8,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
@@ -25,7 +24,6 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/hierarchyView.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ShowConceptInHierarchy_Action.class);
 
-  private MPSProject project;
   private IOperationContext context;
   private EditorCell editorCell;
   private SNode node;
@@ -72,10 +70,6 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
       this.node = node;
     }
     if (this.node == null) {
-      return false;
-    }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.project == null) {
       return false;
     }
     this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);

@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
@@ -27,7 +26,7 @@ public class CloneRoot_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(CloneRoot_Action.class);
 
   private Project ideaProject;
-  private MPSProject project;
+  private Project project;
   private IOperationContext context;
   private List<SNode> nodes;
 
@@ -76,7 +75,7 @@ public class CloneRoot_Action extends GeneratedAction {
     if (this.ideaProject == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }
@@ -93,7 +92,7 @@ public class CloneRoot_Action extends GeneratedAction {
         SNode root = SNodeOperations.getContainingRoot(node);
         final SNode copy = SNodeOperations.copyNode(root);
         SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
-        CloneRoot_Action.this.project.getComponentSafe(MPSEditorOpener.class).editNode(copy, CloneRoot_Action.this.context);
+        CloneRoot_Action.this.project.getComponent(MPSEditorOpener.class).editNode(copy, CloneRoot_Action.this.context);
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
             ProjectPane.getInstance(CloneRoot_Action.this.ideaProject).selectNode(copy);

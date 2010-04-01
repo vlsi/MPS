@@ -39,7 +39,7 @@ public class OutputViewGenerationHandler extends TextGenerationHandler {
 
   @Override
   public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ITaskProgressHelper progressHelper) {
-    final OutputViewTool viewTool = OutputViewTool.getOutputViewTool(context.getMPSProject());
+    final OutputViewTool viewTool = OutputViewTool.getOutputViewTool(context.getProject());
     viewTool.clear();
 
     List<SNode> roots = new ArrayList<SNode>(status.getOutputModel().getRoots());

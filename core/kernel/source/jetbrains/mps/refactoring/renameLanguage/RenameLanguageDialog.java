@@ -135,7 +135,7 @@ public class RenameLanguageDialog extends BaseDialog {
             languageConfig.setName("tmp");
 
             try {
-              return languageConfig.getGenParams(mpsProject, true);
+              return languageConfig.getGenParams(myProject, true);
             } catch (IllegalGeneratorConfigurationException e) {
               return null;
             }

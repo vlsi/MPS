@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.awt.Frame;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -18,7 +18,7 @@ public class UpgradeModelPersistenceInProject_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(UpgradeModelPersistenceInProject_Action.class);
 
   private Frame mainFrame;
-  private MPSProject mpsProject;
+  private Project project;
 
   public UpgradeModelPersistenceInProject_Action() {
     super("Upgrade Models Persistence", "", ICON);
@@ -51,8 +51,8 @@ public class UpgradeModelPersistenceInProject_Action extends GeneratedAction {
     if (this.mainFrame == null) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
       return false;
     }
     return true;
@@ -61,7 +61,7 @@ public class UpgradeModelPersistenceInProject_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       PersistenceUpdater persistenceUpdater = new PersistenceUpdater();
-      persistenceUpdater.upgradePersistenceInProject(UpgradeModelPersistenceInProject_Action.this.mpsProject, UpgradeModelPersistenceInProject_Action.this.mainFrame);
+      persistenceUpdater.upgradePersistenceInProject(UpgradeModelPersistenceInProject_Action.this.project, UpgradeModelPersistenceInProject_Action.this.mainFrame);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "UpgradeModelPersistenceInProject", t);

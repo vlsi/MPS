@@ -6,7 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.generator.GeneratorManager;
 import java.util.ArrayList;
 
@@ -22,7 +23,7 @@ public class GenerateModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GenerateModel_Action.class);
 
-  private MPSProject project;
+  private Project project;
   private IOperationContext context;
   private List<SModelDescriptor> models;
   private SModelDescriptor model;
@@ -66,7 +67,7 @@ public class GenerateModel_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }
@@ -81,15 +82,15 @@ public class GenerateModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      boolean checkSuccessful = GenerateModel_Action.this.project.getPluginManager().getTool(ModelCheckerTool_Tool.class).checkModelsBeforeGenerationIfNeeded(GenerateModel_Action.this.context, GenerateModel_Action.this.models, new Runnable() {
+      boolean checkSuccessful = GenerateModel_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeGenerationIfNeeded(GenerateModel_Action.this.context, GenerateModel_Action.this.models, new Runnable() {
         public void run() {
-          GenerateModel_Action.this.project.getComponentSafe(GeneratorManager.class).generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler);
+          GenerateModel_Action.this.project.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler);
         }
       });
       if (!(checkSuccessful)) {
         return;
       }
-      GenerateModel_Action.this.project.getComponentSafe(GeneratorManager.class).generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler);
+      GenerateModel_Action.this.project.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateModel", t);

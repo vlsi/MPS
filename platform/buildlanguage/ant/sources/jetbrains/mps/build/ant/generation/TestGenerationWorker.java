@@ -1,5 +1,6 @@
 package jetbrains.mps.build.ant.generation;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.build.ant.*;
@@ -426,7 +427,7 @@ public class TestGenerationWorker extends GeneratorWorker {
           }
         } else {
           for (BaseTestConfiguration config : testConfigurationList) {
-            GenParameters genParams = config.getGenParams(project, true);
+            GenParameters genParams = config.getGenParams(project.getComponent(Project.class), true);
             modelDescriptors.addAll(genParams.getModelDescriptors());
           }
         }

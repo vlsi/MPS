@@ -120,7 +120,7 @@ public class OutputViewTool extends BaseProjectTool {
     });
   }
 
-  public static OutputViewTool getOutputViewTool(MPSProject project) {
+  public static OutputViewTool getOutputViewTool(Project project) {
     return project.getComponent(OutputViewTool.class);
   }
 

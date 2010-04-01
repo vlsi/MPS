@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project.structure.project.testconfigurations;
 
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.project.MPSProject;
@@ -31,5 +33,9 @@ public abstract class BaseTestConfiguration {
     myName = name;
   }
 
-  public abstract GenParameters getGenParams(MPSProject project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException;
+  public abstract GenParameters getGenParams(Project project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException;
+
+  public static MPSProject getMPSProject(Project p){
+    return p.getComponent(MPSProjectHolder.class).getMPSProject();
+  }
 }

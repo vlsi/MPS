@@ -101,7 +101,8 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     return ModelCheckerTool_Tool.this.performCheckingTask(ModelCheckerUtils.getModelDescriptors(modules), NameUtil.formatNumericalString(ListSequence.fromList(modules).count(), "module"), Icons.MODULE_GROUP_CLOSED, operationContext, showTab);
   }
 
-  public ModelCheckerViewer checkProject(MPSProject mpsProject, IOperationContext operationContext, boolean showTab) {
+  public ModelCheckerViewer checkProject(Project project, IOperationContext operationContext, boolean showTab) {
+    MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
     return ModelCheckerTool_Tool.this.performCheckingTask(ModelCheckerUtils.getModelDescriptors(mpsProject), mpsProject.getProjectDescriptor().getName(), Icons.PROJECT_ICON, operationContext, showTab);
   }
 

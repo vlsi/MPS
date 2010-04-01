@@ -6,7 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
@@ -23,7 +23,7 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowGenerationTrace_Action.class);
 
-  private MPSProject project;
+  private Project project;
   private Frame frame;
   private List<SNode> nodes;
 
@@ -77,7 +77,7 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
     if (this.nodes == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }
@@ -102,6 +102,6 @@ public class ShowGenerationTrace_Action extends GeneratedAction {
   }
 
   private GenerationTracer getGenTracer() {
-    return ShowGenerationTrace_Action.this.project.getComponentSafe(GenerationTracer.class);
+    return ShowGenerationTrace_Action.this.project.getComponent(GenerationTracer.class);
   }
 }

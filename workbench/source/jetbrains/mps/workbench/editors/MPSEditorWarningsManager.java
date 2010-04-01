@@ -154,7 +154,6 @@ public class MPSEditorWarningsManager implements ProjectComponent {
         "Generate",
         new Runnable() {
           public void run() {
-            final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
             final List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
@@ -163,7 +162,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
                   languageConfig.setModuleRef(l.getModuleReference());
                   languageConfig.setName("tmp");
                   try {
-                    models.addAll(languageConfig.getGenParams(mpsProject, false).getModelDescriptors());
+                    models.addAll(languageConfig.getGenParams(myProject, false).getModelDescriptors());
                   } catch (IllegalGeneratorConfigurationException e) {
                     LOG.error(e);
                   }

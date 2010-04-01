@@ -8,7 +8,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.awt.Frame;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
 import javax.swing.tree.TreeNode;
@@ -37,8 +36,7 @@ public class NewModelFromSource_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(NewModelFromSource_Action.class);
 
   private Frame frame;
-  private Project ideaProject;
-  private MPSProject project;
+  private Project project;
   private IOperationContext context;
   private IModule module;
   private TreeNode treeNode;
@@ -90,11 +88,7 @@ public class NewModelFromSource_Action extends GeneratedAction {
     if (this.frame == null) {
       return false;
     }
-    this.ideaProject = event.getData(MPSDataKeys.PROJECT);
-    if (this.ideaProject == null) {
-      return false;
-    }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }
@@ -168,7 +162,7 @@ public class NewModelFromSource_Action extends GeneratedAction {
           javaCompiler.compile();
         }
         SModelDescriptor modelDescriptor = result;
-        ProjectPane.getInstance(NewModelFromSource_Action.this.ideaProject).selectModel(modelDescriptor);
+        ProjectPane.getInstance(NewModelFromSource_Action.this.project).selectModel(modelDescriptor);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

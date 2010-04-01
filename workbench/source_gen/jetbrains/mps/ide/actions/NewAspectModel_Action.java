@@ -8,7 +8,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.project.IModule;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -25,7 +24,6 @@ public class NewAspectModel_Action extends GeneratedAction {
 
   private IModule module;
   private Project ideaProject;
-  private MPSProject project;
   private LanguageAspect aspect;
 
   public NewAspectModel_Action(LanguageAspect aspect_par) {
@@ -68,10 +66,6 @@ public class NewAspectModel_Action extends GeneratedAction {
     }
     this.ideaProject = event.getData(MPSDataKeys.PROJECT);
     if (this.ideaProject == null) {
-      return false;
-    }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.project == null) {
       return false;
     }
     return true;

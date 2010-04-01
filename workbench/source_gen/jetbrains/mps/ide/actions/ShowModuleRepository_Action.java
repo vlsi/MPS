@@ -6,16 +6,17 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class ShowModuleRepository_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ShowModuleRepository_Action.class);
 
-  private MPSProject project;
+  private Project project;
 
   public ShowModuleRepository_Action() {
     super("Show Module Repository", "", ICON);
@@ -44,7 +45,7 @@ public class ShowModuleRepository_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }
@@ -53,8 +54,7 @@ public class ShowModuleRepository_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ModuleRepository_Tool tool = ShowModuleRepository_Action.this.project.getPluginManager().getTool(ModuleRepository_Tool.class);
-      assert tool != null;
+      ModuleRepository_Tool tool = ShowModuleRepository_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModuleRepository_Tool.class);
       tool.openTool(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

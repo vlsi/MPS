@@ -6,7 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -18,10 +18,10 @@ public class SliceWithNode_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(SliceWithNode_Action.class);
 
   private SNode n;
-  private MPSProject project;
+  private Project project;
 
   public SliceWithNode_Action() {
-    super("Slice With Selected Node", "", ICON);
+    super("Slice with Selected Node", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -54,7 +54,7 @@ public class SliceWithNode_Action extends GeneratedAction {
     if (this.n == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }

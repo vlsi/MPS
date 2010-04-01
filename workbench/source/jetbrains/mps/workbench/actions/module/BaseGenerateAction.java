@@ -25,6 +25,7 @@ import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -43,7 +44,7 @@ import java.util.*;
 public abstract class BaseGenerateAction extends BaseAction {
   private boolean myRegenerate;
   private IOperationContext myOperationContext;
-  private MPSProject myProject;
+  private Project myProject;
   private Frame myFrame;
   Set<IModule> myModules;
 
@@ -73,7 +74,7 @@ public abstract class BaseGenerateAction extends BaseAction {
 
   protected boolean collectActionData(AnActionEvent e) {
     if (!super.collectActionData(e)) return false;
-    myProject = e.getData(MPSDataKeys.MPS_PROJECT);
+    myProject = e.getData(MPSDataKeys.PROJECT);
     myOperationContext = e.getData(MPSDataKeys.OPERATION_CONTEXT);
     if (myOperationContext == null) return false;
     myModules = getModuleToGenerate(e);
@@ -113,7 +114,7 @@ public abstract class BaseGenerateAction extends BaseAction {
 
     final IOperationContext invocationContext1 = invocationContext;
     //noinspection ConstantConditions
-    boolean checkSuccessful = myProject.getPluginManager().getTool(ModelCheckerTool_Tool.class)
+    boolean checkSuccessful = myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class)
       .checkModelsBeforeGenerationIfNeeded(invocationContext, modelsToGenerate, new Runnable() {
         public void run() {
           GeneratorManager generatorManager = myOperationContext.getComponent(GeneratorManager.class);

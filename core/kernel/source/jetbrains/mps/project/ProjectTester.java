@@ -16,6 +16,7 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
@@ -208,7 +209,7 @@ public class ProjectTester {
 
             GenParameters parms;
             try {
-              parms = t.getGenParams(myProject, true);
+              parms = t.getGenParams(myProject.getComponent(Project.class), true);
             } catch (IllegalGeneratorConfigurationException e) {
               errors.add("Can't create a generator configuration : " + e.getMessage());
               return;

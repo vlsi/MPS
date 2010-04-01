@@ -11,7 +11,6 @@ import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.ActionPlace;
-import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -23,9 +22,8 @@ public class ModelProperties_Action extends GeneratedAction {
 
   private SModelDescriptor model;
   private IOperationContext context;
-  private ActionPlace place;
-  private MPSProject project;
   private Integer size;
+  private ActionPlace place;
 
   public ModelProperties_Action() {
     super("Model Properties", "", ICON);
@@ -69,16 +67,12 @@ public class ModelProperties_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
-    this.place = event.getData(MPSDataKeys.PLACE);
-    if (this.place == null) {
-      return false;
-    }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.project == null) {
-      return false;
-    }
     this.size = event.getData(MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE);
     if (this.size == null) {
+      return false;
+    }
+    this.place = event.getData(MPSDataKeys.PLACE);
+    if (this.place == null) {
       return false;
     }
     return true;

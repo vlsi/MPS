@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.vfs.IFile;
@@ -130,8 +132,9 @@ public class PersistenceUpdater {
     }
   }
 
-  public void upgradePersistenceInProject(MPSProject project, Frame mainFrame) {
-    upgradePersistenceInUnit(project.getScope(), "Project " + project.getProjectFile().toString(), mainFrame);
+  public void upgradePersistenceInProject(Project project, Frame mainFrame) {
+    MPSProject p = project.getComponent(MPSProjectHolder.class).getMPSProject();
+    upgradePersistenceInUnit(p.getScope(), "Project " + p.getProjectFile().toString(), mainFrame);
   }
 
   public void upgradePersistenceInAllVisibleModels(Frame mainFrame) {

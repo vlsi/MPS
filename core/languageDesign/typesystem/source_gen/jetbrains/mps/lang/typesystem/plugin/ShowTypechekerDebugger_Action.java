@@ -5,7 +5,7 @@ package jetbrains.mps.lang.typesystem.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -15,7 +15,7 @@ public class ShowTypechekerDebugger_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(ShowTypechekerDebugger_Action.class);
 
-  private MPSProject project;
+  private Project project;
 
   public ShowTypechekerDebugger_Action() {
     super("Show Typechecker Debugger", "", ICON);
@@ -42,7 +42,7 @@ public class ShowTypechekerDebugger_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }

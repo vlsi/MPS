@@ -9,7 +9,6 @@ import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import java.awt.Frame;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.smodel.IOperationContext;
@@ -39,7 +38,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(GoToEditorDeclaration_Action.class);
 
   private Project ideaProject;
-  private MPSProject project;
+  private Project project;
   private Frame frame;
   private IEditor editor;
   private IOperationContext context;
@@ -94,7 +93,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
     if (this.ideaProject == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }

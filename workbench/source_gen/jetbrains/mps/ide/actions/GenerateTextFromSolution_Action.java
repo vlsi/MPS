@@ -6,7 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
 import java.awt.Frame;
@@ -27,7 +27,7 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GenerateTextFromSolution_Action.class);
 
-  private MPSProject mpsProject;
+  private Project project;
   private IOperationContext context;
   private IModule module;
   private Frame frame;
@@ -66,8 +66,8 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
       return false;
     }
     this.context = event.getData(MPSDataKeys.OPERATION_CONTEXT);
@@ -95,7 +95,7 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
           conf.setModuleRef(GenerateTextFromSolution_Action.this.module.getModuleReference());
           conf.setName("tmp");
           try {
-            params.value = conf.getGenParams(GenerateTextFromSolution_Action.this.mpsProject, true);
+            params.value = conf.getGenParams(GenerateTextFromSolution_Action.this.project, true);
           } catch (IllegalGeneratorConfigurationException e) {
             exceptionMsg.value = e.getMessage();
           }

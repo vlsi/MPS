@@ -8,16 +8,17 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class ShowModelChecker_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/modelChecker.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ShowModelChecker_Action.class);
 
-  private MPSProject mpsProject;
+  private Project project;
 
   public ShowModelChecker_Action() {
     super("Show Model Checker", "", ICON);
@@ -31,7 +32,7 @@ public class ShowModelChecker_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return ShowModelChecker_Action.this.mpsProject.getPluginManager().getTool(ModelCheckerTool_Tool.class).isAvailable();
+    return ShowModelChecker_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).isAvailable();
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -53,8 +54,8 @@ public class ShowModelChecker_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
       return false;
     }
     return true;
@@ -62,7 +63,7 @@ public class ShowModelChecker_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ModelCheckerTool_Tool tool = ShowModelChecker_Action.this.mpsProject.getPluginManager().getTool(ModelCheckerTool_Tool.class);
+      ModelCheckerTool_Tool tool = ShowModelChecker_Action.this.project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class);
       if (!(tool.isAvailable()) || !(tool.toolIsOpened())) {
         // Not visible: open 
         tool.openToolLater(true);

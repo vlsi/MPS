@@ -16,6 +16,7 @@
 package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.refactoring.structure.OldRefactoring;
 import jetbrains.mps.lang.refactoring.structure.Refactoring;
@@ -120,7 +121,12 @@ public class RefactoringUtil {
     return true;
   }
 
+  @Deprecated
   public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(MPSProject project, Language language) {
+    return getLanguageAndItsExtendingLanguageModels(project.getComponent(Project.class), language);
+  }
+
+  public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
     Set<Language> extendingLangs = MPSModuleRepository.getInstance().getAllExtendingLanguages(language);
     Map<IModule, List<SModel>> result = new LinkedHashMap<IModule, List<SModel>>(extendingLangs.size() + 1);
     result.put(language, getLanguageModelsList(project, language));
@@ -132,13 +138,18 @@ public class RefactoringUtil {
     return result;
   }
 
-  private static List<SModel> getLanguageModelsList(MPSProject project, Language l) {
+  private static List<SModel> getLanguageModelsList(Project project, Language l) {
     ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
     languageConfig.setModuleRef(l.getModuleReference());
     return languageConfig.getGenParams(project, true).getSModels();
   }
 
+  @Deprecated
   public static Map<IModule, List<SModel>> getLanguageModels(MPSProject project, Language language) {
+    return getLanguageModels(project.getComponent(Project.class), language);
+  }
+
+  public static Map<IModule, List<SModel>> getLanguageModels(Project project, Language language) {
     return Collections.<IModule, List<SModel>>singletonMap(language, getLanguageModelsList(project, language));
   }
 
