@@ -62,7 +62,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   private ProjectScope myScope = new ProjectScope();
 
   private Project myIDEAProject;
-  private boolean myDisposed;
   private String myErrors = null;
 
   public MPSProject(final File projectFile, final ProjectDescriptor projectDescriptor, Project ideaProject) {
@@ -161,13 +160,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     return myErrors;
   }
 
-  @Nullable
-  public Solution findSolution(String name) {
-    for (Solution s : getProjectSolutions()) {
-      if (name.equals(s.getSolutionDescriptor().getNamespace())) return s;
-    }
-    return null;
-  }
+  //--modules
 
   @NotNull
   public List<IModule> getModules() {
@@ -178,6 +171,30 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     return result;
   }
 
+  @NotNull
+  public List<Path> getAllModulePaths() {
+    ArrayList<Path> result = new ArrayList<Path>();
+    result.addAll(myProjectDescriptor.getLanguages());
+    result.addAll(myProjectDescriptor.getSolutions());
+    result.addAll(myProjectDescriptor.getDevkits());
+    return result;
+  }
+
+  public boolean isProjectModule(@NotNull IModule module) {
+    if (module instanceof Language) {
+      return getProjectLanguages().contains((Language) module);
+    }
+    if (module instanceof Solution) {
+      return getProjectSolutions().contains((Solution) module);
+    }
+    if (module instanceof DevKit) {
+      return myDevKits.contains((DevKit) module);
+    }
+    return false;
+  }
+
+  //--descriptor
+
   public void setProjectDescriptor(final @NotNull ProjectDescriptor descriptor) {
     MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
@@ -187,6 +204,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     readModules();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
   }
+
+  @NotNull
+  public ProjectDescriptor getProjectDescriptor() {
+    return myProjectDescriptor;
+  }
+
+  //--languages
 
   public void addProjectLanguage(@NotNull Language language) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
@@ -203,6 +227,18 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     projectDescriptor.removeLanguage(descriptorFile.getAbsolutePath());
     setProjectDescriptor(projectDescriptor);
   }
+
+  @NotNull
+  public List<Language> getProjectLanguages() {
+    List<Language> result = new ArrayList<Language>();
+    for (ModuleReference langRef : myLanguages) {
+      Language language = MPSModuleRepository.getInstance().getLanguage(langRef);
+      if (language != null) result.add(language);
+    }
+    return result;
+  }
+
+  //--solutions
 
   @NotNull
   public Solution addProjectSolution(@NotNull File solutionDescriptionFile) {
@@ -229,6 +265,18 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     setProjectDescriptor(projectDescriptor);
   }
 
+  @NotNull
+  public List<Solution> getProjectSolutions() {
+    List<Solution> result = new ArrayList<Solution>();
+    for (ModuleReference solRef : mySolutions) {
+      Solution solution = MPSModuleRepository.getInstance().getSolution(solRef);
+      if (solution != null) result.add(solution);
+    }
+    return result;
+  }
+
+  //--devkits
+
   public DevKit addProjectDevKit(@NotNull IFile devKitDescriptorFile) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     projectDescriptor.addDevkit(devKitDescriptorFile.getAbsolutePath());
@@ -254,6 +302,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   @NotNull
+  public List<DevKit> getProjectDevKits() {
+    return Collections.unmodifiableList(myDevKits);
+  }
+
+  //--
+
+  @NotNull
   public String toString() {
     return "MPSProject file: " + (myProjectFile == null ? "<none>" : myProjectFile.toString());
   }
@@ -263,28 +318,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     return myProjectFile;
   }
 
-  public boolean hasIDEAProject() {
-    return getProjectHandler() != null;
-  }
-
   @Nullable
   public IProjectHandler getProjectHandler() {
     File projectFile = getProjectFile().getParentFile();
     String projectPath = projectFile.getAbsolutePath();
     return MPSPlugin.getInstance().getProjectHandler(projectPath);
-  }
-
-  public void addLanguageRoot(@NotNull String languagePath) {
-    getProjectDescriptor().addLanguage(languagePath);
-  }
-
-  @NotNull
-  public List<Path> getAllModulePaths() {
-    ArrayList<Path> result = new ArrayList<Path>();
-    result.addAll(myProjectDescriptor.getLanguages());
-    result.addAll(myProjectDescriptor.getSolutions());
-    result.addAll(myProjectDescriptor.getDevkits());
-    return result;
   }
 
   @Nullable
@@ -310,49 +348,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         return;
       }
     }
-  }
-
-  @NotNull
-  public ProjectDescriptor getProjectDescriptor() {
-    return myProjectDescriptor;
-  }
-
-  @NotNull
-  public List<Language> getProjectLanguages() {
-    List<Language> result = new ArrayList<Language>();
-    for (ModuleReference langRef : myLanguages) {
-      Language language = MPSModuleRepository.getInstance().getLanguage(langRef);
-      if (language != null) result.add(language);
-    }
-    return result;
-  }
-
-  @NotNull
-  public List<Solution> getProjectSolutions() {
-    List<Solution> result = new ArrayList<Solution>();
-    for (ModuleReference solRef : mySolutions) {
-      Solution solution = MPSModuleRepository.getInstance().getSolution(solRef);
-      if (solution != null) result.add(solution);
-    }
-    return result;
-  }
-
-  @NotNull
-  public List<DevKit> getProjectDevKits() {
-    return Collections.unmodifiableList(myDevKits);
-  }
-
-  public boolean isProjectModule(@NotNull IModule module) {
-    if (module instanceof Language) {
-      return getProjectLanguages().contains((Language) module);
-    }
-    if (module instanceof Solution) {
-      return getProjectSolutions().contains((Solution) module);
-    }
-    if (module instanceof DevKit) {
-      return myDevKits.contains((DevKit) module);
-    }
-    return false;
   }
 
   public IOperationContext createOperationContext() {
@@ -421,11 +416,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         ProjectUtil.closeProject(project);
       }
     }
-    myDisposed = true;
-  }
-
-  public boolean isDisposed() {
-    return myDisposed;
   }
 
   public void invalidateCaches() {
@@ -445,7 +435,5 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       result.addAll(getProjectDevKits());
       return result;
     }
-
-
   }
 }             
