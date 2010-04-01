@@ -167,6 +167,12 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="6266395626233624824" />
+        <node role="statement:3" type="jetbrains.mps.transformation.test.outputLang.structure.CustomStatement" id="5857536350883158504">
+          <property name="name" value="extraWork" />
+          <node role="inner" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5857536350883158506">
+            <property name="value:3" value="55" />
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.transformation.test.outputLang.structure.CustomStatement" id="6266395626233719470">
           <property name="name" value="myWork1" />
           <node role="inner" type="jetbrains.mps.baseLanguage.structure.MulExpression:3" id="6266395626234333484">
@@ -202,6 +208,16 @@
             <node role="initializer:3" type="jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef" id="2163819695913721861">
               <property name="ii" value="22" />
               <link role="myStatement" targetNodeId="6266395626233719470" resolveInfo="myWork1" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5857536350883158508">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5857536350883158509">
+            <property name="name:3" value="e31" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="5857536350883158510" />
+            <node role="initializer:3" type="jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef" id="5857536350883158511">
+              <property name="ii" value="0" />
+              <link role="myStatement" targetNodeId="5857536350883158504" resolveInfo="extraWork" />
             </node>
           </node>
         </node>
