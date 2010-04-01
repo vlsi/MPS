@@ -453,8 +453,8 @@
                 <link role="classConcept:3" targetNodeId="6.1240834761783:0" resolveInfo="AntRunner" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240834495618">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1240834495619" />
-                  <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="1240834495621">
-                    <link role="member:23" targetNodeId="1240828335946" resolveInfo="mpsProject" />
+                  <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="3805214458597994678">
+                    <link role="member:23" targetNodeId="1240828335944" resolveInfo="project" />
                   </node>
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1240837426811">

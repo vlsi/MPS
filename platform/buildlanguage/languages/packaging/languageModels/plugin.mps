@@ -11655,7 +11655,7 @@
                   <link role="member:23" targetNodeId="1224866410255" resolveInfo="mpsProject" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.GetToolOperation:23" id="1240829557116">
+              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.GetToolOperation:23" id="3805214458597995231">
                 <link role="tool:23" targetNodeId="1226429676208" resolveInfo="BuildTool" />
               </node>
             </node>
@@ -11836,8 +11836,8 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="73.1240834761784:0" resolveInfo="runLayout" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240829557149">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1240829557150" />
-                  <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="1240829557151">
-                    <link role="member:23" targetNodeId="1224866410255" resolveInfo="mpsProject" />
+                  <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="3805214458597994681">
+                    <link role="member:23" targetNodeId="1224850942354" resolveInfo="project" />
                   </node>
                 </node>
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1240829557152">
