@@ -5,6 +5,9 @@ package jetbrains.mps.baseLanguage.search;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.BaseLanguageUtil;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 
@@ -36,17 +39,28 @@ public final class VisibilityUtil {
     if (memberClassifier == null) {
       return true;
     }
-    SNode contextClassifier = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
+    SNode contextClassifier = VisibilityUtil.getAncestorClassifier(contextNode);
     while (contextClassifier != null) {
       if (memberClassifier == contextClassifier) {
         return true;
       }
       if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) {
-        if (BaseLanguageUtil.isAssignable(((Classifier) SNodeOperations.getAdapter(contextClassifier)), ((Classifier) SNodeOperations.getAdapter(memberClassifier)))) {
+        SNode tmpContextClassifier;
+
+        if (SNodeOperations.isInstanceOf(contextClassifier, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+          tmpContextClassifier = SNodeOperations.cast(contextClassifier, "jetbrains.mps.baseLanguage.structure.Classifier");
+        } else if (SNodeOperations.isInstanceOf(contextClassifier, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")) {
+          SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(IClassifier_Behavior.call_createType_1213877527970(SNodeOperations.cast(contextClassifier, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+          tmpContextClassifier = SLinkOperations.getTarget(classifierType, "classifier", false);
+        } else {
+          throw new IllegalStateException();
+        }
+
+        if (BaseLanguageUtil.isAssignable(((Classifier) SNodeOperations.getAdapter(tmpContextClassifier)), ((Classifier) SNodeOperations.getAdapter(memberClassifier)))) {
           return true;
         }
       }
-      SNode parent = SNodeOperations.getAncestor(contextClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      SNode parent = getAncestorClassifier(contextClassifier);
       if (parent == null) {
         break;
       }
@@ -62,5 +76,9 @@ public final class VisibilityUtil {
       memberClassifier = parent;
     }
     return false;
+  }
+
+  private static SNode getAncestorClassifier(SNode contextNode) {
+    return SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.baseLanguage.structure.Classifier","jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"}, true, false);
   }
 }
