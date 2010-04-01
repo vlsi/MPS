@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
 import jetbrains.mps.ide.actions.AddClassMethodStrategy;
 import jetbrains.mps.ide.actions.MethodsToImplementStrategy;
@@ -55,7 +55,7 @@ public class ImplementMethods_Intention extends BaseIntention implements Intenti
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         Frame frame = editorContext.getOperationContext().getMainFrame();
-        MPSProject project = editorContext.getOperationContext().getMPSProject();
+        Project project = editorContext.getOperationContext().getProject();
         new StratergyAddMethodDialog(editorContext, frame, new AddClassMethodStrategy(node), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
       }
     });

@@ -38,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="24" />
+  <maxImportIndex value="25" />
   <import index="1" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)" version="-1" />
@@ -52,6 +52,7 @@
   <import index="22" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="23" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="25" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1225194241668">
     <link role="conceptDeclaration:32" targetNodeId="1.1225194240794" />
@@ -1364,8 +1365,8 @@
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4393431345217255674">
                           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4393431345217255675">
                             <property name="name:3" value="project" />
-                            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4393431345217255676">
-                              <link role="classifier:3" targetNodeId="24.~MPSProject" resolveInfo="MPSProject" />
+                            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3805214458598349199">
+                              <link role="classifier:3" targetNodeId="25.~Project" resolveInfo="Project" />
                             </node>
                             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4393431345217255677">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4393431345217255678">
@@ -1375,7 +1376,7 @@
                                 </node>
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4393431345217255681">
-                                <link role="baseMethodDeclaration:3" targetNodeId="16.~IOperationContext.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="16.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                               </node>
                             </node>
                           </node>
@@ -1492,8 +1493,8 @@
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4393431345217255703">
                           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4393431345217255704">
                             <property name="name:3" value="project" />
-                            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4393431345217255705">
-                              <link role="classifier:3" targetNodeId="24.~MPSProject" resolveInfo="MPSProject" />
+                            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3805214458598348618">
+                              <link role="classifier:3" targetNodeId="25.~Project" resolveInfo="Project" />
                             </node>
                             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4393431345217255706">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4393431345217255707">
@@ -1503,7 +1504,7 @@
                                 </node>
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4393431345217255710">
-                                <link role="baseMethodDeclaration:3" targetNodeId="16.~IOperationContext.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="16.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                               </node>
                             </node>
                           </node>

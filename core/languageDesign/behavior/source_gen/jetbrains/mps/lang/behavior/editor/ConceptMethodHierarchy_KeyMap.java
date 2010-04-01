@@ -12,7 +12,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
 import jetbrains.mps.ide.actions.AddConceptMethodStrategy;
 import jetbrains.mps.ide.actions.MethodsToOverrideStrategy;
@@ -68,7 +68,7 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           Frame frame = editorContext.getOperationContext().getMainFrame();
-          MPSProject project = editorContext.getOperationContext().getMPSProject();
+          Project project = editorContext.getOperationContext().getProject();
           new StratergyAddMethodDialog(editorContext, frame, new AddConceptMethodStrategy(node), new MethodsToOverrideStrategy(), new OverrideConceptMethodStrategy(project)).showDialog();
         }
       });
@@ -117,7 +117,7 @@ public class ConceptMethodHierarchy_KeyMap extends EditorCellKeyMap {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           Frame frame = editorContext.getOperationContext().getMainFrame();
-          MPSProject project = editorContext.getOperationContext().getMPSProject();
+          Project project = editorContext.getOperationContext().getProject();
           new StratergyAddMethodDialog(editorContext, frame, new AddConceptMethodStrategy(node), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
         }
       });

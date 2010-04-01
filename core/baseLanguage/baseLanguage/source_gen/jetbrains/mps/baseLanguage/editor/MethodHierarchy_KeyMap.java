@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
 import jetbrains.mps.ide.actions.AddClassMethodStrategy;
@@ -67,7 +67,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          MPSProject project = editorContext.getOperationContext().getMPSProject();
+          Project project = editorContext.getOperationContext().getProject();
           Frame frame = editorContext.getOperationContext().getMainFrame();
           new StratergyAddMethodDialog(editorContext, frame, new AddClassMethodStrategy(node), new MethodsToOverrideStrategy(), new OverrideClassMethodStrategy(project)).showDialog();
         }
@@ -116,7 +116,7 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          MPSProject project = editorContext.getOperationContext().getMPSProject();
+          Project project = editorContext.getOperationContext().getProject();
           Frame frame = editorContext.getOperationContext().getMainFrame();
           new StratergyAddMethodDialog(editorContext, frame, new AddClassMethodStrategy(node), new MethodsToImplementStrategy(), new ImplementMethodStrategy(project)).showDialog();
         }

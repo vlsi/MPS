@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
 import jetbrains.mps.ide.actions.AddClassMethodStrategy;
@@ -54,7 +54,7 @@ public class OverrideMethods_Intention extends BaseIntention implements Intentio
   public void execute(final SNode node, final EditorContext editorContext) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        MPSProject project = editorContext.getOperationContext().getMPSProject();
+        Project project = editorContext.getOperationContext().getProject();
         Frame frame = editorContext.getOperationContext().getMainFrame();
         new StratergyAddMethodDialog(editorContext, frame, new AddClassMethodStrategy(node), new MethodsToOverrideStrategy(), new OverrideClassMethodStrategy(project)).showDialog();
       }

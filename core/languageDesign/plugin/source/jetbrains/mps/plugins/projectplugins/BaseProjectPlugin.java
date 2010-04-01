@@ -92,13 +92,14 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   }
 
   protected ProjectPluginManager getPluginManager() {
-    return getProject().getPluginManager();
+    return myProject.getComponent(ProjectPluginManager.class);
   }
 
   protected Project getIDEAProject() {
-    return getProject().getComponent(Project.class);
+    return myProject;
   }
 
+  @Deprecated
   public MPSProject getProject() {
     return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
