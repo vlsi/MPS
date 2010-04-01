@@ -6,6 +6,7 @@ import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MoveStaticMethod_destination_Settings extends IChooserSettings.BaseChooserSettings<SNode> {
   private RefactoringContext myRefactoringContext;
@@ -16,6 +17,6 @@ public class MoveStaticMethod_destination_Settings extends IChooserSettings.Base
   }
 
   public boolean met(final SNode entity) {
-    return SNodeOperations.isInstanceOf(entity, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    return SNodeOperations.isInstanceOf(entity, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(ListSequence.fromList(SNodeOperations.getAncestors(MoveStaticMethod_destination_Settings.this.myRefactoringContext.getSelectedNode(), null, false)).contains(entity));
   }
 }
