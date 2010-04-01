@@ -57,13 +57,13 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   }
 
   //for compatibility (compilation is not required)
-  protected List<GeneratedTool> initTools(Project project){
+  protected List<GeneratedTool> initTools(Project project) {
     return new ArrayList<GeneratedTool>();
   }
 
   protected List<BaseGeneratedTool> initAllTools(Project project) {
     ArrayList<BaseGeneratedTool> result = new ArrayList<BaseGeneratedTool>();
-    for (BaseGeneratedTool tool:initTools(project)){
+    for (BaseGeneratedTool tool : initTools(project)) {
       result.add(tool);
     }
     return result;
@@ -95,13 +95,8 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     return myProject.getComponent(ProjectPluginManager.class);
   }
 
-  protected Project getIDEAProject() {
+  public Project getProject() {
     return myProject;
-  }
-
-  @Deprecated
-  public MPSProject getProject() {
-    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
   //------------------shared stuff-----------------------
@@ -111,8 +106,8 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
     myCustomPartsToDispose = initCustomParts(project);
 
-    GeneratorManager manager = getProject().getComponent(GeneratorManager.class);
-    myGenerationListeners = initGenerationListeners(getProject());
+    GeneratorManager manager = myProject.getComponent(GeneratorManager.class);
+    myGenerationListeners = initGenerationListeners(myProject.getComponent(MPSProjectHolder.class).getMPSProject());
     for (GenerationListener listener : myGenerationListeners) {
       manager.addGenerationListener(listener);
     }
@@ -120,7 +115,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     initEditors(project);
 
     myTools = (List) (initAllTools(myProject));
-    final Project ideaProject = getIDEAProject();
+    final Project ideaProject = myProject;
     for (final BaseGeneratedTool tool : myTools) {
       if (ideaProject.isDisposed()) return;
       try {
@@ -132,7 +127,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       myInitializedTools.add(tool);
     }
 
-    myPrefsComponents = createPreferencesComponents(getIDEAProject());
+    myPrefsComponents = createPreferencesComponents(myProject);
     for (BaseProjectPrefsComponent component : myPrefsComponents) {
       component.init();
     }
@@ -143,7 +138,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       component.dispose();
     }
 
-    final Project ideaProject = getIDEAProject();
+    final Project ideaProject = myProject;
     for (final BaseGeneratedTool tool : myTools) {
       if (ideaProject.isDisposed()) return;
       if (!myInitializedTools.contains(tool)) return;
@@ -161,7 +156,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       opener.unregisterOpenHandlers(BaseProjectPlugin.this);
     }
 
-    GeneratorManager manager = getProject().getComponent(GeneratorManager.class);
+    GeneratorManager manager = myProject.getComponent(GeneratorManager.class);
     for (GenerationListener listener : myGenerationListeners) {
       manager.removeGenerationListener(listener);
     }
