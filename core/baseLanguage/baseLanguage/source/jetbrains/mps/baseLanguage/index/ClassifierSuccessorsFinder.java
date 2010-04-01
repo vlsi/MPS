@@ -188,7 +188,7 @@ public class ClassifierSuccessorsFinder {
     private Set<VirtualFile> myFilesInScope;
 
     SearchScope(Set<VirtualFile> notModifiedModelFiles) {
-      super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()));
+      super(null);
       myFilesInScope = notModifiedModelFiles;
     }
 

@@ -286,7 +286,6 @@ class FastFindUsagesManager extends FindUsagesManager {
   }
 
   private Set<VirtualFile> getCandidates(final Set<VirtualFile> scopeFiles, final String nodeId) {
-    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
 
     final Set<VirtualFile> candidates = new HashSet<VirtualFile>();
     FileBasedIndex.getInstance().processValues(IdIndex.NAME, new IdIndexEntry(nodeId, true), null,
@@ -295,7 +294,7 @@ class FastFindUsagesManager extends FindUsagesManager {
           candidates.add(file);
           return true;
         }
-      }, new GlobalSearchScope(project) {
+      }, new GlobalSearchScope(null) {
         public boolean contains(VirtualFile file) {
           return scopeFiles.contains(file);
         }
