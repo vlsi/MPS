@@ -48,6 +48,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.PrepStatementUtil;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
 import jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.helper.WrappersUtils;
+import jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -4092,6 +4093,21 @@ public class QueriesGenerated {
             }
           }
           SPropertyOperations.set(bs, "label", label);
+        }
+      }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_4923436771430697283(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for (SNode sl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.structure.StatementList")) {
+      if (ExpressionStatement_Behavior.call_canServeAsReturn_1239355137616(SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
+        SNode es = SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+        SNode anc = SNodeOperations.getAncestorWhereConceptInList(es, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"}, false, false);
+        if (SNodeOperations.isInstanceOf(anc, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+          SNode rt = SLinkOperations.getTarget(SNodeOperations.cast(anc, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true);
+          if (!((rt != null) && SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+            FunctionTypeUtil.prepAdaptations(_context, rt, SLinkOperations.getTarget(es, "expression", true));
+          }
         }
       }
     }

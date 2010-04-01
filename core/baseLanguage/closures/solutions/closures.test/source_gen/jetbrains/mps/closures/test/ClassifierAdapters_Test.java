@@ -363,6 +363,11 @@ __switch__:
     }.invoke();
   }
 
+  public void test_mps7619() throws Exception {
+    IFilter flt = this.filter();
+    Assert.assertFalse(flt.filter(null));
+  }
+
   public void acceptWorker(Worker one, Worker two) {
   }
 
@@ -389,6 +394,14 @@ __switch__:
     return new Processor() {
       public int process(String str) throws ProcessingException {
         throw new ProcessingException(str);
+      }
+    };
+  }
+
+  public IFilter filter() {
+    return new IFilter() {
+      public boolean filter(String name) {
+        return false;
       }
     };
   }
