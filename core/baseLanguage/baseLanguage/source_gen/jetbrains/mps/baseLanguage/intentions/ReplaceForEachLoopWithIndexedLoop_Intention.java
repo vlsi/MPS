@@ -122,10 +122,9 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
     } else if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "iterable", true)), "jetbrains.mps.baseLanguage.collections.structure.ListType")) {
       SNode listAccess = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", null);
       SLinkOperations.setTarget(listAccess, "list", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "iterable", true)), true);
-      SLinkOperations.setTarget(listAccess, "index", listAccess, true);
+      SLinkOperations.setTarget(listAccess, "index", iteratorReference, true);
       SLinkOperations.setTarget(variable, "initializer", listAccess, true);
     }
-
     final SNode fake_node = node;
     ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), null, false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
