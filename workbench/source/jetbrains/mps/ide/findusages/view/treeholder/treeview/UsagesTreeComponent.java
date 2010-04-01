@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
@@ -63,7 +64,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     super(new BorderLayout());
 
     myTree = new UsagesTree() {
-      public MPSProject getProject() {
+      public Project getProject() {
         return UsagesTreeComponent.this.getProject();
       }
     };
@@ -210,7 +211,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     return myViewToolbar;
   }
 
-  public abstract MPSProject getProject();
+  public abstract Project getProject();
 
   class ViewToolbar extends JPanel {
     private PathOptionsToolbar myPathOptionsToolbar;

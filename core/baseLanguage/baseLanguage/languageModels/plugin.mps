@@ -967,13 +967,8 @@
             </node>
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1217598423144">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1217598423145">
-                <link role="baseMethodDeclaration:3" targetNodeId="91.~TodoViewer.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolveInfo="TodoViewer" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1217598423146">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1217598423147" />
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1217598423148">
-                    <link role="baseMethodDeclaration:3" targetNodeId="39.~BaseTool.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
-                  </node>
-                </node>
+                <link role="baseMethodDeclaration:3" targetNodeId="91.~TodoViewer.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="TodoViewer" />
+                <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project:23" id="7532560174119031727" />
               </node>
             </node>
           </node>

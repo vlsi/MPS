@@ -25,11 +25,6 @@ public class RunReplacement_Tool extends GeneratedTool {
     super(project, "Replacement", -1, IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}\\icons\\replace.png", "jetbrains.mps.quickQueryLanguage"), true), ToolWindowAnchor.BOTTOM, false);
   }
 
-  public void init(Project project) {
-    super.init(project);
-    project.getComponent(Project.class);
-  }
-
   public void closeTab(ReplacementView view) {
     view.dispose();
     int index = ListSequence.fromList(RunReplacement_Tool.this.myViews).indexOf(view);
@@ -47,7 +42,7 @@ public class RunReplacement_Tool extends GeneratedTool {
   public void addTab(final SearchQuery searchQuery, final Query query) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ReplacementView view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.getMPSProject(), FindUtils.makeProvider(new QueryFinder(query)), searchQuery, query);
+        ReplacementView view = new ReplacementView(RunReplacement_Tool.this, RunReplacement_Tool.this.getProject(), FindUtils.makeProvider(new QueryFinder(query)), searchQuery, query);
         ListSequence.fromList(RunReplacement_Tool.this.myViews).addElement(view);
         String name = "Query ";
         if (ListSequence.fromList(RunReplacement_Tool.this.myViews).count() > 1) {

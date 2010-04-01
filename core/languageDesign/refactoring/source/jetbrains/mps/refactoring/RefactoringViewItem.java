@@ -62,7 +62,7 @@ public abstract class RefactoringViewItem {
       throw new IllegalArgumentException("search result is null");
     }
     myPanel = new JPanel(new BorderLayout());
-    myUsagesView = new UsagesView(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()), new ViewOptions()) {
+    myUsagesView = new UsagesView(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), new ViewOptions()) {
       public void close() {
         RefactoringViewItem.this.close();
       }

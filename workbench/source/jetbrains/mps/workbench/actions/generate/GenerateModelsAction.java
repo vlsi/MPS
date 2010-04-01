@@ -16,9 +16,11 @@
 package jetbrains.mps.workbench.actions.generate;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -42,9 +44,9 @@ public abstract class GenerateModelsAction extends BaseAction {
   public abstract IGenerationHandler getGenerationHandler();
 
   public void doExecute(AnActionEvent e) {
-    MPSProject project = myContext.getMPSProject();
+    Project project = e.getData(MPSDataKeys.PROJECT);
     //noinspection ConstantConditions
-    boolean checkSuccessful = project.getPluginManager().getTool(ModelCheckerTool_Tool.class)
+    boolean checkSuccessful = project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class)
       .checkModelsBeforeGenerationIfNeeded(myContext, myModels, new Runnable() {
         public void run() {
           myGenManager.generateModelsFromDifferentModules(

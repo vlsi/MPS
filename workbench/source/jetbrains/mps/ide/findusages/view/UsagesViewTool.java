@@ -261,7 +261,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     private FindUsagesOptions myOptions = new FindUsagesOptions();
 
     public void createUsageView() {
-      myUsagesView = new UsagesView(getMPSProject(), myDefaultViewOptions) {
+      myUsagesView = new UsagesView(getProject(), myDefaultViewOptions) {
         public void close() {
           int index = myUsageViewsData.indexOf(UsageViewData.this);
           UsagesViewTool.this.closeTab(index);

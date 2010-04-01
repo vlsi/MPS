@@ -37,6 +37,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
@@ -61,7 +62,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
   private static final String BUTTONS = "buttons";
   private static final String TREE_WRAPPER = "tree_wrapper";
 
-  private MPSProject myProject;
+  private Project myProject;
 
   //my components
   private JPanel myPanel;
@@ -78,13 +79,13 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
   //for assertions - check invariant - constructor -> read|setRunOpts
   private boolean myIsInitialized = false;
 
-  public UsagesView(MPSProject project, ViewOptions defaultOptions) {
+  public UsagesView(Project project, ViewOptions defaultOptions) {
     myProject = project;
 
     myPanel = new JPanel(new BorderLayout());
 
     myTreeComponent = new UsagesTreeComponent(defaultOptions) {
-      public MPSProject getProject() {
+      public Project getProject() {
         return myProject;
       }
     };
@@ -132,19 +133,14 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
   }
 
   private void regenerate() {
-    final MPSProject project = myProject;
-    if (project == null) {
-      return;
-    }
-
-    GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
+    GeneratorManager manager = myProject.getComponent(GeneratorManager.class);
     List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
       if (!modelDescriptor.isTransient() && (modelDescriptor instanceof DefaultSModelDescriptor)) {
         models.add(modelDescriptor);
       }
     }
-    manager.generateModelsFromDifferentModules(project.createOperationContext(), models, new JavaGenerationHandler());
+    manager.generateModelsFromDifferentModules(new ProjectOperationContext(myProject), models, new JavaGenerationHandler());
   }
 
   public void goToNext() {

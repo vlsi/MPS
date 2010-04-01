@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import javax.swing.JPanel;
 import com.intellij.openapi.Disposable;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,7 +22,6 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.JScrollPane;
-import com.intellij.openapi.project.Project;
 import javax.swing.JTable;
 import java.awt.GridLayout;
 import javax.swing.Icon;
@@ -48,11 +47,11 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private TestTree myTreeComponent;
   private ProgressLine myProgressLineComponent;
   private TestToolbarPanel myActionToolComponent;
-  private final MPSProject myProject;
+  private final Project myProject;
   private FailedTestOccurenceNavigator myTestNavigator;
   private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
-  public UnitTestViewComponent(MPSProject project, IOperationContext context, ConsoleViewImpl console, UnitTestExecutionController model) {
+  public UnitTestViewComponent(Project project, IOperationContext context, ConsoleViewImpl console, UnitTestExecutionController model) {
     this.myProject = project;
     this.myTestState = model.getState();
     this.initComponent(console, context);
@@ -109,8 +108,8 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     return treePanel;
   }
 
-  private JComponent createOutputComponent(MPSProject project, ConsoleViewImpl console) {
-    this.myOutputComponent = new TestOutputComponent(project.getComponent(Project.class), this, console, this.myTestState);
+  private JComponent createOutputComponent(Project project, ConsoleViewImpl console) {
+    this.myOutputComponent = new TestOutputComponent(project, this, console, this.myTestState);
     return this.myOutputComponent.getComponent();
   }
 
@@ -166,9 +165,8 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     @Nullable
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(Location.LOCATION)) {
-        Project project = UnitTestViewComponent.this.myProject.getComponent(Project.class);
         MPSTreeNode currentNode = UnitTestViewComponent.this.myTreeComponent.getCurrentNode();
-        return new MPSLocation(project, currentNode.getUserObject());
+        return new MPSLocation(UnitTestViewComponent.this.myProject, currentNode.getUserObject());
       }
       return null;
     }

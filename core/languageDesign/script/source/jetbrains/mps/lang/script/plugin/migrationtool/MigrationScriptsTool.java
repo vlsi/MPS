@@ -114,7 +114,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        MigrationScriptsView view = new MigrationScriptsView(finder, provider, query, MigrationScriptsTool.this, getMPSProject()){
+        MigrationScriptsView view = new MigrationScriptsView(finder, provider, query, MigrationScriptsTool.this, getProject()){
           public void close() {
             int index = myViews.indexOf(this);
             closeTab(index);

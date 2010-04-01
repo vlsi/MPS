@@ -35,9 +35,6 @@ public class ModelRepository_Tool extends GeneratedTool {
     ModelRepository_Tool.this.myComponent.uninstall();
   }
 
-  public void dispose() {
-  }
-
   public void init(Project project) {
     ModelRepository_Tool.this.myComponent = new ModelRepositoryComponent();
     ModelRepository_Tool.this.myPanel = new JPanel(new BorderLayout());

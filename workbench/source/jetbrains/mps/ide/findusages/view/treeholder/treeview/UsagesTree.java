@@ -672,7 +672,7 @@ public abstract class UsagesTree extends MPSTree {
         return !node.isRoot();
       }
     });
-    getProject().getComponentSafe(MPSEditorOpener.class).openNode(node, context, focus, select);
+    getProject().getComponent(MPSEditorOpener.class).openNode(node, context, focus, select);
   }
 
   private void navigateInTree(Object o, boolean focus) {
@@ -691,7 +691,7 @@ public abstract class UsagesTree extends MPSTree {
     projectPane.activate(focus);
   }
 
-  public abstract MPSProject getProject();
+  public abstract Project getProject();
 
   private UsagesTreeNode getResultsNode() {
     int index = myShowSearchedNodes ? 1 : 0;

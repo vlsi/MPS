@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.view.UsagesView;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
@@ -21,7 +21,6 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import javax.swing.JComponent;
@@ -35,7 +34,7 @@ public class ReplacementView {
   private JPanel myMainPanel = new JPanel(new BorderLayout());
   private JButton myButton = new JButton("Do replace");
 
-  public ReplacementView(RunReplacement_Tool tool, final MPSProject project, IResultProvider provider, SearchQuery searchQuery, final Query query) {
+  public ReplacementView(RunReplacement_Tool tool, final Project project, IResultProvider provider, SearchQuery searchQuery, final Query query) {
     this.myTool = tool;
     this.myUsagesView = new UsagesView(project, new ViewOptions()) {
       public void close() {

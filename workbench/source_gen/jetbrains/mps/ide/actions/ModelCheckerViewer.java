@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import javax.swing.JPanel;
 import jetbrains.mps.ide.findusages.INavigator;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import javax.swing.Icon;
@@ -29,7 +29,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -37,6 +36,7 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -47,11 +47,12 @@ import org.apache.commons.lang.StringEscapeUtils;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import java.util.Arrays;
 import org.jdom.Element;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 
 public abstract class ModelCheckerViewer extends JPanel implements INavigator {
-  private MPSProject myProject;
+  private Project myProject;
   private IOperationContext myOperationContext;
   private UsagesView myUsagesView;
   private String myTabTitle;
@@ -61,15 +62,15 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
   private JButton myFixButton;
   private String myCheckProgressTitle = "Checking...";
 
-  public ModelCheckerViewer(MPSProject mpsProject, IOperationContext operationContext) {
-    this.myProject = mpsProject;
+  public ModelCheckerViewer(Project project, IOperationContext operationContext) {
+    this.myProject = project;
     this.myOperationContext = operationContext;
 
     this.setLayout(new BorderLayout());
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
     viewOptions.myCategories = new boolean[]{true,false};
 
-    this.myUsagesView = new UsagesView(mpsProject, viewOptions) {
+    this.myUsagesView = new UsagesView(project, viewOptions) {
       public void close() {
         ModelCheckerViewer.this.close();
       }
@@ -170,7 +171,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
 
   public void prepareAndCheck(final List<SModelDescriptor> modelDescriptors, final String taskTargetTitle, final Icon taskIcon) {
     IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
-    SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, this.myOperationContext), ModelCheckerViewer.this.myProject.getScope());
+    SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, this.myOperationContext), ModelCheckerViewer.this.myProject.getComponent(MPSProjectHolder.class).getMPSProject().getScope());
     ModelCheckerViewer.this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, false, true));
 
     this.myCheckProgressTitle = "Checking " + taskTargetTitle;

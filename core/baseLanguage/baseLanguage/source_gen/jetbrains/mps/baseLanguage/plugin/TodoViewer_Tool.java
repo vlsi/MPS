@@ -18,7 +18,7 @@ public class TodoViewer_Tool extends GeneratedTool {
 
   public void init(Project project) {
     super.init(project);
-    TodoViewer_Tool.this.myComponent = new TodoViewer(TodoViewer_Tool.this.getMPSProject());
+    TodoViewer_Tool.this.myComponent = new TodoViewer(project);
   }
 
   public void dispose() {

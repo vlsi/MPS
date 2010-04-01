@@ -19,6 +19,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
@@ -34,6 +35,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
@@ -52,11 +54,11 @@ import java.util.List;
 
 public class TodoViewer extends JPanel {
   private UsagesView myUsagesView;
-  private MPSProject myProject;
+  private Project myProject;
 
   public final static Icon TODO_ICON = new ImageIcon(TodoViewer.class.getResource("todo.png"));
 
-  public TodoViewer(final MPSProject project) {
+  public TodoViewer(final Project project) {
     myProject = project;
     setLayout(new BorderLayout());
 
@@ -79,7 +81,7 @@ public class TodoViewer extends JPanel {
   }
 
   private GeneratedTool getTool() {
-    return myProject.getPluginManager().getTool(TodoViewer_Tool.class);
+    return myProject.getComponent(ProjectPluginManager.class).getTool(TodoViewer_Tool.class);
   }
 
   private Project getProject() {
@@ -100,9 +102,10 @@ public class TodoViewer extends JPanel {
     };
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
 
+    MPSProject project = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     myUsagesView.setRunOptions(
       FindUtils.makeProvider(new TodoFinder()),
-      new SearchQuery(myProject.getScope()),
+      new SearchQuery(project.getScope()),
       new ButtonConfiguration(true),
       new SearchResults()
     );
