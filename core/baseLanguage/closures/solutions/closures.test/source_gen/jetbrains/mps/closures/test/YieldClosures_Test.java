@@ -1067,6 +1067,165 @@ __switch__:
     });
   }
 
+  public void test_allKindsOfLoopLabels() throws Exception {
+    this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
+      public void invoke(List<Integer> exp) {
+        int i = 10;
+label1:
+        while (i > 0) {
+label2:
+          for (int j = i % 5; j >= 0; j--) {
+label3:
+            do {
+              if (i % 2 > j) {
+                continue label2;
+              }
+              ListSequence.fromList(exp).addElement(i + j);
+              i--;
+            } while((i + j) % 3 == 2);
+            switch (j) {
+              case 1:
+                continue;
+              case 2:
+                break;
+              case 3:
+                continue label1;
+              default:
+                break label2;
+            }
+            ListSequence.fromList(exp).addElement(j);
+          }
+          ListSequence.fromList(exp).addElement(i);
+          i--;
+        }
+      }
+    }, new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
+      public Iterable<Integer> invoke() {
+        return new Iterable<Integer>() {
+          public Iterator<Integer> iterator() {
+            return new YieldingIterator<Integer>() {
+              private int __CP__ = 0;
+              private int _3_i;
+              private int _6_j;
+
+              protected boolean moveToNext() {
+__loop__:
+                do {
+__switch__:
+                  switch (this.__CP__) {
+                    case -1:
+                      assert false : "Internal error";
+                      return false;
+                    case 6:
+                      this._6_j = _3_i % 5;
+                    case 7:
+                      if (!(_6_j >= 0)) {
+                        this.__CP__ = 10;
+                        break;
+                      }
+                      this.__CP__ = 8;
+                      break;
+                    case 9:
+                      _6_j--;
+                      this.__CP__ = 7;
+                      break;
+                    case 14:
+                      if (_3_i % 2 > _6_j) {
+                        this.__CP__ = 15;
+                        break;
+                      }
+                      this.__CP__ = 16;
+                      break;
+                    case 13:
+                      switch (_6_j) {
+                        case 1:
+                          this.__CP__ = 20;
+                          break __switch__;
+                        case 2:
+                          this.__CP__ = 21;
+                          break __switch__;
+                        case 3:
+                          this.__CP__ = 23;
+                          break __switch__;
+                        default:
+                          this.__CP__ = 27;
+                          break __switch__;
+                      }
+                    case 4:
+                      if (_3_i > 0) {
+                        this.__CP__ = 5;
+                        break;
+                      }
+                      this.__CP__ = 1;
+                      break;
+                    case 12:
+                      if ((_3_i + _6_j) % 3 == 2) {
+                        this.__CP__ = 11;
+                        break;
+                      }
+                      this.__CP__ = 13;
+                      break;
+                    case 16:
+                      this.__CP__ = 18;
+                      this.yield(_3_i + _6_j);
+                      return true;
+                    case 19:
+                      this.__CP__ = 9;
+                      this.yield(_6_j);
+                      return true;
+                    case 10:
+                      this.__CP__ = 29;
+                      this.yield(_3_i);
+                      return true;
+                    case 0:
+                      this._3_i = 10;
+                      this.__CP__ = 4;
+                      break;
+                    case 5:
+                      this.__CP__ = 6;
+                      break;
+                    case 29:
+                      _3_i--;
+                      this.__CP__ = 4;
+                      break;
+                    case 8:
+                      this.__CP__ = 11;
+                      break;
+                    case 11:
+                      this.__CP__ = 14;
+                      break;
+                    case 18:
+                      _3_i--;
+                      this.__CP__ = 12;
+                      break;
+                    case 15:
+                      this.__CP__ = 12;
+                      break;
+                    case 20:
+                      this.__CP__ = 9;
+                      break;
+                    case 21:
+                      this.__CP__ = 19;
+                      break;
+                    case 23:
+                      this.__CP__ = 9;
+                      break;
+                    case 27:
+                      this.__CP__ = 10;
+                      break;
+                    default:
+                      break __loop__;
+                  }
+                } while(true);
+                return false;
+              }
+            };
+          }
+        };
+      }
+    });
+  }
+
   public void test_yieldAllLast() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
@@ -1091,8 +1250,8 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _2__yield_75e5vq_a0b0a0a11a;
-              private Iterator<Integer> _2__yield_75e5vq_a0b0a0a11a_it;
+              private Integer _2__yield_75e5vq_a0b0a0a21a;
+              private Iterator<Integer> _2__yield_75e5vq_a0b0a0a21a_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1103,18 +1262,18 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2__yield_75e5vq_a0b0a0a11a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3).iterator();
+                      this._2__yield_75e5vq_a0b0a0a21a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3).iterator();
                     case 3:
-                      if (!(this._2__yield_75e5vq_a0b0a0a11a_it.hasNext())) {
+                      if (!(this._2__yield_75e5vq_a0b0a0a21a_it.hasNext())) {
                         this.__CP__ = 5;
                         break;
                       }
-                      this._2__yield_75e5vq_a0b0a0a11a = this._2__yield_75e5vq_a0b0a0a11a_it.next();
+                      this._2__yield_75e5vq_a0b0a0a21a = this._2__yield_75e5vq_a0b0a0a21a_it.next();
                       this.__CP__ = 4;
                       break;
                     case 6:
                       this.__CP__ = 3;
-                      this.yield(_2__yield_75e5vq_a0b0a0a11a);
+                      this.yield(_2__yield_75e5vq_a0b0a0a21a);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -1150,8 +1309,8 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _3__yield_75e5vq_b0b0a0a21a;
-              private Iterator<Integer> _3__yield_75e5vq_b0b0a0a21a_it;
+              private Integer _3__yield_75e5vq_b0b0a0a31a;
+              private Iterator<Integer> _3__yield_75e5vq_b0b0a0a31a_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1162,13 +1321,13 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 3:
-                      this._3__yield_75e5vq_b0b0a0a21a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 3).iterator();
+                      this._3__yield_75e5vq_b0b0a0a31a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 3).iterator();
                     case 4:
-                      if (!(this._3__yield_75e5vq_b0b0a0a21a_it.hasNext())) {
+                      if (!(this._3__yield_75e5vq_b0b0a0a31a_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._3__yield_75e5vq_b0b0a0a21a = this._3__yield_75e5vq_b0b0a0a21a_it.next();
+                      this._3__yield_75e5vq_b0b0a0a31a = this._3__yield_75e5vq_b0b0a0a31a_it.next();
                       this.__CP__ = 5;
                       break;
                     case 2:
@@ -1177,7 +1336,7 @@ __switch__:
                       return true;
                     case 6:
                       this.__CP__ = 4;
-                      this.yield(_3__yield_75e5vq_b0b0a0a21a);
+                      this.yield(_3__yield_75e5vq_b0b0a0a31a);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -1209,10 +1368,10 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _2__yield_75e5vq_a0b0a0a31a;
-              private Iterator<Integer> _2__yield_75e5vq_a0b0a0a31a_it;
-              private Integer _6__yield_75e5vq_b0b0a0a31a;
-              private Iterator<Integer> _6__yield_75e5vq_b0b0a0a31a_it;
+              private Integer _2__yield_75e5vq_a0b0a0a41a;
+              private Iterator<Integer> _2__yield_75e5vq_a0b0a0a41a_it;
+              private Integer _6__yield_75e5vq_b0b0a0a41a;
+              private Iterator<Integer> _6__yield_75e5vq_b0b0a0a41a_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -1223,32 +1382,32 @@ __switch__:
                       assert false : "Internal error";
                       return false;
                     case 2:
-                      this._2__yield_75e5vq_a0b0a0a31a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2).iterator();
+                      this._2__yield_75e5vq_a0b0a0a41a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2).iterator();
                     case 3:
-                      if (!(this._2__yield_75e5vq_a0b0a0a31a_it.hasNext())) {
+                      if (!(this._2__yield_75e5vq_a0b0a0a41a_it.hasNext())) {
                         this.__CP__ = 5;
                         break;
                       }
-                      this._2__yield_75e5vq_a0b0a0a31a = this._2__yield_75e5vq_a0b0a0a31a_it.next();
+                      this._2__yield_75e5vq_a0b0a0a41a = this._2__yield_75e5vq_a0b0a0a41a_it.next();
                       this.__CP__ = 4;
                       break;
                     case 5:
-                      this._6__yield_75e5vq_b0b0a0a31a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 3, 4).iterator();
+                      this._6__yield_75e5vq_b0b0a0a41a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), 3, 4).iterator();
                     case 7:
-                      if (!(this._6__yield_75e5vq_b0b0a0a31a_it.hasNext())) {
+                      if (!(this._6__yield_75e5vq_b0b0a0a41a_it.hasNext())) {
                         this.__CP__ = 1;
                         break;
                       }
-                      this._6__yield_75e5vq_b0b0a0a31a = this._6__yield_75e5vq_b0b0a0a31a_it.next();
+                      this._6__yield_75e5vq_b0b0a0a41a = this._6__yield_75e5vq_b0b0a0a41a_it.next();
                       this.__CP__ = 8;
                       break;
                     case 6:
                       this.__CP__ = 3;
-                      this.yield(_2__yield_75e5vq_a0b0a0a31a);
+                      this.yield(_2__yield_75e5vq_a0b0a0a41a);
                       return true;
                     case 9:
                       this.__CP__ = 7;
-                      this.yield(_6__yield_75e5vq_b0b0a0a31a);
+                      this.yield(_6__yield_75e5vq_b0b0a0a41a);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -1283,8 +1442,8 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private Integer _6__yield_75e5vq_a0a0b0a0a41a;
-              private Iterator<Integer> _6__yield_75e5vq_a0a0b0a0a41a_it;
+              private Integer _6__yield_75e5vq_a0a0b0a0a51a;
+              private Iterator<Integer> _6__yield_75e5vq_a0a0b0a0a51a_it;
               private int _2_i;
 
               protected boolean moveToNext() {
@@ -1309,18 +1468,18 @@ __switch__:
                       this.__CP__ = 3;
                       break;
                     case 6:
-                      this._6__yield_75e5vq_a0a0b0a0a41a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), _2_i).iterator();
+                      this._6__yield_75e5vq_a0a0b0a0a51a_it = ListSequence.fromListAndArray(new ArrayList<Integer>(), _2_i).iterator();
                     case 7:
-                      if (!(this._6__yield_75e5vq_a0a0b0a0a41a_it.hasNext())) {
+                      if (!(this._6__yield_75e5vq_a0a0b0a0a51a_it.hasNext())) {
                         this.__CP__ = 5;
                         break;
                       }
-                      this._6__yield_75e5vq_a0a0b0a0a41a = this._6__yield_75e5vq_a0a0b0a0a41a_it.next();
+                      this._6__yield_75e5vq_a0a0b0a0a51a = this._6__yield_75e5vq_a0a0b0a0a51a_it.next();
                       this.__CP__ = 8;
                       break;
                     case 9:
                       this.__CP__ = 7;
-                      this.yield(_6__yield_75e5vq_a0a0b0a0a41a);
+                      this.yield(_6__yield_75e5vq_a0a0b0a0a51a);
                       return true;
                     case 0:
                       this.__CP__ = 2;

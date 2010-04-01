@@ -1072,6 +1072,7 @@
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1199466066648">
       <property name="name:0" value="label" />
       <link role="dataType:0" targetNodeId="4.1082983041843:0" resolveInfo="string" />
+      <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3376587159404427133" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1107215745374">
       <property name="value:0" value="break" />
@@ -1122,6 +1123,7 @@
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1199470060942">
       <property name="name:0" value="label" />
       <link role="dataType:0" targetNodeId="4.1082983041843:0" resolveInfo="string" />
+      <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3376587159404427204" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1107216162003">
       <property name="value:0" value="continue" />
@@ -1763,6 +1765,7 @@
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1199465379613">
       <property name="name:0" value="label" />
       <link role="dataType:0" targetNodeId="4.1082983041843:0" resolveInfo="string" />
+      <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3376587159404379926" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1154032110515">
       <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473854053:0" />
@@ -1881,6 +1884,7 @@
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1201381395355">
       <property name="name:0" value="label" />
       <link role="dataType:0" targetNodeId="4.1082983041843:0" resolveInfo="string" />
+      <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="3376587159404422118" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1163670766145">
       <property name="metaClass:0" value="aggregation" />

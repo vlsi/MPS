@@ -215,13 +215,17 @@ public class PrepStatementUtil {
 
   private void prepBreakStatement(TemplateQueryContext genContext, SNode bstmt) {
     int brLabel = -1;
-    String lbl = SPropertyOperations.getString(bstmt, "label");
     SNode node = bstmt;
     while (((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false, false)) != null)) {
-      if (lbl == (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ?
+      SNode loopLabel = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ?
+        SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "loopLabel", true) :
+        SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "switchLabel", true)
+      );
+      String depLabel = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ?
         SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") :
         SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label")
-      )) {
+      );
+      if ((SLinkOperations.getTarget(bstmt, "loopLabelReference", true) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(bstmt, "loopLabelReference", true), "loopLabel", false) == loopLabel || SPropertyOperations.getString(bstmt, "label") == depLabel || (SPropertyOperations.getString(bstmt, "label") != null && SPropertyOperations.getString(bstmt, "label").equals(depLabel))) {
         Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(genContext, node);
         brLabel = labels[labels.length - 1];
         break;
@@ -233,10 +237,11 @@ public class PrepStatementUtil {
 
   private void prepContinueStatement(TemplateQueryContext genContext, SNode cstmt) {
     int conLabel = -1;
-    String lbl = SPropertyOperations.getString(cstmt, "label");
     SNode node = cstmt;
     while (((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, false, false)) != null)) {
-      if (lbl == SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") || (lbl != null && lbl.equals(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label")))) {
+      String depLabel = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label");
+      SNode loopLabel = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "loopLabel", true);
+      if (SLinkOperations.getTarget(SLinkOperations.getTarget(cstmt, "loopLabelReference", true), "loopLabel", false) == loopLabel || SPropertyOperations.getString(cstmt, "label") == depLabel || (SPropertyOperations.getString(cstmt, "label") != null && SPropertyOperations.getString(cstmt, "label").equals(depLabel))) {
         Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(genContext, node);
         conLabel = labels[1];
         break;
