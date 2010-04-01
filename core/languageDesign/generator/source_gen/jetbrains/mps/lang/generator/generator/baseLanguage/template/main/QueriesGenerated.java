@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef_Behavior;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 
 public class QueriesGenerated {
@@ -328,13 +329,13 @@ public class QueriesGenerated {
       // references in 'get prev input by label' 
       List<SNode> ops = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef");
       for (SNode op : ops) {
-        SNode patternVar = SLinkOperations.getTarget(op, "patternVarDecl", false);
+        SNode patternVar = GenerationContextOp_PatternRef_Behavior.call_getTarget_1758784108620114792(op);
         if (patternVar == null) {
           _context.showErrorMessage(op, "reference on pattern variable is broken");
           continue;
         }
-        SPropertyOperations.set(op, "name_intern", PatternVarsUtil.getFieldName(SLinkOperations.getTarget(op, "patternVarDecl", false)));
-        SLinkOperations.setTarget(op, "patternVarDecl", null, false);
+        SPropertyOperations.set(op, "name_intern", PatternVarsUtil.getFieldName(patternVar));
+        GenerationContextOp_PatternRef_Behavior.call_setTarget_1758784108620254533(op, null);
       }
     }
   }

@@ -25,7 +25,7 @@ public class typeof_GenerationContextOp_PatternRef_InferenceRule extends Abstrac
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef";
+    return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef";
   }
 
   public boolean isApplicable(SNode argument) {

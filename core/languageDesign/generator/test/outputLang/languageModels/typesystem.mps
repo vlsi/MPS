@@ -22,6 +22,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="-1" />
@@ -30,8 +33,8 @@
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6266395626234257712">
       <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="6266395626234295840">
         <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="6266395626234295844">
-          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation" id="6266395626234295845">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="6266395626234295847" />
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="6266395626234295845">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="6266395626234295847" />
           </node>
         </node>
         <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="6266395626234295843">

@@ -90,7 +90,7 @@
                     <link role="concept:16" targetNodeId="2v.1068581242866:3" resolveInfo="LocalVariableReference" />
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2681305894288179663">
                       <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2681305894288179660" />
-                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef:0" id="2681305894288179669">
+                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef:0" id="2681305894288179669">
                         <link role="patternVarDecl:0" targetNodeId="4146564171992617050" resolveInfo="#yy" />
                       </node>
                     </node>
@@ -104,7 +104,7 @@
                     <link role="concept:16" targetNodeId="2v.1068581242866:3" resolveInfo="LocalVariableReference" />
                     <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2681305894288179623">
                       <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2681305894288179620" />
-                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef:0" id="2681305894288179629">
+                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef:0" id="2681305894288179629">
                         <link role="patternVarDecl:0" targetNodeId="4146564171992617049" resolveInfo="#xx" />
                       </node>
                     </node>
@@ -119,7 +119,7 @@
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2681305894288179570">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2681305894288179565">
                       <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2681305894288179564" />
-                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef:0" id="2681305894288179569">
+                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef:0" id="2681305894288179569">
                         <link role="patternVarDecl:0" targetNodeId="4146564171992617050" resolveInfo="#yy" />
                       </node>
                     </node>
@@ -133,7 +133,7 @@
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2681305894288179597">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2681305894288179590">
                       <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2681305894288179588" />
-                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef:0" id="2681305894288179595">
+                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef:0" id="2681305894288179595">
                         <link role="patternVarDecl:0" targetNodeId="4146564171992617049" resolveInfo="#xx" />
                       </node>
                     </node>
@@ -162,7 +162,7 @@
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2681305894288283517">
                         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2681305894288283524">
                           <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2681305894288283523" />
-                          <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef:0" id="2681305894288283528">
+                          <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef:0" id="2681305894288283528">
                             <link role="patternVarDecl:0" targetNodeId="2681305894288283461" resolveInfo="#right" />
                           </node>
                         </node>
@@ -181,7 +181,7 @@
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2681305894288283500">
                         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2681305894288283507">
                           <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2681305894288283506" />
-                          <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef:0" id="2681305894288283511">
+                          <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef:0" id="2681305894288283511">
                             <link role="patternVarDecl:0" targetNodeId="2681305894288283459" resolveInfo="#left" />
                           </node>
                         </node>
@@ -236,7 +236,7 @@
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2681305894288387826">
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2681305894288387828">
                       <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2681305894288387827" />
-                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef:0" id="2681305894288387832">
+                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef:0" id="2681305894288387832">
                         <link role="patternVarDecl:0" targetNodeId="2681305894288387810" resolveInfo="#right" />
                       </node>
                     </node>
@@ -253,7 +253,7 @@
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2681305894288387833">
                     <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2681305894288387835">
                       <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2681305894288387834" />
-                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef:0" id="2681305894288387839">
+                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef:0" id="2681305894288387839">
                         <link role="patternVarDecl:0" targetNodeId="2681305894288387809" resolveInfo="#left" />
                       </node>
                     </node>

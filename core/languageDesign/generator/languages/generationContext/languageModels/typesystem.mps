@@ -676,5 +676,65 @@
       <link role="concept:3" targetNodeId="1.5190093307972723402:0" resolveInfo="GenerationContextOp_ParameterRef" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1758784108619297846">
+    <property name="name:3" value="typeof_GenerationContextOp_LinkPatternRef" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1758784108619297847">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1758784108619297849">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1758784108619297850">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1758784108619297851">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1758784108619297852">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1758784108619300616">
+                <link role="applicableNode:3" targetNodeId="1758784108619297848" resolveInfo="generationContextOp_LinkPatternRef" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1758784108619321948">
+                <link role="link:16" targetNodeId="1.1758784108619220827:0" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1758784108619297855">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1758784108619297856">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1758784108619300615">
+              <link role="applicableNode:3" targetNodeId="1758784108619297848" resolveInfo="generationContextOp_LinkPatternRef" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1758784108619297848">
+      <property name="name:3" value="generationContextOp_LinkPatternRef" />
+      <link role="concept:3" targetNodeId="1.1758784108619220823:0" resolveInfo="GenerationContextOp_LinkPatternRef" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1758784108619321949">
+    <property name="name:3" value="typeof_GenerationContextOp_PropertyPatternRef" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1758784108619321950">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1758784108619321952">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1758784108619321953">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1758784108619321954">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1758784108619321955">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1758784108619321962">
+                <link role="applicableNode:3" targetNodeId="1758784108619321951" resolveInfo="generationContextOp_PropertyPatternRef" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1758784108619321963">
+                <link role="link:16" targetNodeId="1.1758784108619220828:0" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1758784108619321958">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1758784108619321959">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1758784108619321961">
+              <link role="applicableNode:3" targetNodeId="1758784108619321951" resolveInfo="generationContextOp_PropertyPatternRef" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1758784108619321951">
+      <property name="name:3" value="generationContextOp_PropertyPatternRef" />
+      <link role="concept:3" targetNodeId="1.1758784108619220824:0" resolveInfo="GenerationContextOp_PropertyPatternRef" />
+    </node>
+  </node>
 </model>
 

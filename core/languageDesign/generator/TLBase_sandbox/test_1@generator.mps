@@ -308,7 +308,7 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4589968773278438439">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4589968773278344040">
                       <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="4589968773278344039" />
-                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef:0" id="4589968773278344044">
+                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef:0" id="4589968773278344044">
                         <link role="patternVarDecl:0" targetNodeId="4589968773278335913" resolveInfo="#right" />
                       </node>
                     </node>
@@ -328,7 +328,7 @@
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4589968773278440011">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4589968773278440006">
                 <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="4589968773278440005" />
-                <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef:0" id="7514052574630017077">
+                <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef:0" id="7514052574630017077">
                   <link role="patternVarDecl:0" targetNodeId="4589968773278344013" resolveInfo="#left" />
                 </node>
               </node>
@@ -831,6 +831,12 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1227219853403">
     <property name="name:3" value="AAA" />
+    <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="8382161895353429778">
+      <property name="name:3" value="dummy" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8382161895353429779" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8382161895353429780" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8382161895353429781" />
+    </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="4665309944889937050">
       <property name="name:3" value="cccc" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4665309944889937051" />
