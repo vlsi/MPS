@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -18,7 +18,7 @@ public class AnalyzeStacktrace_Action extends GeneratedAction {
 
   private Frame frame;
   private IOperationContext context;
-  private MPSProject project;
+  private Project project;
 
   public AnalyzeStacktrace_Action() {
     super("Analyze Stacktrace", "Analyze Stacktrace", ICON);
@@ -53,7 +53,7 @@ public class AnalyzeStacktrace_Action extends GeneratedAction {
     if (this.context == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }

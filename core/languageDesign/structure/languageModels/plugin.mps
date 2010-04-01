@@ -138,14 +138,14 @@
             <node role="type:3" type="jetbrains.mps.lang.plugin.structure.ToolType:23" id="1216651728627">
               <link role="tool:23" targetNodeId="1216648908320" resolveInfo="StructureView" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216651728628">
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3676236766201766283">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216651728629">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1216651728630" />
                 <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="1217420649031">
                   <link role="member:23" targetNodeId="1217420649030" resolveInfo="project" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.GetToolOperation:23" id="1216651728632">
+              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.GetToolInProjectOperation:23" id="3676236766201766287">
                 <link role="tool:23" targetNodeId="1216648908320" resolveInfo="StructureView" />
               </node>
             </node>
@@ -181,7 +181,7 @@
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1216650728478">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1216650728479">
-                  <link role="baseMethodDeclaration:3" targetNodeId="5.~ProjectOperationContext.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolveInfo="ProjectOperationContext" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="5.~ProjectOperationContext.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="ProjectOperationContext" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1216650728480">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1216650728481" />
                     <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="1217420649032">
@@ -217,7 +217,7 @@
     </node>
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1217420649030">
       <property name="name:23" value="project" />
-      <link role="key:23" targetNodeId="12.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
+      <link role="key:23" targetNodeId="20.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1216651471788">

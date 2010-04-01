@@ -6,11 +6,12 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.project.ProjectOperationContext;
 
@@ -19,7 +20,7 @@ public class ShowConceptStructure_Action extends GeneratedAction {
   private static Logger LOG = Logger.getLogger(ShowConceptStructure_Action.class);
 
   private SNode node;
-  private MPSProject project;
+  private Project project;
 
   public ShowConceptStructure_Action() {
     super("Show Concept Structure", "", ICON);
@@ -58,7 +59,7 @@ public class ShowConceptStructure_Action extends GeneratedAction {
     if (this.node == null) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }
@@ -67,7 +68,7 @@ public class ShowConceptStructure_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      StructureView_Tool tool = ShowConceptStructure_Action.this.project.getPluginManager().getTool(StructureView_Tool.class);
+      StructureView_Tool tool = ShowConceptStructure_Action.this.project.getComponent(ProjectPluginManager.class).getTool(StructureView_Tool.class);
       tool.getStructureView().inspect(((AbstractConceptDeclaration) ((AbstractConceptDeclaration) SNodeOperations.getAdapter(ShowConceptStructure_Action.this.node))), new ProjectOperationContext(ShowConceptStructure_Action.this.project));
       tool.openToolLater(true);
     } catch (Throwable t) {

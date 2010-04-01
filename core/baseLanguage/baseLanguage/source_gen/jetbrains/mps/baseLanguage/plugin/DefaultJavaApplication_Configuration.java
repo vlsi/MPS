@@ -31,7 +31,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import java.util.Collections;
@@ -114,7 +113,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
         Runnable consoleDispose = null;
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
-        MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
+        Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
         {
           if (DefaultJavaApplication_Configuration.this.getStateObject().modelId == null || DefaultJavaApplication_Configuration.this.getStateObject().nodeId == null) {
             throw new ExecutionException("Class node is not defined");
@@ -134,7 +133,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           }
 
           if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getMake()) {
-            RunUtil.makeBeforeRun(mpsProject, Collections.singletonList(node.value));
+            RunUtil.makeBeforeRun(project, Collections.singletonList(node.value));
           }
 
           final ClassRunner classRunner = new ClassRunner();

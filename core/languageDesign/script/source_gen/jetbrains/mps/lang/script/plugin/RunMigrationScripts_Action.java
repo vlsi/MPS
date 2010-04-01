@@ -5,7 +5,7 @@ package jetbrains.mps.lang.script.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
@@ -22,7 +22,7 @@ public class RunMigrationScripts_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(RunMigrationScripts_Action.class);
 
-  private MPSProject project;
+  private Project project;
   private Frame frame;
   private IOperationContext context;
   private List<SModelDescriptor> models;
@@ -57,7 +57,7 @@ public class RunMigrationScripts_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }

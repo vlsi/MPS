@@ -29,7 +29,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="20" />
+  <maxImportIndex value="21" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -43,6 +43,7 @@
   <import index="18" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.workbench.editors(jetbrains.mps.workbench.editors@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
+  <import index="21" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1207489199158">
     <property name="name:23" value="ScriptsForSelection" />
     <property name="caption:23" value="Scripts" />
@@ -769,7 +770,7 @@
     <property name="caption:23" value="More..." />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="8476129223775221656">
       <property name="name:23" value="project" />
-      <link role="key:23" targetNodeId="10.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
+      <link role="key:23" targetNodeId="9.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="8476129223775221658">
       <property name="name:23" value="frame" />
@@ -1002,7 +1003,7 @@
               <link role="variableDeclaration:3" targetNodeId="8476129223775270147" resolveInfo="dialog" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8476129223775349224">
-              <link role="baseMethodDeclaration:3" targetNodeId="20.~Component.setVisible(boolean):void" resolveInfo="setVisible" />
+              <link role="baseMethodDeclaration:3" targetNodeId="20.~Dialog.setVisible(boolean):void" resolveInfo="setVisible" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="8476129223775349225">
                 <property name="value:3" value="true" />
               </node>
@@ -1063,7 +1064,7 @@
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3745452943050771353">
-                      <link role="baseMethodDeclaration:3" targetNodeId="3.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="21.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="3745452943050771354">
                         <link role="classifier:3" targetNodeId="19.~MPSEditorOpener" resolveInfo="MPSEditorOpener" />
                       </node>

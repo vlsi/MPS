@@ -26802,6 +26802,10 @@
     <link role="configType" targetNodeId="1104580685292496804:0" resolveInfo="JUnit" />
     <link role="stateTypeParameter" targetNodeId="95.~BaseRunProfileState" resolveInfo="BaseRunProfileState" />
     <node role="executionParameter" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="5241497812385469122">
+      <property name="name:23" value="project" />
+      <link role="key:23" targetNodeId="53.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+    <node role="executionParameter" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="3540275947738031298">
       <property name="name:23" value="mpsProject" />
       <link role="key:23" targetNodeId="42.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
     </node>
@@ -26872,8 +26876,8 @@
                   <link role="baseMethodDeclaration:3" targetNodeId="1208271155269:0" resolveInfo="UnitTestViewComponent" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2281887280934080842">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="2281887280934080843" />
-                    <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation:23" id="2281887280934080862">
-                      <link role="member:23" targetNodeId="5241497812385469122:0" resolveInfo="mpsProject" />
+                    <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation:23" id="3540275947738031309">
+                      <link role="member:23" targetNodeId="3540275947738031298:0" resolveInfo="mpsProject" />
                     </node>
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2281887280934080845">
@@ -26943,8 +26947,8 @@
                   <link role="member:0" targetNodeId="1905391470718378442:0" resolveInfo="collectWhatToTest" />
                   <node role="actualArgument:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5521528256364958470">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5521528256364958471" />
-                    <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation:23" id="5521528256364958477">
-                      <link role="member:23" targetNodeId="5241497812385469122:0" resolveInfo="mpsProject" />
+                    <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.RunConfigParameterReferenceOperation:23" id="3540275947738031315">
+                      <link role="member:23" targetNodeId="3540275947738031298:0" resolveInfo="mpsProject" />
                     </node>
                   </node>
                 </node>

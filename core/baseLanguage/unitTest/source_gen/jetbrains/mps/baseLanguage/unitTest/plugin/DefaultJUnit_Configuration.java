@@ -106,6 +106,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
         Runnable consoleDispose = null;
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
+        final Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
         final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
         final IOperationContext operationContext = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
         {
@@ -125,7 +126,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
               List<SNode> stuffToTest = DefaultJUnit_Configuration.this.collectWhatToTest(mpsProject);
 
               if (javaRunParameters.getMake()) {
-                RunUtil.makeBeforeRun(mpsProject, stuffToTest);
+                RunUtil.makeBeforeRun(project, stuffToTest);
               }
 
               return new UnitTestExecutionController(stuffToTest, javaRunParameters);

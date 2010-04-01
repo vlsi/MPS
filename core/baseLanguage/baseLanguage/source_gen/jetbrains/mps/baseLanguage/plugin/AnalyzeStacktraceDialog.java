@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.JComponent;
 import javax.swing.JTextArea;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import javax.swing.JPanel;
@@ -13,13 +13,14 @@ import java.awt.BorderLayout;
 import jetbrains.mps.datatransfer.TextPasteUtil;
 import javax.swing.JScrollPane;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class AnalyzeStacktraceDialog extends BaseDialog {
   private JComponent myComponent;
   private JTextArea myText;
-  private MPSProject myProject;
+  private Project myProject;
 
-  public AnalyzeStacktraceDialog(Frame frame, final IOperationContext context, MPSProject project) {
+  public AnalyzeStacktraceDialog(Frame frame, final IOperationContext context, Project project) {
     super(frame, "Analyze Stacktrace");
     this.myProject = project;
     this.myComponent = this.createPanel();
@@ -51,7 +52,7 @@ public class AnalyzeStacktraceDialog extends BaseDialog {
 
   @BaseDialog.Button(name = "OK", mnemonic = 'O', position = 0, defaultButton = false)
   public void onOk() {
-    AnalyzeStacktrace_Tool tool = this.myProject.getPluginManager().getTool(AnalyzeStacktrace_Tool.class);
+    AnalyzeStacktrace_Tool tool = this.myProject.getComponent(ProjectPluginManager.class).getTool(AnalyzeStacktrace_Tool.class);
     tool.setStackTrace(this.myText.getText());
     tool.openToolLater(true);
     this.dispose();
