@@ -6374,5 +6374,41 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4816349095291149922">
+    <link role="conceptDeclaration:32" targetNodeId="1.4816349095291149800:2" resolveInfo="TemplateArgumentLinkPatternRefExpression" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="4816349095291149924">
+      <link role="relationDeclaration:32" targetNodeId="1.4816349095291149802:2" />
+      <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="4816349095291149925">
+        <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="4816349095291149926">
+          <property name="readOnly:32" value="true" />
+          <link role="relationDeclaration:32" targetNodeId="4.1169194664001:0" resolveInfo="name" />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="4816349095291149927">
+            <property name="style:32" value="BOLD" />
+          </node>
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="4816349095291149928">
+            <property name="color:32" value="DARK_GREEN" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4816349095291149929">
+    <link role="conceptDeclaration:32" targetNodeId="1.4816349095291149799:2" resolveInfo="TemplateArgumentPropertyPatternRefExpression" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="4816349095291149931">
+      <link role="relationDeclaration:32" targetNodeId="1.4816349095291149801:2" />
+      <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="4816349095291149932">
+        <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="4816349095291149933">
+          <property name="readOnly:32" value="true" />
+          <link role="relationDeclaration:32" targetNodeId="4.1169194664001:0" resolveInfo="name" />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="4816349095291149934">
+            <property name="style:32" value="BOLD" />
+          </node>
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="4816349095291149935">
+            <property name="color:32" value="DARK_GREEN" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

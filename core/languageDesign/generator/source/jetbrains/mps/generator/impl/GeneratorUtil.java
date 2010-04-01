@@ -229,6 +229,17 @@ public class GeneratorUtil {
     return parameterDeclarations.toArray(new TemplateParameterDeclaration[parameterDeclarations.size()]);
   }
 
+  static BaseConcept getPatternVariable(TemplateArgumentPatternRef argument) {
+    if(argument instanceof TemplateArgumentPatternVarRefExpression) {
+      return ((TemplateArgumentPatternVarRefExpression) argument).getPatternVarDecl();
+    } else if(argument instanceof TemplateArgumentLinkPatternRefExpression) {
+      return ((TemplateArgumentLinkPatternRefExpression) argument).getPatternVar();
+    } else if(argument instanceof TemplateArgumentPropertyPatternRefExpression) {
+      return ((TemplateArgumentPropertyPatternRefExpression) argument).getPropertyPattern();
+    }
+    return null;
+  }
+
   static TemplateContext getTemplateContext(RuleConsequence consequence, SNode inputNode, TemplateContext context, ITemplateGenerator generator) {
     if(consequence instanceof ITemplateCall) {
       final Expression[] arguments = getArguments((ITemplateCall) consequence);
@@ -255,13 +266,13 @@ public class GeneratorUtil {
           value = ((StringLiteral) expr).getValue();
         } else if(expr instanceof NullLiteral) {
           /* ok */
-        } else if(expr instanceof TemplateArgumentPatternVarRefExpression) {
-          TemplateArgumentPatternVarRefExpression patternRefExpr = (TemplateArgumentPatternVarRefExpression) expr;
-          if(patternRefExpr.getPatternVarDecl() == null) {
-            generator.showErrorMessage(inputNode, consequence.getNode(), "cannot evaluate template argument #" + (i+1) + ": invalid pattern reference");
+        } else if(expr instanceof TemplateArgumentPatternRef) {
+          BaseConcept patternVar = getPatternVariable((TemplateArgumentPatternRef) expr);
+          if(patternVar == null) {
+            generator.showErrorMessage(inputNode, expr.getNode(), "cannot evaluate template argument #" + (i+1) + ": invalid pattern reference");
           } else {
             // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
-            value = context.getPatternVariable(PatternVarsUtil.getFieldName(patternRefExpr.getPatternVarDecl().getNode()));
+            value = context.getPatternVariable(PatternVarsUtil.getFieldName(patternVar.getNode()));
           }
         } else if(expr instanceof TemplateArgumentQueryExpression) {
           TemplateArgumentQuery query = ((TemplateArgumentQueryExpression) expr).getQuery();

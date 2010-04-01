@@ -2845,5 +2845,65 @@
       <link role="concept:3" targetNodeId="3.4665309944889425032:2" resolveInfo="TemplateArgumentPatternVarRefExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="4816349095291149936">
+    <property name="name:3" value="typeof_TemplateArgumentPropertyPatternRefExpression" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4816349095291149937">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="4816349095291152103">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4816349095291152107">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="4816349095291152108">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4816349095291152111">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4816349095291152110">
+                <link role="applicableNode:3" targetNodeId="4816349095291149938" resolveInfo="templateArgumentPropertyPatternRefExpression" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4816349095291153404">
+                <link role="link:16" targetNodeId="3.4816349095291149801:2" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4816349095291152106">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="4816349095291152096">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4816349095291152098">
+              <link role="applicableNode:3" targetNodeId="4816349095291149938" resolveInfo="templateArgumentPropertyPatternRefExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="4816349095291149938">
+      <property name="name:3" value="templateArgumentPropertyPatternRefExpression" />
+      <link role="concept:3" targetNodeId="3.4816349095291149799:2" resolveInfo="TemplateArgumentPropertyPatternRefExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="4816349095291153405">
+    <property name="name:3" value="typeof_TemplateArgumentLinkPatternRefExpression" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4816349095291153406">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="4816349095291153412">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4816349095291153416">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="4816349095291153417">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4816349095291153420">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4816349095291153419">
+                <link role="applicableNode:3" targetNodeId="4816349095291153407" resolveInfo="templateArgumentLinkPatternRefExpression" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4816349095291153424">
+                <link role="link:16" targetNodeId="3.4816349095291149802:2" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4816349095291153415">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="4816349095291153409">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4816349095291153411">
+              <link role="applicableNode:3" targetNodeId="4816349095291153407" resolveInfo="templateArgumentLinkPatternRefExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="4816349095291153407">
+      <property name="name:3" value="templateArgumentLinkPatternRefExpression" />
+      <link role="concept:3" targetNodeId="3.4816349095291149800:2" resolveInfo="TemplateArgumentLinkPatternRefExpression" />
+    </node>
+  </node>
 </model>
 

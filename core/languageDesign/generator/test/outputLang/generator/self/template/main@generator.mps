@@ -294,6 +294,9 @@
             </node>
           </node>
         </node>
+        <node role="actualArgument:2" type="jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression:2" id="2163819695913280754">
+          <link role="propertyPattern:2" targetNodeId="2681305894288686805" resolveInfo="$jobName" />
+        </node>
         <node role="actualArgument:2" type="jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression:2" id="2681305894288695082">
           <link role="patternVarDecl:2" targetNodeId="2681305894288695006" resolveInfo="#myExpr" />
         </node>
@@ -344,6 +347,14 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="2163819695913378077">
+      <link role="applicableConcept:2" targetNodeId="1.2163819695913378074" resolveInfo="CustomStatementRef" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="2163819695913379838">
+        <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="2163819695913379840">
+          <property name="value:3" value="42" />
         </node>
       </node>
     </node>
@@ -450,6 +461,10 @@
       <property name="name:2" value="name" />
       <node role="type:2" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2681305894288695011" />
     </node>
+    <node role="parameter:2" type="jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration:2" id="2163819695913278979">
+      <property name="name:2" value="name2" />
+      <node role="type:2" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2163819695913280740" />
+    </node>
     <node role="parameter:2" type="jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration:2" id="2681305894288695012">
       <property name="name:2" value="expr" />
       <node role="type:2" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="2681305894288695014">
@@ -496,6 +511,23 @@
                             <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef:0" id="6266395626234257710">
                               <link role="parameter:0" targetNodeId="6266395626234057755" resolveInfo="b" />
                             </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="2163819695913280742">
+                <property name="text:3" value="ss" />
+                <node role="propertyMacro$property_attribute$text:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="2163819695913280743">
+                  <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="2163819695913280744">
+                    <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2163819695913280745">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2163819695913280746">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2163819695913280748">
+                          <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="2163819695913280747" />
+                          <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef:0" id="2163819695913280752">
+                            <link role="parameter:0" targetNodeId="2163819695913278979" resolveInfo="name2" />
                           </node>
                         </node>
                       </node>

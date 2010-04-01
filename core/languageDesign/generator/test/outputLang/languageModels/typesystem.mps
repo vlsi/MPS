@@ -56,5 +56,28 @@
       <link role="concept:3" targetNodeId="1.2681305894288486346" resolveInfo="CustomStatement" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="2163819695913379860">
+    <property name="name:3" value="typeof_CustomStatementRef" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2163819695913379861">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="2163819695913393697">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2163819695913393701">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2163819695913393702">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="2163819695913393704" />
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="2163819695913393700">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="2163819695913379864">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2163819695913393696">
+              <link role="applicableNode:3" targetNodeId="2163819695913379862" resolveInfo="customStatementRef" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="2163819695913379862">
+      <property name="name:3" value="customStatementRef" />
+      <link role="concept:3" targetNodeId="1.2163819695913378074" resolveInfo="CustomStatementRef" />
+    </node>
+  </node>
 </model>
 

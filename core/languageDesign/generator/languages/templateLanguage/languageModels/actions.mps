@@ -155,11 +155,15 @@
           <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8421689336187917125">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8421689336187928120">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="8421689336187928127">
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="4665309944889460250">
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="4665309944889460315">
-                    <node role="leftExpression:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept:23" id="4665309944889460316" />
-                    <node role="rightExpression:3" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression:16" id="4665309944889460317">
-                      <link role="conceptDeclaration:16" targetNodeId="1.4665309944889425032:2" resolveInfo="TemplateArgumentPatternVarRefExpression" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="4816349095291127783">
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="4816349095291128444">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4816349095291128447">
+                      <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_concept:23" id="4816349095291128446" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation:16" id="4816349095291149782">
+                        <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4816349095291149784">
+                          <link role="conceptDeclaration:16" targetNodeId="1.4816349095291127781:2" resolveInfo="TemplateArgumentPatternRef" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="8421689336188156516">
