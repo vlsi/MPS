@@ -257,7 +257,7 @@ public class ExtractMethodDialog extends BaseDialog {
       JOptionPane.showMessageDialog(this, "Can't refactor. See errors.", "Can't perform refactoring", JOptionPane.ERROR_MESSAGE);
     } else {
       final Wrappers._T<SNode> staticTarget = new Wrappers._T<SNode>();
-      final Wrappers._T<SModel> refactoringModel = new Wrappers._T<SModel>();
+      final Wrappers._T<SModel> refactoringModel = new Wrappers._T<SModel>(null);
       if (this.myParameters.getAnalyzer().getExtractMethodReafactoringProcessor().getClass() == AbstractExtractMethodRefactoringProcessor.class) {
         final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -280,7 +280,9 @@ public class ExtractMethodDialog extends BaseDialog {
         public void run() {
           SNode result = ExtractMethodDialog.this.myRefactoring.doRefactor();
           ExtractMethodDialog.this.myContext.select(result);
-          refactoringModel.value.addImportedModel(SNodeOperations.getModel(staticTarget.value).getSModelReference());
+          if (refactoringModel.value != null) {
+            refactoringModel.value.addImportedModel(SNodeOperations.getModel(staticTarget.value).getSModelReference());
+          }
         }
       });
     }

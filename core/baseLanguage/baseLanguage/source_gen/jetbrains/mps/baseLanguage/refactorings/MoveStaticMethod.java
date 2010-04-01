@@ -54,6 +54,6 @@ public class MoveStaticMethod extends BaseRefactoring {
   }
 
   public static String getKeyStroke_static() {
-    return "ctrl alt M";
+    return " F6";
   }
 }

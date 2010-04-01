@@ -47,6 +47,7 @@ public class MoveStaticField extends BaseRefactoring {
 
   public void refactor(final RefactoringContext refactoringContext) {
     ((MoveStaticFieldRefactoring) refactoringContext.getParameter("refactor")).doRefactoring();
+    System.out.println("refactoring has been done");
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
@@ -54,6 +55,6 @@ public class MoveStaticField extends BaseRefactoring {
   }
 
   public static String getKeyStroke_static() {
-    return "ctrl alt M";
+    return " F6";
   }
 }

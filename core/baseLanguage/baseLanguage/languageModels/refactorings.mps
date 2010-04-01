@@ -41,7 +41,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="17" />
+  <maxImportIndex value="18" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="7" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)" version="-1" />
@@ -49,6 +49,7 @@
   <import index="13" modelUID="f:java_stub#jetbrains.mps.ide.findusages.model(jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.findUsages(jetbrains.mps.findUsages@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.smodel.constraints(jetbrains.mps.smodel.constraints@java_stub)" version="-1" />
+  <import index="18" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <visible index="2" modelUID="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="7874812549549771289">
@@ -431,6 +432,7 @@
       </node>
     </node>
   </node>
+  <visible index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="5142438244426791432">
     <property name="name:1" value="MoveStaticField" />
     <property name="userFriendlyName:1" value="Move Static Field" />
@@ -455,11 +457,24 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2177628253335435118">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2177628253335435795">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2177628253335435119">
+              <link role="classifier:3" targetNodeId="4v.~System" resolveInfo="System" />
+              <link role="variableDeclaration:3" targetNodeId="4v.~System.out" resolveInfo="out" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2177628253335435799">
+              <link role="baseMethodDeclaration:3" targetNodeId="18.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2177628253335435800">
+                <property name="value:3" value="refactoring has been done" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="keystroke:1" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="5142438244426854963">
-      <property name="modifiers:23" value="ctrl+alt" />
-      <property name="keycode:23" value="VK_M" />
+      <property name="keycode:23" value="VK_F6" />
     </node>
     <node role="parameter:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter:1" id="5142438244426854964">
       <property name="name:1" value="destination" />
@@ -469,11 +484,27 @@
         <node role="filterBlock:1" type="jetbrains.mps.lang.refactoring.structure.FilterParameterClause:1" id="5142438244426854971">
           <node role="body:1" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5142438244426854972">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5142438244426854973">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5142438244426854974">
-                <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter:1" id="5142438244426854975" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="5142438244426854976">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="5142438244426854977">
-                    <link role="conceptDeclaration:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="2177628253335280039">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="2177628253335280062">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2177628253335280063">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2177628253335280064">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2177628253335280065">
+                        <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.SettingsRefactoringContext_ConceptFunctionParameter:1" id="2177628253335280066" />
+                        <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.NodeOperation:1" id="2177628253335280067" />
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation:16" id="2177628253335280068" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation:7" id="2177628253335280069">
+                      <node role="argument:7" type="jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter:1" id="2177628253335280070" />
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5142438244426854974">
+                  <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter:1" id="5142438244426854975" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="5142438244426854976">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="5142438244426854977">
+                      <link role="conceptDeclaration:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -575,11 +606,27 @@
         <node role="filterBlock:1" type="jetbrains.mps.lang.refactoring.structure.FilterParameterClause:1" id="418677511065471996">
           <node role="body:1" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="418677511065471997">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="418677511065471998">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="418677511065471999">
-                <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter:1" id="418677511065472000" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="418677511065472001">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="418677511065472003">
-                    <link role="conceptDeclaration:16" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="2177628253335280072">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="418677511065471999">
+                  <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter:1" id="418677511065472000" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="418677511065472001">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="418677511065472003">
+                      <link role="conceptDeclaration:16" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
+                    </node>
+                  </node>
+                </node>
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="2177628253335280075">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2177628253335280076">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2177628253335280077">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2177628253335280078">
+                        <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.SettingsRefactoringContext_ConceptFunctionParameter:1" id="2177628253335280079" />
+                        <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.NodeOperation:1" id="2177628253335280080" />
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation:16" id="2177628253335280081" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation:7" id="2177628253335280082">
+                      <node role="argument:7" type="jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_RefactoringParameter:1" id="2177628253335280083" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -606,8 +653,7 @@
       </node>
     </node>
     <node role="keystroke:1" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="418677511065471992">
-      <property name="modifiers:23" value="ctrl+alt" />
-      <property name="keycode:23" value="VK_M" />
+      <property name="keycode:23" value="VK_F6" />
     </node>
     <node role="field:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringField:1" id="418677511065472004">
       <property name="name:1" value="refactor" />
