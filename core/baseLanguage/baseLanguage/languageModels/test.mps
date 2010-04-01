@@ -1496,7 +1496,14 @@
                         </node>
                       </node>
                     </node>
-                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1229349941657" />
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock:3" id="2039071756760480142">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="2039071756760639333">
+                        <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="2039071756760639334">
+                          <property name="text:3" value="MPS-6545" />
+                        </node>
+                      </node>
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1229349941657" />
+                    </node>
                   </node>
                 </node>
               </node>
