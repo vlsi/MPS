@@ -63,11 +63,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   public UsagesTreeComponent(ViewOptions defaultOptions) {
     super(new BorderLayout());
 
-    myTree = new UsagesTree() {
-      public Project getProject() {
-        return UsagesTreeComponent.this.getProject();
-      }
-    };
+    myTree = new UsagesTree(UsagesTreeComponent.this.getProject()) ;
     myTree.setBorder(new EmptyBorder(3, 5, 3, 5));
 
     JScrollPane treePane = new JScrollPane(myTree);

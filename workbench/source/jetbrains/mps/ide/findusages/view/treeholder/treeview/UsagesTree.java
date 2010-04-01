@@ -61,7 +61,7 @@ import javax.swing.tree.TreePath;
 import java.awt.event.*;
 import java.util.*;
 
-public abstract class UsagesTree extends MPSTree {
+public class UsagesTree extends MPSTree {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
   private static final String COMMAND_OPEN_NODE_IN_TREE = "open_node_in_tree";
   private static final String COMMAND_INCLUDE = "include";
@@ -76,8 +76,10 @@ public abstract class UsagesTree extends MPSTree {
   private boolean myShowPopupMenu;
   private int myIsAdjusting = 0;
   private boolean myAutoscroll = false;
+  private Project myProject;
 
-  public UsagesTree() {
+  public UsagesTree(Project project) {
+    myProject = project;
     myAdditionalInfoNeeded = false;
 
     myResultPathProvider.add(PathItemRole.ROLE_MAIN_RESULTS);
@@ -665,19 +667,18 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   public void navigateToNode(final SNode node, boolean focus) {
-    MPSProject mpsProject = getProject().getComponent(MPSProjectHolder.class).getMPSProject();
+    MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     ModuleContext context = ModuleContext.create(node, mpsProject, false);
     boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         return !node.isRoot();
       }
     });
-    getProject().getComponent(MPSEditorOpener.class).openNode(node, context, focus, select);
+    myProject.getComponent(MPSEditorOpener.class).openNode(node, context, focus, select);
   }
 
   private void navigateInTree(Object o, boolean focus) {
-    Project project = getProject().getComponent(Project.class);
-    ProjectPane projectPane = ProjectPane.getInstance(project);
+    ProjectPane projectPane = ProjectPane.getInstance(myProject);
     if (o instanceof SNode) {
       projectPane.selectNode((SNode) o);
     } else if (o instanceof SModel) {
@@ -690,8 +691,6 @@ public abstract class UsagesTree extends MPSTree {
 
     projectPane.activate(focus);
   }
-
-  public abstract Project getProject();
 
   private UsagesTreeNode getResultsNode() {
     int index = myShowSearchedNodes ? 1 : 0;
@@ -749,6 +748,6 @@ public abstract class UsagesTree extends MPSTree {
   }
 
   private ToolWindow getToolWindow() {
-    return getProject().getComponent(Project.class).getComponent(UsagesViewTool.class).getToolWindow();
+    return myProject.getComponent(UsagesViewTool.class).getToolWindow();
   }
 }
