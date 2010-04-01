@@ -133,7 +133,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
     SModelRepository.getInstance().markChanged(DefaultSModelDescriptor.this, false);
     MPSModuleRepository.getInstance().invalidateCaches();
-    Runnable modelReplacer = new Runnable() {
+    Runnable modelReplacedNotifier = new Runnable() {
       @Override
       public void run() {
         fireModelReplaced();
@@ -141,9 +141,9 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
       }
     };
     if (ModelAccess.instance().isInEDT()) {
-      modelReplacer.run();
+      modelReplacedNotifier.run();
     } else {
-      ModelAccess.instance().runReadInEDT(modelReplacer);
+      ModelAccess.instance().runReadInEDT(modelReplacedNotifier);
     }
   }
 
