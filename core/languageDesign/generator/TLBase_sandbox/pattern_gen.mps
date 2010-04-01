@@ -166,6 +166,25 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="6266395626233624824" />
+        <node role="statement:3" type="jetbrains.mps.transformation.test.outputLang.structure.CustomStatement" id="6266395626233719470">
+          <property name="name" value="myWork1" />
+          <node role="inner" type="jetbrains.mps.baseLanguage.structure.MulExpression:3" id="6266395626234333484">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="6266395626234333487">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6266395626234333490">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6266395626234333493">
+                  <link role="variableDeclaration:3" targetNodeId="2681305894288275126" resolveInfo="e" />
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6266395626234333489">
+                  <property name="value:3" value="1" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6266395626234333483">
+              <property name="value:3" value="175" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

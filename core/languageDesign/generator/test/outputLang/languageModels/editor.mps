@@ -138,5 +138,23 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="4146564171992368522" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="2681305894288486350">
+    <link role="conceptDeclaration:32" targetNodeId="1.2681305894288486346" resolveInfo="CustomStatement" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="2681305894288486352">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2681305894288486355">
+        <property name="text:32" value="work: " />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="2681305894288486354" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="2681305894288486357">
+        <link role="relationDeclaration:32" targetNodeId="2.1169194664001:0" resolveInfo="name" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2681305894288486360">
+        <property name="text:32" value="for" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="2681305894288486362">
+        <link role="relationDeclaration:32" targetNodeId="1.2681305894288486349" />
+      </node>
+    </node>
+  </node>
 </model>
 
