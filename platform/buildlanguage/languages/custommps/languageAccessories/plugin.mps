@@ -97,12 +97,12 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240828433806">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240828433807">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1240828433808" />
-                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="1240828433809">
-                  <link role="member:23" targetNodeId="1240828335946" resolveInfo="mpsProject" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="9141759174220974982">
+                  <link role="member:23" targetNodeId="1240828335944" resolveInfo="project" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.GetToolOperation:23" id="1240828433810">
-                <link role="tool:23" targetNodeId="1240830394395" resolveInfo="BuildTool" />
+              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.GetToolInProjectOperation:23" id="9141759174220981123">
+                <link role="tool:23" targetNodeId="1240830394395" resolveInfo="CustomMPSBuildTool" />
               </node>
             </node>
           </node>
