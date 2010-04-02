@@ -280,7 +280,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     if (clazz == Project.class) {
       return (T) myIDEAProject;
     } else{
-      return getComponent(Project.class).getComponent(clazz);
+      return myIDEAProject.getComponent(clazz);
     }
   }
 
