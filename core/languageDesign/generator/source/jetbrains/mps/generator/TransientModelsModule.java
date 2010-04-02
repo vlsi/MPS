@@ -18,17 +18,13 @@ package jetbrains.mps.generator;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -68,7 +64,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   public void initComponent() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().addModule(TransientModelsModule.this, getMPSProject());
+        MPSModuleRepository.getInstance().addModule(TransientModelsModule.this, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
       }
     });
   }
@@ -80,10 +76,6 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
         MPSModuleRepository.getInstance().removeModule(TransientModelsModule.this);
       }
     });
-  }
-
-  private MPSProject getMPSProject() {
-    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
   public void setInvocationContext(IModule invocationContext) {

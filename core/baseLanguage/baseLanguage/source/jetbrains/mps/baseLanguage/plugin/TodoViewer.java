@@ -102,10 +102,9 @@ public class TodoViewer extends JPanel {
     };
     add(myUsagesView.getComponent(), BorderLayout.CENTER);
 
-    MPSProject project = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     myUsagesView.setRunOptions(
       FindUtils.makeProvider(new TodoFinder()),
-      new SearchQuery(project.getProject().getComponent(ProjectScope.class)),
+      new SearchQuery(myProject.getComponent(ProjectScope.class)),
       new ButtonConfiguration(true),
       new SearchResults()
     );

@@ -72,7 +72,6 @@ public class TestMain {
       throw new RuntimeException("Can't find a project in file " + projectFile.getAbsolutePath());
     }
 
-
     ApplicationManagerEx.getApplicationEx().doNotSave();
 
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();

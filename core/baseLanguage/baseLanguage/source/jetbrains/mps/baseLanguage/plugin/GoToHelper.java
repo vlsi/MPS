@@ -61,8 +61,7 @@ public class GoToHelper {
     if (nodes.isEmpty()) return;
 
     List<NodeNavigationItem> navigatables = new ArrayList<NodeNavigationItem>();
-    MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
-    ProjectOperationContext context = new ProjectOperationContext(mpsProject);
+    ProjectOperationContext context = new ProjectOperationContext(project);
     for (SNode node : nodes) {
       navigatables.add(new NodeNavigationItem(node, context, project));
     }
