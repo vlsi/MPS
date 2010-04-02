@@ -106,7 +106,7 @@ public class BookmarksDialog extends BaseDialog {
     myMainComponent.add(rightPanel, outerConstraints);
 
     myTree.rebuildNow();
-/*    Frame mainFrame = myProject.getComponent(MPSProjectHolder.class).getMPSProject().createOperationContext().getMainFrame();
+/*    Frame mainFrame = WindowManager.getInstance().getFrame(myProject);
     setSize(400,400);
     setLocation(mainFrame.getX()+(mainFrame.getWidth() - getWidth())/2, mainFrame.getY()+(mainFrame.getHeight() - getHeight())/2);
     setModal(true);*/

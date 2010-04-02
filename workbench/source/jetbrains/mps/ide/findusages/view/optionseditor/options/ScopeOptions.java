@@ -98,7 +98,7 @@ public class ScopeOptions extends BaseOptions {
     if (myScopeType.equals(GLOBAL_SCOPE)) {
       scope = GlobalScopeMinusTransient.getInstance();
     } else if (myScopeType.equals(PROJECT_SCOPE)) {
-      scope = operationContext.getMPSProject().getProject().getComponent(ProjectScope.class);
+      scope = operationContext.getProject().getComponent(ProjectScope.class);
     } else if (myScopeType.equals(MODULE_SCOPE)) {
       if (myModule.equals(DEFAULT_VALUE)) {
         scope = new OnlyModuleScope(operationContext.getModule());

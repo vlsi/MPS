@@ -21,9 +21,7 @@ class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
   public MPSTreeNode getTreeNode(IOperationContext context) {
     SModelDescriptor md = GlobalScope.getInstance().getModelDescriptor(getValue());
     if (md == null) return null;
-    MPSProject mpsProject = context.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
-    if (mpsProject == null) return null;
-    return new SModelTreeNode(md, null, new ModuleContext(md.getModule(), mpsProject));
+    return new SModelTreeNode(md, null, new ModuleContext(md.getModule(), context.getProject()));
   }
 
   public List<SNode> getAvaliableNodes() {

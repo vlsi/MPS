@@ -69,7 +69,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
 
   public LanguageHierarchiesComponentNew(Language language, IOperationContext context) {
     myLanguage = language;
-    myOperationContext = new ModuleContext(language, context.getMPSProject());
+    myOperationContext = new ModuleContext(language, context.getProject());
     addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         for (ConceptContainer conceptContainer : myRoots) {
