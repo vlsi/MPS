@@ -31,6 +31,8 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JFrame;
@@ -98,18 +100,18 @@ public class ModelDiffTool implements DiffTool {
   }
 
   public static SModel readModel(DiffContent content, String path) throws IOException, ReadException {
-    SModel sModel = ModelUtils.readModel(content.getBytes(), path);
     if (content instanceof DocumentContent || content instanceof FileContent) {
-      SModelRepository repository = SModelRepository.getInstance();
-      final SModelDescriptor sModelDescriptor = repository.getModelDescriptor(sModel.getSModelFqName());
-      if (sModelDescriptor == null) return sModel;
-      return ModelAccess.instance().runReadAction(new Computable<SModel>() {
-        public SModel compute() {
-          return sModelDescriptor.getSModel();
-        }
-      });
+      SModelRepository modelRepository = SModelRepository.getInstance();
+      final SModelDescriptor modelDescriptor = modelRepository.findModel(VFileSystem.toIFile(content.getFile()));
+      if (modelDescriptor != null) {
+        return ModelAccess.instance().runReadAction(new Computable<SModel>() {
+          public SModel compute() {
+            return modelDescriptor.getSModel();
+          }
+        });
+      }
     }
-    return sModel;
+    return ModelUtils.readModel(content.getBytes(), path);
   }
 
   public boolean canShow(DiffRequest request) {
