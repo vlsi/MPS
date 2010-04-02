@@ -51,6 +51,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
     return myProject;
   }
 
+  @NotNull
   public IScope getScope() {
     return getMPSProject().getScope();
   }
