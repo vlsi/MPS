@@ -38,6 +38,7 @@ import jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner;
 import com.intellij.execution.executors.DefaultDebugExecutor;
 import jetbrains.mps.debug.DebuggerKeys;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.execution.process.ProcessNotCreatedException;
 import jetbrains.mps.ide.actions.DefaultProcessHandler;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
@@ -114,53 +115,62 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
         Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
-        {
-          if (DefaultJavaApplication_Configuration.this.getStateObject().modelId == null || DefaultJavaApplication_Configuration.this.getStateObject().nodeId == null) {
-            throw new ExecutionException("Class node is not defined");
-          }
-          final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
-            }
-          });
-          if (node.value == null) {
-            throw new ExecutionException("Class node does not exist");
-          }
 
-          if (DefaultJavaApplication_Configuration.this.getStateObject().parameters == null) {
-            DefaultJavaApplication_Configuration.this.getStateObject().parameters = new ConfigRunParameters();
-          }
-
-          if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getMake()) {
-            RunUtil.makeBeforeRun(project, Collections.singletonList(node.value));
-          }
-
-          final ClassRunner classRunner = new ClassRunner();
-          if (executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID)) {
-            String args = this.getUserData(DebuggerKeys.CONNECTION_SETTINGS);
-            classRunner.setDebugArguments(args);
-          }
-          ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions())));
-          consoleComponent = consoleView.getComponent();
-          consoleDispose = new Runnable() {
-            public void run() {
-              Disposer.dispose(consoleView);
-            }
-          };
-
-          final Wrappers._T<Process> process = new Wrappers._T<Process>();
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getUseAlternativeJRE()) {
-                classRunner.setJavaHomePath(DefaultJavaApplication_Configuration.this.getStateObject().parameters.getAlternativeJRE());
-              }
-              process.value = classRunner.run(node.value, DefaultJavaApplication_Configuration.this.getStateObject().parameters.getProgramParameters(), DefaultJavaApplication_Configuration.this.getStateObject().parameters.getVMParameters(), DefaultJavaApplication_Configuration.this.getStateObject().parameters.getWorkingDirectory());
-            }
-          });
-
-          handler = new DefaultProcessHandler(consoleView, process.value, classRunner.getCommandString());
+        // user's execute code 
+        if (DefaultJavaApplication_Configuration.this.getStateObject().modelId == null || DefaultJavaApplication_Configuration.this.getStateObject().nodeId == null) {
+          throw new ExecutionException("Class node is not defined");
         }
+        final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
+          }
+        });
+        if (node.value == null) {
+          throw new ExecutionException("Class node does not exist");
+        }
+
+        if (DefaultJavaApplication_Configuration.this.getStateObject().parameters == null) {
+          DefaultJavaApplication_Configuration.this.getStateObject().parameters = new ConfigRunParameters();
+        }
+
+        if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getMake()) {
+          RunUtil.makeBeforeRun(project, Collections.singletonList(node.value));
+        }
+
+        final ClassRunner classRunner = new ClassRunner();
+        if (executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID)) {
+          String args = this.getUserData(DebuggerKeys.CONNECTION_SETTINGS);
+          classRunner.setDebugArguments(args);
+        }
+        ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions())));
+        consoleComponent = consoleView.getComponent();
+        consoleDispose = new Runnable() {
+          public void run() {
+            Disposer.dispose(consoleView);
+          }
+        };
+
+        final Wrappers._T<Process> process = new Wrappers._T<Process>();
+        final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getUseAlternativeJRE()) {
+              classRunner.setJavaHomePath(DefaultJavaApplication_Configuration.this.getStateObject().parameters.getAlternativeJRE());
+            }
+            try {
+              process.value = classRunner.run(node.value, DefaultJavaApplication_Configuration.this.getStateObject().parameters.getProgramParameters(), DefaultJavaApplication_Configuration.this.getStateObject().parameters.getVMParameters(), DefaultJavaApplication_Configuration.this.getStateObject().parameters.getWorkingDirectory());
+            } catch (ProcessNotCreatedException e) {
+              ex.value = e;
+            }
+          }
+        });
+        if (ex.value != null) {
+          throw ex.value;
+        }
+
+        handler = new DefaultProcessHandler(consoleView, process.value, classRunner.getCommandString());
+
         final JComponent finalConsoleComponent = consoleComponent;
         final Runnable finalConsoleDispose = consoleDispose;
         final ProcessHandler finalHandler = handler;
