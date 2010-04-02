@@ -11651,11 +11651,11 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240829557112">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240829557113">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1240829557114" />
-                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="1240829557115">
-                  <link role="member:23" targetNodeId="1224866410255" resolveInfo="mpsProject" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="9141759174221147459">
+                  <link role="member:23" targetNodeId="1224850942354" resolveInfo="project" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.GetToolOperation:23" id="3805214458597995231">
+              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.GetToolInProjectOperation:23" id="9141759174221171708">
                 <link role="tool:23" targetNodeId="1226429676208" resolveInfo="BuildTool" />
               </node>
             </node>
