@@ -523,6 +523,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.project.ProjectScope</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.nodeEditor.Highlighter</implementation-class>
         </component>
 

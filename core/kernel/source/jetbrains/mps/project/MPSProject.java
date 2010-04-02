@@ -56,8 +56,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   private List<ModuleReference> myLanguages = new ArrayList<ModuleReference>();
   private List<DevKit> myDevKits = new ArrayList<DevKit>();
 
-  private ProjectScope myScope = new ProjectScope();
-
   private String myErrors = null;
 
   public MPSProject(final File projectFile, final ProjectDescriptor projectDescriptor, Project ideaProject) {
@@ -333,8 +331,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     }
   }
 
-  public IScope getScope() {
-    return myScope;
+  public ProjectScope getScope() {
+    return myIDEAProject.getComponent(ProjectScope.class);
   }
 
   public void update() {
@@ -378,22 +376,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public void invalidateCaches() {
-    myScope.invalidateCaches();
-  }
-
-  //TODO: make private (was made visible for usages view to save view scope by Mihail Muhin)
-  public class ProjectScope extends DefaultScope {
-    protected Set<IModule> getInitialModules() {
-      Set<IModule> result = new HashSet<IModule>();
-      result.addAll(getProjectSolutions());
-      for (Language l : getProjectLanguages()) {
-        result.add(l);
-        result.addAll(l.getGenerators());
-      }
-
-      result.addAll(getProjectDevKits());
-      return result;
-    }
+    getScope().invalidateCaches();
   }
 
   //-----------DEPRECATED

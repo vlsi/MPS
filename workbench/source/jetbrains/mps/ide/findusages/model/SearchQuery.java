@@ -23,7 +23,6 @@ import jetbrains.mps.ide.findusages.model.holders.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.AbstractModule.ModuleScope;
-import jetbrains.mps.project.MPSProject.ProjectScope;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
