@@ -64,7 +64,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
   public LanguageHierarchiesComponent(Language language, IOperationContext context) {
     myLanguage = language;
-    myOperationContext = new ModuleContext(language, context.getMPSProject());
+    myOperationContext = new ModuleContext(language, context.getProject());
     addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         for (ConceptContainer conceptContainer : myRoots) {

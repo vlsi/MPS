@@ -4,13 +4,14 @@ package jetbrains.mps.workbench.dialogs.project.properties.project;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import javax.swing.JPanel;
 import java.awt.CardLayout;
 import javax.swing.JRadioButton;
 import org.jetbrains.annotations.Nullable;
 import java.awt.HeadlessException;
+import com.intellij.openapi.wm.WindowManager;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import java.awt.GridBagLayout;
@@ -26,9 +27,6 @@ import java.awt.BorderLayout;
 import javax.swing.border.Border;
 import javax.swing.BorderFactory;
 import javax.swing.border.CompoundBorder;
-import javax.swing.JFrame;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.WindowManager;
 import java.awt.Component;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -38,6 +36,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -70,7 +69,7 @@ public class TestConfigurationDialog extends BaseDialog {
   private static final String MODEL = "model";
   private static final String MODULE = "module";
 
-  private MPSProject myProject;
+  private Project myProject;
   private BaseTestConfiguration myConfig;
   private BaseTestConfiguration myResult = null;
   private JPanel myMainComponent;
@@ -82,8 +81,8 @@ public class TestConfigurationDialog extends BaseDialog {
   private JRadioButton myRadioModule;
   private TestConfigurationDialog.NamePanel myNamePanel;
 
-  public TestConfigurationDialog(MPSProject mpsProject, @Nullable BaseTestConfiguration config) throws HeadlessException {
-    super(getFrame(mpsProject), "Edit Test Configuration");
+  public TestConfigurationDialog(Project mpsProject, @Nullable BaseTestConfiguration config) throws HeadlessException {
+    super(WindowManager.getInstance().getFrame(mpsProject), "Edit Test Configuration");
     this.myProject = mpsProject;
     this.myConfig = config;
     this.initUI();
@@ -205,11 +204,6 @@ public class TestConfigurationDialog extends BaseDialog {
     this.dispose();
   }
 
-  private static JFrame getFrame(MPSProject mpsProject) {
-    Project project = mpsProject.getProject();
-    return WindowManager.getInstance().getFrame(project);
-  }
-
   private abstract class BasePanel extends JPanel {
     private BasePanel() {
     }
@@ -225,9 +219,9 @@ public class TestConfigurationDialog extends BaseDialog {
 
   private class ModulePanel extends TestConfigurationDialog.BasePanel {
     private JTextField myModuleUID;
-    private MPSProject myProject;
+    private Project myProject;
 
-    public ModulePanel(MPSProject project) {
+    public ModulePanel(Project project) {
       this.myProject = project;
       this.setLayout(new BorderLayout());
       this.myModuleUID = new JTextField();
@@ -238,7 +232,7 @@ public class TestConfigurationDialog extends BaseDialog {
               return MPSModuleRepository.getInstance().getAllModules();
             }
           });
-          IModule module = CommonChoosers.showDialogModuleChooser(ModulePanel.this, TestConfigurationDialog.MODULE, ModulePanel.this.myProject.getModules(), modules);
+          IModule module = CommonChoosers.showDialogModuleChooser(ModulePanel.this, TestConfigurationDialog.MODULE, ModulePanel.this.myProject.getComponent(MPSProjectHolder.class).getMPSProject().getModules(), modules);
           if (module == null) {
             return;
           }
@@ -271,9 +265,9 @@ public class TestConfigurationDialog extends BaseDialog {
 
     private List<SModelReference> myModels = ObservableCollections.observableList(new ArrayList<SModelReference>());
     private JList myModelsList;
-    private MPSProject myProject;
+    private Project myProject;
 
-    public ModelsPanel(MPSProject project) {
+    public ModelsPanel(Project project) {
       this.myProject = project;
       this.setLayout(new BorderLayout());
       this.myModelsList = new JList();
@@ -292,7 +286,7 @@ public class TestConfigurationDialog extends BaseDialog {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               boolean inProject = false;
-              for (SModelDescriptor projectModel : ModelsPanel.this.myProject.getProjectModels()) {
+              for (SModelDescriptor projectModel : ModelsPanel.this.myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectModels()) {
                 if (model.equals(projectModel.getSModelReference())) {
                   inProject = true;
                   break;
@@ -316,7 +310,7 @@ public class TestConfigurationDialog extends BaseDialog {
       ListAddAction addAction = new ListAddAction(this.myModelsList) {
         @Override
         protected int doAdd(AnActionEvent e) {
-          List<SModelDescriptor> models = ModelsPanel.this.myProject.getProjectModels();
+          List<SModelDescriptor> models = ModelsPanel.this.myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectModels();
           SModelDescriptor sModelDescriptor = CommonChoosers.showDialogModelChooser(ModelsPanel.this, models, SModelRepository.getInstance().getModelDescriptors());
           if (sModelDescriptor == null) {
             return -1;
