@@ -27,9 +27,10 @@ import jetbrains.mps.ide.embeddableEditor.GenerationResult;
 import java.util.Collections;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class ReplaceDialog extends BaseDialog {
   private EmbeddableEditor myEditor;
@@ -93,7 +94,7 @@ public class ReplaceDialog extends BaseDialog {
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getMPSProject(), query, SNodeOperations.cast(result.getSNode(), "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
+          ReplaceDialog.this.execute(ReplaceDialog.this.myContext.getProject(), query, SNodeOperations.cast(result.getSNode(), "jetbrains.mps.quickQueryLanguage.structure.BaseQuery"), scope);
         }
       });
       this.myEditor.disposeEditor();
@@ -109,7 +110,7 @@ public class ReplaceDialog extends BaseDialog {
     this.dispose();
   }
 
-  public void execute(MPSProject project, Query query, final SNode queryNode, final IScope scope) {
+  public void execute(Project project, Query query, final SNode queryNode, final IScope scope) {
     final Wrappers._T<SearchQuery> searchQuery = new Wrappers._T<SearchQuery>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -120,6 +121,6 @@ public class ReplaceDialog extends BaseDialog {
         }
       }
     });
-    project.getPluginManager().getTool(RunReplacement_Tool.class).addTab(searchQuery.value, query);
+    project.getComponent(ProjectPluginManager.class).getTool(RunReplacement_Tool.class).addTab(searchQuery.value, query);
   }
 }

@@ -1852,7 +1852,7 @@
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1235926660278" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1235926663393">
-                            <link role="baseMethodDeclaration:3" targetNodeId="5.~IOperationContext.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="5.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                           </node>
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1235926665910">
@@ -2090,7 +2090,7 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1235929460046">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1235929460047">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1235929460048">
-              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.GetToolOperation:23" id="1235929460049">
+              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.GetToolInProjectOperation:23" id="2880878974640603330">
                 <link role="tool:23" targetNodeId="1220008857613" resolveInfo="RunReplacement" />
               </node>
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1235929460050">
@@ -2111,8 +2111,8 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1235929460054">
         <property name="name:3" value="project" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1235929460055">
-          <link role="classifier:3" targetNodeId="10.~MPSProject" resolveInfo="MPSProject" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2880878974640603328">
+          <link role="classifier:3" targetNodeId="27.~Project" resolveInfo="Project" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1235929460056">
@@ -2236,7 +2236,7 @@
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2268726300190430261">
                   <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2268726300190430262">
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2268726300190430263">
-                      <link role="baseMethodDeclaration:3" targetNodeId="35.1219405202225" resolveInfo="EmbeddableEditor" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="35.5367124414732055990" resolveInfo="EmbeddableEditor" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2268726300190430264">
                         <link role="variableDeclaration:3" targetNodeId="1219746535418" resolveInfo="context" />
                       </node>
