@@ -8,7 +8,6 @@ import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 import jetbrains.mps.plugins.pluginparts.runconfigs.MPSPsiElement;
-import com.intellij.openapi.project.Project;
 
 public class JUnitConfigFromProject extends BaseConfigCreator<MPSProject> implements Cloneable {
   private RunConfiguration myConfig;
@@ -29,7 +28,7 @@ public class JUnitConfigFromProject extends BaseConfigCreator<MPSProject> implem
 
     JUnitConfigFromProject.this.setSourceElement(new MPSPsiElement(parameter));
 
-    final String name = parameter.getComponent(Project.class).getName();
+    final String name = parameter.getProject().getName();
     {
       JUnit_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JUnit_ConfigurationType.CONFIGURATION_TYPE_EP), JUnit_ConfigurationType.class);
       DefaultJUnit_Configuration _config = new DefaultJUnit_Configuration(JUnitConfigFromProject.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig") {

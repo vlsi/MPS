@@ -21267,10 +21267,7 @@
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1969840607717542971">
                 <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="1969840607717542972" />
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1969840607717542973">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="1969840607717542974">
-                    <link role="classifier:3" targetNodeId="36.~Project" resolveInfo="Project" />
-                  </node>
+                  <link role="baseMethodDeclaration:3" targetNodeId="8.~MPSProject.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1969840607717542975">

@@ -206,7 +206,7 @@ public class TestConfigurationDialog extends BaseDialog {
   }
 
   private static JFrame getFrame(MPSProject mpsProject) {
-    Project project = mpsProject.getComponent(Project.class);
+    Project project = mpsProject.getProject();
     return WindowManager.getInstance().getFrame(project);
   }
 
