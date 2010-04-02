@@ -35,7 +35,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="55" />
+  <maxImportIndex value="56" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590510(jetbrains.mps.quickQueryLanguage.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -66,6 +66,7 @@
   <import index="50" modelUID="f:java_stub#jetbrains.mps.lang.structure.findUsages(jetbrains.mps.lang.structure.findUsages@java_stub)" version="-1" />
   <import index="54" modelUID="f:java_stub#jetbrains.mps.kernel.model(jetbrains.mps.kernel.model@java_stub)" version="-1" />
   <import index="55" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <import index="56" modelUID="f:java_stub#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1219056224639">
     <property name="name:3" value="QueryExecutor" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1235926499683">
@@ -296,7 +297,7 @@
                 <link role="variableDeclaration:3" targetNodeId="1219326437615" resolveInfo="oldContext" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1219326450153">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~IOperationContext.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
               </node>
             </node>
             <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1219326372237">
@@ -386,7 +387,7 @@
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1219327272503" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1219327280668">
-                <link role="baseMethodDeclaration:3" targetNodeId="10.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <link role="baseMethodDeclaration:3" targetNodeId="24.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1219327290419">
                   <link role="variableDeclaration:3" targetNodeId="1219327163254" resolveInfo="c" />
                 </node>
@@ -449,20 +450,33 @@
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235926730860">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1235926741756">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1235926747883">
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1235926747884">
-              <link role="fieldDeclaration:3" targetNodeId="1219326319430" resolveInfo="myMPSProject" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7018291867655279930">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7018291867655279917">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1235926747883">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1235926747884">
+                  <link role="fieldDeclaration:3" targetNodeId="1219326319430" resolveInfo="myMPSProject" />
+                </node>
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1235926747885" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7018291867655279921">
+                <link role="baseMethodDeclaration:3" targetNodeId="24.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="7018291867655279926">
+                  <link role="classifier:3" targetNodeId="56.~MPSProjectHolder" resolveInfo="MPSProjectHolder" />
+                </node>
+              </node>
             </node>
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1235926747885" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7018291867655279936">
+              <link role="baseMethodDeclaration:3" targetNodeId="56.~MPSProjectHolder.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
+            </node>
           </node>
         </node>
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1219326319430">
-      <property name="name:3" value="myMPSProject" />
+      <property name="name:3" value="myProject" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1219326319447" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1219326326263">
-        <link role="classifier:3" targetNodeId="10.~MPSProject" resolveInfo="MPSProject" />
+      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7018291867655216866">
+        <link role="classifier:3" targetNodeId="27.~Project" resolveInfo="Project" />
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="1219326329498">
