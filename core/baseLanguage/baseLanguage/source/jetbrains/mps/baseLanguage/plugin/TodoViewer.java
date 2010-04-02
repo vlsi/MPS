@@ -85,7 +85,7 @@ public class TodoViewer extends JPanel {
   }
 
   private Project getProject() {
-    return myProject.getComponent(Project.class);
+    return myProject;
   }
 
   private void refresh() {

@@ -65,7 +65,7 @@ public class ReplacementView {
     this.myMainPanel.add(this.myUsagesView.getComponent(), BorderLayout.CENTER);
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        ProgressManager.getInstance().run(new Task.Modal(project.getComponent(Project.class), "Searching", true) {
+        ProgressManager.getInstance().run(new Task.Modal(project, "Searching", true) {
           public void run(@NotNull ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             ReplacementView.this.myUsagesView.run(indicator);

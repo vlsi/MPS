@@ -301,7 +301,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
             if (!(holder instanceof VoidHolder)) {
               if (holder.getObject() == null) return; //object was deleted
             }
-            ProgressManager.getInstance().run(new Modal(myProject.getComponent(Project.class), getSearchProgressTitle(), true) {
+            ProgressManager.getInstance().run(new Modal(myProject, getSearchProgressTitle(), true) {
               public void run(@NotNull final ProgressIndicator indicator) {
                 indicator.setIndeterminate(true);
                 UsagesView.this.run(indicator);

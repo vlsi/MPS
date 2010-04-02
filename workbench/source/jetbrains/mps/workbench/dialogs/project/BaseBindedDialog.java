@@ -107,7 +107,7 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
       }
     });
 
-    ProgressManager.getInstance().run(new Modal(getOperationContext().getComponent(Project.class), "Applying changes", false) {
+    ProgressManager.getInstance().run(new Modal(getOperationContext().getProject(), "Applying changes", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         try {

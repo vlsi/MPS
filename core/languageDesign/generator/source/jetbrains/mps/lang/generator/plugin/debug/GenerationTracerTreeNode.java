@@ -150,7 +150,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
     IOperationContext context = new ProjectOperationContext(myProject);
 
-    new MPSEditorOpener(myProject.getComponent(Project.class)).openNode(nodeToOpen, context,true,true);
+    new MPSEditorOpener(myProject).openNode(nodeToOpen, context,true,true);
   }
 
   public void doubleClick() {

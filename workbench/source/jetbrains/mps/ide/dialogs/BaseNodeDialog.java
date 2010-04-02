@@ -128,7 +128,7 @@ public abstract class BaseNodeDialog extends BaseDialog {
   private boolean doSaveChanges() {
     if (!validateNode()) return true;
     final boolean[] dontCloseDialog = new boolean[]{true};
-    ProgressManager.getInstance().run(new Modal(getOperationContext().getComponent(Project.class), "Applying changes", false) {
+    ProgressManager.getInstance().run(new Modal(getOperationContext().getProject(), "Applying changes", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         try {

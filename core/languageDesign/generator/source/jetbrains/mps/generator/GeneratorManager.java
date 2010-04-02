@@ -214,7 +214,7 @@ public class GeneratorManager {
     IdeEventQueue.getInstance().flushQueue();
 
     final boolean[] result = new boolean[]{false};
-    ProgressManager.getInstance().run(new Modal(invocationContext.getComponent(Project.class), "Generation", true) {
+    ProgressManager.getInstance().run(new Modal(invocationContext.getProject(), "Generation", true) {
       public void run(@NotNull ProgressIndicator progress) {
         result[0] = generateModels(inputModels, generationHandler, progress, messages, saveTransientModels);
       }

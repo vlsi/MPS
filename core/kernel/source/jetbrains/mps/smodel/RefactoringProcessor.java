@@ -131,7 +131,7 @@ public class RefactoringProcessor {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         final boolean[] wasError = new boolean[]{false};
-        ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getComponent(Project.class), "Finding usages...", false) {
+        ProgressManager.getInstance().run(new Modal(refactoringContext.getCurrentOperationContext().getProject(), "Finding usages...", false) {
           public void run(@NotNull ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             ModelAccess.instance().runReadAction(new Runnable() {
@@ -231,7 +231,7 @@ public class RefactoringProcessor {
         }
       });
       IOperationContext operationContext = refactoringContext.getSelectedMPSProject().createOperationContext();
-      new GeneratorManager(operationContext.getComponent(Project.class), new GenerationSettings()).generateModelsFromDifferentModules(operationContext, descriptors, new JavaGenerationHandler());
+      new GeneratorManager(operationContext.getProject(), new GenerationSettings()).generateModelsFromDifferentModules(operationContext, descriptors, new JavaGenerationHandler());
     } finally {
       SNode.setNodeMemeberAccessModifier(null);
     }
