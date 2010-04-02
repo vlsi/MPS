@@ -269,10 +269,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     }
   }
 
-  public <T> T getComponent(Class<T> clazz) {
-    return myIDEAProject.getComponent(clazz);
-  }
-
   public List<SModelDescriptor> getProjectModels() {
     ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     List<IModule> modules = getModules();
@@ -353,7 +349,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         MPSProjects projects = MPSProjects.instance();
         projects.removeProject(MPSProject.this);
 
-        getComponent(Highlighter.class).stopUpdater();
+        getProject().getComponent(Highlighter.class).stopUpdater();
 
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
@@ -403,6 +399,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   @Deprecated
   public IOperationContext createOperationContext() {
     return new ProjectOperationContext(this);
+  }
+
+  @Deprecated
+  // should be left for compatibility with generated plugins (editor openers)
+  public <T> T getComponent(Class<T> clazz) {
+    return getProject().getComponent(clazz);
   }
 
   @Deprecated

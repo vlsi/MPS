@@ -18,14 +18,14 @@ public class EditorLangPlugin_CustomProjectPlugin extends BaseCustomProjectPlugi
 
   public void doInit(MPSProject project) {
     EditorLangPlugin_CustomProjectPlugin.this.myAutoResolver = new AutoResolver();
-    Highlighter highlighter = project.getComponent(Highlighter.class);
+    Highlighter highlighter = project.getProject().getComponent(Highlighter.class);
     if (highlighter != null) {
       highlighter.addChecker(EditorLangPlugin_CustomProjectPlugin.this.myAutoResolver);
     }
   }
 
   public void doDispose(MPSProject project) {
-    Highlighter highlighter = project.getComponent(Highlighter.class);
+    Highlighter highlighter = project.getProject().getComponent(Highlighter.class);
     if (highlighter != null) {
       highlighter.removeChecker(EditorLangPlugin_CustomProjectPlugin.this.myAutoResolver);
     }

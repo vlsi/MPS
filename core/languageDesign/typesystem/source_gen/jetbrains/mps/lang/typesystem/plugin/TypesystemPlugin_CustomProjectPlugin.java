@@ -4,7 +4,6 @@ package jetbrains.mps.lang.typesystem.plugin;
 
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomProjectPlugin;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.typesystem.uiActions.SupertypesViewTool;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.nodeEditor.Highlighter;
@@ -12,7 +11,6 @@ import jetbrains.mps.nodeEditor.Highlighter;
 public class TypesystemPlugin_CustomProjectPlugin extends BaseCustomProjectPlugin {
   private static Logger LOG = Logger.getLogger(TypesystemPlugin_CustomProjectPlugin.class);
 
-  private SupertypesViewTool mySupertypesViewTool;
   private TypesEditorChecker myChecker;
 
   public TypesystemPlugin_CustomProjectPlugin() {
@@ -20,14 +18,14 @@ public class TypesystemPlugin_CustomProjectPlugin extends BaseCustomProjectPlugi
 
   public void doInit(MPSProject project) {
     TypesystemPlugin_CustomProjectPlugin.this.myChecker = new TypesEditorChecker();
-    Highlighter highlighter = project.getComponent(Highlighter.class);
+    Highlighter highlighter = project.getProject().getComponent(Highlighter.class);
     if (highlighter != null) {
       highlighter.addChecker(TypesystemPlugin_CustomProjectPlugin.this.myChecker);
     }
   }
 
   public void doDispose(MPSProject project) {
-    Highlighter highlighter = project.getComponent(Highlighter.class);
+    Highlighter highlighter = project.getProject().getComponent(Highlighter.class);
     if (highlighter != null) {
       highlighter.removeChecker(TypesystemPlugin_CustomProjectPlugin.this.myChecker);
       TypesystemPlugin_CustomProjectPlugin.this.myChecker.dispose();

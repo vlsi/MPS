@@ -1262,13 +1262,6 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration:23" id="1206189513856">
     <property name="name:23" value="TypesystemPlugin" />
-    <node role="fieldDeclaration:23" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration:0" id="1215438760598">
-      <property name="name:0" value="mySupertypesViewTool" />
-      <node role="visibility:0" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1215438760599" />
-      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1215438763634">
-        <link role="classifier:3" targetNodeId="2.~SupertypesViewTool" resolveInfo="SupertypesViewTool" />
-      </node>
-    </node>
     <node role="fieldDeclaration:23" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration:0" id="1215438799718">
       <property name="name:0" value="myChecker" />
       <node role="visibility:0" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1215438799719" />
@@ -1300,9 +1293,14 @@
               <link role="classifier:3" targetNodeId="10.~Highlighter" resolveInfo="Highlighter" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1211475061627">
-              <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject:23" id="1211475061628" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6707041071993577679">
+                <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject:23" id="1211475061628" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6707041071993577684">
+                  <link role="baseMethodDeclaration:3" targetNodeId="14.~MPSProject.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
+                </node>
+              </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1211475061629">
-                <link role="baseMethodDeclaration:3" targetNodeId="14.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <link role="baseMethodDeclaration:3" targetNodeId="45.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="1211475061630">
                   <link role="classifier:3" targetNodeId="10.~Highlighter" resolveInfo="Highlighter" />
                 </node>
@@ -1347,9 +1345,14 @@
               <link role="classifier:3" targetNodeId="10.~Highlighter" resolveInfo="Highlighter" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1211475120404">
-              <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject:23" id="1211475120405" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6707041071993577671">
+                <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject:23" id="1211475120405" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6707041071993577676">
+                  <link role="baseMethodDeclaration:3" targetNodeId="14.~MPSProject.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
+                </node>
+              </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1211475120406">
-                <link role="baseMethodDeclaration:3" targetNodeId="14.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <link role="baseMethodDeclaration:3" targetNodeId="45.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="1211475120407">
                   <link role="classifier:3" targetNodeId="10.~Highlighter" resolveInfo="Highlighter" />
                 </node>
