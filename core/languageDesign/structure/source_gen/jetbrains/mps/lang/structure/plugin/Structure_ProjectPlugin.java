@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class Structure_ProjectPlugin extends BaseProjectPlugin {
   public void initEditors(MPSProject project) {
-    MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
+    MPSEditorOpener opener = project.getProject().getComponent(MPSEditorOpener.class);
     opener.registerOpenHandler(new MPSEditorOpenHandler() {
       public SNode getBaseNode(IOperationContext context, SNode node) {
         SNode baseNode = null;

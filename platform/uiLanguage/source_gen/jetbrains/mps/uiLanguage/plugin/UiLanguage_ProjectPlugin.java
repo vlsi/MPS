@@ -14,7 +14,7 @@ import jetbrains.mps.ide.IEditor;
 
 public class UiLanguage_ProjectPlugin extends BaseProjectPlugin {
   public void initEditors(MPSProject project) {
-    MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
+    MPSEditorOpener opener = project.getProject().getComponent(MPSEditorOpener.class);
     opener.registerOpenHandler(new MPSEditorOpenHandler() {
       public SNode getBaseNode(IOperationContext context, SNode node) {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.uiLanguage.structure.ComponentController")) {
