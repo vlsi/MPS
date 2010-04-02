@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
+import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 import jetbrains.mps.smodel.IOperationContext;

@@ -16,10 +16,13 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.awt.Frame;
 
 public class ProjectOperationContext extends StandaloneMPSContext {
   private Project myProject;
@@ -42,6 +45,16 @@ public class ProjectOperationContext extends StandaloneMPSContext {
   @Nullable
   public IModule getModule() {
     return null;
+  }
+
+  @Override
+  public Project getProject() {
+    return myProject;
+  }
+
+  @Override
+  public Frame getMainFrame() {
+    return WindowManager.getInstance().getFrame(myProject);
   }
 
   @NotNull

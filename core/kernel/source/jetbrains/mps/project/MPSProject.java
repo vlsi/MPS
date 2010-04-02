@@ -385,7 +385,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         CleanupManager.getInstance().cleanup();
       }
     });
-
+                                                          
     //todo hack
     if (myIDEAProject != null) {
       if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
