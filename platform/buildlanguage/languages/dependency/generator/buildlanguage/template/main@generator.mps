@@ -54,7 +54,6 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904cf(jetbrains.mps.build.dependency.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904c8(jetbrains.mps.buildlanguage.structure)" version="21" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="6" modelUID="r:00000000-0000-4000-0000-011c895904c3(jetbrains.mps.buildlanguage.generated)" version="0" />
   <import index="7" modelUID="r:1e7ada09-c25e-41ea-a9b5-398e142ef533(jetbrains.mps.build.generictasks.structure)" version="22" />
   <import index="8" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1216906848218">

@@ -14,19 +14,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <maxImportIndex value="14" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="2" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
-  <import index="3" modelUID="f:java_stub#jetbrains.mps.stubs(jetbrains.mps.stubs@java_stub)" version="-1" />
-  <import index="4" modelUID="r:aa7e8178-3b66-4295-bcce-165c85d78006(jetbrains.mps.stubs.javastub)" version="-1" />
-  <import index="5" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="6" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="7" modelUID="f:java_stub#jetbrains.mps.util.misc.hash(jetbrains.mps.util.misc.hash@java_stub)" version="-1" />
-  <import index="8" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
-  <import index="9" modelUID="f:java_stub#jetbrains.mps.workbench.actions.goTo.index(jetbrains.mps.workbench.actions.goTo.index@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#org.objectweb.asm(org.objectweb.asm@java_stub)" version="-1" />
-  <import index="11" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
-  <import index="12" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
-  <import index="13" modelUID="f:java_stub#jetbrains.mps.project.structure.model(jetbrains.mps.project.structure.model@java_stub)" version="-1" />
-  <import index="14" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7241381882860002213">
     <property name="name:3" value="StubHelper" />

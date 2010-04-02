@@ -66,7 +66,6 @@
   <import index="50" modelUID="f:java_stub#jetbrains.mps.lang.structure.findUsages(jetbrains.mps.lang.structure.findUsages@java_stub)" version="-1" />
   <import index="54" modelUID="f:java_stub#jetbrains.mps.kernel.model(jetbrains.mps.kernel.model@java_stub)" version="-1" />
   <import index="55" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="56" modelUID="f:java_stub#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1219056224639">
     <property name="name:3" value="QueryExecutor" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1235926499683">

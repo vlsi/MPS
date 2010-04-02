@@ -38,7 +38,6 @@
   <import index="22" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="23" modelUID="f:java_stub#jetbrains.mps.lang.stubs.behavior(jetbrains.mps.lang.stubs.behavior@java_stub)" version="-1" />
   <import index="24" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
-  <import index="25" modelUID="f:java_stub#jetbrains.mps.lang.stubs.structure(jetbrains.mps.lang.stubs.structure@java_stub)" version="-1" />
   <import index="26" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="27" modelUID="r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)" version="-1" />
   <import index="28" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />

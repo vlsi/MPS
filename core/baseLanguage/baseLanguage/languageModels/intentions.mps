@@ -70,7 +70,6 @@
   <import index="47" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
   <import index="48" modelUID="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)" version="-1" />
   <import index="49" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
-  <import index="55" modelUID="f:java_stub#jetbrains.mps(jetbrains.mps@java_stub)" version="-1" />
   <import index="56" modelUID="f:java_stub#jetbrains.mps.intentions(jetbrains.mps.intentions@java_stub)" version="-1" />
   <import index="57" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="58" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />

@@ -12,7 +12,6 @@
   <import index="1" modelUID="f:java_stub#jetbrains.mps.ide.tabbedEditor.tabs(jetbrains.mps.ide.tabbedEditor.tabs@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.ide.tabbedEditor(jetbrains.mps.ide.tabbedEditor@java_stub)" version="-1" />
-  <import index="4" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />

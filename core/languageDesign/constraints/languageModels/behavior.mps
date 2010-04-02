@@ -43,7 +43,6 @@
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <import index="14" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
-  <import index="16" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877261402">
     <link role="concept" targetNodeId="1.1159285995602:8" resolveInfo="NodeDefaultSearchScope" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877261403">

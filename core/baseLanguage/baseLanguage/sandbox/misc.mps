@@ -54,7 +54,6 @@
   <import index="156" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="157" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="159" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="161" modelUID="f:java_stub#jetbrains.mps.util.annotation(jetbrains.mps.util.annotation@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="8703963746976779593">
     <property name="name:3" value="MyIntfc" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8703963746976779594" />

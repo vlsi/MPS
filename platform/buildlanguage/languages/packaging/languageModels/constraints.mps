@@ -46,7 +46,6 @@
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="24" modelUID="f:java_stub#jetbrains.mps.lang.structure.editor(jetbrains.mps.lang.structure.editor@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104846985">
     <property name="package:8" value="projectComponents" />
     <link role="concept:8" targetNodeId="15.1203598512427:7" resolveInfo="Folder" />

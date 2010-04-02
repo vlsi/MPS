@@ -12,7 +12,6 @@
   <language-engaged-on-generation namespace="fc8d557e-5de6-4dd8-b749-aab2fb23aefc(jetbrains.mps.baseLanguage.overloadedOperators)" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="r:3ad93d2f-47fe-4070-8a77-383dab3a6def(jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test)" version="-1" />
-  <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3855395826139545516">
     <property name="name:3" value="TestModel" />

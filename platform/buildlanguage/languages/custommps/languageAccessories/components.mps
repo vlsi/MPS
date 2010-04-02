@@ -36,7 +36,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="2" />
-  <import index="1" modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)" version="-1" />
   <import index="2" modelUID="r:5e2666e0-c7c7-4002-9ed9-38805719453d(jetbrains.mps.build.custommps.generator.template.main@generator)" version="-1" />
   <visible index="2" modelUID="r:19a13561-830e-4400-a084-e2990744f9e1(jetbrains.mps.build.packaging.defaultVariables)" />
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="7323449223785675058">

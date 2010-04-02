@@ -46,8 +46,6 @@
   <import index="27" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" />
   <import index="30" modelUID="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)" version="-1" />
   <import index="31" modelUID="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)" version="-1" />
-  <import index="34" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
-  <import index="35" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1174643003920">
     <link role="conceptDeclaration:32" targetNodeId="1.1174642900584:3" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1174643009469">

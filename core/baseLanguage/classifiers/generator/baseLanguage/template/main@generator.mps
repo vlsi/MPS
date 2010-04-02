@@ -32,7 +32,6 @@
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1205839086351">
     <property name="name:2" value="reduce_DefaultClassifierMethodDeclaration" />
     <link role="applicableConcept:2" targetNodeId="1.1205769003971:0" resolveInfo="DefaultClassifierMethodDeclaration" />

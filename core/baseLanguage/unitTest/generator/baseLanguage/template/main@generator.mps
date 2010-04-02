@@ -40,7 +40,6 @@
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="4" modelUID="f:java_stub#junit.framework(junit.framework@java_stub)" version="-1" />
-  <import index="9" modelUID="f:java_stub#org.junit(org.junit@java_stub)" version="-1" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1171932074406">
     <property name="name:3" value="BTestCaseImpl" />

@@ -37,7 +37,6 @@
   <maxImportIndex value="5" />
   <import index="1" modelUID="r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)" version="-1" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
-  <import index="3" modelUID="f:java_stub#jetbrains.mps.baseLanguage.typesystem(jetbrains.mps.baseLanguage.typesystem@java_stub)" version="-1" />
   <import index="4" modelUID="r:288434b8-c7e0-41e8-9f8d-1323c8a122b9(jetbrains.mps.baseLanguage.overloadedOperators.generator.template.util)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="6677452554239169670">

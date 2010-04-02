@@ -40,14 +40,10 @@
   <maxImportIndex value="12" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.math(java.math@java_stub)" version="-1" />
-  <import index="3" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="4" modelUID="r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)" version="-1" />
-  <import index="5" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="9" modelUID="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.baseLanguage.math.runtime(jetbrains.mps.baseLanguage.math.runtime@java_stub)" version="-1" />
-  <import index="11" modelUID="r:44a13e0a-5741-450e-b617-f6a7b8d52ba5(jetbrains.mps.baseLanguage.math.generator.template.types@generator)" version="-1" />
-  <import index="12" modelUID="r:e8891659-6cf7-4c12-aefc-c30d28622ede(jetbrains.mps.baseLanguage.math.generator.template.operations@generator)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <visible index="3" modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" />
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />

@@ -30,7 +30,6 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="r:559d3790-e362-4356-8802-ce09ca282dd8(jetbrains.mps.baseLanguage.contracts.structure)" version="1" />
-  <import index="2" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="332248429538152944">
     <property name="name:3" value="typeof_Precondition" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="332248429538152945">

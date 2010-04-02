@@ -45,10 +45,6 @@
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="11" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="12" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="13" modelUID="f:java_stub#java.text(java.text@java_stub)" version="-1" />
-  <import index="14" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="15" modelUID="r:ff802b39-fe8b-448c-92e1-659087928d82(jetbrains.mps.baseLanguage.tuples.generator.template.helpers)" version="-1" />
   <import index="17" modelUID="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />

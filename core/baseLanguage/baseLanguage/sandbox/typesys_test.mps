@@ -31,7 +31,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="10" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="8" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5526632522770640548">

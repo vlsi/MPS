@@ -41,8 +41,6 @@
   <import index="1" modelUID="r:559d3790-e362-4356-8802-ce09ca282dd8(jetbrains.mps.baseLanguage.contracts.structure)" version="1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="r:d54f54a0-640e-4999-bafa-7df8112ed364(jetbrains.mps.baseLanguage.contracts.generator.template.utils)" version="-1" />
-  <import index="4" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1399727060253204125">
     <property name="name:2" value="main" />

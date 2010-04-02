@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.tuples" uuid="a247e09e-2435-45ba-b8d2-07e93feba96a" java-stubs-enabled="true" compileInMPS="true">
+<language namespace="jetbrains.mps.baseLanguage.tuples" uuid="a247e09e-2435-45ba-b8d2-07e93feba96a" java-stubs-enabled="true" compileInMPS="true" doNotGenerateAdapters="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage.tuples" />
   </models>

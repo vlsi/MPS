@@ -34,7 +34,6 @@
   <import index="17" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.smodel.event(jetbrains.mps.smodel.event@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
-  <import index="21" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1237995590703">
     <property name="name:3" value="SModelUtil" />
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="2618147303383781398">

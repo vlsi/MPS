@@ -96,9 +96,6 @@
   <import index="84" modelUID="f:java_stub#jetbrains.mps.project.structure.model(jetbrains.mps.project.structure.model@java_stub)" version="-1" />
   <import index="87" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="88" modelUID="f:java_stub#jetbrains.mps.project.structure.project(jetbrains.mps.project.structure.project@java_stub)" version="-1" />
-  <import index="89" modelUID="f:java_stub#jetbrains.mps.textGen(jetbrains.mps.textGen@java_stub)" version="-1" />
-  <import index="90" modelUID="f:java_stub#jetbrains.mps.ide.progress(jetbrains.mps.ide.progress@java_stub)" version="-1" />
-  <import index="91" modelUID="f:java_stub#java.rmi(java.rmi@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1218726094600">
     <property name="name:23" value="ProjectPaneModelAddition" />
     <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="1218726094601">

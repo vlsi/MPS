@@ -45,7 +45,6 @@
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c8959051b(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util)" version="-1" />
   <import index="16" modelUID="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.baseLanguage.regexp.runtime(jetbrains.mps.baseLanguage.regexp.runtime@java_stub)" version="-1" />
-  <import index="22" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1174510749043">
     <property name="name:2" value="main" />
     <node role="preMappingScript:2" type="jetbrains.mps.lang.generator.structure.MappingScriptReference:2" id="7048923897762884715">

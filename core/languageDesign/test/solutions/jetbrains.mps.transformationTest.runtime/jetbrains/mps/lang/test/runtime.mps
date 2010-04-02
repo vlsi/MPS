@@ -80,7 +80,6 @@
   <import index="36" modelUID="f:java_stub#com.intellij.idea(com.intellij.idea@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#com.intellij.openapi.diagnostic(com.intellij.openapi.diagnostic@java_stub)" version="-1" />
   <import index="40" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
-  <import index="41" modelUID="f:java_stub#jetbrains.mps.generator.template(jetbrains.mps.generator.template@java_stub)" version="-1" />
   <import index="42" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="44" modelUID="f:java_stub#jetbrains.mps.generator.impl(jetbrains.mps.generator.impl@java_stub)" version="-1" />
   <import index="45" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />

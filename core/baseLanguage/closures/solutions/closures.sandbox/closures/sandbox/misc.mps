@@ -30,8 +30,6 @@
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
-  <import index="8" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
-  <import index="9" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1221651112606">
     <property name="name:3" value="Debug" />

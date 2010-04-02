@@ -76,7 +76,6 @@
   <import index="13" modelUID="f:java_stub#javax.swing.tree(javax.swing.tree@java_stub)" version="-1" />
   <import index="14" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="18" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="19" modelUID="f:java_stub#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" />
   <import index="21" modelUID="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.runtime)" version="-1" />
   <import index="25" modelUID="f:java_stub#javax.swing.event(javax.swing.event@java_stub)" version="-1" />
   <import index="28" modelUID="f:java_stub#javax.swing.table(javax.swing.table@java_stub)" version="-1" />
@@ -99,7 +98,6 @@
   <import index="57" modelUID="f:java_stub#com.intellij.execution(com.intellij.execution@java_stub)" version="-1" />
   <import index="59" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.choosers(jetbrains.mps.workbench.dialogs.choosers@java_stub)" version="-1" />
   <import index="61" modelUID="f:java_stub#java.nio.charset(java.nio.charset@java_stub)" version="-1" />
-  <import index="62" modelUID="f:java_stub#com.intellij.execution.runners(com.intellij.execution.runners@java_stub)" version="-1" />
   <import index="66" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
   <import index="68" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="70" modelUID="f:java_stub#jetbrains.mps.kernel.model(jetbrains.mps.kernel.model@java_stub)" version="-1" />
@@ -113,11 +111,8 @@
   <import index="93" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.info)" version="-1" />
   <import index="95" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.runconfigs(jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)" version="-1" />
   <import index="96" modelUID="f:java_stub#com.intellij.openapi(com.intellij.openapi@java_stub)" version="-1" />
-  <import index="98" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.components.parts(jetbrains.mps.workbench.dialogs.project.components.parts@java_stub)" version="-1" />
   <import index="106" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.components.parts.actions(jetbrains.mps.workbench.dialogs.project.components.parts.actions@java_stub)" version="-1" />
   <import index="107" modelUID="r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)" version="-1" />
-  <import index="108" modelUID="f:java_stub#com.intellij.execution.testframework.ui(com.intellij.execution.testframework.ui@java_stub)" version="-1" />
-  <import index="109" modelUID="f:java_stub#com.intellij.ide.util.treeView(com.intellij.ide.util.treeView@java_stub)" version="-1" />
   <import index="110" modelUID="f:java_stub#com.intellij.util(com.intellij.util@java_stub)" version="-1" />
   <import index="111" modelUID="f:java_stub#org.junit(org.junit@java_stub)" version="-1" />
   <import index="112" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />

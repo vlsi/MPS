@@ -14,7 +14,6 @@
   <import index="4" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#javax.swing.table(javax.swing.table@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons(jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons@java_stub)" version="-1" />
-  <import index="8" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1560298786499490203">
     <property name="abstractClass:3" value="true" />
     <property name="name:3" value="ListAddAction" />

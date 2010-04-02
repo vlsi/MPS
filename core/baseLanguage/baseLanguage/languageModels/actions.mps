@@ -66,7 +66,6 @@
   <import index="61" modelUID="f:java_stub#javax.swing.tree(javax.swing.tree@java_stub)" version="-1" />
   <import index="62" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="63" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
-  <import index="68" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="69" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="70" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1138168268784">

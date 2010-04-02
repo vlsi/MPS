@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AsPattern" conceptFQName="jetbrains.mps.patterns.structure.AsPattern" featureKind="CONCEPT" />
@@ -86,7 +87,6 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136720037773">
     <property name="name:0" value="AsPattern" />
     <link role="extends:0" targetNodeId="1136720037779:0" resolveInfo="PatternVariableDeclaration" />

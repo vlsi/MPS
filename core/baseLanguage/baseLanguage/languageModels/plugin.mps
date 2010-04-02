@@ -84,14 +84,12 @@
   <import index="78" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
   <import index="79" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="82" modelUID="f:java_stub#jetbrains.mps.ide.findusages.view(jetbrains.mps.ide.findusages.view@java_stub)" version="-1" />
-  <import index="83" modelUID="f:java_stub#jetbrains.mps.baseLanguage.findUsages(jetbrains.mps.baseLanguage.findUsages@java_stub)" version="-1" />
   <import index="91" modelUID="f:java_stub#jetbrains.mps.baseLanguage.plugin(jetbrains.mps.baseLanguage.plugin@java_stub)" version="-1" />
   <import index="97" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="99" modelUID="f:java_stub#jetbrains.mps.generator.fileGenerator(jetbrains.mps.generator.fileGenerator@java_stub)" version="-1" />
   <import index="100" modelUID="r:00000000-0000-4000-0000-011c89590317(jetbrains.mps.lang.refactoring.plugin)" version="-1" />
   <import index="107" modelUID="f:java_stub#jetbrains.mps.resolve(jetbrains.mps.resolve@java_stub)" version="-1" />
   <import index="109" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.choosers(jetbrains.mps.workbench.dialogs.choosers@java_stub)" version="-1" />
-  <import index="110" modelUID="f:java_stub#com.intellij.ide(com.intellij.ide@java_stub)" version="-1" />
   <import index="116" modelUID="f:java_stub#com.intellij.execution(com.intellij.execution@java_stub)" version="-1" />
   <import index="122" modelUID="f:java_stub#jetbrains.mps.datatransfer(jetbrains.mps.datatransfer@java_stub)" version="-1" />
   <import index="123" modelUID="f:java_stub#com.intellij.ui.awt(com.intellij.ui.awt@java_stub)" version="-1" />

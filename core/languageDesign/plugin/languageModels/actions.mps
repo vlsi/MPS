@@ -46,8 +46,6 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <import index="5" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
-  <import index="9" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1217414439967">
     <property name="name:23" value="ComplexParameters" />

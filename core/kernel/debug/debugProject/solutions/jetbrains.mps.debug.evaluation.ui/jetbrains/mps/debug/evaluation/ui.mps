@@ -47,10 +47,6 @@
   <import index="13" modelUID="f:java_stub#com.sun.jdi(com.sun.jdi@java_stub)" version="-1" />
   <import index="14" modelUID="r:af5efca5-3385-45cc-9441-f2124214c2e2(jetbrains.mps.debug.info)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
-  <import index="16" modelUID="f:java_stub#jetbrains.mps.debug.evaluation.structure(jetbrains.mps.debug.evaluation.structure@java_stub)" version="-1" />
-  <import index="17" modelUID="f:java_stub#jetbrains.mps.ide.embeddableEditor(jetbrains.mps.ide.embeddableEditor@java_stub)" version="-1" />
-  <import index="18" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
-  <import index="19" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="20" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="21" modelUID="f:java_stub#java.lang.reflect(java.lang.reflect@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
@@ -61,7 +57,6 @@
   <import index="27" modelUID="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debug.evaluation.structure)" version="-1" />
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="29" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="31" modelUID="r:95236d12-ace0-455d-a686-31c68ba00021(jetbrains.mps.stubs.javastub.classpath)" version="-1" />
   <import index="32" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5849716370568348282">

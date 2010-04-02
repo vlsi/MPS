@@ -32,7 +32,6 @@
   <maxImportIndex value="5" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="5" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1174922445389">
     <property name="name:3" value="GeneratorUtil" />

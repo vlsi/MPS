@@ -35,7 +35,6 @@
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
-  <import index="5" modelUID="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" version="-1" />
   <visible index="2" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1241010420895">
     <property name="name:3" value="TupleDeclarationUtil" />

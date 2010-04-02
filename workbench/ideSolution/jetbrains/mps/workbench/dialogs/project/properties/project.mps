@@ -38,12 +38,9 @@
   <import index="27" modelUID="f:java_stub#org.jdesktop.beansbinding(org.jdesktop.beansbinding@java_stub)" version="-1" />
   <import index="28" modelUID="f:java_stub#org.jdesktop.swingbinding(org.jdesktop.swingbinding@java_stub)" version="-1" />
   <import index="29" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
-  <import index="30" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
-  <import index="31" modelUID="f:java_stub#com.intellij.ide(com.intellij.ide@java_stub)" version="-1" />
   <import index="32" modelUID="f:java_stub#javax.swing.border(javax.swing.border@java_stub)" version="-1" />
   <import index="33" modelUID="f:java_stub#jetbrains.mps.ide.projectPane(jetbrains.mps.ide.projectPane@java_stub)" version="-1" />
   <import index="34" modelUID="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" version="-1" />
-  <import index="35" modelUID="f:java_stub#jetbrains.mps.ide.properties(jetbrains.mps.ide.properties@java_stub)" version="-1" />
   <import index="36" modelUID="f:java_stub#com.intellij.openapi.wm(com.intellij.openapi.wm@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3201642974933580312">

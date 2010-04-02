@@ -35,7 +35,6 @@
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#jetbrains.mps.textGen(jetbrains.mps.textGen@java_stub)" version="-1" />
-  <import index="7" modelUID="f:java_stub#jetbrains.mps.baseLanguage(jetbrains.mps.baseLanguage@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.logging(jetbrains.mps.logging@java_stub)" version="-1" />
@@ -43,8 +42,6 @@
   <import index="15" modelUID="f:java_stub#org.jdom(org.jdom@java_stub)" version="-1" />
   <import index="16" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="21" modelUID="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" version="5" />
-  <import index="22" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
-  <import index="23" modelUID="f:java_stub#jetbrains.mps.baseLanguage.behavior(jetbrains.mps.baseLanguage.behavior@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration:11" id="1234796104060">

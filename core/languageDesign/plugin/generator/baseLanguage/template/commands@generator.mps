@@ -32,8 +32,6 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" version="-1" />
-  <import index="4" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.tool(jetbrains.mps.plugins.pluginparts.tool@java_stub)" version="-1" />
-  <import index="5" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1225441503865">
     <property name="name:2" value="mc_commands" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1225441503866">
