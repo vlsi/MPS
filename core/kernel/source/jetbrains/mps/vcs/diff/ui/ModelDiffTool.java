@@ -50,7 +50,6 @@ public class ModelDiffTool implements DiffTool {
 
       final ModelDifferenceDialog d = ModelAccess.instance().runReadAction(new Computable<ModelDifferenceDialog>() {
         public ModelDifferenceDialog compute() {
-          MPSProject project = request.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
           SModelDescriptor sModelDescriptor = oldModel.getModelDescriptor();
           if (sModelDescriptor == null) {
             sModelDescriptor = newModel.getModelDescriptor();
@@ -59,7 +58,7 @@ public class ModelDiffTool implements DiffTool {
           if (sModelDescriptor == null) {
             context = new GlobalOperationContext();
           } else {
-            context = new ModuleContext(sModelDescriptor.getModule(), project);
+            context = new ModuleContext(sModelDescriptor.getModule(), request.getProject());
           }
           boolean modal = !request.getHints().contains(DiffTool.HINT_SHOW_FRAME);
           JFrame frame = WindowManager.getInstance().getFrame(request.getProject());

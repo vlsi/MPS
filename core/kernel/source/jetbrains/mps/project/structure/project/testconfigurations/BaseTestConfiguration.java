@@ -34,8 +34,4 @@ public abstract class BaseTestConfiguration {
   }
 
   public abstract GenParameters getGenParams(Project project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException;
-
-  public static MPSProject getMPSProject(Project p){
-    return p.getComponent(MPSProjectHolder.class).getMPSProject();
-  }
 }

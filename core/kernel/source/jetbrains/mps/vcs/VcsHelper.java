@@ -29,6 +29,7 @@ import jetbrains.mps.MPSProjectHolder;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl;
 import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.watching.ModelChangesWatcher;
@@ -93,8 +94,7 @@ public class VcsHelper {
   private static boolean doRealMerge(IFile modelFile, final SModel inMemory) {
     try {
       final SModel onDisk = ModelUtils.readModel(FileUtil.loadFileBytes(FileSystem.toFile(modelFile)), modelFile.getPath());
-      return showMergeDialog(inMemory, inMemory, onDisk, modelFile,
-        ProjectManager.getInstance().getOpenProjects()[0].getComponent(MPSProjectHolder.class).getMPSProject());
+      return showMergeDialog(inMemory, inMemory, onDisk, modelFile,ProjectManager.getInstance().getOpenProjects()[0]);
     } catch (IOException e) {
       LOG.error(e);
     } catch (ReadException e) {
@@ -103,7 +103,7 @@ public class VcsHelper {
     return true;
   }
 
-  public static boolean showMergeDialog(final SModel base, final SModel mine, final SModel repo, IFile modelFile, final MPSProject project) {
+  public static boolean showMergeDialog(final SModel base, final SModel mine, final SModel repo, IFile modelFile, final Project project) {
     final VirtualFile file = VFileSystem.getFile(modelFile);
     LOG.assertLog(file != null);
 

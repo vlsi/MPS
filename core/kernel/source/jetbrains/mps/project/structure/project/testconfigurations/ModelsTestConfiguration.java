@@ -50,7 +50,7 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
     Set<SModelDescriptor> modelDescriptors = new LinkedHashSet<SModelDescriptor>();
 
     for (SModelReference m : getModels()) {
-      modelDescriptors.add(getMPSProject(project).getProject().getComponent(ProjectScope.class).getModelDescriptor(m));
+      modelDescriptors.add(project.getComponent(ProjectScope.class).getModelDescriptor(m));
     }
 
     if (modelDescriptors.isEmpty()) {

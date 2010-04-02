@@ -7,7 +7,6 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -28,7 +27,6 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(ReRunMergeFromBackup_Action.class);
 
   private SModelDescriptor model;
-  private MPSProject mpsProject;
   private Project project;
 
   public ReRunMergeFromBackup_Action() {
@@ -77,10 +75,6 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     if (this.model == null) {
       return false;
     }
-    this.mpsProject = event.getData(MPSDataKeys.MPS_PROJECT);
-    if (this.mpsProject == null) {
-      return false;
-    }
     this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
@@ -119,7 +113,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     if (mineModel == null) {
       return;
     }
-    VcsHelper.showMergeDialog(base, mineModel, theirs, ReRunMergeFromBackup_Action.this.model.getModelFile(), ReRunMergeFromBackup_Action.this.mpsProject);
+    VcsHelper.showMergeDialog(base, mineModel, theirs, ReRunMergeFromBackup_Action.this.model.getModelFile(), ReRunMergeFromBackup_Action.this.project);
   }
 
   private File[] getBackupFiles() {

@@ -51,8 +51,7 @@ public class ModelMergeTool implements DiffTool {
         mrequest.getFile().getPath());
       final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
         public MergeModelsDialog compute() {
-          MPSProject project = request.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
-          IOperationContext context = new ModuleContext(baseModel.getModelDescriptor().getModule(), project);
+          IOperationContext context = new ModuleContext(baseModel.getModelDescriptor().getModule(), request.getProject());
           return new MergeModelsDialog(context, baseModel, mineModel, newModel);
         }
       });

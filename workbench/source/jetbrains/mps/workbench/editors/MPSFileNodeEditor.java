@@ -232,7 +232,6 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
       return myContext;
     }
 
-    MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     assert myFile.getNode() != null : "File should not be null";
     assert myFile.getNode().getModel() != null : "Model should not be null";
     SModelDescriptor sm = myFile.getNode().getModel().getModelDescriptor();
@@ -242,7 +241,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,
       return null;
     }
 
-    return new ModuleContext(sm.getModule(), mpsProject);
+    return new ModuleContext(sm.getModule(), myProject);
   }
 
 }

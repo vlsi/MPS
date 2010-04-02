@@ -126,7 +126,6 @@ public class RenameLanguageDialog extends BaseDialog {
       });
 
       for (final Language l : langs) {
-        final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
         GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
           public GenParameters compute() {
             ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
@@ -149,7 +148,7 @@ public class RenameLanguageDialog extends BaseDialog {
 
         myProject.getComponent(GeneratorManager.class)
           .generateModelsFromDifferentModules(
-            new ModuleContext(myLanguage, mpsProject),
+            new ModuleContext(myLanguage, myProject),
             params.getModelDescriptors(),
              new JavaGenerationHandler());
       }

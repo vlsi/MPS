@@ -328,9 +328,4 @@ public abstract class BaseTool {
   protected Project getProject() {
     return myProject;
   }
-
-  @Deprecated
-  protected MPSProject getMPSProject() {
-    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-  }
 }

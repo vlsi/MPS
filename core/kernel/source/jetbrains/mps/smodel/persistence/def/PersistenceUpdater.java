@@ -33,13 +33,6 @@ import com.intellij.openapi.application.ApplicationManager;
 
 import javax.swing.JOptionPane;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 25.12.2009
- * Time: 14:57:37
- * To change this template use File | Settings | File Templates.
- */
 public class PersistenceUpdater {
   public void upgradePersistence(List<SModelDescriptor> modelDescriptors, final int toVersion) {
     for (final SModelDescriptor modelDescriptor : modelDescriptors) {
@@ -130,7 +123,7 @@ public class PersistenceUpdater {
 
   public void upgradePersistenceInProject(Project project, Frame mainFrame) {
     MPSProject p = project.getComponent(MPSProjectHolder.class).getMPSProject();
-    upgradePersistenceInUnit(p.getProject().getComponent(ProjectScope.class), "Project " + p.getProjectFile().toString(), mainFrame);
+    upgradePersistenceInUnit(project.getComponent(ProjectScope.class), "Project " + p.getProjectFile().toString(), mainFrame);
   }
 
   public void upgradePersistenceInAllVisibleModels(Frame mainFrame) {
