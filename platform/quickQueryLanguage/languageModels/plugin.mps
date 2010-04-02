@@ -3082,16 +3082,8 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1235928525906">
-                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1235928525907">
-                                <link role="variableDeclaration:3" targetNodeId="1219924916377" resolveInfo="project" />
-                              </node>
-                              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1235928525908">
-                                <link role="baseMethodDeclaration:3" targetNodeId="24.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
-                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="1235928525909">
-                                  <link role="classifier:3" targetNodeId="27.~Project" resolveInfo="Project" />
-                                </node>
-                              </node>
+                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1235928525907">
+                              <link role="variableDeclaration:3" targetNodeId="1219924916377" resolveInfo="project" />
                             </node>
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1235928525910">
                               <property name="value:3" value="Searching" />
