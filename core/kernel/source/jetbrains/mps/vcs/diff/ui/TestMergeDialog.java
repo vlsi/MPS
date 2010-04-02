@@ -36,7 +36,6 @@ import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.MPSProject.ProjectScope;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.library.LibraryManager;
