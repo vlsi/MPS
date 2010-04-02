@@ -20,6 +20,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -83,7 +84,7 @@ public class BookmarksTree extends MPSTree {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeNumbered(i);
         textTreeNode.setIcon(BookmarkManager.getIcon(i));
-        textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, myProject.getComponent(MPSProjectHolder.class).getMPSProject().createOperationContext()));
+        textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, new ProjectOperationContext(myProject)));
         root.add(textTreeNode);
       }
     }
@@ -93,7 +94,7 @@ public class BookmarksTree extends MPSTree {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeUnnumbered(nodePointer);
         textTreeNode.setIcon(BookmarkManager.getIcon(-1));
-        textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, myProject.getComponent(MPSProjectHolder.class).getMPSProject().createOperationContext()));
+        textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, new ProjectOperationContext(myProject)));
         root.add(textTreeNode);
       }
     }
