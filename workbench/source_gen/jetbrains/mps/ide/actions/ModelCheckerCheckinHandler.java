@@ -11,9 +11,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.project.ProjectOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.io.File;
@@ -64,10 +63,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
       return CheckinHandler.ReturnResult.COMMIT;
     }
 
-    MPSProject mpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-    IOperationContext operationContext = mpsProject.createOperationContext();
-
-    return mpsProject.getPluginManager().getTool(ModelCheckerTool_Tool.class).checkModelsBeforeCommit(operationContext, getModelDescriptorsByFiles(this.myPanel.getFiles()));
+    return this.myProject.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModelsBeforeCommit(new ProjectOperationContext(this.myProject), getModelDescriptorsByFiles(this.myPanel.getFiles()));
   }
 
   public static List<SModelDescriptor> getModelDescriptorsByFiles(Iterable<File> files) {
