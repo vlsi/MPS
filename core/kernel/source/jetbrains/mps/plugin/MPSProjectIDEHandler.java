@@ -55,8 +55,6 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   private static final Logger LOG = Logger.getLogger(MPSProjectIDEHandler.class);
 
   private Project myProject;
-  //we cache MPS project so that we can use
-  private MPSProject myMPSProject;
 
   public MPSProjectIDEHandler(Project project) throws RemoteException {
     myProject = project;
@@ -67,9 +65,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
     new Thread() {
       public void run() {
-        myMPSProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
         try {
-          IProjectHandler handler = myMPSProject.getProjectHandler();
+          IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(myProject);
           if (handler == null) return;
           handler.addIdeHandler(MPSProjectIDEHandler.this);
         } catch (RemoteException e) {
@@ -85,7 +82,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     new Thread() {
       @Override
       public void run() {
-        IProjectHandler handler = myMPSProject.getProjectHandler();
+        IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(myProject);
         if (handler != null) {
           try {
             handler.removeIdeHandler(MPSProjectIDEHandler.this);

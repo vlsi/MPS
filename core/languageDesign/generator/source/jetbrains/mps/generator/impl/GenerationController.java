@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
@@ -33,6 +34,7 @@ import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
@@ -237,11 +239,12 @@ public class GenerationController {
   }
 
   protected IProjectHandler getProjectHandler() {
-    return IdeMain.getTestMode() != TestMode.CORE_TEST ? getProject().getProjectHandler() : null;
+    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return null;
+    return MPSPlugin.getInstance().getProjectHandler(getProject());
   }
 
-  private MPSProject getProject() {
-    return getFirstContext().getMPSProject();
+  private Project getProject() {
+    return getFirstContext().getProject();
   }
 
   private void clearMessageVew() {

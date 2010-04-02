@@ -1505,17 +1505,21 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499494184">
               <link role="classifier:3" targetNodeId="18.~IProjectHandler" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499494185">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499494186">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1560298786499494187">
-                  <link role="variableDeclaration:3" targetNodeId="1560298786499494179" resolveInfo="context" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499494188">
-                  <link role="baseMethodDeclaration:3" targetNodeId="9.~IOperationContext.getMPSProject():jetbrains.mps.project.MPSProject" />
-                </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6289945658608706752">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6289945658608706750">
+                <link role="baseMethodDeclaration:3" targetNodeId="18.~MPSPlugin.getInstance():jetbrains.mps.plugin.MPSPlugin" resolveInfo="getInstance" />
+                <link role="classConcept:3" targetNodeId="18.~MPSPlugin" resolveInfo="MPSPlugin" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499494189">
-                <link role="baseMethodDeclaration:3" targetNodeId="19.~MPSProject.getProjectHandler():jetbrains.mps.plugin.IProjectHandler" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6289945658608706757">
+                <link role="baseMethodDeclaration:3" targetNodeId="18.~MPSPlugin.getProjectHandler(com.intellij.openapi.project.Project):jetbrains.mps.plugin.IProjectHandler" resolveInfo="getProjectHandler" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6289945658608706759">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6289945658608706760">
+                    <link role="variableDeclaration:3" targetNodeId="1560298786499494179" resolveInfo="context" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6289945658608706761">
+                    <link role="baseMethodDeclaration:3" targetNodeId="9.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

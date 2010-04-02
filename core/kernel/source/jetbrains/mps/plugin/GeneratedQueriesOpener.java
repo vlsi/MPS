@@ -35,7 +35,7 @@ public class GeneratedQueriesOpener {
     for (Method m : cls.getMethods()) {
       if (m.getName().endsWith("_" + node.getId())) {
         try {
-          IProjectHandler handler = context.getMPSProject().getProjectHandler();
+          IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(context.getProject());
           if (handler != null) {
             handler.openMethod(modelName + ".QueriesGenerated", m.getName(), m.getParameterTypes().length);
             return true;

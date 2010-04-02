@@ -26,6 +26,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
@@ -125,7 +126,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
 
           public void execute(KeyEvent keyEvent, EditorContext context) {
             try {
-              IProjectHandler handler = context.getOperationContext().getMPSProject().getProjectHandler();
+              IProjectHandler handler = getProjectHandlerForContext(context);
               assert handler != null;
               handler.openQueryMethod(getNamespace(), getQueryMethodPrefix() + getQueryMethodId());
             } catch (IOException e) {
@@ -157,9 +158,13 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
     return editorCell;
   }
 
+  private IProjectHandler getProjectHandlerForContext(EditorContext context) {
+    return MPSPlugin.getInstance().getProjectHandler(context.getOperationContext().getProject());
+  }
+
   public void showMethodTextOnACell(EditorCell cell, final EditorContext context) {
     try {
-      final IProjectHandler handler = context.getOperationContext().getMPSProject().getProjectHandler();
+      final IProjectHandler handler = getProjectHandlerForContext(context);
       assert handler != null;
 
 
@@ -192,10 +197,9 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
     }
   }
 
-  protected List<INodeSubstituteAction> createActions(EditorContext context) {
+  protected List<INodeSubstituteAction> createActions(final EditorContext context) {
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     List<String> conditionsList = getAvailableIdsUsingPlugin(context);
-    final MPSProject project = context.getOperationContext().getMPSProject();
 
     if (conditionsList == null) {
       LOG.debug("Plugin isn't present using reflection");
@@ -223,7 +227,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
         String id = JOptionPane.showInputDialog(null, "Enter query method ID :", "Create New Query Method", JOptionPane.QUESTION_MESSAGE);
         if (id == null) return null;
         try {
-          IProjectHandler projectHandler = project.getProjectHandler();
+          IProjectHandler projectHandler = getProjectHandlerForContext(context);
           SModelDescriptor modelDescriptor = getSNode().getModel().getModelDescriptor();
           assert modelDescriptor != null;
           String modelPath = modelDescriptor.getModelFile().getAbsolutePath();
@@ -245,7 +249,7 @@ public abstract class QueryMethodIdEditor extends AbstractCellProvider {
   }
 
   private List<String> getAvailableIdsUsingPlugin(EditorContext context) {
-    IProjectHandler handler = context.getOperationContext().getMPSProject().getProjectHandler();
+    IProjectHandler handler = getProjectHandlerForContext(context);
     List<String> result = null;
     try {
       assert handler != null;

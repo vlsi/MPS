@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.plugin;
 
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 
+import java.io.File;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 
@@ -43,8 +46,14 @@ public class MPSPlugin {
   private IMPSPlugin myPlugin = null;
   private boolean myMessageShown = false;
 
-  public IProjectHandler getProjectHandler(String projectPath) {
+  public IProjectHandler getProjectHandler(Project project) {
    //todo enable LOG.assertLog(!ThreadUtils.isEventDispatchThread());
+
+    File mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject().getProjectFile();
+
+    File projectFile = mpsProject.getParentFile();
+    String projectPath = projectFile.getAbsolutePath();
+
     try {
       IMPSPlugin plugin = getPlugin();
       if (plugin == null) return null;

@@ -6,7 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
@@ -18,8 +18,9 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.plugin.MPSPlugin;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -29,7 +30,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GoByCurrentReference_Action.class);
 
-  private MPSProject project;
+  private Project project;
   private EditorComponent editorComponent;
   private EditorCell cell;
   private IOperationContext context;
@@ -79,7 +80,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }
@@ -105,7 +106,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode targetNode = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
-      if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(SNodeOperations.getModel(targetNode).getStereotype()) && GoByCurrentReference_Action.this.project.getProjectHandler() != null) {
+      if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(SNodeOperations.getModel(targetNode).getStereotype()) && GoByCurrentReference_Action.this.getHandlerFor(GoByCurrentReference_Action.this.project) != null) {
         if (GoByCurrentReference_Action.this.navigateToJavaStub(targetNode)) {
           return;
         }
@@ -122,6 +123,10 @@ public class GoByCurrentReference_Action extends GeneratedAction {
     return GoByCurrentReference_Action.this.context.getComponent(MPSEditorOpener.class);
   }
 
+  private IProjectHandler getHandlerFor(Project p) {
+    return MPSPlugin.getInstance().getProjectHandler(p);
+  }
+
   private boolean navigateToJavaStub(SNode targetNode) {
     SModelReference ref = SNodeOperations.getModel(targetNode).getSModelReference();
     boolean isClassifier = SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier");
@@ -132,7 +137,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
       return false;
     }
     // ---- 
-    IProjectHandler handler = GoByCurrentReference_Action.this.project.getProjectHandler();
+    IProjectHandler handler = GoByCurrentReference_Action.this.getHandlerFor(GoByCurrentReference_Action.this.project);
     if (handler == null) {
       if (log.isErrorEnabled()) {
         log.error("Project handle is null. Trying to open in MPS...");

@@ -245,13 +245,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   @Nullable
-  public IProjectHandler getProjectHandler() {
-    File projectFile = getProjectFile().getParentFile();
-    String projectPath = projectFile.getAbsolutePath();
-    return MPSPlugin.getInstance().getProjectHandler(projectPath);
-  }
-
-  @Nullable
   public String getFolderFor(IModule module) {
     IFile file = module.getDescriptorFile();
     assert file != null;
@@ -282,10 +275,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     } else{
       return myIDEAProject.getComponent(clazz);
     }
-  }
-
-  public void saveModels() {
-    SModelRepository.getInstance().saveAll();
   }
 
   public List<SModelDescriptor> getProjectModels() {

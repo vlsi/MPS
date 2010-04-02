@@ -15,6 +15,7 @@ import javax.swing.JTable;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import java.util.Collections;
 
@@ -50,7 +51,7 @@ public class HandlerTableCellEditor extends AbstractTableCellEditor {
   }
 
   public List<String> getModelRootManagerClassNames(IOperationContext context) {
-    IProjectHandler projectHandler = context.getMPSProject().getProjectHandler();
+    IProjectHandler projectHandler = MPSPlugin.getInstance().getProjectHandler(context.getProject());
     if (projectHandler != null) {
       try {
         return projectHandler.findInheritors(IModelRootManager.class.getName());
