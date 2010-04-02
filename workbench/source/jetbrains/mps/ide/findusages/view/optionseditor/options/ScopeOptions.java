@@ -21,6 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
@@ -97,7 +98,7 @@ public class ScopeOptions extends BaseOptions {
     if (myScopeType.equals(GLOBAL_SCOPE)) {
       scope = GlobalScopeMinusTransient.getInstance();
     } else if (myScopeType.equals(PROJECT_SCOPE)) {
-      scope = operationContext.getMPSProject().getScope();
+      scope = operationContext.getMPSProject().getProject().getComponent(ProjectScope.class);
     } else if (myScopeType.equals(MODULE_SCOPE)) {
       if (myModule.equals(DEFAULT_VALUE)) {
         scope = new OnlyModuleScope(operationContext.getModule());

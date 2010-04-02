@@ -27,10 +27,7 @@ import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ProjectTester;
-import jetbrains.mps.project.TestResult;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
@@ -160,19 +157,19 @@ public class TestMain {
   }
 
   private static SModelDescriptor getSandbox1(MPSProject project) {
-    return project.getScope().getModelDescriptor(SModelReference.fromString("testRefactoring.sandbox"));
+    return project.getProject().getComponent(ProjectScope.class).getModelDescriptor(SModelReference.fromString("testRefactoring.sandbox"));
   }
 
   private static SModelDescriptor getSandbox2(MPSProject project) {
-    return project.getScope().getModelDescriptor(SModelReference.fromString("testRefactoring.sandbox2"));
+    return project.getProject().getComponent(ProjectScope.class).getModelDescriptor(SModelReference.fromString("testRefactoring.sandbox2"));
   }
 
   private static Language getTestRefactoringLanguage(MPSProject project) {
-    return project.getScope().getLanguage("testRefactoring");
+    return project.getProject().getComponent(ProjectScope.class).getLanguage("testRefactoring");
   }
 
   private static Language getTestRefactoringTargetLanguage(MPSProject project) {
-    return project.getScope().getLanguage("testRefactoringTargetLang");
+    return project.getProject().getComponent(ProjectScope.class).getLanguage("testRefactoringTargetLang");
   }
 
   public static boolean testRefactoringOnProject(final File projectDirectory, final IRefactoringTester refactoringTester) {

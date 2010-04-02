@@ -22,7 +22,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
-import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -37,6 +36,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -105,7 +105,7 @@ public class TodoViewer extends JPanel {
     MPSProject project = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     myUsagesView.setRunOptions(
       FindUtils.makeProvider(new TodoFinder()),
-      new SearchQuery(project.getScope()),
+      new SearchQuery(project.getProject().getComponent(ProjectScope.class)),
       new ButtonConfiguration(true),
       new SearchResults()
     );

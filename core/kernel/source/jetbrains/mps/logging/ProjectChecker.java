@@ -16,6 +16,7 @@
 package jetbrains.mps.logging;
 
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
@@ -39,7 +40,7 @@ public class ProjectChecker {
   public static boolean checkProject(MPSProject project) {
     Set<SModelDescriptor> modelsToTest = new HashSet<SModelDescriptor>();
 
-    for (Language language : project.getScope().getVisibleLanguages()) {
+    for (Language language : project.getProject().getComponent(ProjectScope.class).getVisibleLanguages()) {
       modelsToTest.addAll(language.getScope().getModelDescriptors());
       for (Generator generator : language.getGenerators()) {
         modelsToTest.addAll(generator.getScope().getModelDescriptors());

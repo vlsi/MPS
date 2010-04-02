@@ -16,13 +16,9 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.awt.Frame;
 
 public class ProjectOperationContext extends StandaloneMPSContext {
   private Project myProject;
@@ -53,7 +49,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
 
   @NotNull
   public IScope getScope() {
-    return getMPSProject().getScope();
+    return getMPSProject().getProject().getComponent(ProjectScope.class);
   }
 
   public String toString() {

@@ -17,14 +17,11 @@ package jetbrains.mps.smodel.persistence.def;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
 import java.awt.Frame;
@@ -34,7 +31,6 @@ import java.util.Set;
 
 import com.intellij.openapi.application.ApplicationManager;
 
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 /**
@@ -134,7 +130,7 @@ public class PersistenceUpdater {
 
   public void upgradePersistenceInProject(Project project, Frame mainFrame) {
     MPSProject p = project.getComponent(MPSProjectHolder.class).getMPSProject();
-    upgradePersistenceInUnit(p.getScope(), "Project " + p.getProjectFile().toString(), mainFrame);
+    upgradePersistenceInUnit(p.getProject().getComponent(ProjectScope.class), "Project " + p.getProjectFile().toString(), mainFrame);
   }
 
   public void upgradePersistenceInAllVisibleModels(Frame mainFrame) {

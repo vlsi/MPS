@@ -19,6 +19,7 @@ import com.intellij.ide.impl.dataRules.GetDataRule;
 import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -33,7 +34,7 @@ public class ScopeRule implements GetDataRule {
     if (scope != null) return scope;
 
     MPSProject project = (MPSProject) dataProvider.getData(MPSDataKeys.MPS_PROJECT.getName());
-    if (project != null) return project.getScope();
+    if (project != null) return project.getProject().getComponent(ProjectScope.class);
     return GlobalScope.getInstance();
   }
 }

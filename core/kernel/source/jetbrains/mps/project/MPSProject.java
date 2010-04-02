@@ -331,10 +331,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     }
   }
 
-  public ProjectScope getScope() {
-    return myIDEAProject.getComponent(ProjectScope.class);
-  }
-
   public void update() {
     setProjectDescriptor(getProjectDescriptor());
   }
@@ -376,7 +372,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public void invalidateCaches() {
-    getScope().invalidateCaches();
+    getProject().getComponent(ProjectScope.class).invalidateCaches();
   }
 
   //-----------DEPRECATED
