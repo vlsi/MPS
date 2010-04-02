@@ -127,11 +127,11 @@ public abstract class UITestsBase extends JFCTestCase {
 
       TestUtil.conditionalWaitAndFlush(this, new Computable<Boolean>() {
         public Boolean compute() {
-          return project[0] != null && project[0].getComponent(Project.class) != null;
+          return project[0] != null && project[0].getProject() != null;
         }
       });
 
-      return project[0].getComponent(Project.class);
+      return project[0].getProject();
     }
   }
 

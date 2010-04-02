@@ -67,7 +67,7 @@ public class TestMain {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
     final MPSProject project = loadProject(projectFile);
-    pr.execute(project.getComponent(Project.class));
+    pr.execute(project.getProject());
   }
 
   public static MPSProject loadProject(File projectFile) {
@@ -119,7 +119,7 @@ public class TestMain {
     final MPSProject project = loadProject(projectFile);
     return testActionForLeaks(new Runnable() {
       public void run() {
-        new ProjectTester(project.getComponent(Project.class)).testProject();
+        new ProjectTester(project.getProject()).testProject();
       }
     }, leakThreshold);
   }
@@ -359,7 +359,7 @@ public class TestMain {
     }
 
     final MPSProject project = loadProject(projectFile);
-    TestResult result = new ProjectTester(project.getComponent(Project.class), isRunnable).testProject(configurations);
+    TestResult result = new ProjectTester(project.getProject(), isRunnable).testProject(configurations);
 
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {

@@ -427,7 +427,7 @@ public class TestGenerationWorker extends GeneratorWorker {
           }
         } else {
           for (BaseTestConfiguration config : testConfigurationList) {
-            GenParameters genParams = config.getGenParams(project.getComponent(Project.class), true);
+            GenParameters genParams = config.getGenParams(project.getProject(), true);
             modelDescriptors.addAll(genParams.getModelDescriptors());
           }
         }

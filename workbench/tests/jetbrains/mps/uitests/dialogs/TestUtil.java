@@ -141,7 +141,7 @@ public class TestUtil {
   public static void closeProject(final MPSProject createdProject) {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        ProjectManager.getInstance().closeProject(createdProject.getComponent(Project.class));
+        ProjectManager.getInstance().closeProject(createdProject.getProject());
       }
     });
   }
