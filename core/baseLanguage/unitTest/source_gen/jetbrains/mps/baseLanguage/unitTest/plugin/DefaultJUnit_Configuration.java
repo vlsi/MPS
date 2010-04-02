@@ -109,17 +109,19 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
         final Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
         final MPSProject mpsProject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
         final IOperationContext operationContext = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
-        {
-          final ConfigRunParameters javaRunParameters = DefaultJUnit_Configuration.this.getStateObject().myJavaRunParameters.copy();
-          // add debug arguments if runned under debug 
-          if (executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID)) {
-            String args = this.getUserData(DebuggerKeys.CONNECTION_SETTINGS);
-            String oldVmParams = javaRunParameters.getVMParameters();
-            if (StringUtils.isNotEmpty(oldVmParams)) {
-              oldVmParams += " ";
-            }
-            javaRunParameters.setVMParameters(oldVmParams + args);
+
+        // user's execute code 
+        final ConfigRunParameters javaRunParameters = DefaultJUnit_Configuration.this.getStateObject().myJavaRunParameters.copy();
+        // add debug arguments if runned under debug 
+        if (executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID)) {
+          String args = this.getUserData(DebuggerKeys.CONNECTION_SETTINGS);
+          String oldVmParams = javaRunParameters.getVMParameters();
+          if (StringUtils.isNotEmpty(oldVmParams)) {
+            oldVmParams += " ";
           }
+          javaRunParameters.setVMParameters(oldVmParams + args);
+        }
+        {
           // calculate parameter 
           final UnitTestExecutionController parameter = new _FunctionTypes._return_P0_E0<UnitTestExecutionController>() {
             public UnitTestExecutionController invoke() {
@@ -169,6 +171,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             throw ex.value;
           }
         }
+
         final JComponent finalConsoleComponent = consoleComponent;
         final Runnable finalConsoleDispose = consoleDispose;
         final ProcessHandler finalHandler = handler;
