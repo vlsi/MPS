@@ -39,11 +39,7 @@ import jetbrains.mps.util.PairMap;
   }
 
   private UnregisteredNodes() {
-    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
-      public void performCleanup() {
-        clear();
-      }
-    });
+
   }
 
   void clear() {
