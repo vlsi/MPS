@@ -31,6 +31,7 @@ import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.typesystem.inference.InequationSystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
@@ -48,7 +49,6 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
   private SNode myCurrentChild;
   private LinkDeclaration myLinkDeclaration;
 
-
   public DefaultChildSubstituteInfo(final SNode sourceNode, final LinkDeclaration linkDeclaration, final EditorContext editorContext) {
     super(editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
@@ -62,7 +62,8 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
         }
 
         myParentNode = sourceNode;
-        myLinkDeclaration = linkDeclaration;
+        LinkDeclaration mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(myParentNode.getConceptDeclarationAdapter(), linkDeclaration.getRole());
+        myLinkDeclaration = mostSpecificLinkDeclaration;
         myCurrentChild = sourceNode.getChild(SModelUtil_new.getGenuineLinkRole(linkDeclaration));
       }
     });
@@ -78,7 +79,8 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
           LOG.error("only aggregation links are allowed here", new RuntimeException("only aggregation links are allowed here"), linkDeclaration.getNode());
         }
         myParentNode = parentNode;
-        myLinkDeclaration = linkDeclaration;
+        LinkDeclaration mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(myParentNode.getConceptDeclarationAdapter(), linkDeclaration.getRole());
+        myLinkDeclaration = mostSpecificLinkDeclaration;
         myCurrentChild = currChildNode;
       }
     });
