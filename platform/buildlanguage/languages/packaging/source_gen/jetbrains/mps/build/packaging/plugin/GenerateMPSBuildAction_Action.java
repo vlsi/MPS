@@ -5,7 +5,7 @@ package jetbrains.mps.build.packaging.plugin;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -22,7 +22,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(GenerateMPSBuildAction_Action.class);
 
-  private MPSProject project;
+  private Project project;
   private IOperationContext operationContext;
   private SModelDescriptor modelDescriptor;
 
@@ -58,7 +58,7 @@ public class GenerateMPSBuildAction_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.project = event.getData(MPSDataKeys.MPS_PROJECT);
+    this.project = event.getData(MPSDataKeys.PROJECT);
     if (this.project == null) {
       return false;
     }

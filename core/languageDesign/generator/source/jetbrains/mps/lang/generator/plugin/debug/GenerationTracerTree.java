@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.generator.plugin.debug;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.project.MPSProject;
 
@@ -29,7 +30,7 @@ public class GenerationTracerTree extends MPSTree {
   }
 
   protected GenerationTracerTreeNode rebuild() {
-    return new GenerationTracerTreeNode(myRootTracerNode, myProject);
+    return new GenerationTracerTreeNode(myRootTracerNode, myProject.getComponent(Project.class));
   }
 
   public boolean isAutoscrollToSource() {
@@ -39,6 +40,4 @@ public class GenerationTracerTree extends MPSTree {
   public void setAutoscrollToSource(boolean b) {
     myAutoscrollToSource = b;
   }
-
-
 }

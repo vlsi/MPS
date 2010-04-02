@@ -81,8 +81,8 @@ public abstract class GenerateModelsAction extends BaseAction {
   @Override
   protected boolean collectActionData(AnActionEvent e) {
     if (!super.collectActionData(e)) return false;
-    MPSProject project = e.getData(MPSDataKeys.MPS_PROJECT);
-    myGenManager = project.getComponentSafe(GeneratorManager.class);
+    Project project = e.getData(MPSDataKeys.PROJECT);
+    myGenManager = project.getComponent(GeneratorManager.class);
     myModels = e.getData(MPSDataKeys.MODELS);
     if (myModels == null) myModels = new ArrayList<SModelDescriptor>();
     if (myModels.isEmpty()) {

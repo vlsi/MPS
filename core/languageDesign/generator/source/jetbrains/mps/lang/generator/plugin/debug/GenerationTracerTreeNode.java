@@ -24,6 +24,7 @@ import jetbrains.mps.lang.generator.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.lang.generator.plugin.debug.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.IOperationContext;
@@ -34,9 +35,9 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   private static final Logger LOG = Logger.getLogger(GenerationTracerTreeNode.class);
 
   private TracerNode myTracerNode;
-  private MPSProject myProject;
+  private Project myProject;
 
-  public GenerationTracerTreeNode(TracerNode tracerNode, MPSProject project) {
+  public GenerationTracerTreeNode(TracerNode tracerNode, Project project) {
     super(null);
     myProject = project;
     myTracerNode = tracerNode;
@@ -69,7 +70,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   private ActionGroup createActionGroupForInputNode() {
-    final GenerationTracer tracer = myProject.getComponentSafe(GenerationTracer.class);
+    final GenerationTracer tracer = myProject.getComponent(GenerationTracer.class);
 
     final TracerNode tracerNode = this.getTracerNode();
     final boolean enable = tracerNode != null && tracerNode.getNodePointer() != null && tracerNode.getNodePointer().getNode() != null;
@@ -105,7 +106,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   private ActionGroup createActionGroupForOutputNode() {
-    final GenerationTracer tracer = myProject.getComponentSafe(GenerationTracer.class);
+    final GenerationTracer tracer = myProject.getComponent(GenerationTracer.class);
 
     DefaultActionGroup group = new DefaultActionGroup();
 
@@ -147,7 +148,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     SNode nodeToOpen = myTracerNode.getNodePointer().getNode();
     if (nodeToOpen == null) return;
 
-    IOperationContext context = myProject.createOperationContext();
+    IOperationContext context = new ProjectOperationContext(myProject);
 
     new MPSEditorOpener(myProject.getComponent(Project.class)).openNode(nodeToOpen, context,true,true);
   }
@@ -160,7 +161,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
       LOG.info("clicked node was deleted");
 
     }
-    myProject.getComponentSafe(MPSEditorOpener.class).openNode(node);
+    myProject.getComponent(MPSEditorOpener.class).openNode(node);
   }
 
   public boolean isLeaf() {

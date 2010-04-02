@@ -7,7 +7,7 @@ import java.io.File;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
@@ -31,14 +31,14 @@ public class GenerateTextFromBuild {
   public GenerateTextFromBuild() {
   }
 
-  public static File generate(final SNode configuration, SModelDescriptor descriptor, IOperationContext context, MPSProject project, boolean showWindow) {
+  public static File generate(final SNode configuration, SModelDescriptor descriptor, IOperationContext context, Project project, boolean showWindow) {
     final String basedir = ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
         return MPSLayout_Behavior.call_getFolderToGenerate_1229522949966(Configuration_Behavior.call_getLayout_1213877261819(configuration));
       }
     });
     // generate files 
-    final GeneratorManager generatorManager = project.getComponentSafe(GeneratorManager.class);
+    final GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
     final File[] fileToRun = new File[]{null};
     TextGenerationHandler generationHandler = new TextGenerationHandler() {
       @Override

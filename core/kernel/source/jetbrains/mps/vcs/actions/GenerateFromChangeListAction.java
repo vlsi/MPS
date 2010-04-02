@@ -17,6 +17,7 @@ package jetbrains.mps.vcs.actions;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.Presentation;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.actions.AbstractVcsAction;
 import com.intellij.openapi.vcs.actions.VcsContext;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -37,9 +38,9 @@ import java.util.List;
 public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
   protected void actionPerformed(VcsContext vcsContext) {
     List<SModelDescriptor> modelsToGenerate = getModelsToGenerate(vcsContext);
-    MPSProject project = vcsContext.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
+    Project project = vcsContext.getProject();
     IOperationContext context = new ProjectOperationContext(project);
-    project.getComponentSafe(GeneratorManager.class).generateModelsFromDifferentModules(context, modelsToGenerate, getGenerationHandler());
+    project.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(context, modelsToGenerate, getGenerationHandler());
   }
 
   protected abstract IGenerationHandler getGenerationHandler();
