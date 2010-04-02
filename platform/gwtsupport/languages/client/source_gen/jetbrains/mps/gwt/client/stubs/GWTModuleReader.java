@@ -147,7 +147,7 @@ public class GWTModuleReader {
 
   private void addGWTModuleReference(SNode link, SNode src, final String fqName) {
     SModelReference trgsmref = this.gwtstubResolver.stubModelReference(namespace(fqName));
-    if (SNodeOperations.getModel(src).getModelDescriptor().getSModelReference().equals(trgsmref)) {
+    if (SNodeOperations.getModel(src).getSModelReference().equals(trgsmref)) {
       SNode trg = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(src), "jetbrains.mps.gwt.client.structure.GWTModule")).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode gwtmod) {
           return SPropertyOperations.getString(gwtmod, "name").equals(shortName(fqName));

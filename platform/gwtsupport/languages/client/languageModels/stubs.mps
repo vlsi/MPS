@@ -3441,21 +3441,16 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6487379123666448020">
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6487379123666449328">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6487379123666449323">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6487379123666449318">
-                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="6487379123666448032">
-                  <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6487379123666448027">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6487379123666448026">
-                      <link role="variableDeclaration:3" targetNodeId="6487379123666448002" resolveInfo="src" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="6487379123666448031" />
+              <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="6487379123666448032">
+                <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6487379123666448027">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6487379123666448026">
+                    <link role="variableDeclaration:3" targetNodeId="6487379123666448002" resolveInfo="src" />
                   </node>
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6487379123666449322">
-                  <link role="baseMethodDeclaration:3" targetNodeId="4.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="6487379123666448031" />
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6487379123666449327">
-                <link role="baseMethodDeclaration:3" targetNodeId="4.~SModelDescriptor.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
+                <link role="baseMethodDeclaration:3" targetNodeId="4.~SModel.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6487379123666449332">
