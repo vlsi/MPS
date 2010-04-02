@@ -1487,6 +1487,7 @@
       <property name="value:0" value="tool&lt;&lt;{tool}&gt;&gt;" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="2880878974640497882" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1209911036758">
     <property name="package:0" value="Actions.Groups" />
@@ -1712,6 +1713,7 @@
       <property name="value:0" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
+    <node role="deprecatedNode$attribute:0" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation:0" id="2880878974640497881" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210676672555">
     <property name="package:0" value="Preference.Members" />
