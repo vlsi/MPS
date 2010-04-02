@@ -405,19 +405,33 @@ public class TemplateProcessor {
       IncludeMacro includeMacro = (IncludeMacro) nodeMacro;
       TemplateDeclaration includeTemplate = includeMacro.getIncludeTemplate();
       if (includeTemplate == null) {
-        myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$ : no 'include template'");
+        myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLUDE$ : no 'include template'");
         return null;
+      }
+
+      final List<TemplateParameterDeclaration> parameterDeclarations = includeTemplate.getParameters();
+      if(parameterDeclarations != null && parameterDeclarations.size() > 0) {
+        if(myContext == null) {
+          myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLUDE$: no parameters");
+        } else {
+          for(TemplateParameterDeclaration decl : parameterDeclarations) {
+            String name = decl.getName();
+            if(name != null && !myContext.hasVariable(name)) {
+              myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLUDE$: parameter `" + name + "' is missing");
+            }
+          }
+        }
       }
 /*
       TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator);
       if (fragment == null) {
-        myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$");
+        myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLUDE$");
         return null;
       }
 */
       List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments(includeTemplate);
       if (!GeneratorUtil.checkIfOneOrMaryAdjacentFragments(fragments, includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator)) {
-        myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$");
+        myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLUDE$");
         return null;
       }
 
@@ -432,7 +446,7 @@ public class TemplateProcessor {
         for (TemplateFragment fragment : fragments) {
           SNode templateForInclude = fragment.getParent().getNode();
           mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
-          List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newInputNode, null /* FIXME add parameters */);
+          List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newInputNode, myContext);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         }
       } finally {

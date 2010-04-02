@@ -137,6 +137,14 @@ public class QueriesGenerated {
     return pattern;
   }
 
+  public static GeneratedMatchingPattern patternRule_Condition_933643154465852759(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a32();
+    if (!(pattern.match(_context.getNode()))) {
+      return null;
+    }
+    return pattern;
+  }
+
   public static class Pattern_x583g4_a0a0a71 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_right;
     /*package*/ SNode PatternVar_xx;
@@ -501,6 +509,45 @@ public class QueriesGenerated {
           return false;
         }
         this.PatternVar_ref = nodeToMatch_x583g4_a0a0a22.getReferent("myStatement");
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (!(!(pattern != null) || pattern.getClass() != this.getClass())) {
+        this.PatternVar_ref = (SNode) pattern.getFieldValue("PatternVar_ref");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("PatternVar_ref".equals(fieldName)) {
+        return this.PatternVar_ref;
+      }
+      return null;
+    }
+  }
+
+  public static class Pattern_x583g4_a0a0a32 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode PatternVar_ref;
+
+    public Pattern_x583g4_a0a0a32() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_x583g4_a0a0a32;
+        nodeToMatch_x583g4_a0a0a32 = nodeToMatch;
+        if (!("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef".equals(nodeToMatch_x583g4_a0a0a32.getConceptFqName()))) {
+          return false;
+        }
+        if (!("11".equals(nodeToMatch_x583g4_a0a0a32.getProperty("ii")))) {
+          return false;
+        }
+        this.PatternVar_ref = nodeToMatch_x583g4_a0a0a32.getReferent("myStatement");
       }
       return true;
     }

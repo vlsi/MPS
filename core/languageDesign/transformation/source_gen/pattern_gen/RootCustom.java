@@ -33,6 +33,9 @@ public class RootCustom {
       int e33 = 42;
       int e32 = (22 + "myWork1".length());
       int e31 = 58 + ("extraWork".length());
+      int e30 = 
+      {
+      };
     }
   }
 }

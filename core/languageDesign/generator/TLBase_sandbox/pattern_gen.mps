@@ -221,6 +221,16 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7870321878390043349">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7870321878390043350">
+            <property name="name:3" value="e30" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7870321878390043351" />
+            <node role="initializer:3" type="jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef" id="7870321878390043352">
+              <property name="ii" value="11" />
+              <link role="myStatement" targetNodeId="5857536350883158504" resolveInfo="extraWork" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

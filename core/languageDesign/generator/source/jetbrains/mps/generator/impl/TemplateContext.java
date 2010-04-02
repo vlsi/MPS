@@ -26,4 +26,8 @@ public class TemplateContext {
   public Object getVariable(String name) {
     return variables == null ? null : variables.get(name);
   }
+
+  public boolean hasVariable(String name) {
+    return variables == null ? false : variables.containsKey(name);
+  }
 }
