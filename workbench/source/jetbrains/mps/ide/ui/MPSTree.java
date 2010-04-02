@@ -426,12 +426,17 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          List<String> expansion = getExpandedPaths();
-          List<String> selection = getSelectedPaths();
+          final List<String> expansion = getExpandedPaths();
+          final List<String> selection = getSelectedPaths();
           rebuildAction.run();
           if (saveExpansion) {
-            expandPaths(expansion);
-            selectPaths(selection);
+            runWithoutExpansion(new Runnable() {
+              @Override
+              public void run() {
+                expandPaths(expansion);
+                selectPaths(selection);
+              }
+            });
           }
         }
       });
