@@ -59,6 +59,7 @@ public class MPSEditorOpener implements ProjectComponent {
 
   public MPSEditorOpener(Project project) {
     myProject = project;
+    assert myProject != null;
   }
 
   public void projectOpened() {
@@ -183,7 +184,7 @@ public class MPSEditorOpener implements ProjectComponent {
   }
 
   private IEditor openNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select, final boolean openBaseNode) {
-    final Project ideaProject = context.getComponent(Project.class);
+    final Project ideaProject = context.getProject();
     ideaProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
     /* TODO use SNodePointer instead of SNode */
     /* temp hack: runWriteAction instead of read, TODO move sync into doOpenNode */
@@ -213,7 +214,7 @@ public class MPSEditorOpener implements ProjectComponent {
         ", top-level node: " + current +
         ", isDisposed: " + node.isDisposed() +
         ", model: " + node.getModel() +
-        (node.getModel() != null ? ", modelDisposed: " + node.getModel().isDisposed(): "");
+        (node.getModel() != null ? ", modelDisposed: " + node.getModel().isDisposed() : "");
     }
     // [--] for http://youtrack.jetbrains.net/issue/MPS-7663
     final IEditor nodeEditor = openEditor(containingRoot, context, openBaseNode);
