@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.MPSProject;
@@ -57,7 +58,7 @@ public class OutputViewTool extends BaseProjectTool {
       }
 
       public void actionPerformed(ActionEvent e) {
-        String pattern = JOptionPane.showInputDialog(getMPSProject().getComponent(Frame.class), "Enter pattern to find", myLastSearchPattern);
+        String pattern = JOptionPane.showInputDialog(WindowManager.getInstance().getFrame(getProject()), "Enter pattern to find", myLastSearchPattern);
         if (pattern == null) return;
         find(pattern);
       }

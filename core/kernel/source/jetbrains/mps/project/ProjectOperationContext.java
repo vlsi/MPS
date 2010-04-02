@@ -22,14 +22,15 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class ProjectOperationContext extends StandaloneMPSContext {
-  private MPSProject myProject;
+  private Project myProject;
 
   public ProjectOperationContext(Project project) {
-    myProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+    myProject = project;
   }
 
+  @Deprecated
   public ProjectOperationContext(MPSProject project) {
-    myProject = project;
+    myProject = project.getComponent(Project.class);
   }
 
   public <T> T getComponent(@NotNull Class<T> clazz) {
@@ -44,13 +45,14 @@ public class ProjectOperationContext extends StandaloneMPSContext {
   }
 
   @NotNull
+  @Deprecated
   public MPSProject getMPSProject() {
-    return myProject;
+    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
   @NotNull
   public IScope getScope() {
-    return myProject.getScope();
+    return getMPSProject().getScope();
   }
 
   public String toString() {
