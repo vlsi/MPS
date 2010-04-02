@@ -96,7 +96,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   @Deprecated //left for compatibility
   public ProjectPluginManager getPluginManager() {
-    return getComponentSafe(Project.class).getComponent(ProjectPluginManager.class);
+    return getComponent(Project.class).getComponent(ProjectPluginManager.class);
   }
 
   public List<SModelDescriptor> getProjectModels() {
@@ -392,7 +392,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         MPSProjects projects = MPSProjects.instance();
         projects.removeProject(MPSProject.this);
 
-        getComponentSafe(Highlighter.class).stopUpdater();
+        getComponent(Highlighter.class).stopUpdater();
 
         MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
         SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);

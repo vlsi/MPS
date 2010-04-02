@@ -90,9 +90,7 @@ class ModelChangesTree extends MPSTree {
           if (targetNode != null) {
             Project[] openedProjects = ProjectManager.getInstance().getOpenProjects();
             if (openedProjects.length == 0) break;
-            final Project firstOpenedProject = openedProjects[0];
-            MPSProject mpsProject = firstOpenedProject.getComponent(MPSProjectHolder.class).getMPSProject();
-            mpsProject.getComponentSafe(MPSEditorOpener.class).openNode(targetNode);
+            openedProjects[0].getComponent(MPSEditorOpener.class).openNode(targetNode);
           }
         }
       }

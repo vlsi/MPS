@@ -422,7 +422,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       root.add(myModulesPool);
 
       if (getProject().getComponent(TransientModelsModule.class).getOwnModelDescriptors().size() != 0) {
-        TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(project);
+        TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(getProject());
         root.add(transientModelsNode);
       }
       return root;

@@ -388,7 +388,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     /* temp hack: write action instead of read, TODO remove lock, hintObject should be SNodePointer */
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        NavigationManager.getInstance().navigateTo(getMPSProject(), selectedMessage.getHintObject(), true, true);
+        NavigationManager.getInstance().navigateTo(getProject(), selectedMessage.getHintObject(), true, true);
       }
     });
   }

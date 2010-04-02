@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -25,9 +26,9 @@ import jetbrains.mps.workbench.action.ActionUtils;
 public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   private IModule myTransientModule;
 
-  public TransientModelsTreeNode(MPSProject project) {
-    super(new ModuleContext(project.getComponentSafe(TransientModelsModule.class), project));
-    myTransientModule = project.getComponentSafe(TransientModelsModule.class);
+  public TransientModelsTreeNode(Project project) {
+    super(new ModuleContext(project.getComponent(TransientModelsModule.class), project));
+    myTransientModule = project.getComponent(TransientModelsModule.class);
     populate();
     updatePresentation();
     setNodeIdentifier(myTransientModule.getModuleReference().toString());

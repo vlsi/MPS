@@ -133,7 +133,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
             public void run() {
               SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
               if (node != null) {
-                getMPSProject().getComponentSafe(MPSEditorOpener.class).openNode(node);
+                getProject().getComponent(MPSEditorOpener.class).openNode(node);
               }
             }
           });

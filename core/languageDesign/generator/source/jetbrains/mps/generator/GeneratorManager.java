@@ -298,14 +298,14 @@ public class GeneratorManager {
     final boolean[] result = new boolean[1];
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        final MPSProject project = inputModels.get(0).o2.getMPSProject();
-        project.getComponentSafe(TransientModelsModule.class).clearAll();
+        final Project project = inputModels.get(0).o2.getProject();
+        project.getComponent(TransientModelsModule.class).clearAll();
         if (!saveTransientModels) {
-          project.getComponentSafe(GenerationTracer.class).discardTracing();
+          project.getComponent(GenerationTracer.class).discardTracing();
         }
 
         IGenerationTracer tracer = saveTransientModels
-          ? project.getComponentSafe(GenerationTracer.class)
+          ? project.getComponent(GenerationTracer.class)
           : new NullGenerationTracer();
         tracer.startTracing();
 

@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.ide.messages;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 
 public interface INavigationHandler<T> {
-  void navigate(MPSProject project, T object, boolean focus, boolean select);
+  void navigate(Project project, T object, boolean focus, boolean select);
 }

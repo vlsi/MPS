@@ -90,7 +90,7 @@ public class GeneratorWorker extends MpsWorker {
       s.append(m);
     }
     info(s.toString());
-    GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
+    GeneratorManager gm = project.getComponent(GeneratorManager.class);
     GenerationListener generationListener = getGenerationListener();
     gm.addGenerationListener(generationListener);
 
