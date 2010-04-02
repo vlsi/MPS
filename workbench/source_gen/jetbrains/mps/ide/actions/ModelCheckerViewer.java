@@ -36,7 +36,7 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
-import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -162,7 +162,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
   }
 
   private void runCheck() {
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), this.myCheckProgressTitle, true) {
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject, this.myCheckProgressTitle, true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ModelCheckerViewer.this.myUsagesView.run(indicator);
       }
@@ -171,7 +171,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
 
   public void prepareAndCheck(final List<SModelDescriptor> modelDescriptors, final String taskTargetTitle, final Icon taskIcon) {
     IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
-    SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, this.myOperationContext), ModelCheckerViewer.this.myProject.getComponent(MPSProjectHolder.class).getMPSProject().getScope());
+    SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, this.myOperationContext), ModelCheckerViewer.this.myProject.getComponent(ProjectScope.class));
     ModelCheckerViewer.this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, false, true));
 
     this.myCheckProgressTitle = "Checking " + taskTargetTitle;

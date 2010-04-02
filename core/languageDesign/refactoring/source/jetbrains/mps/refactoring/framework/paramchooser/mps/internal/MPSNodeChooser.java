@@ -22,6 +22,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.refactoring.framework.InvalidInputValueException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
@@ -137,7 +138,7 @@ public class MPSNodeChooser implements IChooser {
 
   private Set<SModelDescriptor> getModelsFrom(IOperationContext context) {
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
-    for (SModelDescriptor model : context.getMPSProject().getScope().getModelDescriptors()) {
+    for (SModelDescriptor model : context.getProject().getComponent(ProjectScope.class).getModelDescriptors()) {
       if (SModelStereotype.isUserModel(model)) {
         models.add(model);
       }
