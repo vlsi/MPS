@@ -25,10 +25,9 @@ import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.BaseAdapter;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ToggleAction;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.icons.Icons;
-import jetbrains.mps.MPSProjectHolder;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
 public class StratergyAddMethodDialog extends BaseAddMethodDialog {
   private StratergyAddMethodDialog.ContainerStrategy myContainerStrategy;
@@ -160,12 +159,12 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
   }
 
   private class SortByNameAction extends ToggleAction {
-    private MPSProject myProject;
+    private Project myProject;
 
     private SortByNameAction(Project p) {
       super("Sort Alphabetically");
       this.getTemplatePresentation().setIcon(Icons.SORT_ALPHABETICALLY_ICON);
-      this.myProject = p.getComponent(MPSProjectHolder.class).getMPSProject();
+      this.myProject = p;
     }
 
     public boolean isSelected(AnActionEvent e) {
@@ -178,11 +177,11 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
     }
 
     public boolean isSelected() {
-      return this.myProject.getPluginManager().getPrefsComponent(PersistentOptions_PreferencesComponent.class).getStateObject().sortAlphabetically;
+      return this.myProject.getComponent(ProjectPluginManager.class).getPrefsComponent(PersistentOptions_PreferencesComponent.class).getStateObject().sortAlphabetically;
     }
 
     public void setSelected(boolean state) {
-      this.myProject.getPluginManager().getPrefsComponent(PersistentOptions_PreferencesComponent.class).getStateObject().sortAlphabetically = state;
+      this.myProject.getComponent(ProjectPluginManager.class).getPrefsComponent(PersistentOptions_PreferencesComponent.class).getStateObject().sortAlphabetically = state;
     }
   }
 }
