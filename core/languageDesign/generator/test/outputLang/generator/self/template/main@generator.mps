@@ -374,6 +374,21 @@
         </node>
       </node>
     </node>
+    <node role="patternReductionRule:2" type="jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule:2" id="933643154465852759">
+      <node role="pattern:2" type="jetbrains.mps.lang.pattern.structure.PatternExpression:0" id="933643154465852760">
+        <node role="patternNode:0" type="jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef" id="933643154465860962">
+          <property name="ii" value="11" />
+          <node role="_attr_$link_attribute$myStatement" type="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration:0" id="933643154465860963">
+            <property name="varName:0" value="ref" />
+          </node>
+        </node>
+      </node>
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="933643154465854521">
+        <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="933643154465854523">
+          <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="933643154465854524" />
+        </node>
+      </node>
+    </node>
     <node role="rootMappingRule:2" type="jetbrains.mps.lang.generator.structure.Root_MappingRule:2" id="4146564171992412767">
       <link role="template:2" targetNodeId="4146564171992412775" resolveInfo="map_null" />
       <link role="applicableConcept:2" targetNodeId="1.4146564171992368516" resolveInfo="CustomRoot" />
@@ -693,6 +708,9 @@
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5857536350883039206">
                     <link role="baseMethodDeclaration:3" targetNodeId="4v.~String.length():int" resolveInfo="length" />
+                    <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.IncludeMacro:2" id="933643154466318764">
+                      <link role="includeTemplate:2" targetNodeId="933643154466320524" resolveInfo="aaaaa" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -700,8 +718,17 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="933643154466318762" />
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="933643154466320524">
+    <property name="name:2" value="aaaaa" />
+    <node role="parameter:2" type="jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration:2" id="933643154466320526">
+      <property name="name:2" value="node" />
+      <node role="type:2" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="933643154466320528" />
+    </node>
+    <node role="contentNode:2" type="jetbrains.mps.lang.core.structure.BaseConcept:0" id="933643154466320525" />
   </node>
 </model>
 
