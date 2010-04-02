@@ -21,6 +21,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
@@ -29,15 +30,12 @@ import jetbrains.mps.MPSProjectHolder;
 public class BookmarksDialog extends BaseDialog {
   private BookmarkManager myBookmarkManager;
   private JPanel myMainComponent = new JPanel();
-  private Project myProject;
   private BookmarksTree myTree;
 
-
   public BookmarksDialog(Project project, BookmarkManager bookmarkManager) {
-     super(project.getComponent(MPSProjectHolder.class).getMPSProject().createOperationContext().getMainFrame(), 
+     super(WindowManager.getInstance().getFrame(project), 
        "Editor Bookmarks");
     myBookmarkManager = bookmarkManager;
-    myProject = project;
     myTree = new BookmarksTree(project, bookmarkManager);
 
     setTitle("Editor Bookmarks");

@@ -94,11 +94,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     setProjectDescriptor(getProjectDescriptor());
   }
 
-  @Deprecated //left for compatibility
-  public ProjectPluginManager getPluginManager() {
-    return getComponent(Project.class).getComponent(ProjectPluginManager.class);
-  }
-
   public List<SModelDescriptor> getProjectModels() {
     ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     List<IModule> modules = getModules();
@@ -371,13 +366,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     return null;
   }
 
-  @NotNull
-  public <T> T getComponentSafe(Class<T> clz) {
-    T result = getComponent(clz);
-    if (result == null) throw new RuntimeException("Can't find a component " + clz.getName());
-    return result;
-  }
-
   public void saveModels() {
     SModelRepository.getInstance().saveAll();
   }
@@ -436,5 +424,20 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       result.addAll(getProjectDevKits());
       return result;
     }
+  }
+
+  //-----------DEPRECATED
+
+  @NotNull
+  @Deprecated
+  public <T> T getComponentSafe(Class<T> clz) {
+    T result = getComponent(clz);
+    if (result == null) throw new RuntimeException("Can't find a component " + clz.getName());
+    return result;
+  }
+
+  @Deprecated //should be left for compatibility (Project Operations in plugins)
+  public ProjectPluginManager getPluginManager() {
+    return getComponent(Project.class).getComponent(ProjectPluginManager.class);
   }
 }             

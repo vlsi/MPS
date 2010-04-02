@@ -21,7 +21,7 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.hierarchy.icons.Icons;
 import jetbrains.mps.ide.hierarchy.toggle.GroupedToggleAction;
 import jetbrains.mps.ide.hierarchy.toggle.ToggleActionGroup;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -162,11 +162,8 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
 
         CommonChoosers.showSimpleNodeChooser(nodes, new ChooserCallback<SNode>() {
           public void execute(SNode node) {
-            MPSProject project = getMPSProject();
-            if (project != null) {
-              final IOperationContext operationContext = project.createOperationContext();
-              showItemInHierarchy((T) node.getAdapter(), operationContext);
-            }
+            final IOperationContext operationContext = new ProjectOperationContext(getProject());
+            showItemInHierarchy((T) node.getAdapter(), operationContext);
           }
         });
       }
