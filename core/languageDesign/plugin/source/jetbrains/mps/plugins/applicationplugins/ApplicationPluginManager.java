@@ -88,8 +88,7 @@ public class ApplicationPluginManager implements ApplicationComponent {
     Set<IModule> modules = new HashSet<IModule>();
     modules.add(PluginUtil.getIDEModule());
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
-      MPSProject mpsProject = p.getComponent(MPSProjectHolder.class).getMPSProject();
-      modules.addAll(PluginUtil.collectPluginModules(mpsProject));
+      modules.addAll(PluginUtil.collectPluginModules(p));
     }
 
     List<BaseApplicationPlugin> plugins = PluginUtil.createPlugins(modules, new ApplicationPluginCreator());
