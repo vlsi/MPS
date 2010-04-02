@@ -92,8 +92,8 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       return (MPSTree) myTree;
     }
 
-    protected MPSProject getMPSProject() {
-      return ProjectPane.this.getMPSProject();
+    protected Project getProject() {
+      return ProjectPane.this.getProject();
     }
 
     protected ProjectModulesPoolTreeNode getModulesPoolNode() {
@@ -158,9 +158,8 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   @Override
   protected void removeListeners() {
     super.removeListeners();
-    if (getMPSProject() != null) {
-      getProject().getComponent(FileEditorManager.class).removeFileEditorManagerListener(myEditorListener);  
-    }
+    FileEditorManager fileEditorManager = getProject().getComponent(FileEditorManager.class);
+    fileEditorManager.removeFileEditorManagerListener(myEditorListener);  
   }
 
   @Override
@@ -190,10 +189,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   public ProjectView getProjectView() {
     return myProjectView;
-  }
-
-  public MPSProject getMPSProject() {
-    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
   public String getTitle() {
@@ -240,7 +235,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
     SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
 
-    IEditor editor = getMPSProject().getComponentSafe(MPSEditorOpener.class).editNode(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
+    IEditor editor = getProject().getComponent(MPSEditorOpener.class).editNode(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
     editor.requestFocus();
   }
 
@@ -393,39 +388,41 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       if (getProject() == null || getProject().isDisposed()) {
         return new TextTreeNode("Empty");
       }
-      ProjectTreeNode root = new ProjectTreeNode(getMPSProject());
+
+      MPSProject project = getProject().getComponent(MPSProjectHolder.class).getMPSProject();
+      ProjectTreeNode root = new ProjectTreeNode(project);
 
       List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
 
-      List<Solution> solutions = getMPSProject().getProjectSolutions();
+      List<Solution> solutions = project.getProjectSolutions();
       for (Solution solution : solutions) {
-        ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, getMPSProject());
+        ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, project);
         moduleNodes.add(solutionTreeNode);
       }
 
-      List<Language> languages = getMPSProject().getProjectLanguages();
+      List<Language> languages = project.getProjectLanguages();
       for (Language language : languages) {
-        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, getMPSProject());
+        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, project);
         moduleNodes.add(node);
       }
 
-      List<DevKit> devkits = getMPSProject().getProjectDevKits();
+      List<DevKit> devkits = project.getProjectDevKits();
       for (DevKit devKit : devkits) {
-        ProjectDevKitTreeNode node = new ProjectDevKitTreeNode(devKit, getMPSProject());
+        ProjectDevKitTreeNode node = new ProjectDevKitTreeNode(devKit, project);
         moduleNodes.add(node);
       }
 
-      ModulesNamespaceTreeBuilder builder = new ModulesNamespaceTreeBuilder(getMPSProject());
+      ModulesNamespaceTreeBuilder builder = new ModulesNamespaceTreeBuilder(project);
       for (MPSTreeNode mtn : moduleNodes) {
         builder.addNode(mtn);
       }
       builder.fillNode(root);
 
-      myModulesPool = new ProjectModulesPoolTreeNode(getMPSProject());
+      myModulesPool = new ProjectModulesPoolTreeNode(project);
       root.add(myModulesPool);
 
-      if (getMPSProject().getComponentSafe(TransientModelsModule.class).getOwnModelDescriptors().size() != 0) {
-        TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(getMPSProject());
+      if (getProject().getComponent(TransientModelsModule.class).getOwnModelDescriptors().size() != 0) {
+        TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(project);
         root.add(transientModelsNode);
       }
       return root;

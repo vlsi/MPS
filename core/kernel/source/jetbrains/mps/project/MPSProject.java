@@ -94,6 +94,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     setProjectDescriptor(getProjectDescriptor());
   }
 
+  @Deprecated //left for compatibility
   public ProjectPluginManager getPluginManager() {
     return getComponentSafe(Project.class).getComponent(ProjectPluginManager.class);
   }

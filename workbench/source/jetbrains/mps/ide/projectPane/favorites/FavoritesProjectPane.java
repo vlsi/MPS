@@ -15,6 +15,7 @@ import com.intellij.util.ui.EmptyIcon;
 import javax.swing.*;
 import javax.swing.tree.TreeNode;
 
+import jetbrains.mps.project.ProjectOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -50,7 +51,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     super(project);
     myFavoritesManager = manager;
     myProjectView = projectView;
-    myContext = getMPSProject().createOperationContext();
+    myContext = new ProjectOperationContext(getProject());
     myTree = new LogicalViewTree(FavoritesProjectPane.this) {
       protected MPSTreeNode rebuild() {
         String subId = getSubId();
@@ -107,10 +108,6 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
         myProjectView.addProjectPane(FavoritesProjectPane.this);
       }
     });
-  }
-
-  public MPSProject getMPSProject() {
-    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
   public void rebuild() {

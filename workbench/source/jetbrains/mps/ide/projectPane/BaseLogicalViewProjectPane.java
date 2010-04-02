@@ -20,7 +20,6 @@ import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
-import jetbrains.mps.ide.actions.NewSolution_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -32,19 +31,16 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionFactory;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.Nullable;
@@ -104,8 +100,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   public abstract Project getProject();
-
-  public abstract MPSProject getMPSProject();
 
   public abstract ProjectView getProjectView();
 
@@ -201,13 +195,11 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   protected void removeListeners() {
-    if (getMPSProject() != null) {
-      SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
-      CommandProcessor.getInstance().removeCommandListener(myCommandListener);
-      MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
-      getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
-      VirtualFileManager.getInstance().removeVirtualFileManagerListener(myRefreshListener);
-    }
+    SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
+    CommandProcessor.getInstance().removeCommandListener(myCommandListener);
+    MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
+    getProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
+    VirtualFileManager.getInstance().removeVirtualFileManagerListener(myRefreshListener);
   }
 
   protected void addListeners() {
@@ -263,10 +255,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
     CommandProcessor.getInstance().addCommandListener(myCommandListener);
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
-    getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
+    getProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
-
 
 
   public SNode getSelectedSNode() {
@@ -302,7 +293,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   public SModelDescriptor getContextModel() {
     MPSTreeNode treeNode = (MPSTreeNode) getSelectedTreeNode(TreeNode.class);
     while (treeNode != null && !(treeNode instanceof SModelTreeNode)) {
-     treeNode = (MPSTreeNode) treeNode.getParent();
+      treeNode = (MPSTreeNode) treeNode.getParent();
     }
     if (treeNode == null) return null;
     return ((SModelTreeNode) treeNode).getSModelDescriptor();
@@ -556,7 +547,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
   }
 
-    //----listeners----
+  //----listeners----
 
   private class MyModelRepositoryAdapter extends SModelRepositoryAdapter {
     public void modelRepositoryChanged() {
@@ -620,14 +611,17 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       dsde.getDragSourceContext().setCursor(null);
     }
 
-    public void dragOver(DragSourceDragEvent dsde) {}
+    public void dragOver(DragSourceDragEvent dsde) {
+    }
 
     public void dropActionChanged(DragSourceDragEvent dsde) {
       dsde.getDragSourceContext().setCursor(null);
     }
 
-    public void dragDropEnd(DragSourceDropEvent dsde) { }
+    public void dragDropEnd(DragSourceDropEvent dsde) {
+    }
 
-    public void dragExit(DragSourceEvent dse) { }
+    public void dragExit(DragSourceEvent dse) {
+    }
   }
 }

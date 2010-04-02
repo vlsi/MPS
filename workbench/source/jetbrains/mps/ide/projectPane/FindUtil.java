@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Generator;

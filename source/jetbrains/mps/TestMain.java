@@ -26,7 +26,6 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -68,7 +67,7 @@ public class TestMain {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
     final MPSProject project = loadProject(projectFile);
-    pr.execute(project);
+    pr.execute(project.getComponent(Project.class));
   }
 
   public static MPSProject loadProject(File projectFile) {
@@ -83,9 +82,9 @@ public class TestMain {
 
     String filePath = projectFile.getAbsolutePath();
 
-    Project ideaProject = null;
+    Project project = null;
     try {
-      ideaProject = projectManager.loadAndOpenProject(filePath, false);
+      project = projectManager.loadAndOpenProject(filePath, false);
     } catch (IOException e) {
       throw new RuntimeException(e);
     } catch (JDOMException e) {
@@ -94,7 +93,7 @@ public class TestMain {
       throw new RuntimeException(e);
     }
 
-    assert ideaProject != null;
+    assert project != null;
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -104,9 +103,8 @@ public class TestMain {
       }
     });
 
-    projectManager.openProject(ideaProject);
-    MPSProjectHolder holder = ideaProject.getComponent(MPSProjectHolder.class);
-    return holder.getMPSProject();
+    projectManager.openProject(project);
+    return project.getComponent(MPSProjectHolder.class).getMPSProject();
   }
 
   public static boolean testProjectGenerationForLeaks(File projectFile) {
@@ -417,6 +415,6 @@ public class TestMain {
   }
 
   public static interface ProjectRunnable {
-    void execute(MPSProject project);
+    void execute(Project project);
   }
 }
