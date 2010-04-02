@@ -438,36 +438,19 @@
         <link role="typeVariableDeclaration:3" targetNodeId="1219327175866" resolveInfo="T" />
       </node>
     </node>
-    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1235926730856">
-      <property name="isDeprecated:3" value="true" />
-      <property name="name:3" value="getMPSProject" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1235926730857" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1235926730858">
-        <link role="classifier:3" targetNodeId="10.~MPSProject" resolveInfo="MPSProject" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8978229515790707745">
+      <property name="name:3" value="getProject" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8978229515790707746" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8978229515790707747">
+        <link role="classifier:3" targetNodeId="27.~Project" resolveInfo="Project" />
       </node>
-      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="1235926730859">
-        <link role="annotation:3" targetNodeId="2.~Deprecated" resolveInfo="Deprecated" />
-      </node>
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235926730860">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1235926741756">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7018291867655279930">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7018291867655279917">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1235926747883">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1235926747884">
-                  <link role="fieldDeclaration:3" targetNodeId="1219326319430" resolveInfo="myMPSProject" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1235926747885" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7018291867655279921">
-                <link role="baseMethodDeclaration:3" targetNodeId="24.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="7018291867655279926">
-                  <link role="classifier:3" targetNodeId="56.~MPSProjectHolder" resolveInfo="MPSProjectHolder" />
-                </node>
-              </node>
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8978229515790707748">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8978229515790711849">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8978229515790711852">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="8978229515790711853">
+              <link role="fieldDeclaration:3" targetNodeId="1219326319430" resolveInfo="myProject" />
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7018291867655279936">
-              <link role="baseMethodDeclaration:3" targetNodeId="56.~MPSProjectHolder.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
-            </node>
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="8978229515790711854" />
           </node>
         </node>
       </node>

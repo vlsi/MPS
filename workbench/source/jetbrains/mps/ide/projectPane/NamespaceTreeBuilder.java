@@ -15,17 +15,12 @@
  */
 package jetbrains.mps.ide.projectPane;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
-import org.jetbrains.annotations.NotNull;
 
-import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -133,7 +128,7 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     }
 
     IModule module = (context != null) ? context.getModule() : null;
-    T newChild = myBuilder.createNamespaceNode(first, new MyContext(module, context));
+    T newChild = myBuilder.createNamespaceNode(first, new ModuleChangingOperationContext(module, context));
 
     sourceNode.add(newChild);
 
@@ -150,46 +145,4 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode, T extends MPST
     public abstract boolean isNamespaceNode(MPSTreeNode n);
   }
 
-  private static class MyContext implements IOperationContext {
-    private final IModule myModule;
-    private IOperationContext myOperationContext;
-
-    public MyContext(IModule module, IOperationContext operationContext) {
-      myModule = module;
-      myOperationContext = operationContext;
-    }
-
-    public <T> T getComponent(Class<T> clazz) {
-      return myOperationContext.getComponent(clazz);
-    }
-
-    public Frame getMainFrame() {
-      return myOperationContext.getMainFrame();
-    }
-
-    public boolean isValid() {
-      return true;
-    }
-
-    public IModule getModule() {
-      return myModule;
-    }
-
-    public MPSProject getMPSProject() {
-      return myOperationContext.getMPSProject();
-    }
-
-    public Project getProject() {
-      return myOperationContext.getProject();
-    }
-
-    @NotNull
-    public IScope getScope() {
-      return myOperationContext.getScope();
-    }
-
-    public boolean isTestMode() {
-      return myOperationContext.isTestMode();
-    }
-  }
 }

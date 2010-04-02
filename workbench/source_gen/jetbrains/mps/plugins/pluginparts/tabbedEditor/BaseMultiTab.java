@@ -11,7 +11,7 @@ import java.util.List;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.ArrayList;
-import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import javax.swing.JOptionPane;
@@ -38,7 +38,7 @@ public abstract class BaseMultiTab extends BaseMultitabbedTab {
       if (node == null) {
         continue;
       }
-      MPSProject project = this.getOperationContext().getMPSProject();
+      Project project = this.getOperationContext().getProject();
       IModule module = node.getModel().getModelDescriptor().getModule();
       IOperationContext context = new ModuleContext(module, project);
       res.add(new Pair<SNode, IOperationContext>(node, context));

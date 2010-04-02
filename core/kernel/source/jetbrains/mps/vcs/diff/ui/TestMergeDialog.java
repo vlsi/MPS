@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.application.Application;
@@ -87,13 +88,13 @@ public class TestMergeDialog {
         final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
           public MergeModelsDialog compute() {
             IOperationContext context = new StandaloneMPSContext() {
-
-              public MPSProject getMPSProject() {
-                return null;  //To change body of implemented methods use File | Settings | File Templates.
+              @Override
+              public Project getProject() {
+                return null;
               }
 
               public IModule getModule() {
-                return null;  //To change body of implemented methods use File | Settings | File Templates.
+                return null; 
               }
 
               @NotNull

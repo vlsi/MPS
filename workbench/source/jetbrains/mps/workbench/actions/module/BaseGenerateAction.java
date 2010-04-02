@@ -25,6 +25,7 @@ import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.ide.genconf.GenParameters;
+import jetbrains.mps.ide.projectPane.ModuleChangingOperationContext;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -95,7 +96,7 @@ public abstract class BaseGenerateAction extends BaseAction {
     for (IModule module : myModules) {
       if (module instanceof Generator) {
         module = ((Generator) module).getSourceLanguage();
-        invocationContext = new MyContext(module, myOperationContext);
+        invocationContext = new ModuleChangingOperationContext(module, myOperationContext);
       }
       modelsToGenerate.addAll(getModelsToGenerate(module));
     }
@@ -174,49 +175,6 @@ public abstract class BaseGenerateAction extends BaseAction {
 
     if (params == null) return new ArrayList<SModelDescriptor>();
     return params.getModelDescriptors();
-  }
-
-  private static class MyContext implements IOperationContext {
-    private final IModule myModule;
-    private IOperationContext myOperationContext;
-
-    public MyContext(IModule module, IOperationContext operationContext) {
-      myModule = module;
-      myOperationContext = operationContext;
-    }
-
-    public <T> T getComponent(Class<T> clazz) {
-      return myOperationContext.getComponent(clazz);
-    }
-
-    public Frame getMainFrame() {
-      return myOperationContext.getMainFrame();
-    }
-
-    public boolean isValid() {
-      return true;
-    }
-
-    public IModule getModule() {
-      return myModule;
-    }
-
-    public MPSProject getMPSProject() {
-      return myOperationContext.getMPSProject();
-    }
-
-    public Project getProject() {
-      return myOperationContext.getProject();
-    }
-
-    @NotNull
-    public IScope getScope() {
-      return myOperationContext.getScope();
-    }
-
-    public boolean isTestMode() {
-      return myOperationContext.isTestMode();
-    }
   }
 }
 

@@ -9,8 +9,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.MPSProjectHolder;
 
 public class FindInstancesContext extends StandaloneMPSContext {
   private Project myProject;
@@ -37,8 +35,7 @@ public class FindInstancesContext extends StandaloneMPSContext {
     return super.getComponent(c);
   }
 
-  @Deprecated
-  public MPSProject getMPSProject() {
-    return this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+  public Project getProject() {
+    return this.myProject;
   }
 }

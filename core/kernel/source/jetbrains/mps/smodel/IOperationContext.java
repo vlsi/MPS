@@ -23,14 +23,6 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.Frame;
 
 public interface IOperationContext {
-  /**
-   * Use getProject() instead
-   *
-   * @return
-   */
-  @Deprecated
-  MPSProject getMPSProject();
-
   Project getProject();
 
   IModule getModule();
@@ -45,4 +37,9 @@ public interface IOperationContext {
   boolean isTestMode();
 
   <T> T getComponent(Class<T> clazz);
+
+  //----DEPRECATED
+  
+  @Deprecated
+  MPSProject getMPSProject();
 }

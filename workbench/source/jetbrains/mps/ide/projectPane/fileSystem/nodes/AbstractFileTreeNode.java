@@ -21,15 +21,8 @@ import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.workbench.action.ActionUtils;
-import org.jetbrains.annotations.NotNull;
 
-import java.awt.Frame;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
@@ -45,7 +38,7 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
   }
 
   public AbstractFileTreeNode(Project project, VirtualFile file, boolean showFullPath) {
-    super(new MyIOperationContext());
+    super(new NullOperationContext());
     myFile = file;
     myProvider = project.getComponent(VcsFileStatusProvider.class);
     myProject = project;
@@ -92,42 +85,4 @@ public abstract class AbstractFileTreeNode extends MPSTreeNode {
     return children;
   }
 
-  private static class MyIOperationContext implements IOperationContext {
-    public MyIOperationContext() {
-    }
-
-    @Deprecated
-    public MPSProject getMPSProject() {
-      return null;
-    }
-
-    public Project getProject() {
-      return null;
-    }
-
-    public IModule getModule() {
-      return null;
-    }
-
-    @NotNull
-    public IScope getScope() {
-      return GlobalScope.getInstance();
-    }
-
-    public Frame getMainFrame() {
-      return null;
-    }
-
-    public boolean isValid() {
-      return true;
-    }
-
-    public boolean isTestMode() {
-      return false;
-    }
-
-    public <T> T getComponent(Class<T> clazz) {
-      return null;
-    }
-  }
 }

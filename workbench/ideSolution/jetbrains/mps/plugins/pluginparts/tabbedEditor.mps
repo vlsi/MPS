@@ -8,7 +8,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
-  <maxImportIndex value="13" />
+  <maxImportIndex value="14" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.ide.tabbedEditor.tabs(jetbrains.mps.ide.tabbedEditor.tabs@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.ide.tabbedEditor(jetbrains.mps.ide.tabbedEditor@java_stub)" version="-1" />
@@ -22,6 +22,7 @@
   <import index="11" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#com.intellij.ide(com.intellij.ide@java_stub)" version="-1" />
+  <import index="14" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="504431509334724271">
     <property name="abstractClass:3" value="true" />
@@ -203,8 +204,8 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="504431509334724420">
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="504431509334724421">
                 <property name="name:3" value="project" />
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="504431509334724422">
-                  <link role="classifier:3" targetNodeId="5.~MPSProject" />
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8978229515790637668">
+                  <link role="classifier:3" targetNodeId="14.~Project" resolveInfo="Project" />
                 </node>
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="504431509334724423">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="504431509334724424">
@@ -214,7 +215,7 @@
                     </node>
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="504431509334724429">
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.~IOperationContext.getMPSProject():jetbrains.mps.project.MPSProject" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="2.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                   </node>
                 </node>
               </node>
@@ -253,7 +254,7 @@
                 </node>
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="504431509334724443">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="504431509334724444">
-                    <link role="baseMethodDeclaration:3" targetNodeId="5.~ModuleContext.&lt;init&gt;(jetbrains.mps.project.IModule,jetbrains.mps.project.MPSProject)" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="5.~ModuleContext.&lt;init&gt;(jetbrains.mps.project.IModule,com.intellij.openapi.project.Project)" resolveInfo="ModuleContext" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="504431509334724445">
                       <link role="variableDeclaration:3" targetNodeId="504431509334724431" resolveInfo="module" />
                     </node>

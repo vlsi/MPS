@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -30,23 +31,24 @@ import java.util.Set;
 public class ModuleContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(ModuleContext.class);
 
-  private MPSProject myProject;
+  private Project myProject;
 
   //we need to store module reference this way because generator are recreated on every reload
   //and if we store generator reference here it will be stale
   private ModuleReference myModuleReference;
 
   public ModuleContext(@NotNull final IModule module, @NotNull final Project project) {
-    this(module, project.getComponent(MPSProjectHolder.class).getMPSProject());
-  }
-
-  public ModuleContext(@NotNull final IModule module, @NotNull final MPSProject project) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myModuleReference = module.getModuleReference();
-        myProject = project;
       }
     });
+    myProject = project;
+  }
+
+  @Deprecated
+  public ModuleContext(@NotNull final IModule module, @NotNull final MPSProject project) {
+    this(module,project.getComponent(Project.class));
   }
 
   public <T> T getComponent(Class<T> clazz) {
@@ -55,12 +57,12 @@ public class ModuleContext extends StandaloneMPSContext {
     return super.getComponent(clazz);
   }
 
-  public IModule getModule() {
-    return MPSModuleRepository.getInstance().getModule(myModuleReference);
+  public Project getProject() {
+    return myProject;
   }
 
-  public MPSProject getMPSProject() {
-    return myProject;
+  public IModule getModule() {
+    return MPSModuleRepository.getInstance().getModule(myModuleReference);
   }
 
   public boolean isValid() {

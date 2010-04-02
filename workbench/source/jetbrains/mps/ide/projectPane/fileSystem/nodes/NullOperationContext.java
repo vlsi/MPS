@@ -13,49 +13,54 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+
+package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.awt.Frame;
 
-public class ProjectOperationContext extends StandaloneMPSContext {
-  private Project myProject;
-
-  public ProjectOperationContext(Project project) {
-    myProject = project;
+class NullOperationContext implements IOperationContext {
+  public NullOperationContext() {
   }
 
   @Deprecated
-  public ProjectOperationContext(MPSProject project) {
-    myProject = project.getComponent(Project.class);
-  }
-
-  public <T> T getComponent(@NotNull Class<T> clazz) {
-    T component = myProject.getComponent(clazz);
-    if (component != null) return component;
-    return super.getComponent(clazz);
-  }
-
-  @Nullable
-  public IModule getModule() {
+  public MPSProject getMPSProject() {
     return null;
   }
 
   public Project getProject() {
-    return myProject;
+    return null;
   }
 
+  public IModule getModule() {
+    return null;
+  }
+
+  @NotNull
   public IScope getScope() {
-    return getMPSProject().getScope();
+    return GlobalScope.getInstance();
   }
 
-  public String toString() {
-    return "project context";
+  public Frame getMainFrame() {
+    return null;
+  }
+
+  public boolean isValid() {
+    return true;
+  }
+
+  public boolean isTestMode() {
+    return false;
+  }
+
+  public <T> T getComponent(Class<T> clazz) {
+    return null;
   }
 }
