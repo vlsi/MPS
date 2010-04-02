@@ -52,13 +52,8 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
   //------------------stuff to generate-----------------------
 
-  protected void initEditors(MPSProject project) {
-
-  }
-
-  //for compatibility (compilation is not required)
-  protected List<GeneratedTool> initTools(Project project) {
-    return new ArrayList<GeneratedTool>();
+  protected void initEditors(Project project) {
+    initEditors(project.getComponent(MPSProjectHolder.class).getMPSProject());
   }
 
   protected List<BaseGeneratedTool> initAllTools(Project project) {
@@ -69,20 +64,42 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     return result;
   }
 
-  protected List<BaseCustomProjectPlugin> initCustomParts(MPSProject project) {
-    return new ArrayList<BaseCustomProjectPlugin>();
-  }
-
   protected List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
     return new ArrayList<BaseProjectPrefsComponent>();
   }
 
-  protected List<GenerationListener> initGenerationListeners(MPSProject project) {
-    return new ArrayList<GenerationListener>();
+  protected List<GenerationListener> initGenerationListeners(Project project) {
+    return initGenerationListeners(project.getComponent(MPSProjectHolder.class).getMPSProject());
   }
 
   protected List<IFileGenerator> initFileGenerators() {
     return new ArrayList<IFileGenerator>();
+  }
+
+  protected List<BaseCustomProjectPlugin> initCustomParts(Project project) {
+    return initCustomParts(project.getComponent(MPSProjectHolder.class).getMPSProject());
+  }
+
+  //---(DEPRECATED)---stuff to generate---(DEPRECATED)---------
+
+  @Deprecated //left for compatibility
+  protected void initEditors(MPSProject project) {
+
+  }
+
+  @Deprecated //left for compatibility
+  protected List<GeneratedTool> initTools(Project project) {
+    return new ArrayList<GeneratedTool>();
+  }
+
+  @Deprecated //left for compatibility
+  protected List<BaseCustomProjectPlugin> initCustomParts(MPSProject project) {
+    return new ArrayList<BaseCustomProjectPlugin>();
+  }
+
+  @Deprecated //left for compatibility
+  protected List<GenerationListener> initGenerationListeners(MPSProject project) {
+    return new ArrayList<GenerationListener>();
   }
 
   //------------------quick access stuff-----------------------
@@ -101,8 +118,8 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
 
   //------------------shared stuff-----------------------
 
-  public final void init(final MPSProject project) {
-    myProject = project.getProject();
+  public final void init(final Project project) {
+    myProject = project;
 
     myCustomPartsToDispose = initCustomParts(project);
 
@@ -112,7 +129,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
       manager.addGenerationListener(listener);
     }
 
-    initEditors(project);
+    initEditors(myProject);
 
     myTools = (List) (initAllTools(myProject));
     final Project ideaProject = myProject;

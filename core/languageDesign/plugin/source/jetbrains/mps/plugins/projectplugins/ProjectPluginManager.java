@@ -117,7 +117,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
           mySortedPlugins = PluginUtil.createPlugins(modules, new ProjectPluginCreator());
           for (BaseProjectPlugin plugin : mySortedPlugins) {
             try {
-              plugin.init(mpsProject);
+              plugin.init(myProject);
             } catch (Throwable t1) {
               LOG.error("Plugin " + plugin + " threw an exception during initialization " + t1.getMessage(), t1);
             }
