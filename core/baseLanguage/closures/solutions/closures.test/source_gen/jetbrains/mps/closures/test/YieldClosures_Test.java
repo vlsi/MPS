@@ -113,7 +113,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -218,7 +218,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -241,9 +241,9 @@ __switch__:
             ListSequence.fromList(exp).addElement(j * i);
             j--;
             ListSequence.fromList(exp).addElement(j + i);
-          } while(j > 0);
+          } while (j > 0);
           i--;
-        } while(i > 0);
+        } while (i > 0);
         i = 0;
         ListSequence.fromList(exp).addElement(i);
         // must not return value 
@@ -336,7 +336,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -419,7 +419,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -510,7 +510,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -618,7 +618,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -729,7 +729,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -853,7 +853,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -971,7 +971,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -1057,7 +1057,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -1082,7 +1082,7 @@ label3:
               }
               ListSequence.fromList(exp).addElement(i + j);
               i--;
-            } while((i + j) % 3 == 2);
+            } while ((i + j) % 3 == 2);
             switch (j) {
               case 1:
                 continue;
@@ -1216,7 +1216,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -1288,7 +1288,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -1347,7 +1347,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -1421,7 +1421,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -1493,7 +1493,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -1539,7 +1539,7 @@ __switch__:
                         default:
                           break __loop__;
                       }
-                    } while(true);
+                    } while (true);
                     return false;
                   }
                 };
@@ -1594,7 +1594,7 @@ __switch__:
                         default:
                           break __loop__;
                       }
-                    } while(true);
+                    } while (true);
                     return false;
                   }
                 };
@@ -1657,7 +1657,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -1702,7 +1702,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -1763,7 +1763,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };

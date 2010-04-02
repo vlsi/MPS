@@ -7690,7 +7690,7 @@
         <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="1237557565649">
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart:11" id="1237557566183" />
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart:11" id="1237557653895">
-            <property name="value:11" value="} while(" />
+            <property name="value:11" value="} while (" />
             <property name="withIndent:11" value="true" />
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart:11" id="1237557566184">

@@ -26,7 +26,7 @@ public class DoWhileStatement_TextGen extends SNodeTextGen {
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "body", true), this.getSNode());
     this.decreaseDepth();
     this.appendNewLine();
-    this.appendWithIndent("} while(");
+    this.appendWithIndent("} while (");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "condition", true), this.getSNode());
     this.append(");");
   }

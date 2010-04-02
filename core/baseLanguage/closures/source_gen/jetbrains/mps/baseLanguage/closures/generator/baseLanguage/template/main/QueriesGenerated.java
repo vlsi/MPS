@@ -2828,7 +2828,7 @@ public class QueriesGenerated {
       ListSequence.fromList(results).addElement(slist);
       Object data = new Integer[]{beginLabel,endLabel};
       Values.CLOSURE_DATA.set(_context, slist, data);
-    } while(stmts != null && ListSequence.fromList(stmts).count() > 0);
+    } while (stmts != null && ListSequence.fromList(stmts).count() > 0);
     return results;
   }
 

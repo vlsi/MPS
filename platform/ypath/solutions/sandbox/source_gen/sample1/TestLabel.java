@@ -18,7 +18,7 @@ none:
             continue outer;
           }
         }
-      } while(true);
+      } while (true);
     }
   }
 }

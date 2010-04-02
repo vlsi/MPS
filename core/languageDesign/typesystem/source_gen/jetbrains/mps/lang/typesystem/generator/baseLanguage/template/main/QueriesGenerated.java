@@ -239,7 +239,7 @@ public class QueriesGenerated {
         }
       }
       return false;
-    } while(false);
+    } while (false);
   }
 
   public static boolean baseMappingRule_Condition_1215528656471(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -1454,7 +1454,7 @@ public class QueriesGenerated {
                   break;
                 }
               }
-            } while(false);
+            } while (false);
             SNode rightPart = SLinkOperations.getTarget(matchedNode_x583g4_b0pj, "rightExpression", true);
             do {
               SNode matchedNode_x583g4_e0a1a942 = rightPart;
@@ -1473,13 +1473,13 @@ public class QueriesGenerated {
                   break;
                 }
               }
-            } while(false);
+            } while (false);
             return true;
           }
         }
       }
       return true;
-    } while(false);
+    } while (false);
   }
 
   public static boolean ifMacro_Condition_1214931157675(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1521,7 +1521,7 @@ public class QueriesGenerated {
                   break;
                 }
               }
-            } while(false);
+            } while (false);
             SNode rightPart = SLinkOperations.getTarget(matchedNode_x583g4_b0qj, "rightExpression", true);
             do {
               SNode matchedNode_x583g4_e0a1a052 = rightPart;
@@ -1540,13 +1540,13 @@ public class QueriesGenerated {
                   break;
                 }
               }
-            } while(false);
+            } while (false);
             return false;
           }
         }
       }
       return false;
-    } while(false);
+    } while (false);
   }
 
   public static boolean ifMacro_Condition_5830155447076591857(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2739,7 +2739,7 @@ parametersLoop:
                       break;
                     }
                   }
-                } while(false);
+                } while (false);
               }
             }
             break parametersLoop;
@@ -2776,7 +2776,7 @@ parametersLoop:
             }
           }
           continue;
-        } while(false);
+        } while (false);
 parametersLoop:
         for (SNode parameterDeclaration : SLinkOperations.getTargets(baseMethodDeclaration, "parameter", true)) {
           SNode lastParameterType = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).last(), "type", true);

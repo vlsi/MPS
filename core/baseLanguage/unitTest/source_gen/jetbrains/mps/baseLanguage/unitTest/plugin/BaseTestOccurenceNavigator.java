@@ -39,7 +39,7 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
         founded = true;
       }
       node = temp;
-    } while(!(founded));
+    } while (!(founded));
   }
 
   public boolean hasNextOccurence() {

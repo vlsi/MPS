@@ -43,7 +43,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
     do {
       SetSequence.fromSet(roles).addElement(SPropertyOperations.getString(curNode, "role"));
       curNode = SLinkOperations.getTarget(curNode, "specializedLink", false);
-    } while(curNode != null);
+    } while (curNode != null);
     // find concept 
     SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     if ((conceptDeclaration == null)) {
