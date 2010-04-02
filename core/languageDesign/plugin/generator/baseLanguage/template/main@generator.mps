@@ -3077,11 +3077,16 @@
               <link role="classifier:3" targetNodeId="54.~MPSEditorOpener" resolveInfo="MPSEditorOpener" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1218031143235">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1218031140297">
-                <link role="variableDeclaration:3" targetNodeId="1204475188842" resolveInfo="project" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6707041071993778123">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1218031140297">
+                  <link role="variableDeclaration:3" targetNodeId="1204475188842" resolveInfo="project" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6707041071993778213">
+                  <link role="baseMethodDeclaration:3" targetNodeId="35.~MPSProject.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
+                </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1218031147805">
-                <link role="baseMethodDeclaration:3" targetNodeId="35.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <link role="baseMethodDeclaration:3" targetNodeId="93.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="1218031158888">
                   <link role="classifier:3" targetNodeId="54.~MPSEditorOpener" resolveInfo="MPSEditorOpener" />
                 </node>
