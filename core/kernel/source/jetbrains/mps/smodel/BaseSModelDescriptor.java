@@ -289,7 +289,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public void removeModelCommandListener(@NotNull SModelCommandListener listener) {
     synchronized (myListenersLock) {
       myModelCommandListeners.remove(listener);
-      myModelListenersCopy = null;
+      myModelCommandListenersCopy = null;
     }
   }
 
