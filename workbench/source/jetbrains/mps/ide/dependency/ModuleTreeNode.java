@@ -44,7 +44,7 @@ public class ModuleTreeNode extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    Project project = myProject.getComponent(Project.class);
+    Project project = myProject.getProject();
     ProjectPane.getInstance(project).selectModule(myModule);
   }
 

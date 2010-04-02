@@ -239,6 +239,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     return "MPSProject file: " + (myProjectFile == null ? "<none>" : myProjectFile.toString());
   }
 
+  public Project getProject() {
+    return myIDEAProject;
+  }
+
   @NotNull
   public File getProjectFile() {
     return myProjectFile;
@@ -325,7 +329,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       }
     }
   }
-  
+
   public IScope getScope() {
     return myScope;
   }
@@ -374,14 +378,14 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         CleanupManager.getInstance().cleanup();
       }
     });
-                                                          
+
     //todo hack
     if (myIDEAProject != null) {
       if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
         ProjectUtil.closeProject(myIDEAProject);
       }
     }
-  }
+  }           
 
   public void invalidateCaches() {
     myScope.invalidateCaches();
@@ -411,6 +415,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   @Deprecated //should be left for compatibility (Project Operations in plugins)
   public ProjectPluginManager getPluginManager() {
-    return getComponent(Project.class).getComponent(ProjectPluginManager.class);
+    return myIDEAProject.getComponent(ProjectPluginManager.class);
   }
 }             

@@ -33,7 +33,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
 
   @Deprecated
   public ProjectOperationContext(MPSProject project) {
-    myProject = project.getComponent(Project.class);
+    myProject = project.getProject();
   }
 
   public <T> T getComponent(@NotNull Class<T> clazz) {

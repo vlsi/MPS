@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.uiLanguage.runtime.events.Events;
 import com.intellij.openapi.wm.IdeFocusManager;
-import com.intellij.openapi.project.Project;
 import java.awt.GridBagLayout;
 import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
 import java.awt.FlowLayout;
@@ -77,7 +76,7 @@ public class JUnitConfigEditor extends JPanel {
     IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
       public void run() {
         myThis.setProject(myThis.findProjectFromContext());
-        myThis.setProjectName(myThis.getProject().getComponent(Project.class).getName());
+        myThis.setProjectName(myThis.getProject().getProject().getName());
         if (myThis.myProjectName_d3c0 != null) {
           myThis.myProjectName_d3c0.setText(myThis.getProjectName());
         }

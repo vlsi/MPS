@@ -48,7 +48,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
   @Deprecated
   public ModuleContext(@NotNull final IModule module, @NotNull final MPSProject project) {
-    this(module,project.getComponent(Project.class));
+    this(module,project.getProject());
   }
 
   public <T> T getComponent(Class<T> clazz) {

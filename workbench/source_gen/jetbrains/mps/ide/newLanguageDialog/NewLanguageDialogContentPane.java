@@ -252,7 +252,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
     myThis.getDialog().dispose();
     final Wrappers._T<Language> language = new Wrappers._T<Language>(null);
-    Project project = myThis.getProject().getComponent(Project.class);
+    Project project = myThis.getProject().getProject();
     ProgressManager.getInstance().run(new Task.Modal(project, "Creating", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);

@@ -92,7 +92,7 @@ public class MakeAssert {
       return null;
     }
     System.out.println("Loading project");
-    return TestMain.loadProject(projectFile).getComponent(Project.class);
+    return TestMain.loadProject(projectFile).getProject();
   }
 
   private static void disposeProject(final Project project) {

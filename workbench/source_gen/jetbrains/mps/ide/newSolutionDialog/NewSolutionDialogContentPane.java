@@ -23,7 +23,6 @@ import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.ide.NewModuleCheckUtil;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
@@ -224,7 +223,7 @@ public class NewSolutionDialogContentPane extends JPanel {
       return;
     }
     myThis.getDialog().dispose();
-    ProgressManager.getInstance().run(new Task.Modal(myThis.getProject().getComponent(Project.class), "Creating", false) {
+    ProgressManager.getInstance().run(new Task.Modal(myThis.getProject().getProject(), "Creating", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         ModelAccess.instance().runWriteAction(new Runnable() {

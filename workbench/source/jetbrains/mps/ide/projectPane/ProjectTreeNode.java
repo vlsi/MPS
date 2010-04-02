@@ -40,7 +40,7 @@ class ProjectTreeNode extends MPSTreeNode {
 
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
-    Project ideaProject = myProject.getComponent(Project.class);
+    Project ideaProject = myProject.getProject();
     setText(ideaProject.getName());
     setFontStyle(Font.BOLD);
     setErrorState(myProject.getErrors() != null ? ErrorState.ERROR : ErrorState.NONE);

@@ -102,7 +102,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   //------------------shared stuff-----------------------
 
   public final void init(final MPSProject project) {
-    myProject = project.getComponent(Project.class);
+    myProject = project.getProject();
 
     myCustomPartsToDispose = initCustomParts(project);
 

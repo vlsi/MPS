@@ -981,10 +981,7 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1787456828538707508">
-              <link role="baseMethodDeclaration:3" targetNodeId="20.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="1787456828538708712">
-                <link role="classifier:3" targetNodeId="29.~Project" resolveInfo="Project" />
-              </node>
+              <link role="baseMethodDeclaration:3" targetNodeId="20.~MPSProject.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
             </node>
           </node>
         </node>

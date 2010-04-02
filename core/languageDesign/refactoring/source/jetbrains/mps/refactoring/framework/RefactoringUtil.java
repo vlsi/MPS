@@ -123,7 +123,7 @@ public class RefactoringUtil {
 
   @Deprecated
   public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(MPSProject project, Language language) {
-    return getLanguageAndItsExtendingLanguageModels(project.getComponent(Project.class), language);
+    return getLanguageAndItsExtendingLanguageModels(project.getProject(), language);
   }
 
   public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
@@ -146,7 +146,7 @@ public class RefactoringUtil {
 
   @Deprecated
   public static Map<IModule, List<SModel>> getLanguageModels(MPSProject project, Language language) {
-    return getLanguageModels(project.getComponent(Project.class), language);
+    return getLanguageModels(project.getProject(), language);
   }
 
   public static Map<IModule, List<SModel>> getLanguageModels(Project project, Language language) {

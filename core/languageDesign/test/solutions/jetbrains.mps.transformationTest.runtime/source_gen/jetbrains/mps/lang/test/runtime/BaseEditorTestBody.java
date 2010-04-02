@@ -137,14 +137,14 @@ public class BaseEditorTestBody extends BaseTestBody {
   }
 
   public static IEditor openEditor(MPSProject project, SModelDescriptor model, SNode node) {
-    Project p = project.getComponent(Project.class);
+    Project p = project.getProject();
     IOperationContext context = new ModuleContext(model.getModule(), project);
     MPSEditorOpener opener = new MPSEditorOpener(p);
     return opener.editNode(node, context);
   }
 
   public static void closeEditor(MPSProject project, SNode node) {
-    Project p = project.getComponent(Project.class);
+    Project p = project.getProject();
     FileEditorManager editorManager = FileEditorManager.getInstance(p);
     editorManager.closeFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
   }

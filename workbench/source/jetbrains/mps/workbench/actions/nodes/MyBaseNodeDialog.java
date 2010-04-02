@@ -42,7 +42,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
   public MyBaseNodeDialog(IOperationContext operationContext, SNode node, SNode type, IErrorReporter error) throws HeadlessException {
     super(getTitle(node), operationContext);
 
-    SupertypesViewTool supertypesView = operationContext.getMPSProject().getComponent(SupertypesViewTool.class);
+    SupertypesViewTool supertypesView = operationContext.getProject().getComponent(SupertypesViewTool.class);
 
     myMainComponent = new JSplitPaneWithoutBorders(JSplitPane.HORIZONTAL_SPLIT, getSuperMainComponent(), supertypesView.getComponent());
     myMainComponent.setDividerSize(6);

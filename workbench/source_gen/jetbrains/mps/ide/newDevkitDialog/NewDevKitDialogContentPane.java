@@ -212,7 +212,7 @@ public class NewDevKitDialogContentPane extends JPanel {
       return;
     }
     myThis.getDialog().dispose();
-    Project ideaProject = myThis.getProject().getComponent(Project.class);
+    Project ideaProject = myThis.getProject().getProject();
     final DevKit[] localResult = new DevKit[1];
     ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Creating", false) {
       public void run(@NotNull ProgressIndicator indicator) {
