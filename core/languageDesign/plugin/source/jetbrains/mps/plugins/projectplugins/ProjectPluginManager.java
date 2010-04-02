@@ -107,12 +107,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     assert !myProject.isDisposed();
     if (myLoaded) return;
 
-    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     synchronized (myPluginsLock) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           Set<IModule> modules = new HashSet<IModule>();
-          modules.addAll(PluginUtil.collectPluginModules(mpsProject));
+          modules.addAll(PluginUtil.collectPluginModules(myProject));
           modules.add(PluginUtil.getIDEModule());
           mySortedPlugins = PluginUtil.createPlugins(modules, new ProjectPluginCreator());
           for (BaseProjectPlugin plugin : mySortedPlugins) {
