@@ -132,7 +132,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   }
 
   public void showTraceView(TracerNode tracerNode) {
-    GenerationTracerView tracerView = new GenerationTracerView(tracerNode, getMPSProject()) {
+    GenerationTracerView tracerView = new GenerationTracerView(tracerNode, getProject()) {
       public void close() {
         GenerationTracerViewTool.this.closeTab(myTracerViews.indexOf(this));
       }

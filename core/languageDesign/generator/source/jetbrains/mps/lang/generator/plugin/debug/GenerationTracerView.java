@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.generator.plugin.debug;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.generator.plugin.debug.icons.Icons;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -35,7 +36,7 @@ public abstract class GenerationTracerView {
 
   private TracerNode myRootTracerNode;
 
-  public GenerationTracerView(TracerNode tracerNode, MPSProject project) {
+  public GenerationTracerView(TracerNode tracerNode, Project project) {
     myRootTracerNode = tracerNode;
     myPanel = new JPanel(new BorderLayout());
     myTree = new GenerationTracerTree(tracerNode, project);

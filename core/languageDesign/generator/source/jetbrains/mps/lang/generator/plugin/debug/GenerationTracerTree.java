@@ -21,16 +21,16 @@ import jetbrains.mps.project.MPSProject;
 
 public class GenerationTracerTree extends MPSTree {
   private TracerNode myRootTracerNode;
-  private MPSProject myProject;
+  private Project myProject;
   private boolean myAutoscrollToSource;
 
-  public GenerationTracerTree(TracerNode root, MPSProject project) {
+  public GenerationTracerTree(TracerNode root, Project project) {
     myRootTracerNode = root;
     myProject = project;
   }
 
   protected GenerationTracerTreeNode rebuild() {
-    return new GenerationTracerTreeNode(myRootTracerNode, myProject.getComponent(Project.class));
+    return new GenerationTracerTreeNode(myRootTracerNode, myProject);
   }
 
   public boolean isAutoscrollToSource() {

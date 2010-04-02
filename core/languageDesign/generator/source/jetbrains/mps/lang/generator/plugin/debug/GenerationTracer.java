@@ -48,12 +48,8 @@ public class GenerationTracer implements IGenerationTracer {
     myProject = project;
   }
 
-  private MPSProject getMPSProject() {
-    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-  }
-
   private GenerationTracerViewTool getTracerViewTool() {
-    return getMPSProject().getComponent(GenerationTracerViewTool.class);
+    return myProject.getComponent(GenerationTracerViewTool.class);
   }
 
   @Override
