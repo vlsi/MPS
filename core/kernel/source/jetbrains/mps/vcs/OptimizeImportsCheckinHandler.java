@@ -26,6 +26,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.ModelCheckerSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -95,8 +96,7 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
         }
       }
 
-      MPSProject mpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-      final IOperationContext operationContext = mpsProject.createOperationContext();
+      final IOperationContext operationContext = new ProjectOperationContext(myProject);
       ThreadUtils.assertLogIsEDT();
       try {
         ModelAccess.instance().runCommandInEDT(new Runnable() {

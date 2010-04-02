@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -40,6 +41,6 @@ public class TypecheckerStateView extends BaseProjectTool {
 
   public void initComponent() {
     super.initComponent();
-    myComponent = new TypecheckerStateViewComponent(getProject().getComponent(MPSProjectHolder.class).getMPSProject().createOperationContext());
+    myComponent = new TypecheckerStateViewComponent(new ProjectOperationContext(getProject()));
   }
 }
