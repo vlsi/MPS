@@ -18,14 +18,11 @@ package jetbrains.mps.project;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
-import jetbrains.mps.plugin.IProjectHandler;
-import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.project.Path;
@@ -39,7 +36,6 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.Frame;
 import java.io.File;
 import java.util.*;
 
@@ -274,11 +270,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public <T> T getComponent(Class<T> clazz) {
-    if (clazz == Project.class) {
-      return (T) myIDEAProject;
-    } else{
-      return myIDEAProject.getComponent(clazz);
-    }
+    return myIDEAProject.getComponent(clazz);
   }
 
   public List<SModelDescriptor> getProjectModels() {
@@ -385,7 +377,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
         ProjectUtil.closeProject(myIDEAProject);
       }
     }
-  }           
+  }
 
   public void invalidateCaches() {
     myScope.invalidateCaches();
@@ -413,7 +405,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     return new ProjectOperationContext(this);
   }
 
-  @Deprecated //should be left for compatibility (Project Operations in plugins)
+  @Deprecated
+  //should be left for compatibility (Project Operations in plugins)
   public ProjectPluginManager getPluginManager() {
     return myIDEAProject.getComponent(ProjectPluginManager.class);
   }
