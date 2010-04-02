@@ -47,17 +47,17 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
 
-  private File myProjectFile;
+  private Project myIDEAProject;
 
+  private File myProjectFile;
   private ProjectDescriptor myProjectDescriptor;
+
   private List<ModuleReference> mySolutions = new ArrayList<ModuleReference>();
   private List<ModuleReference> myLanguages = new ArrayList<ModuleReference>();
-
   private List<DevKit> myDevKits = new ArrayList<DevKit>();
 
   private ProjectScope myScope = new ProjectScope();
 
-  private Project myIDEAProject;
   private String myErrors = null;
 
   public MPSProject(final File projectFile, final ProjectDescriptor projectDescriptor, Project ideaProject) {
@@ -113,6 +113,31 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
       return myDevKits.contains((DevKit) module);
     }
     return false;
+  }
+
+  @Nullable
+  public String getFolderFor(IModule module) {
+    IFile file = module.getDescriptorFile();
+    assert file != null;
+    Path path = new Path(FileUtil.getCanonicalPath(file.getAbsolutePath()));
+    for (Path sp : getAllModulePaths()) {
+      if (sp.isSamePath(path)) {
+        return sp.getMPSFolder();
+      }
+    }
+    return null;
+  }
+
+  public void setFolderFor(IModule module, String newFolder) {
+    IFile file = module.getDescriptorFile();
+    assert file != null;
+    Path path = new Path(FileUtil.getCanonicalPath(file.getAbsolutePath()));
+    for (Path sp : getAllModulePaths()) {
+      if (sp.isSamePath(path)) {
+        sp.setMPSFolder(newFolder);
+        return;
+      }
+    }
   }
 
   //--descriptor
@@ -228,7 +253,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     return Collections.unmodifiableList(myDevKits);
   }
 
-  //--
+  //--ui
 
   @NotNull
   public String toString() {
@@ -239,34 +264,24 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     return myIDEAProject;
   }
 
+  private void error(String text) {
+    if (myErrors == null) {
+      myErrors = text;
+    } else {
+      myErrors += "\n" + text;
+    }
+    LOG.error(text);
+  }
+
+  public String getErrors() {
+    return myErrors;
+  }
+
+  //--project stuff
+
   @NotNull
   public File getProjectFile() {
     return myProjectFile;
-  }
-
-  @Nullable
-  public String getFolderFor(IModule module) {
-    IFile file = module.getDescriptorFile();
-    assert file != null;
-    Path path = new Path(FileUtil.getCanonicalPath(file.getAbsolutePath()));
-    for (Path sp : getAllModulePaths()) {
-      if (sp.isSamePath(path)) {
-        return sp.getMPSFolder();
-      }
-    }
-    return null;
-  }
-
-  public void setFolderFor(IModule module, String newFolder) {
-    IFile file = module.getDescriptorFile();
-    assert file != null;
-    Path path = new Path(FileUtil.getCanonicalPath(file.getAbsolutePath()));
-    for (Path sp : getAllModulePaths()) {
-      if (sp.isSamePath(path)) {
-        sp.setMPSFolder(newFolder);
-        return;
-      }
-    }
   }
 
   public List<SModelDescriptor> getProjectModels() {
@@ -324,19 +339,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   public void update() {
     setProjectDescriptor(getProjectDescriptor());
-  }
-
-  private void error(String text) {
-    if (myErrors == null) {
-      myErrors = text;
-    } else {
-      myErrors += "\n" + text;
-    }
-    LOG.error(text);
-  }
-
-  public String getErrors() {
-    return myErrors;
   }
 
   public void dispose() {
