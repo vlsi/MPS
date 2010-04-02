@@ -5305,21 +5305,6 @@
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3201642974933587321">
       <link role="classifier:3" targetNodeId="11.~BaseStretchingBindedDialog" />
     </node>
-    <node role="staticField:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration:3" id="3201642974933587322">
-      <property name="isFinal:3" value="true" />
-      <property name="name:3" value="LOG" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3201642974933587323">
-        <link role="classifier:3" targetNodeId="8.~Logger" />
-      </node>
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3201642974933587324" />
-      <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3201642974933587325">
-        <link role="classConcept:3" targetNodeId="8.~Logger" />
-        <link role="baseMethodDeclaration:3" targetNodeId="8.~Logger.getLogger(java.lang.Class):jetbrains.mps.logging.Logger" />
-        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="3201642974933587326">
-          <link role="classifier:3" targetNodeId="3201642974933587319" resolveInfo="ProjectPropertiesDialog" />
-        </node>
-      </node>
-    </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="3201642974933587327">
       <property name="name:3" value="myProject" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3201642974933587328">
@@ -5359,25 +5344,12 @@
               <property name="value:3" value=" Properties" />
             </node>
           </node>
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3201642974933587344">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3201642974933587345">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3201642974933587346">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3201642974933587347">
-                  <link role="variableDeclaration:3" targetNodeId="3201642974933587335" resolveInfo="project" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3201642974933587348">
-                  <link role="baseMethodDeclaration:3" targetNodeId="14.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="3201642974933587349">
-                    <link role="classifier:3" targetNodeId="15.~MPSProjectHolder" />
-                  </node>
-                </node>
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1258576280906119152">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1258576280906119153">
+              <link role="baseMethodDeclaration:3" targetNodeId="6.~ProjectOperationContext.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="ProjectOperationContext" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1258576280906119154">
+                <link role="variableDeclaration:3" targetNodeId="3201642974933587335" resolveInfo="project" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3201642974933587350">
-                <link role="baseMethodDeclaration:3" targetNodeId="15.~MPSProjectHolder.getMPSProject():jetbrains.mps.project.MPSProject" />
-              </node>
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3201642974933587351">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~MPSProject.createOperationContext():jetbrains.mps.smodel.IOperationContext" />
             </node>
           </node>
         </node>
@@ -5443,25 +5415,12 @@
               <property name="value:3" value=" Properties" />
             </node>
           </node>
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3201642974933587379">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3201642974933587380">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3201642974933587381">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3201642974933587382">
-                  <link role="variableDeclaration:3" targetNodeId="3201642974933587368" resolveInfo="project" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3201642974933587383">
-                  <link role="baseMethodDeclaration:3" targetNodeId="14.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="3201642974933587384">
-                    <link role="classifier:3" targetNodeId="15.~MPSProjectHolder" />
-                  </node>
-                </node>
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1258576280906119146">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1258576280906119148">
+              <link role="baseMethodDeclaration:3" targetNodeId="6.~ProjectOperationContext.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="ProjectOperationContext" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1258576280906119149">
+                <link role="variableDeclaration:3" targetNodeId="3201642974933587368" resolveInfo="project" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3201642974933587385">
-                <link role="baseMethodDeclaration:3" targetNodeId="15.~MPSProjectHolder.getMPSProject():jetbrains.mps.project.MPSProject" />
-              </node>
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3201642974933587386">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~MPSProject.createOperationContext():jetbrains.mps.smodel.IOperationContext" />
             </node>
           </node>
         </node>
@@ -5513,7 +5472,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="11.~BaseStretchingBindedDialog.addComponent(javax.swing.JComponent,jetbrains.mps.workbench.dialogs.project.BaseBindedDialog$ConstraintsType):void" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3201642974933587411">
                 <link role="classConcept:3" targetNodeId="34.4060390951635972879" resolveInfo="StandardComponents" />
-                <link role="baseMethodDeclaration:3" targetNodeId="35.~StandardComponents.createProjectSolutionsPanel(jetbrains.mps.workbench.dialogs.project.IBindedDialog,java.lang.String,java.util.List):javax.swing.JPanel" />
+                <link role="baseMethodDeclaration:3" targetNodeId="34.4060390951635974672" resolveInfo="createProjectSolutionsPanel" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="3201642974933587412" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3201642974933587413">
                   <property name="value:3" value="Solutions" />
@@ -5544,7 +5503,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="11.~BaseStretchingBindedDialog.addComponent(javax.swing.JComponent,jetbrains.mps.workbench.dialogs.project.BaseBindedDialog$ConstraintsType):void" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3201642974933587424">
                 <link role="classConcept:3" targetNodeId="34.4060390951635972879" resolveInfo="StandardComponents" />
-                <link role="baseMethodDeclaration:3" targetNodeId="35.~StandardComponents.createProjectLanguagesPanel(jetbrains.mps.workbench.dialogs.project.IBindedDialog,java.lang.String,java.util.List):javax.swing.JPanel" />
+                <link role="baseMethodDeclaration:3" targetNodeId="34.4060390951635974689" resolveInfo="createProjectLanguagesPanel" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="3201642974933587425" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3201642974933587426">
                   <property name="value:3" value="Languages" />
@@ -5575,7 +5534,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="11.~BaseStretchingBindedDialog.addComponent(javax.swing.JComponent,jetbrains.mps.workbench.dialogs.project.BaseBindedDialog$ConstraintsType):void" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3201642974933587437">
                 <link role="classConcept:3" targetNodeId="34.4060390951635972879" resolveInfo="StandardComponents" />
-                <link role="baseMethodDeclaration:3" targetNodeId="35.~StandardComponents.createProjectDevkitsPanel(jetbrains.mps.workbench.dialogs.project.IBindedDialog,java.lang.String,java.util.List):javax.swing.JPanel" />
+                <link role="baseMethodDeclaration:3" targetNodeId="34.4060390951635974706" resolveInfo="createProjectDevkitsPanel" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="3201642974933587438" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3201642974933587439">
                   <property name="value:3" value="Devkits" />
@@ -5606,7 +5565,7 @@
               <link role="baseMethodDeclaration:3" targetNodeId="11.~BaseStretchingBindedDialog.addComponent(javax.swing.JComponent,jetbrains.mps.workbench.dialogs.project.BaseBindedDialog$ConstraintsType):void" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3201642974933587450">
                 <link role="classConcept:3" targetNodeId="34.4060390951635972879" resolveInfo="StandardComponents" />
-                <link role="baseMethodDeclaration:3" targetNodeId="35.~StandardComponents.createTestConfigsPanel(jetbrains.mps.workbench.dialogs.project.IBindedDialog,java.lang.String,java.util.List,jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties):javax.swing.JPanel" />
+                <link role="baseMethodDeclaration:3" targetNodeId="34.4060390951635974468" resolveInfo="createTestConfigsPanel" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="3201642974933587451" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3201642974933587452">
                   <property name="value:3" value="Test Configurations" />
