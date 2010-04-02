@@ -43,6 +43,8 @@ public class StructuralCollectionUtil {
       for (SModel model : ourModelsToNodes.keySet()) {
         if (reference.equals(model.getSModelReference())) {
           beforeModelDisposed(model);
+          // Removing model listener (it was not removed by removeNodeFromSet() method since model.getModelDescriptor() is null)
+          md.removeModelListener(ourModelListener);
           return;
         }
       }
