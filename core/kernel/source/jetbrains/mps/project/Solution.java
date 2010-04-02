@@ -147,8 +147,12 @@ public class Solution extends AbstractModule {
   }
 
   public void save() {
-    if (myDescriptorFile == null) return;
+    if (isStub()) return;
     SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
+  }
+
+  public boolean isStub() {
+    return myDescriptorFile == null;
   }
 
   public SolutionDescriptor getSolutionDescriptor() {

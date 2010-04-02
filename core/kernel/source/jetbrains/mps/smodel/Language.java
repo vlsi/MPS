@@ -98,7 +98,17 @@ public class Language extends AbstractModule {
     language.setLanguageDescriptor(languageDescriptor, false);
     repository.addModule(language, moduleOwner);
 
-    for (StubSolution ss : languageDescriptor.getStubSolutions()) {
+    revalidateStubSolutions(languageDescriptor, language);
+
+    return language;
+  }
+
+  private Language() {
+
+  }
+
+  private static void revalidateStubSolutions(LanguageDescriptor ld, MPSModuleOwner owner) {
+    for (StubSolution ss : ld.getStubSolutions()) {
       SolutionDescriptor descriptor = new SolutionDescriptor();
       descriptor.setUUID(ss.getId().toString());
       descriptor.setNamespace(ss.getName());
@@ -111,14 +121,8 @@ public class Language extends AbstractModule {
       //todo what should be here?
       descriptor.setDontLoadClasses(true);
 
-      Solution.newInstance(descriptor, language);
+      Solution.newInstance(descriptor, owner);
     }
-
-    return language;
-  }
-
-  private Language() {
-
   }
 
   protected void reloadAfterDescriptorChange() {

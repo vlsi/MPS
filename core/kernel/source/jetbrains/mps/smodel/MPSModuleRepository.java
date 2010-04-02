@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.generator.fileGenerator.BaseModelCache;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.AbstractModule.StubPath;
@@ -27,7 +28,6 @@ import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.generator.fileGenerator.BaseModelCache;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -156,7 +156,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     }
   }
 
-  public boolean isKnownModule (IModule m) {
+  public boolean isKnownModule(IModule m) {
     return myModules.contains(m);
   }
 
@@ -359,6 +359,11 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     Set<IModule> visibleModules = new HashSet<IModule>();
     for (IModule m : myModules) {
+      if (m instanceof Solution && ((Solution) m).isStub()) {
+        visibleModules.add(m);
+        continue;
+      }
+
       for (MPSModuleOwner r : rootOwners) {
         if (myModuleToOwners.contains(m, r)) {
           visibleModules.add(m);
