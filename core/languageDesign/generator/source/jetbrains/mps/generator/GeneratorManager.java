@@ -133,7 +133,7 @@ public class GeneratorManager {
     }
 
     final IOperationContext invocationContext = inputModels.get(0).o2;
-    final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getMPSProject());
+    final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
 
     // confirm saving transient models
     final boolean saveTransientModels;

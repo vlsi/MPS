@@ -86,76 +86,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     });
   }
 
-  public IScope getScope() {
-    return myScope;
-  }
-
-  public void update() {
-    setProjectDescriptor(getProjectDescriptor());
-  }
-
-  public List<SModelDescriptor> getProjectModels() {
-    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    List<IModule> modules = getModules();
-    for (IModule module : modules) {
-      result.addAll(module.getOwnModelDescriptors());
-    }
-    return result;
-  }
-
-  private void readModules() {
-    myErrors = null;
-
-    // load solutions
-    mySolutions = new LinkedList<ModuleReference>();
-    for (Path solutionPath : myProjectDescriptor.getSolutions()) {
-      String path = solutionPath.getPath();
-      IFile descriptorFile = FileSystem.getFile(path);
-      if (descriptorFile.exists()) {
-        mySolutions.add(MPSModuleRepository.getInstance().registerSolution(descriptorFile, this).getModuleReference());
-      } else {
-        error("Can't load solution from " + descriptorFile.getCanonicalPath() + " File doesn't exist.");
-      }
-    }
-
-    // load languages
-    myLanguages = new LinkedList<ModuleReference>();
-    for (Path languagePath : myProjectDescriptor.getLanguages()) {
-      String path = languagePath.getPath();
-      IFile descriptorFile = FileSystem.getFile(path);
-      if (descriptorFile.exists()) {
-        myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this).getModuleReference());
-      } else {
-        error("Can't load language from " + descriptorFile.getCanonicalPath() + " File doesn't exist.");
-      }
-    }
-
-    //load devkits
-    myDevKits = new LinkedList<DevKit>();
-    for (Path dk : myProjectDescriptor.getDevkits()) {
-      String path = dk.getPath();
-      IFile devKit = FileSystem.getFile(path);
-      if (devKit.exists()) {
-        myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
-      } else {
-        error("Can't load devkit from " + devKit.getCanonicalPath() + " File doesn't exist");
-      }
-    }
-  }
-
-  private void error(String text) {
-    if (myErrors == null) {
-      myErrors = text;
-    } else {
-      myErrors += "\n" + text;
-    }
-    LOG.error(text);
-  }
-
-  public String getErrors() {
-    return myErrors;
-  }
-
   //--modules
 
   @NotNull
@@ -346,10 +276,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     }
   }
 
-  public IOperationContext createOperationContext() {
-    return new ProjectOperationContext(this);
-  }
-
   public <T> T getComponent(Class<T> clazz) {
     if (clazz == Project.class) {
       return (T) myIDEAProject;
@@ -368,6 +294,76 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   public void saveModels() {
     SModelRepository.getInstance().saveAll();
+  }
+
+  public List<SModelDescriptor> getProjectModels() {
+    ArrayList<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    List<IModule> modules = getModules();
+    for (IModule module : modules) {
+      result.addAll(module.getOwnModelDescriptors());
+    }
+    return result;
+  }
+
+  private void readModules() {
+    myErrors = null;
+
+    // load solutions
+    mySolutions = new LinkedList<ModuleReference>();
+    for (Path solutionPath : myProjectDescriptor.getSolutions()) {
+      String path = solutionPath.getPath();
+      IFile descriptorFile = FileSystem.getFile(path);
+      if (descriptorFile.exists()) {
+        mySolutions.add(MPSModuleRepository.getInstance().registerSolution(descriptorFile, this).getModuleReference());
+      } else {
+        error("Can't load solution from " + descriptorFile.getCanonicalPath() + " File doesn't exist.");
+      }
+    }
+
+    // load languages
+    myLanguages = new LinkedList<ModuleReference>();
+    for (Path languagePath : myProjectDescriptor.getLanguages()) {
+      String path = languagePath.getPath();
+      IFile descriptorFile = FileSystem.getFile(path);
+      if (descriptorFile.exists()) {
+        myLanguages.add(MPSModuleRepository.getInstance().registerLanguage(descriptorFile, this).getModuleReference());
+      } else {
+        error("Can't load language from " + descriptorFile.getCanonicalPath() + " File doesn't exist.");
+      }
+    }
+
+    //load devkits
+    myDevKits = new LinkedList<DevKit>();
+    for (Path dk : myProjectDescriptor.getDevkits()) {
+      String path = dk.getPath();
+      IFile devKit = FileSystem.getFile(path);
+      if (devKit.exists()) {
+        myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
+      } else {
+        error("Can't load devkit from " + devKit.getCanonicalPath() + " File doesn't exist");
+      }
+    }
+  }
+  
+  public IScope getScope() {
+    return myScope;
+  }
+
+  public void update() {
+    setProjectDescriptor(getProjectDescriptor());
+  }
+
+  private void error(String text) {
+    if (myErrors == null) {
+      myErrors = text;
+    } else {
+      myErrors += "\n" + text;
+    }
+    LOG.error(text);
+  }
+
+  public String getErrors() {
+    return myErrors;
   }
 
   public void dispose() {
@@ -427,6 +423,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   //-----------DEPRECATED
+
+  @Deprecated
+  public IOperationContext createOperationContext() {
+    return new ProjectOperationContext(this);
+  }
 
   @NotNull
   @Deprecated

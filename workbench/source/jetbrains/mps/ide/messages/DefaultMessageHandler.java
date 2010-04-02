@@ -23,12 +23,12 @@ import jetbrains.mps.project.MPSProject;
  * Jul 27, 2007
  */
 public class DefaultMessageHandler implements IMessageHandler {
-  private MPSProject myProject;
+  private Project myProject;
   private MessagesViewTool myMessagesViewTool;
 
-  public DefaultMessageHandler(MPSProject project) {
+  public DefaultMessageHandler(Project project) {
     myProject = project;
-    myMessagesViewTool = myProject.getComponent(Project.class).getComponent(MessagesViewTool.class);
+    myMessagesViewTool = myProject.getComponent(MessagesViewTool.class);
     if (myMessagesViewTool != null) {
       myMessagesViewTool.resetAutoscrollOption();
     }
