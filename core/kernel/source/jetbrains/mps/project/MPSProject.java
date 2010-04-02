@@ -371,15 +371,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     }
   }
 
-  public void invalidateCaches() {
-    getProject().getComponent(ProjectScope.class).invalidateCaches();
-  }
-
   //-----------DEPRECATED
 
   @Deprecated
   public IOperationContext createOperationContext() {
-    return new ProjectOperationContext(this);
+    return new ProjectOperationContext(myIDEAProject);
   }
 
   @Deprecated

@@ -107,7 +107,7 @@ public class MPSModuleRepository implements ApplicationComponent {
         MPSProjects projects = MPSProjects.instance();
         if (projects != null) {
           for (MPSProject p : projects.getProjects()) {
-            p.invalidateCaches();
+            p.getProject().getComponent(ProjectScope.class).invalidateCaches();
           }
         }
 
