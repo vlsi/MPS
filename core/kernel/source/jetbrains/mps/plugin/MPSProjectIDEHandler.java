@@ -18,6 +18,7 @@ package jetbrains.mps.plugin;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder;
 import jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder;
@@ -117,7 +118,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   private Frame getMainFrame() {
-    return myMPSProject.getComponent(Frame.class);
+    return WindowManager.getInstance().getFrame(myProject);
   }
 
   public void showNode(final String namespace, final String id) throws RemoteException {

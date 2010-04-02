@@ -279,17 +279,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   public <T> T getComponent(Class<T> clazz) {
     if (clazz == Project.class) {
       return (T) myIDEAProject;
+    } else{
+      return getComponent(Project.class).getComponent(clazz);
     }
-
-    if (clazz == Frame.class) {
-      return (T) WindowManager.getInstance().getFrame(getComponent(Project.class));
-    }
-
-    if (clazz != Project.class) {
-      return getComponentSafe(Project.class).getComponent(clazz);
-    }
-
-    return null;
   }
 
   public void saveModels() {
