@@ -49,8 +49,9 @@ public class Solution extends AbstractModule {
   }
 
   //this is for stubs framework only
-  public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner){
-    Solution solution = new Solution(){
+
+  public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
+    Solution solution = new Solution() {
       public String getGeneratorOutputPath() {
         return null;
       }
@@ -124,6 +125,7 @@ public class Solution extends AbstractModule {
     if (isExternallyVisible() && mySolutionDescriptor.getNamespace() != null) {
       mp = new ModuleReference(mySolutionDescriptor.getNamespace(), mySolutionDescriptor.getUUID());
     } else {
+      assert myDescriptorFile != null;
       mp = new ModuleReference(FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath()), mySolutionDescriptor.getUUID());
     }
 
@@ -145,6 +147,7 @@ public class Solution extends AbstractModule {
   }
 
   public void save() {
+    if (myDescriptorFile == null) return;
     SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getSolutionDescriptor());
   }
 
@@ -157,11 +160,11 @@ public class Solution extends AbstractModule {
   }
 
   public String toString() {
-    String text = mySolutionDescriptor.getNamespace();
-    if (text == null || text.length() == 0) {
-      text = myDescriptorFile.getName();
-    }
-    return text;
+    String namespace = mySolutionDescriptor.getNamespace();
+    if (namespace != null && namespace.length() != 0) return namespace;
+    assert myDescriptorFile != null;
+    namespace = myDescriptorFile.getName();
+    return namespace;
   }
 
   public boolean isExternallyVisible() {
@@ -170,13 +173,14 @@ public class Solution extends AbstractModule {
 
   public String getGeneratorOutputPath() {
     String generatorOutputPath = mySolutionDescriptor.getOutputPath();
-    if (generatorOutputPath == null) {
-      generatorOutputPath = myDescriptorFile.getParent().getCanonicalPath() + File.separatorChar + "source_gen";
-    }
+    if (generatorOutputPath != null) return generatorOutputPath;
+    assert myDescriptorFile != null;
+    generatorOutputPath = myDescriptorFile.getParent().getCanonicalPath() + File.separatorChar + "source_gen";
     return generatorOutputPath;
   }
 
   public String getTestsGeneratorOutputPath() {
+    assert myDescriptorFile != null;
     return myDescriptorFile.getParent().getCanonicalPath() + File.separatorChar + "test_gen";
   }
 
