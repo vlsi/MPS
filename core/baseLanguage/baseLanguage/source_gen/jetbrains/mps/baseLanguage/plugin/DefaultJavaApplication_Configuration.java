@@ -152,7 +152,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
         };
 
         final Wrappers._T<Process> process = new Wrappers._T<Process>();
-        final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
+        final Wrappers._T<ProcessNotCreatedException> ex = new Wrappers._T<ProcessNotCreatedException>(null);
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getUseAlternativeJRE()) {
