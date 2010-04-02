@@ -387,10 +387,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     });
 
     //todo hack
-    if (getComponent(Project.class) != null) {
-      final Project project = getComponentSafe(Project.class);
+    if (myIDEAProject != null) {
       if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
-        ProjectUtil.closeProject(project);
+        ProjectUtil.closeProject(myIDEAProject);
       }
     }
   }
@@ -419,14 +418,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   @Deprecated
   public IOperationContext createOperationContext() {
     return new ProjectOperationContext(this);
-  }
-
-  @NotNull
-  @Deprecated
-  public <T> T getComponentSafe(Class<T> clz) {
-    T result = getComponent(clz);
-    if (result == null) throw new RuntimeException("Can't find a component " + clz.getName());
-    return result;
   }
 
   @Deprecated //should be left for compatibility (Project Operations in plugins)
