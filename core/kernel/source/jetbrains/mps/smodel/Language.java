@@ -62,7 +62,6 @@ public class Language extends AbstractModule {
 
   private LanguageDescriptor myLanguageDescriptor;
   private List<Generator> myGenerators = new ArrayList<Generator>();
-  private List<Solution> myStubSolutions = new ArrayList<Solution>();
 
   private HashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new HashMap<String, AbstractConceptDeclaration>();
   private IClassPathItem myLanguageRuntimeClasspathCache;
@@ -73,8 +72,6 @@ public class Language extends AbstractModule {
   private
   @Nullable
   Set<IRefactoring> myCachedRefactorings = null;
-
-  private boolean myFirstLoad = true;
 
   private List<Language> myAllExtendedLanguages = new ArrayList<Language>();
 
@@ -101,26 +98,21 @@ public class Language extends AbstractModule {
     language.setLanguageDescriptor(languageDescriptor, false);
     repository.addModule(language, moduleOwner);
 
-    if (language.myFirstLoad) {
-      language.myFirstLoad = false;
-      for (StubSolution ss : languageDescriptor.getStubSolutions()) {
-        SolutionDescriptor descriptor = new SolutionDescriptor();
-        descriptor.setUUID(ss.getId().toString());
-        descriptor.setNamespace(ss.getName());
+    for (StubSolution ss : languageDescriptor.getStubSolutions()) {
+      SolutionDescriptor descriptor = new SolutionDescriptor();
+      descriptor.setUUID(ss.getId().toString());
+      descriptor.setNamespace(ss.getName());
 
-        descriptor.setCompileInMPS(false);
-        descriptor.setEnableJavaStubs(true);
+      descriptor.setCompileInMPS(false);
+      descriptor.setEnableJavaStubs(true);
 
-        descriptor.setExternallyVisible(true);
+      descriptor.setExternallyVisible(true);
 
-        //todo what should be here?
-        descriptor.setDontLoadClasses(true);
+      //todo what should be here?
+      descriptor.setDontLoadClasses(true);
 
-        Solution solution = Solution.newInstance(descriptor, language);
-        language.myStubSolutions.add(solution);
-      }
+      Solution.newInstance(descriptor, language);
     }
-
 
     return language;
   }
