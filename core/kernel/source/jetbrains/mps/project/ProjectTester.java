@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.generator.GeneratorManager;
@@ -53,15 +54,15 @@ import java.util.Collections;
 import java.util.List;
 
 public class ProjectTester {
-  private MPSProject myProject;
+  private Project myProject;
   private boolean myIsRunnable;
 
-  public ProjectTester(MPSProject project, boolean isRunnable) {
+  public ProjectTester(Project project, boolean isRunnable) {
     myProject = project;
     myIsRunnable = isRunnable;
   }
 
-  public ProjectTester(MPSProject project) {
+  public ProjectTester(Project project) {
     this(project, false);
   }
 
@@ -185,7 +186,7 @@ public class ProjectTester {
 
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          List<BaseTestConfiguration> configurations = new ArrayList<BaseTestConfiguration>(myProject.getProjectDescriptor().getTestConfigurations());
+          List<BaseTestConfiguration> configurations = new ArrayList<BaseTestConfiguration>(myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectDescriptor().getTestConfigurations());
 
           if (configurations.isEmpty()) {
             throw new RuntimeException("tested project has no test configurations");
@@ -209,7 +210,7 @@ public class ProjectTester {
 
             GenParameters parms;
             try {
-              parms = t.getGenParams(myProject.getComponent(Project.class), true);
+              parms = t.getGenParams(myProject, true);
             } catch (IllegalGeneratorConfigurationException e) {
               errors.add("Can't create a generator configuration : " + e.getMessage());
               return;
@@ -217,7 +218,7 @@ public class ProjectTester {
 
             int numErrorsBeforeGeneration = errors.size();
 
-            GeneratorManager gm = myProject.getComponentSafe(GeneratorManager.class);
+            GeneratorManager gm = myProject.getComponent(GeneratorManager.class);
             gm.generateModels(
               parms.getModelDescriptors(),
               new ModuleContext(parms.getModule(), myProject),

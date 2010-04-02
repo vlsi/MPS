@@ -119,7 +119,7 @@ public class TestMain {
     final MPSProject project = loadProject(projectFile);
     return testActionForLeaks(new Runnable() {
       public void run() {
-        new ProjectTester(project).testProject();
+        new ProjectTester(project.getComponent(Project.class)).testProject();
       }
     }, leakThreshold);
   }
@@ -359,7 +359,7 @@ public class TestMain {
     }
 
     final MPSProject project = loadProject(projectFile);
-    TestResult result = new ProjectTester(project, isRunnable).testProject(configurations);
+    TestResult result = new ProjectTester(project.getComponent(Project.class), isRunnable).testProject(configurations);
 
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
