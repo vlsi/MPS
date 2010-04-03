@@ -23,7 +23,6 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -137,15 +136,13 @@ public class BaseEditorTestBody extends BaseTestBody {
   }
 
   public static IEditor openEditor(MPSProject project, SModelDescriptor model, SNode node) {
-    Project p = project.getComponent(Project.class);
-    IOperationContext context = new ModuleContext(model.getModule(), project);
-    MPSEditorOpener opener = new MPSEditorOpener(p);
+    IOperationContext context = new ModuleContext(model.getModule(), project.getProject());
+    MPSEditorOpener opener = new MPSEditorOpener(project.getProject());
     return opener.editNode(node, context);
   }
 
   public static void closeEditor(MPSProject project, SNode node) {
-    Project p = project.getComponent(Project.class);
-    FileEditorManager editorManager = FileEditorManager.getInstance(p);
+    FileEditorManager editorManager = FileEditorManager.getInstance(project.getProject());
     editorManager.closeFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
   }
 
