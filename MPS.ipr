@@ -48,7 +48,6 @@
             <option name="LABEL_INDENT_ABSOLUTE" value="false" />
           </value>
         </option>
-        <option name="LINE_SEPARATOR" value="&#13;&#10;" />
         <option name="FIELD_NAME_PREFIX" value="my" />
         <option name="INSERT_INNER_CLASS_IMPORTS" value="true" />
         <option name="PACKAGES_TO_USE_IMPORT_ON_DEMAND">
@@ -118,7 +117,7 @@
           <option name="LABEL_INDENT_ABSOLUTE" value="false" />
         </ADDITIONAL_INDENT_OPTIONS>
         <ADDITIONAL_INDENT_OPTIONS fileType="xml">
-          <option name="INDENT_SIZE" value="4" />
+          <option name="INDENT_SIZE" value="2" />
           <option name="CONTINUATION_INDENT_SIZE" value="8" />
           <option name="TAB_SIZE" value="4" />
           <option name="USE_TAB_CHARACTER" value="false" />
@@ -882,7 +881,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="emma" />
       <extension name="snapshooter" />
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.Launcher" />
-      <option name="VM_PARAMETERS" value="-client -ea -Xmx1500m -Xss1024k -XX:PermSize=92m -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError  -Dcom.sun.management.jmxremote -Dapple.laf.useScreenMenuBar=true -Dcom.apple.mrj.application.apple.menu.about.name=&quot;JetBrains MPS&quot;" />
+      <option name="VM_PARAMETERS" value="-client -ea -Xmx1500m -Xss1024k -XX:PermSize=150m -Dmps.internal=true -XX:+HeapDumpOnOutOfMemoryError  -Dcom.sun.management.jmxremote -Dapple.laf.useScreenMenuBar=true -Dcom.apple.mrj.application.apple.menu.about.name=&quot;JetBrains MPS&quot;" />
       <option name="PROGRAM_PARAMETERS" value="nosplash" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/bin" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -898,7 +897,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;additional-options=&#13;&#10;snapshots-dir=&#13;&#10;" />
+        <option name="myExternalizedOptions" value="&#10;additional-options=&#10;snapshots-dir=&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />

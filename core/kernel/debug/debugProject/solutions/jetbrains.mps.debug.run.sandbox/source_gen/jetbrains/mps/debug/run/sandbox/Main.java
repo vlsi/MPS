@@ -5,7 +5,7 @@ package jetbrains.mps.debug.run.sandbox;
 import jetbrains.mps.smodel.SNode;
 
 public class Main {
-  private int myI;
+  public int myI;
 
   public Main() {
   }
