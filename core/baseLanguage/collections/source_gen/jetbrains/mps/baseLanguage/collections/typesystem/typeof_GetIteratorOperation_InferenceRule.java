@@ -74,7 +74,7 @@ public class typeof_GetIteratorOperation_InferenceRule extends AbstractInference
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152278173", 0, intentionProvider);
         typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152278181", true), (SNode) new typeof_GetIteratorOperation_InferenceRule.QuotationClass_2s4nhf_a0a3a2a0().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1237470428123), typeCheckingContext), _info_12389875345);
       }
-    } while(false);
+    } while (false);
   }
 
   public String getApplicableConceptFQName() {
