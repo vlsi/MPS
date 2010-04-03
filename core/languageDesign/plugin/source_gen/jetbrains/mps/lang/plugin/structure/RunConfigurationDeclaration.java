@@ -15,6 +15,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RunConfigurationDeclaration extends BaseConcept implements INamedConcept, IClassifier, ICheckedNamePolicy {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration";
+  public static final String CPR_RequiresCustomEditor = "requiresCustomEditor";
   public static final String ICON_PATH = "iconPath";
   public static final String CAPTION = "caption";
   public static final String NAME = "name";
