@@ -81,7 +81,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
