@@ -1506,18 +1506,23 @@
               <link role="classifier:3" targetNodeId="16.~ModuleContext" resolveInfo="ModuleContext" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1224595559037">
-              <link role="baseMethodDeclaration:3" targetNodeId="16.~ModuleContext.create(jetbrains.mps.smodel.SModelDescriptor,jetbrains.mps.project.MPSProject,boolean):jetbrains.mps.project.ModuleContext" resolveInfo="create" />
               <link role="classConcept:3" targetNodeId="16.~ModuleContext" resolveInfo="ModuleContext" />
+              <link role="baseMethodDeclaration:3" targetNodeId="16.~ModuleContext.create(jetbrains.mps.smodel.SModelDescriptor,com.intellij.openapi.project.Project,boolean):jetbrains.mps.project.ModuleContext" resolveInfo="create" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1224595559038">
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1224595559039">
                   <link role="fieldDeclaration:3" targetNodeId="1217253536786" resolveInfo="myModel" />
                 </node>
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1224595612382" />
               </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1226945318356">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1226945318358" />
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1226945318357">
-                  <link role="fieldDeclaration:3" targetNodeId="1225466949750" resolveInfo="myProject" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="734517265126391475">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1226945318356">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1226945318358" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1226945318357">
+                    <link role="fieldDeclaration:3" targetNodeId="1225466949750" resolveInfo="myProject" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="734517265126396780">
+                  <link role="baseMethodDeclaration:3" targetNodeId="16.~MPSProject.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                 </node>
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1224595559042">

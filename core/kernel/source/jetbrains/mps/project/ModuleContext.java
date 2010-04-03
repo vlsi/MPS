@@ -48,7 +48,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
   @Deprecated
   public ModuleContext(@NotNull final IModule module, @NotNull final MPSProject project) {
-    this(module,project.getProject());
+    this(module, project.getProject());
   }
 
   public <T> T getComponent(Class<T> clazz) {
@@ -82,7 +82,7 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   @Nullable
-  public static ModuleContext create(final SNode node, MPSProject project, boolean askIfMany) {
+  public static ModuleContext create(final SNode node, Project project, boolean askIfMany) {
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       public SModel compute() {
         return node.getModel();
@@ -92,7 +92,7 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   @Nullable
-  public static ModuleContext create(final SModel model, MPSProject project, boolean askIfMany) {
+  public static ModuleContext create(final SModel model, Project project, boolean askIfMany) {
     SModelDescriptor modelDescriptor = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
       public SModelDescriptor compute() {
         return model.getModelDescriptor();
@@ -102,7 +102,7 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   @Nullable
-  public static ModuleContext create(@NotNull final SModelDescriptor model, MPSProject project, boolean askIfMany) {
+  public static ModuleContext create(@NotNull final SModelDescriptor model, Project project, boolean askIfMany) {
 
     if (askIfMany && (ModelAccess.instance().canRead() || ModelAccess.instance().canWrite())) {
       LOG.errorWithTrace("Invocation of operations which might show dialog with lock held");
@@ -134,5 +134,4 @@ public class ModuleContext extends StandaloneMPSContext {
 
     return new ModuleContext(module, project);
   }
-
 }

@@ -56,7 +56,7 @@ public class BaseTransformationTest extends TestCase {
 
   public void setModelDescriptor(SModelDescriptor modelDescriptor) {
     this.myModel = modelDescriptor;
-    ModuleContext context = ModuleContext.create(this.myModel, this.myProject, false);
+    ModuleContext context = ModuleContext.create(this.myModel, this.myProject.getProject(), false);
     TransientModelsModule module = context.getComponent(TransientModelsModule.class);
     this.myTransidentModel = module.createTransientModel("testTransidentModel", "testTransidentModel");
     CloneUtil.cloneModel(this.myModel.getSModel(), this.myTransidentModel.getSModel(), false);

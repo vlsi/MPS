@@ -87,7 +87,7 @@ public class GeneratorManager {
       messagesTool.resetAutoscrollOption();
       for (SModelDescriptor model : inputModels) {
         assert model != null;
-        ModuleContext moduleContext = ModuleContext.create(model, operationContext.getProject().getComponent(MPSProjectHolder.class).getMPSProject(), false);
+        ModuleContext moduleContext = ModuleContext.create(model, operationContext.getProject(), false);
         if (moduleContext == null) {
           messagesTool.add(new Message(MessageKind.WARNING, GeneratorManager.class, "Model " + model.getLongName() + " won't be generated"));
           continue;
