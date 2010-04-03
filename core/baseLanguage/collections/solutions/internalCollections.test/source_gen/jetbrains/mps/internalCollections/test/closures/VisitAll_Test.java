@@ -70,7 +70,7 @@ __skip__:
           if (it > 5) {
             throw new StopIteratingException();
           }
-        } while(false);
+        } while (false);
       }
     });
     this.assertIterableEquals(Arrays.asList(4, 8, 12), res);
@@ -86,7 +86,7 @@ __skip__:
           if (it > 5) {
             throw new StopIteratingException();
           }
-        } while(false);
+        } while (false);
       }
     });
     this.assertIterableEquals(Arrays.asList(4, 8, 12), res);

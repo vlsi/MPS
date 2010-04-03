@@ -98,7 +98,7 @@ public class ClassifierType_Behavior {
           }
         }
         return false;
-      } while(false);
+      } while (false);
     }
     {
       GeneratedMatchingPattern pattern_hz3823_b0f = new ClassifierType_Behavior.Pattern_hz3823_a0a0a1a6(SLinkOperations.getTarget(thisNode, "classifier", false));

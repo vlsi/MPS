@@ -41,7 +41,7 @@ public class check_Antiquotation_NonTypesystemRule extends AbstractNonTypesystem
           break;
         }
       }
-    } while(false);
+    } while (false);
   }
 
   public String getApplicableConceptFQName() {

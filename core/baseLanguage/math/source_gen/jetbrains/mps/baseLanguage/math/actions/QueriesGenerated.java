@@ -114,7 +114,7 @@ public class QueriesGenerated {
                 break;
               }
             }
-          } while(false);
+          } while (false);
           SPropertyOperations.set(lso, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), lso);
           return SLinkOperations.getTarget(lso, "matrix", true);

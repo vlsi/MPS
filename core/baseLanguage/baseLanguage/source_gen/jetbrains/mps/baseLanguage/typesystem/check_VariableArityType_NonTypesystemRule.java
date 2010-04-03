@@ -44,7 +44,7 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableArityType, "variable arity types should only be used in method parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921506083", intentionProvider, errorTarget);
       }
-    } while(false);
+    } while (false);
   }
 
   public String getApplicableConceptFQName() {

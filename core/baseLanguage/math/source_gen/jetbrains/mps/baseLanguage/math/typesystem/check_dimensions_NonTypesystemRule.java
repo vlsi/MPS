@@ -86,7 +86,7 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
           break;
         }
       }
-    } while(false);
+    } while (false);
   }
 
   public String getApplicableConceptFQName() {

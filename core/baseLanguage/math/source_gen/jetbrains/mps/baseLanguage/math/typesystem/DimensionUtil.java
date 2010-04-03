@@ -173,7 +173,7 @@ public class DimensionUtil {
               s += 1;
             }
           }
-        } while(false);
+        } while (false);
       }
       SNode result = MathTypeUtil.qMatrix(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_757772128652074250));
       if (row) {
@@ -258,7 +258,7 @@ public class DimensionUtil {
         }
       }
       return 0;
-    } while(false);
+    } while (false);
   }
 
   public static int dimc(SNode t) {
@@ -289,7 +289,7 @@ public class DimensionUtil {
         }
       }
       return 0;
-    } while(false);
+    } while (false);
   }
 
   public static class QuotationClass_48zlf8_a0a0a8a0a0 {

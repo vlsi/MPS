@@ -39,6 +39,6 @@ public class DefaultBaseLine_Behavior {
         }
       }
       return false;
-    } while(false);
+    } while (false);
   }
 }

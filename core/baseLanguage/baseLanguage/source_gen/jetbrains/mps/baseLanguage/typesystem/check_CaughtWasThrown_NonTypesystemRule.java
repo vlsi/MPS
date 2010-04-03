@@ -64,7 +64,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
               break;
             }
           }
-        } while(false);
+        } while (false);
 
         if (!(SetSequence.fromSet(thrown).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode t) {

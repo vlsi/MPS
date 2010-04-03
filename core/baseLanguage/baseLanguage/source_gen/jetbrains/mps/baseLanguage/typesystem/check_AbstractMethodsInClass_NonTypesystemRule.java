@@ -43,7 +43,7 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
               break;
             }
           }
-        } while(false);
+        } while (false);
       }
     }
   }

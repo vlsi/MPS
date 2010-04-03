@@ -187,7 +187,7 @@ public class MathTypeUtil {
         }
       }
       return null;
-    } while(false);
+    } while (false);
   }
 
   public static int pickExplicitWidening(SNode narrower, SNode wider) {
@@ -322,7 +322,7 @@ public class MathTypeUtil {
         }
       }
       return null;
-    } while(false);
+    } while (false);
   }
 
   public static boolean checkAdditiveOperationDimensions(SNode binOp) {

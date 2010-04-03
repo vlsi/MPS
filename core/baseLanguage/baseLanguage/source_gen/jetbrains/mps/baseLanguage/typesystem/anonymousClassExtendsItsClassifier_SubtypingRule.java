@@ -38,7 +38,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
           break;
         }
       }
-    } while(false);
+    } while (false);
     return result;
   }
 

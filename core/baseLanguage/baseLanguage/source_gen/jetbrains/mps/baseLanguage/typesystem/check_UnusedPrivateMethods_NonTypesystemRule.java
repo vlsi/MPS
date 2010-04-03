@@ -61,7 +61,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
             break;
           }
         }
-      } while(false);
+      } while (false);
     }
   }
 

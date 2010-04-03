@@ -60,7 +60,7 @@ public class MatrixInitializerIndexReference_index_ReferentConstraint extends Ba
             break;
           }
         }
-      } while(false);
+      } while (false);
       n = SNodeOperations.getAncestor(n, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", false, false);
     }
     return indices;

@@ -39,6 +39,6 @@ public class ScriptKindClassItem_Behavior {
         }
       }
       return false;
-    } while(false);
+    } while (false);
   }
 }

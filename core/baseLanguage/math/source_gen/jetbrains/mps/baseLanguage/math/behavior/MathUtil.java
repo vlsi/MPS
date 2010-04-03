@@ -81,7 +81,7 @@ public class MathUtil {
         }
       }
       return null;
-    } while(false);
+    } while (false);
   }
 
   public static SNode convert2(SNode bmc) {
@@ -136,7 +136,7 @@ public class MathUtil {
         }
       }
       return null;
-    } while(false);
+    } while (false);
   }
 
   public static SNode getMathContext(SNode node) {
@@ -183,7 +183,7 @@ public class MathUtil {
         }
       }
       return new MathUtil.QuotationClass_30uc9x_a0e0b0d().createNode();
-    } while(false);
+    } while (false);
     switch (SPropertyOperations.getInteger_def(mc, "precisionSetting", "0")) {
       case 1:
         return new MathUtil.QuotationClass_30uc9x_a0a0a2a3().createNode();
@@ -251,7 +251,7 @@ public class MathUtil {
         }
       }
       return null;
-    } while(false);
+    } while (false);
   }
 
   public static int getIndex(SNode node) {

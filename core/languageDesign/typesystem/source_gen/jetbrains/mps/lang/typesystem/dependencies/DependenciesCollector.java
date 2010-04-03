@@ -138,8 +138,8 @@ public class DependenciesCollector {
                 break;
               }
             }
-          } while(false);
-        } while(false);
+          } while (false);
+        } while (false);
       }
     }
   }

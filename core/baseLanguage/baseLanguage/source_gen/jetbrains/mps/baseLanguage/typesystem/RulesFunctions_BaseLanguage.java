@@ -149,7 +149,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -315,7 +315,7 @@ __switch__:
             break;
           }
         }
-      } while(false);
+      } while (false);
     } else {
       {
         SNode arg;
@@ -479,7 +479,7 @@ __switch__:
             return SLinkOperations.getTarget(matchedNode_5ahx9e_a0f0l, "staticInitializer", true) == prevStatementList;
           }
         }
-      } while(false);
+      } while (false);
     }
     return false;
   }
@@ -588,7 +588,7 @@ with_anc:
           use_quickfix = true;
         }
         break with_anc;
-      } while(false);
+      } while (false);
       if (ListSequence.fromList(throwTypes).isEmpty()) {
         return;
       }
