@@ -8,16 +8,14 @@ import java.awt.GridBagLayout;
 import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
 
 public class DefaultJUnit_Editor extends JPanel {
-  private JavaConfigOptions myJavaConfigurationOptions;
-  private JUnitConfigEditor myUsersComponent;
+  private JavaConfigOptions myJavaConfigurationOptions = new JavaConfigOptions();
+  private JUnitConfigEditor myUsersComponent = new JUnitConfigEditor();
 
   public DefaultJUnit_Editor() {
     super(new GridBagLayout());
 
-    this.myJavaConfigurationOptions = new JavaConfigOptions();
-    this.myUsersComponent = new JUnitConfigEditor();
-    this.add(this.myUsersComponent, LayoutUtil.createPanelConstraints(0));
-    this.add(this.myJavaConfigurationOptions, LayoutUtil.createPanelConstraints(1));
+    this.add(this.myUsersComponent, LayoutUtil.createPanelConstraints(1));
+    this.add(this.myJavaConfigurationOptions, LayoutUtil.createPanelConstraints(2));
   }
 
   public void apply(DefaultJUnit_Configuration configuration) {

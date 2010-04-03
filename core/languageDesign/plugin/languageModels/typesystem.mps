@@ -2980,5 +2980,50 @@
       <link role="concept:3" targetNodeId="4.3339131993542057764:23" resolveInfo="GetPrefComponentInProjectOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="2195473424935456956">
+    <property name="name:3" value="check_RunConfigurationDeclaration" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2195473424935456957">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2195473424935459710">
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="2195473424935658036">
+          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2195473424935658048">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2195473424935658040">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2195473424935658039">
+                <link role="applicableNode:3" targetNodeId="2195473424935456958" resolveInfo="runConfigurationDeclaration" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation:16" id="2195473424935658044" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess:16" id="2195473424935658054">
+              <link role="conceptProperty:16" targetNodeId="4.2195473424935653498:23" resolveInfo="requiresCustomEditor" />
+            </node>
+          </node>
+          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2195473424935459719">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2195473424935459714">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2195473424935459713">
+                <link role="applicableNode:3" targetNodeId="2195473424935456958" resolveInfo="runConfigurationDeclaration" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2195473424935459718">
+                <link role="link:16" targetNodeId="4.162872405267681133:23" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="2195473424935459723" />
+          </node>
+        </node>
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2195473424935459712">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="2195473424935459724">
+            <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2195473424935459728">
+              <property name="value:3" value="Run configuration should declare editor" />
+            </node>
+            <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2195473424935459727">
+              <link role="applicableNode:3" targetNodeId="2195473424935456958" resolveInfo="runConfigurationDeclaration" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="2195473424935456958">
+      <property name="name:3" value="runConfigurationDeclaration" />
+      <link role="concept:3" targetNodeId="4.7035278950562851062:23" resolveInfo="RunConfigurationDeclaration" />
+    </node>
+  </node>
 </model>
 
