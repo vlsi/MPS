@@ -37,6 +37,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.MPSProjectHolder;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -86,7 +87,7 @@ public class GeneratorManager {
       messagesTool.resetAutoscrollOption();
       for (SModelDescriptor model : inputModels) {
         assert model != null;
-        ModuleContext moduleContext = ModuleContext.create(model, operationContext.getMPSProject(), false);
+        ModuleContext moduleContext = ModuleContext.create(model, operationContext.getProject().getComponent(MPSProjectHolder.class).getMPSProject(), false);
         if (moduleContext == null) {
           messagesTool.add(new Message(MessageKind.WARNING, GeneratorManager.class, "Model " + model.getLongName() + " won't be generated"));
           continue;

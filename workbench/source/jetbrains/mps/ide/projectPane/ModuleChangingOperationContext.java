@@ -50,10 +50,6 @@ public class ModuleChangingOperationContext implements IOperationContext {
     return myModule;
   }
 
-  public MPSProject getMPSProject() {
-    return myOperationContext.getMPSProject();
-  }
-
   public Project getProject() {
     return myOperationContext.getProject();
   }

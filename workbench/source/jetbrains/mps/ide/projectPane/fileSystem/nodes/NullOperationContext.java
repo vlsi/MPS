@@ -30,11 +30,6 @@ class NullOperationContext implements IOperationContext {
   public NullOperationContext() {
   }
 
-  @Deprecated
-  public MPSProject getMPSProject() {
-    return null;
-  }
-
   public Project getProject() {
     return null;
   }

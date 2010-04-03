@@ -37,9 +37,4 @@ public interface IOperationContext {
   boolean isTestMode();
 
   <T> T getComponent(Class<T> clazz);
-
-  //----DEPRECATED
-  
-  @Deprecated
-  MPSProject getMPSProject();
 }

@@ -45,11 +45,4 @@ public abstract class StandaloneMPSContext implements IOperationContext {
   public boolean isValid() {
     return true;
   }
-
-  @Deprecated
-  public final MPSProject getMPSProject() {
-    Project project = getProject();
-    if (project == null) return null;
-    return project.getComponent(MPSProjectHolder.class).getMPSProject();
-  }
 }
