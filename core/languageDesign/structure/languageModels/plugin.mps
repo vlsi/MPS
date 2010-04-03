@@ -28,7 +28,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="42" />
+  <maxImportIndex value="41" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.workbench.tools(jetbrains.mps.workbench.tools@java_stub)" version="-1" />
@@ -61,7 +61,6 @@
   <import index="39" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <import index="40" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
   <import index="41" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
-  <import index="42" modelUID="f:java_stub#com.intellij.openapi.components(com.intellij.openapi.components@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ToolDeclaration:23" id="1216648908320">
     <property name="name:23" value="StructureView" />
     <property name="caption:23" value="Concept Structure" />
@@ -3316,16 +3315,11 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6388164970935848583">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6388164970935848584">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6388164970935848585">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8805345833582340359">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6388164970935848586">
-                    <link role="variableDeclaration:3" targetNodeId="6388164970935848432" resolveInfo="context" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8805345833582340364">
-                    <link role="baseMethodDeclaration:3" targetNodeId="18.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
-                  </node>
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6388164970935848586">
+                  <link role="variableDeclaration:3" targetNodeId="6388164970935848432" resolveInfo="context" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6388164970935848587">
-                  <link role="baseMethodDeclaration:3" targetNodeId="42.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="18.~IOperationContext.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="6388164970935848588">
                     <link role="classifier:3" targetNodeId="30.~MPSEditorOpener" resolveInfo="MPSEditorOpener" />
                   </node>
