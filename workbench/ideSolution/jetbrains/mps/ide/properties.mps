@@ -3936,7 +3936,7 @@
                                   </node>
                                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3416087927885130185">
                                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3416087927885130186">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="34.~TestConfigurationDialog.&lt;init&gt;(jetbrains.mps.project.MPSProject,jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration)" resolveInfo="TestConfigurationDialog" />
+                                      <link role="baseMethodDeclaration:3" targetNodeId="34.~TestConfigurationDialog.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration)" resolveInfo="TestConfigurationDialog" />
                                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3416087927885130187">
                                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3416087927885130188">
                                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3416087927885130189">
@@ -3947,7 +3947,7 @@
                                           </node>
                                         </node>
                                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3416087927885130191">
-                                          <link role="baseMethodDeclaration:3" targetNodeId="31.~IOperationContext.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
+                                          <link role="baseMethodDeclaration:3" targetNodeId="31.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                                         </node>
                                       </node>
                                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3416087927885130192" />
@@ -4174,7 +4174,7 @@
                                   </node>
                                   <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3416087927885130281">
                                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3416087927885130282">
-                                      <link role="baseMethodDeclaration:3" targetNodeId="34.~TestConfigurationDialog.&lt;init&gt;(jetbrains.mps.project.MPSProject,jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration)" resolveInfo="TestConfigurationDialog" />
+                                      <link role="baseMethodDeclaration:3" targetNodeId="34.~TestConfigurationDialog.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration)" resolveInfo="TestConfigurationDialog" />
                                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3416087927885130283">
                                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3416087927885130284">
                                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3416087927885130285">
@@ -4185,7 +4185,7 @@
                                           </node>
                                         </node>
                                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3416087927885130287">
-                                          <link role="baseMethodDeclaration:3" targetNodeId="31.~IOperationContext.getMPSProject():jetbrains.mps.project.MPSProject" resolveInfo="getMPSProject" />
+                                          <link role="baseMethodDeclaration:3" targetNodeId="31.~IOperationContext.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
                                         </node>
                                       </node>
                                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="3416087927885130288">
