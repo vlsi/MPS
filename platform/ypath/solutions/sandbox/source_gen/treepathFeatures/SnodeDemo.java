@@ -44,7 +44,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -91,7 +91,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -130,7 +130,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -177,7 +177,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -251,7 +251,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -324,7 +324,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -381,7 +381,7 @@ __switch__:
                           default:
                             break __loop__;
                         }
-                      } while(true);
+                      } while (true);
                       return false;
                     }
                   };
@@ -442,7 +442,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -481,7 +481,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
@@ -545,7 +545,7 @@ __switch__:
                     default:
                       break __loop__;
                   }
-                } while(true);
+                } while (true);
                 return false;
               }
             };
