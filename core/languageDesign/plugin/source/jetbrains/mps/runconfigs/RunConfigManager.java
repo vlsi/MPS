@@ -60,9 +60,11 @@ public class RunConfigManager implements ProjectComponent {
   private Project myProject;
   private Element myState = null;
   private Element mySharedState = null;
+  private final MPSProject myMpsProject;
 
-  public RunConfigManager(Project project) {
+  public RunConfigManager(Project project, MPSProject mpsProject) {
     myProject = project;
+    myMpsProject = mpsProject;
   }
 
   public void projectOpened() {
@@ -190,16 +192,15 @@ public class RunConfigManager implements ProjectComponent {
   }
 
   private List<ConfigurationType> createConfigs(Project project) {
-    final MPSProject mpsProject = myProject.getComponent(MPSProject.class);
 
     final List<ConfigurationType> conTypes = new ArrayList<ConfigurationType>();
 
     Set<Language> languages = new HashSet<Language>();
-    for (Solution s : mpsProject.getProjectSolutions()) {
+    for (Solution s : myMpsProject.getProjectSolutions()) {
       languages.addAll(s.getScope().getVisibleLanguages());
     }
 
-    for (Language l : mpsProject.getProjectLanguages()) {
+    for (Language l : myMpsProject.getProjectLanguages()) {
       languages.add(l);
     }
 
