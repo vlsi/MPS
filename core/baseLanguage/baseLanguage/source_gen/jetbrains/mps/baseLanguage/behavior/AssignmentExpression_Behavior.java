@@ -16,7 +16,12 @@ public class AssignmentExpression_Behavior {
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     SNode type = null;
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "rValue")) {
-      type = SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "lValue", true))), "jetbrains.mps.baseLanguage.structure.Type");
+      SNode rawType = SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "lValue", true)));
+      if (SNodeOperations.isInstanceOf(rawType, "jetbrains.mps.baseLanguage.structure.Type")) {
+        type = SNodeOperations.cast(rawType, "jetbrains.mps.baseLanguage.structure.Type");
+      } else {
+        return null;
+      }
     }
     return type;
   }
