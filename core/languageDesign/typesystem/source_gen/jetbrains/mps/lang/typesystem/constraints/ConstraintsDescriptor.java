@@ -30,8 +30,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new SimpleRule_ProcedureCall_parametersLink_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new PropertyMessageTarget_propertyDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ReferenceMessageTarget_linkDeclaration_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new LinkAssociation_subtypeLink_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new LinkAssociation_supertypeLink_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ConceptClauseLinkInfo_linkDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new InequationReference_inequation_ReferentConstraint());
   }
