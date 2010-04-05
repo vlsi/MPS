@@ -27,7 +27,6 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
-
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -36,7 +35,6 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -103,9 +101,6 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean forceNewTab, final String notFoundMsg) {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-        if (project == null || project.isDisposed()) return;
-
         final SearchResults[] searchResults = new SearchResults[1];
         final boolean[] isCancelled = new boolean[1];
         ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
