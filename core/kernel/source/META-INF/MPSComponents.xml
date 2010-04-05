@@ -491,6 +491,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.project.ProjectSaveChecker</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.library.ProjectLibraryManager</implementation-class>
         </component>
 
