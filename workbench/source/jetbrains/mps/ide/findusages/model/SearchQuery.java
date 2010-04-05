@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.model;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.BootstrapScope;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -54,7 +55,7 @@ public class SearchQuery implements IExternalizeable {
   private IScope myScope;
   private IHolder myObjectHolder = new VoidHolder();
 
-  public SearchQuery(Element element, MPSProject project) throws CantLoadSomethingException {
+  public SearchQuery(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -96,7 +97,7 @@ public class SearchQuery implements IExternalizeable {
     return myObjectHolder.getIcon();
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     Element scopeXML = new Element(SCOPE);
     if (myScope instanceof GlobalScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_GLOBAL);
@@ -136,13 +137,13 @@ public class SearchQuery implements IExternalizeable {
     element.addContent(holderXML);
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     Element scopeXML = element.getChild(SCOPE);
     String scopeType = scopeXML.getAttribute(SCOPE_TYPE).getValue();
     if (scopeType.equals(SCOPE_TYPE_GLOBAL)) {
       myScope = GlobalScopeMinusTransient.getInstance();
     } else if (scopeType.equals(SCOPE_TYPE_PROJECT)) {
-      myScope = project.getProject().getComponent(ProjectScope.class);
+      myScope = project.getComponent(ProjectScope.class);
     } else if (scopeType.equals(SCOPE_TYPE_MODULE)) {
       String moduleUID = scopeXML.getAttribute(MODULE_ID).getValue();
       myScope = null;
@@ -160,7 +161,7 @@ public class SearchQuery implements IExternalizeable {
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
       for (Element modelXML : (List<Element>) modelsXML.getChildren(MODEL)) {
         String modelUID = modelXML.getAttribute(MODEL_ID).getValue();
-        SModelDescriptor sModelDescriptor = project.getProject().getComponent(ProjectScope.class).getModelDescriptor(SModelReference.fromString(modelUID));
+        SModelDescriptor sModelDescriptor = project.getComponent(ProjectScope.class).getModelDescriptor(SModelReference.fromString(modelUID));
         if (sModelDescriptor == null) {
           LOG.warning("model scope not found for model " + modelUID);
           throw new CantLoadSomethingException("model scope not found for model " + modelUID);
@@ -175,7 +176,7 @@ public class SearchQuery implements IExternalizeable {
     Element holderXML = element.getChild(HOLDER);
     String holderClass = holderXML.getAttributeValue(HOLDER_CLASS);
     try {
-      myObjectHolder = (IHolder) Class.forName(holderClass).getConstructor(Element.class, MPSProject.class).newInstance(holderXML, project);
+      myObjectHolder = (IHolder) Class.forName(holderClass).getConstructor(Element.class, Project.class).newInstance(holderXML, project);
     } catch (Exception e) {
       throw new CantLoadSomethingException(e);
     }

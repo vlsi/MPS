@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.model.holders;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.MPSProject;
@@ -28,7 +29,7 @@ public class StringHolder implements IHolder<String> {
 
   private String myString = "";
 
-  public StringHolder(Element element, MPSProject project) throws CantLoadSomethingException {
+  public StringHolder(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -49,12 +50,12 @@ public class StringHolder implements IHolder<String> {
     return null;
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     myString = element.getAttributeValue(VALUE);
     if (myString == null) throw new CantLoadSomethingException("string value is not present");
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     element.setAttribute(VALUE, myString);
   }
 }

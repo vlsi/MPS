@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.ide.findusages;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
 public interface IExternalizeable {
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException;
+  public void read(Element element, Project project) throws CantLoadSomethingException;
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException;
+  public void write(Element element, Project project) throws CantSaveSomethingException;
 }

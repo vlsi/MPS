@@ -128,7 +128,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     options.myShowPopupMenu = myTree.isShowPopupMenu();
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     myNodeRepresentator = null;
     Element nodeRepresentatorXML = element.getChild(NODE_REPRESENTATOR);
     if (nodeRepresentatorXML != null) {
@@ -156,7 +156,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     myTree.setContents(myContents, myPathProvider);
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     Element nodeRepresentatorXML = new Element(NODE_REPRESENTATOR);
     if (myNodeRepresentator != null) {
       nodeRepresentatorXML.setAttribute(CLASS_NAME, myNodeRepresentator.getClass().getName());

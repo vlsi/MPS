@@ -36,7 +36,6 @@ import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -191,7 +190,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
 
   //----SAVE/LOAD STUFF----
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     assert !myIsInitialized;
     myIsInitialized = true;
 
@@ -215,7 +214,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     myTreeComponent.read(treeWrapperXML, project);
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     Element optionsXML = new Element(BUTTONS);
     myButtonConfiguration.write(optionsXML, project);
     element.addContent(optionsXML);
@@ -255,7 +254,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
       myShowCloseButton = true;
     }
 
-    public ButtonConfiguration(Element optionsXML, MPSProject project) {
+    public ButtonConfiguration(Element optionsXML, Project project) {
       read(optionsXML, project);
     }
 
@@ -271,13 +270,13 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
       return myShowCloseButton;
     }
 
-    public void read(Element element, MPSProject project) {
+    public void read(Element element, Project project) {
       myShowRerunButton = Boolean.parseBoolean(element.getAttributeValue(RERUN));
       myShowRegenerateButton = Boolean.parseBoolean(element.getAttributeValue(REGENERATE));
       myShowCloseButton = Boolean.parseBoolean(element.getAttributeValue(CLOSE));
     }
 
-    public void write(Element element, MPSProject project) {
+    public void write(Element element, Project project) {
       element.setAttribute(RERUN, Boolean.toString(myShowRerunButton));
       element.setAttribute(REGENERATE, Boolean.toString(myShowRegenerateButton));
       element.setAttribute(CLOSE, Boolean.toString(myShowCloseButton));

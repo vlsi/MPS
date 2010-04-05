@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.IExternalizeable;
-import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
 import java.util.Arrays;
@@ -68,7 +68,7 @@ public class ViewOptions implements IExternalizeable {
     mySearchedNodesButtonsVisible = searchedNodesButtonsVisible;
   }
 
-  public void read(Element element, MPSProject project) {
+  public void read(Element element, Project project) {
     Element viewOptionsXML = element.getChild(OPTIONS);
 
     myCategory = Boolean.valueOf(viewOptionsXML.getAttributeValue(CATEGORY_OPTION));
@@ -87,7 +87,7 @@ public class ViewOptions implements IExternalizeable {
     myAutoscrolls = Boolean.valueOf(viewOptionsXML.getAttributeValue(AUTOSCROLL_OPTION));
   }
 
-  public void write(Element element, MPSProject project) {
+  public void write(Element element, Project project) {
     Element viewOptionsXML = new Element(OPTIONS);
 
     viewOptionsXML.setAttribute(CATEGORY_OPTION, Boolean.toString(myCategory));

@@ -20,7 +20,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -31,7 +30,6 @@ import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -90,7 +88,7 @@ public abstract class MigrationScriptsView {
     myControlsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     myApplyButton = new JButton(new AbstractAction("Apply Migrations") {
       public void actionPerformed(ActionEvent e) {
-        applyMigrations();                       
+        applyMigrations();
       }
     });
     myControlsPanel.add(myApplyButton);

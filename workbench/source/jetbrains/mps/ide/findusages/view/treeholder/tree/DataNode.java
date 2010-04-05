@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
@@ -22,7 +23,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.BaseNodeD
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -50,7 +50,7 @@ public class DataNode implements IExternalizeable {
     myData = data;
   }
 
-  public DataNode(Element element, MPSProject project) throws CantLoadSomethingException {
+  public DataNode(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -148,12 +148,12 @@ public class DataNode implements IExternalizeable {
 
   //-------PERSISTENCE--------
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     Element dataXML = element.getChild(DATA);
     String dataClass = dataXML.getAttributeValue(DATA_CLASS);
     try {
       Class<?> cls = Class.forName(dataClass);
-      myData = (BaseNodeData) cls.getConstructor(Element.class, MPSProject.class).newInstance(dataXML, project);
+      myData = (BaseNodeData) cls.getConstructor(Element.class, Project.class).newInstance(dataXML, project);
     } catch (InvocationTargetException e) {
       if (e.getCause() instanceof CantLoadSomethingException) {
         throw (CantLoadSomethingException) e.getCause();
@@ -177,7 +177,7 @@ public class DataNode implements IExternalizeable {
     }
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     Element dataXML = new Element(DATA);
     dataXML.setAttribute(DATA_CLASS, myData.getClass().getName());
     myData.write(dataXML, project);

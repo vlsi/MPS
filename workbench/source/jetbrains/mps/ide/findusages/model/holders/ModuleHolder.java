@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.model.holders;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.icons.IconManager;
@@ -31,7 +32,7 @@ public class ModuleHolder implements IHolder<IModule> {
 
   private String myModuleUID = "";
 
-  public ModuleHolder(Element element, MPSProject project) throws CantLoadSomethingException {
+  public ModuleHolder(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -52,13 +53,13 @@ public class ModuleHolder implements IHolder<IModule> {
     return IconManager.getIconFor(getObject());
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element,Project project) throws CantSaveSomethingException {
     if (getObject() == null) throw new CantSaveSomethingException("module is not found");
 
     element.setAttribute(UID, myModuleUID);
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     myModuleUID = element.getAttributeValue(UID);
 
     if (getObject() == null) throw new CantLoadSomethingException("module is not found");

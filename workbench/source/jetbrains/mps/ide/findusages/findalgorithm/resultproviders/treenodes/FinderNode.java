@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -27,7 +28,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -85,7 +85,7 @@ public class FinderNode extends BaseLeaf {
     return TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
 
     Element finderXML;
@@ -102,7 +102,7 @@ public class FinderNode extends BaseLeaf {
     element.addContent(finderXML);
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     if (element.getChild(FINDER) != null) {
       Element finderXML = element.getChild(FINDER);

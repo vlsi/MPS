@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.ide.findusages.model.holders;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,7 +27,7 @@ public class VoidHolder implements IHolder {
   private String myCaption = "<void>";
   private Icon myIcon = null;
 
-  public VoidHolder(Element element, MPSProject project) {
+  public VoidHolder(Element element, Project project) {
     throw new UnsupportedOperationException();
   }
 
@@ -53,11 +53,11 @@ public class VoidHolder implements IHolder {
     return myIcon;
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     throw new CantLoadSomethingException("VoidHolder is not loadable");
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     throw new CantSaveSomethingException("VoidHolder is not saveable");
   }
 }

@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
@@ -101,12 +102,12 @@ public class AspectMethodsFinder implements IFinder {
       return null;
     }
 
-    public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+    public void read(Element element, Project project) throws CantLoadSomethingException {
       myData.myModelName = element.getAttributeValue(MODEL_NAME);
       myData.myMethodName = element.getAttributeValue(METHOD_NAME);
     }
 
-    public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+    public void write(Element element, Project project) throws CantSaveSomethingException {
       element.setAttribute(MODEL_NAME, myData.myModelName);
       element.setAttribute(METHOD_NAME, myData.myMethodName);
     }

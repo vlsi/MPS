@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
@@ -23,7 +24,6 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.NameUtil;
@@ -44,7 +44,7 @@ public class FindersOptions extends BaseOptions {
   @NotNull
   private List<String> myFindersClassNames = new ArrayList<String>();
 
-  public FindersOptions(Element element, MPSProject project) throws CantLoadSomethingException {
+  public FindersOptions(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -100,7 +100,7 @@ public class FindersOptions extends BaseOptions {
     return FindUtils.makeProvider(finders);
   }
 
-  public void write(Element element, MPSProject project) {
+  public void write(Element element, Project project) {
     Element findersXML = new Element(FINDERS);
     for (String finderClassName : myFindersClassNames) {
       Element finderXML = new Element(FINDER);
@@ -110,7 +110,7 @@ public class FindersOptions extends BaseOptions {
     element.addContent(findersXML);
   }
 
-  public void read(Element element, MPSProject project) {
+  public void read(Element element, Project project) {
     Element findersXML = element.getChild(FINDERS);
     for (Element finderXML : (List<Element>) findersXML.getChildren(FINDER)) {
       String finderName = finderXML.getAttribute(CLASS_NAME).getValue();

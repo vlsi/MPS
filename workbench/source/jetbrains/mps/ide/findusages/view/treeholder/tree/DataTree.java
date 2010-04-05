@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -28,7 +29,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItem;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jdom.Element;
@@ -44,7 +44,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
   public DataTree() {
   }
 
-  public DataTree(Element element, MPSProject project) throws CantLoadSomethingException {
+  public DataTree(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -187,7 +187,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
         Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
         CategoryNodeData data = (CategoryNodeData) child.getData();
         if (data.getCategoryKindName().equals(category.o1.getName())
-            && data.getIdObject().equals(category.o2)) {
+          && data.getIdObject().equals(category.o2)) {
           next = child;
         }
       } else {
@@ -236,13 +236,13 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
   //----READ/WRITE STUFF----
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     myTreeRoot.read(element, project);
     notifyChangeListeners();
     updateNotifier();
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     myTreeRoot.write(element, project);
   }
 

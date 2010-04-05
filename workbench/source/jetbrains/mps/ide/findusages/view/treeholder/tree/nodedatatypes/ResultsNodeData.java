@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
-import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -38,7 +38,7 @@ public class ResultsNodeData extends BaseNodeData {
     myNodeRepresentator = nodeRepresentator;
   }
 
-  public ResultsNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+  public ResultsNodeData(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 

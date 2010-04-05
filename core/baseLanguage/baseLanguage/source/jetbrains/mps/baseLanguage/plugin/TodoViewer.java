@@ -19,33 +19,31 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
+import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
-import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
-import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.plugins.pluginparts.tool.GeneratedTool;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NotNull;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -153,10 +151,10 @@ public class TodoViewer extends JPanel {
     }
 
     // Nothing to read or write: this class is stateless
-    public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+    public void read(Element element, Project project) throws CantLoadSomethingException {
     }
 
-    public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+    public void write(Element element, Project project) throws CantSaveSomethingException {
     }
   }
 }

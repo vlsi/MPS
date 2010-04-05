@@ -16,6 +16,8 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
@@ -23,7 +25,6 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -82,20 +83,20 @@ public class FilterNode extends BaseNode {
     return TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     Element filterXML = new Element(FILTER);
     filterXML.setAttribute(CLASS_NAME, myFilter.getClass().getName());
     element.addContent(filterXML);
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     Element filterXML = element.getChild(FILTER);
     String filterName = filterXML.getAttribute(CLASS_NAME).getValue();
     try {
       Class filterClass = null;
-      for (Language l : project.getProjectLanguages()) {
+      for (Language l : project.getComponent(MPSProjectHolder.class).getMPSProject().getProjectLanguages()) {
         filterClass = l.getClass(filterName);
         if (filterClass != null) break;
       }

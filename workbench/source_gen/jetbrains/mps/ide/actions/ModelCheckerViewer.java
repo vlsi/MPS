@@ -47,7 +47,6 @@ import org.apache.commons.lang.StringEscapeUtils;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import java.util.Arrays;
 import org.jdom.Element;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 
@@ -256,10 +255,10 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
       return Arrays.asList(ModelCheckerIssue.CATEGORY_KIND_SEVERITY, ModelCheckerIssue.CATEGORY_KIND_ISSUE_TYPE);
     }
 
-    public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+    public void write(Element element, Project project) throws CantSaveSomethingException {
     }
 
-    public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+    public void read(Element element, Project project) throws CantLoadSomethingException {
     }
   }
 }

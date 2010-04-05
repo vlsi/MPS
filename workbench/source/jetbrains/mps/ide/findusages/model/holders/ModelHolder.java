@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.model.holders;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.MPSProject;
@@ -33,7 +34,7 @@ public class ModelHolder implements IHolder<SModel> {
 
   public SModelReference myModelReference = SModelReference.fromString("");
 
-  public ModelHolder(Element element, MPSProject project) throws CantLoadSomethingException {
+  public ModelHolder(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -60,13 +61,13 @@ public class ModelHolder implements IHolder<SModel> {
     return jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     Element modelXML = new Element(MODEL);
     modelXML.setAttribute(UID, myModelReference.toString());
     element.addContent(modelXML);
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     Element modelXML = element.getChild(MODEL);
     myModelReference = SModelReference.fromString(modelXML.getAttributeValue(UID));
   }

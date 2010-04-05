@@ -17,6 +17,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -124,7 +125,7 @@ public abstract class BaseNode implements IResultProvider {
 
   //----SAVE/LOAD STUFF----
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     Element childrenXML = new Element(CHILDREN);
     for (BaseNode child : myChildren) {
       Element childXML = new Element(child.getClass().getName());
@@ -134,7 +135,7 @@ public abstract class BaseNode implements IResultProvider {
     element.addContent(childrenXML);
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     Element childrenXML = element.getChild(CHILDREN);
     for (Element childXML : (List<Element>) childrenXML.getChildren()) {
       try {

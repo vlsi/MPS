@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
-import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
+import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 
@@ -61,9 +61,9 @@ public class CategoryNodeData extends BaseNodeData {
     myNodeRepresentator = nodeRepresentator;
   }
 
-  public CategoryNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+  public CategoryNodeData(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
-  }         
+  }
 
   @Override
   public Icon getIcon() {
@@ -82,7 +82,7 @@ public class CategoryNodeData extends BaseNodeData {
     return myCategoryKindName;
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     element.setAttribute(CATEGORY, myCategory);
     if (myCategoryKindName != null) {
@@ -90,7 +90,7 @@ public class CategoryNodeData extends BaseNodeData {
     }
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     myCategory = element.getAttributeValue(CATEGORY);
     myCategoryKindName = element.getAttributeValue(CATEGORY_KIND);

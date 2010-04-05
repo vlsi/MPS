@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.model.holders;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -32,7 +33,7 @@ public class NodeHolder implements IHolder<SNode> {
 
   private SNodePointer myNodePointer = new SNodePointer((SNode) null);
 
-  public NodeHolder(Element element, MPSProject project) throws CantLoadSomethingException {
+  public NodeHolder(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -59,7 +60,7 @@ public class NodeHolder implements IHolder<SNode> {
     return IconManager.getIconFor(node);
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     Element nodeXML = element.getChild(NODE);
     if (nodeXML == null) {
       throw new CantLoadSomethingException("node is null");
@@ -71,7 +72,7 @@ public class NodeHolder implements IHolder<SNode> {
     myNodePointer = new SNodePointer(node);
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     if (myNodePointer.getNode() == null) {
       throw new CantSaveSomethingException("node is null");
     }

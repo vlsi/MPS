@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -39,7 +39,7 @@ public class ModuleNodeData extends BaseNodeData {
     myModuleReference = module.getModuleReference();
   }
 
-  public ModuleNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+  public ModuleNodeData(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -73,12 +73,12 @@ public class ModuleNodeData extends BaseNodeData {
     return getModule();
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     element.setAttribute(MODULE_REF, myModuleReference.toString());
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     myModuleReference = ModuleReference.fromString(element.getAttributeValue(MODULE_REF));
   }

@@ -166,7 +166,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
   //---END FIND STUFF----
 
-  private void read(Element element, MPSProject project) {
+  private void read(Element element, Project project) {
     Element versionXML = element.getChild(VERSION);
     if (versionXML == null) return;
     String version = versionXML.getAttribute(ID).getValue();
@@ -205,7 +205,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     });
   }
 
-  private void write(Element element, MPSProject project) {
+  private void write(Element element, Project project) {
     Element versionXML = new Element(VERSION);
     versionXML.setAttribute(ID, VERSION_NUMBER);
     element.addContent(versionXML);
@@ -232,7 +232,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     return ModelAccess.instance().runReadAction(new Computable<Element>() {
       public Element compute() {
         Element state = new Element("state");
-        write(state, getProject().getComponent(MPSProject.class));
+        write(state, getProject().getComponent(Project.class));
         return state;
       }
     });
@@ -245,7 +245,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            read(state, getProject().getComponent(MPSProjectHolder.class).getMPSProject());
+            read(state, getProject());
           }
         });
       }
@@ -269,7 +269,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       };
     }
 
-    public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+    public void read(Element element, Project project) throws CantLoadSomethingException {
       Element usageViewXML = element.getChild(USAGE_VIEW);
       createUsageView();
       myUsagesView.read(usageViewXML, project);
@@ -278,7 +278,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       myOptions = new FindUsagesOptions(usageViewOptionsXML, project);
     }
 
-    public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+    public void write(Element element, Project project) throws CantSaveSomethingException {
       Element usageViewXML = new Element(USAGE_VIEW);
       myUsagesView.write(usageViewXML, project);
       element.addContent(usageViewXML);

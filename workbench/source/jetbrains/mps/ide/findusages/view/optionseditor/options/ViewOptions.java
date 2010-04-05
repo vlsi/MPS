@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
@@ -31,7 +32,7 @@ public class ViewOptions extends BaseOptions {
     myNewTab = false;
   }
 
-  public ViewOptions(Element element, MPSProject project) {
+  public ViewOptions(Element element, Project project) {
     read(element, project);
   }
 
@@ -44,13 +45,13 @@ public class ViewOptions extends BaseOptions {
     return new ViewOptions(myShowOneResult, myNewTab);
   }
 
-  public void read(Element element, MPSProject project) {
+  public void read(Element element, Project project) {
     Element flagsXML = element.getChild(FLAGS);
     myShowOneResult = Boolean.parseBoolean(flagsXML.getAttribute(SHOW_ONE_RESULT).getValue());
     myNewTab = Boolean.parseBoolean(flagsXML.getAttribute(NEW_TAB).getValue());
   }
 
-  public void write(Element element, MPSProject project) {
+  public void write(Element element, Project project) {
     Element flagsXML = new Element(FLAGS);
     flagsXML.setAttribute(SHOW_ONE_RESULT, Boolean.toString(myShowOneResult));
     flagsXML.setAttribute(NEW_TAB, Boolean.toString(myNewTab));

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -26,7 +27,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -67,7 +67,7 @@ public class NodeNodeData extends BaseNodeData {
     myNodePointer = new SNodePointer((SNode) result.getPathObject());
   }
 
-  public NodeNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+  public NodeNodeData(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -88,7 +88,7 @@ public class NodeNodeData extends BaseNodeData {
     return myNodePointer.getNode();
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     Element nodeXML = new Element(NODE);
     if (myNodePointer.getNode() != null) {
@@ -97,7 +97,7 @@ public class NodeNodeData extends BaseNodeData {
     element.addContent(nodeXML);
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     List children = element.getChild(NODE).getChildren();
     SNode node = null;

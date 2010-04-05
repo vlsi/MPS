@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages.findalgorithm.finders.specific;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
@@ -78,11 +79,11 @@ public class ConstantFinder implements IFinder {
       return myIcon;
     }
 
-    public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+    public void read(Element element, Project project) throws CantLoadSomethingException {
       throw new CantLoadSomethingException("do not call read on ConstantHolder!!!");
     }
 
-    public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+    public void write(Element element, Project project) throws CantSaveSomethingException {
       throw new CantSaveSomethingException("do not call write on ConstantHolder!!!");
     }
   }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.BootstrapScope;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.logging.Logger;
@@ -53,7 +54,7 @@ public class ScopeOptions extends BaseOptions {
     myScopeType = GLOBAL_SCOPE;
   }
 
-  public ScopeOptions(Element element, MPSProject project) {
+  public ScopeOptions(Element element, Project project) {
     read(element, project);
   }
 
@@ -151,7 +152,7 @@ public class ScopeOptions extends BaseOptions {
     return new SearchQuery(node, getScope(context, modelDescriptor));
   }
 
-  public void write(Element element, MPSProject project) {
+  public void write(Element element, Project project) {
     Element scopeTypeXML = new Element(SCOPE_TYPE);
     scopeTypeXML.setAttribute(SCOPE_TYPE, myScopeType);
     scopeTypeXML.setAttribute(MODULE, myModule == null ? "" : myModule);
@@ -159,7 +160,7 @@ public class ScopeOptions extends BaseOptions {
     element.addContent(scopeTypeXML);
   }
 
-  public void read(Element element, MPSProject project) {
+  public void read(Element element, Project project) {
     Element scopeTypeXML = element.getChild(SCOPE_TYPE);
     myScopeType = scopeTypeXML.getAttributeValue(SCOPE_TYPE);
     myModule = scopeTypeXML.getAttributeValue(MODULE);

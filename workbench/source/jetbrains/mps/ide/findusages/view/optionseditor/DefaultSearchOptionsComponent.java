@@ -80,14 +80,10 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
     myDefaultSearchOptions = defaultSearchOptions;
   }
 
-  private MPSProject getMPSProject() {
-    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-  }
-
   public Element getState() {
     Element defaultFindOptionsXML = new Element(DEFAULT_SEARCH_OPTIONS);
     try {
-      myDefaultSearchOptions.write(defaultFindOptionsXML, getMPSProject());
+      myDefaultSearchOptions.write(defaultFindOptionsXML, myProject);
     } catch (CantSaveSomethingException e) {
       throw new RuntimeException("this exception shouldn't be thrown");
     }
@@ -96,7 +92,7 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
 
   public void loadState(Element state) {
     try {
-      myDefaultSearchOptions.read(state, getMPSProject());
+      myDefaultSearchOptions.read(state, myProject);
     } catch (CantLoadSomethingException e) {
       myDefaultSearchOptions = new FindUsagesOptions(new FindersOptions(), new ScopeOptions(), new ViewOptions());
     }

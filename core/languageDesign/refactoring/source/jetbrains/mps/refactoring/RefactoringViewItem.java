@@ -16,6 +16,7 @@
 package jetbrains.mps.refactoring;
 
 import com.intellij.ide.DataManager;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder.ConstantHolder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -25,7 +26,6 @@ import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.ModelAccess;
@@ -75,10 +75,10 @@ public abstract class RefactoringViewItem {
         return null;
       }
 
-      public void read(Element element, MPSProject project) {
+      public void read(Element element, Project project) {
       }
 
-      public void write(Element element, MPSProject project) {
+      public void write(Element element, Project project) {
       }
     };
     myButtonsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -190,7 +190,7 @@ public abstract class RefactoringViewItem {
 
   public abstract void close();
 
-  public void dispose(){
+  public void dispose() {
     myUsagesView.dispose();
   }
 

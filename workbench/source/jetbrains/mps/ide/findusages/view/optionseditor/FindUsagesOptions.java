@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions;
@@ -29,14 +30,12 @@ import java.util.List;
 import java.util.Map;
 
 public class FindUsagesOptions implements Cloneable {
-  private static final Logger LOG = Logger.getLogger(FindUsagesOptions.class);
-
   private static final String OPTION = "option";
   private static final String CLASS_NAME = "class_name";
 
   private Map<Class, BaseOptions> myOptions = new LinkedHashMap<Class, BaseOptions>();
 
-  public FindUsagesOptions(Element element, MPSProject project) throws CantLoadSomethingException {
+  public FindUsagesOptions(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -62,11 +61,11 @@ public class FindUsagesOptions implements Cloneable {
     return (T) myOptions.get(optionClass);
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     for (Element optionXML : (List<Element>) element.getChildren(OPTION)) {
       String className = optionXML.getAttribute(CLASS_NAME).getValue();
       try {
-        Object o = Class.forName(className).getConstructor(Element.class, MPSProject.class).newInstance(optionXML, project);
+        Object o = Class.forName(className).getConstructor(Element.class, Project.class).newInstance(optionXML, project);
         myOptions.put(o.getClass(), (BaseOptions) o);
       } catch (InvocationTargetException e) {
         if (e.getCause() instanceof CantLoadSomethingException) {
@@ -92,7 +91,7 @@ public class FindUsagesOptions implements Cloneable {
     throw new CantLoadSomethingException("can't instantiate options " + className, t);
   }
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     for (BaseOptions option : myOptions.values()) {
       Element optionXML = new Element(OPTION);
       optionXML.setAttribute(CLASS_NAME, option.getClass().getName());

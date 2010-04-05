@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
-import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -46,7 +46,7 @@ public abstract class BaseNodeData implements IExternalizeable {
 
   }
 
-  public BaseNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+  public BaseNodeData(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
@@ -115,7 +115,7 @@ public abstract class BaseNodeData implements IExternalizeable {
 
   //----SAVE/LOAD STUFF----
 
-  public void write(Element element, MPSProject project) throws CantSaveSomethingException {
+  public void write(Element element, Project project) throws CantSaveSomethingException {
     element.setAttribute(CAPTION, myCaption);
     element.setAttribute(INFO, myAdditionalInfo);
     element.setAttribute(EXCLUDED, Boolean.toString(myIsExcluded));
@@ -128,7 +128,7 @@ public abstract class BaseNodeData implements IExternalizeable {
     element.addContent(roleXML);
   }
 
-  public void read(Element element, MPSProject project) throws CantLoadSomethingException {
+  public void read(Element element, Project project) throws CantLoadSomethingException {
     myCaption = element.getAttributeValue(CAPTION);
     myAdditionalInfo = element.getAttributeValue(INFO);
     myIsExcluded = Boolean.parseBoolean(element.getAttributeValue(EXCLUDED));

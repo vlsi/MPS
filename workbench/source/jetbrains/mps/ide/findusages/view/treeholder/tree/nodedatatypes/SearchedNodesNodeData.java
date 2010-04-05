@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
-import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
 import javax.swing.Icon;
@@ -30,7 +30,7 @@ public class SearchedNodesNodeData extends BaseNodeData {
     super(role, CATEGORY_NAME, "", true, false, false);
   }
 
-  public SearchedNodesNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+  public SearchedNodesNodeData(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 

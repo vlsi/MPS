@@ -15,27 +15,22 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseNode;
-import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import jetbrains.mps.nodeEditor.DefaultEditorMessage;
-import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
-import jetbrains.mps.nodeEditor.NodeHighlightManager;
-import jetbrains.mps.nodeEditor.text.TextRenderUtil;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.PunctuationUtil;
-import jetbrains.mps.nodeEditor.cells.*;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.text.TextRenderUtil;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
@@ -43,9 +38,10 @@ import jetbrains.mps.workbench.search.AbstractSearchPanel;
 import jetbrains.mps.workbench.search.SearchHistoryComponent;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.*;
+import java.awt.Color;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
 import java.util.*;
-import java.util.List;
 import java.util.regex.Matcher;
 
 public class SearchPanel extends AbstractSearchPanel {
@@ -238,7 +234,8 @@ public class SearchPanel extends AbstractSearchPanel {
       } while (index < startCellPosition.size() && startCellPosition.get(index) < matcher.end());
       index--;
     }
-    myOwner = new EditorMessageOwner() {};
+    myOwner = new EditorMessageOwner() {
+    };
     if (!myCells.isEmpty() && myCells.size() <= 100) {
       highlight(resultIndex, startHighlightPosition, endHighlightPosition, cells);
     }
@@ -305,7 +302,7 @@ public class SearchPanel extends AbstractSearchPanel {
     SearchQuery searchQuery = new SearchQuery(null) {
       @NotNull
       public String getCaption() {
-        return "Occurrences of '"+ myText.getText() + "'";
+        return "Occurrences of '" + myText.getText() + "'";
       }
     };
     usagesViewTool.findUsages(baseNode, searchQuery, false, false, false, null);
@@ -386,7 +383,7 @@ public class SearchPanel extends AbstractSearchPanel {
 
     @Override
     public int hashCode() {
-      return ((myPositions == null)? -1 : myPositions.size()) + EqualUtil.hashCode(myInfo);
+      return ((myPositions == null) ? -1 : myPositions.size()) + EqualUtil.hashCode(myInfo);
     }
 
     @Override
