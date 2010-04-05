@@ -113,13 +113,14 @@ public class VcsRootsManager implements ProjectComponent {
   }
 
   public void initComponent() {
+
   }
 
   public void disposeComponent() {
+
   }
 
   private void addDirectoryMappings() {
-
     MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     List<IModule> allModules = mpsProject.getModules();
     Map<AbstractVcs, Set<VirtualFile>> vcss = new HashMap<AbstractVcs, Set<VirtualFile>>();

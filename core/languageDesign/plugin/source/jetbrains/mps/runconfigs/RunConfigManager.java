@@ -88,8 +88,7 @@ public class RunConfigManager implements ProjectComponent {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-        createCreators(mpsProject);
+        createCreators(myProject);
       }
     });
 
@@ -123,12 +122,11 @@ public class RunConfigManager implements ProjectComponent {
   }
 
   private void addConfigTypes() {
-    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     final ExtensionPoint<ConfigurationType> epConfigType = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
     synchronized (myConfigsLock) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          mySortedConfigs = createConfigs(mpsProject);
+          mySortedConfigs = createConfigs(myProject);
           for (ConfigurationType ct : mySortedConfigs) {
             epConfigType.registerExtension(ct);
           }
@@ -191,15 +189,17 @@ public class RunConfigManager implements ProjectComponent {
     return myProject.getComponent(ProjectRunConfigurationManager.class);
   }
 
-  private List<ConfigurationType> createConfigs(MPSProject project) {
+  private List<ConfigurationType> createConfigs(Project project) {
+    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+
     final List<ConfigurationType> conTypes = new ArrayList<ConfigurationType>();
 
     Set<Language> languages = new HashSet<Language>();
-    for (Solution s : project.getProjectSolutions()) {
+    for (Solution s : mpsProject.getProjectSolutions()) {
       languages.addAll(s.getScope().getVisibleLanguages());
     }
 
-    for (Language l : project.getProjectLanguages()) {
+    for (Language l : mpsProject.getProjectLanguages()) {
       languages.add(l);
     }
 
@@ -229,15 +229,17 @@ public class RunConfigManager implements ProjectComponent {
     myRegisteredCreators.add(configCreator);
   }
   
-  private List<ConfigurationType> createCreators(MPSProject project) {
+  private List<ConfigurationType> createCreators(Project project) {
+    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+
     final List<ConfigurationType> conTypes = new ArrayList<ConfigurationType>();
 
     Set<Language> languages = new HashSet<Language>();
-    for (Solution s : project.getProjectSolutions()) {
+    for (Solution s : mpsProject.getProjectSolutions()) {
       languages.addAll(s.getScope().getVisibleLanguages());
     }
 
-    for (Language l : project.getProjectLanguages()) {
+    for (Language l : mpsProject.getProjectLanguages()) {
       languages.add(l);
     }
 
