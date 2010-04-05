@@ -21,6 +21,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -54,7 +55,8 @@ public class CachesManager implements ApplicationComponent {
         for (Object key : myDependsOnModels.keySet()) {
           List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
           for (SModelDescriptor dependsOnModel : dependsOnModels) {
-            if (dependsOnModel.getSModelReference().equals(reference)) {
+            SModelReference ref = dependsOnModel == null ? null : dependsOnModel.getSModelReference();
+            if (EqualUtil.equals(ref, reference)) {
               keysToRemove.add(key);
             }
           }
@@ -100,7 +102,7 @@ public class CachesManager implements ApplicationComponent {
   public <T> AbstractCache getCache(Object key, T element, CacheCreator<T> creator) {
     synchronized (myLock) {
       AbstractCache result = myCaches.get(key);
-      if(result != null || element == null || creator == null) {
+      if (result != null || element == null || creator == null) {
         return result;
       }
       result = creator.create(key, element);
