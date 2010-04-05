@@ -20,7 +20,6 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class IdeMain {
-  private static boolean ourUILoaded = false;
   private static TestMode ourTestMode = TestMode.NO_TEST;
 
   public static Date expirationDate() {
@@ -43,14 +42,6 @@ public class IdeMain {
     } else {
       setTestMode(TestMode.NO_TEST);
     }
-  }
-
-  public static void setUILoaded(boolean value) {
-    ourUILoaded = value;
-  }
-
-  public static boolean isUILoaded() {
-    return ourUILoaded;
   }
 
   public enum TestMode {

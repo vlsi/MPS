@@ -114,7 +114,7 @@ public abstract class UITestsBase extends JFCTestCase {
     protected Project initProject() throws InterruptedException {
       TestUtil.conditionalWaitAndFlush(this, new Computable<Boolean>() {
         public Boolean compute() {
-          return IdeMain.isUILoaded();
+          return false;//IdeMain.isUILoaded();
         }
       });
 
