@@ -214,6 +214,7 @@ public class TypeChecker implements ApplicationComponent {
     if (node == null) return null;
     fireNodeTypeAccessed(node);
     final TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
+    if (context == null) return null;
     return context.getTypeOf(node, this);
   }
 
