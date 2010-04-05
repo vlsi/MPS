@@ -21,18 +21,14 @@ import com.intellij.openapi.vcs.CheckinProjectPanel;
 import com.intellij.openapi.vcs.VcsConfiguration;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import com.intellij.openapi.vcs.ui.RefreshableOnComponent;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.actions.ModelCheckerSettings;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.FileSystemFile;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.actions.model.OptimizeImportsHelper;
 
 import javax.swing.JCheckBox;
@@ -96,7 +92,7 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
         }
       }
 
-      final IOperationContext operationContext = new ProjectOperationContext(myProject);
+      final IOperationContext operationContext = ProjectOperationContext.get(myProject);
       ThreadUtils.assertLogIsEDT();
       try {
         ModelAccess.instance().runCommandInEDT(new Runnable() {

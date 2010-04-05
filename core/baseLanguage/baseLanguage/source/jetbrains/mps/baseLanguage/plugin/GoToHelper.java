@@ -20,13 +20,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 import com.intellij.openapi.util.Computable;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.baseLanguage.icons.Icons;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.lang.core.structure.BaseConcept;
-import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -61,7 +57,7 @@ public class GoToHelper {
     if (nodes.isEmpty()) return;
 
     List<NodeNavigationItem> navigatables = new ArrayList<NodeNavigationItem>();
-    ProjectOperationContext context = new ProjectOperationContext(project);
+    ProjectOperationContext context = ProjectOperationContext.get(project);
     for (SNode node : nodes) {
       navigatables.add(new NodeNavigationItem(node, context, project));
     }

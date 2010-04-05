@@ -23,7 +23,6 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.lang.generator.plugin.debug.TracerNode.Kind;
 import jetbrains.mps.lang.generator.plugin.debug.icons.Icons;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -148,7 +147,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     SNode nodeToOpen = myTracerNode.getNodePointer().getNode();
     if (nodeToOpen == null) return;
 
-    IOperationContext context = new ProjectOperationContext(myProject);
+    IOperationContext context = ProjectOperationContext.get(myProject);
 
     new MPSEditorOpener(myProject).openNode(nodeToOpen, context,true,true);
   }

@@ -5337,12 +5337,11 @@
               <property name="value:3" value=" Properties" />
             </node>
           </node>
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1258576280906119152">
-            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1258576280906119153">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~ProjectOperationContext.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="ProjectOperationContext" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1258576280906119154">
-                <link role="variableDeclaration:3" targetNodeId="3201642974933587335" resolveInfo="project" />
-              </node>
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5248874065261062827">
+            <link role="baseMethodDeclaration:3" targetNodeId="6.~ProjectOperationContext.get(com.intellij.openapi.project.Project):jetbrains.mps.project.ProjectOperationContext" resolveInfo="get" />
+            <link role="classConcept:3" targetNodeId="6.~ProjectOperationContext" resolveInfo="ProjectOperationContext" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5248874065261062828">
+              <link role="variableDeclaration:3" targetNodeId="3201642974933587335" resolveInfo="project" />
             </node>
           </node>
         </node>
@@ -5408,12 +5407,11 @@
               <property name="value:3" value=" Properties" />
             </node>
           </node>
-          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1258576280906119146">
-            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1258576280906119148">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~ProjectOperationContext.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="ProjectOperationContext" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1258576280906119149">
-                <link role="variableDeclaration:3" targetNodeId="3201642974933587368" resolveInfo="project" />
-              </node>
+          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5248874065261062830">
+            <link role="baseMethodDeclaration:3" targetNodeId="6.~ProjectOperationContext.get(com.intellij.openapi.project.Project):jetbrains.mps.project.ProjectOperationContext" resolveInfo="get" />
+            <link role="classConcept:3" targetNodeId="6.~ProjectOperationContext" resolveInfo="ProjectOperationContext" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5248874065261062831">
+              <link role="variableDeclaration:3" targetNodeId="3201642974933587368" resolveInfo="project" />
             </node>
           </node>
         </node>

@@ -22,24 +22,15 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.nodeEditor.EditorMessage;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
-import java.util.List;
-import java.util.Set;
-import java.util.Map;
-import java.util.HashSet;
-
-import com.intellij.util.containers.HashMap;
 
 public class NodeExplorerComponent {
   private MyTree myTree = new MyTree();
@@ -57,7 +48,7 @@ public class NodeExplorerComponent {
 
   public void showNode(SNode node, Project project) {
     myNode = node == null ? null : new SNodePointer(node);
-    myTree.setOperationContext(new ProjectOperationContext(project));
+    myTree.setOperationContext(ProjectOperationContext.get(project));
     myTree.rebuildNow();
   }
 

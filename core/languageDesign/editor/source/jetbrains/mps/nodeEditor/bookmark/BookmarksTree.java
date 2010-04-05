@@ -29,7 +29,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
-import jetbrains.mps.MPSProjectHolder;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -84,7 +83,7 @@ public class BookmarksTree extends MPSTree {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeNumbered(i);
         textTreeNode.setIcon(BookmarkManager.getIcon(i));
-        textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, new ProjectOperationContext(myProject)));
+        textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, ProjectOperationContext.get(myProject)));
         root.add(textTreeNode);
       }
     }
@@ -94,7 +93,7 @@ public class BookmarksTree extends MPSTree {
         hasBookmarks = true;
         TextTreeNode textTreeNode = new MyTextTreeNodeUnnumbered(nodePointer);
         textTreeNode.setIcon(BookmarkManager.getIcon(-1));
-        textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, new ProjectOperationContext(myProject)));
+        textTreeNode.add(new MySNodeTreeNode(nodePointer.getNode(), null, ProjectOperationContext.get(myProject)));
         root.add(textTreeNode);
       }
     }

@@ -19,6 +19,7 @@ import jetbrains.mps.lang.structure.scripts.RenameProperty;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.*;
@@ -32,7 +33,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
     System.err.println("preparing arguments for refactoring");
     RenameProperty renameProperty = new RenameProperty();
     final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(renameProperty));
-    refactoringContext.setCurrentOperationContext(project.createOperationContext());
+    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project.getProject()));
     final String newPropertyName = "niceProperty";
 
     ModelAccess.instance().runReadAction(new Runnable() {

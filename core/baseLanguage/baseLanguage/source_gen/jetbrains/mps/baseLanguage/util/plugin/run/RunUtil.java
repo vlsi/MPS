@@ -34,7 +34,7 @@ public class RunUtil {
       });
     }
     if (ListSequence.fromList(models).isNotEmpty()) {
-      genManager.generateModelsFromDifferentModules(new ProjectOperationContext(project), models, new JavaGenerationHandler());
+      genManager.generateModelsFromDifferentModules(ProjectOperationContext.get(project), models, new JavaGenerationHandler());
     }
   }
 }

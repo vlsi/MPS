@@ -140,7 +140,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
         models.add(modelDescriptor);
       }
     }
-    manager.generateModelsFromDifferentModules(new ProjectOperationContext(myProject), models, new JavaGenerationHandler());
+    manager.generateModelsFromDifferentModules(ProjectOperationContext.get(myProject), models, new JavaGenerationHandler());
   }
 
   public void goToNext() {

@@ -81,7 +81,7 @@ public class GenerateFiles_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      IOperationContext projectContext = new ProjectOperationContext(GenerateFiles_Action.this.project);
+      IOperationContext projectContext = ProjectOperationContext.get(GenerateFiles_Action.this.project);
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
       for (TreeNode ppNode : ListSequence.fromList(GenerateFiles_Action.this.ppNodes)) {
         for (SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode) ppNode).getModelsUnder())) {

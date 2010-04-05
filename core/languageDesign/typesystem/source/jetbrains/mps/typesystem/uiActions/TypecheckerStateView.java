@@ -15,18 +15,12 @@
  */
 package jetbrains.mps.typesystem.uiActions;
 
-import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.MPSProjectHolder;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
 
 public class TypecheckerStateView extends BaseProjectTool {
@@ -42,6 +36,6 @@ public class TypecheckerStateView extends BaseProjectTool {
 
   public void initComponent() {
     super.initComponent();
-    myComponent = new TypecheckerStateViewComponent(new ProjectOperationContext(getProject()));
+    myComponent = new TypecheckerStateViewComponent(ProjectOperationContext.get(getProject()));
   }
 }

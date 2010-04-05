@@ -18,7 +18,6 @@ package jetbrains.mps.workbench.dataExtraction;
 import com.intellij.ide.impl.dataRules.GetDataRule;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.Nullable;
@@ -28,6 +27,6 @@ public class ContextRule implements GetDataRule {
   public Object getData(DataProvider dataProvider) {
     Project project = (Project) dataProvider.getData(MPSDataKeys.PROJECT.getName());
     if (project == null) return null;
-    return new ProjectOperationContext(project);
+    return ProjectOperationContext.get(project);
   }
 }

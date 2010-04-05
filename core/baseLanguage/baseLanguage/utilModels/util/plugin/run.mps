@@ -2178,12 +2178,11 @@
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399148664">
                   <link role="baseMethodDeclaration:3" targetNodeId="26.~GeneratorManager.generateModelsFromDifferentModules(jetbrains.mps.smodel.IOperationContext,java.util.List,jetbrains.mps.generator.generationTypes.IGenerationHandler):void" resolveInfo="generateModelsFromDifferentModules" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3540275947737487295">
-                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3540275947737496143">
-                      <link role="baseMethodDeclaration:3" targetNodeId="35.~ProjectOperationContext.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="ProjectOperationContext" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3540275947737496144">
-                        <link role="variableDeclaration:3" targetNodeId="8492459591399148673" resolveInfo="project" />
-                      </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5248874065261062841">
+                    <link role="baseMethodDeclaration:3" targetNodeId="35.~ProjectOperationContext.get(com.intellij.openapi.project.Project):jetbrains.mps.project.ProjectOperationContext" resolveInfo="get" />
+                    <link role="classConcept:3" targetNodeId="35.~ProjectOperationContext" resolveInfo="ProjectOperationContext" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5248874065261062842">
+                      <link role="variableDeclaration:3" targetNodeId="8492459591399148673" resolveInfo="project" />
                     </node>
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8492459591399148668">

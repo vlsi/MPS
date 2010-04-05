@@ -18,14 +18,14 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
   private ProjectProperties myProperties;
 
   public ProjectPropertiesDialog(final Project project) {
-    super(project.getName() + " Properties", new ProjectOperationContext(project));
+    super(project.getName() + " Properties", ProjectOperationContext.get(project));
     this.myProject = project;
     this.collectProjectProperties();
     this.initUI();
   }
 
   public ProjectPropertiesDialog(final Project project, ProjectProperties properties) {
-    super(project.getName() + " Properties", new ProjectOperationContext(project));
+    super(project.getName() + " Properties", ProjectOperationContext.get(project));
     this.myProject = project;
     this.myProperties = properties;
     this.initUI();

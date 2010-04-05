@@ -162,7 +162,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
 
         CommonChoosers.showSimpleNodeChooser(nodes, new ChooserCallback<SNode>() {
           public void execute(SNode node) {
-            final IOperationContext operationContext = new ProjectOperationContext(getProject());
+            final IOperationContext operationContext = ProjectOperationContext.get(getProject());
             showItemInHierarchy((T) node.getAdapter(), operationContext);
           }
         });

@@ -130,7 +130,7 @@ public class StacktraceUtil {
 
   private static void showNode(Project p, SNode node) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
-    ProjectOperationContext operationContext = new ProjectOperationContext(p);
+    ProjectOperationContext operationContext = ProjectOperationContext.get(p);
     MPSEditorOpener opener = p.getComponent(MPSEditorOpener.class);
     opener.editNode(node, operationContext);
   }

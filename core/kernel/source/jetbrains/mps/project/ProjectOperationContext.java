@@ -23,13 +23,8 @@ import org.jetbrains.annotations.Nullable;
 public class ProjectOperationContext extends StandaloneMPSContext {
   private Project myProject;
 
-  public ProjectOperationContext(Project project) {
+  private ProjectOperationContext(Project project) {
     myProject = project;
-  }
-
-  @Deprecated
-  public ProjectOperationContext(MPSProject project) {
-    myProject = project.getProject();
   }
 
   public <T> T getComponent(@NotNull Class<T> clazz) {
@@ -54,5 +49,9 @@ public class ProjectOperationContext extends StandaloneMPSContext {
 
   public String toString() {
     return "project context";
+  }
+
+  public static ProjectOperationContext get(Project project) {
+    return new ProjectOperationContext(project);
   }
 }

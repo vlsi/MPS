@@ -18,6 +18,7 @@ package jetbrains.mps.refactoring.framework.tests;
 import jetbrains.mps.lang.structure.scripts.RenameConcept;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.*;
@@ -34,7 +35,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
     final String newConceptName = "MyVeryGoodConcept2";
     RenameConcept renameConcept = new RenameConcept();
     final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(renameConcept));
-    refactoringContext.setCurrentOperationContext(project.createOperationContext());
+    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project.getProject()));
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         final SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();

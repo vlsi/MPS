@@ -18,6 +18,7 @@ package jetbrains.mps.refactoring.framework.tests;
 import jetbrains.mps.lang.structure.scripts.MoveConcepts;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.*;
@@ -33,7 +34,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
     final String conceptName = "MyVeryGoodConcept1";
     MoveConcepts moveConcepts = new MoveConcepts();
     final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(moveConcepts));
-    refactoringContext.setCurrentOperationContext(project.createOperationContext());
+    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project.getProject()));
     final SModelDescriptor targetStructureModelDescriptor[] = new SModelDescriptor[]{null};
 
     ModelAccess.instance().runReadAction(new Runnable() {

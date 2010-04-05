@@ -374,11 +374,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   //-----------DEPRECATED
 
   @Deprecated
-  public IOperationContext createOperationContext() {
-    return new ProjectOperationContext(myIDEAProject);
-  }
-
-  @Deprecated
   // should be left for compatibility with generated plugins (editor openers)
   public <T> T getComponent(Class<T> clazz) {
     return getProject().getComponent(clazz);

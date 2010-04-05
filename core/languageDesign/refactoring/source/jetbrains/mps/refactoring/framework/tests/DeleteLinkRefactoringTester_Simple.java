@@ -19,6 +19,7 @@ import jetbrains.mps.lang.structure.scripts.SafeDeleteLink;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.*;
@@ -32,7 +33,7 @@ public class DeleteLinkRefactoringTester_Simple implements IRefactoringTester {
     System.err.println("preparing arguments for refactoring");
     SafeDeleteLink safeDeleteLink = new SafeDeleteLink();
     final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(safeDeleteLink));
-    refactoringContext.setCurrentOperationContext(project.createOperationContext());
+    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project.getProject()));
     final String[] linkName = new String[]{null};
 
     ModelAccess.instance().runReadAction(new Runnable() {

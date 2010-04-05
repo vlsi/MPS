@@ -31,9 +31,7 @@ public abstract class StandaloneMPSContext implements IOperationContext {
   }
 
   public <T> T getComponent(Class<T> clazz) {
-    T component = ApplicationManager.getApplication().getComponent(clazz);
-    if (component != null) return component;
-    return null;
+    return ApplicationManager.getApplication().getComponent(clazz);
   }
 
   public final Frame getMainFrame() {
