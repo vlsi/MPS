@@ -17,8 +17,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.ide.DataManager;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import org.jetbrains.annotations.Nullable;
@@ -129,7 +127,6 @@ public class StacktraceUtil {
   }
 
   private static void showNode(Project p, SNode node) {
-    DataContext dataContext = DataManager.getInstance().getDataContext();
     ProjectOperationContext operationContext = ProjectOperationContext.get(p);
     MPSEditorOpener opener = p.getComponent(MPSEditorOpener.class);
     opener.editNode(node, operationContext);
