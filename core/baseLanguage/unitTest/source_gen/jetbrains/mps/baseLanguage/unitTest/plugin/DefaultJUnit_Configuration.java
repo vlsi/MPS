@@ -243,6 +243,10 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
     return this.myState;
   }
 
+  public boolean isDebuggable() {
+    return true;
+  }
+
   private List<SNode> collectWhatToTest(final MPSProject mpsProject) {
     final List<SNode> all = new ArrayList<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {

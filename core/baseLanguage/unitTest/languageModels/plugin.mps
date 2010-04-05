@@ -26705,6 +26705,7 @@
     <property name="package" value="run" />
     <property name="name" value="DefaultJUnit" />
     <property name="caption" value="JUnit" />
+    <property name="isDebuggable" value="true" />
     <link role="configType" targetNodeId="1104580685292496804:0" resolveInfo="JUnit" />
     <link role="stateTypeParameter" targetNodeId="95.~BaseRunProfileState" resolveInfo="BaseRunProfileState" />
     <node role="executionParameter" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="5241497812385469122">
