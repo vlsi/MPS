@@ -37,6 +37,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -646,6 +647,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return BaseAdapter.fromAdapter(constraints.getCanBeChild());
   }
 
+  @Nullable
   private Method getCanBeRootMethod(String conceptFqName, IOperationContext context) {
     if (myCanBeRootMethods.containsKey(conceptFqName)) {
       return myCanBeRootMethods.get(conceptFqName);
@@ -710,6 +712,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public SNode getCanBeRootBlock(IOperationContext context, String conceptFqName) {
     Method m = getCanBeRootMethod(conceptFqName, context);
+    if (m == null) return null;
     ConceptConstraints constraints = getClassConstraints(context, m);
     if (constraints == null) return null;
     return BaseAdapter.fromAdapter(constraints.getCanBeRoot());
