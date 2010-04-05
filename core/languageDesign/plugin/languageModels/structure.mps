@@ -4161,7 +4161,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="3636700473138841144">
     <property name="package:0" value="RunConfigs.Configuration.Execute" />
-    <property name="name:0" value="IEnchancedRunConfiguration" />
+    <property name="name:0" value="IEnhancedRunConfiguration" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3018238135942601771">
     <property name="package:0" value="RunConfigs" />
