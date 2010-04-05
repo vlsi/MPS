@@ -21,10 +21,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
-import jetbrains.mps.debug.info.DebugInfo;
-import jetbrains.mps.debug.info.PositionInfo;
-import jetbrains.mps.debug.info.VarPositionInfo;
-import jetbrains.mps.debug.info.ScopePositionInfo;
+import jetbrains.mps.debug.info.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
@@ -221,6 +218,21 @@ public class FileGenerationManager implements ApplicationComponent {
           positionInfo.setNodeId(input.getId());
           info.setModel(input.getModel());
           positionInfo.setFileName(fileName);
+          Map<SNode, VarInfo> varMap = positionInfo.getTempVarInfoMap();
+          for (SNode varNode : varMap.keySet()) {
+            SNode originalVar = getOriginalInputNode(varNode);
+            VarInfo varInfo = varMap.get(varNode);
+            if (originalVar != null && !(originalVar.isDisposed())) {
+              String s = originalVar.getId();
+              if (s == null) {
+                System.err.println("");
+              }
+              varInfo.setNodeId(s);
+            } else {
+              positionInfo.removeVarInfo(varInfo);
+            }
+          }
+      //    positionInfo.clearTempVarInfoMap();
           info.addScopePosition(positionInfo, rootNodeId);
         }
       }

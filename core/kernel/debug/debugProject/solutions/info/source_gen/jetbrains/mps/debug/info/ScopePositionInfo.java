@@ -5,15 +5,16 @@ package jetbrains.mps.debug.info;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 import org.jdom.DataConversionException;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 
 public class ScopePositionInfo extends PositionInfo {
   private static String VAR_INFO = "varInfo";
 
   private Map<String, VarInfo> myVars = MapSequence.fromMap(new HashMap<String, VarInfo>());
+  private Map<SNode, VarInfo> myTempNodeToVarMap = MapSequence.fromMap(new HashMap<SNode, VarInfo>());
 
   public ScopePositionInfo() {
   }
@@ -47,8 +48,22 @@ public class ScopePositionInfo extends PositionInfo {
 
   public void addVarInfo(SNode node) {
     VarInfo varInfo = new VarInfo();
-    varInfo.setNodeId(node.getId());
     varInfo.setVarName(node.getName());
+    MapSequence.fromMap(this.myTempNodeToVarMap).put(node, varInfo);
     MapSequence.fromMap(this.myVars).put(varInfo.getVarName(), varInfo);
+  }
+
+  public Map<SNode, VarInfo> getTempVarInfoMap() {
+    Map<SNode, VarInfo> result = MapSequence.fromMap(new HashMap<SNode, VarInfo>());
+    MapSequence.fromMap(result).putAll(this.myTempNodeToVarMap);
+    return result;
+  }
+
+  public void clearTempVarInfoMap() {
+    MapSequence.fromMap(this.myTempNodeToVarMap).clear();
+  }
+
+  public void removeVarInfo(VarInfo varInfo) {
+    MapSequence.fromMap(this.myVars).removeKey(varInfo.getVarName());
   }
 }
