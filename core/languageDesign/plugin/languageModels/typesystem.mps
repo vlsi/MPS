@@ -3025,5 +3025,32 @@
       <link role="concept:3" targetNodeId="4.7035278950562851062:23" resolveInfo="RunConfigurationDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="3273619486685465076">
+    <property name="name:3" value="typeof_ActionsList_FunctionParameter" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3273619486685465077">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="3273619486685465265">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3273619486685465269">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="3273619486685465270">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="3273619486685465272">
+              <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3273619486685467383">
+                <link role="classifier:3" targetNodeId="23.~AnAction" resolveInfo="AnAction" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3273619486685465268">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="3273619486685465262">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3273619486685465264">
+              <link role="applicableNode:3" targetNodeId="3273619486685465078" resolveInfo="actionsList_FunctionParameter" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="3273619486685465078">
+      <property name="name:3" value="actionsList_FunctionParameter" />
+      <link role="concept:3" targetNodeId="4.3273619486685168257:23" resolveInfo="ActionsList_FunctionParameter" />
+    </node>
+  </node>
 </model>
 

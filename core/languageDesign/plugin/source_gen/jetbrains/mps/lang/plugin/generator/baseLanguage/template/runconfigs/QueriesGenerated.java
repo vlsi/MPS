@@ -375,10 +375,6 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "executeParameterQuery", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1633282062186470928(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "executeActions", true) != null);
-  }
-
   public static SNode sourceNodeQuery_8294332872984074416(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "iconBlock", true);
   }
@@ -491,7 +487,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeParameterQuery", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1633282062186470919(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_3273619486685188870(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeActions", true), "body", true);
   }
 

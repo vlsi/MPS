@@ -26905,6 +26905,21 @@
           <link role="classifier:3" targetNodeId="2281887280934031664:0" resolveInfo="UnitTestExecutionModel" />
         </node>
       </node>
+      <node role="executeActions:23" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteActions:23" id="3273619486685430442">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3273619486685430443">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="3273619486685687517">
+            <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="3273619486685687519">
+              <property name="text:3" value="we are not interested in default actions" />
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3273619486685459629">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3273619486685687507">
+              <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.ActionsList_FunctionParameter:23" id="3273619486685459630" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation:7" id="3273619486685687511" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="checkBlock" type="jetbrains.mps.lang.plugin.structure.CheckConfigurationBlock:23" id="5241497812385468872">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5241497812385468873">

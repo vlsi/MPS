@@ -135,7 +135,16 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             }
           }.invoke();
 
-          // set actions 
+          ListSequence.fromList(actions).addSequence(ListSequence.fromList(new _FunctionTypes._return_P0_E0<List<AnAction>>() {
+            public List<AnAction> invoke() {
+              {
+                final List<AnAction> actionsList = ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions());
+                // we are not interested in default actions 
+                ListSequence.fromList(actionsList).clear();
+                return actionsList;
+              }
+            }
+          }.invoke()));
 
           // create console component 
           final Tuples._2<JComponent, _FunctionTypes._void_P0_E0> component = MultiTuple.<JComponent, _FunctionTypes._void_P0_E0>empty2().assign((Tuples._2<JComponent, _FunctionTypes._void_P0_E0>) (new _FunctionTypes._return_P0_E0<Tuples._2<JComponent, _FunctionTypes._void_P0_E0>>() {
