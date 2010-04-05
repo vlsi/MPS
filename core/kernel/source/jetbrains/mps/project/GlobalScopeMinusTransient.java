@@ -24,13 +24,13 @@ import jetbrains.mps.smodel.SModelRepository;
 import java.util.*;
 
 public class GlobalScopeMinusTransient extends GlobalScope {
-  private static GlobalScopeMinusTransient myInstance;
+  private static GlobalScopeMinusTransient ourInstance;
 
   public static GlobalScopeMinusTransient getInstance() {
-    if (myInstance == null) {
-      myInstance = new GlobalScopeMinusTransient();
+    if (ourInstance == null) {
+      ourInstance = new GlobalScopeMinusTransient();
     }
-    return myInstance;
+    return ourInstance;
   }
 
   protected GlobalScopeMinusTransient() {
