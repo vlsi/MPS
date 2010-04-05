@@ -57,7 +57,7 @@ public class ModelCheckerUtils {
     }
     int issueCount = 0;
     for (SearchResult<ModelCheckerIssue> issue : ListSequence.fromList(issues.getSearchResults())) {
-      if (severity.equals(issue.getCategories().get(0))) {
+      if (severity.equals(issue.getCategories().get(0).o2)) {
         issueCount++;
       }
     }
