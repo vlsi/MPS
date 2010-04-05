@@ -21,7 +21,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -83,7 +82,7 @@ public class DeleteModelHelper {
 
   public static void safeDelete(final Project project, final SModelDescriptor modelDescriptor, boolean deleteFiles) {
     IRefactoring ref = OldRefactoringAdapter.createAdapterFor(new SafeDeleteModelRefactoring(deleteFiles));
-    GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(ref){
+    GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(ref) {
       protected Applicability getMinApplicabilityLevel() {
         return Applicability.OVERRIDDEN;
       }
@@ -94,8 +93,7 @@ public class DeleteModelHelper {
 
       @Nullable
       public Object getData(@NonNls String dataId) {
-        if (dataId.equals(MPSDataKeys.MPS_PROJECT.getName()))
-          return project.getComponent(MPSProjectHolder.class).getMPSProject();
+        if (dataId.equals(MPSDataKeys.PROJECT.getName())) return project;
         else if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())) return modelDescriptor;
         else return myRealContext.getData(dataId);
       }

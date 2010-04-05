@@ -72,7 +72,7 @@ public class DependencyViewer extends BaseProjectTool {
   public void projectOpened() {
     super.projectOpened();
 
-    myTree = new DependencyTree(getProject().getComponent(MPSProjectHolder.class).getMPSProject());
+    myTree = new DependencyTree(getProject());
     JScrollPane scrollPane = new JScrollPane(myTree) {
       public void addNotify() {
         super.addNotify();

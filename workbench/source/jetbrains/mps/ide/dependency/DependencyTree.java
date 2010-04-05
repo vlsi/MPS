@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.DevkitProperties_Action;
 import jetbrains.mps.ide.actions.GeneratorProperties_Action;
 import jetbrains.mps.ide.actions.LanguageProperties_Action;
@@ -42,10 +43,10 @@ import javax.swing.JPopupMenu;
 import javax.swing.tree.TreePath;
 
 public class DependencyTree extends MPSTree implements DataProvider {
-  private MPSProject myProject;
+  private Project myProject;
   private IModule myModule = null;
 
-  public DependencyTree(MPSProject project) {
+  public DependencyTree(Project project) {
     myProject = project;
   }
 

@@ -31,11 +31,11 @@ import java.util.List;
 import com.intellij.openapi.project.Project;
 
 public class ModuleTreeNode extends MPSTreeNode {
-  private MPSProject myProject;
+  private Project myProject;
   private IModule myModule;
   private boolean myInitialized;
 
-  public ModuleTreeNode(MPSProject project, IModule module) {
+  public ModuleTreeNode(Project project, IModule module) {
     super(module, null);
     myProject = project;
     myModule = module;
@@ -44,8 +44,7 @@ public class ModuleTreeNode extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    Project project = myProject.getProject();
-    ProjectPane.getInstance(project).selectModule(myModule);
+    ProjectPane.getInstance(myProject).selectModule(myModule);
   }
 
   public int getToggleClickCount() {
