@@ -23,13 +23,13 @@ import java.util.List;
 import java.util.Set;
 
 public class GlobalScope extends BaseScope {
-  private static GlobalScope myInstance;
+  private static GlobalScope ourInstance;
 
   public static GlobalScope getInstance() {
-    if (myInstance == null) {
-      myInstance = new GlobalScope();
+    if (ourInstance == null) {
+      ourInstance = new GlobalScope();
     }
-    return myInstance;
+    return ourInstance;
   }
 
   private MPSModuleRepository myMPSModuleRepository;
