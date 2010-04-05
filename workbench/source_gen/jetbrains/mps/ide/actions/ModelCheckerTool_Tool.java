@@ -22,7 +22,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.MPSProjectHolder;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -100,7 +99,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   }
 
   public ModelCheckerViewer checkProject(Project project, IOperationContext operationContext, boolean showTab) {
-    MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+    MPSProject mpsProject = project.getComponent(MPSProject.class);
     return ModelCheckerTool_Tool.this.performCheckingTask(ModelCheckerUtils.getModelDescriptors(mpsProject), mpsProject.getProjectDescriptor().getName(), Icons.PROJECT_ICON, operationContext, showTab);
   }
 

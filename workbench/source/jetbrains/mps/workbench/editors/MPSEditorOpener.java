@@ -25,7 +25,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.ToolWindowManager;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.NodeEditor;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;

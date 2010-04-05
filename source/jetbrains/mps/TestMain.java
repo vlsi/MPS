@@ -100,7 +100,7 @@ public class TestMain {
     });
 
     projectManager.openProject(project);
-    return project.getComponent(MPSProjectHolder.class).getMPSProject();
+    return project.getComponent(MPSProject.class);
   }
 
   public static boolean testProjectGenerationForLeaks(File projectFile) {

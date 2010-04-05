@@ -17,7 +17,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.MPSProjectHolder;
 import com.intellij.openapi.application.ModalityState;
 import java.util.Arrays;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -81,7 +80,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
               }
             });
             runnable.value.run();
-            final MPSProject project = BuildGeneratorImpl.this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+            final MPSProject project = BuildGeneratorImpl.this.myProject.getComponent(MPSProject.class);
             project.getProjectDescriptor().addSolution(solution.getDescriptorFile().getAbsolutePath());
             ProgressManager.getInstance().run(new Task.Modal(BuildGeneratorImpl.this.myProject, "Reloading Classes", false) {
               public void run(@NotNull ProgressIndicator progressIndicator) {
@@ -112,7 +111,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         //  get solution 
         String solutionName = this.getNewSolutionName();
         String solutionBaseDir = projectBaseDir.getPath() + File.separator + "solutions" + File.separator + solutionName;
-        MPSProject mpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+        MPSProject mpsProject = this.myProject.getComponent(MPSProject.class);
         indicator.setText("Creating Solution...");
         solution = BuildGeneratorUtil.createSolution(mpsProject, solutionName, solutionBaseDir);
       } else {

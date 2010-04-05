@@ -5,7 +5,6 @@ package jetbrains.mps.build.packaging.plugin;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.project.Solution;
@@ -19,7 +18,7 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
 
   public SolutionStep(Project project, AbstractBuildGenerator generator, IErrorHandler handler) {
     super(project, generator, handler);
-    this.myMpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    this.myMpsProject = this.myProject.getComponent(MPSProject.class);
   }
 
   public String getDescription() {

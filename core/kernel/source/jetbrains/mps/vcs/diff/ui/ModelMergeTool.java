@@ -30,7 +30,7 @@ import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.MPSProjectHolder;
+
 
 import javax.swing.SwingUtilities;
 import java.io.*;

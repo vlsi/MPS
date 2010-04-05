@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.MPSProjectHolder;
+
 
 
 class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
@@ -95,7 +95,7 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   private void populate() {
-    MPSProject project = getOperationContext().getProject().getComponent(MPSProjectHolder.class).getMPSProject();
+    MPSProject project = getOperationContext().getProject().getComponent(MPSProject.class);
 
     TextTreeNode extendedDevkits = new TextTreeNode("extended devkits");
     for (DevKit d : myDevKit.getExtendedDevKits()) {

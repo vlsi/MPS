@@ -22,7 +22,7 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.logging.Logger;

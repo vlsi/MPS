@@ -20,7 +20,7 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
@@ -94,7 +94,7 @@ public class TestUtil {
 
     conditionalWaitAndFlush(test,new Computable<Boolean>() {
       public Boolean compute() {
-        return ideaProject[0].getComponent(MPSProjectHolder.class) != null;
+        return ideaProject[0].getComponent(MPSProject.class) != null;
       }
     });
 
@@ -118,7 +118,7 @@ public class TestUtil {
       test.pressButton(dialog, "Close");
     }
 
-    return ideaProject[0].getComponent(MPSProjectHolder.class).getMPSProject();
+    return ideaProject[0].getComponent(MPSProject.class);
   }
 
   public static void deleteProject(UITestsBase tests, File projectFile) {

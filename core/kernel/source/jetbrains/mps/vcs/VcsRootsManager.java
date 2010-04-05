@@ -24,7 +24,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.util.containers.ConcurrentHashSet;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.vcs.ui.VcsIdeSettings.VcsRootsDiscoveryPolicy;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -121,7 +121,7 @@ public class VcsRootsManager implements ProjectComponent {
   }
 
   private void addDirectoryMappings() {
-    MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    MPSProject mpsProject = myProject.getComponent(MPSProject.class);
     List<IModule> allModules = mpsProject.getModules();
     Map<AbstractVcs, Set<VirtualFile>> vcss = new HashMap<AbstractVcs, Set<VirtualFile>>();
 

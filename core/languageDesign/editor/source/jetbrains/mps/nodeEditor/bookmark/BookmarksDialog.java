@@ -25,7 +25,7 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.MPSProjectHolder;
+
 
 public class BookmarksDialog extends BaseDialog {
   private BookmarkManager myBookmarkManager;

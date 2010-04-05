@@ -8,7 +8,6 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.properties.StandardComponents;
 import jetbrains.mps.workbench.dialogs.project.BaseBindedDialog;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.dialogs.BaseDialog;
@@ -44,7 +43,7 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
   }
 
   private MPSProject getMPSProject() {
-    return this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    return this.myProject.getComponent(MPSProject.class);
   }
 
   protected boolean doSaveChanges() {

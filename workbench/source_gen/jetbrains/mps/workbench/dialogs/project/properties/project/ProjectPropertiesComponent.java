@@ -9,7 +9,6 @@ import java.awt.BorderLayout;
 import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.MPSProjectHolder;
 
 public class ProjectPropertiesComponent extends JPanel {
   private static final Logger LOG = Logger.getLogger(ProjectPropertiesComponent.class);
@@ -60,6 +59,6 @@ public class ProjectPropertiesComponent extends JPanel {
   }
 
   private MPSProject getMPSProject() {
-    return this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    return this.myProject.getComponent(MPSProject.class);
   }
 }

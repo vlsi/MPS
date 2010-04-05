@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AllModelsTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.StubsTreeNode;
@@ -60,7 +60,7 @@ public abstract class ProjectTreeFindHelper {
   }
 
   public SModelTreeNode findMostSuitableModelTreeNode(@NotNull SModelDescriptor model) {
-    MPSProject project = getProject().getComponent(MPSProjectHolder.class).getMPSProject();
+    MPSProject project = getProject().getComponent(MPSProject.class);
 
     IModule module = FindUtil.getModuleForModel(project, model);
     if (module == null) return findModelTreeNodeAnywhere(model, getTree().getRootNode());

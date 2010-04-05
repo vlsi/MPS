@@ -18,7 +18,7 @@ package jetbrains.mps.project;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.smodel.IOperationContext;

@@ -28,7 +28,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.library.LanguageDesign_DevKit;
@@ -176,7 +176,7 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
   private void createProject() {
     myCreatedProject = ProjectManagerEx.getInstanceEx().newProject(myOptions.getProjectName(), myOptions.getProjectPath() + File.separator + myOptions.getProjectName() + MPSExtentions.DOT_MPS_PROJECT, true, false);
     //noinspection ConstantConditions
-    final MPSProject mpsProject = myCreatedProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    final MPSProject mpsProject = myCreatedProject.getComponent(MPSProject.class);
 
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {

@@ -17,7 +17,7 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 
@@ -32,7 +32,7 @@ public class ProjectScope extends DefaultScope {
   }
 
   protected Set<IModule> getInitialModules() {
-    MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    MPSProject mpsProject = myProject.getComponent(MPSProject.class);
 
     Set<IModule> result = new HashSet<IModule>();
     result.addAll(mpsProject.getProjectSolutions());

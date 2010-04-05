@@ -18,7 +18,7 @@ package jetbrains.mps.project;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;

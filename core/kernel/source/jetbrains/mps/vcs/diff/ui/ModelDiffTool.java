@@ -30,7 +30,7 @@ import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalOperationContext;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;

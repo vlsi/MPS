@@ -2100,23 +2100,18 @@
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5849716370568348952">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5849716370568348953">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5849716370568348954">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5849716370568348955">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5849716370568348956">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5849716370568348957">
-                  <link role="fieldDeclaration:3" targetNodeId="5849716370568348890" resolveInfo="myProject" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5849716370568348958" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5849716370568348955">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5849716370568348956">
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5849716370568348957">
+                <link role="fieldDeclaration:3" targetNodeId="5849716370568348890" resolveInfo="myProject" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5849716370568348959">
-                <link role="baseMethodDeclaration:3" targetNodeId="24.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="5849716370568348960">
-                  <link role="classifier:3" targetNodeId="25.~MPSProjectHolder" />
-                </node>
-              </node>
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5849716370568348958" />
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5849716370568348961">
-              <link role="baseMethodDeclaration:3" targetNodeId="25.~MPSProjectHolder.getMPSProject():jetbrains.mps.project.MPSProject" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5849716370568348959">
+              <link role="baseMethodDeclaration:3" targetNodeId="24.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="2058049813809857260">
+                <link role="classifier:3" targetNodeId="15.~MPSProject" resolveInfo="MPSProject" />
+              </node>
             </node>
           </node>
         </node>

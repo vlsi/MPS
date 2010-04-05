@@ -20,7 +20,7 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.Tag;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
@@ -53,7 +53,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   //------------------stuff to generate-----------------------
 
   protected void initEditors(Project project) {
-    initEditors(project.getComponent(MPSProjectHolder.class).getMPSProject());
+    initEditors(project.getComponent(MPSProject.class));
   }
 
   protected List<BaseGeneratedTool> initAllTools(Project project) {
@@ -69,7 +69,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   }
 
   protected List<GenerationListener> initGenerationListeners(Project project) {
-    return initGenerationListeners(project.getComponent(MPSProjectHolder.class).getMPSProject());
+    return initGenerationListeners(project.getComponent(MPSProject.class));
   }
 
   protected List<IFileGenerator> initFileGenerators() {
@@ -77,7 +77,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
   }
 
   protected List<BaseCustomProjectPlugin> initCustomParts(Project project) {
-    return initCustomParts(project.getComponent(MPSProjectHolder.class).getMPSProject());
+    return initCustomParts(project.getComponent(MPSProject.class));
   }
 
   //---(DEPRECATED)---stuff to generate---(DEPRECATED)---------
@@ -124,7 +124,7 @@ public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, Pe
     myCustomPartsToDispose = initCustomParts(project);
 
     GeneratorManager manager = myProject.getComponent(GeneratorManager.class);
-    myGenerationListeners = initGenerationListeners(myProject.getComponent(MPSProjectHolder.class).getMPSProject());
+    myGenerationListeners = initGenerationListeners(myProject.getComponent(MPSProject.class));
     for (GenerationListener listener : myGenerationListeners) {
       manager.addGenerationListener(listener);
     }

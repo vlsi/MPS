@@ -25,7 +25,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vcs.diff.ui.MergeModelsDialog;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.vcs.ModelUtils.Version;
-import jetbrains.mps.MPSProjectHolder;
+
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl;
 import com.intellij.openapi.project.ProjectManager;

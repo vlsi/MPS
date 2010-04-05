@@ -29,7 +29,7 @@ import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.lang.plugin.structure.RunConfigCreator;
@@ -190,7 +190,7 @@ public class RunConfigManager implements ProjectComponent {
   }
 
   private List<ConfigurationType> createConfigs(Project project) {
-    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    final MPSProject mpsProject = myProject.getComponent(MPSProject.class);
 
     final List<ConfigurationType> conTypes = new ArrayList<ConfigurationType>();
 
@@ -230,7 +230,7 @@ public class RunConfigManager implements ProjectComponent {
   }
   
   private List<ConfigurationType> createCreators(Project project) {
-    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    final MPSProject mpsProject = myProject.getComponent(MPSProject.class);
 
     final List<ConfigurationType> conTypes = new ArrayList<ConfigurationType>();
 

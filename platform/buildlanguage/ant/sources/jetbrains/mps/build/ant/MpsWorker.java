@@ -96,7 +96,8 @@ public abstract class MpsWorker {
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
 
     File projectFile = FileUtil.createTmpFile();
-    final MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
+    final MPSProject project = new MPSProject(ideaProject);
+    project.init(projectFile, new ProjectDescriptor());    
 
     ObjectsToProcess go = new ObjectsToProcess();
     collectModelsToGenerate(go);

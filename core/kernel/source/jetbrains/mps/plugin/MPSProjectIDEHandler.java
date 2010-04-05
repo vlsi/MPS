@@ -19,7 +19,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder;
 import jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder;
 import jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder;

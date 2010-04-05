@@ -17,7 +17,7 @@ package jetbrains.mps.workbench.actions.module;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -42,7 +42,7 @@ public class DeleteModuleHelper {
   }
 
   private static void delete(Project project, IModule module, boolean deleteFiles) {
-    MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+    MPSProject mpsProject = project.getComponent(MPSProject.class);
     if (!mpsProject.isProjectModule(module) && !deleteFiles) {
       JOptionPane.showMessageDialog(WindowManager.getInstance().getFrame(project), "Non-project modules can only be deleted with files deletion enabled", "Can't delete module", JOptionPane.WARNING_MESSAGE);
     }

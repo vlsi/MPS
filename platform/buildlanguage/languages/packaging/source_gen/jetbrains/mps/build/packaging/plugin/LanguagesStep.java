@@ -4,7 +4,6 @@ package jetbrains.mps.build.packaging.plugin;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.MPSProjectHolder;
 import javax.swing.JComponent;
 import java.util.List;
 import jetbrains.mps.project.IModule;
@@ -35,7 +34,7 @@ public class LanguagesStep extends AbstractStep {
   public LanguagesStep(Project project, AbstractBuildGenerator generator, IErrorHandler handler) {
     this.myGenerator = generator;
     this.myProject = project;
-    this.myMpsProject = this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    this.myMpsProject = this.myProject.getComponent(MPSProject.class);
     this.myHandler = handler;
   }
 

@@ -36,7 +36,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -232,7 +232,7 @@ public class TestConfigurationDialog extends BaseDialog {
               return MPSModuleRepository.getInstance().getAllModules();
             }
           });
-          IModule module = CommonChoosers.showDialogModuleChooser(ModulePanel.this, TestConfigurationDialog.MODULE, ModulePanel.this.myProject.getComponent(MPSProjectHolder.class).getMPSProject().getModules(), modules);
+          IModule module = CommonChoosers.showDialogModuleChooser(ModulePanel.this, TestConfigurationDialog.MODULE, ModulePanel.this.myProject.getComponent(MPSProject.class).getModules(), modules);
           if (module == null) {
             return;
           }
@@ -286,7 +286,7 @@ public class TestConfigurationDialog extends BaseDialog {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               boolean inProject = false;
-              for (SModelDescriptor projectModel : ModelsPanel.this.myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectModels()) {
+              for (SModelDescriptor projectModel : ModelsPanel.this.myProject.getComponent(MPSProject.class).getProjectModels()) {
                 if (model.equals(projectModel.getSModelReference())) {
                   inProject = true;
                   break;
@@ -310,7 +310,7 @@ public class TestConfigurationDialog extends BaseDialog {
       ListAddAction addAction = new ListAddAction(this.myModelsList) {
         @Override
         protected int doAdd(AnActionEvent e) {
-          List<SModelDescriptor> models = ModelsPanel.this.myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectModels();
+          List<SModelDescriptor> models = ModelsPanel.this.myProject.getComponent(MPSProject.class).getProjectModels();
           SModelDescriptor sModelDescriptor = CommonChoosers.showDialogModelChooser(ModelsPanel.this, models, SModelRepository.getInstance().getModelDescriptors());
           if (sModelDescriptor == null) {
             return -1;

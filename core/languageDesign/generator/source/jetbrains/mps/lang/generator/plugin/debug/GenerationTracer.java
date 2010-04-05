@@ -16,7 +16,7 @@
 package jetbrains.mps.lang.generator.plugin.debug;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;

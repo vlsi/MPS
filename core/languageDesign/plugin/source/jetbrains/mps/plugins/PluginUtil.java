@@ -16,7 +16,7 @@
 package jetbrains.mps.plugins;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.ide.actions.Ide_ApplicationPlugin;
 import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.library.LibraryManager;
@@ -39,7 +39,7 @@ public class PluginUtil {
   public static final String IDE_MODULE_ID = "jetbrains.mps.ide";
 
   public static Set<IModule> collectPluginModules(Project project) {
-    MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
+    MPSProject mpsProject = project.getComponent(MPSProject.class);
 
     Set<IModule> modules = new HashSet<IModule>();
 

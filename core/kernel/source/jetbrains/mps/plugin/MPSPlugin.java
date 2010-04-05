@@ -16,9 +16,10 @@
 package jetbrains.mps.plugin;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
 
 import java.io.File;
 import java.rmi.Naming;
@@ -49,7 +50,7 @@ public class MPSPlugin {
   public IProjectHandler getProjectHandler(Project project) {
    //todo enable LOG.assertLog(!ThreadUtils.isEventDispatchThread());
 
-    File mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject().getProjectFile();
+    File mpsProject = project.getComponent(MPSProject.class).getProjectFile();
 
     File projectFile = mpsProject.getParentFile();
     String projectPath = projectFile.getAbsolutePath();

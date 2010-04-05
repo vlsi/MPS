@@ -9,7 +9,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.MPSProjectHolder;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
@@ -42,7 +41,7 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   public MPSProject getMPSProject() {
-    return this.myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    return this.myProject.getComponent(MPSProject.class);
   }
 
   public void setInvocationContext(IModule invocationContext) {

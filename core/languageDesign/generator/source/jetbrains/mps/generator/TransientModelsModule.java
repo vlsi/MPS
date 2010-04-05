@@ -17,10 +17,11 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -40,9 +41,9 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   private int myNumber = ourModuleCounter.getAndIncrement();
 
   //the second parameter is needed because there is a time dependency -
-  //MPSProjectHolder must be disposed after TransientModelsModule for
+  //MPSProject must be disposed after TransientModelsModule for
   //the module's models to be disposed
-  public TransientModelsModule(Project project, MPSProjectHolder mpsProject) {
+  public TransientModelsModule(Project project, MPSProject mpsProject) {
     myProject = project;
     ModuleReference reference = ModuleReference.fromString("TransientModule " + myNumber);
     setModulePointer(reference);
@@ -64,7 +65,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
   public void initComponent() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        MPSModuleRepository.getInstance().addModule(TransientModelsModule.this, myProject.getComponent(MPSProjectHolder.class).getMPSProject());
+        MPSModuleRepository.getInstance().addModule(TransientModelsModule.this, myProject.getComponent(MPSProject.class));
       }
     });
   }

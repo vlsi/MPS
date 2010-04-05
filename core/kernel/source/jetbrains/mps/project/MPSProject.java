@@ -16,14 +16,21 @@
 package jetbrains.mps.project;
 
 import com.intellij.ide.impl.ProjectUtil;
+import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.components.State;
+import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.ShutDownTracker;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
@@ -33,21 +40,91 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jdom.Element;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
-public class MPSProject implements ModelOwner, MPSModuleOwner {
+@State(
+  name = "MPSProject",
+  storages = {
+    @Storage(
+      id = "other",
+      file = "$PROJECT_FILE$"
+    )
+  }
+)
+public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent, PersistentStateComponent<Element> {
+  private Project myProject;
+  private Element myProjectElement;
+
+  public MPSProject(Project project) {
+    myProject = project;
+  }
+
+  public Element getState() {
+    if (myProject.getPresentableUrl() == null) {
+      return new Element("state");
+    }
+
+    return ModelAccess.instance().runReadAction(new Computable<Element>() {
+      public Element compute() {
+        ProjectDescriptor descriptor = getProjectDescriptor();
+        File file = new File(myProject.getPresentableUrl());
+        return ProjectDescriptorPersistence.saveProjectDescriptorToElement(descriptor, file);
+      }
+    });
+  }
+
+  public void loadState(Element state) {
+    myProjectElement = state;
+  }
+
+  public void projectOpened() {
+
+  }
+
+  public void projectClosed() {
+
+  }
+
+  @NonNls
+  @NotNull
+  public String getComponentName() {
+    return "MPS Project Holder";
+  }
+
+  public void initComponent() {
+    String url = myProject.getPresentableUrl();
+    if (url != null) {
+      final File projectFile = new File(url);
+      ProjectDescriptor descriptor = new ProjectDescriptor();
+      ProjectDescriptorPersistence.loadProjectDescriptorFromElement(descriptor, projectFile, myProjectElement);
+      init(projectFile, descriptor);
+    } else {
+      ProjectDescriptor descriptor = new ProjectDescriptor();
+      init(null, descriptor);
+    }
+  }
+
+  public void disposeComponent() {
+    dispose(!ShutDownTracker.isShutdownHookRunning());
+  }
+
+  //-----------project holder end
+
   public static final String COMPONENTS = "components";
   public static final String COMPONENT = "component";
   public static final String CLASS = "class";
   public static final String BUNDLE = "bundle";
 
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
-
-  private Project myIDEAProject;
 
   private File myProjectFile;
   private ProjectDescriptor myProjectDescriptor;
@@ -58,10 +135,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
 
   private String myErrors = null;
 
-  public MPSProject(final File projectFile, final ProjectDescriptor projectDescriptor, Project ideaProject) {
-    myIDEAProject = ideaProject;
-
-    if (ideaProject.isDefault()) return;
+  public void init(final File projectFile, final ProjectDescriptor projectDescriptor) {
+    if (myProject.isDefault()) return;
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -259,7 +334,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   }
 
   public Project getProject() {
-    return myIDEAProject;
+    return myProject;
   }
 
   private void error(String text) {
@@ -364,9 +439,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     });
 
     //todo hack
-    if (myIDEAProject != null) {
+    if (myProject != null) {
       if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
-        ProjectUtil.closeProject(myIDEAProject);
+        ProjectUtil.closeProject(myProject);
       }
     }
   }
@@ -382,6 +457,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
   @Deprecated
   //should be left for compatibility (Project Operations in plugins)
   public ProjectPluginManager getPluginManager() {
-    return myIDEAProject.getComponent(ProjectPluginManager.class);
+    return myProject.getComponent(ProjectPluginManager.class);
   }
-}             
+}

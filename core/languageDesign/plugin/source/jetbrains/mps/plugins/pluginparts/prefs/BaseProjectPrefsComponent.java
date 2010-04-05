@@ -17,7 +17,7 @@ package jetbrains.mps.plugins.pluginparts.prefs;
 
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
@@ -41,7 +41,7 @@ public abstract class BaseProjectPrefsComponent implements PersistentStateCompon
   }
 
   public MPSProject getMPSProject() {
-    return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+    return myProject.getComponent(MPSProject.class);
   }
 
   public void init() {

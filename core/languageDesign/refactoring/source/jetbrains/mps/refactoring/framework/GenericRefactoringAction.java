@@ -16,8 +16,9 @@
 package jetbrains.mps.refactoring.framework;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget.TargetType;
 import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
 import jetbrains.mps.smodel.*;
@@ -60,7 +61,7 @@ public class GenericRefactoringAction extends BaseAction {
     context.setSelectedModules(toList(getModules(e, isOneTarget)));
 
     //noinspection ConstantConditions
-    context.setSelectedMPSProject(e.getData(MPSDataKeys.PROJECT).getComponent(MPSProjectHolder.class).getMPSProject());
+    context.setSelectedMPSProject(e.getData(MPSDataKeys.PROJECT).getComponent(MPSProject.class));
     context.setCurrentScope(e.getData(MPSDataKeys.SCOPE));
 
     new Thread() {

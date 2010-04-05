@@ -18,7 +18,7 @@ package jetbrains.mps.project;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.generator.GeneratorManager;
@@ -186,7 +186,7 @@ public class ProjectTester {
 
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          List<BaseTestConfiguration> configurations = new ArrayList<BaseTestConfiguration>(myProject.getComponent(MPSProjectHolder.class).getMPSProject().getProjectDescriptor().getTestConfigurations());
+          List<BaseTestConfiguration> configurations = new ArrayList<BaseTestConfiguration>(myProject.getComponent(MPSProject.class).getProjectDescriptor().getTestConfigurations());
 
           if (configurations.isEmpty()) {
             throw new RuntimeException("tested project has no test configurations");

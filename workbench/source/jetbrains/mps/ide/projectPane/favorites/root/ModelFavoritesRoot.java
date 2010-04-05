@@ -6,7 +6,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.MPSProjectHolder;
+
 
 import java.util.List;
 import java.util.ArrayList;

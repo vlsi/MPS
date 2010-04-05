@@ -32,7 +32,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
@@ -389,7 +389,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
         return new TextTreeNode("Empty");
       }
 
-      MPSProject project = getProject().getComponent(MPSProjectHolder.class).getMPSProject();
+      MPSProject project = getProject().getComponent(MPSProject.class);
       ProjectTreeNode root = new ProjectTreeNode(project);
 
       List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();

@@ -55,19 +55,16 @@ public class TestGenerationWorker extends GeneratorWorker {
   private final Map<SModelDescriptor, Long> myPerfomanceMap = new HashMap<SModelDescriptor, Long>();
 
   private final TesterGenerationHandler myGenerationHandler = new TesterGenerationHandler(false, true) {
-    @Override
     protected JavaCompiler createJavaCompiler(Set<IModule> contextModules) {
       return new JavaCompiler(getClassPath(contextModules)) {
-        @Override
         public ClassLoader getClassLoader(ClassLoader parent) {
           return new MyClassLoader(parent);
         }
       };
     }
 
-    @Override
     public void finishGeneration(ITaskProgressHelper progressHelper) {
-      //
+      
     }
   };
 
@@ -104,7 +101,8 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     com.intellij.openapi.project.Project ideaProject = ProjectManager.getInstance().getDefaultProject();
     File projectFile = FileUtil.createTmpFile();
-    final MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
+    final MPSProject project = new MPSProject(ideaProject);
+    project.init(projectFile, new ProjectDescriptor());
 
     LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
     LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();

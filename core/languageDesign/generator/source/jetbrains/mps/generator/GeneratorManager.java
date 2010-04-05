@@ -37,7 +37,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.MPSProjectHolder;
+
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;

@@ -1,6 +1,6 @@
 package jetbrains.mps.ide.projectPane.favorites.root;
 
-import jetbrains.mps.MPSProjectHolder;
+
 import jetbrains.mps.ide.projectPane.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -24,7 +24,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
   public MPSTreeNode getTreeNode(IOperationContext context) {
     IModule module = MPSModuleRepository.getInstance().getModule(getValue());
     if (module == null) return null;
-    MPSProject mpsProject = context.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
+    MPSProject mpsProject = context.getProject().getComponent(MPSProject.class);
     if (mpsProject == null) return null;
     ProjectModuleTreeNode moduleTreeNode = ProjectModuleTreeNode.createFor(mpsProject, module);
     return moduleTreeNode;

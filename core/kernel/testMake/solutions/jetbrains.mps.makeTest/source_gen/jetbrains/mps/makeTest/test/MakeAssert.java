@@ -18,7 +18,6 @@ import java.io.File;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 
@@ -96,7 +95,7 @@ public class MakeAssert {
   }
 
   private static void disposeProject(final Project project) {
-    final MPSProject p = project.getComponent(MPSProjectHolder.class).getMPSProject();
+    final MPSProject p = project.getComponent(MPSProject.class);
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         p.dispose();
