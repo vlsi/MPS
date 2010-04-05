@@ -35,8 +35,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner;
-import com.intellij.execution.executors.DefaultDebugExecutor;
-import jetbrains.mps.debug.DebuggerKeys;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.execution.process.ProcessNotCreatedException;
 import jetbrains.mps.ide.actions.DefaultProcessHandler;
@@ -139,10 +137,6 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
         }
 
         final ClassRunner classRunner = new ClassRunner();
-        if (executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID)) {
-          String args = this.getUserData(DebuggerKeys.CONNECTION_SETTINGS);
-          classRunner.setDebugArguments(args);
-        }
         ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions())));
         consoleComponent = consoleView.getComponent();
         consoleDispose = new Runnable() {
