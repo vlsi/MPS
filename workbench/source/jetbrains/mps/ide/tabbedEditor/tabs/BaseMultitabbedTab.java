@@ -183,9 +183,6 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
             Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
             createLoadableNodeChecked(nodeAndContext, selectedValue);
             setPackageAfterCreationChecked(nodeAndContext);
-            LazyTabbedPane tabbedPane = getTabbedEditor().getTabbedPane();
-            tabbedPane.initTab(BaseMultitabbedTab.this);
-            selectTab(myLoadableNodes.size() - 1);
             return FINAL_CHOICE;
           }
         });
@@ -262,6 +259,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     myEditors.add(component);
     myInnerTabbedPane.add(getTabTextForNode(loadableNode), jComponent);
     myInnerTabbedPane.setIconAt(myEditors.size() - 1, IconManager.getIconFor(loadableNode));
+    myInnerTabbedPane.setSelectedComponent(jComponent);
     ToolWindowManager.getInstance(operationContext.getProject()).getFocusManager().requestFocus(component, false);
     aspectAdded(loadableNode);
     addNameListener(loadableNode.getModel().getModelDescriptor());
