@@ -1502,7 +1502,11 @@
                           <property name="text:3" value="MPS-6545" />
                         </node>
                       </node>
-                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1229349941657" />
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="8508807536211130839">
+                        <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="8508807536211130840">
+                          <property name="text:3" value="return;" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
