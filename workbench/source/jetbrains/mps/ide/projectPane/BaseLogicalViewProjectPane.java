@@ -537,13 +537,12 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
 
     public void commandFinished(CommandEvent event) {
-      if (myNeedRebuild) {
-        JTree tree = getTree();
-        if (tree instanceof MPSTree) {
-          ((MPSTree) tree).rebuildLater();
-        }
-        myNeedRebuild = false;
+      if (!myNeedRebuild) return;
+      JTree tree = getTree();
+      if (tree instanceof MPSTree) {
+        ((MPSTree) tree).rebuildLater();
       }
+      myNeedRebuild = false;
     }
   }
 

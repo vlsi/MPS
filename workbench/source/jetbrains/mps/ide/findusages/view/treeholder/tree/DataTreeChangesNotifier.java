@@ -36,7 +36,7 @@ import java.util.Set;
 public class DataTreeChangesNotifier {
   private IChangeListener myTree;
   private boolean myChanged = false;
-  private CommandAdapter myCommandNotifier = new MyCommandNotifier();
+  private CommandAdapter myCommandNotifier = new MyCommandListener();
 
   private MyModelCommandListener myModelListener = new MyModelCommandListener();
   private MyModelRepositoryListener myModelRepositoryListener = new MyModelRepositoryListener();
@@ -51,6 +51,7 @@ public class DataTreeChangesNotifier {
   }
 
   public void startListening(DataNode root) {
+    
     CommandProcessor.getInstance().addCommandListener(myCommandNotifier);
 
     for (DataNode node : root.getDescendantsByDataClass(NodeNodeData.class)) {
@@ -117,7 +118,7 @@ public class DataTreeChangesNotifier {
     }
   }
 
-  private class MyCommandNotifier extends CommandAdapter {
+  private class MyCommandListener extends CommandAdapter {
     public void commandFinished(CommandEvent event) {
       if (!myChanged) return;
       myChanged = false;
