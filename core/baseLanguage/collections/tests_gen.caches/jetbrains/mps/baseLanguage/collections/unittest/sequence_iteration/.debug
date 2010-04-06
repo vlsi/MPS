@@ -79,39 +79,19 @@
   <scopeInfo nodeId="1165597014943" fileName="Sequence_iteration1.java" startLine="209" startPosition="48" endLine="211" endPosition="14" />
   <scopeInfo nodeId="1165597015012" fileName="Sequence_iteration1.java" startLine="275" startPosition="48" endLine="277" endPosition="14" />
   <scopeInfo nodeId="1165597015036" fileName="Sequence_iteration1.java" startLine="281" startPosition="48" endLine="283" endPosition="14" />
-  <scopeInfo nodeId="1165449584333" fileName="Sequence_iteration1.java" startLine="65" startPosition="18" endLine="69" endPosition="5">
-    <varInfo nodeId="6784027201966232328" varName="s" />
-  </scopeInfo>
-  <scopeInfo nodeId="1165600600810" fileName="Sequence_iteration2.java" startLine="68" startPosition="26" endLine="72" endPosition="7">
-    <varInfo nodeId="6784027201966232770" varName="s_inner" />
-  </scopeInfo>
-  <scopeInfo nodeId="1165453645681" fileName="Sequence_iteration1.java" startLine="70" startPosition="34" endLine="74" endPosition="5">
-    <varInfo nodeId="6784027201966232370" varName="s" />
-  </scopeInfo>
-  <scopeInfo nodeId="1165454291900" fileName="Sequence_iteration1.java" startLine="135" startPosition="18" endLine="139" endPosition="5">
-    <varInfo nodeId="6784027201966232431" varName="s" />
-  </scopeInfo>
-  <scopeInfo nodeId="1165454291920" fileName="Sequence_iteration1.java" startLine="141" startPosition="46" endLine="145" endPosition="5">
-    <varInfo nodeId="6784027201966232470" varName="s" />
-  </scopeInfo>
-  <scopeInfo nodeId="1165597014920" fileName="Sequence_iteration1.java" startLine="203" startPosition="18" endLine="207" endPosition="5">
-    <varInfo nodeId="6784027201966232528" varName="s" />
-  </scopeInfo>
-  <scopeInfo nodeId="1165597014940" fileName="Sequence_iteration1.java" startLine="208" startPosition="46" endLine="212" endPosition="5">
-    <varInfo nodeId="6784027201966232570" varName="s" />
-  </scopeInfo>
-  <scopeInfo nodeId="1165597015009" fileName="Sequence_iteration1.java" startLine="274" startPosition="18" endLine="278" endPosition="5">
-    <varInfo nodeId="6784027201966232631" varName="s" />
-  </scopeInfo>
-  <scopeInfo nodeId="1165597015033" fileName="Sequence_iteration1.java" startLine="280" startPosition="58" endLine="284" endPosition="5">
-    <varInfo nodeId="6784027201966232670" varName="s" />
-  </scopeInfo>
+  <scopeInfo nodeId="1165449584333" fileName="Sequence_iteration1.java" startLine="65" startPosition="18" endLine="69" endPosition="5" />
+  <scopeInfo nodeId="1165600600810" fileName="Sequence_iteration2.java" startLine="68" startPosition="26" endLine="72" endPosition="7" />
+  <scopeInfo nodeId="1165453645681" fileName="Sequence_iteration1.java" startLine="70" startPosition="34" endLine="74" endPosition="5" />
+  <scopeInfo nodeId="1165454291900" fileName="Sequence_iteration1.java" startLine="135" startPosition="18" endLine="139" endPosition="5" />
+  <scopeInfo nodeId="1165454291920" fileName="Sequence_iteration1.java" startLine="141" startPosition="46" endLine="145" endPosition="5" />
+  <scopeInfo nodeId="1165597014920" fileName="Sequence_iteration1.java" startLine="203" startPosition="18" endLine="207" endPosition="5" />
+  <scopeInfo nodeId="1165597014940" fileName="Sequence_iteration1.java" startLine="208" startPosition="46" endLine="212" endPosition="5" />
+  <scopeInfo nodeId="1165597015009" fileName="Sequence_iteration1.java" startLine="274" startPosition="18" endLine="278" endPosition="5" />
+  <scopeInfo nodeId="1165597015033" fileName="Sequence_iteration1.java" startLine="280" startPosition="58" endLine="284" endPosition="5" />
   <scopeInfo nodeId="1165600539987" fileName="Sequence_iteration2.java" startLine="65" startPosition="48" endLine="73" endPosition="42">
-    <varInfo nodeId="6784027201966232703" varName="count_inner" />
+    <varInfo nodeId="1165600619520" varName="count_inner" />
   </scopeInfo>
-  <scopeInfo nodeId="1165600539984" fileName="Sequence_iteration2.java" startLine="64" startPosition="18" endLine="74" endPosition="5">
-    <varInfo nodeId="6784027201966232767" varName="s" />
-  </scopeInfo>
+  <scopeInfo nodeId="1165600539984" fileName="Sequence_iteration2.java" startLine="64" startPosition="18" endLine="74" endPosition="5" />
   <scopeInfo nodeId="1165449450253" fileName="Sequence_iteration1.java" startLine="14" startPosition="37" endLine="75" endPosition="35">
     <varInfo nodeId="1165449748240" varName="count" />
     <varInfo nodeId="1165449466318" varName="ss" />
@@ -130,12 +110,12 @@
   <scopeInfo nodeId="1165597014892" fileName="Sequence_iteration1.java" startLine="149" startPosition="0" endLine="215" endPosition="0" />
   <scopeInfo nodeId="1165451039405" fileName="Sequence_iteration1.java" startLine="78" startPosition="37" endLine="147" endPosition="47">
     <varInfo nodeId="1165454291897" varName="count" />
-    <varInfo nodeId="6784027201966232974" varName="yield_count" />
+    <varInfo nodeId="1165453934276" varName="yield_count" />
     <varInfo nodeId="1165453981204" varName="ss" />
   </scopeInfo>
   <scopeInfo nodeId="1165597014965" fileName="Sequence_iteration1.java" startLine="216" startPosition="36" endLine="286" endPosition="62">
     <varInfo nodeId="1165597015006" varName="count" />
-    <varInfo nodeId="6784027201966233191" varName="yield_count" />
+    <varInfo nodeId="1165597014971" varName="yield_count" />
     <varInfo nodeId="1165597014975" varName="ss" />
     <varInfo nodeId="1165597357930" varName="sequence_size" />
   </scopeInfo>
