@@ -7,7 +7,6 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.impl.ProjectViewImpl;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.project.Project;
@@ -60,7 +59,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane {
-  private MyCommandListener myCommandListener = new MyCommandListener();
+  private MyModelAccessListener myModelAccessListener = new MyModelAccessListener();
   private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryAdapter();
   private VirtualFileManagerListener myRefreshListener = new RefreshListener();
   private boolean myNeedRebuild = false;
@@ -196,7 +195,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   protected void removeListeners() {
     SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
-    CommandProcessor.getInstance().removeCommandListener(myCommandListener);
+    ModelAccess.instance().removeCommandListener(myModelAccessListener);
     MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
     getProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     VirtualFileManager.getInstance().removeVirtualFileManagerListener(myRefreshListener);
@@ -253,7 +252,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     myTree.enableDnd(this);
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myRefreshListener);
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
-    CommandProcessor.getInstance().addCommandListener(myCommandListener);
+    ModelAccess.instance().addCommandListener(myModelAccessListener);
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
     getProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
@@ -531,12 +530,12 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
   }
 
-  private class MyCommandListener extends CommandAdapter {
-    public void commandStarted(CommandEvent event) {
+  private class MyModelAccessListener extends ModelAccessAdapter {
+    public void commandStarted() {
       myNeedRebuild = false;
     }
 
-    public void commandFinished(CommandEvent event) {
+    public void commandFinished() {
       if (!myNeedRebuild) return;
       JTree tree = getTree();
       if (tree instanceof MPSTree) {
