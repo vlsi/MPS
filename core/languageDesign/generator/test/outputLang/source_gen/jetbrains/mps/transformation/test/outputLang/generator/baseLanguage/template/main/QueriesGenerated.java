@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
@@ -38,7 +39,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5857536350883039219(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(((SNode) _context.getVariable("node")), "name");
+    return BaseConcept_Behavior.call_getPresentation_1213877396640(((SNode) _context.getVariable("node")));
   }
 
   public static SNode sourceNodeQuery_2681305894288283515(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -544,7 +545,7 @@ public class QueriesGenerated {
         if (!("jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef".equals(nodeToMatch_x583g4_a0a0a32.getConceptFqName()))) {
           return false;
         }
-        if (!("11".equals(nodeToMatch_x583g4_a0a0a32.getProperty("ii")))) {
+        if (!("12".equals(nodeToMatch_x583g4_a0a0a32.getProperty("ii")))) {
           return false;
         }
         this.PatternVar_ref = nodeToMatch_x583g4_a0a0a32.getReferent("myStatement");

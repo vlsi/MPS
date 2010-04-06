@@ -191,6 +191,24 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.transformation.test.outputLang.structure.CustomStatement" id="6509983489804965801">
+          <property name="name" value="myWork2" />
+          <node role="inner" type="jetbrains.mps.baseLanguage.structure.MulExpression:3" id="6509983489804965802">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="6509983489804965803">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6509983489804965804">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6509983489804965805">
+                  <link role="variableDeclaration:3" targetNodeId="2681305894288275126" resolveInfo="e" />
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6509983489804965806">
+                  <property name="value:3" value="1" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6509983489804965807">
+              <property name="value:3" value="175" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2163819695913718896">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2163819695913718897">
             <property name="name:3" value="e33" />
@@ -228,6 +246,16 @@
             <node role="initializer:3" type="jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef" id="7870321878390043352">
               <property name="ii" value="11" />
               <link role="myStatement" targetNodeId="5857536350883158504" resolveInfo="extraWork" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6509983489804965645">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6509983489804965646">
+            <property name="name:3" value="e29" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="6509983489804965647" />
+            <node role="initializer:3" type="jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef" id="6509983489804965648">
+              <property name="ii" value="12" />
+              <link role="myStatement" targetNodeId="6509983489804965801" resolveInfo="myWork2" />
             </node>
           </node>
         </node>

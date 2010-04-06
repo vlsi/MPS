@@ -52,6 +52,8 @@ public class InputQueryUtil {
         throw new GenerationFailureException("SwitchMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null);
       } else if (nodeMacro instanceof IncludeMacro) {
         throw new GenerationFailureException("IncludeMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null);
+      } else if (nodeMacro instanceof TemplateCallMacro) {
+        throw new GenerationFailureException("TemplateCallMacro is not supported by getNewInputNodes", currentInputNode, nodeMacro.getNode(), null);
       }
 
       // <default> : propagate  current input node
@@ -75,6 +77,8 @@ public class InputQueryUtil {
         return getNewInputNodeForSwitchMacro(currentInputNode, (SwitchMacro) nodeMacro, context, generator);
       } else if (nodeMacro instanceof IncludeMacro) {
         return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((IncludeMacro) nodeMacro).getSourceNodeQuery(), true, context, generator);
+      } else if (nodeMacro instanceof TemplateCallMacro) {
+        return getNewInputNode(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((TemplateCallMacro) nodeMacro).getSourceNodeQuery(), true, context, generator);
       }
     } catch (Throwable t) {
       throw new GenerationFailureException("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null, t);

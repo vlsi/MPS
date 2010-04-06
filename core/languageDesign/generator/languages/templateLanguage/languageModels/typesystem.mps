@@ -3178,5 +3178,49 @@
       <link role="concept:3" targetNodeId="3.1194565793557:2" resolveInfo="IncludeMacro" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1510949579267745151">
+    <property name="name:3" value="typeof_TemplateCallMacro" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1510949579267745152">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1510949579267745154">
+        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1510949579267745155">
+          <property name="name:3" value="template" />
+          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1510949579267745156">
+            <link role="concept:16" targetNodeId="3.1092059087312:2" resolveInfo="TemplateDeclaration" />
+          </node>
+          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1510949579267745157">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1510949579267745158">
+              <link role="applicableNode:3" targetNodeId="1510949579267745153" resolveInfo="macro" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1510949579267766491">
+              <link role="link:16" targetNodeId="3.1722980698497626483:2" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1510949579267766492" />
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1510949579267769251">
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1510949579267769252">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="1510949579267769258">
+            <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1510949579267769259">
+              <property name="value:3" value="No template" />
+            </node>
+            <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1510949579267769260">
+              <link role="applicableNode:3" targetNodeId="1510949579267745153" resolveInfo="macro" />
+            </node>
+          </node>
+        </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1510949579267769255">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1510949579267769256">
+            <link role="variableDeclaration:3" targetNodeId="1510949579267745155" resolveInfo="includedTemplate" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="1510949579267769257" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1510949579267745153">
+      <property name="name:3" value="macro" />
+      <link role="concept:3" targetNodeId="3.1510949579266781519:2" resolveInfo="TemplateCallMacro" />
+    </node>
+  </node>
 </model>
 

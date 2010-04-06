@@ -242,51 +242,55 @@ public class GeneratorUtil {
 
   static TemplateContext getTemplateContext(RuleConsequence consequence, SNode inputNode, TemplateContext context, ITemplateGenerator generator) {
     if(consequence instanceof ITemplateCall) {
-      final Expression[] arguments = getArguments((ITemplateCall) consequence);
-      final TemplateParameterDeclaration[] parameters = getParameters((ITemplateCall) consequence);
-
-      if(arguments == null && parameters == null) {
-        return null;
-      }
-      if(arguments == null || parameters == null || arguments.length != parameters.length) {
-        generator.showErrorMessage(inputNode, consequence.getNode(), "number of arguments doesn't match template");
-        return null;
-      }
-
-      final Map<String,Object> vars = new HashMap<String, Object>(arguments.length);
-      for(int i = 0; i < arguments.length; i++) {
-        Expression expr = arguments[i];
-        String name = parameters[i].getName();
-        Object value = null;
-        if(expr instanceof BooleanConstant) {
-          value = ((BooleanConstant) expr).getValue();
-        } else if(expr instanceof IntegerConstant) {
-          value = ((IntegerConstant) expr).getValue();
-        } else if(expr instanceof StringLiteral) {
-          value = ((StringLiteral) expr).getValue();
-        } else if(expr instanceof NullLiteral) {
-          /* ok */
-        } else if(expr instanceof TemplateArgumentPatternRef) {
-          BaseConcept patternVar = getPatternVariable((TemplateArgumentPatternRef) expr);
-          if(patternVar == null) {
-            generator.showErrorMessage(inputNode, expr.getNode(), "cannot evaluate template argument #" + (i+1) + ": invalid pattern reference");
-          } else {
-            // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
-            value = context.getPatternVariable(PatternVarsUtil.getFieldName(patternVar.getNode()));
-          }
-        } else if(expr instanceof TemplateArgumentQueryExpression) {
-          TemplateArgumentQuery query = ((TemplateArgumentQueryExpression) expr).getQuery();
-          value = generator.getExecutor().evaluateArgumentQuery(inputNode, query, context);
-        } else {
-          generator.showErrorMessage(inputNode, consequence.getNode(), "cannot evaluate template argument #" + (i+1));
-        }
-
-        vars.put(name, value);
-      }
-      return new TemplateContext(null, vars);
+      return getTemplateContext((ITemplateCall)consequence, inputNode, context, generator);
     }
     return context;
   }
+
+  static TemplateContext getTemplateContext(ITemplateCall templateCall, SNode inputNode, TemplateContext context, ITemplateGenerator generator) {
+    final Expression[] arguments = getArguments(templateCall);
+    final TemplateParameterDeclaration[] parameters = getParameters(templateCall);
+
+    if(arguments == null && parameters == null) {
+      return null;
+    }
+    if(arguments == null || parameters == null || arguments.length != parameters.length) {
+      generator.showErrorMessage(inputNode, templateCall.getNode(), "number of arguments doesn't match template");
+      return null;
+    }
+
+    final Map<String,Object> vars = new HashMap<String, Object>(arguments.length);
+    for(int i = 0; i < arguments.length; i++) {
+      Expression expr = arguments[i];
+      String name = parameters[i].getName();
+      Object value = null;
+      if(expr instanceof BooleanConstant) {
+        value = ((BooleanConstant) expr).getValue();
+      } else if(expr instanceof IntegerConstant) {
+        value = ((IntegerConstant) expr).getValue();
+      } else if(expr instanceof StringLiteral) {
+        value = ((StringLiteral) expr).getValue();
+      } else if(expr instanceof NullLiteral) {
+        /* ok */
+      } else if(expr instanceof TemplateArgumentPatternRef) {
+        BaseConcept patternVar = getPatternVariable((TemplateArgumentPatternRef) expr);
+        if(patternVar == null) {
+          generator.showErrorMessage(inputNode, expr.getNode(), "cannot evaluate template argument #" + (i+1) + ": invalid pattern reference");
+        } else {
+          // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
+          value = context.getPatternVariable(PatternVarsUtil.getFieldName(patternVar.getNode()));
+        }
+      } else if(expr instanceof TemplateArgumentQueryExpression) {
+        TemplateArgumentQuery query = ((TemplateArgumentQueryExpression) expr).getQuery();
+        value = generator.getExecutor().evaluateArgumentQuery(inputNode, query, context);
+      } else {
+        generator.showErrorMessage(inputNode, templateCall.getNode(), "cannot evaluate template argument #" + (i+1));
+      }
+
+      vars.put(name, value);
+    }
+    return new TemplateContext(null, vars);
+}
 
   /**
    * @return message type or null if no message have been sent

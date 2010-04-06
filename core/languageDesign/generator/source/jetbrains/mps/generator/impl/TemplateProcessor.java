@@ -457,6 +457,57 @@ public class TemplateProcessor {
       }
 
       return outputNodes;
+    } else if (nodeMacro instanceof TemplateCallMacro) {
+      // $CALL$
+      SNode newInputNode = getNewInputNode(nodeMacro, inputNode);
+      if (newInputNode == null) {
+        return outputNodes; // skip template
+      }
+
+      TemplateCallMacro callMacro = (TemplateCallMacro) nodeMacro;
+      TemplateDeclaration template = callMacro.getTemplate();
+      if (template == null) {
+        myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $CALL$ : no 'include template'");
+        return null;
+      }
+
+      TemplateContext context = GeneratorUtil.getTemplateContext(callMacro, inputNode, myContext, myGenerator);
+
+/*
+      TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(template, newInputNode, nodeMacro.getNode(), myGenerator);
+      if (fragment == null) {
+        myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $CALL$");
+        return null;
+      }
+*/
+      List<TemplateFragment> fragments = GeneratorUtil.getTemplateFragments(template);
+      if (!GeneratorUtil.checkIfOneOrMaryAdjacentFragments(fragments, template, newInputNode, nodeMacro.getNode(), myGenerator)) {
+        myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $CALL$");
+        return null;
+      }
+
+      boolean inputChanged = (newInputNode != inputNode);
+      if (inputChanged) {
+        pushInputHistory(inputNode);
+        generationTracer.pushInputNode(newInputNode);
+      }
+      generationTracer.pushTemplateNode(template.getNode());
+
+      try {
+        for (TemplateFragment fragment : fragments) {
+          SNode templateForInclude = fragment.getParent().getNode();
+          mappingName = GeneratorUtil.getMappingName(fragment, mappingName);
+          List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateForInclude, newInputNode, context);
+          if (_outputNodes != null) outputNodes.addAll(_outputNodes);
+        }
+      } finally {
+        if (inputChanged) {
+          popInputHistory();
+          generationTracer.closeInputNode(newInputNode);
+        }
+      }
+
+      return outputNodes;
     }
 
     // $$

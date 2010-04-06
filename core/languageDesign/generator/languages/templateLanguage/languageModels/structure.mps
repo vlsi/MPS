@@ -1719,5 +1719,27 @@
       <link role="target:0" targetNodeId="13.1137418540378:0" resolveInfo="LinkPatternVariableDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1510949579266781519">
+    <property name="package:0" value="macro" />
+    <property name="name:0" value="TemplateCallMacro" />
+    <link role="extends:0" targetNodeId="1167951328751:2" resolveInfo="SourceSubstituteMacro" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1510949579266801461">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="sourceNodeQuery" />
+      <property name="sourceCardinality:0" value="0..1" />
+      <link role="target:0" targetNodeId="1168024337012:2" resolveInfo="SourceSubstituteMacro_SourceNodeQuery" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1510949579266801462">
+      <property name="value:0" value="$CALL$" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1510949579266801466">
+      <property name="value:0" value="call template macro" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1510949579266801467">
+      <link role="intfc:0" targetNodeId="1722980698497626400:2" resolveInfo="ITemplateCall" />
+    </node>
+  </node>
 </model>
 
