@@ -168,21 +168,15 @@ public class ModuleRepositoryComponent {
       }
     }
 
-    public void beforeCommandFinished(CommandEvent event) {
-    }
-
     public void commandFinished(CommandEvent event) {
-      if (myDeferredUpdate) {
-        myDeferredUpdate = false;
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            myTree.rebuildNow();
-          }
-        });
-      }
-    }
-
-    public void commandStarted(CommandEvent event) {
+      if (!myDeferredUpdate) return;
+      
+      myDeferredUpdate = false;
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          myTree.rebuildNow();
+        }
+      });
     }
   }
 }

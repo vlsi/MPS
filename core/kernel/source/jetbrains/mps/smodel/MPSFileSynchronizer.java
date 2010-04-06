@@ -29,6 +29,7 @@ import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vfs.IFile;
 
 public class MPSFileSynchronizer implements ApplicationComponent {
+  private CommandAdapter myListener = new MyCommandAdapter();
 
   public static MPSFileSynchronizer getInstance() {
     return ApplicationManager.getApplication().getComponent(MPSFileSynchronizer.class);
@@ -50,18 +51,19 @@ public class MPSFileSynchronizer implements ApplicationComponent {
   }
 
   public void initComponent() {
-    CommandProcessor.getInstance().addCommandListener(new CommandAdapter() {
-      @Override
-      public void commandFinished(CommandEvent event) {
-        for (IFile vf : myFilesToSynchronize) {
-          VFileSystem.refreshFileSynchronously(vf);
-        }
-        myFilesToSynchronize.clear();
-      }
-    });
+    CommandProcessor.getInstance().addCommandListener(myListener);
   }
 
   public void disposeComponent() {
+    CommandProcessor.getInstance().removeCommandListener(myListener);
+  }
 
+  private class MyCommandAdapter extends CommandAdapter {
+    public void commandFinished(CommandEvent event) {
+      for (IFile vf : myFilesToSynchronize) {
+        VFileSystem.refreshFileSynchronously(vf);
+      }
+      myFilesToSynchronize.clear();
+    }
   }
 }
