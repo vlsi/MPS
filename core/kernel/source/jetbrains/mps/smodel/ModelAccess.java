@@ -369,76 +369,25 @@ public class ModelAccess {
   private List<ModelAccessListener> myListeners = new ArrayList<ModelAccessListener>();
   private final Object myListenersLock = new Object();
 
-  private final Object myCommandLevelLock = new Object();
-  private int myCommandLevel = 0;
-
-  private void incCommandLevel() {
-    synchronized (myCommandLevelLock) {
-      if (myCommandLevel != 0) {
-        LOG.error("command level>0", new Exception());
-      } else {
-        onCommandStarted();
-      }
-      myCommandLevel++;
-    }
-  }
-
-  private void decCommandLevel() {
-    synchronized (myCommandLevelLock) {
-      myCommandLevel--;
-      if (myCommandLevel == 0) {
-        onCommandFinished();
-      }
-    }
-  }
-
-  public void addCommandListener(ModelAccessListener l) {
-    synchronized (myListenersLock) {
+  public void addCommandListener(ModelAccessListener l){
+    synchronized (myListenersLock){
       myListeners.add(l);
     }
   }
 
-  public void removeCommandListener(ModelAccessListener l) {
-    synchronized (myListenersLock) {
+  public void removeCommandListener(ModelAccessListener l){
+    synchronized (myListenersLock){
       myListeners.remove(l);
     }
   }
 
-  private void onCommandStarted() {
-    ArrayList<ModelAccessListener> listeners;
-    synchronized (myListenersLock) {
-      listeners = new ArrayList<ModelAccessListener>(myListeners);
-    }
-
-    for (ModelAccessListener l : listeners) {
-      try {
-        l.commandStarted();
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
   private void onCommandFinished() {
-    ArrayList<ModelAccessListener> listeners;
-    synchronized (myListenersLock) {
-      listeners = new ArrayList<ModelAccessListener>(myListeners);
+    for (ModelAccessListener l : myListeners) {
+      l.beforeCommandFinished();
     }
 
-    for (ModelAccessListener l : listeners) {
-      try {
-        l.beforeCommandFinished();
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-
-    for (ModelAccessListener l : listeners) {
-      try {
-        l.commandFinished();
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
+    for (ModelAccessListener l : myListeners) {
+      l.commandFinished();
     }
   }
 
@@ -452,9 +401,8 @@ public class ModelAccess {
     public void run() {
       runWriteAction(new Runnable() {
         public void run() {
-          incCommandLevel();
           myRunnable.run();
-          decCommandLevel();
+          onCommandFinished();
         }
       });
     }
@@ -468,9 +416,8 @@ public class ModelAccess {
     }
 
     public T compute() {
-      incCommandLevel();
       T result = myComputable.compute();
-      decCommandLevel();
+      onCommandFinished();
       return result;
     }
   }

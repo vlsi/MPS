@@ -97,8 +97,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   };
 
   private Project myProject;
-  private ModelAccessListener myCommandListener = new ModelAccessAdapter() {
-    public void commandFinished() {
+  private CommandAdapter myCommandListener = new CommandAdapter() {
+    public void commandFinished(CommandEvent event) {
       myLastCommandTime = System.currentTimeMillis();
     }
   };
@@ -123,13 +123,13 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     myGlobalSModelEventsManager.addGlobalModelListener(myModelReloadListener);
 
     myInspectorTool = myProject.getComponent(InspectorTool.class);
-    ModelAccess.instance().addCommandListener(myCommandListener);
+    CommandProcessor.getInstance().addCommandListener(myCommandListener);
     myThread = new HighlighterThread();
     myThread.start();
   }
 
   public void projectClosed() {
-    ModelAccess.instance().removeCommandListener(myCommandListener);
+    CommandProcessor.getInstance().removeCommandListener(myCommandListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
     myGlobalSModelEventsManager.removeGlobalModelListener(myModelReloadListener);

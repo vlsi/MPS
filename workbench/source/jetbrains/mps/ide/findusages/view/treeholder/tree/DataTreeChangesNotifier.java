@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree;
 
+import com.intellij.openapi.command.CommandAdapter;
+import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
@@ -34,7 +36,7 @@ import java.util.Set;
 public class DataTreeChangesNotifier {
   private IChangeListener myTree;
   private boolean myChanged = false;
-  private ModelAccessListener myCommandListener = new MyCommandListener();
+  private CommandAdapter myCommandNotifier = new MyCommandListener();
 
   private MyModelCommandListener myModelListener = new MyModelCommandListener();
   private MyModelRepositoryListener myModelRepositoryListener = new MyModelRepositoryListener();
@@ -49,7 +51,8 @@ public class DataTreeChangesNotifier {
   }
 
   public void startListening(DataNode root) {
-    ModelAccess.instance().addCommandListener(myCommandListener);
+    
+    CommandProcessor.getInstance().addCommandListener(myCommandNotifier);
 
     for (DataNode node : root.getDescendantsByDataClass(NodeNodeData.class)) {
       NodeNodeData nodeData = (NodeNodeData) node.getData();
@@ -72,7 +75,7 @@ public class DataTreeChangesNotifier {
   }
 
   public void stopListening() {
-    ModelAccess.instance().removeCommandListener(myCommandListener);
+    CommandProcessor.getInstance().removeCommandListener(myCommandNotifier);
 
     myNodes.clear();
     myModels.clear();
@@ -115,8 +118,8 @@ public class DataTreeChangesNotifier {
     }
   }
 
-  private class MyCommandListener extends ModelAccessAdapter {
-    public void commandFinished() {
+  private class MyCommandListener extends CommandAdapter {
+    public void commandFinished(CommandEvent event) {
       if (!myChanged) return;
       myChanged = false;
       myTree.changed();

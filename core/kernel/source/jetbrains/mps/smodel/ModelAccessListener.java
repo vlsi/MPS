@@ -17,8 +17,6 @@
 package jetbrains.mps.smodel;
 
 public interface ModelAccessListener {
-  void commandStarted();
-
   /**
    * This should be used in case you need to access nodes and references
    * You shouldn't change anything in model here
