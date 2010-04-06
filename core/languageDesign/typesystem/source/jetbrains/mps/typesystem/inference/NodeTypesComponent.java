@@ -1135,43 +1135,43 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private class MyModelListener implements SModelCommandListener {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent event : events) {
-        event.accept(new SModelEventVisitorAdapter() {
-
-          public void visitChildEvent(SModelChildEvent event) {
-            markDependentNodesForInvalidation(event.getChild(), false);
-            markDependentNodesForInvalidation(event.getParent(), false);
-
-            markDependentNodesForInvalidation(event.getChild(), true);
-            markDependentNodesForInvalidation(event.getParent(), true);
-            if (true) {
-              List<SReference> references = new ArrayList<SReference>();
-              SNode child = event.getChild();
-              references.addAll(child.getReferences());
-              for (SNode descendant : child.getDescendants()) {
-                references.addAll(descendant.getReferences());
-              }
-              for (SReference reference : references) {
-                SNode targetNode = reference.getTargetNode();
-                if (targetNode != null) {
-                  markDependentNodesForInvalidation(targetNode, true);
-                }
-              }
-            }
-          }
-
-          public void visitReferenceEvent(SModelReferenceEvent event) {
-            markDependentNodesForInvalidation(event.getReference().getSourceNode(), false);
-            markDependentNodesForInvalidation(event.getReference().getSourceNode(), true);
-            if (event.isAdded()) {
-              markDependentNodesForInvalidation(event.getReference().getTargetNode(), true);
-            }
-          }
-
-          public void visitPropertyEvent(SModelPropertyEvent event) {
-            markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
-          }
-        });
+        event.accept(new MySModelEventVisitorAdapter());
       }
+    }
+  }
+
+  private class MySModelEventVisitorAdapter extends SModelEventVisitorAdapter {
+    public void visitChildEvent(SModelChildEvent event) {
+      markDependentNodesForInvalidation(event.getChild(), false);
+      markDependentNodesForInvalidation(event.getParent(), false);
+
+      markDependentNodesForInvalidation(event.getChild(), true);
+      markDependentNodesForInvalidation(event.getParent(), true);
+
+      List<SReference> references = new ArrayList<SReference>();
+      SNode child = event.getChild();
+      references.addAll(child.getReferences());
+      for (SNode descendant : child.getDescendants()) {
+        references.addAll(descendant.getReferences());
+      }
+      for (SReference reference : references) {
+        SNode targetNode = reference.getTargetNode();
+        if (targetNode != null) {
+          markDependentNodesForInvalidation(targetNode, true);
+        }
+      }
+    }
+
+    public void visitReferenceEvent(SModelReferenceEvent event) {
+      markDependentNodesForInvalidation(event.getReference().getSourceNode(), false);
+      markDependentNodesForInvalidation(event.getReference().getSourceNode(), true);
+      if (!event.isAdded()) return;
+      
+      markDependentNodesForInvalidation(event.getReference().getTargetNode(), true);
+    }
+
+    public void visitPropertyEvent(SModelPropertyEvent event) {
+      markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
     }
 
     private void markDependentNodesForInvalidation(SNode eventNode, boolean nonTypesystem) {

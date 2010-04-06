@@ -78,9 +78,8 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
       public void eventsHappenedInCommand(List<SModelEvent> events) {
         for (SModelEvent e : events) {
-          if (Language.getModelAspect(e.getModelDescriptor()) == LanguageAspect.STRUCTURE) {
-            invalidateCache();
-          }
+          if (LanguageAspect.STRUCTURE.is(e.getModelDescriptor())) continue;
+          invalidateCache();
         }
       }
     });

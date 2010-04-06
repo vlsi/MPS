@@ -89,21 +89,21 @@ public class DataTreeChangesNotifier {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent event : events) {
         if (event.getModelDescriptor() == null) continue;
-        if (myModels.contains(event.getModelDescriptor().getSModelReference())) {
-          if (event instanceof SModelRootEvent) {
-            SModelRootEvent modelRootEvent = (SModelRootEvent) event;
-            SNodePointer rootPointer = new SNodePointer(modelRootEvent.getRoot());
-            if (modelRootEvent.isRemoved() && myNodes.contains(rootPointer)) {
-              myChanged = true;
-              return;
-            }
-          } else if (event instanceof SModelChildEvent) {
-            SModelChildEvent modelChildEvent = (SModelChildEvent) event;
-            SNodePointer childPointer = new SNodePointer(modelChildEvent.getChild());
-            if (modelChildEvent.isRemoved() && myNodes.contains(childPointer)) {
-              myChanged = true;
-              return;
-            }
+        if (!myModels.contains(event.getModelDescriptor().getSModelReference())) continue;
+
+        if (event instanceof SModelRootEvent) {
+          SModelRootEvent modelRootEvent = (SModelRootEvent) event;
+          SNodePointer rootPointer = new SNodePointer(modelRootEvent.getRoot());
+          if (modelRootEvent.isRemoved() && myNodes.contains(rootPointer)) {
+            myChanged = true;
+            return;
+          }
+        } else if (event instanceof SModelChildEvent) {
+          SModelChildEvent modelChildEvent = (SModelChildEvent) event;
+          SNodePointer childPointer = new SNodePointer(modelChildEvent.getChild());
+          if (modelChildEvent.isRemoved() && myNodes.contains(childPointer)) {
+            myChanged = true;
+            return;
           }
         }
       }

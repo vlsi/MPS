@@ -160,7 +160,6 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     }
   }
 
-
   private class MyCommandListener implements SModelCommandListener {
     public void eventsHappenedInCommand(final List<SModelEvent> events) {
       SwingUtilities.invokeLater(new Runnable() {
