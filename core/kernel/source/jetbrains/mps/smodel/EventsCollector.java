@@ -28,8 +28,6 @@ import java.lang.reflect.Proxy;
 import java.util.*;
 
 public class EventsCollector {
-  private static final Logger LOG = Logger.getLogger(EventsCollector.class);
-
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private SModelListener myListener = createCommandEventsCollector();
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
