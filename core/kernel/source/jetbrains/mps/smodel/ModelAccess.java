@@ -382,33 +382,39 @@ public class ModelAccess {
   }
 
   private void onCommandStarted() {
+    ArrayList<ModelAccessListener> listeners;
     synchronized (myListenersLock) {
-      for (ModelAccessListener l : myListeners) {
-        try {
-          l.commandStarted();
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
+      listeners = new ArrayList<ModelAccessListener>(myListeners);
+    }
+
+    for (ModelAccessListener l : listeners) {
+      try {
+        l.commandStarted();
+      } catch (Throwable t) {
+        LOG.error(t);
       }
     }
   }
 
   private void onCommandFinished() {
+    ArrayList<ModelAccessListener> listeners;
     synchronized (myListenersLock) {
-      for (ModelAccessListener l : myListeners) {
-        try {
-          l.beforeCommandFinished();
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
+      listeners = new ArrayList<ModelAccessListener>(myListeners);
+    }
+    
+    for (ModelAccessListener l : listeners) {
+      try {
+        l.beforeCommandFinished();
+      } catch (Throwable t) {
+        LOG.error(t);
       }
+    }
 
-      for (ModelAccessListener l : myListeners) {
-        try {
-          l.commandFinished();
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
+    for (ModelAccessListener l : listeners) {
+      try {
+        l.commandFinished();
+      } catch (Throwable t) {
+        LOG.error(t);
       }
     }
   }
