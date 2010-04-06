@@ -384,20 +384,17 @@
         </node>
       </node>
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="933643154465854521">
-        <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="933643154465854523">
-          <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7870321878390045251">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1510949579268158036">
-              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1510949579268158037">
-                <property name="name:3" value="i12" />
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1510949579268158038" />
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1510949579268158040">
-                  <property name="value:3" value="1" />
-                  <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateCallMacro:2" id="1510949579268158045">
-                    <link role="template:2" targetNodeId="5857536350883030947" resolveInfo="process42" />
-                    <node role="actualArgument:2" type="jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression:2" id="1510949579268158046">
-                      <link role="patternVar:2" targetNodeId="933643154465860963" resolveInfo="#ref" />
-                    </node>
-                  </node>
+        <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="6509983489805125463">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="6509983489805125466">
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6509983489805125465">
+              <property name="value:3" value="12" />
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6509983489805214621">
+              <property name="value:3" value="1" />
+              <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateCallMacro:2" id="6509983489805214623">
+                <link role="template:2" targetNodeId="5857536350883030947" resolveInfo="process42" />
+                <node role="actualArgument:2" type="jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression:2" id="6509983489805214624">
+                  <link role="patternVar:2" targetNodeId="933643154465860963" resolveInfo="#ref" />
                 </node>
               </node>
             </node>

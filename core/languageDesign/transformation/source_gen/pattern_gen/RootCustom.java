@@ -30,12 +30,15 @@ public class RootCustom {
         // myWork1true myWork1 
         int var12 = 175 * (1 + e);
       }
+      {
+        // myWork2true myWork2 
+        int var12 = 175 * (1 + e);
+      }
       int e33 = 42;
       int e32 = (22 + "myWork1".length());
       int e31 = 58 + ("extraWork".length());
-      int e30 = 
-      {
-      };
+      int e30 = 42;
+      int e29 = (12 + 58 + ("myWork2".length()));
     }
   }
 }
