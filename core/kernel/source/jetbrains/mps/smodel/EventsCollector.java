@@ -28,10 +28,6 @@ import java.lang.reflect.Proxy;
 import java.util.*;
 
 public class EventsCollector {
-  private static final Logger LOG = Logger.getLogger(EventsCollector.class);
-
-  private static CommandListenersSupport ourListenersSupport = new CommandListenersSupport();
-
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private SModelListener myListener = createCommandEventsCollector();
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
@@ -43,9 +39,9 @@ public class EventsCollector {
 
   public EventsCollector() {
     myCommandProcessor = CommandProcessor.getInstance();
-    myCurrentCommand = myCommandProcessor.getCurrentCommand();
 
     ModelAccess.instance().addCommandListener(myModelAccessListener);
+    myCurrentCommand = myCommandProcessor.getCurrentCommand();
   }
 
   private SModelListener createCommandEventsCollector() {
@@ -131,113 +127,13 @@ public class EventsCollector {
     }
   }
 
-  private static class CommandListenersSupport {
-    private final Object myLock = new Object();
-    private Set<CommandListener> myListeners = new LinkedHashSet<CommandListener>();
-
-    private CommandListenersSupport() {
-      CommandProcessor.getInstance().addCommandListener(new MyListener());
-    }
-
-    public void addCommandListener(CommandListener l) {
-      synchronized (myLock) {
-        myListeners.add(l);
-      }
-    }
-
-    public void removeCommandListener(CommandListener l) {
-      synchronized (myLock) {
-        myListeners.remove(l);
-      }
-    }
-
-    private void fireCommandStarted(CommandEvent e) {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.commandStarted(e);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
-
-    private void fireBeforeCommandFinished(CommandEvent e) {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.beforeCommandFinished(e);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
-
-    private void fireCommandFinished(CommandEvent e) {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.commandFinished(e);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
-
-    private void fireUndoTransparentActionStarted() {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.undoTransparentActionStarted();
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
-
-    private void fireUndoTransparentActionFinished() {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.undoTransparentActionFinished();
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
-
-    private class MyListener implements CommandListener {
-      public void commandStarted(CommandEvent event) {
-        fireCommandStarted(event);
-      }
-
-      public void beforeCommandFinished(CommandEvent event) {
-        fireBeforeCommandFinished(event);
-      }
-
-      public void commandFinished(CommandEvent event) {
-        fireCommandFinished(event);
-      }
-
-      public void undoTransparentActionStarted() {
-        fireUndoTransparentActionStarted();
-      }
-
-      public void undoTransparentActionFinished() {
-        fireUndoTransparentActionFinished();
-      }
-    }
-  }
-
   private class MyModelAccessAdapter extends ModelAccessAdapter {
     public void commandStarted() {
       myEvents.clear();
       myCurrentCommand = myCommandProcessor.getCurrentCommand();
+      if (myCurrentCommand==null){
+        return;
+      }
     }
 
     public void beforeCommandFinished() {
