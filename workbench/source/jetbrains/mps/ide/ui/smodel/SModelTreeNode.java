@@ -625,9 +625,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   private class MyEventsCollector extends EventsCollector {
     protected void eventsHappened(List<SModelEvent> events) {
-      if (myTreeUpdater != null) {
-        myTreeUpdater.eventsHappenedInCommand(events);
-      }
+      if (myTreeUpdater == null) return;
+      myTreeUpdater.eventsHappenedInCommand(events);
     }
   }
 

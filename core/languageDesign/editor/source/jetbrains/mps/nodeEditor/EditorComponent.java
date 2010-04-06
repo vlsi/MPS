@@ -2861,7 +2861,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private class MySimpleModelListener extends SModelAdapter {
-    @Override
     public void modelReplaced(final SModelDescriptor sm) {
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
       if (myNode != null) {
@@ -2875,11 +2874,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private class MyEventsCollector extends EventsCollector {
-    @Override
-    public void flush() {
-      super.flush();
-    }
-
     protected void eventsHappened(List<SModelEvent> events) {
       handleEvents(events);
     }
@@ -2893,7 +2887,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     public void cellSynchronizedWithModel(EditorCell cell);
   }
 
-  @Override
   public void repaint() {
     super.repaint();
     if (myLeftHighlighter != null) {

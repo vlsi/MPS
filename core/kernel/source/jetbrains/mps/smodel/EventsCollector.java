@@ -124,6 +124,7 @@ public class EventsCollector {
   }
 
   protected void eventsHappened(List<SModelEvent> events) {
+
   }
 
   public void dispose() {
@@ -136,13 +137,11 @@ public class EventsCollector {
     myDisposed = true;
   }
 
-
   private void checkDisposed() {
     if (myDisposed) {
       throw new IllegalStateException("Disposed events collector was called: " + getClass());
     }
   }
-
 
   private static class CommandListenersSupport {
     private final Object myLock = new Object();
