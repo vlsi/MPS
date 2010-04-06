@@ -381,6 +381,12 @@ public class ModelAccess {
     }
   }
 
+  private void onCommandStarted() {
+    for (ModelAccessListener l : myListeners) {
+      l.commandStarted();
+    }
+  }
+
   private void onCommandFinished() {
     for (ModelAccessListener l : myListeners) {
       l.beforeCommandFinished();
@@ -401,6 +407,7 @@ public class ModelAccess {
     public void run() {
       runWriteAction(new Runnable() {
         public void run() {
+          onCommandStarted();
           myRunnable.run();
           onCommandFinished();
         }
@@ -416,6 +423,7 @@ public class ModelAccess {
     }
 
     public T compute() {
+      onCommandStarted();
       T result = myComputable.compute();
       onCommandFinished();
       return result;

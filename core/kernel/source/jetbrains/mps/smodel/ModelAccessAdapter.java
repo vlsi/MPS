@@ -17,6 +17,10 @@
 package jetbrains.mps.smodel;
 
 public class ModelAccessAdapter implements ModelAccessListener {
+  public void commandStarted() {
+
+  }
+
   public void beforeCommandFinished() {
 
   }
