@@ -369,31 +369,43 @@ public class ModelAccess {
   private List<ModelAccessListener> myListeners = new ArrayList<ModelAccessListener>();
   private final Object myListenersLock = new Object();
 
-  public void addCommandListener(ModelAccessListener l){
-    synchronized (myListenersLock){
+  public void addCommandListener(ModelAccessListener l) {
+    synchronized (myListenersLock) {
       myListeners.add(l);
     }
   }
 
-  public void removeCommandListener(ModelAccessListener l){
-    synchronized (myListenersLock){
+  public void removeCommandListener(ModelAccessListener l) {
+    synchronized (myListenersLock) {
       myListeners.remove(l);
     }
   }
 
   private void onCommandStarted() {
     for (ModelAccessListener l : myListeners) {
-      l.commandStarted();
+      try {
+        l.commandStarted();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   private void onCommandFinished() {
     for (ModelAccessListener l : myListeners) {
-      l.beforeCommandFinished();
+      try {
+        l.beforeCommandFinished();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
 
     for (ModelAccessListener l : myListeners) {
-      l.commandFinished();
+      try {
+        l.commandFinished();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
