@@ -31,7 +31,6 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.SwingUtilities;
 import java.io.IOException;
 import java.util.List;
-import java.util.WeakHashMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -169,35 +168,36 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
               for (SModelEvent e : events) {
-                e.accept(new SModelEventVisitorAdapter() {
-                  public void visitRootEvent(SModelRootEvent event) {
-                    if (event.isRemoved()) {
-                      VirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getRoot()));
-                      if (vf != null) {
-                        fireBeforeFileDeletion(this, vf);
-                        fireFileDeleted(this, vf, vf.getName(), null);
-                        myVirtualFiles.remove(new SNodePointer(event.getRoot()));
-                      }
-                    }
-                  }
-
-                  public void visitPropertyEvent(SModelPropertyEvent event) {
-                    if (event.getNode().isDisposed()) {
-                      return;
-                    }
-                    VirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getNode()));
-                    if (event.getNode().isRoot() && vf != null) {
-                      fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
-                      ((MPSNodeVirtualFile) vf).updateFields();
-                      firePropertyChanged(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
-                    }
-                  }
-                });
+                e.accept(new MyModelEventVisitor());
               }
             }
           });
         }
       });
+    }
+  }
+
+  private class MyModelEventVisitor extends SModelEventVisitorAdapter {
+    public void visitRootEvent(SModelRootEvent event) {
+      if (!event.isRemoved()) return;
+
+      VirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getRoot()));
+      if (vf == null) return;
+
+      fireBeforeFileDeletion(this, vf);
+      fireFileDeleted(this, vf, vf.getName(), null);
+      myVirtualFiles.remove(new SNodePointer(event.getRoot()));
+    }
+
+    public void visitPropertyEvent(SModelPropertyEvent event) {
+      if (event.getNode().isDisposed()) return;
+
+      VirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getNode()));
+      if (!event.getNode().isRoot() || vf == null) return;
+
+      fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
+      ((MPSNodeVirtualFile) vf).updateFields();
+      firePropertyChanged(this, vf, VirtualFile.PROP_NAME, event.getOldPropertyValue(), event.getNewPropertyValue());
     }
   }
 
