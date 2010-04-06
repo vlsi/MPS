@@ -20,48 +20,59 @@ import jetbrains.mps.lang.typesystem.runtime.incremental.INodesReadListener;
 import java.util.Stack;
 
 public class NodeReadEventsCaster {
-  private static ThreadLocal<INodesReadListener> ourNodesReadListener = new ThreadLocal<INodesReadListener>();
+  private static ThreadLocal<Stack<INodesReadListener>> ourNodesReadListeners = new ThreadLocal<Stack<INodesReadListener>>();
 
   public static void fireNodeChildReadAccess(SNode node, String childRole, SNode child) {
     if (node.getModel().isLoading()) return;
 
-    if (ourNodesReadListener.get() != null) {
-      ourNodesReadListener.get().nodeChildReadAccess(node, childRole, child);
+    Stack<INodesReadListener> listeners = ourNodesReadListeners.get();
+    if (listeners != null) {
+      listeners.peek().nodeChildReadAccess(node, childRole, child);
     }
   }
 
   public static void fireNodePropertyReadAccess(SNode node, String propertyName, String value) {
     if (node.getModel().isLoading()) return;
 
-    if (ourNodesReadListener.get() != null) {
-      ourNodesReadListener.get().nodePropertyReadAccess(node, propertyName, value);
+    Stack<INodesReadListener> listeners = ourNodesReadListeners.get();
+    if (listeners != null) {
+      listeners.peek().nodePropertyReadAccess(node, propertyName, value);
     }
   }
 
   public static void fireNodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
     if (node.getModel().isLoading()) return;
 
-    if (ourNodesReadListener.get() != null) {
-      ourNodesReadListener.get().nodeReferentReadAccess(node, referentRole, referent);
+    Stack<INodesReadListener> listeners = ourNodesReadListeners.get();
+    if (listeners != null) {
+      listeners.peek().nodeReferentReadAccess(node, referentRole, referent);
     }
   }
 
   public static void fireNodeUnclassifiedReadAccess(SNode node) {
     if (node.getModel().isLoading()) return;
 
-    if (ourNodesReadListener.get() != null) {
-      ourNodesReadListener.get().nodeUnclassifiedReadAccess(node);
+    Stack<INodesReadListener> listeners = ourNodesReadListeners.get();
+    if (listeners != null) {
+      listeners.peek().nodeUnclassifiedReadAccess(node);
     }
   }
 
   public static void setNodesReadListener(INodesReadListener listener) {
-    if (ourNodesReadListener.get() != null) {
-      throw new IllegalStateException("Thread-local INodesReadListener was already specified");
+    Stack<INodesReadListener> listeners = ourNodesReadListeners.get();
+    if (listeners == null) {
+      listeners = new Stack<INodesReadListener>();
+      ourNodesReadListeners.set(listeners);
     }
-    ourNodesReadListener.set(listener);
+    listeners.push(listener);
   }
 
   public static void removeNodesReadListener() {
-    ourNodesReadListener.set(null);
+    Stack<INodesReadListener> listeners = ourNodesReadListeners.get();
+    assert listeners != null : "Trying to remove not existing listener";
+    listeners.pop();
+    if (listeners.isEmpty()) {
+      ourNodesReadListeners.set(null);
+    }
   }
 }
