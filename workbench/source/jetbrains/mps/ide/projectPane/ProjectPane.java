@@ -249,7 +249,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     manager.getToolWindow(ToolWindowId.PROJECT_VIEW).activate(new Runnable() {
       public void run() {
         if (focus) {
-          manager.getFocusManager().requestFocus(myTree, false);
+          manager.getFocusManager().requestFocus(myTree, true);
         }
       }
     }, false);
