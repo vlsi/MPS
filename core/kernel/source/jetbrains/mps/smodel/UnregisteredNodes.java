@@ -26,20 +26,24 @@ import jetbrains.mps.util.PairMap;
  */
 /*package*/ class UnregisteredNodes {
   private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
-  private static UnregisteredNodes myInstance;
+  private static UnregisteredNodes ourInstance;
 
   private final PairMap<SModelReference, SNodeId, SNode> myMap = new PairMap<SModelReference, SNodeId, SNode>();
   private final Object myLock = new Object();
 
   public static UnregisteredNodes instance() {
-    if (myInstance == null) {
-      myInstance = new UnregisteredNodes();
+    if (ourInstance == null) {
+      ourInstance = new UnregisteredNodes();
     }
-    return myInstance;
+    return ourInstance;
   }
 
   private UnregisteredNodes() {
-
+    CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
+      public void performCleanup() {
+        clear();
+      }
+    });
   }
 
   void clear() {
