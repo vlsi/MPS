@@ -28,10 +28,9 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.SNodePointer;
 import java.util.HashMap;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Condition;
 
@@ -80,14 +79,14 @@ public class ConceptEditorHelper {
     return createNewConceptAspectInstance(applicableNode, concept, md.getSModel());
   }
 
-  public static void addMultitabbedListener(final BaseMultiTab tab, final LanguageAspect aspect) {
+  public static void addMultitabbedListener(final BaseMultiTab tab, final LanguageAspect aspect, boolean listenNonRootEvents) {
     final Language language = ConceptEditorHelper.getLanguageForTab(tab);
-    tab.addNodeAdditionListener(new ConceptEditorHelper.ModelCondition(language, aspect), new ConceptEditorHelper.MultitabbedListener(tab));
+    tab.addNodeAdditionListener(new ConceptEditorHelper.ModelCondition(language, aspect), new ConceptEditorHelper.MultitabbedListener(tab, listenNonRootEvents));
   }
 
-  public static void addSingletabbedListener(final BaseSingleTab tab, final LanguageAspect aspect) {
+  public static void addSingletabbedListener(final BaseSingleTab tab, final LanguageAspect aspect, boolean listenNonRootEvents) {
     final Language language = ConceptEditorHelper.getLanguageForTab(tab);
-    tab.addNodeAdditionListener(new ConceptEditorHelper.ModelCondition(language, aspect), new ConceptEditorHelper.SingletabbedListener(tab));
+    tab.addNodeAdditionListener(new ConceptEditorHelper.ModelCondition(language, aspect), new ConceptEditorHelper.SingletabbedListener(tab, listenNonRootEvents));
   }
 
   private static Language getLanguageForTab(final AbstractLazyTab tab) {
@@ -97,9 +96,11 @@ public class ConceptEditorHelper {
 
   public static class MultitabbedListener extends SModelAdapter {
     private BaseMultiTab tab;
+    private boolean listenNonRootEvents;
 
-    public MultitabbedListener(BaseMultiTab tab) {
+    public MultitabbedListener(BaseMultiTab tab, boolean listenNonRootEvents) {
       this.tab = tab;
+      this.listenNonRootEvents = listenNonRootEvents;
     }
 
     public void referenceAdded(SModelReferenceEvent event) {
@@ -118,30 +119,38 @@ public class ConceptEditorHelper {
       }
     }
 
-    public void referenceRemoved(SModelReferenceEvent event) {
-      /*
-        SNode root = event.getReference().getSourceNode().getContainingRoot();
-        if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
-          return;
-        }
-
-        Map<SNode, IOperationContext> nodesMap = this.createNodesMap();
-
-        List<SNode> nodes = this.tab.getLoadableNodes();
-        ListSequence.fromList(nodes).removeSequence(SetSequence.fromSet(MapSequence.fromMap(nodesMap).keySet()));
-        if (ListSequence.fromList(nodes).isNotEmpty()) {
-          SNodePointer n = new SNodePointer(ListSequence.fromList(nodes).getElement(0));
-          this.tab.closeTab(n, this.tab.getIndexOfTabFor(n));
-        }
-      */
-    }
-
     private Map<SNode, IOperationContext> createNodesMap() {
       Map<SNode, IOperationContext> nodesMap = MapSequence.fromMap(new HashMap<SNode, IOperationContext>());
       for (Pair<SNode, IOperationContext> pair : ListSequence.fromList(this.tab.tryToLoadNodes())) {
         MapSequence.fromMap(nodesMap).put(pair.o1, pair.o2);
       }
       return nodesMap;
+    }
+
+    public void childAdded(SModelChildEvent event) {
+      if (!(this.listenNonRootEvents)) {
+        return;
+      }
+
+      SNode child = event.getChild();
+      if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.structure.structure.IConceptAspect"))) {
+        return;
+      }
+      if (this.tab.getLoadableNodes().contains(child)) {
+        return;
+      }
+
+      IOperationContext context = null;
+      for (Pair<SNode, IOperationContext> pair : ListSequence.fromList(this.tab.tryToLoadNodes())) {
+        if (pair.o1 == SNodeOperations.getContainingRoot(child)) {
+          context = pair.o2;
+          break;
+        }
+      }
+      if (context == null) {
+        return;
+      }
+      this.tab.addInnerTabChecked(SNodeOperations.getContainingRoot(child), context);
     }
 
     public void rootAdded(SModelRootEvent event) {
@@ -169,17 +178,22 @@ public class ConceptEditorHelper {
 
   public static class SingletabbedListener extends SModelAdapter {
     private BaseSingleTab tab;
+    private boolean listenNonRootEvents;
 
-    public SingletabbedListener(BaseSingleTab tab) {
+    public SingletabbedListener(BaseSingleTab tab, boolean listenNonRootEvents) {
       this.tab = tab;
+      this.listenNonRootEvents = listenNonRootEvents;
     }
 
     public void referenceAdded(SModelReferenceEvent event) {
       this.reinitIfNeeded(event.getReference().getSourceNode().getContainingRoot());
     }
 
-    public void referenceRemoved(SModelReferenceEvent event) {
-      this.reinitIfNeeded(event.getReference().getSourceNode().getContainingRoot());
+    public void childAdded(SModelChildEvent event) {
+      if (!(this.listenNonRootEvents)) {
+        return;
+      }
+      this.reinitIfNeeded(event.getChild());
     }
 
     public void rootAdded(SModelRootEvent event) {

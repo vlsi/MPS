@@ -64,7 +64,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public void init() {
-      ConceptEditorHelper.addSingletabbedListener(Structure_Tab.this, LanguageAspect.STRUCTURE);
+      ConceptEditorHelper.addSingletabbedListener(Structure_Tab.this, LanguageAspect.STRUCTURE, false);
     }
 
     public String getTitle() {
@@ -99,7 +99,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public void init() {
-      ConceptEditorHelper.addMultitabbedListener(Editor_Tab.this, LanguageAspect.EDITOR);
+      ConceptEditorHelper.addMultitabbedListener(Editor_Tab.this, LanguageAspect.EDITOR, false);
     }
 
     public String getTitle() {
@@ -149,7 +149,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public void init() {
-      ConceptEditorHelper.addSingletabbedListener(Constraints_Tab.this, LanguageAspect.CONSTRAINTS);
+      ConceptEditorHelper.addSingletabbedListener(Constraints_Tab.this, LanguageAspect.CONSTRAINTS, false);
     }
 
     public String getTitle() {
@@ -188,7 +188,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public void init() {
-      ConceptEditorHelper.addSingletabbedListener(Behavior_Tab.this, LanguageAspect.BEHAVIOR);
+      ConceptEditorHelper.addSingletabbedListener(Behavior_Tab.this, LanguageAspect.BEHAVIOR, false);
     }
 
     public String getTitle() {
@@ -227,7 +227,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public void init() {
-      ConceptEditorHelper.addMultitabbedListener(Typesystem_Tab.this, LanguageAspect.TYPESYSTEM);
+      ConceptEditorHelper.addMultitabbedListener(Typesystem_Tab.this, LanguageAspect.TYPESYSTEM, false);
     }
 
     public String getTitle() {
@@ -303,7 +303,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public void init() {
-      ConceptEditorHelper.addMultitabbedListener(Actions_Tab.this, LanguageAspect.ACTIONS);
+      ConceptEditorHelper.addMultitabbedListener(Actions_Tab.this, LanguageAspect.ACTIONS, true);
     }
 
     public String getTitle() {
@@ -350,7 +350,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public void init() {
-      ConceptEditorHelper.addMultitabbedListener(Refactorings_Tab.this, LanguageAspect.REFACTORINGS);
+      ConceptEditorHelper.addMultitabbedListener(Refactorings_Tab.this, LanguageAspect.REFACTORINGS, false);
     }
 
     public String getTitle() {
@@ -397,7 +397,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public void init() {
-      ConceptEditorHelper.addMultitabbedListener(Intentions_Tab.this, LanguageAspect.INTENTIONS);
+      ConceptEditorHelper.addMultitabbedListener(Intentions_Tab.this, LanguageAspect.INTENTIONS, false);
     }
 
     public String getTitle() {
@@ -444,7 +444,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public void init() {
-      ConceptEditorHelper.addMultitabbedListener(Find_Usages_Tab.this, LanguageAspect.FIND_USAGES);
+      ConceptEditorHelper.addMultitabbedListener(Find_Usages_Tab.this, LanguageAspect.FIND_USAGES, false);
     }
 
     public String getTitle() {
@@ -495,7 +495,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public void init() {
-      ConceptEditorHelper.addSingletabbedListener(Data_Flow_Tab.this, LanguageAspect.DATA_FLOW);
+      ConceptEditorHelper.addSingletabbedListener(Data_Flow_Tab.this, LanguageAspect.DATA_FLOW, false);
     }
 
     public String getTitle() {
@@ -677,7 +677,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public void init() {
-      ConceptEditorHelper.addSingletabbedListener(Textgen_Tab.this, LanguageAspect.TEXT_GEN);
+      ConceptEditorHelper.addSingletabbedListener(Textgen_Tab.this, LanguageAspect.TEXT_GEN, false);
     }
 
     public String getTitle() {
