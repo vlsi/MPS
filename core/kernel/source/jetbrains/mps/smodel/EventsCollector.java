@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
@@ -23,7 +22,6 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.logging.Logger;
 
-import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -37,7 +35,7 @@ public class EventsCollector {
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private SModelListener myListener = createCommandEventsCollector();
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
-  private CommandListener myCommandListener;
+  private ModelAccessListener myModelAccessListener = new MyModelAccessAdapter();
   private CommandProcessor myCommandProcessor;
   private boolean myDisposed;
 
@@ -47,17 +45,7 @@ public class EventsCollector {
     myCommandProcessor = CommandProcessor.getInstance();
     myCurrentCommand = myCommandProcessor.getCurrentCommand();
 
-    ourListenersSupport.addCommandListener(myCommandListener = new CommandAdapter() {
-      public void commandStarted(CommandEvent event) {
-        myEvents.clear();
-        myCurrentCommand = myCommandProcessor.getCurrentCommand();
-      }
-
-      public void beforeCommandFinished(CommandEvent event) {
-        flush();
-        myCurrentCommand = null;
-      }
-    });
+    ModelAccess.instance().addCommandListener(myModelAccessListener);
   }
 
   private SModelListener createCommandEventsCollector() {
@@ -133,7 +121,7 @@ public class EventsCollector {
     for (SModelDescriptor sm : new LinkedHashSet<SModelDescriptor>(myModelDescriptors)) {
       remove(sm);
     }
-    ourListenersSupport.removeCommandListener(myCommandListener);
+    ModelAccess.instance().removeCommandListener(myModelAccessListener);
     myDisposed = true;
   }
 
@@ -243,6 +231,18 @@ public class EventsCollector {
       public void undoTransparentActionFinished() {
         fireUndoTransparentActionFinished();
       }
+    }
+  }
+
+  private class MyModelAccessAdapter extends ModelAccessAdapter {
+    public void commandStarted() {
+      myEvents.clear();
+      myCurrentCommand = myCommandProcessor.getCurrentCommand();
+    }
+
+    public void beforeCommandFinished() {
+      flush();
+      myCurrentCommand = null;
     }
   }
 }
