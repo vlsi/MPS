@@ -36,6 +36,7 @@ public class NodeSubstitutePatternEditor {
 
   private String myCachedText = "";
   private int myCachedCaretPosition;
+  private boolean myReturnEmptyPattern;
 
   public void setText(String text) {
     if (myEditorActivated) {
@@ -69,6 +70,10 @@ public class NodeSubstitutePatternEditor {
 
   public boolean processKeyPressed(KeyEvent keyEvent) {
     if (myEditorActivated) {
+      if (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown()) {
+        myReturnEmptyPattern = !myReturnEmptyPattern;
+        return true;
+      }
       return myEditorWindow.processKeyPressed(keyEvent);
     }
     return false;
@@ -82,6 +87,9 @@ public class NodeSubstitutePatternEditor {
   }
 
   public String getPattern() {
+    if (myReturnEmptyPattern) {
+      return "";
+    }
     if (myEditorActivated) {
       TextLine textLine = myEditorWindow.myTextLine;
       int caretPosition = textLine.getCaretPosition();

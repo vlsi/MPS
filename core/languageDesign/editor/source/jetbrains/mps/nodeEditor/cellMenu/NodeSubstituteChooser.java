@@ -460,7 +460,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       return true;
     }
 
-    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER || (keyEvent.getKeyCode() == KeyEvent.VK_SPACE && keyEvent.isControlDown())) {
+    if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
       if (!myMenuEmpty) {
         doSubstituteSelection();
       }
