@@ -369,6 +369,29 @@ public class ModelAccess {
   private List<ModelAccessListener> myListeners = new ArrayList<ModelAccessListener>();
   private final Object myListenersLock = new Object();
 
+  private final Object myCommandLevelLock = new Object();
+  private int myCommandLevel = 0;
+
+  private void incCommandLevel() {
+    synchronized (myCommandLevelLock) {
+      if (myCommandLevel != 0) {
+        LOG.error("command level>0", new Exception());
+      } else {
+        onCommandStarted();
+      }
+      myCommandLevel++;
+    }
+  }
+
+  private void decCommandLevel() {
+    synchronized (myCommandLevelLock) {
+      myCommandLevel--;
+      if (myCommandLevel == 0) {
+        onCommandFinished();
+      }
+    }
+  }
+
   public void addCommandListener(ModelAccessListener l) {
     synchronized (myListenersLock) {
       myListeners.add(l);
@@ -401,7 +424,7 @@ public class ModelAccess {
     synchronized (myListenersLock) {
       listeners = new ArrayList<ModelAccessListener>(myListeners);
     }
-    
+
     for (ModelAccessListener l : listeners) {
       try {
         l.beforeCommandFinished();
@@ -429,9 +452,9 @@ public class ModelAccess {
     public void run() {
       runWriteAction(new Runnable() {
         public void run() {
-          onCommandStarted();
+          incCommandLevel();
           myRunnable.run();
-          onCommandFinished();
+          decCommandLevel();
         }
       });
     }
@@ -445,9 +468,9 @@ public class ModelAccess {
     }
 
     public T compute() {
-      onCommandStarted();
+      incCommandLevel();
       T result = myComputable.compute();
-      onCommandFinished();
+      decCommandLevel();
       return result;
     }
   }
