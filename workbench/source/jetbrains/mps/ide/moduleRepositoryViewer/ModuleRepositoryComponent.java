@@ -30,10 +30,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.MPSModuleRepositoryListener;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 
@@ -143,16 +140,16 @@ public class ModuleRepositoryComponent {
     }
   }
 
-  private class DeferringEventHandler extends CommandAdapter implements MPSModuleRepositoryListener {
+  private class DeferringEventHandler extends ModelAccessAdapter implements MPSModuleRepositoryListener {
     private boolean myDeferredUpdate = false;
 
     public void installListeners() {
-      CommandProcessor.getInstance().addCommandListener(this);
+      ModelAccess.instance().addCommandListener(this);
       MPSModuleRepository.getInstance().addRepositoryListener(this);
     }
 
     public void unInstallListeners() {
-      CommandProcessor.getInstance().removeCommandListener(this);
+      ModelAccess.instance().removeCommandListener(this);
       MPSModuleRepository.getInstance().removeRepositoryListener(this);
     }
 
@@ -168,9 +165,9 @@ public class ModuleRepositoryComponent {
       }
     }
 
-    public void commandFinished(CommandEvent event) {
+    public void commandFinished() {
       if (!myDeferredUpdate) return;
-      
+
       myDeferredUpdate = false;
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
