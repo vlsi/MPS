@@ -31,6 +31,8 @@ import com.intellij.openapi.components.ApplicationComponent;
 
 
 class ImmatureReferences implements ApplicationComponent {
+  private SModelRepositoryAdapter myReposListener = new MySModelRepositoryAdapter();
+  private ModelAccessAdapter myModelAccessListener = new MyModelAccessAdapter();
 
   static ImmatureReferences getInstance() {
     return ApplicationManager.getApplication().getComponent(ImmatureReferences.class);
@@ -55,11 +57,8 @@ class ImmatureReferences implements ApplicationComponent {
   }
 
   public void initComponent() {
-    mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
-      public void modelRemoved(SModelDescriptor modelDescriptor) {
-        myReferences.remove(modelDescriptor.getSModelReference());
-      }
-    });
+    mySModelRepository.addModelRepositoryListener(myReposListener);
+    ModelAccess.instance().addCommandListener(myModelAccessListener);
   }
 
   public void cleanup() {
@@ -72,7 +71,8 @@ class ImmatureReferences implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-
+    mySModelRepository.removeModelRepositoryListener(myReposListener);
+    ModelAccess.instance().removeCommandListener(myModelAccessListener);
   }
 
   void add(SReferenceBase ref) {
@@ -104,5 +104,17 @@ class ImmatureReferences implements ApplicationComponent {
     }
     myReferencesSetPool.add(pooledSet);
     return usedSet;
+  }
+
+  private class MyModelAccessAdapter extends ModelAccessAdapter {
+    public void commandFinished() {
+      cleanup();
+    }
+  }
+
+  private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
+    public void modelRemoved(SModelDescriptor modelDescriptor) {
+      myReferences.remove(modelDescriptor.getSModelReference());
+    }
   }
 }

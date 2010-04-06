@@ -15,31 +15,29 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.cleanup.CleanupListener;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.PairMap;
 
-/**
- * Igor Alshannikov
- * Jul 26, 2007
- */
-/*package*/ class UnregisteredNodes {
+class UnregisteredNodes {
   private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
-  private static UnregisteredNodes myInstance;
+  private static UnregisteredNodes ourInstance;
 
   private final PairMap<SModelReference, SNodeId, SNode> myMap = new PairMap<SModelReference, SNodeId, SNode>();
   private final Object myLock = new Object();
 
   public static UnregisteredNodes instance() {
-    if (myInstance == null) {
-      myInstance = new UnregisteredNodes();
+    if (ourInstance == null) {
+      ourInstance = new UnregisteredNodes();
     }
-    return myInstance;
+    return ourInstance;
   }
 
   private UnregisteredNodes() {
-
+    ModelAccess.instance().addCommandListener(new ModelAccessAdapter(){
+      public void commandFinished() {
+        clear();
+      }
+    });
   }
 
   void clear() {

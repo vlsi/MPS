@@ -389,9 +389,6 @@ public class ModelAccess {
     for (ModelAccessListener l : myListeners) {
       l.commandFinished();
     }
-
-    ImmatureReferences.getInstance().cleanup();
-    UnregisteredNodes.instance().clear();
   }
 
   private class CommandRunnable implements Runnable {
