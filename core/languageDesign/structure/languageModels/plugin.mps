@@ -3869,7 +3869,7 @@
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="2600311093289626387" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2600311093289626127">
-                    <link role="baseMethodDeclaration:3" targetNodeId="27.~BaseMultitabbedTab.addInnerTabChecked(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="addInnerTabChecked" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="27.~BaseMultitabbedTab.addEditableNode(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="addEditableNode" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2600311093289626128">
                       <link role="variableDeclaration:3" targetNodeId="2600311093289626118" resolveInfo="n" />
                     </node>
@@ -4137,7 +4137,7 @@
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="3989978367392598338" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3989978367392598339">
-                <link role="baseMethodDeclaration:3" targetNodeId="27.~BaseMultitabbedTab.addInnerTabChecked(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="addInnerTabChecked" />
+                <link role="baseMethodDeclaration:3" targetNodeId="27.~BaseMultitabbedTab.addEditableNode(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="addEditableNode" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3989978367392598370">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3989978367392598340">
                     <link role="variableDeclaration:3" targetNodeId="3989978367392598277" resolveInfo="root" />
@@ -4299,7 +4299,7 @@
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="2600311093289626453" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2600311093289626303">
-                <link role="baseMethodDeclaration:3" targetNodeId="27.~BaseMultitabbedTab.addInnerTabChecked(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="addInnerTabChecked" />
+                <link role="baseMethodDeclaration:3" targetNodeId="27.~BaseMultitabbedTab.addEditableNode(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="addEditableNode" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2600311093289626304">
                   <link role="variableDeclaration:3" targetNodeId="2600311093289626247" resolveInfo="root" />
                 </node>

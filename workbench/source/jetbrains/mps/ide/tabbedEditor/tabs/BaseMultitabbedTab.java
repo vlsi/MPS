@@ -77,7 +77,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     super(tabbedEditor, baseNode);
   }
 
-  public void addInnerTabChecked(SNode loadableNode, IOperationContext operationContext) {
+  public void addEditableNode(SNode loadableNode, IOperationContext operationContext) {
     if (getLoadableNodes().size() == 0) {
       tryToInitComponent();
       getTabbedEditor().getTabbedPane().updateTabComponent(this);

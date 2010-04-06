@@ -115,7 +115,7 @@ public class ConceptEditorHelper {
       ListSequence.fromList(nodes).removeSequence(ListSequence.fromList(this.tab.getLoadableNodes()));
       if (ListSequence.fromList(nodes).isNotEmpty()) {
         SNode n = ListSequence.fromList(nodes).getElement(0);
-        this.tab.addInnerTabChecked(n, MapSequence.fromMap(nodesMap).get(n));
+        this.tab.addEditableNode(n, MapSequence.fromMap(nodesMap).get(n));
       }
     }
 
@@ -150,7 +150,7 @@ public class ConceptEditorHelper {
       if (context == null) {
         return;
       }
-      this.tab.addInnerTabChecked(SNodeOperations.getContainingRoot(child), context);
+      this.tab.addEditableNode(SNodeOperations.getContainingRoot(child), context);
     }
 
     public void rootAdded(SModelRootEvent event) {
@@ -172,7 +172,7 @@ public class ConceptEditorHelper {
       if (context == null) {
         return;
       }
-      this.tab.addInnerTabChecked(root, context);
+      this.tab.addEditableNode(root, context);
     }
   }
 
