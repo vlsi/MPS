@@ -33,6 +33,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.Generator;
 
 public class ConceptEditorHelper {
   public static IScope getScope(ILazyTab tab) {
@@ -82,6 +83,11 @@ public class ConceptEditorHelper {
   public static void addMultitabbedListener(final BaseMultiTab tab, final LanguageAspect aspect, boolean listenNonRootEvents) {
     final Language language = ConceptEditorHelper.getLanguageForTab(tab);
     tab.addNodeAdditionListener(new ConceptEditorHelper.ModelCondition(language, aspect), new ConceptEditorHelper.MultitabbedListener(tab, listenNonRootEvents));
+  }
+
+  public static void addGeneratorListener(final BaseMultiTab tab) {
+    final Language language = ConceptEditorHelper.getLanguageForTab(tab);
+    tab.addNodeAdditionListener(new ConceptEditorHelper.GeneratorCondition(language), new ConceptEditorHelper.MultitabbedListener(tab, true));
   }
 
   public static void addSingletabbedListener(final BaseSingleTab tab, final LanguageAspect aspect, boolean listenNonRootEvents) {
@@ -223,6 +229,23 @@ public class ConceptEditorHelper {
 
     public boolean met(SModelDescriptor modelDescriptor) {
       return Language.getLanguageFor(modelDescriptor) == this.myLanguage && Language.getModelAspect(modelDescriptor) == this.myAspect;
+    }
+  }
+
+  public static class GeneratorCondition implements Condition<SModelDescriptor> {
+    private Language myLanguage;
+
+    public GeneratorCondition(Language language) {
+      this.myLanguage = language;
+    }
+
+    public boolean met(SModelDescriptor modelDescriptor) {
+      for (Generator generator : ListSequence.fromList(this.myLanguage.getGenerators())) {
+        if (generator.getOwnTemplateModels().contains(modelDescriptor)) {
+          return true;
+        }
+      }
+      return false;
     }
   }
 }

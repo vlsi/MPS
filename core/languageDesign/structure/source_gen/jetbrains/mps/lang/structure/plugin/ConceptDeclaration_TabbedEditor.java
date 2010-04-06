@@ -38,7 +38,6 @@ import com.intellij.ide.DataManager;
 import jetbrains.mps.workbench.dialogs.project.creation.NewGeneratorDialog;
 import jetbrains.mps.ide.actions.MappingDialog;
 import jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   public ConceptDeclaration_TabbedEditor(IOperationContext operationContext, SNode node) {
@@ -530,6 +529,11 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   public static class Generator_Tab extends BaseMultiTab {
     public Generator_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
       super(tabbedEditor, baseNode, adapterClass);
+      this.init();
+    }
+
+    public void init() {
+      ConceptEditorHelper.addGeneratorListener(Generator_Tab.this);
     }
 
     public String getTitle() {
@@ -665,7 +669,6 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
           }
         }
       });
-      context.getComponent(MPSEditorOpener.class).openNode(result.value);
       return result.value;
     }
   }
