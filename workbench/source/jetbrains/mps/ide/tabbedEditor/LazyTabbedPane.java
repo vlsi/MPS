@@ -75,6 +75,11 @@ public class LazyTabbedPane extends JPanel implements Disposable {
     return Collections.unmodifiableList(myLazyTabs);
   }
 
+  public void updateTabComponent(ILazyTab tab) {
+    int index = myLazyTabs.indexOf(tab);
+    myTabbedPane.setComponentAt(index, tab.getComponent());
+  }
+
   public int getCurrentTabIndex() {
     return getTabs().indexOf(getCurrentTab());
   }
@@ -91,41 +96,43 @@ public class LazyTabbedPane extends JPanel implements Disposable {
     int index = myLazyTabs.indexOf(tab);
     if (tab.getComponent() == null) {
       myTabbedPane.setForegroundAt(index, Color.GRAY);
-    } else {
-      RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
-      if (statusManager == null) {
-        myTabbedPane.setForegroundAt(index, Color.BLACK);
+      return;
+    }
+
+    RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(myTabbedEditor.getOperationContext().getProject());
+    if (statusManager == null) {
+      myTabbedPane.setForegroundAt(index, Color.BLACK);
+      return;
+    }
+
+    boolean hasNotChanged = false;
+    boolean hasModified = false;
+    boolean hasAdded = false;
+    for (EditorComponent editorComponent : tab.getEditorComponents()) {
+      SNode node = editorComponent.getEditedNode();
+      if (node == null) {
+        continue;
+      }
+      FileStatus status = statusManager.getStatus(node);
+      if (status == FileStatus.ADDED) {
+        hasAdded = true;
+      } else if (status == FileStatus.MODIFIED) {
+        hasModified = true;
       } else {
-        boolean hasNotChanged = false;
-        boolean hasModified = false;
-        boolean hasAdded = false;
-        for (EditorComponent editorComponent : tab.getEditorComponents()) {
-          SNode node = editorComponent.getEditedNode();
-          if (node == null) {
-            continue;
-          }
-          FileStatus status = statusManager.getStatus(node);
-          if (status == FileStatus.ADDED) {
-            hasAdded = true;
-          } else if (status == FileStatus.MODIFIED) {
-            hasModified = true;
-          } else {
-            hasNotChanged = true;
-          }
-        }
-        FileStatus status = FileStatus.NOT_CHANGED;
-        if (hasModified) {
-          status = FileStatus.MODIFIED;
-        } else if (hasAdded) {
-          if (hasNotChanged) {
-            status = FileStatus.MODIFIED;
-          } else {
-            status = FileStatus.ADDED;
-          }
-        }
-        myTabbedPane.setForegroundAt(index, status.getColor());
+        hasNotChanged = true;
       }
     }
+    FileStatus status = FileStatus.NOT_CHANGED;
+    if (hasModified) {
+      status = FileStatus.MODIFIED;
+    } else if (hasAdded) {
+      if (hasNotChanged) {
+        status = FileStatus.MODIFIED;
+      } else {
+        status = FileStatus.ADDED;
+      }
+    }
+    myTabbedPane.setForegroundAt(index, status.getColor());
   }
 
   public void initTab(final ILazyTab tab) {

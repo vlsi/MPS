@@ -80,6 +80,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
   public void addInnerTabChecked(SNode loadableNode, IOperationContext operationContext) {
     if (getLoadableNodes().size() == 0) {
       tryToInitComponent();
+      getTabbedEditor().getTabbedPane().updateTabComponent(this);
     } else {
       addInnerTab(loadableNode, operationContext);
     }
@@ -129,13 +130,13 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
   }
 
   public JComponent getComponent() {
-    if (myInnerTabbedPane == null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          tryToInitComponent();
-        }
-      });
-    }
+    if (myInnerTabbedPane != null) return myComponent;
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        tryToInitComponent();
+      }
+    });
     return myComponent;
   }
 
@@ -227,27 +228,27 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
 
     myComponent.add(myInnerTabbedPane, BorderLayout.CENTER);
 
-    if (canCreate()) {
-      final JPanel panel = new JPanel(new BorderLayout());
-      final JButton button = new JButton();
-      AbstractAction action = new AbstractAction("Create new") {
-        public void actionPerformed(final ActionEvent e) {
-          List<SNode> concepts = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
-            public List<SNode> compute() {
-              return getAvailableConcepts();
-            }
-          });
-          if (concepts.size() == 0) {
-            createLoadableNode(true, null);
-          } else {
-            showConceptList(new RelativePoint(button, new Point(0, button.getHeight())));
+    if (!canCreate()) return true;
+
+    final JPanel panel = new JPanel(new BorderLayout());
+    final JButton button = new JButton();
+    AbstractAction action = new AbstractAction("Create new") {
+      public void actionPerformed(final ActionEvent e) {
+        List<SNode> concepts = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
+          public List<SNode> compute() {
+            return getAvailableConcepts();
           }
+        });
+        if (concepts.size() == 0) {
+          createLoadableNode(true, null);
+        } else {
+          showConceptList(new RelativePoint(button, new Point(0, button.getHeight())));
         }
-      };
-      button.setAction(action);
-      panel.add(button, BorderLayout.WEST);
-      myComponent.add(panel, BorderLayout.NORTH);
-    }
+      }
+    };
+    button.setAction(action);
+    panel.add(button, BorderLayout.WEST);
+    myComponent.add(panel, BorderLayout.NORTH);
 
     return true;
   }
@@ -284,9 +285,8 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
 
   private void updateTabColor(int tabIndex) {
     RootNodeFileStatusManager statusManager = RootNodeFileStatusManager.getInstance(getOperationContext().getProject());
-    if (statusManager == null) {
-      return;
-    }
+    if (statusManager == null) return;
+
     FileStatus fileStatus = statusManager.getStatus(myEditors.get(tabIndex).getEditedNode());
     if (fileStatus == null) {
       fileStatus = FileStatus.NOT_CHANGED;
