@@ -24,7 +24,9 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.SwingUtilities;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -90,7 +92,7 @@ public class ModelAccess {
       r.run();
       return;
     }
-    if(mySharedReadInWriteMode) {
+    if (mySharedReadInWriteMode) {
       try {
         mySharedReadInWriteLock.readLock().lock();
         r.run();
@@ -137,7 +139,7 @@ public class ModelAccess {
     if (canRead()) {
       return c.compute();
     }
-    if(mySharedReadInWriteMode) {
+    if (mySharedReadInWriteMode) {
       try {
         mySharedReadInWriteLock.readLock().lock();
         return c.compute();
@@ -258,7 +260,7 @@ public class ModelAccess {
 
   public boolean canRead() {
     if (allowSharedRead) {
-      if(myReadWriteLock.getReadHoldCount() != 0) {
+      if (myReadWriteLock.getReadHoldCount() != 0) {
         return true;
       }
     }
@@ -267,7 +269,7 @@ public class ModelAccess {
   }
 
   public boolean canWrite() {
-    if(mySharedReadInWriteMode) {
+    if (mySharedReadInWriteMode) {
       return false;
     }
     return myReadWriteLock.isWriteLockedByCurrentThread();
@@ -362,7 +364,32 @@ public class ModelAccess {
     return "true".equals(System.getProperty("mps.sharedread"));
   }
 
-  private void onCommandFinished(){
+  //--------command events listening 
+
+  private List<ModelAccessListener> myListeners = new ArrayList<ModelAccessListener>();
+  private final Object myListenersLock = new Object();
+
+  public void addCommandListener(ModelAccessListener l){
+    synchronized (myListenersLock){
+      myListeners.add(l);
+    }
+  }
+
+  public void removeCommandListener(ModelAccessListener l){
+    synchronized (myListenersLock){
+      myListeners.remove(l);
+    }
+  }
+
+  private void onCommandFinished() {
+    for (ModelAccessListener l : myListeners) {
+      l.beforeCommandFinished();
+    }
+
+    for (ModelAccessListener l : myListeners) {
+      l.commandFinished();
+    }
+
     ImmatureReferences.getInstance().cleanup();
     UnregisteredNodes.instance().clear();
   }
