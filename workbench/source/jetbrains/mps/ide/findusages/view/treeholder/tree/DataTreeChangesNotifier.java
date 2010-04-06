@@ -112,28 +112,23 @@ public class DataTreeChangesNotifier {
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
     public void modelDeleted(SModelDescriptor modelDescriptor) {
-      if (myModels.contains(modelDescriptor.getSModelReference())) {
-        myChanged = true;
-        return;
-      }
+      if (!myModels.contains(modelDescriptor.getSModelReference())) return;
+      myChanged = true;
     }
   }
 
   private class MyCommandNotifier extends CommandAdapter {
     public void commandFinished(CommandEvent event) {
-      if (myChanged) {
-        myChanged = false;
-        myTree.changed();
-      }
+      if (!myChanged) return;
+      myChanged = false;
+      myTree.changed();
     }
   }
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
     public void moduleRemoved(IModule module) {
-      if (myModules.contains(module.getModuleReference())) {
-        myChanged = true;
-        return;
-      }
+      if (!myModules.contains(module.getModuleReference())) return;
+      myChanged = true;
     }
   }
 }
