@@ -317,28 +317,32 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
   }
 
   private void setPackageAfterCreationChecked(final Pair<SNode, IOperationContext>[] nodeAndContext) {
+    Runnable runnable = new Runnable() {
+      public void run() {
+        setPackageAfterCreation(nodeAndContext[0]);
+      }
+    };
+
     if (ModelAccess.instance().canWrite()) {
-      setPackageAfterCreation(nodeAndContext[0]);
+      runnable.run();
     } else {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          setPackageAfterCreation(nodeAndContext[0]);
-        }
-      });
+      ModelAccess.instance().runWriteActionInCommand(runnable);
     }
   }
 
   private void createLoadableNodeChecked(final Pair<SNode, IOperationContext>[] nodeAndContext, final SNode concept) {
     IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
       public void run() {
+        Runnable runnable = new Runnable() {
+          public void run() {
+            nodeAndContext[0] = createLoadableNode(true, concept);
+          }
+        };
+
         if (isOutsideCommandExecution()) {
-          nodeAndContext[0] = createLoadableNode(true, concept);
+          runnable.run();
         } else {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              nodeAndContext[0] = createLoadableNode(true, concept);
-            }
-          });
+          ModelAccess.instance().runWriteActionInCommand(runnable);
         }
       }
     });
