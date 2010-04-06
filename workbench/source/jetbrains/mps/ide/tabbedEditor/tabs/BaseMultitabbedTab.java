@@ -262,6 +262,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     myEditors.add(component);
     myInnerTabbedPane.add(getTabTextForNode(loadableNode), jComponent);
     myInnerTabbedPane.setIconAt(myEditors.size() - 1, IconManager.getIconFor(loadableNode));
+    myInnerTabbedPane.setSelectedComponent(jComponent);
     ToolWindowManager.getInstance(operationContext.getProject()).getFocusManager().requestFocus(component, false);
     aspectAdded(loadableNode);
     addNameListener(loadableNode.getModel().getModelDescriptor());
