@@ -36,16 +36,13 @@ class ImmatureReferences implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(ImmatureReferences.class);
   }
 
-  private CleanupManager myCleanupManager;
-
   private SModelRepository mySModelRepository;
 
   private ConcurrentMap<SModelReference, ConcurrentMap<SReferenceBase, SReferenceBase>> myReferences = new ConcurrentHashMap<SModelReference, ConcurrentMap<SReferenceBase, SReferenceBase>>();
 
   private ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, SReferenceBase>> myReferencesSetPool = new ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, SReferenceBase>>();
 
-  ImmatureReferences(CleanupManager cleanupManager, SModelRepository modelRepository) {
-    myCleanupManager = cleanupManager;
+  ImmatureReferences(SModelRepository modelRepository) {
     mySModelRepository = modelRepository;
     for (int i = 0; i < 4; i++) {
       myReferencesSetPool.add(new ConcurrentHashMap<SReferenceBase, SReferenceBase>());
@@ -58,14 +55,7 @@ class ImmatureReferences implements ApplicationComponent {
   }
 
   public void initComponent() {
-    myCleanupManager.addCleanupListener(new CleanupListener() {
-      public void performCleanup() {
-        cleanup();
-      }
-    });
-
     mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
-      @Override
       public void modelRemoved(SModelDescriptor modelDescriptor) {
         myReferences.remove(modelDescriptor.getSModelReference());
       }
