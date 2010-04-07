@@ -740,5 +740,100 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="4946830740863976385">
+    <property name="name:1" value="ConvertAnonimousClass" />
+    <property name="userFriendlyName:1" value="Convert Anonymous to Inner Class" />
+    <node role="parameter:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter:1" id="4946830740863976386">
+      <property name="name:1" value="name" />
+      <node role="chooser:1" type="jetbrains.mps.lang.refactoring.structure.MPSParameterChooser:1" id="4946830740863976387">
+        <property name="title:1" value="Class name" />
+        <node role="paramType:1" type="jetbrains.mps.lang.refactoring.structure.StringMPSParameterType:1" id="4946830740863976388" />
+        <node role="initialValueBlock:1" type="jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause:1" id="4946830740863976389">
+          <node role="body:1" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4946830740863976390">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4946830740863976391">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="4946830740863976392">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4946830740863976393">
+                  <property name="value:3" value="My" />
+                </node>
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4946830740863976394">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4946830740863976395">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4946830740863976396">
+                      <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.SettingsRefactoringContext_ConceptFunctionParameter:1" id="4946830740863976397" />
+                      <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.NodeOperation:1" id="4946830740863976398" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4946830740863976399">
+                      <link role="link:16" targetNodeId="1.1170346070688:3" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4946830740863976400">
+                    <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="target:1" type="jetbrains.mps.lang.refactoring.structure.NodeTarget:1" id="4946830740863976401">
+      <link role="concept:1" targetNodeId="1.1170345865475:3" resolveInfo="AnonymousClass" />
+      <node role="isApplicableBlock:1" type="jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause:1" id="4946830740863976402">
+        <node role="body:1" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4946830740863976403">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4946830740863976404">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4946830740863976405">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4946830740863976406">
+                <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_SNode:1" id="4946830740863976407" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="4946830740863976408">
+                  <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="4946830740863976409">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4946830740863976410">
+                      <link role="conceptDeclaration:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="4946830740863976411" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="doRefactorBlock:1" type="jetbrains.mps.lang.refactoring.structure.DoRefactorClause:1" id="4946830740863976412">
+      <node role="body:1" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4946830740863976413">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4946830740863976414">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4946830740863976415">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4946830740863976416">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4946830740863976417">
+                <link role="baseMethodDeclaration:3" targetNodeId="11.4946830740863874648" resolveInfo="ConvertAnonymousRefactoring" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4946830740863976418">
+                  <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="4946830740863976419" />
+                  <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.NodeOperation:1" id="4946830740863976420" />
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference:1" id="4946830740863976421">
+                  <link role="refactoringParameter:1" targetNodeId="4946830740863976386" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4946830740863976422">
+              <link role="baseMethodDeclaration:3" targetNodeId="11.4946830740863888461" resolveInfo="doRefactor" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="keystroke:1" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="4946830740863976423">
+      <property name="keycode:23" value="VK_F6" />
+    </node>
+    <node role="initBlock:1" type="jetbrains.mps.lang.refactoring.structure.InitClause:1" id="4946830740863976424">
+      <node role="body:1" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4946830740863976425">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4946830740863976426">
+          <node role="expression:3" type="jetbrains.mps.lang.refactoring.structure.AskExpression:1" id="4946830740863976427">
+            <node role="parameter:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference:1" id="4946830740863976428">
+              <link role="refactoringParameter:1" targetNodeId="4946830740863976386" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
