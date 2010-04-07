@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -19,10 +20,12 @@ public class check_CommandClosureLiteral_NonTypesystemRule extends AbstractNonTy
 
   public void applyRule(final SNode commandClosureLiteral, final TypeCheckingContext typeCheckingContext) {
     for (SNode rs : SNodeOperations.getDescendants(commandClosureLiteral, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})) {
-      {
-        BaseIntentionProvider intentionProvider = null;
-        IErrorTarget errorTarget = new NodeErrorTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(rs, "not allowed here", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "4923436771431072981", intentionProvider, errorTarget);
+      if ((SLinkOperations.getTarget(rs, "expression", true) != null)) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(rs, "not allowed here", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "4923436771431072981", intentionProvider, errorTarget);
+        }
       }
     }
   }

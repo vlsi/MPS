@@ -2878,12 +2878,27 @@
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4923436771431072776">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="4923436771431072969">
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4923436771431072970">
-          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="4923436771431072981">
-            <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4923436771431072984">
-              <property name="value:3" value="not allowed here" />
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3523143215693315506">
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3523143215693315507">
+              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="4923436771431072981">
+                <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4923436771431072984">
+                  <property name="value:3" value="not allowed here" />
+                </node>
+                <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4923436771431072985">
+                  <link role="variableDeclaration:3" targetNodeId="4923436771431072971" resolveInfo="rs" />
+                </node>
+              </node>
             </node>
-            <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4923436771431072985">
-              <link role="variableDeclaration:3" targetNodeId="4923436771431072971" resolveInfo="rs" />
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3523143215693315781">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3523143215693315642">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3523143215693315577">
+                  <link role="variableDeclaration:3" targetNodeId="4923436771431072971" resolveInfo="rs" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="3523143215693315713">
+                  <link role="link:16" targetNodeId="6.1068581517676:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="3523143215693315852" />
             </node>
           </node>
         </node>
