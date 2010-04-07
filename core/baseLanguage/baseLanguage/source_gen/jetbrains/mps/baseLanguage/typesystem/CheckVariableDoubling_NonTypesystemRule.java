@@ -23,7 +23,6 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode iVariableDeclaration, final TypeCheckingContext typeCheckingContext) {
-
     List<SNode> methods = SNodeOperations.getAncestors(iVariableDeclaration, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", true);
     List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode bmd : methods) {
@@ -33,9 +32,17 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
         }
       }
     }
-    List<SNode> vars = new LocalVariablesScope(SNodeOperations.getParent(iVariableDeclaration)).getNodes();
+    List<SNode> vars = new LocalVariablesScope(iVariableDeclaration).getNodes();
     vars.addAll(params);
-    for (SNode var : vars) {
+    SNode nearestMethod = SNodeOperations.getAncestor(iVariableDeclaration, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
+    List<SNode> methodVariables = SNodeOperations.getDescendants(nearestMethod, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{});
+    List<SNode> intersection = new ArrayList<SNode>();
+    for (SNode var : methodVariables) {
+      if (vars.contains(var)) {
+        ListSequence.fromList(intersection).addElement(var);
+      }
+    }
+    for (SNode var : intersection) {
       if (var == null || SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") == null) {
         continue;
       }
