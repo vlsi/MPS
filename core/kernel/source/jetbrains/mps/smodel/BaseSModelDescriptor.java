@@ -113,8 +113,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
         }
       }
     }
-
-    assert !result.isEmpty() : "model has no appropriate model roots";
     return result;
   }
 
