@@ -178,6 +178,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
 
           public PopupStep onChosen(final SNode selectedValue, boolean finalChoice) {
             myListPopup.dispose();
+            myListPopup = null;
             Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
             createLoadableNodeChecked(nodeAndContext, selectedValue);
             setPackageAfterCreationChecked(nodeAndContext);
