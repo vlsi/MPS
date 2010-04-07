@@ -105,7 +105,11 @@ public class PositionInfo implements Comparable<PositionInfo> {
   public int compareTo(PositionInfo p) {
     if (ObjectUtils.equals(this.getLineDistance(), p.getLineDistance())) {
       if (ObjectUtils.equals(this.myStartLine, p.myStartLine)) {
-        return this.myStartPosition - p.myStartPosition;
+        if (ObjectUtils.equals(this.myStartPosition, p.myStartPosition)) {
+          return this.myNodeId.compareTo(p.myNodeId);
+        } else {
+          return this.myStartPosition - p.myStartPosition;
+        }
       } else {
         return this.myStartLine - p.myStartLine;
       }

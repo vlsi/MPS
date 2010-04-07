@@ -64,7 +64,9 @@ public class DebugInfoManager implements ApplicationComponent {
 
   public boolean isScopeNode(SNode node) {
     for (String concept : myScopeConceptsAndGetters.keySet()) {
-      if (SNodeOperations.isInstanceOf(node, concept)) return true;
+      if (SNodeOperations.isInstanceOf(node, concept)) {
+        return true;
+      }
     }
     return false;
   }
