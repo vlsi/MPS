@@ -25,9 +25,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ProjectScope;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
 import org.jdesktop.beansbinding.AutoBinding;
 import org.jetbrains.annotations.NotNull;
 
@@ -101,6 +99,13 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
   protected final boolean saveChanges() {
     final boolean[] closeDialog = new boolean[]{true};
 
+    //to save changes in all models before reload not to lose them
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        SModelRepository.getInstance().saveAll();
+      }
+    });
+
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         closeDialog[0] = doSaveChanges();
@@ -111,7 +116,6 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         try {
-
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               CleanupManager.getInstance().cleanup();
