@@ -224,9 +224,6 @@ public class FileGenerationManager implements ApplicationComponent {
             VarInfo varInfo = varMap.get(varNode);
             if (originalVar != null && !(originalVar.isDisposed())) {
               String s = originalVar.getId();
-              if (s == null) {
-                System.err.println("");
-              }
               varInfo.setNodeId(s);
             } else {
               positionInfo.removeVarInfo(varInfo);
