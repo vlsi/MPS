@@ -138,8 +138,7 @@ public class TabbedEditor implements IEditor {
         if (openedEditor instanceof MPSFileNodeEditor) {
           MPSFileNodeEditor openedMPSEditor = (MPSFileNodeEditor) openedEditor;
           if (EqualUtil.equals(this, openedMPSEditor.getNodeEditor())) continue;
-          List<SNode> openedNodes = openedMPSEditor.getNodeEditor().getEditedNodes();
-          if (openedNodes.size() == 1 && thisNodes.contains(openedNodes.get(0))) {
+          if (!(openedMPSEditor.getNodeEditor() instanceof TabbedEditor)) {
             manager.closeFile(openedMPSEditor.getFile());
           }
         }

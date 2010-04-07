@@ -138,8 +138,10 @@ public class LazyTabbedPane extends JPanel implements Disposable {
   public void initTab(final ILazyTab tab) {
     myTabbedEditor.onSelectInnerTab();
     if (myInitializedTabs.contains(tab)) return;
+
     final JPanel panel = (JPanel) myTabbedPane.getComponentAt(myLazyTabs.indexOf(tab));
     JComponent component = tab.getComponent();
+
     if (component == null) {
       panel.removeAll();
       JLabel label = new JLabel("<html><p align='center'>" + tab.getNullText() + (tab.canCreate() ? "<br>(Click here or press Insert to create)" : "") + "</p>", JLabel.CENTER);
@@ -153,9 +155,7 @@ public class LazyTabbedPane extends JPanel implements Disposable {
 
       label.addHierarchyListener(new HierarchyListener() {
         public void hierarchyChanged(HierarchyEvent hierarchyEvent) {
-          if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED)) {
-            return;
-          }
+          if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED)) return;
           if (!isShowing()) return;
           inspect(null);
         }
@@ -168,14 +168,16 @@ public class LazyTabbedPane extends JPanel implements Disposable {
       panel.validate();
       panel.repaint();
       updateTabColor(tab);
-      return;
     } else {
       updateTabColor(tab);
-      panel.removeAll();
-      panel.add(component, BorderLayout.CENTER);
-      panel.validate();
-      panel.repaint();
       myInitializedTabs.add(tab);
+
+      if (panel!=component){
+        panel.removeAll();
+        panel.add(component, BorderLayout.CENTER);
+        panel.validate();
+        panel.repaint();
+      }
 
       for (EditorComponent c : tab.getEditorComponents()) {
         for (CellSelectionListener listener : myTabbedEditor.mySelectionListeners) {
