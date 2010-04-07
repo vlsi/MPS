@@ -118,6 +118,8 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           String oldVmParams = javaRunParameters.getVMParameters();
           if (StringUtils.isNotEmpty(oldVmParams)) {
             oldVmParams += " ";
+          } else {
+            oldVmParams = "";
           }
           javaRunParameters.setVMParameters(oldVmParams + args);
         }
