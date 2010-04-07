@@ -126,7 +126,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
   }
 
   private SModel whichMineModel(SModel currentModel, SModel backUpModel) {
-    if (ReRunMergeFromBackup_Action.this.getHash(currentModel).equals(backUpModel)) {
+    if (ReRunMergeFromBackup_Action.this.getHash(currentModel).equals(ReRunMergeFromBackup_Action.this.getHash(backUpModel))) {
       return currentModel;
     } else {
       String current = "Currently Loaded Model";
