@@ -15,49 +15,62 @@ public class First {
     System.out.println(check_7907427828436741042(sNotNull));
     System.out.println(check_5227621747122194240(check_5227621747122071247(sNotNull)));
     System.out.println(check_7907427828436741049(sNull));
+    sNotNull.equals(sNull);
+    check_3391577739833428007(sNotNull, sNull);
     List<Object> l = ListSequence.fromList(new ArrayList<Object>());
-    ListSequence.fromList(l).addElement(null);
-    ListSequence.fromList(l).addElement(1);
-    ListSequence.fromList(l).addElement(3);
-    ListSequence.fromList(l).addElement("qwert");
-    ListSequence.fromList(l).addElement("abc");
-    ListSequence.fromList(l).addElement(null);
+    Test t = new Test();
+    check_6164144034085176664(t);
     System.out.println(ListSequence.fromList(l).where(new IWhereFilter<Object>() {
       public boolean accept(Object it) {
-        return check_1713017043372893920(it) != null;
+        return check_3391577739833707209(it) != null;
       }
     }));
   }
 
-  public static Boolean check_7907427828436741042(String p) {
+  private static Boolean check_7907427828436741042(String p) {
     if (null == p) {
       return null;
     }
     return p.isEmpty();
   }
 
-  public static Boolean check_5227621747122194240(String p) {
+  private static Boolean check_5227621747122194240(String p) {
     if (null == p) {
       return null;
     }
     return p.isEmpty();
   }
 
-  public static String check_5227621747122071247(String p) {
+  private static String check_5227621747122071247(String p) {
     if (null == p) {
       return null;
     }
     return p.replace("aa", "bb");
   }
 
-  public static Character check_7907427828436741049(String p) {
+  private static Character check_7907427828436741049(String p) {
     if (null == p) {
       return null;
     }
     return p.charAt(1);
   }
 
-  public static String check_1713017043372893920(Object p) {
+  private static Boolean check_3391577739833428007(String p, String sNull) {
+    if (null == p) {
+      return null;
+    }
+    return p.equals(sNull);
+  }
+
+  private static Void check_6164144034085176664(Test p) {
+    if (null == p) {
+      return null;
+    }
+    p.t();
+    return null;
+  }
+
+  private static String check_3391577739833707209(Object p) {
     if (null == p) {
       return null;
     }
