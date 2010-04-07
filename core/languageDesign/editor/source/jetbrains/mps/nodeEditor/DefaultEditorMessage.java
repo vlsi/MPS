@@ -152,7 +152,7 @@ public class DefaultEditorMessage implements EditorMessage {
     g.fillRect(x, y, width - 1, height - 1);
   }
 
-  public boolean isBackGround() {
+  public boolean isBackground() {
     return false;
   }
 

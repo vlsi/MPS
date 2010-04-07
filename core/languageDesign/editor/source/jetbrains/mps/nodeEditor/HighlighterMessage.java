@@ -65,7 +65,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     return result;
   }
 
-  public boolean isBackGround() {
+  public boolean isBackground() {
     return isWarning();
   }
 

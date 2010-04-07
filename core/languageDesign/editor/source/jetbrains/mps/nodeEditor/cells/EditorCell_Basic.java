@@ -665,7 +665,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
     List<EditorMessage> messages = getMessages();
     for (EditorMessage message : messages) {
-      if (message != null && message.isBackGround()) {
+      if (message != null && message.isBackground()) {
         message.paint(g, getEditor(), this);
       }
     }
@@ -709,7 +709,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     List<EditorMessage> messages = getMessages();
     for (EditorMessage message : messages) {
-      if (message != null && !message.isBackGround()) {
+      if (message != null && !message.isBackground()) {
         message.paint(g, getEditor(), this);
       }
     }

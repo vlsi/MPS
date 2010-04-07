@@ -48,7 +48,7 @@ public interface EditorMessage {
 
   void paint(Graphics g, EditorComponent editorComponent, EditorCell cell);
 
-  boolean isBackGround();
+  boolean isBackground();
 
   boolean sameAs(EditorMessage message);
 

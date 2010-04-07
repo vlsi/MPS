@@ -43,7 +43,7 @@ public class ChangeEditorMessage extends DefaultEditorMessage {
   }
 
   @Override
-  public boolean isBackGround() {
+  public boolean isBackground() {
     return true;
   }
 

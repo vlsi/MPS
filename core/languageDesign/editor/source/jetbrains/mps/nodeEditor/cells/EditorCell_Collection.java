@@ -29,7 +29,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ArrayWrapper;
 import jetbrains.mps.util.Condition;
 
-import javax.swing.JComponent;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.WritableRaster;
@@ -579,7 +578,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
     List<EditorMessage> messages = getMessages();
     for (EditorMessage message : messages) {
-      if (message != null && message.isBackGround()) {
+      if (message != null && message.isBackground()) {
         message.paint(g, getEditor(), this);
       }
     }
