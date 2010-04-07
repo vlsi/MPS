@@ -3209,7 +3209,7 @@
       <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
       <link role="specializedLink:0" targetNodeId="7086588812844916869:23" />
     </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3361586479359565467">
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="7589249354678402915">
       <link role="intfc:0" targetNodeId="7086588812844908357:23" resolveInfo="IRunConfigPropertyInstance" />
     </node>
   </node>

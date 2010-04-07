@@ -6058,5 +6058,21 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="3361586479359735093" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7589249354677770833">
+    <link role="conceptDeclaration:32" targetNodeId="1.7589249354677770830:23" resolveInfo="AbstractRunConfigPropertyInstance" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="7589249354677770835">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="7589249354677770836">
+        <property name="readOnly:32" value="true" />
+        <link role="relationDeclaration:32" targetNodeId="14.1169194664001:0" resolveInfo="name" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7589249354677770837">
+        <property name="text:32" value="=" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="7589249354677770838">
+        <link role="relationDeclaration:32" targetNodeId="1.7589249354677770832:23" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="7589249354677770839" />
+    </node>
+  </node>
 </model>
 
