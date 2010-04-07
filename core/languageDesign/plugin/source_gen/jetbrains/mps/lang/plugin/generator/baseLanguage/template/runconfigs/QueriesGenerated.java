@@ -375,6 +375,18 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "executeParameterQuery", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1053283424753165207(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "executeConsole", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1053283424753177097(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "executeConsole", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1053283424753176819(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "executeConsole", true) != null);
+  }
+
   public static SNode sourceNodeQuery_8294332872984074416(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "iconBlock", true);
   }

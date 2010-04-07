@@ -5869,6 +5869,7 @@
                   <property name="flag:32" value="false" />
                 </node>
                 <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1997310975062788066">
+                  <property name="noTargetText:32" value="default actions" />
                   <link role="relationDeclaration:32" targetNodeId="1.3256691185935786643:23" />
                 </node>
                 <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="1997310975062788065" />
@@ -5891,6 +5892,7 @@
                   <property name="flag:32" value="false" />
                 </node>
                 <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1997310975062788092">
+                  <property name="noTargetText:32" value="default console" />
                   <link role="relationDeclaration:32" targetNodeId="1.3256691185935786644:23" />
                 </node>
                 <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="1997310975062788091" />
