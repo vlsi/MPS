@@ -80,22 +80,19 @@ public abstract class BaseSingletabbedTab extends AbstractLazyTab {
   }
 
   public JComponent getComponent() {
-    if (myComponent == null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          tryToInitComponent();
-        }
-      });
+    if (myComponent != null) return myComponent.getExternalComponent();
 
-      if (myComponent != null) {
-        if (IdeMain.getTestMode() != IdeMain.TestMode.CORE_TEST) {
-          Project project = getOperationContext().getProject();
-          ToolWindowManager.getInstance(project).getFocusManager().requestFocus(myComponent, false);
-        }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        tryToInitComponent();
       }
-    }
-
+    });
     if (myComponent == null) return null;
+
+    if (IdeMain.getTestMode() != IdeMain.TestMode.CORE_TEST) {
+      Project project = getOperationContext().getProject();
+      ToolWindowManager.getInstance(project).getFocusManager().requestFocus(myComponent, false);
+    }
 
     return myComponent.getExternalComponent();
   }
