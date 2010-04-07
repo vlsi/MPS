@@ -9,13 +9,49 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class RunConfigPropertyInstance extends BaseConcept {
+public class RunConfigPropertyInstance extends BaseConcept implements IRunConfigPropertyInstance {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance";
+  public static final String NAME = "name";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String PROPERTY = "property";
   public static final String PROPERTY_VALUE = "propertyValue";
 
   public RunConfigPropertyInstance(SNode node) {
     super(node);
+  }
+
+  public String getName() {
+    return this.getProperty(RunConfigPropertyInstance.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(RunConfigPropertyInstance.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(RunConfigPropertyInstance.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(RunConfigPropertyInstance.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(RunConfigPropertyInstance.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(RunConfigPropertyInstance.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(RunConfigPropertyInstance.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(RunConfigPropertyInstance.VIRTUAL_PACKAGE, value);
   }
 
   public PersistentPropertyDeclaration getProperty() {

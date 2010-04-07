@@ -3183,7 +3183,7 @@
       <property name="metaClass:0" value="aggregation" />
       <property name="sourceCardinality:0" value="0..n" />
       <property name="role:0" value="property" />
-      <link role="target:0" targetNodeId="7066926174333292873:23" resolveInfo="RunConfigParameterInstance" />
+      <link role="target:0" targetNodeId="7086588812844908357:23" resolveInfo="IRunConfigPropertyInstance" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7066926174333292871">
       <property name="metaClass:0" value="reference" />
@@ -3207,6 +3207,10 @@
       <property name="role:0" value="propertyValue" />
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+      <link role="specializedLink:0" targetNodeId="7086588812844916869:23" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3361586479359565467">
+      <link role="intfc:0" targetNodeId="7086588812844908357:23" resolveInfo="IRunConfigPropertyInstance" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8415911927033048374">
@@ -4211,6 +4215,19 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3273619486685172382">
       <property name="value:0" value="actionsList" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="7086588812844908357">
+    <property name="package:0" value="RunConfigs.Create.CreateStatement" />
+    <property name="name:0" value="IRunConfigPropertyInstance" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7086588812844916869">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="propertyValue" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="extends:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3361586479359733094">
+      <link role="intfc:0" targetNodeId="6.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>

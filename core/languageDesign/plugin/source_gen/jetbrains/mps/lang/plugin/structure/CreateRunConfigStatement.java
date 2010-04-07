@@ -50,19 +50,19 @@ public class CreateRunConfigStatement extends Statement {
     return this.getChildCount(CreateRunConfigStatement.PROPERTY);
   }
 
-  public Iterator<RunConfigPropertyInstance> properties() {
-    return this.children(RunConfigPropertyInstance.class, CreateRunConfigStatement.PROPERTY);
+  public Iterator<IRunConfigPropertyInstance> properties() {
+    return this.children(IRunConfigPropertyInstance.class, CreateRunConfigStatement.PROPERTY);
   }
 
-  public List<RunConfigPropertyInstance> getProperties() {
-    return this.getChildren(RunConfigPropertyInstance.class, CreateRunConfigStatement.PROPERTY);
+  public List<IRunConfigPropertyInstance> getProperties() {
+    return this.getChildren(IRunConfigPropertyInstance.class, CreateRunConfigStatement.PROPERTY);
   }
 
-  public void addProperty(RunConfigPropertyInstance node) {
+  public void addProperty(IRunConfigPropertyInstance node) {
     this.addChild(CreateRunConfigStatement.PROPERTY, node);
   }
 
-  public void insertProperty(RunConfigPropertyInstance prev, RunConfigPropertyInstance node) {
+  public void insertProperty(IRunConfigPropertyInstance prev, IRunConfigPropertyInstance node) {
     this.insertChild(prev, CreateRunConfigStatement.PROPERTY, node);
   }
 
