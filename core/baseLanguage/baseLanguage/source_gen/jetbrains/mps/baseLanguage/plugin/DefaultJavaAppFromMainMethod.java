@@ -32,15 +32,12 @@ public class DefaultJavaAppFromMainMethod extends BaseConfigCreator<SNode> imple
     SNode classifier = SNodeOperations.getAncestor(parameter, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     DefaultJavaAppFromMainMethod.this.setSourceElement(new MPSPsiElement(classifier));
 
-    String nodeId = classifier.getId();
-    String modelId = SNodeOperations.getModel(classifier).getModelDescriptor().getSModelReference().toString();
-
     {
       JavaApplication_ConfigurationType configType = ContainerUtil.findInstance(Extensions.getExtensions(JavaApplication_ConfigurationType.CONFIGURATION_TYPE_EP), JavaApplication_ConfigurationType.class);
       DefaultJavaApplication_Configuration _config = new DefaultJavaApplication_Configuration(DefaultJavaAppFromMainMethod.this.getContext().getProject(), configType.getConfigurationFactories()[0], "NewConfig");
       _config.setName(SPropertyOperations.getString(classifier, "name"));
-      _config.getStateObject().modelId = modelId;
-      _config.getStateObject().nodeId = nodeId;
+      _config.getStateObject().nodeId = parameter.getId();
+      _config.getStateObject().modelId = parameter.getModel().getModelDescriptor().getSModelReference().toString();
       DefaultJavaAppFromMainMethod.this.myConfig = _config;
     }
   }

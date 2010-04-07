@@ -8,11 +8,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
-import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
@@ -31,12 +31,15 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
-import java.util.Collections;
-import jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner;
+import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
+import com.intellij.execution.executors.DefaultDebugExecutor;
+import jetbrains.mps.debug.DebuggerKeys;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.util.Disposer;
-import com.intellij.execution.process.ProcessNotCreatedException;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.actions.DefaultProcessHandler;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
@@ -48,6 +51,9 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
+import java.util.Collections;
 
 public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   @Tag(value = "state")
@@ -70,33 +76,32 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   public void checkConfiguration() throws RuntimeConfigurationException {
     final StringBuilder error = new StringBuilder();
     {
-      if (DefaultJavaApplication_Configuration.this.getStateObject().modelId != null && DefaultJavaApplication_Configuration.this.getStateObject().nodeId != null) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            SNode node = null;
-            node = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
-            if ((node == null)) {
-              error.append("node is not selected or does not exist").append("\n");
-            }
-            if ((ClassConcept_Behavior.call_getMainMethod_1213877355884(node) == null)) {
-              error.append("node is not valid").append("\n");
-            }
-          }
-        });
-      } else {
-        error.append("node is not selected").append("\n");
-      }
-
-      if (DefaultJavaApplication_Configuration.this.getStateObject().parameters == null) {
-        DefaultJavaApplication_Configuration.this.getStateObject().parameters = new ConfigRunParameters();
-      }
-      String paramsReport = DefaultJavaApplication_Configuration.this.getStateObject().parameters.getErrorReport();
+      String paramsReport = DefaultJavaApplication_Configuration.this.getStateObject().myJavaRunParameters.getErrorReport();
       if (paramsReport != null) {
         error.append(paramsReport).append("\n");
       }
-      if (!(DefaultJavaApplication_Configuration.this.getStateObject().compileInMPS) && DefaultJavaApplication_Configuration.this.getStateObject().parameters != null && DefaultJavaApplication_Configuration.this.getStateObject().parameters.getMake()) {
-        error.append("can't make").append("\n");
-      }
+      final SNode node = new _FunctionTypes._return_P0_E0<SNode>() {
+        public SNode invoke() {
+          SNode snode;
+          String errorReport;
+          {
+            Tuples._2<SNode, String> _tmp_vpmxmq_c0a0a2a1a1 = DefaultJavaApplication_Configuration.this.checkNode();
+            snode = _tmp_vpmxmq_c0a0a2a1a1._0();
+            errorReport = _tmp_vpmxmq_c0a0a2a1a1._1();
+          }
+          if (snode == null) {
+            error.append(errorReport).append("\n");
+          }
+          return snode;
+        }
+      }.invoke();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if (ClassConcept_Behavior.call_getMainMethod_1213877355884(node) == null) {
+            error.append("selected node does not have main method").append("\n");
+          }
+        }
+      });
     }
     if (error.length() != 0) {
       throw new RuntimeConfigurationException(error.toString());
@@ -112,58 +117,66 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
         Runnable consoleDispose = null;
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
-        Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
 
         // user's execute code 
-        if (DefaultJavaApplication_Configuration.this.getStateObject().modelId == null || DefaultJavaApplication_Configuration.this.getStateObject().nodeId == null) {
-          throw new ExecutionException("Class node is not defined");
-        }
-        final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
+        final ConfigRunParameters javaRunParameters = DefaultJavaApplication_Configuration.this.getStateObject().myJavaRunParameters.copy();
+        // add debug arguments if runned under debug 
+        if (executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID)) {
+          String args = this.getUserData(DebuggerKeys.CONNECTION_SETTINGS);
+          String oldVmParams = javaRunParameters.getVMParameters();
+          if (StringUtils.isNotEmpty(oldVmParams)) {
+            oldVmParams += " ";
           }
-        });
-        if (node.value == null) {
-          throw new ExecutionException("Class node does not exist");
+          javaRunParameters.setVMParameters(oldVmParams + args);
         }
+        final SNode node = DefaultJavaApplication_Configuration.this.getNodeForExecution(environment.getProject(), (javaRunParameters).getMake());
+        {
+          // calculate parameter 
 
-        if (DefaultJavaApplication_Configuration.this.getStateObject().parameters == null) {
-          DefaultJavaApplication_Configuration.this.getStateObject().parameters = new ConfigRunParameters();
-        }
-
-        if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getMake()) {
-          RunUtil.makeBeforeRun(project, Collections.singletonList(node.value));
-        }
-
-        final ClassRunner classRunner = new ClassRunner();
-        ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions())));
-        consoleComponent = consoleView.getComponent();
-        consoleDispose = new Runnable() {
-          public void run() {
-            Disposer.dispose(consoleView);
-          }
-        };
-
-        final Wrappers._T<Process> process = new Wrappers._T<Process>();
-        final Wrappers._T<ProcessNotCreatedException> ex = new Wrappers._T<ProcessNotCreatedException>(null);
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            if (DefaultJavaApplication_Configuration.this.getStateObject().parameters.getUseAlternativeJRE()) {
-              classRunner.setJavaHomePath(DefaultJavaApplication_Configuration.this.getStateObject().parameters.getAlternativeJRE());
+          ListSequence.fromList(actions).addSequence(ListSequence.fromList(new _FunctionTypes._return_P0_E0<List<AnAction>>() {
+            public List<AnAction> invoke() {
+              {
+                final List<AnAction> actionsList = ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions());
+                return actionsList;
+              }
             }
-            try {
-              process.value = classRunner.run(node.value, DefaultJavaApplication_Configuration.this.getStateObject().parameters.getProgramParameters(), DefaultJavaApplication_Configuration.this.getStateObject().parameters.getVMParameters(), DefaultJavaApplication_Configuration.this.getStateObject().parameters.getWorkingDirectory());
-            } catch (ProcessNotCreatedException e) {
-              ex.value = e;
-            }
-          }
-        });
-        if (ex.value != null) {
-          throw ex.value;
-        }
+          }.invoke()));
 
-        handler = new DefaultProcessHandler(consoleView, process.value, classRunner.getCommandString());
+          // create console component 
+          final Tuples._2<JComponent, _FunctionTypes._void_P0_E0> component = MultiTuple.<JComponent, _FunctionTypes._void_P0_E0>empty2().assign((Tuples._2<JComponent, _FunctionTypes._void_P0_E0>) (new _FunctionTypes._return_P0_E0<Tuples._2<JComponent, _FunctionTypes._void_P0_E0>>() {
+            public Tuples._2<JComponent, _FunctionTypes._void_P0_E0> invoke() {
+              return MultiTuple.<JComponent,_FunctionTypes._void_P0_E0>from(consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
+                public void invoke() {
+                  Disposer.dispose(consoleView);
+                }
+              });
+            }
+          }.invoke()));
+          consoleComponent = component._0();
+          consoleDispose = new Runnable() {
+            public void run() {
+              component._1().invoke();
+            }
+          };
+
+          final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
+          // create process handler 
+          handler = (ProcessHandler) new _FunctionTypes._return_P0_E0<Object>() {
+            public Object invoke() {
+              try {
+                ClassRunner classRunner = new ClassRunner();
+                Process process = classRunner.run(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), javaRunParameters.getProgramParameters(), javaRunParameters.getVMParameters(), javaRunParameters.getWorkingDirectory());
+                return new DefaultProcessHandler(consoleView, process, classRunner.getCommandString());
+              } catch (ExecutionException e) {
+                ex.value = e;
+                return null;
+              }
+            }
+          }.invoke();
+          if (ex.value != null) {
+            throw ex.value;
+          }
+        }
 
         final JComponent finalConsoleComponent = consoleComponent;
         final Runnable finalConsoleDispose = consoleDispose;
@@ -236,8 +249,64 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
     return this.myState;
   }
 
+  public boolean isDebuggable() {
+    return true;
+  }
+
+  public SNode getNode() {
+    if (DefaultJavaApplication_Configuration.this.getStateObject().modelId == null || DefaultJavaApplication_Configuration.this.getStateObject().nodeId == null) {
+      return null;
+    }
+    final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        node.value = new SNodePointer(DefaultJavaApplication_Configuration.this.getStateObject().modelId, DefaultJavaApplication_Configuration.this.getStateObject().nodeId).getNode();
+      }
+    });
+    return node.value;
+  }
+
+  public void setNode(final SNode node) {
+    if (node == null) {
+      DefaultJavaApplication_Configuration.this.getStateObject().modelId = null;
+      DefaultJavaApplication_Configuration.this.getStateObject().nodeId = null;
+      return;
+    }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        DefaultJavaApplication_Configuration.this.getStateObject().modelId = node.getModel().getModelDescriptor().getSModelReference().toString();
+        DefaultJavaApplication_Configuration.this.getStateObject().nodeId = node.getId();
+      }
+    });
+  }
+
+  private SNode getNodeForExecution(Project project, boolean make) {
+    SNode node = DefaultJavaApplication_Configuration.this.getNode();
+    if (make) {
+      RunUtil.makeBeforeRun(project, Collections.singletonList(node));
+    }
+    return node;
+  }
+
+  private Tuples._2<SNode, String> checkNode() {
+    if (DefaultJavaApplication_Configuration.this.getStateObject().modelId != null && DefaultJavaApplication_Configuration.this.getStateObject().nodeId != null) {
+      final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          node.value = DefaultJavaApplication_Configuration.this.getNode();
+        }
+      });
+      if ((node.value == null)) {
+        return MultiTuple.<SNode,String>from((SNode) null, "node is not selected or does not exist");
+      }
+      return MultiTuple.<SNode,String>from(node.value, (String) null);
+    } else {
+      return MultiTuple.<SNode,String>from((SNode) null, "node is not selected");
+    }
+  }
+
   private static class MySettingsEditor extends SettingsEditor<DefaultJavaApplication_Configuration> {
-    private JavaAppConfigEditor myComponent = null;
+    private DefaultJavaApplication_Editor myComponent = null;
 
     public MySettingsEditor() {
     }
@@ -252,7 +321,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
 
     @NotNull
     protected JComponent createEditor() {
-      this.myComponent = new JavaAppConfigEditor();
+      this.myComponent = new DefaultJavaApplication_Editor();
       return this.myComponent;
     }
 
@@ -262,18 +331,17 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   }
 
   public static class MyState implements Cloneable {
+    public ConfigRunParameters myJavaRunParameters = new ConfigRunParameters();
     public String nodeId;
     public String modelId;
-    public boolean compileInMPS;
-    public ConfigRunParameters parameters;
 
     public MyState() {
     }
 
     public Object clone() throws CloneNotSupportedException {
       DefaultJavaApplication_Configuration.MyState object = (DefaultJavaApplication_Configuration.MyState) super.clone();
-      if (this.parameters != null) {
-        object.parameters = (ConfigRunParameters) this.parameters.clone();
+      if (this.myJavaRunParameters != null) {
+        object.myJavaRunParameters = (ConfigRunParameters) this.myJavaRunParameters.clone();
       }
       return object;
     }

@@ -20,7 +20,6 @@ public class JavaApplication_ConfigurationType implements ConfigurationType {
 
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
-    ListSequence.fromList(result).addElement(new NewJavaApplication_Factory(this));
     ListSequence.fromList(result).addElement(new DefaultJavaApplication_Factory(this));
     return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
   }
