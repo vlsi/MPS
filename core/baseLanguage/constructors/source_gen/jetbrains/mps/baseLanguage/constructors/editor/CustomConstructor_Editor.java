@@ -120,6 +120,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("shortDescription");
     provider.setNoTargetText("<no shortDescription>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_shortDescription");
@@ -141,7 +142,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_pn47sh_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("leftParenthesis");
-    provider.setNoTargetText("<no leftParenthesis>");
+    provider.setNoTargetText("<lp");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_leftParenthesis");
@@ -159,7 +160,7 @@ public class CustomConstructor_Editor extends DefaultNodeEditor {
   private EditorCell createProperty_pn47sh_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("rightParenthesis");
-    provider.setNoTargetText("<no rightParenthesis>");
+    provider.setNoTargetText("rp>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_rightParenthesis");

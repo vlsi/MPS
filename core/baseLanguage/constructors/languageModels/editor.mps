@@ -73,18 +73,21 @@
         <property name="text:32" value="short description:" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="606143069299308270">
+        <property name="allowEmptyText:32" value="true" />
         <link role="relationDeclaration:32" targetNodeId="3v.1156234966388:0" resolveInfo="shortDescription" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="606143069299308271">
           <property name="flag:32" value="true" />
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8670107124455598003">
+        <property name="noTargetText:32" value="&lt;lp" />
         <link role="relationDeclaration:32" targetNodeId="1.3330196687714050064:1" resolveInfo="leftParenthesis" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="5379647004618201112">
         <link role="relationDeclaration:32" targetNodeId="1.5379647004618201111:1" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8670107124455598005">
+        <property name="noTargetText:32" value="rp&gt;" />
         <link role="relationDeclaration:32" targetNodeId="1.3330196687714050065:1" resolveInfo="rightParenthesis" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="8670107124455191229">
@@ -776,7 +779,7 @@
     <link role="conceptDeclaration:32" targetNodeId="1.5379647004618176185:1" resolveInfo="ListArgumentsClause" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5379647004618201104">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5379647004618201107">
-        <property name="text:32" value="list of" />
+        <property name="text:32" value="listof" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4739047193854406833">
         <link role="relationDeclaration:32" targetNodeId="1.4739047193854398652:1" />
