@@ -67,7 +67,7 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
         result = true;
       }
       if (!(result)) {
-        for (Iterator<ClassifierType> it = ((ClassConcept) cls).implementedInterfaces(); it.hasNext(); ) {
+        for (Iterator<ClassifierType> it = ((ClassConcept) cls).implementedInterfaces(); it.hasNext();) {
           if (this.checkSubclassifier(it.next().getClassifier())) {
             result = true;
             break;
@@ -76,7 +76,7 @@ public class AllSubclassifiersScope extends AbstractClassifiersScope {
       }
     } else
     if (cls instanceof Interface) {
-      for (Iterator<ClassifierType> it = ((Interface) cls).extendedInterfaces(); it.hasNext(); ) {
+      for (Iterator<ClassifierType> it = ((Interface) cls).extendedInterfaces(); it.hasNext();) {
         if (this.checkSubclassifier(it.next().getClassifier())) {
           result = true;
           break;

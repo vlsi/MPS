@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.util.containers.HashMap;
-import com.intellij.openapi.util.Computable;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -93,7 +92,7 @@ public class MethodResolveUtil {
       int indexOfArg = 0;
       for (Expression actualArg : actualArgs) {
         TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(actualArg.getNode());
-        final SNode term = actualArg.getNode();
+        SNode term = actualArg.getNode();
         SNode typeOfArg;
         if (nodesAndTypes.containsKey(term)) {
           typeOfArg = nodesAndTypes.get(term);
@@ -101,13 +100,10 @@ public class MethodResolveUtil {
           if (typeCheckingContext == null) {
             typeOfArg = null;
           } else {
-            typeOfArg = typeCheckingContext.runTypeCheckingActionInEditorQueries(new Computable<SNode>() {
-              @Override
-              public SNode compute() {
-                return TypeChecker.getInstance().getTypeOf(term);
-              }
-            });
+            typeCheckingContext.setInEditorQueriesMode();
+            typeOfArg = TypeChecker.getInstance().getTypeOf(term);
             nodesAndTypes.put(term, typeOfArg);
+            typeCheckingContext.resetIsInEditorQueriesMode();
           }
         }
         List<? extends BaseMethodDeclaration> candidates1 = MethodResolveUtil.selectByParameterType(typeOfArg, indexOfArg, candidates, typeByTypeVar, mostSpecific);

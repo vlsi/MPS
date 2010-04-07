@@ -7,10 +7,11 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.search.ParameterScope;
 import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -23,17 +24,9 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode iVariableDeclaration, final TypeCheckingContext typeCheckingContext) {
-    List<SNode> methods = SNodeOperations.getAncestors(iVariableDeclaration, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", true);
-    List<SNode> params = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode bmd : methods) {
-      for (SNode child : SNodeOperations.getChildren(bmd)) {
-        if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
-          ListSequence.fromList(params).addElement(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
-        }
-      }
-    }
+    List<SNode> param = new ParameterScope(iVariableDeclaration).getNodes();
     List<SNode> vars = new LocalVariablesScope(iVariableDeclaration).getNodes();
-    vars.addAll(params);
+    vars.addAll(param);
     SNode nearestMethod = SNodeOperations.getAncestor(iVariableDeclaration, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
     List<SNode> methodVariables = SNodeOperations.getDescendants(nearestMethod, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{});
     List<SNode> intersection = new ArrayList<SNode>();
