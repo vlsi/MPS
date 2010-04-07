@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
@@ -23,21 +22,16 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.logging.Logger;
 
-import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.*;
 
 public class EventsCollector {
-  private static final Logger LOG = Logger.getLogger(EventsCollector.class);
-
-  private static CommandListenersSupport ourListenersSupport = new CommandListenersSupport();
-
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private SModelListener myListener = createCommandEventsCollector();
   private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
-  private CommandListener myCommandListener;
+  private ModelAccessListener myModelAccessListener = new MyModelAccessAdapter();
   private CommandProcessor myCommandProcessor;
   private boolean myDisposed;
 
@@ -45,19 +39,9 @@ public class EventsCollector {
 
   public EventsCollector() {
     myCommandProcessor = CommandProcessor.getInstance();
+
+    ModelAccess.instance().addCommandListener(myModelAccessListener);
     myCurrentCommand = myCommandProcessor.getCurrentCommand();
-
-    ourListenersSupport.addCommandListener(myCommandListener = new CommandAdapter() {
-      public void commandStarted(CommandEvent event) {
-        myEvents.clear();
-        myCurrentCommand = myCommandProcessor.getCurrentCommand();
-      }
-
-      public void beforeCommandFinished(CommandEvent event) {
-        flush();
-        myCurrentCommand = null;
-      }
-    });
   }
 
   private SModelListener createCommandEventsCollector() {
@@ -133,7 +117,7 @@ public class EventsCollector {
     for (SModelDescriptor sm : new LinkedHashSet<SModelDescriptor>(myModelDescriptors)) {
       remove(sm);
     }
-    ourListenersSupport.removeCommandListener(myCommandListener);
+    ModelAccess.instance().removeCommandListener(myModelAccessListener);
     myDisposed = true;
   }
 
@@ -143,106 +127,18 @@ public class EventsCollector {
     }
   }
 
-  private static class CommandListenersSupport {
-    private final Object myLock = new Object();
-    private Set<CommandListener> myListeners = new LinkedHashSet<CommandListener>();
-
-    private CommandListenersSupport() {
-      CommandProcessor.getInstance().addCommandListener(new MyListener());
-    }
-
-    public void addCommandListener(CommandListener l) {
-      synchronized (myLock) {
-        myListeners.add(l);
+  private class MyModelAccessAdapter extends ModelAccessAdapter {
+    public void commandStarted() {
+      myEvents.clear();
+      myCurrentCommand = myCommandProcessor.getCurrentCommand();
+      if (myCurrentCommand==null){
+        return;
       }
     }
 
-    public void removeCommandListener(CommandListener l) {
-      synchronized (myLock) {
-        myListeners.remove(l);
-      }
-    }
-
-    private void fireCommandStarted(CommandEvent e) {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.commandStarted(e);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
-
-    private void fireBeforeCommandFinished(CommandEvent e) {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.beforeCommandFinished(e);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
-
-    private void fireCommandFinished(CommandEvent e) {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.commandFinished(e);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
-
-    private void fireUndoTransparentActionStarted() {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.undoTransparentActionStarted();
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
-
-    private void fireUndoTransparentActionFinished() {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.undoTransparentActionFinished();
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-      }
-    }
-
-    private class MyListener implements CommandListener {
-      public void commandStarted(CommandEvent event) {
-        fireCommandStarted(event);
-      }
-
-      public void beforeCommandFinished(CommandEvent event) {
-        fireBeforeCommandFinished(event);
-      }
-
-      public void commandFinished(CommandEvent event) {
-        fireCommandFinished(event);
-      }
-
-      public void undoTransparentActionStarted() {
-        fireUndoTransparentActionStarted();
-      }
-
-      public void undoTransparentActionFinished() {
-        fireUndoTransparentActionFinished();
-      }
+    public void beforeCommandFinished() {
+      flush();
+      myCurrentCommand = null;
     }
   }
 }

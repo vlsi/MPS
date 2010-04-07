@@ -17,8 +17,6 @@ package jetbrains.mps.ide.modelRepositoryViewer;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.command.CommandEvent;
-import com.intellij.openapi.command.CommandListener;
 import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -31,6 +29,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 
@@ -175,47 +174,37 @@ public class ModelRepositoryComponent {
     });
   }
 
-  private class DeferringEventHandler extends SModelAdapter implements CommandListener {
+  private class DeferringEventHandler{
     private SModelRepositoryListener myRepoListener = new SModelRepositoryAdapter() {
       public void modelRepositoryChanged() {
-        DeferringEventHandler.this.repositoryChanged();
+        requestUpdate();
+      }
+    };
+
+    private SModelListener myModelListener = new SModelAdapter(){
+      public void modelInitialized(SModelDescriptor modelDescriptor) {
+        requestUpdate();
+      }
+    };
+
+    private ModelAccessListener myModelAccessListener = new ModelAccessAdapter(){
+      public void commandFinished() {
+        requestUpdate();
       }
     };
 
     public void installListeners() {
-      CommandProcessor.getInstance().addCommandListener(this);
+      ModelAccess.instance().addCommandListener(myModelAccessListener);
       SModelRepository.getInstance().addModelRepositoryListener(myRepoListener);
-      GlobalSModelEventsManager.getInstance().addGlobalModelListener(this);
+      GlobalSModelEventsManager.getInstance().addGlobalModelListener(myModelListener);
     }
 
     public void unInstallListeners() {
-      CommandProcessor.getInstance().removeCommandListener(this);
+      ModelAccess.instance().removeCommandListener(myModelAccessListener);
       SModelRepository.getInstance().removeModelRepositoryListener(myRepoListener);
-      GlobalSModelEventsManager.getInstance().removeGlobalModelListener(this);
+      GlobalSModelEventsManager.getInstance().removeGlobalModelListener(myModelListener);
     }
 
-    public void modelInitialized(SModelDescriptor modelDescriptor) {
-      requestUpdate();
-    }
 
-    private void repositoryChanged() {
-      requestUpdate();
-    }
-
-    public void beforeCommandFinished(CommandEvent event) {
-    }
-
-    public void commandFinished(CommandEvent event) {
-    }
-
-    public void commandStarted(CommandEvent event) {
-    }
-
-    public void undoTransparentActionStarted() {
-    }
-
-    public void undoTransparentActionFinished() {
-
-    }
   }
 }
