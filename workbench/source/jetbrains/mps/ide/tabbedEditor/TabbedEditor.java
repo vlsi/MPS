@@ -123,9 +123,8 @@ public class TabbedEditor implements IEditor {
   protected void selectTab(int n) {
     myTabbedPane.selectTab(n);
     JComponent component = myTabbedPane.getCurrentTab().getComponent();
-    if (component != null) {
-      component.requestFocus();
-    }
+    if (component == null) return;
+    component.requestFocus();
   }
 
   public void onSelectInnerTab() {

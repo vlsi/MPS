@@ -32,7 +32,6 @@ import jetbrains.mps.changesmanager.RootNodeFileStatusManager;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.tabbedEditor.AbstractLazyTab;
-import jetbrains.mps.ide.tabbedEditor.LazyTabbedPane;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.core.structure.INamedConcept;
@@ -80,7 +79,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
   public void addEditableNode(SNode loadableNode, IOperationContext operationContext) {
     if (getLoadableNodes().size() == 0) {
       tryToInitComponent();
-      getTabbedEditor().getTabbedPane().updateTabComponent(this);
+      getTabbedEditor().getTabbedPane().updateTabComponent(this);      
     } else {
       addInnerTab(loadableNode, operationContext);
     }
@@ -191,10 +190,10 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     });
   }
 
-  private boolean tryToInitComponent() {
+  private void tryToInitComponent() {
     List<Pair<SNode, IOperationContext>> loadableNodes = tryToLoadNodes();
 
-    if (loadableNodes.isEmpty()) return false;
+    if (loadableNodes.isEmpty()) return;
 
     myComponent = new JPanel(new BorderLayout());
     myInnerTabbedPane = new JTabbedPane();
@@ -225,7 +224,7 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
 
     myComponent.add(myInnerTabbedPane, BorderLayout.CENTER);
 
-    if (!canCreate()) return true;
+    if (!canCreate()) return;
 
     final JPanel panel = new JPanel(new BorderLayout());
     final JButton button = new JButton();
@@ -246,8 +245,6 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
     button.setAction(action);
     panel.add(button, BorderLayout.WEST);
     myComponent.add(panel, BorderLayout.NORTH);
-
-    return true;
   }
 
   private JComponent addInnerTab(SNode loadableNode, IOperationContext operationContext) {
