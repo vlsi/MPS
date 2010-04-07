@@ -160,15 +160,15 @@ public abstract class BaseAddMethodDialog extends BaseDialog {
             methodNodes.add((BaseAddMethodDialog.MethodTreeNode) path.getLastPathComponent());
           }
         }
+        Collections.sort(methodNodes, new Comparator<BaseAddMethodDialog.MethodTreeNode>() {
+          public int compare(BaseAddMethodDialog.MethodTreeNode m1, BaseAddMethodDialog.MethodTreeNode m2) {
+            return BaseAddMethodDialog.this.compareMethods(m1.getMethod(), m2.getMethod());
+          }
+        });
         List<BaseMethodDeclaration> methods = BaseAddMethodDialog.this.doAddMethods(methodNodes);
         if (methods.isEmpty()) {
           return;
         }
-        Collections.sort(methods, new Comparator<BaseMethodDeclaration>() {
-          public int compare(BaseMethodDeclaration m1, BaseMethodDeclaration m2) {
-            return BaseAddMethodDialog.this.compareMethods(m1, m2);
-          }
-        });
         if (methods.size() == 1) {
           SNode node = methods.get(0).getNode();
           BaseAddMethodDialog.this.myContext.selectAfter(node);
