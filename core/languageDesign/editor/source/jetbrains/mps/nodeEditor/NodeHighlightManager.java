@@ -104,7 +104,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     if (result != null) {
       return new ArrayList<EditorMessage>(result);
     }
-    return new ArrayList<EditorMessage>();
+    return Collections.<EditorMessage>emptyList();
   }
 
   private List<EditorMessage> calculateMessages(EditorCell cell) {
