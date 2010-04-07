@@ -35,7 +35,6 @@ import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import com.intellij.execution.executors.DefaultDebugExecutor;
 import jetbrains.mps.debug.DebuggerKeys;
 import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner;
@@ -54,6 +53,7 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import java.util.Collections;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   @Tag(value = "state")
@@ -126,6 +126,8 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           String oldVmParams = javaRunParameters.getVMParameters();
           if (StringUtils.isNotEmpty(oldVmParams)) {
             oldVmParams += " ";
+          } else {
+            oldVmParams = "";
           }
           javaRunParameters.setVMParameters(oldVmParams + args);
         }
@@ -143,19 +145,10 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           }.invoke()));
 
           // create console component 
-          final Tuples._2<JComponent, _FunctionTypes._void_P0_E0> component = MultiTuple.<JComponent, _FunctionTypes._void_P0_E0>empty2().assign((Tuples._2<JComponent, _FunctionTypes._void_P0_E0>) (new _FunctionTypes._return_P0_E0<Tuples._2<JComponent, _FunctionTypes._void_P0_E0>>() {
-            public Tuples._2<JComponent, _FunctionTypes._void_P0_E0> invoke() {
-              return MultiTuple.<JComponent,_FunctionTypes._void_P0_E0>from(consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {
-                public void invoke() {
-                  Disposer.dispose(consoleView);
-                }
-              });
-            }
-          }.invoke()));
-          consoleComponent = component._0();
+          consoleComponent = consoleView.getComponent();
           consoleDispose = new Runnable() {
             public void run() {
-              component._1().invoke();
+              Disposer.dispose(consoleView);
             }
           };
 

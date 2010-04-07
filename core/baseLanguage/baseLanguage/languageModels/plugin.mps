@@ -13796,31 +13796,6 @@
     <link role="configType" targetNodeId="4434783588132660334" resolveInfo="JavaApplication" />
     <link role="conceptDeclaration" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
     <node role="executeBlock" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock:23" id="3607966867310296661">
-      <node role="executeConsole:23" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteConsole:23" id="3607966867310296662">
-        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3607966867310296663">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3607966867310300139">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral:2" id="3607966867310300140">
-              <node role="component:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3607966867310339940">
-                <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.Console_FunctionParameter:23" id="3607966867310339938" />
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3607966867310344157">
-                  <link role="baseMethodDeclaration:3" targetNodeId="44.~ConsoleViewImpl.getComponent():javax.swing.JComponent" resolveInfo="getComponent" />
-                </node>
-              </node>
-              <node role="component:2" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="3607966867310344393">
-                <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3607966867310344394">
-                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3607966867310344397">
-                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3607966867310344398">
-                      <link role="baseMethodDeclaration:3" targetNodeId="50.~Disposer.dispose(com.intellij.openapi.Disposable):void" resolveInfo="dispose" />
-                      <link role="classConcept:3" targetNodeId="50.~Disposer" resolveInfo="Disposer" />
-                      <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.Console_FunctionParameter:23" id="3607966867310344399" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="executeProcess:23" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteProcess:23" id="3607966867310296664">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3607966867310296665">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3607966867310300134">

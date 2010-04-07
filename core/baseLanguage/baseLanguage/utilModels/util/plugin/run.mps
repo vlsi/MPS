@@ -1447,16 +1447,6 @@
         <link role="classifier:3" targetNodeId="34.~ProcessBuilder" resolveInfo="ProcessBuilder" />
       </node>
     </node>
-    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="7518625823783865160">
-      <property name="name:3" value="myIsDebug" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="7518625823783865161" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="7518625823783865175" />
-    </node>
-    <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="4593326532895577298">
-      <property name="name:3" value="myDebugArguments" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="4593326532895577299" />
-      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4593326532895577313" />
-    </node>
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="8492459591399148212">
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8492459591399148213" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8492459591399148214" />
