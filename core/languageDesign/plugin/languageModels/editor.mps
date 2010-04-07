@@ -6046,6 +6046,7 @@
     <link role="conceptDeclaration:32" targetNodeId="1.7086588812844908357:23" resolveInfo="IRunConfigPropertyInstance" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3361586479359735091">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="3361586479359735095">
+        <property name="readOnly:32" value="true" />
         <link role="relationDeclaration:32" targetNodeId="14.1169194664001:0" resolveInfo="name" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3361586479359735096">
