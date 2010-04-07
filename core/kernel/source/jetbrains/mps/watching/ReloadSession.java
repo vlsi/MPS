@@ -56,9 +56,7 @@ class ReloadSession {
 
   public void doReload() {
     if (hasAnythingToDo()) {
-
       ProgressManager.getInstance().run(new Modal(null, "Reloading", false) {
-
         public void run(@NotNull final ProgressIndicator progressIndicator) {
           fireReloadStarted();
           LOG.debug("Starting reload for:\n" +
@@ -90,7 +88,6 @@ class ReloadSession {
               progressIndicator.setText("Reloading classes... Please wait.");
               LOG.info("Reloading classes.");
               ModelAccess.instance().runReadAction(new Runnable() {
-                @Override
                 public void run() {
                   ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
                 }
@@ -131,7 +128,6 @@ class ReloadSession {
           } catch (RuntimeException e) {
             LOG.error(e);
           }
-
         }
       }
     });
