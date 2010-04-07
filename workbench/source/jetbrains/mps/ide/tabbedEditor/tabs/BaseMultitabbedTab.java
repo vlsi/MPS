@@ -79,7 +79,6 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
   public void addEditableNode(SNode loadableNode, IOperationContext operationContext) {
     if (getLoadableNodes().size() == 0) {
       tryToInitComponent();
-      getTabbedEditor().getTabbedPane().updateTabComponent(this);      
     } else {
       addInnerTab(loadableNode, operationContext);
     }
@@ -224,27 +223,29 @@ public abstract class BaseMultitabbedTab extends AbstractLazyTab {
 
     myComponent.add(myInnerTabbedPane, BorderLayout.CENTER);
 
-    if (!canCreate()) return;
-
-    final JPanel panel = new JPanel(new BorderLayout());
-    final JButton button = new JButton();
-    AbstractAction action = new AbstractAction("Create new") {
-      public void actionPerformed(final ActionEvent e) {
-        List<SNode> concepts = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
-          public List<SNode> compute() {
-            return getAvailableConcepts();
+    if (canCreate()) {
+      final JPanel panel = new JPanel(new BorderLayout());
+      final JButton button = new JButton();
+      AbstractAction action = new AbstractAction("Create new") {
+        public void actionPerformed(final ActionEvent e) {
+          List<SNode> concepts = ModelAccess.instance().runReadAction(new Computable<List<SNode>>() {
+            public List<SNode> compute() {
+              return getAvailableConcepts();
+            }
+          });
+          if (concepts.size() == 0) {
+            createLoadableNode(true, null);
+          } else {
+            showConceptList(new RelativePoint(button, new Point(0, button.getHeight())));
           }
-        });
-        if (concepts.size() == 0) {
-          createLoadableNode(true, null);
-        } else {
-          showConceptList(new RelativePoint(button, new Point(0, button.getHeight())));
         }
-      }
-    };
-    button.setAction(action);
-    panel.add(button, BorderLayout.WEST);
-    myComponent.add(panel, BorderLayout.NORTH);
+      };
+      button.setAction(action);
+      panel.add(button, BorderLayout.WEST);
+      myComponent.add(panel, BorderLayout.NORTH);
+    }
+
+    getTabbedEditor().getTabbedPane().updateTabComponent(this);
   }
 
   private JComponent addInnerTab(SNode loadableNode, IOperationContext operationContext) {
