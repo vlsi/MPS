@@ -7023,8 +7023,8 @@
                 <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="364536634176620802">
                   <property name="value:3" value="1" />
                 </node>
-                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="364536634176620804">
-                  <link role="variableDeclaration:3" targetNodeId="^" resolveInfo="myField" />
+                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference:3" id="4618117613181129322">
+                  <link role="variableDeclaration:3" targetNodeId="8350369201053334933" resolveInfo="myField" />
                 </node>
               </node>
             </node>
