@@ -471,17 +471,6 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1153944193378">
-    <property name="name:0" value="ForEachVariable" />
-    <property name="iconPath:0" value="${mps_home}/core/baseLanguage/baseLanguage/icons/variable.png" />
-    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1219697389604">
-      <link role="intfc:0" targetNodeId="1.1169194658468:0" resolveInfo="INamedConcept" />
-    </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1226941030274">
-      <link role="intfc:0" targetNodeId="2.1212170275853:3" resolveInfo="IValidIdentifier" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1153944233411">
     <property name="name:0" value="ForEachVariableReference" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" />
@@ -3075,6 +3064,20 @@
       <property name="role:0" value="containerDeclaration" />
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="6099516049394485216:7" resolveInfo="CustomContainerDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1153944193378">
+    <property name="name:0" value="ForEachVariable" />
+    <property name="iconPath:0" value="${mps_home}/core/baseLanguage/baseLanguage/icons/variable.png" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1219697389604">
+      <link role="intfc:0" targetNodeId="1.1169194658468:0" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1226941030274">
+      <link role="intfc:0" targetNodeId="2.1212170275853:3" resolveInfo="IValidIdentifier" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5432666129547687716">
+      <link role="intfc:0" targetNodeId="2.5432666129547687712:3" resolveInfo="IVariableDeclaration" />
     </node>
   </node>
 </model>

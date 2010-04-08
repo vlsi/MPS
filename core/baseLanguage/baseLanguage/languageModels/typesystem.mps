@@ -71,7 +71,6 @@
   <import index="56" modelUID="f:java_stub#jetbrains.mps.lang.dataFlow.framework(jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
   <import index="57" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <import index="58" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
-  <import index="59" modelUID="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1175495245176">
     <property name="name:3" value="typeOf_andExpression" />
     <property name="overrides:3" value="true" />
@@ -22937,7 +22936,7 @@
           <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4579166930940842484">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4579166930940688913">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4579166930940842446">
-                <link role="baseMethodDeclaration:3" targetNodeId="59.4579166930940566544" resolveInfo="ParameterScope" />
+                <link role="baseMethodDeclaration:3" targetNodeId="35.~ParameterScope.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="ParameterScope" />
                 <node role="actualArgument:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4579166930940842465">
                   <link role="applicableNode:3" targetNodeId="6654001062452788424" resolveInfo="iVariableDeclaration" />
                 </node>
