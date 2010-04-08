@@ -117,7 +117,9 @@ public class StubReloadManager implements ApplicationComponent {
       for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(m)) {
         if (!SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
         if (notChanged(stubPathList, sm)) {
-          notReloaded++;
+          if (sm.isInitialized()){
+            notReloaded++;
+          }
           continue;
         } else {
           reloaded++;
