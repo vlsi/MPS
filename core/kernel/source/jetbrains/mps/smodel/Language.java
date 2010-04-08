@@ -126,7 +126,11 @@ public class Language extends AbstractModule {
   }
 
   protected void reloadAfterDescriptorChange() {
-    MPSModuleRepository.getInstance().unRegisterModules(this);
+    MPSModuleRepository.getInstance().unRegisterModules(this, new Condition<IModule>() {
+      public boolean met(IModule m) {
+        return !(m instanceof Solution && ((Solution) m).isStub());
+      }
+    });
 
     for (Generator generator : getGenerators()) {
       generator.dispose();

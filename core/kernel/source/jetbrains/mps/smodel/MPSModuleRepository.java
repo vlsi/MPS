@@ -23,6 +23,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ManyToManyMap;
 import jetbrains.mps.vfs.FileSystem;
@@ -322,13 +323,24 @@ public class MPSModuleRepository implements ApplicationComponent {
     fireModuleAdded(module);
   }
 
+  public void unRegisterModules(MPSModuleOwner owner, Condition<IModule> condition) {
+    assertCanWrite();
+
+    myDirtyFlag = true;
+    Set<IModule> modules = new HashSet<IModule>(myModuleToOwners.getBySecond(owner));
+    for (IModule m : modules) {
+      if (condition.met(m)) {
+        myModuleToOwners.removeLink(m, owner);
+      }
+    }
+    fireRepositoryChanged();
+  }
+
   public void unRegisterModules(MPSModuleOwner owner) {
     assertCanWrite();
 
     myDirtyFlag = true;
-
     myModuleToOwners.clearSecond(owner);
-
     fireRepositoryChanged();
   }
 
@@ -338,7 +350,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     if (!myDirtyFlag) return;
 
     myDirtyFlag = false;
-    for (IModule m : getModulesToBeRemoved(new HashSet<MPSModuleOwner>())) {
+    for (IModule m : getModulesToBeRemoved()) {
       fireBeforeModuleRemoved(m);
       m.dispose();
       removeModule(m);
@@ -346,16 +358,14 @@ public class MPSModuleRepository implements ApplicationComponent {
     //todo: do the similar thing with module stubs
   }
 
-  private Set<IModule> getModulesToBeRemoved(Set<MPSModuleOwner> willBeReleased) {
+  private Set<IModule> getModulesToBeRemoved() {
     Set<MPSModuleOwner> rootOwners = new HashSet<MPSModuleOwner>();
     for (IModule m : myModules) {
       for (MPSModuleOwner owner : myModuleToOwners.getByFirst(m)) {
-        if (!(owner instanceof IModule)) {
-          rootOwners.add(owner);
-        }
+        if (owner instanceof IModule) continue;
+        rootOwners.add(owner);
       }
     }
-    rootOwners.removeAll(willBeReleased);
 
     Set<IModule> visibleModules = new HashSet<IModule>();
     for (IModule m : myModules) {
@@ -371,21 +381,18 @@ public class MPSModuleRepository implements ApplicationComponent {
       }
     }
 
-    boolean hasModulesToProcess = true;
-    while (hasModulesToProcess) {
-      Set<IModule> toAdd = new HashSet<IModule>();
+    Set<IModule> toAdd;
+    do {
+      toAdd = new HashSet<IModule>();
       for (IModule m : myModules) {
         if (visibleModules.contains(m)) continue;
         for (IModule v : visibleModules) {
-          if (myModuleToOwners.contains(m, v)) {
-            toAdd.add(m);
-          }
+          if (!myModuleToOwners.contains(m, v)) continue;
+          toAdd.add(m);
         }
       }
-
-      hasModulesToProcess = !toAdd.isEmpty();
       visibleModules.addAll(toAdd);
-    }
+    } while (!toAdd.isEmpty());
 
     Set<IModule> toBeRemoved = new HashSet<IModule>(myModules);
     toBeRemoved.removeAll(visibleModules);
@@ -438,7 +445,6 @@ public class MPSModuleRepository implements ApplicationComponent {
 
     return false;
   }
-
 
   public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
     return readModuleDescriptors(dir, owner, new HashSet<IFile>());
