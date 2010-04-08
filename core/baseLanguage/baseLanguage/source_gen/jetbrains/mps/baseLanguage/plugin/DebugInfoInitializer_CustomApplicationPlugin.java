@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.debug.api.BreakpointManagerComponent;
 
 public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private static Logger LOG = Logger.getLogger(DebugInfoInitializer_CustomApplicationPlugin.class);
@@ -71,6 +72,7 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
         return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(scopeNode, "variable", true));
       }
     });
+    BreakpointManagerComponent.notifyDebuggableConceptsAdded();
   }
 
   public void doDispose() {
