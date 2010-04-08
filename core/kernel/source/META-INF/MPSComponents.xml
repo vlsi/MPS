@@ -512,7 +512,7 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.debug.runtime.BreakpointManagerComponent</implementation-class>
+            <implementation-class>jetbrains.mps.debug.api.BreakpointManagerComponent</implementation-class>
             <skipForDummyProject/>
         </component>
 
