@@ -244,7 +244,7 @@ public class ModelAccess {
           public void run() {
             if (getWriteLock().tryLock()) {
               try {
-                r.run();
+                new CommandRunnable(r).run();
               } finally {
                 getWriteLock().unlock();
               }
