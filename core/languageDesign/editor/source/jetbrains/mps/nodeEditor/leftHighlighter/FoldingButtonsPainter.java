@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.util.misc.hash.HashMap;
 
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 import java.util.Map;
@@ -19,6 +20,7 @@ import java.util.Map.Entry;
 public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
   private Map<CellInfo, FoldingButton> myFoldingButtons = new HashMap<CellInfo, FoldingButton>();
   private FoldingButton myButtonUnderMouse;
+  private boolean myNeedsRelayout;
 
   public FoldingButtonsPainter(LeftEditorHighlighter leftHighlighter) {
     super(leftHighlighter);
@@ -32,16 +34,24 @@ public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
       assert foldable.getEditor() == editorComponent : "cell must be from my editor";
       myFoldingButtons.put(foldable.getCellInfo(), new FoldingButton(foldable, getLefthighlighter().getBackground()));
     }
+    myNeedsRelayout = true;
   }
 
   @Override
   public void relayout() {
+    if (!myNeedsRelayout) {
+      return;
+    }
     for (Iterator<Entry<CellInfo, FoldingButton>> it = myFoldingButtons.entrySet().iterator(); it.hasNext();) {
       Entry<CellInfo, FoldingButton> nextEntry = it.next();
       if (!nextEntry.getValue().relayout()) {
         it.remove();
       }
     }
+  }
+
+  public void setNeedsRelayout() {
+    myNeedsRelayout = true;
   }
 
   @Override
@@ -57,13 +67,25 @@ public class FoldingButtonsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public void paintInLocalCoordinates(Graphics g) {
+    Rectangle clipBounds = g.getClipBounds();
     // Painting mouse over feedback "below" all other folding buttons
     for (FoldingButton button : myFoldingButtons.values()) {
-      button.paintFeedback(g);
+      if (isVisible(button, clipBounds)) {
+        button.paintFeedback(g);
+      }
     }
     for (FoldingButton button : myFoldingButtons.values()) {
-      button.paint(g);
+      if (isVisible(button, clipBounds)) {
+        button.paint(g);
+      }
     }
+  }
+
+  private boolean isVisible(FoldingButton button, Rectangle clipBounds) {
+    return !(clipBounds.y + clipBounds.height < button.getY() ||
+      clipBounds.y > button.getY() + button.getHeight() ||
+      clipBounds.x + clipBounds.width < -FoldingButton.HALF_WIDTH ||
+      clipBounds.x > FoldingButton.HALF_WIDTH);
   }
 
   @Override

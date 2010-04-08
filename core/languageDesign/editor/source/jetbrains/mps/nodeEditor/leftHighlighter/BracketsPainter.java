@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.leftHighlighter.HighlighterBracket.BracketEdge;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -15,6 +16,7 @@ import java.util.Map.Entry;
  * Date: 02.03.2010
  */
 public class BracketsPainter extends AbstractFoldingAreaPainter {
+  private int myLeftAreaWidth = -1;
   private HashMap<CellInfo, HighlighterBracket> myBrackets = new HashMap<CellInfo, HighlighterBracket>();
 
   public BracketsPainter(LeftEditorHighlighter leftEditorHighlighter) {
@@ -22,17 +24,22 @@ public class BracketsPainter extends AbstractFoldingAreaPainter {
   }
 
   @Override
-  public void relayout() {
+  public int getLeftAreaWidth() {
+    if (myLeftAreaWidth < 0) {
+      myLeftAreaWidth = relayoutBrackets();
+    }
+    return myLeftAreaWidth;
+  }
+
+  private int relayoutBrackets() {
     for (Iterator<Entry<CellInfo, HighlighterBracket>> it = myBrackets.entrySet().iterator(); it.hasNext();) {
       Entry<CellInfo, HighlighterBracket> nextEntry = it.next();
       if (!nextEntry.getValue().relayout()) {
+        // TODO: check if this code is useful 
         it.remove();
       }
     }
-  }
 
-  @Override
-  public int getLeftAreaWidth() {
     List<BracketEdge> bracketEdges = new ArrayList<BracketEdge>();
     for (HighlighterBracket bracket : myBrackets.values()) {
       bracket.setLevel(1);
@@ -86,8 +93,9 @@ public class BracketsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public void paintInLocalCoordinates(Graphics g) {
+    Rectangle clipBounds = g.getClipBounds();
     for (HighlighterBracket bracket : myBrackets.values()) {
-      bracket.paint(g);
+      bracket.paint(g, clipBounds);
     }
   }
 
@@ -98,11 +106,13 @@ public class BracketsPainter extends AbstractFoldingAreaPainter {
 
   public void removeBracket(EditorCell cell) {
     myBrackets.remove(cell.getCellInfo());
+    myLeftAreaWidth = -1;
   }
 
   public void addBracket(EditorCell cell, EditorCell secondCell, Color c) {
     CellInfo info1 = cell.getCellInfo();
     CellInfo info2 = secondCell.getCellInfo();
     myBrackets.put(info1, new HighlighterBracket(info1, info2, c, getEditorComponent()));
+    myLeftAreaWidth = -1;
   }
 }

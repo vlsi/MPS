@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 
 /**
  * User: Alexander Shatalin
@@ -62,9 +63,15 @@ public class HighlighterBracket {
     return myEndingEdge;
   }
 
-  public void paint(Graphics g) {
-    g.setColor(myColor);
+  public void paint(Graphics g, Rectangle clipBounds) {
+    if (clipBounds.y + clipBounds.height < getY1() || clipBounds.y > getY2()) {
+      return;
+    }
     int bracketWidth = getBracketWidth(getLevel());
+    if (clipBounds.x + clipBounds.width < -bracketWidth || clipBounds.x > 0) {
+      return;
+    }
+    g.setColor(myColor);
     int horizontalSegmentStart = bracketWidth - BRACKET_LINE_THICKNESS;
     int horizontalSegmentWidth = bracketWidth - BRACKET_LINE_THICKNESS - ADDITIONAL_HORIZONTAL_SHIFT;
     g.fillRect(-horizontalSegmentStart, getY1(), horizontalSegmentWidth, BRACKET_LINE_THICKNESS);

@@ -1407,7 +1407,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void relayout() {
-    doRelayout(true);
+    doRelayout();
     revalidate();
     repaint();
     myMessagesGutter.repaint();
@@ -1424,18 +1424,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  public void revalidateAndRepaint(boolean updateFolding) {
-    myLeftHighlighter.relayout(updateFolding);
+  public void revalidateAndRepaint() {
+    myLeftHighlighter.relayout(false);
     repaint();
   }
 
-  private void doRelayout(boolean updateFolding) {
+  private void doRelayout() {
     if (myRootCell == null) return;
 
     myRootCell.setX(myShiftX);
     myRootCell.setY(myShiftY);
     myRootCell.relayout();
-    myLeftHighlighter.relayout(updateFolding);
+    myLeftHighlighter.relayout(true);
     if (mySearchPanel.isVisible()) {
       mySearchPanel.search(false);
     }
@@ -1747,7 +1747,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       changeSelection(newSelectedCell, true, false);
       assert mySelectedCell != null;
       mySelectedCell.processMousePressed(mouseEvent);
-      revalidateAndRepaint(false);
+      revalidateAndRepaint();
     }
   }
 
@@ -2144,7 +2144,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (isKeyboardHandlerProcessingEnabled(keyEvent) && peekKeyboardHandler().processKeyPressed(editorContext, keyEvent)) {
       keyEvent.consume();
     }
-    revalidateAndRepaint(false);
+    revalidateAndRepaint();
   }
 
   public void processKeyReleased(final KeyEvent keyEvent) {
@@ -2154,7 +2154,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       keyEvent.consume();
     }
 
-    revalidateAndRepaint(false);
+    revalidateAndRepaint();
   }
 
   public void processKeyTyped(final KeyEvent keyEvent) {
@@ -2164,7 +2164,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       keyEvent.consume();
     }
 
-    revalidateAndRepaint(false);
+    revalidateAndRepaint();
   }
 
   private boolean isKeyboardHandlerProcessingEnabled(KeyEvent keyEvent) {

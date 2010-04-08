@@ -68,6 +68,7 @@ public class LeftEditorHighlighter extends JComponent {
 
   private EditorComponent myEditorComponent;
   private List<AbstractFoldingAreaPainter> myFoldingAreaPainters = new ArrayList();
+  private FoldingButtonsPainter myFoldingButtonsPainter;
   private BracketsPainter myBracketsPainter;
 
   private BookmarkListener myListener;
@@ -87,7 +88,7 @@ public class LeftEditorHighlighter extends JComponent {
   private int myRightFoldingAreaWidth;
   private int myWidth;
   private int myHeight;
-
+  
   public LeftEditorHighlighter(EditorComponent editorComponent) {
     setBackground(Color.white);
     myEditorComponent = editorComponent;
@@ -152,11 +153,11 @@ public class LeftEditorHighlighter extends JComponent {
         for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
           painter.editorRebuilt();
         }
-        relayout(true, false);
+        relayout();
       }
     });
     myFoldingAreaPainters.add(myBracketsPainter = new BracketsPainter(this));
-    myFoldingAreaPainters.add(new FoldingButtonsPainter(this));
+    myFoldingAreaPainters.add(myFoldingButtonsPainter = new FoldingButtonsPainter(this));
   }
 
   public EditorComponent getEditorComponent() {
@@ -298,31 +299,24 @@ public class LeftEditorHighlighter extends JComponent {
 
   public void relayout(boolean updateFolding) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.relayout() should be executed in eventDispatchThread";
-    relayout(updateFolding, true);
+    if (updateFolding) {
+      myFoldingButtonsPainter.setNeedsRelayout();
+    }
+    relayout();
   }
 
-  private void relayout(boolean updateFolding, boolean updateBraces) {
+  private void relayout() {
     recalculateIconRenderersWidth();
-    recalculateFoldingAreaWidth(updateFolding, updateBraces);
+    recalculateFoldingAreaWidth();
     updateSeparatorLinePosition();
   }
 
-  private void recalculateFoldingAreaWidth(boolean updateFolding, boolean updateBraces) {
+  private void recalculateFoldingAreaWidth() {
     myLeftFoldingAreaWidth = MIN_LEFT_FOLDING_AREA_WIDTH;
     myRightFoldingAreaWidth = MIN_RIGHT_FOLDING_AREA_WIDTH;
     // Layouting painterss
     for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
-      if (painter instanceof FoldingButtonsPainter) {
-        if (updateFolding) {
-          painter.relayout();
-        }
-      } else if (painter instanceof BracketsPainter) {
-        if (updateBraces) {
-          painter.relayout();
-        }
-      } else {
-        painter.relayout();
-      }
+      painter.relayout();
       myLeftFoldingAreaWidth = Math.max(myLeftFoldingAreaWidth, painter.getLeftAreaWidth());
       myRightFoldingAreaWidth = Math.max(myRightFoldingAreaWidth, painter.getRightAreaWidth());
     }
