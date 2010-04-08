@@ -27,6 +27,7 @@ import jetbrains.mps.debug.info.StacktraceUtil;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.LocatableEventRequestor;
+import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -41,51 +42,18 @@ import java.util.List;
  * Time: 15:25:56
  * To change this template use File | Settings | File Templates.
  */
-public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
+public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
   private static Logger LOG = Logger.getLogger(MPSBreakpoint.class);
 
-  private final Project myProject;
-  private final SNodePointer myNodePointer;
-  public boolean myIsEnabled = true; //todo add ability to disable breakpoints
+  private MPSBreakpoint() {
 
-  public MPSBreakpoint(SNode node, Project project) {
-    myNodePointer = new SNodePointer(node);
-    myProject = project;
   }
 
-  public MPSBreakpoint(SNodePointer nodePointer, Project project) {
-    myNodePointer = nodePointer;
-    myProject = project;
+  //todo use factory from BreakpointManager
+  public static MPSBreakpoint createBreakpoint(SNodePointer pointer, Project project) {
+    return new MPSBreakpoint();
   }
 
-  public SNodePointer getNodePointer() {
-    return myNodePointer;
-  }
-
-  public SNode getSNode() {
-    return myNodePointer.getNode();
-  }
-
-  public BreakpointInfo createBreakpointInfo() {
-    return new BreakpointInfo(myNodePointer.getModelReference().toString(),
-      myNodePointer.getNodeId().toString());
-  }
-
-  public static MPSBreakpoint fromBreakpointInfo(BreakpointInfo breakpointInfo, Project project) {
-    return new MPSBreakpoint(new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId), project);
-  }
-
-  public PositionInfo getTargetCodePosition() {
-    DebugInfo debugInfo = BLDebugInfoCache.getInstance().get(myNodePointer.getModel());
-    if (debugInfo == null) {
-      return null;
-    }
-    return debugInfo.getPositionForNode(myNodePointer.getNodeId().toString());
-  }
-
-  public boolean isValid() {
-    return getTargetCodePosition() != null;
-  }
 
   //this should be called on every breakpoint when DebugEventsProcessor is attached
 
@@ -143,11 +111,6 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
     createRequestForPreparedClass(debugProcess, classType);
   }
 
-  public int getLineIndexInClass() {
-    PositionInfo position = getTargetCodePosition();
-    if (position == null) return -1;
-    return position.getStartLine() + 1;
-  }
 
   //this is called when a class for this BP is prepared
 
@@ -155,7 +118,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
     RequestManager requestManager = debugProcess.getRequestManager();
 
     try {
-      int lineIndex = getLineIndexInClass();
+      int lineIndex = getLineIndexInFile();
       List<Location> locs = classType.locationsOfLine(lineIndex);
       if (locs.size() > 0) {
         for (final Location location : locs) {
@@ -165,7 +128,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
       } else {
         // there's no executable code in this class
         requestManager.setInvalid(this, "no executable code found");
-        String message = "No locations of type " + classType.name() + " found at line " + getLineIndexInClass();
+        String message = "No locations of type " + classType.name() + " found at line " + getLineIndexInFile();
         LOG.warning(message);
       }
     } catch (ClassNotPreparedException ex) {
@@ -184,23 +147,6 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
     }
   }
 
-  public Project getProject() {
-    return myProject;
-  }
-
-  public static class BreakpointInfo {
-    public String myModelReference;
-    public String myNodeId;
-
-    public BreakpointInfo(String modelReference, String nodeId) {
-      myModelReference = modelReference;
-      myNodeId = nodeId;
-    }
-
-    public BreakpointInfo() {
-
-    }
-  }
 
   @Override
   //called when breakpoint is hit
