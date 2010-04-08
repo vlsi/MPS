@@ -35,8 +35,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
-import java.awt.Frame;
 import jetbrains.mps.workbench.dialogs.project.creation.NewGeneratorDialog;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.actions.MappingDialog;
 import jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior;
 
@@ -609,9 +609,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
         }
       });
       final List<Generator> genList = language.value.getGenerators();
-      Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
       if (ListSequence.fromList(genList).isEmpty()) {
-        NewGeneratorDialog dialog = new NewGeneratorDialog(frame, language.value);
+        NewGeneratorDialog dialog = new NewGeneratorDialog(WindowManager.getInstance().getFrame(project), language.value);
         dialog.showDialog();
         final Generator createdGenerator = dialog.getResult();
         if (createdGenerator != null) {
