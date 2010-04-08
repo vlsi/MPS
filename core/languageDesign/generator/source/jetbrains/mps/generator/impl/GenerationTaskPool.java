@@ -31,14 +31,14 @@ public class GenerationTaskPool implements IGenerationTaskPool {
     }
 
     public Thread newThread(final Runnable original) {
-      Runnable r = new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runReadAction(original);
-        }
-      };
+//      Runnable r = new Runnable() {
+//        @Override
+//        public void run() {
+//          ModelAccess.instance().runReadAction(original);
+//        }
+//      };
 
-      Thread t = new Thread(group, r, namePrefix + threadNumber.getAndIncrement());
+      Thread t = new Thread(group, original, namePrefix + threadNumber.getAndIncrement());
       if (t.isDaemon())
         t.setDaemon(false);
       if (t.getPriority() != Thread.NORM_PRIORITY)
@@ -58,16 +58,29 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       seqNum = seq.getAndIncrement();
     }
 
-    @Override
-    public void run() {
+    private void runInternal() {
       try {
         myTask.run();
       } catch (GenerationCanceledException e) {
         reportException(e);
       } catch (GenerationFailureException e) {
         reportException(e);
-      } catch(Throwable th) {
+      } catch (Throwable th) {
         reportException(th);
+      }
+    }
+
+    @Override
+    public void run() {
+      if (myTask.requiresReadAccess()) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            runInternal();
+          }
+        });
+      } else {
+        runInternal();
       }
     }
 
@@ -88,8 +101,8 @@ public class GenerationTaskPool implements IGenerationTaskPool {
     @Override
     protected void afterExecute(Runnable r, Throwable t) {
       long tasksLeft = tasksInQueue.decrementAndGet();
-      if(tasksLeft == 0) {
-        synchronized(objectLock) {
+      if (tasksLeft == 0) {
+        synchronized (objectLock) {
           objectLock.notifyAll();
         }
       }
@@ -109,28 +122,28 @@ public class GenerationTaskPool implements IGenerationTaskPool {
   public void waitForCompletion() throws GenerationCanceledException, GenerationFailureException {
     Throwable th = null;
     synchronized (objectLock) {
-      while(exceptions.size() == 0 && tasksInQueue.get() != 0 && !progressMonitor.isCanceled()) {
+      while (exceptions.size() == 0 && tasksInQueue.get() != 0 && !progressMonitor.isCanceled()) {
         try {
           objectLock.wait(1000);
         } catch (InterruptedException e) {
           /* ignore */
         }
       }
-      if(exceptions.size() != 0) {
+      if (exceptions.size() != 0) {
         th = exceptions.get(0);
-      } else if(progressMonitor.isCanceled()) {
+      } else if (progressMonitor.isCanceled()) {
         th = new GenerationCanceledException();
       }
     }
     myExecutor.shutdownNow();
 
     // rethrow
-    if(th != null) {
-      if(th instanceof GenerationCanceledException) {
-        throw (GenerationCanceledException)th;
-      } else if(th instanceof GenerationFailureException) {
+    if (th != null) {
+      if (th instanceof GenerationCanceledException) {
+        throw (GenerationCanceledException) th;
+      } else if (th instanceof GenerationFailureException) {
         throw (GenerationFailureException) th;
-      } else if(th instanceof RuntimeException) {
+      } else if (th instanceof RuntimeException) {
         throw (RuntimeException) th;
       }
     }

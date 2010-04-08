@@ -32,7 +32,6 @@ import java.util.Map;
 public class ReferenceInfo_Macro extends ReferenceInfo {
   private final SNode myTemplateReferenceNode;
   private final ReferenceMacro myReferenceMacro;
-  private final Map<String, SNode> myInputNodesByMappingName;
   private final TemplateContext myContext;
 
   // results of 'expandReferenceMacro'
@@ -41,9 +40,8 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private SNode myOutputTargetNode;
   private SModelReference myExternalTargetModelReference;
 
-  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, @Nullable SNode inputNode, Map<String, SNode> inputNodesByMappingName, SNode templateReferenceNode, TemplateContext context) {
-    super(outputSourceNode, getReferenceRole(macro), inputNode);
-    myInputNodesByMappingName = inputNodesByMappingName;
+  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro macro, SNode templateReferenceNode, TemplateContext context) {
+    super(outputSourceNode, getReferenceRole(macro), context.getInput());
     myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = macro;
     myContext = context;
@@ -73,12 +71,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private void ensureMacroProcessed(TemplateGenerator generator) {
     if (myMacroProcessed) return;
     myMacroProcessed = true;
-    Map<String, SNode> old = generator.setPreviousInputNodesByMappingName(myInputNodesByMappingName);
-    try {
-      expandReferenceMacro(generator);
-    } finally {
-      generator.setPreviousInputNodesByMappingName(old);
-    }
+    expandReferenceMacro(generator);
   }
 
   public SNode doResolve_Tricky(TemplateGenerator generator) {

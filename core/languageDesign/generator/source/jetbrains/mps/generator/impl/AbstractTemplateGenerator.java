@@ -43,7 +43,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   private GeneratorMappings myMappings;
 
-  private Map<String, SNode> myCurrentPreviousInputNodesByMappingName;
   private HashSet<SNode> myFailedRules;
 
   protected final IQueryExecutor myExecutor;
@@ -191,19 +190,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
     return myMappings.findOutputNodeByInputAndTemplateNode(inputNode, templateNode);
-  }
-
-  public Map<String, SNode> setPreviousInputNodesByMappingName(Map<String, SNode> inputNodesByMappingName) {
-    Map<String, SNode> old = myCurrentPreviousInputNodesByMappingName;
-    myCurrentPreviousInputNodesByMappingName = inputNodesByMappingName;
-    return old;
-  }
-
-  public SNode getPreviousInputNodeByMappingName(String mappingName) {
-    if (myCurrentPreviousInputNodesByMappingName == null || mappingName == null) {
-      return null;
-    }
-    return myCurrentPreviousInputNodesByMappingName.get(mappingName);
   }
 
   public SNode findOutputNodeById(SNodeId nodeId) {

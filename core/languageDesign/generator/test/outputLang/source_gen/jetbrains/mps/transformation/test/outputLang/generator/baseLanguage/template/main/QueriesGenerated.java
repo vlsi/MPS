@@ -91,7 +91,7 @@ public class QueriesGenerated {
     if (!(pattern.match(_context.getNode()))) {
       return null;
     }
-    _context.setContext(new TemplateContext(pattern, null));
+    _context.setContext(new TemplateContext(pattern, null, _context.getNode()));
     if (!(baseMappingRule_Condition_4112907264514778044(operationContext, _context))) {
       return null;
     }

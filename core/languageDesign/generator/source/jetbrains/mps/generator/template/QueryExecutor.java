@@ -11,6 +11,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -128,7 +129,7 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, TemplateContext context) throws GenerationFailureException {
+  public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
     IfMacro_Condition function = ifMacro.getConditionFunction();
     if (function == null) {
       throw new GenerationFailureException("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null);
@@ -179,7 +180,7 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, TemplateContext context) throws GenerationFailureException {
+  public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
     MapSrcMacro_MapperFunction mapperFunction;
     if (adapter instanceof MapSrcNodeMacro) {
@@ -201,7 +202,7 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, TemplateContext context) throws GenerationFailureException {
+  public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
     MapSrcMacro_PostMapperFunction postMapperFunction;
     if (adapter instanceof MapSrcNodeMacro) {
@@ -225,7 +226,7 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, TemplateContext context) throws GenerationFailureException {
+  public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
     String attributeRole = propertyMacro.getRole_();
     String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(attributeRole);
 
@@ -250,7 +251,7 @@ public class QueryExecutor implements IQueryExecutor {
   }
 
   @Override
-  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, TemplateContext context) {
+  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, @NotNull TemplateContext context) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
     try {
       return (SNode) QueryMethodGenerated.invoke(
@@ -432,7 +433,7 @@ public class QueryExecutor implements IQueryExecutor {
     }
 
     @Override
-    public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, TemplateContext context) throws GenerationFailureException {
+    public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
       try {
         tracer.push("check if condition", true);
         return super.checkConditionForIfMacro(inputNode, ifMacro, context);
@@ -452,7 +453,7 @@ public class QueryExecutor implements IQueryExecutor {
     }
 
     @Override
-    public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, TemplateContext context) throws GenerationFailureException {
+    public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException {
       try {
         tracer.push("map-src node macro", true);
         return super.executeMapSrcNodeMacro(inputNode, mapSrcNodeOrListMacro, parentOutputNode, context);
@@ -462,7 +463,7 @@ public class QueryExecutor implements IQueryExecutor {
     }
 
     @Override
-    public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, TemplateContext context) throws GenerationFailureException {
+    public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
       try {
         tracer.push("map-src postproc", true);
         super.executeMapSrcNodeMacro_PostProc(inputNode, mapSrcNodeOrListMacro, outputNode, context);
@@ -472,7 +473,7 @@ public class QueryExecutor implements IQueryExecutor {
     }
 
     @Override
-    public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, TemplateContext context) throws GenerationFailureException {
+    public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
       try {
         tracer.push("property macro", true);
         super.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
@@ -482,7 +483,7 @@ public class QueryExecutor implements IQueryExecutor {
     }
 
     @Override
-    public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, TemplateContext context) {
+    public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, @NotNull TemplateContext context) {
       try {
         tracer.push("evaluate source node", true);
         return super.evaluateSourceNodeQuery(inputNode, macroNode, query, context);

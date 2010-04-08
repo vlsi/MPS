@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;
 import java.util.List;
@@ -86,7 +87,7 @@ public class InputQueryUtil {
     throw new GenerationFailureException("couldn't get new input node", currentInputNode, nodeMacro.getNode(), null);
   }
 
-  private static SNode getNewInputNode(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, TemplateContext context, ITemplateGenerator generator) throws GenerationFailureException {
+  private static SNode getNewInputNode(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, @NotNull TemplateContext context, ITemplateGenerator generator) throws GenerationFailureException {
     if (query == null) {
       if (optionalQuery) {
         // continue with current source node
@@ -98,7 +99,7 @@ public class InputQueryUtil {
     return generator.getExecutor().evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, context);
   }
 
-  private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, TemplateContext context, ITemplateGenerator generator) throws GenerationFailureException {
+  private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, @NotNull TemplateContext context, ITemplateGenerator generator) throws GenerationFailureException {
     if (query != null) {
       List<SNode> list = generator.getExecutor().evaluateSourceNodesQuery(currentInputNode, null, macro.getNode(), query, context);
       return list != null ? list : Collections.<SNode>emptyList();
@@ -107,7 +108,7 @@ public class InputQueryUtil {
     throw new GenerationFailureException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
   }
 
-  private static SNode getNewInputNodeForSwitchMacro(SNode currentInputNode, SwitchMacro macro, TemplateContext context, ITemplateGenerator generator) {
+  private static SNode getNewInputNodeForSwitchMacro(SNode currentInputNode, SwitchMacro macro, @NotNull TemplateContext context, ITemplateGenerator generator) {
     // in SWITCH the input query is optional
     SourceSubstituteMacro_SourceNodeQuery query = macro.getSourceNodeQuery();
     if (query == null) {

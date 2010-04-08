@@ -49,8 +49,6 @@ public interface ITemplateGenerator {
 
   SNode findCopiedOutputNodeForInputNode(SNode inputNode);
 
-  SNode getPreviousInputNodeByMappingName(String mappingName);
-
   void showInformationMessage(SNode node, String message);
 
   void showWarningMessage(SNode node, String message);

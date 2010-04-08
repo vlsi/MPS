@@ -29,29 +29,29 @@ public class WeavingProcessor {
     myFastNodeFinder = myGenerator.getInputModel().getFastNodeFinder();
   }
 
-  private void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template,
+  private void weaveTemplateDeclaration(TemplateDeclaration template,
                                         SNode outputContextNode, Weaving_MappingRule rule, TemplateContext context)
     throws GenerationFailureException, GenerationCanceledException {
 
-    myGenerationTracer.pushInputNode(inputNode);
+    myGenerationTracer.pushInputNode(context.getInput());
     try {
-      weaveTemplateDeclaration_intern(inputNode, template, outputContextNode, rule, context);
+      weaveTemplateDeclaration_intern(template, outputContextNode, rule, context);
     } finally {
-      myGenerationTracer.closeInputNode(inputNode);
+      myGenerationTracer.closeInputNode(context.getInput());
     }
   }
 
-  private void weaveTemplateDeclaration_intern(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateContext context)
+  private void weaveTemplateDeclaration_intern(TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateContext context)
     throws GenerationFailureException, GenerationCanceledException {
 
     if (template == null) {
-      myGenerator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't evaluate weaving rule: no template");
+      myGenerator.showErrorMessage(context.getInput(), null, rule.getNode(), "couldn't evaluate weaving rule: no template");
       return;
     }
 
     List<TemplateFragment> templateFragments = GeneratorUtil.getTemplateFragments(template);
     if (templateFragments.isEmpty()) {
-      myGenerator.showErrorMessage(inputNode, template.getNode(), rule.getNode(), "nothing to weave: no template fragments found in template");
+      myGenerator.showErrorMessage(context.getInput(), template.getNode(), rule.getNode(), "nothing to weave: no template fragments found in template");
       return;
     }
 
@@ -79,12 +79,12 @@ public class WeavingProcessor {
 
     String ruleMappingName = GeneratorUtil.getMappingName(rule, null);
     // for each template fragment create output nodes
-    TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator, context);
+    TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator);
     for (TemplateFragment templateFragment : templateFragments) {
       SNode templateFragmentNode = BaseAdapter.fromAdapter(templateFragment.getParent());
       SNode contextParentNode = null;
       try {
-        contextParentNode = myGenerator.getExecutor().getContextNodeForTemplateFragment(inputNode, templateFragmentNode, outputContextNode);
+        contextParentNode = myGenerator.getExecutor().getContextNodeForTemplateFragment(context.getInput(), templateFragmentNode, outputContextNode);
       } catch (Exception e) {
         myGenerator.getLogger().handleException(e);
       }
@@ -92,11 +92,11 @@ public class WeavingProcessor {
         try {
           List<SNode> outputNodesToWeave = templateProcessor.processTemplateNode(
             GeneratorUtil.getMappingName(templateFragment, ruleMappingName),
-            templateFragmentNode, inputNode);
+            templateFragmentNode, context);
           String childRole = templateFragmentNode.getRole_();
           for (SNode outputNodeToWeave : outputNodesToWeave) {
             if (!GeneratorUtil.checkChild(contextParentNode, childRole, outputNodeToWeave)) {
-              myGenerator.showWarningMessage(inputNode, " -- was input: " + inputNode.getDebugText());
+              myGenerator.showWarningMessage(context.getInput(), " -- was input: " + context.getInput().getDebugText());
               myGenerator.showWarningMessage(templateFragment.getNode(), " -- was template: " + templateFragment.getDebugText());
               myGenerator.showWarningMessage(rule.getNode(), " -- was rule: " + rule.getDebugText());
             }
@@ -116,13 +116,13 @@ public class WeavingProcessor {
             }
           }
         } catch (DismissTopMappingRuleException e) {
-          myGenerator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "dismission of weaving rule is not supported");
+          myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "dismission of weaving rule is not supported");
         } catch (TemplateProcessingFailureException e) {
-          myGenerator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "error pocessing template fragment");
+          myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "error pocessing template fragment");
           myGenerator.showInformationMessage(contextParentNode, " -- was output context node:");
         }
       } else {
-        myGenerator.showErrorMessage(inputNode, templateFragment.getNode(), rule.getNode(), "couldn't define 'context' for template fragment");
+        myGenerator.showErrorMessage(context.getInput(), templateFragment.getNode(), rule.getNode(), "couldn't define 'context' for template fragment");
       }
     }
   }
@@ -156,7 +156,8 @@ public class WeavingProcessor {
             myGenerationTracer.pushRuleConsequence(ruleConsequence.getNode());
             if (ruleConsequence instanceof TemplateDeclarationReference) {
               TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-              weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule, GeneratorUtil.getTemplateContext(ruleConsequence, applicableNode, null, myGenerator));
+              weaveTemplateDeclaration(template, outputContextNode, rule,
+                GeneratorUtil.createTemplateContext(applicableNode, null, ruleConsequence, applicableNode, myGenerator));
 
             } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
               WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
@@ -171,7 +172,8 @@ public class WeavingProcessor {
                 someOutputGenerated = false;
               }
               for (SNode queryNode : queryNodes) {
-                weaveTemplateDeclaration(queryNode, template, outputContextNode, rule, GeneratorUtil.getTemplateContext(ruleConsequence, queryNode, null, myGenerator));
+                weaveTemplateDeclaration(template, outputContextNode, rule,
+                  GeneratorUtil.createTemplateContext(queryNode, null, ruleConsequence, queryNode, myGenerator));
               }
             } else {
               myGenerator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "unsupported rule consequence");

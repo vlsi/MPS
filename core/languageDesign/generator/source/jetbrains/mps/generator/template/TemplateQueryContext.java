@@ -146,7 +146,7 @@ public class TemplateQueryContext {
   }
 
   public SNode getPreviousInputNodeByMappingLabel(String label) {
-    return myGenerator.getPreviousInputNodeByMappingName(label);
+    return myContext == null ? null : myContext.getNamedInput(label);
   }
 
   public SNode getOriginalCopiedInputNode(SNode node) {

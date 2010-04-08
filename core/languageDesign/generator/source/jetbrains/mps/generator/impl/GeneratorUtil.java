@@ -24,7 +24,6 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
@@ -240,23 +239,23 @@ public class GeneratorUtil {
     return null;
   }
 
-  static TemplateContext getTemplateContext(RuleConsequence consequence, SNode inputNode, TemplateContext context, ITemplateGenerator generator) {
+  static TemplateContext createTemplateContext(SNode inputNode, TemplateContext context, RuleConsequence consequence, SNode newInputNode, ITemplateGenerator generator) {
     if(consequence instanceof ITemplateCall) {
-      return getTemplateContext((ITemplateCall)consequence, inputNode, context, generator);
+      return createTemplateContext(inputNode, context, (ITemplateCall)consequence, newInputNode, generator);
     }
-    return context;
+    return context != null ? context : new TemplateContext(newInputNode);
   }
 
-  static TemplateContext getTemplateContext(ITemplateCall templateCall, SNode inputNode, TemplateContext context, ITemplateGenerator generator) {
+  static TemplateContext createTemplateContext(SNode inputNode, TemplateContext context, ITemplateCall templateCall, SNode newInputNode, ITemplateGenerator generator) {
     final Expression[] arguments = getArguments(templateCall);
     final TemplateParameterDeclaration[] parameters = getParameters(templateCall);
 
     if(arguments == null && parameters == null) {
-      return null;
+      return new TemplateContext(newInputNode);
     }
     if(arguments == null || parameters == null || arguments.length != parameters.length) {
       generator.showErrorMessage(inputNode, templateCall.getNode(), "number of arguments doesn't match template");
-      return null;
+      return new TemplateContext(newInputNode);
     }
 
     final Map<String,Object> vars = new HashMap<String, Object>(arguments.length);
@@ -289,7 +288,7 @@ public class GeneratorUtil {
 
       vars.put(name, value);
     }
-    return new TemplateContext(null, vars);
+    return new TemplateContext(null, vars, newInputNode);
 }
 
   /**

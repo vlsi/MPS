@@ -29,12 +29,12 @@ import java.util.List;
 public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   private SNode myTemplateSourceNode;
   private SNode myTemplateTargetNode;
-  private List<SNode> myInputHistory;
+  private TemplateContext myContext;
 
 
-  public ReferenceInfo_TemplateNode(SNode outputSourceNode, SReference templateReference, SNode inputNode, @Nullable List<SNode> inputHistory) {
-    super(outputSourceNode, templateReference.getRole(), inputNode);
-    myInputHistory = inputHistory;
+  public ReferenceInfo_TemplateNode(SNode outputSourceNode, SReference templateReference, TemplateContext context) {
+    super(outputSourceNode, templateReference.getRole(), context.getInput());
+    myContext = context;
     myTemplateSourceNode = templateReference.getSourceNode();
     myTemplateTargetNode = templateReference.getTargetNode();
   }
@@ -69,12 +69,10 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     }
 
     // try to find for indirect input nodes
-    if (myInputHistory != null) {
-      for (SNode historyInputNode : myInputHistory) {
-        outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(historyInputNode, myTemplateTargetNode);
-        if (outputTargetNode != null) {
-          return outputTargetNode;
-        }
+    for (SNode historyInputNode : myContext.getInputHistory()) {
+      outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(historyInputNode, myTemplateTargetNode);
+      if (outputTargetNode != null) {
+        return outputTargetNode;
       }
     }
 

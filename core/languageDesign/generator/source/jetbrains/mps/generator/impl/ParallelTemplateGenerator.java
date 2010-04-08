@@ -40,6 +40,11 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       public void run() throws GenerationCanceledException, GenerationFailureException {
         applyReductionRules_internal(inputNode, clonedOutputNode);
       }
+
+      @Override
+      public boolean requiresReadAccess() {
+        return true;
+      }
     });
   }
 

@@ -13,6 +13,8 @@ public interface IGenerationTaskPool {
 
   public interface GenerationTask {
     void run() throws GenerationCanceledException, GenerationFailureException;
+    
+    boolean requiresReadAccess();
   }
 
   void addTask(GenerationTask r);

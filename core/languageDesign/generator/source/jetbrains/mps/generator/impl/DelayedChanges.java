@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,12 +44,12 @@ public class DelayedChanges {
     myLogger = generator.getLogger();
   }
 
-  public void addExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, Map<String, SNode> inputNodesByMappingName, TemplateContext context) {
-    myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, inputNode, inputNodesByMappingName, context));
+  public void addExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context) {
+    myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, context));
   }
 
-  public void addExecuteMapSrcNodeMacroPostProcChange(NodeMacro mapSrcMacro, SNode outputChild, SNode inputNode, Map<String, SNode> inputNodesByMappingName, TemplateContext context) {
-    myExecuteMapSrcNodeMacroPostProcChanges.add(new ExecuteMapSrcNodeMacroPostProcChange(mapSrcMacro, outputChild, inputNode, inputNodesByMappingName, context));
+  public void addExecuteMapSrcNodeMacroPostProcChange(NodeMacro mapSrcMacro, SNode outputChild, @NotNull TemplateContext context) {
+    myExecuteMapSrcNodeMacroPostProcChanges.add(new ExecuteMapSrcNodeMacroPostProcChange(mapSrcMacro, outputChild, context));
   }
 
 
@@ -65,22 +66,17 @@ public class DelayedChanges {
   private class ExecuteMapSrcNodeMacroChange {
     private final SNode myMapSrcMacro;
     private final SNode myChildToReplace;
-    private final SNode myInputNode;
-    private final Map<String, SNode> myInputNodesByMappingName;
     private final TemplateContext myContext;
 
-    public ExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, Map<String, SNode> inputNodesByMappingName, TemplateContext context) {
+    public ExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context) {
       myMapSrcMacro = mapSrcMacro.getNode();
       myChildToReplace = childToReplace;
-      myInputNode = inputNode;
-      myInputNodesByMappingName = inputNodesByMappingName;
       myContext = context;
     }
 
     public void doChange() {
-      Map<String, SNode> old = myGenerator.setPreviousInputNodesByMappingName(myInputNodesByMappingName);
       try {
-        SNode child = myGenerator.getExecutor().executeMapSrcNodeMacro(myInputNode, myMapSrcMacro, myChildToReplace.getParent(), myContext);
+        SNode child = myGenerator.getExecutor().executeMapSrcNodeMacro(myContext.getInput(), myMapSrcMacro, myChildToReplace.getParent(), myContext);
         if (child != null) {
           // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
           // planning the generation steps.
@@ -88,7 +84,7 @@ public class DelayedChanges {
           if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
             if (!childLang.getGenerators().isEmpty()) {
               myLogger.error(child, "language of output node is '" + childLang.getNamespace() + "' - this language did not show up when computing generation steps!");
-              myLogger.describeError(myInputNode, "was input: " + myInputNode.getDebugText());
+              myLogger.describeError(myContext.getInput(), "was input: " + myContext.getInput().getDebugText());
               myLogger.describeError(myMapSrcMacro, "was template: " + myMapSrcMacro.getDebugText());
               myLogger.describeError(null, "workaround: add the language '" + childLang.getNamespace() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'");
             }
@@ -112,7 +108,7 @@ public class DelayedChanges {
           }else {
             String childRole = parent.getRoleOf(myChildToReplace);
             if (!GeneratorUtil.checkChild(parent, childRole, child)) {
-              myLogger.describeWarning(myInputNode, "was input: " + myInputNode.getDebugText());
+              myLogger.describeWarning(myContext.getInput(), "was input: " + myContext.getInput().getDebugText());
               myLogger.describeWarning(myMapSrcMacro, "was template: " + myMapSrcMacro.getDebugText());
             }
 
@@ -121,13 +117,11 @@ public class DelayedChanges {
           myGenerator.getGeneratorSessionContext().getGenerationTracer().replaceOutputNode(myChildToReplace, child);
 
           // post-processing
-          addExecuteMapSrcNodeMacroPostProcChange((NodeMacro) myMapSrcMacro.getAdapter(), child, myInputNode, myInputNodesByMappingName, myContext);
+          addExecuteMapSrcNodeMacroPostProcChange((NodeMacro) myMapSrcMacro.getAdapter(), child, myContext);
         }
       } catch (Throwable t) {
-        myGenerator.showErrorMessage(myInputNode, myMapSrcMacro, "mapping failed: '" + t.getMessage() + "'");
+        myGenerator.showErrorMessage(myContext.getInput(), myMapSrcMacro, "mapping failed: '" + t.getMessage() + "'");
         myLogger.handleException(t);
-      } finally {
-        myGenerator.setPreviousInputNodesByMappingName(old);
       }
     }
 
@@ -148,7 +142,7 @@ public class DelayedChanges {
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           reference.getRole(),
           reference.getSourceNode(),
-          myInputNode,
+          myContext.getInput(),
           reference.getTargetNode());
         PostponedReference postponedReference = new PostponedReference(
           refInfo,
@@ -161,27 +155,20 @@ public class DelayedChanges {
   private class ExecuteMapSrcNodeMacroPostProcChange {
     private final SNode myMapSrcMacro;
     private final SNode myOutputChild;
-    private final SNode myInputNode;
-    private final Map<String, SNode> myInputNodesByMappingName;
     private final TemplateContext myContext;
 
-    public ExecuteMapSrcNodeMacroPostProcChange(NodeMacro mapSrcMacro, SNode outputChild, SNode inputNode, Map<String, SNode> inputNodesByMappingName, TemplateContext context) {
+    public ExecuteMapSrcNodeMacroPostProcChange(NodeMacro mapSrcMacro, SNode outputChild, @NotNull TemplateContext context) {
       myMapSrcMacro = mapSrcMacro.getNode();
       myOutputChild = outputChild;
-      myInputNode = inputNode;
-      myInputNodesByMappingName = inputNodesByMappingName;
       myContext = context;
     }
 
     public void doChange() {
-      Map<String, SNode> old = myGenerator.setPreviousInputNodesByMappingName(myInputNodesByMappingName);
       try {
-        myGenerator.getExecutor().executeMapSrcNodeMacro_PostProc(myInputNode, myMapSrcMacro, myOutputChild, myContext);
+        myGenerator.getExecutor().executeMapSrcNodeMacro_PostProc(myContext.getInput(), myMapSrcMacro, myOutputChild, myContext);
       } catch (Throwable t) {
-        myGenerator.showErrorMessage(myInputNode, myMapSrcMacro, "mapping failed: '" + t.getMessage() + "'");
+        myGenerator.showErrorMessage(myContext.getInput(), myMapSrcMacro, "mapping failed: '" + t.getMessage() + "'");
         myLogger.handleException(t);
-      } finally {
-        myGenerator.setPreviousInputNodesByMappingName(old);
       }
     }
   }

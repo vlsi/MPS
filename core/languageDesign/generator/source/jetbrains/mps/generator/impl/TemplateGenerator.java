@@ -283,7 +283,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
     try {
-      List<SNode> outputNodes = new TemplateProcessor(this, null).processTemplateNode(mappingName, templateNode, inputNode);
+      List<SNode> outputNodes = new TemplateProcessor(this).processTemplateNode(mappingName, templateNode, new TemplateContext(inputNode));
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode);
         myOutputModel.addRoot(outputNode);
@@ -468,7 +468,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no rule consequence");
       return null;
     }
-    TemplateContext conseqContext = GeneratorUtil.getTemplateContext(ruleConsequence, inputNode, pattern == null ? null : new TemplateContext(pattern, null), this);
+    TemplateContext conseqContext = GeneratorUtil.createTemplateContext(inputNode, pattern == null ? null : new TemplateContext(pattern, null, inputNode), ruleConsequence, inputNode, this);
 
     List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtil.getTemplateNodesFromRuleConsequence(ruleConsequence, inputNode, rule.getNode(), this);
     if (nodeAndMappingNamePairs == null) {
@@ -477,12 +477,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     List<SNode> result = new ArrayList<SNode>(nodeAndMappingNamePairs.size());
-    TemplateProcessor templateProcessor = new TemplateProcessor(this, conseqContext);
+    TemplateProcessor templateProcessor = new TemplateProcessor(this);
     for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;
       try {
-        result.addAll(templateProcessor.processTemplateNode(mappingName, templateNode, inputNode));
+        result.addAll(templateProcessor.processTemplateNode(mappingName, templateNode, conseqContext));
       } catch (DismissTopMappingRuleException e) {
         throw e;
       } catch (TemplateProcessingFailureException e) {
