@@ -35,6 +35,7 @@ public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
       for (ModelUpdater updater : updCopy) {
         updater.updateModel(this, model);
       }
+      myNeedsReloading = false;
     }
   }
 

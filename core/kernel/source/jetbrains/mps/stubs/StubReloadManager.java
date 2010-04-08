@@ -21,7 +21,10 @@ import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
 
 public class StubReloadManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(StubReloadManager.class);
@@ -106,16 +109,26 @@ public class StubReloadManager implements ApplicationComponent {
   }
 
   private void markOldStubs() {
+    int reloaded = 0;
+    int notReloaded = 0;
+
     for (AbstractModule m : getAllModules()) {
       List<StubPath> stubPathList = computeNotChangedStubPaths(m);
       for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(m)) {
         if (!SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
-        if (notChanged(stubPathList, sm)) continue;
+        if (notChanged(stubPathList, sm) || !(sm.isInitialized())) {
+          notReloaded++;
+          continue;
+        } else {
+          reloaded++;
+        }
 
         assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
         ((BaseStubModelDescriptor) sm).markReload();
       }
     }
+
+    //System.out.printf("Stubs reloaded: " + reloaded + "; not reloaded: " + notReloaded + "\n");
   }
 
   private List<StubPath> computeNotChangedStubPaths(AbstractModule module) {
