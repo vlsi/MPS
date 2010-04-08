@@ -117,7 +117,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected void reloadAfterDescriptorChange() {
-    MPSModuleRepository.getInstance().unRegisterModules(this);
     rereadModels();
 
     updatePackagedDescriptorClasspath();

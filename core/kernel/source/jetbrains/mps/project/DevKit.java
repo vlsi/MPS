@@ -31,7 +31,7 @@ import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
 
-public class DevKit extends AbstractModule {
+public class DevKit extends AbstractModule implements MPSModuleOwner{
   private static final Logger LOG = Logger.getLogger(DevKit.class);
 
   public static DevKit newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
@@ -120,6 +120,10 @@ public class DevKit extends AbstractModule {
     }
   }
 
+  protected void reloadAfterDescriptorChange() {
+    MPSModuleRepository.getInstance().unRegisterModules(this);
+    super.reloadAfterDescriptorChange();
+  }
 
   public void dispose() {
     super.dispose();

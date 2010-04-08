@@ -30,7 +30,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.*;
 
-public class Generator extends AbstractModule {
+public class Generator extends AbstractModule{
   public static final Logger LOG = Logger.getLogger(Generator.class);
 
   private Language mySourceLanguage;
@@ -132,7 +132,6 @@ public class Generator extends AbstractModule {
   public void dispose() {
     super.dispose();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    MPSModuleRepository.getInstance().unRegisterModules(this);
     MPSModuleRepository.getInstance().removeModule(this);
   }
 

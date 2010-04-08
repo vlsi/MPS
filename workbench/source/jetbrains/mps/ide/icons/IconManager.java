@@ -24,10 +24,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.Macros;
@@ -231,22 +228,32 @@ public class IconManager {
     return Icons.MODEL_ICON;
   }
 
-  public static Icon getIconFor(MPSModuleOwner owner) {
-    if (owner instanceof Generator) {
+  public static Icon getIconFor(IModule module) {
+    if (module instanceof Generator) {
       return Icons.GENERATOR_ICON;
     }
-    if (owner instanceof Language) {
+    if (module instanceof Language) {
       return Icons.PROJECT_LANGUAGE_ICON;
     }
+    if (module instanceof Solution) {
+      return Icons.SOLUTION_ICON;
+    }
+    if (module instanceof DevKit) {
+      return Icons.DEVKIT_ICON;
+    }
+
+    return Icons.DEFAULT_ICON;
+  }
+
+  public static Icon getIconFor(MPSModuleOwner owner) {
     if (owner instanceof MPSProject) {
       return Icons.PROJECT_ICON;
     }
-    if (owner instanceof Solution) {
-      return Icons.SOLUTION_ICON;
+
+    if (owner instanceof IModule) {
+      return getIconFor((IModule) owner);
     }
-    if (owner instanceof DevKit) {
-      return Icons.DEVKIT_ICON;
-    }
+
     return Icons.DEFAULT_ICON;
   }
 

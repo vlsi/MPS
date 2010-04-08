@@ -143,7 +143,6 @@ public class Solution extends AbstractModule {
   public void dispose() {
     super.dispose();
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
-    MPSModuleRepository.getInstance().unRegisterModules(this);
   }
 
   public void save() {

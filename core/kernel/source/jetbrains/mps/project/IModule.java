@@ -30,7 +30,7 @@ import java.io.File;
 import java.util.List;
 import java.util.Set;
 
-public interface IModule extends ModelOwner, MPSModuleOwner {
+public interface IModule extends ModelOwner{
   @Deprecated
   String getModuleUID();
 

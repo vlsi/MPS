@@ -387,7 +387,8 @@ public class MPSModuleRepository implements ApplicationComponent {
       for (IModule m : myModules) {
         if (visibleModules.contains(m)) continue;
         for (IModule v : visibleModules) {
-          if (!myModuleToOwners.contains(m, v)) continue;
+          if (!(v instanceof MPSModuleOwner)) continue;
+          if (!myModuleToOwners.contains(m, (MPSModuleOwner) v)) continue;
           toAdd.add(m);
         }
       }

@@ -54,7 +54,7 @@ import java.lang.reflect.Constructor;
 import java.util.*;
 
 
-public class Language extends AbstractModule {
+public class Language extends AbstractModule implements MPSModuleOwner{
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   private static final String LANGUAGE_ACCESSORIES = "languageAccessories";
