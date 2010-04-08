@@ -5130,14 +5130,23 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5124230653299542675">
     <property name="package:32" value="Custom.DebugInfo" />
     <link role="conceptDeclaration:32" targetNodeId="1.5124230653299542673:23" resolveInfo="ConceptReference" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="5124230653299542800">
-      <link role="relationDeclaration:32" targetNodeId="1.5124230653299542674:23" />
-      <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="5124230653299542801">
-        <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="5124230653299542803">
-          <property name="readOnly:32" value="true" />
-          <link role="relationDeclaration:32" targetNodeId="14.1169194664001:0" resolveInfo="name" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="6516056543317150529">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="6516056543317150530">
+        <link role="relationDeclaration:32" targetNodeId="1.5124230653299542674:23" />
+        <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="6516056543317150531">
+          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="6516056543317150532">
+            <property name="readOnly:32" value="true" />
+            <link role="relationDeclaration:32" targetNodeId="14.1169194664001:0" resolveInfo="name" />
+          </node>
         </node>
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="6516056543317150535">
+        <property name="text:32" value="create breakpoint:" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="6516056543317150537">
+        <link role="relationDeclaration:32" targetNodeId="1.6516056543317148534:23" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="6516056543317150533" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5124230653299630702">

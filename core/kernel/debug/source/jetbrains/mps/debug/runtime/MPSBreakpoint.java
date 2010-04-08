@@ -45,17 +45,15 @@ import java.util.List;
 public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
   private static Logger LOG = Logger.getLogger(MPSBreakpoint.class);
 
-  private MPSBreakpoint() {
-
+  public MPSBreakpoint(SNodePointer nodePointer, Project project) {
+    super(nodePointer, project);
   }
 
-  //todo use factory from BreakpointManager
-  public static MPSBreakpoint createBreakpoint(SNodePointer pointer, Project project) {
-    return new MPSBreakpoint();
+  public MPSBreakpoint(SNode node, Project project) {
+    super(node, project);
   }
 
-
-  //this should be called on every breakpoint when DebugEventsProcessor is attached
+//this should be called on every breakpoint when DebugEventsProcessor is attached
 
   public void createClassPrepareRequest(DebugVMEventsProcessor debugProcess) {
     DebuggerManagerThread.assertIsManagerThread();

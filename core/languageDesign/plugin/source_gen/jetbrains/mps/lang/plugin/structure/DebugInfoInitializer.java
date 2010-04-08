@@ -23,19 +23,19 @@ public class DebugInfoInitializer extends BaseConcept {
     return this.getChildCount(DebugInfoInitializer.CONCEPTS_TO_DEBUG);
   }
 
-  public Iterator<ConceptReference> conceptsToDebugs() {
-    return this.children(ConceptReference.class, DebugInfoInitializer.CONCEPTS_TO_DEBUG);
+  public Iterator<DebuggableNodeItem> conceptsToDebugs() {
+    return this.children(DebuggableNodeItem.class, DebugInfoInitializer.CONCEPTS_TO_DEBUG);
   }
 
-  public List<ConceptReference> getConceptsToDebugs() {
-    return this.getChildren(ConceptReference.class, DebugInfoInitializer.CONCEPTS_TO_DEBUG);
+  public List<DebuggableNodeItem> getConceptsToDebugs() {
+    return this.getChildren(DebuggableNodeItem.class, DebugInfoInitializer.CONCEPTS_TO_DEBUG);
   }
 
-  public void addConceptsToDebug(ConceptReference node) {
+  public void addConceptsToDebug(DebuggableNodeItem node) {
     this.addChild(DebugInfoInitializer.CONCEPTS_TO_DEBUG, node);
   }
 
-  public void insertConceptsToDebug(ConceptReference prev, ConceptReference node) {
+  public void insertConceptsToDebug(DebuggableNodeItem prev, DebuggableNodeItem node) {
     this.insertChild(prev, DebugInfoInitializer.CONCEPTS_TO_DEBUG, node);
   }
 

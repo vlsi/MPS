@@ -1310,6 +1310,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "initBlock", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_7642440232345543701(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBreakpoint", true), "body", true);
+  }
+
   public static SNode sourceNodeQuery_5177675550061758237(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variablesGetter", true), "body", true);
   }

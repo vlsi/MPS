@@ -5,8 +5,12 @@ package jetbrains.mps.baseLanguage.plugin;
 import jetbrains.mps.plugins.pluginparts.custom.BaseCustomApplicationPlugin;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.DebugInfoManager;
-import jetbrains.mps.util.Mapper;
+import jetbrains.mps.util.Mapper2;
 import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
+import jetbrains.mps.debug.runtime.MPSBreakpoint;
+import jetbrains.mps.util.Mapper;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
@@ -21,10 +25,26 @@ public class DebugInfoInitializer_CustomApplicationPlugin extends BaseCustomAppl
 
   public void doInit() {
     DebugInfoManager manager = DebugInfoManager.getInstance();
-    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.Statement");
-    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.Statement", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
+      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
+        return new MPSBreakpoint(debuggableNode, project);
+      }
+    });
+    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
+      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
+        return new MPSBreakpoint(debuggableNode, project);
+      }
+    });
+    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
+      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
+        return new MPSBreakpoint(debuggableNode, project);
+      }
+    });
+    manager.addDebuggableConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper2<SNode, Project, AbstractMPSBreakpoint>() {
+      public AbstractMPSBreakpoint value(SNode debuggableNode, Project project) {
+        return new MPSBreakpoint(debuggableNode, project);
+      }
+    });
     manager.addScopeConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", new Mapper<SNode, List<SNode>>() {
       public List<SNode> value(SNode scopeNode) {
         return SLinkOperations.getTargets(scopeNode, "parameter", true);
