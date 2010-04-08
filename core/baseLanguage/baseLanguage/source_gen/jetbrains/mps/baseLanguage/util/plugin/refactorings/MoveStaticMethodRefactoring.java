@@ -18,16 +18,16 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
   }
 
   private void replaceFields() {
-    SNode classNode = SNodeOperations.getAncestor(this.moving, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    for (SNode field : ListSequence.fromList(SNodeOperations.getDescendants(this.moving, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", false, new String[]{}))) {
+    SNode classNode = SNodeOperations.getAncestor(this.myMoving, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    for (SNode field : ListSequence.fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", false, new String[]{}))) {
       SNodeOperations.replaceWithAnother(field, new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0b0a().createNode(classNode, SLinkOperations.getTarget(field, "variableDeclaration", false)));
     }
   }
 
   private void replaceMethods() {
-    SNode classNode = SNodeOperations.getAncestor(this.moving, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(this.moving, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{}))) {
-      if (SLinkOperations.getTarget(call, "baseMethodDeclaration", false) != this.moving) {
+    SNode classNode = SNodeOperations.getAncestor(this.myMoving, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(this.myMoving, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", false, new String[]{}))) {
+      if (SLinkOperations.getTarget(call, "baseMethodDeclaration", false) != this.myMoving) {
         SNodeOperations.replaceWithAnother(call, new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0a0b0b().createNode(classNode, SLinkOperations.getTarget(call, "baseMethodDeclaration", false)));
       }
     }
@@ -44,10 +44,10 @@ public class MoveStaticMethodRefactoring extends BasicMoveRefactoring {
     super.replaceSingleUsage(usage);
     if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       SNode newCall;
-      if (SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == this.destination) {
-        newCall = new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a1a1a3().createNode(this.replacing);
+      if (SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == this.myDestination) {
+        newCall = new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a1a1a3().createNode(this.myReplacing);
       } else {
-        newCall = new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0b0b0d().createNode(this.destination, this.replacing);
+        newCall = new MoveStaticMethodRefactoring.QuotationClass_f5lqsg_a0a0a0b0b0d().createNode(this.myDestination, this.myReplacing);
       }
       ListSequence.fromList(SLinkOperations.getTargets(newCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)));
       ListSequence.fromList(SLinkOperations.getTargets(newCall, "typeArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "typeArgument", true)));

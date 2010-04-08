@@ -17,15 +17,15 @@ public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
 
   public void replaceSingleUsage(SNode usage) {
     super.replaceSingleUsage(usage);
-    if (SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == this.destination) {
-      SNodeOperations.replaceWithAnother(usage, new MoveStaticFieldRefactoring.QuotationClass_fls06q_a0a0a0b0a().createNode(this.replacing));
+    if (SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == this.myDestination) {
+      SNodeOperations.replaceWithAnother(usage, new MoveStaticFieldRefactoring.QuotationClass_fls06q_a0a0a0b0a().createNode(this.myReplacing));
     } else {
-      SNodeOperations.replaceWithAnother(usage, new MoveStaticFieldRefactoring.QuotationClass_fls06q_a0a0a0a1a0().createNode(this.destination, this.replacing));
+      SNodeOperations.replaceWithAnother(usage, new MoveStaticFieldRefactoring.QuotationClass_fls06q_a0a0a0a1a0().createNode(this.myDestination, this.myReplacing));
     }
   }
 
   protected boolean goodDestination() {
-    return SNodeOperations.isInstanceOf(this.destination, "jetbrains.mps.baseLanguage.structure.Classifier");
+    return SNodeOperations.isInstanceOf(this.myDestination, "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static class QuotationClass_fls06q_a0a0a0b0a {

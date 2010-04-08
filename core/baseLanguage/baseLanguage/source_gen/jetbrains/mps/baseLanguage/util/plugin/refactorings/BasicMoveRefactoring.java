@@ -9,54 +9,54 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BasicMoveRefactoring {
-  protected final SNode moving;
-  protected final SNode destination;
-  protected SNode replacing = null;
-  protected SearchResults<SNode> usages = new SearchResults<SNode>();
-  private boolean isChangingModel = false;
+  protected final SNode myMoving;
+  protected final SNode myDestination;
+  protected SNode myReplacing = null;
+  protected SearchResults<SNode> myUsages = new SearchResults<SNode>();
+  private boolean myIsChangingModel = false;
 
   public BasicMoveRefactoring(SNode moving, SNode destination) {
-    this.moving = moving;
-    this.destination = destination;
+    this.myMoving = moving;
+    this.myDestination = destination;
   }
 
   public void setUssages(SearchResults<SNode> usages) {
-    this.usages = usages;
+    this.myUsages = usages;
   }
 
   public SearchResults<SNode> getUsages() {
-    return this.usages;
+    return this.myUsages;
   }
 
   public void doRefactoring() {
     this.setIsChangingModel();
     this.correctMoving();
     this.createCopy();
-    for (SearchResult<SNode> result : ListSequence.fromList(this.usages.getSearchResults())) {
+    for (SearchResult<SNode> result : ListSequence.fromList(this.myUsages.getSearchResults())) {
       this.replaceSingleUsage(result.getObject());
     }
     this.deleteOld();
   }
 
   public void replaceSingleUsage(SNode usage) {
-    if (this.isChangingModel) {
-      MoveRefactoringUtils.addImportIfNeed(SNodeOperations.getModel(usage), SNodeOperations.getModel(this.destination));
+    if (this.myIsChangingModel) {
+      MoveRefactoringUtils.addImportIfNeed(SNodeOperations.getModel(usage), SNodeOperations.getModel(this.myDestination));
     }
   }
 
   protected void createCopy() {
-    this.replacing = SNodeOperations.copyNode(this.moving);
-    MoveRefactoringUtils.addNodeAtLink(this.destination, this.replacing);
+    this.myReplacing = SNodeOperations.copyNode(this.myMoving);
+    MoveRefactoringUtils.addNodeAtLink(this.myDestination, this.myReplacing);
   }
 
   protected void deleteOld() {
-    SNodeOperations.detachNode(this.moving);
+    SNodeOperations.detachNode(this.myMoving);
   }
 
   protected void correctMoving() {
   }
 
   private void setIsChangingModel() {
-    this.isChangingModel = (SNodeOperations.getModel(this.destination) != SNodeOperations.getModel(this.moving));
+    this.myIsChangingModel = (SNodeOperations.getModel(this.myDestination) != SNodeOperations.getModel(this.myMoving));
   }
 }

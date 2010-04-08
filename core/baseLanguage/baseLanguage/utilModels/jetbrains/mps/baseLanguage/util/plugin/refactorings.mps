@@ -32029,7 +32029,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8517902611909168513">
     <property name="name:3" value="MoveStaticFieldRefactoring" />
-    <property name="package:3" value="moveStaticField" />
+    <property name="package:3" value="moveStaticMember" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8495840634675573138">
       <property name="name:3" value="replaceSingleUsage" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8495840634675573139" />
@@ -32342,7 +32342,7 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4909369320862629900" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5142438244426402999">
-    <property name="package:3" value="moveStaticField" />
+    <property name="package:3" value="moveStaticMember" />
     <property name="name:3" value="BasicMoveRefactoring" />
     <property name="abstractClass:3" value="false" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5142438244426403075">
@@ -32660,25 +32660,25 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="5142438244426403025">
-      <property name="name:3" value="moving" />
+      <property name="name:3" value="myMoving" />
       <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="5142438244426403026" />
       <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="5142438244426403027" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="5142438244426403028">
-      <property name="name:3" value="destination" />
+      <property name="name:3" value="myDestination" />
       <property name="isFinal:3" value="true" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="5142438244426403029" />
       <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="5142438244426403030" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="5142438244426403031">
-      <property name="name:3" value="replacing" />
+      <property name="name:3" value="myReplacing" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="5142438244426403032" />
       <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="5142438244426403033" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="5142438244426403034" />
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="5142438244426403035">
-      <property name="name:3" value="usages" />
+      <property name="name:3" value="myUsages" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="5142438244426403036" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5142438244426403037">
         <link role="classifier:3" targetNodeId="9.~SearchResults" resolveInfo="SearchResults" />
@@ -32692,7 +32692,7 @@
       </node>
     </node>
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="5142438244426403042">
-      <property name="name:3" value="isChangingModel" />
+      <property name="name:3" value="myIsChangingModel" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="5142438244426403043" />
       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="5142438244426403044" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5142438244426403045">
@@ -32702,7 +32702,7 @@
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5142438244426403000" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="418677511065435622">
-    <property name="package:3" value="moveStaticField" />
+    <property name="package:3" value="moveStaticMember" />
     <property name="name:3" value="MoveStaticMethodRefactoring" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="418677511065441949">
       <property name="name:3" value="replaceFields" />
