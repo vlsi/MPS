@@ -2485,11 +2485,19 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="3.~TemplateQueryContext.setContext(jetbrains.mps.generator.impl.TemplateContext):void" resolveInfo="setContext" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5122067947693331978">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5122067947693341743">
-                    <link role="baseMethodDeclaration:3" targetNodeId="31.~TemplateContext.&lt;init&gt;(jetbrains.mps.lang.pattern.GeneratedMatchingPattern,java.util.Map)" resolveInfo="TemplateContext" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="31.~TemplateContext.&lt;init&gt;(jetbrains.mps.lang.pattern.GeneratedMatchingPattern,java.util.Map,jetbrains.mps.smodel.SNode)" resolveInfo="TemplateContext" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5122067947693341744">
                       <link role="variableDeclaration:3" targetNodeId="304293736224463223" resolveInfo="pattern" />
                     </node>
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="5122067947693341746" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6790872658438051151">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6790872658438051150">
+                        <link role="variableDeclaration:3" targetNodeId="1434091819680828197" resolveInfo="_context" />
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6790872658438051155">
+                        <link role="baseMethodDeclaration:3" targetNodeId="3.~TemplateQueryContext.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
