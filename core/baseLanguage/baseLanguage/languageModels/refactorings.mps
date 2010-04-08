@@ -803,7 +803,7 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4946830740863976415">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4946830740863976416">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4946830740863976417">
-                <link role="baseMethodDeclaration:3" targetNodeId="11.4946830740863874648" resolveInfo="ConvertAnonymousRefactoring" />
+                <link role="baseMethodDeclaration:3" targetNodeId="11.8184320397304927314" resolveInfo="NewConvert" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4946830740863976418">
                   <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="4946830740863976419" />
                   <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.NodeOperation:1" id="4946830740863976420" />
@@ -814,7 +814,7 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4946830740863976422">
-              <link role="baseMethodDeclaration:3" targetNodeId="11.4946830740863888461" resolveInfo="doRefactor" />
+              <link role="baseMethodDeclaration:3" targetNodeId="11.8184320397304931894" resolveInfo="doRefactor" />
             </node>
           </node>
         </node>

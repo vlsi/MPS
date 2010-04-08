@@ -13277,7 +13277,7 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6791439617122315501">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6791439617122315502">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6791439617122315503">
-                <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863874648" resolveInfo="ConvertAnonymousRefactoring" />
+                <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304927314" resolveInfo="NewConvert" />
                 <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="6791439617122315504">
                   <link role="declaration:4" targetNodeId="6791439617122315423" resolveInfo="convert" />
                 </node>
@@ -13287,7 +13287,7 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6791439617122315506">
-              <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863888461" resolveInfo="doRefactor" />
+              <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304931894" resolveInfo="doRefactor" />
             </node>
           </node>
         </node>
@@ -13501,7 +13501,7 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6791439617122640187">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6791439617122640188">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6791439617122640189">
-                <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863874648" resolveInfo="ConvertAnonymousRefactoring" />
+                <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304927314" resolveInfo="NewConvert" />
                 <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="6791439617122640190">
                   <link role="declaration:4" targetNodeId="6791439617122640196" resolveInfo="convert" />
                 </node>
@@ -13511,7 +13511,7 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6791439617122640192">
-              <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863888461" resolveInfo="doRefactor" />
+              <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304931894" resolveInfo="doRefactor" />
             </node>
           </node>
         </node>
@@ -13805,29 +13805,29 @@
       <property name="name:4" value="TypeVariablesTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2230400082817279741" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2230400082817279742">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2230400082817279743">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2230400082817279744">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2230400082817279745">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2230400082817279746">
-                <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863874648" resolveInfo="ConvertAnonymousRefactoring" />
-                <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2230400082817279747">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="637963823611492209">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="637963823611492210">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="637963823611492211">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="637963823611492212">
+                <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304927314" resolveInfo="NewConvert" />
+                <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492213">
                   <link role="declaration:4" targetNodeId="2230400082817279736" resolveInfo="convert" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2230400082817279748">
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="637963823611492214">
                   <property name="value:3" value="MyParam" />
                 </node>
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2230400082817279749">
-              <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863888461" resolveInfo="doRefactor" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="637963823611492215">
+              <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304931894" resolveInfo="doRefactor" />
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.lang.test.structure.AssertMatch:4" id="2230400082817279750">
-          <node role="before:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2230400082817279751">
+        <node role="statement:3" type="jetbrains.mps.lang.test.structure.AssertMatch:4" id="637963823611492216">
+          <node role="before:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492217">
             <link role="declaration:4" targetNodeId="2230400082817279734" resolveInfo="before" />
           </node>
-          <node role="after:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2230400082817279752">
+          <node role="after:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492218">
             <link role="declaration:4" targetNodeId="2230400082817279735" resolveInfo="after" />
           </node>
         </node>
@@ -14064,29 +14064,29 @@
       <property name="name:4" value="ToStaticTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2230400082818041867" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2230400082818041868">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2230400082818041872">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2230400082818041873">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2230400082818041874">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="2230400082818041875">
-                <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863874648" resolveInfo="ConvertAnonymousRefactoring" />
-                <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2230400082818041876">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="637963823611492185">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="637963823611492186">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="637963823611492187">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="637963823611492188">
+                <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304927314" resolveInfo="NewConvert" />
+                <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492189">
                   <link role="declaration:4" targetNodeId="2230400082818041862" resolveInfo="convert" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2230400082818041877">
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="637963823611492190">
                   <property name="value:3" value="MyIStatic" />
                 </node>
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2230400082818041878">
-              <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863888461" resolveInfo="doRefactor" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="637963823611492191">
+              <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304931894" resolveInfo="doRefactor" />
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.lang.test.structure.AssertMatch:4" id="2230400082818041879">
-          <node role="before:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2230400082818041880">
+        <node role="statement:3" type="jetbrains.mps.lang.test.structure.AssertMatch:4" id="637963823611492192">
+          <node role="before:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492193">
             <link role="declaration:4" targetNodeId="2230400082818041860" resolveInfo="before" />
           </node>
-          <node role="after:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="2230400082818041881">
+          <node role="after:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492194">
             <link role="declaration:4" targetNodeId="2230400082818059882" resolveInfo="after" />
           </node>
         </node>
@@ -14202,29 +14202,29 @@
       <property name="name:4" value="TypeVaryablesComplexTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4946830740863818098" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4946830740863818099">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4946830740863818102">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4946830740863818103">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4946830740863818104">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4946830740863818105">
-                <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863874648" resolveInfo="ConvertAnonymousRefactoring" />
-                <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="4946830740863818106">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="637963823611492257">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="637963823611492258">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="637963823611492259">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="637963823611492260">
+                <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304927314" resolveInfo="NewConvert" />
+                <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492261">
                   <link role="declaration:4" targetNodeId="4946830740863818090" resolveInfo="convert" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4946830740863818107">
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="637963823611492262">
                   <property name="value:3" value="MyIParams" />
                 </node>
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4946830740863818108">
-              <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863888461" resolveInfo="doRefactor" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="637963823611492263">
+              <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304931894" resolveInfo="doRefactor" />
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.lang.test.structure.AssertMatch:4" id="4946830740863818109">
-          <node role="before:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="4946830740863818110">
+        <node role="statement:3" type="jetbrains.mps.lang.test.structure.AssertMatch:4" id="637963823611492264">
+          <node role="before:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492265">
             <link role="declaration:4" targetNodeId="4946830740863818086" resolveInfo="before" />
           </node>
-          <node role="after:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="4946830740863818111">
+          <node role="after:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492266">
             <link role="declaration:4" targetNodeId="4946830740863818082" resolveInfo="after" />
           </node>
         </node>
@@ -14584,29 +14584,29 @@
       <property name="name:4" value="WithLocalVaryablesTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3145818413496514604" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3145818413496514605">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3145818413496514724">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3145818413496514725">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3145818413496514726">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3145818413496514727">
-                <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863874648" resolveInfo="ConvertAnonymousRefactoring" />
-                <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="3145818413496514728">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="637963823611492195">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="637963823611492196">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="637963823611492197">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="637963823611492198">
+                <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304927314" resolveInfo="NewConvert" />
+                <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492199">
                   <link role="declaration:4" targetNodeId="3145818413496514596" resolveInfo="convert" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3145818413496514729">
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="637963823611492200">
                   <property name="value:3" value="MyIField" />
                 </node>
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3145818413496514730">
-              <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863888461" resolveInfo="doRefactor" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="637963823611492201">
+              <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304931894" resolveInfo="doRefactor" />
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.lang.test.structure.AssertMatch:4" id="3145818413496514731">
-          <node role="before:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="3145818413496514732">
+        <node role="statement:3" type="jetbrains.mps.lang.test.structure.AssertMatch:4" id="637963823611492202">
+          <node role="before:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492203">
             <link role="declaration:4" targetNodeId="3145818413496514595" resolveInfo="before" />
           </node>
-          <node role="after:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="3145818413496514733">
+          <node role="after:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492204">
             <link role="declaration:4" targetNodeId="3145818413496514594" resolveInfo="after" />
           </node>
         </node>
@@ -14930,29 +14930,29 @@
       <property name="name:4" value="AbstractClassWithConstructorTest" />
       <node role="returnType:4" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3145818413497708746" />
       <node role="body:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3145818413497708747">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3145818413497708749">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3145818413497708750">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3145818413497708751">
-              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3145818413497708752">
-                <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863874648" resolveInfo="ConvertAnonymousRefactoring" />
-                <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="3145818413497708753">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="637963823611492165">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="637963823611492166">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="637963823611492167">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="637963823611492168">
+                <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304927314" resolveInfo="NewConvert" />
+                <node role="actualArgument:3" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492169">
                   <link role="declaration:4" targetNodeId="3145818413497708748" resolveInfo="convert" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3145818413497708754">
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="637963823611492170">
                   <property name="value:3" value="MyAConst" />
                 </node>
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3145818413497708755">
-              <link role="baseMethodDeclaration:3" targetNodeId="14.4946830740863888461" resolveInfo="doRefactor" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="637963823611492171">
+              <link role="baseMethodDeclaration:3" targetNodeId="14.8184320397304931894" resolveInfo="doRefactor" />
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.lang.test.structure.AssertMatch:4" id="3145818413497708756">
-          <node role="before:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="3145818413497708757">
+        <node role="statement:3" type="jetbrains.mps.lang.test.structure.AssertMatch:4" id="637963823611492172">
+          <node role="before:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492173">
             <link role="declaration:4" targetNodeId="3145818413497708741" resolveInfo="before" />
           </node>
-          <node role="after:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="3145818413497708758">
+          <node role="after:4" type="jetbrains.mps.lang.test.structure.TestNodeReference:4" id="637963823611492174">
             <link role="declaration:4" targetNodeId="3145818413497708740" resolveInfo="after" />
           </node>
         </node>
