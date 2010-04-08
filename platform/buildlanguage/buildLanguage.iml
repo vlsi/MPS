@@ -31,6 +31,7 @@
     <orderEntry type="module" module-name="xml" />
     <orderEntry type="module" module-name="xmlInternal" />
     <orderEntry type="module" module-name="property" />
+    <orderEntry type="module" module-name="runConfigurations" />
   </component>
 </module>
 
