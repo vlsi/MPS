@@ -213,6 +213,9 @@ public class ConvertAnonymousRefactoring {
         return new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a1a71().createNode(it);
       }
     }));
+    for (SNode typeVaryable : SetSequence.fromSet(MapSequence.fromMap(this.myInnerTypeVaryables).keySet())) {
+      ListSequence.fromList(SLinkOperations.getTargets(constructorInvocation, "typeParameter", true)).addElement(new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0c0r().createNode(typeVaryable));
+    }
     return constructorInvocation;
   }
 
@@ -462,6 +465,24 @@ public class ConvertAnonymousRefactoring {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_qy1soj_a0a0a0c0r {
+    public QuotationClass_qy1soj_a0a0a0c0r() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("typeVariableDeclaration", (SNode) parameter_3);
         result = quotedNode1_2;
       }
       return result;

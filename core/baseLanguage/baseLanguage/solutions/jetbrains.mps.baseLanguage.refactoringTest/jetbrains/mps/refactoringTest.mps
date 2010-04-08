@@ -14491,6 +14491,9 @@
                     <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="4946830740863818039">
                       <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="4946830740863818040">
                         <link role="baseMethodDeclaration:3" targetNodeId="4946830740863818048" resolveInfo="CParams.MyIParams" />
+                        <node role="typeParameter:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="58673743036260611">
+                          <link role="typeVariableDeclaration:3" targetNodeId="4946830740863818046" resolveInfo="F" />
+                        </node>
                       </node>
                     </node>
                   </node>
