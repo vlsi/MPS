@@ -185,7 +185,7 @@ public class LeftEditorHighlighter extends JComponent {
   }
 
   public void removeFoldingAreaPainter(AbstractFoldingAreaPainter painter) {
-    myFoldingAreaPainters.add(painter);
+    myFoldingAreaPainters.remove(painter);
     relayout(true);
     repaint();
   }
