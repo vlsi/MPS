@@ -24,6 +24,7 @@ import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
+import jetbrains.mps.debug.api.ToDebugAPI;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -71,6 +72,7 @@ public class VMCreator {
   }
 
   @Nullable
+  @ToDebugAPI
   public ExecutionResult attachVirtualMachine(final Executor executor,
                                               final ProgramRunner runner,
                                               final RunProfileState state,
@@ -334,6 +336,7 @@ public class VMCreator {
     return myDebuggerManagerThread;
   }
 
+  @ToDebugAPI
   public DebugSession getDebugSession() {
     return myDebuggerSession;
   }

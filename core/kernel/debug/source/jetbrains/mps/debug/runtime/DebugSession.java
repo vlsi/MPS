@@ -19,6 +19,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class DebugSession {
+  //todo extract abstract superclass to allow suspend/resume/etc. any process if developer implements it
   private static final Logger LOG = Logger.getLogger(DebugSession.class);
   private final DebugVMEventsProcessor myEventsProcessor;
   private final List<SessionChangeListener> myListeners = new ArrayList<SessionChangeListener>();
