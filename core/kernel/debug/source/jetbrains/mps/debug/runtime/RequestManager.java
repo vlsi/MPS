@@ -25,6 +25,7 @@ import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
 import jetbrains.mps.debug.runtime.requests.Requestor;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.AbstractMPSBreakpoint;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -242,7 +243,11 @@ public class RequestManager implements DebugProcessListener {
       @Override
       protected void action() throws Exception {
         BreakpointManagerComponent breakpointManager = myDebugEventsProcessor.getBreakpointManager();
-        breakpointManager.createAllClassPrepareRequests(myDebugEventsProcessor);
+        for (AbstractMPSBreakpoint breakpoint : breakpointManager.getAllBreakpoints()) {
+          if (breakpoint instanceof MPSBreakpoint) {
+            ((MPSBreakpoint) breakpoint).createClassPrepareRequest(myDebugEventsProcessor);
+          }
+        }
       }
     });
   }

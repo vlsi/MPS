@@ -182,4 +182,14 @@ public class MPSBreakpoint extends AbstractMPSBreakpoint implements ClassPrepare
 
     return true;
   }
+
+  @Override
+  public void removeFromRunningSessions() {
+    RequestManager.removeClassPrepareRequests(this);
+  }
+
+  @Override
+  public void addToRunningSessions() {
+    RequestManager.createClassPrepareRequests(this);
+  }
 }
