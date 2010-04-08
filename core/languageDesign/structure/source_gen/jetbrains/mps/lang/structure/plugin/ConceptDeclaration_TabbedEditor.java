@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseSingleTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.plugins.pluginparts.tabbedEditor.BaseMultiTab;
 import java.util.List;
@@ -38,6 +37,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.workbench.dialogs.project.creation.NewGeneratorDialog;
+import jetbrains.mps.smodel.BaseAdapter;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MappingDialog;
 import jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior;
@@ -45,23 +45,23 @@ import jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior;
 public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   public ConceptDeclaration_TabbedEditor(IOperationContext operationContext, SNode node) {
     super(operationContext, node);
-    this.addTab(new ConceptDeclaration_TabbedEditor.Structure_Tab(this, node, node.getAdapter().getClass()), 'S');
-    this.addTab(new ConceptDeclaration_TabbedEditor.Editor_Tab(this, node, node.getAdapter().getClass()), 'E');
-    this.addTab(new ConceptDeclaration_TabbedEditor.Constraints_Tab(this, node, node.getAdapter().getClass()), 'C');
-    this.addTab(new ConceptDeclaration_TabbedEditor.Behavior_Tab(this, node, node.getAdapter().getClass()), 'B');
-    this.addTab(new ConceptDeclaration_TabbedEditor.Typesystem_Tab(this, node, node.getAdapter().getClass()), 'T');
-    this.addTab(new ConceptDeclaration_TabbedEditor.Actions_Tab(this, node, node.getAdapter().getClass()), 'A');
-    this.addTab(new ConceptDeclaration_TabbedEditor.Refactorings_Tab(this, node, node.getAdapter().getClass()), 'R');
-    this.addTab(new ConceptDeclaration_TabbedEditor.Intentions_Tab(this, node, node.getAdapter().getClass()), 'I');
-    this.addTab(new ConceptDeclaration_TabbedEditor.Find_Usages_Tab(this, node, node.getAdapter().getClass()), 'F');
-    this.addTab(new ConceptDeclaration_TabbedEditor.Data_Flow_Tab(this, node, node.getAdapter().getClass()), 'D');
-    this.addTab(new ConceptDeclaration_TabbedEditor.Generator_Tab(this, node, node.getAdapter().getClass()), 'G');
-    this.addTab(new ConceptDeclaration_TabbedEditor.Textgen_Tab(this, node, node.getAdapter().getClass()), null);
+    this.addTab(new ConceptDeclaration_TabbedEditor.Structure_Tab(this, node), 'S');
+    this.addTab(new ConceptDeclaration_TabbedEditor.Editor_Tab(this, node), 'E');
+    this.addTab(new ConceptDeclaration_TabbedEditor.Constraints_Tab(this, node), 'C');
+    this.addTab(new ConceptDeclaration_TabbedEditor.Behavior_Tab(this, node), 'B');
+    this.addTab(new ConceptDeclaration_TabbedEditor.Typesystem_Tab(this, node), 'T');
+    this.addTab(new ConceptDeclaration_TabbedEditor.Actions_Tab(this, node), 'A');
+    this.addTab(new ConceptDeclaration_TabbedEditor.Refactorings_Tab(this, node), 'R');
+    this.addTab(new ConceptDeclaration_TabbedEditor.Intentions_Tab(this, node), 'I');
+    this.addTab(new ConceptDeclaration_TabbedEditor.Find_Usages_Tab(this, node), 'F');
+    this.addTab(new ConceptDeclaration_TabbedEditor.Data_Flow_Tab(this, node), 'D');
+    this.addTab(new ConceptDeclaration_TabbedEditor.Generator_Tab(this, node), 'G');
+    this.addTab(new ConceptDeclaration_TabbedEditor.Textgen_Tab(this, node), null);
   }
 
   public static class Structure_Tab extends BaseSingleTab {
-    public Structure_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-      super(tabbedEditor, baseNode, adapterClass);
+    public Structure_Tab(TabbedEditor tabbedEditor, SNode baseNode) {
+      super(tabbedEditor, baseNode);
       this.init();
     }
 
@@ -95,8 +95,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   }
 
   public static class Editor_Tab extends BaseMultiTab {
-    public Editor_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-      super(tabbedEditor, baseNode, adapterClass);
+    public Editor_Tab(TabbedEditor tabbedEditor, SNode baseNode) {
+      super(tabbedEditor, baseNode);
       this.init();
     }
 
@@ -145,8 +145,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   }
 
   public static class Constraints_Tab extends BaseSingleTab {
-    public Constraints_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-      super(tabbedEditor, baseNode, adapterClass);
+    public Constraints_Tab(TabbedEditor tabbedEditor, SNode baseNode) {
+      super(tabbedEditor, baseNode);
       this.init();
     }
 
@@ -184,8 +184,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   }
 
   public static class Behavior_Tab extends BaseSingleTab {
-    public Behavior_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-      super(tabbedEditor, baseNode, adapterClass);
+    public Behavior_Tab(TabbedEditor tabbedEditor, SNode baseNode) {
+      super(tabbedEditor, baseNode);
       this.init();
     }
 
@@ -223,8 +223,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   }
 
   public static class Typesystem_Tab extends BaseMultiTab {
-    public Typesystem_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-      super(tabbedEditor, baseNode, adapterClass);
+    public Typesystem_Tab(TabbedEditor tabbedEditor, SNode baseNode) {
+      super(tabbedEditor, baseNode);
       this.init();
     }
 
@@ -299,8 +299,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   }
 
   public static class Actions_Tab extends BaseMultiTab {
-    public Actions_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-      super(tabbedEditor, baseNode, adapterClass);
+    public Actions_Tab(TabbedEditor tabbedEditor, SNode baseNode) {
+      super(tabbedEditor, baseNode);
       this.init();
     }
 
@@ -346,8 +346,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   }
 
   public static class Refactorings_Tab extends BaseMultiTab {
-    public Refactorings_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-      super(tabbedEditor, baseNode, adapterClass);
+    public Refactorings_Tab(TabbedEditor tabbedEditor, SNode baseNode) {
+      super(tabbedEditor, baseNode);
       this.init();
     }
 
@@ -393,8 +393,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   }
 
   public static class Intentions_Tab extends BaseMultiTab {
-    public Intentions_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-      super(tabbedEditor, baseNode, adapterClass);
+    public Intentions_Tab(TabbedEditor tabbedEditor, SNode baseNode) {
+      super(tabbedEditor, baseNode);
       this.init();
     }
 
@@ -440,8 +440,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   }
 
   public static class Find_Usages_Tab extends BaseMultiTab {
-    public Find_Usages_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-      super(tabbedEditor, baseNode, adapterClass);
+    public Find_Usages_Tab(TabbedEditor tabbedEditor, SNode baseNode) {
+      super(tabbedEditor, baseNode);
       this.init();
     }
 
@@ -491,8 +491,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   }
 
   public static class Data_Flow_Tab extends BaseSingleTab {
-    public Data_Flow_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-      super(tabbedEditor, baseNode, adapterClass);
+    public Data_Flow_Tab(TabbedEditor tabbedEditor, SNode baseNode) {
+      super(tabbedEditor, baseNode);
       this.init();
     }
 
@@ -530,8 +530,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   }
 
   public static class Generator_Tab extends BaseMultiTab {
-    public Generator_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-      super(tabbedEditor, baseNode, adapterClass);
+    public Generator_Tab(TabbedEditor tabbedEditor, SNode baseNode) {
+      super(tabbedEditor, baseNode);
       this.init();
     }
 
@@ -698,8 +698,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
   }
 
   public static class Textgen_Tab extends BaseSingleTab {
-    public Textgen_Tab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
-      super(tabbedEditor, baseNode, adapterClass);
+    public Textgen_Tab(TabbedEditor tabbedEditor, SNode baseNode) {
+      super(tabbedEditor, baseNode);
       this.init();
     }
 
