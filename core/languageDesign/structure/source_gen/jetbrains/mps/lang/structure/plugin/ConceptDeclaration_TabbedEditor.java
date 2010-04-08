@@ -31,12 +31,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
+import javax.swing.JFrame;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.workbench.dialogs.project.creation.NewGeneratorDialog;
-import com.intellij.openapi.wm.WindowManager;
+import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MappingDialog;
 import jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior;
 
@@ -601,6 +603,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
 
     public SNode createNode(final SNode node, final boolean ask, final SNode concept) {
       Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+      final JFrame frame = WindowManager.getInstance().getFrame(project);
+
       final Wrappers._T<Language> language = new Wrappers._T<Language>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -608,21 +612,21 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
           assert language.value != null : "Language shouldn't be null for " + node;
         }
       });
+
       final List<Generator> genList = language.value.getGenerators();
       if (ListSequence.fromList(genList).isEmpty()) {
-        NewGeneratorDialog dialog = new NewGeneratorDialog(WindowManager.getInstance().getFrame(project), language.value);
+        NewGeneratorDialog dialog = new NewGeneratorDialog(frame, language.value);
         dialog.showDialog();
         final Generator createdGenerator = dialog.getResult();
-        if (createdGenerator != null) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              SModel createdModel = createdGenerator.getOwnTemplateModels().get(0).getSModel();
-              SModelOperations.addRootNode(createdModel, SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null));
-            }
-          });
-        } else {
+        if (createdGenerator == null) {
           return null;
         }
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            SModel createdModel = createdGenerator.getOwnTemplateModels().get(0).getSModel();
+            SModelOperations.addRootNode(createdModel, SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null));
+          }
+        });
       }
 
       final List<SNode> mappings = new ArrayList<SNode>();
@@ -635,8 +639,28 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
           }
         }
       });
+
       if (ListSequence.fromList(mappings).isEmpty()) {
-        return null;
+        // generator is present - this means we don't have template models or mappings 
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            SModel model = null;
+            for (Generator generator : genList) {
+              if (generator.getOwnTemplateModels().isEmpty()) {
+                continue;
+              }
+              model = generator.getOwnTemplateModels().get(0).getSModel();
+            }
+
+            if (model == null) {
+              JOptionPane.showMessageDialog(frame, "create template model first");
+            }
+
+            SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
+            SModelOperations.addRootNode(model, node);
+            ListSequence.fromList(mappings).addElement(node);
+          }
+        });
       }
 
       final Wrappers._T<SNode> mapping = new Wrappers._T<SNode>();
