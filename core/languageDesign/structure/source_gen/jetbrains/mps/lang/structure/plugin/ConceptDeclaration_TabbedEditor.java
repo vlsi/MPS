@@ -28,13 +28,14 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.ide.DataManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
 import java.awt.Frame;
-import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.ide.DataManager;
 import jetbrains.mps.workbench.dialogs.project.creation.NewGeneratorDialog;
 import jetbrains.mps.ide.actions.MappingDialog;
 import jetbrains.mps.lang.generator.behavior.MappingConfiguration_Behavior;
@@ -599,6 +600,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public SNode createNode(final SNode node, final boolean ask, final SNode concept) {
+      Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
       final Wrappers._T<Language> language = new Wrappers._T<Language>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -639,9 +641,8 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
       }
 
       final Wrappers._T<SNode> mapping = new Wrappers._T<SNode>();
-      IOperationContext context = Generator_Tab.this.getCurrentEditorComponent().getOperationContext();
       if (ListSequence.fromList(mappings).count() > 1) {
-        MappingDialog configurationDialog = new MappingDialog(language.value, context);
+        MappingDialog configurationDialog = new MappingDialog(project, language.value);
         configurationDialog.showDialog();
         mapping.value = configurationDialog.getResult();
       } else {

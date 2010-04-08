@@ -6,10 +6,11 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.IOperationContext;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import com.intellij.openapi.wm.WindowManager;
 import javax.swing.JScrollPane;
 import javax.swing.tree.TreeSelectionModel;
 import javax.swing.event.TreeSelectionListener;
@@ -21,6 +22,7 @@ import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.icons.IconManager;
@@ -30,11 +32,12 @@ import jetbrains.mps.util.Condition;
 import com.intellij.ui.treeStructure.Tree;
 import javax.swing.JOptionPane;
 import javax.swing.Icon;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class MappingDialog extends BaseDialog {
   private JPanel myMainComponent = new JPanel(new BorderLayout());
   private Language myLanguage;
-  private IOperationContext myContext;
+  private Project myProject;
   private SNode myResult;
   private MPSTree myTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
@@ -42,10 +45,10 @@ public class MappingDialog extends BaseDialog {
     }
   };
 
-  public MappingDialog(Language language, IOperationContext operationContext) {
-    super(operationContext.getMainFrame(), "Choose Mapping Configuration");
+  public MappingDialog(final Project project, Language language) {
+    super(WindowManager.getInstance().getFrame(project), "Choose Mapping Configuration");
+    this.myProject = project;
     this.myLanguage = language;
-    this.myContext = operationContext;
     JScrollPane scrollPane = new JScrollPane(this.myTree);
     this.myMainComponent.add(scrollPane, BorderLayout.CENTER);
     this.myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
@@ -62,8 +65,9 @@ public class MappingDialog extends BaseDialog {
         if (!(node instanceof SNodeTreeNode)) {
           return;
         }
-        MPSEditorOpener opener = MappingDialog.this.myContext.getComponent(MPSEditorOpener.class);
-        opener.editNode(((SNodeTreeNode) node).getSNode(), MappingDialog.this.myContext);
+        MPSEditorOpener opener = project.getComponent(MPSEditorOpener.class);
+        SNodeTreeNode treeNode = (SNodeTreeNode) node;
+        opener.editNode(treeNode.getSNode(), treeNode.getOperationContext());
       }
     });
     this.myTree.rebuildNow();
@@ -85,14 +89,15 @@ public class MappingDialog extends BaseDialog {
     }
     TextTreeNode root = new TextTreeNode("Generators");
     for (final Generator generator : this.myLanguage.getGenerators()) {
-      MPSTreeNode generatorTreeNode = new MappingDialog.MyTreeNode(Icons.GENERATORS_ICON, generator.getModuleUID(), "generator/" + generator.getName());
+      ModuleContext moduleContext = new ModuleContext(generator, this.myProject);
+      MPSTreeNode generatorTreeNode = new MappingDialog.MyTreeNode(moduleContext, Icons.GENERATORS_ICON, generator.getModuleUID(), "generator/" + generator.getName());
       root.add(generatorTreeNode);
       for (SModelDescriptor md : generator.getOwnTemplateModels()) {
-        MPSTreeNode modelTreeNode = new MappingDialog.MyTreeNode(IconManager.getIconFor(md), md.toString(), md.getLongName() + "@" + md.getStereotype());
+        MPSTreeNode modelTreeNode = new MappingDialog.MyTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), md.getLongName() + "@" + md.getStereotype());
         generatorTreeNode.add(modelTreeNode);
         SModel model = md.getSModel();
         for (SNode node : SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
-          SNodeTreeNode nodeTreeNode = new SNodeTreeNode(node, null, this.myContext, new Condition<SNode>() {
+          SNodeTreeNode nodeTreeNode = new SNodeTreeNode(node, null, moduleContext, new Condition<SNode>() {
             public boolean met(SNode p0) {
               return false;
             }
@@ -135,8 +140,8 @@ public class MappingDialog extends BaseDialog {
     private String myNodeIdentifier;
     private String myText;
 
-    public MyTreeNode(Icon icon, String nodeIdentifier, String text) {
-      super(MappingDialog.this.myContext);
+    public MyTreeNode(IOperationContext context, Icon icon, String nodeIdentifier, String text) {
+      super(context);
       this.myIcon = icon;
       this.myNodeIdentifier = nodeIdentifier;
       this.myText = text;
