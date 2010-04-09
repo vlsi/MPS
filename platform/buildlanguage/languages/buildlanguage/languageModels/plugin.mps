@@ -5039,7 +5039,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration" id="7234763849538404662">
     <property name="name" value="DefaultBuildLanguageApplication" />
-    <property name="caption" value="Default Ant" />
+    <property name="caption" value="Build Language Project" />
     <property name="package" value="newRunner" />
     <link role="stateTypeParameter" targetNodeId="58.~RunProfileState" resolveInfo="RunProfileState" />
     <link role="configType" targetNodeId="7234763849538443893:0" resolveInfo="Ant" />
@@ -5416,8 +5416,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration:23" id="7234763849538443893">
-    <property name="name:23" value="Ant" />
-    <property name="caption:23" value="Ant" />
+    <property name="name:23" value="BuildLanguage" />
+    <property name="caption:23" value="Build" />
     <property name="iconPath:23" value="${language_descriptor}/icons/build.png" />
     <property name="package:23" value="newRunner" />
   </node>
