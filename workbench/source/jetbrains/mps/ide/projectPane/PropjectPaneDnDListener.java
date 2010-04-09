@@ -21,6 +21,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTree;
 import javax.swing.tree.TreePath;
@@ -44,22 +45,22 @@ public class PropjectPaneDnDListener implements DropTargetListener {
   }
 
   private SModelDescriptor getModelDescriptor(final SNode node) {
-    if (node == null) return  null;
+    if (node == null) return null;
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       public SModel compute() {
         return node.getModel();
       }
     });
-    return (model == null)? null : model.getModelDescriptor();
+    return (model == null) ? null : model.getModelDescriptor();
   }
 
   private String getVirtualPackage(final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
-        public String compute() {
-          String result = node.getProperty(BaseConcept.VIRTUAL_PACKAGE);
-          return (result == null)? "" : result;
-        }
-      });
+      public String compute() {
+        String result = node.getProperty(BaseConcept.VIRTUAL_PACKAGE);
+        return (result == null) ? "" : result;
+      }
+    });
   }
 
   private List<Pair<SNode, String>> getNodesToMove(SModelDescriptor targetModel, String virtualPackage, List<Pair<SNode, String>> sourceNodes) {
@@ -82,7 +83,7 @@ public class PropjectPaneDnDListener implements DropTargetListener {
     }
     if (node != null) {
       String result = ((PackageNode) node).getFullPackage();
-      return (result == null)? "" : result;
+      return (result == null) ? "" : result;
     }
     return null;
   }
@@ -99,11 +100,11 @@ public class PropjectPaneDnDListener implements DropTargetListener {
   }
 
   private String getPackagePresentation(String name) {
-    return (name == null || name.isEmpty())? "<i><untitled></i>" : "'<b>" + name + "</b>'";
+    return (name == null || name.isEmpty()) ? "<i><untitled></i>" : "'<b>" + name + "</b>'";
   }
 
   private String getFullTargetPack(String targetPackage, String basePack) {
-    return (basePack == null || basePack.isEmpty())? targetPackage : targetPackage + "." + basePack;
+    return (basePack == null || basePack.isEmpty()) ? targetPackage : targetPackage + "." + basePack;
   }
 
   private String getConfirnLabel(List<Pair<SNode, String>> sourceNodes, String target) {
@@ -117,7 +118,7 @@ public class PropjectPaneDnDListener implements DropTargetListener {
       builder.append(getPackagePresentation(getVirtualPackage(first.o1))).append(" ");
     }
     builder.append("to ");
-    builder.append(getPackagePresentation(target + ((isSingle)? first.o2 : "")));
+    builder.append(getPackagePresentation(target + ((isSingle) ? first.o2 : "")));
     builder.append("?</html>");
     return builder.toString();
   }
@@ -161,14 +162,16 @@ public class PropjectPaneDnDListener implements DropTargetListener {
     final List<Pair<SNode, String>> sourceNodes = (List<Pair<SNode, String>>) source;
 
     SModelDescriptor targetModel = getTargetModel(treePath);
-    final String targetPackage = (getTargetVirtualPackage(treePath) == null)? "" : getTargetVirtualPackage(treePath);
+    final String targetPackage = (getTargetVirtualPackage(treePath) == null) ? "" : getTargetVirtualPackage(treePath);
     List<Pair<SNode, String>> nodeToMove = getNodesToMove(targetModel, targetPackage, sourceNodes);
     if (nodeToMove.isEmpty()) {
       dtde.rejectDrop();
       return;
     }
-    Project project = (Project) DataManager.getInstance().getDataContext().getData(MPSDataKeys.PROJECT.getName());
-    int result = JOptionPane.showConfirmDialog(WindowManager.getInstance().getFrame(project), getConfirnLabel(sourceNodes, targetPackage));
+    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    JFrame frame = WindowManager.getInstance().getFrame(project);
+    String text = getConfirnLabel(sourceNodes, targetPackage);
+    int result = JOptionPane.showConfirmDialog(frame, text, "Move Nodes", JOptionPane.YES_NO_OPTION);
     if (result == JOptionPane.YES_OPTION) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
