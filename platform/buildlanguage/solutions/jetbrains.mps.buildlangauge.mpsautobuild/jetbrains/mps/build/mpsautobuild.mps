@@ -1904,5 +1904,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.buildlanguage.structure.Project:21" id="389557897451803815">
+    <property name="name:21" value="test" />
+    <node role="target:21" type="jetbrains.mps.buildlanguage.structure.TargetDeclaration:21" id="389557897451803816">
+      <property name="name:21" value="default" />
+      <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="389557897451803819">
+        <link role="declaration:22" targetNodeId="2v.353793545802812872" resolveInfo="echo" />
+        <node role="internalText:22" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="389557897451803820">
+          <property name="value:21" value="Hello, world!" />
+        </node>
+      </node>
+    </node>
+    <node role="default:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="389557897451803817">
+      <link role="targetDeclaration:21" targetNodeId="389557897451803816" resolveInfo="default" />
+    </node>
+  </node>
 </model>
 
