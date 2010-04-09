@@ -14,7 +14,6 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.baseLanguage.plugin.FieldWithPathChooseDialog;
 
 import javax.swing.JComponent;
 import javax.swing.JLabel;
