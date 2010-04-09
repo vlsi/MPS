@@ -1,53 +1,26 @@
 package jetbrains.mps.debug.runtime;
 
-import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessOutputTypes;
-import com.sun.jdi.*;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
+import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import java.awt.event.KeyEvent;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicReference;
-
-public class DebugSession {
+public class DebugSession extends AbstractDebugSession<JavaUiState> {
   //todo extract abstract superclass to allow suspend/resume/etc. any process if developer implements it
   private static final Logger LOG = Logger.getLogger(DebugSession.class);
   private final DebugVMEventsProcessor myEventsProcessor;
-  private final List<SessionChangeListener> myListeners = new ArrayList<SessionChangeListener>();
-  private final AtomicReference<UiState> myUiState = new AtomicReference<UiState>(new UiState(null));
-
-  private ExecutionState myExecutionState = ExecutionState.WaitingAttach;
-  private ProcessHandler myProcessHandler;
-  private IDebuggableFramesSelector myDebuggableFramesSelector;
 
   public DebugSession(DebugVMEventsProcessor eventsProcessor) {
     myEventsProcessor = eventsProcessor;
     eventsProcessor.getMulticaster().addListener(new MyDebugProcessAdapter());
   }
 
-  public boolean isPaused() {
-    return myExecutionState.equals(ExecutionState.Paused);
-  }
-
-  public boolean isRunning() {
-    return myExecutionState.equals(ExecutionState.Running);
-  }
-
-  public boolean isStopped() {
-    return myExecutionState.equals(ExecutionState.Stopped);
-  }
-
-  public boolean isStepEnabled() {
-    return isPaused() && getUiState().isPausedOnBreakpoint();
+  protected JavaUiState createUiState() {
+    return new JavaUiState(null, this);
   }
 
   public void resume() {
@@ -76,8 +49,12 @@ public class DebugSession {
     step(StepType.Out);
   }
 
+  public boolean canShowEvaluationDialog() {
+    return true;
+  }
+
   public void showEvaluationDialog(IOperationContext operationContext) {
-    DebugSession.UiState state = getUiState();
+    JavaUiState state = getUiState();
     if (state.isPausedOnBreakpoint()) {
       EvaluationDialog evaluationDialog = new EvaluationDialog(operationContext, state, this);
       evaluationDialog.showDialog();
@@ -85,7 +62,7 @@ public class DebugSession {
   }
 
   private void step(StepType type) {
-    DebugSession.UiState state = getUiState();
+    JavaUiState state = getUiState();
     SuspendContext context = state.getContext();
     LOG.assertLog(context != null);
     LOG.assertLog(state.isPausedOnBreakpoint());
@@ -96,90 +73,30 @@ public class DebugSession {
     return myEventsProcessor;
   }
 
-  public void setProcessHandler(ProcessHandler processHandler) {
-    myProcessHandler = processHandler;
-  }
-
-  public ProcessHandler getProcessHandler() {
-    return myProcessHandler;
-  }
-
   private void pause(SuspendContext suspendContext) {
-    DebugSession.UiState state = getUiState();
+    JavaUiState state = getUiState();
     setState(state, state.paused(suspendContext));
   }
 
-  public UiState refresh() {
-    DebugSession.UiState state = getUiState();
-    DebugSession.UiState newState = state.paused(state.getContext());
+  public JavaUiState refresh() {
+    JavaUiState state = getUiState();
+    JavaUiState newState = state.paused(state.getContext());
     setState(state, newState);
     return newState;
   }
 
   private void resume(SuspendContext suspendContext) {
-    DebugSession.UiState state = getUiState();
+    JavaUiState state = getUiState();
     setState(state, state.resumed(suspendContext));
   }
 
-  public UiState getUiState() {
-    return myUiState.get();
-  }
-
-  private void trySetState(UiState oldState, UiState newState) {
-    if (myUiState.compareAndSet(oldState, newState)) {
-      fireStateChanged();
-    }
-  }
-
-  private void setState(UiState oldState, UiState newState) {
+  private void setState(JavaUiState oldState, JavaUiState newState) {
     while (!myUiState.compareAndSet(oldState, newState)) {
       System.err.println("OOPS! somebody changed UiState");
       // TODO we do not care here if user selected something, we just replace old state. But we might do something more clever, like remember what user selected.
       oldState = getUiState();
     }
     fireStateChanged();
-  }
-
-  private void fireStateChanged() {
-    for (SessionChangeListener listener : myListeners) {
-      listener.stateChanged(DebugSession.this);
-    }
-  }
-
-  public void addChangeListener(@NotNull SessionChangeListener listener) {
-    myListeners.add(listener);
-  }
-
-  public void removeChangeListener(@NotNull SessionChangeListener listener) {
-    myListeners.remove(listener);
-  }
-
-  private void fireSessionPaused(DebugSession debugSession) {
-    for (SessionChangeListener listener : myListeners) {
-      listener.paused(debugSession);
-    }
-  }
-
-  private void fireSessionResumed(DebugSession debugSession) {
-    for (SessionChangeListener listener : myListeners) {
-      listener.resumed(debugSession);
-    }
-  }
-
-  public void setDebuggableFramesSelector(IDebuggableFramesSelector debuggableFramesSelector) {
-    myDebuggableFramesSelector = debuggableFramesSelector;
-  }
-
-  @NotNull
-  public IDebuggableFramesSelector getDebuggableFramesSelector() {
-    return myDebuggableFramesSelector;
-  }
-
-  public enum ExecutionState {
-    Stopped,
-    Running,
-    Paused,
-    WaitingAttach;
   }
 
   private class MyDebugProcessAdapter extends DebugProcessAdapter {
@@ -201,267 +118,16 @@ public class DebugSession {
     @Override
     public void processAttached(@NotNull DebugVMEventsProcessor process) {
       myExecutionState = ExecutionState.Running;
-      myProcessHandler.notifyTextAvailable("Connected to the target VM, " + process.getConncetionString() + "\n", ProcessOutputTypes.SYSTEM);
+      myProcessHandler.notifyTextAvailable("Connected to the target VM, " + process.getConnectionString() + "\n", ProcessOutputTypes.SYSTEM);
     }
 
     @Override
     public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
       myExecutionState = ExecutionState.Stopped;
-      setState(getUiState(), new UiState(null));
+      setState(getUiState(), new JavaUiState(null, DebugSession.this));
       fireSessionResumed(DebugSession.this); // TODO hack
-      myProcessHandler.notifyTextAvailable("Disconnected from the target VM, " + process.getConncetionString() + "\n", ProcessOutputTypes.SYSTEM);
+      myProcessHandler.notifyTextAvailable("Disconnected from the target VM, " + process.getConnectionString() + "\n", ProcessOutputTypes.SYSTEM);
     }
   }
 
-  public static interface SessionChangeListener {
-    public void stateChanged(DebugSession session);
-    public void paused(DebugSession session);
-    public void resumed(DebugSession session);
-  }
-
-  // This class is immutable
-  public class UiState {
-    @Nullable
-    private final SuspendContext myContext;
-    @Nullable
-    private final ThreadReference myThread;
-    @Nullable
-    private final StackFrame myStackFrame;
-
-    private UiState(@Nullable SuspendContext context) {
-      myContext = context;
-
-      if (context == null) {
-        myThread = null;
-        myStackFrame = null;
-      } else {
-        myThread = findThread();
-        LOG.assertLog(myThread != null);
-        myStackFrame = findStackFrame();
-      }
-    }
-
-    // This constructor is called when user selects some thread from ui
-    private UiState(@NotNull UiState previousState, @Nullable ThreadReference thread) {
-      if (thread == null) {
-        myContext = null;
-        myThread = null;
-        myStackFrame = null;
-      } else {
-        myThread = thread;
-        myContext = findContext(previousState);
-        LOG.assertLog(myContext != null); // in case some botva is going on
-        myStackFrame = findStackFrame();
-      }
-    }
-
-    // This constructor is called when user selects some frame from ui
-    private UiState(@NotNull UiState previousState, @Nullable StackFrame frame) {
-      LOG.assertLog(frame == null || frame.thread() == previousState.myThread);
-      myContext = previousState.myContext;
-      myThread = previousState.myThread;
-      myStackFrame = frame;
-    }
-
-    private SuspendContext findContext(@NotNull UiState previousState) {
-      SuspendContext newContext = previousState.myContext;
-      LOG.assertLog(newContext != null);
-      if (!newContext.suspends(myThread)) {
-        newContext = null;
-        for (SuspendContext context : getAllPausedContexts()) {
-          if (context.suspends(myThread)) {
-            newContext = context;
-            break;
-          }
-        }
-      }
-      return newContext;
-    }
-
-    private StackFrame findStackFrame() {
-      StackFrame frame = null;
-      try {
-        if (myThread.frameCount() > 0) {
-          frame = myDebuggableFramesSelector.findDeepestDebuggableFrame(myThread.frames());
-        } else {
-          frame = null;
-        }
-      } catch (IncompatibleThreadStateException e) {
-        LOG.error(e);
-      }
-      return frame;
-    }
-
-    private ThreadReference findThread() {
-      ThreadReference thread = myContext.getThread();
-      if (thread == null) {
-        List<ThreadReference> threads = myEventsProcessor.getVirtualMachine().allThreads();
-        thread = threads.get(0);
-        for (ThreadReference t : threads) {
-          // TODO this is a hack to filter out system threads
-          if (!t.threadGroup().name().equals("system")) {
-            thread = t;
-            break;
-          }
-        }
-      }
-      return thread;
-    }
-
-    // changes state on pause/resume
-    private UiState paused(SuspendContext context) {
-      // we select new context even if we are already on some other context
-      // user probably wants to know about new paused contexts
-      return new UiState(context);
-    }
-
-    @Nullable
-    private UiState resumed(SuspendContext context) {
-      //TODO if some other context is resumed it does not mean that those changes do not concern us. We still want to display correct threads state.
-      if (context != myContext) return null;
-
-      SuspendContext newContext = null;
-      List<SuspendContext> allPausedContexts = getAllPausedContexts();
-      if (!allPausedContexts.isEmpty()) {
-        newContext = allPausedContexts.get(0);
-      }
-      return new UiState(newContext);
-    }
-
-    private List<SuspendContext> getAllPausedContexts() {
-      SuspendManager suspendManager = myEventsProcessor.getSuspendManager();
-      SuspendContext context = suspendManager.getPausedByUserContext();
-      if (context != null) {
-        return suspendManager.getPausedContexts();
-      }
-      return CollectionUtil.union(suspendManager.getPausedContexts(), Collections.singletonList(context));
-    }
-
-    // changes state on user selection
-    private UiState selectThreadInternal(@Nullable ThreadReference thread) {
-      return new UiState(this, thread);
-    }
-
-    private UiState selectFrameInternal(@Nullable StackFrame frame) {
-      if (myStackFrame != frame) {
-        return new UiState(this, frame);
-      }
-      return this;
-    }
-
-    public void selectThread(@Nullable ThreadReference thread) {
-      UiState newState = selectThreadInternal(thread);
-      if (newState != this) {
-        trySetState(this, newState);
-      }
-    }
-
-    public void selectFrame(@Nullable StackFrame frame) {
-      UiState newState = selectFrameInternal(frame);
-      if (newState != this) {
-        trySetState(this, newState);
-      }
-    }
-
-    @Nullable
-    public SuspendContext getContext() {
-      return myContext;
-    }
-
-    @Nullable
-    public ThreadReference getThread() {
-      return myThread;
-    }
-
-    @Nullable
-    public StackFrame getStackFrame() {
-      return myStackFrame;
-    }
-
-    @NotNull
-    public List<StackFrame> getStackFrames() {
-      if (myThread != null) {
-        try {
-          return myThread.frames();
-        } catch (IncompatibleThreadStateException e) {
-          LOG.error(e);
-        }
-      }
-      return Collections.emptyList();
-    }
-
-    @NotNull
-    public Map<LocalVariable, Value> getLocalVariablesValues() {
-      if (myStackFrame != null) {
-        try {
-          return myStackFrame.getValues(myStackFrame.visibleVariables());
-        } catch (AbsentInformationException ignore) {
-        }
-      }
-      return Collections.emptyMap();
-    }
-
-    @NotNull
-    public List<LocalVariable> getLocalVariables() {
-      if (myStackFrame != null) {
-        try {
-          return myStackFrame.visibleVariables();
-        } catch (AbsentInformationException ignore) {
-        }
-      }
-      return Collections.emptyList();
-    }
-
-    @Nullable
-    public Value getVariableValue(LocalVariable variable) {
-      if (myStackFrame != null) {
-        return myStackFrame.getValue(variable);
-      }
-      return null;
-    }
-
-    @Nullable
-    public ObjectReference getThisObject() {
-      if (myStackFrame != null) {
-        return myStackFrame.thisObject();
-      }
-      return null;
-    }
-
-    @NotNull
-    public List<ThreadReference> getThreads() {
-      if (myExecutionState.equals(ExecutionState.Paused)) {
-        List<ThreadReference> result = new ArrayList<ThreadReference>();
-        for (ThreadReference threadReference : myEventsProcessor.getVirtualMachine().allThreads()) {
-          if (threadReference.isSuspended()) {
-            result.add(threadReference);
-          }
-        }
-        return result;
-      }
-      return Collections.emptyList();
-    }
-
-    @Nullable
-    public String getSourceFileName() {
-      if (myStackFrame == null) return null;
-      try {
-        return myStackFrame.location().sourceName();
-      } catch (AbsentInformationException e) {
-      }
-      return null;
-    }
-
-    public int getPosition() {
-      if (myStackFrame == null) return 0;
-      return myStackFrame.location().lineNumber();
-    }
-
-    public boolean isPausedOnBreakpoint() {
-      if (myContext != null) {
-        return myEventsProcessor.getSuspendManager().getPausedContexts().contains(myContext);
-      }
-      return false;
-    }
-  }
 }

@@ -1,8 +1,9 @@
 package jetbrains.mps.debug.evaluation;
 
 import com.sun.jdi.*;
-import jetbrains.mps.debug.runtime.DebugSession.UiState;
-import jetbrains.mps.debug.runtime.SuspendContext;
+import jetbrains.mps.debug.api.programState.IThread;
+import jetbrains.mps.debug.runtime.JavaUiState;
+import jetbrains.mps.debug.runtime.java.programState.JavaThread;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,19 +13,19 @@ import jetbrains.mps.debug.runtime.SuspendContext;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Evaluator {
-  private UiState myUiState;
+  private JavaUiState myUiState;
   private ObjectValueProxy myThisObject;
 
-  public Evaluator(UiState uiState) {
+  public Evaluator(JavaUiState uiState) {
     myUiState = uiState;
     ObjectReference objectReference = uiState.getThisObject();
     if (objectReference != null) {
-      myThisObject = new ObjectValueProxy(objectReference, uiState.getThread());
+      myThisObject = new ObjectValueProxy(objectReference, uiState.getThread().getThread());
     }
   }
 
   protected ValueProxy getValue(String varName) throws EvaluationException {
-    StackFrame stackFrame = myUiState.getStackFrame();
+    StackFrame stackFrame = myUiState.getStackFrame().getStackFrame();
     assert stackFrame != null;
     LocalVariable localVariable;
     try {
@@ -36,7 +37,7 @@ public abstract class Evaluator {
       throw new EvaluationException("variable not found: " + varName);
     }
     Value v = stackFrame.getValue(localVariable);
-    return MirrorUtil.getValueProxy(v, myUiState.getThread());
+    return MirrorUtil.getValueProxy(v, myUiState.getThread().getThread());
   }
 
   protected ObjectValueProxy getThisObject() {
@@ -44,11 +45,11 @@ public abstract class Evaluator {
   }
 
   public ThreadReference getThreadReference() {
-    return myUiState.getThread();
+    return myUiState.getThread().getThread();
   }
 
   public VirtualMachine getVM() {
-    return myUiState.getThread().virtualMachine();
+    return myUiState.getThread().getThread().virtualMachine();
   }
 
   public abstract ValueProxy evaluate();

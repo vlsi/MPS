@@ -227,6 +227,10 @@ public class Logger {
     }
   }
 
+  public void errorAssertionFailed() {
+    error("Assertion failed", new Throwable());
+  }
+
   public void assertCanRead() {
     assertLog(ModelAccess.instance().canRead(), "Should be able to read models");
   }

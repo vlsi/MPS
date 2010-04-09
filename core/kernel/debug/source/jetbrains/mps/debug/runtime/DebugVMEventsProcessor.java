@@ -101,7 +101,7 @@ public class DebugVMEventsProcessor {
     return myBreakpointManager;
   }
 
-  public String getConncetionString() {
+  public String getConnectionString() {
     return myVMCreator.getConnectionSettings().getPresentation();
   }
 
