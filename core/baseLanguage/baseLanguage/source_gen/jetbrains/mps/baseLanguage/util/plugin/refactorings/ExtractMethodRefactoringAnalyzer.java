@@ -221,7 +221,7 @@ public class ExtractMethodRefactoringAnalyzer {
     SNode first = ListSequence.fromList(this.myPartToExtract).first();
     SNode classConcept = SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (classConcept != null) {
-      this.myProcessor = new ClassExtractMethodRefactorngProcessor(classConcept, this.myPartToExtract);
+      this.myProcessor = new ClassExtractMethodRefactoringProcessor(classConcept, this.myPartToExtract);
     } else if (SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable", false, false) != null) {
       SNode extractable = SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.IExtractMethodAvailable", false, false);
       this.myProcessor = IExtractMethodAvailable_Behavior.call_getExtractMethodRefactoringProcessor_1221393367929(extractable, this.myPartToExtract);
