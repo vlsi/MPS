@@ -42,10 +42,10 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_4079382982702692313(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDot");
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode operationExpression = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDot");
+          SNode operationExpression = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression");
           SLinkOperations.setTarget(operationExpression, "operand", _context.getSourceNode(), true);
           SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.AbstractOperation");
           return operationExpression;
@@ -66,11 +66,11 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IOperation_7404423900570111860(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDot");
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode dot = IOperation_Behavior.call_getDotExpression_1224687669172(_context.getSourceNode());
-          SNode checkedDot = SNodeOperations.replaceWithNewChild(dot, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDot");
+          SNode checkedDot = SNodeOperations.replaceWithNewChild(dot, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression");
           SLinkOperations.setTarget(checkedDot, "operand", SLinkOperations.getTarget(dot, "operand", true), true);
           SLinkOperations.setTarget(checkedDot, "operation", SLinkOperations.getTarget(dot, "operation", true), true);
           return checkedDot;

@@ -16120,7 +16120,7 @@
           <link role="baseMethodDeclaration:3" targetNodeId="3573019447813594739" resolveInfo="ClassifierVisibleMembersScope" />
           <node role="actualArgument:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="3573019447813743498">
             <link role="concept:16" targetNodeId="17.1107535904670:3" resolveInfo="ClassifierType" />
-            <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDot" id="3573019447813743493">
+            <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" id="3573019447813743493">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3573019447813594795">
                 <link role="variableDeclaration:3" targetNodeId="3161373106581143201" resolveInfo="classifierType" />
               </node>

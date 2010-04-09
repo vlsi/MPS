@@ -27,7 +27,7 @@
   <maxImportIndex value="1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4079382982702596667">
-    <property name="name:0" value="CheckedDot" />
+    <property name="name:0" value="CheckedDotExpression" />
     <link role="extends:0" targetNodeId="2v.1197027756228:3" resolveInfo="DotExpression" />
   </node>
 </model>
