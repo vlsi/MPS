@@ -1458,7 +1458,7 @@
       </node>
       <node role="getConceptsBlock:23" type="jetbrains.mps.lang.plugin.structure.GetConceptsBlock:23" id="6388164970935847782">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935847783">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935847784">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936838064">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935847785">
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848820" resolveInfo="getAvailableConceptAspects" />
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
@@ -1473,7 +1473,7 @@
       </node>
       <node role="newCreateBlock:23" type="jetbrains.mps.lang.plugin.structure.NewCreateBlock:23" id="6388164970935847788">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935847789">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935847790">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936837997">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935847791">
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848891" resolveInfo="createNewConceptAspectInstance" />
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
@@ -1516,7 +1516,7 @@
               </node>
             </node>
           </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935847808">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936837930">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="6388164970935847809">
               <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6388164970935847810">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6388164970935847811">
@@ -1537,7 +1537,7 @@
       </node>
       <node role="createBlock:23" type="jetbrains.mps.lang.plugin.structure.CreateBlock:23" id="6388164970935847817">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935847818">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935847819">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936837863">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935847820">
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848891" resolveInfo="createNewConceptAspectInstance" />
@@ -1621,7 +1621,7 @@
       </node>
       <node role="createBlock:23" type="jetbrains.mps.lang.plugin.structure.CreateBlock:23" id="6388164970935847852">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935847853">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935847854">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936838131">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935847855">
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848891" resolveInfo="createNewConceptAspectInstance" />
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
@@ -1931,7 +1931,7 @@
       </node>
       <node role="getConceptsBlock:23" type="jetbrains.mps.lang.plugin.structure.GetConceptsBlock:23" id="6388164970935847980">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935847981">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935847982">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936340796">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935847983">
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848820" resolveInfo="getAvailableConceptAspects" />
@@ -1946,26 +1946,17 @@
       </node>
       <node role="newCreateBlock:23" type="jetbrains.mps.lang.plugin.structure.NewCreateBlock:23" id="6388164970935847986">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935847987">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6388164970935847988">
-            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6388164970935847989">
-              <property name="name:3" value="result" />
-              <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="6388164970935847990" />
-              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935847991">
-                <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
-                <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848891" resolveInfo="createNewConceptAspectInstance" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="6388164970935847992">
-                  <link role="enumClass:3" targetNodeId="18.~LanguageAspect" resolveInfo="LanguageAspect" />
-                  <link role="enumConstantDeclaration:3" targetNodeId="18.~LanguageAspect.TYPESYSTEM" resolveInfo="TYPESYSTEM" />
-                </node>
-                <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node:23" id="6388164970935847993" />
-                <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Concept:23" id="6388164970935847994" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="6388164970935847995" />
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936837726">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4555902841936837793">
+              <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
+              <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848891" resolveInfo="createNewConceptAspectInstance" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="4555902841936837794">
+                <link role="enumClass:3" targetNodeId="18.~LanguageAspect" resolveInfo="LanguageAspect" />
+                <link role="enumConstantDeclaration:3" targetNodeId="18.~LanguageAspect.TYPESYSTEM" resolveInfo="TYPESYSTEM" />
               </node>
-            </node>
-          </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935847996">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6388164970935847997">
-              <link role="variableDeclaration:3" targetNodeId="6388164970935847989" resolveInfo="result" />
+              <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node:23" id="4555902841936837795" />
+              <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Concept:23" id="4555902841936837796" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="4555902841936837797" />
             </node>
           </node>
         </node>
@@ -2016,7 +2007,7 @@
       </node>
       <node role="getConceptsBlock:23" type="jetbrains.mps.lang.plugin.structure.GetConceptsBlock:23" id="6388164970935848014">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935848015">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935848016">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936838198">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935848017">
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848820" resolveInfo="getAvailableConceptAspects" />
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
@@ -2031,7 +2022,7 @@
       </node>
       <node role="newCreateBlock:23" type="jetbrains.mps.lang.plugin.structure.NewCreateBlock:23" id="6388164970935848020">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935848021">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935848022">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936838265">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935848023">
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848891" resolveInfo="createNewConceptAspectInstance" />
@@ -2092,7 +2083,7 @@
       </node>
       <node role="getConceptsBlock:23" type="jetbrains.mps.lang.plugin.structure.GetConceptsBlock:23" id="6388164970935848044">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935848045">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935848046">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936838332">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935848047">
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848820" resolveInfo="getAvailableConceptAspects" />
@@ -2107,7 +2098,7 @@
       </node>
       <node role="newCreateBlock:23" type="jetbrains.mps.lang.plugin.structure.NewCreateBlock:23" id="6388164970935848050">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935848051">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935848052">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936838399">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935848053">
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848891" resolveInfo="createNewConceptAspectInstance" />
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
@@ -2168,7 +2159,7 @@
       </node>
       <node role="getConceptsBlock:23" type="jetbrains.mps.lang.plugin.structure.GetConceptsBlock:23" id="6388164970935848074">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935848075">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935848076">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936838466">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935848077">
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848820" resolveInfo="getAvailableConceptAspects" />
@@ -2183,7 +2174,7 @@
       </node>
       <node role="newCreateBlock:23" type="jetbrains.mps.lang.plugin.structure.NewCreateBlock:23" id="6388164970935848080">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935848081">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935848082">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936838533">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935848083">
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848891" resolveInfo="createNewConceptAspectInstance" />
@@ -2258,7 +2249,7 @@
       </node>
       <node role="getConceptsBlock:23" type="jetbrains.mps.lang.plugin.structure.GetConceptsBlock:23" id="6388164970935848110">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935848111">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935848112">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936838600">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935848113">
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848820" resolveInfo="getAvailableConceptAspects" />
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
@@ -2273,7 +2264,7 @@
       </node>
       <node role="newCreateBlock:23" type="jetbrains.mps.lang.plugin.structure.NewCreateBlock:23" id="6388164970935848116">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935848117">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935848118">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936838667">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935848119">
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848891" resolveInfo="createNewConceptAspectInstance" />
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
@@ -2337,7 +2328,7 @@
       </node>
       <node role="createBlock:23" type="jetbrains.mps.lang.plugin.structure.CreateBlock:23" id="6388164970935848145">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935848146">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935848147">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936838734">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935848148">
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848891" resolveInfo="createNewConceptAspectInstance" />
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
@@ -3547,7 +3538,7 @@
       </node>
       <node role="createBlock:23" type="jetbrains.mps.lang.plugin.structure.CreateBlock:23" id="6388164970935848614">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6388164970935848615">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6388164970935848616">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4555902841936838801">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6388164970935848617">
               <link role="classConcept:3" targetNodeId="6388164970935848749" resolveInfo="ConceptEditorHelper" />
               <link role="baseMethodDeclaration:3" targetNodeId="6388164970935848891" resolveInfo="createNewConceptAspectInstance" />
