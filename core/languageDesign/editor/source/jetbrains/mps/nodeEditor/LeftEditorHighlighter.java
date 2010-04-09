@@ -67,7 +67,12 @@ public class LeftEditorHighlighter extends JComponent {
   private static final int LEFT_GAP = 1;
 
   private EditorComponent myEditorComponent;
-  private List<AbstractFoldingAreaPainter> myFoldingAreaPainters = new ArrayList();
+  private NavigableSet<AbstractFoldingAreaPainter> myFoldingAreaPainters = new TreeSet<AbstractFoldingAreaPainter>(new Comparator<AbstractFoldingAreaPainter>() {
+    @Override
+    public int compare(AbstractFoldingAreaPainter afap1, AbstractFoldingAreaPainter afap2) {
+      return afap1.getWeight() - afap2.getWeight();
+    }
+  });
   private FoldingButtonsPainter myFoldingButtonsPainter;
   private BracketsPainter myBracketsPainter;
 
@@ -153,7 +158,6 @@ public class LeftEditorHighlighter extends JComponent {
         for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
           painter.editorRebuilt();
         }
-        relayout();
       }
     });
     myFoldingAreaPainters.add(myBracketsPainter = new BracketsPainter(this));
@@ -193,42 +197,49 @@ public class LeftEditorHighlighter extends JComponent {
 
   @Override
   public void paint(Graphics g) {
-    paintBackgroundAndFoldingLine(g);
-    paintIconRenderers(g);
-    paintFoldingArea(g);
+    Rectangle clipBounds = g.getClipBounds();
+    paintBackgroundAndFoldingLine(g, clipBounds);
+    paintIconRenderers(g, clipBounds);
+    paintFoldingArea(g, clipBounds);
   }
 
-  private void paintFoldingArea(Graphics g) {
+  private void paintFoldingArea(Graphics g, Rectangle clipBounds) {
+    if (clipBounds.x + clipBounds.width < myIconRenderersWidth) {
+      return;
+    }
     for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
       painter.paint(g);
     }
   }
 
-  private void paintBackgroundAndFoldingLine(Graphics g) {
+  private void paintBackgroundAndFoldingLine(Graphics g, Rectangle clipBounds) {
     Graphics2D g2d = (Graphics2D) g;
-    Rectangle bounds = g.getClipBounds();
     g.setColor(getBackground());
-    g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+    g.fillRect(clipBounds.x, clipBounds.y, clipBounds.width, clipBounds.height);
 
     // same as in EditorComponent.paint() method
     EditorCell deepestCell = myEditorComponent.getDeepestSelectedCell();
     if (deepestCell instanceof EditorCell_Label) {
-      g.setColor(EditorComponent.CARET_ROW_COLOR);
       int selectedCellY = deepestCell.getY();
       int selectedCellHeight = deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset();
-      g.fillRect(bounds.x, selectedCellY, bounds.width, selectedCellHeight);
-      // Drawing folding line
-      UIUtil.drawVDottedLine(g2d, myFoldingLineX,  bounds.y, selectedCellY, getBackground(), Color.gray);
-      UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY, selectedCellY + selectedCellHeight, EditorComponent.CARET_ROW_COLOR, Color.gray);
-      UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY + selectedCellHeight, bounds.y + bounds.height, getBackground(), Color.gray);
-    } else {
-      // Drawing folding line
-      UIUtil.drawVDottedLine(g2d, myFoldingLineX, bounds.y, bounds.y + bounds.height, getBackground(), Color.gray);
+      if (g.hitClip(clipBounds.x, selectedCellY, clipBounds.width, selectedCellHeight)) {
+        g.setColor(EditorComponent.CARET_ROW_COLOR);
+        g.fillRect(clipBounds.x, selectedCellY, clipBounds.width, selectedCellHeight);
+        // Drawing folding line
+        UIUtil.drawVDottedLine(g2d, myFoldingLineX,  clipBounds.y, selectedCellY, getBackground(), Color.gray);
+        UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY, selectedCellY + selectedCellHeight, EditorComponent.CARET_ROW_COLOR, Color.gray);
+        UIUtil.drawVDottedLine(g2d, myFoldingLineX, selectedCellY + selectedCellHeight, clipBounds.y + clipBounds.height, getBackground(), Color.gray);
+        return;
+      }
     }
+    // Drawing folding line
+    UIUtil.drawVDottedLine(g2d, myFoldingLineX, clipBounds.y, clipBounds.y + clipBounds.height, getBackground(), Color.gray);
   }
 
-  private void paintIconRenderers(final Graphics g) {
-    Rectangle clipBounds = g.getClipBounds();
+  private void paintIconRenderers(final Graphics g, Rectangle clipBounds) {
+    if (clipBounds.x > myIconRenderersWidth) {
+      return;
+    }
     final int startY = clipBounds.y;
     final int endY = clipBounds.y + clipBounds.height;
     myLineToRenderersMap.forEachEntry(new TIntObjectProcedure<List<IconRendererLayoutConstraint>>() {
@@ -300,13 +311,12 @@ public class LeftEditorHighlighter extends JComponent {
   public void relayout(boolean updateFolding) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.relayout() should be executed in eventDispatchThread";
     if (updateFolding) {
-      myFoldingButtonsPainter.setNeedsRelayout();
+      for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
+        painter.relayout();
+      }
+      // wee need to recalculateIconRenderersWidth only if one of collections was folded/unfolded
+      recalculateIconRenderersWidth();
     }
-    relayout();
-  }
-
-  private void relayout() {
-    recalculateIconRenderersWidth();
     recalculateFoldingAreaWidth();
     updateSeparatorLinePosition();
   }
@@ -316,7 +326,6 @@ public class LeftEditorHighlighter extends JComponent {
     myRightFoldingAreaWidth = MIN_RIGHT_FOLDING_AREA_WIDTH;
     // Layouting painterss
     for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
-      painter.relayout();
       myLeftFoldingAreaWidth = Math.max(myLeftFoldingAreaWidth, painter.getLeftAreaWidth());
       myRightFoldingAreaWidth = Math.max(myRightFoldingAreaWidth, painter.getRightAreaWidth());
     }
@@ -534,7 +543,8 @@ public class LeftEditorHighlighter extends JComponent {
   }
 
   private void mousePressedInFoldingArea(MouseEvent e) {
-    for (AbstractFoldingAreaPainter painter : myFoldingAreaPainters) {
+    for (Iterator<AbstractFoldingAreaPainter> it = myFoldingAreaPainters.descendingIterator(); it.hasNext();) {
+      AbstractFoldingAreaPainter painter = it.next();
       painter.mousePressed(e);
       if (e.isConsumed()) {
         break;

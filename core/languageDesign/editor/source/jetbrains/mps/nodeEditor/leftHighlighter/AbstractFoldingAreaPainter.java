@@ -30,6 +30,11 @@ public abstract class AbstractFoldingAreaPainter {
   public void editorRebuilt() {
   }
 
+  /**
+   * This method will be called to notify painter that it should be relayouted in accordance
+   * with latest changes in editor. This method will be called in the edit of associated
+   * EditorComponent rebuild process
+   */
   public void relayout() {
   }
 
@@ -77,7 +82,6 @@ public abstract class AbstractFoldingAreaPainter {
    *         painted "above" FoldingAreaPainter2 then the value returned by FoldingAreaPainter1.getWeight()
    *         should be greater then FoldingAreaPainter2.getWeight()
    *         <p/>
-   *         TODO: remove this method and use order of FoldingAreaPainters specified in LeftEditorHighlighter ?
    */
   public abstract int getWeight();
 

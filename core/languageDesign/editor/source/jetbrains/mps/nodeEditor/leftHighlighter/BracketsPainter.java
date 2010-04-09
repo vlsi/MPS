@@ -31,6 +31,11 @@ public class BracketsPainter extends AbstractFoldingAreaPainter {
     return myLeftAreaWidth;
   }
 
+  @Override
+  public void relayout() {
+    myLeftAreaWidth = -1;
+  }
+
   private int relayoutBrackets() {
     for (Iterator<Entry<CellInfo, HighlighterBracket>> it = myBrackets.entrySet().iterator(); it.hasNext();) {
       Entry<CellInfo, HighlighterBracket> nextEntry = it.next();
@@ -101,7 +106,7 @@ public class BracketsPainter extends AbstractFoldingAreaPainter {
 
   @Override
   public int getWeight() {
-    return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    return 1;
   }
 
   public void removeBracket(EditorCell cell) {
