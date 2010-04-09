@@ -12,16 +12,16 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.Set;
 import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.HashSet;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.baseLanguage.search.LocalVariablesScope;
 import jetbrains.mps.util.Condition;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
@@ -158,22 +158,33 @@ public class InlineMethodRefactoring {
   }
 
   private Map<SNode, SNode> compareParameters() {
+    Set<SNode> usedParameters = this.findUsedParameters();
     SNode statement = SNodeOperations.getAncestor(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
     Map<SNode, SNode> map = MapSequence.fromMap(new HashMap<SNode, SNode>());
     List<SNode> parameters = SLinkOperations.getTargets(this.myMethodDeclaration, "parameter", true);
     for (int i = 0; i < ListSequence.fromList(this.myArguments).count(); i++) {
       SNode parameterDeclaration = ListSequence.fromList(parameters).getElement(i);
       SNode argument = ListSequence.fromList(this.myArguments).getElement(i);
-      if (this.canSubstituteParameter(argument, parameterDeclaration)) {
-        MapSequence.fromMap(map).put(parameterDeclaration, argument);
-      } else {
-        String name = SPropertyOperations.getString(parameterDeclaration, "name");
-        SNode type = SLinkOperations.getTarget(parameterDeclaration, "type", true);
-        SNode ref = this.createVariable(statement, name, type, argument);
-        MapSequence.fromMap(map).put(parameterDeclaration, ref);
+      if (SetSequence.fromSet(usedParameters).contains(parameterDeclaration)) {
+        if (this.canSubstituteParameter(argument, parameterDeclaration)) {
+          MapSequence.fromMap(map).put(parameterDeclaration, argument);
+        } else {
+          String name = SPropertyOperations.getString(parameterDeclaration, "name");
+          SNode type = SLinkOperations.getTarget(parameterDeclaration, "type", true);
+          SNode ref = this.createVariable(statement, name, type, argument);
+          MapSequence.fromMap(map).put(parameterDeclaration, ref);
+        }
       }
     }
     return map;
+  }
+
+  private Set<SNode> findUsedParameters() {
+    Set<SNode> usedParameters = SetSequence.fromSet(new HashSet<SNode>());
+    for (SNode paramReference : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(this.myMethodDeclaration, "body", true), "jetbrains.mps.baseLanguage.structure.ParameterReference", false, new String[]{}))) {
+      SetSequence.fromSet(usedParameters).addElement(SLinkOperations.getTarget(paramReference, "variableDeclaration", false));
+    }
+    return usedParameters;
   }
 
   private boolean canSubstituteParameter(SNode e, SNode parameterDeclaration) {
