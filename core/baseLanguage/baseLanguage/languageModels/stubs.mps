@@ -335,22 +335,13 @@
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5516999836374121265">
                               <link role="baseMethodDeclaration:3" targetNodeId="5.~SModelReference.fromString(java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="fromString" />
                               <link role="classConcept:3" targetNodeId="5.~SModelReference" resolveInfo="SModelReference" />
-                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5516999836374121266">
-                                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5516999836374121267">
-                                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5516999836374121268">
-                                    <link role="variableDeclaration:3" targetNodeId="5516999836374121217" resolveInfo="subpackage" />
-                                  </node>
-                                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5516999836374121269">
-                                    <property name="value:3" value="@" />
-                                  </node>
+                              <node role="actualArgument:3" type="jetbrains.mps.lang.stubs.structure.Stereotype" id="972176972348395597">
+                                <node role="langName" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="972176972348395615">
+                                  <link role="classifier:3" targetNodeId="5.~LanguageID" resolveInfo="LanguageID" />
+                                  <link role="variableDeclaration:3" targetNodeId="5.~LanguageID.JAVA" resolveInfo="JAVA" />
                                 </node>
-                                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5814343044972609645">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="5.~SModelStereotype.getStubStereotypeForId(java.lang.String):java.lang.String" resolveInfo="getStubStereotypeForId" />
-                                  <link role="classConcept:3" targetNodeId="5.~SModelStereotype" resolveInfo="SModelStereotype" />
-                                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5814343044972609647">
-                                    <link role="classifier:3" targetNodeId="5.~LanguageID" resolveInfo="LanguageID" />
-                                    <link role="variableDeclaration:3" targetNodeId="5.~LanguageID.JAVA" resolveInfo="JAVA" />
-                                  </node>
+                                <node role="modelName" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="972176972348698478">
+                                  <link role="variableDeclaration:3" targetNodeId="5516999836374121217" resolveInfo="subpackage" />
                                 </node>
                               </node>
                             </node>
