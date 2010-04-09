@@ -44,11 +44,11 @@ public class DelayedChanges {
     myLogger = generator.getLogger();
   }
 
-  public void addExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context) {
+  public synchronized void addExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context) {
     myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, context));
   }
 
-  public void addExecuteMapSrcNodeMacroPostProcChange(NodeMacro mapSrcMacro, SNode outputChild, @NotNull TemplateContext context) {
+  public synchronized void addExecuteMapSrcNodeMacroPostProcChange(NodeMacro mapSrcMacro, SNode outputChild, @NotNull TemplateContext context) {
     myExecuteMapSrcNodeMacroPostProcChanges.add(new ExecuteMapSrcNodeMacroPostProcChange(mapSrcMacro, outputChild, context));
   }
 

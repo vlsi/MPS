@@ -123,7 +123,7 @@ public class FastRuleFinder {
       return false;
     }
 
-    public synchronized void blockReductionsForOutput(SNode inputNode, SNode outputNode) {
+    public synchronized void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode) {
       SNodeId inputNodeId = inputNode.getSNodeId();
       SNodeId outputNodeId = outputNode.getSNodeId();
       Object o = myInputReductionsData.get(inputNodeId);

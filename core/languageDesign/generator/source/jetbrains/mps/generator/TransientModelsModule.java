@@ -139,12 +139,16 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
 
   public void addModelToKeep(SModelDescriptor model) {
     assert model.isTransient();
-    myModelsToKeep.add(model.getSModelReference().toString());
+    synchronized (myModelsToKeep) {
+      myModelsToKeep.add(model.getSModelReference().toString());
+    }
   }
 
   public boolean isModelToKeep(SModelDescriptor model) {
     assert model.isTransient();
-    return myModelsToKeep.contains(model.getSModelReference().toString());
+    synchronized (myModelsToKeep) {
+      return myModelsToKeep.contains(model.getSModelReference().toString());
+    }
   }
 
   public SModelDescriptor createTransientModel(String name, String stereotype) {

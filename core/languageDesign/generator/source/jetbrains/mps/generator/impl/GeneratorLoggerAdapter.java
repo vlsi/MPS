@@ -74,7 +74,9 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   public void handleException(Throwable t) {
     Message message = new Message(MessageKind.ERROR, t.getMessage());
     message.setException(t);
-    myMessageHandler.handle(message);
+    synchronized (myMessageHandler) {
+      myMessageHandler.handle(message);
+    }
   }
 
   protected void report(MessageKind kind, String text, Object hintObject) {
@@ -82,6 +84,8 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     if(hintObject != null) {
       message.setHintObject(hintObject);
     }
-    myMessageHandler.handle(message);
+    synchronized (myMessageHandler) {
+      myMessageHandler.handle(message);
+    }
   }
 }

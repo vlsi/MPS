@@ -499,11 +499,89 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return result;
   }
 
+  List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
+    myGenerationTracer.pushInputNode(inputNode);
+    try {
+      return copyNodeFromInputNode_internal(mappingName, templateNode, inputNode);
+    } finally {
+      myGenerationTracer.closeInputNode(inputNode);
+    }
+  }
+
+  private List<SNode> copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
+    List<SNode> outputNodes = tryToReduce(inputNode, mappingName);
+    if (outputNodes != null) {
+      return outputNodes;
+    }
+
+    // no reduction found - do node copying
+    myGenerationTracer.pushCopyOperation();
+    SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
+    blockReductionsForCopiedNode(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.
+
+    myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
+    myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
+    // output node should be accessible via 'findCopiedNode'
+    myMappings.addCopiedOutputNodeForInputNode(inputNode, outputNode);
+
+    outputNode.putProperties(inputNode);
+    outputNode.putUserObjects(inputNode);
+    // keep track of 'original input node'
+    if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
+      outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+      outputNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
+    }
+
+    SModel inputModel = myInputModel;
+    for (SReference inputReference : inputNode.getReferencesArray()) {
+      SNode inputTargetNode = inputReference.getTargetNode();
+      if (inputTargetNode == null) {
+        showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode()' referent '" + inputReference.getRole() + "' is null in template model");
+        continue;
+      }
+      if (inputTargetNode.getModel().equals(inputModel)) {
+        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
+          inputReference.getRole(),
+          outputNode,
+          inputReference.getSourceNode(),
+          inputReference.getTargetNode());
+        PostponedReference reference = new PostponedReference(
+          refInfo,
+          this
+        );
+        outputNode.addReference(reference);
+      } else {
+        outputNode.setReferent(inputReference.getRole(), inputTargetNode);
+      }
+    }
+
+    for (SNode inputChildNode : inputNode.getChildren()) {
+      String childRole = inputChildNode.getRole_();
+      assert childRole != null;
+      List<SNode> outputChildNodes = copyNodeFromInputNode(null, inputChildNode, inputChildNode);
+      if (outputChildNodes != null) {
+        for (SNode outputChildNode : outputChildNodes) {
+          // check child
+          if (!GeneratorUtil.checkChild(outputNode, childRole, outputChildNode)) {
+            showWarningMessage(inputNode, " -- was input: " + inputNode.getDebugText());
+            if (SModelStereotype.isGeneratorModel(templateNode.getModel())) {
+              showWarningMessage(templateNode, " -- was template: " + templateNode.getDebugText());
+            }
+          }
+          outputNode.addChild(childRole, outputChildNode);
+        }
+      }
+    }
+
+    myGenerationTracer.pushOutputNode(outputNode);
+    return Collections.singletonList(outputNode);
+  }
+
   /**
    * prevents applying of reduction rules which have already been applied to the input node.
    */
-  void blockReductionsForOutput(SNode inputNode, SNode outputNode) {
-    getBlockedReductionsData().blockReductionsForOutput(inputNode, outputNode);
+  void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode) {
+    getBlockedReductionsData().blockReductionsForCopiedNode(inputNode, outputNode);
   }
 
   private boolean startReductionBlockingForInput(SNode inputNode) {

@@ -211,7 +211,7 @@ public class TemplateProcessor {
       // $COPY-SRC$ / $COPY-SRCL$
       List<SNode> newInputNodes = getNewInputNodes(nodeMacro, templateContext);
       for (SNode newInputNode : newInputNodes) {
-        List<SNode> _outputNodes = copyNodeFromInputNode(mappingName, templateNode, newInputNode);
+        List<SNode> _outputNodes = myGenerator.copyNodeFromInputNode(mappingName, templateNode, newInputNode);
         if (_outputNodes != null) {
           // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.
@@ -517,85 +517,6 @@ public class TemplateProcessor {
 //      }
 //    }
     return nodes;
-  }
-
-  private List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
-    myGenerator.getGenerationTracer().pushInputNode(inputNode);
-    try {
-      return copyNodeFromInputNode_internal(mappingName, templateNode, inputNode);
-    } finally {
-      myGenerator.getGenerationTracer().closeInputNode(inputNode);
-    }
-  }
-
-  private List<SNode> copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
-    List<SNode> outputNodes = myGenerator.tryToReduce(inputNode, mappingName);
-    if (outputNodes != null) {
-      return outputNodes;
-    }
-
-    // no reduction found - do node copying
-    myGenerator.getGenerationTracer().pushCopyOperation();
-    SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
-    myGenerator.blockReductionsForOutput(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.
-
-    GeneratorMappings mappings = myGenerator.getMappings();
-    mappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
-    mappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
-    // output node should be accessible via 'findCopiedNode'
-    mappings.addCopiedOutputNodeForInputNode(inputNode, outputNode);
-
-    outputNode.putProperties(inputNode);
-    outputNode.putUserObjects(inputNode);
-    // keep track of 'original input node'
-    if (inputNode.getModel() == myGenerator.getGeneratorSessionContext().getOriginalInputModel()) {
-      outputNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
-      outputNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
-    }
-
-    SModel inputModel = myGenerator.getInputModel();
-    for (SReference inputReference : inputNode.getReferencesArray()) {
-      SNode inputTargetNode = inputReference.getTargetNode();
-      if (inputTargetNode == null) {
-        myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode()' referent '" + inputReference.getRole() + "' is null in template model");
-        continue;
-      }
-      if (inputTargetNode.getModel().equals(inputModel)) {
-        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-          inputReference.getRole(),
-          outputNode,
-          inputReference.getSourceNode(),
-          inputReference.getTargetNode());
-        PostponedReference reference = new PostponedReference(
-          refInfo,
-          myGenerator
-        );
-        outputNode.addReference(reference);
-      } else {
-        outputNode.setReferent(inputReference.getRole(), inputTargetNode);
-      }
-    }
-
-    for (SNode inputChildNode : inputNode.getChildren()) {
-      String childRole = inputChildNode.getRole_();
-      assert childRole != null;
-      List<SNode> outputChildNodes = copyNodeFromInputNode(null, inputChildNode, inputChildNode);
-      if (outputChildNodes != null) {
-        for (SNode outputChildNode : outputChildNodes) {
-          // check child
-          if (!GeneratorUtil.checkChild(outputNode, childRole, outputChildNode)) {
-            myGenerator.showWarningMessage(inputNode, " -- was input: " + inputNode.getDebugText());
-            if (SModelStereotype.isGeneratorModel(templateNode.getModel())) {
-              myGenerator.showWarningMessage(templateNode, " -- was template: " + templateNode.getDebugText());
-            }
-          }
-          outputNode.addChild(childRole, outputChildNode);
-        }
-      }
-    }
-
-    myGenerator.getGenerationTracer().pushOutputNode(outputNode);
-    return Collections.singletonList(outputNode);
   }
 
   @Nullable

@@ -41,7 +41,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   protected final SModel myInputModel;
   protected final SModel myOutputModel;
 
-  private GeneratorMappings myMappings;
+  protected final GeneratorMappings myMappings;
 
   private HashSet<SNode> myFailedRules;
 
@@ -89,10 +89,11 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public void showErrorIfStrict(SNode node, String message) {
-    if (isStrict())
+    if (isStrict()) {
       myLogger.error(node, message);
-    else
+    } else {
       myLogger.warning(node, message);
+    }
   }
 
   public void showErrorMessage(SNode node, String message) {
@@ -104,15 +105,17 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
-    if (ruleNode != null) {
-      if (myFailedRules == null) {
-        myFailedRules = new HashSet<SNode>();
+    synchronized (myLogger) {
+      if (ruleNode != null) {
+        if (myFailedRules == null) {
+          myFailedRules = new HashSet<SNode>();
+        }
+        if (myFailedRules.contains(ruleNode)) {
+          // do not show duplicating messages
+          return;
+        }
+        myFailedRules.add(ruleNode);
       }
-      if (myFailedRules.contains(ruleNode)) {
-        // do not show duplicating messages
-        return;
-      }
-      myFailedRules.add(ruleNode);
     }
 
     myLogger.error((templateNode != null ? templateNode : ruleNode), message);

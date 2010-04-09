@@ -104,7 +104,9 @@ public class GenerationSessionLogger implements IGeneratorLogger {
   public void handleException(Throwable t) {
     Message message = new Message(MessageKind.ERROR, t.getMessage());
     message.setException(t);
-    myMessageHandler.handle(message);
+    synchronized (myMessageHandler) {
+      myMessageHandler.handle(message);
+    }
   }
 
   public void trace(String message) {
@@ -133,7 +135,9 @@ public class GenerationSessionLogger implements IGeneratorLogger {
         }
       }
     }
-    myMessageHandler.handle(message);
+    synchronized (myMessageHandler) {
+      myMessageHandler.handle(message);
+    }
   }
   
   public int getErrorCount() {
