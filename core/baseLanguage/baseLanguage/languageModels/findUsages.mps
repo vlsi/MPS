@@ -3593,15 +3593,15 @@
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.WhereOperation:7" id="4151347580001030862">
                     <node role="closure:7" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="4151347580001030863">
                       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4151347580001030864">
-                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4151347580001030870">
-                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4151347580001030874">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4151347580001030871">
-                              <link role="variableDeclaration:3" targetNodeId="4151347580001030865" resolveInfo="it" />
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1622582681834357554">
+                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1622582681834357582">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1622582681834357555">
+                              <link role="variableDeclaration:3" targetNodeId="4151347580001040947" resolveInfo="instanceMethod" />
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4151347580001030885">
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1622582681834357612">
                               <link role="baseMethodDeclaration:16" targetNodeId="18.1213877350435" resolveInfo="hasSameSignature" />
-                              <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4151347580001040951">
-                                <link role="variableDeclaration:3" targetNodeId="4151347580001040947" resolveInfo="instanceMethod" />
+                              <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1622582681834357639">
+                                <link role="variableDeclaration:3" targetNodeId="4151347580001030865" resolveInfo="it" />
                               </node>
                             </node>
                           </node>

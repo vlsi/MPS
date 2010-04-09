@@ -51,7 +51,7 @@ public class DerivedMethods_Finder extends GeneratedFinder {
     })) {
       ListSequence.fromList(SLinkOperations.getTargets(derivedClassifier, "method", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(it, instanceMethod);
+          return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(instanceMethod, it);
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {

@@ -159,7 +159,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
         }
         SNode overridenMethod = SetSequence.fromSet(similarMethods).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(derivedClassifierMethod, it);
+            return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(it, derivedClassifierMethod);
           }
         });
         if (overridenMethod != null) {

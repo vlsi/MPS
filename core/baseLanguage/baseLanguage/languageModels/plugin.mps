@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)">
   <persistence version="4" />
   <refactoringHistory />
@@ -9986,14 +9987,14 @@
                         <node role="closure:7" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="4988944197752062137">
                           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4988944197752062138">
                             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4988944197752062146">
-                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4988944197752062179">
-                                <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="4988944197752062147">
-                                  <link role="variable:7" targetNodeId="4988944197752017015" resolveInfo="derivedClassifierMethod" />
+                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1622582681834147345">
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1622582681834147338">
+                                  <link role="variableDeclaration:3" targetNodeId="4988944197752062139" resolveInfo="it" />
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4988944197752062215">
+                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1622582681834147474">
                                   <link role="baseMethodDeclaration:16" targetNodeId="69.1213877350435" resolveInfo="hasSameSignature" />
-                                  <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4988944197752062232">
-                                    <link role="variableDeclaration:3" targetNodeId="4988944197752062139" resolveInfo="it" />
+                                  <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1622582681834147594">
+                                    <link role="variable:7" targetNodeId="4988944197752017015" resolveInfo="derivedClassifierMethod" />
                                   </node>
                                 </node>
                               </node>
