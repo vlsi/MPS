@@ -1780,7 +1780,7 @@
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="148290935931345365" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="148290935931345370">
-                        <link role="baseMethodDeclaration:3" targetNodeId="12.~DebugSession.refresh():jetbrains.mps.debug.runtime.DebugSession$UiState" resolveInfo="refresh" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="12.~DebugSession.refresh():jetbrains.mps.debug.runtime.JavaUiState" resolveInfo="refresh" />
                       </node>
                     </node>
                     <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="148290935931345357">
