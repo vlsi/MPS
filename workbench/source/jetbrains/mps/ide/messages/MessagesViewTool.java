@@ -103,7 +103,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private MessageToolSearchPanel mySearchPanel = new MessageToolSearchPanel(myList, getProject());
 
   public MessagesViewTool(Project project) {
-    super(project, "MPS Messages", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Console", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   public void initComponent() {
