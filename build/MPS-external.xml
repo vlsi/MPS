@@ -277,7 +277,6 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples_u1f0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.tuples.runtime_v1f0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runConfigurations_w1f0" />
-    <antcall target="MPS-languages.pack.jetbrains.mps.baseLanguage.runConfigurations.runtime_x1f0" />
     <mkdir dir="${deploy.dir}/MPS/core/baseLanguage" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.actions_a2f0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.annotations_b2f0" />

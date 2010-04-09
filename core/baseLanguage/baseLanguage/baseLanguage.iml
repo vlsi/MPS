@@ -42,7 +42,6 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="debug" />
     <orderEntry type="module" module-name="runConfigurations" />
-    <orderEntry type="module" module-name="runConfigurations.runtime" />
   </component>
 </module>
 
