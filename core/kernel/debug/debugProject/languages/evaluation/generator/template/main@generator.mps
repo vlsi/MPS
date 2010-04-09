@@ -181,7 +181,7 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1620955434532219972" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1620955434532219973">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="1620955434532226505">
-          <link role="baseMethodDeclaration:3" targetNodeId="3.~Evaluator.&lt;init&gt;(jetbrains.mps.debug.runtime.DebugSession$UiState)" resolveInfo="Evaluator" />
+          <link role="baseMethodDeclaration:3" targetNodeId="3.~Evaluator.&lt;init&gt;(jetbrains.mps.debug.runtime.JavaUiState)" resolveInfo="Evaluator" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1620955434532226506">
             <link role="variableDeclaration:3" targetNodeId="1620955434532226501" resolveInfo="uiState" />
           </node>
@@ -258,7 +258,7 @@
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1620955434532228964" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1620955434532228965">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="1620955434532228971">
-            <link role="baseMethodDeclaration:3" targetNodeId="3.~Evaluator.&lt;init&gt;(jetbrains.mps.debug.runtime.DebugSession$UiState)" resolveInfo="Evaluator" />
+            <link role="baseMethodDeclaration:3" targetNodeId="3.~Evaluator.&lt;init&gt;(jetbrains.mps.debug.runtime.JavaUiState)" resolveInfo="Evaluator" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1620955434532228972">
               <link role="variableDeclaration:3" targetNodeId="1620955434532228967" resolveInfo="uiState" />
             </node>
@@ -323,7 +323,7 @@
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1620955434532229002" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1620955434532229003">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="1620955434532229009">
-            <link role="baseMethodDeclaration:3" targetNodeId="3.~Evaluator.&lt;init&gt;(jetbrains.mps.debug.runtime.DebugSession$UiState)" resolveInfo="Evaluator" />
+            <link role="baseMethodDeclaration:3" targetNodeId="3.~Evaluator.&lt;init&gt;(jetbrains.mps.debug.runtime.JavaUiState)" resolveInfo="Evaluator" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1620955434532229010">
               <link role="variableDeclaration:3" targetNodeId="1620955434532229005" resolveInfo="uiState" />
             </node>
@@ -616,7 +616,7 @@
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1620955434532456807" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1620955434532456808">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="1620955434532456827">
-            <link role="baseMethodDeclaration:3" targetNodeId="3.~Evaluator.&lt;init&gt;(jetbrains.mps.debug.runtime.DebugSession$UiState)" resolveInfo="Evaluator" />
+            <link role="baseMethodDeclaration:3" targetNodeId="3.~Evaluator.&lt;init&gt;(jetbrains.mps.debug.runtime.JavaUiState)" resolveInfo="Evaluator" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1620955434532456828">
               <link role="variableDeclaration:3" targetNodeId="1620955434532456823" resolveInfo="uiState" />
             </node>
