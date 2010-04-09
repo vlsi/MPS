@@ -103,26 +103,6 @@
           </node>
         </node>
       </node>
-      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="972176972348513219">
-        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="972176972348513220" />
-        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="972176972348513221">
-          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="972176972348513222">
-            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="972176972348513223" />
-          </node>
-        </node>
-        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="972176972348513224">
-          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="972176972348513225">
-            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="972176972348513226">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="972176972348513227">
-                <link role="applicableNode:3" targetNodeId="972176972348203854" resolveInfo="stereotype" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="972176972348534560">
-                <link role="link:16" targetNodeId="1.972176972348513213" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="972176972348203854">
       <property name="name:3" value="stereotype" />

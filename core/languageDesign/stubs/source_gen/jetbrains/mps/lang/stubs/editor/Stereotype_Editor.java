@@ -24,8 +24,6 @@ public class Stereotype_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_pu1r4d_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pu1r4d_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pu1r4d_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_pu1r4d_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_pu1r4d_e0(editorContext, node));
     return editorCell;
   }
 
@@ -37,37 +35,13 @@ public class Stereotype_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_pu1r4d_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_pu1r4d_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_pu1r4d_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_pu1r4d_e0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createRefNode_pu1r4d_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("modelName");
-    provider.setNoTargetText("<no modelName>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_pu1r4d_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("langName");
     provider.setNoTargetText("<no langName>");

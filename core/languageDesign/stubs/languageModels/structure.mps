@@ -293,12 +293,6 @@
     <property name="name:0" value="Stereotype" />
     <property name="package:0" value="Stubs" />
     <link role="extends:0" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="972176972348513213">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="modelName" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
-    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="972176972348203841">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="langName" />

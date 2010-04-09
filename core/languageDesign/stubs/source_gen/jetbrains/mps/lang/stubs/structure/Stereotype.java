@@ -10,19 +10,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class Stereotype extends Expression {
   public static final String concept = "jetbrains.mps.lang.stubs.structure.Stereotype";
-  public static final String MODEL_NAME = "modelName";
   public static final String LANG_NAME = "langName";
 
   public Stereotype(SNode node) {
     super(node);
-  }
-
-  public Expression getModelName() {
-    return (Expression) this.getChild(Expression.class, Stereotype.MODEL_NAME);
-  }
-
-  public void setModelName(Expression node) {
-    super.setChild(Stereotype.MODEL_NAME, node);
   }
 
   public Expression getLangName() {

@@ -489,12 +489,6 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="972176972348203847">
         <property name="text:32" value="stereotype{" />
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="972176972348513215">
-        <link role="relationDeclaration:32" targetNodeId="1.972176972348513213" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="972176972348513218">
-        <property name="text:32" value="," />
-      </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="972176972348203851">
         <link role="relationDeclaration:32" targetNodeId="1.972176972348203841" />
       </node>

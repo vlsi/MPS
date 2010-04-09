@@ -335,13 +335,20 @@
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5516999836374121265">
                               <link role="baseMethodDeclaration:3" targetNodeId="5.~SModelReference.fromString(java.lang.String):jetbrains.mps.smodel.SModelReference" resolveInfo="fromString" />
                               <link role="classConcept:3" targetNodeId="5.~SModelReference" resolveInfo="SModelReference" />
-                              <node role="actualArgument:3" type="jetbrains.mps.lang.stubs.structure.Stereotype" id="972176972348395597">
-                                <node role="langName" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="972176972348395615">
-                                  <link role="classifier:3" targetNodeId="5.~LanguageID" resolveInfo="LanguageID" />
-                                  <link role="variableDeclaration:3" targetNodeId="5.~LanguageID.JAVA" resolveInfo="JAVA" />
+                              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="972176972348824308">
+                                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="972176972348824957">
+                                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="972176972348824960">
+                                    <property name="value:3" value="@" />
+                                  </node>
+                                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="972176972348824940">
+                                    <link role="variableDeclaration:3" targetNodeId="5516999836374121217" resolveInfo="subpackage" />
+                                  </node>
                                 </node>
-                                <node role="modelName" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="972176972348698478">
-                                  <link role="variableDeclaration:3" targetNodeId="5516999836374121217" resolveInfo="subpackage" />
+                                <node role="rightExpression:3" type="jetbrains.mps.lang.stubs.structure.Stereotype" id="972176972348963055">
+                                  <node role="langName" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="972176972348963073">
+                                    <link role="classifier:3" targetNodeId="5.~LanguageID" resolveInfo="LanguageID" />
+                                    <link role="variableDeclaration:3" targetNodeId="5.~LanguageID.JAVA" resolveInfo="JAVA" />
+                                  </node>
                                 </node>
                               </node>
                             </node>
