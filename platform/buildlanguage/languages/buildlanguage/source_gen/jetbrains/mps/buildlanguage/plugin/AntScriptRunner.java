@@ -4,6 +4,7 @@ package jetbrains.mps.buildlanguage.plugin;
 
 import jetbrains.mps.baseLanguage.util.plugin.run.BaseRunner;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import java.io.File;
 import com.intellij.execution.process.ProcessNotCreatedException;
 import java.util.List;
@@ -23,15 +24,16 @@ public class AntScriptRunner extends BaseRunner {
 
   private ProcessBuilder myBuilder;
 
-  public AntScriptRunner() {
+  public AntScriptRunner(ConfigRunParameters parameters) {
+    super(parameters);
   }
 
-  public Process run(File file, String programParams, String vmParams, String workingDir) throws ProcessNotCreatedException {
+  public Process run(File file) throws ProcessNotCreatedException {
     List<String> parameters = ListSequence.fromList(new ArrayList<String>());
     AntScriptRunner.addBasicParameters(parameters, file);
     AntScriptRunner.addMacroValues(parameters);
-    if (programParams != null && StringUtils.isNotEmpty(programParams)) {
-      List<String> commandLineList = Sequence.fromIterable(Sequence.fromArray(programParams.split("\\s+"))).toListSequence();
+    if (this.myRunParameters.getProgramParameters() != null && StringUtils.isNotEmpty(this.myRunParameters.getProgramParameters())) {
+      List<String> commandLineList = Sequence.fromIterable(Sequence.fromArray(this.myRunParameters.getProgramParameters().split("\\s+"))).toListSequence();
       ListSequence.fromList(parameters).addSequence(ListSequence.fromList(commandLineList));
     }
 
@@ -40,8 +42,8 @@ public class AntScriptRunner extends BaseRunner {
 
     // set woring dir 
     File workingDirFile;
-    if (workingDir != null && StringUtils.isNotEmpty(workingDir)) {
-      workingDirFile = new File(workingDir);
+    if (this.myRunParameters.getWorkingDirectory() != null && StringUtils.isNotEmpty(this.myRunParameters.getWorkingDirectory())) {
+      workingDirFile = new File(this.myRunParameters.getWorkingDirectory());
     } else {
       workingDirFile = file.getParentFile();
     }

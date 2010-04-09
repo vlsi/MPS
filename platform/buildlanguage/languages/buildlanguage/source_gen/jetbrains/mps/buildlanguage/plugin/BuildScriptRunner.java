@@ -22,6 +22,7 @@ public class BuildScriptRunner extends BaseRunner {
   private BuildScriptRunnerComponent myComponent;
 
   public BuildScriptRunner(BuildScriptRunnerComponent component) {
+    super(null);
     this.myComponent = component;
   }
 

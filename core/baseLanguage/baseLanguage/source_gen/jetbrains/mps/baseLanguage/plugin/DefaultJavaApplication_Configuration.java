@@ -38,7 +38,6 @@ import org.apache.commons.lang.StringUtils;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.actions.DefaultProcessHandler;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
@@ -157,8 +156,8 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           handler = (ProcessHandler) new _FunctionTypes._return_P0_E0<Object>() {
             public Object invoke() {
               try {
-                ClassRunner classRunner = new ClassRunner();
-                Process process = classRunner.run(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), javaRunParameters.getProgramParameters(), javaRunParameters.getVMParameters(), javaRunParameters.getWorkingDirectory());
+                ClassRunner classRunner = new ClassRunner(javaRunParameters);
+                Process process = classRunner.run(node);
                 return new DefaultProcessHandler(consoleView, process, classRunner.getCommandString());
               } catch (ExecutionException e) {
                 ex.value = e;

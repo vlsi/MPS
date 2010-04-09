@@ -143,9 +143,9 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
           handler = (ProcessHandler) new _FunctionTypes._return_P0_E0<Object>() {
             public Object invoke() {
               try {
-                AntScriptRunner runner = new AntScriptRunner();
+                AntScriptRunner runner = new AntScriptRunner(javaRunParameters);
                 File file = DefaultBuildLanguageApplication_Configuration.this.generate(node, project, context);
-                Process process = runner.run(file, javaRunParameters.getProgramParameters(), javaRunParameters.getVMParameters(), javaRunParameters.getWorkingDirectory());
+                Process process = runner.run(file);
                 return new DefaultProcessHandler(consoleView, process, runner.getCommandString());
               } catch (ExecutionException e) {
                 ex.value = e;

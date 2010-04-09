@@ -22,11 +22,10 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.choosers(jetbrains.mps.workbench.dialogs.choosers@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.findUsages(jetbrains.mps.findUsages@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="7" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
@@ -34,6 +33,7 @@
   <import index="9" modelUID="f:java_stub#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
+  <import index="13" modelUID="f:java_stub#jetbrains.mps.baseLanguage.plugin(jetbrains.mps.baseLanguage.plugin@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6937689104170748691">
     <property name="name:3" value="MainNodeChooser" />
     <node role="field:3" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration:3" id="6937689104170748692">
@@ -70,7 +70,7 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6937689104170748708" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6937689104170748709">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation:3" id="6937689104170748710">
-          <link role="baseMethodDeclaration:3" targetNodeId="4.8832748096582805304" resolveInfo="BaseChooserComponent" />
+          <link role="baseMethodDeclaration:3" targetNodeId="13.~BaseChooserComponent.&lt;init&gt;()" resolveInfo="BaseChooserComponent" />
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="6937689104170748711" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6937689104170748712">
@@ -104,7 +104,7 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6937689104170748726">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="6937689104170748727" />
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6937689104170748728">
-              <link role="baseMethodDeclaration:3" targetNodeId="4.8832748096582805249" resolveInfo="init" />
+              <link role="baseMethodDeclaration:3" targetNodeId="13.~BaseChooserComponent.init(java.awt.event.ActionListener):void" resolveInfo="init" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6937689104170748729">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="6937689104170748730">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="6937689104170748731">
@@ -155,7 +155,6 @@
                             </node>
                           </node>
                         </node>
-                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="6937689104170748751" />
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="977355701051636832" />
                         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6937689104170748752">
                           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6937689104170748753">
@@ -352,8 +351,8 @@
         </node>
       </node>
     </node>
-    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6937689104170748804">
-      <link role="classifier:3" targetNodeId="4.8832748096582805228" resolveInfo="BaseChooserComponent" />
+    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5768400825890740141">
+      <link role="classifier:3" targetNodeId="13.~BaseChooserComponent" resolveInfo="BaseChooserComponent" />
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="6937689104170748805">
       <property name="name:3" value="getNode" />
@@ -382,7 +381,7 @@
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6937689104170748821">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6937689104170748822">
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6937689104170748823">
-                      <link role="baseMethodDeclaration:3" targetNodeId="4.73588894266444188" resolveInfo="setText" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="13.~BaseFieldWithButtonComponent.setText(java.lang.String):void" resolveInfo="setText" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6937689104170748824" />
                     </node>
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="6937689104170748825" />
@@ -427,7 +426,7 @@
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6937689104170748845">
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6937689104170748846">
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6937689104170748847">
-                          <link role="baseMethodDeclaration:3" targetNodeId="4.73588894266444188" resolveInfo="setText" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="13.~BaseFieldWithButtonComponent.setText(java.lang.String):void" resolveInfo="setText" />
                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6937689104170748848">
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6937689104170748849">
                               <link role="variableDeclaration:3" targetNodeId="6937689104170748852" resolveInfo="node" />
