@@ -20,11 +20,12 @@ import java.util.List;
  * Time: 17:15:46
  * To change this template use File | Settings | File Templates.
  */
-public class JavaThread implements IThread {
+public class JavaThread extends ProxyForJava implements IThread {
   private static Logger LOG = Logger.getLogger(JavaThread.class);
   private final ThreadReference myThreadReference;
 
   public JavaThread(ThreadReference threadReference) {
+    super(threadReference);
     myThreadReference = threadReference;
   }
 

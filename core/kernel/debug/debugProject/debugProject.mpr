@@ -86,6 +86,8 @@
         <option name="nodeId" value="3337698516783078479" />
         <option name="modelId" value="r:83f8a53e-bd50-491e-b469-7a456b367a2b(jetbrains.mps.debug.run.sandbox)" />
       </MyState>
+      <RunnerSettings RunnerId="Default Debug Runner" />
+      <ConfigurationWrapper RunnerId="Default Debug Runner" />
       <method />
     </configuration>
     <configuration default="false" name="Basic" type="JavaApplication" factoryName="Java Application">

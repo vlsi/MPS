@@ -12,12 +12,13 @@ import jetbrains.mps.logging.Logger;
  * Time: 17:39:13
  * To change this template use File | Settings | File Templates.
  */
-public class JavaLocation implements ILocation {
+public class JavaLocation extends ProxyForJava implements ILocation {
   private static Logger LOG = Logger.getLogger(JavaLocation.class);
 
   private final Location myLocation;
 
   public JavaLocation(Location location) {
+    super(location);
     myLocation = location;
   }
 

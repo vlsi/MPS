@@ -12,13 +12,14 @@ import jetbrains.mps.logging.Logger;
  * Time: 19:05:54
  * To change this template use File | Settings | File Templates.
  */
-public class JavaThisObject implements IWatchable {
+public class JavaThisObject extends ProxyForJava implements IWatchable {
   private static Logger LOG = Logger.getLogger(JavaLocalVariable.class);
   public static final String CATEGORY_THIS_OBJECT = "category_thisObject";
 
   private final ObjectReference myThisObject;
 
   public JavaThisObject(ObjectReference objectReference) {
+    super(objectReference);
     myThisObject = objectReference;
   }
 

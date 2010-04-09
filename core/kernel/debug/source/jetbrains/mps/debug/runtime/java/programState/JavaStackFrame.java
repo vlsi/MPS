@@ -13,12 +13,13 @@ import java.util.*;
  * Time: 17:33:54
  * To change this template use File | Settings | File Templates.
  */
-public class JavaStackFrame implements IStackFrame {
+public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   private static Logger LOG = Logger.getLogger(JavaStackFrame.class);
 
   private final StackFrame myStackFrame;
 
   public JavaStackFrame(StackFrame stackFrame) {
+    super(stackFrame);
     myStackFrame = stackFrame;
   }
 

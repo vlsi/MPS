@@ -11,12 +11,13 @@ import jetbrains.mps.logging.Logger;
  * Time: 18:40:46
  * To change this template use File | Settings | File Templates.
  */
-public class JavaValue implements IValue {
+public class JavaValue extends ProxyForJava implements IValue {
   private static Logger LOG = Logger.getLogger(JavaValue.class);
 
   private final Value myValue;
 
   public JavaValue(Value value) {
+    super(value);
     myValue = value;
   }
 

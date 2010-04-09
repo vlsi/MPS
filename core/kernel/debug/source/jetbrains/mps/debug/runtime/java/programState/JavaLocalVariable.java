@@ -13,7 +13,7 @@ import jetbrains.mps.logging.Logger;
  * Time: 18:43:09
  * To change this template use File | Settings | File Templates.
  */
-public class JavaLocalVariable implements IWatchable {
+public class JavaLocalVariable extends ProxyForJava implements IWatchable {
   private static Logger LOG = Logger.getLogger(JavaLocalVariable.class);
    public static final String CATEGORY_LOCAL_VARIABLE = "category_localVariable";
 
@@ -21,6 +21,7 @@ public class JavaLocalVariable implements IWatchable {
   private final StackFrame myStackFrame;
 
   public JavaLocalVariable(LocalVariable variable, StackFrame stackFrame) {
+    super(variable);
     myLocalVariable = variable;
     myStackFrame = stackFrame;
   }
