@@ -6,6 +6,8 @@ import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.logging.Logger;
 
+import javax.swing.Icon;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -43,5 +45,10 @@ public class JavaLocalVariable extends ProxyForJava implements IWatchable {
   @Override
   public IValue getValue() {
     return new JavaValue(myStackFrame.getValue(myLocalVariable));
+  }
+
+  @Override
+  public Icon getPresentationIcon() {
+    return getValue().getPresentationIcon();
   }
 }

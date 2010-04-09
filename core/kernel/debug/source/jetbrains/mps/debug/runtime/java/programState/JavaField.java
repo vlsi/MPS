@@ -1,8 +1,10 @@
 package jetbrains.mps.debug.runtime.java.programState;
 
+import com.sun.jdi.Field;
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.integration.Icons;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.Icon;
@@ -11,37 +13,39 @@ import javax.swing.Icon;
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
  * Date: 09.04.2010
- * Time: 19:05:54
+ * Time: 21:12:08
  * To change this template use File | Settings | File Templates.
  */
-public class JavaThisObject extends ProxyForJava implements IWatchable {
-  private static Logger LOG = Logger.getLogger(JavaLocalVariable.class);
-  public static final String CATEGORY_THIS_OBJECT = "category_thisObject";
+public class JavaField extends ProxyForJava implements IWatchable {
+  private static Logger LOG = Logger.getLogger(ProxyForJava.class);
+  public static final String CATEGORY_FIELD = "category_field";
 
-  private final ObjectReference myThisObject;
+  private final Field myField;
+  private final ObjectReference myParent;
 
-  public JavaThisObject(ObjectReference objectReference) {
-    super(objectReference);
-    myThisObject = objectReference;
+  public JavaField(Field field, ObjectReference parent) {
+    super(field);
+    myField = field;
+    myParent = parent;
   }
 
-  public ObjectReference getThisObject() {
-    return myThisObject;
+  public Field getField() {
+    return myField;
   }
 
   @Override
   public String getName() {
-    return "this";
+    return myField.name();
   }
 
   @Override
   public String getCategory() {
-    return CATEGORY_THIS_OBJECT;
+    return CATEGORY_FIELD;
   }
 
   @Override
   public IValue getValue() {
-    return new JavaValue(myThisObject);
+    return new JavaValue(myParent.getValue(myField));
   }
 
   @Override
