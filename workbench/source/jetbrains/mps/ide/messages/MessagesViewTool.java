@@ -103,7 +103,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private MessageToolSearchPanel mySearchPanel = new MessageToolSearchPanel(myList, getProject());
 
   public MessagesViewTool(Project project) {
-    super(project, "Console", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "MPS Messages", 0, Icons.MESSAGE_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   public void initComponent() {
@@ -129,7 +129,8 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
     myComponent.add(panel, BorderLayout.WEST);
     myComponent.add(mySearchPanel, BorderLayout.NORTH);
-    myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
+    final JScrollPane scrollPane = new JScrollPane(myList);
+    myComponent.add(scrollPane, BorderLayout.CENTER);
 
     myComponent.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -163,6 +164,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     myList.addMouseWheelListener(new MouseWheelListener() {
       public void mouseWheelMoved(MouseWheelEvent e) {
         myList.setAutoscrolls(false);
+        scrollPane.dispatchEvent(e);
       }
     });
 
