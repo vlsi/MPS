@@ -189,8 +189,8 @@
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1620955434532226501">
         <property name="name:3" value="uiState" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1620955434532226502">
-          <link role="classifier:3" targetNodeId="4.~DebugSession$UiState" resolveInfo="DebugSession.UiState" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2414959769603892310">
+          <link role="classifier:3" targetNodeId="4.~JavaUiState" resolveInfo="JavaUiState" />
         </node>
       </node>
     </node>
@@ -266,8 +266,8 @@
         </node>
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1620955434532228967">
           <property name="name:3" value="uiState" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1620955434532228968">
-            <link role="classifier:3" targetNodeId="4.~DebugSession$UiState" resolveInfo="DebugSession.UiState" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2414959769603893924">
+            <link role="classifier:3" targetNodeId="4.~JavaUiState" resolveInfo="JavaUiState" />
           </node>
         </node>
       </node>
@@ -331,8 +331,8 @@
         </node>
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1620955434532229005">
           <property name="name:3" value="uiState" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1620955434532229006">
-            <link role="classifier:3" targetNodeId="4.~DebugSession$UiState" resolveInfo="DebugSession.UiState" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2414959769603893916">
+            <link role="classifier:3" targetNodeId="4.~JavaUiState" resolveInfo="JavaUiState" />
           </node>
         </node>
       </node>
@@ -624,8 +624,8 @@
         </node>
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1620955434532456823">
           <property name="name:3" value="uiState" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1620955434532456824">
-            <link role="classifier:3" targetNodeId="4.~DebugSession$UiState" resolveInfo="DebugSession.UiState" />
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2414959769603892320">
+            <link role="classifier:3" targetNodeId="4.~JavaUiState" resolveInfo="JavaUiState" />
           </node>
         </node>
       </node>
