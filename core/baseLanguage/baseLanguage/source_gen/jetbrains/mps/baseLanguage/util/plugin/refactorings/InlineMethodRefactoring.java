@@ -188,7 +188,7 @@ public class InlineMethodRefactoring {
   }
 
   private boolean canSubstituteParameter(SNode e, SNode parameterDeclaration) {
-    if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
+    if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.VariableReference") || SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter")) {
       return !(this.variableWriting(parameterDeclaration));
     }
     if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.IntegerConstant")) {
