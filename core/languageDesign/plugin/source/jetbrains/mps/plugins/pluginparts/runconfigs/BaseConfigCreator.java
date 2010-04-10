@@ -29,9 +29,11 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer {
   private PsiElement mySourceElement;
+  @Nullable
   private ConfigurationContext myContext;
 
   public BaseConfigCreator(ConfigurationType configurationType) {
@@ -46,6 +48,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
     return mySourceElement;
   }
 
+  @Nullable
   protected ConfigurationContext getContext() {
     return myContext;
   }
@@ -79,7 +82,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
   }
 
   public int hashCode() {
-    return myContext.hashCode() + 10 * mySourceElement.hashCode() + 20 * getClass().getName().hashCode();
+    return (myContext == null ? 0 : myContext.hashCode()) + 10 * mySourceElement.hashCode() + 20 * getClass().getName().hashCode();
   }
 
   public boolean equals(Object obj) {

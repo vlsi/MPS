@@ -6470,5 +6470,33 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="823693461259265800" />
     </node>
   </node>
+  <visible index="5" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="5842104767987839284">
+    <property name="package:23" value="newRunner" />
+    <property name="name:23" value="DefaultBuildLanguageConfigurationFromNode" />
+    <link role="rcType:23" targetNodeId="7234763849538443893:0" resolveInfo="BuildLanguage" />
+    <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="5842104767987843778">
+      <link role="concept:23" targetNodeId="3v.1196851066733:21" resolveInfo="Project" />
+    </node>
+    <node role="createBlock:23" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlock:23" id="5842104767987839286">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5842104767987839287">
+        <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement:23" id="5842104767988042591">
+          <node role="contextItem:23" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="5842104767988042593" />
+        </node>
+        <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement:23" id="5842104767987897097">
+          <link role="runConfig:23" targetNodeId="7234763849538404662:0" resolveInfo="DefaultBuildLanguageApplication" />
+          <node role="property:23" type="jetbrains.mps.baseLanguage.runConfigurations.structure.NodeRunConfigPropertyInstance" id="5842104767987897099">
+            <node role="propertyValue" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="5842104767987897101" />
+          </node>
+          <node role="configName:23" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5842104767987921942">
+            <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="5842104767987921941" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="5842104767987921946">
+              <link role="property:16" targetNodeId="5v.1169194664001:0" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
