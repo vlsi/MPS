@@ -77,14 +77,12 @@ public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
     }
 
     public SNode createNode(final SNode node) {
-      {
-        SNode controller = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentController", null);
-        SLinkOperations.setTarget(controller, "component", node, false);
-        SModelOperations.addRootNode(SNodeOperations.getModel(node), controller);
-        String virtualPackage = node.getProperty(SModelTreeNode.PACK);
-        controller.setProperty(SModelTreeNode.PACK, virtualPackage);
-        return controller;
-      }
+      SNode controller = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentController", null);
+      SLinkOperations.setTarget(controller, "component", node, false);
+      SModelOperations.addRootNode(SNodeOperations.getModel(node), controller);
+      String virtualPackage = node.getProperty(SModelTreeNode.PACK);
+      controller.setProperty(SModelTreeNode.PACK, virtualPackage);
+      return controller;
     }
   }
 }

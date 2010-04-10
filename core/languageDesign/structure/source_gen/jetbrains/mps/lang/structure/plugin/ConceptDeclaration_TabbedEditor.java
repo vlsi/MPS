@@ -293,8 +293,7 @@ public class ConceptDeclaration_TabbedEditor extends BaseTabbedEditor {
     }
 
     public SNode createNode(final SNode node, final boolean ask, final SNode concept) {
-      SNode result = ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.TYPESYSTEM, node, concept, Typesystem_Tab.this);
-      return result;
+      return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.TYPESYSTEM, node, concept, Typesystem_Tab.this);
     }
   }
 
