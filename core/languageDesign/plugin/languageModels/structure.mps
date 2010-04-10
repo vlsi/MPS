@@ -2972,7 +2972,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="162872405267681153">
     <property name="package:0" value="RunConfigs.Configuration.Editor" />
     <property name="name:0" value="ApplyEditorBlock" />
-    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <link role="extends:0" targetNodeId="3636700473138833152:23" resolveInfo="AbstractEnhancedConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="162872405267681158">
       <property name="value:0" value="apply" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
@@ -2984,7 +2984,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="162872405267681154">
     <property name="package:0" value="RunConfigs.Configuration.Editor" />
     <property name="name:0" value="ResetEditorBlock" />
-    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <link role="extends:0" targetNodeId="3636700473138833152:23" resolveInfo="AbstractEnhancedConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="162872405267681157">
       <property name="value:0" value="reset" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
@@ -4164,7 +4164,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3636700473138833152">
     <property name="package:0" value="RunConfigs.Configuration.Execute.Parametrized" />
-    <property name="name:0" value="ParametrizedExecuteConceptFunction" />
+    <property name="name:0" value="AbstractEnhancedConceptFunction" />
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="3636700473138833155">
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473854053:0" resolveInfo="abstract" />

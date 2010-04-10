@@ -306,10 +306,14 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
 
     protected void resetEditorFrom(DefaultPackagingLanguageApplication_Configuration c) {
       MySettingsEditor.this.myComponent.reset(c);
+      final ConfigRunParameters javaRunParameters = c.getStateObject().myJavaRunParameters;
+      MySettingsEditor.this.myComponent.getUsersComponent().reset(c.getNode(), c.getStateObject().confihurationId);
     }
 
     protected void applyEditorTo(DefaultPackagingLanguageApplication_Configuration c) {
       MySettingsEditor.this.myComponent.apply(c);
+      final ConfigRunParameters javaRunParameters = c.getStateObject().myJavaRunParameters;
+      c.getStateObject().confihurationId = MySettingsEditor.this.myComponent.getUsersComponent().getConfigurationId();
     }
 
     @NotNull
@@ -325,6 +329,7 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
 
   public static class MyState implements Cloneable {
     public ConfigRunParameters myJavaRunParameters = new ConfigRunParameters();
+    public String confihurationId;
     public String nodeId;
     public String modelId;
 

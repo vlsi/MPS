@@ -18,6 +18,7 @@ import javax.swing.JLabel;
 
 public class DefaultPackagingLanguageApplication_Editor extends JPanel {
   private JavaConfigOptions myJavaConfigurationOptions = new JavaConfigOptions();
+  private ConfigurationChoosePanel myUsersComponent = new ConfigurationChoosePanel();
   private MainNodeChooser myChooseNodeComponent = new MainNodeChooser(new _FunctionTypes._return_P0_E0<SNode>() {
     public SNode invoke() {
       final Wrappers._T<SNode> c = new Wrappers._T<SNode>();
@@ -45,6 +46,7 @@ public class DefaultPackagingLanguageApplication_Editor extends JPanel {
   public DefaultPackagingLanguageApplication_Editor() {
     super(new GridBagLayout());
 
+    this.add(this.myUsersComponent, LayoutUtil.createPanelConstraints(1));
     this.add(this.myJavaConfigurationOptions, LayoutUtil.createPanelConstraints(2));
     {
       JPanel panel = new JPanel(new GridBagLayout());
@@ -69,5 +71,9 @@ public class DefaultPackagingLanguageApplication_Editor extends JPanel {
 
   public void dispose() {
     this.myJavaConfigurationOptions.dispose();
+  }
+
+  public ConfigurationChoosePanel getUsersComponent() {
+    return this.myUsersComponent;
   }
 }

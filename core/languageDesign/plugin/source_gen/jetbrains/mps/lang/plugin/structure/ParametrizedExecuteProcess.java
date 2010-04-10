@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ParametrizedExecuteProcess extends ParametrizedExecuteConceptFunction {
+public class ParametrizedExecuteProcess extends AbstractEnhancedConceptFunction {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.ParametrizedExecuteProcess";
 
   public ParametrizedExecuteProcess(SNode node) {
