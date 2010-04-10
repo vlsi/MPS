@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -45,7 +44,7 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
         final Wrappers._T<List<SNode>> toChooseFrom = new Wrappers._T<List<SNode>>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            Set<SNode> instances = findUsegesManager.findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(MainNodeChooser.this.myTargetConcept)), GlobalScope.getInstance(), progressAdapter, false);
+            Set<SNode> instances = findUsegesManager.findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(MainNodeChooser.this.myTargetConcept)), GlobalFileteredScope.getInstance(), progressAdapter, false);
             if (MainNodeChooser.this.myAcceptor == null) {
               toChooseFrom.value = ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).toListSequence();
             } else {
