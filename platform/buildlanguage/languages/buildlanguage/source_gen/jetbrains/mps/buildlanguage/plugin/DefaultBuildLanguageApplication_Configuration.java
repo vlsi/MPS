@@ -33,6 +33,10 @@ import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.io.File;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.buildlanguage.behavior.Project_Behavior;
 import jetbrains.mps.ide.actions.DefaultProcessHandler;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
@@ -44,14 +48,6 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
-import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.buildlanguage.behavior.Project_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import java.util.Collections;
@@ -112,8 +108,8 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
         Runnable consoleDispose = null;
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
-        final Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
-        final IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
+        Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
+        IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
 
         // user's execute code 
         final ConfigRunParameters javaRunParameters = DefaultBuildLanguageApplication_Configuration.this.getStateObject().myJavaRunParameters.copy();
@@ -144,8 +140,14 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
             public Object invoke() {
               try {
                 AntScriptRunner runner = new AntScriptRunner(javaRunParameters);
-                File file = DefaultBuildLanguageApplication_Configuration.this.generate(node, project, context);
-                Process process = runner.run(file);
+                final Wrappers._T<File> file = new Wrappers._T<File>();
+                ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(node), new File(SNodeOperations.getModel(node).getModelDescriptor().getModule().getGeneratorOutputPath()));
+                    file.value = new File(file.value, Project_Behavior.call_getFileName_1213877351819(node));
+                  }
+                });
+                Process process = runner.run(file.value);
                 return new DefaultProcessHandler(consoleView, process, runner.getCommandString());
               } catch (ExecutionException e) {
                 ex.value = e;
@@ -227,29 +229,6 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
 
   public DefaultBuildLanguageApplication_Configuration.MyState getStateObject() {
     return this.myState;
-  }
-
-  private File generate(final SNode currentNode, Project project, IOperationContext context) {
-    final GeneratorManager generatorManager = project.getComponent(GeneratorManager.class);
-    final File[] file = new File[1];
-    TextGenerationHandler generationHandler = new TextGenerationHandler() {
-      @Override
-      protected void fileGenerated(String targetDir, String fileName, TextGenerationUtil.TextGenerationResult result) {
-        File target = new File(targetDir + File.separator + fileName);
-        FileUtil.write(target, result.getText());
-        if (target.getName().equals(Project_Behavior.call_getFileName_1213877351819(SNodeOperations.cast(currentNode, "jetbrains.mps.buildlanguage.structure.Project")))) {
-          file[0] = target;
-        }
-      }
-    };
-    final Wrappers._T<SModelDescriptor> modelDescriptor = new Wrappers._T<SModelDescriptor>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        modelDescriptor.value = SNodeOperations.getModel(currentNode).getModelDescriptor();
-      }
-    });
-    generatorManager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), modelDescriptor.value), context, generationHandler, false);
-    return file[0];
   }
 
   public SNode getNode() {
