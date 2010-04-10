@@ -51,7 +51,6 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
-import java.util.Collections;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class DefaultJavaApplication_Configuration extends BaseRunConfig {
@@ -275,7 +274,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   private SNode getNodeForExecution(Project project, boolean make) {
     SNode node = DefaultJavaApplication_Configuration.this.getNode();
     if (make) {
-      RunUtil.makeBeforeRun(project, Collections.singletonList(node));
+      RunUtil.makeBeforeRun(project, node);
     }
     return node;
   }

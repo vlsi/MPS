@@ -5042,6 +5042,7 @@
     <property name="name" value="DefaultBuildLanguageApplication" />
     <property name="caption" value="Build Language Project" />
     <property name="package" value="newRunner" />
+    <property name="generate" value="true" />
     <link role="stateTypeParameter" targetNodeId="58.~RunProfileState" resolveInfo="RunProfileState" />
     <link role="configType" targetNodeId="7234763849538443893:0" resolveInfo="Ant" />
     <link role="conceptDeclaration" targetNodeId="3v.1196851066733:21" resolveInfo="Project" />

@@ -11443,6 +11443,7 @@
     <property name="name" value="DefaultJavaApplication" />
     <property name="caption" value="Java Application" />
     <property name="isDebuggable" value="true" />
+    <property name="generate" value="true" />
     <link role="stateTypeParameter" targetNodeId="171.~BaseRunProfileState" resolveInfo="BaseRunProfileState" />
     <link role="configType" targetNodeId="4434783588132660334" resolveInfo="JavaApplication" />
     <link role="conceptDeclaration" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />

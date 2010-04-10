@@ -50,8 +50,6 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
-import java.util.Collections;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class DefaultPackagingLanguageApplication_Configuration extends BaseRunConfig {
@@ -280,9 +278,6 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
 
   private SNode getNodeForExecution(Project project, boolean make) {
     SNode node = DefaultPackagingLanguageApplication_Configuration.this.getNode();
-    if (make) {
-      RunUtil.makeBeforeRun(project, Collections.singletonList(node));
-    }
     return node;
   }
 

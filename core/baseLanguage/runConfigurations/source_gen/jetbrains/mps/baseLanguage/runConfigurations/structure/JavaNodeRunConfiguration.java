@@ -10,10 +10,19 @@ import jetbrains.mps.project.GlobalScope;
 
 public class JavaNodeRunConfiguration extends JavaRunConfiguration {
   public static final String concept = "jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration";
+  public static final String GENERATE = "generate";
   public static final String CONCEPT_DECLARATION = "conceptDeclaration";
 
   public JavaNodeRunConfiguration(SNode node) {
     super(node);
+  }
+
+  public boolean getGenerate() {
+    return this.getBooleanProperty(JavaNodeRunConfiguration.GENERATE);
+  }
+
+  public void setGenerate(boolean value) {
+    this.setBooleanProperty(JavaNodeRunConfiguration.GENERATE, value);
   }
 
   public AbstractConceptDeclaration getConceptDeclaration() {
