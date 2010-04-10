@@ -24,6 +24,7 @@ import jetbrains.mps.lang.dataFlow.framework.analyzers.MayBeInitializedVariables
 import jetbrains.mps.lang.dataFlow.DataflowBuilderException;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class Program {
   private List<Instruction> myInstructions = new ArrayList<Instruction>();
@@ -92,6 +93,26 @@ public class Program {
     instruction.setSource(getCurrent());
     instruction.setIndex(myInstructions.size());
     myInstructions.add(instruction);
+  }
+
+  void insert(Instruction instruction, int position) {
+    instruction.setProgram(this);
+    instruction.setSource(getCurrent());
+    instruction.setIndex(position);
+    for (Instruction i : myInstructions.subList(position,myInstructions.size())) {
+        i.setIndex(i.getIndex()+1);
+    }
+    for (Entry<Object,Integer> e: myEnds.entrySet()) {
+        if (e.getValue() > position) {
+          e.setValue(e.getValue()+1);
+        }
+    }
+    for (Entry<Object,Integer> e: myStarts.entrySet()) {
+        if (e.getValue() >= position) {
+          e.setValue(e.getValue()+1);
+        }
+    }
+    myInstructions.add(position, instruction);
   }
 
   void start(Object o) {

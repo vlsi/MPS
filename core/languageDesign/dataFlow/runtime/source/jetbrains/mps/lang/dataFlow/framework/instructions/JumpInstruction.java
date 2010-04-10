@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.dataFlow.framework.instructions;
 
 import jetbrains.mps.lang.dataFlow.framework.ProgramState;
+import jetbrains.mps.lang.dataFlow.framework.StructuralProgramBuilder.Position;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -30,6 +31,10 @@ public class JumpInstruction extends Instruction {
 
   public void setJumpTo(int jumpTo) {
     myJumpTo = jumpTo;
+  }
+
+  public void setJumpTo(final Position position) {
+    myJumpTo = position.getPosition();
   }
 
   public void buildCaches() {

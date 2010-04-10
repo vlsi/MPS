@@ -10,9 +10,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class EmitStatement extends Statement {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.EmitStatement";
+  public static final String POSITION = "position";
 
   public EmitStatement(SNode node) {
     super(node);
+  }
+
+  public InsertPosition getPosition() {
+    return (InsertPosition) this.getChild(InsertPosition.class, EmitStatement.POSITION);
+  }
+
+  public void setPosition(InsertPosition node) {
+    super.setChild(EmitStatement.POSITION, node);
   }
 
   public static EmitStatement newInstance(SModel sm, boolean init) {

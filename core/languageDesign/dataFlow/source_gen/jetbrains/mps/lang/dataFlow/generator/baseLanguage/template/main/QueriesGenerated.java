@@ -8,6 +8,7 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -36,6 +37,14 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "dataFlowBuilderConstructor");
   }
 
+  public static boolean ifMacro_Condition_3063987229946191549(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "position", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_3063987229946254751(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "position", true) != null;
+  }
+
   public static SNode sourceNodeQuery_1206456672226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "builderBlock", true), "body", true);
   }
@@ -44,8 +53,16 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "codeFor", true);
   }
 
+  public static SNode sourceNodeQuery_3063987229946191546(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "position", true);
+  }
+
   public static SNode sourceNodeQuery_1206457204137(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "jumpTo", true);
+  }
+
+  public static SNode sourceNodeQuery_3063987229946254760(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "position", true);
   }
 
   public static SNode sourceNodeQuery_1206457232122(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -90,6 +107,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1235407468435(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "value", true);
+  }
+
+  public static SNode sourceNodeQuery_3063987229946254704(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_3063987229946254740(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
   public static Iterable sourceNodesQuery_1206456525472(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

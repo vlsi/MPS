@@ -32,4 +32,10 @@ public class DataFlow_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
     return style;
   }
+
+  public static Style getInsertPosition(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    return style;
+  }
 }

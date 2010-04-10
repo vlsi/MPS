@@ -19,6 +19,7 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.*;
 import jetbrains.mps.dataFlow.runtime.NullableVariableState;
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public abstract class StructuralProgramBuilder<N> {
   private Program myProgram = new Program();
@@ -79,10 +80,30 @@ public abstract class StructuralProgramBuilder<N> {
     myLabels.get((N) myProgram.getCurrent()).put(label, myProgram.size());
   }
 
-  public void emitNop() {
+  private void updateLabelsOnInsert(final Position position) {
+    for(Entry<N, Map<String, Integer>> labels : myLabels.entrySet()) {
+      for(Entry<String,Integer> label : labels.getValue().entrySet()) {
+        if (label.getValue() > position.getPosition()) {
+          label.setValue(label.getValue()+1);
+        }
+      }
+    }
+  }
+
+
+
+  private NopInstruction emitNopCommon() {
     NopInstruction instruction = new NopInstruction();
     onInstructionEmitted(instruction);
-    myProgram.add(instruction);
+    return instruction;
+  }
+
+  public void emitNop(final Position insertPosition) {
+    myProgram.insert(emitNopCommon(), insertPosition.getPosition());
+  }
+
+  public void emitNop() {
+    myProgram.add(emitNopCommon());
   }
 
   public void emitRead(Object var) {
@@ -115,20 +136,29 @@ public abstract class StructuralProgramBuilder<N> {
     myProgram.add(instruction);
     invokeLater(new Runnable() {
       public void run() {
-        instruction.setJumpTo(position.getPosition());
+        instruction.setJumpTo(position);
       }
     });
   }
 
-  public void emitIfJump(final Position position) {
+  private IfJumpInstruction emitIfJumpCommon(final Position position) {
     final IfJumpInstruction instruction = new IfJumpInstruction();
     onInstructionEmitted(instruction);
-    myProgram.add(instruction);
     invokeLater(new Runnable() {
       public void run() {
-        instruction.setJumpTo(position.getPosition());
+        instruction.setJumpTo(position);
       }
     });
+    return instruction;
+  }
+
+  public void emitIfJump(final Position position) {
+    myProgram.add(emitIfJumpCommon(position));
+  }
+
+  public void emitIfJump(final Position position, final Position insertPosition) {
+    updateLabelsOnInsert(insertPosition);
+    myProgram.insert(emitIfJumpCommon(position), insertPosition.getPosition());
   }
 
   public void emitTry() {
@@ -155,6 +185,14 @@ public abstract class StructuralProgramBuilder<N> {
     instruction.setValue(value);
     onInstructionEmitted(instruction);
     myProgram.add(instruction);
+  }
+
+  public void addInstruction(Instruction instruction, Position position) {
+    if (position == null) {
+      myProgram.add(instruction);
+    } else {
+      myProgram.insert(instruction, position.getPosition());
+    }
   }
 
   protected void onInstructionEmitted(Instruction instruction) {
