@@ -304,10 +304,12 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
 
     protected void resetEditorFrom(DefaultJavaApplication_Configuration c) {
       MySettingsEditor.this.myComponent.reset(c);
+      final ConfigRunParameters javaRunParameters = c.getStateObject().myJavaRunParameters;
     }
 
     protected void applyEditorTo(DefaultJavaApplication_Configuration c) {
       MySettingsEditor.this.myComponent.apply(c);
+      final ConfigRunParameters javaRunParameters = c.getStateObject().myJavaRunParameters;
     }
 
     @NotNull

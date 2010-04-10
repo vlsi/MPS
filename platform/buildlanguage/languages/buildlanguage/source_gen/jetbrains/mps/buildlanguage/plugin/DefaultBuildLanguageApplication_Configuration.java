@@ -290,10 +290,12 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
 
     protected void resetEditorFrom(DefaultBuildLanguageApplication_Configuration c) {
       MySettingsEditor.this.myComponent.reset(c);
+      final ConfigRunParameters javaRunParameters = c.getStateObject().myJavaRunParameters;
     }
 
     protected void applyEditorTo(DefaultBuildLanguageApplication_Configuration c) {
       MySettingsEditor.this.myComponent.apply(c);
+      final ConfigRunParameters javaRunParameters = c.getStateObject().myJavaRunParameters;
     }
 
     @NotNull
