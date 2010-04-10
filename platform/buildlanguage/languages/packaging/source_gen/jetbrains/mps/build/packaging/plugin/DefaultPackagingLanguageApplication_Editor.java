@@ -30,8 +30,14 @@ public class DefaultPackagingLanguageApplication_Editor extends JPanel {
     }
   }.invoke(), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(final SNode node) {
-      StringBuilder error = new StringBuilder();
-      ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
+      final StringBuilder error = new StringBuilder();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if (!(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty())) {
+            error.append("can not run this node").append("\n");
+          }
+        }
+      });
       return error.length() == 0;
     }
   });

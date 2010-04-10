@@ -11,6 +11,7 @@ import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.execution.configurations.RunProfileState;
@@ -34,7 +35,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.io.File;
 import jetbrains.mps.buildlanguage.plugin.AntScriptRunner;
@@ -94,7 +94,13 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
           return snode;
         }
       }.invoke();
-      ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if (!(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty())) {
+            error.append("can not run this node").append("\n");
+          }
+        }
+      });
     }
     if (error.length() != 0) {
       throw new RuntimeConfigurationException(error.toString());

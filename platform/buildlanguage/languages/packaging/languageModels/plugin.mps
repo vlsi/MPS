@@ -13033,19 +13033,34 @@
     </node>
     <node role="checkBlock" type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaCheckBlock" id="2864298211886179263">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2864298211886179264">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2864298211886179273">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2864298211886179274">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2864298211886179275">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter" id="2864298211886180648" />
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation:16" id="2864298211886179277">
-                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="2864298211886179278">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="2864298211886179279">
-                    <link role="conceptDeclaration:16" targetNodeId="1.1240832649054:7" resolveInfo="INotBuildableComponent" />
+        <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement:23" id="3225885096400471652">
+          <node role="commandClosureLiteral:23" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral:23" id="3225885096400471653">
+            <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3225885096400471654">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3225885096400522103">
+                <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3225885096400522105">
+                  <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement:23" id="3225885096400522125">
+                    <node role="error:23" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3225885096400522129">
+                      <property name="value:3" value="can not run this node" />
+                    </node>
+                  </node>
+                </node>
+                <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="3225885096400522121">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3225885096400522108">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3225885096400522109">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter" id="3225885096400522110" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation:16" id="3225885096400522111">
+                        <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="3225885096400522112">
+                          <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="3225885096400522113">
+                            <link role="conceptDeclaration:16" targetNodeId="1.1240832649054:7" resolveInfo="INotBuildableComponent" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation:7" id="3225885096400522114" />
                   </node>
                 </node>
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation:7" id="2864298211886179280" />
           </node>
         </node>
       </node>
