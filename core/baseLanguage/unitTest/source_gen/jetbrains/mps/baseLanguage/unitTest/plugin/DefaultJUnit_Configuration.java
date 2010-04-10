@@ -278,11 +278,13 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
 
     protected void resetEditorFrom(DefaultJUnit_Configuration c) {
       MySettingsEditor.this.myComponent.reset(c);
+      final ConfigRunParameters javaRunParameters = c.getStateObject().myJavaRunParameters;
       MySettingsEditor.this.myComponent.getUsersComponent().reset(c);
     }
 
     protected void applyEditorTo(DefaultJUnit_Configuration c) {
       MySettingsEditor.this.myComponent.apply(c);
+      final ConfigRunParameters javaRunParameters = c.getStateObject().myJavaRunParameters;
       MySettingsEditor.this.myComponent.getUsersComponent().apply(c);
     }
 
