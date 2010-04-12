@@ -38,6 +38,9 @@ public class MessagesGutter extends JPanel {
   private Set<EditorMessage> myMessagesToRemove = new HashSet<EditorMessage>();
   private MyMessagesGutter myMessagesGutter;
 
+  private static final Color LONG_MESSAGE_COLOR = new Color(252, 242, 242);
+  private static final Color LONG_MESSAGE_BORDER_COLOR = new Color(176, 169, 169);
+
   public MessagesGutter(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
 
@@ -177,20 +180,42 @@ public class MessagesGutter extends JPanel {
           if (o1 == o2) return 0;
           if (o1 == null) return -1;
           if (o2 == null) return 1;
-          return o1.getStatus().ordinal() - o2.getStatus().ordinal();
+          if (o1.getStatus().ordinal() == o2.getStatus().ordinal()) {
+            if (o1.isLongInGutter() == o2.isLongInGutter()) {
+              return getMessageStart(o1) - getMessageStart(o2);
+            } else {
+              return o1.isLongInGutter() ? -1 : 1;
+            }
+          } else {
+            return o1.getStatus().ordinal() - o2.getStatus().ordinal();
+          }
         }
       });
       for (EditorMessage msg : editorMessages) {
         if (msg == null || !msg.isValid(myEditorComponent)) {
           continue;
         }
-        int messageY = getMessagePosition(msg);
+        if (msg.isLongInGutter()) {
+          int messageY = getMessageStart(msg);
+          int messageHeight = getMessageHeight(msg) + 1;
 
-        g.setColor(new Color(80, 80, 80, 70));
-        g.fillRect(1, messageY, getWidth() - 2, 2);
+          g.setColor(LONG_MESSAGE_COLOR);
+          int messageX = (getWidth() - 2) / 3;
+          int messageWidth = (getWidth() - 2) / 3 + 1;
+          g.fillRect(messageX, messageY, messageWidth, messageHeight);
 
-        g.setColor(msg.getColor());
-        g.fillRect(0, messageY - 1, getWidth() - 2, 2);
+          g.setColor(LONG_MESSAGE_BORDER_COLOR);
+          g.drawLine(messageX, messageY + messageHeight, messageX + messageWidth, messageY + messageHeight);
+          g.drawLine(messageX + messageWidth, messageY, messageX + messageWidth, messageY + messageHeight);
+        } else {
+          int messageY = getMessagePosition(msg);
+
+          g.setColor(new Color(80, 80, 80, 70));
+          g.fillRect(1, messageY, getWidth() - 2, 2);
+
+          g.setColor(msg.getColor());
+          g.fillRect(0, messageY - 1, getWidth() - 2, 2);
+        }
       }
       //removeLater(messagesToRemove);
     }
@@ -279,9 +304,17 @@ public class MessagesGutter extends JPanel {
       Set<EditorMessage> messagesToRemove = new HashSet<EditorMessage>();
       for (EditorMessage msg : myMessages) {
         if (!msg.isValid(myEditorComponent)) continue;
-        int position = getMessagePosition(msg);
-        if (y >= position - 5 && y <= position + 5) {
-          result.add(msg);
+        if (msg.isLongInGutter()) {
+          int messageY = getMessageStart(msg);
+          int messageHeight = getMessageHeight(msg) + 1;
+          if (y >= messageY - 5 && y <= messageY + messageHeight + 5) {
+            result.add(msg);
+          }
+        } else {
+          int position = getMessagePosition(msg);
+          if (y >= position - 5 && y <= position + 5) {
+            result.add(msg);
+          }
         }
       }
       removeLater(messagesToRemove);

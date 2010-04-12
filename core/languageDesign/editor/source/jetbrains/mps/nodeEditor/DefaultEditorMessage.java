@@ -94,11 +94,19 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   public int getStart(EditorComponent editorComponent) {
-     return getCellInBothWays(editorComponent).getY();
-   }
+    EditorCell editorCell = getCellInBothWays(editorComponent);
+    if (editorCell == null) {
+      return -1;
+    }
+    return editorCell.getY();
+  }
 
   public int getHeight(EditorComponent editorComponent) {
-    return getCellInBothWays(editorComponent).getHeight();
+    EditorCell editorCell = getCellInBothWays(editorComponent);
+    if (editorCell == null) {
+      return -1;
+    }
+    return editorCell.getHeight();
   }
 
   public void doNavigate(EditorComponent editorComponent) {
@@ -162,5 +170,10 @@ public class DefaultEditorMessage implements EditorMessage {
 
   public void setIntentionProvider(IntentionProvider intentionProvider) {
     myIntentionProvider = intentionProvider;
+  }
+
+  @Override
+  public boolean isLongInGutter() {
+    return false;
   }
 }

@@ -58,4 +58,6 @@ public interface EditorMessage {
   public Object getUserObject(Object key);
 
   LocationOnCell getLocationOnCell();
+
+  boolean isLongInGutter();
 }
