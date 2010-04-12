@@ -33,9 +33,11 @@ public class DefaultBuildLanguageApplication_Editor extends JPanel {
 
     this.add(this.myJavaConfigurationOptions, LayoutUtil.createPanelConstraints(2));
     {
+      MainNodeChooser chooser = this.myChooseNodeComponent;
+
       JPanel panel = new JPanel(new GridBagLayout());
       panel.add(new JLabel("Main node:"), LayoutUtil.createLabelConstraints(0));
-      panel.add(this.myChooseNodeComponent, LayoutUtil.createPanelConstraints(1));
+      panel.add(chooser, LayoutUtil.createPanelConstraints(1));
       this.add(panel, LayoutUtil.createPanelConstraints(0));
     }
   }

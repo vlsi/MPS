@@ -11,8 +11,6 @@ import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
@@ -49,9 +47,12 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 
 public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   @Tag(value = "state")
@@ -93,13 +94,6 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           return snode;
         }
       }.invoke();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          if (ClassConcept_Behavior.call_getMainMethod_1213877355884(node) == null) {
-            error.append("selected node does not have main method").append("\n");
-          }
-        }
-      });
     }
     if (error.length() != 0) {
       throw new RuntimeConfigurationException(error.toString());
@@ -281,16 +275,31 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
 
   private Tuples._2<SNode, String> checkNode() {
     if (DefaultJavaApplication_Configuration.this.getStateObject().modelId != null && DefaultJavaApplication_Configuration.this.getStateObject().nodeId != null) {
-      final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          node.value = DefaultJavaApplication_Configuration.this.getNode();
+      final SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        public SNode compute() {
+          return DefaultJavaApplication_Configuration.this.getNode();
         }
       });
-      if ((node.value == null)) {
+      if ((node == null)) {
         return MultiTuple.<SNode,String>from((SNode) null, "node is not selected or does not exist");
       }
-      return MultiTuple.<SNode,String>from(node.value, (String) null);
+      {
+        boolean isApplicable = new _FunctionTypes._return_P0_E0<Boolean>() {
+          public Boolean invoke() {
+            final Wrappers._boolean hasMainMethod = new Wrappers._boolean();
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                hasMainMethod.value = (ClassConcept_Behavior.call_getMainMethod_1213877355884(node) != null);
+              }
+            });
+            return hasMainMethod.value;
+          }
+        }.invoke();
+        if (!(isApplicable)) {
+          return MultiTuple.<SNode,String>from((SNode) null, "can't run selected node");
+        }
+      }
+      return MultiTuple.<SNode,String>from(node, (String) null);
     } else {
       return MultiTuple.<SNode,String>from((SNode) null, "node is not selected");
     }

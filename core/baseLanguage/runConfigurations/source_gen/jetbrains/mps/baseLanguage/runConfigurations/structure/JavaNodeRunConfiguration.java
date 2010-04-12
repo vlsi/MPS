@@ -12,6 +12,7 @@ public class JavaNodeRunConfiguration extends JavaRunConfiguration {
   public static final String concept = "jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration";
   public static final String GENERATE = "generate";
   public static final String CONCEPT_DECLARATION = "conceptDeclaration";
+  public static final String IS_APPLICABLE_BLOCK = "isApplicableBlock";
 
   public JavaNodeRunConfiguration(SNode node) {
     super(node);
@@ -31,6 +32,14 @@ public class JavaNodeRunConfiguration extends JavaRunConfiguration {
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {
     super.setReferent(JavaNodeRunConfiguration.CONCEPT_DECLARATION, node);
+  }
+
+  public IsApplicableBlock getIsApplicableBlock() {
+    return (IsApplicableBlock) this.getChild(IsApplicableBlock.class, JavaNodeRunConfiguration.IS_APPLICABLE_BLOCK);
+  }
+
+  public void setIsApplicableBlock(IsApplicableBlock node) {
+    super.setChild(JavaNodeRunConfiguration.IS_APPLICABLE_BLOCK, node);
   }
 
   public static JavaNodeRunConfiguration newInstance(SModel sm, boolean init) {

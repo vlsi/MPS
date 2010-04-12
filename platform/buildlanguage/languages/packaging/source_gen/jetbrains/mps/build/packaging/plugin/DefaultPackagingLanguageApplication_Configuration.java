@@ -12,8 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.apache.commons.lang.StringUtils;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.Executor;
@@ -28,14 +27,15 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JComponent;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.io.File;
 import jetbrains.mps.buildlanguage.plugin.AntScriptRunner;
 import jetbrains.mps.ide.actions.DefaultProcessHandler;
@@ -50,6 +50,7 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.SNodePointer;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class DefaultPackagingLanguageApplication_Configuration extends BaseRunConfig {
@@ -94,8 +95,10 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
       }.invoke();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (!(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty())) {
-            error.append("can not run this node").append("\n");
+          if (StringUtils.isEmpty(DefaultPackagingLanguageApplication_Configuration.this.getStateObject().confihurationId)) {
+            error.append("configuration to run is not selected").append("\n");
+          } else if (DefaultPackagingLanguageApplication_Configuration.this.getConfiguration(node) == null) {
+            error.append("can not find configuration with id " + DefaultPackagingLanguageApplication_Configuration.this.getStateObject().confihurationId).append("\n");
           }
         }
       });
@@ -114,7 +117,6 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
         Runnable consoleDispose = null;
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
         ProcessHandler handler = null;
-        final SModelDescriptor currentModel = MPSDataKeys.CONTEXT_MODEL.getData(environment.getDataContext());
         final IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(environment.getDataContext());
         final Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
 
@@ -146,24 +148,24 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
           handler = (ProcessHandler) new _FunctionTypes._return_P0_E2<Object, ExecutionException, ExecutionException>() {
             public Object invoke() throws ExecutionException, ExecutionException {
               try {
-                final Wrappers._T<SNode> configuration = new Wrappers._T<SNode>();
-                final Wrappers._boolean isSelectedByUser = new Wrappers._boolean();
-                ModelAccess.instance().runReadAction(new Runnable() {
-                  public void run() {
-                    configuration.value = ListSequence.fromList(SLinkOperations.getTargets(node, "configuration", true)).first();
-                    isSelectedByUser.value = ListSequence.fromList(SLinkOperations.getTargets(node, "configuration", true)).count() > 1;
-                  }
-                });
-                if (isSelectedByUser.value) {
-                  configuration.value = ConfigurationChooser.chooseConfiguration(node, configuration.value);
-                }
-                if (configuration.value == null) {
+                SNode configuration = DefaultPackagingLanguageApplication_Configuration.this.getConfiguration(node);
+
+                if (configuration == null) {
                   throw new ExecutionException("Configuration is not selected.");
                 }
-                File file = GenerateTextFromBuild.generate(configuration.value, currentModel, context, project, true);
+
+                final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
+                ModelAccess.instance().runReadAction(new Runnable() {
+                  public void run() {
+                    model.value = SNodeOperations.getModel(node).getModelDescriptor();
+                  }
+                });
+                File file = GenerateTextFromBuild.generate(configuration, model.value, context, project, true);
+
                 if (file == null) {
                   throw new ExecutionException("No executable file were generated.");
                 }
+
                 AntScriptRunner runner = new AntScriptRunner(javaRunParameters);
                 Process process = runner.run(file);
                 return new DefaultProcessHandler(consoleView, process, runner.getCommandString());
@@ -249,6 +251,16 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
     return this.myState;
   }
 
+  private SNode getConfiguration(final SNode node) {
+    final Wrappers._T<SNode> configuration = new Wrappers._T<SNode>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        configuration.value = SNodeOperations.cast(SNodeOperations.getModel(node).getNodeById(DefaultPackagingLanguageApplication_Configuration.this.getStateObject().confihurationId), "jetbrains.mps.build.packaging.structure.Configuration");
+      }
+    });
+    return configuration.value;
+  }
+
   public SNode getNode() {
     if (DefaultPackagingLanguageApplication_Configuration.this.getStateObject().modelId == null || DefaultPackagingLanguageApplication_Configuration.this.getStateObject().nodeId == null) {
       return null;
@@ -283,16 +295,25 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
 
   private Tuples._2<SNode, String> checkNode() {
     if (DefaultPackagingLanguageApplication_Configuration.this.getStateObject().modelId != null && DefaultPackagingLanguageApplication_Configuration.this.getStateObject().nodeId != null) {
-      final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          node.value = DefaultPackagingLanguageApplication_Configuration.this.getNode();
+      final SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        public SNode compute() {
+          return DefaultPackagingLanguageApplication_Configuration.this.getNode();
         }
       });
-      if ((node.value == null)) {
+      if ((node == null)) {
         return MultiTuple.<SNode,String>from((SNode) null, "node is not selected or does not exist");
       }
-      return MultiTuple.<SNode,String>from(node.value, (String) null);
+      {
+        boolean isApplicable = new _FunctionTypes._return_P0_E0<Boolean>() {
+          public Boolean invoke() {
+            return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
+          }
+        }.invoke();
+        if (!(isApplicable)) {
+          return MultiTuple.<SNode,String>from((SNode) null, "can't run selected node");
+        }
+      }
+      return MultiTuple.<SNode,String>from(node, (String) null);
     } else {
       return MultiTuple.<SNode,String>from((SNode) null, "node is not selected");
     }

@@ -29,7 +29,6 @@ import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
-
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.lang.plugin.structure.RunConfigCreator;
@@ -144,14 +143,20 @@ public class RunConfigManager implements ProjectComponent {
 
     ExecutionManager executionManager = myProject.getComponent(ExecutionManager.class);
     RunContentManagerImpl contentManager = (RunContentManagerImpl) executionManager.getContentManager();
-    for (RunContentDescriptor d:contentManager.getAllDescriptors()) {
-      d.getAttachedContent().getManager().removeAllContents(true);
+    for (RunContentDescriptor d : contentManager.getAllDescriptors()) {
+      if (d.getAttachedContent() == null ){
+        LOG.warning("Attached content of descriptor " + d.getDisplayName() + " is null.");
+      } else if (d.getAttachedContent().getManager() == null) {
+        LOG.warning("Manager of attached content of descriptor " + d.getDisplayName() + " is null.");  
+      } else {
+        d.getAttachedContent().getManager().removeAllContents(true);
+      }
     }
 
     synchronized (myConfigsLock) {
       final ExtensionPoint<RuntimeConfigurationProducer> epCreator = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
       RuntimeConfigurationProducer[] extensions = epCreator.getExtensions();
-      for (RuntimeConfigurationProducer producer: extensions) {
+      for (RuntimeConfigurationProducer producer : extensions) {
         epCreator.unregisterExtension(producer);
         myRegisteredCreators.remove(producer);
       }
@@ -229,7 +234,7 @@ public class RunConfigManager implements ProjectComponent {
     epCreator.registerExtension(configCreator);
     myRegisteredCreators.add(configCreator);
   }
-  
+
   private List<ConfigurationType> createCreators(Project project) {
     final MPSProject mpsProject = myProject.getComponent(MPSProject.class);
 

@@ -296,7 +296,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
 
     protected void disposeEditor() {
       MySettingsEditor.this.myComponent.dispose();
-      MySettingsEditor.this.myComponent.getUsersComponent().dispose();
+      MySettingsEditor.this.myComponent.dispose();
     }
   }
 

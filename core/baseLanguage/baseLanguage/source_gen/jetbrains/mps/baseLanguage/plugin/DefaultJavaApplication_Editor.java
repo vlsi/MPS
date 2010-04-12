@@ -29,15 +29,13 @@ public class DefaultJavaApplication_Editor extends JPanel {
     }
   }.invoke(), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(final SNode node) {
-      final StringBuilder error = new StringBuilder();
+      final Wrappers._boolean hasMainMethod = new Wrappers._boolean();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (ClassConcept_Behavior.call_getMainMethod_1213877355884(node) == null) {
-            error.append("selected node does not have main method").append("\n");
-          }
+          hasMainMethod.value = (ClassConcept_Behavior.call_getMainMethod_1213877355884(node) != null);
         }
       });
-      return error.length() == 0;
+      return hasMainMethod.value;
     }
   });
 
@@ -46,9 +44,11 @@ public class DefaultJavaApplication_Editor extends JPanel {
 
     this.add(this.myJavaConfigurationOptions, LayoutUtil.createPanelConstraints(2));
     {
+      MainNodeChooser chooser = this.myChooseNodeComponent;
+
       JPanel panel = new JPanel(new GridBagLayout());
       panel.add(new JLabel("Main node:"), LayoutUtil.createLabelConstraints(0));
-      panel.add(this.myChooseNodeComponent, LayoutUtil.createPanelConstraints(1));
+      panel.add(chooser, LayoutUtil.createPanelConstraints(1));
       this.add(panel, LayoutUtil.createPanelConstraints(0));
     }
   }

@@ -6,21 +6,22 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
   @NotNull
@@ -28,6 +29,7 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
   @Nullable
   private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myAcceptor;
   private SNode myNode;
+  private final List<IJavaNodeChangeListener> myListeners = ListSequence.fromList(new ArrayList<IJavaNodeChangeListener>());
 
   public MainNodeChooser(@NotNull C targetConcept, @Nullable _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> acceptor) {
     super();
@@ -68,6 +70,9 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
   }
 
   public void setNode(final SNode node) {
+    if (this.myNode == node) {
+      return;
+    }
     if (node == null) {
       if (this.myNode == null) {
         this.setText(null);
@@ -80,5 +85,22 @@ public class MainNodeChooser<C extends SNode> extends BaseChooserComponent {
         }
       });
     }
+    this.fireNodeChanged();
+  }
+
+  public void addNodeChangeListener(@NotNull IJavaNodeChangeListener listener) {
+    ListSequence.fromList(this.myListeners).addElement(listener);
+  }
+
+  public void removeNodeChangeListener(IJavaNodeChangeListener listener) {
+    ListSequence.fromList(this.myListeners).removeElement(listener);
+  }
+
+  private void fireNodeChanged() {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<IJavaNodeChangeListener>() {
+      public void visit(IJavaNodeChangeListener it) {
+        it.nodeChanged(MainNodeChooser.this.myNode);
+      }
+    });
   }
 }

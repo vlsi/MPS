@@ -50,6 +50,7 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig {
@@ -267,16 +268,15 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
 
   private Tuples._2<SNode, String> checkNode() {
     if (DefaultBuildLanguageApplication_Configuration.this.getStateObject().modelId != null && DefaultBuildLanguageApplication_Configuration.this.getStateObject().nodeId != null) {
-      final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          node.value = DefaultBuildLanguageApplication_Configuration.this.getNode();
+      final SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+        public SNode compute() {
+          return DefaultBuildLanguageApplication_Configuration.this.getNode();
         }
       });
-      if ((node.value == null)) {
+      if ((node == null)) {
         return MultiTuple.<SNode,String>from((SNode) null, "node is not selected or does not exist");
       }
-      return MultiTuple.<SNode,String>from(node.value, (String) null);
+      return MultiTuple.<SNode,String>from(node, (String) null);
     } else {
       return MultiTuple.<SNode,String>from((SNode) null, "node is not selected");
     }

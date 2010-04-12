@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.awt.GridBagLayout;
 import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
+import jetbrains.mps.baseLanguage.runConfigurations.runtime.IJavaNodeChangeListener;
 import javax.swing.JLabel;
 
 public class DefaultPackagingLanguageApplication_Editor extends JPanel {
@@ -30,16 +31,8 @@ public class DefaultPackagingLanguageApplication_Editor extends JPanel {
       return c.value;
     }
   }.invoke(), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
-    public Boolean invoke(final SNode node) {
-      final StringBuilder error = new StringBuilder();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          if (!(ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty())) {
-            error.append("can not run this node").append("\n");
-          }
-        }
-      });
-      return error.length() == 0;
+    public Boolean invoke(SNode node) {
+      return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
     }
   });
 
@@ -49,9 +42,16 @@ public class DefaultPackagingLanguageApplication_Editor extends JPanel {
     this.add(this.myUsersComponent, LayoutUtil.createPanelConstraints(1));
     this.add(this.myJavaConfigurationOptions, LayoutUtil.createPanelConstraints(2));
     {
+      MainNodeChooser chooser = this.myChooseNodeComponent;
+      chooser.addNodeChangeListener(new IJavaNodeChangeListener() {
+        public void nodeChanged(SNode node) {
+          DefaultPackagingLanguageApplication_Editor.this.myUsersComponent.nodeChanged(node);
+        }
+      });
+
       JPanel panel = new JPanel(new GridBagLayout());
       panel.add(new JLabel("Main node:"), LayoutUtil.createLabelConstraints(0));
-      panel.add(this.myChooseNodeComponent, LayoutUtil.createPanelConstraints(1));
+      panel.add(chooser, LayoutUtil.createPanelConstraints(1));
       this.add(panel, LayoutUtil.createPanelConstraints(0));
     }
   }

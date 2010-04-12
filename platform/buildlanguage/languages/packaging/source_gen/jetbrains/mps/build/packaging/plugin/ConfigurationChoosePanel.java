@@ -10,16 +10,16 @@ import javax.swing.JLabel;
 import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
 import javax.swing.JComboBox;
 import jetbrains.mps.build.packaging.plugin.run.ui.ReadComboBoxRenderrer;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.AbstractListModel;
 import javax.swing.ComboBoxModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 
 public class ConfigurationChoosePanel extends JPanel {
@@ -38,9 +38,29 @@ public class ConfigurationChoosePanel extends JPanel {
     this.add(comboBox, LayoutUtil.createFieldConstraints(1));
   }
 
-  public void reset(@Nullable SNode node, @Nullable String configurationNodeId) {
+  public void nodeChanged(@Nullable final SNode node) {
+    if (node == null) {
+      this.reset(null, null);
+    } else {
+      final Wrappers._T<String> config = new Wrappers._T<String>(null);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if (ListSequence.fromList(SLinkOperations.getTargets(node, "configuration", true)).isNotEmpty()) {
+            config.value = ListSequence.fromList(SLinkOperations.getTargets(node, "configuration", true)).first().getId();
+          }
+        }
+      });
+      this.reset(node, config.value);
+    }
+  }
+
+  public void reset(@Nullable SNode node, @Nullable final String configurationNodeId) {
     this.myNode = node;
-    this.selectConfiguration(configurationNodeId);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        ConfigurationChoosePanel.this.selectConfiguration(configurationNodeId);
+      }
+    });
     this.myComboBoxModel.nodeChanged();
   }
 
@@ -57,7 +77,13 @@ public class ConfigurationChoosePanel extends JPanel {
     if ((this.myConfiguration == null)) {
       return null;
     }
-    return this.myConfiguration.getId();
+    final Wrappers._T<String> id = new Wrappers._T<String>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        id.value = ConfigurationChoosePanel.this.myConfiguration.getId();
+      }
+    });
+    return id.value;
   }
 
   public class MyComboBoxModel extends AbstractListModel implements ComboBoxModel {

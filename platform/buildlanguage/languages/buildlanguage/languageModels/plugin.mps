@@ -644,6 +644,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c7(jetbrains.mps.buildlanguage.plugin)" version="0" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
+  <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
   <maxImportIndex value="61" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="21" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
@@ -5038,23 +5039,23 @@
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1240834761848" />
   </node>
-  <node type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration" id="7234763849538404662">
-    <property name="name" value="DefaultBuildLanguageApplication" />
-    <property name="caption" value="Build Language Project" />
-    <property name="package" value="newRunner" />
-    <property name="generate" value="true" />
-    <link role="stateTypeParameter" targetNodeId="58.~RunProfileState" resolveInfo="RunProfileState" />
-    <link role="configType" targetNodeId="7234763849538443893:0" resolveInfo="Ant" />
-    <link role="conceptDeclaration" targetNodeId="3v.1196851066733:21" resolveInfo="Project" />
-    <node role="executionParameter" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="823693461259251894">
+  <node type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration:0" id="7234763849538404662">
+    <property name="name:0" value="DefaultBuildLanguageApplication" />
+    <property name="caption:0" value="Build Language Project" />
+    <property name="package:0" value="newRunner" />
+    <property name="generate:0" value="true" />
+    <link role="stateTypeParameter:0" targetNodeId="58.~RunProfileState" resolveInfo="RunProfileState" />
+    <link role="configType:0" targetNodeId="7234763849538443893:0" resolveInfo="Ant" />
+    <link role="conceptDeclaration:0" targetNodeId="3v.1196851066733:21" resolveInfo="Project" />
+    <node role="executionParameter:0" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="823693461259251894">
       <property name="name:23" value="project" />
       <link role="key:23" targetNodeId="52.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
-    <node role="executionParameter" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="823693461259264894">
+    <node role="executionParameter:0" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="823693461259264894">
       <property name="name:23" value="context" />
       <link role="key:23" targetNodeId="33.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
     </node>
-    <node role="executeBlock" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock:23" id="9185618041547065135">
+    <node role="executeBlock:0" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock:23" id="9185618041547065135">
       <node role="executeProcess:23" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteProcess:23" id="9185618041547065138">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9185618041547065139">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="823693461259574608">
@@ -5066,7 +5067,7 @@
               <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="823693461259574636">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="823693461259574637">
                   <link role="baseMethodDeclaration:3" targetNodeId="3038691514509218379:0" resolveInfo="AntScriptRunner" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter" id="1447676209062908522" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter:0" id="1447676209062908522" />
                 </node>
               </node>
             </node>
@@ -5091,7 +5092,7 @@
                       <link role="baseMethodDeclaration:3" targetNodeId="61.~FileGenerationUtil.getDefaultOutputDir(jetbrains.mps.smodel.SModel,java.io.File):java.io.File" resolveInfo="getDefaultOutputDir" />
                       <link role="classConcept:3" targetNodeId="61.~FileGenerationUtil" resolveInfo="FileGenerationUtil" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1452071452018072320">
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter" id="1452071452018072321" />
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter:0" id="1452071452018072321" />
                         <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1452071452018072322" />
                       </node>
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1452071452018072323">
@@ -5102,7 +5103,7 @@
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1452071452018072327">
                                 <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1452071452018072328">
                                   <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1452071452018072329">
-                                    <node role="operand:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter" id="1452071452018072330" />
+                                    <node role="operand:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter:0" id="1452071452018072330" />
                                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1452071452018072331" />
                                   </node>
                                 </node>
@@ -5132,7 +5133,7 @@
                           <link role="variableDeclaration:3" targetNodeId="809981953580477384:0" resolveInfo="file" />
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4286406969142020122">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter" id="4286406969142020123" />
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.Node_FunctionParameter:0" id="4286406969142020123" />
                           <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4286406969142020124">
                             <link role="baseMethodDeclaration:16" targetNodeId="4v.1213877351819" resolveInfo="getFileName" />
                           </node>
@@ -6060,8 +6061,8 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement:23" id="5842104767987897097">
           <link role="runConfig:23" targetNodeId="7234763849538404662:0" resolveInfo="DefaultBuildLanguageApplication" />
-          <node role="property:23" type="jetbrains.mps.baseLanguage.runConfigurations.structure.NodeRunConfigPropertyInstance" id="5842104767987897099">
-            <node role="propertyValue" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="5842104767987897101" />
+          <node role="property:23" type="jetbrains.mps.baseLanguage.runConfigurations.structure.NodeRunConfigPropertyInstance:0" id="5842104767987897099">
+            <node role="propertyValue:0" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="5842104767987897101" />
           </node>
           <node role="configName:23" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5842104767987921942">
             <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="5842104767987921941" />

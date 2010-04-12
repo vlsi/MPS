@@ -63,6 +63,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
+  <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
   <maxImportIndex value="118" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -26649,30 +26650,30 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaRunConfiguration" id="4964800443628637965">
-    <property name="package" value="run" />
-    <property name="name" value="DefaultJUnit" />
-    <property name="caption" value="JUnit" />
-    <property name="isDebuggable" value="true" />
-    <link role="configType" targetNodeId="1104580685292496804:0" resolveInfo="JUnit" />
-    <link role="stateTypeParameter" targetNodeId="95.~BaseRunProfileState" resolveInfo="BaseRunProfileState" />
-    <node role="executionParameter" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="5241497812385469122">
+  <node type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaRunConfiguration:0" id="4964800443628637965">
+    <property name="package:0" value="run" />
+    <property name="name:0" value="DefaultJUnit" />
+    <property name="caption:0" value="JUnit" />
+    <property name="isDebuggable:0" value="true" />
+    <link role="configType:0" targetNodeId="1104580685292496804:0" resolveInfo="JUnit" />
+    <link role="stateTypeParameter:0" targetNodeId="95.~BaseRunProfileState" resolveInfo="BaseRunProfileState" />
+    <node role="executionParameter:0" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="5241497812385469122">
       <property name="name:23" value="project" />
       <link role="key:23" targetNodeId="53.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
     </node>
-    <node role="executionParameter" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="3540275947738031298">
+    <node role="executionParameter:0" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="3540275947738031298">
       <property name="name:23" value="mpsProject" />
       <link role="key:23" targetNodeId="42.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
     </node>
-    <node role="executionParameter" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="5241497812385469123">
+    <node role="executionParameter:0" type="jetbrains.mps.lang.plugin.structure.RunConfigExecutionParameterDeclaration:23" id="5241497812385469123">
       <property name="name:23" value="operationContext" />
       <link role="key:23" targetNodeId="42.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
     </node>
-    <node role="property" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732612">
+    <node role="property:0" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732612">
       <property name="name:23" value="node" />
       <node role="type:23" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4964800443628732613" />
     </node>
-    <node role="property" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732614">
+    <node role="property:0" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732614">
       <property name="name:23" value="nodes" />
       <node role="type:23" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4964800443628732615">
         <link role="classifier:3" targetNodeId="8208276292079557090:0" resolveInfo="ClonableList" />
@@ -26685,19 +26686,19 @@
         </node>
       </node>
     </node>
-    <node role="property" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732620">
+    <node role="property:0" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732620">
       <property name="name:23" value="model" />
       <node role="type:23" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4964800443628732621" />
     </node>
-    <node role="property" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732622">
+    <node role="property:0" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732622">
       <property name="name:23" value="module" />
       <node role="type:23" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4964800443628732623" />
     </node>
-    <node role="property" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732624">
+    <node role="property:0" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732624">
       <property name="name:23" value="method" />
       <node role="type:23" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="4964800443628732625" />
     </node>
-    <node role="property" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732626">
+    <node role="property:0" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732626">
       <property name="name:23" value="methods" />
       <node role="type:23" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4964800443628732627">
         <link role="classifier:3" targetNodeId="8208276292079557090:0" resolveInfo="ClonableList" />
@@ -26710,13 +26711,13 @@
         </node>
       </node>
     </node>
-    <node role="property" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732634">
+    <node role="property:0" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyDeclaration:23" id="4964800443628732634">
       <property name="name:23" value="type" />
       <node role="type:23" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4964800443628732635">
         <link role="classifier:3" targetNodeId="5068927335440176122:0" resolveInfo="JUnitRunTypes" />
       </node>
     </node>
-    <node role="executeBlock" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock:23" id="4964800443628732636">
+    <node role="executeBlock:0" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteBlock:23" id="4964800443628732636">
       <node role="executeConsole:23" type="jetbrains.mps.lang.plugin.structure.ParametrizedExecuteConsole:23" id="4964800443628732637">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4964800443628732638">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2281887280934080837">
@@ -26833,7 +26834,7 @@
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5241497812385469378">
                 <link role="baseMethodDeclaration:3" targetNodeId="107.8492459591399148823" resolveInfo="getMake" />
               </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter" id="5241497812385708792" />
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter:0" id="5241497812385708792" />
             </node>
           </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="5241497812385469379" />
@@ -26844,7 +26845,7 @@
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2281887280934080868">
                   <link role="variableDeclaration:3" targetNodeId="3018238135945156508:0" resolveInfo="all" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter" id="2281887280934080869" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaConfigurationRunParameters_FunctionParameter:0" id="2281887280934080869" />
               </node>
             </node>
           </node>
@@ -26869,7 +26870,7 @@
         </node>
       </node>
     </node>
-    <node role="checkBlock" type="jetbrains.mps.lang.plugin.structure.CheckConfigurationBlock:23" id="5241497812385468872">
+    <node role="checkBlock:0" type="jetbrains.mps.lang.plugin.structure.CheckConfigurationBlock:23" id="5241497812385468872">
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5241497812385468873">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="5241497812385468878">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5241497812385468879">
@@ -26984,7 +26985,7 @@
         </node>
       </node>
     </node>
-    <node role="editor" type="jetbrains.mps.lang.plugin.structure.ConfigurationEditorDeclaration:23" id="5241497812385794389">
+    <node role="editor:0" type="jetbrains.mps.lang.plugin.structure.ConfigurationEditorDeclaration:23" id="5241497812385794389">
       <node role="editor:23" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5241497812385794390">
         <node role="creator:3" type="jetbrains.mps.uiLanguage.structure.ComponentCreator:1" id="5241497812385794391">
           <link role="componentDeclaration:1" targetNodeId="1104580685292496805:0" resolveInfo="JUnitConfigEditor" />
@@ -27029,7 +27030,7 @@
         </node>
       </node>
     </node>
-    <node role="methodDeclaration" type="jetbrains.mps.lang.plugin.structure.RunConfigurationMethodDeclaration:23" id="1905391470718378442">
+    <node role="methodDeclaration:0" type="jetbrains.mps.lang.plugin.structure.RunConfigurationMethodDeclaration:23" id="1905391470718378442">
       <property name="name:23" value="collectWhatToTest" />
       <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1905391470718378444">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1905391470718416001">
