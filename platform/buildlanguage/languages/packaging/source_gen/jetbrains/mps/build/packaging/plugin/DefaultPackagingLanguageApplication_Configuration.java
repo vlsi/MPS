@@ -306,7 +306,13 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
       {
         boolean isApplicable = new _FunctionTypes._return_P0_E0<Boolean>() {
           public Boolean invoke() {
-            return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
+            final Wrappers._boolean isApplicable = new Wrappers._boolean();
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                isApplicable.value = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
+              }
+            });
+            return isApplicable.value;
           }
         }.invoke();
         if (!(isApplicable)) {
