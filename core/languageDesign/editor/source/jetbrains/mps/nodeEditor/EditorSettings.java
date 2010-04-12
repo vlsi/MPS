@@ -409,7 +409,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       panel.add(antialiasingPanel);
 
       JPanel highlightChangesPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-      myHighlightChangesCheckBox = new JCheckBox("Highlight changes from base version");
+      myHighlightChangesCheckBox = new JCheckBox("Highlight nodes with changes relative to base version");
       highlightChangesPanel.add(myHighlightChangesCheckBox);
 
       panel.add(highlightChangesPanel);
