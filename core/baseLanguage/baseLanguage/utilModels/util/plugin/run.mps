@@ -1647,7 +1647,7 @@
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="3038691514508986597" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3038691514508986598">
-                  <link role="baseMethodDeclaration:3" targetNodeId="8492459591399148831" resolveInfo="getAlternativeJRE" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="8492459591399148799" resolveInfo="getVMParameters" />
                 </node>
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3038691514508986599">
