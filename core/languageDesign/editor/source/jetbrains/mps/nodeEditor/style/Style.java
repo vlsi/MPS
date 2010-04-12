@@ -115,6 +115,9 @@ public class Style {
   }
 
   private void updateCache(Set<StyleAttribute> attributes) {
+    if (attributes.isEmpty()) {
+      return;
+    }
     Object[] oldCachedValues = myCachedAttributeValues;
     myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
     System.arraycopy(oldCachedValues, 0, myCachedAttributeValues, 0, myCachedAttributeValues.length);
