@@ -176,4 +176,9 @@ public class DefaultEditorMessage implements EditorMessage {
   public boolean isLongInGutter() {
     return false;
   }
+
+  @Override
+  public Color getColorInGutter() {
+    return getColor();
+  }
 }

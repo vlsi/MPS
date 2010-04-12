@@ -60,4 +60,6 @@ public interface EditorMessage {
   LocationOnCell getLocationOnCell();
 
   boolean isLongInGutter();
+
+  Color getColorInGutter();
 }
