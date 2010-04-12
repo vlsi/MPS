@@ -1,150 +1,155 @@
 <component xmlns:xi="http://www.w3.org/2001/XInclude">
-    <xi:include href="/idea/PlatformActions.xml" xpointer="xpointer(/component/*)"/>
-    <xi:include href="/idea/VcsActions.xml" xpointer="xpointer(/component/*)"/>
+  <xi:include href="/idea/PlatformActions.xml" xpointer="xpointer(/component/*)"/>
+  <xi:include href="/idea/VcsActions.xml" xpointer="xpointer(/component/*)"/>
 
-    <actions>
+  <actions>
 
-        <group id="RunnerLayoutActions">
-            <group id="Runner.Layout" icon="/debugger/restoreLayout.png" popup="true">
-                <action id="Runner.RestoreLayout" class="com.intellij.execution.ui.layout.actions.RestoreLayoutAction"/>
-                <action id="Runner.ToggleToolbarLayout"
-                        class="com.intellij.execution.ui.layout.actions.ToggleToolbarLayoutAction"/>
-            </group>
-
-
-            <group id="Runner.View.Popup">
-                <action id="Runner.MoveViewToGrid" class="com.intellij.execution.ui.layout.actions.MoveToGridAction"
-                        icon="/debugger/toGrid.png"/>
-                <action id="Runner.MoveViewToTab" class="com.intellij.execution.ui.layout.actions.MoveToTabAction"
-                        icon="/debugger/toTab.png"/>
-                <action id="Runner.DetachCell" class="com.intellij.execution.ui.layout.actions.DetachCellAction"
-                        icon="/debugger/detach.png"/>
-                <action id="Runner.AttachCell" class="com.intellij.execution.ui.layout.actions.AttachCellAction"
-                        icon="/debugger/attach.png"/>
-                <separator/>
-                <action id="Runner.MinimizeView" class="com.intellij.execution.ui.layout.actions.MinimizeViewAction"
-                        icon="/actions/minimize.png"/>
-                <separator/>
-                <action id="Runner.CloseView" class="com.intellij.execution.ui.layout.actions.CloseViewAction"
-                        icon="/actions/cross.png"/>
-                <separator/>
-                <group id="Runner.Focus">
-                    <action id="Runner.FocusOnStartup" class="com.intellij.execution.ui.actions.FocusOnStartAction"/>
-                </group>
-            </group>
+    <group id="RunnerLayoutActions">
+      <group id="Runner.Layout" icon="/debugger/restoreLayout.png" popup="true">
+        <action id="Runner.RestoreLayout" class="com.intellij.execution.ui.layout.actions.RestoreLayoutAction"/>
+        <action id="Runner.ToggleToolbarLayout"
+                class="com.intellij.execution.ui.layout.actions.ToggleToolbarLayoutAction"/>
+      </group>
 
 
-            <group id="Runner.View.Toolbar">
-                <reference ref="Runner.MoveViewToGrid"/>
-                <reference ref="Runner.MoveViewToTab"/>
-                <reference ref="Runner.DetachCell"/>
-                <reference ref="Runner.AttachCell"/>
-                <reference ref="Runner.MinimizeView"/>
-                <reference ref="Runner.CloseView"/>
-            </group>
+      <group id="Runner.View.Popup">
+        <action id="Runner.MoveViewToGrid" class="com.intellij.execution.ui.layout.actions.MoveToGridAction"
+                icon="/debugger/toGrid.png"/>
+        <action id="Runner.MoveViewToTab" class="com.intellij.execution.ui.layout.actions.MoveToTabAction"
+                icon="/debugger/toTab.png"/>
+        <action id="Runner.DetachCell" class="com.intellij.execution.ui.layout.actions.DetachCellAction"
+                icon="/debugger/detach.png"/>
+        <action id="Runner.AttachCell" class="com.intellij.execution.ui.layout.actions.AttachCellAction"
+                icon="/debugger/attach.png"/>
+        <separator/>
+        <action id="Runner.MinimizeView" class="com.intellij.execution.ui.layout.actions.MinimizeViewAction"
+                icon="/actions/minimize.png"/>
+        <separator/>
+        <action id="Runner.CloseView" class="com.intellij.execution.ui.layout.actions.CloseViewAction"
+                icon="/actions/cross.png"/>
+        <separator/>
+        <group id="Runner.Focus">
+          <action id="Runner.FocusOnStartup" class="com.intellij.execution.ui.actions.FocusOnStartAction"/>
         </group>
+      </group>
 
 
-        <group id="RunMenu" popup="true">
-            <group id="RunnerActions"/>
-            <action id="editRunConfigurations" class="com.intellij.execution.actions.EditRunConfigurationsAction"/>
-            <action id="Stop" class="com.intellij.execution.actions.StopAction" icon="/actions/suspend.png"/>
-
-            <add-to-group group-id="MainMenu" anchor="after" relative-to-action="BuildMenu"/>
-        </group>
-
-        <group id="RunContextGroup" popup="false">
-            <action id="CreateRunConfiguration" class="com.intellij.execution.actions.CreateAction"/>
-        </group>
-
-        <group id="MPSDebugToolBar" popup="false">
-        </group>
-
-        <group id="DebugToolBar" popup="false">
-            <reference ref="MPSDebugToolBar"/>
-            <reference ref="Stop"/>
-            <separator/>
-        </group>
+      <group id="Runner.View.Toolbar">
+        <reference ref="Runner.MoveViewToGrid"/>
+        <reference ref="Runner.MoveViewToTab"/>
+        <reference ref="Runner.DetachCell"/>
+        <reference ref="Runner.AttachCell"/>
+        <reference ref="Runner.MinimizeView"/>
+        <reference ref="Runner.CloseView"/>
+      </group>
+    </group>
 
 
-        <group id="ToolbarRunGroup">
-            <separator/>
-            <action id="RunConfiguration" class="com.intellij.execution.actions.RunConfigurationAction"/>
-            <reference ref="RunnerActions"/>
+    <group id="RunMenu" popup="true">
+      <group id="RunnerActions"/>
+      <action id="editRunConfigurations" class="com.intellij.execution.actions.EditRunConfigurationsAction"/>
+      <action id="Stop" class="com.intellij.execution.actions.StopAction" icon="/actions/suspend.png"/>
 
-            <add-to-group group-id="MainToolBar" relative-to-action="Forward" anchor="after"/>
-        </group>
+      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="BuildMenu"/>
+    </group>
 
-        <group id="MPSToolbarRunGroup">
-            <!--for integration purposes-->
-            <add-to-group group-id="ToolbarRunGroup" relative-to-action="RunConfiguration" anchor="before"/>
-        </group>
+    <group id="RunContextGroup" popup="false">
+      <action id="CreateRunConfiguration" class="com.intellij.execution.actions.CreateAction"/>
+    </group>
 
-        <!--add "select in" action to all the editors-->
-        <group id="CodeEditorViewGroup" class="com.intellij.ide.actions.CodeEditorActionGroup">
-            <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
-        </group>
+    <group id="MPSDebugToolBar" popup="false">
+    </group>
 
-        <group id="MPSProjectActions" text="MPSProjectActions">
-            <action id="NewProject" class="jetbrains.mps.workbench.actions.NewMPSProjectAction" text="New MPS Project"/>
-            <action id="OpenProject" class="jetbrains.mps.workbench.actions.OpenMPSProjectAction"
-                    text="Open MPS Project"/>
-            <add-to-group anchor="first" group-id="FileMenu"/>
-        </group>
+    <group id="DebugToolBar" popup="false">
+      <reference ref="MPSDebugToolBar"/>
+      <reference ref="Stop"/>
+      <separator/>
+    </group>
 
-        <group id="GenerateMenu" popup="true" text="Ge_nerate">
-            <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>
-        </group>
+    <!--actions for alt+shift+F9/F10-->
+    <action id="ChooseRunConfiguration" class="com.intellij.execution.actions.ChooseRunConfigurationAction"
+            text="Run..." icon="/general/toolWindowRun.png"/>
+    <action id="ChooseDebugConfiguration" class="com.intellij.execution.actions.ChooseDebugConfigurationAction"
+            text="Debug..." icon="/general/debug.png"/>
 
-        <group id="BuildMenu" popup="true" text="Build">
-            <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GenerateMenu"/>
-        </group>
+    <group id="ToolbarRunGroup">
+      <separator/>
+      <action id="RunConfiguration" class="com.intellij.execution.actions.RunConfigurationAction"/>
+      <reference ref="RunnerActions"/>
 
-        <group id="MPSWelcomeDocumentationMenu">
-            <action id="ShowMPSDocumentation"
-                    class="jetbrains.mps.workbench.actions.help.ShowMPSDocumentationSiteAction"
-                    text="Show MPS Documentation" description="You can read MPS Documentation here"/>
-            <action id="ShowTheSimplestLanguageScreenCast"
-                    class="jetbrains.mps.workbench.actions.help.ShowTheSimplestLanguageScreenCastAction"
-                    text="Show The Simplest Language Screencast"
-                    description="You can watch how a simple language is created. (Thanks to Sebastien Arbogast)"/>
+      <add-to-group group-id="MainToolBar" relative-to-action="Forward" anchor="after"/>
+    </group>
 
-            <action id="OpenTheComplexNumberLanguageProject"
-                    class="jetbrains.mps.workbench.actions.welcomeScreen.OpenComplexLanguageProjectAction"
-                    text="Open Complex Numbers Support Language's Project"
-                    description="Take a look at the simplest possible language with typical aspects of most languages."/>
+    <group id="MPSToolbarRunGroup">
+      <!--for integration purposes-->
+      <add-to-group group-id="ToolbarRunGroup" relative-to-action="RunConfiguration" anchor="before"/>
+    </group>
 
-            <action
-                    id="OpenTheSimplestLanguageProject"
-                    class="jetbrains.mps.workbench.actions.welcomeScreen.OpenTheSimplestLanguageProjectAction"
-                    text="Open The Simplest Language's Project"
-                    description="You can take a look at the simplest possible language which contains many aspects that most of the languages have"/>
+    <!--add "select in" action to all the editors-->
+    <group id="CodeEditorViewGroup" class="com.intellij.ide.actions.CodeEditorActionGroup">
+      <action id="SelectIn" class="com.intellij.ide.actions.SelectInAction"/>
+    </group>
 
-            <add-to-group group-id="WelcomeScreen.Documentation" anchor="first"/>
-        </group>
+    <group id="MPSProjectActions" text="MPSProjectActions">
+      <action id="NewProject" class="jetbrains.mps.workbench.actions.NewMPSProjectAction" text="New MPS Project"/>
+      <action id="OpenProject" class="jetbrains.mps.workbench.actions.OpenMPSProjectAction"
+              text="Open MPS Project"/>
+      <add-to-group anchor="first" group-id="FileMenu"/>
+    </group>
 
-        <group id="MPSWelcomeGettingStartedMenu">
-            <action id="CreateNewProjectAction"
-                    class="jetbrains.mps.workbench.actions.NewMPSProjectAction"
-                    text="Create New MPS Project"
-                    description="You can create a new project with this action"/>
+    <group id="GenerateMenu" popup="true" text="Ge_nerate">
+      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>
+    </group>
 
-            <action id="OpenExistingProjectAction"
-                    class="jetbrains.mps.workbench.actions.OpenMPSProjectAction"
-                    text="Open MPS Project"
-                    description="You can open existing MPS project with this action"/>
+    <group id="BuildMenu" popup="true" text="Build">
+      <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GenerateMenu"/>
+    </group>
 
-            <action id="OpenRecenProjectAciton"
-                    class="com.intellij.openapi.wm.impl.welcomeScreen.RecentProjectsAction"
-                    text="Reopen Recent Project"
-                    description="You can open one of the most recent project you were working with. Click the icon or link to select a project from the list."
-                    icon="/general/reopenRecentProject.png"/>
+    <group id="MPSWelcomeDocumentationMenu">
+      <action id="ShowMPSDocumentation"
+              class="jetbrains.mps.workbench.actions.help.ShowMPSDocumentationSiteAction"
+              text="Show MPS Documentation" description="You can read MPS Documentation here"/>
+      <action id="ShowTheSimplestLanguageScreenCast"
+              class="jetbrains.mps.workbench.actions.help.ShowTheSimplestLanguageScreenCastAction"
+              text="Show The Simplest Language Screencast"
+              description="You can watch how a simple language is created. (Thanks to Sebastien Arbogast)"/>
 
-            <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
-        </group>
+      <action id="OpenTheComplexNumberLanguageProject"
+              class="jetbrains.mps.workbench.actions.welcomeScreen.OpenComplexLanguageProjectAction"
+              text="Open Complex Numbers Support Language's Project"
+              description="Take a look at the simplest possible language with typical aspects of most languages."/>
 
-        <group id="EditorFix">
-            <!--We need this only cause platform requires this action, and NPE is thrown if
+      <action
+              id="OpenTheSimplestLanguageProject"
+              class="jetbrains.mps.workbench.actions.welcomeScreen.OpenTheSimplestLanguageProjectAction"
+              text="Open The Simplest Language's Project"
+              description="You can take a look at the simplest possible language which contains many aspects that most of the languages have"/>
+
+      <add-to-group group-id="WelcomeScreen.Documentation" anchor="first"/>
+    </group>
+
+    <group id="MPSWelcomeGettingStartedMenu">
+      <action id="CreateNewProjectAction"
+              class="jetbrains.mps.workbench.actions.NewMPSProjectAction"
+              text="Create New MPS Project"
+              description="You can create a new project with this action"/>
+
+      <action id="OpenExistingProjectAction"
+              class="jetbrains.mps.workbench.actions.OpenMPSProjectAction"
+              text="Open MPS Project"
+              description="You can open existing MPS project with this action"/>
+
+      <action id="OpenRecenProjectAciton"
+              class="com.intellij.openapi.wm.impl.welcomeScreen.RecentProjectsAction"
+              text="Reopen Recent Project"
+              description="You can open one of the most recent project you were working with. Click the icon or link to select a project from the list."
+              icon="/general/reopenRecentProject.png"/>
+
+      <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
+    </group>
+
+    <group id="EditorFix">
+      <!--We need this only cause platform requires this action, and NPE is thrown if
                 the action is not in its place (see MPS-2081 for further details) -->
             <action id="EditorSelectWord" class="com.intellij.openapi.editor.actions.SelectWordAtCaretAction"/>
             <add-to-group group-id="EditMenu" anchor="last"/>
