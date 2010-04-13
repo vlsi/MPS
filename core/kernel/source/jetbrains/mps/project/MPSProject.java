@@ -155,6 +155,42 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
     });
   }
 
+  public void dispose() {
+    dispose(true);
+  }
+
+  public void dispose(final boolean reloadAll) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        MPSProjects projects = MPSProjects.instance();
+        projects.removeProject(MPSProject.this);
+
+        getProject().getComponent(Highlighter.class).stopUpdater();
+
+        MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
+        SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
+
+        TypeChecker.getInstance().clearForReload();
+
+
+        MPSModuleRepository.getInstance().removeUnusedModules();
+        SModelRepository.getInstance().removeUnusedDescriptors();
+        if (reloadAll) {
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        }
+
+        CleanupManager.getInstance().cleanup();
+      }
+    });
+
+    //todo hack
+    if (myProject != null) {
+      if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
+        ProjectUtil.closeProject(myProject);
+      }
+    }
+  }
+  
   //--modules
 
   @NotNull
@@ -215,6 +251,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
 
   //--descriptor
 
+  public void update() {
+    setProjectDescriptor(getProjectDescriptor());
+  }
+  
   public void setProjectDescriptor(final @NotNull ProjectDescriptor descriptor) {
     MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
     SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
@@ -402,46 +442,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, ProjectComponent,
         myDevKits.add(MPSModuleRepository.getInstance().registerDevKit(devKit, this));
       } else {
         error("Can't load devkit from " + devKit.getCanonicalPath() + " File doesn't exist");
-      }
-    }
-  }
-
-  public void update() {
-    setProjectDescriptor(getProjectDescriptor());
-  }
-
-  public void dispose() {
-    dispose(true);
-  }
-
-  public void dispose(final boolean reloadAll) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        MPSProjects projects = MPSProjects.instance();
-        projects.removeProject(MPSProject.this);
-
-        getProject().getComponent(Highlighter.class).stopUpdater();
-
-        MPSModuleRepository.getInstance().unRegisterModules(MPSProject.this);
-        SModelRepository.getInstance().unRegisterModelDescriptors(MPSProject.this);
-
-        TypeChecker.getInstance().clearForReload();
-
-
-        MPSModuleRepository.getInstance().removeUnusedModules();
-        SModelRepository.getInstance().removeUnusedDescriptors();
-        if (reloadAll) {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-        }
-
-        CleanupManager.getInstance().cleanup();
-      }
-    });
-
-    //todo hack
-    if (myProject != null) {
-      if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
-        ProjectUtil.closeProject(myProject);
       }
     }
   }
