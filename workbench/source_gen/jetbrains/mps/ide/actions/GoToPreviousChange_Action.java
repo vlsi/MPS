@@ -12,8 +12,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.changesmanager.EditorChangesHighlighter;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 public class GoToPreviousChange_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/workbench/search/icons/previousOccurence.png", "jetbrains.mps.ide"), true);
@@ -35,7 +35,8 @@ public class GoToPreviousChange_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      event.getPresentation().setVisible(true);
+      event.getPresentation().setEnabled(EditorChangesHighlighter.getInstance(GoToPreviousChange_Action.this.project).isPreviousChangeAvailable(GoToPreviousChange_Action.this.editorContext));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "GoToPreviousChange", t);
