@@ -54,7 +54,7 @@ import java.lang.reflect.Constructor;
 import java.util.*;
 
 
-public class Language extends AbstractModule implements MPSModuleOwner{
+public class Language extends AbstractModule implements MPSModuleOwner {
   private static final Logger LOG = Logger.getLogger(Language.class);
 
   private static final String LANGUAGE_ACCESSORIES = "languageAccessories";
@@ -95,10 +95,32 @@ public class Language extends AbstractModule implements MPSModuleOwner{
       return repository.getLanguage(languageDescriptor.getModuleReference());
     }
 
+    List<SolutionDescriptor> solutionDescriptors = createStubSolutionDescriptors(languageDescriptor);
+
+    for (SolutionDescriptor sd : solutionDescriptors) {
+      List<Dependency> dependencies = languageDescriptor.getDependencies();
+
+      boolean hasDependency = false;
+      for (Dependency ld : dependencies) {
+        if (EqualUtil.equals(ld.getModuleRef(), sd.getModuleReference())) {
+          hasDependency = true;
+          break;
+        }
+      }
+      if (hasDependency) continue;
+
+      Dependency dep = new Dependency();
+      dep.setModuleRef(sd.getModuleReference());
+      dep.setReexport(true);
+      dependencies.add(dep);
+    }
+
     language.setLanguageDescriptor(languageDescriptor, false);
     repository.addModule(language, moduleOwner);
 
-    revalidateStubSolutions(languageDescriptor, language);
+    for (SolutionDescriptor sd : solutionDescriptors) {
+      Solution.newInstance(sd, language);
+    }
 
     return language;
   }
@@ -107,7 +129,8 @@ public class Language extends AbstractModule implements MPSModuleOwner{
 
   }
 
-  private static void revalidateStubSolutions(LanguageDescriptor ld, MPSModuleOwner owner) {
+  private static List<SolutionDescriptor> createStubSolutionDescriptors(LanguageDescriptor ld) {
+    List<SolutionDescriptor> result = new ArrayList<SolutionDescriptor>();
     for (StubSolution ss : ld.getStubSolutions()) {
       SolutionDescriptor descriptor = new SolutionDescriptor();
       descriptor.setUUID(ss.getId().toString());
@@ -121,8 +144,9 @@ public class Language extends AbstractModule implements MPSModuleOwner{
       //todo what should be here?
       descriptor.setDontLoadClasses(true);
 
-      Solution.newInstance(descriptor, owner);
+      result.add(descriptor);
     }
+    return result;
   }
 
   protected void reloadAfterDescriptorChange() {
