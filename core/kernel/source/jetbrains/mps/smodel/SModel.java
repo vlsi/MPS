@@ -33,7 +33,9 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.security.SecureRandom;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * Author: Sergey Dmitriev
@@ -877,25 +879,46 @@ public class SModel implements Iterable<SNode> {
     return new HashSet<SNodeId>(myIdToNodeMap.keySet());
   }
 
-  void putNodeId(@NotNull SNodeId id, @NotNull SNode node) {
+  private static AtomicLong ourCounter = new AtomicLong();
+
+  static {
+    resetIdCounter();
+  }
+
+  static void resetIdCounter() {
+    ourCounter.set(Math.abs(new SecureRandom().nextLong()));
+  }
+  
+  public static SNodeId generateUniqueId() {
+    long id = Math.abs(ourCounter.incrementAndGet());
+    return new SNodeId.Regular(id);
+  }
+
+  void registerNode(@NotNull SNode node) {
     checkNotDisposed();
     if(myDisposed) return;
     
     if (myRegistrationsForbidden) {
-      LOG.error("Registration in model " + getSModelReference() + " is temporarely forbidden");
+      LOG.error("Registration in model " + getSModelReference() + " is temporarily forbidden");
     }
 
-    SNode existingNode = myIdToNodeMap.get(id);
-    if (existingNode != null && existingNode != node) {
-      SNode.resetIdCounter();
-      throw new RuntimeException("couldn't set id=" + id + " to node: " + node.getDebugText() + "\nnode with this id exists: " + existingNode.getDebugText());
+    SNodeId id = node.hasId() ? node.getSNodeId() : null;
+    SNode existingNode = id != null ? myIdToNodeMap.get(id) : null;
+    if(id == null || existingNode != null && existingNode != node) {
+      id = generateUniqueId();
+      while(myIdToNodeMap.containsKey(id)) {
+        resetIdCounter();
+        id = generateUniqueId();
+      }
+      node.setId(id);
     }
     myIdToNodeMap.put(id, node);
   }
 
-  void removeNodeId(@NotNull SNodeId id) {
+  void unregisterNode(@NotNull SNode node) {
     checkNotDisposed();
-    if(myDisposed) return;
+    SNodeId id = node.getSNodeId();
+    if(myDisposed || id == null) return;
     myIdToNodeMap.remove(id);
   }
 

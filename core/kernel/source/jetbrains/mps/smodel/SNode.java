@@ -57,8 +57,6 @@ public final class SNode {
 
   public static final SNode[] EMPTY_ARRAY = new SNode[0];
 
-  private static AtomicLong ourCounter = new AtomicLong();
-
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
 
   private static Set<Pair<SNode, String>> ourPropertySettersInProgress = new HashSet<Pair<SNode, String>>();
@@ -88,14 +86,6 @@ public final class SNode {
   private boolean myDisposed;
 
   private boolean myIsFrozen = false;
-
-  static {
-    resetIdCounter();
-  }
-
-  static void resetIdCounter() {
-    ourCounter.set(Math.abs(new SecureRandom().nextLong()));
-  }
 
   public static void setNodeMemeberAccessModifier(NodeMemberAccessModifier modifier) {
     ourMemberAccessModifier = modifier;
@@ -1089,9 +1079,7 @@ public final class SNode {
       UnregisteredNodesWithAdapters.getInstance().add(this);
     }
 
-    if (myId != null) {
-      myModel.removeNodeId(myId);
-    }
+    myModel.unregisterNode(this);
 
     for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
       child.unRegisterFromModel();
@@ -1106,16 +1094,17 @@ public final class SNode {
       return;
     }
 
+    SModel wasModel = myModel;
+    myModel = model;
+    myModel.registerNode(this);
+    myRegisteredInModelFlag = true;
+
     UnregisteredNodes.instance().remove(this);
 
     if (myAdapter != null) {
       UnregisteredNodesWithAdapters.getInstance().remove(this);
     }
 
-    myRegisteredInModelFlag = true;
-    SModel wasModel = myModel;
-    myModel = model;
-    myModel.putNodeId(getSNodeId(), this);
     if (wasModel != model) {
       ModelChangedCaster.getInstance().fireModelChanged(this, wasModel);
     }
@@ -1433,31 +1422,24 @@ public final class SNode {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
-    if (myId == null) {
-      myId = generateUniqueId();
-      if (!isRegistered()) {
-        UnregisteredNodes.instance().nodeIdChanged(this, null);
-      }
+    if (myId == null && !isRegistered()) {
+      // TODO remove id generation
+      myId = SModel.generateUniqueId();
+      UnregisteredNodes.instance().nodeIdChanged(this, null);
+      //LOG.error(new IllegalStateException("cannot generate id for unregistered node"));
     }
     return myId;
-  }
-
-  public static SNodeId generateUniqueId() {
-    long id = Math.abs(ourCounter.incrementAndGet());
-    return new SNodeId.Regular(id);
   }
 
   public void setId(SNodeId id) {
     if (id.equals(myId)) return;
 
-    if (isRegistered()) {
-      LOG.error("can't set id to registered node " + getDebugText(), new Throwable());
-    }
-
     if (!isRegistered()) {
       SNodeId wasId = myId;
       myId = id;
       UnregisteredNodes.instance().nodeIdChanged(this, wasId);
+    } else {
+      LOG.error("can't set id to registered node " + getDebugText(), new Throwable());
     }
   }
 

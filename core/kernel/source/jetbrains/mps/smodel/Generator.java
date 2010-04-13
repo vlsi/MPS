@@ -179,7 +179,7 @@ public class Generator extends AbstractModule{
   }
 
   public static String generateGeneratorUID(Language sourceLanguage) {
-    return sourceLanguage.getModuleFqName() + "#" + SNode.generateUniqueId();
+    return sourceLanguage.getModuleFqName() + "#" + SModel.generateUniqueId();
   }
 
   public Language getSourceLanguage() {
