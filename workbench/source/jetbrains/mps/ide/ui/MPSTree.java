@@ -55,7 +55,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   public static final String SELECTION = "selection";
   public static final String EXPANSION = "expansion";
 
-  protected static Logger LOG = Logger.getLogger(MPSTree.class);
+  protected static final Logger LOG = Logger.getLogger(MPSTree.class);
 
   public static final String TREE_PATH_SEPARATOR = "/";
 
