@@ -241,7 +241,7 @@ public class SNodeOperations {
         list.add(child);
       }
       if (stopCondition == null || !stopCondition.met(child)) {
-        _populateListOfDescendants(list, child, condition);
+        _populateListOfDescendants(list, child, condition, stopCondition);
       }
     }
   }
