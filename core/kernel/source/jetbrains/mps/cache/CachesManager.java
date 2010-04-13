@@ -52,12 +52,13 @@ public class CachesManager implements ApplicationComponent {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
         List<Object> keysToRemove = new ArrayList<Object>();
         SModelReference reference = modelDescriptor.getSModelReference();
-        for (Object key : myDependsOnModels.keySet()) {
-          List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
-          for (SModelDescriptor dependsOnModel : dependsOnModels) {
-            SModelReference ref = dependsOnModel == null ? null : dependsOnModel.getSModelReference();
-            if (EqualUtil.equals(ref, reference)) {
-              keysToRemove.add(key);
+        synchronized (myLock) {
+          for (Object key : myDependsOnModels.keySet()) {
+            List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
+            for (SModelDescriptor dependsOnModel : dependsOnModels) {
+              if (dependsOnModel.getSModelReference().equals(reference)) {
+                keysToRemove.add(key);
+              }
             }
           }
         }

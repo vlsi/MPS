@@ -36,6 +36,8 @@ import jetbrains.mps.cache.CachesManager;
 
   @Override
   public Set<SModelDescriptor> getDependsOnModels(Object element) {
+    // http://youtrack.jetbrains.net/issue/MPS-8362
+    assert element != null : "Model descriptor is null";
     return Collections.singleton((SModelDescriptor) element);
   }
 
