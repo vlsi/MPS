@@ -402,6 +402,7 @@ public class ModelAccess {
   }
 
   private void onCommandStarted() {
+    UnregisteredNodes.instance().enable();
     ArrayList<ModelAccessListener> listeners;
     synchronized (myListenersLock) {
       listeners = new ArrayList<ModelAccessListener>(myListeners);
@@ -437,6 +438,7 @@ public class ModelAccess {
         LOG.error(t);
       }
     }
+    UnregisteredNodes.instance().disable();
   }
 
   private class CommandRunnable implements Runnable {

@@ -25,11 +25,21 @@ class UnregisteredNodes {
   private final PairMap<SModelReference, SNodeId, SNode> myMap = new PairMap<SModelReference, SNodeId, SNode>();
   private final Object myLock = new Object();
 
+  private boolean myDisabled = true;
+  
   public static UnregisteredNodes instance() {
     if (ourInstance == null) {
       ourInstance = new UnregisteredNodes();
     }
     return ourInstance;
+  }
+
+  void enable() {
+    myDisabled = false;
+  }
+
+  void disable() {
+    myDisabled = true;
   }
 
   private UnregisteredNodes() {
@@ -47,22 +57,24 @@ class UnregisteredNodes {
   }
 
   void put(SNode node) {
-    if (!node.hasId()) return;
+    if (myDisabled || !node.hasId()) return;
     add(node.getModel().getSModelReference(), node.getSNodeId(), node);
   }
 
   void remove(SNode node) {
-    if (!node.hasId()) return;
+    if (myDisabled || !node.hasId()) return;
     remove(node.getModel().getSModelReference(), node.getSNodeId());
   }
 
   SNode get(SModelReference modelReference, SNodeId nodeId) {
+    if(myDisabled) return null;
     synchronized (myLock) {
       return myMap.get(modelReference, nodeId);
     }
   }
 
   void nodeIdChanged(SNode node, SNodeId oldNodeId) {
+    if(myDisabled) return;
     if (oldNodeId != null) {
       remove(node.getModel().getSModelReference(), oldNodeId);
     }
@@ -72,7 +84,7 @@ class UnregisteredNodes {
   }
 
   void nodeModelChanged(SNode node, SModel oldModel) {
-    if (!node.hasId()) return;
+    if (myDisabled || !node.hasId()) return;
     remove(oldModel.getSModelReference(), node.getSNodeId());
     add(node.getModel().getSModelReference(), node.getSNodeId(), node);
   }
