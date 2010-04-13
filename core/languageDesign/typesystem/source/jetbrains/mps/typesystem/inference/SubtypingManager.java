@@ -121,12 +121,12 @@ public class SubtypingManager {
       SNode node = superRepresentator.getNode();
       if (LatticeUtil.isJoin(node)) {
         for (SNode argument : LatticeUtil.getJoinArguments(node)) {
-          if (equationManager == null || equationManager.isConcrete(NodeWrapper.createWrapperFromNode(argument, equationManager))) {
+          if (equationManager == null || equationManager.isConcrete(NodeWrapper.createWrapperFromNode(argument, equationManager, true))) {
             if (isSubtypeByReplacementRules(subRepresentator.getNode(), argument)) {
               return true;
             }
           }
-          if (isSubtype(subRepresentator, NodeWrapper.createWrapperFromNode(argument, equationManager), equationManager, errorInfo, isWeak)) {
+          if (isSubtype(subRepresentator, NodeWrapper.createWrapperFromNode(argument, equationManager, true), equationManager, errorInfo, isWeak)) {
             return true;
           }
         }
@@ -146,7 +146,7 @@ public class SubtypingManager {
               return true;
             }
           }
-          if (isSubtype(NodeWrapper.createWrapperFromNode(argument, equationManager), superRepresentator, equationManager, errorInfo, isWeak)) {
+          if (isSubtype(NodeWrapper.createWrapperFromNode(argument, equationManager, true), superRepresentator, equationManager, errorInfo, isWeak)) {
             return true;
           }
         }
