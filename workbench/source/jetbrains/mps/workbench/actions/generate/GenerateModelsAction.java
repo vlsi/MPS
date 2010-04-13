@@ -21,7 +21,6 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -35,6 +34,7 @@ public abstract class GenerateModelsAction extends BaseAction {
   private List<SModelDescriptor> myModels;
   private IOperationContext myContext;
   private GeneratorManager myGenManager;
+  private ProjectPluginManager myPluginManager;
 
   public GenerateModelsAction(@NotNull String name) {
     super(name);
@@ -44,9 +44,8 @@ public abstract class GenerateModelsAction extends BaseAction {
   public abstract IGenerationHandler getGenerationHandler();
 
   public void doExecute(AnActionEvent e) {
-    Project project = e.getData(MPSDataKeys.PROJECT);
     //noinspection ConstantConditions
-    boolean checkSuccessful = project.getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class)
+    boolean checkSuccessful = myPluginManager.getTool(ModelCheckerTool_Tool.class)
       .checkModelsBeforeGenerationIfNeeded(myContext, myModels, new Runnable() {
         public void run() {
           myGenManager.generateModelsFromDifferentModules(
@@ -82,6 +81,7 @@ public abstract class GenerateModelsAction extends BaseAction {
   protected boolean collectActionData(AnActionEvent e) {
     if (!super.collectActionData(e)) return false;
     Project project = e.getData(MPSDataKeys.PROJECT);
+    myPluginManager = project.getComponent(ProjectPluginManager.class);
     myGenManager = project.getComponent(GeneratorManager.class);
     myModels = e.getData(MPSDataKeys.MODELS);
     if (myModels == null) myModels = new ArrayList<SModelDescriptor>();
