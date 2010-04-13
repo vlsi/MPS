@@ -472,8 +472,12 @@ public class ModelAccess {
 
     public T compute() {
       incCommandLevel();
-      T result = myComputable.compute();
-      decCommandLevel();
+      T result = null;
+      try {
+        result = myComputable.compute();
+      } finally {
+        decCommandLevel();
+      }
       return result;
     }
   }
