@@ -35,6 +35,9 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToLanguage_Action", "jetbrains.mps.ide", new GoToLanguageAction());
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToSolution_Action", "jetbrains.mps.ide", new GoToSolutionAction());
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToDevkit_Action", "jetbrains.mps.ide", new GoToDevkitAction());
+      Goto_ActionGroup.this.addSeparator();
+      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToNextChange_Action", "jetbrains.mps.ide");
+      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToPreviousChange_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
