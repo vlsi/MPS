@@ -299,7 +299,7 @@ public class ModelAccess {
     final Object[] result = new Object[1];
     CommandProcessor.getInstance().executeCommand(null, new Runnable() {
       public void run() {
-        result[0] = runWriteAction(new CommandComputable(c));
+        result[0] = new CommandComputable(c).compute();
       }
     }, name, null, policy);
     return (T) result[0];
@@ -369,26 +369,23 @@ public class ModelAccess {
   private List<ModelAccessListener> myListeners = new ArrayList<ModelAccessListener>();
   private final Object myListenersLock = new Object();
 
-  private final Object myCommandLevelLock = new Object();
   private int myCommandLevel = 0;
 
   private void incCommandLevel() {
-    synchronized (myCommandLevelLock) {
-      if (myCommandLevel != 0) {
-        // LOG.error("command level>0", new Exception());
-      } else {
-        onCommandStarted();
-      }
-      myCommandLevel++;
+    assertLegalWrite();
+    if (myCommandLevel != 0) {
+      // LOG.error("command level>0", new Exception());
+    } else {
+      onCommandStarted();
     }
+    myCommandLevel++;
   }
 
   private void decCommandLevel() {
-    synchronized (myCommandLevelLock) {
-      myCommandLevel--;
-      if (myCommandLevel == 0) {
-        onCommandFinished();
-      }
+    assertLegalWrite();
+    myCommandLevel--;
+    if (myCommandLevel == 0) {
+      onCommandFinished();
     }
   }
 
@@ -471,14 +468,18 @@ public class ModelAccess {
     }
 
     public T compute() {
-      incCommandLevel();
-      T result = null;
-      try {
-        result = myComputable.compute();
-      } finally {
-        decCommandLevel();
-      }
-      return result;
+      return runWriteAction(new Computable<T>() {
+        public T compute() {
+          incCommandLevel();
+          T result = null;
+          try {
+            result = myComputable.compute();
+          } finally {
+            decCommandLevel();
+          }
+          return result;
+        }
+      });
     }
   }
 }
