@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.style;
 
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.CaretPosition;
-import jetbrains.mps.lang.editor.structure._Enum_Measure;
 import jetbrains.mps.lang.editor.structure.RightTransformAnchorTag;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.editor.runtime.ParametersInformation;
@@ -30,6 +29,7 @@ import java.util.Collections;
 
 public class StyleAttributes {
   private static List<StyleAttribute> ourAttributes = new ArrayList<StyleAttribute>();
+  private static List<StyleAttribute> ourNotSimpleAttributes = new ArrayList<StyleAttribute>();
   private static boolean ourFrozen = false;
 
   static int getAttributesCount() {
@@ -41,6 +41,11 @@ public class StyleAttributes {
     return Collections.unmodifiableList(ourAttributes);
   }
 
+  static List<StyleAttribute> getNotSimpleAttributes() {
+    ourFrozen = true;
+    return Collections.unmodifiableList(ourNotSimpleAttributes);
+  }
+
   static StyleAttribute getAttribute(int index) {
     ourFrozen = true;
     return ourAttributes.get(index);
@@ -50,10 +55,16 @@ public class StyleAttributes {
     if (ourFrozen) {
       throw new RuntimeException();
     }
-    ourAttributes.add(a);    
+    ourAttributes.add(a);
+    if (!isSimple(a)) {
+      ourNotSimpleAttributes.add(a);
+    }
     return ourAttributes.size() - 1;
   }
 
+  static boolean isSimple(StyleAttribute a) {
+    return a instanceof SimpleStyleAttribute;
+  }
 
   public static final StyleAttribute<Color> BACKGROUND_COLOR = new InheritableStyleAttribute<Color>("background-color");
   public static final StyleAttribute<Color> BRACKETS_COLOR = new InheritableStyleAttribute<Color>("bracket-color", Color.BLACK);

@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.style;
 
-import com.intellij.util.containers.HashMap;
-
 import java.util.*;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -61,6 +59,18 @@ public class Style {
 
   public <T> T get(StyleAttribute<T> attribute) {
     int index = attribute.getIndex();
+    if (StyleAttributes.isSimple(attribute)) {
+      if (myCachedAttributeValues[index] == null) {
+        T value;
+        if (myAttributeValues[index] instanceof AttributeCalculator) {
+          value = (T) ((AttributeCalculator) myAttributeValues[index]).calculate(myEditorCell);
+        } else {
+          value = (T) myAttributeValues[index];
+        }
+        myCachedAttributeValues[index] = attribute.combine(null, value);
+      }
+      return (T) myCachedAttributeValues[index];
+    }
     T value = (T) myCachedAttributeValues[index];
     if (value != null) {
       return value;
@@ -75,12 +85,24 @@ public class Style {
 
   public <T> void set(StyleAttribute<T> attribute, T value) {
     myAttributeValues[attribute.getIndex()] = value;
-    updateCache(singletonSet(attribute));
+    Set<StyleAttribute> attributeSet = singletonSet(attribute);
+    if (StyleAttributes.isSimple(attribute)) {
+      myCachedAttributeValues[attribute.getIndex()] = null;
+      fireStyleChanged(new StyleChangeEvent(this, attributeSet));
+    } else {
+      updateCache(attributeSet);
+    }
   }
 
   public <T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator) {
     myAttributeValues[attribute.getIndex()] = valueCalculator;
-    updateCache(singletonSet(attribute));
+    Set<StyleAttribute> attributeSet = singletonSet(attribute);
+    if (StyleAttributes.isSimple(attribute)) {
+      myCachedAttributeValues[attribute.getIndex()] = null;
+      fireStyleChanged(new StyleChangeEvent(this, attributeSet));
+    } else {
+      updateCache(attributeSet);
+    }
   }
 
   private Set<StyleAttribute> singletonSet(StyleAttribute sa) {
@@ -89,25 +111,31 @@ public class Style {
 
   private Set<StyleAttribute> getNonDefaultValuedAttributes() {
     Set<StyleAttribute> result = new StyleAttributeSet();
-    for (int i = 0; i < myCachedAttributeValues.length; i++) {
-      Object values = myCachedAttributeValues[i];
-      if (values != null) {
-        result.add(StyleAttributes.getAttribute(i));
+    for (StyleAttribute attribute : StyleAttributes.getNotSimpleAttributes()) {
+      if (myCachedAttributeValues[attribute.getIndex()] != null) {
+        result.add(attribute);
       }
     }
     return result;
   }
 
   public void putAll(Style s) {
-    Set<StyleAttribute> added = new StyleAttributeSet();
+    Set<StyleAttribute> addedSimple = new StyleAttributeSet();
+    Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
     for (int i = 0; i < s.myAttributeValues.length; i++) {
       Object value = s.myAttributeValues[i];
       if (value != null) {
         myAttributeValues[i] = value;
-        added.add(StyleAttributes.getAttribute(i));
+        if (StyleAttributes.isSimple(StyleAttributes.getAttribute(i))) {
+          myCachedAttributeValues[i] = null;
+          addedSimple.add(StyleAttributes.getAttribute(i));
+        } else {
+          addedNotSimple.add(StyleAttributes.getAttribute(i));
+        }
       }
     }
-    updateCache(added);
+    updateCache(addedNotSimple);
+    fireStyleChanged(new StyleChangeEvent(this, addedSimple));
   }
 
   private Style getParentStyle() {
@@ -118,23 +146,21 @@ public class Style {
     if (attributes.isEmpty()) {
       return;
     }
-    Object[] oldCachedValues = myCachedAttributeValues;
-    myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
-    System.arraycopy(oldCachedValues, 0, myCachedAttributeValues, 0, myCachedAttributeValues.length);
 
     Set<StyleAttribute> changedAttributes = new StyleAttributeSet();
     for (StyleAttribute attribute : attributes) {
       Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
       Object currentValue = myAttributeValues[attribute.getIndex()];
+      Object oldValue = myCachedAttributeValues[attribute.getIndex()];
 
-      if (parentValue != null || currentValue != null || oldCachedValues[attribute.getIndex()] != null) {
+      if (parentValue != null || currentValue != null || oldValue != null) {
         if (currentValue instanceof AttributeCalculator) {
           currentValue = ((AttributeCalculator) currentValue).calculate(myEditorCell);
         }
 
         Object newValue = attribute.combine(parentValue, currentValue);
 
-        if (!EqualUtil.equals(newValue, oldCachedValues[attribute.getIndex()])) {
+        if (!EqualUtil.equals(newValue, oldValue)) {
           changedAttributes.add(attribute);
         }
 
