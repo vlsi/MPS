@@ -4,6 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -14,7 +16,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.changesmanager.EditorChangesHighlighter;
 
 public class GoToNextChange_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/workbench/search/icons/nextOccurence.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(GoToNextChange_Action.class);
 
   private EditorContext editorContext;
@@ -22,7 +24,7 @@ public class GoToNextChange_Action extends GeneratedAction {
 
   public GoToNextChange_Action() {
     super("Next Change", "Go to next change", ICON);
-    this.setIsAlwaysVisible(true);
+    this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
 
