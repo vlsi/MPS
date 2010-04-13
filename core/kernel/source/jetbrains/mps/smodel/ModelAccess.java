@@ -375,7 +375,7 @@ public class ModelAccess {
   private void incCommandLevel() {
     synchronized (myCommandLevelLock) {
       if (myCommandLevel != 0) {
-       // LOG.error("command level>0", new Exception());
+        // LOG.error("command level>0", new Exception());
       } else {
         onCommandStarted();
       }
@@ -453,8 +453,11 @@ public class ModelAccess {
       runWriteAction(new Runnable() {
         public void run() {
           incCommandLevel();
-          myRunnable.run();
-          decCommandLevel();
+          try {
+            myRunnable.run();
+          } finally {
+            decCommandLevel();
+          }
         }
       });
     }
