@@ -51,13 +51,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myTextLine = new TextLine("", getStyle(), false);
     myNullTextLine = new TextLine("", getStyle(), true);
 
-    getStyle().addListener(new StyleListener() {
-      public void styleChanged(StyleChangeEvent e) {
-        myTextLine.updateStyle(e.getChangedAttributes());
-        myNullTextLine.updateStyle(e.getChangedAttributes());
-      }
-    });
-
     myTextLine.setCaretEnabled(true);
     myNullTextLine.setCaretEnabled(true);
     setText(text);

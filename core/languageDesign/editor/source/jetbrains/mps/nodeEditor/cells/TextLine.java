@@ -19,6 +19,7 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.nodeEditor.style.*;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.util.misc.hash.HashMap;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
@@ -97,17 +98,17 @@ public class TextLine {
 
   private boolean myShowCaret;
   private boolean mySelected;
+  private boolean myInitialized;
 
   public TextLine(String text) {
     this(text, new Style(), false);
   }
 
-  public TextLine(String text, Style style, boolean isNull) {
+  public TextLine(String text, @NotNull Style style, boolean isNull) {
     setText(text);
     myNull = isNull;
     myStyle = style;
     showTextColor();
-    updateStyle();
   }
 
   public String getText() {
@@ -156,11 +157,7 @@ public class TextLine {
     myMinimalLength = length;
   }
 
-  public void updateStyle() {
-    updateStyle(null);
-  }
-
-  public void updateStyle(Set<StyleAttribute> attributes) {
+  private void updateStyle(Set<StyleAttribute> attributes) {
     if (attributes == null || attributes.contains(StyleAttributes.FONT_SIZE) || attributes.contains(StyleAttributes.FONT_STYLE)) {
       //this is the most expensive calculation
       EditorSettings settings = EditorSettings.getInstance();
@@ -188,6 +185,22 @@ public class TextLine {
     mySelectedTextBackground = myStyle.get(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR);
     myNulLSelectedTextBackground = myStyle.get(StyleAttributes.NULL_SELECTED_TEXT_BACKGROUND_COLOR);
   }
+
+  private void init() {
+    if (myInitialized) {
+      return;
+    }
+    myInitialized = true;
+    updateStyle(null);
+    myStyle.addListener(new StyleListener() {
+      public void styleChanged(StyleChangeEvent e) {
+        Set<StyleAttribute> changedAttributes = e.getChangedAttributes();
+        updateStyle(changedAttributes);
+      }
+    });
+
+  }
+
   public void relayout() {
     FontMetrics metrics = getFontMetrics();
     myHeight = (int) (metrics.getHeight() * myLineSpacing + getPaddingTop() + getPaddingBottom());
@@ -243,18 +256,22 @@ public class TextLine {
   }
 
   public int getPaddingLeft() {
+    init();
     return myPaddingLeft;
   }
 
   public int getPaddingRight() {
+    init();
     return myPaddingRight;
   }
 
   public int getPaddingTop() {
+    init();
     return myPaddingTop;
   }
 
   public int getPaddingBottom() {
+    init();
     return myPaddingBottom;
   }
 
@@ -299,6 +316,7 @@ public class TextLine {
   }
 
   public Color getTextColor() {
+    init();
     if (myControlOvered) {
       return Color.BLUE;
     }
@@ -327,6 +345,7 @@ public class TextLine {
   }
 
   public Color getTextBackgroundColor() {
+    init();
     if (myShowsErrorColor) {
       return ERROR_COLOR;
     } else {
@@ -344,6 +363,7 @@ public class TextLine {
 
 
   public Color getSelectedTextBackgroundColor() {
+    init();
     if (!myNull) {
       return mySelectedTextBackground;
     } else {
@@ -352,6 +372,7 @@ public class TextLine {
   }
 
   public Font getFont() {
+    init();
     return myFont;
   }
 
@@ -611,6 +632,7 @@ public class TextLine {
   }
 
   public boolean isUnderlined() {
+    init();
     if (myControlOvered) {
       return true;
     }
@@ -619,6 +641,7 @@ public class TextLine {
   }
 
   public boolean isStrikeOut() {
+    init();
     return myStrikeOut;
   }
 
