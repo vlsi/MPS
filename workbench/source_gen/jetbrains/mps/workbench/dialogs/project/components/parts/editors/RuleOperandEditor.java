@@ -35,11 +35,11 @@ public class RuleOperandEditor extends AbstractTableCellEditor {
 
   @Override
   public boolean isCellEditable(EventObject e) {
-    if (e instanceof MouseEvent) {
-      return ((MouseEvent) e).getClickCount() >= 2;
-    }
     if (e == null) {
       return false;
+    }
+    if (e instanceof MouseEvent) {
+      return ((MouseEvent) e).getClickCount() >= 2;
     }
     return true;
   }
@@ -60,6 +60,8 @@ public class RuleOperandEditor extends AbstractTableCellEditor {
           table.editingStopped(new ChangeEvent(this));
           table.revalidate();
           table.repaint();
+        } else {
+          table.editingStopped(new ChangeEvent(this));
         }
       }
     });
