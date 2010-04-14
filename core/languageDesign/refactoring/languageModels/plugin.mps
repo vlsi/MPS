@@ -205,7 +205,7 @@
                     <link role="classConcept:3" targetNodeId="19.~ActionFactory" resolveInfo="ActionFactory" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7464679235281555568">
-                    <link role="baseMethodDeclaration:3" targetNodeId="19.~ActionFactory.acquireRegisteredAction(java.lang.String,java.lang.String,java.lang.Object...):com.intellij.openapi.actionSystem.AnAction" resolveInfo="acquireRegisteredAction" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="19.~ActionFactory.acquireRegisteredAction(java.lang.String,java.lang.String,java.lang.Object...):jetbrains.mps.workbench.action.BaseAction" resolveInfo="acquireRegisteredAction" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7464679235281555569">
                       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression:3" id="7464679235281555570">
                         <link role="classifier:3" targetNodeId="2.~GenericRefactoringAction" resolveInfo="GenericRefactoringAction" />

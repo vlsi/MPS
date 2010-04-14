@@ -13494,7 +13494,7 @@
         <link role="classConcept:3" targetNodeId="63.~ActionFactory" resolveInfo="ActionFactory" />
       </node>
       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3205675194086681633">
-        <link role="baseMethodDeclaration:3" targetNodeId="63.~ActionFactory.acquireRegisteredAction(java.lang.String,java.lang.String,java.lang.Object...):com.intellij.openapi.actionSystem.AnAction" resolveInfo="acquireRegisteredAction" />
+        <link role="baseMethodDeclaration:3" targetNodeId="63.~ActionFactory.acquireRegisteredAction(java.lang.String,java.lang.String,java.lang.Object...):jetbrains.mps.workbench.action.BaseAction" resolveInfo="acquireRegisteredAction" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3205675194086681635">
           <property name="value:3" value="className" />
           <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="3205675194086681641">
