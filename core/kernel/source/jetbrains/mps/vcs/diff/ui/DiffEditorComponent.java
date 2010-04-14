@@ -94,20 +94,20 @@ public abstract class DiffEditorComponent extends EditorComponent {
             message.setRole(referenceChange.getRole());
 
             resultChanges.add(message);
-            getHighlightManager().mark(message);
+            getHighlightManager().mark(message, false);
           }
 
           if (change instanceof MoveNodeChange || change instanceof ChangeConceptChange) {
             ChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !newChanges.contains(change));
             resultChanges.add(message);
-            getHighlightManager().mark(message);
+            getHighlightManager().mark(message, false);
           }
 
           if (change instanceof NewNodeChange) {
             if (!isNewVersion) {
               ChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !newChanges.contains(change));
               resultChanges.add(message);
-              getHighlightManager().mark(message);
+              getHighlightManager().mark(message, false);
             }
           }
 
@@ -116,14 +116,14 @@ public abstract class DiffEditorComponent extends EditorComponent {
             ChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !newChanges.contains(change));
             message.setProperty(propertyChange.getProperty());
             resultChanges.add(message);
-            getHighlightManager().mark(message);
+            getHighlightManager().mark(message, false);
           }
 
           if (change instanceof DeleteNodeChange) {
             if (isNewVersion) {
               ChangeEditorMessage message = createEditorMessage(change, model, revertedChanges, !newChanges.contains(change));
               resultChanges.add(message);
-              getHighlightManager().mark(message);
+              getHighlightManager().mark(message, false);
             }
           }
 
@@ -131,8 +131,10 @@ public abstract class DiffEditorComponent extends EditorComponent {
       }
     });
     for (ChangeEditorMessage editorMessage : resultChanges) {
-      getInspector().getHighlightManager().mark(editorMessage);
+      getInspector().getHighlightManager().mark(editorMessage, false);
     }
+    getHighlightManager().repaintAndRebuildEditorMessages();
+    getInspector().getHighlightManager().repaintAndRebuildEditorMessages();
     myChangeEditorMessages = new ArrayList<ChangeEditorMessage>(resultChanges);
   }
 
@@ -240,6 +242,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
       getHighlightManager().unmark(message, false);
       myInspector.getHighlightManager().unmark(message, false);
     }
+    getHighlightManager().rebuildMessages();
     myInspector.getHighlightManager().rebuildMessages();
     removeAllChangesFrom(this);
     removeAllChangesFrom(myInspector);

@@ -155,9 +155,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myMessagesToNodes.addLink(m, m.getNode());
   }
 
-  // This method should be private, use unmark() method instead  
-  @Deprecated
-  public void removeMessage(EditorMessage m) {
+  private void removeMessage(EditorMessage m) {
     if (m == null) {
       return;
     }
@@ -189,6 +187,8 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
   }
 
+  // not used anymore?
+  @Deprecated
   public void unmark(EditorMessage message) {
     unmark(message, true);
   }
@@ -203,7 +203,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
   }
 
-  public void clear() {
+  private void clear() {
     synchronized (myMessagesLock) {
       for (EditorMessage m : new ArrayList<EditorMessage>(myMessages)) {
         removeMessage(m);
@@ -256,16 +256,19 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myEditor.getLeftEditorHighlighter().addAllIconRenderers(myIconRenderers);
   }
 
+  /**
+   * TODO: modify this method to call mark(..., false)
+   */
   public void mark(SNode node, Color color, String messageText, EditorMessageOwner owner) {
     if (node == null) return;
-    mark(new DefaultEditorMessage(node, color, messageText, owner));
+    mark(new DefaultEditorMessage(node, color, messageText, owner), true);
   }
 
   public void mark(List<EditorMessage> messages) {
     mark(messages, true);
   }
 
-  public void mark(List<EditorMessage> messages, boolean repaintAndRebuild) {
+  private void mark(List<EditorMessage> messages, boolean repaintAndRebuild) {
     for (int i = 0; i < messages.size(); i++) {
       mark(messages.get(i), false);
     }
@@ -274,6 +277,8 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
   }
 
+  // not used anymore?
+  @Deprecated
   public void mark(EditorMessage message) {
     mark(message, true);
   }
@@ -286,6 +291,8 @@ public class NodeHighlightManager implements EditorMessageOwner {
     return result;
   }
 
+  // not used anymore?
+  @Deprecated
   public Color getColorFor(SNode node) {
     synchronized (myMessagesLock) {
       for (EditorMessage msg : myMessages) {
