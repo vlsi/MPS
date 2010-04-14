@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.logging.Logger;
 import java.awt.GridBagLayout;
 import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
 import javax.swing.JLabel;
@@ -29,13 +30,18 @@ public class DefaultJavaApplication_Editor extends JPanel {
     }
   }.invoke(), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(final SNode node) {
-      final Wrappers._boolean hasMainMethod = new Wrappers._boolean();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          hasMainMethod.value = (ClassConcept_Behavior.call_getMainMethod_1213877355884(node) != null);
-        }
-      });
-      return hasMainMethod.value;
+      try {
+        final Wrappers._boolean hasMainMethod = new Wrappers._boolean();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            hasMainMethod.value = (ClassConcept_Behavior.call_getMainMethod_1213877355884(node) != null);
+          }
+        });
+        return hasMainMethod.value;
+      } catch (Throwable t) {
+        Logger.getLogger(DefaultJavaApplication_Editor.class).error(t);
+        return false;
+      }
     }
   });
 

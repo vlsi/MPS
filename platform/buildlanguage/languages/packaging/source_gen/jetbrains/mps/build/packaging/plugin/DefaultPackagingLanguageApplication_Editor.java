@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.logging.Logger;
 import java.awt.GridBagLayout;
 import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
 import jetbrains.mps.baseLanguage.runConfigurations.runtime.IJavaNodeChangeListener;
@@ -32,13 +33,18 @@ public class DefaultPackagingLanguageApplication_Editor extends JPanel {
     }
   }.invoke(), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(final SNode node) {
-      final Wrappers._boolean isApplicable = new Wrappers._boolean();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          isApplicable.value = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
-        }
-      });
-      return isApplicable.value;
+      try {
+        final Wrappers._boolean isApplicable = new Wrappers._boolean();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            isApplicable.value = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.packaging.structure.INotBuildableComponent", false, new String[]{})).isEmpty();
+          }
+        });
+        return isApplicable.value;
+      } catch (Throwable t) {
+        Logger.getLogger(DefaultPackagingLanguageApplication_Editor.class).error(t);
+        return false;
+      }
     }
   });
 
@@ -51,7 +57,11 @@ public class DefaultPackagingLanguageApplication_Editor extends JPanel {
       MainNodeChooser chooser = this.myChooseNodeComponent;
       chooser.addNodeChangeListener(new IJavaNodeChangeListener() {
         public void nodeChanged(SNode node) {
-          DefaultPackagingLanguageApplication_Editor.this.myUsersComponent.nodeChanged(node);
+          try {
+            DefaultPackagingLanguageApplication_Editor.this.myUsersComponent.nodeChanged(node);
+          } catch (Throwable t) {
+            Logger.getLogger(DefaultPackagingLanguageApplication_Editor.class).error(t);
+          }
         }
       });
 

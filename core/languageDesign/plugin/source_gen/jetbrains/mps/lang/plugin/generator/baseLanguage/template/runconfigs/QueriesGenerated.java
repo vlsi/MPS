@@ -411,7 +411,7 @@ public class QueriesGenerated {
     return SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "editor", true)));
   }
 
-  public static SNode sourceNodeQuery_1414052598929485283(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6061708161041319607(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "checkBlock", true);
   }
 
@@ -419,7 +419,7 @@ public class QueriesGenerated {
     return ActionParameter_Behavior.call_getType_1171743928471337193(_context.getNode());
   }
 
-  public static SNode sourceNodeQuery_1563971100923802982(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6061708161041341268(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "executeBlock", true);
   }
 
