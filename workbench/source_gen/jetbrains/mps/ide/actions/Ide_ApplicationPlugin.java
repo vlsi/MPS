@@ -45,6 +45,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GeneratorActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GeneratorNewActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GoByReference_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GoToChange_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Goto_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.HelpAddition_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.JUnitTestCaseActions_ActionGroup");
