@@ -171,7 +171,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
     Class managerClass = mod.getClass(className);
     if (managerClass == null) {
-      throw new ManagerNotFoundException("Manager class " + className + " not found in mod " + mod.getModuleFqName());
+      throw new ManagerNotFoundException("Manager class " + className + " not found in module " + mod.getModuleFqName());
     }
 
     try {

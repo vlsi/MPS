@@ -19,6 +19,7 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
+import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
@@ -37,6 +38,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.stubs.BaseStubModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -758,7 +760,6 @@ public abstract class AbstractModule implements IModule {
   }
 
   //todo check this code. Wy not to do it where we add jars?
-  //todo[CP] rewrite when classpaths are removed
   protected void updatePackagedDescriptorClasspath() {
     if (!isPackaged()) return;
 
@@ -811,6 +812,9 @@ public abstract class AbstractModule implements IModule {
     if (myCachedClassPathItem == null) {
       myCachedClassPathItem = new CompositeClassPathItem();
       for (StubPath path : getAllStubPaths()) {
+        //look for classes only in stub dirs with JavaStub manager
+        if (!EqualUtil.equals(path.getManager().getClassName(), JavaStubs.class.getName())) continue;
+
         try {
           IClassPathItem pathItem = AbstractClassPathItem.createFromPath(path.getPath(), this);
           myCachedClassPathItem.add(pathItem);
@@ -877,8 +881,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     public boolean isFresh() {
-      //todo manager timestamp
-      return myPathTimestamp == getTimestamp();
+      return myPathTimestamp == getTimestamp() || myManagerTimestamp == getManagerTimestamp();
     }
 
     private long getTimestamp() {
@@ -887,13 +890,23 @@ public abstract class AbstractModule implements IModule {
       return file.getTimeStamp();
     }
 
-    private void init() {
-      myPathTimestamp = getTimestamp();
-      //todo manager timestamp
-      myManagerTimestamp = 0L;
+    private long getManagerTimestamp() {
+      ModuleId moduleId = ModuleId.fromString(myManager.getModuleId());
+      IModule module = MPSModuleRepository.getInstance().getModuleById(moduleId);
+      if (module == null) return 0L;
+
+      String classNamespace = NameUtil.namespaceFromLongName(myManager.getClassName());
+      IClassPathItem cpItem = module.getClassPathItem();
+      if (cpItem == null) return 0L;
+
+      return cpItem.getClassesTimestamp(classNamespace);
     }
 
-    @Override
+    public void init() {
+      myPathTimestamp = getTimestamp();
+      myManagerTimestamp = getManagerTimestamp();
+    }
+
     public String toString() {
       return myPath + "{" + myManager + '}';
     }

@@ -29,7 +29,6 @@ import java.util.List;
 public class StubReloadManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(StubReloadManager.class);
 
-  //todo dispose old solutions
   private List<String> myLoadedSolutions = new ArrayList<String>();
   private MyStubPaths myAllStubPaths = new MyStubPaths();
   private MPSModuleRepository myRepos;
