@@ -6,6 +6,19 @@ import java.awt.Frame;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.GridBagConstraints;
 import javax.swing.JPanel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.DefaultEditorMessage;
+import java.awt.Color;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class IntroduceConstantDialog extends IntroduceVariableDialog {
   private IntroduceConstantRefactoring myRefactoring;
@@ -23,5 +36,41 @@ public class IntroduceConstantDialog extends IntroduceVariableDialog {
 
   public IntroduceVariableRefactoring getRefactoring() {
     return this.myRefactoring;
+  }
+
+  protected DuplicatesProcessor getDuplicatesProcessor() {
+    return new DuplicatesProcessor<SNode>(this.myEditorContext) {
+      private EditorMessageOwner myOwner = new EditorMessageOwner() {};
+
+      public EditorMessage createEditorMessage(SNode duplicate) {
+        return new DefaultEditorMessage(duplicate, Color.BLUE, null, this.myOwner);
+      }
+
+      protected void substitute(final SNode duplicate) {
+        ModelAccess.instance().runWriteActionInCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
+          public SNode invoke() {
+            return SNodeOperations.replaceWithAnother(duplicate, new IntroduceConstantDialog.QuotationClass_3b985_a0a0a0a0a0a1a0a0a1().createNode(IntroduceConstantDialog.this.getResult()));
+          }
+        }));
+      }
+    };
+  }
+
+  public static class QuotationClass_3b985_a0a0a0a0a0a1a0a0a1 {
+    public QuotationClass_3b985_a0a0a0a0a0a1a0a0a1() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

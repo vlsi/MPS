@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.JPanel;
+import jetbrains.mps.smodel.SNode;
 import javax.swing.JComboBox;
 import java.awt.Frame;
 import java.awt.GridBagLayout;
@@ -20,13 +21,16 @@ import java.awt.event.KeyEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.search.VisibilityUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.awt.Insets;
 
 public abstract class IntroduceVariableDialog extends BaseDialog {
   protected EditorContext myEditorContext;
   protected JPanel myPanel;
+  protected SNode myResult;
   private JComboBox myName;
 
   public IntroduceVariableDialog(String name, Frame frame, EditorContext editorContext) {
@@ -89,13 +93,43 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
 
   protected void doRefactoring() {
     this.dispose();
-    final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    final Wrappers._T<List<SNode>> duplicates = new Wrappers._T<List<SNode>>();
+    ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        result.value = IntroduceVariableDialog.this.getRefactoring().doRefactoring();
+        SNode expr = IntroduceVariableDialog.this.getRefactoring().getExpression();
+        duplicates.value = new SimpleDuplicatesFinder(expr).findDuplicates(IntroduceVariableDialog.this.getRootToFindDuplicates(expr));
       }
     });
-    this.myEditorContext.select(result.value);
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        IntroduceVariableDialog.this.myResult = IntroduceVariableDialog.this.getRefactoring().doRefactoring();
+      }
+    });
+    this.myEditorContext.select(this.myResult);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        duplicates.value = ListSequence.fromList(duplicates.value).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return VisibilityUtil.isVisible(SNodeOperations.getParent(it), IntroduceVariableDialog.this.myResult);
+          }
+        }).toListSequence();
+      }
+    });
+    this.getDuplicatesProcessor().process(duplicates.value);
+  }
+
+  protected SNode getRootToFindDuplicates(SNode node) {
+    SNode result = node;
+    while ((SNodeOperations.getParent(result) != null)) {
+      result = SNodeOperations.getParent(result);
+    }
+    return result;
+  }
+
+  protected abstract DuplicatesProcessor getDuplicatesProcessor();
+
+  public SNode getResult() {
+    return this.myResult;
   }
 
   protected void initPanel() {

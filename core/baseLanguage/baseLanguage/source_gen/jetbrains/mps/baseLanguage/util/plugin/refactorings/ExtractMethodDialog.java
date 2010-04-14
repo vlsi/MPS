@@ -84,7 +84,7 @@ public class ExtractMethodDialog extends BaseDialog {
         buff.append("Method name is incorrect.");
       }
     }
-    String errors = ExtractMethodFabric.getErrors(this.myParameters.getNodesToRefactor());
+    String errors = ExtractMethodFactory.getErrors(this.myParameters.getNodesToRefactor());
     if (errors != null) {
       buff.append(errors);
       this.myCanRefactor = false;

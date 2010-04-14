@@ -11,7 +11,7 @@ import java.awt.Frame;
 import jetbrains.mps.nodeEditor.EditorContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFabric;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class ExtractMethod_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return ExtractMethodFabric.isRefactoringAvailable(ExtractMethod_Action.this.nodes);
+    return ExtractMethodFactory.isRefactoringAvailable(ExtractMethod_Action.this.nodes);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -93,7 +93,7 @@ public class ExtractMethod_Action extends GeneratedAction {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
           params.value = new ExtractMethodRefactoringParameters(ExtractMethod_Action.this.nodes);
-          refactoring.value = ExtractMethodFabric.createRefactoring(params.value);
+          refactoring.value = ExtractMethodFactory.createRefactoring(params.value);
           params.value.setReturnType(refactoring.value.getMethodType());
         }
       });
