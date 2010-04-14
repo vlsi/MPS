@@ -47,7 +47,7 @@ public class ActionFactory {
   private List<String> myActions = new ArrayList<String>();
   private List<BaseKeymapChanges> myKeymaps = new ArrayList<BaseKeymapChanges>();
 
-  public AnAction acquireRegisteredAction(String actionClassName, String moduleNamespace, Object... params) {
+  public BaseAction acquireRegisteredAction(String actionClassName, String moduleNamespace, Object... params) {
     IModule module = MPSModuleRepository.getInstance().getModule(new ModuleReference(moduleNamespace));
     if (module == null) return null;
     Class actionClass = module.getClass(actionClassName);
@@ -69,9 +69,9 @@ public class ActionFactory {
     AnAction registeredAction = ActionManager.getInstance().getAction(id);
     if (registeredAction == null) {
       registerAction(newAction, actionId, id, moduleNamespace, params);
-      return newAction;
+      return (BaseAction) newAction;
     } else {
-      return registeredAction;
+      return (BaseAction) registeredAction;
     }
   }
 
