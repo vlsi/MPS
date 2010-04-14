@@ -13623,8 +13623,8 @@
                         <link role="link:16" targetNodeId="1.3205675194086686070:23" />
                       </node>
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3205675194086686115">
-                      <link role="baseMethodDeclaration:16" targetNodeId="64.1213877371952" resolveInfo="getGeneratedClassFQName" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="5140572531966125067">
+                      <link role="baseMethodDeclaration:16" targetNodeId="64.1213877494288" resolveInfo="getGeneratedClassFQName" />
                     </node>
                   </node>
                 </node>

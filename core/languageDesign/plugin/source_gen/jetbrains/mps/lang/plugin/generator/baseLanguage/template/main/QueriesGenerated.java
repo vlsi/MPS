@@ -545,7 +545,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3205675194086686108(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(SLinkOperations.getTarget(_context.getNode(), "group", false));
+    return ActionGroupDeclaration_Behavior.call_getGeneratedClassFQName_1213877494288(SLinkOperations.getTarget(_context.getNode(), "group", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_3205675194086686118(final IOperationContext operationContext, final PropertyMacroContext _context) {
