@@ -9,7 +9,6 @@ import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
@@ -33,6 +32,7 @@ import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import com.intellij.execution.executors.DefaultDebugExecutor;
 import jetbrains.mps.debug.DebuggerKeys;
 import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner;
@@ -73,27 +73,22 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    final StringBuilder error = new StringBuilder();
+    StringBuilder error = new StringBuilder();
     {
       String paramsReport = DefaultJavaApplication_Configuration.this.getStateObject().myJavaRunParameters.getErrorReport();
       if (paramsReport != null) {
         error.append(paramsReport).append("\n");
       }
-      final SNode node = new _FunctionTypes._return_P0_E0<SNode>() {
-        public SNode invoke() {
-          SNode snode;
-          String errorReport;
-          {
-            Tuples._2<SNode, String> _tmp_vpmxmq_c0a0a2a1a1 = DefaultJavaApplication_Configuration.this.checkNode();
-            snode = _tmp_vpmxmq_c0a0a2a1a1._0();
-            errorReport = _tmp_vpmxmq_c0a0a2a1a1._1();
-          }
-          if (snode == null) {
-            error.append(errorReport).append("\n");
-          }
-          return snode;
-        }
-      }.invoke();
+      final SNode node;
+      String errorReport;
+      {
+        Tuples._2<SNode, String> _tmp_vpmxmq_e0b0b = DefaultJavaApplication_Configuration.this.checkNode();
+        node = _tmp_vpmxmq_e0b0b._0();
+        errorReport = _tmp_vpmxmq_e0b0b._1();
+      }
+      if (node == null) {
+        throw new RuntimeConfigurationException(errorReport);
+      }
     }
     if (error.length() != 0) {
       throw new RuntimeConfigurationException(error.toString());
