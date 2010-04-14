@@ -1297,9 +1297,6 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="2178855608170364056">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator:7" id="2178855608170364057">
-                <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2178855608170364058">
-                  <link role="variableDeclaration:3" targetNodeId="2178855608170364048" resolveInfo="systemJavaHome" />
-                </node>
                 <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="2178855608170364059" />
               </node>
             </node>
@@ -1421,6 +1418,18 @@
               </node>
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation:3" id="2178855608170364106" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6061708161039470846">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6061708161039470877">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6061708161039470847">
+              <link role="variableDeclaration:3" targetNodeId="2178855608170364053" resolveInfo="homes" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="6061708161039470910">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6061708161039470943">
+                <link role="variableDeclaration:3" targetNodeId="2178855608170364048" resolveInfo="systemJavaHome" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2178855608170364107">

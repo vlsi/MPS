@@ -4,19 +4,12 @@ package jetbrains.mps.buildlanguage.plugin;
 
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import java.util.List;
-import jetbrains.mps.plugins.pluginparts.tool.BaseGeneratedTool;
+import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.pluginparts.prefs.BaseProjectPrefsComponent;
 
 public class Buildlanguage_ProjectPlugin extends BaseProjectPlugin {
-  public List<BaseGeneratedTool> initAllTools(Project project) {
-    List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
-    ListSequence.fromList(tools).addElement(new BuildLanguageTool_Tool(project));
-    return tools;
-  }
-
   public List<BaseProjectPrefsComponent> createPreferencesComponents(Project project) {
     List<BaseProjectPrefsComponent> components = ListSequence.fromList(new ArrayList<BaseProjectPrefsComponent>());
     ListSequence.fromList(components).addElement(new AntRunnerPreferences_PreferencesComponent(project));

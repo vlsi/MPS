@@ -9,7 +9,6 @@ import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.commons.lang.StringUtils;
@@ -32,6 +31,7 @@ import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -78,27 +78,22 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
       if (paramsReport != null) {
         error.append(paramsReport).append("\n");
       }
-      final SNode node = new _FunctionTypes._return_P0_E0<SNode>() {
-        public SNode invoke() {
-          SNode snode;
-          String errorReport;
-          {
-            Tuples._2<SNode, String> _tmp_xsfjxy_c0a0a2a1a1 = DefaultPackagingLanguageApplication_Configuration.this.checkNode();
-            snode = _tmp_xsfjxy_c0a0a2a1a1._0();
-            errorReport = _tmp_xsfjxy_c0a0a2a1a1._1();
-          }
-          if (snode == null) {
-            error.append(errorReport).append("\n");
-          }
-          return snode;
-        }
-      }.invoke();
+      final SNode node;
+      String errorReport;
+      {
+        Tuples._2<SNode, String> _tmp_xsfjxy_e0b0b = DefaultPackagingLanguageApplication_Configuration.this.checkNode();
+        node = _tmp_xsfjxy_e0b0b._0();
+        errorReport = _tmp_xsfjxy_e0b0b._1();
+      }
+      if (node == null) {
+        throw new RuntimeConfigurationException(errorReport);
+      }
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (StringUtils.isEmpty(DefaultPackagingLanguageApplication_Configuration.this.getStateObject().confihurationId)) {
+          if (StringUtils.isEmpty(DefaultPackagingLanguageApplication_Configuration.this.getStateObject().configurationId)) {
             error.append("configuration to run is not selected").append("\n");
           } else if (DefaultPackagingLanguageApplication_Configuration.this.getConfiguration(node) == null) {
-            error.append("can not find configuration with id " + DefaultPackagingLanguageApplication_Configuration.this.getStateObject().confihurationId).append("\n");
+            error.append("can not find configuration with id " + DefaultPackagingLanguageApplication_Configuration.this.getStateObject().configurationId).append("\n");
           }
         }
       });
@@ -255,7 +250,7 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
     final Wrappers._T<SNode> configuration = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        configuration.value = SNodeOperations.cast(SNodeOperations.getModel(node).getNodeById(DefaultPackagingLanguageApplication_Configuration.this.getStateObject().confihurationId), "jetbrains.mps.build.packaging.structure.Configuration");
+        configuration.value = SNodeOperations.cast(SNodeOperations.getModel(node).getNodeById(DefaultPackagingLanguageApplication_Configuration.this.getStateObject().configurationId), "jetbrains.mps.build.packaging.structure.Configuration");
       }
     });
     return configuration.value;
@@ -334,13 +329,13 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
     protected void resetEditorFrom(DefaultPackagingLanguageApplication_Configuration c) {
       MySettingsEditor.this.myComponent.reset(c);
       final ConfigRunParameters javaRunParameters = c.getStateObject().myJavaRunParameters;
-      MySettingsEditor.this.myComponent.getUsersComponent().reset(c.getNode(), c.getStateObject().confihurationId);
+      MySettingsEditor.this.myComponent.getUsersComponent().reset(c.getNode(), c.getStateObject().configurationId);
     }
 
     protected void applyEditorTo(DefaultPackagingLanguageApplication_Configuration c) {
       MySettingsEditor.this.myComponent.apply(c);
       final ConfigRunParameters javaRunParameters = c.getStateObject().myJavaRunParameters;
-      c.getStateObject().confihurationId = MySettingsEditor.this.myComponent.getUsersComponent().getConfigurationId();
+      c.getStateObject().configurationId = MySettingsEditor.this.myComponent.getUsersComponent().getConfigurationId();
     }
 
     @NotNull
@@ -356,7 +351,7 @@ public class DefaultPackagingLanguageApplication_Configuration extends BaseRunCo
 
   public static class MyState implements Cloneable {
     public ConfigRunParameters myJavaRunParameters = new ConfigRunParameters();
-    public String confihurationId;
+    public String configurationId;
     public String nodeId;
     public String modelId;
 
