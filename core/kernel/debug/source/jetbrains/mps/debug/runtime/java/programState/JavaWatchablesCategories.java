@@ -12,4 +12,5 @@ import jetbrains.mps.debug.api.programState.WatchablesCategory;
 public class JavaWatchablesCategories {
   public static final WatchablesCategory LOCAL_VARIABLE = new WatchablesCategory("local variable");
   public static final WatchablesCategory THIS_OBJECT = new WatchablesCategory("this");
+  public static final WatchablesCategory CALCULATED_VALUE = new WatchablesCategory("calculated value");
 }

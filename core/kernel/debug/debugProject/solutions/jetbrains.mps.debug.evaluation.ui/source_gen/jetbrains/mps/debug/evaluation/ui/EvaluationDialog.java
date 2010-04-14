@@ -48,7 +48,8 @@ import jetbrains.mps.debug.evaluation.ValueProxy;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.debug.integration.ui.nodes.CalculatedValueTreeNode;
+import jetbrains.mps.debug.api.ui.WatchableNode;
+import jetbrains.mps.debug.runtime.java.programState.CalculatedValue;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -212,7 +213,7 @@ public class EvaluationDialog extends BaseDialog {
     protected MPSTreeNode rebuild() {
       MPSTreeNode rootTreeNode = new TextTreeNode("Evaluation Result");
       if (this.myValueProxy != null && this.myIsSuccessful) {
-        rootTreeNode.add(new CalculatedValueTreeNode(this.myValueProxy.getJDIValue()));
+        rootTreeNode.add(new WatchableNode(new CalculatedValue(this.myValueProxy.getJDIValue())));
       }
       if (!(this.myIsSuccessful)) {
         rootTreeNode.add(new TextTreeNode("bad code"));
