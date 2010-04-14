@@ -121,9 +121,6 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private boolean myInvalidationWasPerformed = false;
   private boolean myInvalidationResult = false;
 
-  // for diagnostics
-  private Set<SNodePointer> myNotSkippedNodes = new HashSet<SNodePointer>(1);
-
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
   private Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
   private SNode myCurrentCheckedNode;
@@ -381,8 +378,6 @@ public class NodeTypesComponent implements EditorMessageOwner {
       if (!isIncrementalMode() || refreshTypes) {
         clear();
       } else {
-        myNotSkippedNodes.clear();
-
         doInvalidateTypesystem();
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();
@@ -405,7 +400,6 @@ public class NodeTypesComponent implements EditorMessageOwner {
       solveInequationsAndExpandTypes();
       performActionsAfterChecking();
     } finally {
-      myNotSkippedNodes.clear();
       clearEquationManager();
       myInvalidationWasPerformed = false;
     }
@@ -579,7 +573,6 @@ public class NodeTypesComponent implements EditorMessageOwner {
           }
         }
         if (!myPartlyCheckedNodes.contains(sNode)) {
-          myNotSkippedNodes.add(new SNodePointer(sNode));
           MyLanguageCachesReadListener languageCachesReadListener = null;
           if (isIncrementalMode()) {
             languageCachesReadListener = new MyLanguageCachesReadListener();
