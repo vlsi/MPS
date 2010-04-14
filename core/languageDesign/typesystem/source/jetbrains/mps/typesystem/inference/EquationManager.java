@@ -59,7 +59,7 @@ public class EquationManager {
   private Map<IWrapper, WhenConcreteEntity> myWhenConcreteEntities = new HashMap<IWrapper, WhenConcreteEntity>();
   private Map<IWrapper, WhenConcreteEntity> myShallowWhenConcreteEntities = new HashMap<IWrapper, WhenConcreteEntity>();
 
-  private Map<IWrapper, Set<SNodePointer>> myNonConcreteVars = new HashMap<IWrapper, Set<SNodePointer>>();
+  private Map<IWrapper, Set<SNode>> myNonConcreteVars = new HashMap<IWrapper, Set<SNode>>();
 
   private Map<IWrapper, Set<IWrapperListener>> myWrapperListeners = new HashMap<IWrapper, Set<IWrapperListener>>(64, 0.4f);
   private boolean myCollectConcretes = false;
@@ -165,12 +165,12 @@ public class EquationManager {
     myShallowWhenConcreteEntities.putAll(slave.myShallowWhenConcreteEntities);
 
     for (IWrapper key : slave.myNonConcreteVars.keySet()) {
-      Set<SNodePointer> nodePointers = myNonConcreteVars.get(key);
-      if (nodePointers == null) {
-        nodePointers = new HashSet<SNodePointer>();
-        myNonConcreteVars.put(key, nodePointers);
+      Set<SNode> nodeSet = myNonConcreteVars.get(key);
+      if (nodeSet == null) {
+        nodeSet = new HashSet<SNode>();
+        myNonConcreteVars.put(key, nodeSet);
       }
-      nodePointers.addAll(slave.myNonConcreteVars.get(key));
+      nodeSet.addAll(slave.myNonConcreteVars.get(key));
     }
 
     for (IWrapper key : slave.myWrapperListeners.keySet()) {
@@ -234,16 +234,10 @@ public class EquationManager {
     return listeners;
   }
 
-  public Set<SNodePointer> getNonConcreteVariables(IWrapper wrapper) {
-    Set<SNodePointer> result = myNonConcreteVars.get(wrapper);
-    if (result == null) return new HashSet<SNodePointer>();
-    return result;
-  }
-
-  public void addNonConcreteVariable(IWrapper wrapper, SNodePointer variable) {
-    Set<SNodePointer> variables = myNonConcreteVars.get(wrapper);
+  public void addNonConcreteVariable(IWrapper wrapper, SNode variable) {
+    Set<SNode> variables = myNonConcreteVars.get(wrapper);
     if (variables == null) {
-      variables = new HashSet<SNodePointer>();
+      variables = new HashSet<SNode>();
       myNonConcreteVars.put(wrapper, variables);
     }
     variables.add(variable);
@@ -600,24 +594,24 @@ public class EquationManager {
     }
     if (!myNonConcreteVars.containsKey(wrapper)) {
       for (SNode var : getChildAndReferentVariables(wrapper.getNode())) {
-        addNonConcreteVariable(wrapper, new SNodePointer(var));
+        addNonConcreteVariable(wrapper, var);
       }
     }
 
-    Set<SNodePointer> variables = myNonConcreteVars.get(wrapper);
+    Set<SNode> variables = myNonConcreteVars.get(wrapper);
     //processing additional variables
     if (variables != null) {
-      for (SNodePointer var : new HashSet<SNodePointer>(variables)) {
-        if (var.getNode() == null) {
+      for (SNode var : new HashSet<SNode>(variables)) {
+      /*  if (var.getNode() == null) {
           variables.remove(var);
           continue;
-        }
+        }*/
         IWrapper varRepresentatorWrapper = this.
-          getRepresentatorWrapper(NodeWrapper.createWrapperFromNode(var.getNode(), this));
+          getRepresentatorWrapper(NodeWrapper.createWrapperFromNode(var, this));
         if (varRepresentatorWrapper.isConcrete()) {
           variables.remove(var);
           for (SNode varChild : getChildAndReferentVariables(varRepresentatorWrapper.getNode())) {
-            variables.add(new SNodePointer(varChild));
+            variables.add(varChild);
           }
         }
       }
