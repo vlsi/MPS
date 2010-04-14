@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFabric;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
@@ -42,7 +42,7 @@ public class staticContainerBehaviorTest_Test extends BaseTransformationTest {
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("1230052684580"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), call);
       ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684562"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
       params.setName("foo");
-      ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
+      ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       ref.setStaticContainer(SNodeOperations.cast(this.getNodeById("1230052684584"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684555"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684584"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684571"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684589"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))));

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFabric;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodWithExitPoints;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
@@ -32,7 +32,7 @@ public class ExtractBreak_Test extends BaseTransformationTest {
       this.addNodeById("1230052480361");
       ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480342"), "jetbrains.mps.baseLanguage.structure.IfStatement")));
       params.setName("foo");
-      ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
+      ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       Assert.assertTrue(ref instanceof ExtractMethodWithExitPoints);
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480334"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052480362"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));

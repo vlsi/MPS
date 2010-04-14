@@ -14,7 +14,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactor
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFabric;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
@@ -39,7 +39,7 @@ public class staticContainerClassTest_Test extends BaseTransformationTest {
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("1230052684702"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), call);
       ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684691"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       params.setName("foo");
-      ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
+      ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       ref.setStaticContainer(SNodeOperations.cast(this.getNodeById("1230052684706"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684688"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684706"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684698"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), SNodeOperations.cast(this.getNodeById("1230052684710"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));

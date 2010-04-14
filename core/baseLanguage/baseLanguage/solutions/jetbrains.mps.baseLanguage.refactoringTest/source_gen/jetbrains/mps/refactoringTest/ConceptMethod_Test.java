@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFabric;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
@@ -33,11 +33,11 @@ public class ConceptMethod_Test extends BaseTransformationTest {
       SLinkOperations.setTarget(SNodeOperations.cast(this.getNodeById("1230052406839"), "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall"), "baseMethodDeclaration", SNodeOperations.cast(this.getNodeById("1230052406844"), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), false);
       ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406805"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       params.setName("foo");
-      ExtractMethodRefactoring ref = ExtractMethodFabric.createRefactoring(params);
+      ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       this.fff(ref);
       params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406818"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       params.setName("bar");
-      ref = ExtractMethodFabric.createRefactoring(params);
+      ref = ExtractMethodFactory.createRefactoring(params);
       ref.doRefactor();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406799"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406830"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"))));
     }

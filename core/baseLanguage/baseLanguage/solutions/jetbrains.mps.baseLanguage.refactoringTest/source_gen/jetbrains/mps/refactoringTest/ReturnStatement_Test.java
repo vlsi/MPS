@@ -7,7 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFabric;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
@@ -37,18 +37,18 @@ public class ReturnStatement_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_alwaysReturn() throws Exception {
       this.addNodeById("1230052642345");
-      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642367"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
-      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642367"), "jetbrains.mps.baseLanguage.structure.IfStatement"), SNodeOperations.cast(this.getNodeById("1230052642388"), "jetbrains.mps.baseLanguage.structure.ReturnStatement"))));
+      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642367"), "jetbrains.mps.baseLanguage.structure.IfStatement"))));
+      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642367"), "jetbrains.mps.baseLanguage.structure.IfStatement"), SNodeOperations.cast(this.getNodeById("1230052642388"), "jetbrains.mps.baseLanguage.structure.ReturnStatement"))));
     }
 
     public void test_retunInAnonymousClass() throws Exception {
       this.addNodeById("1230052642345");
-      Assert.assertNull(ExtractMethodFabric.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642353"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
+      Assert.assertNull(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642353"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))));
     }
 
     public void test_notAlwaysReturn() throws Exception {
       this.addNodeById("1230052642345");
-      Assert.assertTrue(ExtractMethodFabric.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642395"), "jetbrains.mps.baseLanguage.structure.IfStatement"))) != null);
+      Assert.assertTrue(ExtractMethodFactory.getErrors(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052642395"), "jetbrains.mps.baseLanguage.structure.IfStatement"))) != null);
     }
   }
 }
