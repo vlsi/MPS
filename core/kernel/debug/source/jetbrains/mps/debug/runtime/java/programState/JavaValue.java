@@ -5,6 +5,7 @@ import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.integration.Icons;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ import java.util.List;
 public class JavaValue extends ProxyForJava implements IValue {
   private static Logger LOG = Logger.getLogger(JavaValue.class);
 
+  @Nullable
   private final Value myValue;
 
   public JavaValue(Value value) {
@@ -29,12 +31,14 @@ public class JavaValue extends ProxyForJava implements IValue {
     myValue = value;
   }
 
+  @Nullable
   public Value getValue() {
     return myValue;
   }
 
   @Override
   public String getValuePresentation() {
+    if (myValue == null) return "null";
     return (isPrimitive() || getType() == null ? "" : ("{" + getType().name() + "} ")) + myValue.toString();
   }
 
@@ -44,15 +48,18 @@ public class JavaValue extends ProxyForJava implements IValue {
   }
 
   public boolean isPrimitive() {
+    if (myValue == null) return true;
     return myValue.type() instanceof PrimitiveType;
   }
 
   @Override
   public boolean isStructure() {
+    if (myValue == null) return false;
     return myValue.type() == null || isPrimitive();
   }
 
   public Type getType() {
+    if (myValue == null) return null;
     return myValue.type();
   }
 

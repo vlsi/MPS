@@ -32,6 +32,10 @@ public class JavaUiState extends AbstractUiState {
 
   @Nullable
   private final SuspendContext myContext;
+  @Nullable
+  protected final IThread myThread;
+  @Nullable
+  protected final IStackFrame myStackFrame;
   private final DebugSession myDebugSession;
 
   JavaUiState(@Nullable SuspendContext context, DebugSession debugSession) {

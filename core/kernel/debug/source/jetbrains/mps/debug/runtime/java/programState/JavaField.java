@@ -6,6 +6,7 @@ import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.integration.Icons;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.Icon;
 
@@ -51,5 +52,10 @@ public class JavaField extends ProxyForJava implements IWatchable {
   @Override
   public Icon getPresentationIcon() {
     return getValue().getPresentationIcon();
+  }
+
+  @Override
+  public SNode getNode() {
+    return null;
   }
 }

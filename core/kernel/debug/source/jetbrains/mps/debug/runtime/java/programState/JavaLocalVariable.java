@@ -1,10 +1,14 @@
 package jetbrains.mps.debug.runtime.java.programState;
 
+import com.sun.jdi.AbsentInformationException;
 import com.sun.jdi.LocalVariable;
+import com.sun.jdi.Location;
 import com.sun.jdi.StackFrame;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.info.StacktraceUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.Icon;
 
@@ -21,11 +25,13 @@ public class JavaLocalVariable extends ProxyForJava implements IWatchable {
 
   private final LocalVariable myLocalVariable;
   private final StackFrame myStackFrame;
+  private JavaValue myCachedValue;
 
   public JavaLocalVariable(LocalVariable variable, StackFrame stackFrame) {
     super(variable);
     myLocalVariable = variable;
     myStackFrame = stackFrame;
+    myCachedValue = new JavaValue(myStackFrame.getValue(myLocalVariable));
   }
 
   public LocalVariable getLocalVariable() {
@@ -44,11 +50,24 @@ public class JavaLocalVariable extends ProxyForJava implements IWatchable {
 
   @Override
   public IValue getValue() {
-    return new JavaValue(myStackFrame.getValue(myLocalVariable));
+    return myCachedValue;
   }
 
   @Override
   public Icon getPresentationIcon() {
     return getValue().getPresentationIcon();
+  }
+
+  @Override
+  public SNode getNode() {
+    try {
+    Location location = myStackFrame.location();
+    SNode snode = StacktraceUtil.getNodeOrVar(location.declaringType().name(),
+      location.sourceName(), location.lineNumber(), myLocalVariable.name());
+      return snode;
+    } catch (AbsentInformationException ex) {
+      LOG.error(ex);
+      return null;
+    }
   }
 }
