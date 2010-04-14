@@ -3,6 +3,7 @@ package jetbrains.mps.debug.runtime.java.programState;
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 
@@ -15,14 +16,12 @@ import javax.swing.Icon;
  * Time: 19:05:54
  * To change this template use File | Settings | File Templates.
  */
-public class JavaThisObject extends ProxyForJava implements IWatchable {
+public class JavaThisObject implements IWatchable {
   private static Logger LOG = Logger.getLogger(JavaLocalVariable.class);
-  public static final String CATEGORY_THIS_OBJECT = "category_thisObject";
 
   private final ObjectReference myThisObject;
 
   public JavaThisObject(ObjectReference objectReference) {
-    super(objectReference);
     myThisObject = objectReference;
   }
 
@@ -33,11 +32,6 @@ public class JavaThisObject extends ProxyForJava implements IWatchable {
   @Override
   public String getName() {
     return "this";
-  }
-
-  @Override
-  public String getCategory() {
-    return CATEGORY_THIS_OBJECT;
   }
 
   @Override
@@ -53,5 +47,10 @@ public class JavaThisObject extends ProxyForJava implements IWatchable {
   @Override
   public SNode getNode() {
     return null;
+  }
+
+  @Override
+  public WatchablesCategory getCategory() {
+    return JavaWatchablesCategories.THIS_OBJECT;
   }
 }

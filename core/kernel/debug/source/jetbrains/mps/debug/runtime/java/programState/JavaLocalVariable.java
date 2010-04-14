@@ -6,6 +6,7 @@ import com.sun.jdi.Location;
 import com.sun.jdi.StackFrame;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.info.StacktraceUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
@@ -19,16 +20,14 @@ import javax.swing.Icon;
  * Time: 18:43:09
  * To change this template use File | Settings | File Templates.
  */
-public class JavaLocalVariable extends ProxyForJava implements IWatchable {
+public class JavaLocalVariable implements IWatchable {
   private static Logger LOG = Logger.getLogger(JavaLocalVariable.class);
-   public static final String CATEGORY_LOCAL_VARIABLE = "category_localVariable";
 
   private final LocalVariable myLocalVariable;
   private final StackFrame myStackFrame;
   private JavaValue myCachedValue;
 
   public JavaLocalVariable(LocalVariable variable, StackFrame stackFrame) {
-    super(variable);
     myLocalVariable = variable;
     myStackFrame = stackFrame;
     myCachedValue = new JavaValue(myStackFrame.getValue(myLocalVariable));
@@ -41,11 +40,6 @@ public class JavaLocalVariable extends ProxyForJava implements IWatchable {
   @Override
   public String getName() {
     return myLocalVariable.name();
-  }
-
-  @Override
-  public String getCategory() {
-    return CATEGORY_LOCAL_VARIABLE;
   }
 
   @Override
@@ -69,5 +63,10 @@ public class JavaLocalVariable extends ProxyForJava implements IWatchable {
       LOG.error(ex);
       return null;
     }
+  }
+
+  @Override
+  public WatchablesCategory getCategory() {
+    return JavaWatchablesCategories.LOCAL_VARIABLE;
   }
 }

@@ -55,7 +55,7 @@ public class JavaValue extends ProxyForJava implements IValue {
   @Override
   public boolean isStructure() {
     if (myValue == null) return false;
-    return myValue.type() == null || isPrimitive();
+    return myValue.type() != null && !isPrimitive();
   }
 
   public Type getType() {

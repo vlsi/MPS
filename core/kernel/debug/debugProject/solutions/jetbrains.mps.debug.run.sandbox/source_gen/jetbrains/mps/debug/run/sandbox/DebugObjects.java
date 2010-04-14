@@ -14,6 +14,8 @@ public class DebugObjects {
   }
 
   public void doStrangeThings() {
+    int a = 3;
+    a++;
     System.err.println("Doing strange things.");
     System.err.println(this.myNonStaticField);
     while (true) {

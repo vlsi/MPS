@@ -4,6 +4,7 @@ import com.sun.jdi.Field;
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.integration.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
@@ -17,17 +18,17 @@ import javax.swing.Icon;
  * Time: 21:12:08
  * To change this template use File | Settings | File Templates.
  */
-public class JavaField extends ProxyForJava implements IWatchable {
+public class JavaField implements IWatchable {
   private static Logger LOG = Logger.getLogger(ProxyForJava.class);
-  public static final String CATEGORY_FIELD = "category_field";
 
   private final Field myField;
   private final ObjectReference myParent;
+  private JavaValue myCachedValue;
 
   public JavaField(Field field, ObjectReference parent) {
-    super(field);
     myField = field;
     myParent = parent;
+    myCachedValue = new JavaValue(myParent.getValue(myField));
   }
 
   public Field getField() {
@@ -40,13 +41,8 @@ public class JavaField extends ProxyForJava implements IWatchable {
   }
 
   @Override
-  public String getCategory() {
-    return CATEGORY_FIELD;
-  }
-
-  @Override
   public IValue getValue() {
-    return new JavaValue(myParent.getValue(myField));
+    return myCachedValue;
   }
 
   @Override
@@ -57,5 +53,10 @@ public class JavaField extends ProxyForJava implements IWatchable {
   @Override
   public SNode getNode() {
     return null;
+  }
+
+  @Override
+  public WatchablesCategory getCategory() {
+    return WatchablesCategory.NONE;
   }
 }

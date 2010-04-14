@@ -3,6 +3,7 @@ package jetbrains.mps.debug.runtime.java.programState;
 import com.sun.jdi.ArrayReference;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.Icon;
@@ -15,19 +16,12 @@ import javax.swing.Icon;
  * To change this template use File | Settings | File Templates.
  */
 public class JavaArrayItem implements IWatchable {
-  public static final String CATEGORY_ARRAY_ITEM = "category_arrayItem";
-
   private final ArrayReference myArray;
   private final int myIndex;
 
   public JavaArrayItem(ArrayReference arrayReference, int index) {
     myArray = arrayReference;
     myIndex = index;
-  }
-
-  @Override
-  public String getCategory() {
-    return CATEGORY_ARRAY_ITEM;
   }
 
   public ArrayReference getArray() {
@@ -52,5 +46,10 @@ public class JavaArrayItem implements IWatchable {
   @Override
   public SNode getNode() {
     return null;
+  }
+
+  @Override
+  public WatchablesCategory getCategory() {
+    return WatchablesCategory.NONE;
   }
 }
