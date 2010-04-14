@@ -33,7 +33,6 @@ import java.util.zip.ZipFile;
 public class JarFileClassPathItem extends AbstractClassPathItem {
   private static final Logger LOG = Logger.getLogger(JarFileClassPathItem.class);
 
-
   private static File transformFile(IFile f) throws IOException {
     if (f instanceof FileSystemFile) {
       return ((FileSystemFile) f).getFile();
@@ -119,6 +118,7 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   private long getClassTimestamp(String name) {
     String path = name.replace('.', '/') + ".class";
     ZipEntry entry = myZipFile.getEntry(path);
+    assert entry != null : path;
     return entry.getTime();
   }
 
@@ -170,6 +170,10 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
         if (name.endsWith("/")) {
           name = name.substring(0, name.length() - 1);
         }
+
+        //directry having a '.' in its name can't contain classes.
+        // See http://youtrack.jetbrains.net/issue/MPS-7012 for details 
+        if (name.contains(".")) continue;
 
         String pack = name.replace('/', '.');
         buildPackageCaches(pack);
