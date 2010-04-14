@@ -55,9 +55,9 @@ public abstract class AbstractFoldingAreaPainter {
   }
 
   public void paint(Graphics g) {
-    g.translate(getLefthighlighter().getFoldingLineX(), 0);
+    g.translate(getLeftHighlighter().getFoldingLineX(), 0);
     paintInLocalCoordinates(g);
-    g.translate(-getLefthighlighter().getFoldingLineX(), 0);
+    g.translate(-getLeftHighlighter().getFoldingLineX(), 0);
   }
 
   protected void paintInLocalCoordinates(Graphics g) {
@@ -88,20 +88,20 @@ public abstract class AbstractFoldingAreaPainter {
   public void dispose() {
   }
 
-  protected LeftEditorHighlighter getLefthighlighter() {
+  protected LeftEditorHighlighter getLeftHighlighter() {
     return myLeftHighlighter;
   }
 
   protected EditorComponent getEditorComponent() {
-    return getLefthighlighter().getEditorComponent();
+    return getLeftHighlighter().getEditorComponent();
   }
 
   protected void repaint(int y, int height) {
-    int foldingLineX = getLefthighlighter().getFoldingLineX();
+    int foldingLineX = getLeftHighlighter().getFoldingLineX();
     myLeftHighlighter.repaint(foldingLineX - getLeftAreaWidth(), y, foldingLineX + getRightAreaWidth() + 1, height + 1);
   }
 
   protected int getLocalXCoordinate(MouseEvent e) {
-    return e.getX() - getLefthighlighter().getFoldingLineX();
+    return e.getX() - getLeftHighlighter().getFoldingLineX();
   }
 }
