@@ -250,24 +250,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="3100399657864694362">
-    <property name="name:2" value="OverloadedOperatorCall" />
+    <property name="name:2" value="reduceOverloadedOperatorCall" />
     <link role="applicableConcept:2" targetNodeId="2v.1081773326031:3" resolveInfo="BinaryOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3100399657864694367">
       <property name="name:3" value="F" />
-      <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="3100399657864694408">
-        <property name="name:3" value="f" />
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3100399657864694409" />
-        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3100399657864694410" />
-        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3100399657864694411" />
-        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3100399657864694412">
-          <property name="name:3" value="a" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3100399657864694413" />
-        </node>
-        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3100399657864694414">
-          <property name="name:3" value="b" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="3100399657864694416" />
-        </node>
-      </node>
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3100399657864694377">
         <property name="name:3" value="g" />
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3100399657864694378" />

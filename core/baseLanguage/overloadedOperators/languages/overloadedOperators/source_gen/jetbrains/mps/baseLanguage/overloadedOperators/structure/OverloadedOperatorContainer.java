@@ -18,6 +18,7 @@ public class OverloadedOperatorContainer extends BaseConcept implements INamedCo
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String OPERATORS = "operators";
+  public static final String CUSTOM_OPERATORS = "customOperators";
 
   public OverloadedOperatorContainer(SNode node) {
     super(node);
@@ -73,6 +74,26 @@ public class OverloadedOperatorContainer extends BaseConcept implements INamedCo
 
   public void insertOperators(OverloadedBinaryOperator prev, OverloadedBinaryOperator node) {
     this.insertChild(prev, OverloadedOperatorContainer.OPERATORS, node);
+  }
+
+  public int getCustomOperatorsesCount() {
+    return this.getChildCount(OverloadedOperatorContainer.CUSTOM_OPERATORS);
+  }
+
+  public Iterator<CustomOperatorDeclaration> customOperatorses() {
+    return this.children(CustomOperatorDeclaration.class, OverloadedOperatorContainer.CUSTOM_OPERATORS);
+  }
+
+  public List<CustomOperatorDeclaration> getCustomOperatorses() {
+    return this.getChildren(CustomOperatorDeclaration.class, OverloadedOperatorContainer.CUSTOM_OPERATORS);
+  }
+
+  public void addCustomOperators(CustomOperatorDeclaration node) {
+    this.addChild(OverloadedOperatorContainer.CUSTOM_OPERATORS, node);
+  }
+
+  public void insertCustomOperators(CustomOperatorDeclaration prev, CustomOperatorDeclaration node) {
+    this.insertChild(prev, OverloadedOperatorContainer.CUSTOM_OPERATORS, node);
   }
 
   public static OverloadedOperatorContainer newInstance(SModel sm, boolean init) {

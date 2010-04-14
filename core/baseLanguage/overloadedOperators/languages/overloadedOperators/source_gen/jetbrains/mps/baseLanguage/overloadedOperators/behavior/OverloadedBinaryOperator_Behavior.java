@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.overloadedOperators.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
@@ -17,6 +18,12 @@ public class OverloadedBinaryOperator_Behavior {
   }
 
   public static String call_getFunctionName_6677452554240637506(SNode thisNode) {
-    return "apply_" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "operator", false), "name") + "_" + NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "leftType", true))) + "_" + NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "rightType", true)));
+    String operatorName;
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "operator", true), "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference")) {
+      operatorName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "operator", true), "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference"), "binaryOperation", false), "name");
+    } else {
+      operatorName = "customOperator_" + SLinkOperations.getTarget(thisNode, "operator", true).getId();
+    }
+    return "apply_" + operatorName + "_" + NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "leftType", true))) + "_" + NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "rightType", true)));
   }
 }

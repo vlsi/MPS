@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.overloadedOperators.structure;
 
 import jetbrains.mps.baseLanguage.structure.ConceptFunction;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -12,21 +11,13 @@ import jetbrains.mps.project.GlobalScope;
 
 public class OverloadedBinaryOperator extends ConceptFunction {
   public static final String concept = "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator";
-  public static final String OPERATOR = "operator";
   public static final String RETURN_TYPE = "returnType";
   public static final String LEFT_TYPE = "leftType";
   public static final String RIGHT_TYPE = "rightType";
+  public static final String OPERATOR = "operator";
 
   public OverloadedBinaryOperator(SNode node) {
     super(node);
-  }
-
-  public ConceptDeclaration getOperator() {
-    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, OverloadedBinaryOperator.OPERATOR);
-  }
-
-  public void setOperator(ConceptDeclaration node) {
-    super.setReferent(OverloadedBinaryOperator.OPERATOR, node);
   }
 
   public Type getReturnType() {
@@ -51,6 +42,14 @@ public class OverloadedBinaryOperator extends ConceptFunction {
 
   public void setRightType(Type node) {
     super.setChild(OverloadedBinaryOperator.RIGHT_TYPE, node);
+  }
+
+  public Operator getOperator() {
+    return (Operator) this.getChild(Operator.class, OverloadedBinaryOperator.OPERATOR);
+  }
+
+  public void setOperator(Operator node) {
+    super.setChild(OverloadedBinaryOperator.OPERATOR, node);
   }
 
   public static OverloadedBinaryOperator newInstance(SModel sm, boolean init) {

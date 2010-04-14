@@ -118,7 +118,7 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <node type="jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer:3" id="6136676636350205595">
-    <property name="name:3" value="test" />
+    <property name="name:3" value="typeof_OverloadedOperatorUsage" />
     <node role="rule:3" type="jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule:3" id="6136676636350205596">
       <node role="operationConcept:3" type="jetbrains.mps.lang.smodel.structure.ConceptReference:16" id="6136676636350307647">
         <link role="concept:16" targetNodeId="2v.1081773326031:3" resolveInfo="BinaryOperation" />

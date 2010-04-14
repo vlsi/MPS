@@ -49,6 +49,12 @@
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="2v.1068431790189:3" resolveInfo="Type" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2838654975957155510">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="operator" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2838654975957036198" resolveInfo="Operator" />
+    </node>
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="7789383629180759505">
       <link role="conceptLinkDeclaration:0" targetNodeId="2v.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="483844232470668960" resolveInfo="LeftOperand" />
@@ -56,12 +62,6 @@
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="7789383629180759507">
       <link role="conceptLinkDeclaration:0" targetNodeId="2v.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target:0" targetNodeId="7789383629180756961" resolveInfo="RightOperand" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="483844232470132820">
-      <property name="metaClass:0" value="reference" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="operator" />
-      <link role="target:0" targetNodeId="2.1071489090640:0" resolveInfo="ConceptDeclaration" />
     </node>
   </node>
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -74,6 +74,12 @@
       <property name="sourceCardinality:0" value="0..n" />
       <property name="role:0" value="operators" />
       <link role="target:0" targetNodeId="483844232470132813" resolveInfo="OverloadedBinaryOperator" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2838654975956759196">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="customOperators" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="1569627462442419521" resolveInfo="CustomOperatorDeclaration" />
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="483844232470139409">
       <link role="intfc:0" targetNodeId="3v.1169194658468:0" resolveInfo="INamedConcept" />
@@ -96,6 +102,50 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7789383629180756962">
       <property name="value:0" value="right" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2838654975957036198">
+    <property name="name:0" value="Operator" />
+    <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="2838654975957155507">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473854053:0" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2838654975957155508">
+    <property name="name:0" value="BinaryOperationReference" />
+    <link role="extends:0" targetNodeId="2838654975957036198" resolveInfo="Operator" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2838654975957155509">
+      <property name="metaClass:0" value="reference" />
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="binaryOperation" />
+      <link role="target:0" targetNodeId="2.1071489090640:0" resolveInfo="ConceptDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2838654975957402167">
+    <property name="name:0" value="CustomOperator" />
+    <link role="extends:0" targetNodeId="2838654975957036198" resolveInfo="Operator" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2838654975957402169">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="declaration" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1569627462442419521" resolveInfo="CustomOperatorDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1569627462441399919">
+    <property name="name:0" value="CustomOperatorUsage" />
+    <link role="extends:0" targetNodeId="2v.1081773326031:3" resolveInfo="BinaryOperation" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1569627462441399920">
+      <property name="metaClass:0" value="reference" />
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="operator" />
+      <link role="target:0" targetNodeId="1569627462442419521" resolveInfo="CustomOperatorDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1569627462442419521">
+    <property name="name:0" value="CustomOperatorDeclaration" />
+    <link role="extends:0" targetNodeId="3v.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1569627462442419522">
+      <link role="intfc:0" targetNodeId="3v.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>
