@@ -6076,5 +6076,57 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="2178855608170754541" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3205675194086671729">
+    <link role="conceptDeclaration:32" targetNodeId="1.3205675194086589964:23" resolveInfo="ActionAccessOperation" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3205675194086673598">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3205675194086673602">
+        <property name="text:32" value="action" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3205675194086673613">
+        <property name="text:32" value="&lt;" />
+        <link role="styleClass:32" targetNodeId="17.1234958090348" resolveInfo="LeftParenAfterName" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="3205675194086673604">
+        <link role="relationDeclaration:32" targetNodeId="1.3205675194086671728:23" />
+        <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="3205675194086673605">
+          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="3205675194086673607">
+            <property name="readOnly:32" value="true" />
+            <link role="relationDeclaration:32" targetNodeId="14.1169194664001:0" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3205675194086673611">
+        <property name="text:32" value="&gt;" />
+        <link role="styleClass:32" targetNodeId="17.1215088010675" resolveInfo="RightParen" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="3205675194086673600" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3205675194086686071">
+    <link role="conceptDeclaration:32" targetNodeId="1.3205675194086686068:23" resolveInfo="GroupAccessOperation" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3205675194086686073">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3205675194086686082">
+        <property name="text:32" value="group" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3205675194086686075">
+        <property name="text:32" value="&lt;" />
+        <link role="styleClass:32" targetNodeId="17.1234958090348" resolveInfo="LeftParenAfterName" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="3205675194086686076">
+        <link role="relationDeclaration:32" targetNodeId="1.3205675194086686070:23" />
+        <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="3205675194086686077">
+          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="3205675194086686078">
+            <property name="readOnly:32" value="true" />
+            <link role="relationDeclaration:32" targetNodeId="14.1169194664001:0" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="3205675194086686079">
+        <property name="text:32" value="&gt;" />
+        <link role="styleClass:32" targetNodeId="17.1215088010675" resolveInfo="RightParen" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="3205675194086686080" />
+    </node>
+  </node>
 </model>
 

@@ -3186,5 +3186,55 @@
       <link role="concept:3" targetNodeId="4.7035278950562851062:23" resolveInfo="RunConfigurationDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="3205675194086619708">
+    <property name="name:3" value="typeof_ActionAccessOperation" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3205675194086619709">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="3205675194086671715">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3205675194086671719">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="3205675194086671720">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3205675194086671727">
+              <link role="classifier:3" targetNodeId="28.~BaseAction" resolveInfo="BaseAction" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3205675194086671718">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="3205675194086630562">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3205675194086671714">
+              <link role="applicableNode:3" targetNodeId="3205675194086619710" resolveInfo="actionAccessOperation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="3205675194086619710">
+      <property name="name:3" value="actionAccessOperation" />
+      <link role="concept:3" targetNodeId="4.3205675194086589964:23" resolveInfo="ActionAccessOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="3205675194086686083">
+    <property name="name:3" value="typeof_GroupAccessOperation" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3205675194086686084">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="3205675194086686086">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3205675194086686087">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="3205675194086686088">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3205675194086686094">
+              <link role="classifier:3" targetNodeId="28.~BaseGroup" resolveInfo="BaseGroup" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3205675194086686090">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="3205675194086686091">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3205675194086686093">
+              <link role="applicableNode:3" targetNodeId="3205675194086686085" resolveInfo="groupAccessOperation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="3205675194086686085">
+      <property name="name:3" value="groupAccessOperation" />
+      <link role="concept:3" targetNodeId="4.3205675194086686068:23" resolveInfo="GroupAccessOperation" />
+    </node>
+  </node>
 </model>
 
