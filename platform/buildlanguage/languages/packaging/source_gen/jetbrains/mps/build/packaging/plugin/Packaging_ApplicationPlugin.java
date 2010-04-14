@@ -15,7 +15,6 @@ public class Packaging_ApplicationPlugin extends BaseApplicationPlugin {
     String moduleName = "jetbrains.mps.build.packaging";
     this.addGroup(groups, moduleName, "jetbrains.mps.build.packaging.plugin.ProjectPaneModelAddition_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.build.packaging.plugin.ProjectPaneProjectAddition_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.build.packaging.plugin.SNodeAddition_ActionGroup");
     return groups;
   }
 
