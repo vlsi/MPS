@@ -102,6 +102,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     revalidateAllReferences();
     ttrace.pop();
     checkMonitorCanceled();
+
+    // advance blocked reduction data
+    getBlockedReductionsData().advanceStep();
     return myChanged;
   }
 
@@ -137,7 +140,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (SNode outputRootNode : copiedOutputRoots) {
       checkMonitorCanceled();
       SNode inputRootNode = findInputNodeById(outputRootNode.getSNodeId());
-      applyReductionRules(inputRootNode, outputRootNode);
+      applyReductionRules(inputRootNode, outputRootNode, null);
     }
     return copiedOutputRoots;
   }
@@ -283,7 +286,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
 
     try {
-      List<SNode> outputNodes = new TemplateProcessor(this).processTemplateNode(mappingName, templateNode, new TemplateContext(inputNode));
+      List<SNode> outputNodes = new TemplateProcessor(this, null).processTemplateNode(mappingName, templateNode, new TemplateContext(inputNode));
       for (SNode outputNode : outputNodes) {
         registerRoot(outputNode, inputNode);
         myOutputModel.addRoot(outputNode);
@@ -330,18 +333,18 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return false;
   }
 
-  protected void applyReductionRules(SNode inputNode, SNode clonedOutputNode) throws GenerationFailureException, GenerationCanceledException {
+  protected void applyReductionRules(SNode inputNode, SNode clonedOutputNode, ReductionBlockingContext blockingContext) throws GenerationFailureException, GenerationCanceledException {
     myGenerationTracer.pushInputNode(inputNode);
     try {
-      applyReductionRules_internal(inputNode, clonedOutputNode);
+      applyReductionRules_internal(inputNode, clonedOutputNode, blockingContext);
     } finally {
       myGenerationTracer.closeInputNode(inputNode);
     }
   }
 
-  protected void applyReductionRules_internal(SNode inputNode, SNode clonedOutputNode) throws GenerationFailureException, GenerationCanceledException {
+  protected void applyReductionRules_internal(SNode inputNode, SNode clonedOutputNode, ReductionBlockingContext blockingContext) throws GenerationFailureException, GenerationCanceledException {
     if (clonedOutputNode.getParent() != null) { // don't try to reduce copied roots
-      List<SNode> outputNodes = tryToReduce(inputNode, null);
+      List<SNode> outputNodes = tryToReduce(inputNode, null, blockingContext);
       if (outputNodes != null) {
         SNode parent = clonedOutputNode.getParent();
         String childRole = parent.getRoleOf(clonedOutputNode);
@@ -360,6 +363,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
 
+    blockReductionsForCopiedNode(inputNode, clonedOutputNode, blockingContext); // prevent infinite applying of the same reduction to the 'same' node.
+
     // no reduction rule found - keep the cloned node in output model and proceed with its children.
     myGenerationTracer.pushCopyOperation();
     for (SNode childInputNode : inputNode.getChildren()) {
@@ -367,7 +372,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       synchronized (this) {
         childOutputNode = findOutputNodeById(childInputNode.getSNodeId());
       }
-      applyReductionRules(childInputNode, childOutputNode);
+      applyReductionRules(childInputNode, childOutputNode, blockingContext);
     }
     myGenerationTracer.pushOutputNode(clonedOutputNode);
   }
@@ -376,8 +381,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
    * @return null if no reductions found
    */
   @Nullable
-  List<SNode> tryToReduce(SNode inputNode, String mappingName) throws GenerationFailureException, GenerationCanceledException {
-    boolean needStopReductionBlocking = false;
+  List<SNode> tryToReduce(SNode inputNode, String mappingName, ReductionBlockingContext blockingContext) throws GenerationFailureException, GenerationCanceledException {
     ReductionRule reductionRule = null;
     GeneratedMatchingPattern pattern = null;
     try {
@@ -387,17 +391,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return null;
       }
       for (ReductionRule rule : conceptRules) {
-        if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule)) {
+        if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule, blockingContext)) {
           if(rule instanceof Reduction_MappingRule) {
             if (getExecutor().checkCondition(((Reduction_MappingRule) rule).getConditionFunction(), false, inputNode, rule.getNode())) {
-              getBlockedReductionsData().registerInputReduction(inputNode, rule);
               reductionRule = rule;
               break;
             }
           } else if(rule instanceof PatternReduction_MappingRule) {
             pattern = getExecutor().checkIfApplicable((PatternReduction_MappingRule) rule, inputNode);
             if(pattern != null) {
-              getBlockedReductionsData().registerInputReduction(inputNode, rule);
               reductionRule = rule;
               break;
             }
@@ -407,9 +409,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       // apply
       if (reductionRule != null) {
-        needStopReductionBlocking = startReductionBlockingForInput(inputNode);
-
-        List<SNode> outputNodes = applyReductionRule(inputNode, reductionRule, pattern);
+        List<SNode> outputNodes = applyReductionRule(inputNode, reductionRule, pattern, new ReductionBlockingContext(blockingContext, inputNode, reductionRule));
         if (outputNodes != null && outputNodes.size() == 1) {
           SNode reducedNode = outputNodes.get(0);
           // register copied node
@@ -438,19 +438,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           showErrorMessage(reductionRule.getNode(), messageText);
         }
       }
-    } finally {
-      if (needStopReductionBlocking) {
-        stopReductionBlockingForInput(inputNode);
-      }
     }
     return null;
   }
 
   @Nullable
-  private List<SNode> applyReductionRule(SNode inputNode, ReductionRule rule, GeneratedMatchingPattern pattern) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
+  private List<SNode> applyReductionRule(SNode inputNode, ReductionRule rule, GeneratedMatchingPattern pattern, ReductionBlockingContext blockingContext) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
     myGenerationTracer.pushRule(rule.getNode());
     try {
-      return applyReductionRule_internal(inputNode, rule, pattern);
+      return applyReductionRule_internal(inputNode, rule, pattern, blockingContext);
     } catch (AbandonRuleInputException e) {
       return Collections.emptyList();
     } finally {
@@ -459,7 +455,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   @Nullable
-  private List<SNode> applyReductionRule_internal(SNode inputNode, ReductionRule rule, GeneratedMatchingPattern pattern)
+  private List<SNode> applyReductionRule_internal(SNode inputNode, ReductionRule rule, GeneratedMatchingPattern pattern, ReductionBlockingContext blockingContext)
     throws DismissTopMappingRuleException, AbandonRuleInputException, GenerationFailureException, GenerationCanceledException {
 
     String ruleMappingName = GeneratorUtil.getMappingName(rule, null);
@@ -477,7 +473,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     List<SNode> result = new ArrayList<SNode>(nodeAndMappingNamePairs.size());
-    TemplateProcessor templateProcessor = new TemplateProcessor(this);
+    TemplateProcessor templateProcessor = new TemplateProcessor(this, blockingContext);
     for (Pair<SNode, String> nodeAndMappingNamePair : nodeAndMappingNamePairs) {
       SNode templateNode = nodeAndMappingNamePair.o1;
       String mappingName = nodeAndMappingNamePair.o2 != null ? nodeAndMappingNamePair.o2 : ruleMappingName;
@@ -499,17 +495,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return result;
   }
 
-  List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
+  List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode, ReductionBlockingContext blockingContext) throws GenerationFailureException, GenerationCanceledException {
     myGenerationTracer.pushInputNode(inputNode);
     try {
-      return copyNodeFromInputNode_internal(mappingName, templateNode, inputNode);
+      return copyNodeFromInputNode_internal(mappingName, templateNode, inputNode, blockingContext);
     } finally {
       myGenerationTracer.closeInputNode(inputNode);
     }
   }
 
-  private List<SNode> copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
-    List<SNode> outputNodes = tryToReduce(inputNode, mappingName);
+  private List<SNode> copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode, ReductionBlockingContext blockingContext) throws GenerationFailureException, GenerationCanceledException {
+    List<SNode> outputNodes = tryToReduce(inputNode, mappingName, blockingContext);
     if (outputNodes != null) {
       return outputNodes;
     }
@@ -517,7 +513,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
-    blockReductionsForCopiedNode(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.
+//    if(inputNode.hasId()) {
+//      outputNode.setId(inputNode.getSNodeId());
+//    }
+    blockReductionsForCopiedNode(inputNode, outputNode, blockingContext); // prevent infinite applying of the same reduction to the 'same' node.
 
     myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
     myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
@@ -558,7 +557,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (SNode inputChildNode : inputNode.getChildren()) {
       String childRole = inputChildNode.getRole_();
       assert childRole != null;
-      List<SNode> outputChildNodes = copyNodeFromInputNode(null, inputChildNode, inputChildNode);
+      List<SNode> outputChildNodes = copyNodeFromInputNode(null, inputChildNode, inputChildNode, blockingContext);
       if (outputChildNodes != null) {
         for (SNode outputChildNode : outputChildNodes) {
           // check child
@@ -580,16 +579,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   /**
    * prevents applying of reduction rules which have already been applied to the input node.
    */
-  void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode) {
-    getBlockedReductionsData().blockReductionsForCopiedNode(inputNode, outputNode);
-  }
-
-  private boolean startReductionBlockingForInput(SNode inputNode) {
-    return getBlockedReductionsData().startReductionBlockingForInput(inputNode);
-  }
-
-  private void stopReductionBlockingForInput(SNode inputNode) {
-    getBlockedReductionsData().stopReductionBlockingForInput(inputNode);
+  void blockReductionsForCopiedNode(SNode inputNode, SNode outputNode, ReductionBlockingContext blockingContext) {
+    getBlockedReductionsData().blockReductionsForCopiedNode(inputNode, outputNode, blockingContext);
   }
 
   BlockedReductionsData getBlockedReductionsData() {

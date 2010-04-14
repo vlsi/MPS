@@ -19,7 +19,6 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.template.InputQueryUtil;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.*;
@@ -34,10 +33,12 @@ import java.util.*;
  */
 public class TemplateProcessor {
   private final TemplateGenerator myGenerator;
+  private ReductionBlockingContext myBlockingContext;
   private final SModel myOutputModel;
 
-  public TemplateProcessor(TemplateGenerator generator) {
+  public TemplateProcessor(TemplateGenerator generator, ReductionBlockingContext blockingContext) {
     myGenerator = generator;
+    myBlockingContext = blockingContext;
     myOutputModel = myGenerator.getOutputModel();
   }
 
@@ -211,7 +212,7 @@ public class TemplateProcessor {
       // $COPY-SRC$ / $COPY-SRCL$
       List<SNode> newInputNodes = getNewInputNodes(nodeMacro, templateContext);
       for (SNode newInputNode : newInputNodes) {
-        List<SNode> _outputNodes = myGenerator.copyNodeFromInputNode(mappingName, templateNode, newInputNode);
+        List<SNode> _outputNodes = myGenerator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, myBlockingContext);
         if (_outputNodes != null) {
           // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.
@@ -526,7 +527,7 @@ public class TemplateProcessor {
     throws
     DismissTopMappingRuleException,
     GenerationFailureException, GenerationCanceledException {
-    TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator);
+    TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator, myBlockingContext);
     return templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, context, 0);
   }
 

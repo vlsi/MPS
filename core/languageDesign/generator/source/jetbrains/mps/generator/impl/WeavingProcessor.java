@@ -79,7 +79,7 @@ public class WeavingProcessor {
 
     String ruleMappingName = GeneratorUtil.getMappingName(rule, null);
     // for each template fragment create output nodes
-    TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator);
+    TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator, null);
     for (TemplateFragment templateFragment : templateFragments) {
       SNode templateFragmentNode = BaseAdapter.fromAdapter(templateFragment.getParent());
       SNode contextParentNode = null;
