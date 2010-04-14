@@ -21,7 +21,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -86,9 +85,9 @@ public class CachesManager implements ApplicationComponent {
   }
 
   private void putCache(Object key, AbstractCache cache, List<SModelDescriptor> dependsOnModels) {
-    if (myCaches.containsKey(key)) {
-      throw new RuntimeException("can't put another cache by key " + key);
-    }
+    assert !dependsOnModels.contains(null) : "can't put null as one of the values for key " + key;
+    if (myCaches.containsKey(key)) throw new RuntimeException("can't put another cache by key " + key);
+
     myCaches.put(key, cache);
     myDependsOnModels.put(key, dependsOnModels);
     ModelEventRouter eventRouter = new ModelEventRouter(cache);
