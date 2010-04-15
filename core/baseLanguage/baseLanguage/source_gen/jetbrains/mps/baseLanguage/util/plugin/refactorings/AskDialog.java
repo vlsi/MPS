@@ -5,42 +5,64 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import javax.swing.JPanel;
 import java.awt.Frame;
+import javax.swing.JLabel;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
 public class AskDialog extends BaseDialog {
-  private static final int PIXEL_FOR_SYMBOL = 10;
-
   private JPanel myPanel;
-  private boolean myResult;
+  private AskDialog.DialogResults myResult;
 
   public AskDialog(Frame frame, String text) {
     super(frame, text);
     this.myPanel = new JPanel();
+    this.myPanel.add(new JLabel("Replace this fragment?"));
   }
 
   protected JComponent getMainComponent() {
     return this.myPanel;
   }
 
-  @BaseDialog.Button(name = "Yes", mnemonic = 'Y', position = 1, defaultButton = true)
+  @BaseDialog.Button(name = "Yes", mnemonic = 'Y', position = 0, defaultButton = true)
   public void onYes() {
-    this.myResult = true;
+    this.myResult = AskDialog.DialogResults.SUBSTITUTE;
     this.dispose();
   }
 
-  @BaseDialog.Button(name = "No", mnemonic = 'N', position = 0, defaultButton = false)
+  @BaseDialog.Button(name = "No", mnemonic = 'N', position = 1, defaultButton = false)
   public void onNo() {
-    this.myResult = false;
+    this.myResult = AskDialog.DialogResults.CANCEL;
+    this.dispose();
+  }
+
+  @BaseDialog.Button(name = "All", mnemonic = 'A', position = 2, defaultButton = false)
+  public void onAll() {
+    this.myResult = AskDialog.DialogResults.SUBSTITUTE_ALL;
+    this.dispose();
+  }
+
+  @BaseDialog.Button(name = "Cancel", mnemonic = 'C', position = 3, defaultButton = false)
+  public void onCancel() {
+    this.myResult = AskDialog.DialogResults.CANCEL_ALL;
     this.dispose();
   }
 
   @Override
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(100, 200, this.getTitle().length() * PIXEL_FOR_SYMBOL, 30);
+    return new DialogDimensionsSettings.DialogDimensions(100, 200, 100, 30);
   }
 
-  public boolean getResult() {
+  public AskDialog.DialogResults getResult() {
     return this.myResult;
+  }
+
+  public static   enum DialogResults {
+    SUBSTITUTE(),
+    CANCEL(),
+    SUBSTITUTE_ALL(),
+    CANCEL_ALL();
+
+    DialogResults() {
+    }
   }
 }

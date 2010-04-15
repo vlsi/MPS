@@ -15,20 +15,30 @@ public abstract class DuplicatesProcessor<T> {
   }
 
   public void process(List<T> duplicates) {
+    boolean replaceAll = false;
     for (T duplicate : ListSequence.fromList(duplicates)) {
-      EditorMessage message = this.createEditorMessage(duplicate);
-      this.myEditorContext.getNodeEditorComponent().getHighlightManager().mark(message);
-      AskDialog dialog = new AskDialog(this.myEditorContext.getOperationContext().getMainFrame(), "replace this duplicate?");
-      dialog.showDialog();
-      boolean shouldSubstitute = dialog.getResult();
-      this.myEditorContext.getNodeEditorComponent().getHighlightManager().unmark(message);
-      if (shouldSubstitute) {
+      if (!(replaceAll)) {
+        EditorMessage message = this.createEditorMessage(duplicate);
+        this.myEditorContext.getNodeEditorComponent().getHighlightManager().mark(message, true);
+        AskDialog dialog = new AskDialog(this.myEditorContext.getOperationContext().getMainFrame(), "Process Duplicates");
+        dialog.showDialog();
+        AskDialog.DialogResults shouldSubstitute = dialog.getResult();
+        this.myEditorContext.getNodeEditorComponent().getHighlightManager().unmark(message, true);
+        if (shouldSubstitute == AskDialog.DialogResults.SUBSTITUTE) {
+          this.substitute(duplicate);
+        } else if (shouldSubstitute == AskDialog.DialogResults.SUBSTITUTE_ALL) {
+          this.substitute(duplicate);
+          replaceAll = true;
+        } else if (shouldSubstitute == AskDialog.DialogResults.CANCEL_ALL) {
+          break;
+        }
+      } else {
         this.substitute(duplicate);
       }
     }
   }
 
-  public abstract EditorMessage createEditorMessage(T duplicate);
+  protected abstract EditorMessage createEditorMessage(T duplicate);
 
-  protected abstract void substitute(T duplicate);
+  public abstract void substitute(T duplicate);
 }
