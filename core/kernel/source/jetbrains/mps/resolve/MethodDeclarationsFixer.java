@@ -70,6 +70,12 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     if (DISABLED) {
       return new HashSet<EditorMessage>();
     }
+
+    // for transient models, there could be no model descriptors
+    if (rootNode.getModel().getModelDescriptor() == null) {
+      return new HashSet<EditorMessage>(0);
+    }
+
     // disable for transient models
     if (rootNode.getModel().getModelDescriptor().isTransient()) {
       return new HashSet<EditorMessage>(0);
