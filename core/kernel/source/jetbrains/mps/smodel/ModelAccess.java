@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.ide.ThreadUtils;
@@ -36,7 +37,6 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * We always first acquire IDEA's lock and only then acquire MPS's lock
  */
 public class ModelAccess {
-
   private static final Logger LOG = Logger.getLogger(ModelAccess.class);
 
   private static final ModelAccess ourInstance = new ModelAccess();
@@ -364,7 +364,7 @@ public class ModelAccess {
     return "true".equals(System.getProperty("mps.sharedread"));
   }
 
-  //--------command events listening 
+  //--------command events listening
 
   private List<ModelAccessListener> myListeners = new ArrayList<ModelAccessListener>();
   private final Object myListenersLock = new Object();
