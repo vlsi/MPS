@@ -82,6 +82,7 @@ public class HighlightCellDependencies_Action extends GeneratedAction {
           }
         }
       }
+      highlightManager.repaintAndRebuildEditorMessages();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "HighlightCellDependencies", t);

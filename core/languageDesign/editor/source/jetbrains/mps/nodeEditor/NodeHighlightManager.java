@@ -82,7 +82,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
    * scheduling lazy rebuild of myMessagesCache and myIconRenderersCache
    * this method can be called from any thread 
    */
-  public void rebuildMessages() {
+  private void rebuildMessages() {
     synchronized (myRebuildCacheFlagsLock) {
       myRebuildMessagesCacheFlag = true;
       myRebuildIconRenderersCacheFlag = true;
@@ -107,7 +107,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
           }
         }
       }
-    });    
+    });
     return myMessagesCache;
   }
 
@@ -196,7 +196,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     return true;
   }
 
-  public void mark(EditorMessage message, boolean repaintAndRebuild) {
+  public void mark(EditorMessage message) {
     for (EditorMessage msg : getMessages()) {
       if (msg.sameAs(message)) return;
     }
@@ -206,18 +206,14 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
     rebuildMessages();
     myEditor.getMessagesGutter().add(message);
-    if (repaintAndRebuild) {
-      repaintAndRebuildEditorMessages();
-    }
   }
 
-  // not used anymore?
-  @Deprecated
+  public void unmarkSingleMessage(EditorMessage message) {
+    unmark(message);
+    repaintAndRebuildEditorMessages();
+  }
+
   public void unmark(EditorMessage message) {
-    unmark(message, true);
-  }
-
-  public void unmark(EditorMessage message, boolean repaintAndRebuild) {
     boolean wasRemoved;
     synchronized (myMessagesLock) {
       wasRemoved = removeMessage(message);
@@ -226,9 +222,6 @@ public class NodeHighlightManager implements EditorMessageOwner {
       rebuildMessages();
     }
     myEditor.getMessagesGutter().remove(message);
-    if (repaintAndRebuild) {
-      repaintAndRebuildEditorMessages();
-    }
   }
 
   private void clear() {
@@ -298,31 +291,21 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myEditor.getLeftEditorHighlighter().addAllIconRenderers(myIconRenderersCache);
   }
 
-  /**
-   * TODO: modify this method to call mark(..., false)
-   */
   public void mark(SNode node, Color color, String messageText, EditorMessageOwner owner) {
     if (node == null) return;
-    mark(new DefaultEditorMessage(node, color, messageText, owner), true);
+    mark(new DefaultEditorMessage(node, color, messageText, owner));
   }
 
   public void mark(List<EditorMessage> messages) {
-    mark(messages, true);
-  }
-
-  private void mark(List<EditorMessage> messages, boolean repaintAndRebuild) {
     for (int i = 0; i < messages.size(); i++) {
-      mark(messages.get(i), false);
+      mark(messages.get(i));
     }
-    if (repaintAndRebuild) {
-      repaintAndRebuildEditorMessages();
-    }
+    repaintAndRebuildEditorMessages();
   }
 
-  // not used anymore?
-  @Deprecated
-  public void mark(EditorMessage message) {
-    mark(message, true);
+  public void markSingleMessage(EditorMessage message) {
+    mark(message);
+    repaintAndRebuildEditorMessages();
   }
 
   public Set<EditorMessage> getMessages() {

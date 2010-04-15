@@ -87,7 +87,7 @@ public class HighlightUsages_Action extends GeneratedAction {
               highlightManager.mark(node, HighlightConstants.NODE_COLOR, "source node", messageOwner);
             } else {
               for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(node, messageOwner))) {
-                highlightManager.unmark(message, false);
+                highlightManager.unmark(message);
               }
             }
           }
@@ -97,7 +97,7 @@ public class HighlightUsages_Action extends GeneratedAction {
                 highlightManager.mark(ref.getSourceNode(), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
               } else {
                 for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(ref.getSourceNode(), messageOwner))) {
-                  highlightManager.unmark(message, false);
+                  highlightManager.unmark(message);
                 }
               }
             }

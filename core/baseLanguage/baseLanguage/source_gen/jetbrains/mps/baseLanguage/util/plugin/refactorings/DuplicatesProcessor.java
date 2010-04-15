@@ -19,11 +19,11 @@ public abstract class DuplicatesProcessor<T> {
     for (T duplicate : ListSequence.fromList(duplicates)) {
       if (!(replaceAll)) {
         EditorMessage message = this.createEditorMessage(duplicate);
-        this.myEditorContext.getNodeEditorComponent().getHighlightManager().mark(message, true);
+        this.myEditorContext.getNodeEditorComponent().getHighlightManager().markSingleMessage(message);
         AskDialog dialog = new AskDialog(this.myEditorContext.getOperationContext().getMainFrame(), "Process Duplicates");
         dialog.showDialog();
         AskDialog.DialogResults shouldSubstitute = dialog.getResult();
-        this.myEditorContext.getNodeEditorComponent().getHighlightManager().unmark(message, true);
+        this.myEditorContext.getNodeEditorComponent().getHighlightManager().unmarkSingleMessage(message);
         if (shouldSubstitute == AskDialog.DialogResults.SUBSTITUTE) {
           this.substitute(duplicate);
         } else if (shouldSubstitute == AskDialog.DialogResults.SUBSTITUTE_ALL) {

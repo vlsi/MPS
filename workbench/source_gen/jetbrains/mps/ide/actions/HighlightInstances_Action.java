@@ -94,6 +94,7 @@ public class HighlightInstances_Action extends GeneratedAction {
           highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
         }
       }
+      highlightManager.repaintAndRebuildEditorMessages();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "HighlightInstances", t);

@@ -36421,12 +36421,9 @@
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="142251460458672530">
-                      <link role="baseMethodDeclaration:3" targetNodeId="7.~NodeHighlightManager.mark(jetbrains.mps.nodeEditor.EditorMessage,boolean):void" resolveInfo="mark" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="7.~NodeHighlightManager.markSingleMessage(jetbrains.mps.nodeEditor.EditorMessage):void" resolveInfo="markSingleMessage" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="142251460458672531">
                         <link role="variableDeclaration:3" targetNodeId="142251460458672534" resolveInfo="message" />
-                      </node>
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1769066237346157625">
-                        <property name="value:3" value="true" />
                       </node>
                     </node>
                   </node>
@@ -36508,12 +36505,9 @@
                       </node>
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1143458983614739578">
-                      <link role="baseMethodDeclaration:3" targetNodeId="7.~NodeHighlightManager.unmark(jetbrains.mps.nodeEditor.EditorMessage,boolean):void" resolveInfo="unmark" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="7.~NodeHighlightManager.unmarkSingleMessage(jetbrains.mps.nodeEditor.EditorMessage):void" resolveInfo="unmarkSingleMessage" />
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1143458983614739579">
                         <link role="variableDeclaration:3" targetNodeId="142251460458672534" resolveInfo="message" />
-                      </node>
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1769066237346157627">
-                        <property name="value:3" value="true" />
                       </node>
                     </node>
                   </node>

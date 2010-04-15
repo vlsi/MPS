@@ -408,7 +408,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           highlightManager.clearForOwner(owner, false);
         }
         for (EditorMessage message : messages) {
-          highlightManager.mark(message, false);
+          highlightManager.mark(message);
         }
       }
     }
