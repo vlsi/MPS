@@ -43,9 +43,16 @@ public class UndoUtil {
     if (!ThreadUtils.isEventDispatchThread()) {
       r.run();
     } else {
+      if (ourUndoBlocked) {
+        LOG.errorWithTrace("non-undoable actions can not be nested");
+        return;
+      }
       setUndoBlocked();
-      r.run();
-      setUndoUnblocked();
+      try {
+        r.run();
+      } finally {
+        setUndoUnblocked();
+      }
     }
   }
 
@@ -53,10 +60,16 @@ public class UndoUtil {
     if (!ThreadUtils.isEventDispatchThread()) {
       return t.compute();
     } else {
+      if (ourUndoBlocked) {
+        LOG.errorWithTrace("non-undoable actions can not be nested");
+        return null;
+      }
       setUndoBlocked();
-      T result = t.compute();
-      setUndoUnblocked();
-      return result;
+      try {
+        return t.compute();
+      } finally {
+        setUndoUnblocked();
+      }
     }
   }
 
