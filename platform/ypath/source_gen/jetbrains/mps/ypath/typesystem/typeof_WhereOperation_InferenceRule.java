@@ -42,7 +42,7 @@ public class typeof_WhereOperation_InferenceRule extends AbstractInferenceRule_R
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(wop, "Error in model structure: wrong parent type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "4234084459083990132", intentionProvider, errorTarget);
       }
-    } while(false);
+    } while (false);
   }
 
   public String getApplicableConceptFQName() {

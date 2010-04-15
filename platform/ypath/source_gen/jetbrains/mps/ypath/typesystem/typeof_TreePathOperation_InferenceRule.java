@@ -45,7 +45,7 @@ public class typeof_TreePathOperation_InferenceRule extends AbstractInferenceRul
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "Error in model structure: wrong parent type", "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1190288908359", intentionProvider, errorTarget);
       }
-    } while(false);
+    } while (false);
   }
 
   public String getApplicableConceptFQName() {
