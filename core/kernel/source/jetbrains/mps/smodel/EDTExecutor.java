@@ -67,7 +67,7 @@ class EDTExecutor {
         }
         Thread.sleep(10);
       } catch (InterruptedException e) {
-        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        LOG.error(e);
       }
     }
   }
