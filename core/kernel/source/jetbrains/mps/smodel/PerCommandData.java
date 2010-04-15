@@ -9,15 +9,11 @@ import jetbrains.mps.logging.Logger;
 public class PerCommandData {
   private static final Logger LOG = Logger.getLogger(PerCommandData.class);
 
-  private static PerCommandData ourInstance = null;
+  private static PerCommandData ourInstance = new PerCommandData();
 
   private Project myProject = null;
 
   public static PerCommandData getInstance() {
-    if (ourInstance == null) {
-      ourInstance = new PerCommandData();
-    }
-
     return ourInstance;
   }
 
