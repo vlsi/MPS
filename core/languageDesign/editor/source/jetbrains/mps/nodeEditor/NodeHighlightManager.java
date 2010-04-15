@@ -90,6 +90,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   private Map<EditorCell, List<EditorMessage>> getMessagesCache() {
+    assert ModelAccess.instance().isInEDT() : "getMessagesCache() should be called from EDT only";
     synchronized (myRebuildCacheFlagsLock) {
       if (!myRebuildMessagesCacheFlag) {
         return myMessagesCache;
@@ -97,11 +98,16 @@ public class NodeHighlightManager implements EditorMessageOwner {
       myRebuildMessagesCacheFlag = false;
     }
     myMessagesCache.clear();
-    synchronized (myMessagesLock) {
-      if (myEditor.getRootCell() != null && !myMessages.isEmpty()) {
-        rebuildMessages(myEditor.getRootCell());
+    // We should first run ReadAction and then go into syhcnronized(myMessagesLock) to avoid deadlock with Highlighter
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        synchronized (myMessagesLock) {
+          if (myEditor.getRootCell() != null && !myMessages.isEmpty()) {
+            rebuildMessages(myEditor.getRootCell());
+          }
+        }
       }
-    }
+    });    
     return myMessagesCache;
   }
 
@@ -142,16 +148,12 @@ public class NodeHighlightManager implements EditorMessageOwner {
       // does not have cells for some node's children (they are edited in main editor)
       // but the cell should not be highlighted only because of this
       if (cell.isBigCell()) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            for (SNode child : node.getChildren()) {
-              EditorCell cellForChild = myEditor.findNodeCell(child);
-              if (cellForChild == null) {
-                getMessagesFromDescendants(child, result);
-              }
-            }
+        for (SNode child : node.getChildren()) {
+          EditorCell cellForChild = myEditor.findNodeCell(child);
+          if (cellForChild == null) {
+            getMessagesFromDescendants(child, result);
           }
-        });
+        }
       }
     }
     return result;
