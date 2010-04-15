@@ -17,7 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.ide.ThreadUtils;
 
-class ModelChange {
+public class ModelChange {
   private static final boolean FREEZE_CHECKS_ENABLED = true;
 
   static void assertLegalNodeChange(SNode node) {
@@ -57,6 +57,7 @@ class ModelChange {
   }
 
   private static boolean isInsideUndoableCommand() {
-    return ThreadUtils.isEventDispatchThread() && com.intellij.openapi.command.CommandProcessor.getInstance().getCurrentCommand() != null;
+    return ThreadUtils.isEventDispatchThread() && !UndoUtil.isUndoBlocked() &&
+      com.intellij.openapi.command.CommandProcessor.getInstance().getCurrentCommand() != null;
   }
 }

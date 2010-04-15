@@ -18,6 +18,7 @@ package jetbrains.mps.typesystem.inference;
 import jetbrains.mps.lang.typesystem.runtime.*;
 import jetbrains.mps.lang.typesystem.structure.RuntimeErrorType;
 import jetbrains.mps.lang.typesystem.structure.MeetType;
+import jetbrains.mps.smodel.ModelChange;
 import jetbrains.mps.typesystem.inference.util.*;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.logging.Logger;
@@ -310,7 +311,12 @@ public class SubtypingManager {
         final TypeCheckingContext tcContext = equationManager == null ? null : equationManager.getTypeCheckingContext();
         List<SNode> supertypes = FreezeUtil.freezeAndCompute(term, new Computable<List<SNode>>() {
           public List<SNode> compute() {
-            return subtypingRule.getSubOrSuperTypes(term, tcContext);
+            return UndoUtil.runNonUndoableAction(new Computable<List<SNode>>() {
+              @Override
+              public List<SNode> compute() {
+                return subtypingRule.getSubOrSuperTypes(term, tcContext);
+              }
+            });
           }
         });
         result.addAll(supertypes);
