@@ -75,6 +75,10 @@
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem:32" id="2838654975957036194">
             <property name="flag:32" value="true" />
           </node>
+          <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2959643274329588162">
+            <property name="text:32" value="" />
+            <property name="nullText:32" value="&lt;&lt;custom operators declaration&gt;&gt;" />
+          </node>
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2838654975957036197">
           <property name="text:32" value=" " />
@@ -90,6 +94,10 @@
           </node>
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem:32" id="3524394717035167852">
             <property name="flag:32" value="true" />
+          </node>
+          <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2959643274329588161">
+            <property name="text:32" value="" />
+            <property name="nullText:32" value="&lt;&lt;overloaded binary operators&gt;&gt;" />
           </node>
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="483844232470346643" />
