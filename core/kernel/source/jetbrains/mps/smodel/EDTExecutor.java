@@ -16,14 +16,13 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.impl.LaterInvocator;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 
-import javax.swing.SwingUtilities;
 import java.util.LinkedList;
 import java.util.Queue;
-
-import com.intellij.openapi.application.impl.LaterInvocator;
-import com.intellij.openapi.application.ModalityState;
 
 class EDTExecutor {
   private static final long MAX_TIME = 100;
@@ -58,6 +57,7 @@ class EDTExecutor {
   }
 
   public void flushEventQueue() {
+    LOG.assertLog(!ThreadUtils.isEventDispatchThread(), "possible deadlock");
     while (true) {
       try {
         synchronized (myLock) {
