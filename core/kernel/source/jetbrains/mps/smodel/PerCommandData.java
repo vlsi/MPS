@@ -4,7 +4,14 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.wm.IdeFrame;
+import com.intellij.openapi.wm.ex.WindowManagerEx;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.logging.Logger;
+
+import java.awt.Component;
+import java.awt.Window;
 
 public class PerCommandData {
   private static final Logger LOG = Logger.getLogger(PerCommandData.class);
@@ -20,8 +27,7 @@ public class PerCommandData {
   private PerCommandData() {
     ModelAccess.instance().addCommandListener(new ModelAccessAdapter() {
       public void commandStarted() {
-        DataContext dataContext = DataManager.getInstance().getDataContext();
-        myProject = PlatformDataKeys.PROJECT.getData(dataContext);
+        myProject = getProject_internal();
       }
 
       public void commandFinished() {
@@ -33,7 +39,16 @@ public class PerCommandData {
 
   public Project getProjectAtCurrentCommandStart() {
     LOG.assertInCommand();
-    //todo enable ? LOG.assertLog(myProject != null, "Project==null - the most possible reason is that command was started while focus was moving");
+    LOG.assertLog(myProject != null, "Project==null - the most possible reason is that command was started while focus was moving");
     return myProject;
+  }
+
+  private Project getProject_internal() {
+    Window window = WindowManagerEx.getInstanceEx().getMostRecentFocusedWindow();
+    final Component parent = UIUtil.findUltimateParent(window);
+    if (parent instanceof IdeFrame) {
+      return ((IdeFrame) parent).getProject();
+    }
+    return null;
   }
 }
