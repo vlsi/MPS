@@ -240,7 +240,7 @@ public class Logger {
   }
 
   public void assertInCommand() {
-    assertLog(ModelAccess.instance().isInsideCommand(), "This action must be performed in command");
+    assertLog(CommandProcessor.getInstance().getCurrentCommand() != null, "This action must be performed in command");
   }
 
   public void assertInEDT() {
@@ -248,7 +248,7 @@ public class Logger {
   }
 
   public void assertNotInCommand() {
-    assertLog(!ModelAccess.instance().isInsideCommand(), "This action should be performed outside of command");
+    assertLog(CommandProcessor.getInstance().getCurrentCommand() == null, "This action should be performed outside of command");
   }
 
   public void checkEDT() {
