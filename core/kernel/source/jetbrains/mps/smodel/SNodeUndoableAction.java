@@ -45,7 +45,7 @@ public abstract class SNodeUndoableAction implements UndoableAction {
   protected abstract void doRedo();
 
   public final void undo() throws UnexpectedUndoException {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (myFile != null) {
           myFile.setModificationStamp(myModifcationStamp);
@@ -56,7 +56,7 @@ public abstract class SNodeUndoableAction implements UndoableAction {
   }
 
   public final void redo() throws UnexpectedUndoException {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         doRedo();
       }

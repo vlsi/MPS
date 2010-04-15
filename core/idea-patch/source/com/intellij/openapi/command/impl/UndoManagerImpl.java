@@ -42,6 +42,7 @@ import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.HashSet;
 import gnu.trove.THashSet;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.TestOnly;
@@ -381,10 +382,7 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
         }
       }
     };
-
-    CommandProcessor.getInstance()
-      .executeCommand(myProject, executeUndoOrRedoAction, isUndoInProgress() ? CommonBundle.message("undo.command.name") : CommonBundle
-        .message("redo.command.name"), null, myMerger.getUndoConfirmationPolicy());
+    ModelAccess.instance().executeCommand(executeUndoOrRedoAction);
     if (exception[0] != null) throw exception[0];
   }
 
