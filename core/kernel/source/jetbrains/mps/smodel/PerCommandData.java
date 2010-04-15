@@ -33,6 +33,7 @@ public class PerCommandData {
 
   public Project getProjectAtCurrentCommandStart() {
     LOG.assertInCommand();
+    LOG.assertLog(myProject != null, "Project==null - the most possible reason is that command was started while focus was moving");
     return myProject;
   }
 }
