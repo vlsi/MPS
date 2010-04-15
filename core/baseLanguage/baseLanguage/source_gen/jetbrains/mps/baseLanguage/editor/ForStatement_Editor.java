@@ -300,7 +300,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_l9yc2b_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("variable");
-    provider.setNoTargetText("<no variable>");
+    provider.setNoTargetText(" ");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     {
@@ -323,7 +323,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_l9yc2b_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
-    provider.setNoTargetText("<no condition>");
+    provider.setNoTargetText(" ");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -455,9 +455,13 @@ public class ForStatement_Editor extends DefaultNodeEditor {
 
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
-      emptyCell = super.createEmptyCell(editorContext);
+      emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
+    }
+
+    public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
+      return this.createConstant_l9yc2b_a9a(editorContext, node);
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
@@ -483,6 +487,17 @@ public class ForStatement_Editor extends DefaultNodeEditor {
         editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
         return editorCell;
       }
+    }
+
+    private EditorCell createConstant_l9yc2b_a9a(EditorContext editorContext, SNode node) {
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+      editorCell.setCellId("Constant_l9yc2b_a9a");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.EDITABLE, true);
+      }
+      editorCell.setDefaultText("");
+      return editorCell;
     }
   }
 }

@@ -2855,5 +2855,36 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="6791390962478915903">
+    <link role="concept:8" targetNodeId="1.1830039279190439966:3" resolveInfo="AdditionalForLoopVariable" />
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="6791390962478915904">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6791390962478915905">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6791390962478932955">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="6791390962478933416">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6791390962478954742">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6791390962478933422">
+                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="6791390962478933420">
+                  <link role="concept:16" targetNodeId="1.1144231330558:3" resolveInfo="ForStatement" />
+                  <node role="leftExpression:16" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="6791390962478933419" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6791390962478954741">
+                  <link role="link:16" targetNodeId="1.1144230900587:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="6791390962478954746" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6791390962478932957">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="6791390962478932956" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="6791390962478933413">
+                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="6791390962478933415">
+                  <link role="conceptDeclaration:16" targetNodeId="1.1144231330558:3" resolveInfo="ForStatement" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

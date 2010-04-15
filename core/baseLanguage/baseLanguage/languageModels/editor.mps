@@ -6052,6 +6052,7 @@
         <link role="styleClass:32" targetNodeId="1215087929380" resolveInfo="LeftParen" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1144231387422">
+        <property name="noTargetText:32" value=" " />
         <link role="relationDeclaration:32" targetNodeId="17.1144230900587:3" />
         <link role="actionMap:32" targetNodeId="772870278648919542" resolveInfo="DeleteFirstForLooapVar" />
         <link role="keyMap:32" targetNodeId="772870278649561899" resolveInfo="AddForStatementVar" />
@@ -6099,6 +6100,7 @@
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1144231420872">
+        <property name="noTargetText:32" value=" " />
         <link role="relationDeclaration:32" targetNodeId="17.1144231399730:3" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1144231423624">
@@ -6110,6 +6112,11 @@
         <property name="separatorText:32" value="," />
         <link role="relationDeclaration:32" targetNodeId="17.1144231408325:3" />
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1032195626824939923" />
+        <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="6791390962478665969">
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="6791390962478665970">
+            <property name="flag:32" value="true" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1144231387425">
         <property name="text:32" value=")" />

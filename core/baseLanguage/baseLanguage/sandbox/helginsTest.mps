@@ -55,7 +55,31 @@
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="9026942911488986357">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="9026942911488986358" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9026942911488986359" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9026942911488986360" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9026942911488986360">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForStatement:3" id="6791390962477706294">
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6791390962477706295" />
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression:3" id="6791390962479102532">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6791390962479102537">
+              <property name="value:3" value="4" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6791390962479102531">
+              <link role="variableDeclaration:3" targetNodeId="6791390962479099572" resolveInfo="a" />
+            </node>
+          </node>
+          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6791390962479099572">
+            <property name="name:3" value="a" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="6791390962479099574" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="6791390962479102536">
+              <property name="value:3" value="3" />
+            </node>
+          </node>
+          <node role="iteration:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="6791390962479102539">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6791390962479102540">
+              <link role="variableDeclaration:3" targetNodeId="6791390962479099572" resolveInfo="a" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

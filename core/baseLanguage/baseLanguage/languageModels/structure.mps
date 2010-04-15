@@ -1555,7 +1555,7 @@
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1144230900587">
       <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
+      <property name="sourceCardinality:0" value="0..1" />
       <property name="role:0" value="variable" />
       <link role="target:0" targetNodeId="1068581242863:3" resolveInfo="LocalVariableDeclaration" />
     </node>
