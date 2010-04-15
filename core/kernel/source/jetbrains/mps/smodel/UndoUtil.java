@@ -57,12 +57,12 @@ public class UndoUtil {
     }
   }
 
-  public static void setUndoBlocked() {
+  private static void setUndoBlocked() {
     if (!ThreadUtils.isEventDispatchThread()) return;
     ourUndoBlocked = true;
   }
 
-  public static void setUndoUnblocked() {
+  private static void setUndoUnblocked() {
     if (!ThreadUtils.isEventDispatchThread()) return;
     ourUndoBlocked = false;
   }
