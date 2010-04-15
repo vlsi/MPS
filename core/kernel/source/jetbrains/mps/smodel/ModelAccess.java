@@ -18,7 +18,6 @@ package jetbrains.mps.smodel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.ide.ThreadUtils;
@@ -387,6 +386,10 @@ public class ModelAccess {
     if (myCommandLevel == 0) {
       onCommandFinished();
     }
+  }
+
+  public boolean isInsideCommand() {
+    return myCommandLevel > 0;
   }
 
   public void addCommandListener(ModelAccessListener l) {
