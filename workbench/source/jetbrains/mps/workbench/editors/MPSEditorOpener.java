@@ -49,7 +49,7 @@ import javax.swing.SwingUtilities;
 import java.awt.Component;
 import java.util.*;
 
-public class MPSEditorOpener implements ProjectComponent {
+public class MPSEditorOpener{
   private static final Logger LOG = Logger.getLogger(MPSEditorOpener.class);
 
   private Project myProject;
@@ -60,26 +60,6 @@ public class MPSEditorOpener implements ProjectComponent {
   public MPSEditorOpener(Project project) {
     myProject = project;
     assert myProject != null;
-  }
-
-  public void projectOpened() {
-
-  }
-
-  public void projectClosed() {
-
-  }
-
-  @NonNls
-  @NotNull
-  public String getComponentName() {
-    return "MPS Editor Opener";
-  }
-
-  public void initComponent() {
-  }
-
-  public void disposeComponent() {
   }
 
   public SNode getBaseNode(IOperationContext context, SNode node) {
@@ -114,10 +94,9 @@ public class MPSEditorOpener implements ProjectComponent {
       }
     }
 
-    if (nodeEditor == null) {
-      nodeEditor = new NodeEditor(operationContext, node);
-    }
-    return nodeEditor;
+    if (nodeEditor != null) return nodeEditor;
+
+    return new NodeEditor(operationContext, node);
   }
 
   public void registerOpenHandler(MPSEditorOpenHandler handler, MPSEditorOpenHandlerOwner owner) {
@@ -173,6 +152,8 @@ public class MPSEditorOpener implements ProjectComponent {
   public IEditor openNodeExplicitly(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
     return openNode(node, context, focus, select, false);
   }
+
+  //----------generic
 
   private IEditor editNode(final SNode node, final IOperationContext context, boolean openBaseNode) {
     boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
@@ -240,6 +221,40 @@ public class MPSEditorOpener implements ProjectComponent {
 
     return nodeEditor;
   }
+
+  private IEditor openEditor(final SNode root, IOperationContext context, boolean openBaseNode) {
+    SNode baseNode = null;
+
+    if (openBaseNode) {
+      baseNode = getBaseNode(context, root);
+    }
+
+    if (baseNode == null) {
+      baseNode = root;
+    }
+
+    // [++] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
+    assert baseNode.isRegistered() : "BaseNode is not registered";
+    SNode node = new SNodePointer(baseNode).getNode();
+    assert node != null : "Unable to get Node by SNodePointer";
+    assert node.isRegistered() : "Returned node is not registered (" + node + "|" + baseNode + ")";
+    // [--] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
+    MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
+    FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
+    FileEditor fileEditor = editorManager.openFile(file, false)[0];
+
+    MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
+
+    IEditor nodeEditor = fileNodeEditor.getNodeEditor();
+
+    if (nodeEditor instanceof TabbedEditor) {
+      ((TabbedEditor) nodeEditor).selectLinkedEditor(root);
+    }
+
+    return nodeEditor;
+  }
+
+  //----------util
 
   private boolean focusNeededInInspector(SNode node) {
     final InspectorTool inspectorTool = getInspector();
@@ -327,37 +342,4 @@ public class MPSEditorOpener implements ProjectComponent {
 
     component.changeSelection(component.getRootCell());
   }
-
-  private IEditor openEditor(final SNode root, IOperationContext context, boolean openBaseNode) {
-    SNode baseNode = null;
-
-    if (openBaseNode) {
-      baseNode = getBaseNode(context, root);
-    }
-
-    if (baseNode == null) {
-      baseNode = root;
-    }
-
-    // [++] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
-    assert baseNode.isRegistered() : "BaseNode is not registered";
-    SNode node = new SNodePointer(baseNode).getNode();
-    assert node != null : "Unable to get Node by SNodePointer";
-    assert node.isRegistered() : "Returned node is not registered (" + node + "|" + baseNode + ")";
-    // [--] assertions for http://youtrack.jetbrains.net/issue/MPS-7792
-    MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
-    FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
-    FileEditor fileEditor = editorManager.openFile(file, false)[0];
-
-    MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
-
-    IEditor nodeEditor = fileNodeEditor.getNodeEditor();
-
-    if (nodeEditor instanceof TabbedEditor) {
-      ((TabbedEditor) nodeEditor).selectLinkedEditor(root);
-    }
-
-    return nodeEditor;
-  }
-
 }
