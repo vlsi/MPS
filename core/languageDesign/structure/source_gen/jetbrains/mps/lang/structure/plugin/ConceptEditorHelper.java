@@ -97,7 +97,10 @@ public class ConceptEditorHelper {
 
   private static Language getLanguageForTab(final AbstractLazyTab tab) {
     SNode node = ((SNode) tab.getBaseNode());
-    return SModelUtil.getDeclaringLanguage(node, GlobalScope.getInstance());
+    assert node != null : "base node of tabbed editor is null";
+    Language language = SModelUtil.getDeclaringLanguage(node, GlobalScope.getInstance());
+    assert language != null : "language is null for node " + node;
+    return language;
   }
 
   public static class MultitabbedListener extends SModelAdapter {
