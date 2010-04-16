@@ -33,22 +33,6 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void applyReductionRules(final SNode inputNode, final SNode clonedOutputNode, final ReductionBlockingContext blockingContext)
-    throws GenerationFailureException, GenerationCanceledException {
-    myPool.addTask(new GenerationTask(){
-      @Override
-      public void run() throws GenerationCanceledException, GenerationFailureException {
-        applyReductionRules_internal(inputNode, clonedOutputNode, blockingContext);
-      }
-
-      @Override
-      public boolean requiresReadAccess() {
-        return true;
-      }
-    });
-  }
-
-  @Override
   protected List<SNode> applyReductions(boolean isPrimary)
     throws GenerationCanceledException, GenerationFailureException {
     List<SNode> result = super.applyReductions(isPrimary);

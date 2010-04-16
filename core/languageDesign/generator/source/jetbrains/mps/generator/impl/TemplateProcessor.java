@@ -212,7 +212,7 @@ public class TemplateProcessor {
       // $COPY-SRC$ / $COPY-SRCL$
       List<SNode> newInputNodes = getNewInputNodes(nodeMacro, templateContext);
       for (SNode newInputNode : newInputNodes) {
-        List<SNode> _outputNodes = myGenerator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, myBlockingContext);
+        List<SNode> _outputNodes = myGenerator.copyNodeFromInputNode(mappingName, templateNode, newInputNode, myBlockingContext, new boolean[]{false});
         if (_outputNodes != null) {
           // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.
