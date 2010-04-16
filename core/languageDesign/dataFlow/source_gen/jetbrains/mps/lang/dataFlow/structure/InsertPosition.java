@@ -11,18 +11,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class InsertPosition extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.dataFlow.structure.InsertPosition";
-  public static final String EXPRESSION = "expression";
+  public static final String INSTRUCTION = "instruction";
 
   public InsertPosition(SNode node) {
     super(node);
   }
 
-  public Expression getExpression() {
-    return (Expression) this.getChild(Expression.class, InsertPosition.EXPRESSION);
+  public Expression getInstruction() {
+    return (Expression) this.getChild(Expression.class, InsertPosition.INSTRUCTION);
   }
 
-  public void setExpression(Expression node) {
-    super.setChild(InsertPosition.EXPRESSION, node);
+  public void setInstruction(Expression node) {
+    super.setChild(InsertPosition.INSTRUCTION, node);
   }
 
   public static InsertPosition newInstance(SModel sm, boolean init) {

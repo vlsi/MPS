@@ -151,7 +151,7 @@ public class Program {
 
   public int getEnd(Object o) {
     if (!myEnds.containsKey(o)) {
-        throw new DataflowBuilderException("Can't find a start of node " + o);
+        throw new DataflowBuilderException("Can't find an end of node " + o);
     }
     return myEnds.get(o);
   }
@@ -373,4 +373,10 @@ public class Program {
       return Collections.unmodifiableList(myChildren);
     }
   }
+
+   public boolean contains(Object o) {
+     Instruction i = null;
+     myInstructions.indexOf(i);
+      return myStarts.containsKey(o);
+   }
 }

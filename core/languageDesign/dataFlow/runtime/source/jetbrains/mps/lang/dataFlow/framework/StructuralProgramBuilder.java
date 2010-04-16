@@ -62,6 +62,14 @@ public abstract class StructuralProgramBuilder<N> {
     };
   }
 
+  public int insertAfter(Instruction i) {
+     return myProgram.indexOf(i)+1;
+  }
+
+  public int insertBefore(Instruction i) {
+     return myProgram.indexOf(i);
+  }
+
   public Position label(final N node, final String label) {
     return new Position() {
       public int getPosition() {
@@ -80,10 +88,10 @@ public abstract class StructuralProgramBuilder<N> {
     myLabels.get((N) myProgram.getCurrent()).put(label, myProgram.size());
   }
 
-  private void updateLabelsOnInsert(final Position position) {
+  private void updateLabelsOnInsert(final int position) {
     for(Entry<N, Map<String, Integer>> labels : myLabels.entrySet()) {
       for(Entry<String,Integer> label : labels.getValue().entrySet()) {
-        if (label.getValue() > position.getPosition()) {
+        if (label.getValue() > position) {
           label.setValue(label.getValue()+1);
         }
       }
@@ -98,12 +106,15 @@ public abstract class StructuralProgramBuilder<N> {
     return instruction;
   }
 
-  public void emitNop(final Position insertPosition) {
-    myProgram.insert(emitNopCommon(), insertPosition.getPosition());
+  public void emitNop(final int insertPosition) {
+    updateLabelsOnInsert(insertPosition);
+    myProgram.insert(emitNopCommon(), insertPosition);
   }
 
   public void emitNop() {
-    myProgram.add(emitNopCommon());
+   // if(myProgram.getInstructions().size()==0 || !(myProgram.getInstructions().get(myProgram.getInstructions().size()-1)instanceof NopInstruction)) {
+      myProgram.add(emitNopCommon());
+  //  }
   }
 
   public void emitRead(Object var) {
@@ -156,9 +167,9 @@ public abstract class StructuralProgramBuilder<N> {
     myProgram.add(emitIfJumpCommon(position));
   }
 
-  public void emitIfJump(final Position position, final Position insertPosition) {
+  public void emitIfJump(final Position position, int insertPosition) {
     updateLabelsOnInsert(insertPosition);
-    myProgram.insert(emitIfJumpCommon(position), insertPosition.getPosition());
+    myProgram.insert(emitIfJumpCommon(position), insertPosition);
   }
 
   public void emitTry() {
@@ -204,5 +215,13 @@ public abstract class StructuralProgramBuilder<N> {
 
   public interface Position {
     int getPosition();
+  }
+
+  public boolean contains(Object o) {
+      return myProgram.contains(o);
+  }
+
+  public List<Instruction> getInstructionsFor(Object o) {
+    return myProgram.getInstructionsFor(o);
   }
 }

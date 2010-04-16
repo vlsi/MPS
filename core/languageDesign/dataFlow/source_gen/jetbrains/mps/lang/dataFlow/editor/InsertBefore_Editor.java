@@ -30,8 +30,8 @@ public class InsertBefore_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_l4xam2_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("expression");
-    provider.setNoTargetText("<no expression>");
+    provider.setRole("instruction");
+    provider.setNoTargetText("<no instruction>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

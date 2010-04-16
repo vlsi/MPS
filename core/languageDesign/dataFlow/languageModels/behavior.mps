@@ -136,5 +136,25 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877480942" />
     </node>
   </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1823319949748055875">
+    <link role="concept" targetNodeId="1.4969132436616196224:0" resolveInfo="InstructionType" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1823319949748055878">
+      <property name="name" value="getPresentation" />
+      <link role="overriddenMethod" targetNodeId="2v.1213877396640" resolveInfo="getPresentation" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1823319949748055881">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1823319949748055885">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1823319949748055886">
+            <property name="value:3" value="instruction" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1823319949748055883" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1823319949748055884" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1823319949748055876">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1823319949748055877" />
+    </node>
+  </node>
 </model>
 

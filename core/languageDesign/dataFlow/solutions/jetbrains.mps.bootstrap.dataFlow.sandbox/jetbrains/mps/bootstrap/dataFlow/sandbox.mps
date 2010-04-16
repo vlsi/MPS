@@ -49,6 +49,7 @@
           <property name="name:0" value="abc" />
         </node>
         <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement:0" id="1206445590393">
+          <property name="left_transfrom_hint:0" value="true" />
           <node role="jumpTo:0" type="jetbrains.mps.lang.dataFlow.structure.AfterPosition:0" id="1206445591770">
             <node role="relativeTo:0" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1206445594303" />
           </node>
@@ -198,7 +199,7 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1207309893331">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1207309893332" />
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1207309893333">
-                <link role="baseMethodDeclaration:3" targetNodeId="1207309893322" resolveInfo="testExtractMethod" />
+                <link role="baseMethodDeclaration:3" targetNodeId="1207308295627" resolveInfo="testExtractMethod" />
               </node>
             </node>
           </node>
@@ -206,7 +207,7 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1207305638178">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1207305638179">
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1207305638181">
-              <link role="baseMethodDeclaration:3" targetNodeId="1207305638165" resolveInfo="abcdef" />
+              <link role="baseMethodDeclaration:3" targetNodeId="1207320884179" resolveInfo="abcdef" />
             </node>
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1207305638180" />
           </node>
@@ -347,7 +348,7 @@
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1207308287936">
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1207308287937" />
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1207308287938">
-                    <link role="baseMethodDeclaration:3" targetNodeId="1207308287927" resolveInfo="testExtractMethod" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="1207308295627" resolveInfo="testExtractMethod" />
                   </node>
                 </node>
                 <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1207304246348" />
@@ -470,9 +471,6 @@
       </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1206443792482" />
-    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1207141396977">
-      <link role="classifier:3" targetNodeId="1206443792481" resolveInfo="ABC" />
-    </node>
   </node>
 </model>
 

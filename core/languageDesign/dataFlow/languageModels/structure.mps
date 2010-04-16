@@ -440,11 +440,79 @@
     <link role="extends:0" targetNodeId="5.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8486807419021026953">
       <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="expression" />
+      <property name="role:0" value="instruction" />
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="3.1068431790191:3" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="8486807419021026927">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473854053:0" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2959643274329928484">
+    <property name="name:0" value="GetCodeForExpression" />
+    <link role="extends:0" targetNodeId="3.1068431790191:3" resolveInfo="Expression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2959643274329928485">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="expression" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="3.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="2206233444648685679">
+      <property name="value:0" value="get code for" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4969132436616196224">
+    <property name="name:0" value="InstructionType" />
+    <link role="extends:0" targetNodeId="3.1068431790189:3" resolveInfo="Type" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1823319949748055874">
+      <property name="value:0" value="instruction" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1823319949748058980">
+    <property name="name:0" value="InstructionGetSourceOperation" />
+    <property name="package:0" value="InstructionOperations" />
+    <link role="extends:0" targetNodeId="1823319949748058981:0" resolveInfo="BaseInstructionOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1823319949748059015">
+      <property name="value:0" value="getSource" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1823319949748058981">
+    <property name="name:0" value="BaseInstructionOperation" />
+    <property name="package:0" value="InstructionOperations" />
+    <link role="extends:0" targetNodeId="5.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1823319949748059509">
+      <link role="intfc:0" targetNodeId="3.1197027803184:3" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="7180022869589052773">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473854053:0" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7180022869589052764">
+    <property name="package:0" value="InstructionOperations" />
+    <property name="name:0" value="InstructionIsNop" />
+    <link role="extends:0" targetNodeId="7180022869589052771:0" resolveInfo="BooleanInstructionOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7180022869589052770">
+      <property name="value:0" value="isNop" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7180022869589052765">
+    <property name="package:0" value="InstructionOperations" />
+    <property name="name:0" value="InstructionIsRet" />
+    <link role="extends:0" targetNodeId="7180022869589052771:0" resolveInfo="BooleanInstructionOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7180022869589052769">
+      <property name="value:0" value="isRet" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7180022869589052771">
+    <property name="package:0" value="InstructionOperations" />
+    <property name="name:0" value="BooleanInstructionOperation" />
+    <link role="extends:0" targetNodeId="1823319949748058981:0" resolveInfo="BaseInstructionOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="7180022869589052772">
       <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473854053:0" resolveInfo="abstract" />
     </node>
   </node>

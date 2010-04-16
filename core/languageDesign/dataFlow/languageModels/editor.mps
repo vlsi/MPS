@@ -537,5 +537,38 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1409563270992623160" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="2959643274329928487">
+    <link role="conceptDeclaration:32" targetNodeId="1.2959643274329928484:0" resolveInfo="GetCodeForStatement" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="2959643274329928489">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2206233444648685683">
+        <property name="text:32" value="get code for" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2959643274329984353">
+        <property name="text:32" value="(" />
+        <link role="styleClass:32" targetNodeId="3.1215087929380" resolveInfo="LeftParen" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem:32" id="4300488197318511639">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="2959643274329928494">
+        <link role="relationDeclaration:32" targetNodeId="1.2959643274329928485:0" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2959643274329984355">
+        <property name="text:32" value=")" />
+        <link role="styleClass:32" targetNodeId="3.1215088010675" resolveInfo="RightParen" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="4300488197318511641">
+          <property name="flag:32" value="true" />
+        </node>
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="2959643274329928491" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7180022869589052766">
+    <property name="package:32" value="InstructionOperations" />
+    <link role="conceptDeclaration:32" targetNodeId="1.1823319949748058981:0" resolveInfo="BaseInstructionOperation" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="7180022869589052768">
+      <link role="relationDeclaration:32" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
