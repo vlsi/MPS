@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.debug.runtime;
 
-import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collections;

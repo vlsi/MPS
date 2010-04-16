@@ -22,9 +22,9 @@ import com.intellij.execution.*;
 import com.intellij.execution.executors.DefaultRunExecutor;
 import com.intellij.execution.executors.DefaultDebugExecutor;
 import com.intellij.execution.runners.ProgramRunner;
+import jetbrains.mps.debug.api.integration.MPSDebugRunner;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.runconfigs.runner.MPSProgramRunner;
-import jetbrains.mps.debug.integration.MPSDebugRunner;
 
 public class RunConfigInitializer implements ApplicationComponent {
 
