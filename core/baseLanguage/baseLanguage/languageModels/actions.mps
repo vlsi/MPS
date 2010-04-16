@@ -1789,6 +1789,24 @@
         </node>
       </node>
     </node>
+    <node role="nodeFactory:23" type="jetbrains.mps.lang.actions.structure.NodeFactory:23" id="5649551303341182515">
+      <link role="applicableConcept:23" targetNodeId="1.1144230876926:3" resolveInfo="AbstractForStatement" />
+      <node role="setupFunction:23" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction:23" id="5649551303341182516">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5649551303341182517">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5649551303341182562">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5649551303341182799">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5649551303341182586">
+                <node role="operand:3" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode:23" id="5649551303341182563" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5649551303341182612">
+                  <link role="link:16" targetNodeId="1.1144230900587:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation:16" id="5649551303341182825" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1158872173903">
     <property name="name:3" value="ExpectedType_FactoryUtil" />
