@@ -65,7 +65,6 @@ import java.util.*;
 import java.util.List;
 import java.util.regex.Matcher;
 
-// TODO add Patch annotations
 public abstract class ChooseByNameBase {
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.util.gotoByName.ChooseByNameBase");
 
