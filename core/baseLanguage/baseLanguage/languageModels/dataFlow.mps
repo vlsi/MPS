@@ -1240,6 +1240,29 @@
     <link role="conceptDeclaration:0" targetNodeId="1.1164879751025:3" resolveInfo="TryCatchStatement" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1206542990055">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1206542990056">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="5255918499423243425">
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5255918499423243426">
+            <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement:0" id="5255918499423243432">
+              <node role="jumpTo:0" type="jetbrains.mps.lang.dataFlow.structure.BeforePosition:0" id="5255918499423243434">
+                <node role="relativeTo:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5255918499423243436">
+                  <link role="variableDeclaration:3" targetNodeId="5255918499423243430" resolveInfo="catchClause" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5255918499423243427">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="5255918499423243428" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="5255918499423243429">
+              <link role="link:16" targetNodeId="1.1164903496223:3" />
+            </node>
+          </node>
+          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5255918499423243430">
+            <property name="name:3" value="catchClause" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="5255918499423243431">
+              <link role="concept:16" targetNodeId="1.1164903280175:3" resolveInfo="CatchClause" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="2838654975956047419">
           <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2838654975956047420">
             <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="2838654975956047421" />

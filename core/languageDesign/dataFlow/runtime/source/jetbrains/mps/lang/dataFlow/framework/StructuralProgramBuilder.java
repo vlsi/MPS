@@ -112,9 +112,7 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   public void emitNop() {
-   // if(myProgram.getInstructions().size()==0 || !(myProgram.getInstructions().get(myProgram.getInstructions().size()-1)instanceof NopInstruction)) {
-      myProgram.add(emitNopCommon());
-  //  }
+    myProgram.add(emitNopCommon());
   }
 
   public void emitRead(Object var) {
