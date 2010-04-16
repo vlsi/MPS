@@ -44,7 +44,7 @@ public class UndoUtil {
       r.run();
     } else {
       if (ourUndoBlocked) {
-        LOG.errorWithTrace("non-undoable actions can not be nested");
+        r.run();
         return;
       }
       setUndoBlocked();
@@ -61,8 +61,7 @@ public class UndoUtil {
       return t.compute();
     } else {
       if (ourUndoBlocked) {
-        LOG.errorWithTrace("non-undoable actions can not be nested");
-        return null;
+        return t.compute();
       }
       setUndoBlocked();
       try {
