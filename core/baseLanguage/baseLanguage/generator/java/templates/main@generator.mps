@@ -307,6 +307,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1201570124301">
     <property name="name:2" value="weave_Property" />
+    <property name="package:2" value="property" />
     <link role="applicableConcept:2" targetNodeId="1.1201370618622:3" resolveInfo="Property" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1201570141858">
       <property name="name:3" value="C" />
@@ -643,6 +644,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1202577940061">
     <property name="name:2" value="reduce_ValueParameter" />
+    <property name="package:2" value="property.implementation.custom.set" />
     <link role="applicableConcept:2" targetNodeId="1.1202003934320:3" resolveInfo="ValueParameter" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1202577971329">
       <property name="name:3" value="f" />
@@ -666,6 +668,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1206152999436">
     <property name="name:2" value="reduce_AssignmentExpression_propertySet" />
+    <property name="package:2" value="assignments" />
     <link role="applicableConcept:2" targetNodeId="1.1068498886294:3" resolveInfo="AssignmentExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="1206153090473">
       <property name="methodName:1" value="setProperty" />
@@ -763,6 +766,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1206154637872">
     <property name="name:2" value="reduce_DotExpression_propertyGet" />
+    <property name="package:2" value="dotExpression" />
     <link role="applicableConcept:2" targetNodeId="1.1197027756228:3" resolveInfo="DotExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall:1" id="1206154679453">
       <property name="methodName:1" value="getProperty" />

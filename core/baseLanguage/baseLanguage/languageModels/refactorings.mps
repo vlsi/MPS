@@ -595,6 +595,7 @@
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="418677511065471952">
     <property name="name:1" value="MoveStaticMethod" />
     <property name="userFriendlyName:1" value="Move Static Method" />
+    <property name="package:1" value="method.static" />
     <node role="parameter:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter:1" id="418677511065471993">
       <property name="name:1" value="destination" />
       <node role="chooser:1" type="jetbrains.mps.lang.refactoring.structure.MPSParameterChooser:1" id="418677511065471994">
@@ -743,6 +744,7 @@
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="4946830740863976385">
     <property name="name:1" value="ConvertAnonimousClass" />
     <property name="userFriendlyName:1" value="Convert Anonymous to Inner Class" />
+    <property name="package:1" value="classifier" />
     <node role="parameter:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter:1" id="4946830740863976386">
       <property name="name:1" value="name" />
       <node role="chooser:1" type="jetbrains.mps.lang.refactoring.structure.MPSParameterChooser:1" id="4946830740863976387">

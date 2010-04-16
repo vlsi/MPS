@@ -853,7 +853,6 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1075139052656">
     <property name="name:32" value="ConstructorDeclaration_Editor" />
-    <property name="package:32" value="method" />
     <link role="conceptDeclaration:32" targetNodeId="17.1068580123140:3" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1075139052657">
       <property name="name:32" value="methodBox" />
@@ -3804,6 +3803,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1083262769250">
     <property name="name:32" value="EnumConstantReference_Editor" />
+    <property name="package:32" value="classifier.enum" />
     <link role="conceptDeclaration:32" targetNodeId="17.1083260308424:3" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1090928601376">
       <property name="vertical:32" value="false" />
@@ -7674,6 +7674,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1164890912564">
     <property name="name:32" value="_BaseMethodDeclaration_Actions" />
+    <property name="package:32" value="method" />
     <link role="applicableConcept:32" targetNodeId="17.1068580123132:3" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1164890932034">
       <node role="executeFunction:32" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction:32" id="1164890932035">
@@ -8844,6 +8845,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration:32" id="1173990860683">
     <property name="name:32" value="IMethodCall_actualArguments" />
+    <property name="package:32" value="method" />
     <link role="conceptDeclaration:32" targetNodeId="17.1204053956946:3" resolveInfo="IMethodCall" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1173990937233">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1173990956438">
@@ -11264,6 +11266,7 @@
   </node>
   <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="1194344707826">
     <property name="name:32" value="AssignmentExpression_LeftArgument_Actions" />
+    <property name="package:32" value="assignments" />
     <link role="applicableConcept:32" targetNodeId="17.1068498886294:3" resolveInfo="AssignmentExpression" />
     <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="1194344788457">
       <property name="actionId:32" value="delete_action_id" />

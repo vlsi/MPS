@@ -32,6 +32,7 @@
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1143148725345">
     <property name="name:2" value="reduce_ConceptFunctionParameter_default" />
+    <property name="package:2" value="conceptFunction" />
     <link role="applicableConcept:2" targetNodeId="1.1107135704075:3" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1143148725346">
       <property name="name:3" value="_context_method_" />

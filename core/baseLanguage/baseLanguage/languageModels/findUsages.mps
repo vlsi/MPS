@@ -52,6 +52,7 @@
     <property name="name:2" value="OverridingMethods" />
     <property name="description:2" value="Overriding Methods" />
     <property name="isVisible:2" value="true" />
+    <property name="package:2" value="method.instance" />
     <link role="forConcept:2" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
     <node role="isApplicableFunction:2" type="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock:2" id="1200309609797">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1200309609798">
@@ -138,6 +139,7 @@
     <property name="name:2" value="ImplementingClasses" />
     <property name="description:2" value="Implementing Classes" />
     <property name="isVisible:2" value="true" />
+    <property name="package:2" value="classifier" />
     <link role="forConcept:2" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
     <node role="findFunction:2" type="jetbrains.mps.lang.findUsages.structure.FindBlock:2" id="1200310248827">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1200310248828">
@@ -492,6 +494,7 @@
     <property name="name:2" value="DerivedClasses" />
     <property name="description:2" value="Derived Classes" />
     <property name="isVisible:2" value="true" />
+    <property name="package:2" value="classifier" />
     <link role="forConcept:2" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
     <node role="findFunction:2" type="jetbrains.mps.lang.findUsages.structure.FindBlock:2" id="1200310473080">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1200310473081">
@@ -634,6 +637,7 @@
     <property name="description:2" value="All Method Usages" />
     <property name="isVisible:2" value="true" />
     <property name="longDescription:2" value="Usages of this method, overriding methods and implementing methods" />
+    <property name="package:2" value="method" />
     <link role="forConcept:2" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
     <node role="isApplicableFunction:2" type="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock:2" id="1200317943494">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1200317943495">
@@ -1640,6 +1644,7 @@
     <property name="isVisible:2" value="true" />
     <property name="name:2" value="ParameterUsages" />
     <property name="description:2" value="Parameter Usages" />
+    <property name="package:2" value="method" />
     <link role="forConcept:2" targetNodeId="1.1068498886292:3" resolveInfo="ParameterDeclaration" />
     <node role="isApplicableFunction:2" type="jetbrains.mps.lang.findUsages.structure.IsApplicableBlock:2" id="1201091722184">
       <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1201091722185">

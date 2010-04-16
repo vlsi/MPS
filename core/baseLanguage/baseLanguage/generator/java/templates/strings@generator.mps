@@ -30,6 +30,7 @@
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059665">
     <property name="name:2" value="reduce_IsEmptyExpression" />
+    <property name="package:2" value="string.expression" />
     <link role="applicableConcept:2" targetNodeId="4.1225271369338:3" resolveInfo="IsEmptyOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059666">
       <link role="classConcept:3" targetNodeId="2.~StringUtils" resolveInfo="StringUtils" />
@@ -56,6 +57,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059676">
     <property name="name:2" value="reduce_IsNotEmptyExpression" />
+    <property name="package:2" value="string.expression" />
     <link role="applicableConcept:2" targetNodeId="4.1225271408483:3" resolveInfo="IsNotEmptyOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059677">
       <link role="classConcept:3" targetNodeId="2.~StringUtils" resolveInfo="StringUtils" />
@@ -82,6 +84,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059687">
     <property name="name:2" value="reduce_NPEEqualsExpression" />
+    <property name="package:2" value="string" />
     <link role="applicableConcept:2" targetNodeId="4.1225271283259:3" resolveInfo="NPEEqualsExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059688">
       <link role="baseMethodDeclaration:3" targetNodeId="2.~ObjectUtils.equals(java.lang.Object,java.lang.Object):boolean" resolveInfo="equals" />
@@ -125,6 +128,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059706">
     <property name="name:2" value="reduce_NPENotEqualsExpression" />
+    <property name="package:2" value="string" />
     <link role="applicableConcept:2" targetNodeId="4.1225271221393:3" resolveInfo="NPENotEqualsExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1225277059707">
       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059708">
@@ -177,6 +181,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059745">
     <property name="name:2" value="reduce_SubstringExpression" />
+    <property name="package:2" value="string.expression" />
     <link role="applicableConcept:2" targetNodeId="4.1225271484915:3" resolveInfo="SubstringExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059746">
       <link role="classConcept:3" targetNodeId="2.~StringUtils" resolveInfo="StringUtils" />
@@ -259,6 +264,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059783">
     <property name="name:2" value="reduce_TrimOperation_Both" />
+    <property name="package:2" value="string.expression" />
     <link role="applicableConcept:2" targetNodeId="4.1225271546410:3" resolveInfo="TrimOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059784">
       <link role="classConcept:3" targetNodeId="2.~StringUtils" resolveInfo="StringUtils" />
@@ -285,6 +291,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059794">
     <property name="name:2" value="reduce_TrimOperation_Leading" />
+    <property name="package:2" value="string.expression" />
     <link role="applicableConcept:2" targetNodeId="4.1225271546410:3" resolveInfo="TrimOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059795">
       <link role="classConcept:3" targetNodeId="2.~StringUtils" resolveInfo="StringUtils" />
@@ -314,6 +321,7 @@
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225277059806">
     <property name="name:2" value="reduce_TrimOperation_Trainling" />
+    <property name="package:2" value="string.expression" />
     <link role="applicableConcept:2" targetNodeId="4.1225271546410:3" resolveInfo="TrimOperation" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1225277059807">
       <link role="classConcept:3" targetNodeId="2.~StringUtils" resolveInfo="StringUtils" />

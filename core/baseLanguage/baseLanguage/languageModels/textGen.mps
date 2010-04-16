@@ -2106,6 +2106,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234887555845">
+    <property name="package:11" value="classifier" />
     <link role="conceptDeclaration:11" targetNodeId="1.1170345865475:3" resolveInfo="AnonymousClass" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234887555846">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234887555847">
@@ -2323,6 +2324,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234888787417">
+    <property name="package:11" value="classifier" />
     <link role="conceptDeclaration:11" targetNodeId="1.1182160077978:3" resolveInfo="AnonymousClassCreator" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234888787418">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234888787419">
@@ -2340,6 +2342,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234888829413">
+    <property name="package:11" value="array" />
     <link role="conceptDeclaration:11" targetNodeId="1.1173175405605:3" resolveInfo="ArrayAccessExpression" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234888829414">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234888829415">
@@ -2371,6 +2374,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234888870976">
+    <property name="package:11" value="array" />
     <link role="conceptDeclaration:11" targetNodeId="1.1184950988562:3" resolveInfo="ArrayCreator" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234888870977">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234888870978">
@@ -2397,6 +2401,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234888916067">
+    <property name="package:11" value="array" />
     <link role="conceptDeclaration:11" targetNodeId="1.1154542696413:3" resolveInfo="ArrayCreatorWithInitializer" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234888916068">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234888916069">
@@ -2430,6 +2435,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234889016866">
+    <property name="package:11" value="dotExpression" />
     <link role="conceptDeclaration:11" targetNodeId="1.1208890769693:3" resolveInfo="ArrayLengthOperation" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234889016867">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234889016868">
@@ -2442,6 +2448,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234889037948">
+    <property name="package:11" value="array" />
     <link role="conceptDeclaration:11" targetNodeId="1.1188220165133:3" resolveInfo="ArrayLiteral" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234889037949">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234889037950">
@@ -2467,6 +2474,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234890240213">
+    <property name="package:11" value="type" />
     <link role="conceptDeclaration:11" targetNodeId="1.1070534760951:3" resolveInfo="ArrayType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234890240214">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234890240215">
@@ -2866,6 +2874,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234890826228">
+    <property name="package:11" value="type.primitive" />
     <link role="conceptDeclaration:11" targetNodeId="1.1070534644030:3" resolveInfo="BooleanType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234890826229">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234890826230">
@@ -2970,6 +2979,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234890924622">
+    <property name="package:11" value="type.primitive" />
     <link role="conceptDeclaration:11" targetNodeId="1.1070534604311:3" resolveInfo="ByteType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234890924623">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234890924624">
@@ -3078,6 +3088,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234891149163">
+    <property name="package:11" value="type.primitive" />
     <link role="conceptDeclaration:11" targetNodeId="1.1070534555686:3" resolveInfo="CharType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234891149164">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234891149165">
@@ -3092,6 +3103,7 @@
   <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234891178357">
     <property name="extention:11" value="java" />
+    <property name="package:11" value="classifier" />
     <link role="conceptDeclaration:11" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234891178358">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234891178359">
@@ -3465,6 +3477,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234892337624">
+    <property name="package:11" value="classifier" />
     <link role="conceptDeclaration:11" targetNodeId="1.1212685548494:3" resolveInfo="ClassCreator" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234892337625">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234892337626">
@@ -3513,6 +3526,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234892420461">
+    <property name="package:11" value="classifier" />
     <link role="conceptDeclaration:11" targetNodeId="1.1116615150612:3" resolveInfo="ClassifierClassExpression" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234892420462">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234892420463">
@@ -3547,6 +3561,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234892447096">
+    <property name="package:11" value="type" />
     <link role="conceptDeclaration:11" targetNodeId="1.1107535904670:3" resolveInfo="ClassifierType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234892447097">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234892447098">
@@ -3645,6 +3660,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1234892777974">
+    <property name="package:11" value="conceptFunction" />
     <link role="conceptDeclaration:11" targetNodeId="1.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1234892777975">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234892777976">
@@ -3785,6 +3801,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235067749472">
+    <property name="package:11" value="if" />
     <link role="conceptDeclaration:11" targetNodeId="1.1068580123159:3" resolveInfo="IfStatement" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235067749473">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235067749474">
@@ -3868,6 +3885,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235068025775">
+    <property name="package:11" value="classifier" />
     <link role="conceptDeclaration:11" targetNodeId="1.1206629501431:3" resolveInfo="InstanceInitializer" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235068025776">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235068025777">
@@ -3904,6 +3922,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235068084774">
+    <property name="package:11" value="method.instance" />
     <link role="conceptDeclaration:11" targetNodeId="1.1202948039474:3" resolveInfo="InstanceMethodCallOperation" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235068084775">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235068084776">
@@ -3917,6 +3936,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235068110028">
+    <property name="package:11" value="method.instance" />
     <link role="conceptDeclaration:11" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235068110029">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235068110030">
@@ -4271,6 +4291,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235068672666">
+    <property name="package:11" value="type.primitive" />
     <link role="conceptDeclaration:11" targetNodeId="1.1070534370425:3" resolveInfo="IntegerType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235068672667">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235068672668">
@@ -4283,6 +4304,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235068684876">
+    <property name="package:11" value="classifier" />
     <link role="conceptDeclaration:11" targetNodeId="1.1107796713796:3" resolveInfo="Interface" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235068684877">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235068684878">
@@ -4584,6 +4606,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235130213032">
+    <property name="package:11" value="method.static" />
     <link role="conceptDeclaration:11" targetNodeId="1.1172058436953:3" resolveInfo="LocalStaticMethodCall" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235130213033">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235130213034">
@@ -4621,6 +4644,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235130339063">
+    <property name="package:11" value="type.primitive" />
     <link role="conceptDeclaration:11" targetNodeId="1.1068581242867:3" resolveInfo="LongType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235130339064">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235130339065">
@@ -4633,6 +4657,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235130354959">
+    <property name="package:11" value="type" />
     <link role="conceptDeclaration:11" targetNodeId="1.1171903862077:3" resolveInfo="LowerBoundType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235130354960">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235130354961">
@@ -4800,6 +4825,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235130646085">
+    <property name="package:11" value="method" />
     <link role="conceptDeclaration:11" targetNodeId="1.1068498886292:3" resolveInfo="ParameterDeclaration" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235130646086">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235130646087">
@@ -4817,6 +4843,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235130676607">
+    <property name="package:11" value="method" />
     <link role="conceptDeclaration:11" targetNodeId="1.1068581242874:3" resolveInfo="ParameterReference" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235130676608">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235130693731">
@@ -4892,6 +4919,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235130814902">
+    <property name="package:11" value="prefix/postfix" />
     <link role="conceptDeclaration:11" targetNodeId="1.1214918975462:3" resolveInfo="PostfixDecrementExpression" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235130814903">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235130814904">
@@ -4912,6 +4940,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235130845453">
+    <property name="package:11" value="prefix/postfix" />
     <link role="conceptDeclaration:11" targetNodeId="1.1214918800624:3" resolveInfo="PostfixIncrementExpression" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235130845454">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235130845455">
@@ -5108,6 +5137,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235131150614">
+    <property name="package:11" value="type.primitive" />
     <link role="conceptDeclaration:11" targetNodeId="1.1070533982221:3" resolveInfo="ShortType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235131150615">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235131150616">
@@ -5574,6 +5604,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235131758155">
+    <property name="package:11" value="method.static" />
     <link role="conceptDeclaration:11" targetNodeId="1.1081236700937:3" resolveInfo="StaticMethodCall" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235131758156">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235131758157">
@@ -5612,6 +5643,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235131802112">
+    <property name="package:11" value="method.static" />
     <link role="conceptDeclaration:11" targetNodeId="1.1081236700938:3" resolveInfo="StaticMethodDeclaration" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235131802113">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235131802114">
@@ -5875,6 +5907,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235133002982">
+    <property name="package:11" value="string" />
     <link role="conceptDeclaration:11" targetNodeId="1.1225271177708:3" resolveInfo="StringType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235133002983">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235133002984">
@@ -5887,6 +5920,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235133040740">
+    <property name="package:11" value="classifier" />
     <link role="conceptDeclaration:11" targetNodeId="1.1070475587102:3" resolveInfo="SuperConstructorInvocation" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235133040741">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235133040742">
@@ -5916,6 +5950,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235133147898">
+    <property name="package:11" value="method.instance" />
     <link role="conceptDeclaration:11" targetNodeId="1.1073063089578:3" resolveInfo="SuperMethodCall" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235133147899">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235133147900">
@@ -6274,6 +6309,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235133911716">
+    <property name="package:11" value="classifier" />
     <link role="conceptDeclaration:11" targetNodeId="1.1178893518978:3" resolveInfo="ThisConstructorInvocation" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235133911717">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235133911718">
@@ -6522,6 +6558,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235148827560">
+    <property name="package:11" value="type" />
     <link role="conceptDeclaration:11" targetNodeId="1.1109279763828:3" resolveInfo="TypeVariableDeclaration" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235148827561">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235148827562">
@@ -6597,6 +6634,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235149154430">
+    <property name="package:11" value="type" />
     <link role="conceptDeclaration:11" targetNodeId="1.1109283449304:3" resolveInfo="TypeVariableReference" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235149154431">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235149154432">
@@ -6618,6 +6656,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235149177249">
+    <property name="package:11" value="type" />
     <link role="conceptDeclaration:11" targetNodeId="1.1171903916106:3" resolveInfo="UpperBoundType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235149177250">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235149177251">
@@ -6671,6 +6710,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235149361338">
+    <property name="package:11" value="type" />
     <link role="conceptDeclaration:11" targetNodeId="1.1177714083117:3" resolveInfo="VarType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235149361339">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235149361340">
@@ -6765,6 +6805,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235149549592">
+    <property name="package:11" value="visibility" />
     <link role="conceptDeclaration:11" targetNodeId="1.1146644584814:3" resolveInfo="Visibility" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235149549593">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235149549594">
@@ -6823,6 +6864,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235149638269">
+    <property name="package:11" value="type.primitive" />
     <link role="conceptDeclaration:11" targetNodeId="1.1068581517677:3" resolveInfo="VoidType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235149638270">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235149638271">
@@ -6942,6 +6984,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235149803040">
+    <property name="package:11" value="type" />
     <link role="conceptDeclaration:11" targetNodeId="1.1171903607971:3" resolveInfo="WildCardType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235149803041">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235149803042">
@@ -6954,6 +6997,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235567804739">
+    <property name="package:11" value="classifier.enum" />
     <link role="conceptDeclaration:11" targetNodeId="1.1083260308424:3" resolveInfo="EnumConstantReference" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235567804740">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235567804741">
@@ -7033,6 +7077,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235567952587">
+    <property name="package:11" value="dotExpression" />
     <link role="conceptDeclaration:11" targetNodeId="1.1197029447546:3" resolveInfo="FieldReferenceOperation" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235567952588">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235567952589">
@@ -7054,6 +7099,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235570534877">
+    <property name="package:11" value="enumOperations" />
     <link role="conceptDeclaration:11" targetNodeId="1.1224575136086:3" resolveInfo="EnumValueOfExpression" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235570534878">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235570534879">
@@ -7102,6 +7148,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235570593532">
+    <property name="package:11" value="enumOperations" />
     <link role="conceptDeclaration:11" targetNodeId="1.1224573963862:3" resolveInfo="EnumValuesExpression" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235570593533">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235570593534">
@@ -7184,6 +7231,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235590065729">
+    <property name="package:11" value="dotExpression" />
     <link role="conceptDeclaration:11" targetNodeId="1.1197027756228:3" resolveInfo="DotExpression" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235590065730">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235590065731">
@@ -7517,6 +7565,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235740038236">
+    <property name="package:11" value="array" />
     <link role="conceptDeclaration:11" targetNodeId="1.1184952934362:3" resolveInfo="DimensionExpression" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235740038237">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235740038238">
@@ -7590,6 +7639,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235740133835">
+    <property name="package:11" value="type.primitive" />
     <link role="conceptDeclaration:11" targetNodeId="1.1070534513062:3" resolveInfo="DoubleType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235740133836">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235740133837">
@@ -7709,6 +7759,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235740434208">
+    <property name="package:11" value="if" />
     <link role="conceptDeclaration:11" targetNodeId="1.1206060495898:3" resolveInfo="ElsifClause" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235740434209">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235740434210">
@@ -7753,6 +7804,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235740524220">
+    <property name="package:11" value="classifier.enum" />
     <link role="conceptDeclaration:11" targetNodeId="1.1083245097125:3" resolveInfo="EnumClass" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235740524221">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235740524222">
@@ -7945,6 +7997,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235740896598">
+    <property name="package:11" value="classifier.enum" />
     <link role="conceptDeclaration:11" targetNodeId="1.1083245299891:3" resolveInfo="EnumConstantDeclaration" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235740896599">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235740896600">
@@ -8223,6 +8276,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1235741389634">
+    <property name="package:11" value="type.primitive" />
     <link role="conceptDeclaration:11" targetNodeId="1.1070534436861:3" resolveInfo="FloatType" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1235741389635">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235741389636">
@@ -9255,6 +9309,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1239710466732">
+    <property name="package:11" value="prefix/postfix" />
     <link role="conceptDeclaration:11" targetNodeId="1.1239709577448:3" resolveInfo="PrefixDecrementExpression" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1239710466733">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1239710466734">
@@ -9275,6 +9330,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1239710558961">
+    <property name="package:11" value="prefix/postfix" />
     <link role="conceptDeclaration:11" targetNodeId="1.1239709250944:3" resolveInfo="PrefixIncrementExpression" />
     <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1239710558962">
       <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1239710558963">

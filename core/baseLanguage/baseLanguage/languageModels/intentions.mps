@@ -76,6 +76,7 @@
   <import index="59" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1193744597902">
     <property name="name:8" value="AddCastStatement" />
+    <property name="package:8" value="if" />
     <link role="forConcept:8" targetNodeId="1.1068580123159:3" resolveInfo="IfStatement" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1193744597903">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1193744597904">
@@ -1722,6 +1723,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1199559711021">
     <property name="name:8" value="ReplaceEqualsWithEquality" />
+    <property name="package:8" value="method.instance" />
     <link role="forConcept:8" targetNodeId="1.1202948039474:3" resolveInfo="InstanceMethodCallOperation" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1199559711022">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1199559711023">
@@ -5894,6 +5896,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1202861044458">
     <property name="name:8" value="CreateSetAccessor" />
+    <property name="package:8" value="property.implementation.custom" />
     <link role="forConcept:8" targetNodeId="1.1201402044357:3" resolveInfo="GetAccessor" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1202861044459">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1202861044460">
@@ -5955,6 +5958,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1203413213560">
     <property name="name:8" value="MakeGeneric" />
+    <property name="package:8" value="method" />
     <link role="forConcept:8" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1203413213561">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1203413213562">
@@ -6838,7 +6842,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1206066794083">
-    <property name="package:8" value="elsif" />
+    <property name="package:8" value="if" />
     <property name="name:8" value="ElsifSwapWithMain" />
     <link role="forConcept:8" targetNodeId="1.1206060495898:3" resolveInfo="ElsifClause" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1206066794084">
@@ -6973,7 +6977,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1206631638103">
-    <property name="package:8" value="class" />
+    <property name="package:8" value="classifier" />
     <property name="name:8" value="AddInstanceInitializer" />
     <link role="forConcept:8" targetNodeId="1.1068390468198:3" resolveInfo="ClassConcept" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1206631638104">
@@ -7018,6 +7022,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1214431614908">
     <property name="name:8" value="ConvertClassCreatorToAnonimous" />
+    <property name="package:8" value="classifier" />
     <link role="forConcept:8" targetNodeId="1.1212685548494:3" resolveInfo="ClassCreator" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1214431614909">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1214431614910">
@@ -7623,6 +7628,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1224168785803">
     <property name="name:8" value="AddFieldForUnUsedParameter" />
+    <property name="package:8" value="method" />
     <link role="forConcept:8" targetNodeId="1.1068498886292:3" resolveInfo="ParameterDeclaration" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1224168785804">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1224168785805">
@@ -8010,6 +8016,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1226917954178">
     <property name="name:8" value="ConvertToArrayType" />
+    <property name="package:8" value="type" />
     <link role="forConcept:8" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1226917954179">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226917954180">
@@ -8118,6 +8125,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1226918395187">
     <property name="name:8" value="RemoveArrayType" />
+    <property name="package:8" value="type" />
     <link role="forConcept:8" targetNodeId="1.1070534760951:3" resolveInfo="ArrayType" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="1226918395188">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1226918395189">
@@ -8519,7 +8527,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="1236187435379">
-    <property name="package:8" value="method" />
+    <property name="package:8" value="method.instance" />
     <property name="name:8" value="MakeMethodAbstarct" />
     <property name="isAvailableInChildNodes:8" value="true" />
     <link role="forConcept:8" targetNodeId="1.1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
@@ -9067,6 +9075,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="3627222673199430317">
     <property name="name:8" value="MigrateString" />
+    <property name="package:8" value="type" />
     <link role="forConcept:8" targetNodeId="1.1107535904670:3" resolveInfo="ClassifierType" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="3627222673199430318">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3627222673199430319">
@@ -9437,6 +9446,7 @@
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="3898325814824766814">
     <property name="name:8" value="MakeParameterFinal" />
     <property name="isErrorIntention:8" value="true" />
+    <property name="package:8" value="method" />
     <link role="forConcept:8" targetNodeId="1.1068581242874:3" resolveInfo="ParameterReference" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="3898325814824766815">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3898325814824766816">
@@ -16327,6 +16337,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="5742179528877834612">
     <property name="name:8" value="CreateMethodDeclaration" />
+    <property name="package:8" value="dotExpression" />
     <link role="forConcept:8" targetNodeId="1.1197027803184:3" resolveInfo="IOperation" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="5742179528877834613">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5742179528877834614">
@@ -18465,7 +18476,6 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration:8" id="985108658453262823">
-    <property name="package:8" value="surround" />
     <property name="name:8" value="SurroundWithParenthesis" />
     <property name="isAvailableInChildNodes:8" value="false" />
     <link role="forConcept:8" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
@@ -20244,6 +20254,7 @@
   </node>
   <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="7638980610829995124">
     <property name="name:8" value="ConvertToClosure" />
+    <property name="package:8" value="classifier" />
     <link role="forConcept:8" targetNodeId="1.1170345865475:3" resolveInfo="AnonymousClass" />
     <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="7638980610829995125">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7638980610829995126">
