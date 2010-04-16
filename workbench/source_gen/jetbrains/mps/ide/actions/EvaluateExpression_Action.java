@@ -12,7 +12,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.debug.runtime.DebugSession;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class EvaluateExpression_Action extends GeneratedAction {
@@ -36,8 +36,8 @@ public class EvaluateExpression_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
-        DebugSession debugSession = DebugActionsUtil.getDebugSession(event);
-        event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled());
+        AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
+        event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled() && debugSession.canShowEvaluationDialog());
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

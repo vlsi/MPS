@@ -19,14 +19,19 @@ import com.sun.jdi.connect.Connector;
 import com.sun.jdi.connect.Connector.Argument;
 import com.sun.jdi.connect.IllegalConnectorArgumentsException;
 import com.sun.jdi.connect.ListeningConnector;
+import jetbrains.mps.debug.DebuggerKeys;
+import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
 import jetbrains.mps.debug.integration.runconfigs.RemoteDebugProcessHandler;
+import jetbrains.mps.debug.integration.runconfigs.RemoteRunProfileState;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import jetbrains.mps.debug.api.ToDebugAPI;
+import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,7 +48,7 @@ import java.util.Map;
  * Time: 16:39:41
  * To change this template use File | Settings | File Templates.
  */
-public class VMCreator {
+public class VMCreator extends AbstractDebugSessionCreator {
   private static Logger LOG = Logger.getLogger(VMCreator.class);
 
   private static final int LOCAL_START_TIMEOUT = 15000;
@@ -71,22 +76,35 @@ public class VMCreator {
     myDebuggerSession = new DebugSession(myDebugVMEventsProcessor);
   }
 
+  private DebugConnectionSettings createLocalConnectionSettings(RunProfileState state) {
+    if (state instanceof RemoteRunProfileState) {
+      RemoteRunProfileState remoteState = (RemoteRunProfileState) state;
+      return remoteState.getSettings();
+    } else if (state instanceof BaseRunProfileState) {
+      BaseRunProfileState baseRunProfileState = (BaseRunProfileState) state;
+      DebugConnectionSettings connectionSettings = new LocalConnectionSettings(true);
+      baseRunProfileState.putUserData(DebuggerKeys.CONNECTION_SETTINGS, connectionSettings.getCommandLine(true));
+      return connectionSettings;
+    } else {
+      throw new RuntimeException("Unknown Run Profile State");
+    }
+  }
+
   @Nullable
   @ToDebugAPI
-  public ExecutionResult attachVirtualMachine(final Executor executor,
+  public ExecutionResult startSession(final Executor executor,
                                               final ProgramRunner runner,
-                                              final RunProfileState state,
-                                              DebugConnectionSettings settings
+                                              final RunProfileState state
   ) throws ExecutionException {
     assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
     // LOG.assertTrue(isInInitialState());
 
-    myConnectionSettings = settings;
+    myConnectionSettings = createLocalConnectionSettings(state);
 
     createVirtualMachine();
     try {
       synchronized (myProcessListeners) {
-        myExecutionResult = state.execute(executor, runner);
+        myExecutionResult = execute(executor, runner, state);
         if (myExecutionResult == null) {
           fail();
           return null;
@@ -336,7 +354,6 @@ public class VMCreator {
     return myDebuggerManagerThread;
   }
 
-  @ToDebugAPI
   public DebugSession getDebugSession() {
     return myDebuggerSession;
   }

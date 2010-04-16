@@ -11,7 +11,7 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.debug.runtime.DebugSession;
+import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class Resume_Action extends GeneratedAction {
@@ -34,7 +34,7 @@ public class Resume_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
-        DebugSession debugSession = DebugActionsUtil.getDebugSession(event);
+        AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
         event.getPresentation().setEnabled(debugSession != null && debugSession.isPaused());
       }
     } catch (Throwable t) {
