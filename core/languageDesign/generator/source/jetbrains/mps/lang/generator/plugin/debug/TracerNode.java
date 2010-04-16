@@ -115,7 +115,7 @@ public class TracerNode {
   }
 
   public boolean isThis(Kind kind, SNode node) {
-    return myKind == kind && myNodePointer.getNode() == node;
+    return myKind == kind && myNodePointer.equals(new SNodePointer(node));
   }
 
   /*package*/ TracerNode find(SNode node) {
