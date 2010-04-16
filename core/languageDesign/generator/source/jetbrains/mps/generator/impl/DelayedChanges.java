@@ -138,7 +138,6 @@ public class DelayedChanges {
       // reference to input model - illegal
       if (myGenerator.getSourceModel().getSModelReference().equals(reference.getTargetSModelReference())) {
         // replace
-        reference.getSourceNode().removeReference(reference);
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           reference.getRole(),
           reference.getSourceNode(),
@@ -147,7 +146,7 @@ public class DelayedChanges {
         PostponedReference postponedReference = new PostponedReference(
           refInfo,
           myGenerator);
-        reference.getSourceNode().addReference(postponedReference);
+        reference.getSourceNode().replaceReference(reference, postponedReference);
       }
     }
   }

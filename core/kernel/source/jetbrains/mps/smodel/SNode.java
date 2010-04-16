@@ -1299,6 +1299,18 @@ public final class SNode {
     }
   }
 
+  public void replaceReference(SReference referenceToRemove, @NotNull SReference referenceToAdd) {
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (reference.equals(referenceToRemove)) {
+          int index = _reference().indexOf(reference);
+          replaceReferenceAt(index, referenceToAdd);
+          break;
+        }
+      }
+    }
+  }
+
   public List<SNode> getReferents() {
     ModelAccess.assertLegalRead(this);
 
@@ -1324,6 +1336,17 @@ public final class SNode {
 
     if (ModelChange.needFireEvents(getModel(), this)) {
       getModel().fireReferenceAddedEvent(reference);
+    }
+  }
+
+  private void replaceReferenceAt(int index, @NotNull SReference referenceToAdd) {
+    ModelChange.assertLegalNodeChange(this);
+
+    if (ModelChange.needRegisterUndo(getModel()) || ModelChange.needFireEvents(getModel(), this)) {
+      removeReferenceAt(index);
+      insertReferenceAt(index, referenceToAdd);
+    } else {
+      myReferences[index] = referenceToAdd;
     }
   }
 

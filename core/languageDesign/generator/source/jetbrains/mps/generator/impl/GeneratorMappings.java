@@ -63,7 +63,8 @@ public class GeneratorMappings {
   synchronized void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
-    // todo: generator should repotr error on attempt to obtain not unique output-node
+    // todo: generator should report error on attempt to obtain not unique output-node
+    if(templateNode == null) return;
     myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
   }
 

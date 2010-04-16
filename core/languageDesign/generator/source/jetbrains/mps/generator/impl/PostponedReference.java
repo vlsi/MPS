@@ -120,9 +120,10 @@ public class PostponedReference extends SReference {
    */
   public void validateAndReplace() {
     SReference replacement = getReplacementReference();
-    getSourceNode().removeReference(this);
     if (replacement != null) {
-      getSourceNode().addReference(replacement);
+      getSourceNode().replaceReference(this, replacement);
+    } else {
+      getSourceNode().removeReference(this);
     }
   }
 

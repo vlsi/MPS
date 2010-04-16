@@ -146,7 +146,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     List<SNode> copiedRoots = new ArrayList<SNode>(rootsToCopy.size());
     for (SNode rootToCopy : rootsToCopy) {
       boolean[] changed = new boolean[]{ false };
-      SNode newroot = copyNodeFromInputRoot(rootToCopy, changed);
+      SNode newroot = copyRootNodeFromInput(rootToCopy, changed);
       if(changed[0]) {
         setChanged(true);
       }
@@ -249,6 +249,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     } catch (TemplateProcessingFailureException e) {
       showErrorMessage(inputNode, templateNode, "couldn't create root node");
+    }
+  }
+  
+  private SNode copyRootNodeFromInput(SNode inputNode, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
+    myGenerationTracer.pushInputNode(inputNode);
+    try {
+      return copyNodeFromInputNode_internal(null, null, inputNode, null, changed).get(0);
+    } finally {
+      myGenerationTracer.closeInputNode(inputNode);
     }
   }
 
@@ -463,7 +472,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
       SNode inputTargetNode = inputReference.getTargetNode();
       if (inputTargetNode == null) {
-        showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode()' referent '" + inputReference.getRole() + "' is null in template model");
+        showErrorMessage(inputNode, templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText());
         continue;
       }
       if (inputTargetNode.getModel().equals(inputModel)) {
@@ -485,7 +494,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (SNode inputChildNode : inputNode.getChildrenIterable()) {
       String childRole = inputChildNode.getRole_();
       assert childRole != null;
-      List<SNode> outputChildNodes = copyNodeFromInputNode(null, inputChildNode, inputChildNode, blockingContext, changed);
+      List<SNode> outputChildNodes = copyNodeFromInputNode(null, null, inputChildNode, blockingContext, changed);
       if (outputChildNodes != null) {
         for (SNode outputChildNode : outputChildNodes) {
           // check child
@@ -502,15 +511,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     myGenerationTracer.pushOutputNode(outputNode);
     return Collections.singletonList(outputNode);
-  }
-
-  private SNode copyNodeFromInputRoot(SNode inputNode, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
-    myGenerationTracer.pushInputNode(inputNode);
-    try {
-      return copyNodeFromInputNode_internal(null, null, inputNode, null, changed).get(0);
-    } finally {
-      myGenerationTracer.closeInputNode(inputNode);
-    }
   }
 
   /**
