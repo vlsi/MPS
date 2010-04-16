@@ -517,7 +517,7 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.debug.runtime.DebugManagerComponent</implementation-class>
+            <implementation-class>jetbrains.mps.debug.api.DebugSessionManagerComponent</implementation-class>
             <skipForDummyProject/>
         </component>
 

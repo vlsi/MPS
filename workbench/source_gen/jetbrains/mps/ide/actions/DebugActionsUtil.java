@@ -11,7 +11,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionManager;
-import jetbrains.mps.debug.runtime.DebugManagerComponent;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 
 public class DebugActionsUtil {
   public DebugActionsUtil() {
@@ -33,6 +33,6 @@ public class DebugActionsUtil {
         selected.getProcessHandler()
       );
     }
-    return DebugManagerComponent.getInstance(project).getDebugSession(processHandler);
+    return DebugSessionManagerComponent.getInstance(project).getDebugSession(processHandler);
   }
 }

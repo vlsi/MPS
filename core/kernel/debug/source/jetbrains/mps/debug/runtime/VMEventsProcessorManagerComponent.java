@@ -2,6 +2,7 @@ package jetbrains.mps.debug.runtime;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import org.jetbrains.annotations.NotNull;
 
@@ -17,13 +18,13 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
   private final Map<DebugVMEventsProcessor, DebugSession> myEventProcessorToSessionMap = new HashMap<DebugVMEventsProcessor, DebugSession>(1);
   private final DebugProcessListener myListener = new MyDebugProcessesMulticaster();
   private final List<DebugProcessListener> myAllProcessListeners = new ArrayList<DebugProcessListener>();
-  private final DebugManagerComponent myDebugManager;
+  private final DebugSessionManagerComponent myDebugManager;
 
   public static VMEventsProcessorManagerComponent getInstance(Project project) {
     return project.getComponent(VMEventsProcessorManagerComponent.class);
   }
 
-  public VMEventsProcessorManagerComponent(DebugManagerComponent component) {
+  public VMEventsProcessorManagerComponent(DebugSessionManagerComponent component) {
     myDebugManager = component;
   }
 

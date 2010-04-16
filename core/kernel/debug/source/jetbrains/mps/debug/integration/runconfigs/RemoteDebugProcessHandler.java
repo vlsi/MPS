@@ -3,6 +3,7 @@ package jetbrains.mps.debug.integration.runconfigs;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.runtime.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -16,7 +17,7 @@ public class RemoteDebugProcessHandler extends ProcessHandler {
   }
 
   public void startNotify() {
-    final DebugManagerComponent debugManager = DebugManagerComponent.getInstance(myProject);
+    final DebugSessionManagerComponent debugManager = DebugSessionManagerComponent.getInstance(myProject);
     final VMEventsProcessorManagerComponent vmManager = VMEventsProcessorManagerComponent.getInstance(myProject);
     final AbstractDebugSession abstractSession = debugManager.getDebugSession(this);
     if (abstractSession instanceof DebugSession) {
@@ -46,14 +47,14 @@ public class RemoteDebugProcessHandler extends ProcessHandler {
   }
 
   protected void destroyProcessImpl() {
-    AbstractDebugSession debugProcess = DebugManagerComponent.getInstance(myProject).getDebugSession(this);
+    AbstractDebugSession debugProcess = DebugSessionManagerComponent.getInstance(myProject).getDebugSession(this);
     if (debugProcess != null) {
       debugProcess.stop(true);
     }
   }
 
   protected void detachProcessImpl() {
-    AbstractDebugSession debugProcess = DebugManagerComponent.getInstance(myProject).getDebugSession(this);
+    AbstractDebugSession debugProcess = DebugSessionManagerComponent.getInstance(myProject).getDebugSession(this);
     if (debugProcess != null) {
       debugProcess.stop(false);
     }

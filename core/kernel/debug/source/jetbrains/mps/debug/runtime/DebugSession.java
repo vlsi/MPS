@@ -2,6 +2,7 @@ package jetbrains.mps.debug.runtime;
 
 import com.intellij.execution.process.ProcessOutputTypes;
 import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.evaluation.ui.EvaluationDialog;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
@@ -100,7 +101,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiState> {
   }
 
   @Override
-  public void sessionRegistered(DebugManagerComponent manager) {
+  public void sessionRegistered(DebugSessionManagerComponent manager) {
     VMEventsProcessorManagerComponent vmManager
       = manager.getProject().getComponent(VMEventsProcessorManagerComponent.class);
     vmManager.addDebugSession(this);
