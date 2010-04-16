@@ -10571,6 +10571,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877400601">
+    <property name="package" value="classifier.enum" />
     <link role="concept" targetNodeId="1.1083260308424:3" resolveInfo="EnumConstantReference" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877400602">
       <property name="name" value="eval" />
@@ -21145,6 +21146,24 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4313092516461999923" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4313092516461999924" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3718132079121423206">
+      <property name="name" value="getCatchClauses" />
+      <link role="overriddenMethod" targetNodeId="3718132079121388582" resolveInfo="getCatchClauses" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3718132079121423209">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5255918499422580089">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5255918499422580093">
+            <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5255918499422580092" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="5255918499422580097">
+              <link role="link:16" targetNodeId="1.1164903496223:3" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="5255918499422532955">
+        <link role="elementConcept:16" targetNodeId="1.1164903280175:3" resolveInfo="CatchClause" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5255918499422532956" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4313092516461999912">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4313092516461999913" />
     </node>
@@ -21216,6 +21235,26 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="4313092516462065666">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4313092516462065667" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5255918499422580100">
+      <property name="name" value="getCatchClauses" />
+      <property name="isVirtual" value="false" />
+      <property name="isAbstract" value="false" />
+      <link role="overriddenMethod" targetNodeId="3718132079121388582" resolveInfo="getCatchClauses" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5255918499422580101" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5255918499422580102">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5255918499422580104">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5255918499422580106">
+            <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5255918499422580105" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="5255918499422580110">
+              <link role="link:16" targetNodeId="1.1164903700860:3" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="5255918499422580103">
+        <link role="elementConcept:16" targetNodeId="1.1164903280175:3" resolveInfo="CatchClause" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="4313092516462065717">
@@ -21377,6 +21416,22 @@
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="2102329369853775248">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2102329369853775249" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="3718132079121388579">
+    <link role="concept" targetNodeId="1.3718132079121388578:3" resolveInfo="ITryCatchStatement" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3718132079121388582">
+      <property name="name" value="getCatchClauses" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5255918499422532954" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="3718132079121423198">
+        <link role="elementConcept:16" targetNodeId="1.1164903280175:3" resolveInfo="CatchClause" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3718132079121388585" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="3718132079121388580">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3718132079121388581" />
     </node>
   </node>
 </model>

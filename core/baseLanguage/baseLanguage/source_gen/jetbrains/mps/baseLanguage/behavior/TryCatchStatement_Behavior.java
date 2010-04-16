@@ -21,6 +21,10 @@ public class TryCatchStatement_Behavior {
     TryCatchStatement_Behavior.collectUncatchedThrowables_4313092516462065508(throwables, SLinkOperations.getTarget(thisNode, "body", true), SLinkOperations.getTargets(thisNode, "catchClause", true), ignoreMayBeThrowables);
   }
 
+  public static List<SNode> virtual_getCatchClauses_3718132079121388582(SNode thisNode) {
+    return SLinkOperations.getTargets(thisNode, "catchClause", true);
+  }
+
   public static void collectUncatchedThrowables_4313092516462065508(Set<SNode> throwables, SNode body, List<SNode> catchClause, boolean ignoreMayBeThrowables) {
     Set<SNode> thrownsFromBody = SetSequence.fromSet(new HashSet());
     StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(body, thrownsFromBody, ignoreMayBeThrowables);
@@ -31,7 +35,7 @@ public class TryCatchStatement_Behavior {
       Set<SNode> toRemove = SetSequence.fromSet(new HashSet());
       for (SNode thrownFromBody : SetSequence.fromSet(thrownsFromBody)) {
         SNode catchedType = SLinkOperations.getTarget(SLinkOperations.getTarget(caatch, "throwable", true), "type", true);
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(new TryCatchStatement_Behavior.QuotationClass_1bi1ep_a0a0b0c0e0c().createNode(thrownFromBody), catchedType)) {
+        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(new TryCatchStatement_Behavior.QuotationClass_1bi1ep_a0a0b0c0e0d().createNode(thrownFromBody), catchedType)) {
           SetSequence.fromSet(toRemove).addElement(thrownFromBody);
         }
       }
@@ -45,8 +49,8 @@ public class TryCatchStatement_Behavior {
     }
   }
 
-  public static class QuotationClass_1bi1ep_a0a0b0c0e0c {
-    public QuotationClass_1bi1ep_a0a0b0c0e0c() {
+  public static class QuotationClass_1bi1ep_a0a0b0c0e0d {
+    public QuotationClass_1bi1ep_a0a0b0c0e0d() {
     }
 
     public SNode createNode(Object parameter_3) {

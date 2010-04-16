@@ -7,10 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.behavior.ITryCatchStatement_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
@@ -22,17 +22,9 @@ public class check_ExceptionWasNotCaught_NonTypesystemRule extends AbstractNonTy
   public check_ExceptionWasNotCaught_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode iContainsStatementList, final TypeCheckingContext typeCheckingContext) {
-    List<SNode> catchClauses;
-    if (SNodeOperations.isInstanceOf(iContainsStatementList, "jetbrains.mps.baseLanguage.structure.TryStatement")) {
-      catchClauses = SLinkOperations.getTargets(SNodeOperations.cast(iContainsStatementList, "jetbrains.mps.baseLanguage.structure.TryStatement"), "catchClause", true);
-    } else if (SNodeOperations.isInstanceOf(iContainsStatementList, "jetbrains.mps.baseLanguage.structure.TryCatchStatement")) {
-      catchClauses = SLinkOperations.getTargets(SNodeOperations.cast(iContainsStatementList, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), "catchClause", true);
-    } else {
-      return;
-    }
+  public void applyRule(final SNode iTryCatchStatement, final TypeCheckingContext typeCheckingContext) {
     List<SNode> caughtExceptions = new ArrayList<SNode>();
-    for (SNode catchClause : catchClauses) {
+    for (SNode catchClause : ITryCatchStatement_Behavior.call_getCatchClauses_3718132079121388582(iTryCatchStatement)) {
       for (SNode caughtType : caughtExceptions) {
         if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true), caughtType)) {
           {
@@ -47,7 +39,7 @@ public class check_ExceptionWasNotCaught_NonTypesystemRule extends AbstractNonTy
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.IContainsStatementList";
+    return "jetbrains.mps.baseLanguage.structure.ITryCatchStatement";
   }
 
   public boolean isApplicable(SNode argument) {

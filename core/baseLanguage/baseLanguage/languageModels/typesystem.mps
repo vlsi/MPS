@@ -23235,83 +23235,6 @@
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="2089334432679049932">
     <property name="name:3" value="check_ExceptionWasNotCaught" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2089334432679049933">
-      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2089334432679064735">
-        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2089334432679064736">
-          <property name="name:3" value="catchClauses" />
-          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="2089334432679064737">
-            <link role="elementConcept:16" targetNodeId="1.1164903280175:3" resolveInfo="CatchClause" />
-          </node>
-        </node>
-      </node>
-      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2089334432679064697">
-        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2089334432679064698">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2089334432679064771">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2089334432679064776">
-              <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2089334432679064797">
-                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="2089334432679064789">
-                  <link role="concept:16" targetNodeId="1.1153952380246:3" resolveInfo="TryStatement" />
-                  <node role="leftExpression:16" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2089334432679064782">
-                    <link role="applicableNode:3" targetNodeId="2089334432679050510" resolveInfo="iContainsStatementList" />
-                  </node>
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="2089334432679064804">
-                  <link role="link:16" targetNodeId="1.1164903700860:3" />
-                </node>
-              </node>
-              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2089334432679064772">
-                <link role="variableDeclaration:3" targetNodeId="2089334432679064736" resolveInfo="catchClauses" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="elsifClauses:3" type="jetbrains.mps.baseLanguage.structure.ElsifClause:3" id="2089334432679064811">
-          <node role="statementList:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2089334432679064813">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2089334432679064837">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="2089334432679064838">
-                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2089334432679064839">
-                  <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="2089334432679064840">
-                    <link role="concept:16" targetNodeId="1.1164879751025:3" resolveInfo="TryCatchStatement" />
-                    <node role="leftExpression:16" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2089334432679064841">
-                      <link role="applicableNode:3" targetNodeId="2089334432679050510" resolveInfo="iContainsStatementList" />
-                    </node>
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="2089334432679064850">
-                    <link role="link:16" targetNodeId="1.1164903496223:3" />
-                  </node>
-                </node>
-                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2089334432679064843">
-                  <link role="variableDeclaration:3" targetNodeId="2089334432679064736" resolveInfo="catchClauses" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2089334432679325741">
-            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2089334432679325742">
-              <link role="applicableNode:3" targetNodeId="2089334432679050510" resolveInfo="iContainsStatementList" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="2089334432679325743">
-              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="2089334432679325752">
-                <link role="conceptDeclaration:16" targetNodeId="1.1164879751025:3" resolveInfo="TryCatchStatement" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="2089334432679064857">
-          <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2089334432679064858">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="2089334432679064862" />
-          </node>
-        </node>
-        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2089334432679325730">
-          <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2089334432679325731">
-            <link role="applicableNode:3" targetNodeId="2089334432679050510" resolveInfo="iContainsStatementList" />
-          </node>
-          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="2089334432679325732">
-            <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="2089334432679325733">
-              <link role="conceptDeclaration:16" targetNodeId="1.1153952380246:3" resolveInfo="TryStatement" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2089334432679065799">
         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2089334432679065800">
           <property name="name:3" value="caughtExceptions" />
@@ -23328,8 +23251,13 @@
         </node>
       </node>
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="2089334432679064639">
-        <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2089334432679064869">
-          <link role="variableDeclaration:3" targetNodeId="2089334432679064736" resolveInfo="catchClauses" />
+        <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5255918499422583322">
+          <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5255918499422583321">
+            <link role="applicableNode:3" targetNodeId="2089334432679050510" resolveInfo="iTryCatchStatement" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="5255918499422583326">
+            <link role="baseMethodDeclaration:16" targetNodeId="37.3718132079121388582" resolveInfo="getCatchClauses" />
+          </node>
         </node>
         <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2089334432679064641">
           <property name="name:3" value="catchClause" />
@@ -23438,8 +23366,8 @@
       </node>
     </node>
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="2089334432679050510">
-      <property name="name:3" value="iContainsStatementList" />
-      <link role="concept:3" targetNodeId="1.1237545921771:3" resolveInfo="IContainsStatementList" />
+      <property name="name:3" value="iTryCatchStatement" />
+      <link role="concept:3" targetNodeId="1.3718132079121388578:3" resolveInfo="ITryCatchStatement" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="2089334432680122742">

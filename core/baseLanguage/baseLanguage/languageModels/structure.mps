@@ -1758,6 +1758,9 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5720597156431189522">
       <link role="intfc:0" targetNodeId="1237545921771:3" resolveInfo="IContainsStatementList" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5255918499422580099">
+      <link role="intfc:0" targetNodeId="3718132079121388578:3" resolveInfo="ITryCatchStatement" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1154032098014">
     <property name="name:0" value="AbstractLoopStatement" />
@@ -1963,6 +1966,9 @@
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5720597156431189521">
       <link role="intfc:0" targetNodeId="1237545921771:3" resolveInfo="IContainsStatementList" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3718132079121423212">
+      <link role="intfc:0" targetNodeId="3718132079121388578:3" resolveInfo="ITryCatchStatement" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1164903280175">
@@ -3652,6 +3658,9 @@
     <node role="extends:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5432666129547769344">
       <link role="intfc:0" targetNodeId="4.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="3718132079121388578">
+    <property name="name:0" value="ITryCatchStatement" />
   </node>
 </model>
 
