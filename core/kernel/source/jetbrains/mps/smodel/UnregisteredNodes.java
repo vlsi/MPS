@@ -98,7 +98,7 @@ class UnregisteredNodes {
       myMap.put(reference, id, node);
     }
     if(showError) {
-      LOG.error("attempt to put another node with same key: " + reference + "#" + id, new Exception());
+      LOG.error(new IllegalStateException("attempt to put another node with same key: " + reference + "#" + id));
     }
   }
 
