@@ -3,9 +3,9 @@ package jetbrains.mps.debug.runtime.java.programState;
 import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.ThreadReference;
+import jetbrains.mps.debug.api.integration.ui.icons.Icons;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.IThread;
-import jetbrains.mps.debug.integration.Icons;
 import jetbrains.mps.logging.Logger;
 
 import javax.swing.Icon;
