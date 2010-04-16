@@ -16,7 +16,7 @@ import jetbrains.mps.changesmanager.EditorChangesHighlighter;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class GoToPreviousChange_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/workbench/search/icons/previousOccurence.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/previousOccurence.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(GoToPreviousChange_Action.class);
 
   private EditorContext editorContext;

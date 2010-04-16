@@ -24,6 +24,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Bookmarks_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Breakpoints_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Build_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.ChangesStrip_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.CreateRootNode_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DebugPlaybackActionGroup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DebugSpecificPlaybackActionGroup_ActionGroup");
@@ -45,7 +46,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GeneratorActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GeneratorNewActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GoByReference_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.GoToChange_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Goto_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.HelpAddition_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.JUnitTestCaseActions_ActionGroup");
