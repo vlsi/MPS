@@ -522,7 +522,12 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.debug.runtime.CurrentLinePositionComponent</implementation-class>
+            <implementation-class>jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent</implementation-class>
+            <skipForDummyProject/>
+        </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.debug.api.CurrentLinePositionComponent</implementation-class>
             <skipForDummyProject/>
         </component>
 

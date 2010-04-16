@@ -19,7 +19,7 @@ import com.intellij.util.containers.HashMap;
 import com.sun.jdi.*;
 import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.request.*;
-import jetbrains.mps.debug.runtime.DebugManagerComponent.AllDebugProcessesAction;
+import jetbrains.mps.debug.runtime.VMEventsProcessorManagerComponent.AllDebugProcessesAction;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.api.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.requests.ClassPrepareRequestor;
@@ -267,7 +267,8 @@ public class RequestManager implements DebugProcessListener {
   }
 
   public static void createClassPrepareRequests(final MPSBreakpoint breakpoint) {
-    DebugManagerComponent.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
+    VMEventsProcessorManagerComponent
+      .getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override
       public void run(DebugVMEventsProcessor processor) {
         if (processor.isAttached()) {
@@ -278,7 +279,8 @@ public class RequestManager implements DebugProcessListener {
   }
 
   public static void removeClassPrepareRequests(final MPSBreakpoint breakpoint) {
-    DebugManagerComponent.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
+    VMEventsProcessorManagerComponent
+      .getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override
       public void run(DebugVMEventsProcessor processor) {
         if (processor.isAttached()) {
