@@ -1794,14 +1794,18 @@
       <node role="setupFunction:23" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction:23" id="5649551303341182516">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5649551303341182517">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5649551303341182562">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5649551303341182799">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3332304890013052307">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5649551303341182586">
                 <node role="operand:3" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode:23" id="5649551303341182563" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5649551303341182612">
                   <link role="link:16" targetNodeId="1.1144230900587:3" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation:16" id="5649551303341182825" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation:16" id="3332304890013052333">
+                <node role="linkTarget:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="3332304890013071127">
+                  <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3332304890013071152" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
