@@ -41,12 +41,22 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
     }
     List<SNode> params = new ArrayList<SNode>();
     Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);
+    Map<SNode, SNode> inputMapping = this.createInputVaryablesMapping(inputToParams);
+    /*
+      List<MethodMatch> duplicates = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false));
+      System.out.println(duplicates);
+    */
     this.replaceInputVariablesWithParameters(body, inputToParams, mapping);
     SNode newMethod = this.createNewMethod(typeNode, params, body);
     this.addMethod(newMethod);
-    SNode methodCall = this.createMethodCall(newMethod);
-    SNodeOperations.replaceWithAnother(this.myExpression, methodCall);
+    MethodMatch exactMatch = this.createMatch(inputMapping);
+    this.replaceMatchByMethodCall(exactMatch, params, newMethod);
     return newMethod;
+  }
+
+  @Override
+  public void replaceMatchByMethodCall(MethodMatch match, List<SNode> parametersOrder, SNode methodDeclaration) {
+    SNodeOperations.replaceWithAnother(ListSequence.fromList(match.getNodes()).first(), this.createMethodCall(match, parametersOrder, methodDeclaration));
   }
 
   @NotNull

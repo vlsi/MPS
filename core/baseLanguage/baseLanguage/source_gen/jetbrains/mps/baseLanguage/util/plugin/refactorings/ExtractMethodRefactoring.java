@@ -5,21 +5,26 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.baseLanguage.behavior.IParameter_Behavior;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.IStaticContainerForMethods_Behavior;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public abstract class ExtractMethodRefactoring {
   protected ExtractMethodRefactoringParameters myParameters;
@@ -33,6 +38,20 @@ public abstract class ExtractMethodRefactoring {
 
   @NotNull
   public abstract SNode doRefactor();
+
+  public void replaceMatchByMethodCall(MethodMatch match, List<SNode> parametersOrder, SNode methodDeclaration) {
+  }
+
+  protected MethodMatch createMatch(Map<SNode, SNode> inputMapping) {
+    MethodMatch match = new MethodMatch();
+    for (SNode node : ListSequence.fromList(this.myParameters.getNodesToRefactor())) {
+      match.putNode(node);
+    }
+    for (SNode node : SetSequence.fromSet(MapSequence.fromMap(inputMapping).keySet())) {
+      match.putMapping(node, MapSequence.fromMap(inputMapping).get(node));
+    }
+    return match;
+  }
 
   protected SNode createNewMethod(SNode returntType, List<SNode> params, SNode body) {
     SNode myMethod;
@@ -111,6 +130,25 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
+  public Map<SNode, SNode> createInputVaryablesMapping(Map<SNode, SNode> variableDeclarationToParameter) {
+    Map<SNode, SNode> mapping = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    for (SNode node : ListSequence.fromList(this.myParameters.getNodesToRefactor())) {
+      for (SNode varReference : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
+        SNode varDeclaration = SLinkOperations.getTarget(varReference, "variableDeclaration", false);
+        if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(varDeclaration)) {
+          MapSequence.fromMap(mapping).put(varReference, MapSequence.fromMap(variableDeclarationToParameter).get(varDeclaration));
+        }
+      }
+      for (SNode parameter : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IParameter", false, new String[]{}))) {
+        SNode declaration = IParameter_Behavior.call_getDeclaration_1225282371351(parameter);
+        if (MapSequence.fromMap(variableDeclarationToParameter).containsKey(declaration)) {
+          MapSequence.fromMap(mapping).put(parameter, MapSequence.fromMap(variableDeclarationToParameter).get(declaration));
+        }
+      }
+    }
+    return mapping;
+  }
+
   protected SNode createReference(SNode variable) {
     return VariableDeclaration_Behavior.call_createReference_1213877517482(variable);
   }
@@ -125,14 +163,25 @@ public abstract class ExtractMethodRefactoring {
     return result;
   }
 
-  protected SNode createMethodCall(SNode methodDeclaration) {
-    List<SNode> parameters = this.createCallParameters();
+  protected SNode createMethodCall(SNode methodDeclaration, List<SNode> parameters) {
     if (this.myStaticContainer == null) {
       IExtractMethodRefactoringProcessor processor = this.myAnalyzer.getExtractMethodReafactoringProcessor();
       return processor.createMethodCall(methodDeclaration, parameters);
     } else {
       return this.myStaticContainer.createMethodCall(methodDeclaration, parameters);
     }
+  }
+
+  public SNode createMethodCall(MethodMatch match, List<SNode> parametersOrder, SNode methodDeclaration) {
+    List<SNode> methodCallActualParams = new ArrayList<SNode>();
+    for (SNode parameter : ListSequence.fromList(parametersOrder)) {
+      if (ListSequence.fromList(MapSequence.fromMap(match.getParamsMapping()).get(parameter)).isEmpty()) {
+        ListSequence.fromList(methodCallActualParams).addElement(new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0a0b0m().createNode());
+      } else {
+        ListSequence.fromList(methodCallActualParams).addElement(SNodeOperations.cast(SNodeOperations.copyNode(ListSequence.fromList(MapSequence.fromMap(match.getParamsMapping()).get(parameter)).getElement(0)), "jetbrains.mps.baseLanguage.structure.Expression"));
+      }
+    }
+    return this.createMethodCall(methodDeclaration, methodCallActualParams);
   }
 
   public void setStaticContainer(SNode node) {
@@ -147,4 +196,21 @@ public abstract class ExtractMethodRefactoring {
   }
 
   public abstract SNode getMethodType();
+
+  public static class QuotationClass_jq3ovj_a0a0a0a0b0m {
+    public QuotationClass_jq3ovj_a0a0a0a0b0m() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
 }

@@ -39,8 +39,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     return SNodeOperations.copyNode(SLinkOperations.getTarget(this.myOutputVariable, "type", true));
   }
 
-  protected void addCallExpression(SNode newMethod) {
-    SNode methodCall = this.createMethodCall(newMethod);
+  protected void addCallExpression(MethodMatch match, List<SNode> parameterOrder, SNode newMethod) {
+    SNode methodCall = this.createMethodCall(match, parameterOrder, newMethod);
     SLinkOperations.setTarget(SLinkOperations.getTarget(this.myDeclarationStatement, "localVariableDeclaration", true), "initializer", methodCall, true);
     for (SNode statement : ListSequence.fromList(this.myStatements)) {
       if (statement != this.myDeclarationStatement) {

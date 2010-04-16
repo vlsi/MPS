@@ -33,7 +33,8 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     SNode newMethod = this.createNewMethod(type, params, body);
     this.addMethod(newMethod);
     this.replaceInputVariablesWithParameters(body, inputToParams, mapping);
-    this.addCallExpression(newMethod);
+    MethodMatch exactMatch = this.createMatch(this.createInputVaryablesMapping(inputToParams));
+    this.addCallExpression(exactMatch, params, newMethod);
     MethodOptimizer.optimize(body);
     return newMethod;
   }
@@ -45,8 +46,8 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null);
   }
 
-  protected void addCallExpression(SNode newMethod) {
-    SNode methodCall = this.createMethodCall(newMethod);
+  protected void addCallExpression(MethodMatch match, List<SNode> parameterOrder, SNode newMethod) {
+    SNode methodCall = this.createMethodCall(match, parameterOrder, newMethod);
     SNode callStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(callStatement, "expression", methodCall, true);
     SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(this.myStatements).first(), callStatement);
