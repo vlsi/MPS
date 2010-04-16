@@ -133,7 +133,10 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     }
     if (myOnlyInOneModel) {
       result = CollectionUtil.filter(result, new Condition<T>() {
-        public boolean met(T object) {
+        public boolean met(T object) { //if object null return false !!!
+          if (object == null) {
+            return false;
+          }
           return object.getModel() == node.getModel();
         }
       });
@@ -141,6 +144,9 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     if (!myShowGeneratorModels) {
       result = CollectionUtil.filter(result, new Condition<T>() {
         public boolean met(T object) {
+          if (object == null) {
+            return false;
+          }
           return !SModelStereotype.isGeneratorModel(object.getModel());
         }
       });

@@ -150,7 +150,11 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
     protected Set<AbstractConceptDeclaration> getDescendants(AbstractConceptDeclaration conceptDeclaration) {
       Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
       for (String s : myCache.getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclaration))) {
-        result.add(SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance()));
+        AbstractConceptDeclaration abstractConceptDeclaration = SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance());
+        if (abstractConceptDeclaration == null) {
+          System.err.println("");
+        }
+        result.add(abstractConceptDeclaration);
       }
       return result;
     }
