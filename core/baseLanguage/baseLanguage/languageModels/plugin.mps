@@ -4509,7 +4509,6 @@
     <property name="name:23" value="JavaApplication" />
     <property name="caption:23" value="Java Application" />
     <property name="package:23" value="run" />
-    <property name="iconPath:23" value="${language_descriptor}/icons/runApp.png" />
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="6173548178016197173">
     <property name="name:23" value="AnalyzeStacktrace" />

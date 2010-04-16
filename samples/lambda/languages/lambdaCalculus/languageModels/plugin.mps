@@ -136,5 +136,32 @@
     <property name="name:23" value="LambdaCalculus" />
     <property name="caption:23" value="Lambda Calculus Program" />
   </node>
+  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="2566054628276075478">
+    <property name="name:23" value="DefaultLambdaCalculusFromProgram" />
+    <link role="rcType:23" targetNodeId="6796549325584324227" resolveInfo="LambdaCalculus" />
+    <node role="target:23" type="jetbrains.mps.lang.plugin.structure.NodeCreatorTarget:23" id="2566054628276077280">
+      <link role="concept:23" targetNodeId="1.4022026349915669385:1" resolveInfo="Program" />
+    </node>
+    <node role="createBlock:23" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlock:23" id="2566054628276075480">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2566054628276075481">
+        <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement:23" id="2566054628276106082">
+          <node role="contextItem:23" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="2566054628276106084" />
+        </node>
+        <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement:23" id="2566054628276106089">
+          <link role="runConfig:23" targetNodeId="6796549325584324225" resolveInfo="DefaultLambdaCalculusProgram" />
+          <node role="property:23" type="jetbrains.mps.baseLanguage.runConfigurations.structure.NodeRunConfigPropertyInstance:0" id="2566054628276106090">
+            <node role="propertyValue:0" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="2566054628276106092" />
+          </node>
+          <node role="configName:23" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2566054628276106094">
+            <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="2566054628276106093" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="2566054628276106550">
+              <link role="property:16" targetNodeId="4v.1169194664001:0" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
