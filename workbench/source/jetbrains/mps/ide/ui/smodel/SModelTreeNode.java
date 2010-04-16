@@ -26,6 +26,7 @@ import jetbrains.mps.ide.projectPane.*;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.*;
@@ -53,7 +54,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private String myLabel;
   private boolean myInitialized = false;
   private boolean myInitializing = false;
-  private EventsCollector myEventsCollector;
+  private SModelEventsListener myEventsListener;
   private SimpleModelListener mySimpleModelListener = new SimpleModelListener(this) {
     public void updateTreeNodePresentation() {
       SModelTreeNode.this.updatePresentation();
@@ -314,11 +315,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_MODEL_ACTIONS);
   }
 
-  public void flush() {
-    if (myEventsCollector == null) return;
-    myEventsCollector.flush();
-  }
-
   protected CreateRootNodeGroup getQuickCreateGroup(boolean plain) {
     return new CreateRootNodeGroup(plain);
   }
@@ -519,10 +515,22 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private void addListeners() {
-    assert myEventsCollector == null;
+    assert myEventsListener == null;
 
-    myEventsCollector = new MyEventsCollector();
-    myEventsCollector.add(myModelDescriptor);
+    myEventsListener = new SModelEventsListener() {
+      @NotNull
+      @Override
+      public SModelDescriptor getModelDescriptor() {
+        return myModelDescriptor;
+      }
+
+      @Override
+      public void eventsHappened(List<SModelEvent> events) {
+        if (myTreeUpdater == null) return;
+        myTreeUpdater.eventsHappenedInCommand(events);
+      }
+    };
+    SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
     getSModelDescriptor().addModelListener(mySimpleModelListener);
 
     if (!SModelStereotype.isStubModelStereotype(myModelDescriptor.getStereotype())) {
@@ -537,10 +545,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
     }
 
-    if (myEventsCollector == null) return;
-    myEventsCollector.remove(myModelDescriptor);
-    myEventsCollector.dispose();
-    myEventsCollector = null;
+    if (myEventsListener == null) return;
+    SModelEventsDispatcher.getInstance().unregisterListener(myEventsListener);
+    myEventsListener = null;
   }
 
   protected final boolean canBeOpened() {
@@ -620,13 +627,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       if (sm == getSModelDescriptor()) {
         mySimpleModelListener.modelSaved(sm);
       }
-    }
-  }
-
-  private class MyEventsCollector extends EventsCollector {
-    protected void eventsHappened(List<SModelEvent> events) {
-      if (myTreeUpdater == null) return;
-      myTreeUpdater.eventsHappenedInCommand(events);
     }
   }
 

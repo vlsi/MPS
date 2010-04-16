@@ -1,24 +1,24 @@
 package jetbrains.mps.ide.ui.smodel;
 
+import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 
 import java.util.List;
 import java.util.Set;
 import java.util.HashSet;
 
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultTreeModel;
 
 public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   private SNodeTreeUpdater myTreeUpdater;
-  private MyEventsCollector myEventsCollector;
+  private SModelEventsListener myEventsListener;
   private  SimpleModelListener mySNodeModelListener;
 
   public UpdatableSNodeTreeNode(SNode node, IOperationContext operationContext) {
@@ -34,11 +34,9 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   }
 
   private void addListeners() {
-    if (myEventsCollector == null) return;
-    SModelDescriptor md = getModelDescriptor();
-    if (md == null) return;
-    myEventsCollector.add(md);
-    md.addModelListener(mySNodeModelListener);
+    if (myEventsListener == null) return;
+    SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
+    myEventsListener.getModelDescriptor().addModelListener(mySNodeModelListener);
   }
 
   private void removeListeners() {
@@ -47,10 +45,9 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     if (mySNodeModelListener != null) {
       getModelDescriptor().removeModelListener(mySNodeModelListener);
     }
-    if (myEventsCollector == null) return;
-    myEventsCollector.remove(md);
-    myEventsCollector.dispose();
-    myEventsCollector = null;
+    if (myEventsListener == null) return;
+    SModelEventsDispatcher.getInstance().unregisterListener(myEventsListener);
+    myEventsListener = null;
     myTreeUpdater = null;
   }
 
@@ -61,8 +58,8 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
 
   protected void onAdd() {
     super.onAdd();
-    if (myEventsCollector != null) return;
-    myEventsCollector = new MyEventsCollector();
+    if (myEventsListener != null) return;
+    myEventsListener = new MyEventsListener(getModelDescriptor());
     mySNodeModelListener = new SimpleModelListener(this) {
       public void updateTreeNodePresentation() {
         UpdatableSNodeTreeNode.this.updatePresentation();
@@ -74,8 +71,21 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     addListeners();
   }
 
-  private class MyEventsCollector extends EventsCollector {
-    protected void eventsHappened(List<SModelEvent> events) {
+  private class MyEventsListener implements SModelEventsListener {
+    private SModelDescriptor myModelDescriptor;
+
+    private MyEventsListener(SModelDescriptor modelDescriptor) {
+      myModelDescriptor = modelDescriptor;
+    }
+
+    @NotNull
+    @Override
+    public SModelDescriptor getModelDescriptor() {
+      return myModelDescriptor;
+    }
+
+    @Override
+    public void eventsHappened(List<SModelEvent> events) {
       if (myTreeUpdater == null) return;
       myTreeUpdater.eventsHappenedInCommand(events);
     }
