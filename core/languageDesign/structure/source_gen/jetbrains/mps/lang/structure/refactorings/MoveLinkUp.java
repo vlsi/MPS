@@ -80,7 +80,7 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
 
-    Project project = refactoringContext.getSelectedMPSProject().getProject();
+    Project project = refactoringContext.getSelectedProject();
     Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
     if (sourceLanguage != null) {
       Map<IModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, sourceLanguage);

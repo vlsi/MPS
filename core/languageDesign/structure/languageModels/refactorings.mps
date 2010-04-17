@@ -218,10 +218,10 @@
               <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1347577327951781595">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1347577327951781596">
                   <link role="classConcept:3" targetNodeId="6.~RefactoringUtil" resolveInfo="RefactoringUtil" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="6.~RefactoringUtil.getLanguageAndItsExtendingLanguageModels(jetbrains.mps.project.MPSProject,jetbrains.mps.smodel.Language):java.util.Map" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="6.~RefactoringUtil.getLanguageAndItsExtendingLanguageModels(com.intellij.openapi.project.Project,jetbrains.mps.smodel.Language):java.util.Map" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1347577327951781597">
                     <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="1347577327951781598" />
-                    <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.ProjectOperation:1" id="1347577327951781599" />
+                    <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.MainProjectOperation:1" id="8113680833395857487" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1347577327951781600">
                     <link role="variableDeclaration:3" targetNodeId="1347577327951781574" resolveInfo="sourceLanguage" />
@@ -447,10 +447,10 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1347577327951781727">
               <link role="classConcept:3" targetNodeId="6.~RefactoringUtil" resolveInfo="RefactoringUtil" />
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~RefactoringUtil.getLanguageAndItsExtendingLanguageModels(jetbrains.mps.project.MPSProject,jetbrains.mps.smodel.Language):java.util.Map" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
+              <link role="baseMethodDeclaration:3" targetNodeId="6.~RefactoringUtil.getLanguageAndItsExtendingLanguageModels(com.intellij.openapi.project.Project,jetbrains.mps.smodel.Language):java.util.Map" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1347577327951781728">
                 <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="1347577327951781729" />
-                <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.ProjectOperation:1" id="1347577327951781730" />
+                <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.MainProjectOperation:1" id="8113680833395857488" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1347577327951781731">
                 <link role="variableDeclaration:3" targetNodeId="1347577327951781708" resolveInfo="sourceLanguage" />
@@ -699,10 +699,10 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1347577327951781869">
               <link role="classConcept:3" targetNodeId="6.~RefactoringUtil" resolveInfo="RefactoringUtil" />
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~RefactoringUtil.getLanguageAndItsExtendingLanguageModels(jetbrains.mps.project.MPSProject,jetbrains.mps.smodel.Language):java.util.Map" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
+              <link role="baseMethodDeclaration:3" targetNodeId="6.~RefactoringUtil.getLanguageAndItsExtendingLanguageModels(com.intellij.openapi.project.Project,jetbrains.mps.smodel.Language):java.util.Map" resolveInfo="getLanguageAndItsExtendingLanguageModels" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1347577327951781870">
                 <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="1347577327951781871" />
-                <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.ProjectOperation:1" id="1347577327951781872" />
+                <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.MainProjectOperation:1" id="8113680833395857489" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1347577327951781873">
                 <link role="variableDeclaration:3" targetNodeId="1347577327951781844" resolveInfo="sourceLanguage" />
@@ -1959,14 +1959,9 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3068114543317980415">
               <link role="classifier:3" targetNodeId="15.~Project" resolveInfo="Project" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317980416">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317980417">
-                <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="3068114543317980418" />
-                <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.ProjectOperation:1" id="3068114543317980419" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317980420">
-                <link role="baseMethodDeclaration:3" targetNodeId="4.~MPSProject.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
-              </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317980417">
+              <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="3068114543317980418" />
+              <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.MainProjectOperation:1" id="8113680833395857484" />
             </node>
           </node>
         </node>
@@ -2460,14 +2455,9 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3068114543317980393">
               <link role="classifier:3" targetNodeId="15.~Project" resolveInfo="Project" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317980394">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317980395">
-                <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="3068114543317980396" />
-                <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.ProjectOperation:1" id="3068114543317980397" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317980398">
-                <link role="baseMethodDeclaration:3" targetNodeId="4.~MPSProject.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
-              </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317980395">
+              <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="3068114543317980396" />
+              <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.MainProjectOperation:1" id="8113680833395857485" />
             </node>
           </node>
         </node>
@@ -2970,14 +2960,9 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3068114543317980572">
               <link role="classifier:3" targetNodeId="15.~Project" resolveInfo="Project" />
             </node>
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317980573">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317980574">
-                <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="3068114543317980575" />
-                <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.ProjectOperation:1" id="3068114543317980576" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3068114543317980577">
-                <link role="baseMethodDeclaration:3" targetNodeId="4.~MPSProject.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
-              </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3068114543317980574">
+              <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContext_ConceptFunctionParameter:1" id="3068114543317980575" />
+              <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.MainProjectOperation:1" id="8113680833395857486" />
             </node>
           </node>
         </node>

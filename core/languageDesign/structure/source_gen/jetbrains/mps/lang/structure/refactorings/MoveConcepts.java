@@ -183,7 +183,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
 
-    Project project = refactoringContext.getSelectedMPSProject().getProject();
+    Project project = refactoringContext.getSelectedProject();
     Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("sourceModel")));
     if (sourceLanguage != null) {
       Map<IModule, List<SModel>> models = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(project, sourceLanguage);

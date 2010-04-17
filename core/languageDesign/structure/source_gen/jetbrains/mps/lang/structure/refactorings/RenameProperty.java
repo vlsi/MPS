@@ -58,7 +58,7 @@ public class RenameProperty extends BaseLoggableRefactoring {
       return result;
     }
 
-    Map<IModule, List<SModel>> modelsMap = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage);
+    Map<IModule, List<SModel>> modelsMap = RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedProject(), sourceLanguage);
     for (List<SModel> modelList : modelsMap.values()) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(modelList));
     }

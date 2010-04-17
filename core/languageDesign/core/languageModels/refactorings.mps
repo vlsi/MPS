@@ -179,7 +179,6 @@
     </node>
   </node>
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
-  <visible index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="7012097027058633272">
     <property name="name:1" value="MoveNodes" />
     <property name="userFriendlyName:1" value="Move Nodes" />
@@ -201,14 +200,9 @@
         <node role="mainComponent:1" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7012097027058862192">
           <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7012097027058891174">
             <link role="baseMethodDeclaration:3" targetNodeId="7012097027058828345" resolveInfo="ModelOrNodeChooser" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4284078376668134987">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4284078376668133053">
-                <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression:1" id="4284078376668133048" />
-                <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.ProjectOperation:1" id="4284078376668133061" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4284078376668135256">
-                <link role="baseMethodDeclaration:3" targetNodeId="3v.~MPSProject.getProject():com.intellij.openapi.project.Project" resolveInfo="getProject" />
-              </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4284078376668133053">
+              <node role="operand:3" type="jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression:1" id="4284078376668133048" />
+              <node role="operation:3" type="jetbrains.mps.lang.refactoring.structure.MainProjectOperation:1" id="8113680833395852512" />
             </node>
           </node>
         </node>
