@@ -86,6 +86,18 @@
                         <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="278927758244377655">
                           <property name="value:3" value="jetbrains.mps.lang.structure.scripts.RenameProperty" />
                         </node>
+                        <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3068114543318336407">
+                          <property name="value:3" value="jetbrains.mps.lang.core.scripts.MoveNodes" />
+                        </node>
+                        <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3068114543318336409">
+                          <property name="value:3" value="jetbrains.mps.lang.structure.scripts.MoveConcepts" />
+                        </node>
+                        <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3068114543318336411">
+                          <property name="value:3" value="jetbrains.mps.lang.structure.scripts.MoveLinkUp" />
+                        </node>
+                        <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3068114543318336413">
+                          <property name="value:3" value="jetbrains.mps.lang.structure.scripts.MovePropertyUp" />
+                        </node>
                       </node>
                     </node>
                   </node>

@@ -27,7 +27,7 @@ outer:
       for (IRefactoring refactoring : ListSequence.fromList(RefactoringUtil.getAllRefactorings())) {
         // @hack 
         if (refactoring instanceof OldRefactoringAdapter) {
-          List<String> old = ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.core.scripts.Rename", "jetbrains.mps.lang.structure.scripts.RenameConcept", "jetbrains.mps.lang.structure.scripts.RenameLink", "jetbrains.mps.lang.structure.scripts.RenameProperty");
+          List<String> old = ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.lang.core.scripts.Rename", "jetbrains.mps.lang.structure.scripts.RenameConcept", "jetbrains.mps.lang.structure.scripts.RenameLink", "jetbrains.mps.lang.structure.scripts.RenameProperty", "jetbrains.mps.lang.core.scripts.MoveNodes", "jetbrains.mps.lang.structure.scripts.MoveConcepts", "jetbrains.mps.lang.structure.scripts.MoveLinkUp", "jetbrains.mps.lang.structure.scripts.MovePropertyUp");
           for (String name : ListSequence.fromList(old)) {
             if (((OldRefactoringAdapter) refactoring).getRefactoringClassName().equals(name)) {
               continue outer;
