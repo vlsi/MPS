@@ -137,7 +137,7 @@ public class RefactoringProcessor {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 try {
-                  Project project = refactoringContext.getSelectedMPSProject().getProject();
+                  Project project = refactoringContext.getSelectedProject();
                   refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
                   IRefactoring refactoring = refactoringContext.getRefactoring();
                   SearchResults usages = refactoring.getAffectedNodes(refactoringContext);
@@ -231,7 +231,7 @@ public class RefactoringProcessor {
           }
         }
       });
-      IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedMPSProject().getProject());
+      IOperationContext operationContext = ProjectOperationContext.get(refactoringContext.getSelectedProject());
       new GeneratorManager(operationContext.getProject(), new GenerationSettings()).generateModelsFromDifferentModules(operationContext, descriptors, new JavaGenerationHandler());
     } finally {
       SNode.setNodeMemeberAccessModifier(null);

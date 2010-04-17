@@ -44,7 +44,7 @@ public class MPSNodeChooser implements IChooser {
     }
 
     protected Project getProject() {
-      return myContext.getSelectedMPSProject().getProject();
+      return myContext.getSelectedProject();
     }
 
     protected ProjectModulesPoolTreeNode getModulesPoolNode() {
