@@ -172,6 +172,6 @@ public class MoveNodes extends BaseGeneratedRefactoring {
   }
 
   public static String getKeyStroke_static() {
-    return " F6";
+    return "";
   }
 }

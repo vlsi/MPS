@@ -37,7 +37,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
   }
 
   public String getUserFriendlyName() {
-    return "Move Nodes (new)";
+    return "Move Nodes";
   }
 
   public String getKeyStroke() {
@@ -137,6 +137,6 @@ public class MoveNodes extends BaseLoggableRefactoring {
   }
 
   public static String getKeyStroke_static() {
-    return "";
+    return " F6";
   }
 }

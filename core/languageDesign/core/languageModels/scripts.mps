@@ -679,9 +679,6 @@
         <node role="statement:3" type="jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation:1" id="1198082938234" />
       </node>
     </node>
-    <node role="keystroke:1" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke:32" id="1199457345803">
-      <property name="keycode:32" value="VK_F6" />
-    </node>
     <node role="affectedNodesClause:1" type="jetbrains.mps.lang.refactoring.structure.AffectedNodesClause:1" id="1201528947033">
       <node role="body:1" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1201528947034">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1239347290441">

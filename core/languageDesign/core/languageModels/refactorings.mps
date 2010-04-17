@@ -182,7 +182,7 @@
   <visible index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="7012097027058633272">
     <property name="name:1" value="MoveNodes" />
-    <property name="userFriendlyName:1" value="Move Nodes (new)" />
+    <property name="userFriendlyName:1" value="Move Nodes" />
     <node role="field:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringField:1" id="7012097027058650679">
       <property name="name:1" value="role" />
       <node role="type:1" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7012097027058650681" />
@@ -890,6 +890,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="keystroke:1" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke:23" id="3068114543317961934">
+      <property name="keycode:23" value="VK_F6" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7012097027058828343">
