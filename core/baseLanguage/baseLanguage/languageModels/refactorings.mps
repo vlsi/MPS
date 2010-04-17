@@ -742,7 +742,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="4946830740863976385">
-    <property name="name:1" value="ConvertAnonimousClass" />
+    <property name="name:1" value="ConvertAnonymousClass" />
     <property name="userFriendlyName:1" value="Convert Anonymous to Inner Class" />
     <property name="package:1" value="classifier" />
     <node role="parameter:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter:1" id="4946830740863976386">
