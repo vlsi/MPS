@@ -7,10 +7,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.GridBagConstraints;
 import javax.swing.JPanel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
-import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.DefaultEditorMessage;
-import java.awt.Color;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -39,25 +35,19 @@ public class IntroduceConstantDialog extends IntroduceVariableDialog {
   }
 
   protected DuplicatesProcessor getDuplicatesProcessor() {
-    return new DuplicatesProcessor<SNode>(this.myEditorContext) {
-      private EditorMessageOwner myOwner = new EditorMessageOwner() {};
-
-      protected EditorMessage createEditorMessage(SNode duplicate) {
-        return new DefaultEditorMessage(duplicate, Color.BLUE, null, this.myOwner);
-      }
-
+    return new VariableDuplicatesProcessor(this.myEditorContext) {
       public void substitute(final SNode duplicate) {
         ModelAccess.instance().runWriteActionInCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
           public SNode invoke() {
-            return SNodeOperations.replaceWithAnother(duplicate, new IntroduceConstantDialog.QuotationClass_3b985_a0a0a0a0a0a1a0a0a1().createNode(IntroduceConstantDialog.this.getResult()));
+            return SNodeOperations.replaceWithAnother(duplicate, new IntroduceConstantDialog.QuotationClass_3b985_a0a0a0a0a0a0a0a0a1().createNode(IntroduceConstantDialog.this.getResult()));
           }
         }));
       }
     };
   }
 
-  public static class QuotationClass_3b985_a0a0a0a0a0a1a0a0a1 {
-    public QuotationClass_3b985_a0a0a0a0a0a1a0a0a1() {
+  public static class QuotationClass_3b985_a0a0a0a0a0a0a0a0a1 {
+    public QuotationClass_3b985_a0a0a0a0a0a0a0a0a1() {
     }
 
     public SNode createNode(Object parameter_3) {

@@ -18,12 +18,14 @@ public abstract class DuplicatesProcessor<T> {
     boolean replaceAll = false;
     for (T duplicate : ListSequence.fromList(duplicates)) {
       if (!(replaceAll)) {
-        EditorMessage message = this.createEditorMessage(duplicate);
-        this.myEditorContext.getNodeEditorComponent().getHighlightManager().markSingleMessage(message);
+        List<EditorMessage> messages = this.createEditorMessages(duplicate);
+        this.myEditorContext.getNodeEditorComponent().getHighlightManager().mark(messages);
         AskDialog dialog = new AskDialog(this.myEditorContext.getOperationContext().getMainFrame(), "Process Duplicates");
         dialog.showDialog();
         AskDialog.DialogResults shouldSubstitute = dialog.getResult();
-        this.myEditorContext.getNodeEditorComponent().getHighlightManager().unmarkSingleMessage(message);
+        for (EditorMessage message : ListSequence.fromList(messages)) {
+          this.myEditorContext.getNodeEditorComponent().getHighlightManager().unmark(message);
+        }
         if (shouldSubstitute == AskDialog.DialogResults.SUBSTITUTE) {
           this.substitute(duplicate);
         } else if (shouldSubstitute == AskDialog.DialogResults.SUBSTITUTE_ALL) {
@@ -38,7 +40,7 @@ public abstract class DuplicatesProcessor<T> {
     }
   }
 
-  protected abstract EditorMessage createEditorMessage(T duplicate);
+  protected abstract List<EditorMessage> createEditorMessages(T duplicate);
 
   public abstract void substitute(T duplicate);
 }

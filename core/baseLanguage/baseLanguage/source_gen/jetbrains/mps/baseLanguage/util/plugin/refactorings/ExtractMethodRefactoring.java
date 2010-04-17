@@ -39,6 +39,10 @@ public abstract class ExtractMethodRefactoring {
   @NotNull
   public abstract SNode doRefactor();
 
+  public DuplicatesProcessor<MethodMatch> getDuplicatesProcessor() {
+    return null;
+  }
+
   public void replaceMatchByMethodCall(MethodMatch match, List<SNode> parametersOrder, SNode methodDeclaration) {
   }
 
@@ -176,7 +180,7 @@ public abstract class ExtractMethodRefactoring {
     List<SNode> methodCallActualParams = new ArrayList<SNode>();
     for (SNode parameter : ListSequence.fromList(parametersOrder)) {
       if (ListSequence.fromList(MapSequence.fromMap(match.getParamsMapping()).get(parameter)).isEmpty()) {
-        ListSequence.fromList(methodCallActualParams).addElement(new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0a0b0m().createNode());
+        ListSequence.fromList(methodCallActualParams).addElement(new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0a0b0n().createNode());
       } else {
         ListSequence.fromList(methodCallActualParams).addElement(SNodeOperations.cast(SNodeOperations.copyNode(ListSequence.fromList(MapSequence.fromMap(match.getParamsMapping()).get(parameter)).getElement(0)), "jetbrains.mps.baseLanguage.structure.Expression"));
       }
@@ -197,8 +201,8 @@ public abstract class ExtractMethodRefactoring {
 
   public abstract SNode getMethodType();
 
-  public static class QuotationClass_jq3ovj_a0a0a0a0b0m {
-    public QuotationClass_jq3ovj_a0a0a0a0b0m() {
+  public static class QuotationClass_jq3ovj_a0a0a0a0b0n {
+    public QuotationClass_jq3ovj_a0a0a0a0b0n() {
     }
 
     public SNode createNode() {
