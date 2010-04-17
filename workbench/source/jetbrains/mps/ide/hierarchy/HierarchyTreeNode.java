@@ -26,7 +26,6 @@ import jetbrains.mps.util.annotation.DisposableCommand;
 import org.jetbrains.annotations.NotNull;
 
 public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
-
   private SNodePointer myNodePointer;
   protected AbstractHierarchyTree<T> myHierarchyTree;
 

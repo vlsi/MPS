@@ -431,7 +431,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
           rebuildAction.run();
           if (saveExpansion) {
             runWithoutExpansion(new Runnable() {
-              @Override
               public void run() {
                 expandPaths(expansion);
                 selectPaths(selection);

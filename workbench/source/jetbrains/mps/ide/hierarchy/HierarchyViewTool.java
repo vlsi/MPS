@@ -19,22 +19,16 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.INavigateableTool;
 import jetbrains.mps.ide.findusages.INavigator;
 import jetbrains.mps.ide.findusages.UsagesViewTracker;
-import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.util.NameUtil;
 
 import javax.swing.tree.TreePath;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDeclaration> implements INavigateableTool {
   private static List<SModelDescriptor> myStructureModels = new ArrayList<SModelDescriptor>();
@@ -74,7 +68,7 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
   }
 
   protected AbstractHierarchyTree<AbstractConceptDeclaration> createHierarchyTree(boolean isParentHierarchy) {
-    return new ConceptHierarchyTree(this, isParentHierarchy);
+    return new ConceptHierarchyTree(myCache,this,isParentHierarchy);
   }
 
   protected void doRegister() {
@@ -120,48 +114,4 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
     };
   }
 
-  private class ConceptHierarchyTree extends AbstractHierarchyTree<AbstractConceptDeclaration> {
-    public ConceptHierarchyTree(AbstractHierarchyView<AbstractConceptDeclaration> abstractHierarchyView, boolean isParentHierarchy) {
-      super(abstractHierarchyView, AbstractConceptDeclaration.class, isParentHierarchy);
-    }
-
-    protected Set<AbstractConceptDeclaration> getParents(AbstractConceptDeclaration node) {
-      Set<String> parents = myCache.getParentsNames(NameUtil.nodeFQName(node));
-      Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
-      for (String s : parents) {
-        result.add(SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance()));
-      }
-      return result;
-    }
-
-    protected AbstractConceptDeclaration getParent(AbstractConceptDeclaration node) {
-      if (node instanceof ConceptDeclaration) {
-        ConceptDeclaration concept = ((ConceptDeclaration) node);
-        ConceptDeclaration extendsConcept = concept.getExtends();
-        if (extendsConcept == null && !NameUtil.nodeFQName(concept).equals(BaseConcept.concept)) {
-          extendsConcept = SModelUtil_new.getBaseConcept();
-        }
-        return extendsConcept;
-      } else {
-        return null;
-      }
-    }
-
-    protected Set<AbstractConceptDeclaration> getDescendants(AbstractConceptDeclaration conceptDeclaration) {
-      Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
-      for (String s : myCache.getDescendantsOfConcept(NameUtil.nodeFQName(conceptDeclaration))) {
-        AbstractConceptDeclaration abstractConceptDeclaration = SModelUtil_new.findConceptDeclaration(s, GlobalScope.getInstance());
-        if (abstractConceptDeclaration == null) {
-          System.err.println("");
-        }
-        result.add(abstractConceptDeclaration);
-      }
-      return result;
-    }
-
-    protected String noNodeString() {
-      return "(no concept)";
-    }
-
-  }
 }

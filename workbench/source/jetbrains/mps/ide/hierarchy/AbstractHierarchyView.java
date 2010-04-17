@@ -36,7 +36,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractHierarchyView<T extends INodeAdapter> extends BaseProjectTool {
-
   protected AbstractHierarchyTree<T> myHierarchyTree;
   protected HierarchyTreeNode<T> myTreeNode;
   protected JPanel myComponent = new JPanel(new BorderLayout());

@@ -113,11 +113,6 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
 
   protected abstract String noNodeString();
 
-  /* public void rebuildTree() {
-     DefaultTreeModel model = new DefaultTreeModel(rebuild());
-     setModel(model);
-  }*/
-
   protected abstract T getParent(T node);
 
   protected abstract Set<T> getParents(T node);
@@ -205,7 +200,6 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
   }
 
   protected class RootTextTreeNode extends TextTreeNode {
-
     public RootTextTreeNode(String s) {
       super(s);
       if (myHierarchyView != null) {
