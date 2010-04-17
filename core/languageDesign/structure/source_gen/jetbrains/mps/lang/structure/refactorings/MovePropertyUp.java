@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.refactoring.framework.paramchooser.mps.MPSChooserFactory;
 import jetbrains.mps.lang.structure.scripts.RefUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -60,13 +59,13 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
       return false;
     }
 
-    return MovePropertyUp.this.ask(refactoringContext, MPSChooserFactory.createNodeChooser(refactoringContext, "targetConcept", new MovePropertyUp_targetConcept_Settings(refactoringContext)));
+    return MovePropertyUp.this.ask(refactoringContext, new MovePropertyUp_targetConcept_Chooser(refactoringContext));
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
     /*
-      SNode linkToReplace = RefUtil.findPropertyToMerge(SNodeOperations.cast(((SNode) refactoringContext.getParameter("targetConcept")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), node);
+      SNode linkToReplace = RefUtil.findPropertyToMerge(((SNode) refactoringContext.getParameter("targetConcept")), node);
       if ((linkToReplace != null)) {
         refactoringContext.replaceRefsToNodeWithNode(node, linkToReplace);
       } else {
@@ -75,7 +74,7 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
     */
     refactoringContext.moveNodeToNode(node, node.getRole_(), ((SNode) refactoringContext.getParameter("targetConcept")));
     
-    refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(SNodeOperations.cast(((SNode) refactoringContext.getParameter("targetConcept")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "name"), SPropertyOperations.getString(node, "name"));;
+    refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(node, "name"));;
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
