@@ -33,7 +33,6 @@ import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 
-import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -41,16 +40,12 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -66,7 +61,6 @@ import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 import javax.swing.tree.TreePath;
-import javax.swing.tree.TreeSelectionModel;
 import java.awt.Component;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -85,11 +79,10 @@ import java.util.List;
 )
 public class ProjectPane extends BaseLogicalViewProjectPane {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
-  private ProjectModulesPoolTreeNode myModulesPool;
   private ProjectView myProjectView;
   private ProjectTreeFindHelper myFindHelper = new ProjectTreeFindHelper() {
-    protected MPSTree getTree() {
-      return (MPSTree) myTree;
+    protected ProjectTree getTree() {
+      return ProjectPane.this.getTree();
     }
 
     protected Project getProject() {
@@ -97,7 +90,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     }
 
     protected ProjectModulesPoolTreeNode getModulesPoolNode() {
-      return myModulesPool;
+      return getTree().getModulesPoolNode();
     }
   };
 
@@ -128,7 +121,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     super(project);
     myProjectView = projectView;
 
-    myTree = new MyTree();
+    myTree = new ProjectTree(this);
 
     myScrollPane = new MyScrollPane(getTree());
     getTree().addKeyListener(new KeyAdapter() {
@@ -179,8 +172,8 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     return (ProjectPane) projectView.getProjectViewPaneById(ID);
   }
 
-  public MPSTree getTree() {
-    return (MPSTree) myTree;
+  public ProjectTree getTree() {
+    return (ProjectTree) myTree;
   }
 
   public Project getProject() {
@@ -373,82 +366,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     @Nullable
     public Object getData(@NonNls String dataId) {
       return ProjectPane.this.getData(dataId);
-    }
-  }
-
-  public class MyTree extends LogicalViewTree {
-    public MyTree() {
-      super(ProjectPane.this);
-
-      getSelectionModel().setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
-      scrollsOnExpand = false;
-    }
-
-    protected MPSTreeNode rebuild() {
-      if (getProject() == null || getProject().isDisposed()) {
-        return new TextTreeNode("Empty");
-      }
-
-      MPSProject project = getProject().getComponent(MPSProject.class);
-      ProjectTreeNode root = new ProjectTreeNode(project);
-
-      List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
-
-      List<Solution> solutions = project.getProjectSolutions();
-      for (Solution solution : solutions) {
-        ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, project);
-        moduleNodes.add(solutionTreeNode);
-      }
-
-      List<Language> languages = project.getProjectLanguages();
-      for (Language language : languages) {
-        ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, project);
-        moduleNodes.add(node);
-      }
-
-      List<DevKit> devkits = project.getProjectDevKits();
-      for (DevKit devKit : devkits) {
-        ProjectDevKitTreeNode node = new ProjectDevKitTreeNode(devKit, project);
-        moduleNodes.add(node);
-      }
-
-      ModulesNamespaceTreeBuilder builder = new ModulesNamespaceTreeBuilder(project);
-      for (MPSTreeNode mtn : moduleNodes) {
-        builder.addNode(mtn);
-      }
-      builder.fillNode(root);
-
-      myModulesPool = new ProjectModulesPoolTreeNode(project);
-      root.add(myModulesPool);
-
-      if (getProject().getComponent(TransientModelsModule.class).getOwnModelDescriptors().size() != 0) {
-        TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(getProject());
-        root.add(transientModelsNode);
-      }
-      return root;
-    }
-  }
-
-  private class ModulesNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
-    private MPSProject myProject;
-
-    protected ModulesNamespaceTreeBuilder(MPSProject project) {
-      myProject = project;
-    }
-
-    protected String getNamespace(MPSTreeNode node) {
-      String folder = null;
-
-      if (node instanceof ProjectModuleTreeNode) {
-        ProjectModuleTreeNode pmtn = (ProjectModuleTreeNode) node;
-        folder = myProject.getFolderFor(pmtn.getModule());
-      }
-
-      if (folder != null) {
-        return folder;
-      }
-
-      return "";
     }
   }
 
