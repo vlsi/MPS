@@ -25,6 +25,7 @@ import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 
+@Deprecated //left for compatibility with old refactorings
 public class ChooseNodeComponent implements IChooseComponent<SNode> {
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 

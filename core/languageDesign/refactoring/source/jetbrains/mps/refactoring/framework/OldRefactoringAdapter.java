@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@Deprecated //left for compatibility with old refactorings
 public class OldRefactoringAdapter implements IRefactoring {
   private List<SNode> myNodesToOpen;
   protected AbstractLoggableRefactoring myOldRefactoring;

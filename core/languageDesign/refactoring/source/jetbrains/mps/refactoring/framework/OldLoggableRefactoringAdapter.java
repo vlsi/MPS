@@ -18,6 +18,7 @@ package jetbrains.mps.refactoring.framework;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SModel;
 
+@Deprecated //left for compatibility with old refactorings
 public class OldLoggableRefactoringAdapter extends OldRefactoringAdapter implements ILoggableRefactoring {
   public OldLoggableRefactoringAdapter(AbstractLoggableRefactoring oldRefactoring) {
     super(oldRefactoring);

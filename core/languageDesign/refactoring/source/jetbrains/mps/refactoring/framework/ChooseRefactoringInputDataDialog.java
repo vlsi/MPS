@@ -27,6 +27,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Deprecated //left for compatibility with old refactorings
 public class ChooseRefactoringInputDataDialog extends BaseDialog {
 
   private JPanel myInnerPanel;

@@ -25,6 +25,7 @@ import java.awt.*;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
 
+@Deprecated //left for compatibility with old refactorings
 public class ChooseStringComponent extends JPanel implements IChooseComponent<String>  {
   private JTextField myTextField;
   private String myPropertyName;

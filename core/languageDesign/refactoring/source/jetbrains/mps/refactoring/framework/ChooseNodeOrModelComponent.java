@@ -41,6 +41,7 @@ import java.util.Set;
 import static java.awt.GridBagConstraints.BOTH;
 import static java.awt.GridBagConstraints.HORIZONTAL;
 
+@Deprecated //left for compatibility with old refactorings
 public class ChooseNodeOrModelComponent extends JPanel implements IChooseComponent<Object> {
   private String myCaption;
   private String myPropertyName;

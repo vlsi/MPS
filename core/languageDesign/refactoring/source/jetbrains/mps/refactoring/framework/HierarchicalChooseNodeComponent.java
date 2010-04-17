@@ -31,6 +31,7 @@ import java.awt.*;
 
 import com.intellij.openapi.util.Computable;
 
+@Deprecated //left for compatibility with old refactorings
 public class HierarchicalChooseNodeComponent extends JPanel implements IChooseComponent<SNode> {
   private MyHierarchyTree myHierarchyTree;
   private IOperationContext myOperationContext;
