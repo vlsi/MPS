@@ -15,89 +15,69 @@
  */
 package jetbrains.mps.refactoring.framework.paramchooser.mps.internal;
 
-import jetbrains.mps.ide.ChooseItemComponent;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.projectPane.ProjectModulesPoolTreeNode;
+import jetbrains.mps.ide.projectPane.ProjectTree;
+import jetbrains.mps.ide.projectPane.ProjectTreeFindHelper;
+import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.project.ProjectScope;
 import jetbrains.mps.refactoring.framework.InvalidInputValueException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.tree.TreeNode;
-import javax.swing.tree.TreePath;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import static java.awt.GridBagConstraints.BOTH;
-import static java.awt.GridBagConstraints.HORIZONTAL;
-import java.awt.GridBagLayout;
-import java.util.HashSet;
-import java.util.Set;
 
 public class MPSNodeChooser implements IChooser {
-  private JPanel myMainPanel;
-  private MyTree myTree;
-  private MyChooseItemComponent myChooseItemComponent;
+  private ProjectTree myTree;
+  private JScrollPane myScrollPane;
+
+  private ProjectTreeFindHelper myFindHelper = new ProjectTreeFindHelper() {
+    protected ProjectTree getTree() {
+      return myTree;
+    }
+
+    protected Project getProject() {
+      return myContext.getSelectedMPSProject().getProject();
+    }
+
+    protected ProjectModulesPoolTreeNode getModulesPoolNode() {
+      return getTree().getModulesPoolNode();
+    }
+  };
+
   private String myParamName;
   private RefactoringContext myContext;
   private IChooserSettings mySettings;
-  private Set<SModelDescriptor> myModels = new HashSet<SModelDescriptor>();
-  private SModelDescriptor myModel = null;
 
   public MPSNodeChooser(String paramName, RefactoringContext context, IChooserSettings settings) {
     myParamName = paramName;
     myContext = context;
     mySettings = settings;
 
-    initUI();
+    initUI(myContext.getCurrentOperationContext().getProject());
 
-    //init condition
-    myModels = getModelsFrom(myContext.getCurrentOperationContext());
-    myTree.rebuildNow();
-    myChooseItemComponent.rebuild();
-
-    setInitialValue(settings.getInitialValue());
+    Object value = settings.getInitialValue();
+    if (value == null) {
+      value = myContext.getSelectedNode();
+    }
+    setInitialValue(value);
   }
 
-  public void initUI() {
-    myMainPanel = new JPanel(new GridBagLayout());
-
-    GridBagConstraints constraints = new GridBagConstraints();
-
-    constraints.gridx = 0;
-    constraints.gridy = 0;
-    constraints.fill = HORIZONTAL;
-    constraints.weightx = 1;
-    constraints.weighty = 0;
-    myMainPanel.add(new JLabel(mySettings.getTitle()), constraints);
-
-    myChooseItemComponent = new MyChooseItemComponent();
-    constraints.gridy++;
-    constraints.fill = BOTH;
-    constraints.weighty = 0.5;
-    myMainPanel.add(myChooseItemComponent, constraints);
-
-    myTree = new MyTree();
-    constraints.gridy++;
-    constraints.fill = BOTH;
-    constraints.weighty = 1;
-    myMainPanel.add(new JScrollPane(myTree), constraints);
-
-    myTree.setRootVisible(true);
-    myModels = getModelsFrom(myContext.getCurrentOperationContext());
-    myTree.rebuildNow();
-    myChooseItemComponent.rebuild();
-    myTree.expandPath(new TreePath(myTree.getRootNode()));
+  private void initUI(Project project) {
+    myTree = new ProjectTree(project);
+    myScrollPane = new JScrollPane(myTree);
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        myTree.rebuildNow();
+      }
+    });
   }
 
   public boolean isStretchable() {
@@ -105,107 +85,44 @@ public class MPSNodeChooser implements IChooser {
   }
 
   public JComponent getMainComponent() {
-    return myMainPanel;
+    return myScrollPane;
   }
 
   public JComponent getComponentToFocus() {
-    return myChooseItemComponent.getTextField();
+    return myTree;
   }
 
   public void commit() throws InvalidInputValueException {
     String title = mySettings.getTitle();
 
-    if (myTree.getSelectionPath() == null) {
-      throw new InvalidInputValueException(title + ": nothing is selected");
-    }
-
-    MPSTreeNode node = (MPSTreeNode) myTree.getSelectionPath().getLastPathComponent();
-    if (node instanceof SModelTreeNode) {
-      throw new InvalidInputValueException(title + ": selected value should not not be a model");
-    }
-
-    if (!(node instanceof SNodeTreeNode)) {
-      throw new InvalidInputValueException(title + ": nothing is selected");
-    }
-
-    SNode sNode = ((SNodeTreeNode) node).getSNode();
-    if (!mySettings.met(sNode)) {
+    SNode node = getSelectedObject();
+    if (node == null) throw new InvalidInputValueException(title + ": node not selected");
+    if (!mySettings.met(node))
       throw new InvalidInputValueException(title + ": refactoring can't be applied to selected node");
-    }
 
-    myContext.setParameter(myParamName, sNode);
+    myContext.setParameter(myParamName, node);
   }
 
-  private Set<SModelDescriptor> getModelsFrom(IOperationContext context) {
-    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
-    for (SModelDescriptor model : context.getProject().getComponent(ProjectScope.class).getModelDescriptors()) {
-      if (SModelStereotype.isUserModel(model)) {
-        models.add(model);
+  public void setInitialValue(final Object initialValue) {
+    if (initialValue == null) return;
+
+    myTree.runWithoutExpansion(new Runnable() {
+      public void run() {
+        MPSTreeNodeEx sNodeNode = myFindHelper.findMostSuitableSNodeTreeNode((SNode) initialValue);
+        if (sNodeNode == null) return;
+
+        myTree.selectNode(sNodeNode);
       }
-    }
-    return models;
+    });
   }
 
-  public void setInitialValue(Object initialValue) {
-    if (initialValue instanceof SModel) {
-      initialValue = ((SModel) initialValue).getModelDescriptor();
-    }
-    TreeNode treeNode = myTree.findNodeWith(initialValue);
-    if (treeNode != null) {
-      myTree.selectNode(treeNode);
-    }
-  }
-
-  private final class MyTree extends MPSTree {
-    {
-      setShowsRootHandles(true);
-    }
-
-    public boolean isRootVisible() {
-      return true;
-    }
-
-    protected MPSTreeNode rebuild() {
-      MPSTreeNode root;
-      if (myModel != null) {
-        root = new SModelTreeNode(myModel, null, myContext.getCurrentOperationContext(), Condition.TRUE_CONDITION) {
-          @Override
-          protected boolean checkForErrors() {
-            return false;
-          }
-        };
-      } else {
-        root = new TextTreeNode("no model is selected");
-        root.setIcon(Icons.DEFAULT_ICON);
+  private SNode getSelectedObject() {
+    final Object selection = this.myTree.getSelectionPath().getLastPathComponent();
+    return ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      public SNode compute() {
+        if (!(selection instanceof SNodeTreeNode)) return null;
+        return ((SNodeTreeNode) selection).getSNode();
       }
-
-      return root;
-    }
-  }
-
-  class MyChooseItemComponent extends ChooseItemComponent<SModelDescriptor> {
-    public MyChooseItemComponent() {
-      super(null);
-      setMinimumSize(new Dimension(400, 100));
-      setPreferredSize(new Dimension(400, 100));
-    }
-
-    protected String getItemPresentation(SModelDescriptor sm) {
-      return sm.getSModelFqName().toString();
-    }
-
-    public void doChoose(SModelDescriptor sModelDescriptor) {
-      myModel = sModelDescriptor;
-      myTree.rebuildNow();
-    }
-
-    public void rebuild() {
-      getNames().clear();
-      getItemsMap().clear();
-      for (SModelDescriptor modelDescriptor : myModels) {
-        putItem(modelDescriptor.getSModelFqName().toString(), modelDescriptor);
-      }
-      makeNamesConsistent();
-    }
+    });
   }
 }

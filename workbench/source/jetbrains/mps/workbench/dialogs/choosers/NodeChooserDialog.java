@@ -108,9 +108,9 @@ class NodeChooserDialog extends BaseDialog {
 
   public SNode getResult() {
     if (myIsCancelled) return null;
-    BaseNodeItem modelItem = (BaseNodeItem) myChooser.getChosenElement();
-    if (modelItem == null) return null;
-    return modelItem.getNode();
+    BaseNodeItem nodeItem = (BaseNodeItem) myChooser.getChosenElement();
+    if (nodeItem == null) return null;
+    return nodeItem.getNode();
   }
 
   @Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
