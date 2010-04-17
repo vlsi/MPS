@@ -125,8 +125,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     }
     // refactoring itself 
     for (SNode node : refactoringContext.getSelectedNodes()) {
-      
-      refactoringContext.changeFeatureName(node, ((SModel) refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));;
+      refactoringContext.changeFeatureName(node, ((SModel) refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
     }
     refactoringContext.moveNodesToModel(refactoringContext.getSelectedNodes(), ((SModel) refactoringContext.getParameter("targetModel")));
     if (ListSequence.fromList(editors).isNotEmpty()) {

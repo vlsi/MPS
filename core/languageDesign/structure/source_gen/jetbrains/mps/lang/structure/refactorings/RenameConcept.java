@@ -47,7 +47,7 @@ public class RenameConcept extends BaseLoggableRefactoring {
 
   public void refactor(final RefactoringContext refactoringContext) {
     String newConceptName = SNodeOperations.getModel(refactoringContext.getSelectedNode()).getSModelFqName() + "." + ((String) refactoringContext.getParameter("newName"));
-    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newConceptName, ((String) refactoringContext.getParameter("newName")));;
+    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newConceptName, ((String) refactoringContext.getParameter("newName")));
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {

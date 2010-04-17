@@ -73,8 +73,7 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
       }
     */
     refactoringContext.moveNodeToNode(node, node.getRole_(), ((SNode) refactoringContext.getParameter("targetConcept")));
-    
-    refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(node, "name"));;
+    refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(node, "name"));
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
