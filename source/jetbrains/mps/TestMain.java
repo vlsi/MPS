@@ -255,7 +255,7 @@ public class TestMain {
     }
     try {
       return refactoringTester.testRefactoring(
-        project,
+        project.getProject(),
         sandbox1[0],
         sandbox2[0],
         testRefactoringLanguage[0],

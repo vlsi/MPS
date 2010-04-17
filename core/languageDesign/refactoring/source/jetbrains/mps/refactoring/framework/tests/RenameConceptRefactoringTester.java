@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.refactoring.framework.tests;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.structure.scripts.RenameConcept;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.*;
 public class RenameConceptRefactoringTester implements IRefactoringTester {
   private static final String STRMD = "strmd";
 
-  public boolean testRefactoring(final MPSProject project,
+  public boolean testRefactoring(final Project project,
                                  final SModelDescriptor sandbox1,
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
@@ -35,14 +35,14 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
     final String newConceptName = "MyVeryGoodConcept2";
     RenameConcept renameConcept = new RenameConcept();
     final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(renameConcept));
-    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project.getProject()));
+    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         final SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         refactoringContext.setParameter(STRMD, structureModelDescriptor);
         SNode concept = structureModelDescriptor.getSModel().getRootByName("MyVeryGoodConcept1");
         refactoringContext.setSelectedNode(concept);
-        refactoringContext.setSelectedMPSProject(project);
+        refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter("newName", newConceptName);
       }

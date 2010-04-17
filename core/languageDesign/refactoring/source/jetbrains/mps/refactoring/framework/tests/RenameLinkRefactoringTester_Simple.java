@@ -15,17 +15,17 @@
  */
 package jetbrains.mps.refactoring.framework.tests;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.structure.scripts.RenameLink;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.smodel.*;
 
 public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
-  public boolean testRefactoring(final MPSProject project,
+  public boolean testRefactoring(final Project project,
                                  final SModelDescriptor sandbox1,
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
@@ -34,7 +34,7 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
     final String newLinkName = "sister";
     RenameLink renameLink = new RenameLink();
     final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(renameLink));
-    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project.getProject()));
+    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -42,7 +42,7 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
         SNode node = structureModelDescriptor.getSModel().getRootByName("MyVeryGoodConcept1");
         ConceptDeclaration concept = (ConceptDeclaration) BaseAdapter.fromNode(node);
         SNode link = concept.getLinkDeclarations().get(0).getNode();
-        refactoringContext.setSelectedMPSProject(project);
+        refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedNode(link);
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter(RenameLink.newName, newLinkName);

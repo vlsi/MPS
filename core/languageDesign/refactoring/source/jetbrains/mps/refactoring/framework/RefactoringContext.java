@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.refactoring.framework;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -82,7 +83,7 @@ public class RefactoringContext {
   private List<SNode> mySelectedNodes = new ArrayList<SNode>();
   private IOperationContext myCurrentOperationContext;
   private IScope myCurrentScope;
-  private MPSProject mySelectedMPSProject;
+  private Project mySelectedProject;
   private IModule mySelectedModule;
   private List<SModelDescriptor> mySelectedModels;
   private List<IModule> mySelectedModules;
@@ -775,6 +776,8 @@ public class RefactoringContext {
     return mySerializer.deserialize(element);
   }
 
+  //----------------refactoring context data
+
   public SNode getSelectedNode() {
     return mySelectedNode;
   }
@@ -823,8 +826,8 @@ public class RefactoringContext {
     mySelectedModules = modules;
   }
 
-  public void setSelectedMPSProject(MPSProject selectedMPSProject) {
-    mySelectedMPSProject = selectedMPSProject;
+  public void setSelectedProject(Project selectedProject) {
+    mySelectedProject = selectedProject;
   }
 
   public void setCurrentScope(IScope currentScope) {
@@ -836,7 +839,11 @@ public class RefactoringContext {
   }
 
   public MPSProject getSelectedMPSProject() {
-    return mySelectedMPSProject;
+    return getSelectedProject().getComponent(MPSProject.class);
+  }
+
+  public Project getSelectedProject(){
+    return mySelectedProject;
   }
 
   public IScope getCurrentScope() {
@@ -846,6 +853,8 @@ public class RefactoringContext {
   public IOperationContext getCurrentOperationContext() {
     return myCurrentOperationContext;
   }
+
+  //----------------refactoring context data end
 
   public void setDoesGenerateModels(boolean b) {
     myDoesGenerateModels = b;

@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.refactoring.framework.tests;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.structure.scripts.MoveConcepts;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 
 public class MoveConceptRefactoringTester implements IRefactoringTester {
-  public boolean testRefactoring(final MPSProject project,
+  public boolean testRefactoring(final Project project,
                                  final SModelDescriptor sandbox1,
                                  final SModelDescriptor sandbox2,
                                  final Language testRefactoringLanguage,
@@ -34,7 +34,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
     final String conceptName = "MyVeryGoodConcept1";
     MoveConcepts moveConcepts = new MoveConcepts();
     final RefactoringContext refactoringContext = new RefactoringContext(OldRefactoringAdapter.createAdapterFor(moveConcepts));
-    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project.getProject()));
+    refactoringContext.setCurrentOperationContext(ProjectOperationContext.get(project));
     final SModelDescriptor targetStructureModelDescriptor[] = new SModelDescriptor[]{null};
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -42,7 +42,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         targetStructureModelDescriptor[0] = testRefactoringTargetLanguage.getStructureModelDescriptor();
         SNode concept = structureModelDescriptor.getSModel().getRootByName(conceptName);
-        refactoringContext.setSelectedMPSProject(project);
+        refactoringContext.setSelectedProject(project);
         refactoringContext.setSelectedNode(concept);
         refactoringContext.setSelectedNodes(CollectionUtil.list(concept));
         refactoringContext.setSelectedModel(structureModelDescriptor);

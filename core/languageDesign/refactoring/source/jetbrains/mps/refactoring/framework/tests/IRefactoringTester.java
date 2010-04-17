@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.refactoring.framework.tests;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
@@ -27,7 +28,7 @@ import jetbrains.mps.smodel.Language;
 * To change this template use File | Settings | File Templates.
 */
 public interface IRefactoringTester {
-  boolean testRefactoring(MPSProject project,
+  boolean testRefactoring(Project project,
                           SModelDescriptor sandbox1,
                           SModelDescriptor sandbox2,
                           Language testRefactoringlanguage,

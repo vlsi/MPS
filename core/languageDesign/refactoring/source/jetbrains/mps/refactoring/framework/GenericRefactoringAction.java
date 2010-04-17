@@ -61,7 +61,7 @@ public class GenericRefactoringAction extends BaseAction {
     context.setSelectedModules(toList(getModules(e, isOneTarget)));
 
     //noinspection ConstantConditions
-    context.setSelectedMPSProject(e.getData(MPSDataKeys.PROJECT).getComponent(MPSProject.class));
+    context.setSelectedProject(e.getData(MPSDataKeys.PROJECT));
     context.setCurrentScope(e.getData(MPSDataKeys.SCOPE));
 
     new Thread() {
