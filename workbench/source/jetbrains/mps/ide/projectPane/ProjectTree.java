@@ -1,6 +1,8 @@
 package jetbrains.mps.ide.projectPane;
 
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.DevKit;
@@ -12,24 +14,23 @@ import javax.swing.tree.TreeSelectionModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProjectTree extends LogicalViewTree {
-  private ProjectPane myProjectPane;
+public class ProjectTree extends MPSTree {
+  private Project myProject;
   private ProjectModulesPoolTreeNode myModulesPoolTreeNode;
 
-  public ProjectTree(ProjectPane projectPane) {
-    super(projectPane);
-    myProjectPane = projectPane;
+  public ProjectTree(Project project) {
+    myProject = project;
 
     getSelectionModel().setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
     scrollsOnExpand = false;
   }
 
   protected MPSTreeNode rebuild() {
-    if (myProjectPane.getProject() == null || myProjectPane.getProject().isDisposed()) {
+    if (myProject == null || myProject.isDisposed()) {
       return new TextTreeNode("Empty");
     }
 
-    MPSProject project = myProjectPane.getProject().getComponent(MPSProject.class);
+    MPSProject project = myProject.getComponent(MPSProject.class);
     ProjectTreeNode root = new ProjectTreeNode(project);
 
     List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
@@ -61,8 +62,8 @@ public class ProjectTree extends LogicalViewTree {
     myModulesPoolTreeNode = new ProjectModulesPoolTreeNode(project);
     root.add(myModulesPoolTreeNode);
 
-    if (myProjectPane.getProject().getComponent(TransientModelsModule.class).getOwnModelDescriptors().size() != 0) {
-      TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(myProjectPane.getProject());
+    if (myProject.getComponent(TransientModelsModule.class).getOwnModelDescriptors().size() != 0) {
+      TransientModelsTreeNode transientModelsNode = new TransientModelsTreeNode(myProject);
       root.add(transientModelsNode);
     }
     return root;

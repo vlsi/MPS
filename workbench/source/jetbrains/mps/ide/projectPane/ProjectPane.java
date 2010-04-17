@@ -17,6 +17,7 @@ package jetbrains.mps.ide.projectPane;
 
 import com.intellij.ide.SelectInContext;
 import com.intellij.ide.SelectInTarget;
+import com.intellij.ide.dnd.aware.DnDAwareTree;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.openapi.actionSystem.DataProvider;
@@ -28,16 +29,15 @@ import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.ActionCallback;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
-
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -45,7 +45,7 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -121,7 +121,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     super(project);
     myProjectView = projectView;
 
-    myTree = new ProjectTree(this);
+    myTree = new MyProjectTree(project);
 
     myScrollPane = new MyScrollPane(getTree());
     getTree().addKeyListener(new KeyAdapter() {
@@ -152,7 +152,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   protected void removeListeners() {
     super.removeListeners();
     FileEditorManager fileEditorManager = getProject().getComponent(FileEditorManager.class);
-    fileEditorManager.removeFileEditorManagerListener(myEditorListener);  
+    fileEditorManager.removeFileEditorManagerListener(myEditorListener);
   }
 
   @Override
@@ -211,6 +211,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public void select(Object element, final VirtualFile file, final boolean requestFocus) {
+
   }
 
   public JComponent createComponent() {
@@ -300,7 +301,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       }
     });
   }
-
 
   public void selectNode(@NotNull final SNode node) {
     LOG.checkEDT();
@@ -412,6 +412,25 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       } else {
         return file.getNode();
       }
+    }
+  }
+
+  private class MyProjectTree extends ProjectTree implements LogicalViewTree{
+    public MyProjectTree(Project project) {
+      super(project);
+    }
+
+    public void editNode(final SNode node, IOperationContext context, boolean focus) {
+      boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return !node.isRoot();
+        }
+      });
+      ProjectPane.this.editNode(node, context, focus, select);
+    }
+
+    public boolean isAutoOpen() {
+      return getProjectView().isAutoscrollToSource(getId());
     }
   }
 }

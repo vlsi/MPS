@@ -3,6 +3,7 @@ package jetbrains.mps.ide.projectPane.favorites;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.openapi.util.ActionCallback;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
@@ -49,29 +50,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     myFavoritesManager = manager;
     myProjectView = projectView;
     myContext = ProjectOperationContext.get(getProject());
-    myTree = new LogicalViewTree(FavoritesProjectPane.this) {
-      protected MPSTreeNode rebuild() {
-        String subId = getSubId();
-        TextTreeNode invisibleRoot = new TextTreeNode(subId == null? "Favorites" : subId);
-        invisibleRoot.setIcon(new EmptyIcon(10));
-        List<Object> objectList = myFavoritesManager.getRoots(subId);
-        if (objectList == null || objectList.size() == 0) {
-          invisibleRoot.setText("There is nothing to display.");
-          return invisibleRoot;
-        }
-        for (Object o : objectList) {
-          FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(o);
-          if (favoritesRoot == null) continue;
-          MPSTreeNode newChild = favoritesRoot.getTreeNode(myContext);
-          if (newChild == null) {
-            myFavoritesManager.removeRoots(subId, Collections.singletonList(o));
-            continue;
-          }
-          invisibleRoot.add(newChild);
-        }
-        return invisibleRoot;
-      }
-    };
+    myTree = new MyLogicalViewTree();
     myFavoritesListener = new MPSFavoritesListener() {
       public void rootsChanged(String listName) {
         refreshMySubIdsAndSelect(listName);
@@ -184,5 +163,42 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   @Override
   public ProjectView getProjectView() {
     return myProjectView;
+  }
+
+  private class MyLogicalViewTree extends MPSTree implements LogicalViewTree{
+    protected MPSTreeNode rebuild() {
+      String subId = getSubId();
+      TextTreeNode invisibleRoot = new TextTreeNode(subId == null? "Favorites" : subId);
+      invisibleRoot.setIcon(new EmptyIcon(10));
+      List<Object> objectList = myFavoritesManager.getRoots(subId);
+      if (objectList == null || objectList.size() == 0) {
+        invisibleRoot.setText("There is nothing to display.");
+        return invisibleRoot;
+      }
+      for (Object o : objectList) {
+        FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(o);
+        if (favoritesRoot == null) continue;
+        MPSTreeNode newChild = favoritesRoot.getTreeNode(myContext);
+        if (newChild == null) {
+          myFavoritesManager.removeRoots(subId, Collections.singletonList(o));
+          continue;
+        }
+        invisibleRoot.add(newChild);
+      }
+      return invisibleRoot;
+    }
+
+    public void editNode(final SNode node, IOperationContext context, boolean focus) {
+      boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        public Boolean compute() {
+          return !node.isRoot();
+        }
+      });
+      FavoritesProjectPane.this.editNode(node, context, focus, select);
+    }
+
+    public boolean isAutoOpen() {
+      return getProjectView().isAutoscrollToSource(getId());
+    }
   }
 }
