@@ -5826,6 +5826,12 @@
         <link role="template:2" targetNodeId="7953996722066276281" resolveInfo="reduce_OperationContextExpression" />
       </node>
     </node>
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="8113680833395644484">
+      <link role="applicableConcept:2" targetNodeId="1.8113680833395644310:1" resolveInfo="MainProjectOperation" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="8113680833395644486">
+        <link role="template:2" targetNodeId="8113680833395644482" resolveInfo="reduce_MainProjectOperation" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="7953996722066276233">
     <property name="name:2" value="reduce_ModelDescriptorOperation" />
@@ -7489,6 +7495,34 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="4312073247720514268" />
       <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4312073247720514269">
         <link role="classifier:3" targetNodeId="3.~BaseRefactoring" resolveInfo="BaseRefactoring" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="8113680833395644482">
+    <property name="name:2" value="reduce_MainProjectOperation" />
+    <link role="applicableConcept:2" targetNodeId="1.8113680833395644310:1" resolveInfo="MainProjectOperation" />
+    <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8113680833395644487">
+      <property name="name:3" value="doRefactor" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8113680833395644488" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8113680833395644489" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8113680833395644490">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8113680833395644491">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8113680833395644492">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8113680833395644493">
+              <link role="variableDeclaration:3" targetNodeId="8113680833395644496" resolveInfo="refactoringContext" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8113680833395644494">
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~RefactoringContext.getSelectedProject():com.intellij.openapi.project.Project" resolveInfo="getSelectedProject" />
+              <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="8113680833395644495" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8113680833395644496">
+        <property name="name:3" value="refactoringContext" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8113680833395644497">
+          <link role="classifier:3" targetNodeId="3.~RefactoringContext" resolveInfo="RefactoringContext" />
+        </node>
       </node>
     </node>
   </node>

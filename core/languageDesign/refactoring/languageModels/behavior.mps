@@ -40,7 +40,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" version="1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
@@ -48,6 +48,7 @@
   <import index="6" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.refactoring.framework.paramchooser.mps(jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="9" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877320624">
     <property name="package" value="Deprecated.UserArgs" />
     <link role="concept" targetNodeId="1.1197983858784:1" resolveInfo="ChooseComponentClause" />
@@ -1021,6 +1022,31 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7012097027058652553">
+        <link role="concept:16" targetNodeId="5.1068431790189:3" resolveInfo="Type" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="8113680833395644312">
+    <property name="package" value="Context" />
+    <link role="concept" targetNodeId="1.8113680833395644310:1" resolveInfo="MainProjectOperation" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="8113680833395644313">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8113680833395644314" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8113680833395644315">
+      <property name="name" value="createType" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="7012097027058652452" resolveInfo="createType" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8113680833395644316" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8113680833395644317">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8113680833395644458">
+          <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="8113680833395644459">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8113680833395644462">
+              <link role="classifier:3" targetNodeId="9.~Project" resolveInfo="Project" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8113680833395644318">
         <link role="concept:16" targetNodeId="5.1068431790189:3" resolveInfo="Type" />
       </node>
     </node>

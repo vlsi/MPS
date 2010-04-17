@@ -1492,7 +1492,7 @@
     <property name="package:0" value="Context" />
     <link role="extends:0" targetNodeId="7953996722066252909:1" resolveInfo="AbstractUIArgumentOperation" />
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7953996722066252922">
-      <property name="value:0" value="project" />
+      <property name="value:0" value="mpsProject" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
@@ -1792,6 +1792,15 @@
       <property name="role:0" value="parameter" />
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="6895093993902311012:1" resolveInfo="RefactoringParameter" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8113680833395644310">
+    <property name="name:0" value="MainProjectOperation" />
+    <property name="package:0" value="Context" />
+    <link role="extends:0" targetNodeId="7953996722066252909:1" resolveInfo="ContextMemberOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8113680833395644311">
+      <property name="value:0" value="project" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
 </model>
