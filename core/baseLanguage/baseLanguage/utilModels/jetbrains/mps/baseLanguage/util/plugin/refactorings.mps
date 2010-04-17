@@ -73,7 +73,6 @@
   <import index="40" modelUID="f:java_stub#jetbrains.mps.ide.ui.smodel(jetbrains.mps.ide.ui.smodel@java_stub)" version="-1" />
   <import index="41" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="46" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="47" modelUID="r:7720026c-6844-4bc4-97ea-102839747da4(showInfo.plugin)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8492459591399162125">
     <property name="package:3" value="introduceVariable" />
