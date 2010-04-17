@@ -7303,8 +7303,8 @@
                 </node>
               </node>
             </node>
+            <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1259333526065998367" />
           </node>
-          <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="3302086321379403336" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3302086321379403337">
@@ -7348,8 +7348,8 @@
                 </node>
               </node>
             </node>
+            <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1259333526065998368" />
           </node>
-          <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="3302086321379403397" />
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="3302086321379403398">
