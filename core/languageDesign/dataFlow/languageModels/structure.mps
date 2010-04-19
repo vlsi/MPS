@@ -516,5 +516,14 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473854053:0" resolveInfo="abstract" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8754905177066994421">
+    <property name="package:0" value="InstructionOperations" />
+    <property name="name:0" value="InstructionIsJump" />
+    <link role="extends:0" targetNodeId="7180022869589052771:0" resolveInfo="BooleanInstructionOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8754905177066994422">
+      <property name="value:0" value="isJump" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

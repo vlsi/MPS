@@ -25,23 +25,20 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode catchClause : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
-      _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause));
-    }
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
     for (Instruction instruction : _context.getBuilder().getInstructionsFor(SLinkOperations.getTarget(_context.getNode(), "body", true))) {
-      if (InstructionUtil.isNop(instruction) || InstructionUtil.isRet(instruction)) {
+      if (InstructionUtil.isNop(instruction) || InstructionUtil.isRet(instruction) || InstructionUtil.isJump(instruction)) {
         continue;
       }
       SNode statement = SNodeOperations.getAncestor((SNode) InstructionUtil.getSource(instruction), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
       Set<SNode> uncaughtThrowables = Statement_Behavior.call_uncaughtThrowables_5412515780383108857(statement, false);
       for (SNode catchClause : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
         SNode caughtType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new TryCatchStatement_DataFlow.QuotationClass_3m6dtg_a1a0a0b0d0c0a().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new TryCatchStatement_DataFlow.QuotationClass_3m6dtg_a1a0a0b0d0c0a_0().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(new TryCatchStatement_DataFlow.QuotationClass_3m6dtg_a0a0a1a3a2a0().createNode(), caughtType)) {
+        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new TryCatchStatement_DataFlow.QuotationClass_3m6dtg_a1a0a0b0d0b0a().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new TryCatchStatement_DataFlow.QuotationClass_3m6dtg_a1a0a0b0d0b0a_0().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(new TryCatchStatement_DataFlow.QuotationClass_3m6dtg_a0a0a1a3a1a0().createNode(), caughtType)) {
           _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), _context.getBuilder().insertAfter(instruction));
         } else {
           for (SNode throwed : uncaughtThrowables) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(new TryCatchStatement_DataFlow.QuotationClass_3m6dtg_a0a0a0a0a1a3a2a0().createNode(throwed), caughtType)) {
+            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(new TryCatchStatement_DataFlow.QuotationClass_3m6dtg_a0a0a0a0a1a3a1a0().createNode(throwed), caughtType)) {
               _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), _context.getBuilder().insertAfter(instruction));
             }
           }
@@ -58,8 +55,8 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
     }
   }
 
-  public static class QuotationClass_3m6dtg_a1a0a0b0d0c0a {
-    public QuotationClass_3m6dtg_a1a0a0b0d0c0a() {
+  public static class QuotationClass_3m6dtg_a1a0a0b0d0b0a {
+    public QuotationClass_3m6dtg_a1a0a0b0d0b0a() {
     }
 
     public SNode createNode() {
@@ -76,8 +73,8 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
     }
   }
 
-  public static class QuotationClass_3m6dtg_a1a0a0b0d0c0a_0 {
-    public QuotationClass_3m6dtg_a1a0a0b0d0c0a_0() {
+  public static class QuotationClass_3m6dtg_a1a0a0b0d0b0a_0 {
+    public QuotationClass_3m6dtg_a1a0a0b0d0b0a_0() {
     }
 
     public SNode createNode() {
@@ -94,8 +91,8 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
     }
   }
 
-  public static class QuotationClass_3m6dtg_a0a0a1a3a2a0 {
-    public QuotationClass_3m6dtg_a0a0a1a3a2a0() {
+  public static class QuotationClass_3m6dtg_a0a0a1a3a1a0 {
+    public QuotationClass_3m6dtg_a0a0a1a3a1a0() {
     }
 
     public SNode createNode() {
@@ -112,8 +109,8 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
     }
   }
 
-  public static class QuotationClass_3m6dtg_a0a0a0a0a1a3a2a0 {
-    public QuotationClass_3m6dtg_a0a0a0a0a1a3a2a0() {
+  public static class QuotationClass_3m6dtg_a0a0a0a0a1a3a1a0 {
+    public QuotationClass_3m6dtg_a0a0a0a0a1a3a1a0() {
     }
 
     public SNode createNode(Object parameter_3) {

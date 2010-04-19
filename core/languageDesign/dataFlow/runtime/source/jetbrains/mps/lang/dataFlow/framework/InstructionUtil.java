@@ -1,6 +1,7 @@
 package jetbrains.mps.lang.dataFlow.framework;
 
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.lang.dataFlow.framework.instructions.JumpInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.NopInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.RetInstruction;
 
@@ -18,6 +19,10 @@ public class InstructionUtil {
 
   public static boolean isRet(Instruction i) {
      return i instanceof RetInstruction;
+  }
+
+  public static boolean isJump(Instruction i) {
+     return i instanceof JumpInstruction;
   }
 
   public static Object getSource(Instruction i) {
