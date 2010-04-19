@@ -27,7 +27,6 @@ import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.debug.info.PositionInfo;
 import jetbrains.mps.debug.DebugInfoManager;
-import jetbrains.mps.debug.info.VarPositionInfo;
 import jetbrains.mps.debug.info.ScopePositionInfo;
 
 import java.util.Map;
@@ -40,21 +39,21 @@ import java.util.ArrayList;
  */
 public class TextGenManager {
   private static final Logger LOG = Logger.getLogger(TextGenManager.class);
-  private static TextGenManager myInstance;
+  private static TextGenManager ourInstance;
   public static final String PACKAGE_NAME = "PACKAGE_NAME";
   public static final String DEPENDENCY = "DEPENDENCY";
   public static final String EXTENDS = "EXTENDS";
   public static final String IMPORT = "IMPORT";
 
   public static void reset() {
-    myInstance = null;
+    ourInstance = null;
   }
 
   public static TextGenManager instance() {
-    if (myInstance == null) {
-      myInstance = new TextGenManager();
+    if (ourInstance == null) {
+      ourInstance = new TextGenManager();
     }
-    return myInstance;
+    return ourInstance;
   }
 
   private HashMap<SNode, PositionInfo> myPositions;
