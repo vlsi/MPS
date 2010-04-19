@@ -1128,6 +1128,26 @@
           <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1220012475942" />
           <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1220012475943" />
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220012475944">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement:3" id="554709999454419157">
+              <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="554709999454419158">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ThrowStatement:3" id="554709999454419159">
+                  <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="554709999454419160">
+                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="554709999454419161">
+                      <link role="baseMethodDeclaration:3" targetNodeId="5.~Exception.&lt;init&gt;()" resolveInfo="Exception" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="554709999454419162">
+                <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="554709999454419163">
+                  <property name="name:3" value="e" />
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="554709999454419164">
+                    <link role="classifier:3" targetNodeId="5.~Exception" resolveInfo="Exception" />
+                  </node>
+                </node>
+                <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="554709999454419165" />
+              </node>
+            </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement:3" id="1220012491332">
               <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220012491333" />
               <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="1220012491334">
@@ -1164,26 +1184,6 @@
                   </node>
                 </node>
                 <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="354371747683324365" />
-              </node>
-            </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement:3" id="354371747683324372">
-              <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="354371747683324373">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ThrowStatement:3" id="354371747683324380">
-                  <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="354371747683324382">
-                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="354371747683324384">
-                      <link role="baseMethodDeclaration:3" targetNodeId="5.~Exception.&lt;init&gt;()" resolveInfo="Exception" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="354371747683324375">
-                <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="354371747683324376">
-                  <property name="name:3" value="e" />
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="354371747683324379">
-                    <link role="classifier:3" targetNodeId="5.~Exception" resolveInfo="Exception" />
-                  </node>
-                </node>
-                <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="354371747683324378" />
               </node>
             </node>
           </node>
