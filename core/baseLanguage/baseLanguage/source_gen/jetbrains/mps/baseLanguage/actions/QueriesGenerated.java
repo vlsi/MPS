@@ -324,13 +324,14 @@ __switch__:
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1235479197615(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     SNode node = _context.getSourceNode();
-    while (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression")) {
+    do {
       SNode type = TypeChecker.getInstance().getTypeOf(node);
       if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.BooleanType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Boolean")) {
         return true;
       }
       node = SNodeOperations.getParent(node);
-    }
+      // Skipping parent DotExpression instances because special rule inluding all transform menues for DotExpresion parent present in "binaryOperations" SideTransformHintSubstituteActions 
+    } while (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression") && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.DotExpression")));
     return false;
   }
 
@@ -3341,7 +3342,7 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode node = _context.getSourceNode();
-          while (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression")) {
+          do {
             SNode type = TypeChecker.getInstance().getTypeOf(node);
             if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.BooleanType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~Boolean")) {
               SNode not = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
@@ -3350,7 +3351,8 @@ __switch__:
               return not;
             }
             node = SNodeOperations.getParent(node);
-          }
+            // Skipping parent DotExpression instances because special rule inluding all transform menues for DotExpresion parent present in "binaryOperations" SideTransformHintSubstituteActions 
+          } while (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression") && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.DotExpression")));
           return null;
         }
 
