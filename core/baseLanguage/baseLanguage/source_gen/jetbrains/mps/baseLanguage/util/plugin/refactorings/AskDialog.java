@@ -11,7 +11,7 @@ import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
 public class AskDialog extends BaseDialog {
   private JPanel myPanel;
-  private AskDialog.DialogResults myResult;
+  private AskDialog.DialogResults myResult = AskDialog.DialogResults.CANCEL_ALL;
 
   public AskDialog(Frame frame, String text) {
     super(frame, text);
@@ -23,13 +23,13 @@ public class AskDialog extends BaseDialog {
     return this.myPanel;
   }
 
-  @BaseDialog.Button(name = "Yes", mnemonic = 'Y', position = 0, defaultButton = true)
+  @BaseDialog.Button(name = "Replace", mnemonic = 'R', position = 0, defaultButton = true)
   public void onYes() {
     this.myResult = AskDialog.DialogResults.SUBSTITUTE;
     this.dispose();
   }
 
-  @BaseDialog.Button(name = "No", mnemonic = 'N', position = 1, defaultButton = false)
+  @BaseDialog.Button(name = "Skip", mnemonic = 'S', position = 1, defaultButton = false)
   public void onNo() {
     this.myResult = AskDialog.DialogResults.CANCEL;
     this.dispose();
@@ -49,7 +49,7 @@ public class AskDialog extends BaseDialog {
 
   @Override
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(100, 200, 100, 30);
+    return new DialogDimensionsSettings.DialogDimensions(400, 300, 350, 100);
   }
 
   public AskDialog.DialogResults getResult() {

@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.nodeEditor.EditorContext;
 
 /*package*/ class ExtractMethodFromExpressionRefactoring extends ExtractMethodRefactoring {
   @NotNull
@@ -42,10 +43,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
     List<SNode> params = new ArrayList<SNode>();
     Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);
     Map<SNode, SNode> inputMapping = this.createInputVaryablesMapping(inputToParams);
-    /*
-      List<MethodMatch> duplicates = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false));
-      System.out.println(duplicates);
-    */
+    List<MethodMatch> duplicates = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false));
     this.replaceInputVariablesWithParameters(body, inputToParams, mapping);
     SNode newMethod = this.createNewMethod(typeNode, params, body);
     this.addMethod(newMethod);
@@ -64,5 +62,20 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
     SNode typeOf = TypeChecker.getInstance().getTypeOf(this.myExpression);
     assert typeOf != null;
     return SNodeOperations.cast(typeOf, "jetbrains.mps.baseLanguage.structure.Type");
+  }
+
+  private class MyMethodDuplicatesProcessor extends MethodDuplicatesProcessor {
+    private List<SNode> myParametersOrder;
+    private SNode myMethodDeclaration;
+
+    private MyMethodDuplicatesProcessor(EditorContext context, List<SNode> parametersOrder, SNode methodDeclaration) {
+      super(context);
+      this.myParametersOrder = parametersOrder;
+      this.myMethodDeclaration = methodDeclaration;
+    }
+
+    public void substitute(MethodMatch duplicate) {
+      ExtractMethodFromExpressionRefactoring.this.replaceMatchByMethodCall(duplicate, this.myParametersOrder, this.myMethodDeclaration);
+    }
   }
 }
