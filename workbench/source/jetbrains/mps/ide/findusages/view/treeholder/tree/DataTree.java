@@ -216,6 +216,9 @@ public class DataTree implements IExternalizeable, IChangeListener {
         Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
         data = new CategoryNodeData(creator, category.o1.getName(), category.o2, results, nodeRepresentator);
       }
+
+      // Assertion for MPS-8085
+      assert data != null : "currentIdObject = " + currentIdObject.getClass() + " " + currentIdObject;
       next = new DataNode(data);
       root.add(next);
     } else {
