@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class ThrowStatement_Behavior {
@@ -20,11 +21,8 @@ public class ThrowStatement_Behavior {
     if (!(ignoreMayBeThrowables)) {
       Statement_Behavior.collectUncaughtMethodThrowables_5412515780383112967(throwables, SLinkOperations.getTarget(thisNode, "throwable", true));
     }
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "throwable", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression")) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "throwable", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator")) {
-        SNode throwableType = SNodeOperations.getAncestor(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "throwable", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-        SetSequence.fromSet(throwables).addElement(throwableType);
-      }
+    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "throwable", true)), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      SetSequence.fromSet(throwables).addElement(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "throwable", true)), "jetbrains.mps.baseLanguage.structure.Classifier"));
     }
   }
 }
