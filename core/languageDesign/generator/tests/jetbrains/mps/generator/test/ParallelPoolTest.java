@@ -82,7 +82,7 @@ public class ParallelPoolTest extends TestCase {
 
   public void testPoolSpeed() {
     int cores = Runtime.getRuntime().availableProcessors();
-    if(cores < 2) {
+    if(cores < 3) {
       // cannot proceed
       return;
     }
@@ -117,7 +117,7 @@ public class ParallelPoolTest extends TestCase {
 
   public void testPoolCancelling() {
     int cores = Runtime.getRuntime().availableProcessors();
-    if(cores < 2) {
+    if(cores < 3) {
       // cannot proceed
       return;
     }
@@ -159,7 +159,7 @@ public class ParallelPoolTest extends TestCase {
 
   public void testPoolCancelling2() {
     int cores = Runtime.getRuntime().availableProcessors();
-    if(cores < 2) {
+    if(cores < 3) {
       // cannot proceed
       return;
     }

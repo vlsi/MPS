@@ -39,7 +39,7 @@ public class AutoResolver extends EditorCheckerAdapter {
       return messages;
     }
     // disable for transient models
-    if (rootNode.getModel().getModelDescriptor().isTransient()) {
+    if (rootNode.getModel().isTransient()) {
       return messages;
     }
     List<SReference> yetBadReferences = new ArrayList<SReference>();

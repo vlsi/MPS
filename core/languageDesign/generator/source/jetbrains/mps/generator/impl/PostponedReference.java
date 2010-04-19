@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -139,7 +140,7 @@ public class PostponedReference extends SReference {
         myGenerator.showErrorMessage(outputNode, "unacceptable referent [template node]: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
         return false;
       }
-      if (referentNodeModel.getModelDescriptor().isTransient()) {
+      if (referentNodeModel instanceof TransientSModel) {
         // references on transient nodes are not acceptable
         myGenerator.showErrorMessage(outputNode, "unacceptable referent [transient node]: " + outputTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
         return false;

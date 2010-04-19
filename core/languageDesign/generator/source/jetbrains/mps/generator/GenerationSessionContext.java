@@ -69,7 +69,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       myUsedNames = prevContext.myUsedNames;
     }
 
-    if (!inputModel.getModelDescriptor().isTransient()) {
+    if (!(inputModel instanceof TransientSModel)) {
       // new original input model
       myOriginalInputModel = inputModel;
       // forget history
@@ -245,14 +245,13 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
   public void addTransientModelToKeep(SModel model) {
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    if (modelDescriptor.isTransient() && keepTransientForMessageNavigation()) {
-      ((TransientModelsModule) getModule()).addModelToKeep(modelDescriptor);
+    if (model instanceof TransientSModel && keepTransientForMessageNavigation()) {
+      ((TransientModelsModule) getModule()).addModelToKeep(model);
     }
   }
 
   public boolean isTransientModelToKeep(SModel model) {
-    return ((TransientModelsModule) getModule()).isModelToKeep(model.getModelDescriptor());
+    return ((TransientModelsModule) getModule()).isModelToKeep(model);
   }
 
   public void clearTransientModels() {

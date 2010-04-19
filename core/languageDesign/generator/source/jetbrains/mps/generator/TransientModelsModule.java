@@ -137,15 +137,15 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     }
   }
 
-  public void addModelToKeep(SModelDescriptor model) {
-    assert model.isTransient();
+  public void addModelToKeep(SModel model) {
+    assert model instanceof TransientSModel;
     synchronized (myModelsToKeep) {
       myModelsToKeep.add(model.getSModelReference().toString());
     }
   }
 
-  public boolean isModelToKeep(SModelDescriptor model) {
-    assert model.isTransient();
+  public boolean isModelToKeep(SModel model) {
+    assert model instanceof TransientSModel;
     synchronized (myModelsToKeep) {
       return myModelsToKeep.contains(model.getSModelReference().toString());
     }
@@ -155,12 +155,7 @@ public class TransientModelsModule extends AbstractModule implements ProjectComp
     SModelFqName fqName = new SModelFqName(name, stereotype);
     DefaultSModelDescriptor result = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, new SModelReference(fqName, SModelId.generate())) {
       protected SModel loadModel() {
-        return new SModel(getSModelReference()) {
-          @Override
-          protected FastNodeFinder createFastNodeFinder() {
-            return new TransientModelNodeFinder(this);
-          }
-        };
+        return new TransientSModel(getSModelReference());
       }
 
       public boolean isReadOnly() {

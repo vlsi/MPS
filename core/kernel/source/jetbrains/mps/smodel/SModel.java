@@ -1433,4 +1433,8 @@ public class SModel implements Iterable<SNode> {
       LOG.error(new IllegalModelAccessError("accessing disposed model"));
     }
   }
+
+  public boolean isTransient() {
+    return false;
+  }
 }

@@ -16,10 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -393,7 +390,7 @@ public class GenerationSession {
 
   private void recycleWasteModel(SModel model) {
     SModelDescriptor md = model.getModelDescriptor();
-    if (md != null && md.isTransient()) {
+    if (model instanceof TransientSModel) {
       ttrace.push("recycling", false);
       if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
         if (myLogger.needsInfo()) {

@@ -23,6 +23,7 @@ import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.debug.info.*;
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -238,7 +239,7 @@ public class FileGenerationManager implements ApplicationComponent {
 
   private SNode getOriginalInputNode(SNode input) {
     while (input != null && !(input.isDisposed())
-      && (input.getModel().getModelDescriptor() == null || input.getModel().getModelDescriptor().isTransient())) {
+      && (input.getModel() instanceof TransientSModel)) {
       input = (SNode) input.getUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE);
     }
     return input;

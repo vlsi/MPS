@@ -77,7 +77,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
 
     // disable for transient models
-    if (rootNode.getModel().getModelDescriptor().isTransient()) {
+    if (rootNode.getModel().isTransient()) {
       return new HashSet<EditorMessage>(0);
     }
 
