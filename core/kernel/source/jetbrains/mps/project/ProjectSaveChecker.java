@@ -24,6 +24,7 @@ import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.dialogs.ScrollingConfirmDialog;
 import jetbrains.mps.ide.dialogs.ScrollingConfirmDialog.Result;
 import jetbrains.mps.smodel.ModelAccess;
@@ -65,8 +66,16 @@ public class ProjectSaveChecker implements ProjectComponent{
   }
 
   private class MyProjectListener extends ProjectManagerAdapter {
-    public void projectClosing(Project project) {
-      if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    private boolean myIgnoredSaving = false;
+
+    @Override
+    public boolean canCloseProject(Project project) {
+      if (IdeMain.getTestMode() == TestMode.CORE_TEST) return true;
+
+      if (myIgnoredSaving) {
+        myIgnoredSaving = false;
+        return true;
+      }
 
       JFrame projectFrame = WindowManager.getInstance().getFrame(project);
       boolean save = true;
@@ -82,6 +91,9 @@ public class ProjectSaveChecker implements ProjectComponent{
 
         ScrollingConfirmDialog dialog = new ScrollingConfirmDialog(projectFrame, "Save models", message);
         dialog.showDialog();
+        if (dialog.getResult() == Result.CANCEL) {
+          return false;
+        }
         save = (dialog.getResult() == Result.YES);
       }
 
@@ -91,7 +103,10 @@ public class ProjectSaveChecker implements ProjectComponent{
             SModelRepository.getInstance().saveAll();
           }
         });
+      } else {
+        myIgnoredSaving = true;
       }
+      return true;
     }
   }
 

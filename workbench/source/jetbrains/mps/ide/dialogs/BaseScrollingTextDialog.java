@@ -58,4 +58,17 @@ public class BaseScrollingTextDialog extends BaseDialog {
   protected JComponent getMainComponent() {
     return myScrollPane;
   }
+
+  @Override
+  protected void prepareDialog() {
+    super.prepareDialog();
+    // This code expands dialog width if buttons don't fit the dialog 
+    Dimension oldPreferredSize = getPreferredSize();
+    setPreferredSize(null);
+    pack();
+    Dimension newPreferredSize = new Dimension(oldPreferredSize);
+    newPreferredSize.width = Math.max(getPreferredSize().width, oldPreferredSize.width);
+    setPreferredSize(newPreferredSize);
+    pack();
+  }
 }

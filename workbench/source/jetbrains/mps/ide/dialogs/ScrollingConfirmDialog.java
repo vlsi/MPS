@@ -19,7 +19,7 @@ import java.awt.Frame;
 import java.awt.HeadlessException;
 
 public class ScrollingConfirmDialog extends BaseScrollingTextDialog {
-  private Result myResult = Result.YES;
+  private Result myResult = Result.CANCEL;
 
   public ScrollingConfirmDialog(Frame mainFrame, String caption, String text) throws HeadlessException {
     super(mainFrame, caption, text);
@@ -29,7 +29,7 @@ public class ScrollingConfirmDialog extends BaseScrollingTextDialog {
     return myResult;
   }
 
-  @Button(position = 0, name = "Yes", mnemonic = 'Y', defaultButton = true)
+  @Button(position = 0, name = "Yes", mnemonic = 'Y')
   public void yesButton() {
     myResult = Result.YES;
     dispose();
@@ -41,7 +41,13 @@ public class ScrollingConfirmDialog extends BaseScrollingTextDialog {
     dispose();
   }
 
+  @Button(position = 2, name = "Cancel", mnemonic = 'C', defaultButton = true)
+  public void cancelButton() {
+    myResult = Result.CANCEL;
+    dispose();
+  }
+
   public static enum Result {
-    YES, NO
+    YES, NO, CANCEL
   }
 }
