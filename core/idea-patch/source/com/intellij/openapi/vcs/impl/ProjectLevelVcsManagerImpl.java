@@ -111,6 +111,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   private volatile int myBackgroundOperationCounter = 0;
 
   //Patched by MPS
+  @Patch
   private final Set<IBackgroundVcsOperationsListener> myBackgroundOperationListeners = new LinkedHashSet<IBackgroundVcsOperationsListener>();
 
   private final Map<VcsBackgroundableActions, BackgroundableActionEnabledHandler> myBackgroundableActionHandlerMap;
@@ -764,6 +765,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   }
 
   //Patched by MPS
+  @Patch
   public interface IBackgroundVcsOperationsListener {
     public void backgroundOperationStarted();
 
