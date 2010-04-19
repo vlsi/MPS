@@ -598,9 +598,6 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
     final AbstractProjectViewPane newPane = getProjectViewPaneById(id);
     if (newPane == null) return false;
 
-    //begin patch
-    newPane.restoreExpandedPaths();
-    //end patch
 
     newPane.setSubId(subId);
     String[] subIds = newPane.getSubIds();
@@ -616,6 +613,9 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
     } else {
       showPane(newPane);
     }
+    //begin patch
+    newPane.restoreExpandedPaths();
+    //end patch
     return true;
   }
 

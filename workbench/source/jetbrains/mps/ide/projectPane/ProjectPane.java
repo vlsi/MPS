@@ -34,12 +34,16 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
+
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
@@ -67,6 +71,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @State(
   name = "MPSProjectPane",
@@ -116,36 +121,11 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       }
     }
   };
+  private Set<ComponentCreationListener> myComponentCreationListeners;
 
   public ProjectPane(Project project, ProjectView projectView) {
     super(project);
     myProjectView = projectView;
-
-    myTree = new MyProjectTree(project);
-
-    myScrollPane = new MyScrollPane(getTree());
-    getTree().addKeyListener(new KeyAdapter() {
-      public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_F4 && e.getModifiers() == 0) {
-          openEditor();
-          e.consume();
-        }
-        if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0) {
-          openEditor();
-          e.consume();
-        }
-      }
-    });
-
-    addListeners();
-
-    if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        public void run() {
-          rebuildTree();
-        }
-      });
-    }
   }
 
   @Override
@@ -215,7 +195,33 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public JComponent createComponent() {
+    myTree = new MyProjectTree(myProject);
+
+    myScrollPane = new MyScrollPane(getTree());
+    getTree().addKeyListener(new KeyAdapter() {
+      public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_F4 && e.getModifiers() == 0) {
+          openEditor();
+          e.consume();
+        }
+        if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0) {
+          openEditor();
+          e.consume();
+        }
+      }
+    });
+
+    addListeners();
+
+    if (IdeMain.getTestMode() != TestMode.CORE_TEST) {
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        public void run() {
+          rebuildTree();
+        }
+      });
+    }
     super.createComponent();
+    fireComponentCreated();
     return getComponent();
   }
 
@@ -356,6 +362,32 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     return myFindHelper.findNextTreeNode(node);
   }
 
+  private void fireComponentCreated() {
+    if (myComponentCreationListeners == null) {
+      return;
+    }
+    for (ComponentCreationListener l : myComponentCreationListeners.toArray(new ComponentCreationListener[myComponentCreationListeners.size()])) {
+      l.componentCreated(this);
+    }
+  }
+
+  public void addComponentCreationListener(@NotNull ComponentCreationListener l) {
+    if (myComponentCreationListeners == null) {
+      myComponentCreationListeners = new HashSet();
+    }
+    myComponentCreationListeners.add(l);
+  }
+
+  public void removeComponentCreationListener(@NotNull ComponentCreationListener l) {
+    if (myComponentCreationListeners == null) {
+      return;
+    }
+    myComponentCreationListeners.remove(l);
+    if (myComponentCreationListeners.isEmpty()) {
+      myComponentCreationListeners = null;
+    }
+  }
+
   //----UI----
 
   private class MyScrollPane extends JScrollPane implements DataProvider {
@@ -432,5 +464,9 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     public boolean isAutoOpen() {
       return getProjectView().isAutoscrollToSource(getId());
     }
+  }
+  
+  public interface ComponentCreationListener {
+    void componentCreated(ProjectPane projectPane);
   }
 }
