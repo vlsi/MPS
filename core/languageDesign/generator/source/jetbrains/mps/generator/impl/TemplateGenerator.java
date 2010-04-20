@@ -172,7 +172,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
           if (templateNode != null) {
             boolean copyRootOnFailure = false;
-            if(inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
+            if (inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
               rootsToCopy.remove(inputNode);
               copyRootOnFailure = true;
             }
@@ -187,27 +187,26 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, boolean copyRootOnFailure)
+  protected void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, boolean copyRootOnFailure)
     throws GenerationFailureException, GenerationCanceledException {
 
     try {
       List<SNode> outputNodes = new TemplateProcessor(this, null).processTemplateNode(mappingName, templateNode, new TemplateContext(inputNode));
       for (SNode outputNode : outputNodes) {
-        registerRoot(outputNode, inputNode);
-        myOutputModel.addRoot(outputNode);
+        registerRoot(outputNode, inputNode, templateNode, false);
         setChanged(true);
       }
     } catch (DismissTopMappingRuleException e) {
       // it's ok, just continue
-      if(copyRootOnFailure && inputNode.isRoot()) {
+      if (copyRootOnFailure && inputNode.isRoot()) {
         copyRootNodeFromInput(inputNode);
       }
     } catch (TemplateProcessingFailureException e) {
       showErrorMessage(inputNode, templateNode, "couldn't create root node");
     }
   }
-  
-  private void copyRootNodeFromInput(SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
+
+  protected void copyRootNodeFromInput(SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
     // check if can drop
     for (DropRootRule dropRootRule : myRuleManager.getDropRootRules()) {
       if (isApplicableDropRootRule(inputRootNode, dropRootRule)) {
@@ -218,12 +217,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // copy
     myGenerationTracer.pushInputNode(inputRootNode);
     try {
-      boolean[] changed = new boolean[]{ false };
+      boolean[] changed = new boolean[]{false};
       SNode root = copyNodeFromInputNode_internal(null, null, inputRootNode, null, changed);
-      registerRoot(root, inputRootNode);
-      getGeneratorSessionContext().registerCopiedRoot(root);
-      myOutputModel.addRoot(root);
-      if(changed[0]) {
+      registerRoot(root, inputRootNode, null, true);
+      if (changed[0]) {
         setChanged(true);
       }
     } finally {
@@ -268,19 +265,19 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     try {
       // find rule
       ReductionRule[] conceptRules = myRuleManager.getRuleFinder().findReductionRules(inputNode);
-      if(conceptRules == null) {
+      if (conceptRules == null) {
         return null;
       }
       for (ReductionRule rule : conceptRules) {
         if (!getBlockedReductionsData().isReductionBlocked(inputNode, rule, blockingContext)) {
-          if(rule instanceof Reduction_MappingRule) {
+          if (rule instanceof Reduction_MappingRule) {
             if (getExecutor().checkCondition(((Reduction_MappingRule) rule).getConditionFunction(), false, inputNode, rule.getNode())) {
               reductionRule = rule;
               break;
             }
-          } else if(rule instanceof PatternReduction_MappingRule) {
+          } else if (rule instanceof PatternReduction_MappingRule) {
             pattern = getExecutor().checkIfApplicable((PatternReduction_MappingRule) rule, inputNode);
-            if(pattern != null) {
+            if (pattern != null) {
               reductionRule = rule;
               break;
             }
@@ -395,7 +392,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
-    if(inputNode.hasId()) {
+    if (inputNode.hasId()) {
       outputNode.setId(inputNode.getSNodeId());
     }
     blockReductionsForCopiedNode(inputNode, outputNode, blockingContext); // prevent infinite applying of the same reduction to the 'same' node.
@@ -415,9 +412,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     SModel inputModel = myInputModel;
     for (SReference inputReference : inputNode.getReferencesIterable()) {
-      if(inputReference instanceof DynamicReference) {
+      if (inputReference instanceof DynamicReference) {
         SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
-        if(targetModelReference == null) {
+        if (targetModelReference == null) {
           showErrorMessage(inputNode, templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText());
           continue;
         }
@@ -546,15 +543,25 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged = b;
   }
 
-  void registerRoot(@NotNull SNode newroot, SNode old) {
-    myNewToOldRoot.put(newroot, old);
+  private void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNode templateNode, boolean isCopied) {
+    synchronized (this) {
+      registerInModel(outputRoot, inputNode, templateNode);
+      myNewToOldRoot.put(outputRoot, inputNode);
+      if (isCopied) {
+        getGeneratorSessionContext().registerCopiedRoot(outputRoot);
+      }
+    }
+  }
+
+  protected void registerInModel(SNode outputRoot, SNode inputNode, SNode templateNode) {
+    myOutputModel.addRoot(outputRoot);
   }
 
   SNode getOriginalRootByGenerated(SNode root) {
     SNode node = myNewToOldRoot.get(root);
-    if(node != null && !node.isRoot()) {
+    if (node != null && !node.isRoot()) {
       SNode noderoot = node.getContainingRoot();
-      if(noderoot != null) {
+      if (noderoot != null) {
         return noderoot;
       }
     }
