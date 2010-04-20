@@ -198,18 +198,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     myTree = new MyProjectTree(myProject);
 
     myScrollPane = new MyScrollPane(getTree());
-    getTree().addKeyListener(new KeyAdapter() {
-      public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_F4 && e.getModifiers() == 0) {
-          openEditor();
-          e.consume();
-        }
-        if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0) {
-          openEditor();
-          e.consume();
-        }
-      }
-    });
 
     addListeners();
 
@@ -227,16 +215,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   public JComponent getComponent() {
     return myScrollPane;
-  }
-
-  public void openEditor() {
-    TreePath selectionPath = getTree().getSelectionPath();
-    if (selectionPath == null) return;
-    if (!(selectionPath.getLastPathComponent() instanceof SNodeTreeNode)) return;
-    SNodeTreeNode selectedTreeNode = (SNodeTreeNode) selectionPath.getLastPathComponent();
-
-    IEditor editor = getProject().getComponent(MPSEditorOpener.class).editNode(selectedTreeNode.getSNode(), selectedTreeNode.getOperationContext());
-    editor.requestFocus();
   }
 
   public void rebuildTree() {
