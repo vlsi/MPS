@@ -1096,9 +1096,6 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="1223637477699">
         <link role="editorComponent:32" targetNodeId="1223637210494" resolveInfo="_DeprecatedPart" />
-        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem:32" id="1237717874641">
-          <property name="flag:32" value="true" />
-        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1188210514739">
         <property name="vertical:32" value="true" />

@@ -155,10 +155,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_359zr8_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new _DeprecatedPart(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    }
     return editorCell;
   }
 
