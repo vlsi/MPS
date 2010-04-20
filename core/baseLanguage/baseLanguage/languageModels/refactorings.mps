@@ -426,13 +426,14 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="8213529844237519171" />
       </node>
     </node>
   </node>
-  <visible index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="5142438244426791432">
     <property name="name:1" value="MoveStaticField" />
     <property name="userFriendlyName:1" value="Move Static Field" />
+    <link role="overrides:1" targetNodeId="2v.7012097027058633272" resolveInfo="MoveNodes" />
     <node role="field:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringField:1" id="5142438244426854978">
       <property name="name:1" value="refactor" />
       <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5142438244426872844">
@@ -451,20 +452,6 @@
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5142438244426872860">
               <link role="baseMethodDeclaration:3" targetNodeId="11.5142438244426403097" resolveInfo="doRefactoring" />
-            </node>
-          </node>
-        </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2177628253335435118">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2177628253335435795">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2177628253335435119">
-              <link role="classifier:3" targetNodeId="4v.~System" resolveInfo="System" />
-              <link role="variableDeclaration:3" targetNodeId="4v.~System.out" resolveInfo="out" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2177628253335435799">
-              <link role="baseMethodDeclaration:3" targetNodeId="18.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="2177628253335435800">
-                <property name="value:3" value="refactoring has been done" />
-              </node>
             </node>
           </node>
         </node>
@@ -596,6 +583,7 @@
     <property name="name:1" value="MoveStaticMethod" />
     <property name="userFriendlyName:1" value="Move Static Method" />
     <property name="package:1" value="method.static" />
+    <link role="overrides:1" targetNodeId="2v.7012097027058633272" resolveInfo="MoveNodes" />
     <node role="parameter:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter:1" id="418677511065471993">
       <property name="name:1" value="destination" />
       <node role="chooser:1" type="jetbrains.mps.lang.refactoring.structure.MPSParameterChooser:1" id="418677511065471994">
@@ -745,6 +733,7 @@
     <property name="name:1" value="ConvertAnonymousClass" />
     <property name="userFriendlyName:1" value="Convert Anonymous to Inner Class" />
     <property name="package:1" value="classifier" />
+    <link role="overrides:1" targetNodeId="2v.7012097027058633272" resolveInfo="MoveNodes" />
     <node role="parameter:1" type="jetbrains.mps.lang.refactoring.structure.RefactoringParameter:1" id="4946830740863976386">
       <property name="name:1" value="name" />
       <node role="chooser:1" type="jetbrains.mps.lang.refactoring.structure.MPSParameterChooser:1" id="4946830740863976387">
