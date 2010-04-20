@@ -41,7 +41,7 @@ public class RulesManager {
 
   private DependenciesContainer myDependenciesContainer = new DependenciesContainer();
 
-  private Set<SModelDescriptor> myModelsWithLoadedRules = new HashSet<SModelDescriptor>();
+  private Set<SModelReference> myModelsWithLoadedRules = new HashSet<SModelReference>();
 
   private OverloadedOperationsManager myOverloadedOperationsManager;
 
@@ -73,12 +73,12 @@ public class RulesManager {
     myDependentComputationsBlockedNodes.clear();
   }
 
-  public boolean hasModelLoadedRules(SModelDescriptor model) {
-    return myModelsWithLoadedRules.contains(model);
+  public boolean hasModelLoadedRules(SModelReference modelReference) {
+    return myModelsWithLoadedRules.contains(modelReference);
   }
 
-  void markModelHasLoadedRules(SModelDescriptor model) {
-    myModelsWithLoadedRules.add(model);
+  void markModelHasLoadedRules(SModelReference modelReference) {
+    myModelsWithLoadedRules.add(modelReference);
   }
 
   public boolean loadLanguage(String languageNamespace) {

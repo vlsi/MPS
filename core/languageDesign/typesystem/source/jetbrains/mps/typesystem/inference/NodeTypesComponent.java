@@ -354,7 +354,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private boolean loadTypesystemRules(SNode root) {
     SModel model = root.getModel();
     RulesManager rulesManager = myTypeChecker.getRulesManager();
-    if (rulesManager.hasModelLoadedRules(model.getModelDescriptor())) {
+    if (rulesManager.hasModelLoadedRules(model.getSModelReference())) {
       return true;
     }
     List<Language> languages = model.getLanguages(GlobalScope.getInstance());
@@ -363,7 +363,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
       boolean b = rulesManager.loadLanguage(language);
       isLoadedAnyLanguage = isLoadedAnyLanguage || b;
     }
-    rulesManager.markModelHasLoadedRules(model.getModelDescriptor());
+    rulesManager.markModelHasLoadedRules(model.getSModelReference());
     if (!isLoadedAnyLanguage) return false;
     return true;
   }
