@@ -46,7 +46,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
     this.replaceInputVariablesByParameters(body, inputToParams, mapping);
     SNode newMethod = this.createNewMethod(typeNode, params, body);
     this.addMethod(newMethod);
-    MethodMatch exactMatch = this.createMatch(inputMapping, params);
+    MethodMatch exactMatch = this.createMatch(this.myParameters.getNodesToRefactor(), inputMapping, params);
     this.replaceMatch(exactMatch, newMethod);
     return newMethod;
   }

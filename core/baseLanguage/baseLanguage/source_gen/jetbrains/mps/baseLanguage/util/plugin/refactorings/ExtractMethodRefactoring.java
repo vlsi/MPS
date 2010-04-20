@@ -41,9 +41,9 @@ public abstract class ExtractMethodRefactoring {
     return null;
   }
 
-  protected MethodMatch createMatch(Map<SNode, SNode> inputMapping, List<SNode> parametersOrder) {
+  protected MethodMatch createMatch(List<SNode> nodes, Map<SNode, SNode> inputMapping, List<SNode> parametersOrder) {
     MethodMatch match = new MethodMatch(parametersOrder);
-    for (SNode node : ListSequence.fromList(this.myParameters.getNodesToRefactor())) {
+    for (SNode node : ListSequence.fromList(nodes)) {
       match.putNode(node);
     }
     for (SNode node : SetSequence.fromSet(MapSequence.fromMap(inputMapping).keySet())) {

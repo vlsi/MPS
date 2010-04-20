@@ -43,7 +43,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   public void replaceMatch(MethodMatch match, SNode methodDeclaration) {
     SNode methodCall = this.createMethodCall(match, methodDeclaration);
     SLinkOperations.setTarget(SLinkOperations.getTarget(this.myDeclarationStatement, "localVariableDeclaration", true), "initializer", methodCall, true);
-    for (SNode statement : ListSequence.fromList(this.myStatements)) {
+    List<SNode> statements = match.getNodes();
+    for (SNode statement : ListSequence.fromList(statements)) {
       if (statement != this.myDeclarationStatement) {
         SNodeOperations.deleteNode(statement);
       }

@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -22,8 +23,9 @@ public class ExtractMethodWithReturn extends ExtractMethodFromStatementsRefactor
     SNode methodCall = this.createMethodCall(match, methodDeclaration);
     SNode returnlStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
     SLinkOperations.setTarget(returnlStatement, "expression", methodCall, true);
-    SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(this.myStatements).first(), returnlStatement);
-    for (SNode statement : ListSequence.fromList(this.myStatements)) {
+    List<SNode> statements = match.getNodes();
+    SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), returnlStatement);
+    for (SNode statement : ListSequence.fromList(statements)) {
       SNodeOperations.deleteNode(statement);
     }
   }
