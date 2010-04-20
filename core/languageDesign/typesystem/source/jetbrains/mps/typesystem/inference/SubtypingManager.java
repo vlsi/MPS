@@ -84,7 +84,7 @@ public class SubtypingManager {
   /**
    * may produce side effects, such as creating new type equations
    */
-  public synchronized boolean isSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
+  public  boolean isSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable EquationInfo errorInfo, boolean isWeak) {
     synchronized (CACHE_ACCESS) {
       IWrapper subRepresentator = subtype;
       IWrapper superRepresentator = supertype;
@@ -556,7 +556,7 @@ System.out.println("alltypes = " + allTypes);*/
     return result_; //commonSupertypes;
   }
 
-  public synchronized SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, boolean isWeak, EquationManager equationManager) {
+  public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, boolean isWeak, EquationManager equationManager) {
     if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
     if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConceptFqName())) {
