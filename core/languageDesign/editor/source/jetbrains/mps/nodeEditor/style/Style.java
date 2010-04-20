@@ -17,7 +17,9 @@ package jetbrains.mps.nodeEditor.style;
 
 import java.util.*;
 
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.logging.Logger;
 
@@ -58,12 +60,17 @@ public class Style {
   }
 
   public <T> T get(StyleAttribute<T> attribute) {
-    int index = attribute.getIndex();
+    final int index = attribute.getIndex();
     if (StyleAttributes.isSimple(attribute)) {
       if (myCachedAttributeValues[index] == null) {
         T value;
         if (myAttributeValues[index] instanceof AttributeCalculator) {
-          value = (T) ((AttributeCalculator) myAttributeValues[index]).calculate(myEditorCell);
+          value = ModelAccess.instance().runReadAction(new Computable<T>() {
+            @Override
+            public T compute() {
+              return (T) ((AttributeCalculator) myAttributeValues[index]).calculate(myEditorCell);
+            }
+          });
         } else {
           value = (T) myAttributeValues[index];
         }
