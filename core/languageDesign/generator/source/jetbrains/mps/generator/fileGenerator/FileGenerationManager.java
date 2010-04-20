@@ -18,7 +18,14 @@ package jetbrains.mps.generator.fileGenerator;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.vcs.changes.ChangeListManager;
+import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileSystem;
+import com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem;
+import com.intellij.openapi.vfs.newvfs.RefreshQueue;
+import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
 import jetbrains.mps.debug.info.*;
@@ -101,13 +108,27 @@ public class FileGenerationManager implements ApplicationComponent {
     touchOutputDir(status, outputDir);
   }
 
-  private void processGeneratedFiles(GenerationStatus status, File outputRoot, IOperationContext context,
+  private void processGeneratedFiles(GenerationStatus status, File outputRoot, final IOperationContext context,
                                      Set<File> generatedFiles, boolean cleanUp) {
 
     MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
     manager.addFilesToVcs(new ArrayList<File>(generatedFiles), false, false);
 
     refreshGeneratedFiles(generatedFiles);
+
+    final List<VirtualFile> generatedVirtualFiles = new ArrayList<VirtualFile>();
+    for (File generatedFile : generatedFiles) {
+      generatedVirtualFiles.add(LocalFileSystem.getInstance().findFileByIoFile(generatedFile));
+    }
+    RefreshSession session = RefreshQueue.getInstance().createSession(true, true, new Runnable() {
+      @Override
+      public void run() {
+        VcsDirtyScopeManager.getInstance(context.getProject()).filesDirty(generatedVirtualFiles, null);
+      }
+    });
+    session.addAllFiles(generatedVirtualFiles);
+    session.launch();
+
     if (cleanUp) {
       cleanUp(status.getInputModel(), context, outputRoot, generatedFiles);
     }
