@@ -33,6 +33,7 @@ import jetbrains.mps.logging.LoggingHandlerAdapter;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
@@ -81,7 +82,7 @@ public class GenerationSession {
     myIsStrict = isStrict;
     myLogger = new GenerationSessionLogger(logger);
     ttrace = myIsStrict && !myParallelGeneration
-      ? new PerformanceTracer("model " + inputModel.getName())
+      ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getLongName()))
       : new NullPerformanceTracer();
   }
 

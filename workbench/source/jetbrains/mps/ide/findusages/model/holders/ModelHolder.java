@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -54,7 +55,7 @@ public class ModelHolder implements IHolder<SModel> {
 
   @NotNull
   public String getCaption() {
-    return getModelDescriptor().getName();
+    return NameUtil.shortNameFromLongName(getModelDescriptor().getLongName());
   }
 
   public Icon getIcon() {

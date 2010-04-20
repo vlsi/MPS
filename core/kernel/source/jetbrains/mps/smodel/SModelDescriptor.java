@@ -44,9 +44,7 @@ public interface SModelDescriptor {
 
   SModelId getSModelId();
 
-  /**
-   * todo: should return "long name"
-   */
+  @Deprecated //method with such a name can confuse user - what name is returned? 
   String getName();
 
   String getLongName();

@@ -78,6 +78,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   /**
    * todo: should return "long name"
    */
+  @Deprecated
   public String getName() {
     return NameUtil.shortNameFromLongName(myModelReference.getLongName());
   }
