@@ -670,7 +670,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
   public static class MyState {
     private String myFontFamily = "Monospaced";
-    private int myFontSize = 12;
+    private int myFontSize = 13;
     private double myLineSpacing = 1.0;
 
     private int myTextWidth = 500;

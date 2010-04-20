@@ -501,14 +501,11 @@ public class TextLine {
       return;
     }
     int x = getCaretX(shiftX);
-    g.setColor(Color.BLACK);
-    g.drawLine(x, shiftY, x, shiftY + myTextHeight);
-    if (getCaretPosition() == 0) {
-      g.drawLine(x + 1, shiftY, x + 1, shiftY + myTextHeight);
-    } else {
-      g.drawLine(x - 1, shiftY, x - 1, shiftY + myTextHeight);
+    if (getCaretPosition() != 0) {
+      x--;
     }
-    g.setPaintMode();
+    g.setColor(Color.BLACK);
+    g.drawRect(x, shiftY, 1, myTextHeight - 1);
   }
 
 
