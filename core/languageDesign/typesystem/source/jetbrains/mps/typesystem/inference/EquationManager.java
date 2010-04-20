@@ -875,11 +875,6 @@ public class EquationManager {
 
   private void processErrorEquation(IWrapper type, IWrapper error, IErrorReporter errorReporter, SNode nodeToCheck) {
     boolean reverse = error.getDegree() > type.getDegree();
-    if (reverse) {
-      setParent(type, error);
-    } else {
-      setParent(error, type);
-    }
     myTypeCheckingContext.reportMessage(nodeToCheck, errorReporter);
     if (reverse) {
       type.fireRepresentatorSet(error, this);
