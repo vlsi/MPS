@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -34,11 +34,10 @@ public abstract class ExtractMethodRefactoring {
   @NotNull
   public abstract SNode doRefactor();
 
+  public abstract void replaceMatch(MethodMatch match, SNode methodDeclaration);
+
   public DuplicatesProcessor<MethodMatch> getDuplicatesProcessor() {
     return null;
-  }
-
-  public void replaceMatchByMethodCall(MethodMatch match, List<SNode> parametersOrder, SNode methodDeclaration) {
   }
 
   protected MethodMatch createMatch(Map<SNode, SNode> inputMapping, List<SNode> parametersOrder) {
@@ -103,7 +102,7 @@ public abstract class ExtractMethodRefactoring {
     return result;
   }
 
-  protected void replaceInputVariablesWithParameters(SNode body, Map<SNode, SNode> variableDeclarationToParameter, Map<SNode, SNode> mapping) {
+  protected void replaceInputVariablesByParameters(SNode body, Map<SNode, SNode> variableDeclarationToParameter, Map<SNode, SNode> mapping) {
     for (Instruction instruction : SetSequence.fromSet(this.myAnalyzer.getInstructions())) {
       if (instruction instanceof ReadInstruction) {
         ReadInstruction readInstruction = (ReadInstruction) instruction;

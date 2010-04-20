@@ -32,11 +32,21 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);
     SNode newMethod = this.createNewMethod(type, params, body);
     this.addMethod(newMethod);
-    this.replaceInputVariablesWithParameters(body, inputToParams, mapping);
+    this.replaceInputVariablesByParameters(body, inputToParams, mapping);
     MethodMatch exactMatch = this.createMatch(this.createInputVaryablesMapping(inputToParams), params);
-    this.addCallExpression(exactMatch, params, newMethod);
+    this.replaceMatch(exactMatch, newMethod);
     MethodOptimizer.optimize(body);
     return newMethod;
+  }
+
+  public void replaceMatch(MethodMatch match, SNode methodDeclaration) {
+    SNode methodCall = this.createMethodCall(match, methodDeclaration);
+    SNode callStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+    SLinkOperations.setTarget(callStatement, "expression", methodCall, true);
+    SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(this.myStatements).first(), callStatement);
+    for (SNode statement : ListSequence.fromList(this.myStatements)) {
+      SNodeOperations.deleteNode(statement);
+    }
   }
 
   protected void modifyPartToExtract() {
@@ -44,15 +54,5 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
 
   public SNode getMethodType() {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null);
-  }
-
-  protected void addCallExpression(MethodMatch match, List<SNode> parameterOrder, SNode newMethod) {
-    SNode methodCall = this.createMethodCall(match, newMethod);
-    SNode callStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-    SLinkOperations.setTarget(callStatement, "expression", methodCall, true);
-    SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(this.myStatements).first(), callStatement);
-    for (SNode statement : ListSequence.fromList(this.myStatements)) {
-      SNodeOperations.deleteNode(statement);
-    }
   }
 }
