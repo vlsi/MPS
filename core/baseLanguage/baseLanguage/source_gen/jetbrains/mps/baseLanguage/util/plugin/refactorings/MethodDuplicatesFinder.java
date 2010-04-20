@@ -15,10 +15,12 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 public class MethodDuplicatesFinder {
   private List<SNode> myNodesToFind;
   private final Map<SNode, SNode> myMapping;
+  private final List<SNode> myParameterOrder;
 
-  public MethodDuplicatesFinder(List<SNode> nodesToFind, Map<SNode, SNode> mapping) {
+  public MethodDuplicatesFinder(List<SNode> nodesToFind, Map<SNode, SNode> mapping, List<SNode> parametersOrder) {
     this.myNodesToFind = nodesToFind;
     this.myMapping = mapping;
+    this.myParameterOrder = parametersOrder;
   }
 
   public List<MethodMatch> findDuplicates(SNode root) {
@@ -45,7 +47,7 @@ public class MethodDuplicatesFinder {
     private MethodMatch myMatch;
 
     public MethodMatchModifier() {
-      this.myMatch = new MethodMatch();
+      this.myMatch = new MethodMatch(MethodDuplicatesFinder.this.myParameterOrder);
     }
 
     public boolean accept(SNode candidate, SNode original) {

@@ -13,16 +13,23 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class MethodMatch {
   private List<SNode> myNodes;
+  private List<SNode> myParametersOrder;
   private Map<SNode, SNode> myNodesToParams;
   private Map<SNode, List<SNode>> myParamsToNodes;
 
-  public MethodMatch() {
+  public MethodMatch(List<SNode> parametersOrder) {
     this.myNodesToParams = MapSequence.fromMap(new HashMap<SNode, SNode>());
     this.myParamsToNodes = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     this.myNodes = new ArrayList<SNode>();
+    this.myParametersOrder = parametersOrder;
   }
 
   public void putMapping(SNode node, SNode parameter) {
@@ -72,5 +79,34 @@ public class MethodMatch {
 
     }
     return true;
+  }
+
+  public List<SNode> getCallParameters() {
+    List<SNode> callActualParams = new ArrayList<SNode>();
+    for (SNode parameter : ListSequence.fromList(this.myParametersOrder)) {
+      if (ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).isEmpty()) {
+        ListSequence.fromList(callActualParams).addElement(new MethodMatch.QuotationClass_5zfyci_a0a0a0a0b0h().createNode());
+      } else {
+        ListSequence.fromList(callActualParams).addElement(SNodeOperations.cast(SNodeOperations.copyNode(ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).getElement(0)), "jetbrains.mps.baseLanguage.structure.Expression"));
+      }
+    }
+    return callActualParams;
+  }
+
+  public static class QuotationClass_5zfyci_a0a0a0a0b0h {
+    public QuotationClass_5zfyci_a0a0a0a0b0h() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

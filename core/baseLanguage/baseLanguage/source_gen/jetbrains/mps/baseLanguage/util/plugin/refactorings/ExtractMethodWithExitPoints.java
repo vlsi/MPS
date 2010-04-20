@@ -20,7 +20,7 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
   }
 
   protected void addCallExpression(MethodMatch match, List<SNode> parameterOrder, SNode newMethod) {
-    SNode methodCall = this.createMethodCall(match, parameterOrder, newMethod);
+    SNode methodCall = this.createMethodCall(match, newMethod);
     SNode ifNode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SLinkOperations.setTarget(ifNode, "condition", methodCall, true);
     SLinkOperations.setTarget(ifNode, "ifTrue", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);

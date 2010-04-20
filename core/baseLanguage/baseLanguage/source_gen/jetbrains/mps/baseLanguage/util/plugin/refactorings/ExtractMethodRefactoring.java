@@ -20,11 +20,6 @@ import jetbrains.mps.baseLanguage.behavior.IParameter_Behavior;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.IStaticContainerForMethods_Behavior;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.project.GlobalScope;
 
 public abstract class ExtractMethodRefactoring {
   protected ExtractMethodRefactoringParameters myParameters;
@@ -46,8 +41,8 @@ public abstract class ExtractMethodRefactoring {
   public void replaceMatchByMethodCall(MethodMatch match, List<SNode> parametersOrder, SNode methodDeclaration) {
   }
 
-  protected MethodMatch createMatch(Map<SNode, SNode> inputMapping) {
-    MethodMatch match = new MethodMatch();
+  protected MethodMatch createMatch(Map<SNode, SNode> inputMapping, List<SNode> parametersOrder) {
+    MethodMatch match = new MethodMatch(parametersOrder);
     for (SNode node : ListSequence.fromList(this.myParameters.getNodesToRefactor())) {
       match.putNode(node);
     }
@@ -176,16 +171,8 @@ public abstract class ExtractMethodRefactoring {
     }
   }
 
-  public SNode createMethodCall(MethodMatch match, List<SNode> parametersOrder, SNode methodDeclaration) {
-    List<SNode> methodCallActualParams = new ArrayList<SNode>();
-    for (SNode parameter : ListSequence.fromList(parametersOrder)) {
-      if (ListSequence.fromList(MapSequence.fromMap(match.getParamsMapping()).get(parameter)).isEmpty()) {
-        ListSequence.fromList(methodCallActualParams).addElement(new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0a0b0n().createNode());
-      } else {
-        ListSequence.fromList(methodCallActualParams).addElement(SNodeOperations.cast(SNodeOperations.copyNode(ListSequence.fromList(MapSequence.fromMap(match.getParamsMapping()).get(parameter)).getElement(0)), "jetbrains.mps.baseLanguage.structure.Expression"));
-      }
-    }
-    return this.createMethodCall(methodDeclaration, methodCallActualParams);
+  public SNode createMethodCall(MethodMatch match, SNode methodDeclaration) {
+    return this.createMethodCall(methodDeclaration, match.getCallParameters());
   }
 
   public void setStaticContainer(SNode node) {
@@ -200,21 +187,4 @@ public abstract class ExtractMethodRefactoring {
   }
 
   public abstract SNode getMethodType();
-
-  public static class QuotationClass_jq3ovj_a0a0a0a0b0n {
-    public QuotationClass_jq3ovj_a0a0a0a0b0n() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
 }

@@ -19,7 +19,7 @@ public class ExtractMethodWithReturn extends ExtractMethodFromStatementsRefactor
   }
 
   protected void addCallExpression(MethodMatch match, List<SNode> parameterOrder, SNode newMethod) {
-    SNode methodCall = this.createMethodCall(match, parameterOrder, newMethod);
+    SNode methodCall = this.createMethodCall(match, newMethod);
     SNode returnlStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
     SLinkOperations.setTarget(returnlStatement, "expression", methodCall, true);
     SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(this.myStatements).first(), returnlStatement);

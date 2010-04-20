@@ -40,7 +40,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   }
 
   protected void addCallExpression(MethodMatch match, List<SNode> parameterOrder, SNode newMethod) {
-    SNode methodCall = this.createMethodCall(match, parameterOrder, newMethod);
+    SNode methodCall = this.createMethodCall(match, newMethod);
     SLinkOperations.setTarget(SLinkOperations.getTarget(this.myDeclarationStatement, "localVariableDeclaration", true), "initializer", methodCall, true);
     for (SNode statement : ListSequence.fromList(this.myStatements)) {
       if (statement != this.myDeclarationStatement) {

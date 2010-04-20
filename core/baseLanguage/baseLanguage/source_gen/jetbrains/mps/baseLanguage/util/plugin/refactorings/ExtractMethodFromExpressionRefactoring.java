@@ -43,18 +43,18 @@ import jetbrains.mps.nodeEditor.EditorContext;
     List<SNode> params = new ArrayList<SNode>();
     Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);
     Map<SNode, SNode> inputMapping = this.createInputVaryablesMapping(inputToParams);
-    List<MethodMatch> duplicates = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false));
+    List<MethodMatch> duplicates = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping, params).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.StatementList", false, false));
     this.replaceInputVariablesWithParameters(body, inputToParams, mapping);
     SNode newMethod = this.createNewMethod(typeNode, params, body);
     this.addMethod(newMethod);
-    MethodMatch exactMatch = this.createMatch(inputMapping);
+    MethodMatch exactMatch = this.createMatch(inputMapping, params);
     this.replaceMatchByMethodCall(exactMatch, params, newMethod);
     return newMethod;
   }
 
   @Override
   public void replaceMatchByMethodCall(MethodMatch match, List<SNode> parametersOrder, SNode methodDeclaration) {
-    SNodeOperations.replaceWithAnother(ListSequence.fromList(match.getNodes()).first(), this.createMethodCall(match, parametersOrder, methodDeclaration));
+    SNodeOperations.replaceWithAnother(ListSequence.fromList(match.getNodes()).first(), this.createMethodCall(match, methodDeclaration));
   }
 
   @NotNull
