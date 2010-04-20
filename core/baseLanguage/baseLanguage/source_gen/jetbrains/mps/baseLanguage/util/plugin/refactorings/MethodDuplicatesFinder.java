@@ -27,6 +27,9 @@ public class MethodDuplicatesFinder {
     List<MethodMatch> found = new ArrayList<MethodMatch>();
     if (ListSequence.fromList(this.myNodesToFind).count() == 1) {
       for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
+        if (ListSequence.fromList(this.myNodesToFind).contains(node)) {
+          continue;
+        }
         MethodDuplicatesFinder.MethodMatchModifier modifier = new MethodDuplicatesFinder.MethodMatchModifier();
         modifier.getMatch().putNode(node);
         if (MatchingUtil.matchNodes(node, ListSequence.fromList(this.myNodesToFind).first(), modifier, true)) {

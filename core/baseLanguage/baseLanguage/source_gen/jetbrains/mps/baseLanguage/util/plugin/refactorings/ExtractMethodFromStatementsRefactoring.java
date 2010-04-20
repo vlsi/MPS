@@ -30,10 +30,12 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addSequence(ListSequence.fromList(CopyUtil.copy(this.myStatements, mapping)));
     List<SNode> params = new ArrayList<SNode>();
     Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);
+    Map<SNode, SNode> inputMapping = this.createInputVaryablesMapping(inputToParams);
+    this.myMatches = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping, params).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
     SNode newMethod = this.createNewMethod(type, params, body);
     this.addMethod(newMethod);
     this.replaceInputVariablesByParameters(body, inputToParams, mapping);
-    MethodMatch exactMatch = this.createMatch(this.createInputVaryablesMapping(inputToParams), params);
+    MethodMatch exactMatch = this.createMatch(inputMapping, params);
     this.replaceMatch(exactMatch, newMethod);
     MethodOptimizer.optimize(body);
     return newMethod;

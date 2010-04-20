@@ -31,8 +31,8 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
-import javax.swing.JOptionPane;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -253,6 +253,7 @@ public class ExtractMethodDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "Refactor", mnemonic = 'R', defaultButton = true)
   public void onOk() {
+    final Wrappers._T<SNode> result = new Wrappers._T<SNode>(null);
     if (!(this.myCanRefactor)) {
       JOptionPane.showMessageDialog(this, "Can't refactor. See errors.", "Can't perform refactoring", JOptionPane.ERROR_MESSAGE);
     } else {
@@ -278,8 +279,8 @@ public class ExtractMethodDialog extends BaseDialog {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          SNode result = ExtractMethodDialog.this.myRefactoring.doRefactor();
-          ExtractMethodDialog.this.myContext.select(result);
+          result.value = ExtractMethodDialog.this.myRefactoring.doRefactor();
+          ExtractMethodDialog.this.myContext.select(result.value);
           if (refactoringModel.value != null) {
             refactoringModel.value.addImportedModel(SNodeOperations.getModel(staticTarget.value).getSModelReference());
           }
@@ -287,6 +288,9 @@ public class ExtractMethodDialog extends BaseDialog {
       });
     }
     this.dispose();
+    if ((result.value != null)) {
+      new ExtractMethodDialog.MyMethodDuplicatesProcessor(this.myContext, result.value).process(this.myRefactoring.getMatches());
+    }
   }
 
   @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C', defaultButton = false)
@@ -296,5 +300,22 @@ public class ExtractMethodDialog extends BaseDialog {
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensionsSettings.DialogDimensions(100, 200, 500, 400);
+  }
+
+  public class MyMethodDuplicatesProcessor extends MethodDuplicatesProcessor {
+    private SNode myMethod;
+
+    public MyMethodDuplicatesProcessor(EditorContext context, SNode method) {
+      super(context);
+      this.myMethod = method;
+    }
+
+    public void substitute(final MethodMatch duplicate) {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          ExtractMethodDialog.this.myRefactoring.replaceMatch(duplicate, MyMethodDuplicatesProcessor.this.myMethod);
+        }
+      });
+    }
   }
 }
