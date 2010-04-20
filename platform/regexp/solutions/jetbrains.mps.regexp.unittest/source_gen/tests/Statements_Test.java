@@ -8,15 +8,15 @@ import java.util.regex.Matcher;
 import junit.framework.Assert;
 
 public class Statements_Test extends TestCase {
-  private static Pattern REGEXP_a2a0a = Pattern.compile("(?:\\w+@\\w(?:.\\w+)*)", 0);
-  private static Pattern REGEXP_a1a1a = Pattern.compile("ab", 0);
-  private static Pattern REGEXP_a1a2a = Pattern.compile("(\\w\\w)", 0);
+  private static Pattern REGEXP_yyh11i_a0a0c0a = Pattern.compile("(?:\\w+@\\w(?:.\\w+)*)", 0);
+  private static Pattern REGEXP_yyh11i_a0a0b0b = Pattern.compile("ab", 0);
+  private static Pattern REGEXP_yyh11i_a0a0b0c = Pattern.compile("(\\w\\w)", 0);
 
   public void test_ifmatch() throws Exception {
     String input = "reader@gmail.com";
     boolean matches = false;
     {
-      Pattern _pattern_0 = REGEXP_a2a0a;
+      Pattern _pattern_0 = REGEXP_yyh11i_a0a0c0a;
       Matcher _matcher_0 = _pattern_0.matcher(input);
       if (_matcher_0.matches()) {
         matches = true;
@@ -28,7 +28,7 @@ public class Statements_Test extends TestCase {
   public void test_iftilde() throws Exception {
     boolean result = false;
     {
-      Pattern _pattern_0 = REGEXP_a1a1a;
+      Pattern _pattern_0 = REGEXP_yyh11i_a0a0b0b;
       Matcher _matcher_0 = _pattern_0.matcher("aaabcd");
       if (_matcher_0.find()) {
         result = true;
@@ -40,7 +40,7 @@ public class Statements_Test extends TestCase {
   public void test_findall() throws Exception {
     int i = 0;
     {
-      Pattern _pattern_0 = REGEXP_a1a2a;
+      Pattern _pattern_0 = REGEXP_yyh11i_a0a0b0c;
       Matcher _matcher_0 = _pattern_0.matcher("abababab");
       while (_matcher_0.find()) {
         Assert.assertEquals("ab", _matcher_0.group(1));

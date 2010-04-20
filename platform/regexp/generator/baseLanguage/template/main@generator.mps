@@ -435,7 +435,8 @@
                 <link role="classifier:3" targetNodeId="3.~Pattern" resolveInfo="Pattern" />
               </node>
               <node role="initializer:3" type="jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression:1" id="6717546899049700815">
-                <property name="fieldName:1" value="aa" />
+                <property name="fieldName:1" value="REGEXP" />
+                <property name="makeUnique:1" value="true" />
                 <node role="templateFragment$attribute:1" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="6717546899049700872" />
                 <node role="expression:1" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="6717546899049700873">
                   <link role="baseMethodDeclaration:3" targetNodeId="3.~Pattern.compile(java.lang.String,int):java.util.regex.Pattern" resolveInfo="compile" />
@@ -557,22 +558,6 @@
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6717546899049700925">
                             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6717546899049700926">
                               <link role="variableDeclaration:3" targetNodeId="6717546899049700889" resolveInfo="result" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="propertyMacro$property_attribute$fieldName:1" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="6717546899049700928">
-                  <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="6717546899049700929">
-                    <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6717546899049700930">
-                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6717546899049700931">
-                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6717546899049700934">
-                          <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="6717546899049700933" />
-                          <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName:0" id="6717546899049700938">
-                            <node role="baseName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6717546899049700940">
-                              <property name="value:3" value="REGEXP" />
                             </node>
                           </node>
                         </node>

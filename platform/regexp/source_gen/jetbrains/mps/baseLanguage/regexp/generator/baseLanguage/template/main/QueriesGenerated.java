@@ -76,10 +76,6 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static Object propertyMacro_GetPropertyValue_6717546899049700929(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("REGEXP", null);
-  }
-
   public static Object propertyMacro_GetPropertyValue_1174655313358(final IOperationContext operationContext, final PropertyMacroContext _context) {
     List<SNode> nodes = SNodeOperations.getAncestors(_context.getNode(), "jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction", false);
     return "_pattern_" + ListSequence.fromList(nodes).count();

@@ -18,7 +18,7 @@ public class TestEvent {
   public static String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
   public static String FAILURE_TEST_SUFFIX = "<TEST_FAILURE_END>";
   private static List<String> ALL_TOKENS;
-  private static Pattern REGEXP_a1a1a2 = Pattern.compile("([^:]+)(?::([^:]+))?:memory=(\\d+):time=(\\d+)", 0);
+  private static Pattern REGEXP_6m48zo_a0a0b0b0c = Pattern.compile("([^:]+)(?::([^:]+))?:memory=(\\d+):time=(\\d+)", 0);
 
   private String token;
   private String testCaseName;
@@ -111,7 +111,7 @@ public class TestEvent {
     if (messageString.startsWith(expectedToken)) {
       String params = messageString.substring(expectedToken.length());
       {
-        Pattern _pattern_0 = REGEXP_a1a1a2;
+        Pattern _pattern_0 = REGEXP_6m48zo_a0a0b0b0c;
         Matcher _matcher_0 = _pattern_0.matcher(params);
         if (_matcher_0.matches()) {
           testEvent = new TestEvent();

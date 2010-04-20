@@ -73,13 +73,13 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.CopyUtil;
 
 public class QueriesGenerated {
-  private static Pattern REGEXP_a0a0a0a2a0a0a0a2a0a1a97 = Pattern.compile("-?\\d+", 0);
-  private static Pattern REGEXP_a0a0a0a0c0a0a0a0c0a0b0bd = Pattern.compile("-?\\d*", 0);
-  private static Pattern REGEXP_a0a0a2a0a0a0a2a0a2a97 = Pattern.compile("-?\\d+(?:l|L)", 0);
-  private static Pattern REGEXP_a0a0a2a0a0a0a2a0a4a97 = Pattern.compile("(?:-?)\\d+\\.\\d*", 0);
-  private static Pattern REGEXP_a0a0a2a0a0a0a2a0a5a97 = Pattern.compile("(?:-?)\\d+.\\d*(?:f|F)", 0);
-  private static Pattern REGEXP_a1a0a0a0a0a2a0a6a97 = Pattern.compile("\"([^\\\\\"]*)\"?", 0);
-  private static Pattern REGEXP_a0a0a2a0a0a0a2a0a6a97 = Pattern.compile("\"[^\\\\\"]*\"?", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a97 = Pattern.compile("-?\\d+", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0bd = Pattern.compile("-?\\d*", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a2a97 = Pattern.compile("-?\\d+(?:l|L)", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a4a97 = Pattern.compile("(?:-?)\\d+\\.\\d*", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a97 = Pattern.compile("(?:-?)\\d+.\\d*(?:f|F)", 0);
+  private static Pattern REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0bd = Pattern.compile("\"([^\\\\\"]*)\"?", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a6a97 = Pattern.compile("\"[^\\\\\"]*\"?", 0);
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1198761649460(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ArrayLiteral") || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue");
@@ -598,9 +598,9 @@ __switch__:
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             if (strictly) {
-              return REGEXP_a0a0a0a2a0a0a0a2a0a1a97.matcher(pattern).matches();
+              return REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a97.matcher(pattern).matches();
             } else {
-              return REGEXP_a0a0a0a0c0a0a0a0c0a0b0bd.matcher(pattern).matches();
+              return REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0bd.matcher(pattern).matches();
             }
           }
 
@@ -630,7 +630,7 @@ __switch__:
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP_a0a0a2a0a0a0a2a0a2a97.matcher(pattern).matches();
+            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a2a97.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -690,7 +690,7 @@ __switch__:
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP_a0a0a2a0a0a0a2a0a4a97.matcher(pattern).matches();
+            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a4a97.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -719,7 +719,7 @@ __switch__:
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP_a0a0a2a0a0a0a2a0a5a97.matcher(pattern).matches();
+            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a97.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -740,7 +740,7 @@ __switch__:
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode stringLiteral = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
             {
-              Pattern _pattern_0 = REGEXP_a1a0a0a0a0a2a0a6a97;
+              Pattern _pattern_0 = REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0bd;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.matches()) {
                 SPropertyOperations.set(stringLiteral, "value", _matcher_0.group(1));
@@ -754,7 +754,7 @@ __switch__:
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP_a0a0a2a0a0a0a2a0a6a97.matcher(pattern).matches();
+            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a6a97.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {

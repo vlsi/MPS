@@ -26,14 +26,14 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class QueriesGenerated {
-  private static Pattern REGEXP_a0a0a0a2a0a0a0a2a0a1a3 = Pattern.compile("[^\"`']+", 0);
-  private static Pattern REGEXP_a0a0a0a0c0a0a0a0c0a0b0d = Pattern.compile("[^\"`']*", 0);
-  private static Pattern REGEXP_a0a0a0a2a0a0a0a2a0a1a4 = Pattern.compile("\\d+", 0);
-  private static Pattern REGEXP_a0a0a0a0c0a0a0a0c0a0b0e = Pattern.compile("\\d*", 0);
-  private static Pattern REGEXP_a0a0a2a0a0a0a2a0a2a4 = Pattern.compile("\\d+[#]\\d+", 0);
-  private static Pattern REGEXP_a0a0a2a0a0a0a2a0a3a4 = Pattern.compile("0x[A-F\\d]+", 0);
-  private static Pattern REGEXP_a0a2a2a0a0a0a2a0a1a5 = Pattern.compile("\\w+[=]", 0);
-  private static Pattern REGEXP_a0a2a2a0a0a0a2a0a1a6 = Pattern.compile("\\w*", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a3 = Pattern.compile("[^\"`']+", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0d = Pattern.compile("[^\"`']*", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a4 = Pattern.compile("\\d+", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0e = Pattern.compile("\\d*", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a2a4 = Pattern.compile("\\d+[#]\\d+", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a3a4 = Pattern.compile("0x[A-F\\d]+", 0);
+  private static Pattern REGEXP_x583g4_a0a2a2a0a0a0a2a0a1a5 = Pattern.compile("\\w+[=]", 0);
+  private static Pattern REGEXP_x583g4_a0a2a2a0a0a0a2a0a1a6 = Pattern.compile("\\w*", 0);
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ArithmeticExpression_3263637656462449660(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.bash.structure.IArithmeticHolder", false, false) != null);
@@ -66,9 +66,9 @@ public class QueriesGenerated {
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             if (strictly) {
-              return REGEXP_a0a0a0a2a0a0a0a2a0a1a3.matcher(pattern).matches();
+              return REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a3.matcher(pattern).matches();
             } else {
-              return REGEXP_a0a0a0a0c0a0a0a0c0a0b0d.matcher(pattern).matches();
+              return REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0d.matcher(pattern).matches();
             }
           }
 
@@ -108,9 +108,9 @@ public class QueriesGenerated {
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             if (strictly) {
-              return REGEXP_a0a0a0a2a0a0a0a2a0a1a4.matcher(pattern).matches();
+              return REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a4.matcher(pattern).matches();
             } else {
-              return REGEXP_a0a0a0a0c0a0a0a0c0a0b0e.matcher(pattern).matches();
+              return REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0e.matcher(pattern).matches();
             }
           }
 
@@ -147,7 +147,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP_a0a0a2a0a0a0a2a0a2a4.matcher(pattern).matches();
+            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a2a4.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -180,7 +180,7 @@ public class QueriesGenerated {
           }
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            return REGEXP_a0a0a2a0a0a0a2a0a3a4.matcher(pattern).matches();
+            return REGEXP_x583g4_a0a0a2a0a0a0a2a0a3a4.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {
@@ -232,7 +232,7 @@ public class QueriesGenerated {
             if ((name != null)) {
               return true;
             }
-            return REGEXP_a0a2a2a0a0a0a2a0a1a5.matcher(pattern).matches();
+            return REGEXP_x583g4_a0a2a2a0a0a0a2a0a1a5.matcher(pattern).matches();
           }
         });
       }
@@ -291,7 +291,7 @@ public class QueriesGenerated {
             if ((name != null)) {
               return false;
             }
-            return REGEXP_a0a2a2a0a0a0a2a0a1a6.matcher(pattern).matches();
+            return REGEXP_x583g4_a0a2a2a0a0a0a2a0a1a6.matcher(pattern).matches();
           }
 
           public String getMatchingText(String pattern) {

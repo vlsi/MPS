@@ -25,8 +25,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 
 public class QueriesGenerated {
-  private static Pattern REGEXP_a0a2a0a0a0a2a0a1a1 = Pattern.compile("(?:-?)\\d+", 0);
-  private static Pattern REGEXP_a0a2a0a0a0a2a0a2a1 = Pattern.compile("(?:-?)\\d+\\.\\d*", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0c0a0a0a0c0a0b0b = Pattern.compile("(?:-?)\\d+", 0);
+  private static Pattern REGEXP_x583g4_a0a0a0c0a0a0a0c0a0c0b = Pattern.compile("(?:-?)\\d+\\.\\d*", 0);
 
   public static void nodeFactory_NodeSetup_Operation_1162840292119(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.samples.formulaLanguage.structure.Operation")) {
@@ -54,7 +54,7 @@ public class QueriesGenerated {
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             {
-              Pattern _pattern_0 = REGEXP_a0a2a0a0a0a2a0a1a1;
+              Pattern _pattern_0 = REGEXP_x583g4_a0a0a0c0a0a0a0c0a0b0b;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.matches()) {
                 return true;
@@ -90,7 +90,7 @@ public class QueriesGenerated {
 
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             {
-              Pattern _pattern_0 = REGEXP_a0a2a0a0a0a2a0a2a1;
+              Pattern _pattern_0 = REGEXP_x583g4_a0a0a0c0a0a0a0c0a0c0b;
               Matcher _matcher_0 = _pattern_0.matcher(pattern);
               if (_matcher_0.matches()) {
                 return true;
