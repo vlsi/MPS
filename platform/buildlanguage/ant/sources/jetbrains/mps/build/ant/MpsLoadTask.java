@@ -226,13 +226,13 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     File[] pathsToLook;
     if (new File(myMpsHome.getAbsolutePath() + File.separator + "classes").exists()) {
       pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "core"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "workbench" + File.separator + "classes"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "ant"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "uiLanguage"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "xml"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "gtext"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "builders"),
+//        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "uiLanguage"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "xml" + File.separator + "xmlQuery" + File.separator + "runtime"),
+//        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "gtext"),
+//        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "builders"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "MPSSupport")};
     } else {
       pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
@@ -260,6 +260,11 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
   protected abstract Class<? extends MpsWorker> getWorkerClass();
 
   private void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
+    if (dir.getName().equals("classes") || dir.getName().equals("classes_gen")) {
+      result.add(dir);
+      return;
+    }
+
     File[] children = dir.listFiles();
 
     // we do not want trove different from ours in $mps.home$/lib
