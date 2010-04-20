@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.workbench.actions.model;
 
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
@@ -35,6 +34,7 @@ import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import javax.swing.Icon;
 import javax.swing.tree.TreeNode;
@@ -105,7 +105,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
       for (ConceptDeclaration conceptDeclaration : lang.getConceptDeclarations()) {
         if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
-          add(newRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
+          add(new NewRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
         }
       }
 
@@ -141,7 +141,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
       for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
         if (ModelConstraintsManager.getInstance().canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
-          langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
+          langRootsGroup.add(new NewRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
         }
       }
       if (!plain) {
@@ -152,49 +152,56 @@ public class CreateRootNodeGroup extends BaseGroup {
     }
   }
 
-  private BaseAction newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor) {
-    return new BaseAction(NodePresentationUtil.matchingText(nodeConcept.getNode())) {
-      {
-        Icon icon = ModelAccess.instance().runReadAction(new Computable<Icon>() {
-          public Icon compute() {
-            return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.getNode()));
-          }
-        });
-        getTemplatePresentation().setIcon(icon);
-        setExecuteOutsideCommand(true);
-      }
+  private class NewRootNodeAction extends BaseAction {
+    private Project myProject;
+    private IScope myScope;
+    public IOperationContext myContext;
+    private final SNodePointer myNodeConcept;
+    private final SModelDescriptor myModelDescriptor;
 
-      private Project myProject;
-      private IScope myScope;
+    public NewRootNodeAction(final SNodePointer nodeConcept, SModelDescriptor modelDescriptor) {
+      super(NodePresentationUtil.matchingText(nodeConcept.getNode()));
+      myNodeConcept = nodeConcept;
+      myModelDescriptor = modelDescriptor;
+      Icon icon = ModelAccess.instance().runReadAction(new Computable<Icon>() {
+        public Icon compute() {
+          return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.getNode()));
+        }
+      });
+      getTemplatePresentation().setIcon(icon);
+      setExecuteOutsideCommand(true);
+    }
 
-      protected void doUpdate(AnActionEvent e) {
-        super.doUpdate(e);
-      }
+    protected void doUpdate(AnActionEvent e) {
+      super.doUpdate(e);
+    }
 
-      protected boolean collectActionData(AnActionEvent e) {
-        if (! super.collectActionData(e)) return false;
-        myProject = MPSDataKeys.PROJECT.getData(e.getDataContext());
-        myScope = MPSDataKeys.SCOPE.getData(e.getDataContext());
-        if (myScope==null) return false;
-        return true;
-      }
+    protected boolean collectActionData(AnActionEvent e) {
+      if (!super.collectActionData(e)) return false;
+      myProject = MPSDataKeys.PROJECT.getData(e.getDataContext());
+      myScope = MPSDataKeys.SCOPE.getData(e.getDataContext());
+      if (myScope == null) return false;
+      myContext = MPSDataKeys.OPERATION_CONTEXT.getData(e.getDataContext());
+      if (myContext == null) return false;
+      return true;
+    }
 
-      protected void doExecute(AnActionEvent e) {
-        ProjectPane pane = ProjectPane.getInstance(myProject);
+    protected void doExecute(AnActionEvent e) {
+      ProjectPane pane = ProjectPane.getInstance(myProject);
 
-        SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
-          public SNode compute() {
-            SNode result = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), myScope);
-            result.setProperty(SModelTreeNode.PACK, myPackage);
-            modelDescriptor.getSModel().addRoot(result);
-            return result;
-          }
-        });
+      SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
+        public SNode compute() {
+          SNode result = NodeFactoryManager.createNode((ConceptDeclaration) myNodeConcept.getNode().getAdapter(), null, null, myModelDescriptor.getSModel(), myScope);
+          result.setProperty(SModelTreeNode.PACK, myPackage);
+          myModelDescriptor.getSModel().addRoot(result);
+          return result;
+        }
+      });
 
-        pane.selectNode(node);
-        pane.openEditor();
-      }
-    };
+      pane.selectNode(node);
+
+      IEditor editor = myProject.getComponent(MPSEditorOpener.class).editNode(node, myContext);
+      editor.requestFocus();
+    }
   }
-
 }
