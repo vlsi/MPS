@@ -222,6 +222,8 @@ public class ImportProperties {
     List<Dependency> deps = getNewModuleDependencies(all);
     if (!deps.isEmpty()) {
       ModuleDescriptor descriptor = targetModule.getModuleDescriptor();
+      // for http://youtrack.jetbrains.net/issue/MPS-8435
+      assert descriptor != null : "ModuleDescriptor is null for: " + targetModule;
       for (Dependency dep : deps) {
         descriptor.getDependencies().add(dep);
       }
