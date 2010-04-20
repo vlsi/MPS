@@ -104,7 +104,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myChanged;
   }
 
-  protected List<SNode> applyReductions(boolean isPrimary) throws GenerationCanceledException, GenerationFailureException {
+  protected void applyReductions(boolean isPrimary) throws GenerationCanceledException, GenerationFailureException {
     // create all roots
     if (isPrimary) {
       ttrace.push("create root", false);
@@ -120,63 +120,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     List<SNode> rootsToCopy = new ArrayList<SNode>(myInputModel.getRoots());
     for (Root_MappingRule rule : myRuleManager.getRoot_MappingRules()) {
       checkMonitorCanceled();
-      applyRoot_MappingRule(rule, rootsToCopy);
+      applyRootMappingRule(rule, rootsToCopy);
     }
     ttrace.pop();
 
+    // copy roots
     checkMonitorCanceled();
     getGeneratorSessionContext().clearCopiedRootsSet();
-    List<SNode> copiedOutputRoots = copyRootsFromInputModel(rootsToCopy);
-    for (SNode copiedOutputRoot : copiedOutputRoots) {
-      getGeneratorSessionContext().registerCopiedRoot(copiedOutputRoot);
-      myOutputModel.addRoot(copiedOutputRoot);
-    }
-    return copiedOutputRoots;
-  }
-
-  private List<SNode> copyRootsFromInputModel(List<SNode> rootsToCopy) throws GenerationFailureException, GenerationCanceledException {
-    Iterator<SNode> iterator = rootsToCopy.iterator();
-    while (iterator.hasNext()) {
-      SNode rootNode = iterator.next();
-      if (isRootToDrop(rootNode)) {
-        iterator.remove();
-      }
-    }
-
-    List<SNode> copiedRoots = new ArrayList<SNode>(rootsToCopy.size());
     for (SNode rootToCopy : rootsToCopy) {
-      boolean[] changed = new boolean[]{ false };
-      SNode newroot = copyRootNodeFromInput(rootToCopy, changed);
-      if(changed[0]) {
-        setChanged(true);
-      }
-      registerRoot(newroot, rootToCopy);
-      copiedRoots.add(newroot);
-    }
-    return copiedRoots;
-  }
-
-  private void revalidateAllReferences() throws GenerationCanceledException {
-    // replace all postponed references
-    List<SNode> roots = myOutputModel.getRoots();
-    for (SNode root : roots) {
-      checkMonitorCanceled();
-      revalidateAllReferences(root);
-    }
-  }
-
-  private void revalidateAllReferences(SNode node) throws GenerationCanceledException {
-    for (SReference reference : node.getReferencesArray()) {
-      checkMonitorCanceled();
-      if (reference instanceof PostponedReference) {
-        ((PostponedReference) reference).validateAndReplace();
-      }
-    }
-
-    List<SNode> children = node.getChildren();
-    for (SNode child : children) {
-      checkMonitorCanceled();
-      revalidateAllReferences(child);
+      copyRootNodeFromInput(rootToCopy);
     }
   }
 
@@ -190,9 +142,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         try {
           createRootNodeFromTemplate(
             GeneratorUtil.getMappingName(createRootRule, null),
-            BaseAdapter.fromAdapter(templateNode), null);
-        } catch (DismissTopMappingRuleException e) {
-          // it's ok, just continue
+            BaseAdapter.fromAdapter(templateNode), null, false);
         } finally {
           myGenerationTracer.closeRule(createRootRule.getNode());
         }
@@ -200,7 +150,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private void applyRoot_MappingRule(Root_MappingRule rule, List<SNode> rootsToCopy) throws GenerationFailureException, GenerationCanceledException {
+  private void applyRootMappingRule(Root_MappingRule rule, List<SNode> rootsToCopy) throws GenerationFailureException, GenerationCanceledException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
       showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
@@ -221,15 +171,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         try {
           SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
           if (templateNode != null) {
-            createRootNodeFromTemplate(GeneratorUtil.getMappingName(rule, null), templateNode, inputNode);
+            boolean copyRootOnFailure = false;
+            if(inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
+              rootsToCopy.remove(inputNode);
+              copyRootOnFailure = true;
+            }
+            createRootNodeFromTemplate(GeneratorUtil.getMappingName(rule, null), templateNode, inputNode, copyRootOnFailure);
           } else {
             showErrorMessage(BaseAdapter.fromAdapter(rule), "no template is defined for the rule");
           }
-          if (inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
-            rootsToCopy.remove(inputNode);
-          }
-        } catch (DismissTopMappingRuleException e) {
-          // it's ok, just continue
         } finally {
           myGenerationTracer.closeInputNode(inputNode);
         }
@@ -237,8 +187,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  private void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode)
-    throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
+  private void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, boolean copyRootOnFailure)
+    throws GenerationFailureException, GenerationCanceledException {
 
     try {
       List<SNode> outputNodes = new TemplateProcessor(this, null).processTemplateNode(mappingName, templateNode, new TemplateContext(inputNode));
@@ -247,17 +197,37 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         myOutputModel.addRoot(outputNode);
         setChanged(true);
       }
+    } catch (DismissTopMappingRuleException e) {
+      // it's ok, just continue
+      if(copyRootOnFailure && inputNode.isRoot()) {
+        copyRootNodeFromInput(inputNode);
+      }
     } catch (TemplateProcessingFailureException e) {
       showErrorMessage(inputNode, templateNode, "couldn't create root node");
     }
   }
   
-  private SNode copyRootNodeFromInput(SNode inputNode, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
-    myGenerationTracer.pushInputNode(inputNode);
+  private void copyRootNodeFromInput(SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
+    // check if can drop
+    for (DropRootRule dropRootRule : myRuleManager.getDropRootRules()) {
+      if (isApplicableDropRootRule(inputRootNode, dropRootRule)) {
+        return;
+      }
+    }
+
+    // copy
+    myGenerationTracer.pushInputNode(inputRootNode);
     try {
-      return copyNodeFromInputNode_internal(null, null, inputNode, null, changed).get(0);
+      boolean[] changed = new boolean[]{ false };
+      SNode root = copyNodeFromInputNode_internal(null, null, inputRootNode, null, changed);
+      registerRoot(root, inputRootNode);
+      getGeneratorSessionContext().registerCopiedRoot(root);
+      myOutputModel.addRoot(root);
+      if(changed[0]) {
+        setChanged(true);
+      }
     } finally {
-      myGenerationTracer.closeInputNode(inputNode);
+      myGenerationTracer.closeInputNode(inputRootNode);
     }
   }
 
@@ -267,15 +237,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       checkMonitorCanceled();
       wp.apply(rule);
     }
-  }
-
-  private boolean isRootToDrop(SNode rootNode) throws GenerationFailureException {
-    for (DropRootRule dropRootRule : myRuleManager.getDropRootRules()) {
-      if (isApplicableDropRootRule(rootNode, dropRootRule)) {
-        return true;
-      }
-    }
-    return false;
   }
 
   public boolean isApplicableDropRootRule(SNode inputRootNode, DropRootRule rule) throws GenerationFailureException {
@@ -424,13 +385,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return outputNodes;
       }
 
-      return copyNodeFromInputNode_internal(mappingName, templateNode, inputNode, blockingContext, changed);
+      return Collections.singletonList(copyNodeFromInputNode_internal(mappingName, templateNode, inputNode, blockingContext, changed));
     } finally {
       myGenerationTracer.closeInputNode(inputNode);
     }
   }
 
-  private List<SNode> copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode, ReductionBlockingContext blockingContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
+  private SNode copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode, ReductionBlockingContext blockingContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
@@ -510,7 +471,31 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     myGenerationTracer.pushOutputNode(outputNode);
-    return Collections.singletonList(outputNode);
+    return outputNode;
+  }
+
+  private void revalidateAllReferences() throws GenerationCanceledException {
+    // replace all postponed references
+    List<SNode> roots = myOutputModel.getRoots();
+    for (SNode root : roots) {
+      checkMonitorCanceled();
+      revalidateAllReferences(root);
+    }
+  }
+
+  private void revalidateAllReferences(SNode node) throws GenerationCanceledException {
+    for (SReference reference : node.getReferencesArray()) {
+      checkMonitorCanceled();
+      if (reference instanceof PostponedReference) {
+        ((PostponedReference) reference).validateAndReplace();
+      }
+    }
+
+    List<SNode> children = node.getChildren();
+    for (SNode child : children) {
+      checkMonitorCanceled();
+      revalidateAllReferences(child);
+    }
   }
 
   /**

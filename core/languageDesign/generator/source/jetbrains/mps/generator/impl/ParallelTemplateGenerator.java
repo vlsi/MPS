@@ -33,10 +33,9 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected List<SNode> applyReductions(boolean isPrimary)
+  protected void applyReductions(boolean isPrimary)
     throws GenerationCanceledException, GenerationFailureException {
-    List<SNode> result = super.applyReductions(isPrimary);
+    super.applyReductions(isPrimary);
     myPool.waitForCompletion();
-    return result;
   }
 }

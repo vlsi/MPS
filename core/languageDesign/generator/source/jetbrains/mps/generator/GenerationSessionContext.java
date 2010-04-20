@@ -221,13 +221,13 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
   }
 
-  public void registerCopiedRoot(SNode inputNode) {
+  public void registerCopiedRoot(SNode outputRootNode) {
     Set<SNode> set = (Set<SNode>) getStepObject(COPYED_ROOTS);
     if (set == null) {
       set = new HashSet<SNode>();
       putStepObject(COPYED_ROOTS, set);
     }
-    set.add(inputNode);
+    set.add(outputRootNode);
   }
 
   public boolean isCopiedRoot(SNode inputNode) {
