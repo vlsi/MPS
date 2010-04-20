@@ -200,9 +200,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   protected void addListeners() {
-    DragSource.getDefaultDragSource().createDefaultDragGestureRecognizer(getTree(), DnDConstants.ACTION_MOVE, new MyDragGestureListener());
-    new DropTarget(myTree, new ProjectPaneDnDListener(myTree, new MyTransferable(null).getTransferDataFlavors()[0]));
-    myTree.enableDnd(this);
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myRefreshListener);
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
     ModelAccess.instance().addCommandListener(myModelAccessListener);
@@ -210,7 +207,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     getProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
     ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
-
 
   public SNode getSelectedSNode() {
     MPSTreeNodeEx selectedTreeNode = getSelectedTreeNode(MPSTreeNodeEx.class);
@@ -524,101 +520,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
           ((MPSTree) tree).rebuildLater();
         }
         myNeedRebuild = false;
-      }
-    }
-  }
-
-  private class MyTransferable implements Transferable {
-    private final String mySupportedFlavor = "MPSNodeToMoveFlavor";
-    private Object myObject;
-
-    public MyTransferable(Object o) {
-      myObject = o;
-    }
-
-    public DataFlavor[] getTransferDataFlavors() {
-      Class aClass = MyTransferable.class;
-      DataFlavor dataFlavor = null;
-      try {
-        dataFlavor = new DataFlavor(DataFlavor.javaJVMLocalObjectMimeType + ";class=" + aClass.getName(),
-          mySupportedFlavor, aClass.getClassLoader());
-      } catch (ClassNotFoundException ignored) {
-      }
-      return new DataFlavor[]{dataFlavor};
-    }
-
-    public boolean isDataFlavorSupported(DataFlavor flavor) {
-      DataFlavor[] flavors = getTransferDataFlavors();
-      return ArrayUtil.find(flavors, flavor) != -1;
-    }
-
-    public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
-      return myObject;
-    }
-  }
-
-  private static class MyDragSourceListener implements DragSourceListener {
-    public void dragEnter(DragSourceDragEvent dsde) {
-      dsde.getDragSourceContext().setCursor(null);
-    }
-
-    public void dragOver(DragSourceDragEvent dsde) {
-    }
-
-    public void dropActionChanged(DragSourceDragEvent dsde) {
-      dsde.getDragSourceContext().setCursor(null);
-    }
-
-    public void dragDropEnd(DragSourceDropEvent dsde) {
-    }
-
-    public void dragExit(DragSourceEvent dse) {
-    }
-  }
-
-  private class MyDragGestureListener implements DragGestureListener {
-    public void dragGestureRecognized(DragGestureEvent dge) {
-      if ((dge.getDragAction() & DnDConstants.ACTION_COPY_OR_MOVE) == 0) return;
-      ProjectView projectView = ProjectView.getInstance(getProject());
-      if (projectView == null) return;
-      final AbstractProjectViewPane currentPane = projectView.getCurrentProjectViewPane();
-      if (!(currentPane instanceof BaseLogicalViewProjectPane)) return;
-      List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
-      for (SNode node : getSelectedSNodes()) {
-        result.add(new Pair(node, ""));
-      }
-      SModelDescriptor contextDescriptor = getContextModel();
-      if (contextDescriptor != null) {
-        for (PackageNode treeNode : getSelectedTreeNodes(PackageNode.class)) {
-          String searchedPack = treeNode.getFullPackage();
-          if (treeNode.getChildCount() == 0 || searchedPack == null) continue;
-          for (final SNode node : contextDescriptor.getSModel().getRoots()) {
-            String nodePack = ModelAccess.instance().runReadAction(new Computable<String>() {
-              public String compute() {
-                return node.getProperty(BaseConcept.VIRTUAL_PACKAGE);
-              }
-            });
-            if (nodePack == null) continue;
-            if (nodePack.startsWith(searchedPack)) {
-              StringBuilder basePack = new StringBuilder();
-              String firstPart = treeNode.getPackage();
-              String secondPart = "";
-              if (nodePack.startsWith(searchedPack + ".")) {
-                secondPart = nodePack.replaceFirst(searchedPack + ".", "");
-              }
-              basePack.append(firstPart);
-              if (!firstPart.isEmpty() && !secondPart.isEmpty()) {
-                basePack.append(".");
-              }
-              basePack.append(secondPart);
-              result.add(new Pair(node, basePack.toString()));
-            }
-          }
-        }
-      }
-      try {
-        dge.startDrag(DragSource.DefaultMoveNoDrop, new MyTransferable(result), new MyDragSourceListener());
-      } catch (InvalidDnDOperationException ignored) {
       }
     }
   }
