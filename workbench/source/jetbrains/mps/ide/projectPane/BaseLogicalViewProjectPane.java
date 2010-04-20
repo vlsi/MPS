@@ -7,8 +7,6 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.impl.ProjectViewImpl;
 import com.intellij.openapi.actionSystem.*;
-import com.intellij.openapi.command.CommandEvent;
-import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -202,53 +200,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   protected void addListeners() {
-    DragSource.getDefaultDragSource().createDefaultDragGestureRecognizer(getTree(), DnDConstants.ACTION_MOVE, new DragGestureListener() {
-      public void dragGestureRecognized(DragGestureEvent dge) {
-        if ((dge.getDragAction() & DnDConstants.ACTION_COPY_OR_MOVE) == 0) return;
-        ProjectView projectView = ProjectView.getInstance(getProject());
-        if (projectView == null) return;
-        final AbstractProjectViewPane currentPane = projectView.getCurrentProjectViewPane();
-        if (!(currentPane instanceof BaseLogicalViewProjectPane)) return;
-        List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
-        for (SNode node : getSelectedSNodes()) {
-          result.add(new Pair(node, ""));
-        }
-        SModelDescriptor contextDescriptor = getContextModel();
-        if (contextDescriptor != null) {
-          for (PackageNode treeNode : getSelectedTreeNodes(PackageNode.class)) {
-            String searchedPack = treeNode.getFullPackage();
-            if (treeNode.getChildCount() == 0 || searchedPack == null) continue;
-            for (final SNode node : contextDescriptor.getSModel().getRoots()) {
-              String nodePack = ModelAccess.instance().runReadAction(new Computable<String>() {
-                public String compute() {
-                  return node.getProperty(BaseConcept.VIRTUAL_PACKAGE);
-                }
-              });
-              if (nodePack == null) continue;
-              if (nodePack.startsWith(searchedPack)) {
-                StringBuilder basePack = new StringBuilder();
-                String firstPart = treeNode.getPackage();
-                String secondPart = "";
-                if (nodePack.startsWith(searchedPack + ".")) {
-                  secondPart = nodePack.replaceFirst(searchedPack + ".", "");
-                }
-                basePack.append(firstPart);
-                if (!firstPart.isEmpty() && !secondPart.isEmpty()) {
-                  basePack.append(".");
-                }
-                basePack.append(secondPart);
-                result.add(new Pair(node, basePack.toString()));
-              }
-            }
-          }
-        }
-        try {
-          dge.startDrag(DragSource.DefaultMoveNoDrop, new MyTransferable(result), new MyDragSourceListener());
-        } catch (InvalidDnDOperationException ignored) {
-        }
-      }
-    });
-    new DropTarget(myTree, new PropjectPaneDnDListener(myTree, new MyTransferable(null).getTransferDataFlavors()[0]));
+    DragSource.getDefaultDragSource().createDefaultDragGestureRecognizer(getTree(), DnDConstants.ACTION_MOVE, new MyDragGestureListener());
+    new DropTarget(myTree, new ProjectPaneDnDListener(myTree, new MyTransferable(null).getTransferDataFlavors()[0]));
     myTree.enableDnd(this);
     VirtualFileManager.getInstance().addVirtualFileManagerListener(myRefreshListener);
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
@@ -620,6 +573,53 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
 
     public void dragExit(DragSourceEvent dse) {
+    }
+  }
+
+  private class MyDragGestureListener implements DragGestureListener {
+    public void dragGestureRecognized(DragGestureEvent dge) {
+      if ((dge.getDragAction() & DnDConstants.ACTION_COPY_OR_MOVE) == 0) return;
+      ProjectView projectView = ProjectView.getInstance(getProject());
+      if (projectView == null) return;
+      final AbstractProjectViewPane currentPane = projectView.getCurrentProjectViewPane();
+      if (!(currentPane instanceof BaseLogicalViewProjectPane)) return;
+      List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
+      for (SNode node : getSelectedSNodes()) {
+        result.add(new Pair(node, ""));
+      }
+      SModelDescriptor contextDescriptor = getContextModel();
+      if (contextDescriptor != null) {
+        for (PackageNode treeNode : getSelectedTreeNodes(PackageNode.class)) {
+          String searchedPack = treeNode.getFullPackage();
+          if (treeNode.getChildCount() == 0 || searchedPack == null) continue;
+          for (final SNode node : contextDescriptor.getSModel().getRoots()) {
+            String nodePack = ModelAccess.instance().runReadAction(new Computable<String>() {
+              public String compute() {
+                return node.getProperty(BaseConcept.VIRTUAL_PACKAGE);
+              }
+            });
+            if (nodePack == null) continue;
+            if (nodePack.startsWith(searchedPack)) {
+              StringBuilder basePack = new StringBuilder();
+              String firstPart = treeNode.getPackage();
+              String secondPart = "";
+              if (nodePack.startsWith(searchedPack + ".")) {
+                secondPart = nodePack.replaceFirst(searchedPack + ".", "");
+              }
+              basePack.append(firstPart);
+              if (!firstPart.isEmpty() && !secondPart.isEmpty()) {
+                basePack.append(".");
+              }
+              basePack.append(secondPart);
+              result.add(new Pair(node, basePack.toString()));
+            }
+          }
+        }
+      }
+      try {
+        dge.startDrag(DragSource.DefaultMoveNoDrop, new MyTransferable(result), new MyDragSourceListener());
+      } catch (InvalidDnDOperationException ignored) {
+      }
     }
   }
 }

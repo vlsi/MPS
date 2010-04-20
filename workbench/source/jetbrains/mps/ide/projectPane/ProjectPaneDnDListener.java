@@ -35,11 +35,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class PropjectPaneDnDListener implements DropTargetListener {
+public class ProjectPaneDnDListener implements DropTargetListener {
   private JTree myTree;
   private DataFlavor myDataFlavor;
 
-  public PropjectPaneDnDListener(final JTree tree, DataFlavor dataFlavor) {
+  public ProjectPaneDnDListener(final JTree tree, DataFlavor dataFlavor) {
     myDataFlavor = dataFlavor;
     myTree = tree;
   }
