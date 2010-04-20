@@ -32,6 +32,7 @@ public class BasicMoveRefactoring {
     this.setIsChangingModel();
     this.correctMoving();
     this.createCopy();
+    MoveRefactoringUtils.fixImportsFromNode(this.myReplacing);
     for (SearchResult<SNode> result : ListSequence.fromList(this.myUsages.getSearchResults())) {
       this.replaceSingleUsage(result.getObject());
     }
@@ -40,7 +41,7 @@ public class BasicMoveRefactoring {
 
   public void replaceSingleUsage(SNode usage) {
     if (this.myIsChangingModel) {
-      MoveRefactoringUtils.addImportIfNeed(SNodeOperations.getModel(usage), SNodeOperations.getModel(this.myDestination));
+      MoveRefactoringUtils.addNodeModelImportIfNeed(usage, this.myDestination);
     }
   }
 

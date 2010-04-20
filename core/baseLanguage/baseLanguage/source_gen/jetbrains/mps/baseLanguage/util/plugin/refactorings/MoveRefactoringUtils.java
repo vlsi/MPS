@@ -9,6 +9,8 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MoveRefactoringUtils {
   public static void addNodeAtLink(SNode container, SNode node) {
@@ -20,10 +22,22 @@ public class MoveRefactoringUtils {
     }
   }
 
-  public static void addImportIfNeed(SModel model, SModel toImport) {
+  private static void addImportIfNeed(SModel model, SModel toImport) {
     if (model == toImport || model.getImportedModelUIDs().contains(toImport.getSModelReference())) {
       return;
     }
     model.addImportedModel(toImport.getSModelReference());
+  }
+
+  public static void addNodeModelImportIfNeed(SNode node, SNode toImport) {
+    addImportIfNeed(SNodeOperations.getModel(node), SNodeOperations.getModel(toImport));
+  }
+
+  public static void fixImportsFromNode(SNode node) {
+    for (SNode descendant : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
+      for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(descendant))) {
+        addNodeModelImportIfNeed(node, SLinkOperations.getTargetNode(reference));
+      }
+    }
   }
 }

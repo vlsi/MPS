@@ -103,6 +103,7 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         IntroduceVariableDialog.this.myResult = IntroduceVariableDialog.this.getRefactoring().doRefactoring();
+        MoveRefactoringUtils.fixImportsFromNode(IntroduceVariableDialog.this.myResult);
       }
     });
     this.myEditorContext.select(this.myResult);
