@@ -17,6 +17,7 @@ package jetbrains.mps.typesystem.inference.util;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.ObjectCache;
 import jetbrains.mps.util.misc.ObjectCache.DeletedPairsListener;
 import jetbrains.mps.logging.Logger;
@@ -28,14 +29,14 @@ public class StructuralCollectionUtil {
   public static final Object KEY = new Object();
 
   public static int hashCode(SNode node) {
-    Integer result = (Integer) node.getUserObject(KEY);
+    Integer result = (Integer) node.getUserObject(new Pair(KEY, node));
     if (result != null) {
       return result;
     }
     StringBuilder sb = new StringBuilder();
     toString(sb, node, node);
     result = sb.toString().hashCode();
-    node.putUserObject(KEY, result);
+    node.putUserObject(new Pair(KEY, node), result);
     return result;
   }
 
