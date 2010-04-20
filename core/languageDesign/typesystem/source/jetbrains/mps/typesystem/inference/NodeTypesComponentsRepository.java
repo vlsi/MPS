@@ -138,6 +138,11 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
     });
   }
 
+  public TypeCheckingContext createIsolatedTypeCheckingContext(final SNode node) {
+    TypeCheckingContext typeCheckingContext = new TypeCheckingContext(node, myTypeChecker);
+    return typeCheckingContext;
+  }
+
   public void clear() {
     synchronized (myLock) {
       for (final TypeCheckingContext typeCheckingContext : myNodesToContexts.values()) {

@@ -373,7 +373,6 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
-    assert nodeToCheck.getContainingRoot() == myRootNode;
     try {
       if (!isIncrementalMode() || refreshTypes) {
         clear();
