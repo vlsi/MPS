@@ -49,6 +49,10 @@
       <property name="id" value="ed6d7656-532c-4bc2-81d1-af945aeb8280" />
       <property name="name" value="jetbrains.mps.baseLanguage.blTypes" />
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="8601151196496189824">
+      <property name="id" value="774bf8a0-62e5-41e1-af63-f4812e60e48b" />
+      <property name="name" value="jetbrains.mps.baseLanguage.checkedDots" />
+    </node>
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="701559220729405139">
       <property name="id" value="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" />
       <property name="name" value="jetbrains.mps.baseLanguage.classifiers" />
