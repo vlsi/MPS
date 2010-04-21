@@ -22,15 +22,14 @@
     <projectSolutions>
       <solutionPath path="${project}/solutions/info/jetbrains.mps.debug.info.msd" />
       <solutionPath path="${project}/solutions/jetbrains.mps.debug.evaluation.sandbox/jetbrains.mps.debug.evaluation.sandbox.msd" folder="" />
-      <solutionPath path="${project}/solutions/jetbrains.mps.debug.run.sandbox/jetbrains.mps.debug.run.sandbox.msd" folder="" />
       <solutionPath path="${project}/solutions/jetbrains.mps.debug.evaluation.ui/jetbrains.mps.debug.evaluation.ui.msd" folder="" />
-      <solutionPath path="${mps_home}/core/baseLanguage/runConfigurations/runtime/jetbrains.mps.baseLanguage.runConfigurations.runtime.msd" folder="" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.debug.run.sandbox/jetbrains.mps.debug.run.sandbox.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}/languages/evaluation/evaluation.mpl" folder="" />
-      <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
       <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" />
       <languagePath path="${mps_home}/core/baseLanguage/runConfigurations/runConfigurations.mpl" folder="" />
+      <languagePath path="${project}/languages/evaluation/evaluation.mpl" folder="" />
+      <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
