@@ -35,6 +35,7 @@ public abstract class AbstractCache extends SModelAdapter {
   private final Set<String> myInitializingDataSetKeys = new HashSet<String>();
 
   protected AbstractCache(Object key) {
+    super(SModelListenerPriority.PLATFORM);
     myKey = key;
   }
 

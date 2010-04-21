@@ -21,6 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -40,14 +41,20 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
 
   private SModelRepository mySModelRepository;
 
-  private List<SModelListener> myGlobalListeners = new ArrayList<SModelListener>();
+  private List<List<SModelListener>> myGlobalListenersList;
   private List<SModelCommandListener> myGlobalCommandListeners = new ArrayList<SModelCommandListener>();
 
-  private SModelListener myRelayListener = createRelayListener();
+  private SModelListener[] myRelayListeners;
   private MyEventsCollector myEventsCollector = new MyEventsCollector();
 
   public GlobalSModelEventsManager(SModelRepository SModelRepository) {
     mySModelRepository = SModelRepository;
+    myRelayListeners = new SModelListener[SModelListenerPriority.values().length];
+    myGlobalListenersList = new ArrayList<List<SModelListener>>(SModelListenerPriority.values().length);
+    for (SModelListenerPriority priority : SModelListenerPriority.values()) {
+      myGlobalListenersList.add(new ArrayList<SModelListener>());
+      myRelayListeners[priority.ordinal()] = createRelayListener(priority);
+    }
   }
 
   public void initComponent() {
@@ -70,7 +77,6 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
     });
   }
 
-
   @NonNls
   @NotNull
   public String getComponentName() {
@@ -81,21 +87,25 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
   }
 
   private void addListeners(SModelDescriptor sm) {
-    sm.addModelListener(myRelayListener);
+    for (SModelListener listener : myRelayListeners) {
+      sm.addModelListener(listener);
+    }
     myEventsCollector.add(sm);
   }
 
   private void removeListeners(SModelDescriptor sm) {
-    sm.removeModelListener(myRelayListener);
+    for (SModelListener listener : myRelayListeners) {
+      sm.removeModelListener(listener);
+    }
     myEventsCollector.remove(sm);
   }
 
   public void addGlobalModelListener(SModelListener l) {
-    myGlobalListeners.add(l);
+    myGlobalListenersList.get(l.getPriority().ordinal()).add(l);
   }
 
   public void removeGlobalModelListener(SModelListener l) {
-    myGlobalListeners.remove(l);
+    myGlobalListenersList.get(l.getPriority().ordinal()).remove(l);
   }
 
   public void addGlobalCommandListener(SModelCommandListener l) {
@@ -106,11 +116,11 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
     myGlobalCommandListeners.remove(l);
   }
 
-  private List<SModelListener> globalListeners() {
-    return new ArrayList<SModelListener>(myGlobalListeners);
+  private List<SModelListener> globalListeners(SModelListenerPriority priority) {
+    return new ArrayList<SModelListener>(myGlobalListenersList.get(priority.ordinal()));
   }
 
-  private SModelListener createRelayListener() {
+  private SModelListener createRelayListener(final SModelListenerPriority priority) {
     return (SModelListener) Proxy.newProxyInstance(
       getClass().getClassLoader(),
       new Class[]{SModelListener.class},
@@ -124,8 +134,12 @@ public class GlobalSModelEventsManager implements ApplicationComponent {
             return this.hashCode();
           }
 
+          if (method.getName().equals("getPriority") && args == null) {
+            return priority;
+          }
+
           method.setAccessible(true);
-          for (SModelListener l : globalListeners()) {
+          for (SModelListener l : globalListeners(priority)) {
             try {
               method.invoke(l, args);
             } catch (Throwable t) {

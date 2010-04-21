@@ -16,11 +16,25 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.event.*;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Comparator;
 
 /**
  * @author Kostik
  */
 public class SModelAdapter implements SModelListener {
+  public static final SModelListenerComparator COMPARATOR = new SModelListenerComparator();
+  private SModelListenerPriority myPriority;
+
+  public SModelAdapter() {
+    this(SModelListenerPriority.CLIENT);
+  }
+
+  public SModelAdapter(@NotNull SModelListenerPriority priority) {
+    myPriority = priority;
+  }
+
   public void languageAdded(SModelLanguageEvent event) {
     eventFired(event);
     modelChanged(event.getModel());
@@ -130,5 +144,19 @@ public class SModelAdapter implements SModelListener {
   }
 
   public void modelChangedDramatically(SModel model) {
+  }
+
+  @NotNull
+  @Override
+  public SModelListenerPriority getPriority() {
+    return myPriority;
+  }
+
+  private static class SModelListenerComparator implements Comparator<SModelListener> {
+
+    @Override
+    public int compare(SModelListener listener1, SModelListener listener2) {
+      return listener1.getPriority().ordinal() - listener2.getPriority().ordinal();
+    }
   }
 }

@@ -37,6 +37,7 @@ public abstract class DataSet extends SModelAdapter {
   private DefaultNodeChangedProcessing myDefaultNodeChangedProcessing;
 
   protected DataSet(String id, AbstractCache ownerCache, DefaultNodeChangedProcessing defaultProcessing) {
+    super(SModelListenerPriority.PLATFORM);
     myId = id;
     myOwnerCache = ownerCache;
     myDefaultNodeChangedProcessing = defaultProcessing;

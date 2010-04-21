@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -144,6 +145,10 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   }
 
   private class MySModelAdapter extends SModelAdapter {
+    public MySModelAdapter() {
+      super(SModelListenerPriority.PLATFORM);
+    }
+
     public void childAdded(SModelChildEvent event) {
       synchronized (myLock) {
         if (!myInitialized) return;
@@ -177,6 +182,14 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
     }
 
     public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
+      synchronized (myLock) {
+        myInitialized = false;
+        myNodes.clear();
+      }
+    }
+
+    @Override
+    public void modelReplaced(SModelDescriptor md) {
       synchronized (myLock) {
         myInitialized = false;
         myNodes.clear();

@@ -25,6 +25,7 @@ import java.util.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -41,7 +42,7 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(NodeTypesComponentsRepository.class);
   }
 
-  private SModelListener myModelListener = new SModelAdapter() {
+  private SModelListener myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
     public void beforeModelDisposed(SModel sm) {
       synchronized (myLock) {
         for (SNode node : new ArrayList<SNode>(myNodesToContexts.keySet())) {

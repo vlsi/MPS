@@ -607,6 +607,10 @@ public class SModelRepository implements ApplicationComponent {
   }
 
   private class ModelChangeListener extends SModelAdapter {
+    public ModelChangeListener() {
+      super(SModelListenerPriority.PLATFORM);
+    }
+
     @Override
     public void modelChanged(SModel model) {
       markChanged(model);

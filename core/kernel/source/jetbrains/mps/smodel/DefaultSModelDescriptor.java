@@ -31,7 +31,6 @@ import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WeakSet;

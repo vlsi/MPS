@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Author: Sergey Dmitriev
@@ -88,4 +89,12 @@ public interface SModelListener {
   void modelReplaced(SModelDescriptor md);
 
   void beforeModelDisposed(SModel sm);
+
+  @NotNull
+  SModelListenerPriority getPriority();
+
+  public enum SModelListenerPriority {
+    PLATFORM,
+    CLIENT;
+  }
 }

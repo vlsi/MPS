@@ -85,9 +85,6 @@ public class CachesManager implements ApplicationComponent {
   }
 
   private void putCache(Object key, AbstractCache cache, List<SModelDescriptor> dependsOnModels) {
-    assert !dependsOnModels.contains(null) : "can't put null as one of the values for key " + key;
-    if (myCaches.containsKey(key)) throw new RuntimeException("can't put another cache by key " + key);
-
     myCaches.put(key, cache);
     myDependsOnModels.put(key, dependsOnModels);
     ModelEventRouter eventRouter = new ModelEventRouter(cache);
@@ -144,6 +141,7 @@ public class CachesManager implements ApplicationComponent {
     private AbstractCache myCache;
 
     public ModelEventRouter(AbstractCache cache) {
+      super(SModelListenerPriority.PLATFORM);
       myCache = cache;
     }
 
@@ -154,6 +152,11 @@ public class CachesManager implements ApplicationComponent {
         // model went out of loading state - drop cache because we don't know what has happened while in loading state
         CachesManager.getInstance().removeCache(myCache.getKey());
       }
+    }
+
+    @Override
+    public void modelReplaced(SModelDescriptor md) {
+      CachesManager.getInstance().removeCache(myCache.getKey());
     }
 
     public void languageAdded(SModelLanguageEvent event) {

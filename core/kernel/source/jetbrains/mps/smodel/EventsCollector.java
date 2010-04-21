@@ -21,6 +21,7 @@ import com.intellij.openapi.command.CommandProcessor;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -56,6 +57,10 @@ public class EventsCollector {
 
           if (method.getName().equals("hashCode") && args == null) {
             return this.hashCode();
+          }
+
+          if (method.getName().equals("getPriority") && args == null) {
+            return SModelListenerPriority.CLIENT;
           }
 
           if (method.getName().equals("beforeChildRemoved")) {

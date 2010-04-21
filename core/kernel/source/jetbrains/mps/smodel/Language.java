@@ -961,6 +961,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   private class CachesInvalidator extends SModelAdapter {
+    public CachesInvalidator() {
+      super(SModelListenerPriority.PLATFORM);
+    }
+
     @Override
     public void modelChanged(SModel model) {
       invalidateCaches();
