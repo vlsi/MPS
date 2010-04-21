@@ -227,18 +227,20 @@ public class RuntimeEnvironment<T> {
   }
 
   public void classLoaded(String name, T id) {
-    if (myLoadedClasses.containsKey(name)) {
-      T oldLoaderId = myLoadedClasses.get(name);
-      if (!equals(oldLoaderId, id)) {
-        String s = "Class \"" + name + "\" was loaded by multiple module classloaders simultaneously.\n" +
-          "Classloaders: \n" +
-          "  " + id.toString() + "\n" +
-          "  " + oldLoaderId.toString();
-        //throw new IllegalStateException(s);
-        System.out.println(s);
+    synchronized (myLoadedClasses) {
+      if (myLoadedClasses.containsKey(name)) {
+        T oldLoaderId = myLoadedClasses.get(name);
+        if (!equals(oldLoaderId, id)) {
+          String s = "Class \"" + name + "\" was loaded by multiple module classloaders simultaneously.\n" +
+            "Classloaders: \n" +
+            "  " + id.toString() + "\n" +
+            "  " + oldLoaderId.toString();
+          //throw new IllegalStateException(s);
+          System.out.println(s);
+        }
+      } else {
+        myLoadedClasses.put(name, id);
       }
-    } else {
-      myLoadedClasses.put(name, id);
     }
   }
 

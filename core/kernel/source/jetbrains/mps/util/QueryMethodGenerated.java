@@ -59,9 +59,25 @@ public class QueryMethodGenerated implements ApplicationComponent {
   }
 
   public static void clearCaches() {
-    ourMethods.clear();
-    ourClassesReportedAsNotFound.clear();
-    ourAdaptorsConstructors.clear();
+    synchronized (ourMethods) {
+      ourMethods.clear();
+    }
+    synchronized (ourClassesReportedAsNotFound) {
+      ourClassesReportedAsNotFound.clear();
+    }
+    synchronized (ourAdaptorsConstructors) {
+      ourAdaptorsConstructors.clear();
+    }
+  }
+
+  public static boolean needReport(String className) {
+    synchronized (ourClassesReportedAsNotFound) {
+      if(!ourClassesReportedAsNotFound.contains(className)) {
+        ourClassesReportedAsNotFound.add(className);
+        return true;
+      }
+    }
+    return false;
   }
 
   public static Class getQueriesGeneratedClassFor(SModelDescriptor sm) {
@@ -73,50 +89,51 @@ public class QueryMethodGenerated implements ApplicationComponent {
   }
 
   private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Pair<SModelReference, String> pair = new Pair<SModelReference, String>(sourceModel.getSModelReference(), methodName);
-    if (QueryMethodGenerated.ourMethods.containsKey(pair)) {
-      return QueryMethodGenerated.ourMethods.get(pair);
-    }
+    synchronized (ourMethods) {
+      Pair<SModelReference, String> pair = new Pair<SModelReference, String>(sourceModel.getSModelReference(), methodName);
+      if (QueryMethodGenerated.ourMethods.containsKey(pair)) {
+        return QueryMethodGenerated.ourMethods.get(pair);
+      }
 
-    String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getSModelReference());
-    String queriesClassName = packageName + ".QueriesGenerated";
-    Class queriesClass;
-    IModule module = findModuleForModel(sourceModel);
-    assert module != null;
+      String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getSModelReference());
+      String queriesClassName = packageName + ".QueriesGenerated";
+      Class queriesClass;
+      IModule module = findModuleForModel(sourceModel);
+      assert module != null;
 
-    queriesClass = module.getClass(queriesClassName);
+      queriesClass = module.getClass(queriesClassName);
 
-    if (queriesClass == null) {
-      if (!suppressErrorLogging) {
-        if (!ourClassesReportedAsNotFound.contains(queriesClassName)) {
-          LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getSModelReference() + "' : TRY TO GENERATE");
+      if (queriesClass == null) {
+        if (!suppressErrorLogging) {
+          if (needReport(queriesClassName)) {
+            LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getSModelReference() + "' : TRY TO GENERATE");
+          }
         }
-        ourClassesReportedAsNotFound.add(queriesClassName);
+        throw new ClassNotFoundException("'" + queriesClassName + "' in module " + module.getModuleFqName());
       }
-      throw new ClassNotFoundException("'" + queriesClassName + "' in module " + module.getModuleFqName());
-    }
 
-    Method method = null;
+      Method method = null;
 
-    Method[] declaredMethods = queriesClass.getDeclaredMethods();
-    for (Method declaredMethod : declaredMethods) {
-      if (declaredMethod.getName().equals(methodName)) {
-        method = declaredMethod;
-        break;
+      Method[] declaredMethods = queriesClass.getDeclaredMethods();
+      for (Method declaredMethod : declaredMethods) {
+        if (declaredMethod.getName().equals(methodName)) {
+          method = declaredMethod;
+          break;
+        }
       }
-    }
 
-    if (method == null) {
-      if (!suppressErrorLogging) {
-        LOG.error("couldn't find method '" + methodName + "' in '" + queriesClassName + "' : TRY TO GENERATE model '" + sourceModel.getSModelReference() + "'");
+      if (method == null) {
+        if (!suppressErrorLogging) {
+          LOG.error("couldn't find method '" + methodName + "' in '" + queriesClassName + "' : TRY TO GENERATE model '" + sourceModel.getSModelReference() + "'");
+        }
+        throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + queriesClassName + "'");
       }
-      throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + queriesClassName + "'");
+
+      method.setAccessible(true);
+
+      QueryMethodGenerated.ourMethods.put(pair, method);
+      return method;
     }
-
-    method.setAccessible(true);
-
-    QueryMethodGenerated.ourMethods.put(pair, method);
-    return method;
   }
 
   public static Object invoke(String methodName, IOperationContext context, Object contextObject, SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException {
@@ -144,47 +161,48 @@ public class QueryMethodGenerated implements ApplicationComponent {
   }
 
   public static Constructor getAdapterConstructor(String className) {
-    Constructor result = ourAdaptorsConstructors.get(className);
-    if (result == null) {
-      try {
-        String adapterName = className;
+    synchronized (ourAdaptorsConstructors) {
+      Constructor result = ourAdaptorsConstructors.get(className);
+      if (result == null) {
+        try {
+          String adapterName = className;
 
-        String namespace = NameUtil.namespaceFromLongName(className);
+          String namespace = NameUtil.namespaceFromLongName(className);
 
-        assert namespace.endsWith(".structure");
-        String languageNamespace = className.substring(0, namespace.length() - ".structure".length());
-        Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+          assert namespace.endsWith(".structure");
+          String languageNamespace = className.substring(0, namespace.length() - ".structure".length());
+          Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
 
 
-        Class cls;
-        if (l == null) {
-          return null;
+          Class cls;
+          if (l == null) {
+            return null;
+          }
+          cls = l.getClass(adapterName);
+
+          if (cls == null) {
+            throw new ClassNotFoundException(adapterName);
+          }
+
+          if (cls.isInterface()) {
+            result = BaseConcept.class.getConstructor(SNode.class);
+          } else {
+            result = cls.getConstructor(SNode.class);
+          }
+          result.setAccessible(true);
+          ourAdaptorsConstructors.put(className, result);
+        } catch (NoSuchMethodException e) {
+          LOG.error(e);
+        } catch (ClassNotFoundException e) {
+          if (needReport(className)) {
+            LOG.error("Can't find a class : " + e.getMessage());
+          }
+        } catch (NoClassDefFoundError e) {
+          LOG.error("no class def found : " + e.getMessage() + " because of " + className);
         }
-        cls = l.getClass(adapterName);
-
-        if (cls == null) {
-          throw new ClassNotFoundException(adapterName);
-        }
-
-        if (cls.isInterface()) {
-          result = BaseConcept.class.getConstructor(SNode.class);
-        } else {
-          result = cls.getConstructor(SNode.class);
-        }
-        result.setAccessible(true);
-        ourAdaptorsConstructors.put(className, result);
-      } catch (NoSuchMethodException e) {
-        LOG.error(e);
-      } catch (ClassNotFoundException e) {
-        if (!ourClassesReportedAsNotFound.contains(className)) {
-          LOG.error("Can't find a class : " + e.getMessage());
-        }
-        ourClassesReportedAsNotFound.add(className);
-      } catch (NoClassDefFoundError e) {
-        LOG.error("no class def found : " + e.getMessage() + " because of " + className);
       }
+      return result;
     }
-    return result;
   }
 
   private ClassLoaderManager myClassLoaderManager;
