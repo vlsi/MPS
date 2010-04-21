@@ -5,9 +5,13 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
-import java.util.ArrayList;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Iterator;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -16,28 +20,41 @@ public class MethodDuplicatesFinder {
   private List<SNode> myNodesToFind;
   private final Map<SNode, SNode> myMapping;
   private final List<SNode> myParameterOrder;
+  private Set<SNode> myUsedNodes = SetSequence.fromSet(new HashSet<SNode>());
 
   public MethodDuplicatesFinder(List<SNode> nodesToFind, Map<SNode, SNode> mapping, List<SNode> parametersOrder) {
     this.myNodesToFind = nodesToFind;
     this.myMapping = mapping;
     this.myParameterOrder = parametersOrder;
+    for (SNode node : ListSequence.fromList(this.myNodesToFind)) {
+      SetSequence.fromSet(this.myUsedNodes).addElement(node);
+    }
   }
 
   public List<MethodMatch> findDuplicates(SNode root) {
     List<MethodMatch> found = new ArrayList<MethodMatch>();
-    if (ListSequence.fromList(this.myNodesToFind).count() == 1) {
-      for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
-        if (ListSequence.fromList(this.myNodesToFind).contains(node)) {
-          continue;
-        }
-        MethodDuplicatesFinder.MethodMatchModifier modifier = new MethodDuplicatesFinder.MethodMatchModifier();
-        modifier.getMatch().putNode(node);
-        if (MatchingUtil.matchNodes(node, ListSequence.fromList(this.myNodesToFind).first(), modifier, true)) {
-          MethodMatch resultMatch = modifier.getMatch();
-          if (resultMatch.checkMapping()) {
-            found.add(resultMatch);
+    for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
+      SNode current = node;
+      MethodDuplicatesFinder.MethodMatchModifier modifier = new MethodDuplicatesFinder.MethodMatchModifier();
+      Iterator<SNode> iterator = ListSequence.fromList(this.myNodesToFind).iterator();
+      boolean hasNoErrors = true;
+      while (iterator.hasNext() && hasNoErrors) {
+        if ((current == null) || SetSequence.fromSet(this.myUsedNodes).contains(current)) {
+          hasNoErrors = false;
+        } else {
+          modifier.getMatch().putNode(current);
+          if (!(MatchingUtil.matchNodes(current, iterator.next(), modifier, true))) {
+            hasNoErrors = false;
           }
+          current = SNodeOperations.getNextSibling(current);
         }
+      }
+      MethodMatch resultMatch = modifier.getMatch();
+      if (hasNoErrors && resultMatch.checkMapping()) {
+        for (SNode resultNode : ListSequence.fromList(resultMatch.getNodes())) {
+          SetSequence.fromSet(this.myUsedNodes).addElement(resultNode);
+        }
+        found.add(resultMatch);
       }
     }
     return found;

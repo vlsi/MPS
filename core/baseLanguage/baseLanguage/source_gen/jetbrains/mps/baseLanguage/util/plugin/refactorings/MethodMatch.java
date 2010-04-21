@@ -75,8 +75,8 @@ public class MethodMatch {
         return false;
       }
     }
-    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(ListSequence.fromList(nodes).getElement(0), SLinkOperations.getTarget(parameter, "type", true)))) {
-
+    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(nodes).getElement(0)), SLinkOperations.getTarget(parameter, "type", true)))) {
+      return false;
     }
     return true;
   }
