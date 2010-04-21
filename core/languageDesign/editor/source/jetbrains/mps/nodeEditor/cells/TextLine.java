@@ -421,16 +421,16 @@ public class TextLine {
       g.setColor(backgroundColor);
       g.fillRect(shiftX + getPaddingLeft(),
         shiftY + getPaddingTop(),
-        myWidth - 1,
-        myTextHeight - 1);
+        myWidth,
+        myTextHeight);
     }
 
     if (textBackgroundColor != null) {
       g.setColor(textBackgroundColor);
       g.fillRect(shiftX + getPaddingLeft(),
         shiftY + getPaddingTop(),
-        myWidth - 1,
-        myTextHeight - 1);
+        myWidth,
+        myTextHeight);
     }
 
     g.setFont(getFont());
