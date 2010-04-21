@@ -27,6 +27,9 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class RulesManager {
+
+  public static final Object RULES_LOCK = new Object();
+
   private TypeChecker myTypeChecker;
   private Set<String> myLoadedLanguages = new HashSet<String>();
   private RuleSet<InferenceRule_Runtime> myInferenceRules = new CheckingRuleSet<InferenceRule_Runtime>();
@@ -92,127 +95,147 @@ public class RulesManager {
     return loadLanguage(l);
   }
 
-  public boolean loadLanguage(Language l) {
-    if (myLoadedLanguages.contains(l.getNamespace())) {
-      return true;
-    }
-    SModelDescriptor helginsModelDescriptor = l.getTypesystemModelDescriptor();
-    if (helginsModelDescriptor == null) return false;
-    String packageName = helginsModelDescriptor.getLongName();
-    String oldClassname = "HelginsDescriptor";
-    String classname = "TypesystemDescriptor";
-    try {
-      IHelginsDescriptor typesystemDescriptor;
-      Class<? extends IHelginsDescriptor> c = (Class<? extends IHelginsDescriptor>) l.getClass(packageName + "." + classname);
-      if (c == null) {
-        c = (Class<? extends IHelginsDescriptor>) l.getClass(packageName + "." + oldClassname);
-      }
-      if (c != null) {
-        typesystemDescriptor = c.newInstance();
-        myInferenceRules.addRuleSetItem(typesystemDescriptor.getInferenceRules());
-        myNonTypesystemRules.addRuleSetItem(typesystemDescriptor.getNonTypesystemRules());
-        mySubtypingRules.addRuleSetItem(typesystemDescriptor.getSubtypingRules());
-        myComparisonRules.addRuleSetItem(typesystemDescriptor.getComparisonRules());
-        myReplacementRules.addRuleSetItem(typesystemDescriptor.getEliminationRules());
-        myDependenciesContainer.addDependencies(typesystemDescriptor.getDependencies());
-        myVariableConverters.addAll(typesystemDescriptor.getVariableConverters());
-        myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(typesystemDescriptor.getOverloadedOperationsTypesProviders());
-        Set<AbstractDependentComputation_Runtime> dependentComputations = typesystemDescriptor.getDependentComputations();
-        myDependentComputations.addRuleSetItem(dependentComputations);
-        for (AbstractDependentComputation_Runtime dependentComputation : dependentComputations) {
-          myDependentComputationsBlockedNodes.addRule(dependentComputation.getWrapper());
-        }
-        myComparisonRules.makeConsistent();
-        myReplacementRules.makeConsistent();
-        myDependenciesContainer.makeConsistent();
-        myOverloadedOperationsManager.makeConsistent();
+  public boolean loadLanguage(final Language l) {
+    synchronized (RULES_LOCK) {
+      if (myLoadedLanguages.contains(l.getNamespace())) {
         return true;
-      } else {
-        return false;
       }
-    } catch (Throwable t) {
-      //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
-      return false;
-    } finally {
-      myLoadedLanguages.add(l.getNamespace());
+      SModelDescriptor helginsModelDescriptor = l.getTypesystemModelDescriptor();
+      if (helginsModelDescriptor == null) return false;
+      String packageName = helginsModelDescriptor.getLongName();
+      String oldClassname = "HelginsDescriptor";
+      String classname = "TypesystemDescriptor";
+      try {
+        IHelginsDescriptor typesystemDescriptor;
+        Class<? extends IHelginsDescriptor> c = (Class<? extends IHelginsDescriptor>) l.getClass(packageName + "." + classname);
+        if (c == null) {
+          c = (Class<? extends IHelginsDescriptor>) l.getClass(packageName + "." + oldClassname);
+        }
+        if (c != null) {
+          typesystemDescriptor = c.newInstance();
+          myInferenceRules.addRuleSetItem(typesystemDescriptor.getInferenceRules());
+          myNonTypesystemRules.addRuleSetItem(typesystemDescriptor.getNonTypesystemRules());
+          mySubtypingRules.addRuleSetItem(typesystemDescriptor.getSubtypingRules());
+          myComparisonRules.addRuleSetItem(typesystemDescriptor.getComparisonRules());
+          myReplacementRules.addRuleSetItem(typesystemDescriptor.getEliminationRules());
+          myDependenciesContainer.addDependencies(typesystemDescriptor.getDependencies());
+          myVariableConverters.addAll(typesystemDescriptor.getVariableConverters());
+          myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(typesystemDescriptor.getOverloadedOperationsTypesProviders());
+          Set<AbstractDependentComputation_Runtime> dependentComputations = typesystemDescriptor.getDependentComputations();
+          myDependentComputations.addRuleSetItem(dependentComputations);
+          for (AbstractDependentComputation_Runtime dependentComputation : dependentComputations) {
+            myDependentComputationsBlockedNodes.addRule(dependentComputation.getWrapper());
+          }
+          myComparisonRules.makeConsistent();
+          myReplacementRules.makeConsistent();
+          myDependenciesContainer.makeConsistent();
+          myOverloadedOperationsManager.makeConsistent();
+          return true;
+        } else {
+          return false;
+        }
+      } catch (Throwable t) {
+        //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
+        return false;
+      } finally {
+        myLoadedLanguages.add(l.getNamespace());
+      }
     }
   }
 
   public IVariableConverter_Runtime getVariableConverter(SNode context, String role, SNode variable, boolean isAggregation) {
-    for (IVariableConverter_Runtime converter : myVariableConverters) {
-      if (converter.isApplicable(context, role, variable, isAggregation)) return converter;
+    synchronized (RULES_LOCK) {
+      for (IVariableConverter_Runtime converter : myVariableConverters) {
+        if (converter.isApplicable(context, role, variable, isAggregation)) return converter;
+      }
+      return null;
     }
-    return null;
   }
 
   public Set<InferenceRule_Runtime> getInferenceRules(final SNode node) {
-    return CollectionUtil.filter(myInferenceRules.getRules(node), new Condition<InferenceRule_Runtime>() {
-      public boolean met(InferenceRule_Runtime object) {
-        return object.isApplicable(node);
-      }
-    });
+    synchronized (RULES_LOCK) {
+      return CollectionUtil.filter(myInferenceRules.getRules(node), new Condition<InferenceRule_Runtime>() {
+        public boolean met(InferenceRule_Runtime object) {
+          return object.isApplicable(node);
+        }
+      });
+    }
   }
 
   public Set<NonTypesystemRule_Runtime> getNonTypesystemRules(final SNode node) {
-    return CollectionUtil.filter(myNonTypesystemRules.getRules(node), new Condition<NonTypesystemRule_Runtime>() {
-      public boolean met(NonTypesystemRule_Runtime object) {
-        return object.isApplicable(node);
-      }
-    });
+    synchronized (RULES_LOCK) {
+      return CollectionUtil.filter(myNonTypesystemRules.getRules(node), new Condition<NonTypesystemRule_Runtime>() {
+        public boolean met(NonTypesystemRule_Runtime object) {
+          return object.isApplicable(node);
+        }
+      });
+    }
   }
 
   public Set<SubtypingRule_Runtime> getSubtypingRules(final SNode node, final boolean isWeak) {
-    loadLanguage(node.getLanguageNamespace());
-    return CollectionUtil.filter(mySubtypingRules.getRules(node), new Condition<SubtypingRule_Runtime>() {
-      public boolean met(SubtypingRule_Runtime object) {
-        return (isWeak || !object.isWeak()) && object.isApplicable(node);
-      }
-    });
+    synchronized (RULES_LOCK) {
+      loadLanguage(node.getLanguageNamespace());
+      return CollectionUtil.filter(mySubtypingRules.getRules(node), new Condition<SubtypingRule_Runtime>() {
+        public boolean met(SubtypingRule_Runtime object) {
+          return (isWeak || !object.isWeak()) && object.isApplicable(node);
+        }
+      });
+    }
   }
 
   public boolean subtypingRulesByNodeAreAllByConcept(final SNode node, boolean isWeak) {
-    loadLanguage(node.getLanguageNamespace());
-    for (SubtypingRule_Runtime rule : mySubtypingRules.getRules(node)) {
-      if (!isWeak && rule.isWeak()) {
-        continue;
+    synchronized (RULES_LOCK) {
+      loadLanguage(node.getLanguageNamespace());
+      for (SubtypingRule_Runtime rule : mySubtypingRules.getRules(node)) {
+        if (!isWeak && rule.isWeak()) {
+          continue;
+        }
+        if (!rule.isApplicable(node)) {
+          return false;
+        }
       }
-      if (!rule.isApplicable(node)) {
-        return false;
-      }
+      return true;
     }
-    return true;
   }
 
   public Set<ComparisonRule_Runtime> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
-    loadLanguage(node1.getLanguageNamespace());
-    loadLanguage(node2.getLanguageNamespace());
-    Set<ComparisonRule_Runtime> result = new HashSet<ComparisonRule_Runtime>();
-    result.addAll(
-      CollectionUtil.filter(myComparisonRules.getRules(node1, node2), new Condition<ComparisonRule_Runtime>() {
-        public boolean met(ComparisonRule_Runtime object) {
-          return (isWeak || !object.isWeak()) && object.isApplicable(node1, node2);
-        }
-      }));
-    return result;
+    synchronized (RULES_LOCK) {
+      loadLanguage(node1.getLanguageNamespace());
+      loadLanguage(node2.getLanguageNamespace());
+      Set<ComparisonRule_Runtime> result = new HashSet<ComparisonRule_Runtime>();
+      result.addAll(
+        CollectionUtil.filter(myComparisonRules.getRules(node1, node2), new Condition<ComparisonRule_Runtime>() {
+          public boolean met(ComparisonRule_Runtime object) {
+            return (isWeak || !object.isWeak()) && object.isApplicable(node1, node2);
+          }
+        }));
+      return result;
+    }
   }
 
   public Set<InequationReplacementRule_Runtime> getReplacementRules(final SNode node1, final SNode node2) {
-    Set<InequationReplacementRule_Runtime> result = new HashSet<InequationReplacementRule_Runtime>();
-    result.addAll(
-      CollectionUtil.filter(myReplacementRules.getRules(node1, node2), new Condition<InequationReplacementRule_Runtime>() {
-        public boolean met(InequationReplacementRule_Runtime object) {
-          return object.isApplicable(node1, node2);
-        }
-      }));
-    return result;
+    synchronized (RULES_LOCK) {
+      Set<InequationReplacementRule_Runtime> result = new HashSet<InequationReplacementRule_Runtime>();
+      result.addAll(
+        CollectionUtil.filter(myReplacementRules.getRules(node1, node2), new Condition<InequationReplacementRule_Runtime>() {
+          public boolean met(InequationReplacementRule_Runtime object) {
+            return object.isApplicable(node1, node2);
+          }
+        }));
+      return result;
+    }
   }
 
   public Set<SNode> getDependencies(SNode node) {
-    return myDependenciesContainer.getDependencies(node);
+    synchronized (RULES_LOCK) {
+      return myDependenciesContainer.getDependencies(node);
+    }
   }
 
-  public OverloadedOperationsManager getOverloadedOperationsManager() {
-    return myOverloadedOperationsManager;
+  public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+    synchronized (RULES_LOCK) {
+      return myOverloadedOperationsManager.getOperationType(operation, leftOperandType, rightOperandType);
+    }
   }
 
   public TypeChecker getTypeChecker() {
@@ -220,22 +243,26 @@ public class RulesManager {
   }
 
   public Set<AbstractDependentComputation_Runtime> getDependentComputations(final SNode node) {
-    return CollectionUtil.filter(myDependentComputations.getRules(node), new Condition<AbstractDependentComputation_Runtime>() {
-      @Override
-      public boolean met(AbstractDependentComputation_Runtime dependentComputation) {
-        return dependentComputation.isApplicable(node);
-      }
-    });
+    synchronized (RULES_LOCK) {
+      return CollectionUtil.filter(myDependentComputations.getRules(node), new Condition<AbstractDependentComputation_Runtime>() {
+        @Override
+        public boolean met(AbstractDependentComputation_Runtime dependentComputation) {
+          return dependentComputation.isApplicable(node);
+        }
+      });
+    }
   }
 
   public boolean isBlockingDependentComputationNode(SNode node) {
-    Set<DependentComputationWrapper> set = myDependentComputationsBlockedNodes.getRules(node);
-    if (set == null) return false;
-    for (DependentComputationWrapper wrapper : set) {
-      if (wrapper.isBlocking(node)) {
-        return true;
+    synchronized (RULES_LOCK) {
+      Set<DependentComputationWrapper> set = myDependentComputationsBlockedNodes.getRules(node);
+      if (set == null) return false;
+      for (DependentComputationWrapper wrapper : set) {
+        if (wrapper.isBlocking(node)) {
+          return true;
+        }
       }
+      return false;
     }
-    return false;
   }
 }

@@ -470,8 +470,7 @@ public class TypeCheckingContext {
       equationManager), getRuntimeTypesModel());
     IWrapper rightWrapper = equationManager.expandWrapper(null, NodeWrapper.fromNode(CopyUtil.copy(rightOperandType),
       equationManager), getRuntimeTypesModel());
-    return myTypeChecker.getRulesManager().
-      getOverloadedOperationsManager().getOperationType(operation, leftWrapper.getNode(), rightWrapper.getNode());
+    return myTypeChecker.getRulesManager().getOperationType(operation, leftWrapper.getNode(), rightWrapper.getNode());
   }
 
   //---------------------------- when concrete
