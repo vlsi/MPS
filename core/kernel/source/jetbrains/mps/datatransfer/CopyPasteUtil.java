@@ -178,7 +178,8 @@ public class CopyPasteUtil {
         newReference = SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {//otherwise it points out of our node's subtree
         if (oldTargetNode != null) {
-          newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
+          newReference = SReference.create(sourceReference.getRole(), newSourceNode,
+            oldTargetNode.getModel().getSModelReference(), oldTargetNode.getSNodeId());
         } else if (sourceReference.getResolveInfo() != null) {
           // broken reference. to be resolved later?
           newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, sourceReference.getResolveInfo());
