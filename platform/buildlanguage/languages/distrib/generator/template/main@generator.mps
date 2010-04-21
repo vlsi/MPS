@@ -6432,20 +6432,6 @@
                 <property name="text:0" value="false" />
               </node>
             </node>
-            <node role="content:0" type="jetbrains.mps.xml.deprecated.structure.Element:0" id="1234427036330">
-              <property name="name:0" value="key" />
-              <node role="content:0" type="jetbrains.mps.xml.deprecated.structure.Text:0" id="1234427039646">
-                <property name="name:0" value="" />
-                <property name="text:0" value="file.encoding" />
-              </node>
-            </node>
-            <node role="content:0" type="jetbrains.mps.xml.deprecated.structure.Element:0" id="1234427046860">
-              <property name="name:0" value="string" />
-              <node role="content:0" type="jetbrains.mps.xml.deprecated.structure.Text:0" id="1234427050383">
-                <property name="name:0" value="" />
-                <property name="text:0" value="windows-1251" />
-              </node>
-            </node>
           </node>
           <node role="content:0" type="jetbrains.mps.xml.deprecated.structure.Element:0" id="1234427103205">
             <property name="name:0" value="key" />

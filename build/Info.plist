@@ -50,8 +50,6 @@
         <string>true</string>
         <key>com.apple.mrj.application.live-resize</key>
         <string>false</string>
-        <key>file.encoding</key>
-        <string>windows-1251</string>
       </dict>
       <key>VMOptions</key>
       <string>-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=92m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8</string>
