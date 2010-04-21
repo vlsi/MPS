@@ -163,7 +163,48 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return sb.toString();
   }
 
+  boolean useOldStyleUniqueName = "true".equals(System.getProperty("mps.olduniquename"));
+
+  public String createUniqueNameOldStyle(String roughName, SNode contextNode) {
+    if (contextNode != null) {
+      // find topmost 'named' ancestor
+      INamedConcept topmostNamed = null;
+      INodeAdapter node_ = contextNode.getAdapter();
+      while (node_ != null) {
+        if (node_ instanceof INamedConcept) {
+          topmostNamed = (INamedConcept) node_;
+        }
+        node_ = node_.getParent();
+      }
+
+      if (topmostNamed != null) {
+        String name = topmostNamed.getName();
+        if (name != null) {
+          String contextSuffix = String.valueOf(name.hashCode());
+          if (contextSuffix.length() > 4) {
+            contextSuffix = contextSuffix.substring(contextSuffix.length() - 4); // make it a bit shorter
+          }
+          // modify roughName
+          roughName = roughName + contextSuffix + "_";
+        }
+      }
+    } // if(contextNode != null)
+
+    String uniqueName;
+    int count = 0;
+    while (true) {
+      uniqueName = roughName + (count++);
+      if (!myUsedNames.contains(uniqueName)) break;
+    }
+    myUsedNames.add(uniqueName);
+    return uniqueName;
+  }
+
   public String createUniqueName(String roughName, SNode contextNode, SNode inputNode) {
+    if(useOldStyleUniqueName) {
+      return createUniqueNameOldStyle(roughName, contextNode);
+    }
+    
     String uniqueSuffix = null;
 
     if (contextNode != null) {
