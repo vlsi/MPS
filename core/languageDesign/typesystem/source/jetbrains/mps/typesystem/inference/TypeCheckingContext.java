@@ -15,23 +15,21 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.GlobalScope;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
-import jetbrains.mps.nodeEditor.MessageStatus;
-import jetbrains.mps.nodeEditor.IErrorReporter;
-import jetbrains.mps.nodeEditor.SimpleErrorReporter;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.nodeEditor.MessageStatus;
+import jetbrains.mps.nodeEditor.SimpleErrorReporter;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.ISlicer;
-import jetbrains.mps.typesystem.debug.SliceInfo;
 import jetbrains.mps.typesystem.integration.TypesystemPreferencesComponent;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
-
-import com.intellij.openapi.util.Computable;
-import org.jetbrains.annotations.Nullable;
 
 public class TypeCheckingContext {
   private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
@@ -667,8 +665,11 @@ public class TypeCheckingContext {
   }
 
   private SNode getTypeOf_generationMode(final SNode node) {
-    SNode computedType = myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
-    return computedType;
+    try {
+      return myNodeTypesComponent.computeTypesForNodeDuringGeneration(node);
+    } finally {
+      myNodeTypesComponent.dispose();
+    }
   }
 
   private SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
@@ -704,10 +705,10 @@ public class TypeCheckingContext {
     }
   }
 
-  public Set<Pair<SNode,List<IErrorReporter>>> checkRootAndGetErrors(boolean refreshTypes) {
+  public Set<Pair<SNode, List<IErrorReporter>>> checkRootAndGetErrors(boolean refreshTypes) {
     synchronized (TYPECHECKING_LOCK) {
       checkRoot(refreshTypes);
-      Set<Pair<SNode,List<IErrorReporter>>> errors =
+      Set<Pair<SNode, List<IErrorReporter>>> errors =
         new HashSet<Pair<SNode, List<IErrorReporter>>>(myNodeTypesComponent.getNodesWithErrors());
       return errors;
     }
