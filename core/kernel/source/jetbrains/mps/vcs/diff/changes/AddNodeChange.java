@@ -29,19 +29,11 @@ public class AddNodeChange extends NewNodeChange {
   private SNodeId myPreviousNode;
   private String myPreviousRole;
 
-  private boolean mySubstitution; // This field is used for ChangesManager
-
   public AddNodeChange(String conceptFqName, SNodeId nodeId, String role, SNodeId parentId,
-                       SNodeId prevNode, String prevRole, boolean substitution) {
+                       SNodeId prevNode, String prevRole) {
     super(conceptFqName, nodeId, role, parentId);
     myPreviousNode = prevNode;
     myPreviousRole = prevRole;
-    mySubstitution = substitution;
-  }
-
-  public AddNodeChange(String conceptFqName, SNodeId nodeId, String role, SNodeId parentId,
-                       SNodeId prevNode, String prevRole) {
-    this(conceptFqName, nodeId, role, parentId, prevNode, prevRole, false);
   }
 
   public SNodeId getPreviousNode() {
@@ -49,8 +41,7 @@ public class AddNodeChange extends NewNodeChange {
   }
 
   public String toString() {
-    return "add node " + getAffectedNodeId() + " in role " + getNodeRole() + " before " + getPreviousNode()
-      + (mySubstitution ? " (substituted)" : "");
+    return "add node " + getAffectedNodeId() + " in role " + getNodeRole() + " before " + getPreviousNode();
   }
 
   public boolean apply(SModel m) {
@@ -85,15 +76,8 @@ public class AddNodeChange extends NewNodeChange {
     return Arrays.asList(getNodeParent(), getPreviousNode());
   }
 
-  public boolean isSubstitution() {
-    return mySubstitution;
-  }
-
   @Override
   public ChangeType getChangeType() {
-    if (isSubstitution()) {
-      return ChangeType.CHANGE;
-    }
     return ChangeType.ADD;
   }
 }
