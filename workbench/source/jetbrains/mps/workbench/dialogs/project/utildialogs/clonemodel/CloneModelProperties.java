@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.ModelUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 
@@ -100,7 +101,7 @@ public class CloneModelProperties {
     myLongName = model.getLongName();
 
     myStereotype = model.getStereotype();
-    Set<SModelRoot> modelRoots = model.getModelDescriptor().collectSModelRoots();
+    Set<SModelRoot> modelRoots = ModelUtil.collectSModelRoots(model.getModelDescriptor());
     if (!modelRoots.isEmpty()) {
       SModelRoot root = modelRoots.iterator().next();
       myRoot = new RootReference();
