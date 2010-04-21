@@ -1333,6 +1333,29 @@
     <link role="conceptDeclaration:0" targetNodeId="1.1164879751025:3" resolveInfo="TryCatchStatement" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1206542990055">
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1206542990056">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="7970753809667931443">
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7970753809667931444">
+            <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement:0" id="7970753809667931499">
+              <node role="jumpTo:0" type="jetbrains.mps.lang.dataFlow.structure.BeforePosition:0" id="7970753809667931501">
+                <node role="relativeTo:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7970753809667931503">
+                  <link role="variableDeclaration:3" targetNodeId="7970753809667931497" resolveInfo="catchClause" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7970753809667931494">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="7970753809667931495" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="7970753809667931496">
+              <link role="link:16" targetNodeId="1.1164903496223:3" />
+            </node>
+          </node>
+          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7970753809667931497">
+            <property name="name:3" value="catchClause" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7970753809667931498">
+              <link role="concept:16" targetNodeId="1.1164903280175:3" resolveInfo="CatchClause" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="2838654975956047419">
           <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2838654975956047420">
             <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="2838654975956047421" />
@@ -1347,25 +1370,25 @@
               <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7180022869589272951">
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="7180022869589272970" />
               </node>
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="554709999453756494">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="554709999453756579">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="554709999453756578">
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="7970753809667931349">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7970753809667931434">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7970753809667931433">
                     <link role="variableDeclaration:3" targetNodeId="4969132436615607636" resolveInfo="instruction" />
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.dataFlow.structure.InstructionIsJump:0" id="554709999453756583" />
+                  <node role="operation:3" type="jetbrains.mps.lang.dataFlow.structure.InstructionIsNop:0" id="7970753809667931438" />
                 </node>
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="7180022869589272960">
-                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7180022869589272955">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7180022869589272954">
-                      <link role="variableDeclaration:3" targetNodeId="4969132436615607636" resolveInfo="instruction" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.dataFlow.structure.InstructionIsNop:0" id="7180022869589272959" />
-                  </node>
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7180022869589272964">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="554709999453756494">
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7180022869589272964">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7180022869589272963">
                       <link role="variableDeclaration:3" targetNodeId="4969132436615607636" resolveInfo="instruction" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.lang.dataFlow.structure.InstructionIsRet:0" id="7180022869589272969" />
+                  </node>
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="554709999453756579">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="554709999453756578">
+                      <link role="variableDeclaration:3" targetNodeId="4969132436615607636" resolveInfo="instruction" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.dataFlow.structure.InstructionIsJump:0" id="554709999453756583" />
                   </node>
                 </node>
               </node>
