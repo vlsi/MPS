@@ -151,8 +151,10 @@ public class DefaultEditorMessage implements EditorMessage {
   protected void paintWithColor(Graphics g, EditorCell cell, Color color) {
     int x = cell.getX() + cell.getLeftInset();
     int y = cell.getY();
-    int width = cell.getWidth() - cell.getLeftInset() - cell.getRightInset();
-    int height = cell.getHeight() - cell.getTopInset() - cell.getBottomInset();
+    int width = cell.getWidth() - cell.getLeftInset() - cell.getRightInset() - 1;
+    int height = cell.getHeight() - cell.getTopInset() - cell.getBottomInset() - 1;
+    g.setColor(color);
+    g.drawRect(x, y, width, height);
     color = new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha() / 5);
     g.setColor(color);
     g.fillRect(x, y, width, height);
