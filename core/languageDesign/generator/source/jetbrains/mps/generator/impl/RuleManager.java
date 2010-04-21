@@ -38,6 +38,7 @@ public class RuleManager {
   private FlattenIterable<PatternReduction_MappingRule> myPatternReduction_MappingRules;
   private FlattenIterable<DropRootRule> myDropRootRules;
 
+  private Object mySwitchLock = new Object();
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
 
@@ -118,15 +119,18 @@ public class RuleManager {
   public RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch, ITemplateGenerator generator) throws GenerationFailureException {
     AbstractConceptDeclaration inputNodeConcept = inputNode.getConceptDeclarationAdapter();
 
-    if (myTemplateSwitchGraph == null) {
-      myTemplateSwitchGraph = new TemplateSwitchGraph(myPlan.getTemplateModels());
-      myTemplateSwitchToListCache = new HashMap<TemplateSwitch, List<TemplateSwitch>>();
-    }
+    List<TemplateSwitch> switches;
+    synchronized (mySwitchLock) {
+      if (myTemplateSwitchGraph == null) {
+        myTemplateSwitchGraph = new TemplateSwitchGraph(myPlan.getTemplateModels());
+        myTemplateSwitchToListCache = new HashMap<TemplateSwitch, List<TemplateSwitch>>();
+      }
 
-    List<TemplateSwitch> switches = myTemplateSwitchToListCache.get(templateSwitch);
-    if (switches == null) {
-      switches = myTemplateSwitchGraph.getSubgraphAsList(templateSwitch);
-      myTemplateSwitchToListCache.put(templateSwitch, switches);
+      switches = myTemplateSwitchToListCache.get(templateSwitch);
+      if (switches == null) {
+        switches = myTemplateSwitchGraph.getSubgraphAsList(templateSwitch);
+        myTemplateSwitchToListCache.put(templateSwitch, switches);
+      }
     }
 
     // for each template switch test conditions and choose template node
