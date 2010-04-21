@@ -321,7 +321,7 @@ public enum LanguageAspect {
     if (structureModel == null) {
       modelRoot = l.getSModelRoots().get(0);
     } else {
-      modelRoot = structureModel.getSModelRoot();
+      modelRoot = ModelUtil.getSModelRoot(structureModel);
     }
     final SModelDescriptor model = l.createModel(getModuleUID(l), modelRoot);
     return model;

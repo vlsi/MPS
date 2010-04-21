@@ -137,10 +137,6 @@ public interface SModelDescriptor {
 
   void setVersion(int newVersion);
 
-  SModelRoot getSModelRoot();
-
-  Set<SModelRoot> collectSModelRoots();
-
   Object getUserObject(String key);
 
   void putUserObject(String key, Object value);

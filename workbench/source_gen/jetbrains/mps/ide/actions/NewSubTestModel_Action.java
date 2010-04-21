@@ -20,6 +20,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.ModelUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -99,7 +100,7 @@ public class NewSubTestModel_Action extends GeneratedAction {
           String namespace = NewSubTestModel_Action.this.getNamespace();
           String name = NewSubTestModel_Action.this.getTestModelName();
           SModelFqName newModelFqName = new SModelFqName(namespace, name, SModelStereotype.TESTS);
-          result.value = NewSubTestModel_Action.this.model.getModule().createModel(newModelFqName, NewSubTestModel_Action.this.model.getSModelRoot());
+          result.value = NewSubTestModel_Action.this.model.getModule().createModel(newModelFqName, ModelUtil.getSModelRoot(NewSubTestModel_Action.this.model));
           SModel createdModel = result.value.getSModel();
           SModel sourceModel = NewSubTestModel_Action.this.model.getSModel();
           createdModel.addImportedModel(sourceModel.getSModelReference());

@@ -75,9 +75,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return getSModelReference().getSModelId();
   }
 
-  /**
-   * todo: should return "long name"
-   */
   @Deprecated
   public String getName() {
     return NameUtil.shortNameFromLongName(myModelReference.getLongName());
@@ -90,27 +87,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @NotNull
   public String getStereotype() {
     return myModelReference.getStereotype();
-  }
-
-  public SModelRoot getSModelRoot() {
-    List<SModelRoot> roots = new ArrayList<SModelRoot>(collectSModelRoots());
-    assert !roots.isEmpty() : "model has no appropriate model roots";
-    return roots.get(0);
-  }
-
-  public Set<SModelRoot> collectSModelRoots() {
-    Set<SModelRoot> result = new HashSet<SModelRoot>();
-    for (IModule module : getModules()) {
-      for (SModelRoot modelRoot : module.getSModelRoots()) {
-        String modelFqName = getSModelFqName().toString();
-        String expectedName = PathManager.getModelUIDString(getModelFile(), FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
-
-        if (modelFqName.equals(expectedName)) {
-          result.add(modelRoot);
-        }
-      }
-    }
-    return result;
   }
 
   public Object getUserObject(String key) {
