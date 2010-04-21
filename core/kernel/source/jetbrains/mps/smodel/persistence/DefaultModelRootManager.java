@@ -351,7 +351,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       return;
     }
     IFile oldFile = sm.getModelFile();
-    SModelRoot root = ModelUtil.getSModelRoot(sm);
+    SModelRoot root = ModelRootUtil.getSModelRoot(sm);
     IFile newFile = createFileForModelUID(root, modelFqName);
     newFile.getParent().mkdirs();
     newFile.createNewFile();

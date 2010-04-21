@@ -18,13 +18,12 @@ package jetbrains.mps.workbench.dialogs.project.utildialogs.clonemodel;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.ModelUtil;
+import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class CloneModelProperties {
   public static final String PROPERTY_NAME = "longName";
@@ -101,12 +100,11 @@ public class CloneModelProperties {
     myLongName = model.getLongName();
 
     myStereotype = model.getStereotype();
-    Set<SModelRoot> modelRoots = ModelUtil.collectSModelRoots(model.getModelDescriptor());
-    if (!modelRoots.isEmpty()) {
-      SModelRoot root = modelRoots.iterator().next();
+    SModelRoot modelRoot = ModelRootUtil.getSModelRoot(model.getModelDescriptor());
+    if (modelRoot != null) {
       myRoot = new RootReference();
-      myRoot.setPath(root.getPath());
-      myRoot.setPrefix(root.getPrefix());
+      myRoot.setPath(modelRoot.getPath());
+      myRoot.setPrefix(modelRoot.getPrefix());
     }
 
     myImportedLanguages.addAll(model.getExplicitlyImportedLanguages());

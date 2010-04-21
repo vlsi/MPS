@@ -17,7 +17,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelUtil;
+import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.refactoring.renameModel.RenameModelDialog;
 
 public class RenameModel_Action extends GeneratedAction {
@@ -87,7 +87,7 @@ public class RenameModel_Action extends GeneratedAction {
       final Wrappers._T<SModelRoot> root = new Wrappers._T<SModelRoot>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          root.value = ModelUtil.getSModelRoot(RenameModel_Action.this.model);
+          root.value = ModelRootUtil.getSModelRoot(RenameModel_Action.this.model);
         }
       });
       new RenameModelDialog(RenameModel_Action.this.project, RenameModel_Action.this.frame, root.value, RenameModel_Action.this.model).showDialog();

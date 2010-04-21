@@ -31,10 +31,8 @@ import jetbrains.mps.lang.textGen.structure.TextGen_Language;
 import jetbrains.mps.lang.typesystem.structure.Typesystem_Language;
 import jetbrains.mps.lang.refactoring.structure.Refactoring_Language;
 import jetbrains.mps.lang.stubs.structure.Stubs_Language;
-import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mpslite.behavior.Mpslite_Language;
 import org.jetbrains.annotations.Nullable;
 
@@ -321,7 +319,7 @@ public enum LanguageAspect {
     if (structureModel == null) {
       modelRoot = l.getSModelRoots().get(0);
     } else {
-      modelRoot = ModelUtil.getSModelRoot(structureModel);
+      modelRoot = ModelRootUtil.getSModelRoot(structureModel);
     }
     final SModelDescriptor model = l.createModel(getModuleUID(l), modelRoot);
     return model;
