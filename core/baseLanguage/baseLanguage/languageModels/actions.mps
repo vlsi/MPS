@@ -11163,6 +11163,51 @@
           </node>
         </node>
       </node>
+      <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction:23" id="8283631902251722117">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8283631902251722118">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="8283631902251935569">
+            <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="8283631902251935570">
+              <property name="text:3" value="if parent of this" />
+            </node>
+            <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart:3" id="8283631902251935576">
+              <node role="commentedStatement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8283631902251935578">
+                <node role="expression:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode:23" id="8283631902251935579" />
+              </node>
+            </node>
+            <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="8283631902251935581">
+              <property name="text:3" value="is DotExpression then this leftTransform" />
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="8283631902251935588">
+            <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="8283631902251935594">
+              <property name="text:3" value="will be provided to this" />
+            </node>
+            <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart:3" id="8283631902251935596">
+              <node role="commentedStatement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8283631902251935598">
+                <node role="expression:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode:23" id="8283631902251935599" />
+              </node>
+            </node>
+            <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="8283631902251935601">
+              <property name="text:3" value="by rules defined in binaryOperations LT" />
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8283631902251728528">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="8283631902251728542">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8283631902251728535">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8283631902251728530">
+                  <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode:23" id="8283631902251728529" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="8283631902251728534" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="8283631902251728539">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8283631902251728541">
+                    <link role="conceptDeclaration:16" targetNodeId="1.1197027756228:3" resolveInfo="DotExpression" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="1239714243840">
