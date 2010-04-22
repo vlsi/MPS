@@ -7,13 +7,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -55,7 +55,7 @@ public class SModelUtil {
         MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();
       }
     });
-    meManager.addGlobalModelListener(new SModelAdapter(SModelListenerPriority.PLATFORM) {
+    meManager.addGlobalModelListener(new SModelAdapter(SModelListener.SModelListenerPriority.PLATFORM) {
       public void rootRemoved(SModelRootEvent p0) {
         if (Language.getModelAspect(p0.getModelDescriptor()) == LanguageAspect.STRUCTURE) {
           if (SNodeOperations.isInstanceOf(((SNode) p0.getRoot()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {

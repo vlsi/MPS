@@ -96,7 +96,11 @@
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="5766047821322628685">
                   <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="5766047821322628686">
                     <link role="classifier:3" targetNodeId="11.~SModelAdapter" resolveInfo="SModelAdapter" />
-                    <link role="baseMethodDeclaration:3" targetNodeId="11.~SModelAdapter.&lt;init&gt;()" resolveInfo="SModelAdapter" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="11.~SModelAdapter.&lt;init&gt;(jetbrains.mps.smodel.event.SModelListener$SModelListenerPriority)" resolveInfo="SModelAdapter" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="4860059581300612707">
+                      <link role="enumConstantDeclaration:3" targetNodeId="18.~SModelListener$SModelListenerPriority.PLATFORM" resolveInfo="PLATFORM" />
+                      <link role="enumClass:3" targetNodeId="18.~SModelListener$SModelListenerPriority" resolveInfo="SModelListener.SModelListenerPriority" />
+                    </node>
                     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5766047821322628687" />
                     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5766047821322628688">
                       <property name="name:3" value="rootRemoved" />
