@@ -35,7 +35,8 @@ public class SimpleFindForExtractFromManyStatements_Test extends BaseTransformat
       ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       SNode res = ref.doRefactor();
       for (MethodMatch match : ListSequence.fromList(ref.getMatches())) {
-        ref.replaceMatch(match, res);
+        ExtractMethodRefactoring matchRef = ExtractMethodFactory.createRefactoring(new ExtractMethodRefactoringParameters(match.getNodes()));
+        matchRef.replaceMatch(match, res);
       }
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7793057097608406465"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7793057097608416325"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }

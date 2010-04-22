@@ -8,6 +8,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -22993,18 +22994,51 @@
           </node>
         </node>
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5159544814168932104">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8155843501977095975">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8155843501977095976">
+              <property name="name:3" value="refactoring" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8155843501977095977">
+                <link role="classifier:3" targetNodeId="8492459591399163659" resolveInfo="ExtractMethodRefactoring" />
+              </node>
+            </node>
+          </node>
+          <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement:23" id="8155843501977061835">
+            <node role="commandClosureLiteral:23" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral:23" id="8155843501977061836">
+              <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8155843501977061837">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8155843501977348361">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="8155843501977348363">
+                    <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8155843501977348367">
+                      <link role="baseMethodDeclaration:3" targetNodeId="8492459591399162715" resolveInfo="createRefactoring" />
+                      <link role="classConcept:3" targetNodeId="8492459591399162714" resolveInfo="ExtractMethodFactory" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8155843501977348368">
+                        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8155843501977348369">
+                          <link role="baseMethodDeclaration:3" targetNodeId="8492459591399165107" resolveInfo="ExtractMethodRefactoringParameters" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8155843501977348370">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8155843501977348371">
+                              <link role="variableDeclaration:3" targetNodeId="5159544814168932102" resolveInfo="duplicate" />
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8155843501977348372">
+                              <link role="baseMethodDeclaration:3" targetNodeId="1939461217142824840" resolveInfo="getNodes" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8155843501977348362">
+                      <link role="variableDeclaration:3" targetNodeId="8155843501977095976" resolveInfo="refactoring" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement:3" type="jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement:23" id="5159544814169827227">
             <node role="commandClosureLiteral:23" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral:23" id="5159544814169827228">
               <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5159544814169827229">
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5159544814169827230">
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5159544814169827231">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5159544814169827232">
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5159544814169827233">
-                        <link role="fieldDeclaration:3" targetNodeId="8492459591399171933" resolveInfo="myRefactoring" />
-                      </node>
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5159544814169827234">
-                        <link role="classConcept:3" targetNodeId="8492459591399171910" resolveInfo="ExtractMethodDialog" />
-                      </node>
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8155843501976844989">
+                      <link role="variableDeclaration:3" targetNodeId="8155843501977095976" resolveInfo="refactoring" />
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5159544814169827235">
                       <link role="baseMethodDeclaration:3" targetNodeId="5159544814167901888" resolveInfo="replaceMatch" />

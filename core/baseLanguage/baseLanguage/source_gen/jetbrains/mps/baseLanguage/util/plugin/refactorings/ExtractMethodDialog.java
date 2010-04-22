@@ -311,9 +311,20 @@ public class ExtractMethodDialog extends BaseDialog {
     }
 
     public void substitute(final MethodMatch duplicate) {
+      final Wrappers._T<ExtractMethodRefactoring> refactoring = new Wrappers._T<ExtractMethodRefactoring>();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          refactoring.value = ExtractMethodFactory.createRefactoring(new ExtractMethodRefactoringParameters(duplicate.getNodes()));
+          /*
+            ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(duplicate.getNodes());
+            refactoring.value = ExtractMethodFactory.createRefactoring(params);
+            params.setReturnType(refactoring.value.getMethodType());
+          */
+        }
+      });
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          ExtractMethodDialog.this.myRefactoring.replaceMatch(duplicate, MyMethodDuplicatesProcessor.this.myMethod);
+          refactoring.value.replaceMatch(duplicate, MyMethodDuplicatesProcessor.this.myMethod);
         }
       });
     }
