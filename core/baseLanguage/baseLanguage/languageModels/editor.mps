@@ -8334,7 +8334,6 @@
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="1170345922046">
           <property name="name:32" value="methodsList" />
           <property name="vertical:32" value="true" />
-          <property name="separatorText:32" value=" " />
           <link role="relationDeclaration:32" targetNodeId="17.1107880067339:3" />
           <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1170345922047">
             <property name="text:32" value=" &lt;&lt; methods &gt;&gt;" />
