@@ -36,21 +36,6 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="4079382982702692311">
     <property name="name:23" value="checkedDotExpression" />
-    <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="4079382982702714375">
-      <link role="applicableConcept:23" targetNodeId="2v.1197027803184:3" resolveInfo="IOperation" />
-      <node role="part:23" type="jetbrains.mps.lang.actions.structure.IncludeRightTransformForNodePart:23" id="4079382982702714378">
-        <node role="nodeBlock:23" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery:23" id="4079382982702714379">
-          <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4079382982702714380">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4079382982702714381">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4079382982702714383">
-                <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode:23" id="4079382982702714382" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="4079382982702714387" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="4079382982702692313">
       <link role="applicableConcept:23" targetNodeId="2v.1068431790191:3" resolveInfo="Expression" />
       <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction:23" id="4079382982702692314">
