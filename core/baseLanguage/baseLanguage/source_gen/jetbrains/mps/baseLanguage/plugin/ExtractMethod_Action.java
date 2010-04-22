@@ -92,7 +92,10 @@ public class ExtractMethod_Action extends GeneratedAction {
       final Wrappers._T<ExtractMethodRefactoring> refactoring = new Wrappers._T<ExtractMethodRefactoring>();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          params.value = new ExtractMethodRefactoringParameters(ExtractMethod_Action.this.nodes);
+          /*
+            params.value = new ExtractMethodRefactoringParameters(ExtractMethod_Action.this.nodes);
+          */
+          params.value = ExtractMethodFactory.createParameters(ExtractMethod_Action.this.nodes);
           refactoring.value = ExtractMethodFactory.createRefactoring(params.value);
           params.value.setReturnType(refactoring.value.getMethodType());
         }

@@ -314,12 +314,7 @@ public class ExtractMethodDialog extends BaseDialog {
       final Wrappers._T<ExtractMethodRefactoring> refactoring = new Wrappers._T<ExtractMethodRefactoring>();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          refactoring.value = ExtractMethodFactory.createRefactoring(new ExtractMethodRefactoringParameters(duplicate.getNodes()));
-          /*
-            ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(duplicate.getNodes());
-            refactoring.value = ExtractMethodFactory.createRefactoring(params);
-            params.setReturnType(refactoring.value.getMethodType());
-          */
+          refactoring.value = ExtractMethodFactory.createRefactoring(ExtractMethodFactory.createParameters(duplicate.getNodes()));
         }
       });
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
