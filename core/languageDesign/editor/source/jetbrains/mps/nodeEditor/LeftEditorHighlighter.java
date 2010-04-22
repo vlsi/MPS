@@ -73,7 +73,6 @@ public class LeftEditorHighlighter extends JComponent {
       return afap1.getWeight() - afap2.getWeight();
     }
   });
-  private FoldingButtonsPainter myFoldingButtonsPainter;
   private BracketsPainter myBracketsPainter;
 
   private BookmarkListener myListener;
@@ -161,7 +160,7 @@ public class LeftEditorHighlighter extends JComponent {
       }
     });
     myFoldingAreaPainters.add(myBracketsPainter = new BracketsPainter(this));
-    myFoldingAreaPainters.add(myFoldingButtonsPainter = new FoldingButtonsPainter(this));
+    myFoldingAreaPainters.add(new FoldingButtonsPainter(this));
   }
 
   public EditorComponent getEditorComponent() {
