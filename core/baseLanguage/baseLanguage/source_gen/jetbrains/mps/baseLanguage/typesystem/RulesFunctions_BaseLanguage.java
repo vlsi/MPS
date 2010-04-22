@@ -32,6 +32,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
@@ -577,8 +578,8 @@ with_anc:
             break;
           }
         }
-        if (ListSequence.fromList(ancSLs).contains(SLinkOperations.getTarget(SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "body", true))) {
-          for (final SNode thr : SLinkOperations.getTargets(SNodeOperations.cast(anc, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "throwsItem", true)) {
+        if (ListSequence.fromList(ancSLs).contains(IMethodLike_Behavior.call_getBody_1239354440022(SNodeOperations.as(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike")))) {
+          for (final SNode thr : IMethodLike_Behavior.call_getThrowableTypes_6204026822016975623(SNodeOperations.cast(anc, "jetbrains.mps.baseLanguage.structure.IMethodLike"))) {
             ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
               public boolean accept(SNode tt) {
                 return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, thr);

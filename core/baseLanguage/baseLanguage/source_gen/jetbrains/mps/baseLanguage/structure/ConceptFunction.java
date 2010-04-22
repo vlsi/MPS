@@ -13,6 +13,7 @@ public class ConceptFunction extends BaseConcept implements IMethodLike, IStatem
   public static final String CPR_UsesParameterObject = "usesParameterObject";
   public static final String CPR_ShowName = "showName";
   public static final String CLNK_ConceptFunctionReturnType = "conceptFunctionReturnType";
+  public static final String CLNK_ConceptFunctionThrowsType = "conceptFunctionThrowsType";
   public static final String CLNK_ConceptFunctionParameter = "conceptFunctionParameter";
   public static final String CLNK_ApplicableConceptFunctionParameter = "applicableConceptFunctionParameter";
   public static final String SHORT_DESCRIPTION = "shortDescription";

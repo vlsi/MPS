@@ -202,6 +202,10 @@ public class BaseMethodDeclaration_Behavior {
     return sb.toString();
   }
 
+  public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
+    return SLinkOperations.getTargets(thisNode, "throwsItem", true);
+  }
+
   public static boolean call_isDataFlowChecked_1227714048980(SNode thisNode) {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "virtual_isDataFlowChecked_1227714048980", PARAMETERS_1227714048980);
   }

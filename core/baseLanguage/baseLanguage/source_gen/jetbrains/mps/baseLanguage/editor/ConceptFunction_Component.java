@@ -17,6 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import java.util.List;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
@@ -101,6 +103,17 @@ public class ConceptFunction_Component extends AbstractCellProvider {
           result.append("void");
         } else {
           result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(expectedReturnType));
+        }
+        if (ListSequence.fromList(SLinkOperations.getConceptLinkTargets(node, "conceptFunctionThrowsType")).isNotEmpty()) {
+          result.append(" throws ");
+          boolean isFirstThrowable = true;
+          for (SNode throwableType : SLinkOperations.getConceptLinkTargets(node, "conceptFunctionThrowsType")) {
+            if (!(isFirstThrowable)) {
+              result.append(", ");
+            }
+            isFirstThrowable = false;
+            result.append(BaseConcept_Behavior.call_getPresentation_1213877396640(throwableType));
+          }
         }
         return result.toString();
       }

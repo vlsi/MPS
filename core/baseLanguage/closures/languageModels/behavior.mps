@@ -301,6 +301,25 @@
       </node>
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1239707828190" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="6204026822017058568">
+      <property name="name" value="getThrowableTypes" />
+      <link role="overriddenMethod" targetNodeId="9.6204026822016975623" resolveInfo="getThrowableTypes" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6204026822017058571">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6204026822017058574">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6204026822017058576">
+            <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator:16" id="6204026822017058577">
+              <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="6204026822017058578">
+                <link role="elementConcept:16" targetNodeId="8.1068431790189:3" resolveInfo="Type" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="6204026822017058572">
+        <link role="elementConcept:16" targetNodeId="8.1068431790189:3" resolveInfo="Type" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6204026822017058573" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877338556">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877338557" />
     </node>

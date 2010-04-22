@@ -7,6 +7,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
@@ -56,6 +57,10 @@ public class ClosureLiteral_Behavior {
     // everything which is not void and null is good, 
     // look at ExpressionStatement.canServeAsReturn 
     return new ClosureLiteral_Behavior.QuotationClass_l77foe_a0c0g().createNode();
+  }
+
+  public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
+    return new ArrayList<SNode>();
   }
 
   public static SNode call_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {

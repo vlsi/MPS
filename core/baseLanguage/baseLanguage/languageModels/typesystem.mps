@@ -4591,13 +4591,13 @@
                         </node>
                         <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4460871289557453774">
                           <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="4460871289557453775">
-                            <link role="concept:16" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
+                            <link role="concept:16" targetNodeId="1.1239354281271:3" resolveInfo="IMethodLike" />
                             <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4460871289557453776">
                               <link role="variableDeclaration:3" targetNodeId="4460871289557451535" resolveInfo="anc" />
                             </node>
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="4460871289557453777">
-                            <link role="link:16" targetNodeId="1.1164879685961:3" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="6204026822017733491">
+                            <link role="baseMethodDeclaration:16" targetNodeId="37.6204026822016975623" resolveInfo="getThrowableTypes" />
                           </node>
                         </node>
                       </node>
@@ -4620,13 +4620,13 @@
                         <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4460871289557453781">
                           <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="4460871289557453782">
                             <property name="asCast:16" value="true" />
-                            <link role="concept:16" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
+                            <link role="concept:16" targetNodeId="1.1239354281271:3" resolveInfo="IMethodLike" />
                             <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4460871289557453783">
                               <link role="variableDeclaration:3" targetNodeId="4460871289557451535" resolveInfo="anc" />
                             </node>
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4460871289557453784">
-                            <link role="link:16" targetNodeId="1.1068580123135:3" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="6204026822017733490">
+                            <link role="baseMethodDeclaration:16" targetNodeId="37.1239354440022" resolveInfo="getBody" />
                           </node>
                         </node>
                       </node>

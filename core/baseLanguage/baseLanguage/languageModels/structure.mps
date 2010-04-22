@@ -1514,6 +1514,10 @@
       <property name="name:0" value="conceptFunctionReturnType" />
       <link role="targetType:0" targetNodeId="1068431790189:3" resolveInfo="Type" />
     </node>
+    <node role="conceptLinkDeclaration:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration:0" id="6204026822016975620">
+      <property name="name:0" value="conceptFunctionThrowsType" />
+      <link role="targetType:0" targetNodeId="1068431790189:3" resolveInfo="Type" />
+    </node>
     <node role="conceptLinkDeclaration:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration:0" id="1137546998352">
       <property name="name:0" value="conceptFunctionParameter" />
       <link role="targetType:0" targetNodeId="37.1071489090640:0" />

@@ -15,6 +15,7 @@ public class IMethodLike_Behavior {
   private static Class[] PARAMETERS_1239354342632 = {SNode.class};
   private static Class[] PARAMETERS_1239354409446 = {SNode.class};
   private static Class[] PARAMETERS_1239354440022 = {SNode.class};
+  private static Class[] PARAMETERS_6204026822016975623 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -53,6 +54,10 @@ public class IMethodLike_Behavior {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getBody_1239354440022", PARAMETERS_1239354440022);
   }
 
+  public static List<SNode> call_getThrowableTypes_6204026822016975623(SNode thisNode) {
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_6204026822016975623);
+  }
+
   public static SNode callSuper_getExpectedRetType_1239354342632(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_1239354342632);
   }
@@ -63,5 +68,9 @@ public class IMethodLike_Behavior {
 
   public static SNode callSuper_getBody_1239354440022(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getBody_1239354440022", PARAMETERS_1239354440022);
+  }
+
+  public static List<SNode> callSuper_getThrowableTypes_6204026822016975623(SNode thisNode, String callerConceptFqName) {
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_6204026822016975623);
   }
 }

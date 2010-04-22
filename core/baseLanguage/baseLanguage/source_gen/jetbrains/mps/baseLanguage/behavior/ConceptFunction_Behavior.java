@@ -28,6 +28,10 @@ public class ConceptFunction_Behavior {
     return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionReturnType")).first();
   }
 
+  public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
+    return SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionThrowsType");
+  }
+
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return ConceptFunction_Behavior.call_getExpectedReturnType_1213877374441(thisNode);
   }
