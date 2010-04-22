@@ -443,10 +443,10 @@ public class LeftEditorHighlighter extends JComponent {
         maxIconHeight = Math.max(maxIconHeight, rendererConstraint.getIconRenderer().getIcon().getIconHeight());
       }
       myMaxIconHeight = Math.max(myMaxIconHeight, maxIconHeight);
-      int rowUpperBoundY = y - maxIconHeight / 2;
 /*
  * LeftHighlighter layout was changed (see above)
  *
+      int rowUpperBoundY = y - maxIconHeight / 2;
       int offset;
       if (lastRowLowerBound > 0 && lastRowLowerBound >= rowUpperBoundY) {
         offset = lastRowWidth + GAP_BETWEEN_ICONS;
@@ -468,7 +468,7 @@ public class LeftEditorHighlighter extends JComponent {
  *
       lastRowLowerBound = rowUpperBoundY + maxIconHeight;
       lastRowWidth = offset;
- */      
+ */
       myIconRenderersWidth = Math.max(myIconRenderersWidth, offset);
     }
   }
