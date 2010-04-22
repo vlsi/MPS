@@ -11,11 +11,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodParameter;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
@@ -36,7 +36,7 @@ public class ChangeMethodParametersForStatement_Test extends BaseTransformationT
         SNode c_ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
         SLinkOperations.setTarget(c_ref, "variableDeclaration", SNodeOperations.cast(this.getNodeById("1230052406612"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false);
         SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("1230052406630"), "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression"), c_ref);
-        ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406572"), "jetbrains.mps.baseLanguage.structure.ReturnStatement")));
+        ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406572"), "jetbrains.mps.baseLanguage.structure.ReturnStatement")));
         ListSequence.fromList(params.getParameters()).getElement(0).setSelected(false);
         MethodParameter p2 = ListSequence.fromList(params.getParameters()).getElement(1);
         MethodParameter p1 = ListSequence.fromList(params.getParameters()).getElement(2);

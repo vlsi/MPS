@@ -12,9 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
@@ -40,7 +40,7 @@ public class staticContainerBehaviorTest_Test extends BaseTransformationTest {
       ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addElement(var);
       SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("1230052684589"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("1230052684580"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), call);
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684562"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
+      ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684562"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));
       params.setName("foo");
       ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       ref.setStaticContainer(SNodeOperations.cast(this.getNodeById("1230052684584"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"));

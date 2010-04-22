@@ -9,12 +9,12 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityLevel;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
@@ -35,7 +35,7 @@ public class ExtractFromIntention_Test extends BaseTransformationTest {
       this.addNodeById("1230052684538");
       SLinkOperations.setTarget(SNodeOperations.cast(this.getNodeById("1230052684533"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", SNodeOperations.cast(this.getNodeById("1230052684539"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
       SLinkOperations.setTarget(SNodeOperations.cast(this.getNodeById("1230052684533"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "baseMethodDeclaration", SNodeOperations.cast(this.getNodeById("1230052684540"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684515"), "jetbrains.mps.baseLanguage.structure.StringLiteral")));
+      ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684515"), "jetbrains.mps.baseLanguage.structure.StringLiteral")));
       params.setName("foo");
       params.setVisibilityLevel(VisibilityLevel.PUBLIC);
       ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);

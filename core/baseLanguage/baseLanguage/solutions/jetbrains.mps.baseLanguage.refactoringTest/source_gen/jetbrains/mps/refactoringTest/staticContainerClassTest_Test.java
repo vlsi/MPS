@@ -11,10 +11,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 
@@ -37,7 +37,7 @@ public class staticContainerClassTest_Test extends BaseTransformationTest {
       SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(this.getNodeById("1230052684711"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
       SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(this.getNodeById("1230052684710"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("1230052684702"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), call);
-      ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684691"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
+      ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684691"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
       params.setName("foo");
       ExtractMethodRefactoring ref = ExtractMethodFactory.createRefactoring(params);
       ref.setStaticContainer(SNodeOperations.cast(this.getNodeById("1230052684706"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
