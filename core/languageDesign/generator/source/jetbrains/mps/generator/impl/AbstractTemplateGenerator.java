@@ -80,6 +80,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     if (myProgressMonitor.isCanceled()) throw new GenerationCanceledException();
   }
 
+  protected boolean isCanceled() {
+    return myProgressMonitor.isCanceled();
+  }
+
   public void showInformationMessage(SNode node, String message) {
     myLogger.info(node, message);
   }

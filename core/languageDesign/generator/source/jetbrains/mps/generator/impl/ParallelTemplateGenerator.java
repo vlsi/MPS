@@ -25,6 +25,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   private IGenerationTaskPool myPool;
   private List<RootGenerationTask> myTasks;
   private Map<Pair<SNode,SNode>, RootGenerationTask> myInputToTask;
+  private volatile boolean myIsCancelled = false;
 
   public ParallelTemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                                    IGeneratorLogger logger, RuleManager ruleManager,
@@ -42,6 +43,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     throws GenerationCanceledException, GenerationFailureException {
     super.applyReductions(isPrimary);
     myPool.waitForCompletion();
+    myIsCancelled = isCanceled();
     for(RootGenerationTask task : myTasks) {
       task.registerRootsInModel();
     }
@@ -82,6 +84,11 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     } else {
       task.addGeneratedRoot(outputRoot);
     }
+  }
+
+  @Override
+  protected void checkGenerationCanceledFast() throws GenerationCanceledException {
+    if(myIsCancelled) throw new GenerationCanceledException();
   }
 
   public abstract class RootGenerationTask implements GenerationTask {

@@ -218,7 +218,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myGenerationTracer.pushInputNode(inputRootNode);
     try {
       boolean[] changed = new boolean[]{false};
-      SNode root = copyNodeFromInputNode_internal(null, null, inputRootNode, null, changed);
+      SNode root = copyNodeFromInputNode_internal(null, inputRootNode, null, changed);
       registerRoot(root, inputRootNode, null, true);
       if (changed[0]) {
         setChanged(true);
@@ -262,6 +262,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   List<SNode> tryToReduce(SNode inputNode, String mappingName, ReductionBlockingContext blockingContext) throws GenerationFailureException, GenerationCanceledException {
     ReductionRule reductionRule = null;
     GeneratedMatchingPattern pattern = null;
+    checkGenerationCanceledFast();
     try {
       // find rule
       ReductionRule[] conceptRules = myRuleManager.getRuleFinder().findReductionRules(inputNode);
@@ -318,6 +319,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
     return null;
+  }
+
+  protected void checkGenerationCanceledFast() throws GenerationCanceledException {
   }
 
   @Nullable
@@ -382,13 +386,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         return outputNodes;
       }
 
-      return Collections.singletonList(copyNodeFromInputNode_internal(mappingName, templateNode, inputNode, blockingContext, changed));
+      SNode copiedNode = copyNodeFromInputNode_internal(templateNode, inputNode, blockingContext, changed);
+      myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, copiedNode);
+      return Collections.singletonList(copiedNode);
     } finally {
       myGenerationTracer.closeInputNode(inputNode);
     }
   }
 
-  private SNode copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode, ReductionBlockingContext blockingContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
+  private SNode copyNodeFromInputNode_internal(SNode templateNode, SNode inputNode, ReductionBlockingContext blockingContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
@@ -398,7 +404,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     blockReductionsForCopiedNode(inputNode, outputNode, blockingContext); // prevent infinite applying of the same reduction to the 'same' node.
 
     myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
-    myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
     // output node should be accessible via 'findCopiedNode'
     myMappings.addCopiedOutputNodeForInputNode(inputNode, outputNode);
 
@@ -410,21 +415,32 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       outputNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
     }
 
-    SModel inputModel = myInputModel;
     for (SReference inputReference : inputNode.getReferencesIterable()) {
-      if (inputReference instanceof DynamicReference) {
+      if (inputReference instanceof DynamicReference || inputNode.getModel().equals(myInputModel) && inputReference.isExternal()) {
+        // dynamic & external references don't need validation => replace input model with output
         SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
         if (targetModelReference == null) {
           showErrorMessage(inputNode, templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText());
           continue;
         }
 
-        DynamicReference outputReference = new DynamicReference(
-          inputReference.getRole(),
-          outputNode,
-          targetModelReference,
-          inputReference.getResolveInfo());
-        outputNode.addReference(outputReference);
+        if (inputReference instanceof StaticReference) {
+          outputNode.addReference(new StaticReference(
+            inputReference.getRole(),
+            outputNode,
+            targetModelReference,
+            ((StaticReference) inputReference).getTargetNodeId(),
+            inputReference.getResolveInfo()));
+        } else if (inputReference instanceof DynamicReference) {
+          outputNode.addReference(new DynamicReference(
+            inputReference.getRole(),
+            outputNode,
+            targetModelReference,
+            inputReference.getResolveInfo()));
+        } else {
+          LOG.error("internal error: can't clone reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
+          LOG.error(" -- was reference class : " + inputReference.getClass().getName());
+        }
         continue;
       }
 
@@ -433,7 +449,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         showErrorMessage(inputNode, templateNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText());
         continue;
       }
-      if (inputTargetNode.getModel().equals(inputModel)) {
+      if (inputTargetNode.getModel().equals(myInputModel)) {
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           inputReference.getRole(),
           outputNode,
@@ -452,18 +468,26 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (SNode inputChildNode : inputNode.getChildrenIterable()) {
       String childRole = inputChildNode.getRole_();
       assert childRole != null;
-      List<SNode> outputChildNodes = copyNodeFromInputNode(null, null, inputChildNode, blockingContext, changed);
-      if (outputChildNodes != null) {
-        for (SNode outputChildNode : outputChildNodes) {
-          // check child
-          if (!GeneratorUtil.checkChild(outputNode, childRole, outputChildNode)) {
-            showWarningMessage(inputNode, " -- was input: " + inputNode.getDebugText());
-            if (templateNode != null && SModelStereotype.isGeneratorModel(templateNode.getModel())) {
-              showWarningMessage(templateNode, " -- was template: " + templateNode.getDebugText());
+      myGenerationTracer.pushInputNode(inputChildNode);
+      try {
+        List<SNode> outputChildNodes = tryToReduce(inputChildNode, null, blockingContext);
+        if (outputChildNodes != null) {
+          changed[0] = true;
+          for (SNode outputChildNode : outputChildNodes) {
+            // check child
+            if (!GeneratorUtil.checkChild(outputNode, childRole, outputChildNode)) {
+              showWarningMessage(inputNode, " -- was input: " + inputNode.getDebugText());
+              if (templateNode != null && SModelStereotype.isGeneratorModel(templateNode.getModel())) {
+                showWarningMessage(templateNode, " -- was template: " + templateNode.getDebugText());
+              }
             }
+            outputNode.addChild(childRole, outputChildNode);
           }
-          outputNode.addChild(childRole, outputChildNode);
+        } else {
+          outputNode.addChild(childRole, copyNodeFromInputNode_internal(null, inputChildNode, blockingContext, changed));
         }
+      } finally {
+        myGenerationTracer.closeInputNode(inputChildNode);
       }
     }
 

@@ -531,5 +531,25 @@ public class QueryExecutor implements IQueryExecutor {
         tracer.pop();
       }
     }
+
+    @Override
+    public GeneratedMatchingPattern checkIfApplicable(PatternReduction_MappingRule patternRule, SNode inputNode) throws GenerationFailureException {
+      try {
+        tracer.push("check if pattern rule is applicable", true);
+        return super.checkIfApplicable(patternRule, inputNode);
+      } finally {
+        tracer.pop();
+      }
+    }
+
+    @Override
+    public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query, TemplateContext context) {
+      try {
+        tracer.push("evaluate template argument query", true);
+        return super.evaluateArgumentQuery(inputNode, query, context);
+      } finally {
+        tracer.pop();
+      }
+    }
   }
 }
