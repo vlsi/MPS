@@ -22,18 +22,15 @@ import jetbrains.mps.project.GlobalScope;
 public class MethodMatch {
   private List<SNode> myNodes;
   private List<SNode> myParametersOrder;
-  private Map<SNode, SNode> myNodesToParams;
   private Map<SNode, List<SNode>> myParamsToNodes;
 
   public MethodMatch(List<SNode> parametersOrder) {
-    this.myNodesToParams = MapSequence.fromMap(new HashMap<SNode, SNode>());
     this.myParamsToNodes = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     this.myNodes = new ArrayList<SNode>();
     this.myParametersOrder = parametersOrder;
   }
 
   public void putMapping(SNode node, SNode parameter) {
-    MapSequence.fromMap(this.myNodesToParams).put(node, parameter);
     if (!(MapSequence.fromMap(this.myParamsToNodes).containsKey(parameter))) {
       MapSequence.fromMap(this.myParamsToNodes).put(parameter, new ArrayList<SNode>());
     }

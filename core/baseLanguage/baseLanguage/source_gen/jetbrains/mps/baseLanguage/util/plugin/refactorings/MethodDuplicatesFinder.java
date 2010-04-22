@@ -11,7 +11,6 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Iterator;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -36,15 +35,16 @@ public class MethodDuplicatesFinder {
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {
       SNode current = node;
       MethodDuplicatesFinder.MethodMatchModifier modifier = new MethodDuplicatesFinder.MethodMatchModifier();
-      Iterator<SNode> iterator = ListSequence.fromList(this.myNodesToFind).iterator();
       boolean hasNoErrors = true;
-      while (iterator.hasNext() && hasNoErrors) {
+      for (SNode nodeToFind : ListSequence.fromList(this.myNodesToFind)) {
         if ((current == null) || SetSequence.fromSet(this.myUsedNodes).contains(current)) {
           hasNoErrors = false;
+          break;
         } else {
           modifier.getMatch().putNode(current);
-          if (!(MatchingUtil.matchNodes(current, iterator.next(), modifier, true))) {
+          if (!(MatchingUtil.matchNodes(current, nodeToFind, modifier, true))) {
             hasNoErrors = false;
+            break;
           }
           current = SNodeOperations.getNextSibling(current);
         }
