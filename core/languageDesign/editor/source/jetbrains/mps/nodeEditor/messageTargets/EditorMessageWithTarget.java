@@ -41,11 +41,17 @@ public class EditorMessageWithTarget extends DefaultEditorMessage {
     }
 
     if (myMessageTarget.getTarget() == MessageTargetEnum.REFERENCE) {
-      return cell.isReferenceCell() && myMessageTarget.getRole().equals(cell.getRole());
+      if (cell.isReferenceCell()) {
+        return myMessageTarget.getRole().equals(cell.getRole());
+      } else {
+        return cell.isBigCell() && getCell(editor) == cell;
+      }
     }
 
     if (myMessageTarget.getTarget() == MessageTargetEnum.PROPERTY) {
-      if (!(cell instanceof EditorCell_Property)) return false;
+      if (!(cell instanceof EditorCell_Property)) {
+        return cell.isBigCell() && getCell(editor) == cell;
+      }
       EditorCell_Property propertyCell = (EditorCell_Property) cell;
       ModelAccessor modelAccessor = propertyCell.getModelAccessor();
       if (modelAccessor instanceof PropertyAccessor) {
