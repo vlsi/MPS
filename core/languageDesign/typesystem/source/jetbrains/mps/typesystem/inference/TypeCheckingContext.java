@@ -649,8 +649,7 @@ public class TypeCheckingContext {
     synchronized (TYPECHECKING_LOCK) {
       if (this.isInEditorQueries()) {
         return getTypeOf_resolveMode(node, typeChecker);
-      } else if (typeChecker.isGenerationMode()
-        && TypesystemPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
+      } else if (typeChecker.isGenerationMode()) {
         return getTypeOf_generationMode(node);
       } else {
         return getTypeOf_normalMode(node);

@@ -20,10 +20,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.util.performance.IPerformanceTracer;
 
 public class RuntimeSupport {
 
-  private TypeChecker myTypeChecker;
+  protected TypeChecker myTypeChecker;
 
   public RuntimeSupport(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;

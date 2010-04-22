@@ -36,7 +36,7 @@ import com.intellij.openapi.util.Computable;
 public class SubtypingManager {
   private static final Logger LOG = Logger.getLogger(SubtypingManager.class);
 
-  private final TypeChecker myTypeChecker;
+  protected final TypeChecker myTypeChecker;
 
   private final Object CACHE_ACCESS = new Object();
 
@@ -48,6 +48,7 @@ public class SubtypingManager {
     return myTypeChecker;
   }
 
+  //api
   public boolean isSubtype(SNode subtype, SNode supertype) {
     return isSubtype(subtype, supertype, true);
   }
@@ -57,6 +58,7 @@ public class SubtypingManager {
     return isSubtype(subtype, superType, isWeak);
   }
 
+  //api
   public boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
     if (subtype == supertype) return true;
     if (subtype == null || supertype == null) return false;

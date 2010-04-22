@@ -7,7 +7,7 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
-import jetbrains.mps.generator.util.IPerformanceTracer;
+import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;

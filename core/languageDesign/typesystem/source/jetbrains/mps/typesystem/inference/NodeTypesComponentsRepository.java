@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -141,6 +142,11 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
 
   public TypeCheckingContext createIsolatedTypeCheckingContext(final SNode node) {
     TypeCheckingContext typeCheckingContext = new TypeCheckingContext(node, myTypeChecker);
+    return typeCheckingContext;
+  }
+
+  public TypeCheckingContext createTracingTypeCheckingContext(final SNode node) {
+    TypeCheckingContext typeCheckingContext = new TypeCheckingContext_Tracer(node, myTypeChecker);
     return typeCheckingContext;
   }
 

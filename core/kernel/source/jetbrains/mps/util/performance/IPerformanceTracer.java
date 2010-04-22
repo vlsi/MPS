@@ -1,4 +1,4 @@
-package jetbrains.mps.generator.util;
+package jetbrains.mps.util.performance;
 
 /**
  * Evgeny Gryaznov, Feb 23, 2010

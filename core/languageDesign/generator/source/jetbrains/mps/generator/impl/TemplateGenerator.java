@@ -23,7 +23,7 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.generator.util.IPerformanceTracer;
+import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;

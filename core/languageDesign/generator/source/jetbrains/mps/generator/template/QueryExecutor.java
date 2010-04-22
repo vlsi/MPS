@@ -2,7 +2,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.impl.TemplateContext;
-import jetbrains.mps.generator.util.IPerformanceTracer;
+import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.*;

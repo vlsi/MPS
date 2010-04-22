@@ -16,6 +16,8 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
+import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
+import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.*;
@@ -28,6 +30,8 @@ import jetbrains.mps.typesystem.debug.NullSlicer;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.performance.IPerformanceTracer;
+import jetbrains.mps.util.performance.PerformanceTracer;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -49,7 +53,7 @@ public class TypeChecker implements ApplicationComponent {
   public final Object TYPECHECKING_LOCK = new Object();
   public final Object LISTENERS_LOCK = new Object();
 
-  private final SubtypingManager mySubtypingManager;
+  private SubtypingManager mySubtypingManager;
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
 
@@ -63,6 +67,7 @@ public class TypeChecker implements ApplicationComponent {
   private ClassLoaderManager myClassLoaderManager;
 
   private boolean myIsGeneration = false;
+  private IPerformanceTracer myPerformanceTracer = null;
 
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
 
@@ -158,11 +163,63 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public void setIsGeneration(boolean isGeneration) {
+    setIsGeneration(isGeneration, null);
+  }
+
+  public void setIsGeneration(boolean isGeneration, IPerformanceTracer performanceTracer) {
     myIsGeneration = isGeneration;
     if (isGeneration) {
       mySubtypingCache = new SubtypingCache();
+      initTracing(performanceTracer);
     } else {
+      disposeTracing();
       mySubtypingCache = null;
+    }
+  }
+
+  private void initTracing(IPerformanceTracer performanceTracer) {
+    if (performanceTracer != null) {
+      myPerformanceTracer = performanceTracer;
+      myRuntimeSupport = new RuntimeSupport_Tracer(this);
+      mySubtypingManager = new SubtypingManager_Tracer(this);
+    }
+  }
+
+  private void disposeTracing() {
+    if (myPerformanceTracer != null) {
+      myPerformanceTracer = null;
+      myRuntimeSupport = new RuntimeSupport(this);
+      mySubtypingManager = new SubtypingManager(this);
+    }
+  }
+
+  public IPerformanceTracer getPerformanceTracer() {
+    return myPerformanceTracer;
+  }
+
+  public <T> T computeWithTrace(Computable<T> c, String taskName) {
+    if (myPerformanceTracer != null) {
+      try {
+        myPerformanceTracer.push(taskName, true);
+        return c.compute();
+      } finally {
+        myPerformanceTracer.pop();
+      }
+    } else {
+      return c.compute();
+    }
+  }
+
+  public void runWithTrace(Runnable r, String taskName) {
+    if (myPerformanceTracer != null) {
+      try {
+        myPerformanceTracer.push(taskName, true);
+        r.run();
+      } finally {
+        myPerformanceTracer.pop();
+      }
+    } else {
+      r.run();
     }
   }
 
@@ -215,7 +272,11 @@ public class TypeChecker implements ApplicationComponent {
     fireNodeTypeAccessed(node);
     TypeCheckingContext context;
     if (isGenerationMode()) {
-      context = NodeTypesComponentsRepository.getInstance().createIsolatedTypeCheckingContext(node);
+      if (myPerformanceTracer == null) {
+        context = NodeTypesComponentsRepository.getInstance().createIsolatedTypeCheckingContext(node);
+      } else {
+        context = NodeTypesComponentsRepository.getInstance().createTracingTypeCheckingContext(node);
+      }
     } else {
       context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
     }

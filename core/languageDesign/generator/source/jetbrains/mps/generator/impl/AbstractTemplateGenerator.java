@@ -22,13 +22,12 @@ import jetbrains.mps.generator.template.IQueryExecutor;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.generator.template.QueryExecutor.TraceableQueryExecutor;
-import jetbrains.mps.generator.util.IPerformanceTracer;
-import jetbrains.mps.generator.util.IPerformanceTracer.NullPerformanceTracer;
+import jetbrains.mps.util.performance.IPerformanceTracer;
+import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.smodel.*;
 
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 

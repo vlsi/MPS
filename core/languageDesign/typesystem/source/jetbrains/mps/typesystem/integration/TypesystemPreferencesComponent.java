@@ -51,10 +51,6 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
     return ApplicationManager.getApplication().getComponent(TypesystemPreferencesComponent.class);
   }
 
-  public boolean isGenerationOptimizationEnabled() {
-    return /*false && */myState.isGenerationOptimizationEnabled();
-  }
-
   public boolean isCoersionSimpleCached() {
     return /*false && */myState.isCoersionSimpleCached();
   }
@@ -112,8 +108,6 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
   }
 
   private class MyPreferencesPage {
-    private JCheckBox myGeneratorOptimizationCheckBox = new JCheckBox("Use optimization for generation");
-
     private JCheckBox myCacheSubtypingCheckBox = new JCheckBox("cache for subtyping enabled (advanced)");
     private JCheckBox myCacheCoerceSimpleCheckBox = new JCheckBox("cache for coersion enabled (advanced)");
     private JCheckBox myCacheCoercePatternsCheckBox = new JCheckBox("cache for coersion w/patterns enabled (advanced)");
@@ -122,7 +116,6 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
 
     public MyPreferencesPage() {
       JPanel panel = new JPanel(new GridLayout(0, 1));
-      panel.add(myGeneratorOptimizationCheckBox);
       panel.add(myCacheSubtypingCheckBox);
       panel.add(myCacheCoerceSimpleCheckBox);
       panel.add(myCacheCoercePatternsCheckBox);
@@ -142,11 +135,6 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
 
 
     public void commit() {
-      boolean selectedOptimization = myGeneratorOptimizationCheckBox.isSelected();
-      boolean changedOptimization = (myState.isGenerationOptimizationEnabled() != selectedOptimization);
-      if (changedOptimization) {
-        myState.setGenerationOptimizationEnabled(selectedOptimization);
-      }
       myState.setSubtypingCached(myCacheSubtypingCheckBox.isSelected());
       myState.setCoersionSimpleCached(myCacheCoerceSimpleCheckBox.isSelected());
       myState.setCoersionPatternCached(myCacheCoercePatternsCheckBox.isSelected());
@@ -157,19 +145,17 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
     }
 
     public void reset() {
-      myGeneratorOptimizationCheckBox.setSelected(myState.isGenerationOptimizationEnabled());
       myCacheSubtypingCheckBox.setSelected(myState.isSubtypingCached());
       myCacheCoerceSimpleCheckBox.setSelected(myState.isCoersionSimpleCached());
       myCacheCoercePatternsCheckBox.setSelected(myState.isCoersionPatternCached());
     }
 
     public boolean isModified() {
-      boolean sameGenOptimization = myGeneratorOptimizationCheckBox.isSelected() == myState.isGenerationOptimizationEnabled();
       boolean sameCacheSubtyping = myCacheSubtypingCheckBox.isSelected() == myState.isSubtypingCached();
       boolean sameCacheCoerceSimple = myCacheCoerceSimpleCheckBox.isSelected() == myState.isCoersionSimpleCached();
       boolean sameCacheCoercePatterns = myCacheCoercePatternsCheckBox.isSelected() == myState.isCoersionPatternCached();
 
-      return  !(sameGenOptimization&&sameCacheSubtyping&&sameCacheCoerceSimple&&sameCacheCoercePatterns);
+      return  !(sameCacheSubtyping&&sameCacheCoerceSimple&&sameCacheCoercePatterns);
     }
   }
 
@@ -183,7 +169,6 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
 
   public static class MyState {
     private boolean myUsesDebugHighlighting = false;
-    private boolean myGenerationOptimizationEnabled = true;
     private int myHelginsTimeout = -1;
 
     private boolean myCoersionSimpleCached = true;
@@ -197,14 +182,6 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
 
     public void setUsesDebugHighlighting(boolean usesDebugHighlighting) {
       myUsesDebugHighlighting = usesDebugHighlighting;
-    }
-
-    public boolean isGenerationOptimizationEnabled() {
-      return myGenerationOptimizationEnabled;
-    }
-
-    public void setGenerationOptimizationEnabled(boolean generationOptimizationEnabled) {
-      myGenerationOptimizationEnabled = generationOptimizationEnabled;
     }
 
     public int getHelginsTimeout() {
