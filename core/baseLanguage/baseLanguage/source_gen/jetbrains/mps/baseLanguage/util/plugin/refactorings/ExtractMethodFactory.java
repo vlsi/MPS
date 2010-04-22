@@ -92,8 +92,8 @@ public class ExtractMethodFactory {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("baseMethodDeclaration", quotedNode1_3, SModelReference.fromString("r:abf6cf3f-0ba7-4aaf-bd76-2f522c35199d(jetbrains.mps.baseLanguage.util.plugin.refactorings@0_1)"), SNodeId.fromString("8155843501977598856")));
-        quotedNode1_3.addReference(SReference.create("classConcept", quotedNode1_3, SModelReference.fromString("r:abf6cf3f-0ba7-4aaf-bd76-2f522c35199d(jetbrains.mps.baseLanguage.util.plugin.refactorings@0_1)"), SNodeId.fromString("8492459591399162714")));
+        quotedNode1_3.addReference(SReference.create("baseMethodDeclaration", quotedNode1_3, SModelReference.fromString("r:6f239204-0a4e-4aeb-b636-582aa7e86328(jetbrains.mps.baseLanguage.util.plugin.refactorings@0_1)"), SNodeId.fromString("8155843501977598856")));
+        quotedNode1_3.addReference(SReference.create("classConcept", quotedNode1_3, SModelReference.fromString("r:6f239204-0a4e-4aeb-b636-582aa7e86328(jetbrains.mps.baseLanguage.util.plugin.refactorings@0_1)"), SNodeId.fromString("8492459591399162714")));
         {
           quotedNode_2 = (SNode) parameter_5;
           SNode quotedNode1_4;
