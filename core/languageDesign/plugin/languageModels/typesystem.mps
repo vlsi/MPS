@@ -3236,5 +3236,34 @@
       <link role="concept:3" targetNodeId="4.3205675194086686068:23" resolveInfo="GroupAccessOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="5527296032508935549">
+    <property name="name:3" value="typeof_PersistentPropertyDeclaration" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5527296032508935550">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="5527296032508935722">
+        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="5527296032508935723" />
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5527296032508935727">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="5527296032508935728">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5527296032508935731">
+              <link role="classifier:3" targetNodeId="37.~Cloneable" resolveInfo="Cloneable" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5527296032508935726">
+          <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5527296032508935717">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5527296032508935716">
+              <link role="applicableNode:3" targetNodeId="5527296032508935551" resolveInfo="persistentPropertyDeclaration" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5527296032508935721">
+              <link role="link:16" targetNodeId="6.5680397130376446158:3" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="5527296032508935551">
+      <property name="name:3" value="persistentPropertyDeclaration" />
+      <link role="concept:3" targetNodeId="4.1210179190070:23" resolveInfo="PersistentPropertyDeclaration" />
+    </node>
+  </node>
 </model>
 
