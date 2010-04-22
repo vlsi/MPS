@@ -425,8 +425,14 @@ public class LeftEditorHighlighter extends JComponent {
     myMaxIconHeight = 0;
     int[] sortedYCoordinates = myLineToRenderersMap.keys();
     Arrays.sort(sortedYCoordinates);
+/*
+ * LeftHighlighter layout was changed: now each icon row will start from the beggining (LEFT_GAP)
+ * if you'd like to return original layout and prevent icon rows overlapping - uncomment this and
+ * following code block.
+ *
     int lastRowLowerBound = -1;
     int lastRowWidth = -1;
+*/
     for (int y : sortedYCoordinates) {
       List<IconRendererLayoutConstraint> row = myLineToRenderersMap.get(y);
       if (row.size() == 0) {
@@ -438,12 +444,17 @@ public class LeftEditorHighlighter extends JComponent {
       }
       myMaxIconHeight = Math.max(myMaxIconHeight, maxIconHeight);
       int rowUpperBoundY = y - maxIconHeight / 2;
+/*
+ * LeftHighlighter layout was changed (see above)
+ *
       int offset;
       if (lastRowLowerBound > 0 && lastRowLowerBound >= rowUpperBoundY) {
         offset = lastRowWidth + GAP_BETWEEN_ICONS;
       } else {
         offset = LEFT_GAP;
       }
+*/
+      int offset = LEFT_GAP; 
       for (Iterator<IconRendererLayoutConstraint> it = row.iterator(); it.hasNext();) {
         IconRendererLayoutConstraint rendererConstraint = it.next();
         rendererConstraint.setX(offset);
@@ -452,9 +463,13 @@ public class LeftEditorHighlighter extends JComponent {
           offset += GAP_BETWEEN_ICONS;
         }
       }
+/*
+ * LeftHighlighter layout was changed (see above)
+ *
       lastRowLowerBound = rowUpperBoundY + maxIconHeight;
       lastRowWidth = offset;
-      myIconRenderersWidth = Math.max(myIconRenderersWidth, lastRowWidth);
+ */      
+      myIconRenderersWidth = Math.max(myIconRenderersWidth, offset);
     }
   }
 
