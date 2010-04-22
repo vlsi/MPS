@@ -76,11 +76,11 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    StringBuilder error = new StringBuilder();
+    StringBuilder error_22042010 = new StringBuilder();
     try {
       String paramsReport = DefaultJavaApplication_Configuration.this.getStateObject().myJavaRunParameters.getErrorReport();
       if (paramsReport != null) {
-        error.append(paramsReport).append("\n");
+        error_22042010.append(paramsReport).append("\n");
       }
       final SNode node;
       String errorReport;
@@ -101,8 +101,8 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
       }
       Logger.getLogger(DefaultJavaApplication_Configuration.class).error(t);
     }
-    if (error.length() != 0) {
-      throw new RuntimeConfigurationException(error.toString());
+    if (error_22042010.length() != 0) {
+      throw new RuntimeConfigurationException(error_22042010.toString());
     }
   }
 
@@ -110,11 +110,11 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
     return new BaseRunProfileState() {
       @Nullable
       public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
-        final ConsoleViewImpl consoleView = StacktraceUtil.createConsoleView(MPSDataKeys.PROJECT.getData(environment.getDataContext()));
-        JComponent consoleComponent = null;
-        Runnable consoleDispose = null;
-        final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
-        ProcessHandler handler = null;
+        final ConsoleViewImpl consoleView_22042010 = StacktraceUtil.createConsoleView(MPSDataKeys.PROJECT.getData(environment.getDataContext()));
+        JComponent consoleComponent_22042010 = null;
+        Runnable consoleDispose_22042010 = null;
+        final List<AnAction> actions_22042010 = ListSequence.fromList(new ArrayList<AnAction>());
+        ProcessHandler handler_22042010 = null;
 
         // user's execute code 
         try {
@@ -134,26 +134,26 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           {
             // calculate parameter 
 
-            ListSequence.fromList(actions).addSequence(ListSequence.fromList(new _FunctionTypes._return_P0_E0<List<AnAction>>() {
+            ListSequence.fromList(actions_22042010).addSequence(ListSequence.fromList(new _FunctionTypes._return_P0_E0<List<AnAction>>() {
               public List<AnAction> invoke() {
                 {
-                  final List<AnAction> actionsList = ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions());
+                  final List<AnAction> actionsList = ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView_22042010.createConsoleActions());
                   return actionsList;
                 }
               }
             }.invoke()));
 
             // create console component 
-            consoleComponent = consoleView.getComponent();
-            consoleDispose = new Runnable() {
+            consoleComponent_22042010 = consoleView_22042010.getComponent();
+            consoleDispose_22042010 = new Runnable() {
               public void run() {
-                Disposer.dispose(consoleView);
+                Disposer.dispose(consoleView_22042010);
               }
             };
 
             final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
             // create process handler 
-            handler = (ProcessHandler) new _FunctionTypes._return_P0_E0<Object>() {
+            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E0<Object>() {
               public Object invoke() {
                 try {
                   ClassRunner classRunner = new ClassRunner(javaRunParameters);
@@ -164,7 +164,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
                     }
                   });
                   Process process = classRunner.run(node, className.value);
-                  return new DefaultProcessHandler(consoleView, process, classRunner.getCommandString());
+                  return new DefaultProcessHandler(consoleView_22042010, process, classRunner.getCommandString());
                 } catch (ExecutionException e) {
                   ex.value = e;
                   return null;
@@ -182,9 +182,9 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           throw new ExecutionException("Execution code threw an exception: " + t.getMessage(), t);
         }
 
-        final JComponent finalConsoleComponent = consoleComponent;
-        final Runnable finalConsoleDispose = consoleDispose;
-        final ProcessHandler finalHandler = handler;
+        final JComponent finalConsoleComponent = consoleComponent_22042010;
+        final Runnable finalConsoleDispose = consoleDispose_22042010;
+        final ProcessHandler finalHandler = handler_22042010;
         if (finalHandler == null) {
           return null;
         }
@@ -209,7 +209,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           }
 
           public AnAction[] getActions() {
-            return ListSequence.fromList(actions).toGenericArray(AnAction.class);
+            return ListSequence.fromList(actions_22042010).toGenericArray(AnAction.class);
           }
 
           public ProcessHandler getProcessHandler() {
