@@ -16508,5 +16508,23 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3066917033203112511">
+    <link role="conceptDeclaration:32" targetNodeId="17.3066917033203108594:3" resolveInfo="LocalInstanceMethodCall" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3066917033203129858">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="3066917033203129861">
+        <link role="relationDeclaration:32" targetNodeId="17.3066917033203112509:3" />
+        <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="3066917033203129862">
+          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="3066917033203129864">
+            <property name="readOnly:32" value="true" />
+            <link role="relationDeclaration:32" targetNodeId="18.1169194664001:0" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="3066917033203129866">
+        <link role="editorComponent:32" targetNodeId="1173990860683" resolveInfo="IMethodCall_actualArguments" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3066917033203129860" />
+    </node>
+  </node>
 </model>
 

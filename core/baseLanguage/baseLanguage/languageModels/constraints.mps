@@ -2907,5 +2907,27 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="3066917033203129867">
+    <property name="package:8" value="method.instance" />
+    <link role="concept:8" targetNodeId="1.3066917033203108594:3" resolveInfo="LocalInstanceMethodCall" />
+    <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="3066917033203129868">
+      <link role="applicableLink:8" targetNodeId="1.3066917033203112509:3" />
+      <node role="searchScopeFactory:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory:8" id="3066917033203129869">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3066917033203129870">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3066917033203131283">
+            <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="3066917033203131284">
+              <link role="concept:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+              <link role="baseMethodDeclaration:16" targetNodeId="50.669019847198843527" resolveInfo="getAccessibleMembers" />
+              <node role="actualArgument:16" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="3066917033203131285" />
+              <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3066917033203131286">
+                <link role="classifier:3" targetNodeId="10.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
+                <link role="variableDeclaration:3" targetNodeId="10.~IClassifiersSearchScope.INSTANCE_METHOD" resolveInfo="INSTANCE_METHOD" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

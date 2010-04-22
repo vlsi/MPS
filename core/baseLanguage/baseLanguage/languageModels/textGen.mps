@@ -11469,5 +11469,19 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="1703408759744446147">
+    <property name="package:11" value="method.instance" />
+    <link role="conceptDeclaration:11" targetNodeId="1.3066917033203108594:3" resolveInfo="LocalInstanceMethodCall" />
+    <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="1703408759744446148">
+      <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1703408759744446149">
+        <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="1703408759744452007">
+          <node role="part:11" type="jetbrains.mps.lang.textGen.structure.OperationCall:11" id="1703408759744452009">
+            <link role="function:11" targetNodeId="1235571124825" resolveInfo="methodCall" />
+            <node role="parameter:11" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="1703408759744452010" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

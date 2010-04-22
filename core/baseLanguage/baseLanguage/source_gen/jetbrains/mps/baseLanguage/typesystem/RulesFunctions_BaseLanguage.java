@@ -636,6 +636,10 @@ with_anc:
     }
   }
 
+  public static boolean typesAreComparable(SNode t1, SNode t2) {
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(t1, t2) || TypeChecker.getInstance().getSubtypingManager().isSubtype(t2, t1) || SNodeOperations.isInstanceOf(t1, "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(t2, "jetbrains.mps.baseLanguage.structure.Interface");
+  }
+
   public static class QuotationClass_5ahx9e_a0a0a0a {
     public QuotationClass_5ahx9e_a0a0a0a() {
     }

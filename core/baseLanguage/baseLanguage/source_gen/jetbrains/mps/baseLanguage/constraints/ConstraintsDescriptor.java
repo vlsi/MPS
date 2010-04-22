@@ -49,6 +49,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new ClassifierClassExpression_classifier_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new LoopLabelReference_loopLabel_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ImplicitAnnotationInstanceValue_key_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new LocalInstanceMethodCall_instanceMethodDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Annotation_DefaultSearchScope());
     ListSequence.fromList(this.myConstraints).addElement(new Classifier_DefaultSearchScope());
     ListSequence.fromList(this.myConstraints).addElement(new Interface_DefaultSearchScope());

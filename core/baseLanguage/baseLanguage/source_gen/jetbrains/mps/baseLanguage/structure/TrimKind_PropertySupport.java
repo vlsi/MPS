@@ -4,14 +4,14 @@ package jetbrains.mps.baseLanguage.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 import java.util.Iterator;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class TrimKind_PropertySupport extends PropertySupport {
   public boolean canSetValue(String value) {
     if (value == null) {
       return true;
     }
-    Iterator<TrimKind> constants = ListSequence.fromList(TrimKind.getConstants()).iterator();
+    Iterator<TrimKind> constants = Sequence.fromIterable(TrimKind.getConstants()).iterator();
     while (constants.hasNext()) {
       TrimKind constant = constants.next();
       if (value.equals(constant.getName())) {
@@ -25,7 +25,7 @@ public class TrimKind_PropertySupport extends PropertySupport {
     if (value == null) {
       return null;
     }
-    Iterator<TrimKind> constants = ListSequence.fromList(TrimKind.getConstants()).iterator();
+    Iterator<TrimKind> constants = Sequence.fromIterable(TrimKind.getConstants()).iterator();
     while (constants.hasNext()) {
       TrimKind constant = constants.next();
       if (value.equals(constant.getName())) {
