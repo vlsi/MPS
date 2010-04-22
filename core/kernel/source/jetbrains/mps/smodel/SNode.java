@@ -59,9 +59,9 @@ public final class SNode {
 
   private static NodeMemberAccessModifier ourMemberAccessModifier = null;
 
-  private static Set<Pair<SNode, String>> ourPropertySettersInProgress = new HashSet<Pair<SNode, String>>();
-  private static Set<Pair<SNode, String>> ourPropertyGettersInProgress = new HashSet<Pair<SNode, String>>();
-  private static Set<Pair<SNode, String>> ourSetReferentEventHandlersInProgress = new HashSet<Pair<SNode, String>>();
+  private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertySettersInProgress = new InProgressThreadLocal();
+  private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();
+  private static ThreadLocal<Set<Pair<SNode, String>>> ourSetReferentEventHandlersInProgress = new InProgressThreadLocal();
 
   private String myRoleInParent;
   private SNode myParent;
@@ -692,15 +692,17 @@ public final class SNode {
       return propertyValue;
     }
 
-    if (!ourPropertyGettersInProgress.contains(new Pair<SNode, String>(this, propertyName))) {
+    Set<Pair<SNode, String>> threadSet = ourPropertyGettersInProgress.get();
+    Pair<SNode, String> pair = new Pair<SNode, String>(this, propertyName);
+    if (!threadSet.contains(pair)) {
       INodePropertyGetter getter = CONSTRAINTS_MANAGER.getNodePropertyGetter(this, propertyName);
       if (getter != null) {
-        ourPropertyGettersInProgress.add(new Pair<SNode, String>(this, propertyName));
+        threadSet.add(pair);
         try {
           Object getterValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
           propertyValue = getterValue == null ? null : String.valueOf(getterValue);
         } finally {
-          ourPropertyGettersInProgress.remove(new Pair<SNode, String>(this, propertyName));
+          threadSet.remove(pair);
         }
       }
     } else {
@@ -733,18 +735,19 @@ public final class SNode {
     ModelChange.assertLegalNodeChange(this);
     propertyValue = InternUtil.intern(propertyValue);
     if (usePropertySetter) {
-      if (!ourPropertySettersInProgress.contains(new Pair<SNode, String>(this, propertyName)) && !myModel.isLoading()) {
+      Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
+      Pair<SNode, String> pair = new Pair<SNode, String>(this, propertyName);
+      if (!threadSet.contains(pair) && !myModel.isLoading()) {
         INodePropertySetter setter = CONSTRAINTS_MANAGER.getNodePropertySetter(this, propertyName);
         if (setter != null) {
-          ourPropertySettersInProgress = new HashSet<Pair<SNode, String>>(1);
-          ourPropertySettersInProgress.add(new Pair<SNode, String>(this, propertyName));
+          threadSet.add(pair);
           try {
             setter.execPropertySet(this, propertyName, propertyValue, GlobalScope.getInstance());
             return;
-          } catch (Throwable t) {
+          } catch (Exception t) {
             LOG.error(t);
           } finally {
-            ourPropertySettersInProgress.remove(new Pair<SNode, String>(this, propertyName));
+            threadSet.remove(pair);
           }
         }
       }
@@ -1217,14 +1220,16 @@ public final class SNode {
 
     if (useHandler && !getModel().isLoading()) {
       // invoke custom referent set event handler
-      if (!ourSetReferentEventHandlersInProgress.contains(new Pair<SNode, String>(this, role))) {
+      Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
+      Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
+      if (!threadSet.contains(pair)) {
         INodeReferentSetEventHandler handler = CONSTRAINTS_MANAGER.getNodeReferentSetEventHandler(this, role);
         if (handler != null) {
-          ourSetReferentEventHandlersInProgress.add(new Pair<SNode, String>(this, role));
+          threadSet.add(pair);
           try {
             handler.processReferentSetEvent(this, oldReferent, newReferent, GlobalScope.getInstance());
           } finally {
-            ourSetReferentEventHandlersInProgress.remove(new Pair<SNode, String>(this, role));
+            threadSet.remove(pair);
           }
         }
       }
@@ -2051,4 +2056,11 @@ public final class SNode {
        throw new IllegalModelAccessError("BAD iterator");
     }
   } */
+
+  private static class InProgressThreadLocal extends ThreadLocal<Set<Pair<SNode, String>>> {
+    @Override
+    protected Set<Pair<SNode, String>> initialValue() {
+      return new HashSet<Pair<SNode, String>>();
+    }
+  }
 }
