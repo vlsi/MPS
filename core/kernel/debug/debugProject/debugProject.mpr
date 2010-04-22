@@ -30,6 +30,7 @@
       <languagePath path="${mps_home}/core/baseLanguage/runConfigurations/runConfigurations.mpl" folder="" />
       <languagePath path="${project}/languages/evaluation/evaluation.mpl" folder="" />
       <languagePath path="${mps_home}/core/languageDesign/plugin/plugin.mpl" />
+      <languagePath path="${project}/languages/cpp/cpp.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
