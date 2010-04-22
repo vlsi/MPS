@@ -8,10 +8,17 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 /*package*/ class ExtractMethodWithOutputVariable extends ExtractMethodFromStatementsRefactoring {
   private SNode myOutputVariable;
-  private SNode myDeclarationStatement;
+  private SNode myDeclarationStatement = null;
 
   /*package*/ ExtractMethodWithOutputVariable(ExtractMethodRefactoringParameters parameters) {
     super(parameters);
@@ -42,12 +49,56 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   @Override
   public void replaceMatch(MethodMatch match, SNode methodDeclaration) {
     SNode methodCall = this.createMethodCall(match, methodDeclaration);
-    SLinkOperations.setTarget(SLinkOperations.getTarget(this.myDeclarationStatement, "localVariableDeclaration", true), "initializer", methodCall, true);
     List<SNode> statements = match.getNodes();
+    if ((this.myDeclarationStatement != null)) {
+      SLinkOperations.setTarget(SLinkOperations.getTarget(this.myDeclarationStatement, "localVariableDeclaration", true), "initializer", methodCall, true);
+    } else {
+      SNode newStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+      SLinkOperations.setTarget(newStatement, "expression", new ExtractMethodWithOutputVariable.QuotationClass_n3576q_a0a1a0c0c().createNode(this.myOutputVariable, methodCall), true);
+      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), newStatement);
+    }
     for (SNode statement : ListSequence.fromList(statements)) {
       if (statement != this.myDeclarationStatement) {
         SNodeOperations.deleteNode(statement);
       }
+    }
+  }
+
+  public static class QuotationClass_n3576q_a0a1a0c0c {
+    public QuotationClass_n3576q_a0a1a0c0c() {
+    }
+
+    public SNode createNode(Object parameter_7, Object parameter_8) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode1_5.setReferent("variableDeclaration", (SNode) parameter_7);
+          quotedNode_1.addChild("lValue", quotedNode1_5);
+        }
+        {
+          quotedNode_3 = (SNode) parameter_8;
+          SNode quotedNode1_6;
+          if (_parameterValues_129834374.contains(quotedNode_3)) {
+            quotedNode1_6 = CopyUtil.copy(quotedNode_3);
+          } else {
+            _parameterValues_129834374.add(quotedNode_3);
+            quotedNode1_6 = quotedNode_3;
+          }
+          if (quotedNode1_6 != null) {
+            quotedNode_1.addChild("rValue", HUtil.copyIfNecessary(quotedNode1_6));
+          }
+        }
+        result = quotedNode1_4;
+      }
+      return result;
     }
   }
 }
