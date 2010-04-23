@@ -97,7 +97,7 @@ public class Program {
 
   void insert(Instruction instruction, int position) {
     instruction.setProgram(this);
-    instruction.setSource(getCurrent());
+    instruction.setSource(myInstructions.get(position-1).getSource());
     instruction.setIndex(position);
     for (Instruction i : myInstructions.subList(position,myInstructions.size())) {
         i.setIndex(i.getIndex()+1);
