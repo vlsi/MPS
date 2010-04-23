@@ -40,7 +40,11 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.performance.IPerformanceTracer;
+import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
+import jetbrains.mps.util.performance.PerformanceTracer;
 
 import java.rmi.RemoteException;
 import java.util.*;
@@ -154,11 +158,15 @@ public class GenerationController {
       }
 
       for (SModelDescriptor inputModel : inputModels) {
-        TypeChecker.getInstance().setIsGeneration(true);
+        IPerformanceTracer ttrace = mySettings.isStrictMode()
+          ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getLongName()))
+          : new NullPerformanceTracer();
+
+        TypeChecker.getInstance().setIsGeneration(true, mySettings.isUseNewGenerator() ? null : ttrace);
 
         GenerationSession generationSession = new GenerationSession(
           inputModel, invocationContext, myGenerationTracer, mySaveTransientModels,
-          myProgress, myLogger, mySettings.isUseNewGenerator(), mySettings.isStrictMode());
+          myProgress, myLogger, mySettings.isUseNewGenerator(), mySettings.isStrictMode(), ttrace);
 
         try {
           Logger.addLoggingHandler(generationSession.getLoggingHandler());
@@ -192,6 +200,11 @@ public class GenerationController {
           //with -Xmx1200 before this change
           TypeChecker.getInstance().setIsGeneration(false);
           progressHelper.setText2("");
+        }
+
+        String report = ttrace.report();
+        if (report != null) {
+          myLogger.trace(report);
         }
       }
     } finally {

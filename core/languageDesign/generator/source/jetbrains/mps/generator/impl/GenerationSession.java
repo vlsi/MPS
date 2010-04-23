@@ -72,7 +72,7 @@ public class GenerationSession {
   public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
                            IGenerationTracer generationTracer, boolean saveTransientModels,
                            ProgressIndicator progressMonitor, GeneratorLoggerAdapter logger,
-                           boolean parallelGeneration, boolean isStrict) {
+                           boolean parallelGeneration, boolean isStrict, IPerformanceTracer tracer) {
     myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
     myGenerationTracer = generationTracer;
@@ -81,9 +81,7 @@ public class GenerationSession {
     myParallelGeneration = parallelGeneration;
     myIsStrict = isStrict;
     myLogger = new GenerationSessionLogger(logger);
-    ttrace = myIsStrict && !myParallelGeneration
-      ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getLongName()))
-      : new NullPerformanceTracer();
+    ttrace = tracer;
   }
 
   public GenerationStatus generateModel() throws GenerationCanceledException {
@@ -123,11 +121,6 @@ public class GenerationSession {
       // since session objects might include objects with disposed class loaders
       if (mySessionContext != null) {
         mySessionContext.clearTransientObjects();
-      }
-
-      String report = ttrace.report();
-      if (report != null) {
-        myLogger.trace(report);
       }
 
       return new GenerationStatus(myOriginalInputModel.getSModel(), currOutput,

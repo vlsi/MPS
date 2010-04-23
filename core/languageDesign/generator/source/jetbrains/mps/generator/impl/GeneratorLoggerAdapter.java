@@ -40,6 +40,12 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     report(MessageKind.INFORMATION, message, null);
   }
 
+  public void trace(String message) {
+    for(String s : message.split("\n")) {
+      report(MessageKind.INFORMATION, s, null);
+    }
+  }
+
   @Override
   public void warning(String message) {
     report(MessageKind.WARNING, message, null);
