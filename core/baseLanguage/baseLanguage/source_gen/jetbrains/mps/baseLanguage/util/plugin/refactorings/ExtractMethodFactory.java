@@ -16,7 +16,6 @@ public class ExtractMethodFactory {
       ListSequence.fromList(newNodes).addElement(SNodeOperations.getParent(first));
       return new ExtractMethodRefactoringParameters(newNodes);
     }
-
     return new ExtractMethodRefactoringParameters(nodes);
   }
 

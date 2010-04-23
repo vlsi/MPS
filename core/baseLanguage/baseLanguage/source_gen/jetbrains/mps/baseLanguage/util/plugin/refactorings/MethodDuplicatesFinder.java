@@ -25,9 +25,7 @@ public class MethodDuplicatesFinder {
     this.myNodesToFind = nodesToFind;
     this.myMapping = mapping;
     this.myParameterOrder = parametersOrder;
-    for (SNode node : ListSequence.fromList(this.myNodesToFind)) {
-      SetSequence.fromSet(this.myUsedNodes).addElement(node);
-    }
+    SetSequence.fromSet(this.myUsedNodes).addSequence(ListSequence.fromList(this.myNodesToFind));
   }
 
   public List<MethodMatch> findDuplicates(SNode root) {
@@ -49,12 +47,15 @@ public class MethodDuplicatesFinder {
           current = SNodeOperations.getNextSibling(current);
         }
       }
-      MethodMatch resultMatch = modifier.getMatch();
-      if (hasNoErrors && resultMatch.checkMapping()) {
-        for (SNode resultNode : ListSequence.fromList(resultMatch.getNodes())) {
-          SetSequence.fromSet(this.myUsedNodes).addElement(resultNode);
+      if (hasNoErrors) {
+        MethodMatch resultMatch = modifier.getMatch();
+        resultMatch.createRefactoring();
+        if (resultMatch.checkMapping()) {
+          for (SNode resultNode : ListSequence.fromList(resultMatch.getNodes())) {
+            SetSequence.fromSet(this.myUsedNodes).addElement(resultNode);
+          }
+          found.add(resultMatch);
         }
-        found.add(resultMatch);
       }
     }
     return found;

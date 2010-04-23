@@ -23,6 +23,7 @@ public class MethodMatch {
   private List<SNode> myNodes;
   private List<SNode> myParametersOrder;
   private Map<SNode, List<SNode>> myParamsToNodes;
+  private ExtractMethodRefactoring myRefactoring = null;
 
   public MethodMatch(List<SNode> parametersOrder) {
     this.myParamsToNodes = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
@@ -49,8 +50,12 @@ public class MethodMatch {
     return this.myParamsToNodes;
   }
 
-  public String toString() {
-    return ListSequence.fromList(this.myNodes).first().getPresentation();
+  public ExtractMethodRefactoring getRefactoring() {
+    return this.myRefactoring;
+  }
+
+  public void createRefactoring() {
+    this.myRefactoring = ExtractMethodFactory.createRefactoring(ExtractMethodFactory.createParameters(this.myNodes));
   }
 
   public boolean checkMapping() {
@@ -82,7 +87,7 @@ public class MethodMatch {
     List<SNode> callActualParams = new ArrayList<SNode>();
     for (SNode parameter : ListSequence.fromList(this.myParametersOrder)) {
       if (ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).isEmpty()) {
-        ListSequence.fromList(callActualParams).addElement(new MethodMatch.QuotationClass_5zfyci_a0a0a0a0b0h().createNode());
+        ListSequence.fromList(callActualParams).addElement(new MethodMatch.QuotationClass_5zfyci_a0a0a0a0b0i().createNode());
       } else {
         ListSequence.fromList(callActualParams).addElement(SNodeOperations.cast(SNodeOperations.copyNode(ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).getElement(0)), "jetbrains.mps.baseLanguage.structure.Expression"));
       }
@@ -90,8 +95,8 @@ public class MethodMatch {
     return callActualParams;
   }
 
-  public static class QuotationClass_5zfyci_a0a0a0a0b0h {
-    public QuotationClass_5zfyci_a0a0a0a0b0h() {
+  public static class QuotationClass_5zfyci_a0a0a0a0b0i {
+    public QuotationClass_5zfyci_a0a0a0a0b0i() {
     }
 
     public SNode createNode() {
