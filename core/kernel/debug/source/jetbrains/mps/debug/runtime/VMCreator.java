@@ -94,7 +94,8 @@ public class VMCreator extends AbstractDebugSessionCreator {
   @ToDebugAPI
   public ExecutionResult startSession(final Executor executor,
                                               final ProgramRunner runner,
-                                              final RunProfileState state
+                                              final RunProfileState state,
+                                              Project project
   ) throws ExecutionException {
     assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
     // LOG.assertTrue(isInInitialState());
