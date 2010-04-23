@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.impl.TemplateContext;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.lang.core.structure.BaseConcept;
@@ -402,10 +403,21 @@ public class QueryExecutor implements IQueryExecutor {
       this.tracer = tracer;
     }
 
+    private static String getRulePackage(SNode ruleNode) {
+      return JavaNameUtil.packageNameForModelUID(ruleNode.getModel().getSModelReference());
+    }
+
+    private static String taskName(@NotNull String name, SNode ruleNode) {
+      if(ruleNode == null || ruleNode.getModel() == null) {
+        return name;
+      }
+      return "query in " + getRulePackage(ruleNode); //name;
+    }
+
     @Override
     public boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
       try {
-        tracer.push("check condition", true);
+        tracer.push(taskName("check condition", ruleNode), true);
         return super.checkCondition(condition, required, inputNode, ruleNode);
       } finally {
         tracer.pop();
@@ -415,7 +427,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public boolean checkCondition(CreateRootRule createRootRule) throws GenerationFailureException {
       try {
-        tracer.push("check condition: create root", true);
+        tracer.push(taskName("check condition: create root", createRootRule.getNode()), true);
         return super.checkCondition(createRootRule);
       } finally {
         tracer.pop();
@@ -425,7 +437,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode) throws GenerationFailureException {
       try {
-        tracer.push("check condition: drop root", true);
+        tracer.push(taskName("check condition: drop root", ruleNode), true);
         return super.checkCondition(condition, inputRootNode, ruleNode);
       } finally {
         tracer.pop();
@@ -435,7 +447,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
       try {
-        tracer.push("check if condition", true);
+        tracer.push(taskName("check if condition", ifMacro.getNode()), true);
         return super.checkConditionForIfMacro(inputNode, ifMacro, context);
       } finally {
         tracer.pop();
@@ -445,7 +457,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public void executeMappingScript(MappingScript mappingScript, SModel model) throws GenerationFailureException {
       try {
-        tracer.push("mapping script", true);
+        tracer.push(taskName("mapping script", mappingScript.getNode()), true);
         super.executeMappingScript(mappingScript, model);
       } finally {
         tracer.pop();
@@ -455,7 +467,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException {
       try {
-        tracer.push("map-src node macro", true);
+        tracer.push(taskName("map-src node macro", mapSrcNodeOrListMacro), true);
         return super.executeMapSrcNodeMacro(inputNode, mapSrcNodeOrListMacro, parentOutputNode, context);
       } finally {
         tracer.pop();
@@ -465,7 +477,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
       try {
-        tracer.push("map-src postproc", true);
+        tracer.push(taskName("map-src postproc", mapSrcNodeOrListMacro), true);
         super.executeMapSrcNodeMacro_PostProc(inputNode, mapSrcNodeOrListMacro, outputNode, context);
       } finally {
         tracer.pop();
@@ -475,7 +487,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public void expandPropertyMacro(PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
       try {
-        tracer.push("property macro", true);
+        tracer.push(taskName("property macro", templateNode), true);
         super.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
       } finally {
         tracer.pop();
@@ -485,7 +497,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, @NotNull TemplateContext context) {
       try {
-        tracer.push("evaluate source node", true);
+        tracer.push(taskName("evaluate source node", macroNode), true);
         return super.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
       } finally {
         tracer.pop();
@@ -495,7 +507,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, TemplateContext context) {
       try {
-        tracer.push("evaluate source nodes", true);
+        tracer.push(taskName("evaluate source nodes", query.getNode()), true);
         return super.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
       } finally {
         tracer.pop();
@@ -505,7 +517,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public SNode getContextNodeForTemplateFragment(SNode inputNode, SNode templateFragmentNode, SNode mainContextNode) {
       try {
-        tracer.push("context for template fragment", true);
+        tracer.push(taskName("context for template fragment", templateFragmentNode), true);
         return super.getContextNodeForTemplateFragment(inputNode, templateFragmentNode, mainContextNode);
       } finally {
         tracer.pop();
@@ -515,7 +527,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule) {
       try {
-        tracer.push("context for weaving", true);
+        tracer.push(taskName("context for weaving", rule.getNode()), true);
         return super.getContextNodeForWeavingingRule(inputNode, rule);
       } finally {
         tracer.pop();
@@ -525,7 +537,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public Object getReferentTarget(SNode node, SNode outputNode, ReferenceMacro refMacro, TemplateContext context) {
       try {
-        tracer.push("referent target", true);
+        tracer.push(taskName("referent target", refMacro.getNode()), true);
         return super.getReferentTarget(node, outputNode, refMacro, context);
       } finally {
         tracer.pop();
@@ -535,7 +547,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public GeneratedMatchingPattern checkIfApplicable(PatternReduction_MappingRule patternRule, SNode inputNode) throws GenerationFailureException {
       try {
-        tracer.push("check if pattern rule is applicable", true);
+        tracer.push(taskName("check if pattern rule is applicable", patternRule.getNode()), true);
         return super.checkIfApplicable(patternRule, inputNode);
       } finally {
         tracer.pop();
@@ -545,7 +557,7 @@ public class QueryExecutor implements IQueryExecutor {
     @Override
     public Object evaluateArgumentQuery(SNode inputNode, TemplateArgumentQuery query, TemplateContext context) {
       try {
-        tracer.push("evaluate template argument query", true);
+        tracer.push(taskName("evaluate template argument query", query.getNode()), true);
         return super.evaluateArgumentQuery(inputNode, query, context);
       } finally {
         tracer.pop();
