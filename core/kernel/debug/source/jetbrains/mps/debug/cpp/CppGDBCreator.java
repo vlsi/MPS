@@ -29,9 +29,11 @@ import java.io.File;
  * To change this template use File | Settings | File Templates.
  */
 public class CppGDBCreator extends AbstractDebugSessionCreator {
+  CppDebugSession myDebugSession;
+
   @Override
   public AbstractDebugSession getDebugSession() {
-    return null;
+    return myDebugSession;
   }
 
   @Override
@@ -60,6 +62,8 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
           Disposer.dispose(consoleView);
         }
       };
+      myDebugSession = new CppDebugSession();
+      myDebugSession.setProcessHandler(processHandler);
       return new DefaultExecutionResult(executionConsole, processHandler, consoleView.createConsoleActions());
     } catch (Throwable t) {
       throw new ExecutionException("can't create debug session", t);
