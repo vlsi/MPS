@@ -10,6 +10,8 @@
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
+  <language namespace="ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -36,7 +38,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="45" />
+  <maxImportIndex value="48" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="18" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
@@ -56,6 +58,9 @@
   <import index="41" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="44" modelUID="f:java_stub#com.intellij.execution.configurations(com.intellij.execution.configurations@java_stub)" version="-1" />
   <import index="45" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.runconfigs(jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)" version="-1" />
+  <import index="46" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
+  <import index="47" modelUID="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" version="-1" />
+  <import index="48" modelUID="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1204039255253">
     <property name="name:3" value="typeof_ConceptFunctionParameter_node" />
     <property name="package:3" value="Shared" />
@@ -3271,15 +3276,26 @@
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="5527296032508935549">
     <property name="name:3" value="typeof_PersistentPropertyDeclaration" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5527296032508935550">
-      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="5527296032508935722">
-        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="5527296032508935723" />
-        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5527296032508935727">
-          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="5527296032508935728">
-            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5527296032508935731">
-              <link role="classifier:3" targetNodeId="37.~Cloneable" resolveInfo="Cloneable" />
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="242278890012778669">
+        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="242278890012778670">
+          <property name="name:3" value="primitive" />
+          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="242278890012778671">
+            <link role="concept:16" targetNodeId="47.1159268590033" resolveInfo="PrimitiveTypeDescriptor" />
+          </node>
+          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="242278890012778672">
+            <node role="operand:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="242278890012778673">
+              <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef" id="242278890012778674">
+                <link role="descriptor" targetNodeId="48.1196683941620" resolveInfo="Primitive" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="242278890012778675">
+              <link role="link:16" targetNodeId="47.1159268661479" />
             </node>
           </node>
         </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="5527296032508935722">
+        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="5527296032508935723" />
         <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5527296032508935726">
           <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5527296032508935717">
             <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5527296032508935716">
@@ -3287,6 +3303,28 @@
             </node>
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5527296032508935721">
               <link role="link:16" targetNodeId="6.5680397130376446158:3" />
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="242278890012143701">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="242278890012143702">
+            <node role="quotedNode:0" type="jetbrains.mps.lang.typesystem.structure.JoinType:3" id="242278890012143712">
+              <node role="argument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="242278890012143714">
+                <link role="classifier:3" targetNodeId="37.~Cloneable" resolveInfo="Cloneable" />
+              </node>
+              <node role="argument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="242278890012143717">
+                <link role="classifier:3" targetNodeId="37.~Enum" resolveInfo="Enum" />
+              </node>
+              <node role="argument:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="242278890012143720">
+                <link role="classifier:3" targetNodeId="37.~String" resolveInfo="String" />
+              </node>
+              <node role="argument:3" type="jetbrains.mps.lang.core.structure.BaseConcept:0" id="242278890012570351">
+                <node role="_attr_$attribute:0" type="jetbrains.mps.lang.quotation.structure.Antiquotation:0" id="242278890012570352">
+                  <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="242278890012778676">
+                    <link role="variableDeclaration:3" targetNodeId="242278890012778670" resolveInfo="primitive" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
