@@ -40,8 +40,8 @@ public class ExecutableParametersEditor extends JPanel {
     return this.myFileName;
   }
 
-  public void reset() {
-    this.myFileName = "";
-    this.myTextField.setText("");
+  public void setFileName(String fileName) {
+    this.myFileName = fileName;
+    this.myTextField.setText(this.myFileName);
   }
 }
