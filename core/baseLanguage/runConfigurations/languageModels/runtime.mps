@@ -27,7 +27,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959054e(jetbrains.mps.uiLanguage.constraints)" version="26" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590553(jetbrains.mps.uiLanguage.structure)" version="1" />
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
-  <maxImportIndex value="27" />
+  <maxImportIndex value="31" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.choosers(jetbrains.mps.workbench.dialogs.choosers@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -51,6 +51,10 @@
   <import index="25" modelUID="f:java_stub#javax.swing.text(javax.swing.text@java_stub)" version="-1" />
   <import index="26" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="27" modelUID="f:java_stub#jetbrains.mps.generator(jetbrains.mps.generator@java_stub)" version="-1" />
+  <import index="28" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.runconfigs(jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)" version="-1" />
+  <import index="29" modelUID="f:java_stub#jetbrains.mps.debug.api(jetbrains.mps.debug.api@java_stub)" version="-1" />
+  <import index="30" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
+  <import index="31" modelUID="f:java_stub#jetbrains.mps.debug.runtime(jetbrains.mps.debug.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6937689104170748691">
     <property name="name:3" value="MainNodeChooser" />
     <property name="package:3" value="ui.nodeChooser" />
@@ -3072,6 +3076,44 @@
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2178855608171213722" />
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2178855608171213718" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="8255351389869681567">
+    <property name="name:3" value="JavaRunProfileState" />
+    <property name="abstractClass:3" value="true" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8255351389869712693">
+      <property name="name:3" value="createDebugSessionCreator" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8255351389869712981">
+        <link role="classifier:3" targetNodeId="29.~AbstractDebugSessionCreator" resolveInfo="AbstractDebugSessionCreator" />
+      </node>
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8255351389869712695" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8255351389869712696">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8255351389869715942">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8255351389869715944">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8255351389869716883">
+              <link role="baseMethodDeclaration:3" targetNodeId="31.~VMCreator.&lt;init&gt;(com.intellij.openapi.project.Project)" resolveInfo="VMCreator" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8255351389869716884">
+                <link role="variableDeclaration:3" targetNodeId="8255351389869715940" resolveInfo="project" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8255351389869715940">
+        <property name="name:3" value="project" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8255351389869715941">
+          <link role="classifier:3" targetNodeId="30.~Project" resolveInfo="Project" />
+        </node>
+      </node>
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8255351389869681568" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="8255351389869681569">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8255351389869681570" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8255351389869681571" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8255351389869681572" />
+    </node>
+    <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8255351389869712692">
+      <link role="classifier:3" targetNodeId="28.~BaseRunProfileState" resolveInfo="BaseRunProfileState" />
+    </node>
   </node>
 </model>
 

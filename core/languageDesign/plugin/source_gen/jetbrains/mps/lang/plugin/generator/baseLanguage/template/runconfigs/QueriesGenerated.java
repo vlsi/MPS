@@ -241,9 +241,10 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_8591610611835627262(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "stateTypeParameter", false) != null)) {
       return SLinkOperations.getTarget(_context.getNode(), "stateTypeParameter", false);
-    } else {
+    } else if (!(SPropertyOperations.getBoolean(_context.getNode(), "isDebuggable"))) {
       return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0tb().createNode(), "classifier", false);
     }
+    return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a1a54().createNode(), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_8294332872984122924(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -418,6 +419,14 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_8821770403474041673(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "checkBlock", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_8255351389869499389(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "debugSessionCreator", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_8255351389868569982(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "isDebuggable");
   }
 
   public static boolean ifMacro_Condition_5235140547387554339(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -604,6 +613,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "executionParameter", true);
   }
 
+  public static Iterable sourceNodesQuery_8255351389869499417(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "debugSessionCreator", true), "body", true), "statement", true);
+  }
+
   public static Iterable sourceNodesQuery_5334136372060385046(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "methodDeclaration", true);
   }
@@ -663,6 +676,24 @@ public class QueriesGenerated {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#com.intellij.execution.configurations(com.intellij.execution.configurations@java_stub)"), SNodeId.fromString("~RunProfileState")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_x583g4_a0a1a54 {
+    public QuotationClass_x583g4_a0a1a54() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.runconfigs(jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)"), SNodeId.fromString("~BaseRunProfileState")));
         result = quotedNode1_2;
       }
       return result;

@@ -22,12 +22,14 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String IS_DEBUGGABLE = "isDebuggable";
   public static final String CONFIG_TYPE = "configType";
   public static final String STATE_TYPE_PARAMETER = "stateTypeParameter";
   public static final String EDITOR = "editor";
   public static final String ICON_BLOCK = "iconBlock";
   public static final String CHECK_BLOCK = "checkBlock";
   public static final String EXECUTE_BLOCK = "executeBlock";
+  public static final String DEBUG_SESSION_CREATOR = "debugSessionCreator";
   public static final String PROPERTY = "property";
   public static final String EXECUTION_PARAMETER = "executionParameter";
   public static final String METHOD_DECLARATION = "methodDeclaration";
@@ -84,6 +86,14 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
     this.setProperty(RunConfigurationDeclaration.VIRTUAL_PACKAGE, value);
   }
 
+  public boolean getIsDebuggable() {
+    return this.getBooleanProperty(RunConfigurationDeclaration.IS_DEBUGGABLE);
+  }
+
+  public void setIsDebuggable(boolean value) {
+    this.setBooleanProperty(RunConfigurationDeclaration.IS_DEBUGGABLE, value);
+  }
+
   public RunConfigurationTypeDeclaration getConfigType() {
     return (RunConfigurationTypeDeclaration) this.getReferent(RunConfigurationTypeDeclaration.class, RunConfigurationDeclaration.CONFIG_TYPE);
   }
@@ -130,6 +140,14 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
 
   public void setExecuteBlock(IExecuteConfigBlock node) {
     super.setChild(RunConfigurationDeclaration.EXECUTE_BLOCK, node);
+  }
+
+  public DebugSessionCreator getDebugSessionCreator() {
+    return (DebugSessionCreator) this.getChild(DebugSessionCreator.class, RunConfigurationDeclaration.DEBUG_SESSION_CREATOR);
+  }
+
+  public void setDebugSessionCreator(DebugSessionCreator node) {
+    super.setChild(RunConfigurationDeclaration.DEBUG_SESSION_CREATOR, node);
   }
 
   public int getPropertiesCount() {

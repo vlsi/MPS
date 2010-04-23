@@ -2744,6 +2744,11 @@
       <property name="sourceCardinality:0" value="0..n" />
       <link role="target:0" targetNodeId="3018238135942601771:23" resolveInfo="RunConfigurationMethodDeclaration" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8255351389869184300">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="debugSessionCreator" />
+      <link role="target:0" targetNodeId="8255351389869159733:23" resolveInfo="DebugSessionCreator" />
+    </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="678887849223564240">
       <link role="intfc:0" targetNodeId="6.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
@@ -2755,6 +2760,10 @@
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="2195473424935653499">
       <link role="conceptPropertyDeclaration:0" targetNodeId="2195473424935653498:23" resolveInfo="requiresCustomEditor" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="8255351389868176934">
+      <property name="name:0" value="isDebuggable" />
+      <link role="dataType:0" targetNodeId="6.1082983657063:0" resolveInfo="boolean" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="678887849223472871">
@@ -4317,6 +4326,43 @@
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3205675194086686069">
       <property name="value:0" value="group&lt;&lt;{group}&gt;&gt;" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8255351389869159733">
+    <property name="package:0" value="RunConfigs.Configuration.Debug" />
+    <property name="name:0" value="DebugSessionCreator" />
+    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="8255351389869160282">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="8255351389869160280:23" resolveInfo="Project_ConceptFunctionParameter" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="8255351389869160287">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8255351389869184295">
+        <link role="classifier:3" targetNodeId="36.~AbstractDebugSessionCreator" resolveInfo="AbstractDebugSessionCreator" />
+      </node>
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="8255351389869160283">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1216468774225:3" resolveInfo="showName" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8255351389869160285">
+      <property name="value:0" value="debug session creator" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8255351389869160280">
+    <property name="package:0" value="RunConfigs.Configuration.Debug" />
+    <property name="name:0" value="Project_ConceptFunctionParameter" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="8255351389869184297">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8255351389869184299">
+        <link role="classifier:3" targetNodeId="23.~Project" resolveInfo="Project" />
+      </node>
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8255351389869160281">
+      <property name="value:0" value="project" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="6.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>

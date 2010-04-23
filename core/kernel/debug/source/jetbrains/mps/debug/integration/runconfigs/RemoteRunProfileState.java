@@ -9,6 +9,7 @@ import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
 import jetbrains.mps.plugins.pluginparts.runconfigs.BaseRunProfileState;
 import org.jetbrains.annotations.NotNull;
@@ -41,6 +42,12 @@ public class RemoteRunProfileState extends BaseRunProfileState {
 
   @Override
   public ConfigurationPerRunnerSettings getConfigurationSettings() {
+    return null;
+  }
+
+  @Override
+  public AbstractDebugSessionCreator createDebugSessionCreator(Project p) {
+    // TODO place some code here?
     return null;
   }
 }

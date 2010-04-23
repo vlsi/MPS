@@ -14,7 +14,6 @@ public class JavaRunConfiguration extends RunConfigurationDeclaration implements
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String IS_DEBUGGABLE = "isDebuggable";
 
   public JavaRunConfiguration(SNode node) {
     super(node);
@@ -42,14 +41,6 @@ public class JavaRunConfiguration extends RunConfigurationDeclaration implements
 
   public void setVirtualPackage(String value) {
     this.setProperty(JavaRunConfiguration.VIRTUAL_PACKAGE, value);
-  }
-
-  public boolean getIsDebuggable() {
-    return this.getBooleanProperty(JavaRunConfiguration.IS_DEBUGGABLE);
-  }
-
-  public void setIsDebuggable(boolean value) {
-    this.setBooleanProperty(JavaRunConfiguration.IS_DEBUGGABLE, value);
   }
 
   public static JavaRunConfiguration newInstance(SModel sm, boolean init) {
