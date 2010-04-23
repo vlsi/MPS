@@ -36,7 +36,7 @@ public class SetNodePackage_Action extends GeneratedAction {
   private List<SNode> nodes;
 
   public SetNodePackage_Action() {
-    super("Set Virtual Package", "", ICON);
+    super("Set Virtual Folder", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
