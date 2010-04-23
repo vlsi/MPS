@@ -31,8 +31,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import org.jetbrains.annotations.NonNls;
@@ -45,6 +45,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -188,9 +189,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
     for (AbstractConceptDeclaration concept : hierarchy) {
       Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
-      if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
-        processLanguageAdded(l);
-      }
+      ensureLanguageAdded(l);
 
       String conceptFqName = NameUtil.nodeFQName(concept);
       INodeReferentSetEventHandler result = myNodeReferentSetEventHandlersMap.get(conceptFqName + "#" + referentRole);
@@ -291,9 +290,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
           for (final AbstractConceptDeclaration concept : hierarchy) {
             Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
-            if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
-              processLanguageAdded(l);
-            }
+            ensureLanguageAdded(l);
 
             final String conceptFqName = NameUtil.nodeFQName(concept);
             final IModelConstraints result;
@@ -354,9 +351,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
         List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
         for (AbstractConceptDeclaration concept : hierarchy) {
           Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
-          if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
-            processLanguageAdded(l);
-          }
+          ensureLanguageAdded(l);
 
           String conceptFqName = NameUtil.nodeFQName(concept);
           builder.setLength(0);
@@ -391,9 +386,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(AbstractConceptDeclaration referentConcept) {
     while (referentConcept != null) {
       Language l = SModelUtil_new.getDeclaringLanguage(referentConcept, GlobalScope.getInstance());
-      if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
-        processLanguageAdded(l);
-      }
+      ensureLanguageAdded(l);
 
       String conceptFqName = NameUtil.nodeFQName(referentConcept);
       INodeReferentSearchScopeProvider provider = myNodeDefaultSearchScopeProvidersMap.get(conceptFqName);
@@ -411,9 +404,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(nodeConcept);
     for (AbstractConceptDeclaration concept : hierarchy) {
       Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
-      if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
-        processLanguageAdded(l);
-      }
+      ensureLanguageAdded(l);
 
       String conceptFqName = NameUtil.nodeFQName(concept);
       INodeReferentSearchScopeProvider provider = myNodeReferentSearchScopeProvidersMap.get(conceptFqName + "#" + referentRole);
@@ -422,29 +413,32 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return null;
   }
 
-  private void processLanguageAdded(Language language) {
+  private void ensureLanguageAdded(Language language) {
     String namespace = language.getNamespace();
-    if (myAddedLanguageNamespaces.containsKey(namespace)) {
-      return;
-    }
+    synchronized (myAddedLanguageNamespaces) {
+      if (myAddedLanguageNamespaces.containsKey(namespace)) {
+        return;
+      }
 
-    LinkedList<IModelConstraints> loadedConstraints = new LinkedList<IModelConstraints>();
-    myAddedLanguageNamespaces.put(namespace, loadedConstraints);
-    loadConstraints(namespace, loadedConstraints);
+      LinkedList<IModelConstraints> loadedConstraints = new LinkedList<IModelConstraints>();
+      myAddedLanguageNamespaces.put(namespace, loadedConstraints);
+      loadConstraints(namespace, loadedConstraints);
+    }
   }
 
   private void processLanguageRemoved(Language language) {
     String namespace = language.getNamespace();
+    synchronized (myAddedLanguageNamespaces) {
+      if (!myAddedLanguageNamespaces.containsKey(namespace)) {
+        return;
+      }
 
-    if (!myAddedLanguageNamespaces.containsKey(namespace)) {
-      return;
+      List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.get(namespace);
+      for (IModelConstraints constraints : loadedConstraints) {
+        constraints.unRegisterSelf(this);
+      }
+      myAddedLanguageNamespaces.remove(namespace);
     }
-
-    List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.get(namespace);
-    for (IModelConstraints constraints : loadedConstraints) {
-      constraints.unRegisterSelf(this);
-    }
-    myAddedLanguageNamespaces.remove(namespace);
   }
 
   private void reloadAll() {
@@ -461,15 +455,14 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
     myConstraintClassNames.clear();
 
-    for (String languageNamespace : myAddedLanguageNamespaces.keySet()) {
-      List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.get(languageNamespace);
-      for (IModelConstraints constraints : loadedConstraints) {
-        constraints.unRegisterSelf(this);
+    synchronized (myAddedLanguageNamespaces) {
+      for (List<IModelConstraints> loadedConstraints : myAddedLanguageNamespaces.values()) {
+        for (IModelConstraints constraints : loadedConstraints) {
+          constraints.unRegisterSelf(this);
+        }
       }
-      loadedConstraints.clear();
+      myAddedLanguageNamespaces.clear();
     }
-
-    myAddedLanguageNamespaces.clear();
   }
 
   private void loadConstraints(String languageNamespace, List<IModelConstraints> loadedConstraints) {
