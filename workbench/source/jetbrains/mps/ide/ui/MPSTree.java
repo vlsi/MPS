@@ -173,7 +173,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
         selNode.doubleClick();
       }
     };
-    registerKeyboardAction(openNodeAction, KeyStroke.getKeyStroke("ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     registerKeyboardAction(openNodeAction, KeyStroke.getKeyStroke("F4"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     AbstractAction refreshTreeAction = new AbstractAction() {

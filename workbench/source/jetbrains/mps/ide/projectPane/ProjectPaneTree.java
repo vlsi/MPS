@@ -5,6 +5,7 @@ import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.ArrayUtil;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.smodel.IOperationContext;
@@ -13,10 +14,13 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
+import javax.swing.tree.TreePath;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.dnd.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +31,21 @@ class ProjectPaneTree extends ProjectTree implements LogicalViewTree{
   public ProjectPaneTree(ProjectPane projectPane, Project project) {
     super(project);
     myProjectPane = projectPane;
+
+    //enter can't be listened using keyboard actions because in this case tree's UI receives it first and just expands a node
+    addKeyListener(new KeyAdapter() {
+      public void keyPressed(KeyEvent e) {
+        if (e.getModifiers() != 0) return;
+        if (!(e.getKeyCode() == KeyEvent.VK_ENTER)) return;
+
+        TreePath selPath = getSelectionPath();
+        if (selPath == null) return;
+        MPSTreeNode selNode = (MPSTreeNode) selPath.getLastPathComponent();
+        selNode.doubleClick();
+
+        e.consume();
+      }
+    });
 
     //drag support is alive while the tree is alive
     DragSource.getDefaultDragSource().createDefaultDragGestureRecognizer(this, DnDConstants.ACTION_MOVE, new MyDragGestureListener());
