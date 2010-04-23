@@ -46,8 +46,11 @@ public class DependenciesContainer {
 
   public Set<SNode> getDependencies(SNode node) {
     if (node == null) return new HashSet<SNode>();
-    AbstractConceptDeclaration conceptDeclaration = node.getConceptDeclarationAdapter();
-    Set<IDependency_Runtime> dependencies = get(conceptDeclaration);
+    Set<IDependency_Runtime> dependencies;
+    synchronized (RulesManager.RULES_LOCK) {
+      AbstractConceptDeclaration conceptDeclaration = node.getConceptDeclarationAdapter();
+      dependencies = get(conceptDeclaration);
+    }
     Set<SNode> result = new HashSet<SNode>();
     for (IDependency_Runtime dependency_runtime : dependencies) {
       Set<SNode> sourceNodes = dependency_runtime.getSourceNodes(node);

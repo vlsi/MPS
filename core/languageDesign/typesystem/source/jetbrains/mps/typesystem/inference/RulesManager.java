@@ -227,9 +227,7 @@ public class RulesManager {
   }
 
   public Set<SNode> getDependencies(SNode node) {
-    synchronized (RULES_LOCK) {
-      return myDependenciesContainer.getDependencies(node);
-    }
+    return myDependenciesContainer.getDependencies(node);
   }
 
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
