@@ -233,9 +233,7 @@ public class RulesManager {
   }
 
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-    synchronized (RULES_LOCK) {
-      return myOverloadedOperationsManager.getOperationType(operation, leftOperandType, rightOperandType);
-    }
+    return myOverloadedOperationsManager.getOperationType(operation, leftOperandType, rightOperandType);
   }
 
   public TypeChecker getTypeChecker() {

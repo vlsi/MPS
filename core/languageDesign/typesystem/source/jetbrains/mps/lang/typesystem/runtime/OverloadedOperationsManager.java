@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import jetbrains.mps.typesystem.inference.RulesManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -45,7 +46,10 @@ public class OverloadedOperationsManager {
   }
 
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-    Set<IOverloadedOpsTypesProvider> operationsTypesProviderSet = myOperationsToTypeProviders.getRules(operation);
+    Set<IOverloadedOpsTypesProvider> operationsTypesProviderSet;
+    synchronized (RulesManager.RULES_LOCK) {
+      operationsTypesProviderSet = myOperationsToTypeProviders.getRules(operation);
+    }
     if (operationsTypesProviderSet.isEmpty()) {
       return null;
     }
