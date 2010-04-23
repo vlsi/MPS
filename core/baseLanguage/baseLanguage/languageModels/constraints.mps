@@ -2928,6 +2928,15 @@
         </node>
       </node>
     </node>
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="7676852718365118031">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7676852718365118032">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7676852718365126016">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7676852718365126018">
+            <property name="value:3" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
