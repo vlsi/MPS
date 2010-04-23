@@ -90,10 +90,85 @@ public final class BehaviorManager implements ApplicationComponent {
   }
 
   public void clear() {
-    myMethods.clear();
-    myConstructors.clear();
+    synchronized (myMethods) {
+      myMethods.clear();
+    }
+    synchronized (myConstructors) {
+      myConstructors.clear();
+    }
   }
 
+  private static List<Method> calculateConstructors(AbstractConceptDeclaration concept, Language language) {
+    List<Method> methodsToCall = new ArrayList<Method>();
+    Set<AbstractConceptDeclaration> processed = new HashSet<AbstractConceptDeclaration>();
+
+    List<AbstractConceptDeclaration> concepts = Collections.singletonList(concept);
+    while (!concepts.isEmpty()) {
+      List<AbstractConceptDeclaration> newFrontier = new ArrayList<AbstractConceptDeclaration>();
+      for (AbstractConceptDeclaration currentConcept : concepts) {
+        assert currentConcept != null;
+        if (processed.contains(currentConcept)) {
+          continue;
+        }
+        String fqName = NameUtil.nodeFQName(currentConcept);
+        String behaviorClass = behaviorClassByConceptFqName(fqName);
+
+        try {
+          Class cls = language.getClass(behaviorClass);
+          if (cls != null) {
+            Method method = cls.getMethod("init", SNode.class);
+            method.setAccessible(true);
+            methodsToCall.add(method);
+          }
+        } catch (NoSuchMethodException e) {
+          //ignore
+        }
+
+        if (currentConcept instanceof ConceptDeclaration) {
+          ConceptDeclaration conceptDeclaration = (ConceptDeclaration) currentConcept;
+          List<InterfaceConceptReference> references = conceptDeclaration.getImplementses();
+          for (InterfaceConceptReference reference : references) {
+            InterfaceConceptDeclaration intfc = reference.getIntfc();
+            if (intfc == null) continue;
+            newFrontier.add(intfc);
+          }
+          ConceptDeclaration parentConcept = conceptDeclaration.getExtends();
+          if (parentConcept != null) {
+            newFrontier.add(parentConcept);
+          }
+        } else if (currentConcept instanceof InterfaceConceptDeclaration) {
+          InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) currentConcept;
+          List<InterfaceConceptReference> references = interfaceConcept.getExtendses();
+          for (InterfaceConceptReference reference : references) {
+            InterfaceConceptDeclaration intfc = reference.getIntfc();
+            if (intfc == null) continue;
+            newFrontier.add(intfc);
+          }
+        }
+        processed.add(currentConcept);
+      }
+      concepts = newFrontier;
+    }
+
+    /*  while (concept != null) {
+      String fqName = NameUtil.nodeFQName(concept);
+      String behaviorClass = behaviorClassByConceptFqName(fqName);
+
+      try {
+        Class cls = language.getClass(behaviorClass);
+        if (cls != null) {
+          Method method = cls.getMethod("init", SNode.class);
+          method.setAccessible(true);
+          methodsToCall.add(method);
+        }
+      } catch (NoSuchMethodException e) {
+        //ignor too
+      }
+
+      concept = ((ConceptDeclaration) concept).getExtends();
+    }*/
+    return methodsToCall;
+  }
 
   public void initNode(SNode node) {
     if (node == null) {
@@ -105,81 +180,14 @@ public final class BehaviorManager implements ApplicationComponent {
 
     String conceptFqName = NameUtil.nodeFQName(concept);
 
-    List<Method> methodsToCall = new ArrayList<Method>();
+    List<Method> methodsToCall;
 
-    if (myConstructors.containsKey(conceptFqName)) {
+    synchronized (myConstructors) {
       methodsToCall = myConstructors.get(conceptFqName);
-    } else {
-      List<AbstractConceptDeclaration> concepts = new ArrayList<AbstractConceptDeclaration>();
-      List<AbstractConceptDeclaration> newFrontier = new ArrayList<AbstractConceptDeclaration>();
-      Set<AbstractConceptDeclaration> processed = new HashSet<AbstractConceptDeclaration>();
-      concepts.add(concept);
-      while (!concepts.isEmpty()) {
-        for (AbstractConceptDeclaration currentConcept : concepts) {
-          assert currentConcept != null;
-          if (processed.contains(currentConcept)) {
-            continue;
-          }
-          String fqName = NameUtil.nodeFQName(currentConcept);
-          String behaviorClass = behaviorClassByConceptFqName(fqName);
-
-          try {
-            Class cls = language.getClass(behaviorClass);
-            if (cls != null) {
-              Method method = cls.getMethod("init", SNode.class);
-              method.setAccessible(true);
-              methodsToCall.add(method);
-            }
-          } catch (NoSuchMethodException e) {
-            //ignore
-          }
-
-          if (currentConcept instanceof ConceptDeclaration) {
-            ConceptDeclaration conceptDeclaration = (ConceptDeclaration) currentConcept;
-            List<InterfaceConceptReference> references = conceptDeclaration.getImplementses();
-            for (InterfaceConceptReference reference : references) {
-              InterfaceConceptDeclaration intfc = reference.getIntfc();
-              if (intfc == null) continue;
-              newFrontier.add(intfc);
-            }
-            ConceptDeclaration parentConcept = conceptDeclaration.getExtends();
-            if (parentConcept != null) {
-              newFrontier.add(parentConcept);
-            }
-          } else if (currentConcept instanceof InterfaceConceptDeclaration) {
-            InterfaceConceptDeclaration interfaceConcept = (InterfaceConceptDeclaration) currentConcept;
-            List<InterfaceConceptReference> references = interfaceConcept.getExtendses();
-            for (InterfaceConceptReference reference : references) {
-              InterfaceConceptDeclaration intfc = reference.getIntfc();
-              if (intfc == null) continue;
-              newFrontier.add(intfc);
-            }
-          }
-          processed.add(currentConcept);
-        }
-        concepts = newFrontier;
-        newFrontier = new ArrayList<AbstractConceptDeclaration>();
+      if (methodsToCall == null) {
+        methodsToCall = calculateConstructors(concept, language);
+        myConstructors.put(conceptFqName, methodsToCall);
       }
-
-      /*  while (concept != null) {
-        String fqName = NameUtil.nodeFQName(concept);
-        String behaviorClass = behaviorClassByConceptFqName(fqName);
-
-        try {
-          Class cls = language.getClass(behaviorClass);
-          if (cls != null) {
-            Method method = cls.getMethod("init", SNode.class);
-            method.setAccessible(true);
-            methodsToCall.add(method);
-          }
-        } catch (NoSuchMethodException e) {
-          //ignor too
-        }
-
-        concept = ((ConceptDeclaration) concept).getExtends();
-      }*/
-
-      myConstructors.put(conceptFqName, methodsToCall);
     }
 
     for (int i = methodsToCall.size() - 1; i >= 0; i--) {
@@ -193,7 +201,7 @@ public final class BehaviorManager implements ApplicationComponent {
     }
   }
 
-  private String behaviorClassByConceptFqName(@NotNull String fqName) {
+  private static String behaviorClassByConceptFqName(@NotNull String fqName) {
     Matcher m = CONCEPT_FQNAME.matcher(fqName);
     if (m.matches()) {
       return m.group(1) + ".behavior." + m.group(2) + "_Behavior";
@@ -215,25 +223,27 @@ public final class BehaviorManager implements ApplicationComponent {
 
         MethodInfo mi = new MethodInfo(fqName, methodName, parameterTypes);
 
-        if (myMethods.containsKey(mi)) {
-          return myMethods.get(mi);
-        }
-
-        String behaviorClass = behaviorClassByConceptFqName(fqName);
-
-        try {
-          Class cls = l.getClass(behaviorClass);
-          if (cls != null) {
-            method = cls.getMethod(methodName, parameterTypes);
+        synchronized (myMethods) {
+          if (myMethods.containsKey(mi)) {
+            return myMethods.get(mi);
           }
-        } catch (NoSuchMethodException e) {
-          //ignore too
-        }
 
-        if (method != null) {
-          method.setAccessible(true);
+          String behaviorClass = behaviorClassByConceptFqName(fqName);
+
+          try {
+            Class cls = l.getClass(behaviorClass);
+            if (cls != null) {
+              method = cls.getMethod(methodName, parameterTypes);
+            }
+          } catch (NoSuchMethodException e) {
+            //ignore too
+          }
+
+          if (method != null) {
+            method.setAccessible(true);
+          }
+          myMethods.put(mi, method);
         }
-        myMethods.put(mi, method);
 
         return method;
       }
