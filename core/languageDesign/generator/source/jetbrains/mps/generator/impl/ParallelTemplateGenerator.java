@@ -39,6 +39,11 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
+  protected boolean isQueryDebugSupported() {
+    return false;
+  }
+
+  @Override
   protected void applyReductions(boolean isPrimary)
     throws GenerationCanceledException, GenerationFailureException {
     super.applyReductions(isPrimary);

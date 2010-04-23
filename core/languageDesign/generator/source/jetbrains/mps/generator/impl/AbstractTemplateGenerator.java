@@ -55,13 +55,17 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myMappings = new GeneratorMappings();
-    myExecutor = TRACE_QUERIES && !(tracer instanceof NullPerformanceTracer)
+    myExecutor = !(tracer instanceof NullPerformanceTracer) && isQueryDebugSupported()
       ? new TraceableQueryExecutor(this, tracer)
       : new QueryExecutor(this);
   }
 
   public IOperationContext getOperationContext() {
     return myOperationContext;
+  }
+
+  protected boolean isQueryDebugSupported() {
+    return TRACE_QUERIES;
   }
 
   public IScope getScope() {
