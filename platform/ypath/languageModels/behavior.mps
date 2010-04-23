@@ -3259,30 +3259,6 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3781236886101614206">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3781236886101614207">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3781236886101614208">
-              <link role="classifier:3" targetNodeId="5.~System" />
-              <link role="variableDeclaration:3" targetNodeId="5.~System.out" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3781236886101614209">
-              <link role="baseMethodDeclaration:3" targetNodeId="26.~PrintStream.println(java.lang.String):void" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3781236886101614263">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3781236886101614266">
-                  <property name="value:3" value="]" />
-                </node>
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="3781236886101614227">
-                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3781236886101614210">
-                    <property name="value:3" value="**** getFeatureDesign[" />
-                  </node>
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3781236886101614246">
-                    <link role="variableDeclaration:3" targetNodeId="4581582910845927391" resolveInfo="fqClassName" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4581582910845927400">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4581582910845927401">
             <property name="name:3" value="featureDesign" />
