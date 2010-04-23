@@ -445,7 +445,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
     myCanBeChildMethods.clear();
     myCanBeParentMethods.clear();
     myCanBeRootMethods.clear();
-    myDefaultConceptNames.clear();
+    synchronized (myDefaultConceptNames) {
+      myDefaultConceptNames.clear();
+    }
 
     myNodePropertyGettersMap.clear();
     myNodePropertySettersMap.clear();
@@ -453,7 +455,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
     myNodeReferentSetEventHandlersMap.clear();
     myNodeDefaultSearchScopeProvidersMap.clear();
 
-    myConstraintClassNames.clear();
+    synchronized (myConstraintClassNames) {
+      myConstraintClassNames.clear();
+    }
 
     synchronized (myAddedLanguageNamespaces) {
       for (List<IModelConstraints> loadedConstraints : myAddedLanguageNamespaces.values()) {
@@ -496,12 +500,17 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public String getDefaultConcreteConceptFqName(String fqName, IScope scope) {
-    if (!myDefaultConceptNames.containsKey(fqName)) {
-      String result = fqName;
+    synchronized (myDefaultConceptNames) {
+      String result = myDefaultConceptNames.get(fqName);
+      if(result != null) {
+        return result;
+      }
+
       String behaviorClass = constraintsClassByConceptFqName(fqName);
       String namespace = NameUtil.namespaceFromConceptFQName(fqName);
       Language language = scope.getLanguage(namespace);
       if (language != null) {
+        result = fqName;
         Class cls = language.getClass(behaviorClass);
         if (cls != null) {
           try {
@@ -519,8 +528,8 @@ public class ModelConstraintsManager implements ApplicationComponent {
         }
         myDefaultConceptNames.put(fqName, result);
       }
+      return result;
     }
-    return myDefaultConceptNames.get(fqName);
   }
 
 
@@ -755,17 +764,20 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   private String constraintsClassByConceptFqName(String fqName) {
-    String cachedValue = myConstraintClassNames.get(fqName);
+    synchronized (myConstraintClassNames) {
+      String cachedValue = myConstraintClassNames.get(fqName);
+      if (cachedValue != null) {
+        return cachedValue;
+      }
 
-    if (cachedValue != null) return cachedValue;
-
-    Matcher m = CONCEPT_FQNAME.matcher(fqName);
-    if (m.matches()) {
-      String result = m.group(1) + ".constraints." + m.group(2) + "_Constraints";
-      myConstraintClassNames.put(fqName, result);
-      return result;
-    } else {
-      throw new RuntimeException();
+      Matcher m = CONCEPT_FQNAME.matcher(fqName);
+      if (m.matches()) {
+        String result = m.group(1) + ".constraints." + m.group(2) + "_Constraints";
+        myConstraintClassNames.put(fqName, result);
+        return result;
+      } else {
+        throw new RuntimeException();
+      }
     }
   }
 }
