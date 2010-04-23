@@ -645,7 +645,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c7(jetbrains.mps.buildlanguage.plugin)" version="0" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <languageAspect modelUID="r:550fbd90-c9f2-4576-a8a6-223eca16d68b(jetbrains.mps.baseLanguage.runConfigurations.structure)" version="0" />
-  <maxImportIndex value="61" />
+  <maxImportIndex value="62" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="21" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -675,6 +675,7 @@
   <import index="59" modelUID="f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)" version="-1" />
   <import index="60" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="61" modelUID="f:java_stub#jetbrains.mps.generator.fileGenerator(jetbrains.mps.generator.fileGenerator@java_stub)" version="-1" />
+  <import index="62" modelUID="r:82f15792-6966-47aa-8004-b293ab2bcfd2(jetbrains.mps.lang.plugin.run)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1225567253971">
     <property name="name:3" value="BuildScriptRunner" />
     <property name="package:3" value="runner" />
@@ -4625,7 +4626,7 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="823693461259504378">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="823693461259504386">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="823693461259505248">
-                <link role="baseMethodDeclaration:3" targetNodeId="3.6483235410534722085" resolveInfo="DefaultProcessHandler" />
+                <link role="baseMethodDeclaration:3" targetNodeId="62.242278890011773561" resolveInfo="DefaultProcessHandler" />
                 <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.Console_FunctionParameter:23" id="823693461259505262" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="823693461259574873">
                   <link role="variableDeclaration:3" targetNodeId="823693461259574820:0" resolveInfo="process" />

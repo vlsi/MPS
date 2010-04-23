@@ -32,13 +32,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="r:d30b7004-00fd-4d3e-bdd6-6ae5346d9b86(jetbrains.mps.samples.lambdaCalculus.structure)" version="1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.plugins.pluginparts.runconfigs(jetbrains.mps.plugins.pluginparts.runconfigs@java_stub)" version="-1" />
   <import index="3" modelUID="r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
+  <import index="5" modelUID="r:82f15792-6966-47aa-8004-b293ab2bcfd2(jetbrains.mps.lang.plugin.run)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
   <node type="jetbrains.mps.baseLanguage.runConfigurations.structure.JavaNodeRunConfiguration:0" id="6796549325584324225">
     <property name="generate:0" value="true" />
     <property name="name:0" value="DefaultLambdaCalculusProgram" />
@@ -112,7 +112,7 @@
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6796549325584806309">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6796549325584806310">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6796549325584806311">
-                <link role="baseMethodDeclaration:3" targetNodeId="3v.6483235410534722085" resolveInfo="DefaultProcessHandler" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.242278890011773561" resolveInfo="DefaultProcessHandler" />
                 <node role="actualArgument:3" type="jetbrains.mps.lang.plugin.structure.Console_FunctionParameter:23" id="6796549325584806312" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6796549325584806313">
                   <link role="variableDeclaration:3" targetNodeId="6796549325584806302" resolveInfo="process" />
@@ -136,7 +136,7 @@
     <property name="name:23" value="LambdaCalculus" />
     <property name="caption:23" value="Lambda Calculus Program" />
   </node>
-  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator:23" id="2566054628276075478">
     <property name="name:23" value="DefaultLambdaCalculusFromProgram" />
     <link role="rcType:23" targetNodeId="6796549325584324227" resolveInfo="LambdaCalculus" />
@@ -156,7 +156,7 @@
           <node role="configName:23" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2566054628276106094">
             <node role="operand:3" type="jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter:23" id="2566054628276106093" />
             <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="2566054628276106550">
-              <link role="property:16" targetNodeId="4v.1169194664001:0" resolveInfo="name" />
+              <link role="property:16" targetNodeId="3v.1169194664001:0" resolveInfo="name" />
             </node>
           </node>
         </node>
