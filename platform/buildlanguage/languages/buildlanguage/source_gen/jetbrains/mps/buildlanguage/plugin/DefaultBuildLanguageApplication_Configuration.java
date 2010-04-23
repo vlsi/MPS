@@ -74,7 +74,7 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    StringBuilder error_22042010 = new StringBuilder();
+    final StringBuilder error_22042010 = new StringBuilder();
     try {
       String paramsReport = DefaultBuildLanguageApplication_Configuration.this.getStateObject().myJavaRunParameters.getErrorReport();
       if (paramsReport != null) {

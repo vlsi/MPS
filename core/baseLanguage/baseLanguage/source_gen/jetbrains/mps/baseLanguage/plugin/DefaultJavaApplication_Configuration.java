@@ -76,7 +76,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    StringBuilder error_22042010 = new StringBuilder();
+    final StringBuilder error_22042010 = new StringBuilder();
     try {
       String paramsReport = DefaultJavaApplication_Configuration.this.getStateObject().myJavaRunParameters.getErrorReport();
       if (paramsReport != null) {
@@ -92,14 +92,14 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
       if (node == null) {
         throw new RuntimeConfigurationException(errorReport);
       }
-    } catch (Throwable t) {
-      if (t instanceof RuntimeConfigurationException) {
-        throw (RuntimeConfigurationException) t;
+    } catch (Throwable t_22042010) {
+      if (t_22042010 instanceof RuntimeConfigurationException) {
+        throw (RuntimeConfigurationException) t_22042010;
       }
-      if (t instanceof RuntimeConfigurationError) {
-        throw (RuntimeConfigurationError) t;
+      if (t_22042010 instanceof RuntimeConfigurationError) {
+        throw (RuntimeConfigurationError) t_22042010;
       }
-      Logger.getLogger(DefaultJavaApplication_Configuration.class).error(t);
+      Logger.getLogger(DefaultJavaApplication_Configuration.class).error(t_22042010);
     }
     if (error_22042010.length() != 0) {
       throw new RuntimeConfigurationException(error_22042010.toString());
