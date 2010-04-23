@@ -12465,7 +12465,12 @@
         <property name="noTargetText:32" value="&lt;no method&gt;" />
         <link role="relationDeclaration:32" targetNodeId="17.1202948736718:3" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem:32" id="4972241301747234898">
-          <property name="tag:32" value="ext_2_RTransform" />
+          <node role="tags:32" type="jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper:32" id="3608226089192438706">
+            <property name="tag:32" value="ext_2_RTransform" />
+          </node>
+          <node role="tags:32" type="jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper:32" id="3608226089193039391">
+            <property name="tag:32" value="default_RTransform" />
+          </node>
         </node>
         <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="1202948938318">
           <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1202948938319">

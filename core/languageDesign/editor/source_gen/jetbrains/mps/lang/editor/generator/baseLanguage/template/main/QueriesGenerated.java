@@ -25,10 +25,12 @@ import jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior;
 import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.editor.behavior.CellModel_Collection_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
@@ -617,7 +619,17 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1214320937729(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString_def(_context.getNode(), "tag", null);
+    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "tags", true)).isEmpty()) {
+      return SPropertyOperations.getString_def(_context.getNode(), "tag", null);
+    }
+    String result = "";
+    for (SNode tagWrapper : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "tags", true))) {
+      if (StringUtils.isNotEmpty(result)) {
+        result += SideTransformHintSubstituteActionsHelper.SIDE_TRANSFORM_TAG_SEPARATOR;
+      }
+      result += SPropertyOperations.getString_def(tagWrapper, "tag", null);
+    }
+    return result;
   }
 
   public static Object propertyMacro_GetPropertyValue_1215085777836(final IOperationContext operationContext, final PropertyMacroContext _context) {

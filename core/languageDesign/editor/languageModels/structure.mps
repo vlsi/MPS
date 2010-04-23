@@ -5,6 +5,7 @@
     <refactoringContext modelVersion="27">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="AbstractComponent" conceptFQName="jetbrains.mps.bootstrap.editorLanguage.structure.AbstractComponent" featureKind="CONCEPT" />
@@ -595,6 +596,7 @@
     <refactoringContext modelVersion="28">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="SelectLaterOperation" conceptFQName="jetbrains.mps.lang.editor.structure.SelectLaterOperation" featureKind="CONCEPT" />
@@ -605,6 +607,7 @@
     <refactoringContext modelVersion="29">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="SelectLaterParameter" conceptFQName="jetbrains.mps.lang.editor.structure.SelectLaterParameter" featureKind="CONCEPT" />
@@ -615,6 +618,7 @@
     <refactoringContext modelVersion="30">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="HorizontalGap" conceptFQName="jetbrains.mps.lang.editor.structure.HorizontalGap" featureKind="CONCEPT" />
@@ -625,6 +629,7 @@
     <refactoringContext modelVersion="31">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="CellLayout_Indent" conceptFQName="jetbrains.mps.lang.editor.structure.CellLayout_Indent" featureKind="CONCEPT" />
@@ -635,6 +640,7 @@
     <refactoringContext modelVersion="32">
       <refactoring refactoringClass="jetbrains.mps.lang.structure.scripts.RenameConcept" />
       <moveMap />
+      <sourceMap />
       <conceptFeatureMap>
         <entry>
           <key featureName="CellLayout_Indent2" conceptFQName="jetbrains.mps.lang.editor.structure.CellLayout_Indent2" featureKind="CONCEPT" />
@@ -3473,6 +3479,12 @@
     <property name="package:0" value="Stylesheet" />
     <property name="name:0" value="SideTransformAnchorTagStyleClassItem" />
     <link role="extends:0" targetNodeId="1186402475462:32" resolveInfo="StyleClassItem" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3608226089191997414">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="tags" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="3608226089191997415:32" resolveInfo="RightTransformAnchorTagWrapper" />
+    </node>
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1214320119174">
       <property name="name:0" value="tag" />
       <link role="dataType:0" targetNodeId="1140813780565:32" resolveInfo="RightTransformAnchorTag" />
@@ -4656,6 +4668,14 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3696012239575138273">
       <property name="value:0" value="URL property" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3608226089191997415">
+    <property name="name:0" value="RightTransformAnchorTagWrapper" />
+    <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="3608226089191997418">
+      <property name="name:0" value="tag" />
+      <link role="dataType:0" targetNodeId="1140813780565:32" resolveInfo="RightTransformAnchorTag" />
     </node>
   </node>
 </model>

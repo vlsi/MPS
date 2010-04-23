@@ -7657,8 +7657,158 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1214320157198">
         <link role="relationDeclaration:32" targetNodeId="2.1214320119174:32" resolveInfo="tag" />
+        <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="3608226089191997421">
+          <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3608226089191997422">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3608226089192003318">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192003325">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192003320">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="3608226089192003319" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="3608226089192003324">
+                    <link role="link:16" targetNodeId="2.3608226089191997414:32" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation:7" id="3608226089192003329" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="menuDescriptor:32" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor:32" id="3608226089192003347">
+          <node role="cellMenuPart:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group:32" id="3608226089192003349">
+            <node role="parametersFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query:32" id="3608226089192003350">
+              <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3608226089192003351">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3608226089192003356">
+                  <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation:16" id="3608226089192003357">
+                    <link role="enumDeclaration:16" targetNodeId="2.1140813780565:32" resolveInfo="RightTransformAnchorTag" />
+                    <node role="operation:16" type="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation:16" id="3608226089192003359" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="handlerFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler:32" id="3608226089192003352">
+              <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3608226089192003353">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3608226089192004234">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192004241">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192004236">
+                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode:32" id="3608226089192004235" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="3608226089192004240">
+                        <link role="link:16" targetNodeId="2.3608226089191997414:32" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation:7" id="3608226089192036674" />
+                  </node>
+                </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3608226089192036676">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192036687">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192036678">
+                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode:32" id="3608226089192036677" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3608226089192036682">
+                        <link role="property:16" targetNodeId="2.1214320119174:32" resolveInfo="tag" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation:16" id="3608226089192037048">
+                      <node role="value:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192037053">
+                        <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject:32" id="3608226089192037050" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation:16" id="3608226089192037057" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="parameterObjectType:32" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType:16" id="3608226089192003355">
+              <link role="enum:16" targetNodeId="2.1140813780565:32" resolveInfo="RightTransformAnchorTag" />
+            </node>
+          </node>
+          <node role="cellMenuPart:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item:32" id="3608226089192037061">
+            <property name="matchingText:32" value="Composite tag" />
+            <node role="handlerFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler:32" id="3608226089192037062">
+              <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3608226089192037063">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3608226089192056555">
+                  <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3608226089192056556">
+                    <property name="name:3" value="tagWrapper" />
+                    <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3608226089192056557">
+                      <link role="concept:16" targetNodeId="2.3608226089191997415:32" resolveInfo="RightTransformAnchorTagWrapper" />
+                    </node>
+                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3608226089192056559">
+                      <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="3608226089192056560">
+                        <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3608226089192056561">
+                          <link role="concept:16" targetNodeId="2.3608226089191997415:32" resolveInfo="RightTransformAnchorTagWrapper" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3608226089192056563">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="3608226089192056570">
+                    <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192056574">
+                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode:32" id="3608226089192056573" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3608226089192056578">
+                        <link role="property:16" targetNodeId="2.1214320119174:32" resolveInfo="tag" />
+                      </node>
+                    </node>
+                    <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192056565">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3608226089192056564">
+                        <link role="variableDeclaration:3" targetNodeId="3608226089192056556" resolveInfo="tagWrapper" />
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3608226089192056569">
+                        <link role="property:16" targetNodeId="2.3608226089191997418:32" resolveInfo="tag" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3608226089192037066">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192056547">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192037068">
+                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode:32" id="3608226089192037067" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="3608226089192037072">
+                        <link role="link:16" targetNodeId="2.3608226089191997414:32" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="3608226089192056580">
+                      <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3608226089192056582">
+                        <link role="variableDeclaration:3" targetNodeId="3608226089192056556" resolveInfo="tagWrapper" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3608226089192056584">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192056591">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192056586">
+                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode:32" id="3608226089192056585" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3608226089192056590">
+                        <link role="property:16" targetNodeId="2.1214320119174:32" resolveInfo="tag" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Property_RemoveOperation:16" id="3608226089192056595" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1239878593839" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="3608226089192003331">
+        <property name="separatorText:32" value="," />
+        <property name="usesBraces:32" value="true" />
+        <link role="relationDeclaration:32" targetNodeId="2.3608226089191997414:32" />
+        <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="3608226089192003333">
+          <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3608226089192003334">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3608226089192003335">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192003342">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3608226089192003337">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="3608226089192003336" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="3608226089192003341">
+                    <link role="link:16" targetNodeId="2.3608226089191997414:32" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation:7" id="3608226089192003346" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="496727441190755238" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1214472816506">
@@ -9665,6 +9815,12 @@
         <property name="flag:32" value="false" />
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="3696012239575363022" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3608226089192509002">
+    <link role="conceptDeclaration:32" targetNodeId="2.3608226089191997415:32" resolveInfo="RightTransformAnchorTagWrapper" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="3608226089192516695">
+      <link role="relationDeclaration:32" targetNodeId="2.3608226089191997418:32" resolveInfo="tag" />
     </node>
   </node>
 </model>

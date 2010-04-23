@@ -29,20 +29,29 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.*;
 
 public class SideTransformHintSubstituteActionsHelper {
+  public static final String SIDE_TRANSFORM_TAG_SEPARATOR = "|";
   private static final Logger LOG = Logger.getLogger(SideTransformHintSubstituteActionsHelper.class);
 
   private IOperationContext myContext;
   private SNode mySourceNode;
-  private String myTransformTag;
+  private Set<SideTransformTag> myTransformTags = new LinkedHashSet<SideTransformTag>();
   private CellSide mySide;
 
-  public SideTransformHintSubstituteActionsHelper(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
+  public SideTransformHintSubstituteActionsHelper(SNode sourceNode, CellSide side, String transformTags, IOperationContext context) {
     myContext = context;
     while (sourceNode.isAttribute()) {
       sourceNode = sourceNode.getParent();
     }
     mySourceNode = sourceNode;
-    myTransformTag = transformTag;
+    if (transformTags != null) {
+      for (StringTokenizer tokenizer = new StringTokenizer(transformTags, SIDE_TRANSFORM_TAG_SEPARATOR); tokenizer.hasMoreTokens();) {
+        String nextTag = tokenizer.nextToken();
+        myTransformTags.add(SideTransformTag.parseValue(nextTag));
+      }
+    }
+    if (myTransformTags.isEmpty()) {
+      myTransformTags.add(SideTransformTag.default_);
+    }
     mySide = side;
   }
 
@@ -51,15 +60,15 @@ public class SideTransformHintSubstituteActionsHelper {
     try {
       IScope scope = myContext.getScope();
       final AbstractConceptDeclaration sourceConcept = mySourceNode.getConceptDeclarationAdapter();
-      final SideTransformTag tag = SideTransformTag.parseValue(myTransformTag);
-
       List<Language> languages = mySourceNode.getModel().getLanguages(scope);
       for (Language language : languages) {
         SModelDescriptor actionsModel = language.getActionsModelDescriptor();
         if (actionsModel != null && actionsModel.getSModel() != null) {
           for (SideTransformHintSubstituteActionsBuilder builder : actionsModel.getSModel().allAdapters(SideTransformHintSubstituteActionsBuilder.class)) {
-            if (isApplicable(builder, tag, sourceConcept)) {
-              return true;
+            for (SideTransformTag tag : myTransformTags) {
+              if (isApplicable(builder, tag, sourceConcept)) {
+                return true;
+              }
             }
           }
         }
@@ -138,15 +147,16 @@ public class SideTransformHintSubstituteActionsHelper {
     List<SideTransformHintSubstituteActionsBuilder> actionsBuilders = new LinkedList<SideTransformHintSubstituteActionsBuilder>();
     IScope scope = myContext.getScope();
     final AbstractConceptDeclaration sourceConcept = mySourceNode.getConceptDeclarationAdapter();
-    final SideTransformTag tag = SideTransformTag.parseValue(myTransformTag);
 
     List<Language> languages = mySourceNode.getModel().getLanguages(scope);
     for (Language language : languages) {
       SModelDescriptor actionsModel = language.getActionsModelDescriptor();
       if (actionsModel != null && actionsModel.getSModel() != null) {
         for (SideTransformHintSubstituteActionsBuilder builder : actionsModel.getSModel().allAdapters(SideTransformHintSubstituteActionsBuilder.class)) {
-          if (isApplicable(builder, tag, sourceConcept)) {
-            actionsBuilders.add(builder);
+          for (SideTransformTag tag : myTransformTags) {
+            if (isApplicable(builder, tag, sourceConcept)) {
+              actionsBuilders.add(builder);
+            }
           }
         }
       }
@@ -159,7 +169,7 @@ public class SideTransformHintSubstituteActionsHelper {
                                AbstractConceptDeclaration sourceConcept) {
     // same tag?
     SideTransformTag actionTag = actionsBuilder.getTransformTag();
-    if (actionTag != SideTransformTag.default_ && actionTag != tag) {
+    if (actionTag != tag) {
       return false;
     }
 
