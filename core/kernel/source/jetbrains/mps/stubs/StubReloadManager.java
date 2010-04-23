@@ -54,9 +54,6 @@ public class StubReloadManager implements ApplicationComponent {
     MPSModuleRepository.getInstance().invalidateCaches();//todo do we need this?
 
     updateLoadedStubPaths();
-
-    //debug
-    System.out.printf("\n\n=======RELOAD CYCLE COMPLETED===========================================\n\n");
   }
 
   public List<SNodeDescriptor> getRootNodeDescriptors(AbstractModule module) {

@@ -71,7 +71,6 @@ public class BaseStubModelDescriptor extends DefaultSModelDescriptor {
 
   public void markReload() {
     myNeedsReloading = true;
-    System.out.printf(this.getLongName() + " marked for reload\n");
   }
 
   public void unmarkReload() {
