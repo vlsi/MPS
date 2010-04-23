@@ -52,5 +52,4 @@ public abstract class AbstractIntention implements Intention {
   public String getLocationString() {
     return "";
   }
-
 }

@@ -24,7 +24,7 @@ import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import java.util.ArrayList;
 
-public class MigrationRefactoringAdapter implements Intention {
+public class MigrationRefactoringAdapter extends BaseIntention {
   private AbstractMigrationRefactoring myRefactoring;
   private MigrationScript myMigrationScript;  //todo: do we really need migration script i.e. a link to SNode here?
 
