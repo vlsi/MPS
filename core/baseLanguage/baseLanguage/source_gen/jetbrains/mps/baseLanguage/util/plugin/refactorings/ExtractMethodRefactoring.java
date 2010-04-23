@@ -52,7 +52,7 @@ public abstract class ExtractMethodRefactoring {
     return match;
   }
 
-  protected SNode createNewMethod(SNode returntType, List<SNode> params, SNode body) {
+  protected SNode createNewMethod(SNode returnType, List<SNode> params, SNode body) {
     SNode myMethod;
     if (this.myStaticContainer != null) {
       myMethod = this.myStaticContainer.createNewMethod();
@@ -60,17 +60,17 @@ public abstract class ExtractMethodRefactoring {
       IExtractMethodRefactoringProcessor processor = this.myAnalyzer.getExtractMethodReafactoringProcessor();
       myMethod = processor.createNewMethod();
     }
-    this.fillBaseMethodDeclaration(myMethod, returntType, params, body);
+    this.fillBaseMethodDeclaration(myMethod, returnType, params, body);
     return myMethod;
   }
 
-  protected SNode fillBaseMethodDeclaration(SNode declaration, SNode returntType, List<SNode> params, SNode body) {
+  protected SNode fillBaseMethodDeclaration(SNode declaration, SNode returnType, List<SNode> params, SNode body) {
     if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.IVisible")) {
       SNode visibleDeclaration = SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.IVisible");
       SLinkOperations.setTarget(visibleDeclaration, "visibility", this.myParameters.getVisibilityLevel().getNode(), true);
     }
     SNode methodDeclaration = declaration;
-    SLinkOperations.setTarget(methodDeclaration, "returnType", returntType, true);
+    SLinkOperations.setTarget(methodDeclaration, "returnType", SNodeOperations.copyNode(returnType), true);
     SPropertyOperations.set(methodDeclaration, "name", this.myParameters.getName());
     ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).addSequence(ListSequence.fromList(params));
     SLinkOperations.setTarget(methodDeclaration, "body", body, true);

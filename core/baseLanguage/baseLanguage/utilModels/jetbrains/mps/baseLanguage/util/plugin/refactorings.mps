@@ -4229,7 +4229,7 @@
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399163694">
       <property name="name:3" value="createNewMethod" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8492459591399163695">
-        <property name="name:3" value="returntType" />
+        <property name="name:3" value="returnType" />
         <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8492459591399163696">
           <link role="concept:16" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
         </node>
@@ -4435,8 +4435,11 @@
                 <link role="variableDeclaration:3" targetNodeId="8492459591399163774" resolveInfo="methodDeclaration" />
               </node>
             </node>
-            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8492459591399163782">
-              <link role="variableDeclaration:3" targetNodeId="8492459591399163812" resolveInfo="returntType" />
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3546025902495880518">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8492459591399163782">
+                <link role="variableDeclaration:3" targetNodeId="8492459591399163812" resolveInfo="returntType" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_CopyOperation:16" id="3546025902495880522" />
             </node>
           </node>
         </node>
@@ -4512,7 +4515,7 @@
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="8492459591399163812">
-        <property name="name:3" value="returntType" />
+        <property name="name:3" value="returnType" />
         <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8492459591399163813">
           <link role="concept:16" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
         </node>
