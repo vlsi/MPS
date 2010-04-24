@@ -119,7 +119,7 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3201642974933580340" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3201642974933580341">
         <link role="classConcept:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
-        <link role="baseMethodDeclaration:3" targetNodeId="4.~ListsFactory.create(jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$ListComparator):java.util.List" />
+        <link role="baseMethodDeclaration:3" targetNodeId="3.1560298786499493749" resolveInfo="create" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3201642974933580342">
           <link role="classifier:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
           <link role="variableDeclaration:3" targetNodeId="3.1560298786499493667" resolveInfo="PATH_COMPARATOR" />
@@ -137,7 +137,7 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3201642974933580346" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3201642974933580347">
         <link role="classConcept:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
-        <link role="baseMethodDeclaration:3" targetNodeId="4.~ListsFactory.create(jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$ListComparator):java.util.List" />
+        <link role="baseMethodDeclaration:3" targetNodeId="3.1560298786499493749" resolveInfo="create" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3201642974933580348">
           <link role="classifier:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
           <link role="variableDeclaration:3" targetNodeId="3.1560298786499493667" resolveInfo="PATH_COMPARATOR" />
@@ -155,7 +155,7 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3201642974933580352" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3201642974933580353">
         <link role="classConcept:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
-        <link role="baseMethodDeclaration:3" targetNodeId="4.~ListsFactory.create(jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$ListComparator):java.util.List" />
+        <link role="baseMethodDeclaration:3" targetNodeId="3.1560298786499493749" resolveInfo="create" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3201642974933580354">
           <link role="classifier:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
           <link role="variableDeclaration:3" targetNodeId="3.1560298786499493667" resolveInfo="PATH_COMPARATOR" />
@@ -173,7 +173,7 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="3201642974933580358" />
       <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3201642974933580359">
         <link role="classConcept:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
-        <link role="baseMethodDeclaration:3" targetNodeId="4.~ListsFactory.create(jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$ListComparator):java.util.List" />
+        <link role="baseMethodDeclaration:3" targetNodeId="3.1560298786499493749" resolveInfo="create" />
         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3201642974933580360">
           <link role="classifier:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
           <link role="variableDeclaration:3" targetNodeId="3.1560298786499493687" resolveInfo="GEN_CONF_COMPARATOR" />
@@ -312,7 +312,7 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="3201642974933580424">
               <link role="classConcept:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
-              <link role="baseMethodDeclaration:3" targetNodeId="4.~ListsFactory.createSortedList(jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory$ListComparator):java.util.List" />
+              <link role="baseMethodDeclaration:3" targetNodeId="3.1560298786499493735" resolveInfo="createSortedList" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3201642974933580425">
                 <link role="classifier:3" targetNodeId="3.1560298786499493498" resolveInfo="ListsFactory" />
                 <link role="variableDeclaration:3" targetNodeId="3.1560298786499493667" resolveInfo="PATH_COMPARATOR" />

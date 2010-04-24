@@ -14,7 +14,7 @@ import jetbrains.mps.workbench.ActionPlace;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.dialogs.project.properties.model.ModelPropertiesDialog;
+import jetbrains.mps.ide.properties.StandardDialogs;
 
 public class ModelProperties_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/modelProperties.png", "jetbrains.mps.ide"), true);
@@ -80,7 +80,7 @@ public class ModelProperties_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      new ModelPropertiesDialog(ModelProperties_Action.this.model, ModelProperties_Action.this.context).showDialog();
+      StandardDialogs.createModelPropertiesDialog(ModelProperties_Action.this.model, ModelProperties_Action.this.context).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ModelProperties", t);

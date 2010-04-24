@@ -17,6 +17,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.properties.solution.SolutionPropertiesDialog;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.properties.StandardDialogs;
 
 public class SolutionProperties_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\solutionProperties.png", "jetbrains.mps.ide"), true);
@@ -76,7 +77,7 @@ public class SolutionProperties_Action extends GeneratedAction {
       final Wrappers._T<SolutionPropertiesDialog> dialog = new Wrappers._T<SolutionPropertiesDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog.value = new SolutionPropertiesDialog(solution, SolutionProperties_Action.this.context);
+          dialog.value = StandardDialogs.createSolutionPropertiesDialog(solution, SolutionProperties_Action.this.context);
         }
       });
       dialog.value.showDialog();

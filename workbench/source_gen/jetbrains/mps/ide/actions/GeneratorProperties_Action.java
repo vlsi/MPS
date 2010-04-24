@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.dialogs.project.properties.generator.GeneratorPropertiesDialog;
+import jetbrains.mps.ide.properties.StandardDialogs;
 
 public class GeneratorProperties_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\generatorProperties.png", "jetbrains.mps.ide"), true);
@@ -71,8 +71,7 @@ public class GeneratorProperties_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Generator generator = (Generator) GeneratorProperties_Action.this.module;
-      GeneratorPropertiesDialog dialog = new GeneratorPropertiesDialog(GeneratorProperties_Action.this.project, generator);
-      dialog.showDialog();
+      StandardDialogs.createGeneratorPropertiesDialog(GeneratorProperties_Action.this.project, generator).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GeneratorProperties", t);

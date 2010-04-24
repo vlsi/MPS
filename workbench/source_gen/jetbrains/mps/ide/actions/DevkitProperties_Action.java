@@ -17,6 +17,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.properties.devkit.DevKitPropertiesDialog;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.properties.StandardDialogs;
 
 public class DevkitProperties_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\languageProperties.png", "jetbrains.mps.ide"), true);
@@ -76,7 +77,7 @@ public class DevkitProperties_Action extends GeneratedAction {
       final Wrappers._T<DevKitPropertiesDialog> dialog = new Wrappers._T<DevKitPropertiesDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog.value = new DevKitPropertiesDialog(devkit, DevkitProperties_Action.this.context);
+          dialog.value = StandardDialogs.createDevKitPropertiesDialog(devkit, DevkitProperties_Action.this.context);
         }
       });
       dialog.value.showDialog();
