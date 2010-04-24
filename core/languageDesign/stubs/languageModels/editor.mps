@@ -487,13 +487,18 @@
     <link role="conceptDeclaration:32" targetNodeId="1.972176972348203840" resolveInfo="Stereotype" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="972176972348203844">
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="972176972348203847">
-        <property name="text:32" value="stereotype{" />
+        <property name="text:32" value="stereotype" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="6209672816070685040">
+        <property name="text:32" value="{" />
+        <link role="styleClass:32" targetNodeId="4v.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="972176972348203851">
         <link role="relationDeclaration:32" targetNodeId="1.972176972348203841" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="972176972348203849">
         <property name="text:32" value="}" />
+        <link role="styleClass:32" targetNodeId="4v.1215088010675" resolveInfo="RightParen" />
       </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="972176972348203846" />
     </node>
