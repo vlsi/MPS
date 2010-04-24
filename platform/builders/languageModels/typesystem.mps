@@ -692,5 +692,63 @@
       <link role="concept:3" targetNodeId="1.7057666463730155278:0" resolveInfo="BuilderCreator" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="901357770590752896">
+    <property name="name:3" value="typeof_SimpleBuilderParameterReference" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="901357770590752897">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="901357770590752903">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="901357770590752907">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="901357770590752908">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="901357770590752911">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="901357770590752910">
+                <link role="applicableNode:3" targetNodeId="901357770590752898" resolveInfo="reference" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="901357770590752915">
+                <link role="link:16" targetNodeId="1.5425713840853785829:0" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="901357770590752906">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="901357770590752900">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="901357770590752902">
+              <link role="applicableNode:3" targetNodeId="901357770590752898" resolveInfo="reference" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="901357770590752898">
+      <property name="name:3" value="reference" />
+      <link role="concept:3" targetNodeId="1.5425713840853785828:0" resolveInfo="SimpleBuilderParameterReference" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="901357770590755902">
+    <property name="name:3" value="typeof_SimpleBuilderParameter" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="901357770590755903">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="901357770590755909">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="901357770590755913">
+          <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="901357770590755915">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="901357770590755914">
+              <link role="applicableNode:3" targetNodeId="901357770590755904" resolveInfo="parameter" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="901357770590755919">
+              <link role="link:16" targetNodeId="1.5425713840853682521:0" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="901357770590755912">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="901357770590755906">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="901357770590755908">
+              <link role="applicableNode:3" targetNodeId="901357770590755904" resolveInfo="parameter" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="901357770590755904">
+      <property name="name:3" value="parameter" />
+      <link role="concept:3" targetNodeId="1.5425713840853682520:0" resolveInfo="SimpleBuilderParameter" />
+    </node>
+  </node>
 </model>
 
