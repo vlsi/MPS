@@ -18,14 +18,14 @@ import jetbrains.mps.stubs.javastub.ASMModelLoader;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
+import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
@@ -55,7 +55,6 @@ public class JavaStubs extends BaseStubModelRootManager {
   }
 
   protected void updateModel(final StubLocation location, final SModel model) {
-    final JavaStubs localThis = JavaStubs.this;
     IClassPathItem cpItem = JavaStubs.this.createClassPathItem(location);
     if (cpItem == null) {
       return;
@@ -68,37 +67,7 @@ public class JavaStubs extends BaseStubModelRootManager {
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
-    String pack = location.getPrefix();
-    IClassPathItem cpItem = StubClassPathCache.getInstance().get(location);
-    if (cpItem == null) {
-      return new jetbrains.mps.util.misc.hash.HashSet<BaseStubModelDescriptor>();
-    }
-
-    Set<String> subpackages = cpItem.getSubpackages(pack);
-
-    if (pack.equals("")) {
-    }
-    Set<BaseStubModelDescriptor> result = new jetbrains.mps.util.misc.hash.HashSet<BaseStubModelDescriptor>();
-    for (String subpackage : subpackages) {
-      if (!(cpItem.getAvailableClasses(subpackage).isEmpty())) {
-        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage);
-        AbstractModule.StubPath sp = new AbstractModule.StubPath(location.getPath(), new ModelRootManager(BaseLanguage_Language.MODULE_REFERENCE.getModuleId().toString(), JavaStubs.this.getClass().getName()));
-        if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
-          final SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(subpackage + "@" + SModelStereotype.getStubStereotypeForId(LanguageID.JAVA)));
-          assert descriptor instanceof BaseStubModelDescriptor;
-          BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) descriptor;
-          baseDescriptor.addStubPath(sp);
-          SModelRepository.getInstance().addOwnerForDescriptor(descriptor, location.getModule());
-          result.add(baseDescriptor);
-        } else {
-          BaseStubModelDescriptor modelDescriptor = new BaseStubModelDescriptor(JavaStubs.this, null, modelReference);
-          modelDescriptor.addStubPath(sp);
-          result.add(modelDescriptor);
-        }
-      }
-      result.addAll(JavaStubs.this.getModelDescriptors(new StubLocation(location.getPath(), subpackage, location.getModule())));
-    }
-    return result;
+    return JavaStubs.this.getModelDescriptorsInternal(location);
   }
 
   public Set<SNodeDescriptor> getRootNodeDescriptors(final StubLocation location) {
@@ -112,6 +81,39 @@ public class JavaStubs extends BaseStubModelRootManager {
 
   private IClassPathItem createClassPathItem(StubLocation location) {
     return StubClassPathCache.getInstance().get(location);
+  }
+
+  private Set<BaseStubModelDescriptor> getModelDescriptorsInternal(StubLocation location) {
+    String pack = location.getPrefix();
+    IClassPathItem cpItem = JavaStubs.this.createClassPathItem(location);
+    if (cpItem == null) {
+      return new jetbrains.mps.util.misc.hash.HashSet<BaseStubModelDescriptor>();
+    }
+
+    Set<BaseStubModelDescriptor> result = new jetbrains.mps.util.misc.hash.HashSet<BaseStubModelDescriptor>();
+    for (String subpackage : cpItem.getSubpackages(pack)) {
+      if (!(cpItem.getAvailableClasses(subpackage).isEmpty())) {
+        SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage);
+        String moduleId = BaseLanguage_Language.MODULE_REFERENCE.getModuleId().toString();
+        ModelRootManager manager = new ModelRootManager(moduleId, JavaStubs.this.getClass().getName());
+        AbstractModule.StubPath sp = new AbstractModule.StubPath(location.getPath(), manager);
+        if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
+          SModelReference ref = SModelReference.fromString(subpackage + "@" + SModelStereotype.getStubStereotypeForId(LanguageID.JAVA));
+          SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
+          assert descriptor instanceof BaseStubModelDescriptor;
+          BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) descriptor;
+          baseDescriptor.addStubPath(sp);
+          SModelRepository.getInstance().addOwnerForDescriptor(descriptor, location.getModule());
+          result.add(baseDescriptor);
+        } else {
+          BaseStubModelDescriptor modelDescriptor = new BaseStubModelDescriptor(JavaStubs.this, null, modelReference);
+          modelDescriptor.addStubPath(sp);
+          result.add(modelDescriptor);
+        }
+      }
+      result.addAll(JavaStubs.this.getModelDescriptorsInternal(new StubLocation(location.getPath(), subpackage, location.getModule())));
+    }
+    return result;
   }
 
   private void iterateClasspath(IClassPathItem item, Set<SNodeDescriptor> result, final String pack) {
