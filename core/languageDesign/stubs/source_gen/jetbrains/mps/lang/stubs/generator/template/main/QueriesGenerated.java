@@ -9,6 +9,7 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.stubs.behavior.AbstractModelCreator_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.stubs.behavior.LibraryStubDescriptor_Behavior;
@@ -29,6 +30,11 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_562112407431589663(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "languageId");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8178231612784878176(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SModelDescriptor model = _context.getOriginalInputModel().getModelDescriptor();
+    return Language.getLanguageForLanguageAspect(model).getModuleId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_5553449326502993530(final IOperationContext operationContext, final PropertyMacroContext _context) {

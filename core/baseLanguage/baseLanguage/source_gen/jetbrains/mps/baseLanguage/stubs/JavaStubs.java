@@ -19,9 +19,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
-import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
-import jetbrains.mps.project.structure.model.ModelRootManager;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
@@ -70,6 +67,10 @@ public class JavaStubs extends BaseStubModelRootManager {
     return JavaStubs.this.getModelDescriptorsInternal(location);
   }
 
+  protected String getSelfModuleId() {
+    return "f3061a53-9226-4cc5-a443-f952ceaf5816";
+  }
+
   public Set<SNodeDescriptor> getRootNodeDescriptors(final StubLocation location) {
     Set<SNodeDescriptor> result = new jetbrains.mps.util.misc.hash.HashSet<SNodeDescriptor>();
     IClassPathItem item = JavaStubs.this.createClassPathItem(location);
@@ -94,21 +95,15 @@ public class JavaStubs extends BaseStubModelRootManager {
     for (String subpackage : cpItem.getSubpackages(pack)) {
       if (!(cpItem.getAvailableClasses(subpackage).isEmpty())) {
         SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage);
-        String moduleId = BaseLanguage_Language.MODULE_REFERENCE.getModuleId().toString();
-        ModelRootManager manager = new ModelRootManager(moduleId, JavaStubs.this.getClass().getName());
-        AbstractModule.StubPath sp = new AbstractModule.StubPath(location.getPath(), manager);
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
           SModelReference ref = SModelReference.fromString(subpackage + "@" + SModelStereotype.getStubStereotypeForId(LanguageID.JAVA));
           SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
           assert descriptor instanceof BaseStubModelDescriptor;
           BaseStubModelDescriptor baseDescriptor = (BaseStubModelDescriptor) descriptor;
-          baseDescriptor.addStubPath(sp);
           SModelRepository.getInstance().addOwnerForDescriptor(descriptor, location.getModule());
           result.add(baseDescriptor);
         } else {
-          BaseStubModelDescriptor modelDescriptor = new BaseStubModelDescriptor(JavaStubs.this, null, modelReference);
-          modelDescriptor.addStubPath(sp);
-          result.add(modelDescriptor);
+          result.add(new BaseStubModelDescriptor(JavaStubs.this, null, modelReference));
         }
       }
       result.addAll(JavaStubs.this.getModelDescriptorsInternal(new StubLocation(location.getPath(), subpackage, location.getModule())));
@@ -141,7 +136,6 @@ public class JavaStubs extends BaseStubModelRootManager {
         continue;
       }
       result.add(new SNodeDescriptor(cls, conceptFqName, 0, 0, -1) {
-        @Override
         protected SModelReference calculateModelReference() {
           return StubHelper.uidForPackageInStubs(pack);
         }

@@ -22,6 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
+import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -33,7 +34,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-//one manager per stub path MUST be created
+//one myThisManager per stub path MUST be created
 public abstract class BaseStubModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(BaseStubModelRootManager.class);
 
@@ -41,12 +42,18 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   private ModelUpdater myInitializationListener = new ModelUpdater() {
     public void updateModel(DefaultSModelDescriptor sm, SModel model) {
       updateModelInLoadingState(sm, model);
-      ((BaseStubModelDescriptor)sm).removeModelUpdater(this);
+      ((BaseStubModelDescriptor) sm).removeModelUpdater(this);
       myDescriptorsWithListener.remove(sm);
     }
   };
 
   private StubLocation myLocation;
+  private ModelRootManager myThisManager;
+
+
+  protected BaseStubModelRootManager() {
+    myThisManager = new ModelRootManager(getSelfModuleId(), this.getClass().getName());
+  }
 
   public final void updateModels(@NotNull SModelRoot root, @NotNull IModule module) {
     updateModels(root.getPath(), root.getPrefix(), module);
@@ -66,6 +73,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
 
     for (BaseStubModelDescriptor descriptor : models) {
+      descriptor.addStubPath(new StubPath(myLocation.getPath(), myThisManager));
+
       SModelDescriptor oldDescr = repository.getModelDescriptor(descriptor.getSModelReference());
       if (oldDescr == null) {
         repository.registerModelDescriptor(descriptor, module);
@@ -154,6 +163,8 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   protected abstract void updateModel(StubLocation location, SModel model);
 
   protected abstract Set<Language> getLanguagesToImport();
+
+  protected abstract String getSelfModuleId();
 
   public static IModelRootManager create(String moduleId, String className) throws ManagerNotFoundException {
     AbstractModule mod = ((AbstractModule) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId)));

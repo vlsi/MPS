@@ -111,6 +111,10 @@ public class GWTModuleStubs extends BaseStubModelRootManager {
     return result;
   }
 
+  protected String getSelfModuleId() {
+    return "954c4d77-e24b-4e49-a5a5-5476c966c092";
+  }
+
   private void collectDescriptors(IModelRootManager mrm, StubLocation loc, Set<BaseStubModelDescriptor> result) {
     String pkg = loc.getPrefix();
     PathItem pi = new GWTModulePathItem(loc.getPath());
