@@ -64,7 +64,9 @@ public class JavaStubs extends BaseStubModelRootManager {
   }
 
   protected Set<BaseStubModelDescriptor> getModelDescriptors(final StubLocation location) {
-    return JavaStubs.this.getModelDescriptorsInternal(location);
+    Set<BaseStubModelDescriptor> result = new jetbrains.mps.util.misc.hash.HashSet<BaseStubModelDescriptor>();
+    JavaStubs.this.getModelDescriptorsInternal(location, result);
+    return result;
   }
 
   protected String getSelfModuleId() {
@@ -72,11 +74,13 @@ public class JavaStubs extends BaseStubModelRootManager {
   }
 
   public Set<SNodeDescriptor> getRootNodeDescriptors(final StubLocation location) {
-    Set<SNodeDescriptor> result = new jetbrains.mps.util.misc.hash.HashSet<SNodeDescriptor>();
     IClassPathItem item = JavaStubs.this.createClassPathItem(location);
-    if (item != null) {
-      JavaStubs.this.iterateClasspath(item, result, "");
+    if (item == null) {
+      return new jetbrains.mps.util.misc.hash.HashSet<SNodeDescriptor>();
     }
+
+    Set<SNodeDescriptor> result = new jetbrains.mps.util.misc.hash.HashSet<SNodeDescriptor>();
+    JavaStubs.this.iterateClasspath(item, result, "");
     return result;
   }
 
@@ -84,14 +88,13 @@ public class JavaStubs extends BaseStubModelRootManager {
     return StubClassPathCache.getInstance().get(location);
   }
 
-  private Set<BaseStubModelDescriptor> getModelDescriptorsInternal(StubLocation location) {
+  private void getModelDescriptorsInternal(StubLocation location, Set<BaseStubModelDescriptor> result) {
     String pack = location.getPrefix();
     IClassPathItem cpItem = JavaStubs.this.createClassPathItem(location);
     if (cpItem == null) {
-      return new jetbrains.mps.util.misc.hash.HashSet<BaseStubModelDescriptor>();
+      return;
     }
 
-    Set<BaseStubModelDescriptor> result = new jetbrains.mps.util.misc.hash.HashSet<BaseStubModelDescriptor>();
     for (String subpackage : cpItem.getSubpackages(pack)) {
       if (!(cpItem.getAvailableClasses(subpackage).isEmpty())) {
         SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage);
@@ -106,9 +109,9 @@ public class JavaStubs extends BaseStubModelRootManager {
           result.add(new BaseStubModelDescriptor(JavaStubs.this, null, modelReference));
         }
       }
-      result.addAll(JavaStubs.this.getModelDescriptorsInternal(new StubLocation(location.getPath(), subpackage, location.getModule())));
+      StubLocation newLocation = new StubLocation(location.getPath(), subpackage, location.getModule());
+      JavaStubs.this.getModelDescriptorsInternal(newLocation, result);
     }
-    return result;
   }
 
   private void iterateClasspath(IClassPathItem item, Set<SNodeDescriptor> result, final String pack) {
