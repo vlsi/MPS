@@ -11,11 +11,11 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantDialog;
 import javax.swing.JOptionPane;
 
@@ -40,7 +40,7 @@ public class IntroduceConstant_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(IntroduceConstant_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression");
+    return IntroduceConstantRefactoring.isAbblicable(IntroduceConstant_Action.this.node);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

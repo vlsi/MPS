@@ -11,11 +11,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceFieldRefactoring;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceFieldDialog;
 import javax.swing.JOptionPane;
 
@@ -40,7 +40,7 @@ public class IntroduceField_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(IntroduceField_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(IntroduceField_Action.this.node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+    return IntroduceFieldRefactoring.isApplicable(IntroduceField_Action.this.node);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

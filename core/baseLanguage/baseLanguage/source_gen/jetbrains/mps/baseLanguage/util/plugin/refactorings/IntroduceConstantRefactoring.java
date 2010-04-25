@@ -31,6 +31,10 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     SNodeOperations.replaceWithAnother(node, new IntroduceConstantRefactoring.QuotationClass_2jj2z2_a0a0a0b().createNode(declaration));
   }
 
+  public static boolean isAbblicable(SNode node) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) && (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null);
+  }
+
   public static class QuotationClass_2jj2z2_a0a1a0 {
     public QuotationClass_2jj2z2_a0a1a0() {
     }
