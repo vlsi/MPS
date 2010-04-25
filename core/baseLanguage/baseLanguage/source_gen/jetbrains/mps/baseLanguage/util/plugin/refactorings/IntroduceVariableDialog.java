@@ -20,10 +20,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.awt.Insets;
 
@@ -83,6 +80,7 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
   public void onOk() {
     IntroduceVariableDialog.this.getRefactoring().setName(((String) this.myName.getEditor().getItem()));
     this.doRefactoring();
+    new IntroduceVariableDialog.MyDuplicatesProcessor(this.myEditorContext).process(this.getRefactoring().getDuplicates());
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
@@ -93,13 +91,6 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
 
   protected void doRefactoring() {
     this.dispose();
-    final Wrappers._T<List<SNode>> duplicates = new Wrappers._T<List<SNode>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SNode expr = IntroduceVariableDialog.this.getRefactoring().getExpression();
-        duplicates.value = new SimpleDuplicatesFinder(expr).findDuplicates(IntroduceVariableDialog.this.getRootToFindDuplicates(expr));
-      }
-    });
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         IntroduceVariableDialog.this.myResult = IntroduceVariableDialog.this.getRefactoring().doRefactoring();
@@ -107,16 +98,6 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
       }
     });
     this.myEditorContext.select(this.myResult);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        duplicates.value = ListSequence.fromList(duplicates.value).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return VisibilityUtil.isVisible(SNodeOperations.getParent(it), IntroduceVariableDialog.this.myResult);
-          }
-        }).toListSequence();
-      }
-    });
-    this.getDuplicatesProcessor().process(duplicates.value);
   }
 
   protected SNode getRootToFindDuplicates(SNode node) {
@@ -126,8 +107,6 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
     }
     return result;
   }
-
-  protected abstract DuplicatesProcessor getDuplicatesProcessor();
 
   public SNode getResult() {
     return this.myResult;
@@ -143,5 +122,19 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
     c.weightx = 1;
     c.weighty = 0;
     this.myPanel.add(this.createNamePanel(), c);
+  }
+
+  public class MyDuplicatesProcessor extends VariableDuplicatesProcessor {
+    public MyDuplicatesProcessor(EditorContext context) {
+      super(context);
+    }
+
+    public void substitute(final SNode duplicate) {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          IntroduceVariableDialog.this.getRefactoring().replaceNode(duplicate, IntroduceVariableDialog.this.myResult);
+        }
+      });
+    }
   }
 }

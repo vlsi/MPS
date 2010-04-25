@@ -26,15 +26,16 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
   }
 
   public SNode doRefactoring() {
+    this.findDuplicates();
     SNode newDeclaration;
     if (this.myFieldInitialization == FieldInitializationPlace.FIELD) {
-      newDeclaration = new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a0a1a1().createNode(SNodeOperations.copyNode(this.getExpressionType()), SNodeOperations.copyNode(this.getExpression()), this.getName());
+      newDeclaration = new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a0a2a1().createNode(SNodeOperations.copyNode(this.getExpressionType()), SNodeOperations.copyNode(this.getExpression()), this.getName());
     } else {
-      newDeclaration = new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a0a0b0b().createNode(SNodeOperations.copyNode(this.getExpressionType()), this.getName());
+      newDeclaration = new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a0a0c0b().createNode(SNodeOperations.copyNode(this.getExpressionType()), this.getName());
     }
     SNode classConcept = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).addElement(newDeclaration);
-    SNode assignStatement = new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a4a1().createNode(newDeclaration, SNodeOperations.copyNode(this.getExpression()));
+    SNode assignStatement = new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a5a1().createNode(newDeclaration, SNodeOperations.copyNode(this.getExpression()));
     if (this.myFieldInitialization == FieldInitializationPlace.METHOD) {
       SNodeOperations.insertPrevSiblingChild(SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.Statement", false, false), SNodeOperations.copyNode(assignStatement));
     }
@@ -44,8 +45,12 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
         SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constructor, "body", true), "statement", true)).first(), SNodeOperations.copyNode(assignStatement));
       }
     }
-    SNodeOperations.replaceWithAnother(this.getExpression(), new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a0h0b().createNode(newDeclaration));
+    SNodeOperations.replaceWithAnother(this.getExpression(), new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a0i0b().createNode(newDeclaration));
     return newDeclaration;
+  }
+
+  public void replaceNode(SNode node, SNode declaration) {
+    SNodeOperations.replaceWithAnother(node, new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a0a0c().createNode(declaration));
   }
 
   public void setFieldInitializationPlace(FieldInitializationPlace place) {
@@ -62,8 +67,8 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     return result.value;
   }
 
-  public static class QuotationClass_baxqxe_a0a0a1a1 {
-    public QuotationClass_baxqxe_a0a0a1a1() {
+  public static class QuotationClass_baxqxe_a0a0a2a1 {
+    public QuotationClass_baxqxe_a0a0a2a1() {
     }
 
     public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11) {
@@ -114,8 +119,8 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     }
   }
 
-  public static class QuotationClass_baxqxe_a0a0a0b0b {
-    public QuotationClass_baxqxe_a0a0a0b0b() {
+  public static class QuotationClass_baxqxe_a0a0a0c0b {
+    public QuotationClass_baxqxe_a0a0a0c0b() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -152,8 +157,8 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     }
   }
 
-  public static class QuotationClass_baxqxe_a0a4a1 {
-    public QuotationClass_baxqxe_a0a4a1() {
+  public static class QuotationClass_baxqxe_a0a5a1 {
+    public QuotationClass_baxqxe_a0a5a1() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14) {
@@ -208,8 +213,38 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     }
   }
 
-  public static class QuotationClass_baxqxe_a0a0h0b {
-    public QuotationClass_baxqxe_a0a0h0b() {
+  public static class QuotationClass_baxqxe_a0a0i0b {
+    public QuotationClass_baxqxe_a0a0i0b() {
+    }
+
+    public SNode createNode(Object parameter_7) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode_1.addChild("operand", quotedNode1_5);
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_3;
+          quotedNode1_6.setReferent("fieldDeclaration", (SNode) parameter_7);
+          quotedNode_1.addChild("operation", quotedNode1_6);
+        }
+        result = quotedNode1_4;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_baxqxe_a0a0a0c {
+    public QuotationClass_baxqxe_a0a0a0c() {
     }
 
     public SNode createNode(Object parameter_7) {

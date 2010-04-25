@@ -14,15 +14,6 @@ import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.project.GlobalScope;
 
 public class IntroduceFieldDialog extends IntroduceVariableDialog {
   private IntroduceFieldRefactoring myRefactoring;
@@ -83,47 +74,5 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
       }
     });
     return button;
-  }
-
-  protected DuplicatesProcessor getDuplicatesProcessor() {
-    return new VariableDuplicatesProcessor(this.myEditorContext) {
-      public void substitute(final SNode duplicate) {
-        ModelAccess.instance().runWriteActionInCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
-          public SNode invoke() {
-            return SNodeOperations.replaceWithAnother(duplicate, new IntroduceFieldDialog.QuotationClass_6rk01d_a0a0a0a0a0a0a0a0a3().createNode(IntroduceFieldDialog.this.myResult));
-          }
-        }));
-      }
-    };
-  }
-
-  public static class QuotationClass_6rk01d_a0a0a0a0a0a0a0a0a3 {
-    public QuotationClass_6rk01d_a0a0a0a0a0a0a0a0a3() {
-    }
-
-    public SNode createNode(Object parameter_7) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5 = quotedNode_2;
-          quotedNode_1.addChild("operand", quotedNode1_5);
-        }
-        {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_6 = quotedNode_3;
-          quotedNode1_6.setReferent("fieldDeclaration", (SNode) parameter_7);
-          quotedNode_1.addChild("operation", quotedNode1_6);
-        }
-        result = quotedNode1_4;
-      }
-      return result;
-    }
   }
 }

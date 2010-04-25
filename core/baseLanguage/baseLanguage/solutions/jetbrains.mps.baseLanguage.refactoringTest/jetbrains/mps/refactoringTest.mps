@@ -15529,7 +15529,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="8556882668095192252">
-    <property name="package:4" value="findDuplicates" />
+    <property name="package:4" value="findDuplicates.method" />
     <property name="name:4" value="SimpleFindForExtractFromExpression" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="8556882668095202192">
       <property name="name:4" value="SimpleFindForExtractFromExpressionTest" />
@@ -15928,7 +15928,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="8556882668095222061">
-    <property name="package:4" value="findDuplicates" />
+    <property name="package:4" value="findDuplicates.method" />
     <property name="name:4" value="SimpleFindForExtractFromStatement" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="8556882668095222213">
       <property name="name:4" value="SimpleFindForExtractFromStatementTest" />
@@ -16327,7 +16327,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="1998477585418803771">
-    <property name="package:4" value="findDuplicates" />
+    <property name="package:4" value="findDuplicates.method" />
     <property name="name:4" value="SimpleFindForExtractWithReturn" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="1998477585418805710">
       <property name="name:4" value="SimpleFindForExtractWithReturnTest" />
@@ -16741,7 +16741,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="7793057097608406463">
-    <property name="package:4" value="findDuplicates" />
+    <property name="package:4" value="findDuplicates.method" />
     <property name="name:4" value="SimpleFindForExtractFromManyStatements" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="7793057097608416373">
       <property name="name:4" value="SimpleFindForExtractFromManyStatementsTest" />
@@ -17277,7 +17277,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase:4" id="8155843501977546256">
-    <property name="package:4" value="findDuplicates" />
+    <property name="package:4" value="findDuplicates.method" />
     <property name="name:4" value="ReplaceOutputVaryable" />
     <node role="testMethods:4" type="jetbrains.mps.lang.test.structure.SimpleNodeTest:4" id="8155843501977560935">
       <property name="name:4" value="ReplaceOutputVaryableTest" />

@@ -19,15 +19,20 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
   }
 
   public SNode doRefactoring() {
-    SNode newDeclaration = new IntroduceConstantRefactoring.QuotationClass_2jj2z2_a0a0a0().createNode(SNodeOperations.copyNode(this.getExpressionType()), SNodeOperations.copyNode(this.getExpression()), this.getName());
+    this.findDuplicates();
+    SNode newDeclaration = new IntroduceConstantRefactoring.QuotationClass_2jj2z2_a0a1a0().createNode(SNodeOperations.copyNode(this.getExpressionType()), SNodeOperations.copyNode(this.getExpression()), this.getName());
     SNode classConcept = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticField", true)).addElement(newDeclaration);
-    SNodeOperations.replaceWithAnother(this.getExpression(), new IntroduceConstantRefactoring.QuotationClass_2jj2z2_a0a0d0a().createNode(newDeclaration));
+    SNodeOperations.replaceWithAnother(this.getExpression(), new IntroduceConstantRefactoring.QuotationClass_2jj2z2_a0a0e0a().createNode(newDeclaration));
     return newDeclaration;
   }
 
-  public static class QuotationClass_2jj2z2_a0a0a0 {
-    public QuotationClass_2jj2z2_a0a0a0() {
+  public void replaceNode(SNode node, SNode declaration) {
+    SNodeOperations.replaceWithAnother(node, new IntroduceConstantRefactoring.QuotationClass_2jj2z2_a0a0a0b().createNode(declaration));
+  }
+
+  public static class QuotationClass_2jj2z2_a0a1a0 {
+    public QuotationClass_2jj2z2_a0a1a0() {
     }
 
     public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11) {
@@ -79,8 +84,26 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     }
   }
 
-  public static class QuotationClass_2jj2z2_a0a0d0a {
-    public QuotationClass_2jj2z2_a0a0d0a() {
+  public static class QuotationClass_2jj2z2_a0a0e0a {
+    public QuotationClass_2jj2z2_a0a0e0a() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_2jj2z2_a0a0a0b {
+    public QuotationClass_2jj2z2_a0a0a0b() {
     }
 
     public SNode createNode(Object parameter_3) {

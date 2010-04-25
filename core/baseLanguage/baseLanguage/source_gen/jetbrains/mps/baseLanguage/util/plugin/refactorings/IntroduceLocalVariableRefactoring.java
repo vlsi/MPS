@@ -19,7 +19,8 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
   }
 
   public SNode doRefactoring() {
-    SNode var = new IntroduceLocalVariableRefactoring.QuotationClass_nngwe4_a0a0a0().createNode(this.getExpressionType(), this.getExpression(), this.getName());
+    this.findDuplicates();
+    SNode var = new IntroduceLocalVariableRefactoring.QuotationClass_nngwe4_a0a1a0().createNode(this.getExpressionType(), this.getExpression(), this.getName());
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(this.getExpression()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       SNodeOperations.replaceWithAnother(SNodeOperations.getParent(this.getExpression()), var);
     } else {
@@ -33,12 +34,25 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     return SLinkOperations.getTarget(var, "localVariableDeclaration", true);
   }
 
+  @Override
+  protected SNode getRootToFindDuplicates(SNode node) {
+    SNode result = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    while ((SNodeOperations.getAncestor(result, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) != null)) {
+      result = SNodeOperations.getAncestor(result, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    }
+    return result;
+  }
+
+  public void replaceNode(SNode node, SNode declaration) {
+    SNodeOperations.replaceWithAnother(node, new IntroduceLocalVariableRefactoring.QuotationClass_nngwe4_a0a0a0c().createNode(declaration));
+  }
+
   public static boolean isApplicable(SNode expr) {
     return SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.Expression") && SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) != null;
   }
 
-  public static class QuotationClass_nngwe4_a0a0a0 {
-    public QuotationClass_nngwe4_a0a0a0() {
+  public static class QuotationClass_nngwe4_a0a1a0 {
+    public QuotationClass_nngwe4_a0a1a0() {
     }
 
     public SNode createNode(Object parameter_9, Object parameter_10, Object parameter_11) {
@@ -84,6 +98,24 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
           quotedNode_1.addChild("localVariableDeclaration", quotedNode1_6);
         }
         result = quotedNode1_5;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_nngwe4_a0a0a0c {
+    public QuotationClass_nngwe4_a0a0a0c() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import java.util.ArrayList;
 import javax.swing.JComponent;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -23,6 +24,7 @@ public abstract class IntroduceVariableRefactoring {
   private SNode myExpression;
   private SNode myExpressionType;
   private List<String> myExpectedNames;
+  protected List<SNode> myDuplicates = new ArrayList<SNode>();
 
   public String init(SNode node, JComponent editorComponent) {
     SNode expressionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(node), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
@@ -76,6 +78,25 @@ public abstract class IntroduceVariableRefactoring {
 
   public List<String> getExpectedNames() {
     return this.myExpectedNames;
+  }
+
+  public abstract void replaceNode(SNode node, SNode declaration);
+
+  public List<SNode> getDuplicates() {
+    return this.myDuplicates;
+  }
+
+  protected void findDuplicates() {
+    this.myDuplicates = new SimpleDuplicatesFinder(this.getExpression()).findDuplicates(this.getRootToFindDuplicates(this.getExpression()));
+    this.myDuplicates = ListSequence.fromList(this.myDuplicates).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
+      }
+    }).toListSequence();
+  }
+
+  protected SNode getRootToFindDuplicates(SNode node) {
+    return SNodeOperations.getContainingRoot(node);
   }
 
   public abstract SNode doRefactoring();

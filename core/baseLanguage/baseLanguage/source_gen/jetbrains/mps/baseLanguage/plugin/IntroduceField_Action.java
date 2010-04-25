@@ -40,7 +40,7 @@ public class IntroduceField_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return SNodeOperations.isInstanceOf(IntroduceField_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression");
+    return SNodeOperations.isInstanceOf(IntroduceField_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(IntroduceField_Action.this.node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

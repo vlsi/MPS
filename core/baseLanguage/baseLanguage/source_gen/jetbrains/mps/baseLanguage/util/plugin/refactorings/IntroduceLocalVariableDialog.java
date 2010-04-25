@@ -6,15 +6,6 @@ import java.awt.Frame;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.awt.GridBagConstraints;
 import javax.swing.JPanel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.project.GlobalScope;
 
 public class IntroduceLocalVariableDialog extends IntroduceVariableDialog {
   private IntroduceLocalVariableRefactoring myRefactoring;
@@ -32,40 +23,5 @@ public class IntroduceLocalVariableDialog extends IntroduceVariableDialog {
 
   public IntroduceVariableRefactoring getRefactoring() {
     return this.myRefactoring;
-  }
-
-  @Override
-  protected SNode getRootToFindDuplicates(SNode node) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
-  }
-
-  protected DuplicatesProcessor getDuplicatesProcessor() {
-    return new VariableDuplicatesProcessor(this.myEditorContext) {
-      public void substitute(final SNode duplicate) {
-        ModelAccess.instance().runWriteActionInCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
-          public SNode invoke() {
-            return SNodeOperations.replaceWithAnother(duplicate, new IntroduceLocalVariableDialog.QuotationClass_367qvs_a0a0a0a0a0a0a0a0a2().createNode(IntroduceLocalVariableDialog.this.getResult()));
-          }
-        }));
-      }
-    };
-  }
-
-  public static class QuotationClass_367qvs_a0a0a0a0a0a0a0a0a2 {
-    public QuotationClass_367qvs_a0a0a0a0a0a0a0a0a2() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
   }
 }
