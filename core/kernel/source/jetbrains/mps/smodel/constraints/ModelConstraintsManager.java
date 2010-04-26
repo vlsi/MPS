@@ -42,10 +42,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -60,15 +57,16 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new HashMap<String, List<IModelConstraints>>();
-  private Map<String, INodePropertyGetter> myNodePropertyGettersMap = new HashMap<String, INodePropertyGetter>();
+  private Map<String, INodePropertyGetter> myNodePropertyGettersMap = Collections.synchronizedMap(new HashMap<String, INodePropertyGetter>());
   private Map<String, INodePropertyGetter> myNodePropertyGettersCache = new HashMap<String, INodePropertyGetter>();
-  private Map<String, INodePropertySetter> myNodePropertySettersMap = new HashMap<String, INodePropertySetter>();
+  private Map<String, INodePropertySetter> myNodePropertySettersMap = Collections.synchronizedMap(new HashMap<String, INodePropertySetter>());
   private Map<String, INodePropertySetter> myNodePropertySettersCache = new HashMap<String, INodePropertySetter>();
-  private Map<String, INodePropertyValidator> myNodePropertyValidatorsMap = new HashMap<String, INodePropertyValidator>();
+  private Map<String, INodePropertyValidator> myNodePropertyValidatorsMap = Collections.synchronizedMap(new HashMap<String, INodePropertyValidator>());
   private Map<String, INodePropertyValidator> myNodePropertyValidatorsCache = new HashMap<String, INodePropertyValidator>();
   private Map<String, INodeReferentSetEventHandler> myNodeReferentSetEventHandlersMap = new HashMap<String, INodeReferentSetEventHandler>();
-  private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
-  private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
+
+  private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = Collections.synchronizedMap(new HashMap<String, INodeReferentSearchScopeProvider>());
+  private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = Collections.synchronizedMap(new HashMap<String, INodeReferentSearchScopeProvider>());
 
   private Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
   private Map<String, Method> myCanBeParentMethods = new HashMap<String, Method>();
@@ -120,10 +118,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public void registerNodePropertyGetter(String conceptFqName, String propertyName, INodePropertyGetter getter) {
     String key = conceptFqName + "#" + propertyName;
-    if (!myNodePropertyGettersMap.containsKey(key)) {
-      myNodePropertyGettersMap.put(key, getter);
-    } else {
-      LOG.error("property getter is already registered for key '" + key + "' : " + myNodePropertyGettersMap.get(key));
+    INodePropertyGetter old = myNodePropertyGettersMap.put(key, getter);
+    if(old != null) {
+      LOG.error("property getter is already registered for key '" + key + "' : " + old);
     }
 
     myNodePropertyGettersCache.clear();
@@ -136,10 +133,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public void registerNodePropertySetter(String conceptFqName, String propertyName, INodePropertySetter setter) {
     String key = conceptFqName + "#" + propertyName;
-    if (!myNodePropertySettersMap.containsKey(key)) {
-      myNodePropertySettersMap.put(key, setter);
-    } else {
-      LOG.error("property setter is already registered for key '" + key + "' : " + myNodePropertySettersMap.get(key));
+    INodePropertySetter old = myNodePropertySettersMap.put(key, setter);
+    if(old != null) {
+      LOG.error("property setter is already registered for key '" + key + "' : " + old);
     }
 
     myNodePropertySettersCache.clear();
@@ -152,12 +148,10 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public void registerNodePropertyValidator(String conceptFqName, String propertyName, INodePropertyValidator validator) {
     String key = conceptFqName + "#" + propertyName;
-    if (!myNodePropertyValidatorsMap.containsKey(key)) {
-      myNodePropertyValidatorsMap.put(key, validator);
-    } else {
-      LOG.error("property validator is already registered for key '" + key + "' : " + myNodePropertyValidatorsMap.get(key));
+    INodePropertyValidator old = myNodePropertyValidatorsMap.put(key, validator);
+    if(old != null) {
+      LOG.error("property validator is already registered for key '" + key + "' : " + old);
     }
-
     myNodePropertyValidatorsCache.clear();
   }
 
@@ -207,10 +201,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public void registerNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole, INodeReferentSearchScopeProvider provider) {
     String key = conceptFqName + "#" + referenceRole;
-    if (!myNodeReferentSearchScopeProvidersMap.containsKey(key)) {
-      myNodeReferentSearchScopeProvidersMap.put(key, provider);
-    } else {
-      LOG.error("search scope provider is already registered for key '" + key + "' : " + myNodeReferentSearchScopeProvidersMap.get(key));
+    INodeReferentSearchScopeProvider old = myNodeReferentSearchScopeProvidersMap.put(key, provider);
+    if(old != null) {
+      LOG.error("search scope provider is already registered for key '" + key + "' : " + old);
     }
   }
 
@@ -219,10 +212,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   public void registerNodeDefaultSearchScopeProvider(String conceptFqName, INodeReferentSearchScopeProvider provider) {
-    if (!myNodeDefaultSearchScopeProvidersMap.containsKey(conceptFqName)) {
-      myNodeDefaultSearchScopeProvidersMap.put(conceptFqName, provider);
-    } else {
-      LOG.error("default search scope provider is already registered for concept '" + conceptFqName + "' : " + myNodeDefaultSearchScopeProvidersMap.get(conceptFqName));
+    INodeReferentSearchScopeProvider old = myNodeDefaultSearchScopeProvidersMap.put(conceptFqName, provider);
+    if(old != null) {
+      LOG.error("default search scope provider is already registered for concept '" + conceptFqName + "' : " + old);
     }
   }
 
@@ -342,8 +334,9 @@ public class ModelConstraintsManager implements ApplicationComponent {
     builder.append(prefixedPropertyName);
     final String originalKey = builder.toString();
 
-    if (myNodePropertyValidatorsCache.containsKey(originalKey)) {
-      return myNodePropertyValidatorsCache.get(originalKey);
+    INodePropertyValidator result = myNodePropertyValidatorsCache.get(originalKey);
+    if (result != null || myNodePropertyValidatorsCache.containsKey(originalKey)) {
+      return result;
     }
 
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodePropertyValidator>() {
@@ -456,6 +449,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
     myNodePropertyGettersMap.clear();
     myNodePropertySettersMap.clear();
+    myNodePropertyValidatorsMap.clear();
     myNodeReferentSearchScopeProvidersMap.clear();
     myNodeReferentSetEventHandlersMap.clear();
     myNodeDefaultSearchScopeProvidersMap.clear();
