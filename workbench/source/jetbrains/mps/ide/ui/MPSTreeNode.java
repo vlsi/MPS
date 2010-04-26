@@ -65,6 +65,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private boolean myAutoExpandable = true;
   private ErrorState myErrorState = ErrorState.NONE;
   private ErrorState myCombinedErrorState = ErrorState.NONE;
+  private final Object myTreeMessagesLock = new Object();
   private List<TreeMessage> myTreeMessages = null;
 
   public MPSTreeNode(IOperationContext operationContext) {
@@ -353,11 +354,13 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void addTreeMessage(TreeMessage message, boolean updatePresentation) {
-    if (myTreeMessages == null) {
-      myTreeMessages = new ArrayList<TreeMessage>(1);
+    synchronized (myTreeMessagesLock) {
+      if (myTreeMessages == null) {
+        myTreeMessages = new ArrayList<TreeMessage>(1);
+      }
+      myTreeMessages.add(message);
+      treeMessagesChanged(updatePresentation);
     }
-    myTreeMessages.add(message);
-    treeMessagesChanged(updatePresentation);
   }
 
   public void addTreeMessages(TreeMessage... messages) {
@@ -366,11 +369,13 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   public void addTreeMessages(boolean updatePresentation, TreeMessage... messages) {
     if (messages.length == 0) return;
-    if (myTreeMessages == null) {
-      myTreeMessages = new ArrayList<TreeMessage>(1);
+    synchronized (myTreeMessagesLock) {
+      if (myTreeMessages == null) {
+        myTreeMessages = new ArrayList<TreeMessage>(1);
+      }
+      myTreeMessages.addAll(Arrays.asList(messages));
+      treeMessagesChanged(updatePresentation);
     }
-    myTreeMessages.addAll(Arrays.asList(messages));
-    treeMessagesChanged(updatePresentation);
   }
 
    public void removeTreeMessage(TreeMessage message) {
@@ -378,18 +383,22 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
    }
 
   public void removeTreeMessage(TreeMessage message, boolean updatePresentation) {
-    if (myTreeMessages != null) {
-      myTreeMessages.remove(message);
+    synchronized (myTreeMessagesLock) {
+      if (myTreeMessages != null) {
+        myTreeMessages.remove(message);
+      }
     }
     treeMessagesChanged(updatePresentation);
   }
 
   public void removeTreeMessages(TreeMessageOwner owner, boolean updatePresentation) {
     if (owner == null) return;
-    if (myTreeMessages == null) return;
-    for (TreeMessage message : new ArrayList<TreeMessage>(myTreeMessages)) {
-      if (owner.equals(message.getOwner())) {
-        myTreeMessages.remove(message);
+    synchronized (myTreeMessagesLock) {
+      if (myTreeMessages == null) return;
+      for (TreeMessage message : new ArrayList<TreeMessage>(myTreeMessages)) {
+        if (owner.equals(message.getOwner())) {
+          myTreeMessages.remove(message);
+        }
       }
     }
     treeMessagesChanged(updatePresentation);
