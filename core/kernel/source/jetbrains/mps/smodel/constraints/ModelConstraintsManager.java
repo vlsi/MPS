@@ -56,14 +56,16 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(ModelConstraintsManager.class);
   }
 
+  private Object myLock = new Object();
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new HashMap<String, List<IModelConstraints>>();
+  private Map<String, INodeReferentSetEventHandler> myNodeReferentSetEventHandlersMap = new HashMap<String, INodeReferentSetEventHandler>();
+
   private Map<String, INodePropertyGetter> myNodePropertyGettersMap = Collections.synchronizedMap(new HashMap<String, INodePropertyGetter>());
   private Map<String, INodePropertyGetter> myNodePropertyGettersCache = new HashMap<String, INodePropertyGetter>();
   private Map<String, INodePropertySetter> myNodePropertySettersMap = Collections.synchronizedMap(new HashMap<String, INodePropertySetter>());
   private Map<String, INodePropertySetter> myNodePropertySettersCache = new HashMap<String, INodePropertySetter>();
   private Map<String, INodePropertyValidator> myNodePropertyValidatorsMap = Collections.synchronizedMap(new HashMap<String, INodePropertyValidator>());
   private Map<String, INodePropertyValidator> myNodePropertyValidatorsCache = new HashMap<String, INodePropertyValidator>();
-  private Map<String, INodeReferentSetEventHandler> myNodeReferentSetEventHandlersMap = new HashMap<String, INodeReferentSetEventHandler>();
 
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = Collections.synchronizedMap(new HashMap<String, INodeReferentSearchScopeProvider>());
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = Collections.synchronizedMap(new HashMap<String, INodeReferentSearchScopeProvider>());
@@ -162,41 +164,45 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   public void registerNodeReferentSetEventHandler(String conceptFqName, String referentRole, INodeReferentSetEventHandler eventHandler) {
     String key = conceptFqName + "#" + referentRole;
-    if (!myNodeReferentSetEventHandlersMap.containsKey(key)) {
-      myNodeReferentSetEventHandlersMap.put(key, eventHandler);
-    } else {
-      LOG.error("'set referent' event handler is already registered for key '" + key + "' : " + myNodeReferentSetEventHandlersMap.get(key));
+    synchronized (myLock) {
+      INodeReferentSetEventHandler old = myNodeReferentSetEventHandlersMap.put(key, eventHandler);
+      if(old != null) {
+        LOG.error("'set referent' event handler is already registered for key '" + key + "' : " + old);
+      }
     }
   }
 
   public void unRegisterNodeReferentSetEventHandler(String conceptFqName, String referentRole) {
-    myNodeReferentSetEventHandlersMap.remove(conceptFqName + "#" + referentRole);
+    synchronized (myLock) {
+      myNodeReferentSetEventHandlersMap.remove(conceptFqName + "#" + referentRole);
+    }
   }
 
   public INodeReferentSetEventHandler getNodeReferentSetEventHandler(SNode node, String referentRole) {
     String nodeConceptFqName = node.getConceptFqName();
     String originalKey = nodeConceptFqName + "#" + referentRole;
-    if (myNodeReferentSetEventHandlersMap.containsKey(originalKey)) {
-      return myNodeReferentSetEventHandlersMap.get(originalKey);
-    }
-
-    // find set-event-handler and put to cache
-    List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
-    for (AbstractConceptDeclaration concept : hierarchy) {
-      Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
-      ensureLanguageAdded(l);
-
-      String conceptFqName = NameUtil.nodeFQName(concept);
-      INodeReferentSetEventHandler result = myNodeReferentSetEventHandlersMap.get(conceptFqName + "#" + referentRole);
-      if (result != null) {
-        myNodeReferentSetEventHandlersMap.put(originalKey, result);
+    synchronized (myLock) {
+      INodeReferentSetEventHandler result = myNodeReferentSetEventHandlersMap.get(originalKey);
+      if (result != null || myNodeReferentSetEventHandlersMap.containsKey(originalKey)) {
         return result;
       }
-    }
 
-    // no set-event-handler found
-    myNodeReferentSetEventHandlersMap.put(originalKey, null);
-    return null;
+      // find set-event-handler and put to cache
+      List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
+      for (AbstractConceptDeclaration concept : hierarchy) {
+        Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+        ensureLanguageAdded(l);
+
+        String conceptFqName = NameUtil.nodeFQName(concept);
+        result = myNodeReferentSetEventHandlersMap.get(conceptFqName + "#" + referentRole);
+        if (result != null) {
+          break;
+        }
+      }
+
+      myNodeReferentSetEventHandlersMap.put(originalKey, result);
+      return result;
+    }
   }
 
   public void registerNodeReferentSearchScopeProvider(String conceptFqName, String referenceRole, INodeReferentSearchScopeProvider provider) {
@@ -407,7 +413,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   private void ensureLanguageAdded(Language language) {
     String namespace = language.getNamespace();
-    synchronized (myAddedLanguageNamespaces) {
+    synchronized (myLock) {
       if (myAddedLanguageNamespaces.containsKey(namespace)) {
         return;
       }
@@ -420,7 +426,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   private void processLanguageRemoved(Language language) {
     String namespace = language.getNamespace();
-    synchronized (myAddedLanguageNamespaces) {
+    synchronized (myLock) {
       if (!myAddedLanguageNamespaces.containsKey(namespace)) {
         return;
       }
@@ -451,14 +457,14 @@ public class ModelConstraintsManager implements ApplicationComponent {
     myNodePropertySettersMap.clear();
     myNodePropertyValidatorsMap.clear();
     myNodeReferentSearchScopeProvidersMap.clear();
-    myNodeReferentSetEventHandlersMap.clear();
     myNodeDefaultSearchScopeProvidersMap.clear();
 
     synchronized (myConstraintClassNames) {
       myConstraintClassNames.clear();
     }
 
-    synchronized (myAddedLanguageNamespaces) {
+    synchronized (myLock) {
+      myNodeReferentSetEventHandlersMap.clear();
       for (List<IModelConstraints> loadedConstraints : myAddedLanguageNamespaces.values()) {
         for (IModelConstraints constraints : loadedConstraints) {
           constraints.unRegisterSelf(this);
