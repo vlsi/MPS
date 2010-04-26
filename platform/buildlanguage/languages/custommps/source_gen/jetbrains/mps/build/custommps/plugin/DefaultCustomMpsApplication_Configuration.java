@@ -37,6 +37,7 @@ import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
 import jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -44,7 +45,6 @@ import java.io.File;
 import jetbrains.mps.build.packaging.plugin.GenerateTextFromBuild;
 import jetbrains.mps.build.distrib.behavior.DistribConfiguration_Behavior;
 import jetbrains.mps.buildlanguage.plugin.AntScriptRunner;
-import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
@@ -155,8 +155,8 @@ public class DefaultCustomMpsApplication_Configuration extends BaseRunConfig {
 
             final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
             // create process handler 
-            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E2<Object, ExecutionException, ExecutionException>() {
-              public Object invoke() throws ExecutionException, ExecutionException {
+            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E2<DefaultProcessHandler, ExecutionException, ExecutionException>() {
+              public DefaultProcessHandler invoke() throws ExecutionException, ExecutionException {
                 try {
                   final SNode configuration = DefaultCustomMpsApplication_Configuration.this.getConfiguration(node);
 

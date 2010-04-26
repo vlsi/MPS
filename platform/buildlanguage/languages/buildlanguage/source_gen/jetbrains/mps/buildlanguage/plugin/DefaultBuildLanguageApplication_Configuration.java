@@ -35,12 +35,12 @@ import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
 import java.io.File;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.buildlanguage.behavior.Project_Behavior;
-import jetbrains.mps.lang.plugin.run.DefaultProcessHandler;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.execution.configurations.RunnerSettings;
 import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
@@ -143,8 +143,8 @@ public class DefaultBuildLanguageApplication_Configuration extends BaseRunConfig
 
             final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
             // create process handler 
-            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E0<Object>() {
-              public Object invoke() {
+            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E0<DefaultProcessHandler>() {
+              public DefaultProcessHandler invoke() {
                 try {
                   AntScriptRunner runner = new AntScriptRunner(javaRunParameters);
                   final Wrappers._T<File> file = new Wrappers._T<File>();

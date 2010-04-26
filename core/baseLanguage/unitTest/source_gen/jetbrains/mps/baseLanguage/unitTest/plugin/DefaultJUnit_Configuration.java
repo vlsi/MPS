@@ -179,8 +179,8 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
 
             final Wrappers._T<ExecutionException> ex = new Wrappers._T<ExecutionException>(null);
             // create process handler 
-            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E0<Object>() {
-              public Object invoke() {
+            handler_22042010 = (ProcessHandler) new _FunctionTypes._return_P0_E0<ProcessHandler>() {
+              public ProcessHandler invoke() {
                 try {
                   return parameter.execute();
                 } catch (ExecutionException e) {
