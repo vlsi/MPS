@@ -16531,5 +16531,20 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="3066917033203129860" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7785501532031731646">
+    <link role="conceptDeclaration:32" targetNodeId="17.7785501532031639928:3" resolveInfo="LocalInstanceFieldReference" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="7785501532031731648">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="7785501532031731651">
+        <link role="relationDeclaration:32" targetNodeId="17.7785501532031731645:3" />
+        <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="7785501532031731652">
+          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="7785501532031731654">
+            <property name="readOnly:32" value="true" />
+            <link role="relationDeclaration:32" targetNodeId="18.1169194664001:0" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="7785501532031731650" />
+    </node>
+  </node>
 </model>
 

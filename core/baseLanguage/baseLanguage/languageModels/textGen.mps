@@ -11483,5 +11483,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="7785501532031731666">
+    <link role="conceptDeclaration:11" targetNodeId="1.7785501532031639928:3" resolveInfo="LocalInstanceFieldReference" />
+    <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="7785501532031731667">
+      <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7785501532031731668">
+        <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="7785501532031731669">
+          <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart:11" id="7785501532031731671">
+            <node role="reference:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7785501532031737687">
+              <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="7785501532031737686" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation:16" id="7785501532031737692">
+                <node role="linkQualifier:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier:16" id="7785501532031737693">
+                  <node role="linkQualifier:16" type="jetbrains.mps.lang.smodel.structure.LinkRefQualifier:16" id="7785501532031737695">
+                    <link role="link:16" targetNodeId="1.7785501532031731645:3" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

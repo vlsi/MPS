@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -204,6 +206,61 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
 
       public boolean isShowAsIntention() {
         return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "ConvertLocalInstanceMethodCall";
+      }
+
+      public String getAdditionalInfo() {
+        return "ConvertLocalInstanceMethodCall";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", null);
+        SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
+        ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)));
+        SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), methodCall);
+      }
+
+      public boolean isShowAsIntention() {
+        return true;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "ConvertLocalFieldReference";
+      }
+
+      public String getAdditionalInfo() {
+        return "ConvertLocalFieldReference";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return false;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode fieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+        SLinkOperations.setTarget(fieldReference, "variableDeclaration", SLinkOperations.getTarget(node, "fieldDeclaration", false), false);
+        SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), fieldReference);
+      }
+
+      public boolean isShowAsIntention() {
+        return true;
       }
     });
   }

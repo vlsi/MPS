@@ -2670,15 +2670,9 @@
                   <link role="concept:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
                   <link role="baseMethodDeclaration:16" targetNodeId="51.669019847198843527" resolveInfo="getAssesableMembers" />
                   <node role="actualArgument:16" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode:23" id="669019847198844924" />
-                  <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.BitwiseOrExpression:3" id="7632169031548935848">
-                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="669019847198844926">
-                      <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                      <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.INSTANCE_METHOD" resolveInfo="INSTANCE_METHOD" />
-                    </node>
-                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7632169031548935851">
-                      <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                      <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.INSTANCE_FIELD" resolveInfo="INSTANCE_FIELD" />
-                    </node>
+                  <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7632169031548935851">
+                    <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
+                    <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.INSTANCE_FIELD" resolveInfo="INSTANCE_FIELD" />
                   </node>
                 </node>
               </node>
@@ -2806,15 +2800,9 @@
                 <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7632169031549336137">
                   <property name="name:3" value="constraint" />
                   <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7632169031549336138" />
-                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.BitwiseOrExpression:3" id="7632169031549341055">
-                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7632169031549336139">
-                      <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                      <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.INSTANCE_METHOD" resolveInfo="INSTANCE_METHOD" />
-                    </node>
-                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7632169031549341058">
-                      <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
-                      <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.INSTANCE_FIELD" resolveInfo="INSTANCE_FIELD" />
-                    </node>
+                  <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7632169031549341058">
+                    <link role="classifier:3" targetNodeId="28.~IClassifiersSearchScope" resolveInfo="IClassifiersSearchScope" />
+                    <link role="variableDeclaration:3" targetNodeId="28.~IClassifiersSearchScope.INSTANCE_FIELD" resolveInfo="INSTANCE_FIELD" />
                   </node>
                 </node>
               </node>

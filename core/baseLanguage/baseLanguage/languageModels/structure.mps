@@ -3682,5 +3682,23 @@
       <link role="specializedLink:0" targetNodeId="1068499141037:3" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7785501532031639928">
+    <property name="name:0" value="LocalInstanceFieldReference" />
+    <link role="extends:0" targetNodeId="1068498886296:3" resolveInfo="VariableReference" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7785501532031731645">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="fieldDeclaration" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1068390468200:3" resolveInfo="FieldDeclaration" />
+      <link role="specializedLink:0" targetNodeId="1068581517664:3" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7785501532031731643">
+      <property name="value:0" value="local instance field reference" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473914776:0" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="7785501532031731644">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1146528679895:3" resolveInfo="lvalue" />
+    </node>
+  </node>
 </model>
 
