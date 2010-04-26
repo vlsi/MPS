@@ -24,8 +24,8 @@ import org.jetbrains.annotations.Nullable;
  */
 abstract class SReferenceBase extends SReference {
 
-  protected volatile SNode myImmatureTargetNode;        // young
-  private SModelReference myTargetModelReference;       // mature
+  protected volatile SNode myImmatureTargetNode;            // young
+  private volatile SModelReference myTargetModelReference;  // mature
 
   protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference, SNode immatureTargetNode) {
     super(role, sourceNode);
@@ -49,7 +49,7 @@ abstract class SReferenceBase extends SReference {
     return myImmatureTargetNode.getModel().getSModelReference();
   }
 
-  public void setTargetSModelReference(@NotNull SModelReference modelReference) {
+  public synchronized void setTargetSModelReference(@NotNull SModelReference modelReference) {
     if (!mature()) makeMature(); // hack: make mature anyway: only can store ref to target model in 'mature' ref.
     myTargetModelReference = modelReference;
   }

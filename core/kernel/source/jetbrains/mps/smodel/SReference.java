@@ -31,9 +31,9 @@ public abstract class SReference {
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
 
   private String myRole;
-  private SNode mySourceNode;
+  private final SNode mySourceNode;
 
-  private String myResolveInfo;
+  private volatile String myResolveInfo;
 
   /**
    * role must be "genuine"

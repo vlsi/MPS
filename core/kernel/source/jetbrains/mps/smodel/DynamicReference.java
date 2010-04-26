@@ -31,13 +31,17 @@ import org.jetbrains.annotations.NotNull;
  */
 public class DynamicReference extends SReferenceBase {
 
+  /**
+   *  create 'young' reference
+   */
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode immatureTargetNode) {
-    // 'young' reference
     super(role, sourceNode, null, immatureTargetNode);
   }
 
+  /**
+   *  create 'mature' reference
+   */
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SModelReference targetModelReference, String resolveInfo) {
-    // 'mature' reference
     super(role, sourceNode, targetModelReference, null);
     setResolveInfo(resolveInfo);
   }

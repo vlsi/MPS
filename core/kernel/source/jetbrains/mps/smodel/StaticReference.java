@@ -26,14 +26,17 @@ import org.jetbrains.annotations.Nullable;
 public class StaticReference extends SReferenceBase {
   private SNodeId myTargetNodeId;    // mature
 
+  /**
+   *  create 'young' reference
+   */
   public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode immatureTargetNode) {
-    // 'young' reference
     super(role, sourceNode, null, immatureTargetNode);
   }
 
+  /**
+   *  create 'mature' reference
+   */
   public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, @Nullable SNodeId nodeId, @Nullable String resolveInfo) {
-    // 'mature' reference
-
     // 'targetModelReference' can be null only if it is broken external reference
     super(role, sourceNode, targetModelReference, null);
     setResolveInfo(resolveInfo);
