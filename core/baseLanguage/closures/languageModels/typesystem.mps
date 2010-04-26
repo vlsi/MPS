@@ -2376,9 +2376,7 @@
                 <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="3294521177951941139" />
                 <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3294521177951941143">
                   <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="3294521177951941144">
-                    <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3294521177951941147">
-                      <link role="classifier:3" targetNodeId="3v.~Object" resolveInfo="Object" />
-                    </node>
+                    <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.NullType:3" id="1891437680216305991" />
                   </node>
                 </node>
                 <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3294521177951941142">

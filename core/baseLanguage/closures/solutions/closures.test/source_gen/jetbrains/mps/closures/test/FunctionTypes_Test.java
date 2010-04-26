@@ -7,6 +7,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import junit.framework.Assert;
 
 public class FunctionTypes_Test extends TestCase {
   public void test_functionTypeAdapter_simple() throws Exception {
@@ -259,6 +261,28 @@ __switch__:
     });
     this.accept_Number_from_String(fun3);
     this.accept_Number_from_String(fun4);
+  }
+
+  public void test_return_null() throws Exception {
+    final Wrappers._boolean b = new Wrappers._boolean(true);
+    _FunctionTypes._return_P0_E0<? extends String> ret_string = new _FunctionTypes._return_P0_E0<String>() {
+      public String invoke() {
+        if (b.value) {
+          return "foo";
+        } else {
+          return null;
+        }
+      }
+    };
+    Assert.assertSame("foo", ret_string.invoke());
+    b.value = false;
+    Assert.assertNull(ret_string.invoke());
+    ret_string = new _FunctionTypes._return_P0_E0<String>() {
+      public String invoke() {
+        return null;
+      }
+    };
+    Assert.assertNull(ret_string.invoke());
   }
 
   public void accept_int(_FunctionTypes._return_P0_E0<? extends Integer> fun) {

@@ -126,10 +126,13 @@ public class FunctionType_Behavior {
   public static SNode virtual_getResultType_1230475757059(SNode thisNode) {
     SNode rt = SLinkOperations.getTarget(thisNode, "resultType", true);
     rt = FunctionType_Behavior.call_unmeet_1237318764946(thisNode, rt);
-    return ((rt != null) && !(SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.VoidType")) ?
-      rt :
-      null
-    );
+    if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.VoidType")) {
+      return null;
+    }
+    if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.NullType")) {
+      return new FunctionType_Behavior.QuotationClass_ksvwin_a0a0d0h().createNode();
+    }
+    return SNodeOperations.cast(rt, "jetbrains.mps.baseLanguage.structure.Type");
   }
 
   public static SNode call_unmeet_1237318764946(SNode thisNode, SNode possiblyMeet) {
@@ -306,6 +309,24 @@ with_meet:
       SNode quotedNode_1 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_ksvwin_a0a0d0h {
+    public QuotationClass_ksvwin_a0a0d0h() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_2 = quotedNode_1;
         quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
         result = quotedNode1_2;
