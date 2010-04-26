@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -44,7 +46,31 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
   }
 
   public void replaceNode(SNode node, SNode declaration) {
-    SNodeOperations.replaceWithAnother(node, new IntroduceLocalVariableRefactoring.QuotationClass_nngwe4_a0a0a0c().createNode(declaration));
+    SNode reference = new IntroduceLocalVariableRefactoring.QuotationClass_nngwe4_a0a0a2().createNode(declaration);
+    SNodeOperations.replaceWithAnother(node, reference);
+    this.moveDeclarationIfNeed(reference, SNodeOperations.getParent(declaration));
+  }
+
+  private void moveDeclarationIfNeed(SNode node, SNode declaration) {
+    List<SNode> declAncestors = SNodeOperations.getAncestors(declaration, null, false);
+    ListSequence.fromList(declAncestors).addElement(declaration);
+    SNode commonList = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    while ((commonList != null) && !(ListSequence.fromList(declAncestors).contains(commonList))) {
+      commonList = SNodeOperations.getAncestor(commonList, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
+    }
+    if ((commonList != null)) {
+      SNode firstAncestor = null;
+      for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(commonList, "statement", true))) {
+        List<SNode> nodeAncestors = SNodeOperations.getAncestors(node, null, false);
+        if (ListSequence.fromList(declAncestors).contains(statement) || ListSequence.fromList(nodeAncestors).contains(statement)) {
+          firstAncestor = statement;
+          break;
+        }
+      }
+      if (firstAncestor != declaration) {
+        SNodeOperations.insertPrevSiblingChild(firstAncestor, SNodeOperations.detachNode(declaration));
+      }
+    }
   }
 
   public static boolean isApplicable(SNode expr) {
@@ -103,8 +129,8 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     }
   }
 
-  public static class QuotationClass_nngwe4_a0a0a0c {
-    public QuotationClass_nngwe4_a0a0a0c() {
+  public static class QuotationClass_nngwe4_a0a0a2 {
+    public QuotationClass_nngwe4_a0a0a2() {
     }
 
     public SNode createNode(Object parameter_3) {
