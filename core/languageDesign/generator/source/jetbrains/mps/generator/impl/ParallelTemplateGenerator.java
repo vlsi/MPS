@@ -11,8 +11,10 @@ import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Evgeny Gryaznov, Feb 25, 2010
@@ -32,7 +34,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
                                    SModel inputModel, SModel outputModel, boolean isStrict, IPerformanceTracer performance) {
     super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, isStrict, performance);
     myTasks = new ArrayList<RootGenerationTask>();
-    myInputToTask = new HashMap<Pair<SNode, SNode>, RootGenerationTask>();
+    myInputToTask = new ConcurrentHashMap<Pair<SNode, SNode>, RootGenerationTask>();
     myPool = USE_PARALLEL_POOL
         ? new GenerationTaskPool(progressMonitor)
         : new SimpleGenerationTaskPool();
@@ -55,7 +57,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void createRootNodeFromTemplate(final String mappingName, final SNode templateNode, final SNode inputNode, final boolean copyRootOnFailure) throws GenerationFailureException, GenerationCanceledException {
+  protected void createRootNodeFromTemplate(final String mappingName, @NotNull final SNode templateNode, final SNode inputNode, final boolean copyRootOnFailure) throws GenerationFailureException, GenerationCanceledException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {
@@ -66,7 +68,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void copyRootNodeFromInput(final SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
+  protected void copyRootNodeFromInput(@NotNull final SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
     pushTask(new RootGenerationTask() {
       @Override
       public void run() throws GenerationCanceledException, GenerationFailureException {

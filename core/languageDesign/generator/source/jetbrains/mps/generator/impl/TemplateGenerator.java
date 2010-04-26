@@ -187,7 +187,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  protected void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, boolean copyRootOnFailure)
+  protected void createRootNodeFromTemplate(String mappingName, @NotNull SNode templateNode, SNode inputNode, boolean copyRootOnFailure)
     throws GenerationFailureException, GenerationCanceledException {
 
     try {
@@ -206,7 +206,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
   }
 
-  protected void copyRootNodeFromInput(SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
+  protected void copyRootNodeFromInput(@NotNull SNode inputRootNode) throws GenerationFailureException, GenerationCanceledException {
     // check if can drop
     for (DropRootRule dropRootRule : myRuleManager.getDropRootRules()) {
       if (isApplicableDropRootRule(inputRootNode, dropRootRule)) {

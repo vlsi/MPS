@@ -43,7 +43,7 @@ import org.jetbrains.annotations.Nullable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
-import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -63,12 +63,12 @@ public class ModelConstraintsManager implements ApplicationComponent {
   private Map<String, INodePropertySetter> myNodePropertySettersCache = new HashMap<String, INodePropertySetter>();
   private Map<String, INodePropertyValidator> myNodePropertyValidatorsCache = new HashMap<String, INodePropertyValidator>();
 
-  private Map<String, INodePropertyGetter> myNodePropertyGettersMap = Collections.synchronizedMap(new HashMap<String, INodePropertyGetter>());
-  private Map<String, INodePropertySetter> myNodePropertySettersMap = Collections.synchronizedMap(new HashMap<String, INodePropertySetter>());
-  private Map<String, INodePropertyValidator> myNodePropertyValidatorsMap = Collections.synchronizedMap(new HashMap<String, INodePropertyValidator>());
+  private Map<String, INodePropertyGetter> myNodePropertyGettersMap = new ConcurrentHashMap<String, INodePropertyGetter>();
+  private Map<String, INodePropertySetter> myNodePropertySettersMap = new ConcurrentHashMap<String, INodePropertySetter>();
+  private Map<String, INodePropertyValidator> myNodePropertyValidatorsMap = new ConcurrentHashMap<String, INodePropertyValidator>();
 
-  private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = Collections.synchronizedMap(new HashMap<String, INodeReferentSearchScopeProvider>());
-  private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = Collections.synchronizedMap(new HashMap<String, INodeReferentSearchScopeProvider>());
+  private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new ConcurrentHashMap<String, INodeReferentSearchScopeProvider>();
+  private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new ConcurrentHashMap<String, INodeReferentSearchScopeProvider>();
 
   private Map<String, Method> myCanBeChildMethods = new HashMap<String, Method>();
   private Map<String, Method> myCanBeParentMethods = new HashMap<String, Method>();
