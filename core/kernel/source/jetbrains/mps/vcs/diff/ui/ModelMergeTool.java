@@ -21,9 +21,8 @@ import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
@@ -51,7 +50,8 @@ public class ModelMergeTool implements DiffTool {
         mrequest.getFile().getPath());
       final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
         public MergeModelsDialog compute() {
-          IOperationContext context = new ModuleContext(baseModel.getModelDescriptor().getModule(), request.getProject());
+          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(baseModel.getSModelReference());
+          IOperationContext context = new ModuleContext(modelDescriptor.getModule(), request.getProject());
           return new MergeModelsDialog(context, baseModel, mineModel, newModel);
         }
       });
