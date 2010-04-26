@@ -34,7 +34,9 @@ import java.util.regex.Pattern;
  */
 public class NameUtil {
   private static final Pattern VALID_IDENTIFIER_PATTERN = Pattern.compile("[a-zA-Z[_]][a-zA-Z0-9[_]]*");
+
   public static final String STRUCTURE = "structure";
+  private static final String DOT_STRUCTURE_DOT = "." + STRUCTURE + ".";
 
   private static final HashSet<String> PREPOSITIONS;
   private static final HashSet<String> PARTICLES;
@@ -341,7 +343,7 @@ public class NameUtil {
 
   public static String namespaceFromConceptFQName(String fqName) {
     if (fqName == null) return null;
-    int offset = fqName.lastIndexOf("." + STRUCTURE + ".");
+    int offset = fqName.lastIndexOf(DOT_STRUCTURE_DOT);
     if (offset > 0) {
       return fqName.substring(0, offset);
     }
@@ -349,7 +351,7 @@ public class NameUtil {
   }
 
   public static String conceptFQNameFromNamespaceAndShortName(String namespace, String shortName) {
-    return namespace + "." + STRUCTURE + "." + shortName;
+    return namespace + DOT_STRUCTURE_DOT + shortName;
   }
 
   public static String longNameFromNamespaceAndShortName(String namespace, String name) {

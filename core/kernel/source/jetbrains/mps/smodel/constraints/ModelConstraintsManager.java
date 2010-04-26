@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.constraints;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.constraints.structure.ConceptConstraints;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -371,8 +372,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
     });
   }
 
-
-  /*package*/ INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
+  INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
     INodeReferentSearchScopeProvider result = null;
     result = getNodeReferentSearchScopeProviderNonDefault(nodeConcept, referentRole);
     if (result != null) {
@@ -381,7 +381,6 @@ public class ModelConstraintsManager implements ApplicationComponent {
     LinkDeclaration linkDeclaration = SModelSearchUtil.findLinkDeclaration(nodeConcept, referentRole);
     return getNodeDefaultSearchScopeProvider(linkDeclaration.getTarget());
   }
-
 
   private INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(AbstractConceptDeclaration referentConcept) {
     while (referentConcept != null) {
@@ -442,9 +441,15 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   private void reloadAll() {
-    myCanBeChildMethods.clear();
-    myCanBeParentMethods.clear();
-    myCanBeRootMethods.clear();
+    synchronized (myCanBeChildMethods) {
+      myCanBeChildMethods.clear();
+    }
+    synchronized (myCanBeParentMethods) {
+      myCanBeParentMethods.clear();
+    }
+    synchronized (myCanBeRootMethods) {
+      myCanBeRootMethods.clear();
+    }
     synchronized (myDefaultConceptNames) {
       myDefaultConceptNames.clear();
     }
@@ -502,7 +507,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
   public String getDefaultConcreteConceptFqName(String fqName, IScope scope) {
     synchronized (myDefaultConceptNames) {
       String result = myDefaultConceptNames.get(fqName);
-      if(result != null) {
+      if (result != null || myDefaultConceptNames.containsKey(fqName)) {
         return result;
       }
 
@@ -534,34 +539,29 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
 
   private Method getCanBeParentMethod(SNode parentNode, IOperationContext context) {
-    IScope scope = context.getScope();
-    String fqName = parentNode.getConceptFqName();
-    String constraintsClass = constraintsClassByConceptFqName(fqName);
-    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
-    Language language = scope.getLanguage(namespace);
+    final String fqName = parentNode.getConceptFqName();
+    synchronized (myCanBeParentMethods) {
+      Method result = myCanBeParentMethods.get(fqName);
+      if (result != null || myCanBeParentMethods.containsKey(fqName)) {
+        return result;
+      }
 
-    if (language != null) {
-      Class cls = language.getClass(constraintsClass);
-      if (cls != null) {
-        try {
-          Method m;
-          if (myCanBeParentMethods.containsKey(fqName)) {
-            m = myCanBeParentMethods.get(fqName);
-          } else {
-            m = cls.getMethod(BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
-            myCanBeParentMethods.put(fqName, m);
+      Language language = context.getScope().getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+      if (language != null) {
+        Class behaviorClass = language.getClass(constraintsClassByConceptFqName(fqName));
+        if (behaviorClass != null) {
+          try {
+            result = behaviorClass.getMethod(BehaviorConstants.CAN_BE_A_PARENT_METHOD_NAME, IOperationContext.class, CanBeAParentContext.class);
+          } catch (NoSuchMethodException e) {
+            /* ignore */
           }
-
-          return m;
-        } catch (NoSuchMethodException e) {
-          myCanBeParentMethods.put(fqName, null);
         }
       }
+
+      myCanBeParentMethods.put(fqName, result);
+      return result;
     }
-
-    return null;
   }
-
 
   public boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
     Method m = getCanBeParentMethod(parentNode, context);
@@ -585,46 +585,42 @@ public class ModelConstraintsManager implements ApplicationComponent {
   }
 
   private Method getCanBeChildMethod(String conceptFqName, IOperationContext context) {
-    if (myCanBeChildMethods.containsKey(conceptFqName)) {
-      return myCanBeChildMethods.get(conceptFqName);
-    }
+    synchronized (myCanBeChildMethods) {
+      if (myCanBeChildMethods.containsKey(conceptFqName)) {
+        return myCanBeChildMethods.get(conceptFqName);
+      }
 
-    IScope scope = context.getScope();
-    AbstractConceptDeclaration topConcept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
+      IScope scope = context.getScope();
+      AbstractConceptDeclaration topConcept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
 
-    if (topConcept == null) {
+      if (topConcept != null) {
+        List<AbstractConceptDeclaration> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
+  
+        for (AbstractConceptDeclaration concept : conceptAndSuperConcepts) {
+          String fqName = NameUtil.nodeFQName(concept);
+          Language language = scope.getLanguage(NameUtil.namespaceFromConcept(concept));
+          if (language == null) {
+            continue;
+          }
+
+          Class behaviorClass = language.getClass(constraintsClassByConceptFqName(fqName));
+          if (behaviorClass == null) {
+            continue;
+          }
+
+          try {
+            Method method = behaviorClass.getMethod(BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
+            myCanBeChildMethods.put(conceptFqName, method);
+            return method;
+          } catch (NoSuchMethodException e) {
+            //it's ok
+          }
+        }
+      }
+
       myCanBeChildMethods.put(conceptFqName, null);
       return null;
     }
-
-    List<AbstractConceptDeclaration> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(topConcept);
-
-    for (AbstractConceptDeclaration concept : conceptAndSuperConcepts) {
-      String fqName = NameUtil.nodeFQName(concept);
-      String namespace = NameUtil.namespaceFromConcept(concept);
-      Language language = scope.getLanguage(namespace);
-      if (language == null) {
-        continue;
-      }
-
-      String behaviorClassName = constraintsClassByConceptFqName(fqName);
-      Class behaviorClass = language.getClass(behaviorClassName);
-
-      if (behaviorClass == null) {
-        continue;
-      }
-
-      try {
-        Method method = behaviorClass.getMethod(BehaviorConstants.CAN_BE_A_CHILD_METHOD_NAME, IOperationContext.class, CanBeAChildContext.class);
-        myCanBeChildMethods.put(conceptFqName, method);
-        return method;
-      } catch (NoSuchMethodException e) {
-        //it's ok
-      }
-    }
-
-    myCanBeChildMethods.put(conceptFqName, null);
-    return null;
   }
 
   public boolean canBeChild(String fqName, IOperationContext context, SNode parentNode, SNode link) {
@@ -651,48 +647,38 @@ public class ModelConstraintsManager implements ApplicationComponent {
 
   @Nullable
   private Method getCanBeRootMethod(String conceptFqName, IOperationContext context) {
-    if (myCanBeRootMethods.containsKey(conceptFqName)) {
-      return myCanBeRootMethods.get(conceptFqName);
-    }
+    synchronized (myCanBeRootMethods) {
+      if (myCanBeRootMethods.containsKey(conceptFqName)) {
+        return myCanBeRootMethods.get(conceptFqName);
+      }
 
-    IScope scope = context.getScope();
-    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(conceptFqName, scope);
+      IScope scope = context.getScope();
+      SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
 
-    if (concept == null) {
+      if (concept != null) {
+        String fqName = NameUtil.nodeFQName(concept);
+        Language language = scope.getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+        if (language != null) {
+
+          Class behaviorClass = language.getClass(constraintsClassByConceptFqName(fqName));
+          if (behaviorClass != null) {
+            try {
+              Method method = behaviorClass.getMethod(BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class);
+              myCanBeRootMethods.put(conceptFqName, method);
+              return method;
+            } catch (NoSuchMethodException e) {
+              //it's ok
+            }
+          }
+        }
+      }
+
       myCanBeRootMethods.put(conceptFqName, null);
       return null;
     }
-
-    String fqName = NameUtil.nodeFQName(concept);
-    String namespace = NameUtil.namespaceFromConcept(concept);
-    Language language = scope.getLanguage(namespace);
-    if (language == null) {
-      myCanBeRootMethods.put(conceptFqName, null);
-      return null;
-    }
-
-    String behaviorClassName = constraintsClassByConceptFqName(fqName);
-    Class behaviorClass = language.getClass(behaviorClassName);
-
-    if (behaviorClass == null) {
-      myCanBeRootMethods.put(conceptFqName, null);
-      return null;
-    }
-
-    try {
-      Method method = behaviorClass.getMethod(BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME, IOperationContext.class, CanBeARootContext.class);
-      myCanBeRootMethods.put(conceptFqName, method);
-      return method;
-    } catch (NoSuchMethodException e) {
-      //it's ok
-    }
-
-    myCanBeChildMethods.put(conceptFqName, null);
-    return null;
   }
 
   public Method getAlternativeIconMethod(ConceptDeclaration concept) {
-    String conceptFqName = concept.getConceptFQName();
     String fqName = NameUtil.nodeFQName(concept);
     String namespace = NameUtil.namespaceFromConcept(concept);
     Language language = GlobalScope.getInstance().getLanguage(namespace);
@@ -770,6 +756,7 @@ public class ModelConstraintsManager implements ApplicationComponent {
         return cachedValue;
       }
 
+      // TODO replace with code like in NameUtil.namespaceFromConceptFQName, remove cache
       Matcher m = CONCEPT_FQNAME.matcher(fqName);
       if (m.matches()) {
         String result = m.group(1) + ".constraints." + m.group(2) + "_Constraints";
