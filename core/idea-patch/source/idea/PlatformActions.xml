@@ -321,10 +321,11 @@
                         text="MPS Home"/>
                 <action id="ShowMPSTutorialsSitep"
                         class="jetbrains.mps.workbench.actions.help.ShowMPSTutorialsSiteAction"
-                        text="MPS Tutorials"/>
+                        text="Tutorials"/>
                 <action id="ShowMPSTutorialsSite"
                         class="jetbrains.mps.workbench.actions.help.ShowMPSDocumentationSiteAction"
-                        text="MPS Documentation"/>
+                        text="Online Documentation"/>
+                <separator />
                 <action id="ShowMPSDiscussionForum"
                         class="jetbrains.mps.workbench.actions.help.ShowMPSDiscussionForum"
                         text="MPS Forum"/>
@@ -333,7 +334,7 @@
                         text="MPS Blog"/>
                 <action id="ShowMPSTrackerAction"
                         class="jetbrains.mps.workbench.actions.help.ShowMPSTrackerAction"
-                        text="MPS Issue Tracker"/>
+                        text="Issue Tracker"/>
                 <separator/>
                 <group id="HelpMenuAdditions"/>
                 <!--MPS Patch End-->

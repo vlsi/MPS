@@ -21,6 +21,6 @@ public class ShowMPSDiscussionForum extends ShowSiteAction {
   }
 
   protected String getSiteURL() {
-    return "http://intellij.net/forums/forum.jspa?forumID=61";
+    return "http://www.jetbrains.net/devnet/community/mps";
   }
 }

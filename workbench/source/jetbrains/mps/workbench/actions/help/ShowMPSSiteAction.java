@@ -21,6 +21,6 @@ public class ShowMPSSiteAction extends ShowSiteAction {
   }
 
   protected String getSiteURL() {
-    return "http://www.jetbrains.com/mps";
+    return "http://www.jetbrains.com/mps/";
   }
 }

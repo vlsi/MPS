@@ -19,10 +19,10 @@ import jetbrains.mps.ide.blame.command.Command;
 
 public class ShowMPSTrackerAction extends ShowSiteAction {
   public ShowMPSTrackerAction() {
-    super("MPS Issue Tracker");
+    super("Issue Tracker");
   }
 
   protected String getSiteURL() {
-    return Command.TEAMSYS + "/workspace";
+    return Command.TEAMSYS + "/issues/MPS";
   }
 }
