@@ -30,23 +30,23 @@ import org.jetbrains.annotations.NotNull;
  * Dec 10, 2007
  */
 public class DynamicReference extends SReferenceBase {
-  private SNode myImmatureTargetNode;        // young
 
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode immatureTargetNode) {
     // 'young' reference
-    super(role, sourceNode, null, false);
-    myImmatureTargetNode = immatureTargetNode;
+    super(role, sourceNode, null, immatureTargetNode);
   }
 
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SModelReference targetModelReference, String resolveInfo) {
     // 'mature' reference
-    super(role, sourceNode, targetModelReference, true);
+    super(role, sourceNode, targetModelReference, null);
     setResolveInfo(resolveInfo);
   }
 
   protected SNode getTargetNode_internal() {
-    if (!mature()) {
-      return myImmatureTargetNode;
+    synchronized (this) {
+      if (!mature()) {
+        return myImmatureTargetNode;
+      }
     }
 
     if (getResolveInfo() == null) {
@@ -88,16 +88,5 @@ public class DynamicReference extends SReferenceBase {
     }
 
     return targetNode;
-  }
-
-  protected SNode getImmatureTargetNode() {
-    return myImmatureTargetNode;
-  }
-
-  protected void makeMature() {
-    super.makeMature();
-    setTargetSModelReference(myImmatureTargetNode.getModel().getSModelReference());
-    setResolveInfo(myImmatureTargetNode.getResolveInfo());
-    myImmatureTargetNode = null;
   }
 }

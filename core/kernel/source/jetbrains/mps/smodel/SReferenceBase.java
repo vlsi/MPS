@@ -22,31 +22,31 @@ import org.jetbrains.annotations.Nullable;
  * Igor Alshannikov
  * Sep 28, 2007
  */
-/*package*/ abstract class SReferenceBase extends SReference {
+abstract class SReferenceBase extends SReference {
 
-  private boolean myMature;
-  private SModelReference myTargetModelReference;
+  protected volatile SNode myImmatureTargetNode;        // young
+  private SModelReference myTargetModelReference;       // mature
 
-  protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference, boolean mature) {
+  protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference, SNode immatureTargetNode) {
     super(role, sourceNode);
 
     // if ref is 'mature' then 'targetModelRefernce' is either NOT NULL, or it is broken external reference.
     myTargetModelReference = targetModelReference;
-    myMature = mature;
 
     // 'young' reference
-    if (!mature) {
+    if (immatureTargetNode != null) {
       ImmatureReferences.getInstance().add(this);
     }
+    myImmatureTargetNode = immatureTargetNode;
   }
 
   public boolean isExternal() {
     return !(getSourceNode().getModel().getSModelReference().equals(getTargetSModelReference()));
   }
 
-  public SModelReference getTargetSModelReference() {
+  public synchronized SModelReference getTargetSModelReference() {
     if (mature()) return myTargetModelReference;
-    return getImmatureTargetNode().getModel().getSModelReference();
+    return myImmatureTargetNode.getModel().getSModelReference();
   }
 
   public void setTargetSModelReference(@NotNull SModelReference modelReference) {
@@ -54,28 +54,29 @@ import org.jetbrains.annotations.Nullable;
     myTargetModelReference = modelReference;
   }
 
-  protected final boolean mature() {
-    if (!myMature) {
-      if (getSourceNode().isRegistered() && getImmatureTargetNode().isRegistered() &&
-        !(getSourceNode().isDisposed() || getImmatureTargetNode().isDisposed())) {
+  protected synchronized final boolean mature() {
+    if (myImmatureTargetNode != null) {
+      if (getSourceNode().isRegistered() && myImmatureTargetNode.isRegistered() &&
+        !(getSourceNode().isDisposed() || myImmatureTargetNode.isDisposed())) {
         // convert 'young' reference to 'mature'
         makeMature();
       }
     }
-    return myMature;
+    return myImmatureTargetNode == null;
   }
 
-  protected abstract SNode getImmatureTargetNode();
-
-  protected void makeMature() {
-    if (!myMature) {
+  protected synchronized void makeMature() {
+    if (myImmatureTargetNode != null) {
       ImmatureReferences.getInstance().remove(this);
+      final SNode immatureNode = myImmatureTargetNode;
+      myImmatureTargetNode = null;
+      adjustMature(immatureNode);
+      setTargetSModelReference(immatureNode.getModel().getSModelReference());
+      setResolveInfo(immatureNode.getResolveInfo());
     }
-    myMature = true;
   }
 
-  protected boolean isMature() {
-    return myMature;
+  protected void adjustMature(SNode immatureTarget) {
   }
 }
              

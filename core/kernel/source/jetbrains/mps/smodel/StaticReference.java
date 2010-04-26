@@ -24,31 +24,29 @@ import org.jetbrains.annotations.Nullable;
  * Sep 26, 2007
  */
 public class StaticReference extends SReferenceBase {
-  private SNode myImmatureTargetNode;        // young
   private SNodeId myTargetNodeId;    // mature
 
   public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode immatureTargetNode) {
     // 'young' reference
-    super(role, sourceNode, null, false);
-    myImmatureTargetNode = immatureTargetNode;
+    super(role, sourceNode, null, immatureTargetNode);
   }
 
   public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, @Nullable SNodeId nodeId, @Nullable String resolveInfo) {
     // 'mature' reference
 
     // 'targetModelReference' can be null only if it is broken external reference
-    super(role, sourceNode, targetModelReference, true);
+    super(role, sourceNode, targetModelReference, null);
     setResolveInfo(resolveInfo);
     myTargetNodeId = nodeId;
   }
 
   @Nullable
-  public SNodeId getTargetNodeId() {
+  public synchronized SNodeId getTargetNodeId() {
     if (mature()) return myTargetNodeId;
     return myImmatureTargetNode.getSNodeId();
   }
 
-  public void setTargetNodeId(SNodeId nodeId) {
+  public synchronized void setTargetNodeId(SNodeId nodeId) {
     if (!mature()) makeMature();
     myTargetNodeId = nodeId;
   }
@@ -56,8 +54,10 @@ public class StaticReference extends SReferenceBase {
   protected SNode getTargetNode_internal() {
     NodeReadAccessCasterInEditor.fireReferenceTargetReadAccessed(getSourceNode(), getTargetSModelReference(), getTargetNodeId());
 
-    if (!mature()) {
-      return myImmatureTargetNode;
+    synchronized (this) {
+      if (!mature()) {
+        return myImmatureTargetNode;
+      }
     }
 
     SNodeId targetNodeId = getTargetNodeId();
@@ -105,15 +105,8 @@ public class StaticReference extends SReferenceBase {
     return model;
   }
 
-  protected SNode getImmatureTargetNode() {
-    return myImmatureTargetNode;
-  }
-
-  protected void makeMature() {
-    super.makeMature();
-    myTargetNodeId = myImmatureTargetNode.getSNodeId();
-    setTargetSModelReference(myImmatureTargetNode.getModel().getSModelReference());
-    setResolveInfo(myImmatureTargetNode.getResolveInfo());
-    myImmatureTargetNode = null;
+  @Override
+  protected void adjustMature(SNode immatureTarget) {
+    myTargetNodeId = immatureTarget.getSNodeId();
   }
 }

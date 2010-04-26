@@ -29,8 +29,8 @@ import org.jetbrains.annotations.Nullable;
  */
 public class PostponedReference extends SReference {
 
+  private final TemplateGenerator myGenerator;
   private ReferenceInfo myReferenceInfo;
-  private TemplateGenerator myGenerator;
   private SReference myReplacementReference;
 
 
@@ -45,7 +45,7 @@ public class PostponedReference extends SReference {
   }
 
   @Nullable
-  public SModelReference getTargetSModelReference() {
+  public synchronized SModelReference getTargetSModelReference() {
     if (myReferenceInfo != null) {
       return myReferenceInfo.getTargetModelReference(myGenerator);
     } else if (myReplacementReference != null) {
@@ -69,7 +69,7 @@ public class PostponedReference extends SReference {
   /**
    * @return null is not resolved and not required.
    */
-  private SReference getReplacementReference() {
+  private synchronized SReference getReplacementReference() {
     if (myReplacementReference != null) {
       return myReplacementReference;
     }
@@ -111,7 +111,6 @@ public class PostponedReference extends SReference {
 
     // release resources
     myReferenceInfo = null;
-    myGenerator = null;
     return myReplacementReference;
   }
 
