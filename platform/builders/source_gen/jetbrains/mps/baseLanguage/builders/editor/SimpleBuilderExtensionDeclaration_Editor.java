@@ -197,10 +197,6 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 
   private static class propertyListHandler_lhunxw_f0 extends RefNodeListHandler {
@@ -238,10 +234,6 @@ public class SimpleBuilderExtensionDeclaration_Editor extends DefaultNodeEditor 
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
     }
   }
 }

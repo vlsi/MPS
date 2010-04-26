@@ -281,10 +281,6 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 
   private static class commonClasspathListHandler_pz3u9w_b1d0 extends RefNodeListHandler {
@@ -323,10 +319,6 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 
   private static class cycleListHandler_pz3u9w_b4a extends RefNodeListHandler {
@@ -364,10 +356,6 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
     }
   }
 }

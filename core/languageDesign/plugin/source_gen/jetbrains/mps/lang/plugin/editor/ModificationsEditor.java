@@ -118,9 +118,5 @@ public class ModificationsEditor extends AbstractCellProvider {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 }

@@ -295,10 +295,6 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
-
     private EditorCell createConstant_7chywb_a0b1a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<persistent properties>");
       editorCell.setCellId("Constant_7chywb_a0b1a");
@@ -347,10 +343,6 @@ public class PreferencesComponentDeclaration_Editor extends DefaultNodeEditor {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
-    }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
     }
 
     private EditorCell createConstant_7chywb_a7b1a(EditorContext editorContext, SNode node) {

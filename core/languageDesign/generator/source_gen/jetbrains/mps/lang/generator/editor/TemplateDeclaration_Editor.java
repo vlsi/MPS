@@ -292,10 +292,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 
   public static class TemplateDeclaration_name_cellMenu_a0b0a0 extends AbstractCellMenuPart_PropertyValues {

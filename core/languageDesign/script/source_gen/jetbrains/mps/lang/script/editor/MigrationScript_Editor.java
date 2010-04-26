@@ -309,10 +309,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 
   public static class MigrationScript_category_cellMenu_a0a2a extends AbstractCellMenuPart_PropertyValues {

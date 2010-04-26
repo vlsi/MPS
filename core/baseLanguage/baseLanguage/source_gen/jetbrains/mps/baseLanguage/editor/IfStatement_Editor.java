@@ -303,10 +303,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 
   public static class IfStatement_generic_cellMenu_a0a6a extends AbstractCellMenuPart_Generic_Item {

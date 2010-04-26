@@ -178,9 +178,5 @@ public class DigitalSignatureWindowsConfiguration_Editor extends DefaultNodeEdit
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 }
