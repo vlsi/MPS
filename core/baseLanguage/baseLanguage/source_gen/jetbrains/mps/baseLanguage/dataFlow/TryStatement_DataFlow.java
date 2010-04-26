@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
+import jetbrains.mps.lang.dataFlow.framework.InstructionUtil;
 
 public class TryStatement_DataFlow extends DataFlowBuilder {
   public TryStatement_DataFlow() {
@@ -18,6 +20,15 @@ public class TryStatement_DataFlow extends DataFlowBuilder {
       _context.getBuilder().emitIfJump(_context.getBuilder().before(c));
     }
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
+    for (Instruction instruction : _context.getBuilder().getInstructionsFor(SLinkOperations.getTarget(_context.getNode(), "body", true))) {
+      if (InstructionUtil.isRet(instruction) || InstructionUtil.isJump(instruction) || InstructionUtil.isNop(instruction)) {
+        continue;
+      }
+      for (SNode catchClause : DataFlowTryCatchUtil.getPossibleCatches((SNode) InstructionUtil.getSource(instruction), SLinkOperations.getTargets(_context.getNode(), "catchClause", true))) {
+        _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), _context.getBuilder().insertAfter(instruction));
+      }
+      _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "afterCatches"), _context.getBuilder().insertAfter(instruction));
+    }
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
       public void run() {
         _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "afterCatches"));

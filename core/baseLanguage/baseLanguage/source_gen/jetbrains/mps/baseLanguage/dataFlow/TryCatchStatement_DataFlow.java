@@ -9,16 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.dataFlow.framework.InstructionUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Set;
-import jetbrains.mps.baseLanguage.behavior.Statement_Behavior;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import java.util.HashSet;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
 
 public class TryCatchStatement_DataFlow extends DataFlowBuilder {
   public TryCatchStatement_DataFlow() {
@@ -33,19 +23,8 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
       if (InstructionUtil.isRet(instruction) || InstructionUtil.isJump(instruction) || InstructionUtil.isNop(instruction)) {
         continue;
       }
-      SNode statement = SNodeOperations.getAncestor((SNode) InstructionUtil.getSource(instruction), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-      Set<SNode> uncaughtThrowables = Statement_Behavior.call_uncaughtThrowables_5412515780383108857(statement, false);
-      for (SNode catchClause : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
-        SNode caughtType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new TryCatchStatement_DataFlow.QuotationClass_3m6dtg_a1a0a0b0d0c0a().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new TryCatchStatement_DataFlow.QuotationClass_3m6dtg_a1a0a0b0d0c0a_0().createNode()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(new TryCatchStatement_DataFlow.QuotationClass_3m6dtg_a0a0a1a3a2a0().createNode(), caughtType)) {
-          _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), _context.getBuilder().insertAfter(instruction));
-        } else {
-          for (SNode throwed : uncaughtThrowables) {
-            if (TypeChecker.getInstance().getSubtypingManager().isSubtype(new TryCatchStatement_DataFlow.QuotationClass_3m6dtg_a0a0a0a0a1a3a2a0().createNode(throwed), caughtType)) {
-              _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), _context.getBuilder().insertAfter(instruction));
-            }
-          }
-        }
+      for (SNode catchClause : DataFlowTryCatchUtil.getPossibleCatches((SNode) InstructionUtil.getSource(instruction), SLinkOperations.getTargets(_context.getNode(), "catchClause", true))) {
+        _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), _context.getBuilder().insertAfter(instruction));
       }
     }
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
@@ -55,78 +34,6 @@ public class TryCatchStatement_DataFlow extends DataFlowBuilder {
     });
     for (SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
       _context.getBuilder().build((SNode) c);
-    }
-  }
-
-  public static class QuotationClass_3m6dtg_a1a0a0b0d0c0a {
-    public QuotationClass_3m6dtg_a1a0a0b0d0c0a() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Error")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_3m6dtg_a1a0a0b0d0c0a_0 {
-    public QuotationClass_3m6dtg_a1a0a0b0d0c0a_0() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_3m6dtg_a0a0a1a3a2a0 {
-    public QuotationClass_3m6dtg_a0a0a1a3a2a0() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Exception")));
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_3m6dtg_a0a0a0a0a1a3a2a0 {
-    public QuotationClass_3m6dtg_a0a0a0a0a1a3a2a0() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
     }
   }
 }
