@@ -258,10 +258,6 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 
   public static class CellActionMapDeclaration_name_cellMenu_a0b0a extends AbstractCellMenuPart_PropertyValues {

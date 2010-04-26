@@ -567,9 +567,5 @@ public class _CellModel_Common extends AbstractCellProvider {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 }

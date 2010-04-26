@@ -1295,6 +1295,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "nodeFactory", true) != null;
   }
 
+  public static boolean ifMacro_Condition_709996738299030698(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "separatorTextQuery", true) != null;
+  }
+
   public static boolean ifMacro_Condition_1184142273445(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "emptyCellModel", true) != null;
   }
@@ -1304,7 +1308,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1186780570098(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "separatorText") != null;
+    return SLinkOperations.getTarget(_context.getNode(), "separatorTextQuery", true) == null && SPropertyOperations.getString(_context.getNode(), "separatorText") != null && SPropertyOperations.getString(_context.getNode(), "separatorText").length() == 1;
   }
 
   public static boolean ifMacro_Condition_1200442982117(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1315,8 +1319,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "elementMenuDescriptor", true) == null;
   }
 
-  public static boolean ifMacro_Condition_1184142273591(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "separatorText") == null;
+  public static boolean ifMacro_Condition_7646973654015666427(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "separatorTextQuery", true) == null;
   }
 
   public static boolean ifMacro_Condition_1233145825516(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1327,8 +1331,8 @@ public class QueriesGenerated {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "separatorStyle", true), "styleItem", true)).isNotEmpty();
   }
 
-  public static boolean ifMacro_Condition_1184142273628(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "separatorText") != null;
+  public static boolean ifMacro_Condition_6702281845925898107(final IOperationContext operationContext, final IfMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "separatorTextQuery", true) != null || SPropertyOperations.getString(_context.getNode(), "separatorText") != null;
   }
 
   public static boolean ifMacro_Condition_1184142273658(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1529,6 +1533,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1184142273387(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "nodeFactory", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_709996738299030718(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "separatorTextQuery", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1186780312709(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

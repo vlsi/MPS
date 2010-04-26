@@ -87,6 +87,14 @@ public abstract class AbstractCellListHandler {
 
   public abstract EditorCell createNodeCell(EditorContext editorContext, SNode node);
 
+  protected EditorCell createSeparatorCell(EditorContext editorContext, SNode node) {
+    return createSeparatorCell(editorContext);
+  }
+
+  /**
+   * use createSeparatorCell(EditorContext editorContext, SNode node)
+   */
+  @Deprecated 
   public EditorCell createSeparatorCell(EditorContext editorContext) {
     return null;
   }
@@ -127,11 +135,12 @@ public abstract class AbstractCellListHandler {
       emptyCell.setRole(getElementRole());
       myListEditorCell_Collection.addEditorCell(emptyCell);
     } else {
-      EditorCell separatorCell = null;
+      SNode lastNode = null;
       while (listNodes.hasNext()) {
-        separatorCell = addSeparatorCell(editorContext, separatorCell);
+        addSeparatorCell(editorContext, lastNode);
         SNode node = listNodes.next();
         myListEditorCell_Collection.addEditorCell(createNodeCell(editorContext, node));
+        lastNode = node;
       }
     }
 
@@ -144,12 +153,14 @@ public abstract class AbstractCellListHandler {
 
   protected abstract List<SNode> getNodesForList();
 
-  protected EditorCell addSeparatorCell(EditorContext editorContext, EditorCell separatorCell) {
+  private void addSeparatorCell(EditorContext editorContext, SNode node) {
+    if (node == null) {
+      return;
+    }
+    EditorCell separatorCell = createSeparatorCell(editorContext, node);
     if (separatorCell != null) {
       myListEditorCell_Collection.addEditorCell(separatorCell);
     }
-    separatorCell = createSeparatorCell(editorContext);
-    return separatorCell;
   }
 
   // important: create such a method in every descendant of this class, it will be invoked via reflection

@@ -308,10 +308,6 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 
   public static class CellKeyMapDeclaration_name_postfixCellMenu_a0b0a extends AbstractCellMenuPart_PropertyPostfixHints {

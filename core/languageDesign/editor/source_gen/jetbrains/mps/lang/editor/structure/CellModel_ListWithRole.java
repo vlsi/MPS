@@ -19,6 +19,7 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
   public static final String EMPTY_CELL_MODEL = "emptyCellModel";
   public static final String CELL_LAYOUT = "cellLayout";
   public static final String SEPARATOR_STYLE = "separatorStyle";
+  public static final String SEPARATOR_TEXT_QUERY = "separatorTextQuery";
 
   public CellModel_ListWithRole(SNode node) {
     super(node);
@@ -103,6 +104,14 @@ public class CellModel_ListWithRole extends CellModel_WithRole {
 
   public void setSeparatorStyle(InlineStyleDeclaration node) {
     super.setChild(CellModel_ListWithRole.SEPARATOR_STYLE, node);
+  }
+
+  public QueryFunction_SeparatorText getSeparatorTextQuery() {
+    return (QueryFunction_SeparatorText) this.getChild(QueryFunction_SeparatorText.class, CellModel_ListWithRole.SEPARATOR_TEXT_QUERY);
+  }
+
+  public void setSeparatorTextQuery(QueryFunction_SeparatorText node) {
+    super.setChild(CellModel_ListWithRole.SEPARATOR_TEXT_QUERY, node);
   }
 
   public static CellModel_ListWithRole newInstance(SModel sm, boolean init) {

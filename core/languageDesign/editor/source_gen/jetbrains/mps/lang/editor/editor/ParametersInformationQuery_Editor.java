@@ -415,10 +415,6 @@ public class ParametersInformationQuery_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
-
     private EditorCell createConstant_p9c0o3_a51d0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no methods");
       editorCell.setCellId("Constant_p9c0o3_a51d0");

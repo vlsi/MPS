@@ -210,9 +210,5 @@ public class Style_Component extends AbstractCellProvider {
         }
       }
     }
-
-    public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
-    }
   }
 }
