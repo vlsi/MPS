@@ -2326,16 +2326,35 @@
       <node role="affectedInstancePredicate:0" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate:0" id="19529768407888748">
         <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="19529768407888749">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="19529768407889258">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="19529768407889265">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="19529768407889260">
-                <node role="operand:3" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node:0" id="19529768407889259" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="19529768407889264">
-                  <link role="baseMethodDeclaration:16" targetNodeId="2v.1213877410070" resolveInfo="getOperand" />
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="7785501532031981569">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="7785501532031989106">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="7785501532031989109" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7785501532031989101">
+                  <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="7785501532031989099">
+                    <link role="concept:16" targetNodeId="1.1070475354124:3" resolveInfo="ThisExpression" />
+                    <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7785501532031981573">
+                      <node role="operand:3" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node:0" id="7785501532031981572" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="7785501532031989094">
+                        <link role="baseMethodDeclaration:16" targetNodeId="2v.1213877410070" resolveInfo="getOperand" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7785501532031989105">
+                    <link role="link:16" targetNodeId="1.1182955020723:3" />
+                  </node>
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="19529768407889269">
-                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="19529768407889271">
-                  <link role="conceptDeclaration:16" targetNodeId="1.1070475354124:3" resolveInfo="ThisExpression" />
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="19529768407889265">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="19529768407889260">
+                  <node role="operand:3" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node:0" id="19529768407889259" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="19529768407889264">
+                    <link role="baseMethodDeclaration:16" targetNodeId="2v.1213877410070" resolveInfo="getOperand" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="19529768407889269">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="19529768407889271">
+                    <link role="conceptDeclaration:16" targetNodeId="1.1070475354124:3" resolveInfo="ThisExpression" />
+                  </node>
                 </node>
               </node>
             </node>

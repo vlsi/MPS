@@ -222,7 +222,7 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression");
+        return SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression") && SLinkOperations.getTarget(SNodeOperations.cast(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", false) == null;
       }
 
       public void doUpdateInstanceNode(SNode node) {
