@@ -282,7 +282,8 @@ public class Program {
 
   public Set<WriteInstruction> getUnusedAssignments() {
     AnalysisResult<VarSet> analysisResult = analyze(new LivenessAnalyzer());
-    Set<WriteInstruction> result = new HashSet<WriteInstruction>();
+    Set<WriteInstruction> retModeTrue = new HashSet<WriteInstruction>();
+    Set<WriteInstruction> retModeFalse = new HashSet<WriteInstruction>();
     for (ProgramState s : analysisResult.getStates()) {
       if (s.getInstruction() instanceof WriteInstruction) {
         WriteInstruction write = (WriteInstruction) s.getInstruction();
@@ -291,11 +292,16 @@ public class Program {
           liveAfter.addAll(analysisResult.get(succ));
         }        
         if (!liveAfter.contains(write.getVariableIndex())) {
-          result.add(write);
+          if (s.isReturnMode()) {
+             retModeTrue.add(write);
+          } else {
+             retModeFalse.add(write);
+          }
         }
       }
     }
-    return result;
+    retModeFalse.retainAll(retModeTrue);
+    return retModeFalse;
   }
 
   public String toString() {
