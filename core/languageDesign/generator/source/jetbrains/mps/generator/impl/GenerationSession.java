@@ -272,7 +272,7 @@ public class GenerationSession {
   private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
                              RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
     final TemplateGenerator tg =
-      myGenerationContext.isStrictMode() && myGenerationContext.isGenerateInParallel() && !mySessionContext.getGenerationTracer().isTracing() && ParallelTemplateGenerator.PARALLELING_ENABLED
+      myGenerationContext.isGenerateInParallel()
         ? new ParallelTemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationContext, ttrace)
         : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationContext, ttrace);
     if(tg instanceof ParallelTemplateGenerator) {

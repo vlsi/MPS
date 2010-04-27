@@ -76,7 +76,7 @@ public class GenerationController {
     myGenerationHandler = generationHandler;
     myProgress = progress;
     myLogger = new GeneratorLoggerAdapter(messages, !settings.isShowErrorsOnly());
-    myGenerationContext = new GenerationProcessContext(saveTransientModels, settings.isUseNewGenerator(), settings.isStrictMode(), settings.isShowErrorsOnly(), generationTracer);
+    myGenerationContext = new GenerationProcessContext(saveTransientModels, settings.isUseNewGenerator(), settings.isStrictMode(), settings.isShowErrorsOnly(), progress, generationTracer);
   }
 
   private void initMaps() {
@@ -104,9 +104,13 @@ public class GenerationController {
     ITaskProgressHelper progressHelper = new TaskProgressHelper(myProgress, totalJob, startJobTime);
     try {
       boolean generationOK = true;
-      for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
-        boolean result = generateModelsInModule(moduleAndDescriptors.o1, moduleAndDescriptors.o2, progressHelper);
-        generationOK = generationOK && result;
+      try {
+        for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
+          boolean result = generateModelsInModule(moduleAndDescriptors.o1, moduleAndDescriptors.o2, progressHelper);
+          generationOK = generationOK && result;
+        }
+      } finally {
+        myGenerationContext.cleanup();
       }
       if (generationOK) {
         if(myLogger.needsInfo()) {
@@ -154,11 +158,12 @@ public class GenerationController {
       }
 
       for (SModelDescriptor inputModel : inputModels) {
-        IPerformanceTracer ttrace = myGenerationContext.isStrictMode()
+        IPerformanceTracer ttrace = myGenerationContext.getTracingMode() != GenerationProcessContext.TRACE_OFF
           ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getLongName()))
           : new NullPerformanceTracer();
 
-        TypeChecker.getInstance().setIsGeneration(true, myGenerationContext.isGenerateInParallel() ? null : ttrace);
+        boolean traceTypes = myGenerationContext.getTracingMode() == GenerationProcessContext.TRACE_TYPES;
+        TypeChecker.getInstance().setIsGeneration(true, traceTypes ? ttrace : null);
 
         GenerationSession generationSession = new GenerationSession(
           inputModel, invocationContext, myProgress, myLogger, ttrace, myGenerationContext);

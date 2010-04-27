@@ -31,8 +31,6 @@ import java.util.List;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
-  public static /*final*/ boolean TRACE_QUERIES = false;
-
   private IOperationContext myOperationContext;
   private ProgressIndicator myProgressMonitor;
   private IGeneratorLogger myLogger;
@@ -48,24 +46,20 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
                                       ProgressIndicator progressMonitor, IGeneratorLogger logger,
-                                      IPerformanceTracer tracer, SModel inputModel, SModel outputModel) {
+                                      IPerformanceTracer tracer, SModel inputModel, SModel outputModel, GenerationProcessContext generationContext) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
     myLogger = logger;
     myInputModel = inputModel;
     myOutputModel = outputModel;
     myMappings = new GeneratorMappings();
-    myExecutor = !(tracer instanceof NullPerformanceTracer) && isQueryDebugSupported()
+    myExecutor = generationContext.getTracingMode() >= GenerationProcessContext.TRACE_LANGS
       ? new TraceableQueryExecutor(this, tracer)
       : new QueryExecutor(this);
   }
 
   public IOperationContext getOperationContext() {
     return myOperationContext;
-  }
-
-  protected boolean isQueryDebugSupported() {
-    return TRACE_QUERIES;
   }
 
   public IScope getScope() {

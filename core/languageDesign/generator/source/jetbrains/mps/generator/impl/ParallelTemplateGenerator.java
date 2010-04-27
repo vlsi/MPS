@@ -6,7 +6,6 @@ import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.GenerationTask;
-import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -21,13 +20,9 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ParallelTemplateGenerator extends TemplateGenerator {
 
-  public static /*final*/ boolean PARALLELING_ENABLED = true;
-  public static /*final*/ boolean USE_PARALLEL_POOL = false;
-
   private IGenerationTaskPool myPool;
   private List<RootGenerationTask> myTasks;
   private Map<Pair<SNode,SNode>, RootGenerationTask> myInputToTask;
-  private volatile boolean myIsCancelled = false;
 
   public ParallelTemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                                    IGeneratorLogger logger, RuleManager ruleManager,
@@ -35,14 +30,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, generationContext, performance);
     myTasks = new ArrayList<RootGenerationTask>();
     myInputToTask = new ConcurrentHashMap<Pair<SNode, SNode>, RootGenerationTask>();
-    myPool = USE_PARALLEL_POOL
-        ? new GenerationTaskPool(progressMonitor)
-        : new SimpleGenerationTaskPool();
-  }
-
-  @Override
-  protected boolean isQueryDebugSupported() {
-    return false;
+    myPool = generationContext.getTaskPool();
   }
 
   @Override
@@ -50,7 +38,6 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     throws GenerationCanceledException, GenerationFailureException {
     super.applyReductions(isPrimary);
     myPool.waitForCompletion();
-    myIsCancelled = isCanceled();
     for(RootGenerationTask task : myTasks) {
       task.registerRootsInModel();
     }
@@ -95,7 +82,13 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   @Override
   protected void checkGenerationCanceledFast() throws GenerationCanceledException {
-    if(myIsCancelled) throw new GenerationCanceledException();
+    if(myPool.isCancelled()) throw new GenerationCanceledException();
+  }
+
+  @Override
+  protected void checkMonitorCanceled() throws GenerationCanceledException {
+    super.checkMonitorCanceled();
+    if(myPool.isCancelled()) throw new GenerationCanceledException();
   }
 
   public abstract class RootGenerationTask implements GenerationTask {

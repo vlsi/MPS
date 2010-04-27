@@ -20,6 +20,10 @@ public interface IGenerationTaskPool {
   void addTask(GenerationTask r);
 
   void waitForCompletion() throws GenerationCanceledException, GenerationFailureException;
+  
+  boolean isCancelled();
+
+  void dispose();
 
   public static class SimpleGenerationTaskPool implements IGenerationTaskPool {
     private Deque<GenerationTask> queue = new LinkedList<GenerationTask>();
@@ -30,10 +34,22 @@ public interface IGenerationTaskPool {
 
     public void waitForCompletion() throws GenerationCanceledException, GenerationFailureException {
       GenerationTask next;
-      while((next = queue.poll()) != null) {
-        next.run();
+      try {
+        while((next = queue.poll()) != null) {
+          next.run();
+        }
+      } finally {
+        queue.clear();
       }
-      queue.clear();
+    }
+
+    @Override
+    public boolean isCancelled() {
+      return false;
+    }
+
+    @Override
+    public void dispose() {
     }
   }
 }

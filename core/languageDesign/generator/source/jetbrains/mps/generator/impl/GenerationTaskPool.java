@@ -31,13 +31,6 @@ public class GenerationTaskPool implements IGenerationTaskPool {
     }
 
     public Thread newThread(final Runnable original) {
-//      Runnable r = new Runnable() {
-//        @Override
-//        public void run() {
-//          ModelAccess.instance().runReadAction(original);
-//        }
-//      };
-
       Thread t = new Thread(group, original, namePrefix + threadNumber.getAndIncrement());
       if (t.isDaemon())
         t.setDaemon(false);
@@ -49,13 +42,13 @@ public class GenerationTaskPool implements IGenerationTaskPool {
 
   final static AtomicLong seq = new AtomicLong();
 
-  private class GenerationTaskAdapter implements Runnable, Comparable<GenerationTaskAdapter> {
+  private class GenerationTaskAdapter implements Runnable/*, Comparable<GenerationTaskAdapter>*/ {
     private GenerationTask myTask;
-    final long seqNum;
+//    final long seqNum;
 
     private GenerationTaskAdapter(GenerationTask task) {
       myTask = task;
-      seqNum = seq.getAndIncrement();
+//      seqNum = seq.getAndIncrement();
     }
 
     private void runInternal() {
@@ -84,19 +77,20 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       }
     }
 
-    @Override
-    public int compareTo(GenerationTaskAdapter oth) {
-      return (seqNum < oth.seqNum ? -1 : 1);
-    }
+//    @Override
+//    public int compareTo(GenerationTaskAdapter oth) {
+//      return (seqNum < oth.seqNum ? -1 : 1);
+//    }
   }
 
-  private ProgressIndicator progressMonitor;
+  private final ProgressIndicator progressMonitor;
+  private volatile boolean isCancelled = false;
 
   public GenerationTaskPool(ProgressIndicator progressMonitor) {
     this.progressMonitor = progressMonitor;
   }
 
-  final BlockingQueue<Runnable> queue = new PriorityBlockingQueue<Runnable>(256);
+  final BlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(256);
   ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(4, 4, 10, TimeUnit.SECONDS, queue, new ModelReadThreadFactory()) {
     @Override
     protected void afterExecute(Runnable r, Throwable t) {
@@ -114,6 +108,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
 
   @Override
   public void addTask(GenerationTask r) {
+    if(isCancelled) return;
     tasksInQueue.incrementAndGet();
     myExecutor.execute(new GenerationTaskAdapter(r));
   }
@@ -134,8 +129,19 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       } else if (progressMonitor.isCanceled()) {
         th = new GenerationCanceledException();
       }
+
+      if(th != null) {
+        isCancelled = true;
+        while (tasksInQueue.get() != 0) {
+          try {
+            objectLock.wait(1000);
+          } catch (InterruptedException e) {
+            /* ignore */
+          }
+        }
+        isCancelled = false;
+      }
     }
-    myExecutor.shutdownNow();
 
     // rethrow
     if (th != null) {
@@ -156,5 +162,15 @@ public class GenerationTaskPool implements IGenerationTaskPool {
       exceptions.add(thr);
       objectLock.notifyAll();
     }
+  }
+
+  @Override
+  public boolean isCancelled() {
+    return isCancelled;
+  }
+
+  @Override
+  public void dispose() {
+    myExecutor.shutdownNow();
   }
 }
