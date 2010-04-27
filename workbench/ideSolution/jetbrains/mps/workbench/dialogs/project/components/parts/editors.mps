@@ -13,7 +13,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" version="2" />
-  <maxImportIndex value="28" />
+  <maxImportIndex value="29" />
   <import index="1" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport(jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport@java_stub)" version="-1" />
   <import index="3" modelUID="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)" version="-1" />
@@ -25,7 +25,6 @@
   <import index="9" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#java.awt.event(java.awt.event@java_stub)" version="-1" />
-  <import index="12" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project.properties.generator(jetbrains.mps.workbench.dialogs.project.properties.generator@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
   <import index="14" modelUID="f:java_stub#javax.swing.event(javax.swing.event@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.project(jetbrains.mps.workbench.dialogs.project@java_stub)" version="-1" />
@@ -41,6 +40,7 @@
   <import index="26" modelUID="f:java_stub#jetbrains.mps.smodel.search(jetbrains.mps.smodel.search@java_stub)" version="-1" />
   <import index="27" modelUID="r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)" version="-1" />
   <import index="28" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
+  <import index="29" modelUID="r:018fa4b4-c7b0-4865-b9e5-632b4aeae6f1(jetbrains.mps.ide.properties)" version="-1" />
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1560298786499489293">
     <property name="name:3" value="ModuleImportEditor" />
@@ -941,12 +941,12 @@
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1560298786499491327">
                         <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1560298786499491328">
                           <property name="name:3" value="dialog" />
-                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1560298786499491329">
-                            <link role="classifier:3" targetNodeId="12.~EditOperandDialog" />
+                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5923576889075148997">
+                            <link role="classifier:3" targetNodeId="29.5923576889075046931" resolveInfo="EditOperandDialog" />
                           </node>
                           <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1560298786499491330">
                             <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1560298786499491331">
-                              <link role="baseMethodDeclaration:3" targetNodeId="12.~EditOperandDialog.&lt;init&gt;(jetbrains.mps.smodel.Generator,java.util.List,jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef,boolean)" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="29.5923576889075046943" resolveInfo="EditOperandDialog" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499491332">
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1560298786499491333">
                                   <link role="fieldDeclaration:3" targetNodeId="1560298786499491176" resolveInfo="myGenerator" />
@@ -996,11 +996,11 @@
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1560298786499491348">
                         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1560298786499491349">
                           <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1560298786499491350">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1560298786499491351">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5923576889075167214">
                               <link role="variableDeclaration:3" targetNodeId="1560298786499491328" resolveInfo="dialog" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499491352">
-                              <link role="baseMethodDeclaration:3" targetNodeId="12.~EditOperandDialog.getResult():jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="29.5923576889075047246" resolveInfo="getResult" />
                             </node>
                           </node>
                           <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1560298786499491353" />
@@ -1021,7 +1021,7 @@
                                   <link role="variableDeclaration:3" targetNodeId="1560298786499491328" resolveInfo="dialog" />
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1560298786499491362">
-                                  <link role="baseMethodDeclaration:3" targetNodeId="12.~EditOperandDialog.getResult():jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef" />
+                                  <link role="baseMethodDeclaration:3" targetNodeId="29.5923576889075047246" resolveInfo="getResult" />
                                 </node>
                               </node>
                             </node>

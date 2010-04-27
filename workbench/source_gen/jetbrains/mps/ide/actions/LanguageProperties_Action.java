@@ -15,7 +15,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.workbench.dialogs.project.properties.language.LanguagePropertiesDialog;
+import jetbrains.mps.ide.properties.LanguagePropertiesDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.properties.StandardDialogs;
 

@@ -22,7 +22,6 @@ import jetbrains.mps.ide.properties.StandardDialogs;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.workbench.dialogs.project.properties.model.ModelPropertiesDialog;
 
 import javax.swing.*;
 import java.awt.BorderLayout;

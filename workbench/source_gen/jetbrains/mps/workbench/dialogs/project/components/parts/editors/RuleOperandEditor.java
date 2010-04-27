@@ -12,7 +12,7 @@ import java.awt.event.MouseEvent;
 import java.awt.Component;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.workbench.dialogs.project.properties.generator.EditOperandDialog;
+import jetbrains.mps.ide.properties.EditOperandDialog;
 import javax.swing.event.ChangeEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.RuleOperandRenderer;
