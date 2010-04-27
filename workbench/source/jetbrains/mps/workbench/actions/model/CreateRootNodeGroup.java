@@ -15,9 +15,15 @@
  */
 package jetbrains.mps.workbench.actions.model;
 
+import com.intellij.ide.FileEditorProvider;
+import com.intellij.ide.SelectInContext;
+import com.intellij.ide.SelectInTarget;
+import com.intellij.ide.projectView.ProjectView;
+import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -35,6 +41,8 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.tree.TreeNode;
@@ -187,9 +195,7 @@ public class CreateRootNodeGroup extends BaseGroup {
     }
 
     protected void doExecute(AnActionEvent e) {
-      ProjectPane pane = ProjectPane.getInstance(myProject);
-
-      SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
+      final SNode node = ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
         public SNode compute() {
           SNode result = NodeFactoryManager.createNode((ConceptDeclaration) myNodeConcept.getNode().getAdapter(), null, null, myModelDescriptor.getSModel(), myScope);
           result.setProperty(SModelTreeNode.PACK, myPackage);
@@ -198,10 +204,61 @@ public class CreateRootNodeGroup extends BaseGroup {
         }
       });
 
-      pane.selectNode(node);
+      if (!trySelectInCurrentPane(node)) {
+        ProjectPane pane = ProjectPane.getInstance(myProject);
+        pane.activate(false);
+        pane.selectNode(node);
+      }
 
       IEditor editor = myProject.getComponent(MPSEditorOpener.class).editNode(node, myContext);
       editor.requestFocus();
+    }
+
+    private boolean trySelectInCurrentPane(final SNode node) {
+      final ProjectView projectView = ProjectView.getInstance(myProject);
+
+      AbstractProjectViewPane selectedPane = projectView.getCurrentProjectViewPane();
+      if (selectedPane == null) return false;
+
+      SelectInTarget target = selectedPane.createSelectInTarget();
+      if (target == null) return false;
+
+      SNodePointer pointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+        public SNodePointer compute() {
+          return new SNodePointer(node);
+        }
+      });
+      MySelectInContext context = new MySelectInContext(pointer);
+      if (!target.canSelect(context)) return false;
+
+      target.selectIn(context, false);
+      return true;
+    }
+
+    private class MySelectInContext implements SelectInContext {
+      private final SNodePointer myNode;
+
+      public MySelectInContext(SNodePointer node) {
+        myNode = node;
+      }
+
+      @NotNull
+      public Project getProject() {
+        return myProject;
+      }
+
+      @NotNull
+      public VirtualFile getVirtualFile() {
+        return MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode);
+      }
+
+      public Object getSelectorInFile() {
+        return null;
+      }
+
+      public FileEditorProvider getFileEditorProvider() {
+        return null;
+      }
     }
   }
 }
