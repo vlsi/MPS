@@ -49,7 +49,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
       ExecutionConsole executionConsole = new ExecutionConsole() {
         @Override
         public JComponent getComponent() {
-          return consoleView;
+          return consoleView.getComponent();
         }
 
         @Override
