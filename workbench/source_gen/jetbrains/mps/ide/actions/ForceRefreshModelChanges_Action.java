@@ -11,6 +11,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.changesmanager.ModelChangesManager;
 import jetbrains.mps.changesmanager.ChangesManager;
 
@@ -64,9 +65,14 @@ public class ForceRefreshModelChanges_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ModelChangesManager modelChangesManager = ChangesManager.getInstance(ForceRefreshModelChanges_Action.this.project).getModelChangesManager(ForceRefreshModelChanges_Action.this.model.getModelDescriptor());
-      if (modelChangesManager != null) {
-        modelChangesManager.update(null);
+      final Wrappers._T<ModelChangesManager> modelChangesManager = new Wrappers._T<ModelChangesManager>();
+      ChangesManager.getInstance(ForceRefreshModelChanges_Action.this.project).getCommandQueue().runTask(new Runnable() {
+        public void run() {
+          modelChangesManager.value = ChangesManager.getInstance(ForceRefreshModelChanges_Action.this.project).getModelChangesManager(ForceRefreshModelChanges_Action.this.model.getModelDescriptor());
+        }
+      });
+      if (modelChangesManager.value != null) {
+        modelChangesManager.value.update(null);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
