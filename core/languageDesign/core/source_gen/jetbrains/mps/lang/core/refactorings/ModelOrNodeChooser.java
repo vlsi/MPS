@@ -4,8 +4,10 @@ package jetbrains.mps.lang.core.refactorings;
 
 import javax.swing.JScrollPane;
 import jetbrains.mps.ide.projectPane.ProjectTree;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.projectPane.ProjectTreeFindHelper;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
@@ -13,14 +15,29 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 
 public class ModelOrNodeChooser extends JScrollPane {
   private ProjectTree myTree;
+  private ProjectTreeFindHelper myHelper = new ProjectTreeFindHelper() {
+    protected ProjectTree getTree() {
+      return ModelOrNodeChooser.this.myTree;
+    }
+  };
 
-  public ModelOrNodeChooser(Project project) {
+  public ModelOrNodeChooser(final RefactoringContext context) {
     super();
-    this.myTree = new ProjectTree(project);
+    this.myTree = new ProjectTree(context.getSelectedProject());
     this.setViewportView(this.myTree);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         ModelOrNodeChooser.this.myTree.rebuildNow();
+        ModelOrNodeChooser.this.myTree.runWithoutExpansion(new Runnable() {
+          public void run() {
+            MPSTreeNode treeNode = ModelOrNodeChooser.this.myHelper.findMostSuitableModelTreeNode(context.getSelectedModel());
+            if (treeNode == null) {
+              return;
+            }
+
+            ModelOrNodeChooser.this.myTree.selectNode(treeNode);
+          }
+        });
       }
     });
   }

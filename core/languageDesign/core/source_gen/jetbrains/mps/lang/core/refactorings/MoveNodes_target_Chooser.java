@@ -15,7 +15,7 @@ public class MoveNodes_target_Chooser extends BaseChooser {
 
   public MoveNodes_target_Chooser(final RefactoringContext refactoringContext) {
     super(refactoringContext);
-    this.myMainComponent = new ModelOrNodeChooser(MoveNodes_target_Chooser.this.getRefactoringContext().getSelectedProject());
+    this.myMainComponent = new ModelOrNodeChooser(MoveNodes_target_Chooser.this.getRefactoringContext());
     this.myComponentToFocus = this.myMainComponent;
   }
 
