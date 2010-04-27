@@ -5,7 +5,11 @@ import com.intellij.execution.process.*;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.debug.info.StacktraceUtil;
+import jetbrains.mps.logging.Logger;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.nio.charset.Charset;
 
 /**
@@ -16,7 +20,10 @@ import java.nio.charset.Charset;
  * To change this template use File | Settings | File Templates.
  */
 public class SimpleConsoleProcessHandler extends OSProcessHandler {
+  private static Logger LOG = Logger.getLogger(SimpleConsoleProcessHandler.class);
+
   private ConsoleViewImpl myConsoleView;
+  public OutputStreamWriter myOutputStreamWriter;
 
   public SimpleConsoleProcessHandler(ConsoleViewImpl console, Process process, String params) {
     super(process, params);
@@ -37,6 +44,38 @@ public class SimpleConsoleProcessHandler extends OSProcessHandler {
       StacktraceUtil.appendStacktraceToConsole(this.myConsoleView, s, ConsoleViewContentType.SYSTEM_OUTPUT);
     } else if (ProcessOutputTypes.STDOUT.equals(k)) {
       this.myConsoleView.print(s, ConsoleViewContentType.NORMAL_OUTPUT);
+    }
+  }
+  
+  public void input(String s) {
+    try {
+      getProcessInputWriter().append(s);
+    } catch (IOException ex) {
+      LOG.error(ex);
+    }
+  }
+
+  public void inputWithFlush(String s) {
+    try {
+      getProcessInputWriter().append(s);
+      getProcessInputWriter().flush();
+    } catch (IOException ex) {
+      LOG.error(ex);
+    }
+  }
+
+  private OutputStreamWriter getProcessInputWriter() {
+    if (myOutputStreamWriter == null) {
+      myOutputStreamWriter = new OutputStreamWriter(getProcessInput());
+    }
+    return myOutputStreamWriter;
+  }
+
+  public void flush() {
+    try {
+      getProcessInputWriter().flush();
+    } catch (IOException ex) {
+      LOG.error(ex);
     }
   }
 }

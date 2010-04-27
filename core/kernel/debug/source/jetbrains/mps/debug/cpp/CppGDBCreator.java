@@ -6,11 +6,15 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.Executor;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.impl.ConsoleViewImpl;
+import com.intellij.execution.process.ProcessAdapter;
+import com.intellij.execution.process.ProcessEvent;
 import com.intellij.execution.process.ProcessHandler;
+import com.intellij.execution.process.ProcessListener;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ui.ExecutionConsole;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.util.Key;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractDebugSessionCreator;
 import jetbrains.mps.debug.cpp.plugin.GDBLocationComponent_GDBLocation_PreferencesPage;
@@ -30,6 +34,17 @@ import java.io.File;
  */
 public class CppGDBCreator extends AbstractDebugSessionCreator {
   CppDebugSession myDebugSession;
+  private boolean myReadyForInput = false;
+  private String myCommand;
+
+  @Deprecated
+  public CppGDBCreator() {
+
+  }
+
+  public CppGDBCreator(String command) {
+    myCommand = command;
+  }
 
   @Override
   public AbstractDebugSession getDebugSession() {
@@ -42,10 +57,11 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
       File gdbFile = new File(GDBLocationUtil.getGdbLocation());
       ProcessBuilder processBuilder = new ProcessBuilder();
       processBuilder.directory(gdbFile.getParentFile());
-      processBuilder.command(gdbFile.getAbsolutePath());
+      processBuilder.command(gdbFile.getAbsolutePath(), "-quiet", "--interpreter=mi");
       Process process = processBuilder.start();
       final ConsoleViewImpl consoleView = StacktraceUtil.createConsoleView(project);
-      ProcessHandler processHandler = new SimpleConsoleProcessHandler(consoleView, process, gdbFile.getAbsolutePath());
+      SimpleConsoleProcessHandler processHandler = new SimpleConsoleProcessHandler(consoleView, process, gdbFile.getAbsolutePath());
+      processHandler.addProcessListener(new MyProcessListener());
       ExecutionConsole executionConsole = new ExecutionConsole() {
         @Override
         public JComponent getComponent() {
@@ -69,5 +85,19 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
       throw new ExecutionException("can't create debug session", t);
     }
     //return super.startSession(executor, runner, state);
+  }
+
+  private class MyProcessListener extends ProcessAdapter {
+    @Override
+    public void onTextAvailable(ProcessEvent event, Key outputType) {
+      if (!myReadyForInput) {
+        String s = event.getText();
+        if (s.startsWith("(gdb)")) {
+          myReadyForInput = true;
+          final SimpleConsoleProcessHandler processHandler = (SimpleConsoleProcessHandler) event.getProcessHandler();
+          myDebugSession.getGDBCommands().startProcessUnderGDB(processHandler, myCommand);
+        }
+      }
+    }
   }
 }

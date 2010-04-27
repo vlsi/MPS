@@ -1,7 +1,9 @@
 package jetbrains.mps.debug.cpp;
 
+import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractUiState;
+import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.smodel.IOperationContext;
 
 /**
@@ -12,6 +14,11 @@ import jetbrains.mps.smodel.IOperationContext;
  * To change this template use File | Settings | File Templates.
  */
 public class CppDebugSession extends AbstractDebugSession<CppUiState> {
+  private GDBCommands myGDBCommands = new GDBCommands();
+
+  public GDBCommands getGDBCommands() {
+    return myGDBCommands;
+  }
 
   @Override
   protected CppUiState createUiState() {
@@ -28,6 +35,9 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
 
   @Override
   public void stop(boolean terminateTargetProcess) {
+    if (terminateTargetProcess) {
+      myGDBCommands.stopProcessUnderGDB(getProcessHandler());
+    }
   }
 
   @Override
@@ -44,5 +54,10 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
 
   @Override
   public void showEvaluationDialog(IOperationContext operationContext) {
+  }
+
+  @Override
+  public SimpleConsoleProcessHandler getProcessHandler() {
+    return (SimpleConsoleProcessHandler) super.getProcessHandler();
   }
 }
