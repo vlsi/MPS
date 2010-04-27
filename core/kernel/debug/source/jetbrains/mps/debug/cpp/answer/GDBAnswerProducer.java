@@ -68,7 +68,7 @@ public class GDBAnswerProducer {
     while (true) {
       Pair<String, GDBValue> pair = readResult();
       recordValue.putProperty(pair.o1, pair.o2);
-      if (myOffset >= myInput.length() || currentChar() == '\n') {
+      if (myOffset >= myInput.length() || currentChar() == '\n' || currentChar() == '\r') {
         return recordValue;
       } else if (currentChar() == ',' ) {
         myOffset++;
@@ -209,6 +209,10 @@ public class GDBAnswerProducer {
     myOffset++;
     GDBValue value = readValue();
     return new Pair<String, GDBValue>(varSb.toString(), value);
+  }
+
+  public GDBAnswer getGDBAnswer() {
+    return myGDBAnswer;
   }
 
   public static void main(String args[]) {
