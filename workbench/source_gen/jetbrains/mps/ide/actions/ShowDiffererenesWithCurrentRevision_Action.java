@@ -4,6 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.awt.Frame;
@@ -16,7 +18,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/diff.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ShowDiffererenesWithCurrentRevision_Action.class);
 
   private Frame frame;
@@ -26,7 +28,7 @@ public class ShowDiffererenesWithCurrentRevision_Action extends GeneratedAction 
   private SModelDescriptor model;
 
   public ShowDiffererenesWithCurrentRevision_Action() {
-    super("Compare with the Same Repository Revision", "", ICON);
+    super("Show Diff", "Compare with the Same Repository Revision", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
