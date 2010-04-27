@@ -31,8 +31,8 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   public ParallelTemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                                    IGeneratorLogger logger, RuleManager ruleManager,
-                                   SModel inputModel, SModel outputModel, boolean isStrict, IPerformanceTracer performance) {
-    super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, isStrict, performance);
+                                   SModel inputModel, SModel outputModel, GenerationProcessContext generationContext, IPerformanceTracer performance) {
+    super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, generationContext, performance);
     myTasks = new ArrayList<RootGenerationTask>();
     myInputToTask = new ConcurrentHashMap<Pair<SNode, SNode>, RootGenerationTask>();
     myPool = USE_PARALLEL_POOL

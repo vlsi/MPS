@@ -63,12 +63,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public TemplateGenerator(GenerationSessionContext operationContext, ProgressIndicator progressMonitor,
                            IGeneratorLogger logger, RuleManager ruleManager,
-                           SModel inputModel, SModel outputModel, boolean isStrict, IPerformanceTracer performance) {
+                           SModel inputModel, SModel outputModel, GenerationProcessContext generationContext, IPerformanceTracer performance) {
 
     super(operationContext, progressMonitor, logger, performance, inputModel, outputModel);
     myRuleManager = ruleManager;
     myGenerationTracer = getGeneratorSessionContext().getGenerationTracer();
-    myIsStrict = isStrict;
+    myIsStrict = generationContext.isStrictMode();
     myDelayedChanges = new DelayedChanges(this);
     ttrace = performance;
   }

@@ -53,13 +53,11 @@ public class GenerationController {
   protected static Logger LOG = Logger.getLogger(GenerationController.class);
 
   private GeneratorNotifierHelper myNotifierHelper;
-  protected GenerationSettings mySettings;
   private List<Pair<SModelDescriptor, IOperationContext>> myInputModels;
   protected final IGenerationHandler myGenerationHandler;
-  protected final IGenerationTracer myGenerationTracer;
   protected ProgressIndicator myProgress;
   protected GeneratorLoggerAdapter myLogger;
-  protected boolean mySaveTransientModels;
+  private GenerationProcessContext myGenerationContext;
 
   protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
   protected Map<IModule, IOperationContext> myModulesToContexts = new HashMap<IModule, IOperationContext>();
@@ -74,13 +72,11 @@ public class GenerationController {
                               boolean saveTransientModels) {
 
     myNotifierHelper = notifierHelper;
-    mySettings = settings;
     myInputModels = _inputModels;
     myGenerationHandler = generationHandler;
-    myGenerationTracer = generationTracer;
     myProgress = progress;
     myLogger = new GeneratorLoggerAdapter(messages, !settings.isShowErrorsOnly());
-    mySaveTransientModels = saveTransientModels;
+    myGenerationContext = new GenerationProcessContext(saveTransientModels, settings.isUseNewGenerator(), settings.isStrictMode(), settings.isShowErrorsOnly(), generationTracer);
   }
 
   private void initMaps() {
@@ -153,20 +149,19 @@ public class GenerationController {
     //++ generation
     String wasLoggingThreshold = null;
     try {
-      if (mySettings.isShowErrorsOnly()) {
+      if (myGenerationContext.isShowErrorsOnly()) {
         wasLoggingThreshold = Logger.setThreshold("ERROR");
       }
 
       for (SModelDescriptor inputModel : inputModels) {
-        IPerformanceTracer ttrace = mySettings.isStrictMode()
+        IPerformanceTracer ttrace = myGenerationContext.isStrictMode()
           ? new PerformanceTracer("model " + NameUtil.shortNameFromLongName(inputModel.getLongName()))
           : new NullPerformanceTracer();
 
-        TypeChecker.getInstance().setIsGeneration(true, mySettings.isUseNewGenerator() ? null : ttrace);
+        TypeChecker.getInstance().setIsGeneration(true, myGenerationContext.isGenerateInParallel() ? null : ttrace);
 
         GenerationSession generationSession = new GenerationSession(
-          inputModel, invocationContext, myGenerationTracer, mySaveTransientModels,
-          myProgress, myLogger, mySettings.isUseNewGenerator(), mySettings.isStrictMode(), ttrace);
+          inputModel, invocationContext, myProgress, myLogger, ttrace, myGenerationContext);
 
         try {
           Logger.addLoggingHandler(generationSession.getLoggingHandler());

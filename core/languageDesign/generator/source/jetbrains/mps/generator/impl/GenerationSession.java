@@ -51,9 +51,6 @@ public class GenerationSession {
   private final SModelDescriptor myOriginalInputModel;
   private GenerationPlan myGenerationPlan;
 
-  /* temporary */
-  private final boolean myParallelGeneration;
-
   private final IOperationContext myInvocationContext;
   private final IGenerationTracer myGenerationTracer;
   private final boolean myDiscardTransients;
@@ -64,24 +61,21 @@ public class GenerationSession {
   private GenerationSessionContext mySessionContext;
   private IPerformanceTracer ttrace;
 
-  private boolean myIsStrict;
-
   private int myMajorStep = 0;
   private int myTransientModelsCount = 0;
+  private GenerationProcessContext myGenerationContext;
 
   public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
-                           IGenerationTracer generationTracer, boolean saveTransientModels,
                            ProgressIndicator progressMonitor, GeneratorLoggerAdapter logger,
-                           boolean parallelGeneration, boolean isStrict, IPerformanceTracer tracer) {
+                           IPerformanceTracer tracer, GenerationProcessContext generationContext) {
     myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
-    myGenerationTracer = generationTracer;
-    myDiscardTransients = !saveTransientModels;
+    myGenerationTracer = generationContext.getGenerationTracer();
+    myDiscardTransients = !generationContext.isSaveTransientModels();
     myProgressMonitor = progressMonitor;
-    myParallelGeneration = parallelGeneration;
-    myIsStrict = isStrict;
     myLogger = new GenerationSessionLogger(logger);
     ttrace = tracer;
+    myGenerationContext = generationContext;
   }
 
   public GenerationStatus generateModel() throws GenerationCanceledException {
@@ -278,9 +272,9 @@ public class GenerationSession {
   private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, final boolean isPrimary,
                              RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
     final TemplateGenerator tg =
-      myIsStrict && myParallelGeneration && !mySessionContext.getGenerationTracer().isTracing() && ParallelTemplateGenerator.PARALLELING_ENABLED
-        ? new ParallelTemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myIsStrict, ttrace)
-        : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myIsStrict, ttrace);
+      myGenerationContext.isStrictMode() && myGenerationContext.isGenerateInParallel() && !mySessionContext.getGenerationTracer().isTracing() && ParallelTemplateGenerator.PARALLELING_ENABLED
+        ? new ParallelTemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationContext, ttrace)
+        : new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentOutputModel, myGenerationContext, ttrace);
     if(tg instanceof ParallelTemplateGenerator) {
       return GeneratorUtil.runReadInWrite(new GenerationComputable<Boolean>() {
         @Override
@@ -335,7 +329,7 @@ public class GenerationSession {
       if (myLogger.needsInfo()) {
         myLogger.info(preMappingScript.getNode(), "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")");
       }
-      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myIsStrict, ttrace);
+      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myGenerationContext, ttrace);
       templateGenerator.getExecutor().executeMappingScript(preMappingScript, currentInputModel);
     }
     return currentInputModel;
@@ -363,7 +357,7 @@ public class GenerationSession {
       if (myLogger.needsInfo()) {
         myLogger.info(postMappingScript.getNode(), "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
       }
-      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentOutputModel, currentOutputModel, myIsStrict, ttrace);
+      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentOutputModel, currentOutputModel, myGenerationContext, ttrace);
       templateGenerator.getExecutor().executeMappingScript(postMappingScript, currentOutputModel);
     }
     return currentOutputModel;
