@@ -109,7 +109,6 @@ public final class SNode {
     LOG.assertLog(!isRegistered(), "couldn't change model of registered node " + getDebugText());
     SModel wasModel = myModel;
     myModel = newModel;
-    UnregisteredNodes.instance().nodeModelChanged(this, wasModel);
     ModelChangedCaster.getInstance().fireModelChanged(this, wasModel);
 
     for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
@@ -1462,7 +1461,6 @@ public final class SNode {
     if (myId == null && !isRegistered()) {
       // TODO remove id generation
       myId = SModel.generateUniqueId();
-      UnregisteredNodes.instance().nodeIdChanged(this, null);
       //LOG.error(new IllegalStateException("cannot generate id for unregistered node"));
     }
     return myId;
@@ -1474,7 +1472,6 @@ public final class SNode {
     if (!isRegistered()) {
       SNodeId wasId = myId;
       myId = id;
-      UnregisteredNodes.instance().nodeIdChanged(this, wasId);
     } else {
       LOG.error("can't set id to registered node " + getDebugText(), new Throwable());
     }

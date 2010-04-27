@@ -18,16 +18,27 @@ package jetbrains.mps.util;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Bidirectional map from pair (K1, K2) <-> V 
+ */
 public class PairMap<K1, K2, V> {
   private Map<K1, Map<K2, V>> myMap = new HashMap<K1, Map<K2, V>>();
+  private Map<V, K1> myValueToK1Map = new HashMap<V,K1>();
+  private Map<V, K2> myValueToK2Map = new HashMap<V,K2>();
 
   public void put(K1 k1, K2 k2, V v) {
     Map<K2, V> map = myMap.get(k1);
     if (map == null) {
-      map = new HashMap<K2, V>(1);
+      map = new HashMap<K2, V>();
       myMap.put(k1, map);
     }
-    map.put(k2, v);
+    V oldV = map.put(k2, v);
+    if (oldV != null) {
+      myValueToK1Map.remove(oldV);
+      myValueToK2Map.remove(oldV);
+    }
+    myValueToK1Map.put(v, k1);
+    myValueToK2Map.put(v, k2);
   }
 
   public V get(K1 k1, K2 k2) {
@@ -43,17 +54,40 @@ public class PairMap<K1, K2, V> {
   public void remove(K1 k1, K2 k2) {
     Map<K2, V> map = myMap.get(k1);
     if (map == null) return;
-    map.remove(k2);
+    V oldV = map.remove(k2);
+    if (map.isEmpty()) {
+      myMap.remove(k1);
+    }
+    if (oldV != null) {
+      myValueToK1Map.remove(oldV);
+      myValueToK2Map.remove(oldV);
+    }
+  }
+
+  public void remove(V v) {
+    K1 k1 = myValueToK1Map.remove(v);
+    K2 k2 = myValueToK2Map.remove(v);
+    Map<K2, V> map = myMap.get(k1);
+    if (map == null) return;
+    V oldV = map.remove(k2);
     if (map.isEmpty()) {
       myMap.remove(k1);
     }
   }
 
   public void clear(K1 k1) {
-    myMap.remove(k1);
+    Map<K2, V> removed = myMap.remove(k1);
+    if (removed != null) {
+      for (V removedV : removed.values()) {
+        myValueToK1Map.remove(removedV);
+        myValueToK2Map.remove(removedV);
+      }
+    }
   }
 
   public void clear() {
     myMap.clear();
+    myValueToK1Map.clear();
+    myValueToK2Map.clear();
   }
 }

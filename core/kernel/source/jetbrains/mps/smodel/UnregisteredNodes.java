@@ -62,8 +62,10 @@ class UnregisteredNodes {
   }
 
   void remove(SNode node) {
-    if (myDisabled || !node.hasId()) return;
-    remove(node.getModel().getSModelReference(), node.getSNodeId());
+    if (myDisabled) return;
+    synchronized (myLock) {
+      myMap.remove(node);
+    }
   }
 
   SNode get(SModelReference modelReference, SNodeId nodeId) {
@@ -71,22 +73,6 @@ class UnregisteredNodes {
     synchronized (myLock) {
       return myMap.get(modelReference, nodeId);
     }
-  }
-
-  void nodeIdChanged(SNode node, SNodeId oldNodeId) {
-    if(myDisabled) return;
-    if (oldNodeId != null) {
-      remove(node.getModel().getSModelReference(), oldNodeId);
-    }
-    if (node.hasId()) {
-      add(node.getModel().getSModelReference(), node.getSNodeId(), node);
-    }
-  }
-
-  void nodeModelChanged(SNode node, SModel oldModel) {
-    if (myDisabled || !node.hasId()) return;
-    remove(oldModel.getSModelReference(), node.getSNodeId());
-    add(node.getModel().getSModelReference(), node.getSNodeId(), node);
   }
 
   private void add(SModelReference reference, SNodeId id, SNode node) {
@@ -99,12 +85,6 @@ class UnregisteredNodes {
     }
     if(showError) {
       LOG.error(new IllegalStateException("attempt to put another node with same key: " + reference + "#" + id));
-    }
-  }
-
-  private void remove(SModelReference reference, SNodeId id) {
-    synchronized (myLock) {
-      myMap.remove(reference, id);
     }
   }
 
