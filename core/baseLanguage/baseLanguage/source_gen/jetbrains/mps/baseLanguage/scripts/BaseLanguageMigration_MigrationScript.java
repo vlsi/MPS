@@ -226,10 +226,9 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", null);
+        SNode methodCall = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall");
         SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
         ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)));
-        SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), methodCall);
       }
 
       public boolean isShowAsIntention() {
@@ -254,9 +253,8 @@ public class BaseLanguageMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode fieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
+        SNode fieldReference = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference");
         SLinkOperations.setTarget(fieldReference, "variableDeclaration", SLinkOperations.getTarget(node, "fieldDeclaration", false), false);
-        SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), fieldReference);
       }
 
       public boolean isShowAsIntention() {
