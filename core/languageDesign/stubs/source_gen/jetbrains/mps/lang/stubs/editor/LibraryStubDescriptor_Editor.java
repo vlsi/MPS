@@ -25,12 +25,10 @@ import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 
 public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -203,7 +201,7 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_moduleName");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LibraryStubDescriptor_Editor.LibraryStubDescriptor_generic_cellMenu_a0b0a1b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new LibraryStubDescriptor_Editor.LibraryStubDescriptor_generic_cellMenu_a0b0a1b0(),new LibraryStubDescriptor_Editor.LibraryStubDescriptor_generic_cellMenu_b0b0a1b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -295,9 +293,7 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      SModelDescriptor currentModel = SNodeOperations.getModel(node).getModelDescriptor();
-      Language currentLanguage = Language.getLanguageForLanguageAspect(currentModel);
-      return currentLanguage.getLanguageDescriptor().getStubSolutions();
+      return StubSolutionCreateHelper.getAvailableStubSolutions(node);
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -318,6 +314,19 @@ public class LibraryStubDescriptor_Editor extends DefaultNodeEditor {
 
     public String getMatchingText_internal(StubSolution parameterObject) {
       return parameterObject.getName();
+    }
+  }
+
+  public static class LibraryStubDescriptor_generic_cellMenu_b0b0a1b0 extends AbstractCellMenuPart_Generic_Item {
+    public LibraryStubDescriptor_generic_cellMenu_b0b0a1b0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      StubSolutionCreateHelper.createNewStubSolution(operationContext, node);
+    }
+
+    public String getMatchingText() {
+      return "create new...";
     }
   }
 }
