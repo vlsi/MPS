@@ -77,14 +77,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     protected ProjectTree getTree() {
       return ProjectPane.this.getTree();
     }
-
-    protected Project getProject() {
-      return ProjectPane.this.getProject();
-    }
-
-    protected ProjectModulesPoolTreeNode getModulesPoolNode() {
-      return getTree().getModulesPoolNode();
-    }
   };
 
   private MyScrollPane myScrollPane;

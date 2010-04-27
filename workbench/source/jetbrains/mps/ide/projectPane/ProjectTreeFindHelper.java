@@ -21,7 +21,6 @@ import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTre
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AllModelsTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.StubsTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.TestsTreeNode;
-import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -40,8 +39,9 @@ public abstract class ProjectTreeFindHelper {
     ProjectModuleTreeNode result = findModuleTreeNodeInProject(module);
     if (result != null) return result;
 
-    if (!getModulesPoolNode().isInitialized()) {
-      getModulesPoolNode().init();
+    ProjectModulesPoolTreeNode modulesPoolNode = getTree().getModulesPoolNode();
+    if (!modulesPoolNode.isInitialized()) {
+      modulesPoolNode.init();
     }
 
     return findModuleTreeNodeAnywhere(module);
@@ -244,7 +244,9 @@ public abstract class ProjectTreeFindHelper {
 
   //-----------getters----------
 
-  protected abstract MPSTree getTree();
-  protected abstract Project getProject();
-  protected abstract ProjectModulesPoolTreeNode getModulesPoolNode();
+  protected Project getProject(){
+    return getTree().getProject();
+  }
+
+  protected abstract ProjectTree getTree();
 }

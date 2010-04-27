@@ -73,6 +73,10 @@ public class ProjectTree extends MPSTree {
     return myModulesPoolTreeNode;
   }
 
+  public Project getProject() {
+    return myProject;
+  }
+
   private class ModulesNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
     private MPSProject myProject;
 
