@@ -1010,6 +1010,12 @@ public final class SNode {
     return children.get(index - 1);
   }
 
+  /**
+   * Removes child from current node. This affects only link between current node and its child, but not links in
+   * subtree of child node.
+   *
+   * Differs from {@link SNode#delete()}.
+   */
   public void removeChild(SNode wasChild) {
     if(wasChild.myParent != this) return;
     ModelChange.assertLegalNodeChange(this);
@@ -1369,6 +1375,9 @@ public final class SNode {
     }
   }
 
+  /**
+   * Deletes all nodes in subtree starting with current. Differs from {@link SNode#removeChild(SNode)}.
+   */
   public void delete() {
     delete_internal();
   }
