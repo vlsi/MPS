@@ -78,7 +78,8 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
 
   @BaseDialog.Button(name = "Refactor", mnemonic = 'R', position = 0, defaultButton = true)
   public void onOk() {
-    IntroduceVariableDialog.this.getRefactoring().setName(((String) this.myName.getEditor().getItem()));
+    String name = (String) this.myName.getEditor().getItem();
+    IntroduceVariableDialog.this.getRefactoring().setName(name);
     this.doRefactoring();
     new IntroduceVariableDialog.MyDuplicatesProcessor(this.myEditorContext).process(this.getRefactoring().getDuplicates());
   }
