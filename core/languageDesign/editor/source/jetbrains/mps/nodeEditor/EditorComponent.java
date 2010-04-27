@@ -189,6 +189,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private Stack<EditorCell> mySelectedStack = new Stack<EditorCell>();
   private Stack<KeyboardHandler> myKbdHandlersStack;
+  private MouseListener myMouseEventHandler;
   private HashMap<CellActionType, EditorCellAction> myActionMap;
 
   private NodeSubstituteChooser myNodeSubstituteChooser;
@@ -407,6 +408,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
+        if (areMouseEventsBlocked()) {
+          return;
+        }
         if (e.isPopupTrigger()) {
           processPopupMenu(e);
         } else {
@@ -415,6 +419,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
 
       public void mouseClicked(MouseEvent e) {
+        if (areMouseEventsBlocked()) {
+          return;
+        }
         EditorCell selectedCell = getSelectedCell();
         if (e.getClickCount() == 2 && myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell &&
           selectedCell instanceof EditorCell_Label) {
@@ -424,6 +431,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
 
       public void mouseReleased(MouseEvent e) {
+        if (areMouseEventsBlocked()) {
+          return;
+        }
         if (e.isPopupTrigger()) {
           processPopupMenu(e);
         }
@@ -2085,6 +2095,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void pushKeyboardHandler(KeyboardHandler kbdHandler) {
     myKbdHandlersStack.push(kbdHandler);
+  }
+
+  public void setMouseEventHandler(MouseListener l) {
+    assert myMouseEventHandler == null : "Mouse event handler was already specified";
+    addMouseListener(myMouseEventHandler = l);
+  }
+
+  public void removeMouseEventHandler() {
+    assert myMouseEventHandler != null : "Mouse event handler was was not specified";
+    removeMouseListener(myMouseEventHandler);
+    myMouseEventHandler = null;
+  }
+
+  private boolean areMouseEventsBlocked() {
+    return myMouseEventHandler != null;
   }
 
   public Object getUserData(Object key) {
