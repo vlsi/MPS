@@ -58,8 +58,8 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     }
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     for (SNode containedClassifier : Sequence.fromIterable(classifiers)) {
-      this.collectOverridenMethods(containedClassifier, result);
-      this.collectOverridingMethods(containedClassifier, result);
+      collectOverridenMethods(containedClassifier, result);
+      collectOverridingMethods(containedClassifier, result);
     }
     return result;
   }
@@ -121,7 +121,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     if (Sequence.fromIterable(derivedClassifiers).isEmpty()) {
       return;
     }
-    Map<SNode, Set<Tuples._2<SNode, SNode>>> overridenToOverridingMethodsMap = this.createOverridenToOverridingMethodsMap(nameToMethodsMap, derivedClassifiers);
+    Map<SNode, Set<Tuples._2<SNode, SNode>>> overridenToOverridingMethodsMap = createOverridenToOverridingMethodsMap(nameToMethodsMap, derivedClassifiers);
     for (SNode overridenMethod : SetSequence.fromSet(MapSequence.fromMap(overridenToOverridingMethodsMap).keySet())) {
       boolean overriden = !(SPropertyOperations.getBoolean(overridenMethod, "isAbstract"));
       StringBuffer tooltip = new StringBuffer("Is ");

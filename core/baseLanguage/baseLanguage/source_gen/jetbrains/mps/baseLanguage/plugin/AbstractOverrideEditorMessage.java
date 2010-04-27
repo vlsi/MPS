@@ -55,7 +55,7 @@ public abstract class AbstractOverrideEditorMessage extends DefaultEditorMessage
   public boolean sameAs(EditorMessage message) {
     if (message instanceof AbstractOverrideEditorMessage) {
       AbstractOverrideEditorMessage other = (AbstractOverrideEditorMessage) message;
-      return super.sameAs(other) && other.getType() == this.getType() && other.getTooltipText().equals(this.getTooltipText());
+      return super.sameAs(other) && other.getType() == getType() && other.getTooltipText().equals(getTooltipText());
     }
     return false;
   }
@@ -67,6 +67,6 @@ public abstract class AbstractOverrideEditorMessage extends DefaultEditorMessage
   }
 
   private SNode getInstanceMethodDeclaration() {
-    return (SNode) this.getNode();
+    return (SNode) getNode();
   }
 }

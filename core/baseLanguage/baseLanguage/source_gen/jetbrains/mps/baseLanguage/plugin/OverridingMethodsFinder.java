@@ -40,7 +40,7 @@ public class OverridingMethodsFinder {
       SetSequence.fromSet(safeGet(nameToMethodsMap, SPropertyOperations.getString(methodToCheck, "name"))).addElement(methodToCheck);
     }
     if (MapSequence.fromMap(nameToMethodsMap).isNotEmpty()) {
-      this.collectOverridingMethodsInClassifierHierarchy(container, nameToMethodsMap, SetSequence.fromSet(new HashSet<SNode>()));
+      collectOverridingMethodsInClassifierHierarchy(container, nameToMethodsMap, SetSequence.fromSet(new HashSet<SNode>()));
     }
   }
 
@@ -58,7 +58,7 @@ public class OverridingMethodsFinder {
       if ((SLinkOperations.getTarget(clazz, "superclass", true) != null)) {
         SNode superClassifier = SLinkOperations.getTarget(SLinkOperations.getTarget(clazz, "superclass", true), "classifier", false);
         if (addIfNotContains(visitedClassifiers, superClassifier)) {
-          this.collectOverridingMethods(superClassifier, nameToMethodsMap, visitedClassifiers);
+          collectOverridingMethods(superClassifier, nameToMethodsMap, visitedClassifiers);
         }
       }
       ListSequence.fromList(SLinkOperations.getTargets(clazz, "implementedInterface", true)).select(new ISelector<SNode, SNode>() {
@@ -71,7 +71,7 @@ public class OverridingMethodsFinder {
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          OverridingMethodsFinder.this.collectOverridingMethods(it, nameToMethodsMap, visitedClassifiers);
+          collectOverridingMethods(it, nameToMethodsMap, visitedClassifiers);
         }
       });
     } else if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
@@ -85,7 +85,7 @@ public class OverridingMethodsFinder {
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          OverridingMethodsFinder.this.collectOverridingMethods(it, nameToMethodsMap, visitedClassifiers);
+          collectOverridingMethods(it, nameToMethodsMap, visitedClassifiers);
         }
       });
     }
@@ -119,7 +119,7 @@ public class OverridingMethodsFinder {
       }
     }
     if (!(MapSequence.fromMap(methodNameToMethodMapCopy).isEmpty())) {
-      this.collectOverridingMethodsInClassifierHierarchy(classifier, methodNameToMethodMapCopy, visitedClassifiers);
+      collectOverridingMethodsInClassifierHierarchy(classifier, methodNameToMethodMapCopy, visitedClassifiers);
     }
   }
 
