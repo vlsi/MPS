@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.dialogs.project.creation;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.properties.StandardDialogs;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
@@ -167,7 +168,7 @@ public class NewModelDialog extends BaseDialog {
       return;
     }
 
-    new ModelPropertiesDialog(myResult, myContext).showDialog();
+    StandardDialogs.createModelPropertiesDialog(myResult, myContext).showDialog();
 
     dispose();
   }
