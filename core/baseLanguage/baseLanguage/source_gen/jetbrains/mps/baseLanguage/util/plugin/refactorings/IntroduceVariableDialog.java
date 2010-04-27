@@ -21,7 +21,6 @@ import java.awt.event.KeyEvent;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.awt.Insets;
 
 public abstract class IntroduceVariableDialog extends BaseDialog {
@@ -99,14 +98,6 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
       }
     });
     this.myEditorContext.select(this.myResult);
-  }
-
-  protected SNode getRootToFindDuplicates(SNode node) {
-    SNode result = node;
-    while ((SNodeOperations.getParent(result) != null)) {
-      result = SNodeOperations.getParent(result);
-    }
-    return result;
   }
 
   public SNode getResult() {

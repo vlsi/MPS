@@ -8,9 +8,9 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -46,7 +46,6 @@ public class ConvertAnonymousRefactoring {
   public void doRefactor() {
     this.collectInformation();
     SNode innerClass = this.makeInnerClass();
-    ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(this.myClassToRefactor, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "staticInnerClassifiers", true)).addElement(innerClass);
     SNodeOperations.replaceWithAnother(this.myClassToRefactor, this.makeInnerConstructorInvocation(ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).getElement(0)));
   }
 
@@ -99,6 +98,7 @@ public class ConvertAnonymousRefactoring {
 
   private SNode makeInnerClass() {
     SNode innerClass = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
+    ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(this.myClassToRefactor, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "staticInnerClassifiers", true)).addElement(innerClass);
     SPropertyOperations.set(innerClass, "name", this.myNameForInnerClass);
     SLinkOperations.setTarget(innerClass, "visibility", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null), true);
     this.chooseNonStaticForInnerClass(innerClass);
