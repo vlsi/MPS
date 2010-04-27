@@ -30,8 +30,8 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
 import java.io.IOException;
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.regex.Matcher;
@@ -58,9 +58,8 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNodePointer nodePointer) {
-    if (myVirtualFiles.containsKey(nodePointer)) {
-      return myVirtualFiles.get(nodePointer);
-    }
+    if (myVirtualFiles.containsKey(nodePointer)) return myVirtualFiles.get(nodePointer);
+
     MPSNodeVirtualFile vf = new MPSNodeVirtualFile(nodePointer);
     myVirtualFiles.put(nodePointer, vf);
     return vf;
@@ -97,30 +96,29 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       public VirtualFile compute() {
         Pattern p = Pattern.compile("(.*)/(.*)");
         Matcher m = p.matcher(path);
-        if (m.matches()) {
-          SModelReference reference = SModelReference.fromString(m.group(1));
-          String name = m.group(2);
-          SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(reference);
-          if (sm == null) return null;
+        if (!m.matches()) return null;
 
-          SNode node = null;
-          for (SNode root : sm.getSModel().getRoots()) {
-            if (root.getPresentation().equals(name)) {
-              node = root;
-              break;
-            }
+        SModelReference reference = SModelReference.fromString(m.group(1));
+        String name = m.group(2);
+        SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(reference);
+        if (sm == null) return null;
+
+        SNode node = null;
+        for (SNode root : sm.getSModel().getRoots()) {
+          if (root.getPresentation().equals(name)) {
+            node = root;
+            break;
           }
-
-          if (node == null) return null;
-          return getFileFor(node);
-        } else {
-          return null;
         }
+
+        if (node == null) return null;
+        return getFileFor(node);
       }
     });
   }
 
   public void refresh(boolean asynchronous) {
+
   }
 
   @Nullable
@@ -222,12 +220,10 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private class MyModelListener extends SModelAdapter {
     public void eventFired(SModelEvent event) {
-      if (event.getAffectedRoot() != null) {
-        updateModificationStamp(event.getAffectedRoot());
-      }
+      if (event.getAffectedRoot() == null) return;
+      updateModificationStamp(event.getAffectedRoot());
     }
 
-    @Override
     public void modelReplaced(final SModelDescriptor sm) {
       for (SNode root : sm.getSModel().getRoots()) {
         updateModificationStamp(root);
@@ -237,28 +233,32 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         public void run() {
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
-              for (Entry<SNodePointer, MPSNodeVirtualFile> entry : myVirtualFiles.entrySet()) {
-                if (entry.getKey().getModel() != sm) continue;
-
-                SNode node = entry.getKey().getNode();
-                MPSNodeVirtualFile file = entry.getValue();
-                if (node == null) {
-                  fireBeforeFileDeletion(this, file);
-                  fireFileDeleted(this, file, file.getName(), null);
-                } else {
-                  String oldName = file.getName();
-                  String newName = node.getName();
-                  if (!oldName.equals(newName)) {
-                    fireBeforePropertyChange(this, file, VirtualFile.PROP_NAME, oldName, newName);
-                    ((MPSNodeVirtualFile) file).updateFields();
-                    firePropertyChanged(this, file, VirtualFile.PROP_NAME, oldName, newName);
-                  }
-                }
-              }
+              onModelReplaced(sm);
             }
           });
         }
       });
+    }
+
+    private void onModelReplaced(SModelDescriptor sm) {
+      for (Entry<SNodePointer, MPSNodeVirtualFile> entry : myVirtualFiles.entrySet()) {
+        if (entry.getKey().getModel() != sm) continue;
+
+        SNode node = entry.getKey().getNode();
+        MPSNodeVirtualFile file = entry.getValue();
+        if (node == null) {
+          fireBeforeFileDeletion(this, file);
+          fireFileDeleted(this, file, file.getName(), null);
+        } else {
+          String oldName = file.getName();
+          String newName = node.getName();
+          if (!oldName.equals(newName)) {
+            fireBeforePropertyChange(this, file, VirtualFile.PROP_NAME, oldName, newName);
+            ((MPSNodeVirtualFile) file).updateFields();
+            firePropertyChanged(this, file, VirtualFile.PROP_NAME, oldName, newName);
+          }
+        }
+      }
     }
   }
 }
