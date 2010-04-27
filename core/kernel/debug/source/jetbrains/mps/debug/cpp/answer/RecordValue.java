@@ -17,7 +17,7 @@ public class RecordValue extends GDBValue {
     myMap.put(propertyName, value);
   }
 
-  public GDBValue getProperty(String propertyName) {
+  public GDBValue getPropertyValue(String propertyName) {
     return myMap.get(propertyName);
   }
 }

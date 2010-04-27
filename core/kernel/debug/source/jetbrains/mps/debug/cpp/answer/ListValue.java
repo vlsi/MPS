@@ -18,6 +18,6 @@ public class ListValue extends GDBValue {
   }
 
   public List<GDBValue> getValues() {
-    return new ArrayList<GDBValue>();
+    return new ArrayList<GDBValue>(myValues);
   }
 }
