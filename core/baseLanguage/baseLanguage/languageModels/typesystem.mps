@@ -22344,18 +22344,20 @@
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="412500033818845281">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="412500033818845301">
             <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="2699429144646579817">
-              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2699429144646585843">
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2699429144646585838">
-                  <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2699429144646585837">
-                    <link role="applicableNode:3" targetNodeId="412500033818813658" resolveInfo="imco" />
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="7654328074273802166">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2699429144646585843">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2699429144646585838">
+                    <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2699429144646585837">
+                      <link role="applicableNode:3" targetNodeId="412500033818813658" resolveInfo="imco" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="2699429144646585842">
+                      <link role="baseMethodDeclaration:16" targetNodeId="37.1224687669172" resolveInfo="getDotExpression" />
+                    </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="2699429144646585842">
-                    <link role="baseMethodDeclaration:16" targetNodeId="37.1224687669172" resolveInfo="getDotExpression" />
-                  </node>
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="2699429144646585847">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="2699429144646617506">
-                    <link role="conceptDeclaration:16" targetNodeId="60.4079382982702596667" resolveInfo="CheckedDotExpression" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="2699429144646585847">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="2699429144646617506">
+                      <link role="conceptDeclaration:16" targetNodeId="60.4079382982702596667" resolveInfo="CheckedDotExpression" />
+                    </node>
                   </node>
                 </node>
               </node>
