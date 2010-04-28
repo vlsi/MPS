@@ -44,11 +44,22 @@ class ImmatureReferences implements ApplicationComponent {
 
   private ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, SReferenceBase>> myReferencesSetPool = new ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, SReferenceBase>>();
 
+  private boolean myDisabled = true;
+
   ImmatureReferences(SModelRepository modelRepository) {
     mySModelRepository = modelRepository;
     for (int i = 0; i < 4; i++) {
       myReferencesSetPool.add(new ConcurrentHashMap<SReferenceBase, SReferenceBase>());
     }
+  }
+
+  void enable() {
+    myDisabled = false;
+  }
+
+  void disable() {
+    myDisabled = true;
+    cleanup();
   }
 
   @NotNull
@@ -76,12 +87,14 @@ class ImmatureReferences implements ApplicationComponent {
   }
 
   void add(SReferenceBase ref) {
+    if (myDisabled) return;
     SModelReference modelRef = ref.getSourceNode().getModel().getSModelReference();
     ConcurrentMap<SReferenceBase, SReferenceBase> refSet = getOrCreateRefSet(modelRef);
     refSet.put(ref, ref);
   }
 
   void remove(SReferenceBase ref) {
+    if (myDisabled) return;
     SModelReference modelRef = ref.getSourceNode().getModel().getSModelReference();
     ConcurrentMap<SReferenceBase, SReferenceBase> refSet = myReferences.get(modelRef);
     if (refSet != null) {

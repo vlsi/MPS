@@ -403,6 +403,7 @@ public class ModelAccess {
 
   private void onCommandStarted() {
     UnregisteredNodes.instance().enable();
+    ImmatureReferences.getInstance().enable();
     ArrayList<ModelAccessListener> listeners;
     synchronized (myListenersLock) {
       listeners = new ArrayList<ModelAccessListener>(myListeners);
@@ -438,6 +439,7 @@ public class ModelAccess {
         LOG.error(t);
       }
     }
+    ImmatureReferences.getInstance().disable();
     UnregisteredNodes.instance().disable();
   }
 

@@ -10,6 +10,7 @@ import jetbrains.mps.lang.generator.plugin.debug.IGenerationTracer;
 public class GenerationProcessContext {
 
   public static /*final*/ boolean USE_PARALLEL_POOL = true;
+  public static /*final*/ boolean USE_TRACING = false;
 
   public static final int TRACE_OFF = 0;
   public static final int TRACE_STEPS = 1;
@@ -59,6 +60,8 @@ public class GenerationProcessContext {
   }
 
   public int getTracingMode() {
+    if(!USE_TRACING)
+      return 0;
     return myStrictMode ? (myGenerateInParallel ? TRACE_STEPS : TRACE_TYPES) : 0;
   }
 
