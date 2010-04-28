@@ -13,10 +13,12 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
 
   protected final IMessageHandler myMessageHandler;
   protected final boolean myHandleInfo;
+  protected final boolean myHandleWarnings;
 
-  public GeneratorLoggerAdapter(IMessageHandler messageHandler, boolean handleInfo) {
+  public GeneratorLoggerAdapter(IMessageHandler messageHandler, boolean handleInfo, boolean handleWarnings) {
     myMessageHandler = messageHandler;
     myHandleInfo = handleInfo;
+    myHandleWarnings = handleWarnings;
   }
 
   @Override
@@ -24,7 +26,12 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
     return myHandleInfo;
   }
 
-    @Override
+  @Override
+  public boolean needsWarnings() {
+    return myHandleWarnings;
+  }
+
+  @Override
   public void info(SNode node, String message) {
     if(!myHandleInfo) {
       return;
@@ -48,16 +55,25 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
 
   @Override
   public void warning(String message) {
+    if(!myHandleWarnings) {
+      return;
+    }
     report(MessageKind.WARNING, message, null);
   }
 
   @Override
   public void warning(SNode node, String message) {
+    if(!myHandleWarnings) {
+      return;
+    }
     report(MessageKind.WARNING, message, node);
   }
 
   @Override
   public void describeWarning(SNode node, String message) {
+    if(!myHandleWarnings) {
+      return;
+    }
     report(MessageKind.WARNING, "-- " + message, node);
   }
 

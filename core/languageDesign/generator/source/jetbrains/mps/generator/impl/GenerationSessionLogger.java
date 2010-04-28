@@ -35,15 +35,22 @@ public class GenerationSessionLogger implements IGeneratorLogger {
 
   private final IMessageHandler myMessageHandler;
   private final boolean myHandleInfo;
+  private final boolean myHandleWarnings;
 
   public GenerationSessionLogger(GeneratorLoggerAdapter logger) {
     myMessageHandler = logger.myMessageHandler;
     myHandleInfo = logger.myHandleInfo;
+    myHandleWarnings = logger.myHandleWarnings;
   }
 
   @Override
   public boolean needsInfo() {
     return myHandleInfo;
+  }
+
+  @Override
+  public boolean needsWarnings() {
+    return myHandleWarnings;
   }
 
   public void setOperationContext(GenerationSessionContext operationContext) {
@@ -68,18 +75,27 @@ public class GenerationSessionLogger implements IGeneratorLogger {
 
   @Override
   public void warning(String message) {
+    if(!myHandleWarnings) {
+      return;
+    }
     myWarningsCount++;
     report(MessageKind.WARNING, message, null);
   }
 
   @Override
   public void warning(SNode node, String message) {
+    if(!myHandleWarnings) {
+      return;
+    }
     myWarningsCount++;
     report(MessageKind.WARNING, message, node);
   }
 
   @Override
   public void describeWarning(SNode node, String message) {
+    if(!myHandleWarnings) {
+      return;
+    }
     report(MessageKind.WARNING, "-- " + message, node);
   }
 

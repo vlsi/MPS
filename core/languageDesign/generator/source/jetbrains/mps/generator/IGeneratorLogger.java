@@ -9,6 +9,8 @@ public interface IGeneratorLogger {
 
   boolean needsInfo();
 
+  boolean needsWarnings();
+
   void info(SNode node, String message);
 
   void info(String message);
