@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class ExtractMethodFactory {
   public static ExtractMethodRefactoringParameters createParameters(List<SNode> nodes) {
     SNode first = ListSequence.fromList(nodes).first();
-    if (SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Expression") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(first), "jetbrains.mps.baseLanguage.structure.Statement")) {
+    if (SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Expression") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(first), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       List<SNode> newNodes = new ArrayList<SNode>();
       ListSequence.fromList(newNodes).addElement(SNodeOperations.getParent(first));
       return new ExtractMethodRefactoringParameters(newNodes);

@@ -19,6 +19,7 @@ public class IntroduceConstantDialog extends IntroduceVariableDialog {
     c.gridy = 1;
     c.weighty = 1;
     this.myPanel.add(new JPanel(), c);
+    // <node> 
   }
 
   public IntroduceVariableRefactoring getRefactoring() {

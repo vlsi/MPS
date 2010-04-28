@@ -13,6 +13,7 @@ import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefactoring {
   protected List<SNode> myStatements = new ArrayList<SNode>();
@@ -41,15 +42,19 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     return newMethod;
   }
 
-  public void replaceMatch(MethodMatch match, SNode methodDeclaration) {
-    SNode methodCall = this.createMethodCall(match, methodDeclaration);
-    SNode callStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-    SLinkOperations.setTarget(callStatement, "expression", methodCall, true);
-    List<SNode> statements = match.getNodes();
-    SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), callStatement);
-    for (SNode statement : ListSequence.fromList(statements)) {
-      SNodeOperations.deleteNode(statement);
-    }
+  public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        SNode methodCall = ExtractMethodFromStatementsRefactoring.this.createMethodCall(match, methodDeclaration);
+        SNode callStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+        SLinkOperations.setTarget(callStatement, "expression", methodCall, true);
+        List<SNode> statements = match.getNodes();
+        SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), callStatement);
+        for (SNode statement : ListSequence.fromList(statements)) {
+          SNodeOperations.deleteNode(statement);
+        }
+      }
+    });
   }
 
   protected void modifyPartToExtract() {

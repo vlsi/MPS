@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 /*package*/ class ExtractMethodFromExpressionRefactoring extends ExtractMethodRefactoring {
@@ -51,8 +52,12 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
     return newMethod;
   }
 
-  public void replaceMatch(MethodMatch match, SNode methodDeclaration) {
-    SNodeOperations.replaceWithAnother(ListSequence.fromList(match.getNodes()).first(), this.createMethodCall(match, methodDeclaration));
+  public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        SNodeOperations.replaceWithAnother(ListSequence.fromList(match.getNodes()).first(), ExtractMethodFromExpressionRefactoring.this.createMethodCall(match, methodDeclaration));
+      }
+    });
   }
 
   @NotNull

@@ -42,6 +42,7 @@ public class ExtractMethodDialog extends BaseDialog {
   private boolean myCanRefactor;
   private JTextArea myPreviewArea = new JTextArea();
   private JTextArea myMessagesArea = new JTextArea();
+  private VisibilityPanel myVisibilityPanel;
   private ExtractMethodRefactoringParameters myParameters;
   private EditorContext myContext;
   private ExtractMethodRefactoring myRefactoring;
@@ -132,7 +133,9 @@ public class ExtractMethodDialog extends BaseDialog {
     c.weightx = 0;
     c.weighty = 1;
     c.gridwidth = 1;
-    this.myPanel.add(this.createVisibilityPanel(), c);
+    this.myVisibilityPanel = new VisibilityPanel();
+    this.myPanel.add(this.myVisibilityPanel, c);
+    // <node> 
 
     c.gridx = 0;
     c.gridy = 2;
@@ -253,6 +256,7 @@ public class ExtractMethodDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "Refactor", mnemonic = 'R', defaultButton = true)
   public void onOk() {
+    this.myParameters.setVisibilityLevel(this.myVisibilityPanel.getResult());
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>(null);
     if (!(this.myCanRefactor)) {
       JOptionPane.showMessageDialog(this, "Can't refactor. See errors.", "Can't perform refactoring", JOptionPane.ERROR_MESSAGE);
