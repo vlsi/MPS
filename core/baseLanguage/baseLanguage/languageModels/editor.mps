@@ -16514,8 +16514,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="3066917033203112511">
+    <property name="package:32" value="method.instance" />
     <link role="conceptDeclaration:32" targetNodeId="17.3066917033203108594:3" resolveInfo="LocalInstanceMethodCall" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="3066917033203129858">
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem:32" id="4940013265625477880">
+        <link role="parametersInformation:32" targetNodeId="4755152624708725521" resolveInfo="BaseMethodParameterInformationQuery" />
+      </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="3066917033203129861">
         <link role="relationDeclaration:32" targetNodeId="17.3066917033203112509:3" />
         <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="3066917033203129862">
