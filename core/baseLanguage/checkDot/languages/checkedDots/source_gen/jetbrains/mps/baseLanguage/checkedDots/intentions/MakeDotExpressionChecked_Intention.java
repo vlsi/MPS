@@ -42,11 +42,11 @@ public class MakeDotExpressionChecked_Intention extends BaseIntention implements
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDot"));
+    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode checkedDot = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDot", null);
+    SNode checkedDot = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", null);
     SLinkOperations.setTarget(checkedDot, "operand", SLinkOperations.getTarget(node, "operand", true), true);
     SLinkOperations.setTarget(checkedDot, "operation", SLinkOperations.getTarget(node, "operation", true), true);
     SNodeOperations.replaceWithAnother(node, checkedDot);
