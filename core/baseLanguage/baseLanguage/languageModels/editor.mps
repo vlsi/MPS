@@ -16544,6 +16544,7 @@
           <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="7785501532031731654">
             <property name="readOnly:32" value="true" />
             <link role="relationDeclaration:32" targetNodeId="18.1169194664001:0" resolveInfo="name" />
+            <link role="styleClass:32" targetNodeId="1198595398954" resolveInfo="Field" />
           </node>
         </node>
       </node>

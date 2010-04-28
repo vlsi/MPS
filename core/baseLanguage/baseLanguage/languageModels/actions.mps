@@ -2944,9 +2944,7 @@
             </node>
             <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1217426014465">
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1217426014466">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1217426014467">
-                  <property name="value:3" value="true" />
-                </node>
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1217426014467" />
               </node>
             </node>
           </node>
