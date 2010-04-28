@@ -53,10 +53,7 @@ import java.awt.Cursor;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @State(
@@ -704,6 +701,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       myEnd = 0;
       int oldSize = mySize;
       mySize = 0;
+      Arrays.fill(myItems, null);
       if (oldSize > 0) {
         fireIntervalRemoved(this, 0, oldSize - 1);
       }
