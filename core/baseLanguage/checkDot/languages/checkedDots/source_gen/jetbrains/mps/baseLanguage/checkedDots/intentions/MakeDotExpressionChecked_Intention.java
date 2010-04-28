@@ -31,25 +31,24 @@ public class MakeDotExpressionChecked_Intention extends BaseIntention implements
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Make Dot Expression Checked";
-  }
-
-  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
-    if (!(this.isApplicableToNode(node, editorContext))) {
-      return false;
-    }
-    return true;
-  }
-
-  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"));
+    return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression") ?
+      "Make Dot Expression Not Checked" :
+      "Make Dot Expression Checked"
+    );
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode checkedDot = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", null);
-    SLinkOperations.setTarget(checkedDot, "operand", SLinkOperations.getTarget(node, "operand", true), true);
-    SLinkOperations.setTarget(checkedDot, "operation", SLinkOperations.getTarget(node, "operation", true), true);
-    SNodeOperations.replaceWithAnother(node, checkedDot);
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression")) {
+      SNode dotExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+      SLinkOperations.setTarget(dotExpression, "operand", SLinkOperations.getTarget(node, "operand", true), true);
+      SLinkOperations.setTarget(dotExpression, "operation", SLinkOperations.getTarget(node, "operation", true), true);
+      SNodeOperations.replaceWithAnother(node, dotExpression);
+    } else {
+      SNode checkedDot = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", null);
+      SLinkOperations.setTarget(checkedDot, "operand", SLinkOperations.getTarget(node, "operand", true), true);
+      SLinkOperations.setTarget(checkedDot, "operation", SLinkOperations.getTarget(node, "operation", true), true);
+      SNodeOperations.replaceWithAnother(node, checkedDot);
+    }
   }
 
   public String getLocationString() {
