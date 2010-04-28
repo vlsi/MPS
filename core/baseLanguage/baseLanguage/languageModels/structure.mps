@@ -542,6 +542,9 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5432666129547687714">
       <link role="intfc:0" targetNodeId="5432666129547687712:3" resolveInfo="IVariableDeclaration" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3262277503800835465">
+      <link role="intfc:0" targetNodeId="3262277503800813724:3" resolveInfo="ILocalDeclaration" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1068581242864">
     <property name="name:0" value="LocalVariableDeclarationStatement" />
@@ -578,6 +581,9 @@
       <property name="role:0" value="localVariableDeclaration" />
       <link role="specializedLink:0" targetNodeId="1068581517664:3" />
       <link role="target:0" targetNodeId="1068581242863:3" resolveInfo="LocalVariableDeclaration" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3262277503800835477">
+      <link role="intfc:0" targetNodeId="3262277503800813725:3" resolveInfo="ILocalReference" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1068581242867">
@@ -3699,6 +3705,12 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="7785501532031731644">
       <link role="conceptPropertyDeclaration:0" targetNodeId="1146528679895:3" resolveInfo="lvalue" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="3262277503800813724">
+    <property name="name:0" value="ILocalDeclaration" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="3262277503800813725">
+    <property name="name:0" value="ILocalReference" />
   </node>
 </model>
 

@@ -321,6 +321,20 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6204026822017058573" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3262277503800835449">
+      <property name="name" value="isClosure" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="9.3262277503800835439" resolveInfo="isClosure" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3262277503800835450" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3262277503800835451">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3262277503800835457">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3262277503800835458">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="3262277503800835452" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877338556">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877338557" />
     </node>

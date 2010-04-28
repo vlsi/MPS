@@ -13429,17 +13429,18 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239368289643">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1239367943604">
                       <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1239367931976">
-                        <link role="concept:16" targetNodeId="1.1068581242866:3" resolveInfo="LocalVariableReference" />
+                        <property name="asCast:16" value="true" />
+                        <link role="concept:16" targetNodeId="1.3262277503800813725:3" resolveInfo="ILocalReference" />
                         <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239367924546">
                           <link role="variableDeclaration:3" targetNodeId="1223640624833" resolveInfo="read" />
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1239368289223">
-                        <link role="link:16" targetNodeId="1.1070568296581:3" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3262277503800917682">
+                        <link role="baseMethodDeclaration:16" targetNodeId="37.3262277503800831941" resolveInfo="getDeclaration" />
                       </node>
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1239368311635">
-                      <link role="baseMethodDeclaration:16" targetNodeId="37.1229352990212" resolveInfo="isVariableReferencedInClosures" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3262277503800917685">
+                      <link role="baseMethodDeclaration:16" targetNodeId="37.3262277503800823422" resolveInfo="isReferencedInClosure" />
                     </node>
                   </node>
                 </node>
@@ -13448,8 +13449,8 @@
                     <link role="variableDeclaration:3" targetNodeId="1223640624833" resolveInfo="read" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1239367325251">
-                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1239367941598">
-                      <link role="conceptDeclaration:16" targetNodeId="1.1068581242866:3" resolveInfo="LocalVariableReference" />
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="3262277503800917681">
+                      <link role="conceptDeclaration:16" targetNodeId="1.3262277503800813725:3" resolveInfo="ILocalReference" />
                     </node>
                   </node>
                 </node>

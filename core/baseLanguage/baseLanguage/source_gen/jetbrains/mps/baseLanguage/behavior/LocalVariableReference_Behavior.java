@@ -5,8 +5,11 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LocalVariableReference_Behavior {
+  private static Class[] PARAMETERS_3262277503800835478 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -21,5 +24,17 @@ public class LocalVariableReference_Behavior {
       }
     }
     return false;
+  }
+
+  public static SNode virtual_getDeclaration_3262277503800831941(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "variableDeclaration", false);
+  }
+
+  public static SNode call_getDeclaration_3262277503800835478(SNode thisNode) {
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "virtual_getDeclaration_3262277503800831941", PARAMETERS_3262277503800835478);
+  }
+
+  public static SNode callSuper_getDeclaration_3262277503800835478(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), callerConceptFqName, "virtual_getDeclaration_3262277503800831941", PARAMETERS_3262277503800835478);
   }
 }

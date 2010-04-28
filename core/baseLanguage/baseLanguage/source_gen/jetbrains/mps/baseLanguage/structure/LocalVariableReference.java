@@ -7,11 +7,38 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class LocalVariableReference extends VariableReference {
+public class LocalVariableReference extends VariableReference implements ILocalReference {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.LocalVariableReference";
+  public static final String SHORT_DESCRIPTION = "shortDescription";
+  public static final String ALIAS = "alias";
+  public static final String VIRTUAL_PACKAGE = "virtualPackage";
 
   public LocalVariableReference(SNode node) {
     super(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(LocalVariableReference.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(LocalVariableReference.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(LocalVariableReference.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(LocalVariableReference.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(LocalVariableReference.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(LocalVariableReference.VIRTUAL_PACKAGE, value);
   }
 
   public LocalVariableDeclaration getLocalVariableDeclaration() {

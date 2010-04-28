@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class ClosureLiteral_Behavior {
   private static Class[] PARAMETERS_1229718192182 = {SNode.class ,List.class ,SNode.class ,SNode.class ,SNode.class ,List.class};
+  private static Class[] PARAMETERS_3262277503800835449 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -63,12 +64,24 @@ public class ClosureLiteral_Behavior {
     return new ArrayList<SNode>();
   }
 
+  public static boolean virtual_isClosure_3262277503800835439(SNode thisNode) {
+    return true;
+  }
+
   public static SNode call_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "virtual_getType_1229718192182", PARAMETERS_1229718192182, paramTypes, resultType, returnType, termType, throwsTypes);
   }
 
+  public static boolean call_isClosure_3262277503800835449(SNode thisNode) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "virtual_isClosure_3262277503800835439", PARAMETERS_3262277503800835449);
+  }
+
   public static SNode callSuper_getType_1229718192182(SNode thisNode, String callerConceptFqName, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), callerConceptFqName, "virtual_getType_1229718192182", PARAMETERS_1229718192182, paramTypes, resultType, returnType, termType, throwsTypes);
+  }
+
+  public static boolean callSuper_isClosure_3262277503800835449(SNode thisNode, String callerConceptFqName) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), callerConceptFqName, "virtual_isClosure_3262277503800835439", PARAMETERS_3262277503800835449);
   }
 
   public static class QuotationClass_l77foe_a0a0d {
