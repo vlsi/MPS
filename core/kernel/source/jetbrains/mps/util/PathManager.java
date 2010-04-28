@@ -188,7 +188,7 @@ public class PathManager {
   }
 
   public static String getLanguagesPath() {
-    return getUserHome() + File.separator + ".MPS1x" + File.separator + "languages";
+    return getHomePath() + File.separator + "languages";
   }
 
   private static String getAbsolutePath(String path) {
