@@ -16,11 +16,11 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.lang.generator.structure.MapSrcListMacro;
+import jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction;
+import jetbrains.mps.lang.generator.structure.MapSrcNodeMacro;
 import jetbrains.mps.lang.generator.structure.NodeMacro;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -48,8 +48,15 @@ public class DelayedChanges {
     myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, context));
   }
 
-  public synchronized void addExecuteMapSrcNodeMacroPostProcChange(NodeMacro mapSrcMacro, SNode outputChild, @NotNull TemplateContext context) {
-    myExecuteMapSrcNodeMacroPostProcChanges.add(new ExecuteMapSrcNodeMacroPostProcChange(mapSrcMacro, outputChild, context));
+  public void addExecuteMapSrcNodeMacroPostProcChange(NodeMacro mapSrcMacro, SNode outputChild, @NotNull TemplateContext context) {
+    MapSrcMacro_PostMapperFunction postMapperFunction =
+      (mapSrcMacro instanceof MapSrcNodeMacro)
+        ? ((MapSrcNodeMacro) mapSrcMacro).getPostMapperFunction()
+        : ((MapSrcListMacro) mapSrcMacro).getPostMapperFunction();
+    if (postMapperFunction == null) return;
+    synchronized (this) {
+      myExecuteMapSrcNodeMacroPostProcChanges.add(new ExecuteMapSrcNodeMacroPostProcChange(mapSrcMacro, outputChild, context));
+    }
   }
 
 
@@ -105,7 +112,7 @@ public class DelayedChanges {
               myChildToReplace.getModel().addRoot(child);
               myChildToReplace.getModel().removeRoot(myChildToReplace);
             }            
-          }else {
+          } else {
             String childRole = parent.getRoleOf(myChildToReplace);
             if (!GeneratorUtil.checkChild(parent, childRole, child)) {
               myLogger.describeWarning(myContext.getInput(), "was input: " + myContext.getInput().getDebugText());

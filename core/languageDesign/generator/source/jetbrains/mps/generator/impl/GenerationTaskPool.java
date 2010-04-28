@@ -3,10 +3,8 @@ package jetbrains.mps.generator.impl;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.smodel.ModelAccess;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -90,7 +88,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
     this.progressMonitor = progressMonitor;
   }
 
-  final BlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(256);
+  final BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>();
   ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(4, 4, 10, TimeUnit.SECONDS, queue, new ModelReadThreadFactory()) {
     @Override
     protected void afterExecute(Runnable r, Throwable t) {
