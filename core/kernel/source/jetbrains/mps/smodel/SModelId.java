@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.InternUtil;
+
 import java.util.UUID;
 
 public abstract class SModelId {
@@ -88,7 +90,7 @@ public abstract class SModelId {
     private String myId;
 
     private ForeignSModelId(String id) {
-      myId = id;
+      myId = InternUtil.intern(id);
     }
 
     public boolean equals(Object obj) {
