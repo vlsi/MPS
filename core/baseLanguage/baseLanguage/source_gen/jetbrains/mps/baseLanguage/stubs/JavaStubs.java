@@ -21,7 +21,6 @@ import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import jetbrains.mps.reloading.AbstractClassPathItem;
-import java.io.IOException;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
@@ -92,8 +91,8 @@ public class JavaStubs extends BaseStubModelRootManager {
   private IClassPathItem createClassPathItem(StubLocation location) {
     try {
       return AbstractClassPathItem.createFromPath(location.getPath());
-    } catch (IOException e) {
-      LOG.error("", e);
+    } catch (Throwable t) {
+      LOG.error("", t);
       return null;
     }
   }

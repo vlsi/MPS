@@ -67,8 +67,12 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   protected abstract void collectAvailableClasses(Set<String> classes, String namespace);
 
-  public static IClassPathItem createFromPath(String path) throws IOException {
-    return createFromPath(path, null);
+  public static IClassPathItem createFromPath(String path){
+    try {
+      return createFromPath(path, null);
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   public static IClassPathItem createFromPath(String path, @Nullable IModule module) throws IOException {

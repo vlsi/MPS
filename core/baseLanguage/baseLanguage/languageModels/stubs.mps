@@ -191,9 +191,9 @@
           </node>
           <node role="catchClause:3" type="jetbrains.mps.baseLanguage.structure.CatchClause:3" id="1414612301320821944">
             <node role="throwable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1414612301320821945">
-              <property name="name:3" value="e" />
-              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1414612301320822052">
-                <link role="classifier:3" targetNodeId="8.~IOException" resolveInfo="IOException" />
+              <property name="name:3" value="t" />
+              <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1099255471701298085">
+                <link role="classifier:3" targetNodeId="17.~Throwable" resolveInfo="Throwable" />
               </node>
             </node>
             <node role="catchBody:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1414612301320821947">

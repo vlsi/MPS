@@ -18,7 +18,6 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.FileSystemFile;
 import sun.misc.Launcher;
 
 import java.io.File;
@@ -143,20 +142,12 @@ public class CommonPaths {
 
     String junitJar = libPath() + "junit4" + File.separator + "junit-4.1.jar";
     if (new File(junitJar).exists()) {
-      try {
-        cp.add(new JarFileClassPathItem(junitJar));
-      } catch (IOException e) {
-        throw new RuntimeException(e);
-      }
+        cp.add(AbstractClassPathItem.createFromPath(junitJar));
     }
 
     String log4jJar = libPath() + "log4j" + File.separator + "log4j.jar";
     if (new File(log4jJar).exists()) {
-      try {
-        cp.add(new JarFileClassPathItem(log4jJar));
-      } catch (IOException e) {
-        throw new RuntimeException(e);
-      }
+        cp.add(AbstractClassPathItem.createFromPath(log4jJar));
     }
 
     return cp;
@@ -164,84 +155,53 @@ public class CommonPaths {
 
   private static IClassPathItem getIDEAOpenAPIJar() {
     if (ourIDEAOpenAPIJar == null) {
-      try {
         String path = getIdeaPlatformPath() + File.separator + "platform-api.jar";
-        ourIDEAOpenAPIJar = new JarFileClassPathItem(path);
-      } catch (IOException e) {
-        throw new RuntimeException(e);
-      }
+        ourIDEAOpenAPIJar = AbstractClassPathItem.createFromPath(path);
     }
     return ourIDEAOpenAPIJar;
   }
 
   private static IClassPathItem getIDEAJar() {
     if (ourIDEAAPIJar == null) {
-      try {
         String path = getIdeaPlatformPath() + File.separator + "platform.jar";
-        ourIDEAAPIJar = new JarFileClassPathItem(path);
-      } catch (IOException e) {
-        throw new RuntimeException(e);
-      }
+        ourIDEAAPIJar = AbstractClassPathItem.createFromPath(path);
     }
     return ourIDEAAPIJar;
   }
 
   private static IClassPathItem getIDEAUtilJar() {
     if (ourIDEAUtilJar == null) {
-      try {
         String path = getIdeaPlatformPath() + File.separator + "util.jar";
-        ourIDEAUtilJar = new JarFileClassPathItem(path);
-      } catch (IOException e) {
-        throw new RuntimeException(e);
-      }
+        ourIDEAUtilJar = AbstractClassPathItem.createFromPath(path);
     }
     return ourIDEAUtilJar;
   }
 
   private static IClassPathItem getIDEAExtensionsJar() {
     if (ourIDEAxtensionsJar == null) {
-      try {
         String path = getIdeaPlatformPath() + File.separator + "extensions.jar";
-        ourIDEAxtensionsJar = new JarFileClassPathItem(path);
-      } catch (IOException e) {
-        throw new RuntimeException(e);
-      }
+        ourIDEAxtensionsJar = AbstractClassPathItem.createFromPath(path);
     }
     return ourIDEAxtensionsJar;
   }
 
   private static IClassPathItem getBaseMPSClassPath() {
     String path = getBaseMPSPath();
-
-    if (path != null) {
-      if (path.endsWith(".jar")) {
-        if (ourMPSJar == null) {
-          try {
-            ourMPSJar = new JarFileClassPathItem(path);
-          } catch (IOException e) {
-            LOG.error(e);
-          }
-        }
-        return ourMPSJar;
-      } else {
-        return new FileClassPathItem(path);
-      }
-    }
+    if (path != null) return AbstractClassPathItem.createFromPath(path);
 
     File file = new File(PathManager.getResourceRoot(ClassLoaderManager.class, "/" + ClassLoaderManager.class.getName().replace('.', '/') + ".class"));
-    if (file.exists()) {
-      return new FileClassPathItem(file.getAbsolutePath());
+    if (!file.exists()) {
+      LOG.error("Can't find mps classpath");
+      return null;
     }
-
-    LOG.error("Can't find mps classpath");
-    return null;
+    return AbstractClassPathItem.createFromPath(file.getAbsolutePath());
   }
 
   private static IClassPathItem getMPSKernelClassPath() {
     String supportClasses = PathManager.getHomePath() + File.separator + "core"
       + File.separator + "kernel" + File.separator + "classes";
     if (new File(supportClasses).exists()) {
-      return new FileClassPathItem(supportClasses);
+      return AbstractClassPathItem.createFromPath(supportClasses);
     }
 
     return null;
@@ -251,7 +211,7 @@ public class CommonPaths {
     String supportClasses = PathManager.getHomePath() + File.separator + "core"
       + File.separator + "kernel" + File.separator + "debug" + File.separator + "classes";
     if (new File(supportClasses).exists()) {
-      return new FileClassPathItem(supportClasses);
+      return AbstractClassPathItem.createFromPath(supportClasses);
     }
 
     return null;
@@ -261,7 +221,7 @@ public class CommonPaths {
     String supportClasses = PathManager.getHomePath() + File.separator + "MPSPlugin"
       + File.separator + "MPSSupport" + File.separator + "classes";
     if (new File(supportClasses).exists()) {
-      return new FileClassPathItem(supportClasses);
+      return AbstractClassPathItem.createFromPath(supportClasses);
     }
 
     return null;
@@ -271,7 +231,7 @@ public class CommonPaths {
     String workbenchClasses = PathManager.getHomePath() + File.separator + "workbench"
       + File.separator + "classes";
     if (new File(workbenchClasses).exists()) {
-      return new FileClassPathItem(workbenchClasses);
+      return AbstractClassPathItem.createFromPath(workbenchClasses);
     }
 
     return null;
@@ -284,7 +244,7 @@ public class CommonPaths {
       + File.separator + "svn"
       + File.separator + "classes";
     if (new File(workbenchClasses).exists()) {
-      return new FileClassPathItem(workbenchClasses);
+      return AbstractClassPathItem.createFromPath(workbenchClasses);
     }
 
     return null;
@@ -295,7 +255,7 @@ public class CommonPaths {
       + File.separator + "javaParser"
       + File.separator + "classes";
     if (new File(workbenchClasses).exists()) {
-      return new FileClassPathItem(workbenchClasses);
+      return AbstractClassPathItem.createFromPath(workbenchClasses);
     }
 
     return null;
@@ -337,12 +297,12 @@ public class CommonPaths {
         if (!file.exists()) continue;
 
         if (file.getPath().endsWith(name)) {
-          return new JarFileClassPathItem(new FileSystemFile(file));
+          return (JarFileClassPathItem) AbstractClassPathItem.createFromPath(file.getAbsolutePath());
         }
       } catch (URISyntaxException e) {
         LOG.error(e);
-      } catch (IOException e) {
-        LOG.error(e);
+      } catch (Throwable t) {
+        LOG.error( t);
       }
     }
     return null;
@@ -353,13 +313,9 @@ public class CommonPaths {
     File file = new File(path);
     if (file.exists()) {
       try {
-        if (file.isDirectory()) {
-          item.add(new FileClassPathItem(path));
-        } else {
-          item.add(new JarFileClassPathItem(path));
-        }
-      } catch (IOException e) {
-        LOG.error(e);
+        item.add(AbstractClassPathItem.createFromPath(path));
+      } catch (Throwable t) {
+        LOG.error(t);
       }
     }
   }

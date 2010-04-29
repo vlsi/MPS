@@ -220,8 +220,8 @@ public class ClasspathSelectionTree extends JTree {
     private IClassPathItem classpathChosen() {
       try {
         return AbstractClassPathItem.createFromPath(myFile.getAbsolutePath());
-      } catch (IOException ex) {
-        LOG.error(ex);
+      } catch (Throwable t) {
+        LOG.error(t);
         return null;
       }
     }
