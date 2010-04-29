@@ -1682,13 +1682,10 @@
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1228834789443">
                       <link role="baseMethodDeclaration:3" targetNodeId="142.8492459591399175122" resolveInfo="init" />
-                      <node role="actualArgument:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1228834789444">
-                        <link role="concept:16" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
-                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1228834789445">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1228834789446" />
-                          <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation:23" id="1228834789447">
-                            <link role="member:23" targetNodeId="1225103442001" resolveInfo="node" />
-                          </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1228834789445">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1228834789446" />
+                        <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation:23" id="1228834789447">
+                          <link role="member:23" targetNodeId="1225103442001" resolveInfo="node" />
                         </node>
                       </node>
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1228834789448">
@@ -1841,13 +1838,10 @@
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1225118478481">
                       <link role="baseMethodDeclaration:3" targetNodeId="142.8492459591399175122" resolveInfo="introduce" />
-                      <node role="actualArgument:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1225118478483">
-                        <link role="concept:16" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
-                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1225118478484">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1225118478485" />
-                          <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation:23" id="1225118478486">
-                            <link role="member:23" targetNodeId="1225103612352" resolveInfo="node" />
-                          </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1225118478484">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1225118478485" />
+                        <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation:23" id="1225118478486">
+                          <link role="member:23" targetNodeId="1225103612352" resolveInfo="node" />
                         </node>
                       </node>
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1225118478487">
@@ -2024,13 +2018,10 @@
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1228834869734">
                       <link role="baseMethodDeclaration:3" targetNodeId="142.8492459591399175122" resolveInfo="init" />
-                      <node role="actualArgument:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="1228834869735">
-                        <link role="concept:16" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
-                        <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1228834869736">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1228834869737" />
-                          <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation:23" id="1228834869738">
-                            <link role="member:23" targetNodeId="1225104422039" resolveInfo="node" />
-                          </node>
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1228834869736">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1228834869737" />
+                        <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation:23" id="1228834869738">
+                          <link role="member:23" targetNodeId="1225104422039" resolveInfo="node" />
                         </node>
                       </node>
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1228834869739">

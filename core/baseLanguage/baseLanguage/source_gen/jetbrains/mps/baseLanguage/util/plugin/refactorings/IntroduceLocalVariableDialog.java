@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.EditorContext;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import javax.swing.JPanel;
 
@@ -12,11 +13,16 @@ public class IntroduceLocalVariableDialog extends IntroduceVariableDialog {
 
   public IntroduceLocalVariableDialog(Frame frame, IntroduceLocalVariableRefactoring refactoring, EditorContext editorContext) {
     super("Introduce Local Variable", frame, editorContext);
+    this.setMinimumSize(new Dimension(150, 150));
     this.myRefactoring = refactoring;
     this.initPanel();
+    int gridy = 1;
+    if (getRefactoring().hasDuplicates()) {
+      addReplacingAll(gridy++);
+    }
     GridBagConstraints c;
     c = new GridBagConstraints();
-    c.gridy = 1;
+    c.gridy = gridy;
     c.weighty = 1;
     this.myPanel.add(new JPanel(), c);
   }

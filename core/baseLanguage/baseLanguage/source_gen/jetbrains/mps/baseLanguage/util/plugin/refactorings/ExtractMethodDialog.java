@@ -30,12 +30,12 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
 
 public class ExtractMethodDialog extends BaseDialog {
   private JPanel myPanel;
@@ -244,10 +244,6 @@ public class ExtractMethodDialog extends BaseDialog {
 
   private Border createBorder(String title) {
     return new CompoundBorder(new TitledBorder(title), new EmptyBorder(5, 5, 5, 5));
-  }
-
-  private DialogDimensionsSettings.DialogDimensions getDimensionSettings() {
-    return new DialogDimensionsSettings.DialogDimensions(100, 100, 800, 600);
   }
 
   public JComponent getMainComponent() {

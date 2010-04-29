@@ -27,9 +27,15 @@ public abstract class IntroduceVariableRefactoring {
   private SNode myExpression;
   private SNode myExpressionType;
   private List<String> myExpectedNames;
+  protected SNode myContainer;
+  protected boolean myIsReplacingAll;
+  protected VisibilityLevel myVisibilityLevel;
   protected List<SNode> myDuplicates = new ArrayList<SNode>();
 
   public String init(SNode node, JComponent editorComponent) {
+    this.myExpression = node;
+    this.myContainer = findContainer(node);
+    findDuplicates();
     SNode expressionType = this.getExpressionType(node);
     if (!(SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.baseLanguage.structure.Type"))) {
       return "Couldn't compute type of expression: " + expressionType;
@@ -37,7 +43,6 @@ public abstract class IntroduceVariableRefactoring {
     if (this.isVoidType(expressionType)) {
       return "Expression has no type";
     } else {
-      this.myExpression = node;
       this.myExpressionType = SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.Type");
       Set<String> expectedNames = SetSequence.fromSet(new HashSet<String>());
       String expectedVariableName = Expression_Behavior.call_getVariableExpectedName_1213877519781(node);
@@ -80,6 +85,18 @@ public abstract class IntroduceVariableRefactoring {
     this.myName = name;
   }
 
+  public void setVisibilityLevel(VisibilityLevel level) {
+    this.myVisibilityLevel = level;
+  }
+
+  public void setReplacingAll(boolean b) {
+    this.myIsReplacingAll = b;
+  }
+
+  public boolean hasDuplicates() {
+    return ListSequence.fromList(myDuplicates).isNotEmpty();
+  }
+
   public String getName() {
     return this.myName;
   }
@@ -96,6 +113,10 @@ public abstract class IntroduceVariableRefactoring {
     return this.myExpectedNames;
   }
 
+  public SNode getContainer() {
+    return this.myContainer;
+  }
+
   public abstract void replaceNode(SNode node, SNode declaration);
 
   public List<SNode> getDuplicates() {
@@ -109,6 +130,10 @@ public abstract class IntroduceVariableRefactoring {
         return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(it), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
       }
     }).toListSequence();
+  }
+
+  protected SNode findContainer(SNode node) {
+    return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
   }
 
   protected SNode getRootToFindDuplicates(SNode node) {

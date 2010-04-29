@@ -6,6 +6,7 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.JPanel;
 import jetbrains.mps.smodel.SNode;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import java.awt.Frame;
 import java.awt.GridBagLayout;
@@ -18,15 +19,17 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
-import jetbrains.mps.smodel.ModelAccess;
 import java.awt.Insets;
 
 public abstract class IntroduceVariableDialog extends BaseDialog {
   protected EditorContext myEditorContext;
   protected JPanel myPanel;
   protected SNode myResult;
+  protected JCheckBox myReplaceAll = null;
+  protected VisibilityPanel myVisibilityPanel = null;
   private JComboBox myName;
 
   public IntroduceVariableDialog(String name, Frame frame, EditorContext editorContext) {
@@ -66,6 +69,24 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
     return result;
   }
 
+  public void addReplacingAll(int gridy) {
+    GridBagConstraints c = new GridBagConstraints();
+    c.fill = GridBagConstraints.HORIZONTAL;
+    c.gridx = 0;
+    c.gridy = gridy;
+    this.myReplaceAll = new JCheckBox("replace duplicates (" + ListSequence.fromList(getRefactoring().getDuplicates()).count() + " found)");
+    this.myPanel.add(this.myReplaceAll, c);
+  }
+
+  public void addVisibilityPanel(final GridBagConstraints c) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        IntroduceVariableDialog.this.myVisibilityPanel = new VisibilityPanel();
+        IntroduceVariableDialog.this.myPanel.add(IntroduceVariableDialog.this.myVisibilityPanel, c);
+      }
+    });
+  }
+
   protected JComponent getMainComponent() {
     return this.myPanel;
   }
@@ -79,8 +100,13 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
   public void onOk() {
     String name = (String) this.myName.getEditor().getItem();
     IntroduceVariableDialog.this.getRefactoring().setName(name);
+    if (myVisibilityPanel != null) {
+      getRefactoring().setVisibilityLevel(this.myVisibilityPanel.getResult());
+    }
+    if (myReplaceAll != null) {
+      getRefactoring().setReplacingAll(this.myReplaceAll != null && this.myReplaceAll.isSelected());
+    }
     this.doRefactoring();
-    new IntroduceVariableDialog.MyDuplicatesProcessor(this.myEditorContext).process(this.getRefactoring().getDuplicates());
   }
 
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
@@ -114,19 +140,5 @@ public abstract class IntroduceVariableDialog extends BaseDialog {
     c.weightx = 1;
     c.weighty = 0;
     this.myPanel.add(this.createNamePanel(), c);
-  }
-
-  public class MyDuplicatesProcessor extends VariableDuplicatesProcessor {
-    public MyDuplicatesProcessor(EditorContext context) {
-      super(context);
-    }
-
-    public void substitute(final SNode duplicate) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          IntroduceVariableDialog.this.getRefactoring().replaceNode(duplicate, IntroduceVariableDialog.this.myResult);
-        }
-      });
-    }
   }
 }

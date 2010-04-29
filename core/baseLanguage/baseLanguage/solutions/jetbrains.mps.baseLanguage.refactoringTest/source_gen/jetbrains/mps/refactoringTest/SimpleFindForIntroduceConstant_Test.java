@@ -8,11 +8,12 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.VisibilityLevel;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNode;
 
 @MPSLaunch
 public class SimpleFindForIntroduceConstant_Test extends BaseTransformationTest {
@@ -30,10 +31,9 @@ public class SimpleFindForIntroduceConstant_Test extends BaseTransformationTest 
       IntroduceConstantRefactoring refactoring = new IntroduceConstantRefactoring();
       refactoring.init(SNodeOperations.cast(this.getNodeById("7568753874916187344"), "jetbrains.mps.baseLanguage.structure.StringLiteral"), null);
       refactoring.setName("s");
-      SNode result = refactoring.doRefactoring();
-      for (SNode duplicate : ListSequence.fromList(refactoring.getDuplicates())) {
-        refactoring.replaceNode(duplicate, result);
-      }
+      refactoring.setReplacingAll(true);
+      refactoring.setVisibilityLevel(VisibilityLevel.PRIVATE);
+      refactoring.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7568753874916187327"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("7568753874916187375"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }
   }

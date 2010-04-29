@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceFieldRefacto
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceFieldDialog;
 import javax.swing.JOptionPane;
 
@@ -90,7 +89,7 @@ public class IntroduceField_Action extends GeneratedAction {
       final Wrappers._T<String> error = new Wrappers._T<String>();
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          error.value = introducer.init(SNodeOperations.cast(IntroduceField_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression"), IntroduceField_Action.this.component);
+          error.value = introducer.init(IntroduceField_Action.this.node, IntroduceField_Action.this.component);
         }
       });
       if (error.value == null) {

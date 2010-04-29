@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.EditorContext;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JPanel;
@@ -20,19 +21,29 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
 
   public IntroduceFieldDialog(Frame frame, IntroduceFieldRefactoring refactoring, EditorContext editorContext) {
     super("Introduce Field", frame, editorContext);
+    this.setMinimumSize(new Dimension(350, 250));
     this.myRefactoring = refactoring;
     this.initPanel();
+    int gridy = 1;
     GridBagConstraints c;
     c = new GridBagConstraints();
     c.fill = GridBagConstraints.BOTH;
     c.insets = new Insets(3, 3, 3, 3);
     c.gridx = 0;
-    c.gridy = 1;
+    c.gridy = gridy;
     c.weightx = 1;
     c.weighty = 0;
-    this.myPanel.add(this.createInitDestanationPanel(), c);
+    this.myPanel.add(this.createInitDestinationPanel(), c);
     c = new GridBagConstraints();
-    c.gridy = 2;
+    c.fill = GridBagConstraints.BOTH;
+    c.gridx = 1;
+    c.gridy = gridy++;
+    addVisibilityPanel(c);
+    if (getRefactoring().hasDuplicates()) {
+      addReplacingAll(gridy++);
+    }
+    c = new GridBagConstraints();
+    c.gridy = gridy;
     c.weighty = 1;
     this.myPanel.add(new JPanel(), c);
   }
@@ -41,7 +52,7 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
     return this.myRefactoring;
   }
 
-  private JComponent createInitDestanationPanel() {
+  private JComponent createInitDestinationPanel() {
     JPanel result = new JPanel(new GridBagLayout());
     result.setBorder(new TitledBorder("Initialize in"));
     ButtonGroup group = new ButtonGroup();

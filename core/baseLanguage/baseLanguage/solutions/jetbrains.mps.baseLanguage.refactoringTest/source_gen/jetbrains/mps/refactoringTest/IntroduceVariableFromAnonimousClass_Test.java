@@ -31,6 +31,7 @@ public class IntroduceVariableFromAnonimousClass_Test extends BaseTransformation
       IntroduceLocalVariableRefactoring refactoring = new IntroduceLocalVariableRefactoring();
       refactoring.init(SNodeOperations.cast(this.getNodeById("3109730807963543246"), "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), null);
       refactoring.setName("i");
+      refactoring.setReplacingAll(true);
       refactoring.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3109730807963543202"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3109730807963601732"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
     }

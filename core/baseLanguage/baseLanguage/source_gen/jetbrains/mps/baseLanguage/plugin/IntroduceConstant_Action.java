@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantRefa
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceConstantDialog;
 import javax.swing.JOptionPane;
 
@@ -91,7 +90,7 @@ public class IntroduceConstant_Action extends GeneratedAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           refactoring.value = new IntroduceConstantRefactoring();
-          error.value = refactoring.value.init(SNodeOperations.cast(IntroduceConstant_Action.this.node, "jetbrains.mps.baseLanguage.structure.Expression"), IntroduceConstant_Action.this.component);
+          error.value = refactoring.value.init(IntroduceConstant_Action.this.node, IntroduceConstant_Action.this.component);
         }
       });
       if (error.value == null) {
