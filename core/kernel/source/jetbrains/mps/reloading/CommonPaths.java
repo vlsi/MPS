@@ -40,18 +40,6 @@ public class CommonPaths {
 
   //--------paths-----------
 
-  public static List<String> getJDKPath() {
-    return itemToPath(getJDKClassPath());
-  }
-
-  public static List<String> getMPSPaths() {
-    List<String> result = itemToPath(getMPSClassPath());
-    result.add(libPath()+ "commons-lang" + File.separator + "commons-lang-2.1.jar");
-    result.add(libPath()+ "jdom" + File.separator + "jdom.jar");
-    result.add(libPath()+ "picocontainer" + File.separator + "picocontainer.jar");
-    return result;
-  }
-
   public static String getBaseMPSPath() {
     String classesPath = PathManager.getHomePath() + File.separator + "classes";
     if (new File(classesPath).exists()) {
@@ -62,6 +50,18 @@ public class CommonPaths {
       return mpsJarPath;
     }
     return null;
+  }
+
+  public static List<String> getMPSPaths() {
+    List<String> result = itemToPath(getMPSClassPath());
+    result.add(libPath() + "commons-lang" + File.separator + "commons-lang-2.1.jar");
+    result.add(libPath() + "jdom" + File.separator + "jdom.jar");
+    result.add(libPath() + "picocontainer" + File.separator + "picocontainer.jar");
+    return result;
+  }
+
+  public static List<String> getJDKPath() {
+    return itemToPath(getJDKClassPath());
   }
 
   public static List<String> getJDKJars() {
@@ -136,24 +136,7 @@ public class CommonPaths {
     return result;
   }
 
-  //--------utils-----------
-
-  private static List<String> itemToPath(IClassPathItem cp) {
-    List<String> result = new ArrayList<String>();
-    for (IClassPathItem item : cp.flatten()) {
-      if (item instanceof FileClassPathItem) {
-        result.add(((FileClassPathItem) item).getClassPath());
-      } else if (item instanceof JarFileClassPathItem) {
-        result.add(((JarFileClassPathItem) item).getFile().getAbsolutePath());
-      } else {
-        throw new IllegalArgumentException(item.getClass().getName());
-      }
-    }
-
-    return result;
-  }
-
- //--------private----------
+  //--------private----------
 
   private static IClassPathItem getLibraryJars() {
     CompositeClassPathItem cp = new CompositeClassPathItem();
@@ -179,27 +162,6 @@ public class CommonPaths {
     return cp;
   }
 
-  private static String libPath() {
-    return PathManager.getHomePath() + File.separator + "lib"
-      + File.separator;
-  }
-
-  private static void addIfExists(CompositeClassPathItem item, String path) {
-    path = PathManager.getHomePath() + path.replace('/', File.separatorChar);
-    File file = new File(path);
-    if (file.exists()) {
-      try {
-        if (file.isDirectory()) {
-          item.add(new FileClassPathItem(path));
-        } else {
-          item.add(new JarFileClassPathItem(path));
-        }
-      } catch (IOException e) {
-        LOG.error(e);
-      }
-    }
-  }
-
   private static IClassPathItem getIDEAOpenAPIJar() {
     if (ourIDEAOpenAPIJar == null) {
       try {
@@ -210,10 +172,6 @@ public class CommonPaths {
       }
     }
     return ourIDEAOpenAPIJar;
-  }
-
-  private static String getIdeaPlatformPath() {
-    return libPath() + "jetbrains-ideframework";
   }
 
   private static IClassPathItem getIDEAJar() {
@@ -343,6 +301,34 @@ public class CommonPaths {
     return null;
   }
 
+  //----constant paths------
+
+  private static String libPath() {
+    return PathManager.getHomePath() + File.separator + "lib"
+      + File.separator;
+  }
+
+  private static String getIdeaPlatformPath() {
+    return libPath() + "jetbrains-ideframework";
+  }
+
+  //--------utils-----------
+
+  private static List<String> itemToPath(IClassPathItem cp) {
+    List<String> result = new ArrayList<String>();
+    for (IClassPathItem item : cp.flatten()) {
+      if (item instanceof FileClassPathItem) {
+        result.add(((FileClassPathItem) item).getClassPath());
+      } else if (item instanceof JarFileClassPathItem) {
+        result.add(((JarFileClassPathItem) item).getFile().getAbsolutePath());
+      } else {
+        throw new IllegalArgumentException(item.getClass().getName());
+      }
+    }
+
+    return result;
+  }
+
   private static JarFileClassPathItem findBootstrapJarByName(String name) {
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
       try {
@@ -360,6 +346,22 @@ public class CommonPaths {
       }
     }
     return null;
+  }
+
+  private static void addIfExists(CompositeClassPathItem item, String path) {
+    path = PathManager.getHomePath() + path.replace('/', File.separatorChar);
+    File file = new File(path);
+    if (file.exists()) {
+      try {
+        if (file.isDirectory()) {
+          item.add(new FileClassPathItem(path));
+        } else {
+          item.add(new JarFileClassPathItem(path));
+        }
+      } catch (IOException e) {
+        LOG.error(e);
+      }
+    }
   }
 
   private static void addJarForName(CompositeClassPathItem composite, String name) {
