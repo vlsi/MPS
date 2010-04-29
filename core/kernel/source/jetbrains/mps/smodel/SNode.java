@@ -1470,7 +1470,6 @@ public final class SNode {
     if (id.equals(myId)) return;
 
     if (!isRegistered()) {
-      SNodeId wasId = myId;
       myId = id;
     } else {
       LOG.error("can't set id to registered node " + getDebugText(), new Throwable());
