@@ -30,25 +30,27 @@ public class ReferencedNodeContext {
   private ReferencedNodeContext(SNode node) {
     assert node != null;
     myNodePointer = node;
-    node.putUserObject(this, this); //context must be collected only after its target node is collected
+  }
+
+  private ReferencedNodeContext(SNode node, ReferencedNodeContext prototype) {
+    this(node);
+    myContextRoles.addAll(prototype.myContextRoles);
+    myContextRefererNodes.addAll(prototype.myContextRefererNodes);
   }
 
   public static ReferencedNodeContext createNodeContext(SNode node) {
-    return new ReferencedNodeContext(node);
+    return saveAsUserObject(new ReferencedNodeContext(node));
   }
 
   public ReferencedNodeContext sameContextButAnotherNode(SNode newNode) {
-    ReferencedNodeContext result = new ReferencedNodeContext(newNode);
-    result.myContextRoles.addAll(myContextRoles);
-    result.myContextRefererNodes.addAll(myContextRefererNodes);
-    return result;
+    return saveAsUserObject(new ReferencedNodeContext(newNode, this));
   }
 
   public ReferencedNodeContext contextWithOneMoreReference(SNode node, SNode contextRefererNode, String contextRole) {
-    ReferencedNodeContext result = sameContextButAnotherNode(node);
+    ReferencedNodeContext result = new ReferencedNodeContext(node, this);
     result.myContextRoles.push(contextRole);
     result.myContextRefererNodes.push(contextRefererNode);
-    return result;
+    return saveAsUserObject(result);
   }
 
   public boolean hasRoles() {
@@ -56,17 +58,27 @@ public class ReferencedNodeContext {
   }
 
   public ReferencedNodeContext contextWithOneMoreAttribute(SNode attribute) {
-    ReferencedNodeContext result = sameContextButAnotherNode(getNode());
+    ReferencedNodeContext result = new ReferencedNodeContext(getNode(), this);
     result.myAttributesStack.push(attribute);
-    return result;
+    return saveAsUserObject(result);
   }
 
   public ReferencedNodeContext contextWihtNoAttributes() {
-    return new ReferencedNodeContext(getNode());
+    return saveAsUserObject(new ReferencedNodeContext(getNode()));
   }
 
   public SNode getNode() {
     return myNodePointer;
+  }
+
+  /**
+   * TODO: remove this method
+   * looks like it's necessary to store newly created ReferencedNodeContext as SNode's user object now
+   * because EditorComponent.myRefNodeContextsToBigCellsMap is instances of WeakHashMap
+   */
+  private static ReferencedNodeContext saveAsUserObject(ReferencedNodeContext context) {
+    context.getNode().putUserObject(context, context); //context must be collected only after its target node is collected
+    return context;
   }
 
   public int hashCode() {
