@@ -19,6 +19,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
 import java.util.HashSet;
@@ -60,10 +61,18 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   protected abstract void collectAvailableClasses(Set<String> classes, String namespace);
 
-  public static IClassPathItem createFromPath(String path, IModule module) throws IOException {
+  public static IClassPathItem createFromPath(String path) throws IOException {
+    return createFromPath(path, null);
+  }
+
+  public static IClassPathItem createFromPath(String path, @Nullable IModule module) throws IOException {
     IFile file = FileSystem.getFile(path);
-    if (!file.exists())
-      throw new IOException("Can't load class path item " + path + " in " + (module == null ? "" : module.toString()) + (file.isDirectory() ? ". Execute make in IDEA." : "."));
+
+    if (!file.exists()) {
+      String moduleString = module == null ? "" : ("in" + module.toString());
+      String message = "Can't load class path item " + path + moduleString + "." + (file.isDirectory() ? " Execute make in IDEA." : "");
+      throw new IOException(message);
+    }
 
     IClassPathItem currentItem;
     if (file.isDirectory()) {

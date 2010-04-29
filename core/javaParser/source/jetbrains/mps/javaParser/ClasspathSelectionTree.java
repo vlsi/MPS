@@ -18,24 +18,23 @@ package jetbrains.mps.javaParser;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.reloading.AbstractClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.FileSystemFile;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import javax.swing.event.TreeWillExpandListener;
 import javax.swing.event.TreeExpansionEvent;
+import javax.swing.event.TreeWillExpandListener;
 import javax.swing.tree.*;
 import java.awt.*;
-import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -219,17 +218,12 @@ public class ClasspathSelectionTree extends JTree {
     }
 
     private IClassPathItem classpathChosen() {
-      if (myFile.isDirectory()) {
-        return new FileClassPathItem(myFile.getAbsolutePath());
-      } else if (myFile.getName().endsWith(".jar")) {
-        try {
-          return new JarFileClassPathItem(new FileSystemFile(myFile));
-        } catch (IOException ex) {
-          LOG.error(ex);
-          return null;
-        }
+      try {
+        return AbstractClassPathItem.createFromPath(myFile.getAbsolutePath());
+      } catch (IOException ex) {
+        LOG.error(ex);
+        return null;
       }
-      return null;
     }
 
     public Icon getIcon(boolean expanded) {

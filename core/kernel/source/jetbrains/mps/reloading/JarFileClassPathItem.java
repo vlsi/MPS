@@ -71,11 +71,11 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
   private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
 
-  public JarFileClassPathItem(String path) throws IOException {
+  protected JarFileClassPathItem(String path) throws IOException {
     this(FileSystem.getFile(path));
   }
 
-  public JarFileClassPathItem(IFile file) throws IOException {
+  protected JarFileClassPathItem(IFile file) throws IOException {
     myIFile = file;
     myFile = transformFile(file);
     myPrefix = "jar:" + myFile.toURL() + "!/";

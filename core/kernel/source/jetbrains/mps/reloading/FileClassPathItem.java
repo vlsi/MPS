@@ -36,7 +36,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
   private Map<String, Set<String>> mySubpackagesCache = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> myAvailableClassesCache = new HashMap<String, Set<String>>();
 
-  public FileClassPathItem(String classPath) {
+  protected FileClassPathItem(String classPath) {
     myClassPath = classPath;
   }
 

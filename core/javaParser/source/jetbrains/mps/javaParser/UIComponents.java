@@ -20,6 +20,7 @@ import com.intellij.util.containers.HashMap;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.AbstractClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
@@ -107,30 +108,6 @@ public class UIComponents {
     public DialogDimensions getDefaultDimensionSettings() {
       Frame mainFrame = getOperationContext().getMainFrame();
       return new DialogDimensions(mainFrame.getX() + mainFrame.getWidth() / 2, mainFrame.getY() + mainFrame.getHeight() / 2, 600, 300);
-    }
-
-    private IClassPathItem chooseClasspath(File sourceDir) {
-      TreeFileChooser treeFileChooser = new TreeFileChooser();
-      treeFileChooser.setExtensionFileFilter(".jar");
-      treeFileChooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
-      treeFileChooser.setInitialFile(new FileSystemFile(sourceDir));
-      treeFileChooser.setTitle("Select Classpath");
-      IFile iFile = treeFileChooser.showDialog(this.getMainComponent());
-
-      if (iFile == null) {
-        return null;
-      }
-      if (iFile.isDirectory()) {
-        return new FileClassPathItem(iFile.getAbsolutePath());
-      } else if (iFile.getName().endsWith(".jar")) {
-        try {
-          return new JarFileClassPathItem(iFile);
-        } catch (IOException ex) {
-          LOG.error(ex);
-          return null;
-        }
-      }
-      return null;
     }
 
     public JComponent getMainComponent() {
