@@ -6,6 +6,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jdom.Element;
+import jetbrains.mps.util.InternUtil;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Collection;
@@ -37,10 +38,10 @@ public class RootDependencies implements Comparable<RootDependencies> {
         continue;
       }
       if (e.getAttribute(DEPEND_CLASS_NAME) != null) {
-        ListSequence.fromList(this.myDependNodes).addElement(e.getAttribute(DEPEND_CLASS_NAME).getValue());
+        ListSequence.fromList(this.myDependNodes).addElement(InternUtil.intern(e.getAttribute(DEPEND_CLASS_NAME).getValue()));
       }
       if (e.getAttribute(EXTENDS_CLASS_NAME) != null) {
-        ListSequence.fromList(this.myExtendsNodes).addElement(e.getAttribute(EXTENDS_CLASS_NAME).getValue());
+        ListSequence.fromList(this.myExtendsNodes).addElement(InternUtil.intern(e.getAttribute(EXTENDS_CLASS_NAME).getValue()));
       }
     }
   }
