@@ -79,7 +79,7 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
     final VirtualFile file = VFileSystem.getFile(path);
 
     if (file == null || !file.isValid()) {
-      String moduleString = module == null ? "" : ("in" + module.toString());
+      String moduleString = module == null ? "" : (" in " + module.toString());
       String message = "Can't load class path item " + path + moduleString;
       throw new IOException(message);
     }
