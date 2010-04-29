@@ -23,6 +23,14 @@ public class FieldIsNeverUsed_NonTypesystemRule extends AbstractNonTypesystemRul
 
   public void applyRule(final SNode fieldDeclaration, final TypeCheckingContext typeCheckingContext) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fieldDeclaration, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+      List<SNode> localFieldRefs = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", false, new String[]{});
+      if (ListSequence.fromList(localFieldRefs).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SLinkOperations.getTarget(it, "variableDeclaration", false) == fieldDeclaration;
+        }
+      }).isNotEmpty()) {
+        return;
+      }
       if (SNodeOperations.isInstanceOf(fieldDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
         final SNode member = SNodeOperations.cast(fieldDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.IMember");
         List<SNode> memberOperations = SNodeOperations.getDescendants(SNodeOperations.getParent(fieldDeclaration), "jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation", false, new String[]{});
