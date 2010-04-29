@@ -48,6 +48,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.Map.Entry;
 
 public class FileGenerationManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(FileGenerationManager.class);
@@ -275,9 +276,9 @@ public class FileGenerationManager implements ApplicationComponent {
 
   private List<String> getValues(TextGenerationResult textGenResult, String value) {
     List<String> result = new ArrayList<String>();
-    for (String key : textGenResult.getDependencies().keySet()) {
-      if (textGenResult.getDependencies().get(key).equals(value)) {
-        result.add(key);
+    for (Entry<String, String> entry : textGenResult.getDependencies().entrySet()) {
+      if (entry.getValue().equals(value)) {
+        result.add(entry.getKey());
       }
     }
     Collections.sort(result);

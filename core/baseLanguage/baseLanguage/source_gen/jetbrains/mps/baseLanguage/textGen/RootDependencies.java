@@ -6,7 +6,9 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jdom.Element;
-import java.util.Collections;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.Collection;
 
 public class RootDependencies implements Comparable<RootDependencies> {
   private static final String CLASS_NAME = "className";
@@ -57,12 +59,12 @@ public class RootDependencies implements Comparable<RootDependencies> {
     }
   }
 
-  public List<String> getDependencies() {
-    return Collections.unmodifiableList(this.myDependNodes);
+  public Set<String> getDependencies() {
+    return new HashSet((Collection) myDependNodes);
   }
 
-  public List<String> getExtends() {
-    return Collections.unmodifiableList(this.myExtendsNodes);
+  public Set<String> getExtends() {
+    return new HashSet((Collection) myExtendsNodes);
   }
 
   public String getClassName() {

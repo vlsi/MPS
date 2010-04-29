@@ -10455,20 +10455,24 @@
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3849681456765796948">
       <property name="name:3" value="getDependencies" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="8759246590987814863">
-        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8759246590987814864" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3023484100080346933">
+        <link role="classifier:3" targetNodeId="12.~Set" resolveInfo="Set" />
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="3023484100080347059" />
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3849681456765796950" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3849681456765796951">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3849681456765797048">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8759246590987814867">
-            <link role="baseMethodDeclaration:3" targetNodeId="12.~Collections.unmodifiableList(java.util.List):java.util.List" resolveInfo="unmodifiableList" />
-            <link role="classConcept:3" targetNodeId="12.~Collections" resolveInfo="Collections" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8759246590987814868">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="8759246590987814869">
-                <link role="fieldDeclaration:3" targetNodeId="7159280687324564852" resolveInfo="myDependNodes" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3023484100080346940">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3023484100080347050">
+              <link role="baseMethodDeclaration:3" targetNodeId="12.~HashSet.&lt;init&gt;(java.util.Collection)" resolveInfo="HashSet" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="3023484100080347052">
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3023484100080347055">
+                  <link role="classifier:3" targetNodeId="12.~Collection" resolveInfo="Collection" />
+                </node>
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3023484100080347051">
+                  <link role="variableDeclaration:3" targetNodeId="7159280687324564852" resolveInfo="myDependNodes" />
+                </node>
               </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="8759246590987814870" />
             </node>
           </node>
         </node>
@@ -10476,20 +10480,24 @@
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7493607813808730314">
       <property name="name:3" value="getExtends" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="8759246590987814873">
-        <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="8759246590987814874" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3023484100080346924">
+        <link role="classifier:3" targetNodeId="12.~Set" resolveInfo="Set" />
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="3023484100080347060" />
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7493607813808730316" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7493607813808730317">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7493607813808730332">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8759246590987814877">
-            <link role="baseMethodDeclaration:3" targetNodeId="12.~Collections.unmodifiableList(java.util.List):java.util.List" resolveInfo="unmodifiableList" />
-            <link role="classConcept:3" targetNodeId="12.~Collections" resolveInfo="Collections" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8759246590987814878">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="8759246590987814879">
-                <link role="fieldDeclaration:3" targetNodeId="7493607813808730230" resolveInfo="myExtendsNodes" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3023484100080346920">
+            <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3023484100080346921">
+              <link role="baseMethodDeclaration:3" targetNodeId="12.~HashSet.&lt;init&gt;(java.util.Collection)" resolveInfo="HashSet" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="3023484100080347061">
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3023484100080347064">
+                  <link role="classifier:3" targetNodeId="12.~Collection" resolveInfo="Collection" />
+                </node>
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="3023484100080346922">
+                  <link role="variableDeclaration:3" targetNodeId="7493607813808730230" resolveInfo="myExtendsNodes" />
+                </node>
               </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="8759246590987814880" />
             </node>
           </node>
         </node>

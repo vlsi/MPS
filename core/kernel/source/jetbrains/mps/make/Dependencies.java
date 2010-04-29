@@ -15,24 +15,19 @@
  */
 package jetbrains.mps.make;
 
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.util.misc.hash.HashMap;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.CompositeIterator;
+import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
-import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 
-import java.util.*;
 import java.io.File;
+import java.util.*;
 
 class Dependencies {
   private Map<String, Set<String>> myDependencies = new HashMap<String, Set<String>>();
@@ -47,25 +42,24 @@ class Dependencies {
   }
 
   public Iterable<String> getAllDependencies(String fqName) {
-    return new CompositeIterator<String>(
-      getDependencies(fqName).iterator(),
-      getExtendsDependencies(fqName).iterator());
-  }
-
-  public Set<String> getDependencies(String fqName) {
-    if (!myDependencies.containsKey(fqName)) return Collections.EMPTY_SET;
-    return Collections.unmodifiableSet(myDependencies.get(fqName));
-  }
-
-  public Set<String> getExtendsDependencies(String fqName) {
-    if (!myExtendsDependencies.containsKey(fqName)) return Collections.EMPTY_SET;
-
     Set<String> result = new HashSet<String>();
+    fillDependencies(fqName, result);
+    fillExtendsDependencies(fqName, result);
+    return result;
+  }
+
+  private void fillDependencies(String fqName, Set<String> result) {
+    if (!myDependencies.containsKey(fqName)) return;
+    result.addAll(myDependencies.get(fqName));
+  }
+
+  private void fillExtendsDependencies(String fqName, Set<String> result) {
+    if (!myExtendsDependencies.containsKey(fqName)) return;
+
     for (String ext : myExtendsDependencies.get(fqName)) {
       result.add(ext);
-      result.addAll(getExtendsDependencies(ext));
+      fillExtendsDependencies(ext, result);
     }
-    return result;
   }
 
   public IFile getJavaFile(String fqName) {
@@ -93,9 +87,11 @@ class Dependencies {
 
   private void add(IModule m, ModelDependencies root) {
     for (RootDependencies r : root.getDependencies()) {
-      myModules.put(r.getClassName(), m);
-      myDependencies.put(r.getClassName(), new HashSet<String>(r.getDependencies()));
-      myExtendsDependencies.put(r.getClassName(), new HashSet<String>(r.getExtends()));
+      final String className = r.getClassName();
+
+      myModules.put(className, m);
+      myDependencies.put(className, r.getDependencies());
+      myExtendsDependencies.put(className, r.getExtends());
     }
   }
 
