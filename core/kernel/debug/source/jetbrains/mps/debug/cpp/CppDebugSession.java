@@ -8,6 +8,7 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.AbstractUiState;
 import jetbrains.mps.debug.cpp.answer.GDBAnswer;
 import jetbrains.mps.debug.cpp.answer.GDBAnswerProducer;
+import jetbrains.mps.debug.cpp.answer.GDBEventsHandler;
 import jetbrains.mps.debug.executable.SimpleConsoleProcessHandler;
 import jetbrains.mps.smodel.IOperationContext;
 
@@ -19,13 +20,7 @@ import jetbrains.mps.smodel.IOperationContext;
  * To change this template use File | Settings | File Templates.
  */
 public class CppDebugSession extends AbstractDebugSession<CppUiState> {
-  private GDBCommands myGDBCommands = new GDBCommands();
-
-
-
-  public GDBCommands getGDBCommands() {
-    return myGDBCommands;
-  }
+  private GDBEventsHandler myEventsHandler;
 
   @Override
   protected CppUiState createUiState() {
@@ -42,9 +37,6 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
 
   @Override
   public void stop(boolean terminateTargetProcess) {
-    if (terminateTargetProcess) {
-      myGDBCommands.stopProcessUnderGDB(getProcessHandler());
-    }
   }
 
   @Override
@@ -71,14 +63,10 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   @Override
   public void setProcessHandler(ProcessHandler processHandler) {
     super.setProcessHandler(processHandler);
-    processHandler.addProcessListener(new ProcessAdapter() {
-      @Override
-      public void onTextAvailable(ProcessEvent event, Key outputType) {
-        String text = event.getText();
-        GDBAnswerProducer producer = new GDBAnswerProducer(text);
-        GDBAnswer gdbAnswer = producer.getGDBAnswer();
-        //todo
-      }
-    });
+    myEventsHandler = new GDBEventsHandler((SimpleConsoleProcessHandler) processHandler);
+  }
+
+  public GDBEventsHandler getGDBEventsHandler() {
+    return myEventsHandler;
   }
 }

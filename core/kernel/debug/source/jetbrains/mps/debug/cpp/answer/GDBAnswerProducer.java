@@ -13,16 +13,55 @@ public class GDBAnswerProducer {
   public static final String SAMPLE_STRING =
     "*stopped,reason=\"breakpoint-hit\",bkptno=\"1\"" +
       ",thread-id=\"1\",frame={addr=\"0x004013b5\",func=\"main\"" +
-      ",args=[],file=\"C:/MPS/core/kernel/debug/debugProject/resource/hello.cpp\",line=\"3\"}";
+      ",args=[],file=\"C:/MPS/core/kernel/debug/debugProject/resource/hello.cpp\",line=\"3\"}\r\n";
 
   private String myInput;
   private GDBAnswer myGDBAnswer;
+  private boolean myHasError = false;
 
   private int myOffset = 0;
 
   public GDBAnswerProducer(String input) {
     myInput = input;
-    myGDBAnswer = readAnswer();
+    try {
+      myGDBAnswer = read();
+    } catch (Throwable t) {
+      //todo log
+      myGDBAnswer = null;
+      myHasError = true;
+    }
+  }
+
+  private void accept(String pattern) {
+    int i = 0;
+    while (i < pattern.length() && myOffset < myInput.length()) {
+      char c1 = pattern.charAt(i);
+      char c2 = myInput.charAt(myOffset);
+      if (c1 != c2) {
+        error("");
+        return;
+      }
+      i++;
+      myOffset++;
+    }
+  }
+
+  public void readEOL() {
+    if (currentChar() == '\r') {
+      accept("\r\n");
+    } else {
+      accept("\n");
+    }
+  }
+
+  public GDBAnswer read() {
+    if (currentChar() == '(') {
+      accept("(gdb) ");
+      readEOL();
+      return null;
+    } else {
+      return readAnswer();
+    }
   }
 
   private GDBAnswer readAnswer() {
@@ -33,15 +72,18 @@ public class GDBAnswerProducer {
       //async
       String asyncClass = readClass();
       RecordValue value = readResultList();
+      readEOL();
       return new AsyncAnswer(c, asyncClass, value);
     } else if (c == '~' || c == '@' || c == '&') {
       //stream
       StringValue value = readString();
+      readEOL();
       return new StreamAnswer(c, value.getString());
     } else if (c == '^') {
       //result
       String resultClass = readClass();
       RecordValue value = readResultList();
+      readEOL();
       return new ResultAnswer(c, resultClass, value);
     } else {
       error("");
@@ -64,6 +106,9 @@ public class GDBAnswerProducer {
   }
 
   private RecordValue readResultList() {
+    if (currentChar() == '\n' || currentChar() == '\r') {
+      return null;
+    }
     RecordValue recordValue = new RecordValue();
     while (true) {
       Pair<String, GDBValue> pair = readResult();
@@ -105,6 +150,7 @@ public class GDBAnswerProducer {
   }
 
   private void error(String message) {
+    myHasError = true;
     //todo implement
   }
 
@@ -213,6 +259,10 @@ public class GDBAnswerProducer {
 
   public GDBAnswer getGDBAnswer() {
     return myGDBAnswer;
+  }
+
+  public boolean hasError() {
+    return myHasError;
   }
 
   public static void main(String args[]) {
