@@ -15,12 +15,9 @@
  */
 package jetbrains.mps.reloading;
 
-import com.intellij.openapi.util.Key;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileAdapter;
-import com.intellij.openapi.vfs.VirtualFileEvent;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,8 +26,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
-  private static final Key<IClassPathItem> CLASSPATH_KEY = new Key<IClassPathItem>("classpath");
-
   public long getTimestamp() {
     return getTimestamp("");
   }
@@ -75,59 +70,21 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   }
 
   public static IClassPathItem createFromPath(String path, @Nullable IModule module) throws IOException {
-    final VirtualFile file = VFileSystem.getFile(path);
+    IFile file = FileSystem.getFile(path);
 
-    if (file == null || !file.isValid()) {
-      String moduleString = module == null ? "" : (" in " + module.toString());
-      String message = "Can't load class path item " + path + moduleString;
+    if (!file.exists()) {
+      String moduleString = module == null ? "" : ("in" + module.toString());
+      String message = "Can't load class path item " + path + moduleString + "." + (file.isDirectory() ? " Execute make in IDEA." : "");
       throw new IOException(message);
     }
 
-    IClassPathItem currentItem = file.getUserData(CLASSPATH_KEY);
-    if (currentItem == null) {
-      if (file.isDirectory()) {
-        currentItem = new FileClassPathItem(path);
-      } else {
-        currentItem = new JarFileClassPathItem(path);
-      }
-      file.putUserData(CLASSPATH_KEY, currentItem);
-
-      file.getFileSystem().addVirtualFileListener(new MyVirtualFileAdapter(file));
+    IClassPathItem currentItem;
+    if (file.isDirectory()) {
+      currentItem = new FileClassPathItem(path);
+    } else {
+      currentItem = new JarFileClassPathItem(path);
     }
 
     return currentItem;
-  }
-
-  private static class MyVirtualFileAdapter extends VirtualFileAdapter {
-    private final VirtualFile myFile;
-
-    public MyVirtualFileAdapter(VirtualFile file) {
-      myFile = file;
-    }
-
-    public void contentsChanged(VirtualFileEvent event) {
-      invalidateIfNeeded(event);
-    }
-
-    public void fileDeleted(VirtualFileEvent event) {
-      invalidateIfNeeded(event);
-    }
-
-    public void fileCreated(VirtualFileEvent event) {
-      invalidateIfNeeded(event);
-    }
-
-    private void invalidateIfNeeded(VirtualFileEvent event) {
-      if (!isUnder(myFile, event.getFile())) return;
-      myFile.getFileSystem().removeVirtualFileListener(this);
-      myFile.putUserData(CLASSPATH_KEY, null);
-    }
-
-    private boolean isUnder(VirtualFile parent, VirtualFile child) {
-      if (child == null) return false;
-      if (parent == child) return true;
-
-      return isUnder(parent, child.getParent());
-    }
   }
 }
