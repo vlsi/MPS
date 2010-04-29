@@ -35,10 +35,8 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.stubs.BaseStubModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -54,14 +52,16 @@ import java.util.*;
 
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
-  private static Set<ModelCreationListener> myModelCreationListeners = new HashSet<ModelCreationListener>();
+
   public static final String RUNTIME_JAR_SUFFIX = "runtime.jar";
   public static final String MODULE_DIR = "module";
   public static final String CACHES_DIR = "caches";
   public static final String PACKAGE_SUFFIX = "mpsarch.jar";
 
+  private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
+
   public static void registerModelCreationListener(ModelCreationListener listener) {
-    myModelCreationListeners.add(listener);
+    ourModelCreationListeners.add(listener);
   }
 
   private boolean myModelsRead = false;
@@ -425,7 +425,7 @@ public abstract class AbstractModule implements IModule {
     SModelDescriptor model = manager.createNewModel(root, name, this);
     SModelRepository.getInstance().markChanged(model, true);
 
-    for (ModelCreationListener listener : myModelCreationListeners) {
+    for (ModelCreationListener listener : ourModelCreationListeners) {
       if (listener.isApplicable(model)) {
         listener.onCreate(model);
       }
