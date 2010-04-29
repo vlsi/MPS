@@ -19,7 +19,6 @@ import com.intellij.openapi.util.Key;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileAdapter;
 import com.intellij.openapi.vfs.VirtualFileEvent;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -67,7 +66,7 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   protected abstract void collectAvailableClasses(Set<String> classes, String namespace);
 
-  public static IClassPathItem createFromPath(String path){
+  public static IClassPathItem createFromPath(String path) {
     try {
       return createFromPath(path, null);
     } catch (IOException e) {
@@ -115,9 +114,16 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
     }
 
     private void invalidateIfNeeded(VirtualFileEvent event) {
-      if (event.getFile() != myFile) return;
+      if (!isUnder(myFile, event.getFile())) return;
       myFile.getFileSystem().removeVirtualFileListener(this);
       myFile.putUserData(CLASSPATH_KEY, null);
+    }
+
+    private boolean isUnder(VirtualFile parent, VirtualFile child) {
+      if (child == null) return false;
+      if (parent == child) return true;
+
+      return isUnder(parent, child.getParent());
     }
   }
 }
