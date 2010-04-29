@@ -15,9 +15,13 @@
  */
 package jetbrains.mps.reloading;
 
+import com.intellij.openapi.util.Key;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileAdapter;
+import com.intellij.openapi.vfs.VirtualFileEvent;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,6 +30,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
+  private static final Key<IClassPathItem> CLASSPATH_KEY = new Key<IClassPathItem>("classpath");
+
   public long getTimestamp() {
     return getTimestamp("");
   }
@@ -66,21 +72,48 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   }
 
   public static IClassPathItem createFromPath(String path, @Nullable IModule module) throws IOException {
-    IFile file = FileSystem.getFile(path);
+    final VirtualFile file = VFileSystem.getFile(path);
 
-    if (!file.exists()) {
+    if (file == null || !file.isValid()) {
       String moduleString = module == null ? "" : ("in" + module.toString());
-      String message = "Can't load class path item " + path + moduleString + "." + (file.isDirectory() ? " Execute make in IDEA." : "");
+      String message = "Can't load class path item " + path + moduleString;
       throw new IOException(message);
     }
 
-    IClassPathItem currentItem;
-    if (file.isDirectory()) {
-      currentItem = new FileClassPathItem(path);
-    } else {
-      currentItem = new JarFileClassPathItem(path);
+    IClassPathItem currentItem = file.getUserData(CLASSPATH_KEY);
+    if (currentItem == null) {
+      if (file.isDirectory()) {
+        currentItem = new FileClassPathItem(path);
+      } else {
+        currentItem = new JarFileClassPathItem(path);
+      }
+      file.putUserData(CLASSPATH_KEY, currentItem);
+
+      file.getFileSystem().addVirtualFileListener(new MyVirtualFileAdapter(file));
     }
 
     return currentItem;
+  }
+
+  private static class MyVirtualFileAdapter extends VirtualFileAdapter {
+    private final VirtualFile myFile;
+
+    public MyVirtualFileAdapter(VirtualFile file) {
+      myFile = file;
+    }
+
+    public void contentsChanged(VirtualFileEvent event) {
+      invalidateIfNeeded(event);
+    }
+
+    public void fileDeleted(VirtualFileEvent event) {
+      invalidateIfNeeded(event);
+    }
+
+    private void invalidateIfNeeded(VirtualFileEvent event) {
+      if (event.getFile() != myFile) return;
+      myFile.getFileSystem().removeVirtualFileListener(this);
+      myFile.putUserData(CLASSPATH_KEY, null);
+    }
   }
 }
