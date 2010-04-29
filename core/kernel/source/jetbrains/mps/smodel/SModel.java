@@ -1048,9 +1048,12 @@ public class SModel implements Iterable<SNode> {
     return null;
   }
 
+  /**
+   * not used anymore?
+   */
   public void clearAdapters() {
-    for (SNode root : getRoots()) {
-      root.clearAdapters();
+    for (SNode node : getAllNodesWithIds()) {
+      node.clearAdapter();
     }
   }
 
@@ -1156,6 +1159,13 @@ public class SModel implements Iterable<SNode> {
     ModelChange.assertLegalChange(this);
 
     myRefactoringHistory = refactoringHistory;
+  }
+
+  public void clearAdaptersAndUserObjects() {
+    for (SNode node : getAllNodesWithIds()) {
+      node.clearAdapter();
+      node.removeAllUserObjects();
+    }
   }
 
   public static class ImportElement {

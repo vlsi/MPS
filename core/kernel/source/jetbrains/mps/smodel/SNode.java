@@ -1867,11 +1867,8 @@ public final class SNode {
     return new BaseConcept(this);
   }
 
-  void clearAdapters() {
+  void clearAdapter() {
     myAdapter = null;
-    for(SNode child = myFirstChild; child != null; child = child.myNextSibling) {
-      child.clearAdapters();
-    }
   }
 
   void clearUserObjects() {

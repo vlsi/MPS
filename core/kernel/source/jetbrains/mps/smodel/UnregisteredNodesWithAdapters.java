@@ -39,7 +39,7 @@ class UnregisteredNodesWithAdapters {
       public void onReload() {
         synchronized (myLock) {
           for (SNode node : myNodes) {
-            node.clearAdapters();
+            node.clearAdapter();
           }
           myNodes.clear();
         }
