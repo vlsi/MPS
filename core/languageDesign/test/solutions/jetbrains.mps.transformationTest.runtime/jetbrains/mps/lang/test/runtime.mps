@@ -1732,8 +1732,18 @@
                   </node>
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="9011639092856335975">
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="9011639092856335971">
-                      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="9011639092856335970">
-                        <property name="value:3" value="classloader: " />
+                      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="928868727387311110">
+                        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="928868727387311114">
+                          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="928868727387311117">
+                            <link role="variableDeclaration:3" targetNodeId="1221574097387" resolveInfo="clazz" />
+                          </node>
+                          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="928868727387311113">
+                            <property name="value:3" value="class: " />
+                          </node>
+                        </node>
+                        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="9011639092856335970">
+                          <property name="value:3" value="; classloader: " />
+                        </node>
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="9011639092856335974">
                         <link role="variableDeclaration:3" targetNodeId="9011639092856261495" resolveInfo="classloader" />

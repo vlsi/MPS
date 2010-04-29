@@ -69,7 +69,7 @@ public class BaseTransformationTest extends TestCase {
         clazz.value = BaseTransformationTest.this.myModel.getModule().getClass(className);
         String classloader = clazz.value.getClassLoader().toString();
         String module = BaseTransformationTest.this.myModel.getModule().getModuleFqName();
-        assert classloader.contains(module) : "classloader: " + classloader + "; module: " + module;
+        assert classloader.contains(module) : "class: " + clazz.value + "; classloader: " + classloader + "; module: " + module;
       }
     });
     final Object obj = clazz.value.newInstance();
