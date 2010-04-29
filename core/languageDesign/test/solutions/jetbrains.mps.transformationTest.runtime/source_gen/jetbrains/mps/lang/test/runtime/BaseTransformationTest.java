@@ -67,7 +67,9 @@ public class BaseTransformationTest extends TestCase {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         clazz.value = BaseTransformationTest.this.myModel.getModule().getClass(className);
-        assert clazz.value.getClassLoader().toString().contains(BaseTransformationTest.this.myModel.getModule().getModuleFqName());
+        String classloader = clazz.value.getClassLoader().toString();
+        String module = BaseTransformationTest.this.myModel.getModule().getModuleFqName();
+        assert classloader.contains(module) : "classloader: " + classloader + "; module: " + module;
       }
     });
     final Object obj = clazz.value.newInstance();
