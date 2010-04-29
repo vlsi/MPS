@@ -171,11 +171,15 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2405017814479055125">
           <node role="expression:3" type="jetbrains.mps.lang.textGen.structure.UtilityMethodCall:11" id="2405017814479055126">
             <link role="function:11" targetNodeId="2405017814479055046" resolveInfo="addDependency" />
-            <node role="parameter:11" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2405017814479055127">
-              <link role="classConcept:3" targetNodeId="16.~NameUtil" resolveInfo="NameUtil" />
-              <link role="baseMethodDeclaration:3" targetNodeId="16.~NameUtil.nodeFQName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="nodeFQName" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2405017814479055128">
-                <link role="variableDeclaration:3" targetNodeId="8600024270913924321" resolveInfo="node" />
+            <node role="parameter:11" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2318319143024105675">
+              <link role="baseMethodDeclaration:3" targetNodeId="16.~InternUtil.intern(java.lang.String):java.lang.String" resolveInfo="intern" />
+              <link role="classConcept:3" targetNodeId="16.~InternUtil" resolveInfo="InternUtil" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2318319143024105676">
+                <link role="baseMethodDeclaration:3" targetNodeId="16.~NameUtil.nodeFQName(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="nodeFQName" />
+                <link role="classConcept:3" targetNodeId="16.~NameUtil" resolveInfo="NameUtil" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="2318319143024105677">
+                  <link role="variableDeclaration:3" targetNodeId="8600024270913924321" resolveInfo="node" />
+                </node>
               </node>
             </node>
           </node>
@@ -518,8 +522,12 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8600024270913924350">
           <node role="expression:3" type="jetbrains.mps.lang.textGen.structure.UtilityMethodCall:11" id="8600024270913924351">
             <link role="function:11" targetNodeId="8600024270913923629" resolveInfo="addDependency" />
-            <node role="parameter:11" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8600024270913924352">
-              <link role="variableDeclaration:3" targetNodeId="1236686502860" resolveInfo="importedFqName" />
+            <node role="parameter:11" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="2318319143024105672">
+              <link role="baseMethodDeclaration:3" targetNodeId="16.~InternUtil.intern(java.lang.String):java.lang.String" resolveInfo="intern" />
+              <link role="classConcept:3" targetNodeId="16.~InternUtil" resolveInfo="InternUtil" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2318319143024105673">
+                <link role="variableDeclaration:3" targetNodeId="1236686502860" resolveInfo="importedFqName" />
+              </node>
             </node>
           </node>
         </node>

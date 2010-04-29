@@ -29,9 +29,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * User: Dmitriev.
@@ -74,8 +72,8 @@ public class TextGenManager {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
-    List<String> dependencies = getUserObjectCollection(DEPENDENCY, node, buffer);
-    List<String> extend = getUserObjectCollection(EXTENDS, node, buffer);
+    List<String> dependencies = getUserObjectCollection(DEPENDENCY, node, buffer, (Set<String>) buffer.getUserObject(EXTENDS));
+    List<String> extend = getUserObjectCollection(EXTENDS, node, buffer, null);
     return new TextGenerationResult(buffer.getText(), buffer.hasErrors(), myPositions, myScopePositions, dependencies, extend);
   }
 
@@ -164,21 +162,24 @@ public class TextGenManager {
     return result;
   }
 
-  private List<String> getUserObjectCollection(String key, SNode node, TextGenBuffer buffer) {
-    Object dependenciesObject = buffer.getUserObject(key);
-    List<String> dependencies = new ArrayList<String>();
+  private List<String> getUserObjectCollection(String key, SNode node, TextGenBuffer buffer, Set<String> skipSet) {
+    SetSequence<String> dependenciesObject = (SetSequence<String>) buffer.getUserObject(key);
+    final String nodeFQName = NameUtil.nodeFQName(node);
     if (dependenciesObject != null) {
-      for (Object dependObj : (SetSequence) dependenciesObject) {
-        if (dependObj == null) {
+      List<String> dependencies = new ArrayList<String>(dependenciesObject.size());
+      for (String dependObj : dependenciesObject) {
+        if (dependObj == null || nodeFQName.equals(dependObj)) {
           continue;
         }
-        if (NameUtil.nodeFQName(node).equals(dependObj)) {
+        if(skipSet != null && skipSet.contains(dependObj)) {
           continue;
         }
-        dependencies.add((String) dependObj);
+        dependencies.add(dependObj);
       }
+      Collections.sort(dependencies);
+      return dependencies;
     }
-    return dependencies;
+    return Collections.emptyList();
   }
 
   public static class TextGenerationResult {
@@ -186,7 +187,7 @@ public class TextGenManager {
     private boolean myContainErrors;
     private HashMap<SNode, PositionInfo> myPositions;
     private HashMap<SNode, ScopePositionInfo> myScopePositions;
-    private Map<String, String> myDependencies;
+    private Map<String, List<String>> myDependencies;
 
     private TextGenerationResult(String text,
                                  boolean containErrors,
@@ -198,13 +199,9 @@ public class TextGenManager {
       myContainErrors = containErrors;
       myPositions = positions;
       myScopePositions = scopePositions;
-      myDependencies = new HashMap<String, String>(dependencies.size() + extend.size());
-      for (String s : dependencies) {
-        myDependencies.put(s, DEPENDENCY);
-      }
-      for (String s : extend) {
-        myDependencies.put(s, EXTENDS);
-      }
+      myDependencies = new HashMap<String, List<String>>(2);
+      myDependencies.put(DEPENDENCY, dependencies);
+      myDependencies.put(EXTENDS, extend);
     }
 
     public String getText() {
@@ -223,7 +220,7 @@ public class TextGenManager {
       return myScopePositions;
     }
 
-    public Map<String, String> getDependencies() {
+    public Map<String, List<String>> getDependencies() {
       return myDependencies;
     }
   }

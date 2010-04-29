@@ -18,17 +18,17 @@ package jetbrains.mps.generator.fileGenerator;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileSystem;
-import com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
-import jetbrains.mps.debug.info.*;
+import jetbrains.mps.debug.info.DebugInfo;
+import jetbrains.mps.debug.info.PositionInfo;
+import jetbrains.mps.debug.info.ScopePositionInfo;
+import jetbrains.mps.debug.info.VarInfo;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
@@ -48,7 +48,6 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-import java.util.Map.Entry;
 
 public class FileGenerationManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(FileGenerationManager.class);
@@ -194,7 +193,7 @@ public class FileGenerationManager implements ApplicationComponent {
       try {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
         String rootNodeId = null;
-        if(status.getDependencies() != null) {
+        if (status.getDependencies() != null) {
           SNode node = status.getDependencies().getOriginalRoot(outputNode);
           if (node != null) {
             rootNodeId = node.getId();
@@ -252,7 +251,7 @@ public class FileGenerationManager implements ApplicationComponent {
               positionInfo.removeVarInfo(varInfo);
             }
           }
-      //    positionInfo.clearTempVarInfoMap();
+          //    positionInfo.clearTempVarInfoMap();
           info.addScopePosition(positionInfo, rootNodeId);
         }
       }
@@ -268,21 +267,10 @@ public class FileGenerationManager implements ApplicationComponent {
   }
 
   private void fillDependencies(ModelDependencies root, SNode outputNode, TextGenerationResult result) {
-    if (result.getDependencies() != null) {
-      root.addDependencies(new RootDependencies(NameUtil.nodeFQName(outputNode), getValues(result, TextGenManager.DEPENDENCY),
-        getValues(result, TextGenManager.EXTENDS)));
+    if (result.hasDependencies()) {
+      root.addDependencies(new RootDependencies(NameUtil.nodeFQName(outputNode), result.getDependencies(TextGenManager.DEPENDENCY),
+        result.getDependencies(TextGenManager.EXTENDS)));
     }
-  }
-
-  private List<String> getValues(TextGenerationResult textGenResult, String value) {
-    List<String> result = new ArrayList<String>();
-    for (Entry<String, String> entry : textGenResult.getDependencies().entrySet()) {
-      if (entry.getValue().equals(value)) {
-        result.add(entry.getKey());
-      }
-    }
-    Collections.sort(result);
-    return result;
   }
 
   private void touchOutputDir(GenerationStatus status, File outputRootDirectory) {
@@ -333,7 +321,7 @@ public class FileGenerationManager implements ApplicationComponent {
     for (CacheGenerator g : myCacheGenerators) {
       try {
         File cacheFile = g.generateCache(new CacheGenerationContext(status, outputRootDirectory));
-        if(cacheFile != null) {
+        if (cacheFile != null) {
           generatedCaches.add(cacheFile);
         }
       } catch (Throwable t) {

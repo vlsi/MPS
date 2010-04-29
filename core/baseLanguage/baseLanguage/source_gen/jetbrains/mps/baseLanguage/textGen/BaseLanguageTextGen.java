@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.textGen.TextGenBuffer;
 import java.util.HashSet;
+import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.generator.JavaNameUtil;
 
 public abstract class BaseLanguageTextGen {
@@ -205,7 +206,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   protected static void addDependency(SNode node, final SNodeTextGen textGen) {
-    BaseLanguageTextGen.addDependency(NameUtil.nodeFQName(node), textGen);
+    BaseLanguageTextGen.addDependency(InternUtil.intern(NameUtil.nodeFQName(node)), textGen);
   }
 
   protected static String getPackageName(SNode cls, final SNodeTextGen textGen) {
@@ -250,7 +251,7 @@ public abstract class BaseLanguageTextGen {
       }
     }
     SetSequence.fromSet(importedNames).addElement(importedFqName);
-    BaseLanguageTextGen.addDependency(importedFqName, textGen);
+    BaseLanguageTextGen.addDependency(InternUtil.intern(importedFqName), textGen);
     if (!(packageName.equals("java.lang") || packageName.equals(textGen.getBuffer().getUserObject(TextGenManager.PACKAGE_NAME)))) {
       int currPartId = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
       textGen.appendNewLine();

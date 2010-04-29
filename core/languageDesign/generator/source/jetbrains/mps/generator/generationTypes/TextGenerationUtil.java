@@ -16,13 +16,13 @@
 package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.debug.info.PositionInfo;
-import jetbrains.mps.debug.info.VarPositionInfo;
 import jetbrains.mps.debug.info.ScopePositionInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TextGenerationUtil {
@@ -31,7 +31,7 @@ public class TextGenerationUtil {
     boolean containsErrors = false;
     Map<SNode, PositionInfo> positions = null;
     Map<SNode, ScopePositionInfo> scopePositions = null;
-    Map<String, String> dependencies = null;
+    Map<String, List<String>> dependencies = null;
     if (TextGenManager.instance().canGenerateTextFor(node)) {
       TextGenManager.TextGenerationResult generationResult = TextGenManager.instance().generateText(context, node);
       containsErrors = generationResult.hasErrors();
@@ -50,13 +50,13 @@ public class TextGenerationUtil {
     private String myText;
     private Map<SNode, PositionInfo> myPositions;
     private Map<SNode, ScopePositionInfo> myScopePositions;
-    private Map<String, String> myDependencies = new HashMap<String, String>();
+    private Map<String, List<String>> myDependencies;
 
     public TextGenerationResult(String text,
                                 boolean containsErrors,
                                 Map<SNode, PositionInfo> positions,
                                 Map<SNode, ScopePositionInfo> scopePositions,
-                                Map<String, String> dependencies) {
+                                Map<String, List<String>> dependencies) {
       myContainsErrors = containsErrors;
       myText = text;
       myPositions = positions;
@@ -80,8 +80,17 @@ public class TextGenerationUtil {
       return myScopePositions;
     }
 
-    public Map<String, String> getDependencies() {
-      return myDependencies;
+    public List<String> getDependencies(String value) {
+      return myDependencies.get(value);
+    }
+
+    public boolean hasDependencies() {
+      for(List<String> val : myDependencies.values()) {
+        if(!val.isEmpty()) {
+          return true;
+        }
+      }
+      return false;
     }
   }
 
