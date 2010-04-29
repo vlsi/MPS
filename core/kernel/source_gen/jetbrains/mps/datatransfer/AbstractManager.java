@@ -14,15 +14,15 @@ public abstract class AbstractManager implements ApplicationComponent {
   private AbstractManager.ReloadHelper myReloadHelper = new AbstractManager.ReloadHelper();
 
   public AbstractManager(ClassLoaderManager classLoaderManager) {
-    this.myClassLoaderManager = classLoaderManager;
+    myClassLoaderManager = classLoaderManager;
   }
 
   public void initComponent() {
-    this.myClassLoaderManager.addReloadHandler(this.myReloadHelper);
+    myClassLoaderManager.addReloadHandler(myReloadHelper);
   }
 
   public void disposeComponent() {
-    this.myClassLoaderManager.removeReloadHandler(this.myReloadHelper);
+    myClassLoaderManager.removeReloadHandler(myReloadHelper);
   }
 
   public abstract void clearCaches();
@@ -50,30 +50,30 @@ public abstract class AbstractManager implements ApplicationComponent {
 
     public Descriptor(String className, Language language, Logger log) {
       assert className != null;
-      this.myClassName = className;
+      myClassName = className;
       assert language != null;
-      this.myLanguage = language;
+      myLanguage = language;
       assert log != null;
-      this.myLog = log;
+      myLog = log;
     }
 
     public T getInstance() {
-      if (!(this.myWasInitialized)) {
-        Class postProcessorClass = this.myLanguage.getClass(this.myClassName);
+      if (!(myWasInitialized)) {
+        Class postProcessorClass = myLanguage.getClass(myClassName);
         if (postProcessorClass != null) {
           try {
-            this.myInstance = (T) postProcessorClass.newInstance();
+            myInstance = (T) postProcessorClass.newInstance();
           } catch (InstantiationException ex) {
-            this.myLog.error(ex);
+            myLog.error(ex);
           } catch (IllegalAccessException ex) {
-            this.myLog.error(ex);
+            myLog.error(ex);
           }
         } else {
-          this.myLog.warning("Class not found (probably code for corresponding model should be regenerated): " + this.myClassName);
+          myLog.warning("Class not found (probably code for corresponding model should be regenerated): " + myClassName);
         }
-        this.myWasInitialized = true;
+        myWasInitialized = true;
       }
-      return this.myInstance;
+      return myInstance;
     }
   }
 }

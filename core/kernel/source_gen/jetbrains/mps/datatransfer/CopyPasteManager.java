@@ -39,34 +39,34 @@ public class CopyPasteManager extends AbstractManager {
 
   public void preProcessNode(SNode copy, final Map<SNode, SNode> newNodesToSourceNodes) {
     SNode sourceNode = newNodesToSourceNodes.get(copy);
-    CopyPreProcessor preProcessor = this.getPreProcessor(SNodeOperations.getConceptDeclaration(copy));
+    CopyPreProcessor preProcessor = getPreProcessor(SNodeOperations.getConceptDeclaration(copy));
     if (preProcessor != null && sourceNode != null) {
       preProcessor.preProcesNode(copy, sourceNode);
     } else {
       ListSequence.fromList(SNodeOperations.getChildren(copy)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          CopyPasteManager.this.preProcessNode(it, newNodesToSourceNodes);
+          preProcessNode(it, newNodesToSourceNodes);
         }
       });
     }
   }
 
   public void postProcessNode(SNode node) {
-    PastePostProcessor postProcessor = this.getPostProcessor(SNodeOperations.getConceptDeclaration(node));
+    PastePostProcessor postProcessor = getPostProcessor(SNodeOperations.getConceptDeclaration(node));
     if (postProcessor != null) {
       postProcessor.postProcesNode(node);
     } else {
       ListSequence.fromList(SNodeOperations.getChildren(node)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          CopyPasteManager.this.postProcessNode(it);
+          postProcessNode(it);
         }
       });
     }
   }
 
   public CopyPreProcessor getPreProcessor(SNode concept) {
-    this.load();
-    AbstractManager.Descriptor<CopyPreProcessor> descriptor = MapSequence.fromMap(this.myPreProcessors).get(concept);
+    load();
+    AbstractManager.Descriptor<CopyPreProcessor> descriptor = MapSequence.fromMap(myPreProcessors).get(concept);
     return (descriptor == null ?
       (CopyPreProcessor) null :
       descriptor.getInstance()
@@ -74,8 +74,8 @@ public class CopyPasteManager extends AbstractManager {
   }
 
   private PastePostProcessor getPostProcessor(SNode concept) {
-    this.load();
-    AbstractManager.Descriptor<PastePostProcessor> descriptor = MapSequence.fromMap(this.myPostProcessors).get(concept);
+    load();
+    AbstractManager.Descriptor<PastePostProcessor> descriptor = MapSequence.fromMap(myPostProcessors).get(concept);
     return (descriptor == null ?
       (PastePostProcessor) null :
       descriptor.getInstance()
@@ -83,11 +83,11 @@ public class CopyPasteManager extends AbstractManager {
   }
 
   private void load() {
-    if (this.myLoaded) {
+    if (myLoaded) {
       return;
     }
-    this.myPostProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<PastePostProcessor>>());
-    this.myPreProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<CopyPreProcessor>>());
+    myPostProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<PastePostProcessor>>());
+    myPreProcessors = MapSequence.fromMap(new HashMap<SNode, AbstractManager.Descriptor<CopyPreProcessor>>());
     for (Language language : MPSModuleRepository.getInstance().getAllLanguages()) {
       SModelDescriptor actionsModelDescriptor = language.getActionsModelDescriptor();
       if (actionsModelDescriptor != null) {
@@ -102,15 +102,15 @@ public class CopyPasteManager extends AbstractManager {
           }
         })) {
           for (SNode preProcessor : ListSequence.fromList(SLinkOperations.getTargets(copyPasteHandlers, "preProcessor", true))) {
-            MapSequence.fromMap(this.myPreProcessors).put(SLinkOperations.getTarget(preProcessor, "concept", false), new AbstractManager.Descriptor<CopyPreProcessor>(language.getNamespace() + "." + LanguageAspect.ACTIONS.getName() + "." + CopyPreProcessor_Behavior.call_getClassName_5948027493682347861(preProcessor), language, LOG));
+            MapSequence.fromMap(myPreProcessors).put(SLinkOperations.getTarget(preProcessor, "concept", false), new AbstractManager.Descriptor<CopyPreProcessor>(language.getNamespace() + "." + LanguageAspect.ACTIONS.getName() + "." + CopyPreProcessor_Behavior.call_getClassName_5948027493682347861(preProcessor), language, LOG));
           }
           for (SNode postProcessor : ListSequence.fromList(SLinkOperations.getTargets(copyPasteHandlers, "postProcessor", true))) {
-            MapSequence.fromMap(this.myPostProcessors).put(SLinkOperations.getTarget(postProcessor, "concept", false), new AbstractManager.Descriptor<PastePostProcessor>(language.getNamespace() + "." + LanguageAspect.ACTIONS.getName() + "." + PastePostProcessor_Behavior.call_getClassName_5457641811177522085(postProcessor), language, LOG));
+            MapSequence.fromMap(myPostProcessors).put(SLinkOperations.getTarget(postProcessor, "concept", false), new AbstractManager.Descriptor<PastePostProcessor>(language.getNamespace() + "." + LanguageAspect.ACTIONS.getName() + "." + PastePostProcessor_Behavior.call_getClassName_5457641811177522085(postProcessor), language, LOG));
           }
         }
       }
     }
-    this.myLoaded = true;
+    myLoaded = true;
   }
 
   @NonNls
@@ -120,9 +120,9 @@ public class CopyPasteManager extends AbstractManager {
   }
 
   public void clearCaches() {
-    this.myPostProcessors = null;
-    this.myPreProcessors = null;
-    this.myLoaded = false;
+    myPostProcessors = null;
+    myPreProcessors = null;
+    myLoaded = false;
   }
 
   public static CopyPasteManager getInstance() {
