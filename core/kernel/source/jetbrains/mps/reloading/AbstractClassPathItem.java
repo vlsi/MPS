@@ -113,6 +113,10 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
       invalidateIfNeeded(event);
     }
 
+    public void fileCreated(VirtualFileEvent event) {
+      invalidateIfNeeded(event);
+    }
+
     private void invalidateIfNeeded(VirtualFileEvent event) {
       if (!isUnder(myFile, event.getFile())) return;
       myFile.getFileSystem().removeVirtualFileListener(this);
