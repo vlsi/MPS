@@ -15,23 +15,23 @@
  */
 package jetbrains.mps.textGen;
 
+import jetbrains.mps.debug.DebugInfoManager;
+import jetbrains.mps.debug.info.PositionInfo;
+import jetbrains.mps.debug.info.ScopePositionInfo;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.debug.info.PositionInfo;
-import jetbrains.mps.debug.DebugInfoManager;
-import jetbrains.mps.debug.info.ScopePositionInfo;
 
-import java.util.Map;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * User: Dmitriev.
@@ -66,13 +66,11 @@ public class TextGenManager {
     buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
     appendNodeText(context, buffer, node, null);
     int topLength = buffer.getTopBufferText().split(buffer.getLineSeparator(), -1).length + 2;
-    for (SNode n : myPositions.keySet()) {
-      PositionInfo position = myPositions.get(n);
+    for (PositionInfo position : myPositions.values()) {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
-    for (SNode n : myScopePositions.keySet()) {
-      PositionInfo position = myScopePositions.get(n);
+    for (PositionInfo position : myScopePositions.values()) {
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
     }
@@ -136,13 +134,13 @@ public class TextGenManager {
   }
 
   private SNodeTextGen loadNodeTextGen(IOperationContext context, SNode node) {
-    ConceptDeclaration cd = (ConceptDeclaration) node.getConceptDeclarationAdapter();
+    SNode cd = node.getConceptDeclarationNode();
 
-    ConceptDeclaration baseConcept = SModelUtil_new.getBaseConcept();
+    SNode baseConcept = SModelUtil.getBaseConcept();
     while (cd != baseConcept) {
-      Language l = SModelUtil_new.getDeclaringLanguage(cd, GlobalScope.getInstance());
+      Language l = SModelUtil.getDeclaringLanguage(cd, GlobalScope.getInstance());
 
-      String packageName = NameUtil.namespaceFromConcept(cd);
+      String packageName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(cd));
       String className = cd.getName();
       String textgenClassname = packageName + ".textGen." + className + "_TextGen";
       try {
@@ -158,7 +156,7 @@ public class TextGenManager {
         LOG.error(e, node);
       }
 
-      cd = cd.getExtends();
+      cd = cd.getReferent(ConceptDeclaration.EXTENDS);
       if (cd == null) cd = baseConcept;
     }
     DefaultTextGen result = new DefaultTextGen();
@@ -188,7 +186,7 @@ public class TextGenManager {
     private boolean myContainErrors;
     private HashMap<SNode, PositionInfo> myPositions;
     private HashMap<SNode, ScopePositionInfo> myScopePositions;
-    private Map<String, String> myDependencies = new HashMap<String, String>();
+    private Map<String, String> myDependencies;
 
     private TextGenerationResult(String text,
                                  boolean containErrors,
@@ -200,6 +198,7 @@ public class TextGenManager {
       myContainErrors = containErrors;
       myPositions = positions;
       myScopePositions = scopePositions;
+      myDependencies = new HashMap<String, String>(dependencies.size() + extend.size());
       for (String s : dependencies) {
         myDependencies.put(s, DEPENDENCY);
       }

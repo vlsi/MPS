@@ -22,12 +22,18 @@ import java.util.HashMap;
  * Date: Dec 22, 2003
  */
 public final class TextGenBuffer {
+
   public static final int TOP = 0;
   public static final int DEFAULT = 1;
+
+  public static final String LINE_SEPARATOR = System.getProperty("line.separator");
+  public static final String SPACES = "                                ";
+
   private StringBuilder[] myBuffers = new StringBuilder[]{
-    new StringBuilder(256),
-    new StringBuilder(256)
+    new StringBuilder(512),
+    new StringBuilder(2048)
   };
+
   private int[] myPostions = new int[2];
   private int[] myLineNumbers = new int[2];
   private int myCurrBuffer = 1;
@@ -37,14 +43,17 @@ public final class TextGenBuffer {
   private int myDepth = 0;
   private boolean myContainsErrors = false;
 
+  TextGenBuffer() {
+  }
+
   public String getText() {
     String topBufferText = myBuffers[TOP].toString();
     String defaultBufferText = myBuffers[DEFAULT].toString();
-    return topBufferText.length() <= 0 ? defaultBufferText : topBufferText + getLineSeparator() + getLineSeparator() + defaultBufferText;
+    return topBufferText.length() <= 0 ? defaultBufferText : topBufferText + LINE_SEPARATOR + LINE_SEPARATOR + defaultBufferText;
   }
 
   public String getLineSeparator() {
-    return System.getProperty("line.separator");
+    return LINE_SEPARATOR;
   }
 
   public boolean hasErrors() {
@@ -67,10 +76,9 @@ public final class TextGenBuffer {
     if (s == null) {
       return;
     }
-    String lineSeparator = getLineSeparator();
-    if (s.contains(lineSeparator)) {
-      myLineNumbers[myCurrBuffer] += s.split(lineSeparator, -1).length - 1;
-      myPostions[myCurrBuffer] = s.length() - s.lastIndexOf(lineSeparator) - lineSeparator.length();
+    if (s.contains(LINE_SEPARATOR)) {
+      myLineNumbers[myCurrBuffer] += s.split(LINE_SEPARATOR, -1).length - 1;
+      myPostions[myCurrBuffer] = s.length() - s.lastIndexOf(LINE_SEPARATOR) - LINE_SEPARATOR.length();
     } else {
       myPostions[myCurrBuffer] += s.length();
     }
@@ -83,10 +91,14 @@ public final class TextGenBuffer {
   }
 
   protected void indentBuffer() {
-    for (int i = 0; i < myIndent * myDepth; i++) {
-      myBuffers[myCurrBuffer].append(' ');
+    int spaces = myIndent * myDepth;
+    myPostions[myCurrBuffer] += spaces;
+
+    while(spaces > 0) {
+      int i = spaces > SPACES.length() ? SPACES.length() : spaces;
+      myBuffers[myCurrBuffer].append(SPACES, 0, i);
+      spaces -= i;
     }
-    myPostions[myCurrBuffer] += myIndent * myDepth;
   }
 
   public void putUserObject(Object key, Object o) {

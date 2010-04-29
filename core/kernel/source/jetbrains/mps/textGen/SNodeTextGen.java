@@ -147,8 +147,9 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     String packageName = null;
     if (reference instanceof DynamicReference) {
       shortName = reference.getResolveInfo();
-      if (reference.getTargetSModelReference() != null) {
-        packageName = reference.getTargetSModelReference().getLongName();
+      final SModelReference modelReference = reference.getTargetSModelReference();
+      if (modelReference != null) {
+        packageName = modelReference.getLongName();
       }
     } else {
       SNode targetNode = reference.getTargetNode();
@@ -166,7 +167,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     }
   }
 
-  public String getDeafultNoTextGenErrorText(SNode node) {
+  public String getDefaultNoTextGenErrorText(SNode node) {
     return "<!TextGen not found for '" + node.getConceptFqName() + "'!>";
   }
 
