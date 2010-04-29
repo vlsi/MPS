@@ -4665,9 +4665,9 @@
             <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1218717038113">
               <link role="baseMethodDeclaration:3" targetNodeId="1218648402975" resolveInfo="retrieveClassPath" />
               <link role="classConcept:3" targetNodeId="1218647682296" resolveInfo="ModuleUtil" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1218717039526">
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="920309325922424231">
+                <link role="baseMethodDeclaration:3" targetNodeId="11.~CommonPaths.getMPSClassPath():jetbrains.mps.reloading.IClassPathItem" resolveInfo="getMPSClassPath" />
                 <link role="classConcept:3" targetNodeId="11.~CommonPaths" resolveInfo="CommonPaths" />
-                <link role="baseMethodDeclaration:3" targetNodeId="11.~CommonPaths.getMPSPath():jetbrains.mps.reloading.IClassPathItem" resolveInfo="getMPSPath" />
               </node>
             </node>
             <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1218717051185">

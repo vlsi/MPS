@@ -103,8 +103,8 @@ public class JavaCompiler {
       public void run() {
         CompositeClassPathItem compositeClassPathItem = new CompositeClassPathItem();
         compositeClassPathItem.add(module.getModuleWithDependenciesClassPathItem());
-        compositeClassPathItem.add(CommonPaths.getJDK());
-        compositeClassPathItem.add(CommonPaths.getMPSPath());
+        compositeClassPathItem.add(CommonPaths.getJDKClasspath());
+        compositeClassPathItem.add(CommonPaths.getMPSClassPath());
         myClassPathItem = compositeClassPathItem;
       }
     });

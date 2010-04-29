@@ -41,7 +41,7 @@ public class ModuleCycle_Behavior {
   }
 
   public static List<SNode> getMPSClassPath_1218716245482(String homePath, List<SNode> macro) {
-    return ModuleCycle_Behavior.createPathHolders_1218716903754(ModuleUtil.retrieveClassPath(CommonPaths.getMPSPath()), homePath, macro);
+    return ModuleCycle_Behavior.createPathHolders_1218716903754(ModuleUtil.retrieveClassPath(CommonPaths.getMPSClassPath()), homePath, macro);
   }
 
   public static List<SNode> createPathHolders_1218716903754(List<String> stringClasspath, String homePath, List<SNode> macro) {

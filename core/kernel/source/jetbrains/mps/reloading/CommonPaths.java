@@ -38,45 +38,31 @@ public class CommonPaths {
   private static IClassPathItem ourIDEAUtilJar = null;
   private static IClassPathItem ourIDEAxtensionsJar = null;
 
+  //--------paths-----------
+
   public static List<String> getJDKPath() {
-    return itemToPath(getJDK());
+    return itemToPath(getJDKClasspath());
   }
 
   public static List<String> getMPSPaths() {
-    List<String> result = itemToPath(getMPSPath());
+    List<String> result = itemToPath(getMPSClassPath());
     result.add(libPath()+ "commons-lang" + File.separator + "commons-lang-2.1.jar");
     result.add(libPath()+ "jdom" + File.separator + "jdom.jar");
     result.add(libPath()+ "picocontainer" + File.separator + "picocontainer.jar");
     return result;
   }
 
-
-  private static List<String> itemToPath(IClassPathItem cp) {
-    List<String> result = new ArrayList<String>();
-    for (IClassPathItem item : cp.flatten()) {
-      if (item instanceof FileClassPathItem) {
-        result.add(((FileClassPathItem) item).getClassPath());
-      } else if (item instanceof JarFileClassPathItem) {
-        result.add(((JarFileClassPathItem) item).getFile().getAbsolutePath());
-      } else {
-        throw new IllegalArgumentException(item.getClass().getName());
-      }
+  public static String getBaseMPSPath() {
+    String classesPath = PathManager.getHomePath() + File.separator + "classes";
+    if (new File(classesPath).exists()) {
+      return classesPath;
     }
-
-    return result;
-  }
-
-  public static IClassPathItem getJDK() {
-    if (ourRTJar == null) {
-      CompositeClassPathItem composite = new CompositeClassPathItem();
-      for (String s : getJDKJars()) {
-        addJarForName(composite, s);
-      }
-      ourRTJar = composite;
+    String mpsJarPath = PathManager.getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
+    if (new File(mpsJarPath).exists()) {
+      return mpsJarPath;
     }
-    return ourRTJar;
+    return null;
   }
-
 
   public static List<String> getJDKJars() {
     List<String> result = new ArrayList<String>();
@@ -93,7 +79,20 @@ public class CommonPaths {
     return result;
   }
 
-  public static IClassPathItem getMPSPath() {
+  //------classpaths--------
+
+  public static IClassPathItem getJDKClasspath() {
+    if (ourRTJar == null) {
+      CompositeClassPathItem composite = new CompositeClassPathItem();
+      for (String s : getJDKJars()) {
+        addJarForName(composite, s);
+      }
+      ourRTJar = composite;
+    }
+    return ourRTJar;
+  }
+
+  public static IClassPathItem getMPSClassPath() {
     CompositeClassPathItem result = new CompositeClassPathItem();
     result.add(getBaseMPSClassPath());
     result.add(getIDEAOpenAPIJar());
@@ -136,6 +135,25 @@ public class CommonPaths {
 
     return result;
   }
+
+  //--------utils-----------
+
+  private static List<String> itemToPath(IClassPathItem cp) {
+    List<String> result = new ArrayList<String>();
+    for (IClassPathItem item : cp.flatten()) {
+      if (item instanceof FileClassPathItem) {
+        result.add(((FileClassPathItem) item).getClassPath());
+      } else if (item instanceof JarFileClassPathItem) {
+        result.add(((JarFileClassPathItem) item).getFile().getAbsolutePath());
+      } else {
+        throw new IllegalArgumentException(item.getClass().getName());
+      }
+    }
+
+    return result;
+  }
+
+ //--------private----------
 
   private static IClassPathItem getLibraryJars() {
     CompositeClassPathItem cp = new CompositeClassPathItem();
@@ -181,7 +199,6 @@ public class CommonPaths {
       }
     }
   }
-
 
   private static IClassPathItem getIDEAOpenAPIJar() {
     if (ourIDEAOpenAPIJar == null) {
@@ -326,18 +343,6 @@ public class CommonPaths {
     return null;
   }
 
-  public static String getBaseMPSPath() {
-    String classesPath = PathManager.getHomePath() + File.separator + "classes";
-    if (new File(classesPath).exists()) {
-      return classesPath;
-    }
-    String mpsJarPath = PathManager.getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
-    if (new File(mpsJarPath).exists()) {
-      return mpsJarPath;
-    }
-    return null;
-  }
-
   private static JarFileClassPathItem findBootstrapJarByName(String name) {
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
       try {
@@ -364,20 +369,5 @@ public class CommonPaths {
     } else {
       LOG.error("Can't find " + name + ". Make sure you are using JDK 5.0");
     }
-  }
-
-  private static String getFullJarPathByName(String name) {
-    for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
-      try {
-        File file = new File(url.toURI());
-        if (!file.exists()) continue;
-        if (!file.getPath().endsWith(name)) continue;
-
-        return file.getAbsolutePath();
-      } catch (URISyntaxException e) {
-        LOG.error(e);
-      }
-    }
-    return null;
   }
 }
