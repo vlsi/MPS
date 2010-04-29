@@ -1199,11 +1199,8 @@
                   <property name="cellId:4" value="property_value" />
                 </node>
               </node>
-              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1232031449046">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1232031449047">
-                  <link role="fieldDeclaration:3" targetNodeId="1232031419203" resolveInfo="a" />
-                </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1232031449048" />
+              <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference:3" id="7889712255484393992">
+                <link role="variableDeclaration:3" targetNodeId="1232031419203" resolveInfo="a" />
               </node>
             </node>
           </node>
