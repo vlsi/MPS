@@ -105,5 +105,30 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1713017043373861887" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="8578055449697886098">
+    <property name="package" value="topLevel" />
+    <link role="concept" targetNodeId="2v.8022092943110829337:0" resolveInfo="BaseExtensionMethodContainer" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="8578055449697886099">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8578055449697886100" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="8578055449697886101">
+      <property name="name" value="getMembers" />
+      <property name="isVirtual" value="true" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="4v.1213877531970" resolveInfo="getMembers" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8578055449697886102" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8578055449697886103">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8578055449697886105">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8578055449697889065">
+            <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="8578055449697889064" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="8578055449697889069">
+              <link role="link:16" targetNodeId="2v.8022092943110829339:0" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="8578055449697886104" />
+    </node>
+  </node>
 </model>
 

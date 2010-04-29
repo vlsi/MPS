@@ -145,6 +145,9 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7460368937329709951">
     <link role="conceptDeclaration:32" targetNodeId="1.1550313277221324859:0" resolveInfo="MethodExtensionReference" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="7997068947888871703">
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem:32" id="7889712255484529585">
+        <link role="parametersInformation:32" targetNodeId="2v.4755152624708725521" resolveInfo="BaseMethodParameterInformationQuery" />
+      </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="7997068947888871704" />
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="7997068947888871705">
         <link role="relationDeclaration:32" targetNodeId="1.1550313277221324860:0" />

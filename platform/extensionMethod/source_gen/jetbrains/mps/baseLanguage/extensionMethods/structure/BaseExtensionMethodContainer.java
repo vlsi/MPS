@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.extensionMethods.structure;
 
 import jetbrains.mps.baseLanguage.structure.GenericDeclaration;
 import jetbrains.mps.baseLanguage.structure.IVisible;
+import jetbrains.mps.baseLanguage.structure.IMemberContainer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.Visibility;
 import java.util.Iterator;
@@ -12,7 +13,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class BaseExtensionMethodContainer extends GenericDeclaration implements IVisible {
+public class BaseExtensionMethodContainer extends GenericDeclaration implements IVisible, IMemberContainer {
   public static final String concept = "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";

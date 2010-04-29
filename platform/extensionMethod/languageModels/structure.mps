@@ -122,6 +122,9 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8022092943110829338">
       <link role="intfc:0" targetNodeId="6.1178549954367:3" resolveInfo="IVisible" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8578055449697886097">
+      <link role="intfc:0" targetNodeId="6.1194952169813:3" resolveInfo="IMemberContainer" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8022092943110829339">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="methods" />
