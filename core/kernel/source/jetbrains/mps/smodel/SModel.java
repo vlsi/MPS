@@ -1023,8 +1023,7 @@ public class SModel implements Iterable<SNode> {
         addLanguage(ref, firstVersion);
       }
 
-      List<SReference> references = node.getReferences();
-      for (SReference reference : references) {
+      for (SReference reference : node.getReferencesIterable()) {
         if (reference.isExternal()) {
           SModelReference targetModelReference = reference.getTargetSModelReference();
           if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
