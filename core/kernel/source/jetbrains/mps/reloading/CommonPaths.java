@@ -41,7 +41,7 @@ public class CommonPaths {
   //--------paths-----------
 
   public static List<String> getJDKPath() {
-    return itemToPath(getJDKClasspath());
+    return itemToPath(getJDKClassPath());
   }
 
   public static List<String> getMPSPaths() {
@@ -81,7 +81,7 @@ public class CommonPaths {
 
   //------classpaths--------
 
-  public static IClassPathItem getJDKClasspath() {
+  public static IClassPathItem getJDKClassPath() {
     if (ourRTJar == null) {
       CompositeClassPathItem composite = new CompositeClassPathItem();
       for (String s : getJDKJars()) {

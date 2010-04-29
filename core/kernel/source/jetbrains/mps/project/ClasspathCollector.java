@@ -46,7 +46,7 @@ public class ClasspathCollector {
     }
 
     if (includeJDK) {
-      result.add(CommonPaths.getJDKClasspath());
+      result.add(CommonPaths.getJDKClassPath());
     }
 
     if (includeMPS) {
