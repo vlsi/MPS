@@ -33,54 +33,24 @@ import java.util.zip.ZipFile;
 public class JarFileClassPathItem extends AbstractClassPathItem {
   private static final Logger LOG = Logger.getLogger(JarFileClassPathItem.class);
 
-  private static File transformFile(IFile f) throws IOException {
-    if (f instanceof FileSystemFile) {
-      return ((FileSystemFile) f).getFile();
-    }
+  private IFile myIFile;
 
-    File tmpFile = File.createTempFile(f.getName(), "tmp");
-    tmpFile.deleteOnExit();
-
-    OutputStream os = null;
-    InputStream is = null;
-    try {
-      is = new BufferedInputStream(f.openInputStream());
-      os = new BufferedOutputStream(new FileOutputStream(tmpFile));
-      int result;
-      while ((result = is.read()) != -1) {
-        os.write(result);
-      }
-    } finally {
-      if (is != null) {
-        is.close();
-      }
-      if (os != null) {
-        os.close();
-      }
-    }
-
-    return tmpFile;
-  }
-
+  //computed during init
+  private boolean myIsInitialized = false;
   private ZipFile myZipFile;
   private String myPrefix;
   private File myFile;
-  private IFile myIFile;
 
   private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> mySubpackages = new HashMap<String, Set<String>>();
   private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
 
-  protected JarFileClassPathItem(String path) throws IOException {
+  protected JarFileClassPathItem(String path) {
     this(FileSystem.getFile(path));
   }
 
-  protected JarFileClassPathItem(IFile file) throws IOException {
+  protected JarFileClassPathItem(IFile file) {
     myIFile = file;
-    myFile = transformFile(file);
-    myPrefix = "jar:" + myFile.toURL() + "!/";
-    myZipFile = new ZipFile(myFile);
-    buildCaches();
   }
 
   public IFile getIFile() {
@@ -88,10 +58,12 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   }
 
   public File getFile() {
+    ensureInitialized();
     return myFile;
   }
 
   public byte[] getClass(String name) {
+    ensureInitialized();
     ZipEntry entry = myEntries.get(name);
     if (entry == null) return null;
     InputStream inp = null;
@@ -115,14 +87,8 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     }
   }
 
-  private long getClassTimestamp(String name) {
-    String path = name.replace('.', '/') + ".class";
-    ZipEntry entry = myZipFile.getEntry(path);
-    assert entry != null : path;
-    return entry.getTime();
-  }
-
   public URL getResource(String name) {
+    ensureInitialized();
     try {
       if (myZipFile.getEntry(name) == null) return null;
       return new URL(myPrefix + name);
@@ -132,19 +98,61 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   }
 
   public void collectAvailableClasses(Set<String> classes, String namespace) {
+    ensureInitialized();
     classes.addAll(getClassesSetFor(namespace));
   }
 
   public void collectSubpackages(Set<String> subpackages, String namespace) {
+    ensureInitialized();
     subpackages.addAll(getSubpackagesSetFor(namespace));
   }
 
   public long getClassesTimestamp(String namespace) {
+    ensureInitialized();
     long timestamp = 0;
     for (String cls : getAvailableClasses(namespace)) {
       timestamp = Math.max(timestamp, getClassTimestamp(namespace.equals("") ? cls : namespace + "." + cls));
     }
     return timestamp;
+  }
+
+  public long getTimestamp() {
+    return myIFile.lastModified();
+  }
+
+  public List<IClassPathItem> flatten() {
+    List<IClassPathItem> result = new ArrayList<IClassPathItem>();
+    result.add(this);
+    return result;
+  }
+
+  public void accept(IClassPathItemVisitor visitor) {
+    visitor.visit(this);
+  }
+
+  public String toString() {
+    return "jar file class path item : " + myIFile;
+  }
+
+  private void ensureInitialized(){
+    if (myIsInitialized) return;
+
+    myIsInitialized = true;
+    try {
+      myFile = transformFile(myIFile);
+      myPrefix = "jar:" + myFile.toURL() + "!/";
+      myZipFile = new ZipFile(myFile);
+      buildCaches();
+    } catch (IOException e) {
+      LOG.error(e);
+    }
+  }
+
+  private long getClassTimestamp(String name) {
+    String path = name.replace('.', '/') + ".class";
+    ZipEntry entry = myZipFile.getEntry(path);
+    assert entry != null : path;
+    return entry.getTime();
   }
 
   private Set<String> getClassesSetFor(String pack) {
@@ -205,21 +213,6 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     }
   }
 
-  public long getTimestamp() {
-    return myFile.lastModified();
-  }
-
-  public List<IClassPathItem> flatten() {
-    List<IClassPathItem> result = new ArrayList<IClassPathItem>();
-    result.add(this);
-    return result;
-  }
-
-  @Override
-  public void accept(IClassPathItemVisitor visitor) {
-    visitor.visit(this);
-  }
-
   private void buildPackageCaches(String namespace) {
     String parent = getParentPackage(namespace);
     if (parent.equals(namespace)) return;
@@ -233,7 +226,32 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     return pack.substring(0, lastDot);
   }
 
-  public String toString() {
-    return "jar file class path item : " + myFile;
+  private static File transformFile(IFile f) throws IOException {
+    if (f instanceof FileSystemFile) {
+      return ((FileSystemFile) f).getFile();
+    }
+
+    File tmpFile = File.createTempFile(f.getName(), "tmp");
+    tmpFile.deleteOnExit();
+
+    OutputStream os = null;
+    InputStream is = null;
+    try {
+      is = new BufferedInputStream(f.openInputStream());
+      os = new BufferedOutputStream(new FileOutputStream(tmpFile));
+      int result;
+      while ((result = is.read()) != -1) {
+        os.write(result);
+      }
+    } finally {
+      if (is != null) {
+        is.close();
+      }
+      if (os != null) {
+        os.close();
+      }
+    }
+
+    return tmpFile;
   }
 }
