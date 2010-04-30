@@ -31,25 +31,31 @@ import com.intellij.openapi.components.ApplicationComponent;
 
 
 class ImmatureReferences implements ApplicationComponent {
-  private SModelRepositoryAdapter myReposListener = new MySModelRepositoryAdapter();
-  private ModelAccessAdapter myModelAccessListener = new MyModelAccessAdapter();
+  // How many threads _simultaneously_ accessing the pool are allowed to succeed without congestion
+  private static final int POOL_SIZE = 4;
+
+  private static final Object PRESENT = new Object();
 
   static ImmatureReferences getInstance() {
     return ApplicationManager.getApplication().getComponent(ImmatureReferences.class);
   }
 
+  private SModelRepositoryAdapter myReposListener = new MySModelRepositoryAdapter();
+
+  private ModelAccessAdapter myModelAccessListener = new MyModelAccessAdapter();
+
   private SModelRepository mySModelRepository;
 
-  private ConcurrentMap<SModelReference, ConcurrentMap<SReferenceBase, SReferenceBase>> myReferences = new ConcurrentHashMap<SModelReference, ConcurrentMap<SReferenceBase, SReferenceBase>>();
+  private ConcurrentMap<SModelReference, ConcurrentMap<SReferenceBase, Object>> myReferences = new ConcurrentHashMap<SModelReference, ConcurrentMap<SReferenceBase, Object>>();
 
-  private ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, SReferenceBase>> myReferencesSetPool = new ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, SReferenceBase>>();
+  private ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, Object>> myReferencesSetPool = new ConcurrentLinkedQueue<ConcurrentMap<SReferenceBase, Object>>();
 
   private boolean myDisabled = true;
 
   ImmatureReferences(SModelRepository modelRepository) {
     mySModelRepository = modelRepository;
-    for (int i = 0; i < 4; i++) {
-      myReferencesSetPool.add(new ConcurrentHashMap<SReferenceBase, SReferenceBase>());
+    for (int i = 0; i < POOL_SIZE; i++) {
+      myReferencesSetPool.add(new ConcurrentHashMap<SReferenceBase, Object>());
     }
   }
 
@@ -73,8 +79,8 @@ class ImmatureReferences implements ApplicationComponent {
   }
 
   public void cleanup() {
-    for (Entry<SModelReference, ConcurrentMap<SReferenceBase, SReferenceBase>> entry : myReferences.entrySet()) {
-      for (SReferenceBase r : entry.getValue().values()) {
+    for (Entry<SModelReference, ConcurrentMap<SReferenceBase, Object>> entry : myReferences.entrySet()) {
+      for (SReferenceBase r : entry.getValue().keySet()) {
         r.mature();
       }
     }
@@ -89,31 +95,31 @@ class ImmatureReferences implements ApplicationComponent {
   void add(SReferenceBase ref) {
     if (myDisabled) return;
     SModelReference modelRef = ref.getSourceNode().getModel().getSModelReference();
-    ConcurrentMap<SReferenceBase, SReferenceBase> refSet = getOrCreateRefSet(modelRef);
-    refSet.put(ref, ref);
+    ConcurrentMap<SReferenceBase, Object> refSet = getOrCreateRefSet(modelRef);
+    refSet.put(ref, PRESENT);
   }
 
   void remove(SReferenceBase ref) {
     if (myDisabled) return;
     SModelReference modelRef = ref.getSourceNode().getModel().getSModelReference();
-    ConcurrentMap<SReferenceBase, SReferenceBase> refSet = myReferences.get(modelRef);
+    ConcurrentMap<SReferenceBase, Object> refSet = myReferences.get(modelRef);
     if (refSet != null) {
       refSet.remove(ref);
     }
   }
 
-  private ConcurrentMap<SReferenceBase, SReferenceBase> getOrCreateRefSet(SModelReference modelRef) {
-    ConcurrentMap<SReferenceBase, SReferenceBase> pooledSet;
+  private ConcurrentMap<SReferenceBase, Object> getOrCreateRefSet(SModelReference modelRef) {
+    ConcurrentMap<SReferenceBase, Object> pooledSet;
     try {
       pooledSet = myReferencesSetPool.remove();
     }
     catch (NoSuchElementException e) {
-      pooledSet = new ConcurrentHashMap<SReferenceBase, SReferenceBase>();
+      pooledSet = new ConcurrentHashMap<SReferenceBase, Object>();
     }
-    ConcurrentMap<SReferenceBase, SReferenceBase> usedSet = myReferences.putIfAbsent(modelRef, pooledSet);
+    ConcurrentMap<SReferenceBase, Object> usedSet = myReferences.putIfAbsent(modelRef, pooledSet);
     if (usedSet == null) {
       usedSet = pooledSet;
-      pooledSet = new ConcurrentHashMap<SReferenceBase, SReferenceBase>();
+      pooledSet = new ConcurrentHashMap<SReferenceBase, Object>();
     }
     myReferencesSetPool.add(pooledSet);
     return usedSet;
@@ -127,7 +133,10 @@ class ImmatureReferences implements ApplicationComponent {
 
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
-      myReferences.remove(modelDescriptor.getSModelReference());
+      ConcurrentMap<SReferenceBase, Object> refSet = myReferences.remove(modelDescriptor.getSModelReference());
+      if (refSet != null){
+        refSet.clear();
+      }
     }
   }
 }
